@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DracunculusMedinensis.
+This file offers the methods to automatically retrieve the graph Dracunculus medinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DracunculusMedinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DracunculusMedinensis graph.
+    """Return new instance of the Dracunculus medinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DracunculusMedinensis(
 
     Returns
     -----------------------
-    Instace of DracunculusMedinensis graph.
+    Instace of Dracunculus medinensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCollinoides.
+This file offers the methods to automatically retrieve the graph Lactobacillus collinoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCollinoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCollinoides graph.
+    """Return new instance of the Lactobacillus collinoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusCollinoides(
 
     Returns
     -----------------------
-    Instace of LactobacillusCollinoides graph.
+    Instace of Lactobacillus collinoides graph.
 
 	References
 	---------------------

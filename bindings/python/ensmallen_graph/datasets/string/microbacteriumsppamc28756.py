@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpPamc28756.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. PAMC 28756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpPamc28756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpPamc28756 graph.
+    """Return new instance of the Microbacterium sp. PAMC 28756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpPamc28756(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpPamc28756 graph.
+    Instace of Microbacterium sp. PAMC 28756 graph.
 
 	References
 	---------------------

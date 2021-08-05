@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterOrnithocola.
+This file offers the methods to automatically retrieve the graph Campylobacter ornithocola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterOrnithocola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterOrnithocola graph.
+    """Return new instance of the Campylobacter ornithocola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterOrnithocola(
 
     Returns
     -----------------------
-    Instace of CampylobacterOrnithocola graph.
+    Instace of Campylobacter ornithocola graph.
 
 	References
 	---------------------

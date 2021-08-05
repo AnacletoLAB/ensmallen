@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InsolitispirillumPeregrinum.
+This file offers the methods to automatically retrieve the graph Insolitispirillum peregrinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def InsolitispirillumPeregrinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InsolitispirillumPeregrinum graph.
+    """Return new instance of the Insolitispirillum peregrinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def InsolitispirillumPeregrinum(
 
     Returns
     -----------------------
-    Instace of InsolitispirillumPeregrinum graph.
+    Instace of Insolitispirillum peregrinum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusKawachiiIfo4308.
+This file offers the methods to automatically retrieve the graph Aspergillus kawachii IFO 4308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusKawachiiIfo4308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusKawachiiIfo4308 graph.
+    """Return new instance of the Aspergillus kawachii IFO 4308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusKawachiiIfo4308(
 
     Returns
     -----------------------
-    Instace of AspergillusKawachiiIfo4308 graph.
+    Instace of Aspergillus kawachii IFO 4308 graph.
 
 	References
 	---------------------

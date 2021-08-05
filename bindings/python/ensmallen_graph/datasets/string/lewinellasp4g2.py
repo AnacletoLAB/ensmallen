@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LewinellaSp4g2.
+This file offers the methods to automatically retrieve the graph Lewinella sp. 4G2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LewinellaSp4g2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LewinellaSp4g2 graph.
+    """Return new instance of the Lewinella sp. 4G2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LewinellaSp4g2(
 
     Returns
     -----------------------
-    Instace of LewinellaSp4g2 graph.
+    Instace of Lewinella sp. 4G2 graph.
 
 	References
 	---------------------

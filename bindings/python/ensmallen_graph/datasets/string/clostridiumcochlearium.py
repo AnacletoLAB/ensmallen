@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCochlearium.
+This file offers the methods to automatically retrieve the graph Clostridium cochlearium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCochlearium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCochlearium graph.
+    """Return new instance of the Clostridium cochlearium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumCochlearium(
 
     Returns
     -----------------------
-    Instace of ClostridiumCochlearium graph.
+    Instace of Clostridium cochlearium graph.
 
 	References
 	---------------------

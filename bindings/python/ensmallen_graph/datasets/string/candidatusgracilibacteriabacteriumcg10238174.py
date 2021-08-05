@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGracilibacteriaBacteriumCg10238174.
+This file offers the methods to automatically retrieve the graph Candidatus Gracilibacteria bacterium CG1_02_38_174.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGracilibacteriaBacteriumCg10238174(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGracilibacteriaBacteriumCg10238174 graph.
+    """Return new instance of the Candidatus Gracilibacteria bacterium CG1_02_38_174 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGracilibacteriaBacteriumCg10238174(
 
     Returns
     -----------------------
-    Instace of CandidatusGracilibacteriaBacteriumCg10238174 graph.
+    Instace of Candidatus Gracilibacteria bacterium CG1_02_38_174 graph.
 
 	References
 	---------------------

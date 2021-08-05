@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpAmel2xe9.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. Amel2xE9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpAmel2xe9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpAmel2xe9 graph.
+    """Return new instance of the Streptomyces sp. Amel2xE9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpAmel2xe9(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpAmel2xe9 graph.
+    Instace of Streptomyces sp. Amel2xE9 graph.
 
 	References
 	---------------------

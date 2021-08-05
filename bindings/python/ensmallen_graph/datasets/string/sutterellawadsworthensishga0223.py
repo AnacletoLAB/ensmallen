@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaWadsworthensisHga0223.
+This file offers the methods to automatically retrieve the graph Sutterella wadsworthensis HGA0223.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SutterellaWadsworthensisHga0223(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaWadsworthensisHga0223 graph.
+    """Return new instance of the Sutterella wadsworthensis HGA0223 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SutterellaWadsworthensisHga0223(
 
     Returns
     -----------------------
-    Instace of SutterellaWadsworthensisHga0223 graph.
+    Instace of Sutterella wadsworthensis HGA0223 graph.
 
 	References
 	---------------------

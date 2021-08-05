@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesIsraelii.
+This file offers the methods to automatically retrieve the graph Actinomyces israelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesIsraelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesIsraelii graph.
+    """Return new instance of the Actinomyces israelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesIsraelii(
 
     Returns
     -----------------------
-    Instace of ActinomycesIsraelii graph.
+    Instace of Actinomyces israelii graph.
 
 	References
 	---------------------

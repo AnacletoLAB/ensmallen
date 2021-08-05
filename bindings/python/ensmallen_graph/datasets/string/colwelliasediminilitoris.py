@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaSediminilitoris.
+This file offers the methods to automatically retrieve the graph Colwellia sediminilitoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaSediminilitoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaSediminilitoris graph.
+    """Return new instance of the Colwellia sediminilitoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaSediminilitoris(
 
     Returns
     -----------------------
-    Instace of ColwelliaSediminilitoris graph.
+    Instace of Colwellia sediminilitoris graph.
 
 	References
 	---------------------

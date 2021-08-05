@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPerfringensStr13.
+This file offers the methods to automatically retrieve the graph Clostridium perfringens str. 13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPerfringensStr13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPerfringensStr13 graph.
+    """Return new instance of the Clostridium perfringens str. 13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPerfringensStr13(
 
     Returns
     -----------------------
-    Instace of ClostridiumPerfringensStr13 graph.
+    Instace of Clostridium perfringens str. 13 graph.
 
 	References
 	---------------------

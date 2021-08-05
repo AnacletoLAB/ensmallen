@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbCal65.
+This file offers the methods to automatically retrieve the graph socfb-Cal65.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbCal65(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbCal65 graph.
+    """Return new instance of the socfb-Cal65 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbCal65(
 
     Returns
     -----------------------
-    Instace of SocfbCal65 graph.
+    Instace of socfb-Cal65 graph.
 
 	References
 	---------------------

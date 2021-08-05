@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterPseudethanolicus.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter pseudethanolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterPseudethanolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterPseudethanolicus graph.
+    """Return new instance of the Thermoanaerobacter pseudethanolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoanaerobacterPseudethanolicus(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterPseudethanolicus graph.
+    Instace of Thermoanaerobacter pseudethanolicus graph.
 
 	References
 	---------------------

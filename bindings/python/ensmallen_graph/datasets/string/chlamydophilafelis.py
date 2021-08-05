@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydophilaFelis.
+This file offers the methods to automatically retrieve the graph Chlamydophila felis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydophilaFelis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydophilaFelis graph.
+    """Return new instance of the Chlamydophila felis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydophilaFelis(
 
     Returns
     -----------------------
-    Instace of ChlamydophilaFelis graph.
+    Instace of Chlamydophila felis graph.
 
 	References
 	---------------------

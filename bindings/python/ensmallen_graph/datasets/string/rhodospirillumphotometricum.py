@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillumPhotometricum.
+This file offers the methods to automatically retrieve the graph Rhodospirillum photometricum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillumPhotometricum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillumPhotometricum graph.
+    """Return new instance of the Rhodospirillum photometricum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodospirillumPhotometricum(
 
     Returns
     -----------------------
-    Instace of RhodospirillumPhotometricum graph.
+    Instace of Rhodospirillum photometricum graph.
 
 	References
 	---------------------

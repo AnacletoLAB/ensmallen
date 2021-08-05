@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobusFulgidus.
+This file offers the methods to automatically retrieve the graph Archaeoglobus fulgidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobusFulgidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobusFulgidus graph.
+    """Return new instance of the Archaeoglobus fulgidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArchaeoglobusFulgidus(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobusFulgidus graph.
+    Instace of Archaeoglobus fulgidus graph.
 
 	References
 	---------------------

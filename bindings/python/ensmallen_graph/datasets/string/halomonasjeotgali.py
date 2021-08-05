@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasJeotgali.
+This file offers the methods to automatically retrieve the graph Halomonas jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasJeotgali graph.
+    """Return new instance of the Halomonas jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasJeotgali(
 
     Returns
     -----------------------
-    Instace of HalomonasJeotgali graph.
+    Instace of Halomonas jeotgali graph.
 
 	References
 	---------------------

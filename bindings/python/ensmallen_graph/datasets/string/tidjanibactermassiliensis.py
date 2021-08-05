@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TidjanibacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Tidjanibacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TidjanibacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TidjanibacterMassiliensis graph.
+    """Return new instance of the Tidjanibacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TidjanibacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of TidjanibacterMassiliensis graph.
+    Instace of Tidjanibacter massiliensis graph.
 
 	References
 	---------------------

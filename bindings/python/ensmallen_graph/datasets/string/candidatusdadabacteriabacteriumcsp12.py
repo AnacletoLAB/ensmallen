@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDadabacteriaBacteriumCsp12.
+This file offers the methods to automatically retrieve the graph Candidatus Dadabacteria bacterium CSP1-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDadabacteriaBacteriumCsp12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDadabacteriaBacteriumCsp12 graph.
+    """Return new instance of the Candidatus Dadabacteria bacterium CSP1-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDadabacteriaBacteriumCsp12(
 
     Returns
     -----------------------
-    Instace of CandidatusDadabacteriaBacteriumCsp12 graph.
+    Instace of Candidatus Dadabacteria bacterium CSP1-2 graph.
 
 	References
 	---------------------

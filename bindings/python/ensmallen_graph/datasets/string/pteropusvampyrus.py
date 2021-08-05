@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PteropusVampyrus.
+This file offers the methods to automatically retrieve the graph Pteropus vampyrus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PteropusVampyrus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PteropusVampyrus graph.
+    """Return new instance of the Pteropus vampyrus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PteropusVampyrus(
 
     Returns
     -----------------------
-    Instace of PteropusVampyrus graph.
+    Instace of Pteropus vampyrus graph.
 
 	References
 	---------------------

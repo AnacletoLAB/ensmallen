@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSphaeroides241.
+This file offers the methods to automatically retrieve the graph Rhodobacter sphaeroides 241.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSphaeroides241(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSphaeroides241 graph.
+    """Return new instance of the Rhodobacter sphaeroides 241 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacterSphaeroides241(
 
     Returns
     -----------------------
-    Instace of RhodobacterSphaeroides241 graph.
+    Instace of Rhodobacter sphaeroides 241 graph.
 
 	References
 	---------------------

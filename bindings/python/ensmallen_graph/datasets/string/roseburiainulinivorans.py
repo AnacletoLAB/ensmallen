@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaInulinivorans.
+This file offers the methods to automatically retrieve the graph Roseburia inulinivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaInulinivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaInulinivorans graph.
+    """Return new instance of the Roseburia inulinivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseburiaInulinivorans(
 
     Returns
     -----------------------
-    Instace of RoseburiaInulinivorans graph.
+    Instace of Roseburia inulinivorans graph.
 
 	References
 	---------------------

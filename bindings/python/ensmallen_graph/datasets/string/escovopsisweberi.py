@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscovopsisWeberi.
+This file offers the methods to automatically retrieve the graph Escovopsis weberi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscovopsisWeberi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscovopsisWeberi graph.
+    """Return new instance of the Escovopsis weberi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EscovopsisWeberi(
 
     Returns
     -----------------------
-    Instace of EscovopsisWeberi graph.
+    Instace of Escovopsis weberi graph.
 
 	References
 	---------------------

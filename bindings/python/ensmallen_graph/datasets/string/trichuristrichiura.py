@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichurisTrichiura.
+This file offers the methods to automatically retrieve the graph Trichuris trichiura.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichurisTrichiura(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichurisTrichiura graph.
+    """Return new instance of the Trichuris trichiura graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichurisTrichiura(
 
     Returns
     -----------------------
-    Instace of TrichurisTrichiura graph.
+    Instace of Trichuris trichiura graph.
 
 	References
 	---------------------

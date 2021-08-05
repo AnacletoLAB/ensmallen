@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicellaActignis.
+This file offers the methods to automatically retrieve the graph Oceanicella actignis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicellaActignis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicellaActignis graph.
+    """Return new instance of the Oceanicella actignis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanicellaActignis(
 
     Returns
     -----------------------
-    Instace of OceanicellaActignis graph.
+    Instace of Oceanicella actignis graph.
 
 	References
 	---------------------

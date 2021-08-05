@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrotetrasporaMalaysiensis.
+This file offers the methods to automatically retrieve the graph Microtetraspora malaysiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrotetrasporaMalaysiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrotetrasporaMalaysiensis graph.
+    """Return new instance of the Microtetraspora malaysiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrotetrasporaMalaysiensis(
 
     Returns
     -----------------------
-    Instace of MicrotetrasporaMalaysiensis graph.
+    Instace of Microtetraspora malaysiensis graph.
 
 	References
 	---------------------

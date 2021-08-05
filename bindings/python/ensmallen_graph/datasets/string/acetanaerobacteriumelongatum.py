@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetanaerobacteriumElongatum.
+This file offers the methods to automatically retrieve the graph Acetanaerobacterium elongatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetanaerobacteriumElongatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetanaerobacteriumElongatum graph.
+    """Return new instance of the Acetanaerobacterium elongatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetanaerobacteriumElongatum(
 
     Returns
     -----------------------
-    Instace of AcetanaerobacteriumElongatum graph.
+    Instace of Acetanaerobacterium elongatum graph.
 
 	References
 	---------------------

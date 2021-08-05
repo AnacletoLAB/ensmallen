@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusAmargosae.
+This file offers the methods to automatically retrieve the graph Geodermatophilus amargosae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusAmargosae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusAmargosae graph.
+    """Return new instance of the Geodermatophilus amargosae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusAmargosae(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusAmargosae graph.
+    Instace of Geodermatophilus amargosae graph.
 
 	References
 	---------------------

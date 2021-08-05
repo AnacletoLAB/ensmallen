@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbYale4.
+This file offers the methods to automatically retrieve the graph socfb-Yale4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbYale4(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbYale4 graph.
+    """Return new instance of the socfb-Yale4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbYale4(
 
     Returns
     -----------------------
-    Instace of SocfbYale4 graph.
+    Instace of socfb-Yale4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaTimonensis4401737.
+This file offers the methods to automatically retrieve the graph Prevotella timonensis 4401737.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaTimonensis4401737(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaTimonensis4401737 graph.
+    """Return new instance of the Prevotella timonensis 4401737 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaTimonensis4401737(
 
     Returns
     -----------------------
-    Instace of PrevotellaTimonensis4401737 graph.
+    Instace of Prevotella timonensis 4401737 graph.
 
 	References
 	---------------------

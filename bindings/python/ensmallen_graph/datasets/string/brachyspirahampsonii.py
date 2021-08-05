@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraHampsonii.
+This file offers the methods to automatically retrieve the graph Brachyspira hampsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraHampsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraHampsonii graph.
+    """Return new instance of the Brachyspira hampsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachyspiraHampsonii(
 
     Returns
     -----------------------
-    Instace of BrachyspiraHampsonii graph.
+    Instace of Brachyspira hampsonii graph.
 
 	References
 	---------------------

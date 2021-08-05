@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAcidisoliDsm12555.
+This file offers the methods to automatically retrieve the graph Clostridium acidisoli DSM 12555.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAcidisoliDsm12555(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAcidisoliDsm12555 graph.
+    """Return new instance of the Clostridium acidisoli DSM 12555 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumAcidisoliDsm12555(
 
     Returns
     -----------------------
-    Instace of ClostridiumAcidisoliDsm12555 graph.
+    Instace of Clostridium acidisoli DSM 12555 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitritaleaHalalkaliphilaLw7.
+This file offers the methods to automatically retrieve the graph Nitritalea halalkaliphila LW7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitritaleaHalalkaliphilaLw7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitritaleaHalalkaliphilaLw7 graph.
+    """Return new instance of the Nitritalea halalkaliphila LW7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitritaleaHalalkaliphilaLw7(
 
     Returns
     -----------------------
-    Instace of NitritaleaHalalkaliphilaLw7 graph.
+    Instace of Nitritalea halalkaliphila LW7 graph.
 
 	References
 	---------------------

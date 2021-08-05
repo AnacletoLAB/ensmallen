@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortnoybacteriaBacteriumRifcsphigho212Full389.
+This file offers the methods to automatically retrieve the graph Candidatus Portnoybacteria bacterium RIFCSPHIGHO2_12_FULL_38_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPortnoybacteriaBacteriumRifcsphigho212Full389(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortnoybacteriaBacteriumRifcsphigho212Full389 graph.
+    """Return new instance of the Candidatus Portnoybacteria bacterium RIFCSPHIGHO2_12_FULL_38_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPortnoybacteriaBacteriumRifcsphigho212Full389(
 
     Returns
     -----------------------
-    Instace of CandidatusPortnoybacteriaBacteriumRifcsphigho212Full389 graph.
+    Instace of Candidatus Portnoybacteria bacterium RIFCSPHIGHO2_12_FULL_38_9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaShandongensis.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora shandongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaShandongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaShandongensis graph.
+    """Return new instance of the Saccharopolyspora shandongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharopolysporaShandongensis(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaShandongensis graph.
+    Instace of Saccharopolyspora shandongensis graph.
 
 	References
 	---------------------

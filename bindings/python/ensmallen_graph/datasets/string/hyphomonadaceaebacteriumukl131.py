@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonadaceaeBacteriumUkl131.
+This file offers the methods to automatically retrieve the graph Hyphomonadaceae bacterium UKL13-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonadaceaeBacteriumUkl131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonadaceaeBacteriumUkl131 graph.
+    """Return new instance of the Hyphomonadaceae bacterium UKL13-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomonadaceaeBacteriumUkl131(
 
     Returns
     -----------------------
-    Instace of HyphomonadaceaeBacteriumUkl131 graph.
+    Instace of Hyphomonadaceae bacterium UKL13-1 graph.
 
 	References
 	---------------------

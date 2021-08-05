@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumVivax.
+This file offers the methods to automatically retrieve the graph Plasmodium vivax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumVivax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumVivax graph.
+    """Return new instance of the Plasmodium vivax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumVivax(
 
     Returns
     -----------------------
-    Instace of PlasmodiumVivax graph.
+    Instace of Plasmodium vivax graph.
 
 	References
 	---------------------

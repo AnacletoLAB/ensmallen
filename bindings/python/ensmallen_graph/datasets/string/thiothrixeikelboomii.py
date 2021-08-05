@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiothrixEikelboomii.
+This file offers the methods to automatically retrieve the graph Thiothrix eikelboomii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiothrixEikelboomii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiothrixEikelboomii graph.
+    """Return new instance of the Thiothrix eikelboomii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiothrixEikelboomii(
 
     Returns
     -----------------------
-    Instace of ThiothrixEikelboomii graph.
+    Instace of Thiothrix eikelboomii graph.
 
 	References
 	---------------------

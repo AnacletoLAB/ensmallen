@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermofilumUzonense.
+This file offers the methods to automatically retrieve the graph Thermofilum uzonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermofilumUzonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermofilumUzonense graph.
+    """Return new instance of the Thermofilum uzonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermofilumUzonense(
 
     Returns
     -----------------------
-    Instace of ThermofilumUzonense graph.
+    Instace of Thermofilum uzonense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryobacteriumRoopkundense.
+This file offers the methods to automatically retrieve the graph Cryobacterium roopkundense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryobacteriumRoopkundense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryobacteriumRoopkundense graph.
+    """Return new instance of the Cryobacterium roopkundense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CryobacteriumRoopkundense(
 
     Returns
     -----------------------
-    Instace of CryobacteriumRoopkundense graph.
+    Instace of Cryobacterium roopkundense graph.
 
 	References
 	---------------------

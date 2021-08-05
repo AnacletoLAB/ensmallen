@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusAntranikianii.
+This file offers the methods to automatically retrieve the graph Thermus antranikianii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusAntranikianii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusAntranikianii graph.
+    """Return new instance of the Thermus antranikianii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusAntranikianii(
 
     Returns
     -----------------------
-    Instace of ThermusAntranikianii graph.
+    Instace of Thermus antranikianii graph.
 
 	References
 	---------------------

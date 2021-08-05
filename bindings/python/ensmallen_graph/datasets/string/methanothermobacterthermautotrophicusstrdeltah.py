@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermobacterThermautotrophicusStrDeltaH.
+This file offers the methods to automatically retrieve the graph Methanothermobacter thermautotrophicus str. Delta H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermobacterThermautotrophicusStrDeltaH(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermobacterThermautotrophicusStrDeltaH graph.
+    """Return new instance of the Methanothermobacter thermautotrophicus str. Delta H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothermobacterThermautotrophicusStrDeltaH(
 
     Returns
     -----------------------
-    Instace of MethanothermobacterThermautotrophicusStrDeltaH graph.
+    Instace of Methanothermobacter thermautotrophicus str. Delta H graph.
 
 	References
 	---------------------

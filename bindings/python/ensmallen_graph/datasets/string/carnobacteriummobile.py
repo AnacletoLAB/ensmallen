@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumMobile.
+This file offers the methods to automatically retrieve the graph Carnobacterium mobile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumMobile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumMobile graph.
+    """Return new instance of the Carnobacterium mobile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumMobile(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumMobile graph.
+    Instace of Carnobacterium mobile graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasLipolytica.
+This file offers the methods to automatically retrieve the graph Alteromonas lipolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasLipolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasLipolytica graph.
+    """Return new instance of the Alteromonas lipolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasLipolytica(
 
     Returns
     -----------------------
-    Instace of AlteromonasLipolytica graph.
+    Instace of Alteromonas lipolytica graph.
 
 	References
 	---------------------

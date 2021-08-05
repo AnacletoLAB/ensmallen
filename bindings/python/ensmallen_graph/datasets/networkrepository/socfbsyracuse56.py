@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbSyracuse56.
+This file offers the methods to automatically retrieve the graph socfb-Syracuse56.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbSyracuse56(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbSyracuse56 graph.
+    """Return new instance of the socfb-Syracuse56 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbSyracuse56(
 
     Returns
     -----------------------
-    Instace of SocfbSyracuse56 graph.
+    Instace of socfb-Syracuse56 graph.
 
 	References
 	---------------------

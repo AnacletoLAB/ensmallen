@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumYanoikuyae.
+This file offers the methods to automatically retrieve the graph Sphingobium yanoikuyae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumYanoikuyae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumYanoikuyae graph.
+    """Return new instance of the Sphingobium yanoikuyae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumYanoikuyae(
 
     Returns
     -----------------------
-    Instace of SphingobiumYanoikuyae graph.
+    Instace of Sphingobium yanoikuyae graph.
 
 	References
 	---------------------

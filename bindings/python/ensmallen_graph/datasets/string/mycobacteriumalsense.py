@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAlsense.
+This file offers the methods to automatically retrieve the graph Mycobacterium alsense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAlsense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAlsense graph.
+    """Return new instance of the Mycobacterium alsense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumAlsense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAlsense graph.
+    Instace of Mycobacterium alsense graph.
 
 	References
 	---------------------

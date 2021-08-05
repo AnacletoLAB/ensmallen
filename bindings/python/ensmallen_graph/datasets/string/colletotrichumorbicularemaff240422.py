@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumOrbiculareMaff240422.
+This file offers the methods to automatically retrieve the graph Colletotrichum orbiculare MAFF 240422.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumOrbiculareMaff240422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumOrbiculareMaff240422 graph.
+    """Return new instance of the Colletotrichum orbiculare MAFF 240422 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumOrbiculareMaff240422(
 
     Returns
     -----------------------
-    Instace of ColletotrichumOrbiculareMaff240422 graph.
+    Instace of Colletotrichum orbiculare MAFF 240422 graph.
 
 	References
 	---------------------

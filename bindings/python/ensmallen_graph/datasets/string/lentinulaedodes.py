@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentinulaEdodes.
+This file offers the methods to automatically retrieve the graph Lentinula edodes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentinulaEdodes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentinulaEdodes graph.
+    """Return new instance of the Lentinula edodes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentinulaEdodes(
 
     Returns
     -----------------------
-    Instace of LentinulaEdodes graph.
+    Instace of Lentinula edodes graph.
 
 	References
 	---------------------

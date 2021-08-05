@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelobacterPropionicus.
+This file offers the methods to automatically retrieve the graph Pelobacter propionicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelobacterPropionicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelobacterPropionicus graph.
+    """Return new instance of the Pelobacter propionicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelobacterPropionicus(
 
     Returns
     -----------------------
-    Instace of PelobacterPropionicus graph.
+    Instace of Pelobacter propionicus graph.
 
 	References
 	---------------------

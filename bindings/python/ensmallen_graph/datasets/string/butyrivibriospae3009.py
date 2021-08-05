@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpAe3009.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. AE3009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpAe3009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpAe3009 graph.
+    """Return new instance of the Butyrivibrio sp. AE3009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioSpAe3009(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpAe3009 graph.
+    Instace of Butyrivibrio sp. AE3009 graph.
 
 	References
 	---------------------

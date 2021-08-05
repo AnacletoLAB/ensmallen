@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaMurisAs145.
+This file offers the methods to automatically retrieve the graph Ehrlichia muris AS145.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaMurisAs145(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaMurisAs145 graph.
+    """Return new instance of the Ehrlichia muris AS145 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EhrlichiaMurisAs145(
 
     Returns
     -----------------------
-    Instace of EhrlichiaMurisAs145 graph.
+    Instace of Ehrlichia muris AS145 graph.
 
 	References
 	---------------------

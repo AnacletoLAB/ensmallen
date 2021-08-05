@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusTorquis.
+This file offers the methods to automatically retrieve the graph Psychroflexus torquis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusTorquis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusTorquis graph.
+    """Return new instance of the Psychroflexus torquis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychroflexusTorquis(
 
     Returns
     -----------------------
-    Instace of PsychroflexusTorquis graph.
+    Instace of Psychroflexus torquis graph.
 
 	References
 	---------------------

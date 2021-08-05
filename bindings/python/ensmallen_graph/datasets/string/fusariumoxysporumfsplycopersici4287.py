@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumOxysporumFSpLycopersici4287.
+This file offers the methods to automatically retrieve the graph Fusarium oxysporum f. sp. lycopersici 4287.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumOxysporumFSpLycopersici4287(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumOxysporumFSpLycopersici4287 graph.
+    """Return new instance of the Fusarium oxysporum f. sp. lycopersici 4287 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumOxysporumFSpLycopersici4287(
 
     Returns
     -----------------------
-    Instace of FusariumOxysporumFSpLycopersici4287 graph.
+    Instace of Fusarium oxysporum f. sp. lycopersici 4287 graph.
 
 	References
 	---------------------

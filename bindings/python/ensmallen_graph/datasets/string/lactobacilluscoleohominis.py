@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusColeohominis.
+This file offers the methods to automatically retrieve the graph Lactobacillus coleohominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusColeohominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusColeohominis graph.
+    """Return new instance of the Lactobacillus coleohominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusColeohominis(
 
     Returns
     -----------------------
-    Instace of LactobacillusColeohominis graph.
+    Instace of Lactobacillus coleohominis graph.
 
 	References
 	---------------------

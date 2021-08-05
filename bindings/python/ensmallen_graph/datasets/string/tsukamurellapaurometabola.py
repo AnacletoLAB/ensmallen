@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TsukamurellaPaurometabola.
+This file offers the methods to automatically retrieve the graph Tsukamurella paurometabola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TsukamurellaPaurometabola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TsukamurellaPaurometabola graph.
+    """Return new instance of the Tsukamurella paurometabola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TsukamurellaPaurometabola(
 
     Returns
     -----------------------
-    Instace of TsukamurellaPaurometabola graph.
+    Instace of Tsukamurella paurometabola graph.
 
 	References
 	---------------------

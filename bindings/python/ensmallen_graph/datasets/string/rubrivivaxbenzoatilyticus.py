@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubrivivaxBenzoatilyticus.
+This file offers the methods to automatically retrieve the graph Rubrivivax benzoatilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubrivivaxBenzoatilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubrivivaxBenzoatilyticus graph.
+    """Return new instance of the Rubrivivax benzoatilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RubrivivaxBenzoatilyticus(
 
     Returns
     -----------------------
-    Instace of RubrivivaxBenzoatilyticus graph.
+    Instace of Rubrivivax benzoatilyticus graph.
 
 	References
 	---------------------

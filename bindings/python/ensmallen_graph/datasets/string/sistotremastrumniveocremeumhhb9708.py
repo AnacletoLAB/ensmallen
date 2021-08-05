@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SistotremastrumNiveocremeumHhb9708.
+This file offers the methods to automatically retrieve the graph Sistotremastrum niveocremeum HHB9708.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SistotremastrumNiveocremeumHhb9708(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SistotremastrumNiveocremeumHhb9708 graph.
+    """Return new instance of the Sistotremastrum niveocremeum HHB9708 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SistotremastrumNiveocremeumHhb9708(
 
     Returns
     -----------------------
-    Instace of SistotremastrumNiveocremeumHhb9708 graph.
+    Instace of Sistotremastrum niveocremeum HHB9708 graph.
 
 	References
 	---------------------

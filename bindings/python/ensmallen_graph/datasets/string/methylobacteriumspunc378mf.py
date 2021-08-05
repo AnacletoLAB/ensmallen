@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSpUnc378mf.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. UNC378MF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSpUnc378mf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSpUnc378mf graph.
+    """Return new instance of the Methylobacterium sp. UNC378MF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumSpUnc378mf(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSpUnc378mf graph.
+    Instace of Methylobacterium sp. UNC378MF graph.
 
 	References
 	---------------------

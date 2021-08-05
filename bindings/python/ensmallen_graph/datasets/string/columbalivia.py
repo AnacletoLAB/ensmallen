@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColumbaLivia.
+This file offers the methods to automatically retrieve the graph Columba livia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColumbaLivia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColumbaLivia graph.
+    """Return new instance of the Columba livia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ColumbaLivia(
 
     Returns
     -----------------------
-    Instace of ColumbaLivia graph.
+    Instace of Columba livia graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomonasSpDh1.
+This file offers the methods to automatically retrieve the graph Methylomonas sp. DH-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomonasSpDh1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomonasSpDh1 graph.
+    """Return new instance of the Methylomonas sp. DH-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomonasSpDh1(
 
     Returns
     -----------------------
-    Instace of MethylomonasSpDh1 graph.
+    Instace of Methylomonas sp. DH-1 graph.
 
 	References
 	---------------------

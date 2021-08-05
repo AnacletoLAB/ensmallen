@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumEndosymbiontOfMortierella.
+This file offers the methods to automatically retrieve the graph bacterium endosymbiont of Mortierella.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumEndosymbiontOfMortierella(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumEndosymbiontOfMortierella graph.
+    """Return new instance of the bacterium endosymbiont of Mortierella graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumEndosymbiontOfMortierella(
 
     Returns
     -----------------------
-    Instace of BacteriumEndosymbiontOfMortierella graph.
+    Instace of bacterium endosymbiont of Mortierella graph.
 
 	References
 	---------------------

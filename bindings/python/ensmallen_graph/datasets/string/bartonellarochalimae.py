@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaRochalimae.
+This file offers the methods to automatically retrieve the graph Bartonella rochalimae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaRochalimae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaRochalimae graph.
+    """Return new instance of the Bartonella rochalimae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaRochalimae(
 
     Returns
     -----------------------
-    Instace of BartonellaRochalimae graph.
+    Instace of Bartonella rochalimae graph.
 
 	References
 	---------------------

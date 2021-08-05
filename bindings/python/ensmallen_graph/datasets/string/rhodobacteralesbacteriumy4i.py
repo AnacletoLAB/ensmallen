@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteralesBacteriumY4i.
+This file offers the methods to automatically retrieve the graph Rhodobacterales bacterium Y4I.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteralesBacteriumY4i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteralesBacteriumY4i graph.
+    """Return new instance of the Rhodobacterales bacterium Y4I graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacteralesBacteriumY4i(
 
     Returns
     -----------------------
-    Instace of RhodobacteralesBacteriumY4i graph.
+    Instace of Rhodobacterales bacterium Y4I graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolyangiumBrachysporum.
+This file offers the methods to automatically retrieve the graph [Polyangium] brachysporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolyangiumBrachysporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolyangiumBrachysporum graph.
+    """Return new instance of the [Polyangium] brachysporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolyangiumBrachysporum(
 
     Returns
     -----------------------
-    Instace of PolyangiumBrachysporum graph.
+    Instace of [Polyangium] brachysporum graph.
 
 	References
 	---------------------

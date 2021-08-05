@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloglobulusMorosus.
+This file offers the methods to automatically retrieve the graph Methyloglobulus morosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloglobulusMorosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloglobulusMorosus graph.
+    """Return new instance of the Methyloglobulus morosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloglobulusMorosus(
 
     Returns
     -----------------------
-    Instace of MethyloglobulusMorosus graph.
+    Instace of Methyloglobulus morosus graph.
 
 	References
 	---------------------

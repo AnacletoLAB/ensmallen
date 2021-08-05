@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumPseudosasicola.
+This file offers the methods to automatically retrieve the graph Methylobacterium pseudosasicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumPseudosasicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumPseudosasicola graph.
+    """Return new instance of the Methylobacterium pseudosasicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumPseudosasicola(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumPseudosasicola graph.
+    Instace of Methylobacterium pseudosasicola graph.
 
 	References
 	---------------------

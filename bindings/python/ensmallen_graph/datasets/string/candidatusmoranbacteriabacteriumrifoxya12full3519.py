@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMoranbacteriaBacteriumRifoxya12Full3519.
+This file offers the methods to automatically retrieve the graph Candidatus Moranbacteria bacterium RIFOXYA12_FULL_35_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMoranbacteriaBacteriumRifoxya12Full3519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMoranbacteriaBacteriumRifoxya12Full3519 graph.
+    """Return new instance of the Candidatus Moranbacteria bacterium RIFOXYA12_FULL_35_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMoranbacteriaBacteriumRifoxya12Full3519(
 
     Returns
     -----------------------
-    Instace of CandidatusMoranbacteriaBacteriumRifoxya12Full3519 graph.
+    Instace of Candidatus Moranbacteria bacterium RIFOXYA12_FULL_35_19 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaBacilliformis.
+This file offers the methods to automatically retrieve the graph Neisseria bacilliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaBacilliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaBacilliformis graph.
+    """Return new instance of the Neisseria bacilliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaBacilliformis(
 
     Returns
     -----------------------
-    Instace of NeisseriaBacilliformis graph.
+    Instace of Neisseria bacilliformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoranellaEndobia.
+This file offers the methods to automatically retrieve the graph Moranella endobia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoranellaEndobia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoranellaEndobia graph.
+    """Return new instance of the Moranella endobia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoranellaEndobia(
 
     Returns
     -----------------------
-    Instace of MoranellaEndobia graph.
+    Instace of Moranella endobia graph.
 
 	References
 	---------------------

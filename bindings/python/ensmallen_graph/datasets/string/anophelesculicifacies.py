@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesCulicifacies.
+This file offers the methods to automatically retrieve the graph Anopheles culicifacies.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesCulicifacies(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesCulicifacies graph.
+    """Return new instance of the Anopheles culicifacies graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesCulicifacies(
 
     Returns
     -----------------------
-    Instace of AnophelesCulicifacies graph.
+    Instace of Anopheles culicifacies graph.
 
 	References
 	---------------------

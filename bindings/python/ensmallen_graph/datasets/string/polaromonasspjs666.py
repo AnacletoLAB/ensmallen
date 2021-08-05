@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasSpJs666.
+This file offers the methods to automatically retrieve the graph Polaromonas sp. JS666.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasSpJs666(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasSpJs666 graph.
+    """Return new instance of the Polaromonas sp. JS666 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolaromonasSpJs666(
 
     Returns
     -----------------------
-    Instace of PolaromonasSpJs666 graph.
+    Instace of Polaromonas sp. JS666 graph.
 
 	References
 	---------------------

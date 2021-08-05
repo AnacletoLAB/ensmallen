@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClavibacterMichiganensisSubspTessellarius.
+This file offers the methods to automatically retrieve the graph Clavibacter michiganensis subsp. tessellarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClavibacterMichiganensisSubspTessellarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClavibacterMichiganensisSubspTessellarius graph.
+    """Return new instance of the Clavibacter michiganensis subsp. tessellarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClavibacterMichiganensisSubspTessellarius(
 
     Returns
     -----------------------
-    Instace of ClavibacterMichiganensisSubspTessellarius graph.
+    Instace of Clavibacter michiganensis subsp. tessellarius graph.
 
 	References
 	---------------------

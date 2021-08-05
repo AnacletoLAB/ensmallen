@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VenustampullaEchinocandica.
+This file offers the methods to automatically retrieve the graph Venustampulla echinocandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VenustampullaEchinocandica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VenustampullaEchinocandica graph.
+    """Return new instance of the Venustampulla echinocandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VenustampullaEchinocandica(
 
     Returns
     -----------------------
-    Instace of VenustampullaEchinocandica graph.
+    Instace of Venustampulla echinocandica graph.
 
 	References
 	---------------------

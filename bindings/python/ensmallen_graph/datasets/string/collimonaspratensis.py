@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollimonasPratensis.
+This file offers the methods to automatically retrieve the graph Collimonas pratensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollimonasPratensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollimonasPratensis graph.
+    """Return new instance of the Collimonas pratensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollimonasPratensis(
 
     Returns
     -----------------------
-    Instace of CollimonasPratensis graph.
+    Instace of Collimonas pratensis graph.
 
 	References
 	---------------------

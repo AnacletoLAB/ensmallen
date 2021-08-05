@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiveispirillumIrakenseDsm11586.
+This file offers the methods to automatically retrieve the graph Niveispirillum irakense DSM 11586.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiveispirillumIrakenseDsm11586(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiveispirillumIrakenseDsm11586 graph.
+    """Return new instance of the Niveispirillum irakense DSM 11586 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NiveispirillumIrakenseDsm11586(
 
     Returns
     -----------------------
-    Instace of NiveispirillumIrakenseDsm11586 graph.
+    Instace of Niveispirillum irakense DSM 11586 graph.
 
 	References
 	---------------------

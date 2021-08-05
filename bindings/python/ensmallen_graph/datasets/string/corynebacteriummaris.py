@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMaris.
+This file offers the methods to automatically retrieve the graph Corynebacterium maris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMaris graph.
+    """Return new instance of the Corynebacterium maris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumMaris(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMaris graph.
+    Instace of Corynebacterium maris graph.
 
 	References
 	---------------------

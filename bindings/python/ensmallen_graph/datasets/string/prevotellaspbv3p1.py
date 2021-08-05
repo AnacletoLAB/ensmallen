@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpBv3p1.
+This file offers the methods to automatically retrieve the graph Prevotella sp. BV3P1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpBv3p1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpBv3p1 graph.
+    """Return new instance of the Prevotella sp. BV3P1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpBv3p1(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpBv3p1 graph.
+    Instace of Prevotella sp. BV3P1 graph.
 
 	References
 	---------------------

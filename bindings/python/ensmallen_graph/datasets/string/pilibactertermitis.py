@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PilibacterTermitis.
+This file offers the methods to automatically retrieve the graph Pilibacter termitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PilibacterTermitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PilibacterTermitis graph.
+    """Return new instance of the Pilibacter termitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PilibacterTermitis(
 
     Returns
     -----------------------
-    Instace of PilibacterTermitis graph.
+    Instace of Pilibacter termitis graph.
 
 	References
 	---------------------

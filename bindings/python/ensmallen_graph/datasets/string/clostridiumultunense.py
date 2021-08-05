@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumUltunense.
+This file offers the methods to automatically retrieve the graph Clostridium ultunense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumUltunense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumUltunense graph.
+    """Return new instance of the Clostridium ultunense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumUltunense(
 
     Returns
     -----------------------
-    Instace of ClostridiumUltunense graph.
+    Instace of Clostridium ultunense graph.
 
 	References
 	---------------------

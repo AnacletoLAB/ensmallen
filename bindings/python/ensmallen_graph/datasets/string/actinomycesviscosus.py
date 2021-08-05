@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesViscosus.
+This file offers the methods to automatically retrieve the graph Actinomyces viscosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesViscosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesViscosus graph.
+    """Return new instance of the Actinomyces viscosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesViscosus(
 
     Returns
     -----------------------
-    Instace of ActinomycesViscosus graph.
+    Instace of Actinomyces viscosus graph.
 
 	References
 	---------------------

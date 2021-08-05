@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAdlerbacteriaBacteriumRifoxyc1Full4826.
+This file offers the methods to automatically retrieve the graph Candidatus Adlerbacteria bacterium RIFOXYC1_FULL_48_26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAdlerbacteriaBacteriumRifoxyc1Full4826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAdlerbacteriaBacteriumRifoxyc1Full4826 graph.
+    """Return new instance of the Candidatus Adlerbacteria bacterium RIFOXYC1_FULL_48_26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAdlerbacteriaBacteriumRifoxyc1Full4826(
 
     Returns
     -----------------------
-    Instace of CandidatusAdlerbacteriaBacteriumRifoxyc1Full4826 graph.
+    Instace of Candidatus Adlerbacteria bacterium RIFOXYC1_FULL_48_26 graph.
 
 	References
 	---------------------

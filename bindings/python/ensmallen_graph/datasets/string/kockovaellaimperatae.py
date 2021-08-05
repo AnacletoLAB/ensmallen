@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KockovaellaImperatae.
+This file offers the methods to automatically retrieve the graph Kockovaella imperatae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KockovaellaImperatae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KockovaellaImperatae graph.
+    """Return new instance of the Kockovaella imperatae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KockovaellaImperatae(
 
     Returns
     -----------------------
-    Instace of KockovaellaImperatae graph.
+    Instace of Kockovaella imperatae graph.
 
 	References
 	---------------------

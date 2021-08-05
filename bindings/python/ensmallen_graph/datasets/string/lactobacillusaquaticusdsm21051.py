@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAquaticusDsm21051.
+This file offers the methods to automatically retrieve the graph Lactobacillus aquaticus DSM 21051.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAquaticusDsm21051(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAquaticusDsm21051 graph.
+    """Return new instance of the Lactobacillus aquaticus DSM 21051 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAquaticusDsm21051(
 
     Returns
     -----------------------
-    Instace of LactobacillusAquaticusDsm21051 graph.
+    Instace of Lactobacillus aquaticus DSM 21051 graph.
 
 	References
 	---------------------

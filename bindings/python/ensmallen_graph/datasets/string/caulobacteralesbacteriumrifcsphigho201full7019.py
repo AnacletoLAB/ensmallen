@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacteralesBacteriumRifcsphigho201Full7019.
+This file offers the methods to automatically retrieve the graph Caulobacterales bacterium RIFCSPHIGHO2_01_FULL_70_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacteralesBacteriumRifcsphigho201Full7019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacteralesBacteriumRifcsphigho201Full7019 graph.
+    """Return new instance of the Caulobacterales bacterium RIFCSPHIGHO2_01_FULL_70_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacteralesBacteriumRifcsphigho201Full7019(
 
     Returns
     -----------------------
-    Instace of CaulobacteralesBacteriumRifcsphigho201Full7019 graph.
+    Instace of Caulobacterales bacterium RIFCSPHIGHO2_01_FULL_70_19 graph.
 
 	References
 	---------------------

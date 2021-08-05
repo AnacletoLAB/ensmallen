@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesnuesiellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Desnuesiella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesnuesiellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesnuesiellaMassiliensis graph.
+    """Return new instance of the Desnuesiella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesnuesiellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of DesnuesiellaMassiliensis graph.
+    Instace of Desnuesiella massiliensis graph.
 
 	References
 	---------------------

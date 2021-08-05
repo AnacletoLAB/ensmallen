@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioCuneatusDsm11391.
+This file offers the methods to automatically retrieve the graph Desulfovibrio cuneatus DSM 11391.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioCuneatusDsm11391(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioCuneatusDsm11391 graph.
+    """Return new instance of the Desulfovibrio cuneatus DSM 11391 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioCuneatusDsm11391(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioCuneatusDsm11391 graph.
+    Instace of Desulfovibrio cuneatus DSM 11391 graph.
 
 	References
 	---------------------

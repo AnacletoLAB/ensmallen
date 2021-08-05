@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodothermaceaeBacteriumRa.
+This file offers the methods to automatically retrieve the graph Rhodothermaceae bacterium RA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodothermaceaeBacteriumRa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodothermaceaeBacteriumRa graph.
+    """Return new instance of the Rhodothermaceae bacterium RA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodothermaceaeBacteriumRa(
 
     Returns
     -----------------------
-    Instace of RhodothermaceaeBacteriumRa graph.
+    Instace of Rhodothermaceae bacterium RA graph.
 
 	References
 	---------------------

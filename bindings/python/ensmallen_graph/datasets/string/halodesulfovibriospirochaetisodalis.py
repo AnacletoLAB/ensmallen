@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalodesulfovibrioSpirochaetisodalis.
+This file offers the methods to automatically retrieve the graph Halodesulfovibrio spirochaetisodalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalodesulfovibrioSpirochaetisodalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalodesulfovibrioSpirochaetisodalis graph.
+    """Return new instance of the Halodesulfovibrio spirochaetisodalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalodesulfovibrioSpirochaetisodalis(
 
     Returns
     -----------------------
-    Instace of HalodesulfovibrioSpirochaetisodalis graph.
+    Instace of Halodesulfovibrio spirochaetisodalis graph.
 
 	References
 	---------------------

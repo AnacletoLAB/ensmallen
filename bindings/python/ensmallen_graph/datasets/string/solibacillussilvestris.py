@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolibacillusSilvestris.
+This file offers the methods to automatically retrieve the graph Solibacillus silvestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolibacillusSilvestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolibacillusSilvestris graph.
+    """Return new instance of the Solibacillus silvestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolibacillusSilvestris(
 
     Returns
     -----------------------
-    Instace of SolibacillusSilvestris graph.
+    Instace of Solibacillus silvestris graph.
 
 	References
 	---------------------

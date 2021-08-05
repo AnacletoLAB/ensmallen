@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaceaeBacteriumKbs83.
+This file offers the methods to automatically retrieve the graph Acidobacteriaceae bacterium KBS83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaceaeBacteriumKbs83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaceaeBacteriumKbs83 graph.
+    """Return new instance of the Acidobacteriaceae bacterium KBS83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidobacteriaceaeBacteriumKbs83(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaceaeBacteriumKbs83 graph.
+    Instace of Acidobacteriaceae bacterium KBS83 graph.
 
 	References
 	---------------------

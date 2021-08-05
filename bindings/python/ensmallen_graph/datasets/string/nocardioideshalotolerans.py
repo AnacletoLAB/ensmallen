@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesHalotolerans.
+This file offers the methods to automatically retrieve the graph Nocardioides halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesHalotolerans graph.
+    """Return new instance of the Nocardioides halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardioidesHalotolerans(
 
     Returns
     -----------------------
-    Instace of NocardioidesHalotolerans graph.
+    Instace of Nocardioides halotolerans graph.
 
 	References
 	---------------------

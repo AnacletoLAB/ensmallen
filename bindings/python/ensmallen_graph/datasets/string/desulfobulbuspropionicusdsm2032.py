@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbusPropionicusDsm2032.
+This file offers the methods to automatically retrieve the graph Desulfobulbus propionicus DSM 2032.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbusPropionicusDsm2032(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbusPropionicusDsm2032 graph.
+    """Return new instance of the Desulfobulbus propionicus DSM 2032 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobulbusPropionicusDsm2032(
 
     Returns
     -----------------------
-    Instace of DesulfobulbusPropionicusDsm2032 graph.
+    Instace of Desulfobulbus propionicus DSM 2032 graph.
 
 	References
 	---------------------

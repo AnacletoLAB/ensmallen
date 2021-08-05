@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeromassilibacillusSpMarseilleP3371.
+This file offers the methods to automatically retrieve the graph Anaeromassilibacillus sp. Marseille-P3371.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeromassilibacillusSpMarseilleP3371(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeromassilibacillusSpMarseilleP3371 graph.
+    """Return new instance of the Anaeromassilibacillus sp. Marseille-P3371 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaeromassilibacillusSpMarseilleP3371(
 
     Returns
     -----------------------
-    Instace of AnaeromassilibacillusSpMarseilleP3371 graph.
+    Instace of Anaeromassilibacillus sp. Marseille-P3371 graph.
 
 	References
 	---------------------

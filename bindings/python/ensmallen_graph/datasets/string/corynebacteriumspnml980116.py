@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpNml980116.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. NML98-0116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpNml980116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpNml980116 graph.
+    """Return new instance of the Corynebacterium sp. NML98-0116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSpNml980116(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpNml980116 graph.
+    Instace of Corynebacterium sp. NML98-0116 graph.
 
 	References
 	---------------------

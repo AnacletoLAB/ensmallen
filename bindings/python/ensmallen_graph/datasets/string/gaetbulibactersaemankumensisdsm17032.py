@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GaetbulibacterSaemankumensisDsm17032.
+This file offers the methods to automatically retrieve the graph Gaetbulibacter saemankumensis DSM 17032.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GaetbulibacterSaemankumensisDsm17032(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GaetbulibacterSaemankumensisDsm17032 graph.
+    """Return new instance of the Gaetbulibacter saemankumensis DSM 17032 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GaetbulibacterSaemankumensisDsm17032(
 
     Returns
     -----------------------
-    Instace of GaetbulibacterSaemankumensisDsm17032 graph.
+    Instace of Gaetbulibacter saemankumensis DSM 17032 graph.
 
 	References
 	---------------------

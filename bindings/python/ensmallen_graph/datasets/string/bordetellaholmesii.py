@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaHolmesii.
+This file offers the methods to automatically retrieve the graph Bordetella holmesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaHolmesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaHolmesii graph.
+    """Return new instance of the Bordetella holmesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaHolmesii(
 
     Returns
     -----------------------
-    Instace of BordetellaHolmesii graph.
+    Instace of Bordetella holmesii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKitasatonis.
+This file offers the methods to automatically retrieve the graph Lactobacillus kitasatonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKitasatonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKitasatonis graph.
+    """Return new instance of the Lactobacillus kitasatonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusKitasatonis(
 
     Returns
     -----------------------
-    Instace of LactobacillusKitasatonis graph.
+    Instace of Lactobacillus kitasatonis graph.
 
 	References
 	---------------------

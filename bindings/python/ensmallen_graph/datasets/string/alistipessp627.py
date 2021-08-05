@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSp627.
+This file offers the methods to automatically retrieve the graph Alistipes sp. 627.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSp627(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSp627 graph.
+    """Return new instance of the Alistipes sp. 627 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesSp627(
 
     Returns
     -----------------------
-    Instace of AlistipesSp627 graph.
+    Instace of Alistipes sp. 627 graph.
 
 	References
 	---------------------

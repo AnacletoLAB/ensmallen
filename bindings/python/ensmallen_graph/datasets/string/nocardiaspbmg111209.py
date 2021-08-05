@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSpBmg111209.
+This file offers the methods to automatically retrieve the graph Nocardia sp. BMG111209.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSpBmg111209(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSpBmg111209 graph.
+    """Return new instance of the Nocardia sp. BMG111209 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaSpBmg111209(
 
     Returns
     -----------------------
-    Instace of NocardiaSpBmg111209 graph.
+    Instace of Nocardia sp. BMG111209 graph.
 
 	References
 	---------------------

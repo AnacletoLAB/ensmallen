@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaRubidaea.
+This file offers the methods to automatically retrieve the graph Serratia rubidaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaRubidaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaRubidaea graph.
+    """Return new instance of the Serratia rubidaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerratiaRubidaea(
 
     Returns
     -----------------------
-    Instace of SerratiaRubidaea graph.
+    Instace of Serratia rubidaea graph.
 
 	References
 	---------------------

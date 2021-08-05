@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaDilworthii.
+This file offers the methods to automatically retrieve the graph Burkholderia dilworthii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaDilworthii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaDilworthii graph.
+    """Return new instance of the Burkholderia dilworthii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaDilworthii(
 
     Returns
     -----------------------
-    Instace of BurkholderiaDilworthii graph.
+    Instace of Burkholderia dilworthii graph.
 
 	References
 	---------------------

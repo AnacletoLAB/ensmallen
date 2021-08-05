@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentzeaAlbidocapillata.
+This file offers the methods to automatically retrieve the graph Lentzea albidocapillata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentzeaAlbidocapillata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentzeaAlbidocapillata graph.
+    """Return new instance of the Lentzea albidocapillata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LentzeaAlbidocapillata(
 
     Returns
     -----------------------
-    Instace of LentzeaAlbidocapillata graph.
+    Instace of Lentzea albidocapillata graph.
 
 	References
 	---------------------

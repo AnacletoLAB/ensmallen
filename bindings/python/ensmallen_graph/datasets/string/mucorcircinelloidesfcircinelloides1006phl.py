@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucorCircinelloidesFCircinelloides1006phl.
+This file offers the methods to automatically retrieve the graph Mucor circinelloides f. circinelloides 1006PhL.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucorCircinelloidesFCircinelloides1006phl(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucorCircinelloidesFCircinelloides1006phl graph.
+    """Return new instance of the Mucor circinelloides f. circinelloides 1006PhL graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucorCircinelloidesFCircinelloides1006phl(
 
     Returns
     -----------------------
-    Instace of MucorCircinelloidesFCircinelloides1006phl graph.
+    Instace of Mucor circinelloides f. circinelloides 1006PhL graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesObesi.
+This file offers the methods to automatically retrieve the graph Alistipes obesi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesObesi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesObesi graph.
+    """Return new instance of the Alistipes obesi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesObesi(
 
     Returns
     -----------------------
-    Instace of AlistipesObesi graph.
+    Instace of Alistipes obesi graph.
 
 	References
 	---------------------

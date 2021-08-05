@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSpPc13.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. PC13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterSpPc13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSpPc13 graph.
+    """Return new instance of the Oscillibacter sp. PC13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OscillibacterSpPc13(
 
     Returns
     -----------------------
-    Instace of OscillibacterSpPc13 graph.
+    Instace of Oscillibacter sp. PC13 graph.
 
 	References
 	---------------------

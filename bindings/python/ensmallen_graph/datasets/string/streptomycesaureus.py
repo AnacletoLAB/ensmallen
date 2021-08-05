@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAureus.
+This file offers the methods to automatically retrieve the graph Streptomyces aureus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAureus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAureus graph.
+    """Return new instance of the Streptomyces aureus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesAureus(
 
     Returns
     -----------------------
-    Instace of StreptomycesAureus graph.
+    Instace of Streptomyces aureus graph.
 
 	References
 	---------------------

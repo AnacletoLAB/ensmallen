@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontStrain.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont strain.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontStrain(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontStrain graph.
+    """Return new instance of the Wolbachia endosymbiont strain graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontStrain(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontStrain graph.
+    Instace of Wolbachia endosymbiont strain graph.
 
 	References
 	---------------------

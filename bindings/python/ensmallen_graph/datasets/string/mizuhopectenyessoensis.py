@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MizuhopectenYessoensis.
+This file offers the methods to automatically retrieve the graph Mizuhopecten yessoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MizuhopectenYessoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MizuhopectenYessoensis graph.
+    """Return new instance of the Mizuhopecten yessoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MizuhopectenYessoensis(
 
     Returns
     -----------------------
-    Instace of MizuhopectenYessoensis graph.
+    Instace of Mizuhopecten yessoensis graph.
 
 	References
 	---------------------

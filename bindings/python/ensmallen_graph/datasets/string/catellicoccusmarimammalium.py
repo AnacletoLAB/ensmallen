@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatellicoccusMarimammalium.
+This file offers the methods to automatically retrieve the graph Catellicoccus marimammalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatellicoccusMarimammalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatellicoccusMarimammalium graph.
+    """Return new instance of the Catellicoccus marimammalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CatellicoccusMarimammalium(
 
     Returns
     -----------------------
-    Instace of CatellicoccusMarimammalium graph.
+    Instace of Catellicoccus marimammalium graph.
 
 	References
 	---------------------

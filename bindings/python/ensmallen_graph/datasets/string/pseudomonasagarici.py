@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAgarici.
+This file offers the methods to automatically retrieve the graph Pseudomonas agarici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAgarici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAgarici graph.
+    """Return new instance of the Pseudomonas agarici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAgarici(
 
     Returns
     -----------------------
-    Instace of PseudomonasAgarici graph.
+    Instace of Pseudomonas agarici graph.
 
 	References
 	---------------------

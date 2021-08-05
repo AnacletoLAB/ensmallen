@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSp85200250816Sch5313054B.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. 852002-50816_SCH5313054-b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSp85200250816Sch5313054B(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSp85200250816Sch5313054B graph.
+    """Return new instance of the Mycobacterium sp. 852002-50816_SCH5313054-b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSp85200250816Sch5313054B(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSp85200250816Sch5313054B graph.
+    Instace of Mycobacterium sp. 852002-50816_SCH5313054-b graph.
 
 	References
 	---------------------

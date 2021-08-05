@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronococcusAmylolyticus.
+This file offers the methods to automatically retrieve the graph Natronococcus amylolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronococcusAmylolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronococcusAmylolyticus graph.
+    """Return new instance of the Natronococcus amylolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatronococcusAmylolyticus(
 
     Returns
     -----------------------
-    Instace of NatronococcusAmylolyticus graph.
+    Instace of Natronococcus amylolyticus graph.
 
 	References
 	---------------------

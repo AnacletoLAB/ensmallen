@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobotryumSilenesDioicae.
+This file offers the methods to automatically retrieve the graph Microbotryum silenes-dioicae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobotryumSilenesDioicae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobotryumSilenesDioicae graph.
+    """Return new instance of the Microbotryum silenes-dioicae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobotryumSilenesDioicae(
 
     Returns
     -----------------------
-    Instace of MicrobotryumSilenesDioicae graph.
+    Instace of Microbotryum silenes-dioicae graph.
 
 	References
 	---------------------

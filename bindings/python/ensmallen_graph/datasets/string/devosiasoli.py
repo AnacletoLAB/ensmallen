@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSoli.
+This file offers the methods to automatically retrieve the graph Devosia soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSoli graph.
+    """Return new instance of the Devosia soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSoli(
 
     Returns
     -----------------------
-    Instace of DevosiaSoli graph.
+    Instace of Devosia soli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanibaculumPacificum.
+This file offers the methods to automatically retrieve the graph Oceanibaculum pacificum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanibaculumPacificum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanibaculumPacificum graph.
+    """Return new instance of the Oceanibaculum pacificum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanibaculumPacificum(
 
     Returns
     -----------------------
-    Instace of OceanibaculumPacificum graph.
+    Instace of Oceanibaculum pacificum graph.
 
 	References
 	---------------------

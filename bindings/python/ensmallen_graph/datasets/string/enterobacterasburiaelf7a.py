@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterAsburiaeLf7a.
+This file offers the methods to automatically retrieve the graph Enterobacter asburiae LF7a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterAsburiaeLf7a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterAsburiaeLf7a graph.
+    """Return new instance of the Enterobacter asburiae LF7a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacterAsburiaeLf7a(
 
     Returns
     -----------------------
-    Instace of EnterobacterAsburiaeLf7a graph.
+    Instace of Enterobacter asburiae LF7a graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaMurrelli.
+This file offers the methods to automatically retrieve the graph Trichinella murrelli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaMurrelli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaMurrelli graph.
+    """Return new instance of the Trichinella murrelli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaMurrelli(
 
     Returns
     -----------------------
-    Instace of TrichinellaMurrelli graph.
+    Instace of Trichinella murrelli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnothrixSpCaciam69d.
+This file offers the methods to automatically retrieve the graph Limnothrix sp. CACIAM 69d.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnothrixSpCaciam69d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnothrixSpCaciam69d graph.
+    """Return new instance of the Limnothrix sp. CACIAM 69d graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnothrixSpCaciam69d(
 
     Returns
     -----------------------
-    Instace of LimnothrixSpCaciam69d graph.
+    Instace of Limnothrix sp. CACIAM 69d graph.
 
 	References
 	---------------------

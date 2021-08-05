@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumLacus.
+This file offers the methods to automatically retrieve the graph Mycobacterium lacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumLacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumLacus graph.
+    """Return new instance of the Mycobacterium lacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumLacus(
 
     Returns
     -----------------------
-    Instace of MycobacteriumLacus graph.
+    Instace of Mycobacterium lacus graph.
 
 	References
 	---------------------

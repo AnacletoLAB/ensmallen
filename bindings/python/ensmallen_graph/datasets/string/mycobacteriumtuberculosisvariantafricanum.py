@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTuberculosisVariantAfricanum.
+This file offers the methods to automatically retrieve the graph Mycobacterium tuberculosis variant africanum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTuberculosisVariantAfricanum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTuberculosisVariantAfricanum graph.
+    """Return new instance of the Mycobacterium tuberculosis variant africanum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumTuberculosisVariantAfricanum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTuberculosisVariantAfricanum graph.
+    Instace of Mycobacterium tuberculosis variant africanum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumTaibaishanense.
+This file offers the methods to automatically retrieve the graph Rhizobium taibaishanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumTaibaishanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumTaibaishanense graph.
+    """Return new instance of the Rhizobium taibaishanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumTaibaishanense(
 
     Returns
     -----------------------
-    Instace of RhizobiumTaibaishanense graph.
+    Instace of Rhizobium taibaishanense graph.
 
 	References
 	---------------------

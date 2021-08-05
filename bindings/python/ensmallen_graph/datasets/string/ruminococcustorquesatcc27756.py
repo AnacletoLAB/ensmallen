@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusTorquesAtcc27756.
+This file offers the methods to automatically retrieve the graph Ruminococcus torques ATCC27756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusTorquesAtcc27756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusTorquesAtcc27756 graph.
+    """Return new instance of the Ruminococcus torques ATCC27756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusTorquesAtcc27756(
 
     Returns
     -----------------------
-    Instace of RuminococcusTorquesAtcc27756 graph.
+    Instace of Ruminococcus torques ATCC27756 graph.
 
 	References
 	---------------------

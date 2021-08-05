@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTenderiaElectrophaga.
+This file offers the methods to automatically retrieve the graph Candidatus Tenderia electrophaga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTenderiaElectrophaga(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTenderiaElectrophaga graph.
+    """Return new instance of the Candidatus Tenderia electrophaga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTenderiaElectrophaga(
 
     Returns
     -----------------------
-    Instace of CandidatusTenderiaElectrophaga graph.
+    Instace of Candidatus Tenderia electrophaga graph.
 
 	References
 	---------------------

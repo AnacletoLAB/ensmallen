@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FungalSpNo11243.
+This file offers the methods to automatically retrieve the graph fungal sp. No.11243.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FungalSpNo11243(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FungalSpNo11243 graph.
+    """Return new instance of the fungal sp. No.11243 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FungalSpNo11243(
 
     Returns
     -----------------------
-    Instace of FungalSpNo11243 graph.
+    Instace of fungal sp. No.11243 graph.
 
 	References
 	---------------------

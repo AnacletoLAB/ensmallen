@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSimiae.
+This file offers the methods to automatically retrieve the graph Aeromonas simiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSimiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSimiae graph.
+    """Return new instance of the Aeromonas simiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSimiae(
 
     Returns
     -----------------------
-    Instace of AeromonasSimiae graph.
+    Instace of Aeromonas simiae graph.
 
 	References
 	---------------------

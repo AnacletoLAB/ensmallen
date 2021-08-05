@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NematostellaVectensis.
+This file offers the methods to automatically retrieve the graph Nematostella vectensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NematostellaVectensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NematostellaVectensis graph.
+    """Return new instance of the Nematostella vectensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NematostellaVectensis(
 
     Returns
     -----------------------
-    Instace of NematostellaVectensis graph.
+    Instace of Nematostella vectensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RummeliibacillusStabekisii.
+This file offers the methods to automatically retrieve the graph Rummeliibacillus stabekisii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RummeliibacillusStabekisii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RummeliibacillusStabekisii graph.
+    """Return new instance of the Rummeliibacillus stabekisii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RummeliibacillusStabekisii(
 
     Returns
     -----------------------
-    Instace of RummeliibacillusStabekisii graph.
+    Instace of Rummeliibacillus stabekisii graph.
 
 	References
 	---------------------

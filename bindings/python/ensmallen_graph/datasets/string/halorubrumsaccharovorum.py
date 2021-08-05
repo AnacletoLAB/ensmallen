@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumSaccharovorum.
+This file offers the methods to automatically retrieve the graph Halorubrum saccharovorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumSaccharovorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumSaccharovorum graph.
+    """Return new instance of the Halorubrum saccharovorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalorubrumSaccharovorum(
 
     Returns
     -----------------------
-    Instace of HalorubrumSaccharovorum graph.
+    Instace of Halorubrum saccharovorum graph.
 
 	References
 	---------------------

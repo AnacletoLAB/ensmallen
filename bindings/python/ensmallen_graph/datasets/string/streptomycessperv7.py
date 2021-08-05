@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpErv7.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. ERV7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpErv7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpErv7 graph.
+    """Return new instance of the Streptomyces sp. ERV7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpErv7(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpErv7 graph.
+    Instace of Streptomyces sp. ERV7 graph.
 
 	References
 	---------------------

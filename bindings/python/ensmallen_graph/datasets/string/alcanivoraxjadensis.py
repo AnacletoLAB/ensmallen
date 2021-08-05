@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxJadensis.
+This file offers the methods to automatically retrieve the graph Alcanivorax jadensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxJadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxJadensis graph.
+    """Return new instance of the Alcanivorax jadensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxJadensis(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxJadensis graph.
+    Instace of Alcanivorax jadensis graph.
 
 	References
 	---------------------

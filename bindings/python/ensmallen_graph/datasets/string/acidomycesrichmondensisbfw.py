@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidomycesRichmondensisBfw.
+This file offers the methods to automatically retrieve the graph Acidomyces richmondensis BFW.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidomycesRichmondensisBfw(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidomycesRichmondensisBfw graph.
+    """Return new instance of the Acidomyces richmondensis BFW graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidomycesRichmondensisBfw(
 
     Returns
     -----------------------
-    Instace of AcidomycesRichmondensisBfw graph.
+    Instace of Acidomyces richmondensis BFW graph.
 
 	References
 	---------------------

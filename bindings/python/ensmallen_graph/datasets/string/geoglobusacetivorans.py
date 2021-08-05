@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeoglobusAcetivorans.
+This file offers the methods to automatically retrieve the graph Geoglobus acetivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeoglobusAcetivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeoglobusAcetivorans graph.
+    """Return new instance of the Geoglobus acetivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeoglobusAcetivorans(
 
     Returns
     -----------------------
-    Instace of GeoglobusAcetivorans graph.
+    Instace of Geoglobus acetivorans graph.
 
 	References
 	---------------------

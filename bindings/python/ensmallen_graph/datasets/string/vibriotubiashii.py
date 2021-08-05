@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioTubiashii.
+This file offers the methods to automatically retrieve the graph Vibrio tubiashii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioTubiashii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioTubiashii graph.
+    """Return new instance of the Vibrio tubiashii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioTubiashii(
 
     Returns
     -----------------------
-    Instace of VibrioTubiashii graph.
+    Instace of Vibrio tubiashii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadNetherlandsOsm.
+This file offers the methods to automatically retrieve the graph road-netherlands-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadNetherlandsOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadNetherlandsOsm graph.
+    """Return new instance of the road-netherlands-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadNetherlandsOsm(
 
     Returns
     -----------------------
-    Instace of RoadNetherlandsOsm graph.
+    Instace of road-netherlands-osm graph.
 
 	References
 	---------------------

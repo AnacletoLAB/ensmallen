@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumSpRifcsphigho201Full6931.
+This file offers the methods to automatically retrieve the graph Phenylobacterium sp. RIFCSPHIGHO2_01_FULL_69_31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumSpRifcsphigho201Full6931(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumSpRifcsphigho201Full6931 graph.
+    """Return new instance of the Phenylobacterium sp. RIFCSPHIGHO2_01_FULL_69_31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhenylobacteriumSpRifcsphigho201Full6931(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumSpRifcsphigho201Full6931 graph.
+    Instace of Phenylobacterium sp. RIFCSPHIGHO2_01_FULL_69_31 graph.
 
 	References
 	---------------------

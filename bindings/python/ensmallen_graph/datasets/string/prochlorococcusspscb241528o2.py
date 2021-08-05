@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusSpScb241528o2.
+This file offers the methods to automatically retrieve the graph Prochlorococcus sp. scB241528O2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusSpScb241528o2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusSpScb241528o2 graph.
+    """Return new instance of the Prochlorococcus sp. scB241528O2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProchlorococcusSpScb241528o2(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusSpScb241528o2 graph.
+    Instace of Prochlorococcus sp. scB241528O2 graph.
 
 	References
 	---------------------

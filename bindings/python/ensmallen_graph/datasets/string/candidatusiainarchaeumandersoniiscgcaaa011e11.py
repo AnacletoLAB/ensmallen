@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusIainarchaeumAndersoniiScgcAaa011E11.
+This file offers the methods to automatically retrieve the graph Candidatus Iainarchaeum andersonii SCGC AAA011-E11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusIainarchaeumAndersoniiScgcAaa011E11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusIainarchaeumAndersoniiScgcAaa011E11 graph.
+    """Return new instance of the Candidatus Iainarchaeum andersonii SCGC AAA011-E11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusIainarchaeumAndersoniiScgcAaa011E11(
 
     Returns
     -----------------------
-    Instace of CandidatusIainarchaeumAndersoniiScgcAaa011E11 graph.
+    Instace of Candidatus Iainarchaeum andersonii SCGC AAA011-E11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpUrhe0023.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. URHE0023.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpUrhe0023(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpUrhe0023 graph.
+    """Return new instance of the Cellulomonas sp. URHE0023 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasSpUrhe0023(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpUrhe0023 graph.
+    Instace of Cellulomonas sp. URHE0023 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminibacterSpHeli10.
+This file offers the methods to automatically retrieve the graph Sediminibacter sp. HelI10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminibacterSpHeli10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminibacterSpHeli10 graph.
+    """Return new instance of the Sediminibacter sp. HelI10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SediminibacterSpHeli10(
 
     Returns
     -----------------------
-    Instace of SediminibacterSpHeli10 graph.
+    Instace of Sediminibacter sp. HelI10 graph.
 
 	References
 	---------------------

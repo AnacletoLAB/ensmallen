@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SnodgrassellaAlviScgcAb598O02.
+This file offers the methods to automatically retrieve the graph Snodgrassella alvi SCGC AB-598-O02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SnodgrassellaAlviScgcAb598O02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SnodgrassellaAlviScgcAb598O02 graph.
+    """Return new instance of the Snodgrassella alvi SCGC AB-598-O02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SnodgrassellaAlviScgcAb598O02(
 
     Returns
     -----------------------
-    Instace of SnodgrassellaAlviScgcAb598O02 graph.
+    Instace of Snodgrassella alvi SCGC AB-598-O02 graph.
 
 	References
 	---------------------

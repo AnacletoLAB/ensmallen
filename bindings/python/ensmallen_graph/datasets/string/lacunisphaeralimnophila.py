@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacunisphaeraLimnophila.
+This file offers the methods to automatically retrieve the graph Lacunisphaera limnophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacunisphaeraLimnophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacunisphaeraLimnophila graph.
+    """Return new instance of the Lacunisphaera limnophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LacunisphaeraLimnophila(
 
     Returns
     -----------------------
-    Instace of LacunisphaeraLimnophila graph.
+    Instace of Lacunisphaera limnophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusSp9402080.
+This file offers the methods to automatically retrieve the graph Anaerococcus sp. 9402080.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusSp9402080(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusSp9402080 graph.
+    """Return new instance of the Anaerococcus sp. 9402080 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusSp9402080(
 
     Returns
     -----------------------
-    Instace of AnaerococcusSp9402080 graph.
+    Instace of Anaerococcus sp. 9402080 graph.
 
 	References
 	---------------------

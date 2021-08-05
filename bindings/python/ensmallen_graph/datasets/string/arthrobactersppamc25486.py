@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpPamc25486.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. PAMC 25486.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpPamc25486(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpPamc25486 graph.
+    """Return new instance of the Arthrobacter sp. PAMC 25486 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpPamc25486(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpPamc25486 graph.
+    Instace of Arthrobacter sp. PAMC 25486 graph.
 
 	References
 	---------------------

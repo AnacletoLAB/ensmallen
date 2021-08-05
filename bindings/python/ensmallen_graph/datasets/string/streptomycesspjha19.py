@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpJha19.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. JHA19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpJha19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpJha19 graph.
+    """Return new instance of the Streptomyces sp. JHA19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpJha19(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpJha19 graph.
+    Instace of Streptomyces sp. JHA19 graph.
 
 	References
 	---------------------

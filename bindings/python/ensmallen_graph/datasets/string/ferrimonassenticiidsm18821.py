@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimonasSenticiiDsm18821.
+This file offers the methods to automatically retrieve the graph Ferrimonas senticii DSM 18821.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimonasSenticiiDsm18821(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimonasSenticiiDsm18821 graph.
+    """Return new instance of the Ferrimonas senticii DSM 18821 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrimonasSenticiiDsm18821(
 
     Returns
     -----------------------
-    Instace of FerrimonasSenticiiDsm18821 graph.
+    Instace of Ferrimonas senticii DSM 18821 graph.
 
 	References
 	---------------------

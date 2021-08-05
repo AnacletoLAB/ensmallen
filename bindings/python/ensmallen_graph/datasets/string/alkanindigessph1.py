@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkanindigesSpH1.
+This file offers the methods to automatically retrieve the graph Alkanindiges sp. H1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkanindigesSpH1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkanindigesSpH1 graph.
+    """Return new instance of the Alkanindiges sp. H1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkanindigesSpH1(
 
     Returns
     -----------------------
-    Instace of AlkanindigesSpH1 graph.
+    Instace of Alkanindiges sp. H1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusHorneckiae.
+This file offers the methods to automatically retrieve the graph Bacillus horneckiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusHorneckiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusHorneckiae graph.
+    """Return new instance of the Bacillus horneckiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusHorneckiae(
 
     Returns
     -----------------------
-    Instace of BacillusHorneckiae graph.
+    Instace of Bacillus horneckiae graph.
 
 	References
 	---------------------

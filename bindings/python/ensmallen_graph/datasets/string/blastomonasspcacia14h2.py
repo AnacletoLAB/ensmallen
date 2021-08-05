@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomonasSpCacia14h2.
+This file offers the methods to automatically retrieve the graph Blastomonas sp. CACIA14H2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomonasSpCacia14h2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomonasSpCacia14h2 graph.
+    """Return new instance of the Blastomonas sp. CACIA14H2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomonasSpCacia14h2(
 
     Returns
     -----------------------
-    Instace of BlastomonasSpCacia14h2 graph.
+    Instace of Blastomonas sp. CACIA14H2 graph.
 
 	References
 	---------------------

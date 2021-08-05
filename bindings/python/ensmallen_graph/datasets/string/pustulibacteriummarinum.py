@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PustulibacteriumMarinum.
+This file offers the methods to automatically retrieve the graph Pustulibacterium marinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PustulibacteriumMarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PustulibacteriumMarinum graph.
+    """Return new instance of the Pustulibacterium marinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PustulibacteriumMarinum(
 
     Returns
     -----------------------
-    Instace of PustulibacteriumMarinum graph.
+    Instace of Pustulibacterium marinum graph.
 
 	References
 	---------------------

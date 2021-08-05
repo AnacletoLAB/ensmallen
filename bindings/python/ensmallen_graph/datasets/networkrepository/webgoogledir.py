@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebGoogleDir.
+This file offers the methods to automatically retrieve the graph web-google-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def WebGoogleDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebGoogleDir graph.
+    """Return new instance of the web-google-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def WebGoogleDir(
 
     Returns
     -----------------------
-    Instace of WebGoogleDir graph.
+    Instace of web-google-dir graph.
 
 	References
 	---------------------

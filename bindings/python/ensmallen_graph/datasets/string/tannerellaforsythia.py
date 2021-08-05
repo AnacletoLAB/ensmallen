@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TannerellaForsythia.
+This file offers the methods to automatically retrieve the graph Tannerella forsythia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TannerellaForsythia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TannerellaForsythia graph.
+    """Return new instance of the Tannerella forsythia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TannerellaForsythia(
 
     Returns
     -----------------------
-    Instace of TannerellaForsythia graph.
+    Instace of Tannerella forsythia graph.
 
 	References
 	---------------------

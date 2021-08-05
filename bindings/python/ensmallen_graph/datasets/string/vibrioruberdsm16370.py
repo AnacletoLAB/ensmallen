@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioRuberDsm16370.
+This file offers the methods to automatically retrieve the graph Vibrio ruber DSM 16370.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioRuberDsm16370(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioRuberDsm16370 graph.
+    """Return new instance of the Vibrio ruber DSM 16370 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioRuberDsm16370(
 
     Returns
     -----------------------
-    Instace of VibrioRuberDsm16370 graph.
+    Instace of Vibrio ruber DSM 16370 graph.
 
 	References
 	---------------------

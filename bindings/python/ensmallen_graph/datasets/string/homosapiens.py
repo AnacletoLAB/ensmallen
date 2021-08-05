@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HomoSapiens.
+This file offers the methods to automatically retrieve the graph Homo sapiens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HomoSapiens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HomoSapiens graph.
+    """Return new instance of the Homo sapiens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HomoSapiens(
 
     Returns
     -----------------------
-    Instace of HomoSapiens graph.
+    Instace of Homo sapiens graph.
 
 	References
 	---------------------

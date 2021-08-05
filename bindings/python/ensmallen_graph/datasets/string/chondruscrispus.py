@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChondrusCrispus.
+This file offers the methods to automatically retrieve the graph Chondrus crispus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChondrusCrispus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChondrusCrispus graph.
+    """Return new instance of the Chondrus crispus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChondrusCrispus(
 
     Returns
     -----------------------
-    Instace of ChondrusCrispus graph.
+    Instace of Chondrus crispus graph.
 
 	References
 	---------------------

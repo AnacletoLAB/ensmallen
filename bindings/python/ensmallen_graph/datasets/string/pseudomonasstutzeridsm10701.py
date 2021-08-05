@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriDsm10701.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri DSM10701.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriDsm10701(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriDsm10701 graph.
+    """Return new instance of the Pseudomonas stutzeri DSM10701 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriDsm10701(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriDsm10701 graph.
+    Instace of Pseudomonas stutzeri DSM10701 graph.
 
 	References
 	---------------------

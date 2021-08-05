@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastococcusSpDsm46838.
+This file offers the methods to automatically retrieve the graph Blastococcus sp. DSM 46838.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastococcusSpDsm46838(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastococcusSpDsm46838 graph.
+    """Return new instance of the Blastococcus sp. DSM 46838 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastococcusSpDsm46838(
 
     Returns
     -----------------------
-    Instace of BlastococcusSpDsm46838 graph.
+    Instace of Blastococcus sp. DSM 46838 graph.
 
 	References
 	---------------------

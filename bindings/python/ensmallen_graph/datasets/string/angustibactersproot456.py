@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AngustibacterSpRoot456.
+This file offers the methods to automatically retrieve the graph Angustibacter sp. Root456.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AngustibacterSpRoot456(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AngustibacterSpRoot456 graph.
+    """Return new instance of the Angustibacter sp. Root456 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AngustibacterSpRoot456(
 
     Returns
     -----------------------
-    Instace of AngustibacterSpRoot456 graph.
+    Instace of Angustibacter sp. Root456 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospinaGracilis3211.
+This file offers the methods to automatically retrieve the graph Nitrospina gracilis 3/211.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospinaGracilis3211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospinaGracilis3211 graph.
+    """Return new instance of the Nitrospina gracilis 3/211 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospinaGracilis3211(
 
     Returns
     -----------------------
-    Instace of NitrospinaGracilis3211 graph.
+    Instace of Nitrospina gracilis 3/211 graph.
 
 	References
 	---------------------

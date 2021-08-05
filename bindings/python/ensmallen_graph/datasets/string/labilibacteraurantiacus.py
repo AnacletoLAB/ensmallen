@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabilibacterAurantiacus.
+This file offers the methods to automatically retrieve the graph Labilibacter aurantiacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabilibacterAurantiacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabilibacterAurantiacus graph.
+    """Return new instance of the Labilibacter aurantiacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabilibacterAurantiacus(
 
     Returns
     -----------------------
-    Instace of LabilibacterAurantiacus graph.
+    Instace of Labilibacter aurantiacus graph.
 
 	References
 	---------------------

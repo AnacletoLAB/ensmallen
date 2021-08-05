@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaBogorensisNbrc16594.
+This file offers the methods to automatically retrieve the graph Asaia bogorensis NBRC 16594.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaiaBogorensisNbrc16594(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaBogorensisNbrc16594 graph.
+    """Return new instance of the Asaia bogorensis NBRC 16594 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsaiaBogorensisNbrc16594(
 
     Returns
     -----------------------
-    Instace of AsaiaBogorensisNbrc16594 graph.
+    Instace of Asaia bogorensis NBRC 16594 graph.
 
 	References
 	---------------------

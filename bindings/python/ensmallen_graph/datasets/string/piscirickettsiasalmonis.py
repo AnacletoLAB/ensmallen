@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiscirickettsiaSalmonis.
+This file offers the methods to automatically retrieve the graph Piscirickettsia salmonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiscirickettsiaSalmonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiscirickettsiaSalmonis graph.
+    """Return new instance of the Piscirickettsia salmonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiscirickettsiaSalmonis(
 
     Returns
     -----------------------
-    Instace of PiscirickettsiaSalmonis graph.
+    Instace of Piscirickettsia salmonis graph.
 
 	References
 	---------------------

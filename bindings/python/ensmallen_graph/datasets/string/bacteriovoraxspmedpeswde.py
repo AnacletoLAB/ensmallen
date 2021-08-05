@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriovoraxSpMedpeSwde.
+This file offers the methods to automatically retrieve the graph Bacteriovorax sp. MedPE-SWde.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriovoraxSpMedpeSwde(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriovoraxSpMedpeSwde graph.
+    """Return new instance of the Bacteriovorax sp. MedPE-SWde graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriovoraxSpMedpeSwde(
 
     Returns
     -----------------------
-    Instace of BacteriovoraxSpMedpeSwde graph.
+    Instace of Bacteriovorax sp. MedPE-SWde graph.
 
 	References
 	---------------------

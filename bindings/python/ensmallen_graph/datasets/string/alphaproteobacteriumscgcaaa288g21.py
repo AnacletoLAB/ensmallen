@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumScgcAaa288G21.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium SCGC AAA288-G21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumScgcAaa288G21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumScgcAaa288G21 graph.
+    """Return new instance of the alpha proteobacterium SCGC AAA288-G21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumScgcAaa288G21(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumScgcAaa288G21 graph.
+    Instace of alpha proteobacterium SCGC AAA288-G21 graph.
 
 	References
 	---------------------

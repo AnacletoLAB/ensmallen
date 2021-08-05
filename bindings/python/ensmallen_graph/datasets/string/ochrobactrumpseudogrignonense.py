@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OchrobactrumPseudogrignonense.
+This file offers the methods to automatically retrieve the graph Ochrobactrum pseudogrignonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OchrobactrumPseudogrignonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OchrobactrumPseudogrignonense graph.
+    """Return new instance of the Ochrobactrum pseudogrignonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OchrobactrumPseudogrignonense(
 
     Returns
     -----------------------
-    Instace of OchrobactrumPseudogrignonense graph.
+    Instace of Ochrobactrum pseudogrignonense graph.
 
 	References
 	---------------------

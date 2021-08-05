@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureobasidiumPullulansExf150.
+This file offers the methods to automatically retrieve the graph Aureobasidium pullulans EXF-150.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureobasidiumPullulansExf150(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureobasidiumPullulansExf150 graph.
+    """Return new instance of the Aureobasidium pullulans EXF-150 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureobasidiumPullulansExf150(
 
     Returns
     -----------------------
-    Instace of AureobasidiumPullulansExf150 graph.
+    Instace of Aureobasidium pullulans EXF-150 graph.
 
 	References
 	---------------------

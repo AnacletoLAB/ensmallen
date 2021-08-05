@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyberlindneraFabianii.
+This file offers the methods to automatically retrieve the graph Cyberlindnera fabianii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyberlindneraFabianii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyberlindneraFabianii graph.
+    """Return new instance of the Cyberlindnera fabianii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyberlindneraFabianii(
 
     Returns
     -----------------------
-    Instace of CyberlindneraFabianii graph.
+    Instace of Cyberlindnera fabianii graph.
 
 	References
 	---------------------

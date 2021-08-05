@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CohnellaLaeviribosi.
+This file offers the methods to automatically retrieve the graph Cohnella laeviribosi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CohnellaLaeviribosi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CohnellaLaeviribosi graph.
+    """Return new instance of the Cohnella laeviribosi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CohnellaLaeviribosi(
 
     Returns
     -----------------------
-    Instace of CohnellaLaeviribosi graph.
+    Instace of Cohnella laeviribosi graph.
 
 	References
 	---------------------

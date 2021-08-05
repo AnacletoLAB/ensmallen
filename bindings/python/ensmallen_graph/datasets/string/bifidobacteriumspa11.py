@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumSpA11.
+This file offers the methods to automatically retrieve the graph Bifidobacterium sp. A11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumSpA11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumSpA11 graph.
+    """Return new instance of the Bifidobacterium sp. A11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumSpA11(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumSpA11 graph.
+    Instace of Bifidobacterium sp. A11 graph.
 
 	References
 	---------------------

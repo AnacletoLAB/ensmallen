@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumAurum.
+This file offers the methods to automatically retrieve the graph Microbacterium aurum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumAurum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumAurum graph.
+    """Return new instance of the Microbacterium aurum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumAurum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumAurum graph.
+    Instace of Microbacterium aurum graph.
 
 	References
 	---------------------

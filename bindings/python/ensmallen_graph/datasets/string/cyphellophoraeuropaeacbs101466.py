@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyphellophoraEuropaeaCbs101466.
+This file offers the methods to automatically retrieve the graph Cyphellophora europaea CBS 101466.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyphellophoraEuropaeaCbs101466(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyphellophoraEuropaeaCbs101466 graph.
+    """Return new instance of the Cyphellophora europaea CBS 101466 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyphellophoraEuropaeaCbs101466(
 
     Returns
     -----------------------
-    Instace of CyphellophoraEuropaeaCbs101466 graph.
+    Instace of Cyphellophora europaea CBS 101466 graph.
 
 	References
 	---------------------

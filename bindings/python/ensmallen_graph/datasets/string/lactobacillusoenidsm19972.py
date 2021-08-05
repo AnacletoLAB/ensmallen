@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOeniDsm19972.
+This file offers the methods to automatically retrieve the graph Lactobacillus oeni DSM 19972.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusOeniDsm19972(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOeniDsm19972 graph.
+    """Return new instance of the Lactobacillus oeni DSM 19972 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusOeniDsm19972(
 
     Returns
     -----------------------
-    Instace of LactobacillusOeniDsm19972 graph.
+    Instace of Lactobacillus oeni DSM 19972 graph.
 
 	References
 	---------------------

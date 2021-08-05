@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterHenricii.
+This file offers the methods to automatically retrieve the graph Caulobacter henricii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterHenricii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterHenricii graph.
+    """Return new instance of the Caulobacter henricii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterHenricii(
 
     Returns
     -----------------------
-    Instace of CaulobacterHenricii graph.
+    Instace of Caulobacter henricii graph.
 
 	References
 	---------------------

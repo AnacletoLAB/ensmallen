@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasPosidonica.
+This file offers the methods to automatically retrieve the graph Marinomonas posidonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasPosidonica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasPosidonica graph.
+    """Return new instance of the Marinomonas posidonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinomonasPosidonica(
 
     Returns
     -----------------------
-    Instace of MarinomonasPosidonica graph.
+    Instace of Marinomonas posidonica graph.
 
 	References
 	---------------------

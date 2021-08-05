@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebArabic2005.
+This file offers the methods to automatically retrieve the graph web-arabic-2005.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebArabic2005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebArabic2005 graph.
+    """Return new instance of the web-arabic-2005 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebArabic2005(
 
     Returns
     -----------------------
-    Instace of WebArabic2005 graph.
+    Instace of web-arabic-2005 graph.
 
 	References
 	---------------------

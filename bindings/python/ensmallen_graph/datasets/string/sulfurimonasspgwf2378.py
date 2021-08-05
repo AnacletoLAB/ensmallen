@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasSpGwf2378.
+This file offers the methods to automatically retrieve the graph Sulfurimonas sp. GWF2_37_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasSpGwf2378(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasSpGwf2378 graph.
+    """Return new instance of the Sulfurimonas sp. GWF2_37_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurimonasSpGwf2378(
 
     Returns
     -----------------------
-    Instace of SulfurimonasSpGwf2378 graph.
+    Instace of Sulfurimonas sp. GWF2_37_8 graph.
 
 	References
 	---------------------

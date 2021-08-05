@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumPolonicum.
+This file offers the methods to automatically retrieve the graph Penicillium polonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumPolonicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumPolonicum graph.
+    """Return new instance of the Penicillium polonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumPolonicum(
 
     Returns
     -----------------------
-    Instace of PenicilliumPolonicum graph.
+    Instace of Penicillium polonicum graph.
 
 	References
 	---------------------

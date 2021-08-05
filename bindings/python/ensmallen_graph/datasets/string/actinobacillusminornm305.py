@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusMinorNm305.
+This file offers the methods to automatically retrieve the graph Actinobacillus minor NM305.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusMinorNm305(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusMinorNm305 graph.
+    """Return new instance of the Actinobacillus minor NM305 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusMinorNm305(
 
     Returns
     -----------------------
-    Instace of ActinobacillusMinorNm305 graph.
+    Instace of Actinobacillus minor NM305 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmittiumMucronatum.
+This file offers the methods to automatically retrieve the graph Smittium mucronatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmittiumMucronatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmittiumMucronatum graph.
+    """Return new instance of the Smittium mucronatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmittiumMucronatum(
 
     Returns
     -----------------------
-    Instace of SmittiumMucronatum graph.
+    Instace of Smittium mucronatum graph.
 
 	References
 	---------------------

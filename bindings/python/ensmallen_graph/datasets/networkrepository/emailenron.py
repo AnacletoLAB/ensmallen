@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailEnron.
+This file offers the methods to automatically retrieve the graph email-enron.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -49,7 +49,7 @@ def EmailEnron(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailEnron graph.
+    """Return new instance of the email-enron graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -76,7 +76,7 @@ def EmailEnron(
 
     Returns
     -----------------------
-    Instace of EmailEnron graph.
+    Instace of email-enron graph.
 
 	References
 	---------------------

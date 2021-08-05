@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaAnanassae.
+This file offers the methods to automatically retrieve the graph Drosophila ananassae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaAnanassae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaAnanassae graph.
+    """Return new instance of the Drosophila ananassae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaAnanassae(
 
     Returns
     -----------------------
-    Instace of DrosophilaAnanassae graph.
+    Instace of Drosophila ananassae graph.
 
 	References
 	---------------------

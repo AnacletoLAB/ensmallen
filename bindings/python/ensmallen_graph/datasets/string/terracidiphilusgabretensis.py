@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerracidiphilusGabretensis.
+This file offers the methods to automatically retrieve the graph Terracidiphilus gabretensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerracidiphilusGabretensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerracidiphilusGabretensis graph.
+    """Return new instance of the Terracidiphilus gabretensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerracidiphilusGabretensis(
 
     Returns
     -----------------------
-    Instace of TerracidiphilusGabretensis graph.
+    Instace of Terracidiphilus gabretensis graph.
 
 	References
 	---------------------

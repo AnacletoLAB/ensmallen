@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasMexicana.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas mexicana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasMexicana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasMexicana graph.
+    """Return new instance of the Pseudoxanthomonas mexicana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasMexicana(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasMexicana graph.
+    Instace of Pseudoxanthomonas mexicana graph.
 
 	References
 	---------------------

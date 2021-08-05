@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceLh10.
+This file offers the methods to automatically retrieve the graph copresence-LH10.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceLh10(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceLh10 graph.
+    """Return new instance of the copresence-LH10 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceLh10(
 
     Returns
     -----------------------
-    Instace of CopresenceLh10 graph.
+    Instace of copresence-LH10 graph.
 
 	References
 	---------------------

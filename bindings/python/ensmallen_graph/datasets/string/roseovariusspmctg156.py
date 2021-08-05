@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusSpMctg156.
+This file offers the methods to automatically retrieve the graph Roseovarius sp. MCTG156.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusSpMctg156(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusSpMctg156 graph.
+    """Return new instance of the Roseovarius sp. MCTG156 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseovariusSpMctg156(
 
     Returns
     -----------------------
-    Instace of RoseovariusSpMctg156 graph.
+    Instace of Roseovarius sp. MCTG156 graph.
 
 	References
 	---------------------

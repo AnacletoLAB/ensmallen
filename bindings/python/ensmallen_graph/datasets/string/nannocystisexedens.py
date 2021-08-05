@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NannocystisExedens.
+This file offers the methods to automatically retrieve the graph Nannocystis exedens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NannocystisExedens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NannocystisExedens graph.
+    """Return new instance of the Nannocystis exedens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NannocystisExedens(
 
     Returns
     -----------------------
-    Instace of NannocystisExedens graph.
+    Instace of Nannocystis exedens graph.
 
 	References
 	---------------------

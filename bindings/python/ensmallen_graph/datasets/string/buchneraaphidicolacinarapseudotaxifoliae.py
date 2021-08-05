@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaCinaraPseudotaxifoliae.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola (Cinara pseudotaxifoliae).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaCinaraPseudotaxifoliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaCinaraPseudotaxifoliae graph.
+    """Return new instance of the Buchnera aphidicola (Cinara pseudotaxifoliae) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaCinaraPseudotaxifoliae(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaCinaraPseudotaxifoliae graph.
+    Instace of Buchnera aphidicola (Cinara pseudotaxifoliae) graph.
 
 	References
 	---------------------

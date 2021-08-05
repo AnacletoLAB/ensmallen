@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RaoultellaOrnithinolytica.
+This file offers the methods to automatically retrieve the graph Raoultella ornithinolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RaoultellaOrnithinolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RaoultellaOrnithinolytica graph.
+    """Return new instance of the Raoultella ornithinolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RaoultellaOrnithinolytica(
 
     Returns
     -----------------------
-    Instace of RaoultellaOrnithinolytica graph.
+    Instace of Raoultella ornithinolytica graph.
 
 	References
 	---------------------

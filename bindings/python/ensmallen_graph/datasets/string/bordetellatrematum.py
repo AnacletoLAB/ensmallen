@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaTrematum.
+This file offers the methods to automatically retrieve the graph Bordetella trematum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaTrematum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaTrematum graph.
+    """Return new instance of the Bordetella trematum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaTrematum(
 
     Returns
     -----------------------
-    Instace of BordetellaTrematum graph.
+    Instace of Bordetella trematum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalioglobusJaponicus.
+This file offers the methods to automatically retrieve the graph Halioglobus japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalioglobusJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalioglobusJaponicus graph.
+    """Return new instance of the Halioglobus japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalioglobusJaponicus(
 
     Returns
     -----------------------
-    Instace of HalioglobusJaponicus graph.
+    Instace of Halioglobus japonicus graph.
 
 	References
 	---------------------

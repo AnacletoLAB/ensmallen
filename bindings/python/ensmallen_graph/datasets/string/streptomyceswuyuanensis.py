@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesWuyuanensis.
+This file offers the methods to automatically retrieve the graph Streptomyces wuyuanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesWuyuanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesWuyuanensis graph.
+    """Return new instance of the Streptomyces wuyuanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesWuyuanensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesWuyuanensis graph.
+    Instace of Streptomyces wuyuanensis graph.
 
 	References
 	---------------------

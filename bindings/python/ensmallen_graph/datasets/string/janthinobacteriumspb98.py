@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumSpB98.
+This file offers the methods to automatically retrieve the graph Janthinobacterium sp. B9-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumSpB98(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumSpB98 graph.
+    """Return new instance of the Janthinobacterium sp. B9-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanthinobacteriumSpB98(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumSpB98 graph.
+    Instace of Janthinobacterium sp. B9-8 graph.
 
 	References
 	---------------------

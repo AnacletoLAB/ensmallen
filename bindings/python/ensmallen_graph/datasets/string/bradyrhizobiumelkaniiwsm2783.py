@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumElkaniiWsm2783.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium elkanii WSM2783.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumElkaniiWsm2783(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumElkaniiWsm2783 graph.
+    """Return new instance of the Bradyrhizobium elkanii WSM2783 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumElkaniiWsm2783(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumElkaniiWsm2783 graph.
+    Instace of Bradyrhizobium elkanii WSM2783 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycesLimnophilus.
+This file offers the methods to automatically retrieve the graph Planctomyces limnophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycesLimnophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycesLimnophilus graph.
+    """Return new instance of the Planctomyces limnophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanctomycesLimnophilus(
 
     Returns
     -----------------------
-    Instace of PlanctomycesLimnophilus graph.
+    Instace of Planctomyces limnophilus graph.
 
 	References
 	---------------------

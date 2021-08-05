@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumGwf25820.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium GWF2_58_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumGwf25820(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumGwf25820 graph.
+    """Return new instance of the Alphaproteobacteria bacterium GWF2_58_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumGwf25820(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumGwf25820 graph.
+    Instace of Alphaproteobacteria bacterium GWF2_58_20 graph.
 
 	References
 	---------------------

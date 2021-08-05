@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionivibrioDicarboxylicus.
+This file offers the methods to automatically retrieve the graph Propionivibrio dicarboxylicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionivibrioDicarboxylicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionivibrioDicarboxylicus graph.
+    """Return new instance of the Propionivibrio dicarboxylicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionivibrioDicarboxylicus(
 
     Returns
     -----------------------
-    Instace of PropionivibrioDicarboxylicus graph.
+    Instace of Propionivibrio dicarboxylicus graph.
 
 	References
 	---------------------

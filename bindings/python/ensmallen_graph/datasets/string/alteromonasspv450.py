@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasSpV450.
+This file offers the methods to automatically retrieve the graph Alteromonas sp. V450.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasSpV450(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasSpV450 graph.
+    """Return new instance of the Alteromonas sp. V450 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasSpV450(
 
     Returns
     -----------------------
-    Instace of AlteromonasSpV450 graph.
+    Instace of Alteromonas sp. V450 graph.
 
 	References
 	---------------------

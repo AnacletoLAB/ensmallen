@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpN418.
+This file offers the methods to automatically retrieve the graph Vibrio sp. N418.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpN418(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpN418 graph.
+    """Return new instance of the Vibrio sp. N418 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioSpN418(
 
     Returns
     -----------------------
-    Instace of VibrioSpN418 graph.
+    Instace of Vibrio sp. N418 graph.
 
 	References
 	---------------------

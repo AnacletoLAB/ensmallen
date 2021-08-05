@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumAsp1004a.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium ASP10-04a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumAsp1004a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumAsp1004a graph.
+    """Return new instance of the Rhodobacteraceae bacterium ASP10-04a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteraceaeBacteriumAsp1004a(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumAsp1004a graph.
+    Instace of Rhodobacteraceae bacterium ASP10-04a graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermobrachiumCelere.
+This file offers the methods to automatically retrieve the graph Thermobrachium celere.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermobrachiumCelere(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermobrachiumCelere graph.
+    """Return new instance of the Thermobrachium celere graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermobrachiumCelere(
 
     Returns
     -----------------------
-    Instace of ThermobrachiumCelere graph.
+    Instace of Thermobrachium celere graph.
 
 	References
 	---------------------

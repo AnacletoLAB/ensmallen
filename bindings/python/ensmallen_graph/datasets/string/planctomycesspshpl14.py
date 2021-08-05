@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycesSpShPl14.
+This file offers the methods to automatically retrieve the graph Planctomyces sp. SH-PL14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycesSpShPl14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycesSpShPl14 graph.
+    """Return new instance of the Planctomyces sp. SH-PL14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctomycesSpShPl14(
 
     Returns
     -----------------------
-    Instace of PlanctomycesSpShPl14 graph.
+    Instace of Planctomyces sp. SH-PL14 graph.
 
 	References
 	---------------------

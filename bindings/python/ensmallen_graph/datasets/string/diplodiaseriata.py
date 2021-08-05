@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplodiaSeriata.
+This file offers the methods to automatically retrieve the graph Diplodia seriata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiplodiaSeriata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplodiaSeriata graph.
+    """Return new instance of the Diplodia seriata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiplodiaSeriata(
 
     Returns
     -----------------------
-    Instace of DiplodiaSeriata graph.
+    Instace of Diplodia seriata graph.
 
 	References
 	---------------------

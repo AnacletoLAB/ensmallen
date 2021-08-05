@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHaemocanisStrIllinois.
+This file offers the methods to automatically retrieve the graph Mycoplasma haemocanis str. Illinois.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHaemocanisStrIllinois(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHaemocanisStrIllinois graph.
+    """Return new instance of the Mycoplasma haemocanis str. Illinois graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaHaemocanisStrIllinois(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHaemocanisStrIllinois graph.
+    Instace of Mycoplasma haemocanis str. Illinois graph.
 
 	References
 	---------------------

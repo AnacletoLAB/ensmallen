@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidanaerobacterAcetatoxydans.
+This file offers the methods to automatically retrieve the graph Tepidanaerobacter acetatoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidanaerobacterAcetatoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidanaerobacterAcetatoxydans graph.
+    """Return new instance of the Tepidanaerobacter acetatoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TepidanaerobacterAcetatoxydans(
 
     Returns
     -----------------------
-    Instace of TepidanaerobacterAcetatoxydans graph.
+    Instace of Tepidanaerobacter acetatoxydans graph.
 
 	References
 	---------------------

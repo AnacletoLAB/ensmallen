@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudopelagicolaGijangensis.
+This file offers the methods to automatically retrieve the graph Pseudopelagicola gijangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudopelagicolaGijangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudopelagicolaGijangensis graph.
+    """Return new instance of the Pseudopelagicola gijangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudopelagicolaGijangensis(
 
     Returns
     -----------------------
-    Instace of PseudopelagicolaGijangensis graph.
+    Instace of Pseudopelagicola gijangensis graph.
 
 	References
 	---------------------

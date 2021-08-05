@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporolactobacillusNakayamae.
+This file offers the methods to automatically retrieve the graph Sporolactobacillus nakayamae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporolactobacillusNakayamae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporolactobacillusNakayamae graph.
+    """Return new instance of the Sporolactobacillus nakayamae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporolactobacillusNakayamae(
 
     Returns
     -----------------------
-    Instace of SporolactobacillusNakayamae graph.
+    Instace of Sporolactobacillus nakayamae graph.
 
 	References
 	---------------------

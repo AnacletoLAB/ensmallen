@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash331.
+This file offers the methods to automatically retrieve the graph ash331.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash331(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash331 graph.
+    """Return new instance of the ash331 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash331(
 
     Returns
     -----------------------
-    Instace of Ash331 graph.
+    Instace of ash331 graph.
 
 	References
 	---------------------

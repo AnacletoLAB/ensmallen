@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BatrachochytriumDendrobatidis.
+This file offers the methods to automatically retrieve the graph Batrachochytrium dendrobatidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BatrachochytriumDendrobatidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BatrachochytriumDendrobatidis graph.
+    """Return new instance of the Batrachochytrium dendrobatidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BatrachochytriumDendrobatidis(
 
     Returns
     -----------------------
-    Instace of BatrachochytriumDendrobatidis graph.
+    Instace of Batrachochytrium dendrobatidis graph.
 
 	References
 	---------------------

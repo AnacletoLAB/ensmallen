@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuricaudaAntarctica.
+This file offers the methods to automatically retrieve the graph Muricauda antarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuricaudaAntarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuricaudaAntarctica graph.
+    """Return new instance of the Muricauda antarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MuricaudaAntarctica(
 
     Returns
     -----------------------
-    Instace of MuricaudaAntarctica graph.
+    Instace of Muricauda antarctica graph.
 
 	References
 	---------------------

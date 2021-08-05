@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrocinitomixCatalasitica.
+This file offers the methods to automatically retrieve the graph Crocinitomix catalasitica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrocinitomixCatalasitica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrocinitomixCatalasitica graph.
+    """Return new instance of the Crocinitomix catalasitica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CrocinitomixCatalasitica(
 
     Returns
     -----------------------
-    Instace of CrocinitomixCatalasitica graph.
+    Instace of Crocinitomix catalasitica graph.
 
 	References
 	---------------------

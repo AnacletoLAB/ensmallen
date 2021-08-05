@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpKctc13219.
+This file offers the methods to automatically retrieve the graph [Bacillus] sp. KCTC 13219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpKctc13219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpKctc13219 graph.
+    """Return new instance of the [Bacillus] sp. KCTC 13219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpKctc13219(
 
     Returns
     -----------------------
-    Instace of BacillusSpKctc13219 graph.
+    Instace of [Bacillus] sp. KCTC 13219 graph.
 
 	References
 	---------------------

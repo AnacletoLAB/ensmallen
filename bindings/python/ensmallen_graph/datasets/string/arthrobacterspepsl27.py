@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpEpsl27.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. EPSL27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpEpsl27(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpEpsl27 graph.
+    """Return new instance of the Arthrobacter sp. EPSL27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpEpsl27(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpEpsl27 graph.
+    Instace of Arthrobacter sp. EPSL27 graph.
 
 	References
 	---------------------

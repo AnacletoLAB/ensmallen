@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MedicagoTruncatula.
+This file offers the methods to automatically retrieve the graph Medicago truncatula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MedicagoTruncatula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MedicagoTruncatula graph.
+    """Return new instance of the Medicago truncatula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MedicagoTruncatula(
 
     Returns
     -----------------------
-    Instace of MedicagoTruncatula graph.
+    Instace of Medicago truncatula graph.
 
 	References
 	---------------------

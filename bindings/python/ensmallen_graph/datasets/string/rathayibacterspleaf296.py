@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RathayibacterSpLeaf296.
+This file offers the methods to automatically retrieve the graph Rathayibacter sp. Leaf296.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RathayibacterSpLeaf296(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RathayibacterSpLeaf296 graph.
+    """Return new instance of the Rathayibacter sp. Leaf296 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RathayibacterSpLeaf296(
 
     Returns
     -----------------------
-    Instace of RathayibacterSpLeaf296 graph.
+    Instace of Rathayibacter sp. Leaf296 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpUnc451mf.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. UNC451MF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpUnc451mf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpUnc451mf graph.
+    """Return new instance of the Paenibacillus sp. UNC451MF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpUnc451mf(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpUnc451mf graph.
+    Instace of Paenibacillus sp. UNC451MF graph.
 
 	References
 	---------------------

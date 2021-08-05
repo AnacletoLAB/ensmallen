@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusGnavus.
+This file offers the methods to automatically retrieve the graph Ruminococcus gnavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusGnavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusGnavus graph.
+    """Return new instance of the Ruminococcus gnavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusGnavus(
 
     Returns
     -----------------------
-    Instace of RuminococcusGnavus graph.
+    Instace of Ruminococcus gnavus graph.
 
 	References
 	---------------------

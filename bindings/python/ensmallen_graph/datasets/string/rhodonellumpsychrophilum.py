@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodonellumPsychrophilum.
+This file offers the methods to automatically retrieve the graph Rhodonellum psychrophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodonellumPsychrophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodonellumPsychrophilum graph.
+    """Return new instance of the Rhodonellum psychrophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodonellumPsychrophilum(
 
     Returns
     -----------------------
-    Instace of RhodonellumPsychrophilum graph.
+    Instace of Rhodonellum psychrophilum graph.
 
 	References
 	---------------------

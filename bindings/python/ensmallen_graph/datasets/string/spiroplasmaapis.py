@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaApis.
+This file offers the methods to automatically retrieve the graph Spiroplasma apis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaApis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaApis graph.
+    """Return new instance of the Spiroplasma apis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaApis(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaApis graph.
+    Instace of Spiroplasma apis graph.
 
 	References
 	---------------------

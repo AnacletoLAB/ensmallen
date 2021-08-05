@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterSpongiicolaDsm21749.
+This file offers the methods to automatically retrieve the graph Lysobacter spongiicola DSM 21749.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterSpongiicolaDsm21749(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterSpongiicolaDsm21749 graph.
+    """Return new instance of the Lysobacter spongiicola DSM 21749 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterSpongiicolaDsm21749(
 
     Returns
     -----------------------
-    Instace of LysobacterSpongiicolaDsm21749 graph.
+    Instace of Lysobacter spongiicola DSM 21749 graph.
 
 	References
 	---------------------

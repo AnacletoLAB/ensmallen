@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusIndolicus.
+This file offers the methods to automatically retrieve the graph Peptoniphilus indolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusIndolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusIndolicus graph.
+    """Return new instance of the Peptoniphilus indolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusIndolicus(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusIndolicus graph.
+    Instace of Peptoniphilus indolicus graph.
 
 	References
 	---------------------

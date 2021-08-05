@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogymnoascusSpVkmF3557.
+This file offers the methods to automatically retrieve the graph Pseudogymnoascus sp. VKM F-3557.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogymnoascusSpVkmF3557(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogymnoascusSpVkmF3557 graph.
+    """Return new instance of the Pseudogymnoascus sp. VKM F-3557 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudogymnoascusSpVkmF3557(
 
     Returns
     -----------------------
-    Instace of PseudogymnoascusSpVkmF3557 graph.
+    Instace of Pseudogymnoascus sp. VKM F-3557 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbaceaeBacteriumBrhC16a.
+This file offers the methods to automatically retrieve the graph Desulfobulbaceae bacterium BRH_c16a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbaceaeBacteriumBrhC16a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbaceaeBacteriumBrhC16a graph.
+    """Return new instance of the Desulfobulbaceae bacterium BRH_c16a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobulbaceaeBacteriumBrhC16a(
 
     Returns
     -----------------------
-    Instace of DesulfobulbaceaeBacteriumBrhC16a graph.
+    Instace of Desulfobulbaceae bacterium BRH_c16a graph.
 
 	References
 	---------------------

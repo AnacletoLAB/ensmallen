@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaEriocheiris.
+This file offers the methods to automatically retrieve the graph Spiroplasma eriocheiris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaEriocheiris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaEriocheiris graph.
+    """Return new instance of the Spiroplasma eriocheiris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaEriocheiris(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaEriocheiris graph.
+    Instace of Spiroplasma eriocheiris graph.
 
 	References
 	---------------------

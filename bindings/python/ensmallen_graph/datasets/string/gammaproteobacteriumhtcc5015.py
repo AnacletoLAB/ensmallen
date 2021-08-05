@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumHtcc5015.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium HTCC5015.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumHtcc5015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumHtcc5015 graph.
+    """Return new instance of the gamma proteobacterium HTCC5015 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumHtcc5015(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumHtcc5015 graph.
+    Instace of gamma proteobacterium HTCC5015 graph.
 
 	References
 	---------------------

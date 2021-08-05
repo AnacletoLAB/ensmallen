@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaPlatycodiJcm25414.
+This file offers the methods to automatically retrieve the graph Asaia platycodi JCM 25414.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaiaPlatycodiJcm25414(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaPlatycodiJcm25414 graph.
+    """Return new instance of the Asaia platycodi JCM 25414 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsaiaPlatycodiJcm25414(
 
     Returns
     -----------------------
-    Instace of AsaiaPlatycodiJcm25414 graph.
+    Instace of Asaia platycodi JCM 25414 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMelainabacteriaBacteriumRifcsplowo212Full3511.
+This file offers the methods to automatically retrieve the graph Candidatus Melainabacteria bacterium RIFCSPLOWO2_12_FULL_35_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMelainabacteriaBacteriumRifcsplowo212Full3511(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMelainabacteriaBacteriumRifcsplowo212Full3511 graph.
+    """Return new instance of the Candidatus Melainabacteria bacterium RIFCSPLOWO2_12_FULL_35_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMelainabacteriaBacteriumRifcsplowo212Full3511(
 
     Returns
     -----------------------
-    Instace of CandidatusMelainabacteriaBacteriumRifcsplowo212Full3511 graph.
+    Instace of Candidatus Melainabacteria bacterium RIFCSPLOWO2_12_FULL_35_11 graph.
 
 	References
 	---------------------

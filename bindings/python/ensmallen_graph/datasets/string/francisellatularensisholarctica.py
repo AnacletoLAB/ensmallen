@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaTularensisHolarctica.
+This file offers the methods to automatically retrieve the graph Francisella tularensis holarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaTularensisHolarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaTularensisHolarctica graph.
+    """Return new instance of the Francisella tularensis holarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaTularensisHolarctica(
 
     Returns
     -----------------------
-    Instace of FrancisellaTularensisHolarctica graph.
+    Instace of Francisella tularensis holarctica graph.
 
 	References
 	---------------------

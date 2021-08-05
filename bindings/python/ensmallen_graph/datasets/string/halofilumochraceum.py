@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalofilumOchraceum.
+This file offers the methods to automatically retrieve the graph Halofilum ochraceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalofilumOchraceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalofilumOchraceum graph.
+    """Return new instance of the Halofilum ochraceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalofilumOchraceum(
 
     Returns
     -----------------------
-    Instace of HalofilumOchraceum graph.
+    Instace of Halofilum ochraceum graph.
 
 	References
 	---------------------

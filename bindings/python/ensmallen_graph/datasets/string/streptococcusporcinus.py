@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPorcinus.
+This file offers the methods to automatically retrieve the graph Streptococcus porcinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPorcinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPorcinus graph.
+    """Return new instance of the Streptococcus porcinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPorcinus(
 
     Returns
     -----------------------
-    Instace of StreptococcusPorcinus graph.
+    Instace of Streptococcus porcinus graph.
 
 	References
 	---------------------

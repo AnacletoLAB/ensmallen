@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscLesmis.
+This file offers the methods to automatically retrieve the graph misc-lesmis.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def MiscLesmis(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscLesmis graph.
+    """Return new instance of the misc-lesmis graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def MiscLesmis(
 
     Returns
     -----------------------
-    Instace of MiscLesmis graph.
+    Instace of misc-lesmis graph.
 
 	References
 	---------------------

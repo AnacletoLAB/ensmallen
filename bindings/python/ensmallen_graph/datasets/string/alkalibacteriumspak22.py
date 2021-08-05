@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalibacteriumSpAk22.
+This file offers the methods to automatically retrieve the graph Alkalibacterium sp. AK22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalibacteriumSpAk22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalibacteriumSpAk22 graph.
+    """Return new instance of the Alkalibacterium sp. AK22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkalibacteriumSpAk22(
 
     Returns
     -----------------------
-    Instace of AlkalibacteriumSpAk22 graph.
+    Instace of Alkalibacterium sp. AK22 graph.
 
 	References
 	---------------------

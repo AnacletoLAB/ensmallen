@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDesantisbacteriaBacteriumCg2304021.
+This file offers the methods to automatically retrieve the graph Candidatus Desantisbacteria bacterium CG2_30_40_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDesantisbacteriaBacteriumCg2304021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDesantisbacteriaBacteriumCg2304021 graph.
+    """Return new instance of the Candidatus Desantisbacteria bacterium CG2_30_40_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDesantisbacteriaBacteriumCg2304021(
 
     Returns
     -----------------------
-    Instace of CandidatusDesantisbacteriaBacteriumCg2304021 graph.
+    Instace of Candidatus Desantisbacteria bacterium CG2_30_40_21 graph.
 
 	References
 	---------------------

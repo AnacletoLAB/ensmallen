@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSpTomc.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. TomC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSpTomc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSpTomc graph.
+    """Return new instance of the Desulfovibrio sp. TomC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioSpTomc(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSpTomc graph.
+    Instace of Desulfovibrio sp. TomC graph.
 
 	References
 	---------------------

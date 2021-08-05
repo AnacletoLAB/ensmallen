@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhanerochaeteCarnosaHhb10118Sp.
+This file offers the methods to automatically retrieve the graph Phanerochaete carnosa HHB-10118-sp.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhanerochaeteCarnosaHhb10118Sp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhanerochaeteCarnosaHhb10118Sp graph.
+    """Return new instance of the Phanerochaete carnosa HHB-10118-sp graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhanerochaeteCarnosaHhb10118Sp(
 
     Returns
     -----------------------
-    Instace of PhanerochaeteCarnosaHhb10118Sp graph.
+    Instace of Phanerochaete carnosa HHB-10118-sp graph.
 
 	References
 	---------------------

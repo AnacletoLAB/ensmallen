@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NakamurellaLacteaDsm19367.
+This file offers the methods to automatically retrieve the graph Nakamurella lactea DSM 19367.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NakamurellaLacteaDsm19367(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NakamurellaLacteaDsm19367 graph.
+    """Return new instance of the Nakamurella lactea DSM 19367 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NakamurellaLacteaDsm19367(
 
     Returns
     -----------------------
-    Instace of NakamurellaLacteaDsm19367 graph.
+    Instace of Nakamurella lactea DSM 19367 graph.
 
 	References
 	---------------------

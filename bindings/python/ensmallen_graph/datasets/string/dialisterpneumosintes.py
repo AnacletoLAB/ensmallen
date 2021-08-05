@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DialisterPneumosintes.
+This file offers the methods to automatically retrieve the graph Dialister pneumosintes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DialisterPneumosintes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DialisterPneumosintes graph.
+    """Return new instance of the Dialister pneumosintes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DialisterPneumosintes(
 
     Returns
     -----------------------
-    Instace of DialisterPneumosintes graph.
+    Instace of Dialister pneumosintes graph.
 
 	References
 	---------------------

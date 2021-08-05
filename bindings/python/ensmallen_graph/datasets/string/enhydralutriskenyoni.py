@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnhydraLutrisKenyoni.
+This file offers the methods to automatically retrieve the graph Enhydra lutris kenyoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnhydraLutrisKenyoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnhydraLutrisKenyoni graph.
+    """Return new instance of the Enhydra lutris kenyoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnhydraLutrisKenyoni(
 
     Returns
     -----------------------
-    Instace of EnhydraLutrisKenyoni graph.
+    Instace of Enhydra lutris kenyoni graph.
 
 	References
 	---------------------

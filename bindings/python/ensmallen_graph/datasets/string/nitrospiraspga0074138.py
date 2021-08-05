@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraSpGa0074138.
+This file offers the methods to automatically retrieve the graph Nitrospira sp. Ga0074138.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraSpGa0074138(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraSpGa0074138 graph.
+    """Return new instance of the Nitrospira sp. Ga0074138 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraSpGa0074138(
 
     Returns
     -----------------------
-    Instace of NitrospiraSpGa0074138 graph.
+    Instace of Nitrospira sp. Ga0074138 graph.
 
 	References
 	---------------------

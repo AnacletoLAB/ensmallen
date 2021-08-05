@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumOleivorans.
+This file offers the methods to automatically retrieve the graph Microbacterium oleivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumOleivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumOleivorans graph.
+    """Return new instance of the Microbacterium oleivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumOleivorans(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumOleivorans graph.
+    Instace of Microbacterium oleivorans graph.
 
 	References
 	---------------------

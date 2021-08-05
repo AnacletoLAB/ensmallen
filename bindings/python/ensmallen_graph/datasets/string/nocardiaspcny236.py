@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSpCny236.
+This file offers the methods to automatically retrieve the graph Nocardia sp. CNY236.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSpCny236(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSpCny236 graph.
+    """Return new instance of the Nocardia sp. CNY236 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaSpCny236(
 
     Returns
     -----------------------
-    Instace of NocardiaSpCny236 graph.
+    Instace of Nocardia sp. CNY236 graph.
 
 	References
 	---------------------

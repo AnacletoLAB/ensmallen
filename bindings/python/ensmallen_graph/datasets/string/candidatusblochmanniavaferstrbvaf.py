@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBlochmanniaVaferStrBvaf.
+This file offers the methods to automatically retrieve the graph Candidatus Blochmannia vafer str. BVAF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBlochmanniaVaferStrBvaf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBlochmanniaVaferStrBvaf graph.
+    """Return new instance of the Candidatus Blochmannia vafer str. BVAF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBlochmanniaVaferStrBvaf(
 
     Returns
     -----------------------
-    Instace of CandidatusBlochmanniaVaferStrBvaf graph.
+    Instace of Candidatus Blochmannia vafer str. BVAF graph.
 
 	References
 	---------------------

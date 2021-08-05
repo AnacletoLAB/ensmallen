@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFlectens.
+This file offers the methods to automatically retrieve the graph Pseudomonas flectens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFlectens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFlectens graph.
+    """Return new instance of the Pseudomonas flectens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasFlectens(
 
     Returns
     -----------------------
-    Instace of PseudomonasFlectens graph.
+    Instace of Pseudomonas flectens graph.
 
 	References
 	---------------------

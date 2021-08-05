@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerinicoccusProfundi.
+This file offers the methods to automatically retrieve the graph Serinicoccus profundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerinicoccusProfundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerinicoccusProfundi graph.
+    """Return new instance of the Serinicoccus profundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerinicoccusProfundi(
 
     Returns
     -----------------------
-    Instace of SerinicoccusProfundi graph.
+    Instace of Serinicoccus profundi graph.
 
 	References
 	---------------------

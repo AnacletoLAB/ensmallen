@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusAlimentarius.
+This file offers the methods to automatically retrieve the graph Virgibacillus alimentarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusAlimentarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusAlimentarius graph.
+    """Return new instance of the Virgibacillus alimentarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VirgibacillusAlimentarius(
 
     Returns
     -----------------------
-    Instace of VirgibacillusAlimentarius graph.
+    Instace of Virgibacillus alimentarius graph.
 
 	References
 	---------------------

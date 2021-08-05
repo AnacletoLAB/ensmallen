@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasOryziterrae.
+This file offers the methods to automatically retrieve the graph Arenimonas oryziterrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasOryziterrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasOryziterrae graph.
+    """Return new instance of the Arenimonas oryziterrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenimonasOryziterrae(
 
     Returns
     -----------------------
-    Instace of ArenimonasOryziterrae graph.
+    Instace of Arenimonas oryziterrae graph.
 
 	References
 	---------------------

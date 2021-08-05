@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesSpN902109.
+This file offers the methods to automatically retrieve the graph Actinoplanes sp. N902109.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesSpN902109(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesSpN902109 graph.
+    """Return new instance of the Actinoplanes sp. N902109 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesSpN902109(
 
     Returns
     -----------------------
-    Instace of ActinoplanesSpN902109 graph.
+    Instace of Actinoplanes sp. N902109 graph.
 
 	References
 	---------------------

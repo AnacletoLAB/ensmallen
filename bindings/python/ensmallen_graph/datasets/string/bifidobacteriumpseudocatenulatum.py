@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumPseudocatenulatum.
+This file offers the methods to automatically retrieve the graph Bifidobacterium pseudocatenulatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumPseudocatenulatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumPseudocatenulatum graph.
+    """Return new instance of the Bifidobacterium pseudocatenulatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumPseudocatenulatum(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumPseudocatenulatum graph.
+    Instace of Bifidobacterium pseudocatenulatum graph.
 
 	References
 	---------------------

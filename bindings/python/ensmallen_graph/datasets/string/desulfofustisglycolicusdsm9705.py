@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfofustisGlycolicusDsm9705.
+This file offers the methods to automatically retrieve the graph Desulfofustis glycolicus DSM 9705.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfofustisGlycolicusDsm9705(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfofustisGlycolicusDsm9705 graph.
+    """Return new instance of the Desulfofustis glycolicus DSM 9705 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfofustisGlycolicusDsm9705(
 
     Returns
     -----------------------
-    Instace of DesulfofustisGlycolicusDsm9705 graph.
+    Instace of Desulfofustis glycolicus DSM 9705 graph.
 
 	References
 	---------------------

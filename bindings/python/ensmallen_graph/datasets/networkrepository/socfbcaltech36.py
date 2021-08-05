@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbCaltech36.
+This file offers the methods to automatically retrieve the graph socfb-Caltech36.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbCaltech36(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbCaltech36 graph.
+    """Return new instance of the socfb-Caltech36 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbCaltech36(
 
     Returns
     -----------------------
-    Instace of SocfbCaltech36 graph.
+    Instace of socfb-Caltech36 graph.
 
 	References
 	---------------------

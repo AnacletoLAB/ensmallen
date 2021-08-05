@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithobacteriumRhinotracheale.
+This file offers the methods to automatically retrieve the graph Ornithobacterium rhinotracheale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithobacteriumRhinotracheale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithobacteriumRhinotracheale graph.
+    """Return new instance of the Ornithobacterium rhinotracheale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OrnithobacteriumRhinotracheale(
 
     Returns
     -----------------------
-    Instace of OrnithobacteriumRhinotracheale graph.
+    Instace of Ornithobacterium rhinotracheale graph.
 
 	References
 	---------------------

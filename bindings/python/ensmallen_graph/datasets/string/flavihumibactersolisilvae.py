@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavihumibacterSolisilvae.
+This file offers the methods to automatically retrieve the graph Flavihumibacter solisilvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavihumibacterSolisilvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavihumibacterSolisilvae graph.
+    """Return new instance of the Flavihumibacter solisilvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavihumibacterSolisilvae(
 
     Returns
     -----------------------
-    Instace of FlavihumibacterSolisilvae graph.
+    Instace of Flavihumibacter solisilvae graph.
 
 	References
 	---------------------

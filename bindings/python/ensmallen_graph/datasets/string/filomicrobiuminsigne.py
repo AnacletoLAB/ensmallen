@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FilomicrobiumInsigne.
+This file offers the methods to automatically retrieve the graph Filomicrobium insigne.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FilomicrobiumInsigne(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FilomicrobiumInsigne graph.
+    """Return new instance of the Filomicrobium insigne graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FilomicrobiumInsigne(
 
     Returns
     -----------------------
-    Instace of FilomicrobiumInsigne graph.
+    Instace of Filomicrobium insigne graph.
 
 	References
 	---------------------

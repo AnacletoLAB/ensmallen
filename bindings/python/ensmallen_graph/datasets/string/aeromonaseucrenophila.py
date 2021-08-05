@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasEucrenophila.
+This file offers the methods to automatically retrieve the graph Aeromonas eucrenophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasEucrenophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasEucrenophila graph.
+    """Return new instance of the Aeromonas eucrenophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasEucrenophila(
 
     Returns
     -----------------------
-    Instace of AeromonasEucrenophila graph.
+    Instace of Aeromonas eucrenophila graph.
 
 	References
 	---------------------

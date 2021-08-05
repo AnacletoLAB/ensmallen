@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraSantarosaiSerovarShermaniStrLt821.
+This file offers the methods to automatically retrieve the graph Leptospira santarosai serovar Shermani str. LT 821.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraSantarosaiSerovarShermaniStrLt821(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraSantarosaiSerovarShermaniStrLt821 graph.
+    """Return new instance of the Leptospira santarosai serovar Shermani str. LT 821 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraSantarosaiSerovarShermaniStrLt821(
 
     Returns
     -----------------------
-    Instace of LeptospiraSantarosaiSerovarShermaniStrLt821 graph.
+    Instace of Leptospira santarosai serovar Shermani str. LT 821 graph.
 
 	References
 	---------------------

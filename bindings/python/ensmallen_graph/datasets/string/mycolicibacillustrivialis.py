@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacillusTrivialis.
+This file offers the methods to automatically retrieve the graph Mycolicibacillus trivialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacillusTrivialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacillusTrivialis graph.
+    """Return new instance of the Mycolicibacillus trivialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacillusTrivialis(
 
     Returns
     -----------------------
-    Instace of MycolicibacillusTrivialis graph.
+    Instace of Mycolicibacillus trivialis graph.
 
 	References
 	---------------------

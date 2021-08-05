@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DaphniaMagna.
+This file offers the methods to automatically retrieve the graph Daphnia magna.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DaphniaMagna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DaphniaMagna graph.
+    """Return new instance of the Daphnia magna graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DaphniaMagna(
 
     Returns
     -----------------------
-    Instace of DaphniaMagna graph.
+    Instace of Daphnia magna graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPhaeoluteigriseus.
+This file offers the methods to automatically retrieve the graph Streptomyces phaeoluteigriseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPhaeoluteigriseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPhaeoluteigriseus graph.
+    """Return new instance of the Streptomyces phaeoluteigriseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesPhaeoluteigriseus(
 
     Returns
     -----------------------
-    Instace of StreptomycesPhaeoluteigriseus graph.
+    Instace of Streptomyces phaeoluteigriseus graph.
 
 	References
 	---------------------

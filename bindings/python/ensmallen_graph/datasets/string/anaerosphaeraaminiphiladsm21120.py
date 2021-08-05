@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerosphaeraAminiphilaDsm21120.
+This file offers the methods to automatically retrieve the graph Anaerosphaera aminiphila DSM 21120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerosphaeraAminiphilaDsm21120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerosphaeraAminiphilaDsm21120 graph.
+    """Return new instance of the Anaerosphaera aminiphila DSM 21120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerosphaeraAminiphilaDsm21120(
 
     Returns
     -----------------------
-    Instace of AnaerosphaeraAminiphilaDsm21120 graph.
+    Instace of Anaerosphaera aminiphila DSM 21120 graph.
 
 	References
 	---------------------

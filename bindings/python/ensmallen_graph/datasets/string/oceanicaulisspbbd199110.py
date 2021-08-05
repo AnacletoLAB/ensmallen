@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicaulisSpBbd199110.
+This file offers the methods to automatically retrieve the graph Oceanicaulis sp. BBD 1991-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicaulisSpBbd199110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicaulisSpBbd199110 graph.
+    """Return new instance of the Oceanicaulis sp. BBD 1991-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanicaulisSpBbd199110(
 
     Returns
     -----------------------
-    Instace of OceanicaulisSpBbd199110 graph.
+    Instace of Oceanicaulis sp. BBD 1991-10 graph.
 
 	References
 	---------------------

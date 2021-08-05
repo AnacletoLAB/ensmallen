@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaFloridensisFslS101187.
+This file offers the methods to automatically retrieve the graph Listeria floridensis FSL S10-1187.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaFloridensisFslS101187(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaFloridensisFslS101187 graph.
+    """Return new instance of the Listeria floridensis FSL S10-1187 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaFloridensisFslS101187(
 
     Returns
     -----------------------
-    Instace of ListeriaFloridensisFslS101187 graph.
+    Instace of Listeria floridensis FSL S10-1187 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaDonghaiensis.
+This file offers the methods to automatically retrieve the graph Idiomarina donghaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaDonghaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaDonghaiensis graph.
+    """Return new instance of the Idiomarina donghaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaDonghaiensis(
 
     Returns
     -----------------------
-    Instace of IdiomarinaDonghaiensis graph.
+    Instace of Idiomarina donghaiensis graph.
 
 	References
 	---------------------

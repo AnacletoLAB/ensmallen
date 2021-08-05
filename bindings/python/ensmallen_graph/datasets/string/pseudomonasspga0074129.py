@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpGa0074129.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. Ga0074129.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpGa0074129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpGa0074129 graph.
+    """Return new instance of the Pseudomonas sp. Ga0074129 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpGa0074129(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpGa0074129 graph.
+    Instace of Pseudomonas sp. Ga0074129 graph.
 
 	References
 	---------------------

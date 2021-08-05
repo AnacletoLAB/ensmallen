@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaPneumoniae.
+This file offers the methods to automatically retrieve the graph Klebsiella pneumoniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaPneumoniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaPneumoniae graph.
+    """Return new instance of the Klebsiella pneumoniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KlebsiellaPneumoniae(
 
     Returns
     -----------------------
-    Instace of KlebsiellaPneumoniae graph.
+    Instace of Klebsiella pneumoniae graph.
 
 	References
 	---------------------

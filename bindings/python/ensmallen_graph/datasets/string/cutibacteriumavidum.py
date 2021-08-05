@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CutibacteriumAvidum.
+This file offers the methods to automatically retrieve the graph Cutibacterium avidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CutibacteriumAvidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CutibacteriumAvidum graph.
+    """Return new instance of the Cutibacterium avidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CutibacteriumAvidum(
 
     Returns
     -----------------------
-    Instace of CutibacteriumAvidum graph.
+    Instace of Cutibacterium avidum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusVersutus.
+This file offers the methods to automatically retrieve the graph Planococcus versutus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusVersutus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusVersutus graph.
+    """Return new instance of the Planococcus versutus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusVersutus(
 
     Returns
     -----------------------
-    Instace of PlanococcusVersutus graph.
+    Instace of Planococcus versutus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OstreococcusLucimarinusCce9901.
+This file offers the methods to automatically retrieve the graph Ostreococcus lucimarinus CCE9901.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OstreococcusLucimarinusCce9901(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OstreococcusLucimarinusCce9901 graph.
+    """Return new instance of the Ostreococcus lucimarinus CCE9901 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OstreococcusLucimarinusCce9901(
 
     Returns
     -----------------------
-    Instace of OstreococcusLucimarinusCce9901 graph.
+    Instace of Ostreococcus lucimarinus CCE9901 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChrysemysPictaBellii.
+This file offers the methods to automatically retrieve the graph Chrysemys picta bellii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChrysemysPictaBellii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChrysemysPictaBellii graph.
+    """Return new instance of the Chrysemys picta bellii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChrysemysPictaBellii(
 
     Returns
     -----------------------
-    Instace of ChrysemysPictaBellii graph.
+    Instace of Chrysemys picta bellii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusProomii.
+This file offers the methods to automatically retrieve the graph Virgibacillus proomii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusProomii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusProomii graph.
+    """Return new instance of the Virgibacillus proomii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusProomii(
 
     Returns
     -----------------------
-    Instace of VirgibacillusProomii graph.
+    Instace of Virgibacillus proomii graph.
 
 	References
 	---------------------

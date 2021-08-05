@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpYr247.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. yr247.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpYr247(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpYr247 graph.
+    """Return new instance of the Paenibacillus sp. yr247 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpYr247(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpYr247 graph.
+    Instace of Paenibacillus sp. yr247 graph.
 
 	References
 	---------------------

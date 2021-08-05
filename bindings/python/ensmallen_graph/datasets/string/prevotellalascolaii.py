@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaLascolaii.
+This file offers the methods to automatically retrieve the graph Prevotella lascolaii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaLascolaii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaLascolaii graph.
+    """Return new instance of the Prevotella lascolaii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaLascolaii(
 
     Returns
     -----------------------
-    Instace of PrevotellaLascolaii graph.
+    Instace of Prevotella lascolaii graph.
 
 	References
 	---------------------

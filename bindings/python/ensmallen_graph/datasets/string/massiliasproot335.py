@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpRoot335.
+This file offers the methods to automatically retrieve the graph Massilia sp. Root335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpRoot335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpRoot335 graph.
+    """Return new instance of the Massilia sp. Root335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpRoot335(
 
     Returns
     -----------------------
-    Instace of MassiliaSpRoot335 graph.
+    Instace of Massilia sp. Root335 graph.
 
 	References
 	---------------------

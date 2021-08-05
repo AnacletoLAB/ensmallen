@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobaculumLitoreumDsm18839.
+This file offers the methods to automatically retrieve the graph Thalassobaculum litoreum DSM 18839.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobaculumLitoreumDsm18839(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobaculumLitoreumDsm18839 graph.
+    """Return new instance of the Thalassobaculum litoreum DSM 18839 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobaculumLitoreumDsm18839(
 
     Returns
     -----------------------
-    Instace of ThalassobaculumLitoreumDsm18839 graph.
+    Instace of Thalassobaculum litoreum DSM 18839 graph.
 
 	References
 	---------------------

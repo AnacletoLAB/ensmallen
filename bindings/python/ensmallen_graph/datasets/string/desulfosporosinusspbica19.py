@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusSpBica19.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus sp. BICA1-9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusSpBica19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusSpBica19 graph.
+    """Return new instance of the Desulfosporosinus sp. BICA1-9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfosporosinusSpBica19(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusSpBica19 graph.
+    Instace of Desulfosporosinus sp. BICA1-9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomonasSpFbcd.
+This file offers the methods to automatically retrieve the graph Thiomonas sp. FBCd.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomonasSpFbcd(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomonasSpFbcd graph.
+    """Return new instance of the Thiomonas sp. FBCd graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomonasSpFbcd(
 
     Returns
     -----------------------
-    Instace of ThiomonasSpFbcd graph.
+    Instace of Thiomonas sp. FBCd graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusVelezensisYauB9601Y2.
+This file offers the methods to automatically retrieve the graph Bacillus velezensis YAU B9601-Y2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusVelezensisYauB9601Y2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusVelezensisYauB9601Y2 graph.
+    """Return new instance of the Bacillus velezensis YAU B9601-Y2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusVelezensisYauB9601Y2(
 
     Returns
     -----------------------
-    Instace of BacillusVelezensisYauB9601Y2 graph.
+    Instace of Bacillus velezensis YAU B9601-Y2 graph.
 
 	References
 	---------------------

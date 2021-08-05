@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogulbenkianiaSpNh8b.
+This file offers the methods to automatically retrieve the graph Pseudogulbenkiania sp. NH8B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogulbenkianiaSpNh8b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogulbenkianiaSpNh8b graph.
+    """Return new instance of the Pseudogulbenkiania sp. NH8B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudogulbenkianiaSpNh8b(
 
     Returns
     -----------------------
-    Instace of PseudogulbenkianiaSpNh8b graph.
+    Instace of Pseudogulbenkiania sp. NH8B graph.
 
 	References
 	---------------------

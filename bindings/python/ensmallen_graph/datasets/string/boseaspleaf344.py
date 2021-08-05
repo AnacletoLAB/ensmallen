@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpLeaf344.
+This file offers the methods to automatically retrieve the graph Bosea sp. Leaf344.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpLeaf344(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpLeaf344 graph.
+    """Return new instance of the Bosea sp. Leaf344 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpLeaf344(
 
     Returns
     -----------------------
-    Instace of BoseaSpLeaf344 graph.
+    Instace of Bosea sp. Leaf344 graph.
 
 	References
 	---------------------

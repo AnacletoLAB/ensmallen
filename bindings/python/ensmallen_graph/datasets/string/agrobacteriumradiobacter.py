@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumRadiobacter.
+This file offers the methods to automatically retrieve the graph Agrobacterium radiobacter.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumRadiobacter(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumRadiobacter graph.
+    """Return new instance of the Agrobacterium radiobacter graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumRadiobacter(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumRadiobacter graph.
+    Instace of Agrobacterium radiobacter graph.
 
 	References
 	---------------------

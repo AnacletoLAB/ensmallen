@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CallorhinchusMilii.
+This file offers the methods to automatically retrieve the graph Callorhinchus milii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CallorhinchusMilii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CallorhinchusMilii graph.
+    """Return new instance of the Callorhinchus milii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CallorhinchusMilii(
 
     Returns
     -----------------------
-    Instace of CallorhinchusMilii graph.
+    Instace of Callorhinchus milii graph.
 
 	References
 	---------------------

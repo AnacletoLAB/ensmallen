@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriiaBacterium4080.
+This file offers the methods to automatically retrieve the graph Flavobacteriia bacterium 40-80.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriiaBacterium4080(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriiaBacterium4080 graph.
+    """Return new instance of the Flavobacteriia bacterium 40-80 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriiaBacterium4080(
 
     Returns
     -----------------------
-    Instace of FlavobacteriiaBacterium4080 graph.
+    Instace of Flavobacteriia bacterium 40-80 graph.
 
 	References
 	---------------------

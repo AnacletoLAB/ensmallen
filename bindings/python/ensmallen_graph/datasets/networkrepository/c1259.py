@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph C1259.
+This file offers the methods to automatically retrieve the graph C125-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def C1259(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the C1259 graph.
+    """Return new instance of the C125-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def C1259(
 
     Returns
     -----------------------
-    Instace of C1259 graph.
+    Instace of C125-9 graph.
 
 	References
 	---------------------

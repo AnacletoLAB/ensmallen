@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ModestobacterCaceresii.
+This file offers the methods to automatically retrieve the graph Modestobacter caceresii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ModestobacterCaceresii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ModestobacterCaceresii graph.
+    """Return new instance of the Modestobacter caceresii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ModestobacterCaceresii(
 
     Returns
     -----------------------
-    Instace of ModestobacterCaceresii graph.
+    Instace of Modestobacter caceresii graph.
 
 	References
 	---------------------

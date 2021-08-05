@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSpOralTaxon414.
+This file offers the methods to automatically retrieve the graph Actinomyces sp. oral taxon 414.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSpOralTaxon414(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSpOralTaxon414 graph.
+    """Return new instance of the Actinomyces sp. oral taxon 414 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesSpOralTaxon414(
 
     Returns
     -----------------------
-    Instace of ActinomycesSpOralTaxon414 graph.
+    Instace of Actinomyces sp. oral taxon 414 graph.
 
 	References
 	---------------------

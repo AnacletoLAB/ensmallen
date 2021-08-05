@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpAdety.
+This file offers the methods to automatically retrieve the graph Clostridium sp. AdeTY.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpAdety(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpAdety graph.
+    """Return new instance of the Clostridium sp. AdeTY graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpAdety(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpAdety graph.
+    Instace of Clostridium sp. AdeTY graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraMesophila.
+This file offers the methods to automatically retrieve the graph Thalassospira mesophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraMesophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraMesophila graph.
+    """Return new instance of the Thalassospira mesophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassospiraMesophila(
 
     Returns
     -----------------------
-    Instace of ThalassospiraMesophila graph.
+    Instace of Thalassospira mesophila graph.
 
 	References
 	---------------------

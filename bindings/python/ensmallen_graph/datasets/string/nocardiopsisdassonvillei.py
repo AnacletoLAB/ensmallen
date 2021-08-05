@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisDassonvillei.
+This file offers the methods to automatically retrieve the graph Nocardiopsis dassonvillei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisDassonvillei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisDassonvillei graph.
+    """Return new instance of the Nocardiopsis dassonvillei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisDassonvillei(
 
     Returns
     -----------------------
-    Instace of NocardiopsisDassonvillei graph.
+    Instace of Nocardiopsis dassonvillei graph.
 
 	References
 	---------------------

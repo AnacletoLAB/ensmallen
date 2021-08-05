@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesLuti.
+This file offers the methods to automatically retrieve the graph Bacteroides luti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesLuti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesLuti graph.
+    """Return new instance of the Bacteroides luti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesLuti(
 
     Returns
     -----------------------
-    Instace of BacteroidesLuti graph.
+    Instace of Bacteroides luti graph.
 
 	References
 	---------------------

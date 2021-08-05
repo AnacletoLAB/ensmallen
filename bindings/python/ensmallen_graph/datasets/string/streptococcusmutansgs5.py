@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMutansGs5.
+This file offers the methods to automatically retrieve the graph Streptococcus mutans GS5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMutansGs5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMutansGs5 graph.
+    """Return new instance of the Streptococcus mutans GS5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMutansGs5(
 
     Returns
     -----------------------
-    Instace of StreptococcusMutansGs5 graph.
+    Instace of Streptococcus mutans GS5 graph.
 
 	References
 	---------------------

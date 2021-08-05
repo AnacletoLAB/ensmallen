@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomonasLenta.
+This file offers the methods to automatically retrieve the graph Methylomonas lenta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomonasLenta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomonasLenta graph.
+    """Return new instance of the Methylomonas lenta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomonasLenta(
 
     Returns
     -----------------------
-    Instace of MethylomonasLenta graph.
+    Instace of Methylomonas lenta graph.
 
 	References
 	---------------------

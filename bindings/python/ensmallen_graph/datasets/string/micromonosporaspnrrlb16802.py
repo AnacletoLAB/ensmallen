@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSpNrrlB16802.
+This file offers the methods to automatically retrieve the graph Micromonospora sp. NRRL B-16802.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSpNrrlB16802(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSpNrrlB16802 graph.
+    """Return new instance of the Micromonospora sp. NRRL B-16802 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSpNrrlB16802(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSpNrrlB16802 graph.
+    Instace of Micromonospora sp. NRRL B-16802 graph.
 
 	References
 	---------------------

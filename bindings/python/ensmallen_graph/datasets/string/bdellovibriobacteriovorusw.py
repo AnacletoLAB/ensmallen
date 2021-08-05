@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrioBacteriovorusW.
+This file offers the methods to automatically retrieve the graph Bdellovibrio bacteriovorus W.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrioBacteriovorusW(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrioBacteriovorusW graph.
+    """Return new instance of the Bdellovibrio bacteriovorus W graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BdellovibrioBacteriovorusW(
 
     Returns
     -----------------------
-    Instace of BdellovibrioBacteriovorusW graph.
+    Instace of Bdellovibrio bacteriovorus W graph.
 
 	References
 	---------------------

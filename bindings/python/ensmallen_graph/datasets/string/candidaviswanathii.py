@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaViswanathii.
+This file offers the methods to automatically retrieve the graph Candida viswanathii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaViswanathii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaViswanathii graph.
+    """Return new instance of the Candida viswanathii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaViswanathii(
 
     Returns
     -----------------------
-    Instace of CandidaViswanathii graph.
+    Instace of Candida viswanathii graph.
 
 	References
 	---------------------

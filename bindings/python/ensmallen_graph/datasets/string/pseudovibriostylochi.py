@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudovibrioStylochi.
+This file offers the methods to automatically retrieve the graph Pseudovibrio stylochi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudovibrioStylochi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudovibrioStylochi graph.
+    """Return new instance of the Pseudovibrio stylochi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudovibrioStylochi(
 
     Returns
     -----------------------
-    Instace of PseudovibrioStylochi graph.
+    Instace of Pseudovibrio stylochi graph.
 
 	References
 	---------------------

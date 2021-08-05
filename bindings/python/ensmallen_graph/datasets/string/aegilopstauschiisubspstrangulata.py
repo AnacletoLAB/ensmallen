@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AegilopsTauschiiSubspStrangulata.
+This file offers the methods to automatically retrieve the graph Aegilops tauschii subsp. strangulata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AegilopsTauschiiSubspStrangulata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AegilopsTauschiiSubspStrangulata graph.
+    """Return new instance of the Aegilops tauschii subsp. strangulata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AegilopsTauschiiSubspStrangulata(
 
     Returns
     -----------------------
-    Instace of AegilopsTauschiiSubspStrangulata graph.
+    Instace of Aegilops tauschii subsp. strangulata graph.
 
 	References
 	---------------------

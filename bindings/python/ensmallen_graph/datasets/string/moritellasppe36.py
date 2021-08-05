@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoritellaSpPe36.
+This file offers the methods to automatically retrieve the graph Moritella sp. PE36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoritellaSpPe36(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoritellaSpPe36 graph.
+    """Return new instance of the Moritella sp. PE36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoritellaSpPe36(
 
     Returns
     -----------------------
-    Instace of MoritellaSpPe36 graph.
+    Instace of Moritella sp. PE36 graph.
 
 	References
 	---------------------

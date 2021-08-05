@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylanimicrobiumPachnodaeJcm13526Nbrc107786.
+This file offers the methods to automatically retrieve the graph Xylanimicrobium pachnodae JCM 13526 NBRC 107786.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylanimicrobiumPachnodaeJcm13526Nbrc107786(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylanimicrobiumPachnodaeJcm13526Nbrc107786 graph.
+    """Return new instance of the Xylanimicrobium pachnodae JCM 13526 NBRC 107786 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XylanimicrobiumPachnodaeJcm13526Nbrc107786(
 
     Returns
     -----------------------
-    Instace of XylanimicrobiumPachnodaeJcm13526Nbrc107786 graph.
+    Instace of Xylanimicrobium pachnodae JCM 13526 NBRC 107786 graph.
 
 	References
 	---------------------

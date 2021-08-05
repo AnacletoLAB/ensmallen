@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumSpCp1.
+This file offers the methods to automatically retrieve the graph Carnobacterium sp. CP1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumSpCp1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumSpCp1 graph.
+    """Return new instance of the Carnobacterium sp. CP1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarnobacteriumSpCp1(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumSpCp1 graph.
+    Instace of Carnobacterium sp. CP1 graph.
 
 	References
 	---------------------

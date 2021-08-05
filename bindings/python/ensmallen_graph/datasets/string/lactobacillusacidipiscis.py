@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAcidipiscis.
+This file offers the methods to automatically retrieve the graph Lactobacillus acidipiscis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAcidipiscis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAcidipiscis graph.
+    """Return new instance of the Lactobacillus acidipiscis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAcidipiscis(
 
     Returns
     -----------------------
-    Instace of LactobacillusAcidipiscis graph.
+    Instace of Lactobacillus acidipiscis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesDerwentensis.
+This file offers the methods to automatically retrieve the graph Actinoplanes derwentensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesDerwentensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesDerwentensis graph.
+    """Return new instance of the Actinoplanes derwentensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinoplanesDerwentensis(
 
     Returns
     -----------------------
-    Instace of ActinoplanesDerwentensis graph.
+    Instace of Actinoplanes derwentensis graph.
 
 	References
 	---------------------

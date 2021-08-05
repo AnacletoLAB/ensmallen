@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAnguilliseptica.
+This file offers the methods to automatically retrieve the graph Pseudomonas anguilliseptica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAnguilliseptica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAnguilliseptica graph.
+    """Return new instance of the Pseudomonas anguilliseptica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAnguilliseptica(
 
     Returns
     -----------------------
-    Instace of PseudomonasAnguilliseptica graph.
+    Instace of Pseudomonas anguilliseptica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicroplitisDemolitor.
+This file offers the methods to automatically retrieve the graph Microplitis demolitor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicroplitisDemolitor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicroplitisDemolitor graph.
+    """Return new instance of the Microplitis demolitor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicroplitisDemolitor(
 
     Returns
     -----------------------
-    Instace of MicroplitisDemolitor graph.
+    Instace of Microplitis demolitor graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumLeucaenae.
+This file offers the methods to automatically retrieve the graph Rhizobium leucaenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumLeucaenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumLeucaenae graph.
+    """Return new instance of the Rhizobium leucaenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumLeucaenae(
 
     Returns
     -----------------------
-    Instace of RhizobiumLeucaenae graph.
+    Instace of Rhizobium leucaenae graph.
 
 	References
 	---------------------

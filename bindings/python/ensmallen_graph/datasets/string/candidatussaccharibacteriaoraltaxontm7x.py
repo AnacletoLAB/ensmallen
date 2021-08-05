@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaOralTaxonTm7x.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria oral taxon TM7x.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaOralTaxonTm7x graph.
+    """Return new instance of the Candidatus Saccharibacteria oral taxon TM7x graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaOralTaxonTm7x(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaOralTaxonTm7x graph.
+    Instace of Candidatus Saccharibacteria oral taxon TM7x graph.
 
 	References
 	---------------------

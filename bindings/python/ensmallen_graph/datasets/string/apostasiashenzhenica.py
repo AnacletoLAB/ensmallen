@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApostasiaShenzhenica.
+This file offers the methods to automatically retrieve the graph Apostasia shenzhenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApostasiaShenzhenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApostasiaShenzhenica graph.
+    """Return new instance of the Apostasia shenzhenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApostasiaShenzhenica(
 
     Returns
     -----------------------
-    Instace of ApostasiaShenzhenica graph.
+    Instace of Apostasia shenzhenica graph.
 
 	References
 	---------------------

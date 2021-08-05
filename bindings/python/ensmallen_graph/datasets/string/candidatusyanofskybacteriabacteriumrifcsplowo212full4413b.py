@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusYanofskybacteriaBacteriumRifcsplowo212Full4413b.
+This file offers the methods to automatically retrieve the graph Candidatus Yanofskybacteria bacterium RIFCSPLOWO2_12_FULL_44_13b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusYanofskybacteriaBacteriumRifcsplowo212Full4413b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusYanofskybacteriaBacteriumRifcsplowo212Full4413b graph.
+    """Return new instance of the Candidatus Yanofskybacteria bacterium RIFCSPLOWO2_12_FULL_44_13b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusYanofskybacteriaBacteriumRifcsplowo212Full4413b(
 
     Returns
     -----------------------
-    Instace of CandidatusYanofskybacteriaBacteriumRifcsplowo212Full4413b graph.
+    Instace of Candidatus Yanofskybacteria bacterium RIFCSPLOWO2_12_FULL_44_13b graph.
 
 	References
 	---------------------

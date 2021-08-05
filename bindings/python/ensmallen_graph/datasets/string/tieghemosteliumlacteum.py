@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TieghemosteliumLacteum.
+This file offers the methods to automatically retrieve the graph Tieghemostelium lacteum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TieghemosteliumLacteum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TieghemosteliumLacteum graph.
+    """Return new instance of the Tieghemostelium lacteum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TieghemosteliumLacteum(
 
     Returns
     -----------------------
-    Instace of TieghemosteliumLacteum graph.
+    Instace of Tieghemostelium lacteum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpHmsc077f02.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. HMSC077F02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasSpHmsc077f02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpHmsc077f02 graph.
+    """Return new instance of the Porphyromonas sp. HMSC077F02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonasSpHmsc077f02(
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpHmsc077f02 graph.
+    Instace of Porphyromonas sp. HMSC077F02 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchlesneriaPaludicola.
+This file offers the methods to automatically retrieve the graph Schlesneria paludicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchlesneriaPaludicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchlesneriaPaludicola graph.
+    """Return new instance of the Schlesneria paludicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchlesneriaPaludicola(
 
     Returns
     -----------------------
-    Instace of SchlesneriaPaludicola graph.
+    Instace of Schlesneria paludicola graph.
 
 	References
 	---------------------

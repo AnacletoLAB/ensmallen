@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisMethanolica.
+This file offers the methods to automatically retrieve the graph Amycolatopsis methanolica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisMethanolica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisMethanolica graph.
+    """Return new instance of the Amycolatopsis methanolica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisMethanolica(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisMethanolica graph.
+    Instace of Amycolatopsis methanolica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpPcc7003.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. PCC 7003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpPcc7003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpPcc7003 graph.
+    """Return new instance of the Synechococcus sp. PCC 7003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynechococcusSpPcc7003(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpPcc7003 graph.
+    Instace of Synechococcus sp. PCC 7003 graph.
 
 	References
 	---------------------

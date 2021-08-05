@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Enzymes296.
+This file offers the methods to automatically retrieve the graph ENZYMES296.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Enzymes296(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Enzymes296 graph.
+    """Return new instance of the ENZYMES296 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Enzymes296(
 
     Returns
     -----------------------
-    Instace of Enzymes296 graph.
+    Instace of ENZYMES296 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SimonsiellaMuelleri.
+This file offers the methods to automatically retrieve the graph Simonsiella muelleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SimonsiellaMuelleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SimonsiellaMuelleri graph.
+    """Return new instance of the Simonsiella muelleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SimonsiellaMuelleri(
 
     Returns
     -----------------------
-    Instace of SimonsiellaMuelleri graph.
+    Instace of Simonsiella muelleri graph.
 
 	References
 	---------------------

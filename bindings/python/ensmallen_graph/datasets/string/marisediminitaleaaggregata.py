@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarisediminitaleaAggregata.
+This file offers the methods to automatically retrieve the graph Marisediminitalea aggregata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarisediminitaleaAggregata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarisediminitaleaAggregata graph.
+    """Return new instance of the Marisediminitalea aggregata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarisediminitaleaAggregata(
 
     Returns
     -----------------------
-    Instace of MarisediminitaleaAggregata graph.
+    Instace of Marisediminitalea aggregata graph.
 
 	References
 	---------------------

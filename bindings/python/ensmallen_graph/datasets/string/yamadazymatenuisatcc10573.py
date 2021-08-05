@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YamadazymaTenuisAtcc10573.
+This file offers the methods to automatically retrieve the graph Yamadazyma tenuis ATCC 10573.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YamadazymaTenuisAtcc10573(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YamadazymaTenuisAtcc10573 graph.
+    """Return new instance of the Yamadazyma tenuis ATCC 10573 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YamadazymaTenuisAtcc10573(
 
     Returns
     -----------------------
-    Instace of YamadazymaTenuisAtcc10573 graph.
+    Instace of Yamadazyma tenuis ATCC 10573 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterNosocomialis.
+This file offers the methods to automatically retrieve the graph Acinetobacter nosocomialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterNosocomialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterNosocomialis graph.
+    """Return new instance of the Acinetobacter nosocomialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterNosocomialis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterNosocomialis graph.
+    Instace of Acinetobacter nosocomialis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Coauthorsciteseer.
+This file offers the methods to automatically retrieve the graph coAuthorsCiteseer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Coauthorsciteseer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Coauthorsciteseer graph.
+    """Return new instance of the coAuthorsCiteseer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Coauthorsciteseer(
 
     Returns
     -----------------------
-    Instace of Coauthorsciteseer graph.
+    Instace of coAuthorsCiteseer graph.
 
 	References
 	---------------------

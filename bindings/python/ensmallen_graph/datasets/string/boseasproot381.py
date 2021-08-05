@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpRoot381.
+This file offers the methods to automatically retrieve the graph Bosea sp. Root381.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpRoot381(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpRoot381 graph.
+    """Return new instance of the Bosea sp. Root381 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpRoot381(
 
     Returns
     -----------------------
-    Instace of BoseaSpRoot381 graph.
+    Instace of Bosea sp. Root381 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GossypiumRaimondii.
+This file offers the methods to automatically retrieve the graph Gossypium raimondii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GossypiumRaimondii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GossypiumRaimondii graph.
+    """Return new instance of the Gossypium raimondii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GossypiumRaimondii(
 
     Returns
     -----------------------
-    Instace of GossypiumRaimondii graph.
+    Instace of Gossypium raimondii graph.
 
 	References
 	---------------------

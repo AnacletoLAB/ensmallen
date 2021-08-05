@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusGarvieaeDcc43.
+This file offers the methods to automatically retrieve the graph Lactococcus garvieae DCC43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusGarvieaeDcc43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusGarvieaeDcc43 graph.
+    """Return new instance of the Lactococcus garvieae DCC43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactococcusGarvieaeDcc43(
 
     Returns
     -----------------------
-    Instace of LactococcusGarvieaeDcc43 graph.
+    Instace of Lactococcus garvieae DCC43 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KosmotogaArenicorallinaS304.
+This file offers the methods to automatically retrieve the graph Kosmotoga arenicorallina S304.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KosmotogaArenicorallinaS304(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KosmotogaArenicorallinaS304 graph.
+    """Return new instance of the Kosmotoga arenicorallina S304 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KosmotogaArenicorallinaS304(
 
     Returns
     -----------------------
-    Instace of KosmotogaArenicorallinaS304 graph.
+    Instace of Kosmotoga arenicorallina S304 graph.
 
 	References
 	---------------------

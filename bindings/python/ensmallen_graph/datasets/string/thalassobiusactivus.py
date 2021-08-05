@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobiusActivus.
+This file offers the methods to automatically retrieve the graph Thalassobius activus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobiusActivus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobiusActivus graph.
+    """Return new instance of the Thalassobius activus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobiusActivus(
 
     Returns
     -----------------------
-    Instace of ThalassobiusActivus graph.
+    Instace of Thalassobius activus graph.
 
 	References
 	---------------------

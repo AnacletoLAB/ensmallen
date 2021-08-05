@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermovenabulumGondwanense.
+This file offers the methods to automatically retrieve the graph Thermovenabulum gondwanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermovenabulumGondwanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermovenabulumGondwanense graph.
+    """Return new instance of the Thermovenabulum gondwanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermovenabulumGondwanense(
 
     Returns
     -----------------------
-    Instace of ThermovenabulumGondwanense graph.
+    Instace of Thermovenabulum gondwanense graph.
 
 	References
 	---------------------

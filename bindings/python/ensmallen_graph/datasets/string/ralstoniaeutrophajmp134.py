@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaEutrophaJmp134.
+This file offers the methods to automatically retrieve the graph Ralstonia eutropha JMP134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaEutrophaJmp134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaEutrophaJmp134 graph.
+    """Return new instance of the Ralstonia eutropha JMP134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RalstoniaEutrophaJmp134(
 
     Returns
     -----------------------
-    Instace of RalstoniaEutrophaJmp134 graph.
+    Instace of Ralstonia eutropha JMP134 graph.
 
 	References
 	---------------------

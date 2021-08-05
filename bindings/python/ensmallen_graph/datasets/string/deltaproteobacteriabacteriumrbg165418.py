@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumRbg165418.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium RBG_16_54_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumRbg165418(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumRbg165418 graph.
+    """Return new instance of the Deltaproteobacteria bacterium RBG_16_54_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumRbg165418(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumRbg165418 graph.
+    Instace of Deltaproteobacteria bacterium RBG_16_54_18 graph.
 
 	References
 	---------------------

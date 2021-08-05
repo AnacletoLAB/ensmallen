@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSclerotialis.
+This file offers the methods to automatically retrieve the graph Aspergillus sclerotialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSclerotialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSclerotialis graph.
+    """Return new instance of the Aspergillus sclerotialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSclerotialis(
 
     Returns
     -----------------------
-    Instace of AspergillusSclerotialis graph.
+    Instace of Aspergillus sclerotialis graph.
 
 	References
 	---------------------

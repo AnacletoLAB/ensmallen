@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorMorganii.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor morganii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorMorganii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorMorganii graph.
+    """Return new instance of the Caldicellulosiruptor morganii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldicellulosiruptorMorganii(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorMorganii graph.
+    Instace of Caldicellulosiruptor morganii graph.
 
 	References
 	---------------------

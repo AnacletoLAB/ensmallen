@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterorhabdusMucosicola.
+This file offers the methods to automatically retrieve the graph Enterorhabdus mucosicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterorhabdusMucosicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterorhabdusMucosicola graph.
+    """Return new instance of the Enterorhabdus mucosicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterorhabdusMucosicola(
 
     Returns
     -----------------------
-    Instace of EnterorhabdusMucosicola graph.
+    Instace of Enterorhabdus mucosicola graph.
 
 	References
 	---------------------

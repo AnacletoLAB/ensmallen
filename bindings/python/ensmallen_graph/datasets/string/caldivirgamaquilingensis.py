@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldivirgaMaquilingensis.
+This file offers the methods to automatically retrieve the graph Caldivirga maquilingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldivirgaMaquilingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldivirgaMaquilingensis graph.
+    """Return new instance of the Caldivirga maquilingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldivirgaMaquilingensis(
 
     Returns
     -----------------------
-    Instace of CaldivirgaMaquilingensis graph.
+    Instace of Caldivirga maquilingensis graph.
 
 	References
 	---------------------

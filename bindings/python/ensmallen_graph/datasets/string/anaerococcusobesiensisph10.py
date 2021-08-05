@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusObesiensisPh10.
+This file offers the methods to automatically retrieve the graph Anaerococcus obesiensis ph10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusObesiensisPh10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusObesiensisPh10 graph.
+    """Return new instance of the Anaerococcus obesiensis ph10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerococcusObesiensisPh10(
 
     Returns
     -----------------------
-    Instace of AnaerococcusObesiensisPh10 graph.
+    Instace of Anaerococcus obesiensis ph10 graph.
 
 	References
 	---------------------

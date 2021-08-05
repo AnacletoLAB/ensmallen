@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulcanisaetaDistributa.
+This file offers the methods to automatically retrieve the graph Vulcanisaeta distributa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulcanisaetaDistributa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulcanisaetaDistributa graph.
+    """Return new instance of the Vulcanisaeta distributa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VulcanisaetaDistributa(
 
     Returns
     -----------------------
-    Instace of VulcanisaetaDistributa graph.
+    Instace of Vulcanisaeta distributa graph.
 
 	References
 	---------------------

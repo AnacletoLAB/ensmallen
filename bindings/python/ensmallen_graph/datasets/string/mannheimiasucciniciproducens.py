@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaSucciniciproducens.
+This file offers the methods to automatically retrieve the graph Mannheimia succiniciproducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaSucciniciproducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaSucciniciproducens graph.
+    """Return new instance of the Mannheimia succiniciproducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MannheimiaSucciniciproducens(
 
     Returns
     -----------------------
-    Instace of MannheimiaSucciniciproducens graph.
+    Instace of Mannheimia succiniciproducens graph.
 
 	References
 	---------------------

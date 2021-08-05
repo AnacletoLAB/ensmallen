@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpHmsc08h08.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. HMSC08H08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpHmsc08h08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpHmsc08h08 graph.
+    """Return new instance of the Arthrobacter sp. HMSC08H08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpHmsc08h08(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpHmsc08h08 graph.
+    Instace of Arthrobacter sp. HMSC08H08 graph.
 
 	References
 	---------------------

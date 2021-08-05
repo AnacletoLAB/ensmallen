@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProlixibacterBellariivorans.
+This file offers the methods to automatically retrieve the graph Prolixibacter bellariivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProlixibacterBellariivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProlixibacterBellariivorans graph.
+    """Return new instance of the Prolixibacter bellariivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProlixibacterBellariivorans(
 
     Returns
     -----------------------
-    Instace of ProlixibacterBellariivorans graph.
+    Instace of Prolixibacter bellariivorans graph.
 
 	References
 	---------------------

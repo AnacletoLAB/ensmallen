@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumNoncentrifugens.
+This file offers the methods to automatically retrieve the graph Flavobacterium noncentrifugens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumNoncentrifugens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumNoncentrifugens graph.
+    """Return new instance of the Flavobacterium noncentrifugens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumNoncentrifugens(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumNoncentrifugens graph.
+    Instace of Flavobacterium noncentrifugens graph.
 
 	References
 	---------------------

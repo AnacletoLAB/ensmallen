@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaCinaraStrobi.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola (Cinara strobi).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaCinaraStrobi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaCinaraStrobi graph.
+    """Return new instance of the Buchnera aphidicola (Cinara strobi) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaCinaraStrobi(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaCinaraStrobi graph.
+    Instace of Buchnera aphidicola (Cinara strobi) graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizopusDelemar.
+This file offers the methods to automatically retrieve the graph Rhizopus delemar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizopusDelemar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizopusDelemar graph.
+    """Return new instance of the Rhizopus delemar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizopusDelemar(
 
     Returns
     -----------------------
-    Instace of RhizopusDelemar graph.
+    Instace of Rhizopus delemar graph.
 
 	References
 	---------------------

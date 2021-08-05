@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumFrediiNgr234.
+This file offers the methods to automatically retrieve the graph Sinorhizobium fredii NGR234.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumFrediiNgr234(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumFrediiNgr234 graph.
+    """Return new instance of the Sinorhizobium fredii NGR234 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SinorhizobiumFrediiNgr234(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumFrediiNgr234 graph.
+    Instace of Sinorhizobium fredii NGR234 graph.
 
 	References
 	---------------------

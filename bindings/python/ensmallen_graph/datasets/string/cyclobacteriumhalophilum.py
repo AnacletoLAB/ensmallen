@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyclobacteriumHalophilum.
+This file offers the methods to automatically retrieve the graph Cyclobacterium halophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyclobacteriumHalophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyclobacteriumHalophilum graph.
+    """Return new instance of the Cyclobacterium halophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyclobacteriumHalophilum(
 
     Returns
     -----------------------
-    Instace of CyclobacteriumHalophilum graph.
+    Instace of Cyclobacterium halophilum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpP11g5.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. P11G5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpP11g5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpP11g5 graph.
+    """Return new instance of the Psychrobacter sp. P11G5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterSpP11g5(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpP11g5 graph.
+    Instace of Psychrobacter sp. P11G5 graph.
 
 	References
 	---------------------

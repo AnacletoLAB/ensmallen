@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumDolichum.
+This file offers the methods to automatically retrieve the graph Eubacterium dolichum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumDolichum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumDolichum graph.
+    """Return new instance of the Eubacterium dolichum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumDolichum(
 
     Returns
     -----------------------
-    Instace of EubacteriumDolichum graph.
+    Instace of Eubacterium dolichum graph.
 
 	References
 	---------------------

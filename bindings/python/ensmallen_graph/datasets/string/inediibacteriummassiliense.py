@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InediibacteriumMassiliense.
+This file offers the methods to automatically retrieve the graph Inediibacterium massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def InediibacteriumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InediibacteriumMassiliense graph.
+    """Return new instance of the Inediibacterium massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def InediibacteriumMassiliense(
 
     Returns
     -----------------------
-    Instace of InediibacteriumMassiliense graph.
+    Instace of Inediibacterium massiliense graph.
 
 	References
 	---------------------

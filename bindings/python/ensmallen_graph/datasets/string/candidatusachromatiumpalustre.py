@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAchromatiumPalustre.
+This file offers the methods to automatically retrieve the graph Candidatus Achromatium palustre.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAchromatiumPalustre(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAchromatiumPalustre graph.
+    """Return new instance of the Candidatus Achromatium palustre graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAchromatiumPalustre(
 
     Returns
     -----------------------
-    Instace of CandidatusAchromatiumPalustre graph.
+    Instace of Candidatus Achromatium palustre graph.
 
 	References
 	---------------------

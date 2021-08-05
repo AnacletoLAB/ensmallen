@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaUli.
+This file offers the methods to automatically retrieve the graph Olsenella uli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaUli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaUli graph.
+    """Return new instance of the Olsenella uli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OlsenellaUli(
 
     Returns
     -----------------------
-    Instace of OlsenellaUli graph.
+    Instace of Olsenella uli graph.
 
 	References
 	---------------------

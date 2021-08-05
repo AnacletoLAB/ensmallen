@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpPr090111t3t6a.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. PR090111T3T6A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpPr090111t3t6a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpPr090111t3t6a graph.
+    """Return new instance of the Sphingomonas sp. PR090111T3T6A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasSpPr090111t3t6a(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpPr090111t3t6a graph.
+    Instace of Sphingomonas sp. PR090111T3T6A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSaccharolyticumWm1.
+This file offers the methods to automatically retrieve the graph Clostridium saccharolyticum WM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSaccharolyticumWm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSaccharolyticumWm1 graph.
+    """Return new instance of the Clostridium saccharolyticum WM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSaccharolyticumWm1(
 
     Returns
     -----------------------
-    Instace of ClostridiumSaccharolyticumWm1 graph.
+    Instace of Clostridium saccharolyticum WM1 graph.
 
 	References
 	---------------------

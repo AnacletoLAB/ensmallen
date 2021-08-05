@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGottesmanbacteriaBacteriumRbg165211.
+This file offers the methods to automatically retrieve the graph Candidatus Gottesmanbacteria bacterium RBG_16_52_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGottesmanbacteriaBacteriumRbg165211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGottesmanbacteriaBacteriumRbg165211 graph.
+    """Return new instance of the Candidatus Gottesmanbacteria bacterium RBG_16_52_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGottesmanbacteriaBacteriumRbg165211(
 
     Returns
     -----------------------
-    Instace of CandidatusGottesmanbacteriaBacteriumRbg165211 graph.
+    Instace of Candidatus Gottesmanbacteria bacterium RBG_16_52_11 graph.
 
 	References
 	---------------------

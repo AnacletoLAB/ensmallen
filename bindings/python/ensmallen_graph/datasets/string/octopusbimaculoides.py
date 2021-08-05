@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OctopusBimaculoides.
+This file offers the methods to automatically retrieve the graph Octopus bimaculoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OctopusBimaculoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OctopusBimaculoides graph.
+    """Return new instance of the Octopus bimaculoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OctopusBimaculoides(
 
     Returns
     -----------------------
-    Instace of OctopusBimaculoides graph.
+    Instace of Octopus bimaculoides graph.
 
 	References
 	---------------------

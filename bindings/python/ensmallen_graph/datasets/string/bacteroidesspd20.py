@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesSpD20.
+This file offers the methods to automatically retrieve the graph Bacteroides sp. D20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesSpD20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesSpD20 graph.
+    """Return new instance of the Bacteroides sp. D20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesSpD20(
 
     Returns
     -----------------------
-    Instace of BacteroidesSpD20 graph.
+    Instace of Bacteroides sp. D20 graph.
 
 	References
 	---------------------

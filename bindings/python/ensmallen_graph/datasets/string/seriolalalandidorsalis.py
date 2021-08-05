@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SeriolaLalandiDorsalis.
+This file offers the methods to automatically retrieve the graph Seriola lalandi dorsalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SeriolaLalandiDorsalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SeriolaLalandiDorsalis graph.
+    """Return new instance of the Seriola lalandi dorsalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SeriolaLalandiDorsalis(
 
     Returns
     -----------------------
-    Instace of SeriolaLalandiDorsalis graph.
+    Instace of Seriola lalandi dorsalis graph.
 
 	References
 	---------------------

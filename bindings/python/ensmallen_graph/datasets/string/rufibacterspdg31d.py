@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterSpDg31d.
+This file offers the methods to automatically retrieve the graph Rufibacter sp. DG31D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RufibacterSpDg31d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterSpDg31d graph.
+    """Return new instance of the Rufibacter sp. DG31D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RufibacterSpDg31d(
 
     Returns
     -----------------------
-    Instace of RufibacterSpDg31d graph.
+    Instace of Rufibacter sp. DG31D graph.
 
 	References
 	---------------------

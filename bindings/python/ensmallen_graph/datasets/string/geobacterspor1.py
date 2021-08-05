@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterSpOr1.
+This file offers the methods to automatically retrieve the graph Geobacter sp. OR-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterSpOr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterSpOr1 graph.
+    """Return new instance of the Geobacter sp. OR-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacterSpOr1(
 
     Returns
     -----------------------
-    Instace of GeobacterSpOr1 graph.
+    Instace of Geobacter sp. OR-1 graph.
 
 	References
 	---------------------

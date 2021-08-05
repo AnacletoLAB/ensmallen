@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasPhaseoliPvDieffenbachiaeLmg695.
+This file offers the methods to automatically retrieve the graph Xanthomonas phaseoli pv. dieffenbachiae LMG 695.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasPhaseoliPvDieffenbachiaeLmg695(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasPhaseoliPvDieffenbachiaeLmg695 graph.
+    """Return new instance of the Xanthomonas phaseoli pv. dieffenbachiae LMG 695 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasPhaseoliPvDieffenbachiaeLmg695(
 
     Returns
     -----------------------
-    Instace of XanthomonasPhaseoliPvDieffenbachiaeLmg695 graph.
+    Instace of Xanthomonas phaseoli pv. dieffenbachiae LMG 695 graph.
 
 	References
 	---------------------

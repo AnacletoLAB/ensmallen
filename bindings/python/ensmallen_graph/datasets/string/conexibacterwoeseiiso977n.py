@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConexibacterWoeseiIso977n.
+This file offers the methods to automatically retrieve the graph Conexibacter woesei Iso977N.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConexibacterWoeseiIso977n(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConexibacterWoeseiIso977n graph.
+    """Return new instance of the Conexibacter woesei Iso977N graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ConexibacterWoeseiIso977n(
 
     Returns
     -----------------------
-    Instace of ConexibacterWoeseiIso977n graph.
+    Instace of Conexibacter woesei Iso977N graph.
 
 	References
 	---------------------

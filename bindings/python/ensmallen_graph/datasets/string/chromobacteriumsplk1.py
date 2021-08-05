@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromobacteriumSpLk1.
+This file offers the methods to automatically retrieve the graph Chromobacterium sp. LK1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromobacteriumSpLk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromobacteriumSpLk1 graph.
+    """Return new instance of the Chromobacterium sp. LK1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromobacteriumSpLk1(
 
     Returns
     -----------------------
-    Instace of ChromobacteriumSpLk1 graph.
+    Instace of Chromobacterium sp. LK1 graph.
 
 	References
 	---------------------

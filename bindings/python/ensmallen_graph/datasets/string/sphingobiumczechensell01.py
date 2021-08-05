@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumCzechenseLl01.
+This file offers the methods to automatically retrieve the graph Sphingobium czechense LL01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumCzechenseLl01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumCzechenseLl01 graph.
+    """Return new instance of the Sphingobium czechense LL01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumCzechenseLl01(
 
     Returns
     -----------------------
-    Instace of SphingobiumCzechenseLl01 graph.
+    Instace of Sphingobium czechense LL01 graph.
 
 	References
 	---------------------

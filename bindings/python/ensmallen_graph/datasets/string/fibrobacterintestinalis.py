@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrobacterIntestinalis.
+This file offers the methods to automatically retrieve the graph Fibrobacter intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrobacterIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrobacterIntestinalis graph.
+    """Return new instance of the Fibrobacter intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibrobacterIntestinalis(
 
     Returns
     -----------------------
-    Instace of FibrobacterIntestinalis graph.
+    Instace of Fibrobacter intestinalis graph.
 
 	References
 	---------------------

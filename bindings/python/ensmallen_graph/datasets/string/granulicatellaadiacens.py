@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulicatellaAdiacens.
+This file offers the methods to automatically retrieve the graph Granulicatella adiacens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulicatellaAdiacens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulicatellaAdiacens graph.
+    """Return new instance of the Granulicatella adiacens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GranulicatellaAdiacens(
 
     Returns
     -----------------------
-    Instace of GranulicatellaAdiacens graph.
+    Instace of Granulicatella adiacens graph.
 
 	References
 	---------------------

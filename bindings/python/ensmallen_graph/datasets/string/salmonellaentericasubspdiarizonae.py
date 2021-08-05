@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaSubspDiarizonae.
+This file offers the methods to automatically retrieve the graph Salmonella enterica subsp. diarizonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaSubspDiarizonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaSubspDiarizonae graph.
+    """Return new instance of the Salmonella enterica subsp. diarizonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaSubspDiarizonae(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaSubspDiarizonae graph.
+    Instace of Salmonella enterica subsp. diarizonae graph.
 
 	References
 	---------------------

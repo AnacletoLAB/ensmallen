@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusRhamnosus.
+This file offers the methods to automatically retrieve the graph Lactobacillus rhamnosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusRhamnosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusRhamnosus graph.
+    """Return new instance of the Lactobacillus rhamnosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusRhamnosus(
 
     Returns
     -----------------------
-    Instace of LactobacillusRhamnosus graph.
+    Instace of Lactobacillus rhamnosus graph.
 
 	References
 	---------------------

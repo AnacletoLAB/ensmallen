@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasUenonis603.
+This file offers the methods to automatically retrieve the graph Porphyromonas uenonis 603.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasUenonis603(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasUenonis603 graph.
+    """Return new instance of the Porphyromonas uenonis 603 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasUenonis603(
 
     Returns
     -----------------------
-    Instace of PorphyromonasUenonis603 graph.
+    Instace of Porphyromonas uenonis 603 graph.
 
 	References
 	---------------------

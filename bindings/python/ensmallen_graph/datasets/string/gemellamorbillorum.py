@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaMorbillorum.
+This file offers the methods to automatically retrieve the graph Gemella morbillorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaMorbillorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaMorbillorum graph.
+    """Return new instance of the Gemella morbillorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemellaMorbillorum(
 
     Returns
     -----------------------
-    Instace of GemellaMorbillorum graph.
+    Instace of Gemella morbillorum graph.
 
 	References
 	---------------------

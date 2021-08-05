@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymoseptoriaTritici.
+This file offers the methods to automatically retrieve the graph Zymoseptoria tritici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymoseptoriaTritici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymoseptoriaTritici graph.
+    """Return new instance of the Zymoseptoria tritici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZymoseptoriaTritici(
 
     Returns
     -----------------------
-    Instace of ZymoseptoriaTritici graph.
+    Instace of Zymoseptoria tritici graph.
 
 	References
 	---------------------

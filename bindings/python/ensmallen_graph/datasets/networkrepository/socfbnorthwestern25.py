@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbNorthwestern25.
+This file offers the methods to automatically retrieve the graph socfb-Northwestern25.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbNorthwestern25(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbNorthwestern25 graph.
+    """Return new instance of the socfb-Northwestern25 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbNorthwestern25(
 
     Returns
     -----------------------
-    Instace of SocfbNorthwestern25 graph.
+    Instace of socfb-Northwestern25 graph.
 
 	References
 	---------------------

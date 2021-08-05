@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pwt.
+This file offers the methods to automatically retrieve the graph pwt.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pwt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pwt graph.
+    """Return new instance of the pwt graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pwt(
 
     Returns
     -----------------------
-    Instace of Pwt graph.
+    Instace of pwt graph.
 
 	References
 	---------------------

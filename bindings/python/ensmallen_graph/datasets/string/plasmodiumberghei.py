@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumBerghei.
+This file offers the methods to automatically retrieve the graph Plasmodium berghei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumBerghei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumBerghei graph.
+    """Return new instance of the Plasmodium berghei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumBerghei(
 
     Returns
     -----------------------
-    Instace of PlasmodiumBerghei graph.
+    Instace of Plasmodium berghei graph.
 
 	References
 	---------------------

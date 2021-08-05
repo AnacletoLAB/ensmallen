@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpAs2mBin001.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. AS2M-Bin001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpAs2mBin001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpAs2mBin001 graph.
+    """Return new instance of the Epulopiscium sp. AS2M-Bin001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpAs2mBin001(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpAs2mBin001 graph.
+    Instace of Epulopiscium sp. AS2M-Bin001 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaIsraelensis.
+This file offers the methods to automatically retrieve the graph Legionella israelensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaIsraelensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaIsraelensis graph.
+    """Return new instance of the Legionella israelensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaIsraelensis(
 
     Returns
     -----------------------
-    Instace of LegionellaIsraelensis graph.
+    Instace of Legionella israelensis graph.
 
 	References
 	---------------------

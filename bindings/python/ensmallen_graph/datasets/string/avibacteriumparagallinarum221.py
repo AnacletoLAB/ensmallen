@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AvibacteriumParagallinarum221.
+This file offers the methods to automatically retrieve the graph Avibacterium paragallinarum 221.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AvibacteriumParagallinarum221(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AvibacteriumParagallinarum221 graph.
+    """Return new instance of the Avibacterium paragallinarum 221 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AvibacteriumParagallinarum221(
 
     Returns
     -----------------------
-    Instace of AvibacteriumParagallinarum221 graph.
+    Instace of Avibacterium paragallinarum 221 graph.
 
 	References
 	---------------------

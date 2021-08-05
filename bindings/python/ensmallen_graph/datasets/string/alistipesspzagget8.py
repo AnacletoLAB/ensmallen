@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSpZagget8.
+This file offers the methods to automatically retrieve the graph Alistipes sp. Zagget8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSpZagget8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSpZagget8 graph.
+    """Return new instance of the Alistipes sp. Zagget8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesSpZagget8(
 
     Returns
     -----------------------
-    Instace of AlistipesSpZagget8 graph.
+    Instace of Alistipes sp. Zagget8 graph.
 
 	References
 	---------------------

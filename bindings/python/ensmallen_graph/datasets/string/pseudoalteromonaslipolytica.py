@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasLipolytica.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas lipolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasLipolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasLipolytica graph.
+    """Return new instance of the Pseudoalteromonas lipolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasLipolytica(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasLipolytica graph.
+    Instace of Pseudoalteromonas lipolytica graph.
 
 	References
 	---------------------

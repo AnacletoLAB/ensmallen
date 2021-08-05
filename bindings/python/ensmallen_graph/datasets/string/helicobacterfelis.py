@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterFelis.
+This file offers the methods to automatically retrieve the graph Helicobacter felis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterFelis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterFelis graph.
+    """Return new instance of the Helicobacter felis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterFelis(
 
     Returns
     -----------------------
-    Instace of HelicobacterFelis graph.
+    Instace of Helicobacter felis graph.
 
 	References
 	---------------------

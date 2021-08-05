@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumLuteolum.
+This file offers the methods to automatically retrieve the graph Chlorobium luteolum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumLuteolum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumLuteolum graph.
+    """Return new instance of the Chlorobium luteolum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumLuteolum(
 
     Returns
     -----------------------
-    Instace of ChlorobiumLuteolum graph.
+    Instace of Chlorobium luteolum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidiphilusMargaritifer.
+This file offers the methods to automatically retrieve the graph Tepidiphilus margaritifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidiphilusMargaritifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidiphilusMargaritifer graph.
+    """Return new instance of the Tepidiphilus margaritifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TepidiphilusMargaritifer(
 
     Returns
     -----------------------
-    Instace of TepidiphilusMargaritifer graph.
+    Instace of Tepidiphilus margaritifer graph.
 
 	References
 	---------------------

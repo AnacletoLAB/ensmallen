@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusConcavusDsm17758.
+This file offers the methods to automatically retrieve the graph Lactobacillus concavus DSM 17758.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusConcavusDsm17758(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusConcavusDsm17758 graph.
+    """Return new instance of the Lactobacillus concavus DSM 17758 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusConcavusDsm17758(
 
     Returns
     -----------------------
-    Instace of LactobacillusConcavusDsm17758 graph.
+    Instace of Lactobacillus concavus DSM 17758 graph.
 
 	References
 	---------------------

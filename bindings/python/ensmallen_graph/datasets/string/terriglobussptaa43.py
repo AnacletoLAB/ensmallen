@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerriglobusSpTaa43.
+This file offers the methods to automatically retrieve the graph Terriglobus sp. TAA 43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerriglobusSpTaa43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerriglobusSpTaa43 graph.
+    """Return new instance of the Terriglobus sp. TAA 43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerriglobusSpTaa43(
 
     Returns
     -----------------------
-    Instace of TerriglobusSpTaa43 graph.
+    Instace of Terriglobus sp. TAA 43 graph.
 
 	References
 	---------------------

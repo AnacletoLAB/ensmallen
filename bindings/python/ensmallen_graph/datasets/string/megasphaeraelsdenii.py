@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraElsdenii.
+This file offers the methods to automatically retrieve the graph Megasphaera elsdenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraElsdenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraElsdenii graph.
+    """Return new instance of the Megasphaera elsdenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegasphaeraElsdenii(
 
     Returns
     -----------------------
-    Instace of MegasphaeraElsdenii graph.
+    Instace of Megasphaera elsdenii graph.
 
 	References
 	---------------------

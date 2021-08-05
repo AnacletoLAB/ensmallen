@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpAbg.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. ABG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpAbg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpAbg graph.
+    """Return new instance of the Flavobacterium sp. ABG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpAbg(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpAbg graph.
+    Instace of Flavobacterium sp. ABG graph.
 
 	References
 	---------------------

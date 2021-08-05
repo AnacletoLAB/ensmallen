@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesMarimammalium.
+This file offers the methods to automatically retrieve the graph Actinomyces marimammalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesMarimammalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesMarimammalium graph.
+    """Return new instance of the Actinomyces marimammalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesMarimammalium(
 
     Returns
     -----------------------
-    Instace of ActinomycesMarimammalium graph.
+    Instace of Actinomyces marimammalium graph.
 
 	References
 	---------------------

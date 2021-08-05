@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaLongicatenaAgr2136.
+This file offers the methods to automatically retrieve the graph Dorea longicatena AGR2136.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaLongicatenaAgr2136(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaLongicatenaAgr2136 graph.
+    """Return new instance of the Dorea longicatena AGR2136 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DoreaLongicatenaAgr2136(
 
     Returns
     -----------------------
-    Instace of DoreaLongicatenaAgr2136 graph.
+    Instace of Dorea longicatena AGR2136 graph.
 
 	References
 	---------------------

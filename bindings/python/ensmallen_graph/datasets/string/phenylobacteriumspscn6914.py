@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumSpScn6914.
+This file offers the methods to automatically retrieve the graph Phenylobacterium sp. SCN 69-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumSpScn6914(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumSpScn6914 graph.
+    """Return new instance of the Phenylobacterium sp. SCN 69-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhenylobacteriumSpScn6914(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumSpScn6914 graph.
+    Instace of Phenylobacterium sp. SCN 69-14 graph.
 
 	References
 	---------------------

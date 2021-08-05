@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacterPostgatei.
+This file offers the methods to automatically retrieve the graph Desulfobacter postgatei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacterPostgatei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacterPostgatei graph.
+    """Return new instance of the Desulfobacter postgatei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfobacterPostgatei(
 
     Returns
     -----------------------
-    Instace of DesulfobacterPostgatei graph.
+    Instace of Desulfobacter postgatei graph.
 
 	References
 	---------------------

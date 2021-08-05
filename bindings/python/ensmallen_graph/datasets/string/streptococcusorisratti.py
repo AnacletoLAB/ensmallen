@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusOrisratti.
+This file offers the methods to automatically retrieve the graph Streptococcus orisratti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusOrisratti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusOrisratti graph.
+    """Return new instance of the Streptococcus orisratti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusOrisratti(
 
     Returns
     -----------------------
-    Instace of StreptococcusOrisratti graph.
+    Instace of Streptococcus orisratti graph.
 
 	References
 	---------------------

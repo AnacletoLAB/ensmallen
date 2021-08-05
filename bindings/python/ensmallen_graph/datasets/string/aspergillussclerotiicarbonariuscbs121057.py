@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSclerotiicarbonariusCbs121057.
+This file offers the methods to automatically retrieve the graph Aspergillus sclerotiicarbonarius CBS 121057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSclerotiicarbonariusCbs121057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSclerotiicarbonariusCbs121057 graph.
+    """Return new instance of the Aspergillus sclerotiicarbonarius CBS 121057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSclerotiicarbonariusCbs121057(
 
     Returns
     -----------------------
-    Instace of AspergillusSclerotiicarbonariusCbs121057 graph.
+    Instace of Aspergillus sclerotiicarbonarius CBS 121057 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermobacillusComposti.
+This file offers the methods to automatically retrieve the graph Thermobacillus composti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermobacillusComposti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermobacillusComposti graph.
+    """Return new instance of the Thermobacillus composti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermobacillusComposti(
 
     Returns
     -----------------------
-    Instace of ThermobacillusComposti graph.
+    Instace of Thermobacillus composti graph.
 
 	References
 	---------------------

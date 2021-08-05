@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumNucleatumW1481.
+This file offers the methods to automatically retrieve the graph Fusobacterium nucleatum W1481.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumNucleatumW1481(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumNucleatumW1481 graph.
+    """Return new instance of the Fusobacterium nucleatum W1481 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumNucleatumW1481(
 
     Returns
     -----------------------
-    Instace of FusobacteriumNucleatumW1481 graph.
+    Instace of Fusobacterium nucleatum W1481 graph.
 
 	References
 	---------------------

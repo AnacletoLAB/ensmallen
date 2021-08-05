@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaAlhagi.
+This file offers the methods to automatically retrieve the graph Pantoea alhagi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaAlhagi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaAlhagi graph.
+    """Return new instance of the Pantoea alhagi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaAlhagi(
 
     Returns
     -----------------------
-    Instace of PantoeaAlhagi graph.
+    Instace of Pantoea alhagi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumLeguminosarumViciae248.
+This file offers the methods to automatically retrieve the graph Rhizobium leguminosarum viciae 248.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumLeguminosarumViciae248(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumLeguminosarumViciae248 graph.
+    """Return new instance of the Rhizobium leguminosarum viciae 248 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumLeguminosarumViciae248(
 
     Returns
     -----------------------
-    Instace of RhizobiumLeguminosarumViciae248 graph.
+    Instace of Rhizobium leguminosarum viciae 248 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumMesophilum.
+This file offers the methods to automatically retrieve the graph Tenacibaculum mesophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumMesophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumMesophilum graph.
+    """Return new instance of the Tenacibaculum mesophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumMesophilum(
 
     Returns
     -----------------------
-    Instace of TenacibaculumMesophilum graph.
+    Instace of Tenacibaculum mesophilum graph.
 
 	References
 	---------------------

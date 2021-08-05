@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobutyrivibrioSpOr37.
+This file offers the methods to automatically retrieve the graph Pseudobutyrivibrio sp. OR37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobutyrivibrioSpOr37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobutyrivibrioSpOr37 graph.
+    """Return new instance of the Pseudobutyrivibrio sp. OR37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudobutyrivibrioSpOr37(
 
     Returns
     -----------------------
-    Instace of PseudobutyrivibrioSpOr37 graph.
+    Instace of Pseudobutyrivibrio sp. OR37 graph.
 
 	References
 	---------------------

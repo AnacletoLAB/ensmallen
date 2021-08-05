@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterJejuni81176.
+This file offers the methods to automatically retrieve the graph Campylobacter jejuni 81176.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterJejuni81176(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterJejuni81176 graph.
+    """Return new instance of the Campylobacter jejuni 81176 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterJejuni81176(
 
     Returns
     -----------------------
-    Instace of CampylobacterJejuni81176 graph.
+    Instace of Campylobacter jejuni 81176 graph.
 
 	References
 	---------------------

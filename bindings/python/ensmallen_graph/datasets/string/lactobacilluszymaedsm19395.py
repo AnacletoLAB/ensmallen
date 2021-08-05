@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusZymaeDsm19395.
+This file offers the methods to automatically retrieve the graph Lactobacillus zymae DSM 19395.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusZymaeDsm19395(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusZymaeDsm19395 graph.
+    """Return new instance of the Lactobacillus zymae DSM 19395 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusZymaeDsm19395(
 
     Returns
     -----------------------
-    Instace of LactobacillusZymaeDsm19395 graph.
+    Instace of Lactobacillus zymae DSM 19395 graph.
 
 	References
 	---------------------

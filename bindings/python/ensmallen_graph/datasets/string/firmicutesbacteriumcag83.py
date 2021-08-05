@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FirmicutesBacteriumCag83.
+This file offers the methods to automatically retrieve the graph Firmicutes bacterium CAG:83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FirmicutesBacteriumCag83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FirmicutesBacteriumCag83 graph.
+    """Return new instance of the Firmicutes bacterium CAG:83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FirmicutesBacteriumCag83(
 
     Returns
     -----------------------
-    Instace of FirmicutesBacteriumCag83 graph.
+    Instace of Firmicutes bacterium CAG:83 graph.
 
 	References
 	---------------------

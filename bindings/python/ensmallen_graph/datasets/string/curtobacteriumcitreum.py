@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumCitreum.
+This file offers the methods to automatically retrieve the graph Curtobacterium citreum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumCitreum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumCitreum graph.
+    """Return new instance of the Curtobacterium citreum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumCitreum(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumCitreum graph.
+    Instace of Curtobacterium citreum graph.
 
 	References
 	---------------------

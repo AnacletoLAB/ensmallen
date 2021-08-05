@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminimonasQiaohouensis.
+This file offers the methods to automatically retrieve the graph Sediminimonas qiaohouensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminimonasQiaohouensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminimonasQiaohouensis graph.
+    """Return new instance of the Sediminimonas qiaohouensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SediminimonasQiaohouensis(
 
     Returns
     -----------------------
-    Instace of SediminimonasQiaohouensis graph.
+    Instace of Sediminimonas qiaohouensis graph.
 
 	References
 	---------------------

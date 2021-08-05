@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PapioAnubis.
+This file offers the methods to automatically retrieve the graph Papio anubis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PapioAnubis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PapioAnubis graph.
+    """Return new instance of the Papio anubis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PapioAnubis(
 
     Returns
     -----------------------
-    Instace of PapioAnubis graph.
+    Instace of Papio anubis graph.
 
 	References
 	---------------------

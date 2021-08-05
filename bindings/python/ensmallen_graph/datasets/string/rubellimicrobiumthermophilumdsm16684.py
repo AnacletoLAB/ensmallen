@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubellimicrobiumThermophilumDsm16684.
+This file offers the methods to automatically retrieve the graph Rubellimicrobium thermophilum DSM 16684.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubellimicrobiumThermophilumDsm16684(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubellimicrobiumThermophilumDsm16684 graph.
+    """Return new instance of the Rubellimicrobium thermophilum DSM 16684 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubellimicrobiumThermophilumDsm16684(
 
     Returns
     -----------------------
-    Instace of RubellimicrobiumThermophilumDsm16684 graph.
+    Instace of Rubellimicrobium thermophilum DSM 16684 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SclerodermaCitrinumFougA.
+This file offers the methods to automatically retrieve the graph Scleroderma citrinum Foug A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SclerodermaCitrinumFougA(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SclerodermaCitrinumFougA graph.
+    """Return new instance of the Scleroderma citrinum Foug A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SclerodermaCitrinumFougA(
 
     Returns
     -----------------------
-    Instace of SclerodermaCitrinumFougA graph.
+    Instace of Scleroderma citrinum Foug A graph.
 
 	References
 	---------------------

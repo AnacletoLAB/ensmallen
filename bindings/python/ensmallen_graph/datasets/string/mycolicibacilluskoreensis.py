@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacillusKoreensis.
+This file offers the methods to automatically retrieve the graph Mycolicibacillus koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacillusKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacillusKoreensis graph.
+    """Return new instance of the Mycolicibacillus koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacillusKoreensis(
 
     Returns
     -----------------------
-    Instace of MycolicibacillusKoreensis graph.
+    Instace of Mycolicibacillus koreensis graph.
 
 	References
 	---------------------

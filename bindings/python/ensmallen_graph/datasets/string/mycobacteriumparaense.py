@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumParaense.
+This file offers the methods to automatically retrieve the graph Mycobacterium paraense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumParaense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumParaense graph.
+    """Return new instance of the Mycobacterium paraense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumParaense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumParaense graph.
+    Instace of Mycobacterium paraense graph.
 
 	References
 	---------------------

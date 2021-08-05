@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesVariegatus.
+This file offers the methods to automatically retrieve the graph Streptomyces variegatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesVariegatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesVariegatus graph.
+    """Return new instance of the Streptomyces variegatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesVariegatus(
 
     Returns
     -----------------------
-    Instace of StreptomycesVariegatus graph.
+    Instace of Streptomyces variegatus graph.
 
 	References
 	---------------------

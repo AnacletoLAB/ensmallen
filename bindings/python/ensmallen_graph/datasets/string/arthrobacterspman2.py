@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpMan2.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. MAN2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpMan2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpMan2 graph.
+    """Return new instance of the Arthrobacter sp. MAN2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSpMan2(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpMan2 graph.
+    Instace of Arthrobacter sp. MAN2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctopirusHydrillae.
+This file offers the methods to automatically retrieve the graph Planctopirus hydrillae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctopirusHydrillae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctopirusHydrillae graph.
+    """Return new instance of the Planctopirus hydrillae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctopirusHydrillae(
 
     Returns
     -----------------------
-    Instace of PlanctopirusHydrillae graph.
+    Instace of Planctopirus hydrillae graph.
 
 	References
 	---------------------

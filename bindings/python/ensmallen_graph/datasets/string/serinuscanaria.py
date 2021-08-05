@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerinusCanaria.
+This file offers the methods to automatically retrieve the graph Serinus canaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerinusCanaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerinusCanaria graph.
+    """Return new instance of the Serinus canaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerinusCanaria(
 
     Returns
     -----------------------
-    Instace of SerinusCanaria graph.
+    Instace of Serinus canaria graph.
 
 	References
 	---------------------

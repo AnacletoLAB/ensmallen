@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioBastinii.
+This file offers the methods to automatically retrieve the graph Desulfovibrio bastinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioBastinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioBastinii graph.
+    """Return new instance of the Desulfovibrio bastinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioBastinii(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioBastinii graph.
+    Instace of Desulfovibrio bastinii graph.
 
 	References
 	---------------------

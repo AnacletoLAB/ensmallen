@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioSiamensis.
+This file offers the methods to automatically retrieve the graph Salinivibrio siamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinivibrioSiamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioSiamensis graph.
+    """Return new instance of the Salinivibrio siamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinivibrioSiamensis(
 
     Returns
     -----------------------
-    Instace of SalinivibrioSiamensis graph.
+    Instace of Salinivibrio siamensis graph.
 
 	References
 	---------------------

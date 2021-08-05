@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumAcnesHl037pa2.
+This file offers the methods to automatically retrieve the graph Propionibacterium acnes HL037PA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumAcnesHl037pa2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumAcnesHl037pa2 graph.
+    """Return new instance of the Propionibacterium acnes HL037PA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionibacteriumAcnesHl037pa2(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumAcnesHl037pa2 graph.
+    Instace of Propionibacterium acnes HL037PA2 graph.
 
 	References
 	---------------------

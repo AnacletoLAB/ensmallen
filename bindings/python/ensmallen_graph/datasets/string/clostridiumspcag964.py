@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpCag964.
+This file offers the methods to automatically retrieve the graph Clostridium sp. CAG:964.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpCag964(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpCag964 graph.
+    """Return new instance of the Clostridium sp. CAG:964 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpCag964(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpCag964 graph.
+    Instace of Clostridium sp. CAG:964 graph.
 
 	References
 	---------------------

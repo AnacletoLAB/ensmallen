@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SkermanellaAerolataKacc11604.
+This file offers the methods to automatically retrieve the graph Skermanella aerolata KACC 11604.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SkermanellaAerolataKacc11604(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SkermanellaAerolataKacc11604 graph.
+    """Return new instance of the Skermanella aerolata KACC 11604 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SkermanellaAerolataKacc11604(
 
     Returns
     -----------------------
-    Instace of SkermanellaAerolataKacc11604 graph.
+    Instace of Skermanella aerolata KACC 11604 graph.
 
 	References
 	---------------------

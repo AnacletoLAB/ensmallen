@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaPelophila.
+This file offers the methods to automatically retrieve the graph Demequina pelophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaPelophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaPelophila graph.
+    """Return new instance of the Demequina pelophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaPelophila(
 
     Returns
     -----------------------
-    Instace of DemequinaPelophila graph.
+    Instace of Demequina pelophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnaporthiopsisPoaeAtcc64411.
+This file offers the methods to automatically retrieve the graph Magnaporthiopsis poae ATCC 64411.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnaporthiopsisPoaeAtcc64411(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnaporthiopsisPoaeAtcc64411 graph.
+    """Return new instance of the Magnaporthiopsis poae ATCC 64411 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnaporthiopsisPoaeAtcc64411(
 
     Returns
     -----------------------
-    Instace of MagnaporthiopsisPoaeAtcc64411 graph.
+    Instace of Magnaporthiopsis poae ATCC 64411 graph.
 
 	References
 	---------------------

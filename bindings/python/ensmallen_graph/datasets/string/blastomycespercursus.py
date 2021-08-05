@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomycesPercursus.
+This file offers the methods to automatically retrieve the graph Blastomyces percursus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomycesPercursus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomycesPercursus graph.
+    """Return new instance of the Blastomyces percursus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomycesPercursus(
 
     Returns
     -----------------------
-    Instace of BlastomycesPercursus graph.
+    Instace of Blastomyces percursus graph.
 
 	References
 	---------------------

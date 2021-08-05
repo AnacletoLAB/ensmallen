@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesTangfeifanii.
+This file offers the methods to automatically retrieve the graph Actinomyces tangfeifanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesTangfeifanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesTangfeifanii graph.
+    """Return new instance of the Actinomyces tangfeifanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesTangfeifanii(
 
     Returns
     -----------------------
-    Instace of ActinomycesTangfeifanii graph.
+    Instace of Actinomyces tangfeifanii graph.
 
 	References
 	---------------------

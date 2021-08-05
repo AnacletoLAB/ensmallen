@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChoiromycesVenosus1206131.
+This file offers the methods to automatically retrieve the graph Choiromyces venosus 120613-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChoiromycesVenosus1206131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChoiromycesVenosus1206131 graph.
+    """Return new instance of the Choiromyces venosus 120613-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChoiromycesVenosus1206131(
 
     Returns
     -----------------------
-    Instace of ChoiromycesVenosus1206131 graph.
+    Instace of Choiromyces venosus 120613-1 graph.
 
 	References
 	---------------------

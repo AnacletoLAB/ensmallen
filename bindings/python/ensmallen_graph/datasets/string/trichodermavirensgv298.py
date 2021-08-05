@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaVirensGv298.
+This file offers the methods to automatically retrieve the graph Trichoderma virens Gv29-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichodermaVirensGv298(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaVirensGv298 graph.
+    """Return new instance of the Trichoderma virens Gv29-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichodermaVirensGv298(
 
     Returns
     -----------------------
-    Instace of TrichodermaVirensGv298 graph.
+    Instace of Trichoderma virens Gv29-8 graph.
 
 	References
 	---------------------

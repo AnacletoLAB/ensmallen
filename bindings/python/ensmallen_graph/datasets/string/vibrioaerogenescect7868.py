@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioAerogenesCect7868.
+This file offers the methods to automatically retrieve the graph Vibrio aerogenes CECT 7868.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioAerogenesCect7868(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioAerogenesCect7868 graph.
+    """Return new instance of the Vibrio aerogenes CECT 7868 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioAerogenesCect7868(
 
     Returns
     -----------------------
-    Instace of VibrioAerogenesCect7868 graph.
+    Instace of Vibrio aerogenes CECT 7868 graph.
 
 	References
 	---------------------

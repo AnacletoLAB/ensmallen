@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiUmn026.
+This file offers the methods to automatically retrieve the graph Escherichia coli UMN026.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiUmn026(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiUmn026 graph.
+    """Return new instance of the Escherichia coli UMN026 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EscherichiaColiUmn026(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiUmn026 graph.
+    Instace of Escherichia coli UMN026 graph.
 
 	References
 	---------------------

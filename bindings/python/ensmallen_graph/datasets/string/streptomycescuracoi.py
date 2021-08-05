@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCuracoi.
+This file offers the methods to automatically retrieve the graph Streptomyces curacoi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCuracoi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCuracoi graph.
+    """Return new instance of the Streptomyces curacoi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesCuracoi(
 
     Returns
     -----------------------
-    Instace of StreptomycesCuracoi graph.
+    Instace of Streptomyces curacoi graph.
 
 	References
 	---------------------

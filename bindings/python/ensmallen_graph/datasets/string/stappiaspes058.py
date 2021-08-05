@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StappiaSpEs058.
+This file offers the methods to automatically retrieve the graph Stappia sp. ES.058.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StappiaSpEs058(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StappiaSpEs058 graph.
+    """Return new instance of the Stappia sp. ES.058 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StappiaSpEs058(
 
     Returns
     -----------------------
-    Instace of StappiaSpEs058 graph.
+    Instace of Stappia sp. ES.058 graph.
 
 	References
 	---------------------

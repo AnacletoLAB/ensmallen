@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpKle1755.
+This file offers the methods to automatically retrieve the graph Clostridium sp. KLE1755.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpKle1755(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpKle1755 graph.
+    """Return new instance of the Clostridium sp. KLE1755 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpKle1755(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpKle1755 graph.
+    Instace of Clostridium sp. KLE1755 graph.
 
 	References
 	---------------------

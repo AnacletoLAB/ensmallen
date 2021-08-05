@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DolosigranulumPigrum.
+This file offers the methods to automatically retrieve the graph Dolosigranulum pigrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DolosigranulumPigrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DolosigranulumPigrum graph.
+    """Return new instance of the Dolosigranulum pigrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DolosigranulumPigrum(
 
     Returns
     -----------------------
-    Instace of DolosigranulumPigrum graph.
+    Instace of Dolosigranulum pigrum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BathycoccusPrasinos.
+This file offers the methods to automatically retrieve the graph Bathycoccus prasinos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BathycoccusPrasinos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BathycoccusPrasinos graph.
+    """Return new instance of the Bathycoccus prasinos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BathycoccusPrasinos(
 
     Returns
     -----------------------
-    Instace of BathycoccusPrasinos graph.
+    Instace of Bathycoccus prasinos graph.
 
 	References
 	---------------------

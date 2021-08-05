@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaTuberolachnusSalignus.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola (Tuberolachnus salignus).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaTuberolachnusSalignus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaTuberolachnusSalignus graph.
+    """Return new instance of the Buchnera aphidicola (Tuberolachnus salignus) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaTuberolachnusSalignus(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaTuberolachnusSalignus graph.
+    Instace of Buchnera aphidicola (Tuberolachnus salignus) graph.
 
 	References
 	---------------------

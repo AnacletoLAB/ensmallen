@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRokubacteriaBacteriumGwa27335.
+This file offers the methods to automatically retrieve the graph Candidatus Rokubacteria bacterium GWA2_73_35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRokubacteriaBacteriumGwa27335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRokubacteriaBacteriumGwa27335 graph.
+    """Return new instance of the Candidatus Rokubacteria bacterium GWA2_73_35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRokubacteriaBacteriumGwa27335(
 
     Returns
     -----------------------
-    Instace of CandidatusRokubacteriaBacteriumGwa27335 graph.
+    Instace of Candidatus Rokubacteria bacterium GWA2_73_35 graph.
 
 	References
 	---------------------

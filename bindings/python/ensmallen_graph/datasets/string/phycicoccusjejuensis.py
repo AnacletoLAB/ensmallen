@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycicoccusJejuensis.
+This file offers the methods to automatically retrieve the graph Phycicoccus jejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycicoccusJejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycicoccusJejuensis graph.
+    """Return new instance of the Phycicoccus jejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhycicoccusJejuensis(
 
     Returns
     -----------------------
-    Instace of PhycicoccusJejuensis graph.
+    Instace of Phycicoccus jejuensis graph.
 
 	References
 	---------------------

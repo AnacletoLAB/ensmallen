@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasParapaucimobilis.
+This file offers the methods to automatically retrieve the graph Sphingomonas parapaucimobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasParapaucimobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasParapaucimobilis graph.
+    """Return new instance of the Sphingomonas parapaucimobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasParapaucimobilis(
 
     Returns
     -----------------------
-    Instace of SphingomonasParapaucimobilis graph.
+    Instace of Sphingomonas parapaucimobilis graph.
 
 	References
 	---------------------

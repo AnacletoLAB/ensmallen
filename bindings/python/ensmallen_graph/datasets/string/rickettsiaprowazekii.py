@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaProwazekii.
+This file offers the methods to automatically retrieve the graph Rickettsia prowazekii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaProwazekii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaProwazekii graph.
+    """Return new instance of the Rickettsia prowazekii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaProwazekii(
 
     Returns
     -----------------------
-    Instace of RickettsiaProwazekii graph.
+    Instace of Rickettsia prowazekii graph.
 
 	References
 	---------------------

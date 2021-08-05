@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoalloteichusHymeniacidonis.
+This file offers the methods to automatically retrieve the graph Actinoalloteichus hymeniacidonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoalloteichusHymeniacidonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoalloteichusHymeniacidonis graph.
+    """Return new instance of the Actinoalloteichus hymeniacidonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinoalloteichusHymeniacidonis(
 
     Returns
     -----------------------
-    Instace of ActinoalloteichusHymeniacidonis graph.
+    Instace of Actinoalloteichus hymeniacidonis graph.
 
 	References
 	---------------------

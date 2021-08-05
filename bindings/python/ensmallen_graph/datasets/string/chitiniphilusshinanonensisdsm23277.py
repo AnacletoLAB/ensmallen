@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitiniphilusShinanonensisDsm23277.
+This file offers the methods to automatically retrieve the graph Chitiniphilus shinanonensis DSM 23277.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitiniphilusShinanonensisDsm23277(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitiniphilusShinanonensisDsm23277 graph.
+    """Return new instance of the Chitiniphilus shinanonensis DSM 23277 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitiniphilusShinanonensisDsm23277(
 
     Returns
     -----------------------
-    Instace of ChitiniphilusShinanonensisDsm23277 graph.
+    Instace of Chitiniphilus shinanonensis DSM 23277 graph.
 
 	References
 	---------------------

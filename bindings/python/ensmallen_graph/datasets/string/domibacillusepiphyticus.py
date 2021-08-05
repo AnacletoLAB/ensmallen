@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DomibacillusEpiphyticus.
+This file offers the methods to automatically retrieve the graph Domibacillus epiphyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DomibacillusEpiphyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DomibacillusEpiphyticus graph.
+    """Return new instance of the Domibacillus epiphyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DomibacillusEpiphyticus(
 
     Returns
     -----------------------
-    Instace of DomibacillusEpiphyticus graph.
+    Instace of Domibacillus epiphyticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPerfringensAtcc13124.
+This file offers the methods to automatically retrieve the graph Clostridium perfringens ATCC13124.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPerfringensAtcc13124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPerfringensAtcc13124 graph.
+    """Return new instance of the Clostridium perfringens ATCC13124 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumPerfringensAtcc13124(
 
     Returns
     -----------------------
-    Instace of ClostridiumPerfringensAtcc13124 graph.
+    Instace of Clostridium perfringens ATCC13124 graph.
 
 	References
 	---------------------

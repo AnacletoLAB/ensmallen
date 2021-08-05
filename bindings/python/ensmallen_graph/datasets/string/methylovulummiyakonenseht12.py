@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylovulumMiyakonenseHt12.
+This file offers the methods to automatically retrieve the graph Methylovulum miyakonense HT12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylovulumMiyakonenseHt12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylovulumMiyakonenseHt12 graph.
+    """Return new instance of the Methylovulum miyakonense HT12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylovulumMiyakonenseHt12(
 
     Returns
     -----------------------
-    Instace of MethylovulumMiyakonenseHt12 graph.
+    Instace of Methylovulum miyakonense HT12 graph.
 
 	References
 	---------------------

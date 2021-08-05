@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeomonachusSchauinslandi.
+This file offers the methods to automatically retrieve the graph Neomonachus schauinslandi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeomonachusSchauinslandi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeomonachusSchauinslandi graph.
+    """Return new instance of the Neomonachus schauinslandi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeomonachusSchauinslandi(
 
     Returns
     -----------------------
-    Instace of NeomonachusSchauinslandi graph.
+    Instace of Neomonachus schauinslandi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinosporangiumSpNrrlb3428.
+This file offers the methods to automatically retrieve the graph Actinosporangium sp. NRRLB3428.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinosporangiumSpNrrlb3428(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinosporangiumSpNrrlb3428 graph.
+    """Return new instance of the Actinosporangium sp. NRRLB3428 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinosporangiumSpNrrlb3428(
 
     Returns
     -----------------------
-    Instace of ActinosporangiumSpNrrlb3428 graph.
+    Instace of Actinosporangium sp. NRRLB3428 graph.
 
 	References
 	---------------------

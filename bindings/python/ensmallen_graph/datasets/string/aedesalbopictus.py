@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AedesAlbopictus.
+This file offers the methods to automatically retrieve the graph Aedes albopictus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AedesAlbopictus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AedesAlbopictus graph.
+    """Return new instance of the Aedes albopictus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AedesAlbopictus(
 
     Returns
     -----------------------
-    Instace of AedesAlbopictus graph.
+    Instace of Aedes albopictus graph.
 
 	References
 	---------------------

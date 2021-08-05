@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VanderwaltozymaPolyspora.
+This file offers the methods to automatically retrieve the graph Vanderwaltozyma polyspora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VanderwaltozymaPolyspora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VanderwaltozymaPolyspora graph.
+    """Return new instance of the Vanderwaltozyma polyspora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VanderwaltozymaPolyspora(
 
     Returns
     -----------------------
-    Instace of VanderwaltozymaPolyspora graph.
+    Instace of Vanderwaltozyma polyspora graph.
 
 	References
 	---------------------

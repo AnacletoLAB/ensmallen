@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpKnhs209.
+This file offers the methods to automatically retrieve the graph Clostridium sp. KNHs209.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpKnhs209(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpKnhs209 graph.
+    """Return new instance of the Clostridium sp. KNHs209 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpKnhs209(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpKnhs209 graph.
+    Instace of Clostridium sp. KNHs209 graph.
 
 	References
 	---------------------

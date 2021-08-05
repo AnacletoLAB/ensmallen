@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioIshigakensis.
+This file offers the methods to automatically retrieve the graph Vibrio ishigakensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioIshigakensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioIshigakensis graph.
+    """Return new instance of the Vibrio ishigakensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioIshigakensis(
 
     Returns
     -----------------------
-    Instace of VibrioIshigakensis graph.
+    Instace of Vibrio ishigakensis graph.
 
 	References
 	---------------------

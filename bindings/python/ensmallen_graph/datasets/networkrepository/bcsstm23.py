@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstm23.
+This file offers the methods to automatically retrieve the graph bcsstm23.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstm23(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstm23 graph.
+    """Return new instance of the bcsstm23 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstm23(
 
     Returns
     -----------------------
-    Instace of Bcsstm23 graph.
+    Instace of bcsstm23 graph.
 
 	References
 	---------------------

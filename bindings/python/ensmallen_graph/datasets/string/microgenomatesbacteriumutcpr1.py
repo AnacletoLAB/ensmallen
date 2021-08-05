@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesBacteriumUtcpr1.
+This file offers the methods to automatically retrieve the graph Microgenomates bacterium UTCPR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesBacteriumUtcpr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesBacteriumUtcpr1 graph.
+    """Return new instance of the Microgenomates bacterium UTCPR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesBacteriumUtcpr1(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesBacteriumUtcpr1 graph.
+    Instace of Microgenomates bacterium UTCPR1 graph.
 
 	References
 	---------------------

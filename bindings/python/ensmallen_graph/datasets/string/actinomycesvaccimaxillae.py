@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesVaccimaxillae.
+This file offers the methods to automatically retrieve the graph Actinomyces vaccimaxillae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesVaccimaxillae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesVaccimaxillae graph.
+    """Return new instance of the Actinomyces vaccimaxillae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesVaccimaxillae(
 
     Returns
     -----------------------
-    Instace of ActinomycesVaccimaxillae graph.
+    Instace of Actinomyces vaccimaxillae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpCf284.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. CF284.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpCf284(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpCf284 graph.
+    """Return new instance of the Chryseobacterium sp. CF284 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumSpCf284(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpCf284 graph.
+    Instace of Chryseobacterium sp. CF284 graph.
 
 	References
 	---------------------

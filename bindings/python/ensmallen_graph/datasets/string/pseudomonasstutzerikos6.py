@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriKos6.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri KOS6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriKos6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriKos6 graph.
+    """Return new instance of the Pseudomonas stutzeri KOS6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriKos6(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriKos6 graph.
+    Instace of Pseudomonas stutzeri KOS6 graph.
 
 	References
 	---------------------

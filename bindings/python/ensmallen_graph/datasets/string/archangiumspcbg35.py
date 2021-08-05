@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchangiumSpCbG35.
+This file offers the methods to automatically retrieve the graph Archangium sp. Cb G35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchangiumSpCbG35(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchangiumSpCbG35 graph.
+    """Return new instance of the Archangium sp. Cb G35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArchangiumSpCbG35(
 
     Returns
     -----------------------
-    Instace of ArchangiumSpCbG35 graph.
+    Instace of Archangium sp. Cb G35 graph.
 
 	References
 	---------------------

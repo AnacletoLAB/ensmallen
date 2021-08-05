@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterRudis.
+This file offers the methods to automatically retrieve the graph Acinetobacter rudis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterRudis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterRudis graph.
+    """Return new instance of the Acinetobacter rudis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterRudis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterRudis graph.
+    Instace of Acinetobacter rudis graph.
 
 	References
 	---------------------

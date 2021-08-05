@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph C5009.
+This file offers the methods to automatically retrieve the graph C500-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def C5009(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the C5009 graph.
+    """Return new instance of the C500-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def C5009(
 
     Returns
     -----------------------
-    Instace of C5009 graph.
+    Instace of C500-9 graph.
 
 	References
 	---------------------

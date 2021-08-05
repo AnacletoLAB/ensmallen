@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCollagenovoransDsm3089.
+This file offers the methods to automatically retrieve the graph Clostridium collagenovorans DSM 3089.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCollagenovoransDsm3089(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCollagenovoransDsm3089 graph.
+    """Return new instance of the Clostridium collagenovorans DSM 3089 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumCollagenovoransDsm3089(
 
     Returns
     -----------------------
-    Instace of ClostridiumCollagenovoransDsm3089 graph.
+    Instace of Clostridium collagenovorans DSM 3089 graph.
 
 	References
 	---------------------

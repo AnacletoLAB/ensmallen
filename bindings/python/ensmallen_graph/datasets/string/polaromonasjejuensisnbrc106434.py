@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasJejuensisNbrc106434.
+This file offers the methods to automatically retrieve the graph Polaromonas jejuensis NBRC 106434.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasJejuensisNbrc106434(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasJejuensisNbrc106434 graph.
+    """Return new instance of the Polaromonas jejuensis NBRC 106434 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaromonasJejuensisNbrc106434(
 
     Returns
     -----------------------
-    Instace of PolaromonasJejuensisNbrc106434 graph.
+    Instace of Polaromonas jejuensis NBRC 106434 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusProteolyticus.
+This file offers the methods to automatically retrieve the graph Deinococcus proteolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusProteolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusProteolyticus graph.
+    """Return new instance of the Deinococcus proteolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusProteolyticus(
 
     Returns
     -----------------------
-    Instace of DeinococcusProteolyticus graph.
+    Instace of Deinococcus proteolyticus graph.
 
 	References
 	---------------------

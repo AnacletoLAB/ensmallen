@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaIhumii.
+This file offers the methods to automatically retrieve the graph Prevotella ihumii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaIhumii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaIhumii graph.
+    """Return new instance of the Prevotella ihumii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaIhumii(
 
     Returns
     -----------------------
-    Instace of PrevotellaIhumii graph.
+    Instace of Prevotella ihumii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerpetosiphonAurantiacus.
+This file offers the methods to automatically retrieve the graph Herpetosiphon aurantiacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerpetosiphonAurantiacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerpetosiphonAurantiacus graph.
+    """Return new instance of the Herpetosiphon aurantiacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerpetosiphonAurantiacus(
 
     Returns
     -----------------------
-    Instace of HerpetosiphonAurantiacus graph.
+    Instace of Herpetosiphon aurantiacus graph.
 
 	References
 	---------------------

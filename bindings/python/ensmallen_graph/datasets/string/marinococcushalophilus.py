@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinococcusHalophilus.
+This file offers the methods to automatically retrieve the graph Marinococcus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinococcusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinococcusHalophilus graph.
+    """Return new instance of the Marinococcus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinococcusHalophilus(
 
     Returns
     -----------------------
-    Instace of MarinococcusHalophilus graph.
+    Instace of Marinococcus halophilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SclerotiniaSclerotiorum1980Uf70.
+This file offers the methods to automatically retrieve the graph Sclerotinia sclerotiorum 1980 UF-70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SclerotiniaSclerotiorum1980Uf70(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SclerotiniaSclerotiorum1980Uf70 graph.
+    """Return new instance of the Sclerotinia sclerotiorum 1980 UF-70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SclerotiniaSclerotiorum1980Uf70(
 
     Returns
     -----------------------
-    Instace of SclerotiniaSclerotiorum1980Uf70 graph.
+    Instace of Sclerotinia sclerotiorum 1980 UF-70 graph.
 
 	References
 	---------------------

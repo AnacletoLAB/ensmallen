@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacterialesBacterium5039.
+This file offers the methods to automatically retrieve the graph Sphingobacteriales bacterium 50-39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacterialesBacterium5039(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacterialesBacterium5039 graph.
+    """Return new instance of the Sphingobacteriales bacterium 50-39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacterialesBacterium5039(
 
     Returns
     -----------------------
-    Instace of SphingobacterialesBacterium5039 graph.
+    Instace of Sphingobacteriales bacterium 50-39 graph.
 
 	References
 	---------------------

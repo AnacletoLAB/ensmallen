@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetragenococcusSolitariusNbrc100494.
+This file offers the methods to automatically retrieve the graph Tetragenococcus solitarius NBRC 100494.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetragenococcusSolitariusNbrc100494(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetragenococcusSolitariusNbrc100494 graph.
+    """Return new instance of the Tetragenococcus solitarius NBRC 100494 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetragenococcusSolitariusNbrc100494(
 
     Returns
     -----------------------
-    Instace of TetragenococcusSolitariusNbrc100494 graph.
+    Instace of Tetragenococcus solitarius NBRC 100494 graph.
 
 	References
 	---------------------

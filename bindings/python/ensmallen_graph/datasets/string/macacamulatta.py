@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacacaMulatta.
+This file offers the methods to automatically retrieve the graph Macaca mulatta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacacaMulatta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacacaMulatta graph.
+    """Return new instance of the Macaca mulatta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MacacaMulatta(
 
     Returns
     -----------------------
-    Instace of MacacaMulatta graph.
+    Instace of Macaca mulatta graph.
 
 	References
 	---------------------

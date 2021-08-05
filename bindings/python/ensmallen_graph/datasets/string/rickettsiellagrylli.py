@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiellaGrylli.
+This file offers the methods to automatically retrieve the graph Rickettsiella grylli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiellaGrylli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiellaGrylli graph.
+    """Return new instance of the Rickettsiella grylli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiellaGrylli(
 
     Returns
     -----------------------
-    Instace of RickettsiellaGrylli graph.
+    Instace of Rickettsiella grylli graph.
 
 	References
 	---------------------

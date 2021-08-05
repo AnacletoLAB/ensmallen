@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeochlamydiaSpEps4.
+This file offers the methods to automatically retrieve the graph Neochlamydia sp. EPS4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeochlamydiaSpEps4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeochlamydiaSpEps4 graph.
+    """Return new instance of the Neochlamydia sp. EPS4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeochlamydiaSpEps4(
 
     Returns
     -----------------------
-    Instace of NeochlamydiaSpEps4 graph.
+    Instace of Neochlamydia sp. EPS4 graph.
 
 	References
 	---------------------

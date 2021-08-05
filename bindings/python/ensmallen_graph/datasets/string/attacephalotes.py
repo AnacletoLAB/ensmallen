@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AttaCephalotes.
+This file offers the methods to automatically retrieve the graph Atta cephalotes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AttaCephalotes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AttaCephalotes graph.
+    """Return new instance of the Atta cephalotes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AttaCephalotes(
 
     Returns
     -----------------------
-    Instace of AttaCephalotes graph.
+    Instace of Atta cephalotes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeorickettsiaHelminthoecaStrOregon.
+This file offers the methods to automatically retrieve the graph Neorickettsia helminthoeca str. Oregon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeorickettsiaHelminthoecaStrOregon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeorickettsiaHelminthoecaStrOregon graph.
+    """Return new instance of the Neorickettsia helminthoeca str. Oregon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeorickettsiaHelminthoecaStrOregon(
 
     Returns
     -----------------------
-    Instace of NeorickettsiaHelminthoecaStrOregon graph.
+    Instace of Neorickettsia helminthoeca str. Oregon graph.
 
 	References
 	---------------------

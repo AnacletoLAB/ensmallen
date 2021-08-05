@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumGa0077535.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium Ga0077535.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumGa0077535(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumGa0077535 graph.
+    """Return new instance of the Alphaproteobacteria bacterium Ga0077535 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumGa0077535(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumGa0077535 graph.
+    Instace of Alphaproteobacteria bacterium Ga0077535 graph.
 
 	References
 	---------------------

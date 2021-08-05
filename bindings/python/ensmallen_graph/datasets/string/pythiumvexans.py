@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PythiumVexans.
+This file offers the methods to automatically retrieve the graph Pythium vexans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PythiumVexans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PythiumVexans graph.
+    """Return new instance of the Pythium vexans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PythiumVexans(
 
     Returns
     -----------------------
-    Instace of PythiumVexans graph.
+    Instace of Pythium vexans graph.
 
 	References
 	---------------------

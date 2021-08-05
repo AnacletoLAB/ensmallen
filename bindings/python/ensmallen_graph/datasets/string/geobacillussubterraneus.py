@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusSubterraneus.
+This file offers the methods to automatically retrieve the graph Geobacillus subterraneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusSubterraneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusSubterraneus graph.
+    """Return new instance of the Geobacillus subterraneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacillusSubterraneus(
 
     Returns
     -----------------------
-    Instace of GeobacillusSubterraneus graph.
+    Instace of Geobacillus subterraneus graph.
 
 	References
 	---------------------

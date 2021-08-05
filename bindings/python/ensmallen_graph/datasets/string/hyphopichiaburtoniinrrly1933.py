@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphopichiaBurtoniiNrrlY1933.
+This file offers the methods to automatically retrieve the graph Hyphopichia burtonii NRRL Y-1933.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphopichiaBurtoniiNrrlY1933(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphopichiaBurtoniiNrrlY1933 graph.
+    """Return new instance of the Hyphopichia burtonii NRRL Y-1933 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphopichiaBurtoniiNrrlY1933(
 
     Returns
     -----------------------
-    Instace of HyphopichiaBurtoniiNrrlY1933 graph.
+    Instace of Hyphopichia burtonii NRRL Y-1933 graph.
 
 	References
 	---------------------

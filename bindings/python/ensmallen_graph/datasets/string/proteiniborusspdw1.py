@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniborusSpDw1.
+This file offers the methods to automatically retrieve the graph Proteiniborus sp. DW1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniborusSpDw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniborusSpDw1 graph.
+    """Return new instance of the Proteiniborus sp. DW1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteiniborusSpDw1(
 
     Returns
     -----------------------
-    Instace of ProteiniborusSpDw1 graph.
+    Instace of Proteiniborus sp. DW1 graph.
 
 	References
 	---------------------

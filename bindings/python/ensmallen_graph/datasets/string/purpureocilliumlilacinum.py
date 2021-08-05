@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PurpureocilliumLilacinum.
+This file offers the methods to automatically retrieve the graph Purpureocillium lilacinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PurpureocilliumLilacinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PurpureocilliumLilacinum graph.
+    """Return new instance of the Purpureocillium lilacinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PurpureocilliumLilacinum(
 
     Returns
     -----------------------
-    Instace of PurpureocilliumLilacinum graph.
+    Instace of Purpureocillium lilacinum graph.
 
 	References
 	---------------------

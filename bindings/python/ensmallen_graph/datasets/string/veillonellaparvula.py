@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaParvula.
+This file offers the methods to automatically retrieve the graph Veillonella parvula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaParvula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaParvula graph.
+    """Return new instance of the Veillonella parvula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaParvula(
 
     Returns
     -----------------------
-    Instace of VeillonellaParvula graph.
+    Instace of Veillonella parvula graph.
 
 	References
 	---------------------

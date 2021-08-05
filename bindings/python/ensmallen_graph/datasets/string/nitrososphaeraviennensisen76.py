@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrososphaeraViennensisEn76.
+This file offers the methods to automatically retrieve the graph Nitrososphaera viennensis EN76.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrososphaeraViennensisEn76(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrososphaeraViennensisEn76 graph.
+    """Return new instance of the Nitrososphaera viennensis EN76 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrososphaeraViennensisEn76(
 
     Returns
     -----------------------
-    Instace of NitrososphaeraViennensisEn76 graph.
+    Instace of Nitrososphaera viennensis EN76 graph.
 
 	References
 	---------------------

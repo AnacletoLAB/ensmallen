@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumGwa24611.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium GWA2_46_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumGwa24611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumGwa24611 graph.
+    """Return new instance of the Nitrospirae bacterium GWA2_46_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumGwa24611(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumGwa24611 graph.
+    Instace of Nitrospirae bacterium GWA2_46_11 graph.
 
 	References
 	---------------------

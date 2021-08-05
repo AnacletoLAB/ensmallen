@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusSpBg.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus sp. BG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusSpBg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusSpBg graph.
+    """Return new instance of the Desulfosporosinus sp. BG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfosporosinusSpBg(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusSpBg graph.
+    Instace of Desulfosporosinus sp. BG graph.
 
 	References
 	---------------------

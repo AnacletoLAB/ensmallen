@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobutyrivibrioXylanivorans.
+This file offers the methods to automatically retrieve the graph Pseudobutyrivibrio xylanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobutyrivibrioXylanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobutyrivibrioXylanivorans graph.
+    """Return new instance of the Pseudobutyrivibrio xylanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudobutyrivibrioXylanivorans(
 
     Returns
     -----------------------
-    Instace of PseudobutyrivibrioXylanivorans graph.
+    Instace of Pseudobutyrivibrio xylanivorans graph.
 
 	References
 	---------------------

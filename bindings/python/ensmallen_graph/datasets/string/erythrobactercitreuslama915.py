@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterCitreusLama915.
+This file offers the methods to automatically retrieve the graph Erythrobacter citreus LAMA 915.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterCitreusLama915(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterCitreusLama915 graph.
+    """Return new instance of the Erythrobacter citreus LAMA 915 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterCitreusLama915(
 
     Returns
     -----------------------
-    Instace of ErythrobacterCitreusLama915 graph.
+    Instace of Erythrobacter citreus LAMA 915 graph.
 
 	References
 	---------------------

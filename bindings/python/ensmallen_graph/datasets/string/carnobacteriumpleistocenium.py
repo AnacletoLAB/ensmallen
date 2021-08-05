@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumPleistocenium.
+This file offers the methods to automatically retrieve the graph Carnobacterium pleistocenium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumPleistocenium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumPleistocenium graph.
+    """Return new instance of the Carnobacterium pleistocenium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumPleistocenium(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumPleistocenium graph.
+    Instace of Carnobacterium pleistocenium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerostipesHadrus.
+This file offers the methods to automatically retrieve the graph Anaerostipes hadrus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerostipesHadrus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerostipesHadrus graph.
+    """Return new instance of the Anaerostipes hadrus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerostipesHadrus(
 
     Returns
     -----------------------
-    Instace of AnaerostipesHadrus graph.
+    Instace of Anaerostipes hadrus graph.
 
 	References
 	---------------------

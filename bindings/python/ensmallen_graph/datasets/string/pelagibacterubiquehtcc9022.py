@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacterUbiqueHtcc9022.
+This file offers the methods to automatically retrieve the graph Pelagibacter ubique HTCC9022.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacterUbiqueHtcc9022(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacterUbiqueHtcc9022 graph.
+    """Return new instance of the Pelagibacter ubique HTCC9022 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacterUbiqueHtcc9022(
 
     Returns
     -----------------------
-    Instace of PelagibacterUbiqueHtcc9022 graph.
+    Instace of Pelagibacter ubique HTCC9022 graph.
 
 	References
 	---------------------

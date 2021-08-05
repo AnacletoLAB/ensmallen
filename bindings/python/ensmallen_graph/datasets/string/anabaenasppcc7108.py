@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabaenaSpPcc7108.
+This file offers the methods to automatically retrieve the graph Anabaena sp. PCC7108.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabaenaSpPcc7108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabaenaSpPcc7108 graph.
+    """Return new instance of the Anabaena sp. PCC7108 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnabaenaSpPcc7108(
 
     Returns
     -----------------------
-    Instace of AnabaenaSpPcc7108 graph.
+    Instace of Anabaena sp. PCC7108 graph.
 
 	References
 	---------------------

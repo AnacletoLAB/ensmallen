@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenimonasThermophila.
+This file offers the methods to automatically retrieve the graph Hydrogenimonas thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenimonasThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenimonasThermophila graph.
+    """Return new instance of the Hydrogenimonas thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenimonasThermophila(
 
     Returns
     -----------------------
-    Instace of HydrogenimonasThermophila graph.
+    Instace of Hydrogenimonas thermophila graph.
 
 	References
 	---------------------

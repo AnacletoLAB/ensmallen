@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasComposti.
+This file offers the methods to automatically retrieve the graph Pseudomonas composti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasComposti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasComposti graph.
+    """Return new instance of the Pseudomonas composti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasComposti(
 
     Returns
     -----------------------
-    Instace of PseudomonasComposti graph.
+    Instace of Pseudomonas composti graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaPlatycodiSf21.
+This file offers the methods to automatically retrieve the graph Asaia platycodi SF21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaiaPlatycodiSf21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaPlatycodiSf21 graph.
+    """Return new instance of the Asaia platycodi SF21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AsaiaPlatycodiSf21(
 
     Returns
     -----------------------
-    Instace of AsaiaPlatycodiSf21 graph.
+    Instace of Asaia platycodi SF21 graph.
 
 	References
 	---------------------

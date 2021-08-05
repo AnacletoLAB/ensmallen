@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiorhodospiraSibirica.
+This file offers the methods to automatically retrieve the graph Thiorhodospira sibirica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiorhodospiraSibirica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiorhodospiraSibirica graph.
+    """Return new instance of the Thiorhodospira sibirica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiorhodospiraSibirica(
 
     Returns
     -----------------------
-    Instace of ThiorhodospiraSibirica graph.
+    Instace of Thiorhodospira sibirica graph.
 
 	References
 	---------------------

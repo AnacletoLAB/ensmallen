@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSpicheri.
+This file offers the methods to automatically retrieve the graph Lactobacillus spicheri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSpicheri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSpicheri graph.
+    """Return new instance of the Lactobacillus spicheri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSpicheri(
 
     Returns
     -----------------------
-    Instace of LactobacillusSpicheri graph.
+    Instace of Lactobacillus spicheri graph.
 
 	References
 	---------------------

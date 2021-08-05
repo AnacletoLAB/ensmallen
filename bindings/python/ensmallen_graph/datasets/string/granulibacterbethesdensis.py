@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulibacterBethesdensis.
+This file offers the methods to automatically retrieve the graph Granulibacter bethesdensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulibacterBethesdensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulibacterBethesdensis graph.
+    """Return new instance of the Granulibacter bethesdensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GranulibacterBethesdensis(
 
     Returns
     -----------------------
-    Instace of GranulibacterBethesdensis graph.
+    Instace of Granulibacter bethesdensis graph.
 
 	References
 	---------------------

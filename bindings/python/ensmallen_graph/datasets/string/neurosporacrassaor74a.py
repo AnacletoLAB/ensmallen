@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeurosporaCrassaOr74a.
+This file offers the methods to automatically retrieve the graph Neurospora crassa OR74A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeurosporaCrassaOr74a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeurosporaCrassaOr74a graph.
+    """Return new instance of the Neurospora crassa OR74A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeurosporaCrassaOr74a(
 
     Returns
     -----------------------
-    Instace of NeurosporaCrassaOr74a graph.
+    Instace of Neurospora crassa OR74A graph.
 
 	References
 	---------------------

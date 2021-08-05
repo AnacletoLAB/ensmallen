@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSpDb56.
+This file offers the methods to automatically retrieve the graph Bartonella sp. DB56.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSpDb56(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSpDb56 graph.
+    """Return new instance of the Bartonella sp. DB56 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaSpDb56(
 
     Returns
     -----------------------
-    Instace of BartonellaSpDb56 graph.
+    Instace of Bartonella sp. DB56 graph.
 
 	References
 	---------------------

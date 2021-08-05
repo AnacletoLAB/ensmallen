@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaAminer.
+This file offers the methods to automatically retrieve the graph ca-aminer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaAminer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaAminer graph.
+    """Return new instance of the ca-aminer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaAminer(
 
     Returns
     -----------------------
-    Instace of CaAminer graph.
+    Instace of ca-aminer graph.
 
 	References
 	---------------------

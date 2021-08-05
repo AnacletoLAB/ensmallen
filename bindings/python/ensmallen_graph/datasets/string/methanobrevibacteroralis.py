@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterOralis.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter oralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterOralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterOralis graph.
+    """Return new instance of the Methanobrevibacter oralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterOralis(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterOralis graph.
+    Instace of Methanobrevibacter oralis graph.
 
 	References
 	---------------------

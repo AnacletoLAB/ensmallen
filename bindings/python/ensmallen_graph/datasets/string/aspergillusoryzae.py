@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusOryzae.
+This file offers the methods to automatically retrieve the graph Aspergillus oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusOryzae graph.
+    """Return new instance of the Aspergillus oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusOryzae(
 
     Returns
     -----------------------
-    Instace of AspergillusOryzae graph.
+    Instace of Aspergillus oryzae graph.
 
 	References
 	---------------------

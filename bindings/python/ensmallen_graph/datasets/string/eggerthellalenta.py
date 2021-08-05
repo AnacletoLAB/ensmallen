@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EggerthellaLenta.
+This file offers the methods to automatically retrieve the graph Eggerthella lenta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EggerthellaLenta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EggerthellaLenta graph.
+    """Return new instance of the Eggerthella lenta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EggerthellaLenta(
 
     Returns
     -----------------------
-    Instace of EggerthellaLenta graph.
+    Instace of Eggerthella lenta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaCynodegmi.
+This file offers the methods to automatically retrieve the graph Capnocytophaga cynodegmi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaCynodegmi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaCynodegmi graph.
+    """Return new instance of the Capnocytophaga cynodegmi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaCynodegmi(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaCynodegmi graph.
+    Instace of Capnocytophaga cynodegmi graph.
 
 	References
 	---------------------

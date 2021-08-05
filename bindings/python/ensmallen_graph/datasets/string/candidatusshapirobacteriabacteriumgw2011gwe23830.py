@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusShapirobacteriaBacteriumGw2011Gwe23830.
+This file offers the methods to automatically retrieve the graph Candidatus Shapirobacteria bacterium GW2011_GWE2_38_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusShapirobacteriaBacteriumGw2011Gwe23830(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusShapirobacteriaBacteriumGw2011Gwe23830 graph.
+    """Return new instance of the Candidatus Shapirobacteria bacterium GW2011_GWE2_38_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusShapirobacteriaBacteriumGw2011Gwe23830(
 
     Returns
     -----------------------
-    Instace of CandidatusShapirobacteriaBacteriumGw2011Gwe23830 graph.
+    Instace of Candidatus Shapirobacteria bacterium GW2011_GWE2_38_30 graph.
 
 	References
 	---------------------

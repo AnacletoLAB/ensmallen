@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaSpAngS4.
+This file offers the methods to automatically retrieve the graph Ruegeria sp. ANG-S4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaSpAngS4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaSpAngS4 graph.
+    """Return new instance of the Ruegeria sp. ANG-S4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaSpAngS4(
 
     Returns
     -----------------------
-    Instace of RuegeriaSpAngS4 graph.
+    Instace of Ruegeria sp. ANG-S4 graph.
 
 	References
 	---------------------

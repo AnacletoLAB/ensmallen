@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeF0167.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae F0167.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeF0167(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeF0167 graph.
+    """Return new instance of the Lachnospiraceae F0167 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeF0167(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeF0167 graph.
+    Instace of Lachnospiraceae F0167 graph.
 
 	References
 	---------------------

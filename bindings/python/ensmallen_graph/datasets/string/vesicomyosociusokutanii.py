@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VesicomyosociusOkutanii.
+This file offers the methods to automatically retrieve the graph Vesicomyosocius okutanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VesicomyosociusOkutanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VesicomyosociusOkutanii graph.
+    """Return new instance of the Vesicomyosocius okutanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VesicomyosociusOkutanii(
 
     Returns
     -----------------------
-    Instace of VesicomyosociusOkutanii graph.
+    Instace of Vesicomyosocius okutanii graph.
 
 	References
 	---------------------

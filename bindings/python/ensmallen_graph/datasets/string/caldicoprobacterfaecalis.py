@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicoprobacterFaecalis.
+This file offers the methods to automatically retrieve the graph Caldicoprobacter faecalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicoprobacterFaecalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicoprobacterFaecalis graph.
+    """Return new instance of the Caldicoprobacter faecalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldicoprobacterFaecalis(
 
     Returns
     -----------------------
-    Instace of CaldicoprobacterFaecalis graph.
+    Instace of Caldicoprobacter faecalis graph.
 
 	References
 	---------------------

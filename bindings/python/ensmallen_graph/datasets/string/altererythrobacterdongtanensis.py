@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterDongtanensis.
+This file offers the methods to automatically retrieve the graph Altererythrobacter dongtanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterDongtanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterDongtanensis graph.
+    """Return new instance of the Altererythrobacter dongtanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterDongtanensis(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterDongtanensis graph.
+    Instace of Altererythrobacter dongtanensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalidrisPygmaea.
+This file offers the methods to automatically retrieve the graph Calidris pygmaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalidrisPygmaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalidrisPygmaea graph.
+    """Return new instance of the Calidris pygmaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CalidrisPygmaea(
 
     Returns
     -----------------------
-    Instace of CalidrisPygmaea graph.
+    Instace of Calidris pygmaea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParastrongyloidesTrichosuri.
+This file offers the methods to automatically retrieve the graph Parastrongyloides trichosuri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParastrongyloidesTrichosuri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParastrongyloidesTrichosuri graph.
+    """Return new instance of the Parastrongyloides trichosuri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParastrongyloidesTrichosuri(
 
     Returns
     -----------------------
-    Instace of ParastrongyloidesTrichosuri graph.
+    Instace of Parastrongyloides trichosuri graph.
 
 	References
 	---------------------

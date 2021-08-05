@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesGeorgiae.
+This file offers the methods to automatically retrieve the graph Actinomyces georgiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesGeorgiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesGeorgiae graph.
+    """Return new instance of the Actinomyces georgiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesGeorgiae(
 
     Returns
     -----------------------
-    Instace of ActinomycesGeorgiae graph.
+    Instace of Actinomyces georgiae graph.
 
 	References
 	---------------------

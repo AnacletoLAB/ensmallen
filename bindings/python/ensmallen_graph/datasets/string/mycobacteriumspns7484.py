@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpNs7484.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. NS-7484.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpNs7484(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpNs7484 graph.
+    """Return new instance of the Mycobacterium sp. NS-7484 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpNs7484(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpNs7484 graph.
+    Instace of Mycobacterium sp. NS-7484 graph.
 
 	References
 	---------------------

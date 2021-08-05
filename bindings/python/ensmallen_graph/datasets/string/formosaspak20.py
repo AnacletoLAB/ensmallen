@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormosaSpAk20.
+This file offers the methods to automatically retrieve the graph Formosa sp. AK20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormosaSpAk20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormosaSpAk20 graph.
+    """Return new instance of the Formosa sp. AK20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FormosaSpAk20(
 
     Returns
     -----------------------
-    Instace of FormosaSpAk20 graph.
+    Instace of Formosa sp. AK20 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterHolothuriorum.
+This file offers the methods to automatically retrieve the graph Salegentibacter holothuriorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterHolothuriorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterHolothuriorum graph.
+    """Return new instance of the Salegentibacter holothuriorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterHolothuriorum(
 
     Returns
     -----------------------
-    Instace of SalegentibacterHolothuriorum graph.
+    Instace of Salegentibacter holothuriorum graph.
 
 	References
 	---------------------

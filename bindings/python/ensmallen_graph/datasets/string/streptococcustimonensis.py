@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusTimonensis.
+This file offers the methods to automatically retrieve the graph Streptococcus timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusTimonensis graph.
+    """Return new instance of the Streptococcus timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusTimonensis(
 
     Returns
     -----------------------
-    Instace of StreptococcusTimonensis graph.
+    Instace of Streptococcus timonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychromonasSpCnpt3.
+This file offers the methods to automatically retrieve the graph Psychromonas sp. CNPT3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychromonasSpCnpt3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychromonasSpCnpt3 graph.
+    """Return new instance of the Psychromonas sp. CNPT3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychromonasSpCnpt3(
 
     Returns
     -----------------------
-    Instace of PsychromonasSpCnpt3 graph.
+    Instace of Psychromonas sp. CNPT3 graph.
 
 	References
 	---------------------

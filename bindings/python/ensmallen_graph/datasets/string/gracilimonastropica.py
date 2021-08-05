@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilimonasTropica.
+This file offers the methods to automatically retrieve the graph Gracilimonas tropica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilimonasTropica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilimonasTropica graph.
+    """Return new instance of the Gracilimonas tropica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GracilimonasTropica(
 
     Returns
     -----------------------
-    Instace of GracilimonasTropica graph.
+    Instace of Gracilimonas tropica graph.
 
 	References
 	---------------------

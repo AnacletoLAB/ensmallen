@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StrongyloidesRatti.
+This file offers the methods to automatically retrieve the graph Strongyloides ratti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StrongyloidesRatti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StrongyloidesRatti graph.
+    """Return new instance of the Strongyloides ratti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StrongyloidesRatti(
 
     Returns
     -----------------------
-    Instace of StrongyloidesRatti graph.
+    Instace of Strongyloides ratti graph.
 
 	References
 	---------------------

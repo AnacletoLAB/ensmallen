@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KinetoplastibacteriumDesouzaii.
+This file offers the methods to automatically retrieve the graph Kinetoplastibacterium desouzaii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KinetoplastibacteriumDesouzaii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KinetoplastibacteriumDesouzaii graph.
+    """Return new instance of the Kinetoplastibacterium desouzaii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KinetoplastibacteriumDesouzaii(
 
     Returns
     -----------------------
-    Instace of KinetoplastibacteriumDesouzaii graph.
+    Instace of Kinetoplastibacterium desouzaii graph.
 
 	References
 	---------------------

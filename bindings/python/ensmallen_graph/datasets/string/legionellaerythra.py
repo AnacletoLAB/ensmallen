@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaErythra.
+This file offers the methods to automatically retrieve the graph Legionella erythra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaErythra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaErythra graph.
+    """Return new instance of the Legionella erythra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaErythra(
 
     Returns
     -----------------------
-    Instace of LegionellaErythra graph.
+    Instace of Legionella erythra graph.
 
 	References
 	---------------------

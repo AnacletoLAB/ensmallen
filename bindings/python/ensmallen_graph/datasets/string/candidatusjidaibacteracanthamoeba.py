@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusJidaibacterAcanthamoeba.
+This file offers the methods to automatically retrieve the graph Candidatus Jidaibacter acanthamoeba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusJidaibacterAcanthamoeba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusJidaibacterAcanthamoeba graph.
+    """Return new instance of the Candidatus Jidaibacter acanthamoeba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusJidaibacterAcanthamoeba(
 
     Returns
     -----------------------
-    Instace of CandidatusJidaibacterAcanthamoeba graph.
+    Instace of Candidatus Jidaibacter acanthamoeba graph.
 
 	References
 	---------------------

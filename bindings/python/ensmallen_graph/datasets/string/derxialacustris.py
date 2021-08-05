@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DerxiaLacustris.
+This file offers the methods to automatically retrieve the graph Derxia lacustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DerxiaLacustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DerxiaLacustris graph.
+    """Return new instance of the Derxia lacustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DerxiaLacustris(
 
     Returns
     -----------------------
-    Instace of DerxiaLacustris graph.
+    Instace of Derxia lacustris graph.
 
 	References
 	---------------------

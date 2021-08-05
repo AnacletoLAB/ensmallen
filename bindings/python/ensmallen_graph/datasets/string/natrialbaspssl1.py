@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaSpSsl1.
+This file offers the methods to automatically retrieve the graph Natrialba sp. SSL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaSpSsl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaSpSsl1 graph.
+    """Return new instance of the Natrialba sp. SSL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatrialbaSpSsl1(
 
     Returns
     -----------------------
-    Instace of NatrialbaSpSsl1 graph.
+    Instace of Natrialba sp. SSL1 graph.
 
 	References
 	---------------------

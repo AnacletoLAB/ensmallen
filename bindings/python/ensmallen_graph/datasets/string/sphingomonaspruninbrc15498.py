@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasPruniNbrc15498.
+This file offers the methods to automatically retrieve the graph Sphingomonas pruni NBRC 15498.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasPruniNbrc15498(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasPruniNbrc15498 graph.
+    """Return new instance of the Sphingomonas pruni NBRC 15498 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasPruniNbrc15498(
 
     Returns
     -----------------------
-    Instace of SphingomonasPruniNbrc15498 graph.
+    Instace of Sphingomonas pruni NBRC 15498 graph.
 
 	References
 	---------------------

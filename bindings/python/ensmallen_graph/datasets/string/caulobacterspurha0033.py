@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpUrha0033.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. URHA0033.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSpUrha0033(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpUrha0033 graph.
+    """Return new instance of the Caulobacter sp. URHA0033 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacterSpUrha0033(
 
     Returns
     -----------------------
-    Instace of CaulobacterSpUrha0033 graph.
+    Instace of Caulobacter sp. URHA0033 graph.
 
 	References
 	---------------------

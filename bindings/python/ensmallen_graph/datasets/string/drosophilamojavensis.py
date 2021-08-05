@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaMojavensis.
+This file offers the methods to automatically retrieve the graph Drosophila mojavensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaMojavensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaMojavensis graph.
+    """Return new instance of the Drosophila mojavensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaMojavensis(
 
     Returns
     -----------------------
-    Instace of DrosophilaMojavensis graph.
+    Instace of Drosophila mojavensis graph.
 
 	References
 	---------------------

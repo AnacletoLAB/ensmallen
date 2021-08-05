@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OxalobacterFormigenesOxcc13.
+This file offers the methods to automatically retrieve the graph Oxalobacter formigenes OXCC13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OxalobacterFormigenesOxcc13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OxalobacterFormigenesOxcc13 graph.
+    """Return new instance of the Oxalobacter formigenes OXCC13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OxalobacterFormigenesOxcc13(
 
     Returns
     -----------------------
-    Instace of OxalobacterFormigenesOxcc13 graph.
+    Instace of Oxalobacter formigenes OXCC13 graph.
 
 	References
 	---------------------

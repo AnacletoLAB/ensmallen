@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiaBacteriumJgi0000039D08.
+This file offers the methods to automatically retrieve the graph Marinimicrobia bacterium JGI 0000039-D08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinimicrobiaBacteriumJgi0000039D08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiaBacteriumJgi0000039D08 graph.
+    """Return new instance of the Marinimicrobia bacterium JGI 0000039-D08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinimicrobiaBacteriumJgi0000039D08(
 
     Returns
     -----------------------
-    Instace of MarinimicrobiaBacteriumJgi0000039D08 graph.
+    Instace of Marinimicrobia bacterium JGI 0000039-D08 graph.
 
 	References
 	---------------------

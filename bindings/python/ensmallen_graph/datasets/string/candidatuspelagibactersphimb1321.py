@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPelagibacterSpHimb1321.
+This file offers the methods to automatically retrieve the graph Candidatus Pelagibacter sp. HIMB1321.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPelagibacterSpHimb1321(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPelagibacterSpHimb1321 graph.
+    """Return new instance of the Candidatus Pelagibacter sp. HIMB1321 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPelagibacterSpHimb1321(
 
     Returns
     -----------------------
-    Instace of CandidatusPelagibacterSpHimb1321 graph.
+    Instace of Candidatus Pelagibacter sp. HIMB1321 graph.
 
 	References
 	---------------------

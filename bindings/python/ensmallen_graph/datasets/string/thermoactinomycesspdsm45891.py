@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoactinomycesSpDsm45891.
+This file offers the methods to automatically retrieve the graph Thermoactinomyces sp. DSM 45891.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoactinomycesSpDsm45891(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoactinomycesSpDsm45891 graph.
+    """Return new instance of the Thermoactinomyces sp. DSM 45891 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoactinomycesSpDsm45891(
 
     Returns
     -----------------------
-    Instace of ThermoactinomycesSpDsm45891 graph.
+    Instace of Thermoactinomyces sp. DSM 45891 graph.
 
 	References
 	---------------------

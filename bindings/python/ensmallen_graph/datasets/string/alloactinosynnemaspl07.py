@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlloactinosynnemaSpL07.
+This file offers the methods to automatically retrieve the graph Alloactinosynnema sp. L-07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlloactinosynnemaSpL07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlloactinosynnemaSpL07 graph.
+    """Return new instance of the Alloactinosynnema sp. L-07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlloactinosynnemaSpL07(
 
     Returns
     -----------------------
-    Instace of AlloactinosynnemaSpL07 graph.
+    Instace of Alloactinosynnema sp. L-07 graph.
 
 	References
 	---------------------

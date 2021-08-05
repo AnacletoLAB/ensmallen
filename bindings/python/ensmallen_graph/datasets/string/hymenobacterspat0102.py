@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterSpAt0102.
+This file offers the methods to automatically retrieve the graph Hymenobacter sp. AT01-02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterSpAt0102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterSpAt0102 graph.
+    """Return new instance of the Hymenobacter sp. AT01-02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterSpAt0102(
 
     Returns
     -----------------------
-    Instace of HymenobacterSpAt0102 graph.
+    Instace of Hymenobacter sp. AT01-02 graph.
 
 	References
 	---------------------

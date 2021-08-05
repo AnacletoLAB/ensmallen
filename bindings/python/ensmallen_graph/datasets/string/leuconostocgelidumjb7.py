@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocGelidumJb7.
+This file offers the methods to automatically retrieve the graph Leuconostoc gelidum JB7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocGelidumJb7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocGelidumJb7 graph.
+    """Return new instance of the Leuconostoc gelidum JB7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocGelidumJb7(
 
     Returns
     -----------------------
-    Instace of LeuconostocGelidumJb7 graph.
+    Instace of Leuconostoc gelidum JB7 graph.
 
 	References
 	---------------------

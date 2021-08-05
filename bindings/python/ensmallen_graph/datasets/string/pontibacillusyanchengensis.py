@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacillusYanchengensis.
+This file offers the methods to automatically retrieve the graph Pontibacillus yanchengensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacillusYanchengensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacillusYanchengensis graph.
+    """Return new instance of the Pontibacillus yanchengensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PontibacillusYanchengensis(
 
     Returns
     -----------------------
-    Instace of PontibacillusYanchengensis graph.
+    Instace of Pontibacillus yanchengensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AdvenellaMimigardefordensis.
+This file offers the methods to automatically retrieve the graph Advenella mimigardefordensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AdvenellaMimigardefordensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AdvenellaMimigardefordensis graph.
+    """Return new instance of the Advenella mimigardefordensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AdvenellaMimigardefordensis(
 
     Returns
     -----------------------
-    Instace of AdvenellaMimigardefordensis graph.
+    Instace of Advenella mimigardefordensis graph.
 
 	References
 	---------------------

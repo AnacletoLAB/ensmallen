@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocTwitterMpiSws.
+This file offers the methods to automatically retrieve the graph soc-twitter-mpi-sws.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocTwitterMpiSws(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocTwitterMpiSws graph.
+    """Return new instance of the soc-twitter-mpi-sws graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocTwitterMpiSws(
 
     Returns
     -----------------------
-    Instace of SocTwitterMpiSws graph.
+    Instace of soc-twitter-mpi-sws graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolaciniaPaynteri.
+This file offers the methods to automatically retrieve the graph Methanolacinia paynteri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolaciniaPaynteri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolaciniaPaynteri graph.
+    """Return new instance of the Methanolacinia paynteri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanolaciniaPaynteri(
 
     Returns
     -----------------------
-    Instace of MethanolaciniaPaynteri graph.
+    Instace of Methanolacinia paynteri graph.
 
 	References
 	---------------------

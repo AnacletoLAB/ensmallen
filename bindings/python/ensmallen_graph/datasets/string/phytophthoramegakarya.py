@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraMegakarya.
+This file offers the methods to automatically retrieve the graph Phytophthora megakarya.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraMegakarya(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraMegakarya graph.
+    """Return new instance of the Phytophthora megakarya graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytophthoraMegakarya(
 
     Returns
     -----------------------
-    Instace of PhytophthoraMegakarya graph.
+    Instace of Phytophthora megakarya graph.
 
 	References
 	---------------------

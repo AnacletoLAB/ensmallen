@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesGroupBacteriumRifcsplowo201Full4710.
+This file offers the methods to automatically retrieve the graph Microgenomates group bacterium RIFCSPLOWO2_01_FULL_47_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesGroupBacteriumRifcsplowo201Full4710(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesGroupBacteriumRifcsplowo201Full4710 graph.
+    """Return new instance of the Microgenomates group bacterium RIFCSPLOWO2_01_FULL_47_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesGroupBacteriumRifcsplowo201Full4710(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesGroupBacteriumRifcsplowo201Full4710 graph.
+    Instace of Microgenomates group bacterium RIFCSPLOWO2_01_FULL_47_10 graph.
 
 	References
 	---------------------

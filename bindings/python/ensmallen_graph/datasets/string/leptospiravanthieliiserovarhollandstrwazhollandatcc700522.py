@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522.
+This file offers the methods to automatically retrieve the graph Leptospira vanthielii serovar Holland str. Waz Holland ATCC 700522.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522 graph.
+    """Return new instance of the Leptospira vanthielii serovar Holland str. Waz Holland ATCC 700522 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522(
 
     Returns
     -----------------------
-    Instace of LeptospiraVanthieliiSerovarHollandStrWazHollandAtcc700522 graph.
+    Instace of Leptospira vanthielii serovar Holland str. Waz Holland ATCC 700522 graph.
 
 	References
 	---------------------

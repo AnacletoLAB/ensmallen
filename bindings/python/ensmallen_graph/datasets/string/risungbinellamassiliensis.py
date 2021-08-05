@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RisungbinellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Risungbinella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RisungbinellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RisungbinellaMassiliensis graph.
+    """Return new instance of the Risungbinella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RisungbinellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of RisungbinellaMassiliensis graph.
+    Instace of Risungbinella massiliensis graph.
 
 	References
 	---------------------

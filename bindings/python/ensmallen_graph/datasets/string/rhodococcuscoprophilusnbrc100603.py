@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusCoprophilusNbrc100603.
+This file offers the methods to automatically retrieve the graph Rhodococcus coprophilus NBRC 100603.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusCoprophilusNbrc100603(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusCoprophilusNbrc100603 graph.
+    """Return new instance of the Rhodococcus coprophilus NBRC 100603 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusCoprophilusNbrc100603(
 
     Returns
     -----------------------
-    Instace of RhodococcusCoprophilusNbrc100603 graph.
+    Instace of Rhodococcus coprophilus NBRC 100603 graph.
 
 	References
 	---------------------

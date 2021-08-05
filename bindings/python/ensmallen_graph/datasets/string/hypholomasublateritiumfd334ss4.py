@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HypholomaSublateritiumFd334Ss4.
+This file offers the methods to automatically retrieve the graph Hypholoma sublateritium FD-334 SS-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HypholomaSublateritiumFd334Ss4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HypholomaSublateritiumFd334Ss4 graph.
+    """Return new instance of the Hypholoma sublateritium FD-334 SS-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HypholomaSublateritiumFd334Ss4(
 
     Returns
     -----------------------
-    Instace of HypholomaSublateritiumFd334Ss4 graph.
+    Instace of Hypholoma sublateritium FD-334 SS-4 graph.
 
 	References
 	---------------------

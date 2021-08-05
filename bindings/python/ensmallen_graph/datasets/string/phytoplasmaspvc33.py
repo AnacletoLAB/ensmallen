@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaSpVc33.
+This file offers the methods to automatically retrieve the graph Phytoplasma sp. Vc33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaSpVc33(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaSpVc33 graph.
+    """Return new instance of the Phytoplasma sp. Vc33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytoplasmaSpVc33(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaSpVc33 graph.
+    Instace of Phytoplasma sp. Vc33 graph.
 
 	References
 	---------------------

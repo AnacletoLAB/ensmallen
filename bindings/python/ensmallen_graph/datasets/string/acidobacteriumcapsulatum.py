@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriumCapsulatum.
+This file offers the methods to automatically retrieve the graph Acidobacterium capsulatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriumCapsulatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriumCapsulatum graph.
+    """Return new instance of the Acidobacterium capsulatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidobacteriumCapsulatum(
 
     Returns
     -----------------------
-    Instace of AcidobacteriumCapsulatum graph.
+    Instace of Acidobacterium capsulatum graph.
 
 	References
 	---------------------

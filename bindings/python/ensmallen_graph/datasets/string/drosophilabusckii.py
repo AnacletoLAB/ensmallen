@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaBusckii.
+This file offers the methods to automatically retrieve the graph Drosophila busckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaBusckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaBusckii graph.
+    """Return new instance of the Drosophila busckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaBusckii(
 
     Returns
     -----------------------
-    Instace of DrosophilaBusckii graph.
+    Instace of Drosophila busckii graph.
 
 	References
 	---------------------

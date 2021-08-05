@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChaetomiumThermophilumVarThermophilumDsm1495.
+This file offers the methods to automatically retrieve the graph Chaetomium thermophilum var. thermophilum DSM 1495.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChaetomiumThermophilumVarThermophilumDsm1495(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChaetomiumThermophilumVarThermophilumDsm1495 graph.
+    """Return new instance of the Chaetomium thermophilum var. thermophilum DSM 1495 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChaetomiumThermophilumVarThermophilumDsm1495(
 
     Returns
     -----------------------
-    Instace of ChaetomiumThermophilumVarThermophilumDsm1495 graph.
+    Instace of Chaetomium thermophilum var. thermophilum DSM 1495 graph.
 
 	References
 	---------------------

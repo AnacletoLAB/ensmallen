@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusKakegawensisNbrc103104.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus kakegawensis NBRC 103104.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusKakegawensisNbrc103104(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusKakegawensisNbrc103104 graph.
+    """Return new instance of the Alicyclobacillus kakegawensis NBRC 103104 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlicyclobacillusKakegawensisNbrc103104(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusKakegawensisNbrc103104 graph.
+    Instace of Alicyclobacillus kakegawensis NBRC 103104 graph.
 
 	References
 	---------------------

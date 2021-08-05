@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaMoravica.
+This file offers the methods to automatically retrieve the graph Legionella moravica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaMoravica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaMoravica graph.
+    """Return new instance of the Legionella moravica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaMoravica(
 
     Returns
     -----------------------
-    Instace of LegionellaMoravica graph.
+    Instace of Legionella moravica graph.
 
 	References
 	---------------------

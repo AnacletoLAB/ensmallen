@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthobacteraceaeBacterium501b.
+This file offers the methods to automatically retrieve the graph Xanthobacteraceae bacterium 501b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthobacteraceaeBacterium501b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthobacteraceaeBacterium501b graph.
+    """Return new instance of the Xanthobacteraceae bacterium 501b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthobacteraceaeBacterium501b(
 
     Returns
     -----------------------
-    Instace of XanthobacteraceaeBacterium501b graph.
+    Instace of Xanthobacteraceae bacterium 501b graph.
 
 	References
 	---------------------

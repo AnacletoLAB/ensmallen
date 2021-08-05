@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaGroupBacteriumGw2011Gwb1438b.
+This file offers the methods to automatically retrieve the graph Parcubacteria group bacterium GW2011_GWB1_43_8b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaGroupBacteriumGw2011Gwb1438b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaGroupBacteriumGw2011Gwb1438b graph.
+    """Return new instance of the Parcubacteria group bacterium GW2011_GWB1_43_8b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaGroupBacteriumGw2011Gwb1438b(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaGroupBacteriumGw2011Gwb1438b graph.
+    Instace of Parcubacteria group bacterium GW2011_GWB1_43_8b graph.
 
 	References
 	---------------------

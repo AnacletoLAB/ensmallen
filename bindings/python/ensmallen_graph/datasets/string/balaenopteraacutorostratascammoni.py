@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BalaenopteraAcutorostrataScammoni.
+This file offers the methods to automatically retrieve the graph Balaenoptera acutorostrata scammoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BalaenopteraAcutorostrataScammoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BalaenopteraAcutorostrataScammoni graph.
+    """Return new instance of the Balaenoptera acutorostrata scammoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BalaenopteraAcutorostrataScammoni(
 
     Returns
     -----------------------
-    Instace of BalaenopteraAcutorostrataScammoni graph.
+    Instace of Balaenoptera acutorostrata scammoni graph.
 
 	References
 	---------------------

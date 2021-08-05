@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumHylemonae.
+This file offers the methods to automatically retrieve the graph Clostridium hylemonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumHylemonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumHylemonae graph.
+    """Return new instance of the Clostridium hylemonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumHylemonae(
 
     Returns
     -----------------------
-    Instace of ClostridiumHylemonae graph.
+    Instace of Clostridium hylemonae graph.
 
 	References
 	---------------------

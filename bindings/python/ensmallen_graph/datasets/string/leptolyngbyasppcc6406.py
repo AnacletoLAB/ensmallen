@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpPcc6406.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. PCC6406.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpPcc6406(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpPcc6406 graph.
+    """Return new instance of the Leptolyngbya sp. PCC6406 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptolyngbyaSpPcc6406(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpPcc6406 graph.
+    Instace of Leptolyngbya sp. PCC6406 graph.
 
 	References
 	---------------------

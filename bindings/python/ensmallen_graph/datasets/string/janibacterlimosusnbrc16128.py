@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterLimosusNbrc16128.
+This file offers the methods to automatically retrieve the graph Janibacter limosus NBRC 16128.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterLimosusNbrc16128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterLimosusNbrc16128 graph.
+    """Return new instance of the Janibacter limosus NBRC 16128 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanibacterLimosusNbrc16128(
 
     Returns
     -----------------------
-    Instace of JanibacterLimosusNbrc16128 graph.
+    Instace of Janibacter limosus NBRC 16128 graph.
 
 	References
 	---------------------

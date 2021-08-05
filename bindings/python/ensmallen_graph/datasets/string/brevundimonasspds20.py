@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpDs20.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. DS20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpDs20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpDs20 graph.
+    """Return new instance of the Brevundimonas sp. DS20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpDs20(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpDs20 graph.
+    Instace of Brevundimonas sp. DS20 graph.
 
 	References
 	---------------------

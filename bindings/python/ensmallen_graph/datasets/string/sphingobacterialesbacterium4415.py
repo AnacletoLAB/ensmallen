@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacterialesBacterium4415.
+This file offers the methods to automatically retrieve the graph Sphingobacteriales bacterium 44-15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacterialesBacterium4415(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacterialesBacterium4415 graph.
+    """Return new instance of the Sphingobacteriales bacterium 44-15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacterialesBacterium4415(
 
     Returns
     -----------------------
-    Instace of SphingobacterialesBacterium4415 graph.
+    Instace of Sphingobacteriales bacterium 44-15 graph.
 
 	References
 	---------------------

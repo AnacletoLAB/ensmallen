@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobaculaSpRifoxya12Full4616.
+This file offers the methods to automatically retrieve the graph Desulfobacula sp. RIFOXYA12_FULL_46_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobaculaSpRifoxya12Full4616(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobaculaSpRifoxya12Full4616 graph.
+    """Return new instance of the Desulfobacula sp. RIFOXYA12_FULL_46_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobaculaSpRifoxya12Full4616(
 
     Returns
     -----------------------
-    Instace of DesulfobaculaSpRifoxya12Full4616 graph.
+    Instace of Desulfobacula sp. RIFOXYA12_FULL_46_16 graph.
 
 	References
 	---------------------

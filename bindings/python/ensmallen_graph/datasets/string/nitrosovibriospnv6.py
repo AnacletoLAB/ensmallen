@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosovibrioSpNv6.
+This file offers the methods to automatically retrieve the graph Nitrosovibrio sp. Nv6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosovibrioSpNv6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosovibrioSpNv6 graph.
+    """Return new instance of the Nitrosovibrio sp. Nv6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosovibrioSpNv6(
 
     Returns
     -----------------------
-    Instace of NitrosovibrioSpNv6 graph.
+    Instace of Nitrosovibrio sp. Nv6 graph.
 
 	References
 	---------------------

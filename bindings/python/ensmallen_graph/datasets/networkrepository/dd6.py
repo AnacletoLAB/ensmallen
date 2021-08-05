@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dd6.
+This file offers the methods to automatically retrieve the graph DD6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dd6(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dd6 graph.
+    """Return new instance of the DD6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dd6(
 
     Returns
     -----------------------
-    Instace of Dd6 graph.
+    Instace of DD6 graph.
 
 	References
 	---------------------

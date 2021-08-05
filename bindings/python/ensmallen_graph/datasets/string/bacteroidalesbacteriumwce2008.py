@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidalesBacteriumWce2008.
+This file offers the methods to automatically retrieve the graph Bacteroidales bacterium WCE2008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidalesBacteriumWce2008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidalesBacteriumWce2008 graph.
+    """Return new instance of the Bacteroidales bacterium WCE2008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidalesBacteriumWce2008(
 
     Returns
     -----------------------
-    Instace of BacteroidalesBacteriumWce2008 graph.
+    Instace of Bacteroidales bacterium WCE2008 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAzotoformansLmg9581.
+This file offers the methods to automatically retrieve the graph Bacillus azotoformans LMG 9581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAzotoformansLmg9581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAzotoformansLmg9581 graph.
+    """Return new instance of the Bacillus azotoformans LMG 9581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAzotoformansLmg9581(
 
     Returns
     -----------------------
-    Instace of BacillusAzotoformansLmg9581 graph.
+    Instace of Bacillus azotoformans LMG 9581 graph.
 
 	References
 	---------------------

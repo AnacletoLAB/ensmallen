@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeongeupiaSpUsm3.
+This file offers the methods to automatically retrieve the graph Jeongeupia sp. USM3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeongeupiaSpUsm3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeongeupiaSpUsm3 graph.
+    """Return new instance of the Jeongeupia sp. USM3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeongeupiaSpUsm3(
 
     Returns
     -----------------------
-    Instace of JeongeupiaSpUsm3 graph.
+    Instace of Jeongeupia sp. USM3 graph.
 
 	References
 	---------------------

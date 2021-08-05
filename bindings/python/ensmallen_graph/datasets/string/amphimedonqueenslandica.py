@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphimedonQueenslandica.
+This file offers the methods to automatically retrieve the graph Amphimedon queenslandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmphimedonQueenslandica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphimedonQueenslandica graph.
+    """Return new instance of the Amphimedon queenslandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmphimedonQueenslandica(
 
     Returns
     -----------------------
-    Instace of AmphimedonQueenslandica graph.
+    Instace of Amphimedon queenslandica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropithecusCoquereli.
+This file offers the methods to automatically retrieve the graph Propithecus coquereli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropithecusCoquereli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropithecusCoquereli graph.
+    """Return new instance of the Propithecus coquereli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropithecusCoquereli(
 
     Returns
     -----------------------
-    Instace of PropithecusCoquereli graph.
+    Instace of Propithecus coquereli graph.
 
 	References
 	---------------------

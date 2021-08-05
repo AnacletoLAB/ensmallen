@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaLettingae.
+This file offers the methods to automatically retrieve the graph Thermotoga lettingae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaLettingae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaLettingae graph.
+    """Return new instance of the Thermotoga lettingae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaLettingae(
 
     Returns
     -----------------------
-    Instace of ThermotogaLettingae graph.
+    Instace of Thermotoga lettingae graph.
 
 	References
 	---------------------

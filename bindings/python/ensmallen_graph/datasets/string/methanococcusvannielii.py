@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcusVannielii.
+This file offers the methods to automatically retrieve the graph Methanococcus vannielii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcusVannielii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcusVannielii graph.
+    """Return new instance of the Methanococcus vannielii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanococcusVannielii(
 
     Returns
     -----------------------
-    Instace of MethanococcusVannielii graph.
+    Instace of Methanococcus vannielii graph.
 
 	References
 	---------------------

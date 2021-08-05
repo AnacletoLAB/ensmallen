@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpFjat28573.
+This file offers the methods to automatically retrieve the graph Bacillus sp. FJAT-28573.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpFjat28573(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpFjat28573 graph.
+    """Return new instance of the Bacillus sp. FJAT-28573 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpFjat28573(
 
     Returns
     -----------------------
-    Instace of BacillusSpFjat28573 graph.
+    Instace of Bacillus sp. FJAT-28573 graph.
 
 	References
 	---------------------

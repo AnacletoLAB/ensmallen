@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BhargavaeaCecembensis.
+This file offers the methods to automatically retrieve the graph Bhargavaea cecembensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BhargavaeaCecembensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BhargavaeaCecembensis graph.
+    """Return new instance of the Bhargavaea cecembensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BhargavaeaCecembensis(
 
     Returns
     -----------------------
-    Instace of BhargavaeaCecembensis graph.
+    Instace of Bhargavaea cecembensis graph.
 
 	References
 	---------------------

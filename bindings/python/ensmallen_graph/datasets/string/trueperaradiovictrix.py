@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrueperaRadiovictrix.
+This file offers the methods to automatically retrieve the graph Truepera radiovictrix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrueperaRadiovictrix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrueperaRadiovictrix graph.
+    """Return new instance of the Truepera radiovictrix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrueperaRadiovictrix(
 
     Returns
     -----------------------
-    Instace of TrueperaRadiovictrix graph.
+    Instace of Truepera radiovictrix graph.
 
 	References
 	---------------------

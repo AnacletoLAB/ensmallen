@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCucumis.
+This file offers the methods to automatically retrieve the graph Flavobacterium cucumis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumCucumis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCucumis graph.
+    """Return new instance of the Flavobacterium cucumis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumCucumis(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCucumis graph.
+    Instace of Flavobacterium cucumis graph.
 
 	References
 	---------------------

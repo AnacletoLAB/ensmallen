@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaSpEcsmb14101.
+This file offers the methods to automatically retrieve the graph Shewanella sp. ECSMB14101.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaSpEcsmb14101(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaSpEcsmb14101 graph.
+    """Return new instance of the Shewanella sp. ECSMB14101 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaSpEcsmb14101(
 
     Returns
     -----------------------
-    Instace of ShewanellaSpEcsmb14101 graph.
+    Instace of Shewanella sp. ECSMB14101 graph.
 
 	References
 	---------------------

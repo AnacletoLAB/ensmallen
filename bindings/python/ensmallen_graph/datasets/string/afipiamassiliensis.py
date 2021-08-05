@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaMassiliensis.
+This file offers the methods to automatically retrieve the graph Afipia massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaMassiliensis graph.
+    """Return new instance of the Afipia massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AfipiaMassiliensis(
 
     Returns
     -----------------------
-    Instace of AfipiaMassiliensis graph.
+    Instace of Afipia massiliensis graph.
 
 	References
 	---------------------

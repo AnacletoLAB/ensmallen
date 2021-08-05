@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZavarzinellaFormosa.
+This file offers the methods to automatically retrieve the graph Zavarzinella formosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZavarzinellaFormosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZavarzinellaFormosa graph.
+    """Return new instance of the Zavarzinella formosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZavarzinellaFormosa(
 
     Returns
     -----------------------
-    Instace of ZavarzinellaFormosa graph.
+    Instace of Zavarzinella formosa graph.
 
 	References
 	---------------------

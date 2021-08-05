@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimicrobiiaBacteriumBacl6Mag120910Bin40.
+This file offers the methods to automatically retrieve the graph Acidimicrobiia bacterium BACL6 MAG-120910-bin40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimicrobiiaBacteriumBacl6Mag120910Bin40 graph.
+    """Return new instance of the Acidimicrobiia bacterium BACL6 MAG-120910-bin40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidimicrobiiaBacteriumBacl6Mag120910Bin40(
 
     Returns
     -----------------------
-    Instace of AcidimicrobiiaBacteriumBacl6Mag120910Bin40 graph.
+    Instace of Acidimicrobiia bacterium BACL6 MAG-120910-bin40 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusParauberisNcfd2020.
+This file offers the methods to automatically retrieve the graph Streptococcus parauberis NCFD2020.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusParauberisNcfd2020(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusParauberisNcfd2020 graph.
+    """Return new instance of the Streptococcus parauberis NCFD2020 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusParauberisNcfd2020(
 
     Returns
     -----------------------
-    Instace of StreptococcusParauberisNcfd2020 graph.
+    Instace of Streptococcus parauberis NCFD2020 graph.
 
 	References
 	---------------------

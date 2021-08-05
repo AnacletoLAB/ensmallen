@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSpF0131.
+This file offers the methods to automatically retrieve the graph Peptoniphilus sp. F0131.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSpF0131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSpF0131 graph.
+    """Return new instance of the Peptoniphilus sp. F0131 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusSpF0131(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSpF0131 graph.
+    Instace of Peptoniphilus sp. F0131 graph.
 
 	References
 	---------------------

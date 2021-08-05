@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpNt26.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. NT-26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpNt26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpNt26 graph.
+    """Return new instance of the Rhizobium sp. NT-26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpNt26(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpNt26 graph.
+    Instace of Rhizobium sp. NT-26 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuribacillusAlkaliarsenatis.
+This file offers the methods to automatically retrieve the graph Desulfuribacillus alkaliarsenatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuribacillusAlkaliarsenatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuribacillusAlkaliarsenatis graph.
+    """Return new instance of the Desulfuribacillus alkaliarsenatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuribacillusAlkaliarsenatis(
 
     Returns
     -----------------------
-    Instace of DesulfuribacillusAlkaliarsenatis graph.
+    Instace of Desulfuribacillus alkaliarsenatis graph.
 
 	References
 	---------------------

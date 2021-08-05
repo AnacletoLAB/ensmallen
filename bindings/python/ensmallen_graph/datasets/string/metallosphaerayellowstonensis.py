@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetallosphaeraYellowstonensis.
+This file offers the methods to automatically retrieve the graph Metallosphaera yellowstonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetallosphaeraYellowstonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetallosphaeraYellowstonensis graph.
+    """Return new instance of the Metallosphaera yellowstonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MetallosphaeraYellowstonensis(
 
     Returns
     -----------------------
-    Instace of MetallosphaeraYellowstonensis graph.
+    Instace of Metallosphaera yellowstonensis graph.
 
 	References
 	---------------------

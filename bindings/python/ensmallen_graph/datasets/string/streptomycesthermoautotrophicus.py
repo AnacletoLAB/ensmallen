@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesThermoautotrophicus.
+This file offers the methods to automatically retrieve the graph Streptomyces thermoautotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesThermoautotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesThermoautotrophicus graph.
+    """Return new instance of the Streptomyces thermoautotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesThermoautotrophicus(
 
     Returns
     -----------------------
-    Instace of StreptomycesThermoautotrophicus graph.
+    Instace of Streptomyces thermoautotrophicus graph.
 
 	References
 	---------------------

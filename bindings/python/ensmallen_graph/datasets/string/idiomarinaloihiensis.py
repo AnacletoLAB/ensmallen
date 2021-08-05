@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaLoihiensis.
+This file offers the methods to automatically retrieve the graph Idiomarina loihiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaLoihiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaLoihiensis graph.
+    """Return new instance of the Idiomarina loihiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IdiomarinaLoihiensis(
 
     Returns
     -----------------------
-    Instace of IdiomarinaLoihiensis graph.
+    Instace of Idiomarina loihiensis graph.
 
 	References
 	---------------------

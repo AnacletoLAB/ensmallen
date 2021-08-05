@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinokineosporaTerrae.
+This file offers the methods to automatically retrieve the graph Actinokineospora terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinokineosporaTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinokineosporaTerrae graph.
+    """Return new instance of the Actinokineospora terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinokineosporaTerrae(
 
     Returns
     -----------------------
-    Instace of ActinokineosporaTerrae graph.
+    Instace of Actinokineospora terrae graph.
 
 	References
 	---------------------

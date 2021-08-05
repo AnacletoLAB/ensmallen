@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CroceicoccusMarinus.
+This file offers the methods to automatically retrieve the graph Croceicoccus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CroceicoccusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CroceicoccusMarinus graph.
+    """Return new instance of the Croceicoccus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CroceicoccusMarinus(
 
     Returns
     -----------------------
-    Instace of CroceicoccusMarinus graph.
+    Instace of Croceicoccus marinus graph.
 
 	References
 	---------------------

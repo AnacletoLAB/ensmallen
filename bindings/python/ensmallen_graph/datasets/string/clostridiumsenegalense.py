@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSenegalense.
+This file offers the methods to automatically retrieve the graph Clostridium senegalense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSenegalense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSenegalense graph.
+    """Return new instance of the Clostridium senegalense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSenegalense(
 
     Returns
     -----------------------
-    Instace of ClostridiumSenegalense graph.
+    Instace of Clostridium senegalense graph.
 
 	References
 	---------------------

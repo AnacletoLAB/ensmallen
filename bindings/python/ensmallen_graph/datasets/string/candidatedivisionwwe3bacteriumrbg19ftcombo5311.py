@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWwe3BacteriumRbg19ftCombo5311.
+This file offers the methods to automatically retrieve the graph candidate division WWE3 bacterium RBG_19FT_COMBO_53_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWwe3BacteriumRbg19ftCombo5311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWwe3BacteriumRbg19ftCombo5311 graph.
+    """Return new instance of the candidate division WWE3 bacterium RBG_19FT_COMBO_53_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWwe3BacteriumRbg19ftCombo5311(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWwe3BacteriumRbg19ftCombo5311 graph.
+    Instace of candidate division WWE3 bacterium RBG_19FT_COMBO_53_11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSpOralTaxon920.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. oral taxon 920.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSpOralTaxon920(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSpOralTaxon920 graph.
+    """Return new instance of the Selenomonas sp. oral taxon 920 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SelenomonasSpOralTaxon920(
 
     Returns
     -----------------------
-    Instace of SelenomonasSpOralTaxon920 graph.
+    Instace of Selenomonas sp. oral taxon 920 graph.
 
 	References
 	---------------------

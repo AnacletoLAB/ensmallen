@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SedimenticolaSelenatireducensDsm17993.
+This file offers the methods to automatically retrieve the graph Sedimenticola selenatireducens DSM 17993.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SedimenticolaSelenatireducensDsm17993(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SedimenticolaSelenatireducensDsm17993 graph.
+    """Return new instance of the Sedimenticola selenatireducens DSM 17993 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SedimenticolaSelenatireducensDsm17993(
 
     Returns
     -----------------------
-    Instace of SedimenticolaSelenatireducensDsm17993 graph.
+    Instace of Sedimenticola selenatireducens DSM 17993 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasAlkaliantarctica.
+This file offers the methods to automatically retrieve the graph Halomonas alkaliantarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasAlkaliantarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasAlkaliantarctica graph.
+    """Return new instance of the Halomonas alkaliantarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasAlkaliantarctica(
 
     Returns
     -----------------------
-    Instace of HalomonasAlkaliantarctica graph.
+    Instace of Halomonas alkaliantarctica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusRifietoensis.
+This file offers the methods to automatically retrieve the graph Planococcus rifietoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusRifietoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusRifietoensis graph.
+    """Return new instance of the Planococcus rifietoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusRifietoensis(
 
     Returns
     -----------------------
-    Instace of PlanococcusRifietoensis graph.
+    Instace of Planococcus rifietoensis graph.
 
 	References
 	---------------------

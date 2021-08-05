@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArdenticatenaMaritima.
+This file offers the methods to automatically retrieve the graph Ardenticatena maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArdenticatenaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArdenticatenaMaritima graph.
+    """Return new instance of the Ardenticatena maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArdenticatenaMaritima(
 
     Returns
     -----------------------
-    Instace of ArdenticatenaMaritima graph.
+    Instace of Ardenticatena maritima graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterChironomi.
+This file offers the methods to automatically retrieve the graph Leucobacter chironomi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterChironomi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterChironomi graph.
+    """Return new instance of the Leucobacter chironomi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeucobacterChironomi(
 
     Returns
     -----------------------
-    Instace of LeucobacterChironomi graph.
+    Instace of Leucobacter chironomi graph.
 
 	References
 	---------------------

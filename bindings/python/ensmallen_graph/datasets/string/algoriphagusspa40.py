@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusSpA40.
+This file offers the methods to automatically retrieve the graph Algoriphagus sp. A40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusSpA40(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusSpA40 graph.
+    """Return new instance of the Algoriphagus sp. A40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusSpA40(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusSpA40 graph.
+    Instace of Algoriphagus sp. A40 graph.
 
 	References
 	---------------------

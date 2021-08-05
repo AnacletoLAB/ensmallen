@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrinemaSalaciae.
+This file offers the methods to automatically retrieve the graph Natrinema salaciae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrinemaSalaciae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrinemaSalaciae graph.
+    """Return new instance of the Natrinema salaciae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatrinemaSalaciae(
 
     Returns
     -----------------------
-    Instace of NatrinemaSalaciae graph.
+    Instace of Natrinema salaciae graph.
 
 	References
 	---------------------

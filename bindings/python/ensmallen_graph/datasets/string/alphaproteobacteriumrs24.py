@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumRs24.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium RS24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumRs24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumRs24 graph.
+    """Return new instance of the alpha proteobacterium RS24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumRs24(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumRs24 graph.
+    Instace of alpha proteobacterium RS24 graph.
 
 	References
 	---------------------

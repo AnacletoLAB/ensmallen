@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesIndistinctus.
+This file offers the methods to automatically retrieve the graph Alistipes indistinctus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesIndistinctus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesIndistinctus graph.
+    """Return new instance of the Alistipes indistinctus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesIndistinctus(
 
     Returns
     -----------------------
-    Instace of AlistipesIndistinctus graph.
+    Instace of Alistipes indistinctus graph.
 
 	References
 	---------------------

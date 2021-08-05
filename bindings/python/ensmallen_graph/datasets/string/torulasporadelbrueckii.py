@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TorulasporaDelbrueckii.
+This file offers the methods to automatically retrieve the graph Torulaspora delbrueckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TorulasporaDelbrueckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TorulasporaDelbrueckii graph.
+    """Return new instance of the Torulaspora delbrueckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TorulasporaDelbrueckii(
 
     Returns
     -----------------------
-    Instace of TorulasporaDelbrueckii graph.
+    Instace of Torulaspora delbrueckii graph.
 
 	References
 	---------------------

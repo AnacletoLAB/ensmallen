@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterSpS77.
+This file offers the methods to automatically retrieve the graph Citrobacter sp. S77.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterSpS77(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterSpS77 graph.
+    """Return new instance of the Citrobacter sp. S77 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrobacterSpS77(
 
     Returns
     -----------------------
-    Instace of CitrobacterSpS77 graph.
+    Instace of Citrobacter sp. S77 graph.
 
 	References
 	---------------------

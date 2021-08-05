@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalogenimonasAlkenigignens.
+This file offers the methods to automatically retrieve the graph Dehalogenimonas alkenigignens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalogenimonasAlkenigignens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalogenimonasAlkenigignens graph.
+    """Return new instance of the Dehalogenimonas alkenigignens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DehalogenimonasAlkenigignens(
 
     Returns
     -----------------------
-    Instace of DehalogenimonasAlkenigignens graph.
+    Instace of Dehalogenimonas alkenigignens graph.
 
 	References
 	---------------------

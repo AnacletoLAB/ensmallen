@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OnchocercaOchengi.
+This file offers the methods to automatically retrieve the graph Onchocerca ochengi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OnchocercaOchengi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OnchocercaOchengi graph.
+    """Return new instance of the Onchocerca ochengi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OnchocercaOchengi(
 
     Returns
     -----------------------
-    Instace of OnchocercaOchengi graph.
+    Instace of Onchocerca ochengi graph.
 
 	References
 	---------------------

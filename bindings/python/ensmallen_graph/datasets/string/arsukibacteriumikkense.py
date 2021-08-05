@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArsukibacteriumIkkense.
+This file offers the methods to automatically retrieve the graph Arsukibacterium ikkense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArsukibacteriumIkkense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArsukibacteriumIkkense graph.
+    """Return new instance of the Arsukibacterium ikkense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArsukibacteriumIkkense(
 
     Returns
     -----------------------
-    Instace of ArsukibacteriumIkkense graph.
+    Instace of Arsukibacterium ikkense graph.
 
 	References
 	---------------------

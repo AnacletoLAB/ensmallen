@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterLudwigii.
+This file offers the methods to automatically retrieve the graph Enterobacter ludwigii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterLudwigii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterLudwigii graph.
+    """Return new instance of the Enterobacter ludwigii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterLudwigii(
 
     Returns
     -----------------------
-    Instace of EnterobacterLudwigii graph.
+    Instace of Enterobacter ludwigii graph.
 
 	References
 	---------------------

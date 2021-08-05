@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sstmodel.
+This file offers the methods to automatically retrieve the graph sstmodel.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sstmodel(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sstmodel graph.
+    """Return new instance of the sstmodel graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sstmodel(
 
     Returns
     -----------------------
-    Instace of Sstmodel graph.
+    Instace of sstmodel graph.
 
 	References
 	---------------------

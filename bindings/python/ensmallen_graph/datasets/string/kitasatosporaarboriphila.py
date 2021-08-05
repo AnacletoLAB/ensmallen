@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaArboriphila.
+This file offers the methods to automatically retrieve the graph Kitasatospora arboriphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaArboriphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaArboriphila graph.
+    """Return new instance of the Kitasatospora arboriphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KitasatosporaArboriphila(
 
     Returns
     -----------------------
-    Instace of KitasatosporaArboriphila graph.
+    Instace of Kitasatospora arboriphila graph.
 
 	References
 	---------------------

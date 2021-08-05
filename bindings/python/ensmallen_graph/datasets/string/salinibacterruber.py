@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinibacterRuber.
+This file offers the methods to automatically retrieve the graph Salinibacter ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinibacterRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinibacterRuber graph.
+    """Return new instance of the Salinibacter ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinibacterRuber(
 
     Returns
     -----------------------
-    Instace of SalinibacterRuber graph.
+    Instace of Salinibacter ruber graph.
 
 	References
 	---------------------

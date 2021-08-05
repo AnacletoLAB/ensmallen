@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Enzymes295.
+This file offers the methods to automatically retrieve the graph ENZYMES295.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Enzymes295(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Enzymes295 graph.
+    """Return new instance of the ENZYMES295 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Enzymes295(
 
     Returns
     -----------------------
-    Instace of Enzymes295 graph.
+    Instace of ENZYMES295 graph.
 
 	References
 	---------------------

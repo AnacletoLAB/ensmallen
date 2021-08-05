@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArsenicicoccusSpOralTaxon190.
+This file offers the methods to automatically retrieve the graph Arsenicicoccus sp. oral taxon 190.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArsenicicoccusSpOralTaxon190(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArsenicicoccusSpOralTaxon190 graph.
+    """Return new instance of the Arsenicicoccus sp. oral taxon 190 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArsenicicoccusSpOralTaxon190(
 
     Returns
     -----------------------
-    Instace of ArsenicicoccusSpOralTaxon190 graph.
+    Instace of Arsenicicoccus sp. oral taxon 190 graph.
 
 	References
 	---------------------

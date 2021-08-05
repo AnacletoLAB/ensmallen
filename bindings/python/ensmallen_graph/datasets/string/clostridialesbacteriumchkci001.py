@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumChkci001.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium CHKCI001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumChkci001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumChkci001 graph.
+    """Return new instance of the Clostridiales bacterium CHKCI001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumChkci001(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumChkci001 graph.
+    Instace of Clostridiales bacterium CHKCI001 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaribaculumCambrienseDsm15806.
+This file offers the methods to automatically retrieve the graph Varibaculum cambriense DSM15806.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaribaculumCambrienseDsm15806(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaribaculumCambrienseDsm15806 graph.
+    """Return new instance of the Varibaculum cambriense DSM15806 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VaribaculumCambrienseDsm15806(
 
     Returns
     -----------------------
-    Instace of VaribaculumCambrienseDsm15806 graph.
+    Instace of Varibaculum cambriense DSM15806 graph.
 
 	References
 	---------------------

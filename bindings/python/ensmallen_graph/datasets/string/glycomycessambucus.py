@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycomycesSambucus.
+This file offers the methods to automatically retrieve the graph Glycomyces sambucus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycomycesSambucus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycomycesSambucus graph.
+    """Return new instance of the Glycomyces sambucus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlycomycesSambucus(
 
     Returns
     -----------------------
-    Instace of GlycomycesSambucus graph.
+    Instace of Glycomyces sambucus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OperophteraBrumata.
+This file offers the methods to automatically retrieve the graph Operophtera brumata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OperophteraBrumata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OperophteraBrumata graph.
+    """Return new instance of the Operophtera brumata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OperophteraBrumata(
 
     Returns
     -----------------------
-    Instace of OperophteraBrumata graph.
+    Instace of Operophtera brumata graph.
 
 	References
 	---------------------

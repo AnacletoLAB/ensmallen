@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HanseniasporaOsmophila.
+This file offers the methods to automatically retrieve the graph Hanseniaspora osmophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HanseniasporaOsmophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HanseniasporaOsmophila graph.
+    """Return new instance of the Hanseniaspora osmophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HanseniasporaOsmophila(
 
     Returns
     -----------------------
-    Instace of HanseniasporaOsmophila graph.
+    Instace of Hanseniaspora osmophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpUrha0002.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. URHA0002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpUrha0002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpUrha0002 graph.
+    """Return new instance of the Bradyrhizobium sp. URHA0002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumSpUrha0002(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpUrha0002 graph.
+    Instace of Bradyrhizobium sp. URHA0002 graph.
 
 	References
 	---------------------

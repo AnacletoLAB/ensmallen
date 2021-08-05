@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumDiazoefficiens.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium diazoefficiens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumDiazoefficiens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumDiazoefficiens graph.
+    """Return new instance of the Bradyrhizobium diazoefficiens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumDiazoefficiens(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumDiazoefficiens graph.
+    Instace of Bradyrhizobium diazoefficiens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DermatophilusCongolensisDsm44180Nbrc105199.
+This file offers the methods to automatically retrieve the graph Dermatophilus congolensis DSM 44180 NBRC 105199.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DermatophilusCongolensisDsm44180Nbrc105199(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DermatophilusCongolensisDsm44180Nbrc105199 graph.
+    """Return new instance of the Dermatophilus congolensis DSM 44180 NBRC 105199 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DermatophilusCongolensisDsm44180Nbrc105199(
 
     Returns
     -----------------------
-    Instace of DermatophilusCongolensisDsm44180Nbrc105199 graph.
+    Instace of Dermatophilus congolensis DSM 44180 NBRC 105199 graph.
 
 	References
 	---------------------

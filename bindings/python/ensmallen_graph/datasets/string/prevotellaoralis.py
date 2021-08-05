@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOralis.
+This file offers the methods to automatically retrieve the graph Prevotella oralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOralis graph.
+    """Return new instance of the Prevotella oralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaOralis(
 
     Returns
     -----------------------
-    Instace of PrevotellaOralis graph.
+    Instace of Prevotella oralis graph.
 
 	References
 	---------------------

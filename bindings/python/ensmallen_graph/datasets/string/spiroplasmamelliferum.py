@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaMelliferum.
+This file offers the methods to automatically retrieve the graph Spiroplasma melliferum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaMelliferum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaMelliferum graph.
+    """Return new instance of the Spiroplasma melliferum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaMelliferum(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaMelliferum graph.
+    Instace of Spiroplasma melliferum graph.
 
 	References
 	---------------------

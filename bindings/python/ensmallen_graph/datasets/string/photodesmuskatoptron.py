@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotodesmusKatoptron.
+This file offers the methods to automatically retrieve the graph Photodesmus katoptron.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotodesmusKatoptron(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotodesmusKatoptron graph.
+    """Return new instance of the Photodesmus katoptron graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotodesmusKatoptron(
 
     Returns
     -----------------------
-    Instace of PhotodesmusKatoptron graph.
+    Instace of Photodesmus katoptron graph.
 
 	References
 	---------------------

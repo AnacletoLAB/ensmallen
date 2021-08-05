@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratifractorSalsuginis.
+This file offers the methods to automatically retrieve the graph Nitratifractor salsuginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratifractorSalsuginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratifractorSalsuginis graph.
+    """Return new instance of the Nitratifractor salsuginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitratifractorSalsuginis(
 
     Returns
     -----------------------
-    Instace of NitratifractorSalsuginis graph.
+    Instace of Nitratifractor salsuginis graph.
 
 	References
 	---------------------

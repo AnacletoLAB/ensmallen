@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterDefluvii.
+This file offers the methods to automatically retrieve the graph Acinetobacter defluvii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterDefluvii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterDefluvii graph.
+    """Return new instance of the Acinetobacter defluvii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterDefluvii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterDefluvii graph.
+    Instace of Acinetobacter defluvii graph.
 
 	References
 	---------------------

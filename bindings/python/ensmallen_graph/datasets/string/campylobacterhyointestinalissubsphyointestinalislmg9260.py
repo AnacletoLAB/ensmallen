@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterHyointestinalisSubspHyointestinalisLmg9260.
+This file offers the methods to automatically retrieve the graph Campylobacter hyointestinalis subsp. hyointestinalis LMG 9260.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterHyointestinalisSubspHyointestinalisLmg9260(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterHyointestinalisSubspHyointestinalisLmg9260 graph.
+    """Return new instance of the Campylobacter hyointestinalis subsp. hyointestinalis LMG 9260 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterHyointestinalisSubspHyointestinalisLmg9260(
 
     Returns
     -----------------------
-    Instace of CampylobacterHyointestinalisSubspHyointestinalisLmg9260 graph.
+    Instace of Campylobacter hyointestinalis subsp. hyointestinalis LMG 9260 graph.
 
 	References
 	---------------------

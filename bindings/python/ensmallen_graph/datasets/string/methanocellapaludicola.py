@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocellaPaludicola.
+This file offers the methods to automatically retrieve the graph Methanocella paludicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocellaPaludicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocellaPaludicola graph.
+    """Return new instance of the Methanocella paludicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocellaPaludicola(
 
     Returns
     -----------------------
-    Instace of MethanocellaPaludicola graph.
+    Instace of Methanocella paludicola graph.
 
 	References
 	---------------------

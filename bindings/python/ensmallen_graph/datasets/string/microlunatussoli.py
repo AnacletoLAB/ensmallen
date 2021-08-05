@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrolunatusSoli.
+This file offers the methods to automatically retrieve the graph Microlunatus soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrolunatusSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrolunatusSoli graph.
+    """Return new instance of the Microlunatus soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrolunatusSoli(
 
     Returns
     -----------------------
-    Instace of MicrolunatusSoli graph.
+    Instace of Microlunatus soli graph.
 
 	References
 	---------------------

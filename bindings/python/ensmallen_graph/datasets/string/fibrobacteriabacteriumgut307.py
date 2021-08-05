@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrobacteriaBacteriumGut307.
+This file offers the methods to automatically retrieve the graph Fibrobacteria bacterium GUT307.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrobacteriaBacteriumGut307(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrobacteriaBacteriumGut307 graph.
+    """Return new instance of the Fibrobacteria bacterium GUT307 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibrobacteriaBacteriumGut307(
 
     Returns
     -----------------------
-    Instace of FibrobacteriaBacteriumGut307 graph.
+    Instace of Fibrobacteria bacterium GUT307 graph.
 
 	References
 	---------------------

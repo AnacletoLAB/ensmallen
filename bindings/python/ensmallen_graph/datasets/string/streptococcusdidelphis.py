@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDidelphis.
+This file offers the methods to automatically retrieve the graph Streptococcus didelphis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDidelphis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDidelphis graph.
+    """Return new instance of the Streptococcus didelphis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDidelphis(
 
     Returns
     -----------------------
-    Instace of StreptococcusDidelphis graph.
+    Instace of Streptococcus didelphis graph.
 
 	References
 	---------------------

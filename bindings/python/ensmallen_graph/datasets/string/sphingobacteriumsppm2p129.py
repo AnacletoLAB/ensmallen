@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpPm2P129.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. PM2-P1-29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpPm2P129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpPm2P129 graph.
+    """Return new instance of the Sphingobacterium sp. PM2-P1-29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriumSpPm2P129(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpPm2P129 graph.
+    Instace of Sphingobacterium sp. PM2-P1-29 graph.
 
 	References
 	---------------------

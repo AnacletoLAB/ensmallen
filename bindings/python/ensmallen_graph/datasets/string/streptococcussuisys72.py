@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSuisYs72.
+This file offers the methods to automatically retrieve the graph Streptococcus suis YS72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSuisYs72(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSuisYs72 graph.
+    """Return new instance of the Streptococcus suis YS72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSuisYs72(
 
     Returns
     -----------------------
-    Instace of StreptococcusSuisYs72 graph.
+    Instace of Streptococcus suis YS72 graph.
 
 	References
 	---------------------

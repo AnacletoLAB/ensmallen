@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlterileibacteriumMassiliense.
+This file offers the methods to automatically retrieve the graph Alterileibacterium massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlterileibacteriumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlterileibacteriumMassiliense graph.
+    """Return new instance of the Alterileibacterium massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlterileibacteriumMassiliense(
 
     Returns
     -----------------------
-    Instace of AlterileibacteriumMassiliense graph.
+    Instace of Alterileibacterium massiliense graph.
 
 	References
 	---------------------

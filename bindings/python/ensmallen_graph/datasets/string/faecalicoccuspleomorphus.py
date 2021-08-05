@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FaecalicoccusPleomorphus.
+This file offers the methods to automatically retrieve the graph Faecalicoccus pleomorphus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FaecalicoccusPleomorphus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FaecalicoccusPleomorphus graph.
+    """Return new instance of the Faecalicoccus pleomorphus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FaecalicoccusPleomorphus(
 
     Returns
     -----------------------
-    Instace of FaecalicoccusPleomorphus graph.
+    Instace of Faecalicoccus pleomorphus graph.
 
 	References
 	---------------------

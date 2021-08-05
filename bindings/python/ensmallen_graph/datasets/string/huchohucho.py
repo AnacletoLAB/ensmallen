@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HuchoHucho.
+This file offers the methods to automatically retrieve the graph Hucho hucho.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HuchoHucho(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HuchoHucho graph.
+    """Return new instance of the Hucho hucho graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HuchoHucho(
 
     Returns
     -----------------------
-    Instace of HuchoHucho graph.
+    Instace of Hucho hucho graph.
 
 	References
 	---------------------

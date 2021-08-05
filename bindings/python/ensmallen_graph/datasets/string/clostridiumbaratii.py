@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBaratii.
+This file offers the methods to automatically retrieve the graph Clostridium baratii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBaratii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBaratii graph.
+    """Return new instance of the Clostridium baratii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBaratii(
 
     Returns
     -----------------------
-    Instace of ClostridiumBaratii graph.
+    Instace of Clostridium baratii graph.
 
 	References
 	---------------------

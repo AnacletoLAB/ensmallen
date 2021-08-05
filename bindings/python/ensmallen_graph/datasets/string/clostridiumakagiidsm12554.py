@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAkagiiDsm12554.
+This file offers the methods to automatically retrieve the graph Clostridium akagii DSM 12554.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAkagiiDsm12554(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAkagiiDsm12554 graph.
+    """Return new instance of the Clostridium akagii DSM 12554 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumAkagiiDsm12554(
 
     Returns
     -----------------------
-    Instace of ClostridiumAkagiiDsm12554 graph.
+    Instace of Clostridium akagii DSM 12554 graph.
 
 	References
 	---------------------

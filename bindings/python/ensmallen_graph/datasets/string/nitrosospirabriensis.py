@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosospiraBriensis.
+This file offers the methods to automatically retrieve the graph Nitrosospira briensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosospiraBriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosospiraBriensis graph.
+    """Return new instance of the Nitrosospira briensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosospiraBriensis(
 
     Returns
     -----------------------
-    Instace of NitrosospiraBriensis graph.
+    Instace of Nitrosospira briensis graph.
 
 	References
 	---------------------

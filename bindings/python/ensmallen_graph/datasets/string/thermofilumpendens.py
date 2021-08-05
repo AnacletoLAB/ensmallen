@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermofilumPendens.
+This file offers the methods to automatically retrieve the graph Thermofilum pendens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermofilumPendens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermofilumPendens graph.
+    """Return new instance of the Thermofilum pendens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermofilumPendens(
 
     Returns
     -----------------------
-    Instace of ThermofilumPendens graph.
+    Instace of Thermofilum pendens graph.
 
 	References
 	---------------------

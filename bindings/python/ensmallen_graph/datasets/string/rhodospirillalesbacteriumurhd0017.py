@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillalesBacteriumUrhd0017.
+This file offers the methods to automatically retrieve the graph Rhodospirillales bacterium URHD0017.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillalesBacteriumUrhd0017(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillalesBacteriumUrhd0017 graph.
+    """Return new instance of the Rhodospirillales bacterium URHD0017 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillalesBacteriumUrhd0017(
 
     Returns
     -----------------------
-    Instace of RhodospirillalesBacteriumUrhd0017 graph.
+    Instace of Rhodospirillales bacterium URHD0017 graph.
 
 	References
 	---------------------

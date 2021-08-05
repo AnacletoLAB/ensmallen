@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeyerozymaGuilliermondiiAtcc6260.
+This file offers the methods to automatically retrieve the graph Meyerozyma guilliermondii ATCC 6260.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeyerozymaGuilliermondiiAtcc6260(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeyerozymaGuilliermondiiAtcc6260 graph.
+    """Return new instance of the Meyerozyma guilliermondii ATCC 6260 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MeyerozymaGuilliermondiiAtcc6260(
 
     Returns
     -----------------------
-    Instace of MeyerozymaGuilliermondiiAtcc6260 graph.
+    Instace of Meyerozyma guilliermondii ATCC 6260 graph.
 
 	References
 	---------------------

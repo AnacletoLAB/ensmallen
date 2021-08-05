@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaStewartiiSubspStewartiiDc283.
+This file offers the methods to automatically retrieve the graph Pantoea stewartii subsp. stewartii DC283.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaStewartiiSubspStewartiiDc283(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaStewartiiSubspStewartiiDc283 graph.
+    """Return new instance of the Pantoea stewartii subsp. stewartii DC283 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaStewartiiSubspStewartiiDc283(
 
     Returns
     -----------------------
-    Instace of PantoeaStewartiiSubspStewartiiDc283 graph.
+    Instace of Pantoea stewartii subsp. stewartii DC283 graph.
 
 	References
 	---------------------

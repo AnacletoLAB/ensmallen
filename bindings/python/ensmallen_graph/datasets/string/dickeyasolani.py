@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaSolani.
+This file offers the methods to automatically retrieve the graph Dickeya solani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaSolani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaSolani graph.
+    """Return new instance of the Dickeya solani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DickeyaSolani(
 
     Returns
     -----------------------
-    Instace of DickeyaSolani graph.
+    Instace of Dickeya solani graph.
 
 	References
 	---------------------

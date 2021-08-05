@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaematospirillumJordaniae.
+This file offers the methods to automatically retrieve the graph Haematospirillum jordaniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaematospirillumJordaniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaematospirillumJordaniae graph.
+    """Return new instance of the Haematospirillum jordaniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaematospirillumJordaniae(
 
     Returns
     -----------------------
-    Instace of HaematospirillumJordaniae graph.
+    Instace of Haematospirillum jordaniae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PluralibacterGergoviae.
+This file offers the methods to automatically retrieve the graph Pluralibacter gergoviae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PluralibacterGergoviae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PluralibacterGergoviae graph.
+    """Return new instance of the Pluralibacter gergoviae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PluralibacterGergoviae(
 
     Returns
     -----------------------
-    Instace of PluralibacterGergoviae graph.
+    Instace of Pluralibacter gergoviae graph.
 
 	References
 	---------------------

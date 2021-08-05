@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterHormaecheiSubspSteigerwaltii.
+This file offers the methods to automatically retrieve the graph Enterobacter hormaechei subsp. steigerwaltii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterHormaecheiSubspSteigerwaltii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterHormaecheiSubspSteigerwaltii graph.
+    """Return new instance of the Enterobacter hormaechei subsp. steigerwaltii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterHormaecheiSubspSteigerwaltii(
 
     Returns
     -----------------------
-    Instace of EnterobacterHormaecheiSubspSteigerwaltii graph.
+    Instace of Enterobacter hormaechei subsp. steigerwaltii graph.
 
 	References
 	---------------------

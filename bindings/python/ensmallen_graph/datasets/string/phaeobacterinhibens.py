@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeobacterInhibens.
+This file offers the methods to automatically retrieve the graph Phaeobacter inhibens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeobacterInhibens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeobacterInhibens graph.
+    """Return new instance of the Phaeobacter inhibens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhaeobacterInhibens(
 
     Returns
     -----------------------
-    Instace of PhaeobacterInhibens graph.
+    Instace of Phaeobacter inhibens graph.
 
 	References
 	---------------------

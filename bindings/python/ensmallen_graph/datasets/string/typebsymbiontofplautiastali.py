@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TypeBSymbiontOfPlautiaStali.
+This file offers the methods to automatically retrieve the graph Type-B symbiont of Plautia stali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TypeBSymbiontOfPlautiaStali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TypeBSymbiontOfPlautiaStali graph.
+    """Return new instance of the Type-B symbiont of Plautia stali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TypeBSymbiontOfPlautiaStali(
 
     Returns
     -----------------------
-    Instace of TypeBSymbiontOfPlautiaStali graph.
+    Instace of Type-B symbiont of Plautia stali graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpBjgmmb45.
+This file offers the methods to automatically retrieve the graph Halomonas sp. BJGMMB45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpBjgmmb45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpBjgmmb45 graph.
+    """Return new instance of the Halomonas sp. BJGMMB45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasSpBjgmmb45(
 
     Returns
     -----------------------
-    Instace of HalomonasSpBjgmmb45 graph.
+    Instace of Halomonas sp. BJGMMB45 graph.
 
 	References
 	---------------------

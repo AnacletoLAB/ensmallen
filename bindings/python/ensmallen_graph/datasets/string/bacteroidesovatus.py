@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesOvatus.
+This file offers the methods to automatically retrieve the graph Bacteroides ovatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesOvatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesOvatus graph.
+    """Return new instance of the Bacteroides ovatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesOvatus(
 
     Returns
     -----------------------
-    Instace of BacteroidesOvatus graph.
+    Instace of Bacteroides ovatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmillariaSolidipes.
+This file offers the methods to automatically retrieve the graph Armillaria solidipes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmillariaSolidipes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmillariaSolidipes graph.
+    """Return new instance of the Armillaria solidipes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmillariaSolidipes(
 
     Returns
     -----------------------
-    Instace of ArmillariaSolidipes graph.
+    Instace of Armillaria solidipes graph.
 
 	References
 	---------------------

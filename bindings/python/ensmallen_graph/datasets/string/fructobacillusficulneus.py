@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FructobacillusFiculneus.
+This file offers the methods to automatically retrieve the graph Fructobacillus ficulneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FructobacillusFiculneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FructobacillusFiculneus graph.
+    """Return new instance of the Fructobacillus ficulneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FructobacillusFiculneus(
 
     Returns
     -----------------------
-    Instace of FructobacillusFiculneus graph.
+    Instace of Fructobacillus ficulneus graph.
 
 	References
 	---------------------

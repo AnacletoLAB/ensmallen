@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaBarkeriMs.
+This file offers the methods to automatically retrieve the graph Methanosarcina barkeri MS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaBarkeriMs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaBarkeriMs graph.
+    """Return new instance of the Methanosarcina barkeri MS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaBarkeriMs(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaBarkeriMs graph.
+    Instace of Methanosarcina barkeri MS graph.
 
 	References
 	---------------------

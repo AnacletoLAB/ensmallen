@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMarginalisIcmp9505.
+This file offers the methods to automatically retrieve the graph Pseudomonas marginalis ICMP 9505.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMarginalisIcmp9505(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMarginalisIcmp9505 graph.
+    """Return new instance of the Pseudomonas marginalis ICMP 9505 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasMarginalisIcmp9505(
 
     Returns
     -----------------------
-    Instace of PseudomonasMarginalisIcmp9505 graph.
+    Instace of Pseudomonas marginalis ICMP 9505 graph.
 
 	References
 	---------------------

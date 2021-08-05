@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCarsonellaRuddiiPv.
+This file offers the methods to automatically retrieve the graph Candidatus Carsonella ruddii PV.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCarsonellaRuddiiPv(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCarsonellaRuddiiPv graph.
+    """Return new instance of the Candidatus Carsonella ruddii PV graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCarsonellaRuddiiPv(
 
     Returns
     -----------------------
-    Instace of CandidatusCarsonellaRuddiiPv graph.
+    Instace of Candidatus Carsonella ruddii PV graph.
 
 	References
 	---------------------

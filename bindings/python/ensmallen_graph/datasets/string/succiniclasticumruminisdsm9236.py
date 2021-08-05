@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SucciniclasticumRuminisDsm9236.
+This file offers the methods to automatically retrieve the graph Succiniclasticum ruminis DSM 9236.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SucciniclasticumRuminisDsm9236(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SucciniclasticumRuminisDsm9236 graph.
+    """Return new instance of the Succiniclasticum ruminis DSM 9236 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SucciniclasticumRuminisDsm9236(
 
     Returns
     -----------------------
-    Instace of SucciniclasticumRuminisDsm9236 graph.
+    Instace of Succiniclasticum ruminis DSM 9236 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionKsb1Bacterium448487.
+This file offers the methods to automatically retrieve the graph candidate division KSB1 bacterium 4484_87.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionKsb1Bacterium448487(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionKsb1Bacterium448487 graph.
+    """Return new instance of the candidate division KSB1 bacterium 4484_87 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionKsb1Bacterium448487(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionKsb1Bacterium448487 graph.
+    Instace of candidate division KSB1 bacterium 4484_87 graph.
 
 	References
 	---------------------

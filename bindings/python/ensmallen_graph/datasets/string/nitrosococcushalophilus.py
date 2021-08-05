@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosococcusHalophilus.
+This file offers the methods to automatically retrieve the graph Nitrosococcus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosococcusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosococcusHalophilus graph.
+    """Return new instance of the Nitrosococcus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosococcusHalophilus(
 
     Returns
     -----------------------
-    Instace of NitrosococcusHalophilus graph.
+    Instace of Nitrosococcus halophilus graph.
 
 	References
 	---------------------

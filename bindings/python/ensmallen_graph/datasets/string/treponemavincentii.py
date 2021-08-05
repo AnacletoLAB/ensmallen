@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaVincentii.
+This file offers the methods to automatically retrieve the graph Treponema vincentii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaVincentii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaVincentii graph.
+    """Return new instance of the Treponema vincentii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaVincentii(
 
     Returns
     -----------------------
-    Instace of TreponemaVincentii graph.
+    Instace of Treponema vincentii graph.
 
 	References
 	---------------------

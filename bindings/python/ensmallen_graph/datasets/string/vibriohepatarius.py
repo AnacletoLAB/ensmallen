@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioHepatarius.
+This file offers the methods to automatically retrieve the graph Vibrio hepatarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioHepatarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioHepatarius graph.
+    """Return new instance of the Vibrio hepatarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioHepatarius(
 
     Returns
     -----------------------
-    Instace of VibrioHepatarius graph.
+    Instace of Vibrio hepatarius graph.
 
 	References
 	---------------------

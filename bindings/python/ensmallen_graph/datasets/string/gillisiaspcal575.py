@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GillisiaSpCal575.
+This file offers the methods to automatically retrieve the graph Gillisia sp. CAL575.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GillisiaSpCal575(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GillisiaSpCal575 graph.
+    """Return new instance of the Gillisia sp. CAL575 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GillisiaSpCal575(
 
     Returns
     -----------------------
-    Instace of GillisiaSpCal575 graph.
+    Instace of Gillisia sp. CAL575 graph.
 
 	References
 	---------------------

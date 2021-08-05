@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndosymbiontOfTevnia.
+This file offers the methods to automatically retrieve the graph endosymbiont of Tevnia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndosymbiontOfTevnia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndosymbiontOfTevnia graph.
+    """Return new instance of the endosymbiont of Tevnia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndosymbiontOfTevnia(
 
     Returns
     -----------------------
-    Instace of EndosymbiontOfTevnia graph.
+    Instace of endosymbiont of Tevnia graph.
 
 	References
 	---------------------

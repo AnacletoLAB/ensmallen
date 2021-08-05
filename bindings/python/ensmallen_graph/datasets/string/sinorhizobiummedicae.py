@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumMedicae.
+This file offers the methods to automatically retrieve the graph Sinorhizobium medicae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumMedicae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumMedicae graph.
+    """Return new instance of the Sinorhizobium medicae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SinorhizobiumMedicae(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumMedicae graph.
+    Instace of Sinorhizobium medicae graph.
 
 	References
 	---------------------

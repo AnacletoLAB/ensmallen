@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpLc81.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. LC81.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpLc81(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpLc81 graph.
+    """Return new instance of the Sphingopyxis sp. LC81 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingopyxisSpLc81(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpLc81 graph.
+    Instace of Sphingopyxis sp. LC81 graph.
 
 	References
 	---------------------

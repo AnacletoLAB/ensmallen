@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhishiHudongInternallink.
+This file offers the methods to automatically retrieve the graph zhishi-hudong-internallink.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ZhishiHudongInternallink(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhishiHudongInternallink graph.
+    """Return new instance of the zhishi-hudong-internallink graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ZhishiHudongInternallink(
 
     Returns
     -----------------------
-    Instace of ZhishiHudongInternallink graph.
+    Instace of zhishi-hudong-internallink graph.
 
 	References
 	---------------------

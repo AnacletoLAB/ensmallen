@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSocranskiiParedis.
+This file offers the methods to automatically retrieve the graph Treponema socranskii paredis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSocranskiiParedis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSocranskiiParedis graph.
+    """Return new instance of the Treponema socranskii paredis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSocranskiiParedis(
 
     Returns
     -----------------------
-    Instace of TreponemaSocranskiiParedis graph.
+    Instace of Treponema socranskii paredis graph.
 
 	References
 	---------------------

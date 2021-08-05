@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpDd13.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. DD13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpDd13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpDd13 graph.
+    """Return new instance of the Streptococcus sp. DD13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSpDd13(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpDd13 graph.
+    Instace of Streptococcus sp. DD13 graph.
 
 	References
 	---------------------

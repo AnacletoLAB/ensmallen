@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumGraminearumPh1.
+This file offers the methods to automatically retrieve the graph Fusarium graminearum PH-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumGraminearumPh1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumGraminearumPh1 graph.
+    """Return new instance of the Fusarium graminearum PH-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumGraminearumPh1(
 
     Returns
     -----------------------
-    Instace of FusariumGraminearumPh1 graph.
+    Instace of Fusarium graminearum PH-1 graph.
 
 	References
 	---------------------

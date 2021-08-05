@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusPumilus.
+This file offers the methods to automatically retrieve the graph Bacillus pumilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusPumilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusPumilus graph.
+    """Return new instance of the Bacillus pumilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusPumilus(
 
     Returns
     -----------------------
-    Instace of BacillusPumilus graph.
+    Instace of Bacillus pumilus graph.
 
 	References
 	---------------------

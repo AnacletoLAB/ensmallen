@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumKansasii732.
+This file offers the methods to automatically retrieve the graph Mycobacterium kansasii 732.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumKansasii732(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumKansasii732 graph.
+    """Return new instance of the Mycobacterium kansasii 732 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumKansasii732(
 
     Returns
     -----------------------
-    Instace of MycobacteriumKansasii732 graph.
+    Instace of Mycobacterium kansasii 732 graph.
 
 	References
 	---------------------

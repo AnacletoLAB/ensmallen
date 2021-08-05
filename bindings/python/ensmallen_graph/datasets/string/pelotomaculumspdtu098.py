@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelotomaculumSpDtu098.
+This file offers the methods to automatically retrieve the graph Pelotomaculum sp. DTU098.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelotomaculumSpDtu098(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelotomaculumSpDtu098 graph.
+    """Return new instance of the Pelotomaculum sp. DTU098 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelotomaculumSpDtu098(
 
     Returns
     -----------------------
-    Instace of PelotomaculumSpDtu098 graph.
+    Instace of Pelotomaculum sp. DTU098 graph.
 
 	References
 	---------------------

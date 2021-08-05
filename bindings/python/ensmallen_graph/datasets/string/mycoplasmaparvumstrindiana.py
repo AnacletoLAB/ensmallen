@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaParvumStrIndiana.
+This file offers the methods to automatically retrieve the graph Mycoplasma parvum str. Indiana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaParvumStrIndiana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaParvumStrIndiana graph.
+    """Return new instance of the Mycoplasma parvum str. Indiana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaParvumStrIndiana(
 
     Returns
     -----------------------
-    Instace of MycoplasmaParvumStrIndiana graph.
+    Instace of Mycoplasma parvum str. Indiana graph.
 
 	References
 	---------------------

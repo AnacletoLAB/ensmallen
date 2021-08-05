@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaNeapolitana.
+This file offers the methods to automatically retrieve the graph Thermotoga neapolitana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaNeapolitana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaNeapolitana graph.
+    """Return new instance of the Thermotoga neapolitana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaNeapolitana(
 
     Returns
     -----------------------
-    Instace of ThermotogaNeapolitana graph.
+    Instace of Thermotoga neapolitana graph.
 
 	References
 	---------------------

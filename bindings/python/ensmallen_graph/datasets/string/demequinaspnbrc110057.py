@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaSpNbrc110057.
+This file offers the methods to automatically retrieve the graph Demequina sp. NBRC 110057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaSpNbrc110057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaSpNbrc110057 graph.
+    """Return new instance of the Demequina sp. NBRC 110057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaSpNbrc110057(
 
     Returns
     -----------------------
-    Instace of DemequinaSpNbrc110057 graph.
+    Instace of Demequina sp. NBRC 110057 graph.
 
 	References
 	---------------------

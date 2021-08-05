@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacebacteriaBacteriumCg2303639.
+This file offers the methods to automatically retrieve the graph Candidatus Pacebacteria bacterium CG2_30_36_39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPacebacteriaBacteriumCg2303639(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacebacteriaBacteriumCg2303639 graph.
+    """Return new instance of the Candidatus Pacebacteria bacterium CG2_30_36_39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPacebacteriaBacteriumCg2303639(
 
     Returns
     -----------------------
-    Instace of CandidatusPacebacteriaBacteriumCg2303639 graph.
+    Instace of Candidatus Pacebacteria bacterium CG2_30_36_39 graph.
 
 	References
 	---------------------

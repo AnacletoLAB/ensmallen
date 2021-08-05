@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaArizonensis.
+This file offers the methods to automatically retrieve the graph Nocardia arizonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaArizonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaArizonensis graph.
+    """Return new instance of the Nocardia arizonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaArizonensis(
 
     Returns
     -----------------------
-    Instace of NocardiaArizonensis graph.
+    Instace of Nocardia arizonensis graph.
 
 	References
 	---------------------

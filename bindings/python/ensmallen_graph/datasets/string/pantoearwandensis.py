@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaRwandensis.
+This file offers the methods to automatically retrieve the graph Pantoea rwandensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaRwandensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaRwandensis graph.
+    """Return new instance of the Pantoea rwandensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaRwandensis(
 
     Returns
     -----------------------
-    Instace of PantoeaRwandensis graph.
+    Instace of Pantoea rwandensis graph.
 
 	References
 	---------------------

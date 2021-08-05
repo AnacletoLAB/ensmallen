@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoritellaViscosa.
+This file offers the methods to automatically retrieve the graph Moritella viscosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoritellaViscosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoritellaViscosa graph.
+    """Return new instance of the Moritella viscosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoritellaViscosa(
 
     Returns
     -----------------------
-    Instace of MoritellaViscosa graph.
+    Instace of Moritella viscosa graph.
 
 	References
 	---------------------

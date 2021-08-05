@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaRecordlabel.
+This file offers the methods to automatically retrieve the graph dbpedia-recordlabel.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaRecordlabel(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaRecordlabel graph.
+    """Return new instance of the dbpedia-recordlabel graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaRecordlabel(
 
     Returns
     -----------------------
-    Instace of DbpediaRecordlabel graph.
+    Instace of dbpedia-recordlabel graph.
 
 	References
 	---------------------

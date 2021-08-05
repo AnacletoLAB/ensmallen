@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraPelophila.
+This file offers the methods to automatically retrieve the graph Thiomicrospira pelophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraPelophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraPelophila graph.
+    """Return new instance of the Thiomicrospira pelophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomicrospiraPelophila(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraPelophila graph.
+    Instace of Thiomicrospira pelophila graph.
 
 	References
 	---------------------

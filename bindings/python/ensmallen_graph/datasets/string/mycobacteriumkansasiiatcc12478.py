@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumKansasiiAtcc12478.
+This file offers the methods to automatically retrieve the graph Mycobacterium kansasii ATCC12478.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumKansasiiAtcc12478(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumKansasiiAtcc12478 graph.
+    """Return new instance of the Mycobacterium kansasii ATCC12478 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumKansasiiAtcc12478(
 
     Returns
     -----------------------
-    Instace of MycobacteriumKansasiiAtcc12478 graph.
+    Instace of Mycobacterium kansasii ATCC12478 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpKordi52.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. KORDI52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpKordi52(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpKordi52 graph.
+    """Return new instance of the Synechococcus sp. KORDI52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpKordi52(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpKordi52 graph.
+    Instace of Synechococcus sp. KORDI52 graph.
 
 	References
 	---------------------

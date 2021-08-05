@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobotryumSaponariae.
+This file offers the methods to automatically retrieve the graph Microbotryum saponariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobotryumSaponariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobotryumSaponariae graph.
+    """Return new instance of the Microbotryum saponariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobotryumSaponariae(
 
     Returns
     -----------------------
-    Instace of MicrobotryumSaponariae graph.
+    Instace of Microbotryum saponariae graph.
 
 	References
 	---------------------

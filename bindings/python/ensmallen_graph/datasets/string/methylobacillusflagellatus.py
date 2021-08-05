@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacillusFlagellatus.
+This file offers the methods to automatically retrieve the graph Methylobacillus flagellatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacillusFlagellatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacillusFlagellatus graph.
+    """Return new instance of the Methylobacillus flagellatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacillusFlagellatus(
 
     Returns
     -----------------------
-    Instace of MethylobacillusFlagellatus graph.
+    Instace of Methylobacillus flagellatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAcidiproducensDsm23148.
+This file offers the methods to automatically retrieve the graph Bacillus acidiproducens DSM 23148.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAcidiproducensDsm23148(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAcidiproducensDsm23148 graph.
+    """Return new instance of the Bacillus acidiproducens DSM 23148 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAcidiproducensDsm23148(
 
     Returns
     -----------------------
-    Instace of BacillusAcidiproducensDsm23148 graph.
+    Instace of Bacillus acidiproducens DSM 23148 graph.
 
 	References
 	---------------------

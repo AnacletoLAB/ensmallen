@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusShapirobacteriaBacteriumCg2303520.
+This file offers the methods to automatically retrieve the graph Candidatus Shapirobacteria bacterium CG2_30_35_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusShapirobacteriaBacteriumCg2303520(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusShapirobacteriaBacteriumCg2303520 graph.
+    """Return new instance of the Candidatus Shapirobacteria bacterium CG2_30_35_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusShapirobacteriaBacteriumCg2303520(
 
     Returns
     -----------------------
-    Instace of CandidatusShapirobacteriaBacteriumCg2303520 graph.
+    Instace of Candidatus Shapirobacteria bacterium CG2_30_35_20 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KangiellaSediminilitoris.
+This file offers the methods to automatically retrieve the graph Kangiella sediminilitoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KangiellaSediminilitoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KangiellaSediminilitoris graph.
+    """Return new instance of the Kangiella sediminilitoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KangiellaSediminilitoris(
 
     Returns
     -----------------------
-    Instace of KangiellaSediminilitoris graph.
+    Instace of Kangiella sediminilitoris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAvermitilis.
+This file offers the methods to automatically retrieve the graph Streptomyces avermitilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAvermitilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAvermitilis graph.
+    """Return new instance of the Streptomyces avermitilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesAvermitilis(
 
     Returns
     -----------------------
-    Instace of StreptomycesAvermitilis graph.
+    Instace of Streptomyces avermitilis graph.
 
 	References
 	---------------------

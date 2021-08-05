@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumSpRac02.
+This file offers the methods to automatically retrieve the graph Sinorhizobium sp. RAC02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumSpRac02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumSpRac02 graph.
+    """Return new instance of the Sinorhizobium sp. RAC02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinorhizobiumSpRac02(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumSpRac02 graph.
+    Instace of Sinorhizobium sp. RAC02 graph.
 
 	References
 	---------------------

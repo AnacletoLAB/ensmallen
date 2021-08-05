@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoefleaSpBrhC9.
+This file offers the methods to automatically retrieve the graph Hoeflea sp. BRH_c9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoefleaSpBrhC9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoefleaSpBrhC9 graph.
+    """Return new instance of the Hoeflea sp. BRH_c9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HoefleaSpBrhC9(
 
     Returns
     -----------------------
-    Instace of HoefleaSpBrhC9 graph.
+    Instace of Hoeflea sp. BRH_c9 graph.
 
 	References
 	---------------------

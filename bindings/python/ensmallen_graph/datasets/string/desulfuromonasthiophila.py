@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonasThiophila.
+This file offers the methods to automatically retrieve the graph Desulfuromonas thiophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonasThiophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonasThiophila graph.
+    """Return new instance of the Desulfuromonas thiophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuromonasThiophila(
 
     Returns
     -----------------------
-    Instace of DesulfuromonasThiophila graph.
+    Instace of Desulfuromonas thiophila graph.
 
 	References
 	---------------------

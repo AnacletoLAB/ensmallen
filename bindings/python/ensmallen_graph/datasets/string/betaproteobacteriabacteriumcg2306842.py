@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumCg2306842.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium CG2_30_68_42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumCg2306842(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumCg2306842 graph.
+    """Return new instance of the Betaproteobacteria bacterium CG2_30_68_42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumCg2306842(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumCg2306842 graph.
+    Instace of Betaproteobacteria bacterium CG2_30_68_42 graph.
 
 	References
 	---------------------

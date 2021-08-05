@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RaphidocelisSubcapitata.
+This file offers the methods to automatically retrieve the graph Raphidocelis subcapitata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RaphidocelisSubcapitata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RaphidocelisSubcapitata graph.
+    """Return new instance of the Raphidocelis subcapitata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RaphidocelisSubcapitata(
 
     Returns
     -----------------------
-    Instace of RaphidocelisSubcapitata graph.
+    Instace of Raphidocelis subcapitata graph.
 
 	References
 	---------------------

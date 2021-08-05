@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AequorivitaCapsosiphonis.
+This file offers the methods to automatically retrieve the graph Aequorivita capsosiphonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AequorivitaCapsosiphonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AequorivitaCapsosiphonis graph.
+    """Return new instance of the Aequorivita capsosiphonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AequorivitaCapsosiphonis(
 
     Returns
     -----------------------
-    Instace of AequorivitaCapsosiphonis graph.
+    Instace of Aequorivita capsosiphonis graph.
 
 	References
 	---------------------

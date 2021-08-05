@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumLeiognathiLrivu41.
+This file offers the methods to automatically retrieve the graph Photobacterium leiognathi lrivu41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumLeiognathiLrivu41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumLeiognathiLrivu41 graph.
+    """Return new instance of the Photobacterium leiognathi lrivu41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotobacteriumLeiognathiLrivu41(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumLeiognathiLrivu41 graph.
+    Instace of Photobacterium leiognathi lrivu41 graph.
 
 	References
 	---------------------

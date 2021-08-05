@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaDrancourtii.
+This file offers the methods to automatically retrieve the graph Legionella drancourtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaDrancourtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaDrancourtii graph.
+    """Return new instance of the Legionella drancourtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaDrancourtii(
 
     Returns
     -----------------------
-    Instace of LegionellaDrancourtii graph.
+    Instace of Legionella drancourtii graph.
 
 	References
 	---------------------

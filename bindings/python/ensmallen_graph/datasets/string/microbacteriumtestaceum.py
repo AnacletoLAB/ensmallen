@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumTestaceum.
+This file offers the methods to automatically retrieve the graph Microbacterium testaceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumTestaceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumTestaceum graph.
+    """Return new instance of the Microbacterium testaceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumTestaceum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumTestaceum graph.
+    Instace of Microbacterium testaceum graph.
 
 	References
 	---------------------

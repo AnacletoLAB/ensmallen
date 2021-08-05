@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizopusAzygosporus.
+This file offers the methods to automatically retrieve the graph Rhizopus azygosporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizopusAzygosporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizopusAzygosporus graph.
+    """Return new instance of the Rhizopus azygosporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizopusAzygosporus(
 
     Returns
     -----------------------
-    Instace of RhizopusAzygosporus graph.
+    Instace of Rhizopus azygosporus graph.
 
 	References
 	---------------------

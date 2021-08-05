@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpUnc345mftsu51.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. UNC345MFTsu5.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpUnc345mftsu51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpUnc345mftsu51 graph.
+    """Return new instance of the Nocardioides sp. UNC345MFTsu5.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpUnc345mftsu51(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpUnc345mftsu51 graph.
+    Instace of Nocardioides sp. UNC345MFTsu5.1 graph.
 
 	References
 	---------------------

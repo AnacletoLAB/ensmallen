@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSp3613.
+This file offers the methods to automatically retrieve the graph Eubacterium sp. 36_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSp3613(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSp3613 graph.
+    """Return new instance of the Eubacterium sp. 36_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumSp3613(
 
     Returns
     -----------------------
-    Instace of EubacteriumSp3613 graph.
+    Instace of Eubacterium sp. 36_13 graph.
 
 	References
 	---------------------

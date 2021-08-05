@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Eat.
+This file offers the methods to automatically retrieve the graph eat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Eat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Eat graph.
+    """Return new instance of the eat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Eat(
 
     Returns
     -----------------------
-    Instace of Eat graph.
+    Instace of eat graph.
 
 	References
 	---------------------

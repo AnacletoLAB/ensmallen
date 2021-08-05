@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriaSymbiontBfo2OfFrankliniellaOccidentalis.
+This file offers the methods to automatically retrieve the graph bacteria symbiont BFo2 of Frankliniella occidentalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriaSymbiontBfo2OfFrankliniellaOccidentalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriaSymbiontBfo2OfFrankliniellaOccidentalis graph.
+    """Return new instance of the bacteria symbiont BFo2 of Frankliniella occidentalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriaSymbiontBfo2OfFrankliniellaOccidentalis(
 
     Returns
     -----------------------
-    Instace of BacteriaSymbiontBfo2OfFrankliniellaOccidentalis graph.
+    Instace of bacteria symbiont BFo2 of Frankliniella occidentalis graph.
 
 	References
 	---------------------

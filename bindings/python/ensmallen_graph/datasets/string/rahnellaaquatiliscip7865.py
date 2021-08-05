@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RahnellaAquatilisCip7865.
+This file offers the methods to automatically retrieve the graph Rahnella aquatilis CIP78.65.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RahnellaAquatilisCip7865(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RahnellaAquatilisCip7865 graph.
+    """Return new instance of the Rahnella aquatilis CIP78.65 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RahnellaAquatilisCip7865(
 
     Returns
     -----------------------
-    Instace of RahnellaAquatilisCip7865 graph.
+    Instace of Rahnella aquatilis CIP78.65 graph.
 
 	References
 	---------------------

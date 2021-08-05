@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumGordonae.
+This file offers the methods to automatically retrieve the graph Mycobacterium gordonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumGordonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumGordonae graph.
+    """Return new instance of the Mycobacterium gordonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumGordonae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumGordonae graph.
+    Instace of Mycobacterium gordonae graph.
 
 	References
 	---------------------

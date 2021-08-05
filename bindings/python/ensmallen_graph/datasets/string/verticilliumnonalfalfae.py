@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerticilliumNonalfalfae.
+This file offers the methods to automatically retrieve the graph Verticillium nonalfalfae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerticilliumNonalfalfae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerticilliumNonalfalfae graph.
+    """Return new instance of the Verticillium nonalfalfae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerticilliumNonalfalfae(
 
     Returns
     -----------------------
-    Instace of VerticilliumNonalfalfae graph.
+    Instace of Verticillium nonalfalfae graph.
 
 	References
 	---------------------

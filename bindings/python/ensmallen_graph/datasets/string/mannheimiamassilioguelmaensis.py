@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaMassilioguelmaensis.
+This file offers the methods to automatically retrieve the graph Mannheimia massilioguelmaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaMassilioguelmaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaMassilioguelmaensis graph.
+    """Return new instance of the Mannheimia massilioguelmaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MannheimiaMassilioguelmaensis(
 
     Returns
     -----------------------
-    Instace of MannheimiaMassilioguelmaensis graph.
+    Instace of Mannheimia massilioguelmaensis graph.
 
 	References
 	---------------------

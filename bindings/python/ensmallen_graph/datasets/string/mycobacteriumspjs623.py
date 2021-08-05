@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpJs623.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. JS623.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpJs623(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpJs623 graph.
+    """Return new instance of the Mycobacterium sp. JS623 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpJs623(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpJs623 graph.
+    Instace of Mycobacterium sp. JS623 graph.
 
 	References
 	---------------------

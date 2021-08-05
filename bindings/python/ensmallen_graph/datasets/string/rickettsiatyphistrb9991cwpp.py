@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaTyphiStrB9991cwpp.
+This file offers the methods to automatically retrieve the graph Rickettsia typhi str. B9991CWPP.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaTyphiStrB9991cwpp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaTyphiStrB9991cwpp graph.
+    """Return new instance of the Rickettsia typhi str. B9991CWPP graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RickettsiaTyphiStrB9991cwpp(
 
     Returns
     -----------------------
-    Instace of RickettsiaTyphiStrB9991cwpp graph.
+    Instace of Rickettsia typhi str. B9991CWPP graph.
 
 	References
 	---------------------

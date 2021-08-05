@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSpBv3c26.
+This file offers the methods to automatically retrieve the graph Peptoniphilus sp. BV3C26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSpBv3c26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSpBv3c26 graph.
+    """Return new instance of the Peptoniphilus sp. BV3C26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusSpBv3c26(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSpBv3c26 graph.
+    Instace of Peptoniphilus sp. BV3C26 graph.
 
 	References
 	---------------------

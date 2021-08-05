@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiameybacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Niameybacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiameybacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiameybacterMassiliensis graph.
+    """Return new instance of the Niameybacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NiameybacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of NiameybacterMassiliensis graph.
+    Instace of Niameybacter massiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumGuttoideum.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum guttoideum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumGuttoideum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumGuttoideum graph.
+    """Return new instance of the Desulfotomaculum guttoideum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumGuttoideum(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumGuttoideum graph.
+    Instace of Desulfotomaculum guttoideum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AkkermansiaSpCag344.
+This file offers the methods to automatically retrieve the graph Akkermansia sp. CAG:344.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AkkermansiaSpCag344(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AkkermansiaSpCag344 graph.
+    """Return new instance of the Akkermansia sp. CAG:344 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AkkermansiaSpCag344(
 
     Returns
     -----------------------
-    Instace of AkkermansiaSpCag344 graph.
+    Instace of Akkermansia sp. CAG:344 graph.
 
 	References
 	---------------------

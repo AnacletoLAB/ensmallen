@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetonemaLongum.
+This file offers the methods to automatically retrieve the graph Acetonema longum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetonemaLongum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetonemaLongum graph.
+    """Return new instance of the Acetonema longum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetonemaLongum(
 
     Returns
     -----------------------
-    Instace of AcetonemaLongum graph.
+    Instace of Acetonema longum graph.
 
 	References
 	---------------------

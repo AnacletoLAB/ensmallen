@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioMaritimus.
+This file offers the methods to automatically retrieve the graph Vibrio maritimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioMaritimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioMaritimus graph.
+    """Return new instance of the Vibrio maritimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioMaritimus(
 
     Returns
     -----------------------
-    Instace of VibrioMaritimus graph.
+    Instace of Vibrio maritimus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaCoriaceae.
+This file offers the methods to automatically retrieve the graph Borrelia coriaceae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaCoriaceae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaCoriaceae graph.
+    """Return new instance of the Borrelia coriaceae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaCoriaceae(
 
     Returns
     -----------------------
-    Instace of BorreliaCoriaceae graph.
+    Instace of Borrelia coriaceae graph.
 
 	References
 	---------------------

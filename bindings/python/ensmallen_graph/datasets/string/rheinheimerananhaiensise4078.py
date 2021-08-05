@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraNanhaiensisE4078.
+This file offers the methods to automatically retrieve the graph Rheinheimera nanhaiensis E407-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraNanhaiensisE4078(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraNanhaiensisE4078 graph.
+    """Return new instance of the Rheinheimera nanhaiensis E407-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RheinheimeraNanhaiensisE4078(
 
     Returns
     -----------------------
-    Instace of RheinheimeraNanhaiensisE4078 graph.
+    Instace of Rheinheimera nanhaiensis E407-8 graph.
 
 	References
 	---------------------

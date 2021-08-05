@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndosymbiontOfBathymodiolusSeptemdierumStrMyojinKnoll.
+This file offers the methods to automatically retrieve the graph endosymbiont of Bathymodiolus septemdierum str. Myojin knoll.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndosymbiontOfBathymodiolusSeptemdierumStrMyojinKnoll(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndosymbiontOfBathymodiolusSeptemdierumStrMyojinKnoll graph.
+    """Return new instance of the endosymbiont of Bathymodiolus septemdierum str. Myojin knoll graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EndosymbiontOfBathymodiolusSeptemdierumStrMyojinKnoll(
 
     Returns
     -----------------------
-    Instace of EndosymbiontOfBathymodiolusSeptemdierumStrMyojinKnoll graph.
+    Instace of endosymbiont of Bathymodiolus septemdierum str. Myojin knoll graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterArsenitoxydans.
+This file offers the methods to automatically retrieve the graph Achromobacter arsenitoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterArsenitoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterArsenitoxydans graph.
+    """Return new instance of the Achromobacter arsenitoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterArsenitoxydans(
 
     Returns
     -----------------------
-    Instace of AchromobacterArsenitoxydans graph.
+    Instace of Achromobacter arsenitoxydans graph.
 
 	References
 	---------------------

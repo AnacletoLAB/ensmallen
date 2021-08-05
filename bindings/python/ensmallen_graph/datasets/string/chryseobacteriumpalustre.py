@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumPalustre.
+This file offers the methods to automatically retrieve the graph Chryseobacterium palustre.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumPalustre(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumPalustre graph.
+    """Return new instance of the Chryseobacterium palustre graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumPalustre(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumPalustre graph.
+    Instace of Chryseobacterium palustre graph.
 
 	References
 	---------------------

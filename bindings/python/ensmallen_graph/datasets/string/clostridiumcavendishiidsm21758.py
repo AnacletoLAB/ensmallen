@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCavendishiiDsm21758.
+This file offers the methods to automatically retrieve the graph Clostridium cavendishii DSM 21758.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCavendishiiDsm21758(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCavendishiiDsm21758 graph.
+    """Return new instance of the Clostridium cavendishii DSM 21758 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumCavendishiiDsm21758(
 
     Returns
     -----------------------
-    Instace of ClostridiumCavendishiiDsm21758 graph.
+    Instace of Clostridium cavendishii DSM 21758 graph.
 
 	References
 	---------------------

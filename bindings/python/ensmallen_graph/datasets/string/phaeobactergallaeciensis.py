@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeobacterGallaeciensis.
+This file offers the methods to automatically retrieve the graph Phaeobacter gallaeciensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeobacterGallaeciensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeobacterGallaeciensis graph.
+    """Return new instance of the Phaeobacter gallaeciensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhaeobacterGallaeciensis(
 
     Returns
     -----------------------
-    Instace of PhaeobacterGallaeciensis graph.
+    Instace of Phaeobacter gallaeciensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAlgidicarnis.
+This file offers the methods to automatically retrieve the graph Clostridium algidicarnis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAlgidicarnis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAlgidicarnis graph.
+    """Return new instance of the Clostridium algidicarnis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumAlgidicarnis(
 
     Returns
     -----------------------
-    Instace of ClostridiumAlgidicarnis graph.
+    Instace of Clostridium algidicarnis graph.
 
 	References
 	---------------------

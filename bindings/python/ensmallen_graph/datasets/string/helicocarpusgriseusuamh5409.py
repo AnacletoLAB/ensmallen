@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicocarpusGriseusUamh5409.
+This file offers the methods to automatically retrieve the graph Helicocarpus griseus UAMH5409.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicocarpusGriseusUamh5409(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicocarpusGriseusUamh5409 graph.
+    """Return new instance of the Helicocarpus griseus UAMH5409 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicocarpusGriseusUamh5409(
 
     Returns
     -----------------------
-    Instace of HelicocarpusGriseusUamh5409 graph.
+    Instace of Helicocarpus griseus UAMH5409 graph.
 
 	References
 	---------------------

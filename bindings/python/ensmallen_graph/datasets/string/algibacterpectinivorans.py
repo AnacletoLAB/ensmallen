@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgibacterPectinivorans.
+This file offers the methods to automatically retrieve the graph Algibacter pectinivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgibacterPectinivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgibacterPectinivorans graph.
+    """Return new instance of the Algibacter pectinivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgibacterPectinivorans(
 
     Returns
     -----------------------
-    Instace of AlgibacterPectinivorans graph.
+    Instace of Algibacter pectinivorans graph.
 
 	References
 	---------------------

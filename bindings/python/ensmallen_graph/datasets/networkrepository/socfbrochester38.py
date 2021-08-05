@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbRochester38.
+This file offers the methods to automatically retrieve the graph socfb-Rochester38.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbRochester38(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbRochester38 graph.
+    """Return new instance of the socfb-Rochester38 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbRochester38(
 
     Returns
     -----------------------
-    Instace of SocfbRochester38 graph.
+    Instace of socfb-Rochester38 graph.
 
 	References
 	---------------------

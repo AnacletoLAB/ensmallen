@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusFlavithermusWk1.
+This file offers the methods to automatically retrieve the graph Anoxybacillus flavithermus WK1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusFlavithermusWk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusFlavithermusWk1 graph.
+    """Return new instance of the Anoxybacillus flavithermus WK1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnoxybacillusFlavithermusWk1(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusFlavithermusWk1 graph.
+    Instace of Anoxybacillus flavithermus WK1 graph.
 
 	References
 	---------------------

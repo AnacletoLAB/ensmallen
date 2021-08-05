@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasJandaei.
+This file offers the methods to automatically retrieve the graph Aeromonas jandaei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasJandaei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasJandaei graph.
+    """Return new instance of the Aeromonas jandaei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasJandaei(
 
     Returns
     -----------------------
-    Instace of AeromonasJandaei graph.
+    Instace of Aeromonas jandaei graph.
 
 	References
 	---------------------

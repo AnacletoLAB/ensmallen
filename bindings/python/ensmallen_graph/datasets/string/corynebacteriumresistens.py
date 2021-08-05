@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumResistens.
+This file offers the methods to automatically retrieve the graph Corynebacterium resistens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumResistens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumResistens graph.
+    """Return new instance of the Corynebacterium resistens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumResistens(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumResistens graph.
+    Instace of Corynebacterium resistens graph.
 
 	References
 	---------------------

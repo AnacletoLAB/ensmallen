@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumLiaoningense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium liaoningense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumLiaoningense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumLiaoningense graph.
+    """Return new instance of the Bradyrhizobium liaoningense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumLiaoningense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumLiaoningense graph.
+    Instace of Bradyrhizobium liaoningense graph.
 
 	References
 	---------------------

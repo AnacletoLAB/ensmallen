@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalasseziaSympodialisAtcc42132.
+This file offers the methods to automatically retrieve the graph Malassezia sympodialis ATCC 42132.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalasseziaSympodialisAtcc42132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalasseziaSympodialisAtcc42132 graph.
+    """Return new instance of the Malassezia sympodialis ATCC 42132 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalasseziaSympodialisAtcc42132(
 
     Returns
     -----------------------
-    Instace of MalasseziaSympodialisAtcc42132 graph.
+    Instace of Malassezia sympodialis ATCC 42132 graph.
 
 	References
 	---------------------

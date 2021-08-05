@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaPersicinaNbrc102418.
+This file offers the methods to automatically retrieve the graph Erwinia persicina NBRC 102418.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaPersicinaNbrc102418(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaPersicinaNbrc102418 graph.
+    """Return new instance of the Erwinia persicina NBRC 102418 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaPersicinaNbrc102418(
 
     Returns
     -----------------------
-    Instace of ErwiniaPersicinaNbrc102418 graph.
+    Instace of Erwinia persicina NBRC 102418 graph.
 
 	References
 	---------------------

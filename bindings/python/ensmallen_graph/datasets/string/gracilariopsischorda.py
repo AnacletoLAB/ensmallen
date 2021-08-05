@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilariopsisChorda.
+This file offers the methods to automatically retrieve the graph Gracilariopsis chorda.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilariopsisChorda(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilariopsisChorda graph.
+    """Return new instance of the Gracilariopsis chorda graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilariopsisChorda(
 
     Returns
     -----------------------
-    Instace of GracilariopsisChorda graph.
+    Instace of Gracilariopsis chorda graph.
 
 	References
 	---------------------

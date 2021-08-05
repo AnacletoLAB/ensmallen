@@ -77,7 +77,7 @@ def NR08blocks(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="08blocks",
+        graph_name="NR08blocks",
         dataset="networkrepository",
         version=version,
         directed=directed,

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumDamselaeSubspDamselae.
+This file offers the methods to automatically retrieve the graph Photobacterium damselae subsp. damselae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumDamselaeSubspDamselae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumDamselaeSubspDamselae graph.
+    """Return new instance of the Photobacterium damselae subsp. damselae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumDamselaeSubspDamselae(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumDamselaeSubspDamselae graph.
+    Instace of Photobacterium damselae subsp. damselae graph.
 
 	References
 	---------------------

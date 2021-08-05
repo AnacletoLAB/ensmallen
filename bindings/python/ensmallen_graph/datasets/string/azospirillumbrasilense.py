@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumBrasilense.
+This file offers the methods to automatically retrieve the graph Azospirillum brasilense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumBrasilense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumBrasilense graph.
+    """Return new instance of the Azospirillum brasilense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumBrasilense(
 
     Returns
     -----------------------
-    Instace of AzospirillumBrasilense graph.
+    Instace of Azospirillum brasilense graph.
 
 	References
 	---------------------

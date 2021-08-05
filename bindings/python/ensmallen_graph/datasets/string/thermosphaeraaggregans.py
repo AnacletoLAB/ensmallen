@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosphaeraAggregans.
+This file offers the methods to automatically retrieve the graph Thermosphaera aggregans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosphaeraAggregans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosphaeraAggregans graph.
+    """Return new instance of the Thermosphaera aggregans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermosphaeraAggregans(
 
     Returns
     -----------------------
-    Instace of ThermosphaeraAggregans graph.
+    Instace of Thermosphaera aggregans graph.
 
 	References
 	---------------------

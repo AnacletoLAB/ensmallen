@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TremaOrientale.
+This file offers the methods to automatically retrieve the graph Trema orientale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TremaOrientale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TremaOrientale graph.
+    """Return new instance of the Trema orientale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TremaOrientale(
 
     Returns
     -----------------------
-    Instace of TremaOrientale graph.
+    Instace of Trema orientale graph.
 
 	References
 	---------------------

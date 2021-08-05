@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArtemisiaAnnua.
+This file offers the methods to automatically retrieve the graph Artemisia annua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArtemisiaAnnua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArtemisiaAnnua graph.
+    """Return new instance of the Artemisia annua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArtemisiaAnnua(
 
     Returns
     -----------------------
-    Instace of ArtemisiaAnnua graph.
+    Instace of Artemisia annua graph.
 
 	References
 	---------------------

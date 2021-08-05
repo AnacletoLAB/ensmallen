@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpRu36d.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. RU36D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpRu36d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpRu36d graph.
+    """Return new instance of the Rhizobium sp. RU36D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpRu36d(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpRu36d graph.
+    Instace of Rhizobium sp. RU36D graph.
 
 	References
 	---------------------

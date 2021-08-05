@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrauserellaRugosa.
+This file offers the methods to automatically retrieve the graph Prauserella rugosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrauserellaRugosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrauserellaRugosa graph.
+    """Return new instance of the Prauserella rugosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrauserellaRugosa(
 
     Returns
     -----------------------
-    Instace of PrauserellaRugosa graph.
+    Instace of Prauserella rugosa graph.
 
 	References
 	---------------------

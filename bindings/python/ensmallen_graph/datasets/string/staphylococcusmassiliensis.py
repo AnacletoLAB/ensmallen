@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusMassiliensis.
+This file offers the methods to automatically retrieve the graph Staphylococcus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusMassiliensis graph.
+    """Return new instance of the Staphylococcus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusMassiliensis(
 
     Returns
     -----------------------
-    Instace of StaphylococcusMassiliensis graph.
+    Instace of Staphylococcus massiliensis graph.
 
 	References
 	---------------------

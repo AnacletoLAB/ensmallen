@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalothiobacillusSpXi15.
+This file offers the methods to automatically retrieve the graph Halothiobacillus sp. XI15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalothiobacillusSpXi15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalothiobacillusSpXi15 graph.
+    """Return new instance of the Halothiobacillus sp. XI15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalothiobacillusSpXi15(
 
     Returns
     -----------------------
-    Instace of HalothiobacillusSpXi15 graph.
+    Instace of Halothiobacillus sp. XI15 graph.
 
 	References
 	---------------------

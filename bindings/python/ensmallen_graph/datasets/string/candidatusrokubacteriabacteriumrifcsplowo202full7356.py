@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRokubacteriaBacteriumRifcsplowo202Full7356.
+This file offers the methods to automatically retrieve the graph Candidatus Rokubacteria bacterium RIFCSPLOWO2_02_FULL_73_56.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRokubacteriaBacteriumRifcsplowo202Full7356(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRokubacteriaBacteriumRifcsplowo202Full7356 graph.
+    """Return new instance of the Candidatus Rokubacteria bacterium RIFCSPLOWO2_02_FULL_73_56 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRokubacteriaBacteriumRifcsplowo202Full7356(
 
     Returns
     -----------------------
-    Instace of CandidatusRokubacteriaBacteriumRifcsplowo202Full7356 graph.
+    Instace of Candidatus Rokubacteria bacterium RIFCSPLOWO2_02_FULL_73_56 graph.
 
 	References
 	---------------------

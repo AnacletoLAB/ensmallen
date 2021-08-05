@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProlemurSimus.
+This file offers the methods to automatically retrieve the graph Prolemur simus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProlemurSimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProlemurSimus graph.
+    """Return new instance of the Prolemur simus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProlemurSimus(
 
     Returns
     -----------------------
-    Instace of ProlemurSimus graph.
+    Instace of Prolemur simus graph.
 
 	References
 	---------------------

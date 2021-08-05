@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSphaericusOt4b31.
+This file offers the methods to automatically retrieve the graph Lysinibacillus sphaericus OT4b31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSphaericusOt4b31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSphaericusOt4b31 graph.
+    """Return new instance of the Lysinibacillus sphaericus OT4b31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusSphaericusOt4b31(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSphaericusOt4b31 graph.
+    Instace of Lysinibacillus sphaericus OT4b31 graph.
 
 	References
 	---------------------

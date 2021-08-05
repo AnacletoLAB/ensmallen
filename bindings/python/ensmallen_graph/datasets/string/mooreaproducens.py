@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MooreaProducens.
+This file offers the methods to automatically retrieve the graph Moorea producens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MooreaProducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MooreaProducens graph.
+    """Return new instance of the Moorea producens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MooreaProducens(
 
     Returns
     -----------------------
-    Instace of MooreaProducens graph.
+    Instace of Moorea producens graph.
 
 	References
 	---------------------

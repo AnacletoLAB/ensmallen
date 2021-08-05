@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrococcalesBacterium7064.
+This file offers the methods to automatically retrieve the graph Micrococcales bacterium 70-64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrococcalesBacterium7064(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrococcalesBacterium7064 graph.
+    """Return new instance of the Micrococcales bacterium 70-64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrococcalesBacterium7064(
 
     Returns
     -----------------------
-    Instace of MicrococcalesBacterium7064 graph.
+    Instace of Micrococcales bacterium 70-64 graph.
 
 	References
 	---------------------

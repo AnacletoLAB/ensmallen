@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaDagmatisAtcc43325.
+This file offers the methods to automatically retrieve the graph Pasteurella dagmatis ATCC 43325.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaDagmatisAtcc43325(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaDagmatisAtcc43325 graph.
+    """Return new instance of the Pasteurella dagmatis ATCC 43325 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PasteurellaDagmatisAtcc43325(
 
     Returns
     -----------------------
-    Instace of PasteurellaDagmatisAtcc43325 graph.
+    Instace of Pasteurella dagmatis ATCC 43325 graph.
 
 	References
 	---------------------

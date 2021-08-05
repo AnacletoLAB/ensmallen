@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraSp73s.
+This file offers the methods to automatically retrieve the graph Methylotenera sp. 73s.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraSp73s(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraSp73s graph.
+    """Return new instance of the Methylotenera sp. 73s graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloteneraSp73s(
 
     Returns
     -----------------------
-    Instace of MethyloteneraSp73s graph.
+    Instace of Methylotenera sp. 73s graph.
 
 	References
 	---------------------

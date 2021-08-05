@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AphanomycesAstaci.
+This file offers the methods to automatically retrieve the graph Aphanomyces astaci.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AphanomycesAstaci(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AphanomycesAstaci graph.
+    """Return new instance of the Aphanomyces astaci graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AphanomycesAstaci(
 
     Returns
     -----------------------
-    Instace of AphanomycesAstaci graph.
+    Instace of Aphanomyces astaci graph.
 
 	References
 	---------------------

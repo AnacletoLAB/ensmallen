@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpIbvhs1.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. IBVHS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpIbvhs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpIbvhs1 graph.
+    """Return new instance of the Hydrogenophaga sp. IBVHS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpIbvhs1(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpIbvhs1 graph.
+    Instace of Hydrogenophaga sp. IBVHS1 graph.
 
 	References
 	---------------------

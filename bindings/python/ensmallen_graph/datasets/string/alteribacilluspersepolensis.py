@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteribacillusPersepolensis.
+This file offers the methods to automatically retrieve the graph Alteribacillus persepolensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteribacillusPersepolensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteribacillusPersepolensis graph.
+    """Return new instance of the Alteribacillus persepolensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteribacillusPersepolensis(
 
     Returns
     -----------------------
-    Instace of AlteribacillusPersepolensis graph.
+    Instace of Alteribacillus persepolensis graph.
 
 	References
 	---------------------

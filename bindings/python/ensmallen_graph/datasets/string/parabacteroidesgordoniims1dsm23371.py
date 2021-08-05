@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesGordoniiMs1Dsm23371.
+This file offers the methods to automatically retrieve the graph Parabacteroides gordonii MS-1 DSM 23371.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesGordoniiMs1Dsm23371(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesGordoniiMs1Dsm23371 graph.
+    """Return new instance of the Parabacteroides gordonii MS-1 DSM 23371 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParabacteroidesGordoniiMs1Dsm23371(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesGordoniiMs1Dsm23371 graph.
+    Instace of Parabacteroides gordonii MS-1 DSM 23371 graph.
 
 	References
 	---------------------

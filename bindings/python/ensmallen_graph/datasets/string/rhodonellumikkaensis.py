@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodonellumIkkaensis.
+This file offers the methods to automatically retrieve the graph Rhodonellum ikkaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodonellumIkkaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodonellumIkkaensis graph.
+    """Return new instance of the Rhodonellum ikkaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodonellumIkkaensis(
 
     Returns
     -----------------------
-    Instace of RhodonellumIkkaensis graph.
+    Instace of Rhodonellum ikkaensis graph.
 
 	References
 	---------------------

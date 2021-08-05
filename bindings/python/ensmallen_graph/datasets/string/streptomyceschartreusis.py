@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesChartreusis.
+This file offers the methods to automatically retrieve the graph Streptomyces chartreusis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesChartreusis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesChartreusis graph.
+    """Return new instance of the Streptomyces chartreusis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesChartreusis(
 
     Returns
     -----------------------
-    Instace of StreptomycesChartreusis graph.
+    Instace of Streptomyces chartreusis graph.
 
 	References
 	---------------------

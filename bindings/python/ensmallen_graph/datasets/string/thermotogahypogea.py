@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaHypogea.
+This file offers the methods to automatically retrieve the graph Thermotoga hypogea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaHypogea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaHypogea graph.
+    """Return new instance of the Thermotoga hypogea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaHypogea(
 
     Returns
     -----------------------
-    Instace of ThermotogaHypogea graph.
+    Instace of Thermotoga hypogea graph.
 
 	References
 	---------------------

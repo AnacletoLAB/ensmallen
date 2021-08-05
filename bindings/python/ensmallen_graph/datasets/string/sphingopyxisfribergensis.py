@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisFribergensis.
+This file offers the methods to automatically retrieve the graph Sphingopyxis fribergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisFribergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisFribergensis graph.
+    """Return new instance of the Sphingopyxis fribergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisFribergensis(
 
     Returns
     -----------------------
-    Instace of SphingopyxisFribergensis graph.
+    Instace of Sphingopyxis fribergensis graph.
 
 	References
 	---------------------

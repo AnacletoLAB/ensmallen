@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RamulariaColloCygni.
+This file offers the methods to automatically retrieve the graph Ramularia collo-cygni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RamulariaColloCygni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RamulariaColloCygni graph.
+    """Return new instance of the Ramularia collo-cygni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RamulariaColloCygni(
 
     Returns
     -----------------------
-    Instace of RamulariaColloCygni graph.
+    Instace of Ramularia collo-cygni graph.
 
 	References
 	---------------------

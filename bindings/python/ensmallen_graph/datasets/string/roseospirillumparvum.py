@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseospirillumParvum.
+This file offers the methods to automatically retrieve the graph Roseospirillum parvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseospirillumParvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseospirillumParvum graph.
+    """Return new instance of the Roseospirillum parvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseospirillumParvum(
 
     Returns
     -----------------------
-    Instace of RoseospirillumParvum graph.
+    Instace of Roseospirillum parvum graph.
 
 	References
 	---------------------

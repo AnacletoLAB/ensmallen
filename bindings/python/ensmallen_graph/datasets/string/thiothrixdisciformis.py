@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiothrixDisciformis.
+This file offers the methods to automatically retrieve the graph Thiothrix disciformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiothrixDisciformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiothrixDisciformis graph.
+    """Return new instance of the Thiothrix disciformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiothrixDisciformis(
 
     Returns
     -----------------------
-    Instace of ThiothrixDisciformis graph.
+    Instace of Thiothrix disciformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiferrobacterThiooxydans.
+This file offers the methods to automatically retrieve the graph Acidiferrobacter thiooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidiferrobacterThiooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiferrobacterThiooxydans graph.
+    """Return new instance of the Acidiferrobacter thiooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidiferrobacterThiooxydans(
 
     Returns
     -----------------------
-    Instace of AcidiferrobacterThiooxydans graph.
+    Instace of Acidiferrobacter thiooxydans graph.
 
 	References
 	---------------------

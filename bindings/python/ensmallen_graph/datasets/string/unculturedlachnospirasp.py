@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedLachnospiraSp.
+This file offers the methods to automatically retrieve the graph uncultured Lachnospira sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedLachnospiraSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedLachnospiraSp graph.
+    """Return new instance of the uncultured Lachnospira sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedLachnospiraSp(
 
     Returns
     -----------------------
-    Instace of UnculturedLachnospiraSp graph.
+    Instace of uncultured Lachnospira sp. graph.
 
 	References
 	---------------------

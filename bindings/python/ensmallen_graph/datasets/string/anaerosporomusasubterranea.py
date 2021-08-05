@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerosporomusaSubterranea.
+This file offers the methods to automatically retrieve the graph Anaerosporomusa subterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerosporomusaSubterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerosporomusaSubterranea graph.
+    """Return new instance of the Anaerosporomusa subterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerosporomusaSubterranea(
 
     Returns
     -----------------------
-    Instace of AnaerosporomusaSubterranea graph.
+    Instace of Anaerosporomusa subterranea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OreochromisNiloticus.
+This file offers the methods to automatically retrieve the graph Oreochromis niloticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OreochromisNiloticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OreochromisNiloticus graph.
+    """Return new instance of the Oreochromis niloticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OreochromisNiloticus(
 
     Returns
     -----------------------
-    Instace of OreochromisNiloticus graph.
+    Instace of Oreochromis niloticus graph.
 
 	References
 	---------------------

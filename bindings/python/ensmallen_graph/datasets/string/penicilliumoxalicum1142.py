@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumOxalicum1142.
+This file offers the methods to automatically retrieve the graph Penicillium oxalicum 114-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumOxalicum1142(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumOxalicum1142 graph.
+    """Return new instance of the Penicillium oxalicum 114-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumOxalicum1142(
 
     Returns
     -----------------------
-    Instace of PenicilliumOxalicum1142 graph.
+    Instace of Penicillium oxalicum 114-2 graph.
 
 	References
 	---------------------

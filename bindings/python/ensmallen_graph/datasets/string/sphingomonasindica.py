@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasIndica.
+This file offers the methods to automatically retrieve the graph Sphingomonas indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasIndica graph.
+    """Return new instance of the Sphingomonas indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasIndica(
 
     Returns
     -----------------------
-    Instace of SphingomonasIndica graph.
+    Instace of Sphingomonas indica graph.
 
 	References
 	---------------------

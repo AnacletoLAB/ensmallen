@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrococcusCarbonis.
+This file offers the methods to automatically retrieve the graph Agrococcus carbonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrococcusCarbonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrococcusCarbonis graph.
+    """Return new instance of the Agrococcus carbonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrococcusCarbonis(
 
     Returns
     -----------------------
-    Instace of AgrococcusCarbonis graph.
+    Instace of Agrococcus carbonis graph.
 
 	References
 	---------------------

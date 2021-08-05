@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RouxiellaBadensis.
+This file offers the methods to automatically retrieve the graph Rouxiella badensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RouxiellaBadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RouxiellaBadensis graph.
+    """Return new instance of the Rouxiella badensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RouxiellaBadensis(
 
     Returns
     -----------------------
-    Instace of RouxiellaBadensis graph.
+    Instace of Rouxiella badensis graph.
 
 	References
 	---------------------

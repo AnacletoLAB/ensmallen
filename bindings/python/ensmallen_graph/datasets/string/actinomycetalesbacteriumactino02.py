@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycetalesBacteriumActino02.
+This file offers the methods to automatically retrieve the graph Actinomycetales bacterium Actino_02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycetalesBacteriumActino02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycetalesBacteriumActino02 graph.
+    """Return new instance of the Actinomycetales bacterium Actino_02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycetalesBacteriumActino02(
 
     Returns
     -----------------------
-    Instace of ActinomycetalesBacteriumActino02 graph.
+    Instace of Actinomycetales bacterium Actino_02 graph.
 
 	References
 	---------------------

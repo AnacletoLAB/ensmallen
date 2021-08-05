@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaccharosporaIrregularisDsm2635.
+This file offers the methods to automatically retrieve the graph Asaccharospora irregularis DSM 2635.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaccharosporaIrregularisDsm2635(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaccharosporaIrregularisDsm2635 graph.
+    """Return new instance of the Asaccharospora irregularis DSM 2635 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsaccharosporaIrregularisDsm2635(
 
     Returns
     -----------------------
-    Instace of AsaccharosporaIrregularisDsm2635 graph.
+    Instace of Asaccharospora irregularis DSM 2635 graph.
 
 	References
 	---------------------

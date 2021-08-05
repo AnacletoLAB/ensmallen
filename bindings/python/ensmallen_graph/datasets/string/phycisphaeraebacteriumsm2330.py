@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycisphaeraeBacteriumSm2330.
+This file offers the methods to automatically retrieve the graph Phycisphaerae bacterium SM23_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycisphaeraeBacteriumSm2330(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycisphaeraeBacteriumSm2330 graph.
+    """Return new instance of the Phycisphaerae bacterium SM23_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycisphaeraeBacteriumSm2330(
 
     Returns
     -----------------------
-    Instace of PhycisphaeraeBacteriumSm2330 graph.
+    Instace of Phycisphaerae bacterium SM23_30 graph.
 
 	References
 	---------------------

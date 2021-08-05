@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FuerstiaMarisgermanicae.
+This file offers the methods to automatically retrieve the graph Fuerstia marisgermanicae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FuerstiaMarisgermanicae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FuerstiaMarisgermanicae graph.
+    """Return new instance of the Fuerstia marisgermanicae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FuerstiaMarisgermanicae(
 
     Returns
     -----------------------
-    Instace of FuerstiaMarisgermanicae graph.
+    Instace of Fuerstia marisgermanicae graph.
 
 	References
 	---------------------

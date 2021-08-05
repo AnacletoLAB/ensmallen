@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaThermophila.
+This file offers the methods to automatically retrieve the graph Pseudonocardia thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaThermophila graph.
+    """Return new instance of the Pseudonocardia thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaThermophila(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaThermophila graph.
+    Instace of Pseudonocardia thermophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasByunsanensis.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas byunsanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasByunsanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasByunsanensis graph.
+    """Return new instance of the Pseudoalteromonas byunsanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasByunsanensis(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasByunsanensis graph.
+    Instace of Pseudoalteromonas byunsanensis graph.
 
 	References
 	---------------------

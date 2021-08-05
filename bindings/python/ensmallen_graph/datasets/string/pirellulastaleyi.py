@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PirellulaStaleyi.
+This file offers the methods to automatically retrieve the graph Pirellula staleyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PirellulaStaleyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PirellulaStaleyi graph.
+    """Return new instance of the Pirellula staleyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PirellulaStaleyi(
 
     Returns
     -----------------------
-    Instace of PirellulaStaleyi graph.
+    Instace of Pirellula staleyi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DefluviimonasAlba.
+This file offers the methods to automatically retrieve the graph Defluviimonas alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DefluviimonasAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DefluviimonasAlba graph.
+    """Return new instance of the Defluviimonas alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DefluviimonasAlba(
 
     Returns
     -----------------------
-    Instace of DefluviimonasAlba graph.
+    Instace of Defluviimonas alba graph.
 
 	References
 	---------------------

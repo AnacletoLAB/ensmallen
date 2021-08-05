@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RiemerellaColumbipharyngis.
+This file offers the methods to automatically retrieve the graph Riemerella columbipharyngis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RiemerellaColumbipharyngis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RiemerellaColumbipharyngis graph.
+    """Return new instance of the Riemerella columbipharyngis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RiemerellaColumbipharyngis(
 
     Returns
     -----------------------
-    Instace of RiemerellaColumbipharyngis graph.
+    Instace of Riemerella columbipharyngis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylovorusGlucosetrophus.
+This file offers the methods to automatically retrieve the graph Methylovorus glucosetrophus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylovorusGlucosetrophus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylovorusGlucosetrophus graph.
+    """Return new instance of the Methylovorus glucosetrophus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylovorusGlucosetrophus(
 
     Returns
     -----------------------
-    Instace of MethylovorusGlucosetrophus graph.
+    Instace of Methylovorus glucosetrophus graph.
 
 	References
 	---------------------

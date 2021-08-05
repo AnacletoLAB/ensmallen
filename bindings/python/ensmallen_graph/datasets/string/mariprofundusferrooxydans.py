@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MariprofundusFerrooxydans.
+This file offers the methods to automatically retrieve the graph Mariprofundus ferrooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MariprofundusFerrooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MariprofundusFerrooxydans graph.
+    """Return new instance of the Mariprofundus ferrooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MariprofundusFerrooxydans(
 
     Returns
     -----------------------
-    Instace of MariprofundusFerrooxydans graph.
+    Instace of Mariprofundus ferrooxydans graph.
 
 	References
 	---------------------

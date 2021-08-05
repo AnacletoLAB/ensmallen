@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OmnitrophicaWor2BacteriumRifcsphigho202Full4811.
+This file offers the methods to automatically retrieve the graph Omnitrophica WOR_2 bacterium RIFCSPHIGHO2_02_FULL_48_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OmnitrophicaWor2BacteriumRifcsphigho202Full4811(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OmnitrophicaWor2BacteriumRifcsphigho202Full4811 graph.
+    """Return new instance of the Omnitrophica WOR_2 bacterium RIFCSPHIGHO2_02_FULL_48_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OmnitrophicaWor2BacteriumRifcsphigho202Full4811(
 
     Returns
     -----------------------
-    Instace of OmnitrophicaWor2BacteriumRifcsphigho202Full4811 graph.
+    Instace of Omnitrophica WOR_2 bacterium RIFCSPHIGHO2_02_FULL_48_11 graph.
 
 	References
 	---------------------

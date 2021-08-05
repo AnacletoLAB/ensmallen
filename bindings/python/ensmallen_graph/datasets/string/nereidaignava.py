@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NereidaIgnava.
+This file offers the methods to automatically retrieve the graph Nereida ignava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NereidaIgnava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NereidaIgnava graph.
+    """Return new instance of the Nereida ignava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NereidaIgnava(
 
     Returns
     -----------------------
-    Instace of NereidaIgnava graph.
+    Instace of Nereida ignava graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaMexicanaNbrc108244.
+This file offers the methods to automatically retrieve the graph Nocardia mexicana NBRC 108244.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaMexicanaNbrc108244(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaMexicanaNbrc108244 graph.
+    """Return new instance of the Nocardia mexicana NBRC 108244 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaMexicanaNbrc108244(
 
     Returns
     -----------------------
-    Instace of NocardiaMexicanaNbrc108244 graph.
+    Instace of Nocardia mexicana NBRC 108244 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerolineaceaeBacterium457278.
+This file offers the methods to automatically retrieve the graph Anaerolineaceae bacterium 4572_78.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerolineaceaeBacterium457278(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerolineaceaeBacterium457278 graph.
+    """Return new instance of the Anaerolineaceae bacterium 4572_78 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerolineaceaeBacterium457278(
 
     Returns
     -----------------------
-    Instace of AnaerolineaceaeBacterium457278 graph.
+    Instace of Anaerolineaceae bacterium 4572_78 graph.
 
 	References
 	---------------------

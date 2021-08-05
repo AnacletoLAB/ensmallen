@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioProteolyticus.
+This file offers the methods to automatically retrieve the graph Vibrio proteolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioProteolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioProteolyticus graph.
+    """Return new instance of the Vibrio proteolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioProteolyticus(
 
     Returns
     -----------------------
-    Instace of VibrioProteolyticus graph.
+    Instace of Vibrio proteolyticus graph.
 
 	References
 	---------------------

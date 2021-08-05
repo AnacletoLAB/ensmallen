@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusEiseniae.
+This file offers the methods to automatically retrieve the graph Bacillus eiseniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusEiseniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusEiseniae graph.
+    """Return new instance of the Bacillus eiseniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusEiseniae(
 
     Returns
     -----------------------
-    Instace of BacillusEiseniae graph.
+    Instace of Bacillus eiseniae graph.
 
 	References
 	---------------------

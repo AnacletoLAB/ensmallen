@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllofrancisellaGuangzhouensis.
+This file offers the methods to automatically retrieve the graph Allofrancisella guangzhouensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllofrancisellaGuangzhouensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllofrancisellaGuangzhouensis graph.
+    """Return new instance of the Allofrancisella guangzhouensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AllofrancisellaGuangzhouensis(
 
     Returns
     -----------------------
-    Instace of AllofrancisellaGuangzhouensis graph.
+    Instace of Allofrancisella guangzhouensis graph.
 
 	References
 	---------------------

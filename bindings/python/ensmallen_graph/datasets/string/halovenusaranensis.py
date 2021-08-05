@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalovenusAranensis.
+This file offers the methods to automatically retrieve the graph Halovenus aranensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalovenusAranensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalovenusAranensis graph.
+    """Return new instance of the Halovenus aranensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalovenusAranensis(
 
     Returns
     -----------------------
-    Instace of HalovenusAranensis graph.
+    Instace of Halovenus aranensis graph.
 
 	References
 	---------------------

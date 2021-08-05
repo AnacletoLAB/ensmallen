@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaValaisianaTom4006.
+This file offers the methods to automatically retrieve the graph Borrelia valaisiana Tom4006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaValaisianaTom4006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaValaisianaTom4006 graph.
+    """Return new instance of the Borrelia valaisiana Tom4006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaValaisianaTom4006(
 
     Returns
     -----------------------
-    Instace of BorreliaValaisianaTom4006 graph.
+    Instace of Borrelia valaisiana Tom4006 graph.
 
 	References
 	---------------------

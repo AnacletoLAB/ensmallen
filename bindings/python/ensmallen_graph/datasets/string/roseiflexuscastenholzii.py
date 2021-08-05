@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseiflexusCastenholzii.
+This file offers the methods to automatically retrieve the graph Roseiflexus castenholzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseiflexusCastenholzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseiflexusCastenholzii graph.
+    """Return new instance of the Roseiflexus castenholzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseiflexusCastenholzii(
 
     Returns
     -----------------------
-    Instace of RoseiflexusCastenholzii graph.
+    Instace of Roseiflexus castenholzii graph.
 
 	References
 	---------------------

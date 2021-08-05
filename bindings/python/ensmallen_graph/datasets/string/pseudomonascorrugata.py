@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCorrugata.
+This file offers the methods to automatically retrieve the graph Pseudomonas corrugata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCorrugata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCorrugata graph.
+    """Return new instance of the Pseudomonas corrugata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasCorrugata(
 
     Returns
     -----------------------
-    Instace of PseudomonasCorrugata graph.
+    Instace of Pseudomonas corrugata graph.
 
 	References
 	---------------------

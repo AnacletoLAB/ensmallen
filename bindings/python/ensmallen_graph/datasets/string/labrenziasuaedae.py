@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaSuaedae.
+This file offers the methods to automatically retrieve the graph Labrenzia suaedae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaSuaedae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaSuaedae graph.
+    """Return new instance of the Labrenzia suaedae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrenziaSuaedae(
 
     Returns
     -----------------------
-    Instace of LabrenziaSuaedae graph.
+    Instace of Labrenzia suaedae graph.
 
 	References
 	---------------------

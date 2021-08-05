@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcspwr06.
+This file offers the methods to automatically retrieve the graph bcspwr06.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcspwr06(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcspwr06 graph.
+    """Return new instance of the bcspwr06 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcspwr06(
 
     Returns
     -----------------------
-    Instace of Bcspwr06 graph.
+    Instace of bcspwr06 graph.
 
 	References
 	---------------------

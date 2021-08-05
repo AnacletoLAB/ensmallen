@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyaloscyphaVariabilisF.
+This file offers the methods to automatically retrieve the graph Hyaloscypha variabilis F.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyaloscyphaVariabilisF(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyaloscyphaVariabilisF graph.
+    """Return new instance of the Hyaloscypha variabilis F graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyaloscyphaVariabilisF(
 
     Returns
     -----------------------
-    Instace of HyaloscyphaVariabilisF graph.
+    Instace of Hyaloscypha variabilis F graph.
 
 	References
 	---------------------

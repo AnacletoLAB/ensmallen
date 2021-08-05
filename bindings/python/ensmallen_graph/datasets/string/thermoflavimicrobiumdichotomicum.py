@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoflavimicrobiumDichotomicum.
+This file offers the methods to automatically retrieve the graph Thermoflavimicrobium dichotomicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoflavimicrobiumDichotomicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoflavimicrobiumDichotomicum graph.
+    """Return new instance of the Thermoflavimicrobium dichotomicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoflavimicrobiumDichotomicum(
 
     Returns
     -----------------------
-    Instace of ThermoflavimicrobiumDichotomicum graph.
+    Instace of Thermoflavimicrobium dichotomicum graph.
 
 	References
 	---------------------

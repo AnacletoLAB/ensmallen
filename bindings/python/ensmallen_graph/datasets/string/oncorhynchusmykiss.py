@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OncorhynchusMykiss.
+This file offers the methods to automatically retrieve the graph Oncorhynchus mykiss.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OncorhynchusMykiss(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OncorhynchusMykiss graph.
+    """Return new instance of the Oncorhynchus mykiss graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OncorhynchusMykiss(
 
     Returns
     -----------------------
-    Instace of OncorhynchusMykiss graph.
+    Instace of Oncorhynchus mykiss graph.
 
 	References
 	---------------------

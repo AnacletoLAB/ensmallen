@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesNeuiiDsm8576.
+This file offers the methods to automatically retrieve the graph Actinomyces neuii DSM8576.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesNeuiiDsm8576(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesNeuiiDsm8576 graph.
+    """Return new instance of the Actinomyces neuii DSM8576 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesNeuiiDsm8576(
 
     Returns
     -----------------------
-    Instace of ActinomycesNeuiiDsm8576 graph.
+    Instace of Actinomyces neuii DSM8576 graph.
 
 	References
 	---------------------

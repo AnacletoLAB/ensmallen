@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaEquifetale.
+This file offers the methods to automatically retrieve the graph Acholeplasma equifetale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaEquifetale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaEquifetale graph.
+    """Return new instance of the Acholeplasma equifetale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaEquifetale(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaEquifetale graph.
+    Instace of Acholeplasma equifetale graph.
 
 	References
 	---------------------

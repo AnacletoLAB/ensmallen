@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaladaptatusCibarius.
+This file offers the methods to automatically retrieve the graph Haladaptatus cibarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaladaptatusCibarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaladaptatusCibarius graph.
+    """Return new instance of the Haladaptatus cibarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaladaptatusCibarius(
 
     Returns
     -----------------------
-    Instace of HaladaptatusCibarius graph.
+    Instace of Haladaptatus cibarius graph.
 
 	References
 	---------------------

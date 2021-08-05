@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumMagnumDsm2767.
+This file offers the methods to automatically retrieve the graph Clostridium magnum DSM 2767.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumMagnumDsm2767(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumMagnumDsm2767 graph.
+    """Return new instance of the Clostridium magnum DSM 2767 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumMagnumDsm2767(
 
     Returns
     -----------------------
-    Instace of ClostridiumMagnumDsm2767 graph.
+    Instace of Clostridium magnum DSM 2767 graph.
 
 	References
 	---------------------

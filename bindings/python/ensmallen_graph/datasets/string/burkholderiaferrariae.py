@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaFerrariae.
+This file offers the methods to automatically retrieve the graph Burkholderia ferrariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaFerrariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaFerrariae graph.
+    """Return new instance of the Burkholderia ferrariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaFerrariae(
 
     Returns
     -----------------------
-    Instace of BurkholderiaFerrariae graph.
+    Instace of Burkholderia ferrariae graph.
 
 	References
 	---------------------

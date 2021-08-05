@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumCarotovorumOdoriferum.
+This file offers the methods to automatically retrieve the graph Pectobacterium carotovorum odoriferum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumCarotovorumOdoriferum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumCarotovorumOdoriferum graph.
+    """Return new instance of the Pectobacterium carotovorum odoriferum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PectobacteriumCarotovorumOdoriferum(
 
     Returns
     -----------------------
-    Instace of PectobacteriumCarotovorumOdoriferum graph.
+    Instace of Pectobacterium carotovorum odoriferum graph.
 
 	References
 	---------------------

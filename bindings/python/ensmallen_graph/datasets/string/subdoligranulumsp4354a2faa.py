@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SubdoligranulumSp4354a2faa.
+This file offers the methods to automatically retrieve the graph Subdoligranulum sp. 4354A2FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SubdoligranulumSp4354a2faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SubdoligranulumSp4354a2faa graph.
+    """Return new instance of the Subdoligranulum sp. 4354A2FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SubdoligranulumSp4354a2faa(
 
     Returns
     -----------------------
-    Instace of SubdoligranulumSp4354a2faa graph.
+    Instace of Subdoligranulum sp. 4354A2FAA graph.
 
 	References
 	---------------------

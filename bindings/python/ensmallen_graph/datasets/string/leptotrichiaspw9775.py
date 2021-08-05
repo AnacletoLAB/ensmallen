@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaSpW9775.
+This file offers the methods to automatically retrieve the graph Leptotrichia sp. W9775.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaSpW9775(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaSpW9775 graph.
+    """Return new instance of the Leptotrichia sp. W9775 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaSpW9775(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaSpW9775 graph.
+    Instace of Leptotrichia sp. W9775 graph.
 
 	References
 	---------------------

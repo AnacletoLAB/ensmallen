@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorallococcusCoralloides.
+This file offers the methods to automatically retrieve the graph Corallococcus coralloides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorallococcusCoralloides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorallococcusCoralloides graph.
+    """Return new instance of the Corallococcus coralloides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorallococcusCoralloides(
 
     Returns
     -----------------------
-    Instace of CorallococcusCoralloides graph.
+    Instace of Corallococcus coralloides graph.
 
 	References
 	---------------------

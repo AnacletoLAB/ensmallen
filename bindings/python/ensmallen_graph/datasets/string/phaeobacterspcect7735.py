@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeobacterSpCect7735.
+This file offers the methods to automatically retrieve the graph Phaeobacter sp. CECT 7735.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeobacterSpCect7735(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeobacterSpCect7735 graph.
+    """Return new instance of the Phaeobacter sp. CECT 7735 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhaeobacterSpCect7735(
 
     Returns
     -----------------------
-    Instace of PhaeobacterSpCect7735 graph.
+    Instace of Phaeobacter sp. CECT 7735 graph.
 
 	References
 	---------------------

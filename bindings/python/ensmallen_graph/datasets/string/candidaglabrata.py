@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaGlabrata.
+This file offers the methods to automatically retrieve the graph Candida glabrata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaGlabrata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaGlabrata graph.
+    """Return new instance of the Candida glabrata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaGlabrata(
 
     Returns
     -----------------------
-    Instace of CandidaGlabrata graph.
+    Instace of Candida glabrata graph.
 
 	References
 	---------------------

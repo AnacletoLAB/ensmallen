@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaSpAtcc55076.
+This file offers the methods to automatically retrieve the graph Nonomuraea sp. ATCC 55076.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaSpAtcc55076(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaSpAtcc55076 graph.
+    """Return new instance of the Nonomuraea sp. ATCC 55076 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaSpAtcc55076(
 
     Returns
     -----------------------
-    Instace of NonomuraeaSpAtcc55076 graph.
+    Instace of Nonomuraea sp. ATCC 55076 graph.
 
 	References
 	---------------------

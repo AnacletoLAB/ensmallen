@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RosenbergiellaNectarea.
+This file offers the methods to automatically retrieve the graph Rosenbergiella nectarea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RosenbergiellaNectarea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RosenbergiellaNectarea graph.
+    """Return new instance of the Rosenbergiella nectarea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RosenbergiellaNectarea(
 
     Returns
     -----------------------
-    Instace of RosenbergiellaNectarea graph.
+    Instace of Rosenbergiella nectarea graph.
 
 	References
 	---------------------

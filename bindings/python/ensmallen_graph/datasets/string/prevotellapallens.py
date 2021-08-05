@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaPallens.
+This file offers the methods to automatically retrieve the graph Prevotella pallens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaPallens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaPallens graph.
+    """Return new instance of the Prevotella pallens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaPallens(
 
     Returns
     -----------------------
-    Instace of PrevotellaPallens graph.
+    Instace of Prevotella pallens graph.
 
 	References
 	---------------------

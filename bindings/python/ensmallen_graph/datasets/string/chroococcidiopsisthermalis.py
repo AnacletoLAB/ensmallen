@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChroococcidiopsisThermalis.
+This file offers the methods to automatically retrieve the graph Chroococcidiopsis thermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChroococcidiopsisThermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChroococcidiopsisThermalis graph.
+    """Return new instance of the Chroococcidiopsis thermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChroococcidiopsisThermalis(
 
     Returns
     -----------------------
-    Instace of ChroococcidiopsisThermalis graph.
+    Instace of Chroococcidiopsis thermalis graph.
 
 	References
 	---------------------

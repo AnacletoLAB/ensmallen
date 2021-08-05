@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynchytriumEndobioticum.
+This file offers the methods to automatically retrieve the graph Synchytrium endobioticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynchytriumEndobioticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynchytriumEndobioticum graph.
+    """Return new instance of the Synchytrium endobioticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynchytriumEndobioticum(
 
     Returns
     -----------------------
-    Instace of SynchytriumEndobioticum graph.
+    Instace of Synchytrium endobioticum graph.
 
 	References
 	---------------------

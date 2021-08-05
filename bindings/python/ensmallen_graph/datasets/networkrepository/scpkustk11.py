@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScPkustk11.
+This file offers the methods to automatically retrieve the graph sc-pkustk11.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScPkustk11(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScPkustk11 graph.
+    """Return new instance of the sc-pkustk11 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScPkustk11(
 
     Returns
     -----------------------
-    Instace of ScPkustk11 graph.
+    Instace of sc-pkustk11 graph.
 
 	References
 	---------------------

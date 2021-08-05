@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbDartmouth6.
+This file offers the methods to automatically retrieve the graph socfb-Dartmouth6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbDartmouth6(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbDartmouth6 graph.
+    """Return new instance of the socfb-Dartmouth6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbDartmouth6(
 
     Returns
     -----------------------
-    Instace of SocfbDartmouth6 graph.
+    Instace of socfb-Dartmouth6 graph.
 
 	References
 	---------------------

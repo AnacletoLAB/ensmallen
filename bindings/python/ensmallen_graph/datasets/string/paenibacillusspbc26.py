@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpBc26.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. BC26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpBc26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpBc26 graph.
+    """Return new instance of the Paenibacillus sp. BC26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpBc26(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpBc26 graph.
+    Instace of Paenibacillus sp. BC26 graph.
 
 	References
 	---------------------

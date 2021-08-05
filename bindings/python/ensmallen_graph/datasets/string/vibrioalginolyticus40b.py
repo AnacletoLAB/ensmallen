@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioAlginolyticus40b.
+This file offers the methods to automatically retrieve the graph Vibrio alginolyticus 40B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioAlginolyticus40b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioAlginolyticus40b graph.
+    """Return new instance of the Vibrio alginolyticus 40B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioAlginolyticus40b(
 
     Returns
     -----------------------
-    Instace of VibrioAlginolyticus40b graph.
+    Instace of Vibrio alginolyticus 40B graph.
 
 	References
 	---------------------

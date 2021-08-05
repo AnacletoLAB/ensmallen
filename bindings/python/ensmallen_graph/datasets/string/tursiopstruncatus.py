@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TursiopsTruncatus.
+This file offers the methods to automatically retrieve the graph Tursiops truncatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TursiopsTruncatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TursiopsTruncatus graph.
+    """Return new instance of the Tursiops truncatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TursiopsTruncatus(
 
     Returns
     -----------------------
-    Instace of TursiopsTruncatus graph.
+    Instace of Tursiops truncatus graph.
 
 	References
 	---------------------

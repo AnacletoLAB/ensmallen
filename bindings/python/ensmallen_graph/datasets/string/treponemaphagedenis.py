@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaPhagedenis.
+This file offers the methods to automatically retrieve the graph Treponema phagedenis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaPhagedenis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaPhagedenis graph.
+    """Return new instance of the Treponema phagedenis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaPhagedenis(
 
     Returns
     -----------------------
-    Instace of TreponemaPhagedenis graph.
+    Instace of Treponema phagedenis graph.
 
 	References
 	---------------------

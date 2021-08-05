@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaIniecta.
+This file offers the methods to automatically retrieve the graph Erwinia iniecta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaIniecta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaIniecta graph.
+    """Return new instance of the Erwinia iniecta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaIniecta(
 
     Returns
     -----------------------
-    Instace of ErwiniaIniecta graph.
+    Instace of Erwinia iniecta graph.
 
 	References
 	---------------------

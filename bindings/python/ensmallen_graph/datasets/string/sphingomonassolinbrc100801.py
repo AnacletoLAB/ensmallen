@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSoliNbrc100801.
+This file offers the methods to automatically retrieve the graph Sphingomonas soli NBRC 100801.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSoliNbrc100801(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSoliNbrc100801 graph.
+    """Return new instance of the Sphingomonas soli NBRC 100801 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSoliNbrc100801(
 
     Returns
     -----------------------
-    Instace of SphingomonasSoliNbrc100801 graph.
+    Instace of Sphingomonas soli NBRC 100801 graph.
 
 	References
 	---------------------

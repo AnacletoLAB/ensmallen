@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cs4.
+This file offers the methods to automatically retrieve the graph cs4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cs4(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cs4 graph.
+    """Return new instance of the cs4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cs4(
 
     Returns
     -----------------------
-    Instace of Cs4 graph.
+    Instace of cs4 graph.
 
 	References
 	---------------------

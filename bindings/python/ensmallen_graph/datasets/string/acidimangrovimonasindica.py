@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimangrovimonasIndica.
+This file offers the methods to automatically retrieve the graph Acidimangrovimonas indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidimangrovimonasIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimangrovimonasIndica graph.
+    """Return new instance of the Acidimangrovimonas indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidimangrovimonasIndica(
 
     Returns
     -----------------------
-    Instace of AcidimangrovimonasIndica graph.
+    Instace of Acidimangrovimonas indica graph.
 
 	References
 	---------------------

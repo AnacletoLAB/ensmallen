@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpB6.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. B6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpB6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpB6 graph.
+    """Return new instance of the Cellulomonas sp. B6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasSpB6(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpB6 graph.
+    Instace of Cellulomonas sp. B6 graph.
 
 	References
 	---------------------

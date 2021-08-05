@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyphomyrmexCostatus.
+This file offers the methods to automatically retrieve the graph Cyphomyrmex costatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyphomyrmexCostatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyphomyrmexCostatus graph.
+    """Return new instance of the Cyphomyrmex costatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyphomyrmexCostatus(
 
     Returns
     -----------------------
-    Instace of CyphomyrmexCostatus graph.
+    Instace of Cyphomyrmex costatus graph.
 
 	References
 	---------------------

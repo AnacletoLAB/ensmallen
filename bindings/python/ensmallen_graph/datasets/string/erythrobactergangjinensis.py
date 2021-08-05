@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterGangjinensis.
+This file offers the methods to automatically retrieve the graph Erythrobacter gangjinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterGangjinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterGangjinensis graph.
+    """Return new instance of the Erythrobacter gangjinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterGangjinensis(
 
     Returns
     -----------------------
-    Instace of ErythrobacterGangjinensis graph.
+    Instace of Erythrobacter gangjinensis graph.
 
 	References
 	---------------------

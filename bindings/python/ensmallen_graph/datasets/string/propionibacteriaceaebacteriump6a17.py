@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriaceaeBacteriumP6a17.
+This file offers the methods to automatically retrieve the graph Propionibacteriaceae bacterium P6A17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriaceaeBacteriumP6a17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriaceaeBacteriumP6a17 graph.
+    """Return new instance of the Propionibacteriaceae bacterium P6A17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionibacteriaceaeBacteriumP6a17(
 
     Returns
     -----------------------
-    Instace of PropionibacteriaceaeBacteriumP6a17 graph.
+    Instace of Propionibacteriaceae bacterium P6A17 graph.
 
 	References
 	---------------------

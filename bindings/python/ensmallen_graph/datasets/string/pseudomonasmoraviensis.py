@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMoraviensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas moraviensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMoraviensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMoraviensis graph.
+    """Return new instance of the Pseudomonas moraviensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasMoraviensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasMoraviensis graph.
+    Instace of Pseudomonas moraviensis graph.
 
 	References
 	---------------------

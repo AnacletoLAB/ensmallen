@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicavibrioAeruginosavorusArl13.
+This file offers the methods to automatically retrieve the graph Micavibrio aeruginosavorus ARL13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicavibrioAeruginosavorusArl13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicavibrioAeruginosavorusArl13 graph.
+    """Return new instance of the Micavibrio aeruginosavorus ARL13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicavibrioAeruginosavorusArl13(
 
     Returns
     -----------------------
-    Instace of MicavibrioAeruginosavorusArl13 graph.
+    Instace of Micavibrio aeruginosavorus ARL13 graph.
 
 	References
 	---------------------

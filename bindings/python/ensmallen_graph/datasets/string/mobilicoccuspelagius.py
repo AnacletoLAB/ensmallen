@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MobilicoccusPelagius.
+This file offers the methods to automatically retrieve the graph Mobilicoccus pelagius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MobilicoccusPelagius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MobilicoccusPelagius graph.
+    """Return new instance of the Mobilicoccus pelagius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MobilicoccusPelagius(
 
     Returns
     -----------------------
-    Instace of MobilicoccusPelagius graph.
+    Instace of Mobilicoccus pelagius graph.
 
 	References
 	---------------------

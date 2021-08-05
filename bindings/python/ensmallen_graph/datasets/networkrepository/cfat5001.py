@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CFat5001.
+This file offers the methods to automatically retrieve the graph c-fat500-1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def CFat5001(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CFat5001 graph.
+    """Return new instance of the c-fat500-1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def CFat5001(
 
     Returns
     -----------------------
-    Instace of CFat5001 graph.
+    Instace of c-fat500-1 graph.
 
 	References
 	---------------------

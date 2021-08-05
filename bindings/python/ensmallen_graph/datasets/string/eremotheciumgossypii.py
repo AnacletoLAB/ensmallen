@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremotheciumGossypii.
+This file offers the methods to automatically retrieve the graph Eremothecium gossypii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremotheciumGossypii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremotheciumGossypii graph.
+    """Return new instance of the Eremothecium gossypii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EremotheciumGossypii(
 
     Returns
     -----------------------
-    Instace of EremotheciumGossypii graph.
+    Instace of Eremothecium gossypii graph.
 
 	References
 	---------------------

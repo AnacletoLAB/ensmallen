@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusSpBab2008.
+This file offers the methods to automatically retrieve the graph Halobacillus sp. BAB2008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusSpBab2008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusSpBab2008 graph.
+    """Return new instance of the Halobacillus sp. BAB2008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobacillusSpBab2008(
 
     Returns
     -----------------------
-    Instace of HalobacillusSpBab2008 graph.
+    Instace of Halobacillus sp. BAB2008 graph.
 
 	References
 	---------------------

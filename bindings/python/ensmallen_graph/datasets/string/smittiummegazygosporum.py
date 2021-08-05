@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmittiumMegazygosporum.
+This file offers the methods to automatically retrieve the graph Smittium megazygosporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmittiumMegazygosporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmittiumMegazygosporum graph.
+    """Return new instance of the Smittium megazygosporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmittiumMegazygosporum(
 
     Returns
     -----------------------
-    Instace of SmittiumMegazygosporum graph.
+    Instace of Smittium megazygosporum graph.
 
 	References
 	---------------------

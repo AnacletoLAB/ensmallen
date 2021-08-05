@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IsobaculumMelis.
+This file offers the methods to automatically retrieve the graph Isobaculum melis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IsobaculumMelis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IsobaculumMelis graph.
+    """Return new instance of the Isobaculum melis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IsobaculumMelis(
 
     Returns
     -----------------------
-    Instace of IsobaculumMelis graph.
+    Instace of Isobaculum melis graph.
 
 	References
 	---------------------

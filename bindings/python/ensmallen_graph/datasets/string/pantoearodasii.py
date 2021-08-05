@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaRodasii.
+This file offers the methods to automatically retrieve the graph Pantoea rodasii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaRodasii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaRodasii graph.
+    """Return new instance of the Pantoea rodasii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaRodasii(
 
     Returns
     -----------------------
-    Instace of PantoeaRodasii graph.
+    Instace of Pantoea rodasii graph.
 
 	References
 	---------------------

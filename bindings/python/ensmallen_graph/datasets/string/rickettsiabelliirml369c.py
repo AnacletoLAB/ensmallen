@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaBelliiRml369c.
+This file offers the methods to automatically retrieve the graph Rickettsia bellii RML369C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaBelliiRml369c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaBelliiRml369c graph.
+    """Return new instance of the Rickettsia bellii RML369C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaBelliiRml369c(
 
     Returns
     -----------------------
-    Instace of RickettsiaBelliiRml369c graph.
+    Instace of Rickettsia bellii RML369C graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GopherusAgassizii.
+This file offers the methods to automatically retrieve the graph Gopherus agassizii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GopherusAgassizii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GopherusAgassizii graph.
+    """Return new instance of the Gopherus agassizii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GopherusAgassizii(
 
     Returns
     -----------------------
-    Instace of GopherusAgassizii graph.
+    Instace of Gopherus agassizii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeolectaIrregularisDah3.
+This file offers the methods to automatically retrieve the graph Neolecta irregularis DAH-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeolectaIrregularisDah3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeolectaIrregularisDah3 graph.
+    """Return new instance of the Neolecta irregularis DAH-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeolectaIrregularisDah3(
 
     Returns
     -----------------------
-    Instace of NeolectaIrregularisDah3 graph.
+    Instace of Neolecta irregularis DAH-3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusHemicellulosilyticusJcm9152.
+This file offers the methods to automatically retrieve the graph Bacillus hemicellulosilyticus JCM 9152.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusHemicellulosilyticusJcm9152(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusHemicellulosilyticusJcm9152 graph.
+    """Return new instance of the Bacillus hemicellulosilyticus JCM 9152 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusHemicellulosilyticusJcm9152(
 
     Returns
     -----------------------
-    Instace of BacillusHemicellulosilyticusJcm9152 graph.
+    Instace of Bacillus hemicellulosilyticus JCM 9152 graph.
 
 	References
 	---------------------

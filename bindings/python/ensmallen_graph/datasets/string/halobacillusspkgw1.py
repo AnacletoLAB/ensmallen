@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusSpKgw1.
+This file offers the methods to automatically retrieve the graph Halobacillus sp. KGW1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusSpKgw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusSpKgw1 graph.
+    """Return new instance of the Halobacillus sp. KGW1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacillusSpKgw1(
 
     Returns
     -----------------------
-    Instace of HalobacillusSpKgw1 graph.
+    Instace of Halobacillus sp. KGW1 graph.
 
 	References
 	---------------------

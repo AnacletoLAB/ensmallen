@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LechevalieriaAerocolonigenes.
+This file offers the methods to automatically retrieve the graph Lechevalieria aerocolonigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LechevalieriaAerocolonigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LechevalieriaAerocolonigenes graph.
+    """Return new instance of the Lechevalieria aerocolonigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LechevalieriaAerocolonigenes(
 
     Returns
     -----------------------
-    Instace of LechevalieriaAerocolonigenes graph.
+    Instace of Lechevalieria aerocolonigenes graph.
 
 	References
 	---------------------

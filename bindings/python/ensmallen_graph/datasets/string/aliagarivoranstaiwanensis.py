@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliagarivoransTaiwanensis.
+This file offers the methods to automatically retrieve the graph Aliagarivorans taiwanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliagarivoransTaiwanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliagarivoransTaiwanensis graph.
+    """Return new instance of the Aliagarivorans taiwanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AliagarivoransTaiwanensis(
 
     Returns
     -----------------------
-    Instace of AliagarivoransTaiwanensis graph.
+    Instace of Aliagarivorans taiwanensis graph.
 
 	References
 	---------------------

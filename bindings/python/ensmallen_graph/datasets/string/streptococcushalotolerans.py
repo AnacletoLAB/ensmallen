@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusHalotolerans.
+This file offers the methods to automatically retrieve the graph Streptococcus halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusHalotolerans graph.
+    """Return new instance of the Streptococcus halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusHalotolerans(
 
     Returns
     -----------------------
-    Instace of StreptococcusHalotolerans graph.
+    Instace of Streptococcus halotolerans graph.
 
 	References
 	---------------------

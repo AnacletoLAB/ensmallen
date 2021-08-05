@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumSpGw103.
+This file offers the methods to automatically retrieve the graph Herbaspirillum sp. GW103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumSpGw103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumSpGw103 graph.
+    """Return new instance of the Herbaspirillum sp. GW103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerbaspirillumSpGw103(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumSpGw103 graph.
+    Instace of Herbaspirillum sp. GW103 graph.
 
 	References
 	---------------------

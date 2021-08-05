@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaSaccharevitans.
+This file offers the methods to automatically retrieve the graph Haloterrigena saccharevitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaSaccharevitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaSaccharevitans graph.
+    """Return new instance of the Haloterrigena saccharevitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloterrigenaSaccharevitans(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaSaccharevitans graph.
+    Instace of Haloterrigena saccharevitans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpLz4w.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. Lz4W.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpLz4w(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpLz4w graph.
+    """Return new instance of the Pseudomonas sp. Lz4W graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpLz4w(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpLz4w graph.
+    Instace of Pseudomonas sp. Lz4W graph.
 
 	References
 	---------------------

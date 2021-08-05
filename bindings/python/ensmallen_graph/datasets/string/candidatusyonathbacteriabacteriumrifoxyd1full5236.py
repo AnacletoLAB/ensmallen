@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusYonathbacteriaBacteriumRifoxyd1Full5236.
+This file offers the methods to automatically retrieve the graph Candidatus Yonathbacteria bacterium RIFOXYD1_FULL_52_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusYonathbacteriaBacteriumRifoxyd1Full5236(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusYonathbacteriaBacteriumRifoxyd1Full5236 graph.
+    """Return new instance of the Candidatus Yonathbacteria bacterium RIFOXYD1_FULL_52_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusYonathbacteriaBacteriumRifoxyd1Full5236(
 
     Returns
     -----------------------
-    Instace of CandidatusYonathbacteriaBacteriumRifoxyd1Full5236 graph.
+    Instace of Candidatus Yonathbacteria bacterium RIFOXYD1_FULL_52_36 graph.
 
 	References
 	---------------------

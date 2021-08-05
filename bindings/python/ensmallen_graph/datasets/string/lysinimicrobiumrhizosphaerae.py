@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumRhizosphaerae graph.
+    """Return new instance of the Lysinimicrobium rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinimicrobiumRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumRhizosphaerae graph.
+    Instace of Lysinimicrobium rhizosphaerae graph.
 
 	References
 	---------------------

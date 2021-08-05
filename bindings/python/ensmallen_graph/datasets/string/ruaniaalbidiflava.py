@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuaniaAlbidiflava.
+This file offers the methods to automatically retrieve the graph Ruania albidiflava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuaniaAlbidiflava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuaniaAlbidiflava graph.
+    """Return new instance of the Ruania albidiflava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuaniaAlbidiflava(
 
     Returns
     -----------------------
-    Instace of RuaniaAlbidiflava graph.
+    Instace of Ruania albidiflava graph.
 
 	References
 	---------------------

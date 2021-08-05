@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldalkalibacillusThermarum.
+This file offers the methods to automatically retrieve the graph Caldalkalibacillus thermarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldalkalibacillusThermarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldalkalibacillusThermarum graph.
+    """Return new instance of the Caldalkalibacillus thermarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldalkalibacillusThermarum(
 
     Returns
     -----------------------
-    Instace of CaldalkalibacillusThermarum graph.
+    Instace of Caldalkalibacillus thermarum graph.
 
 	References
 	---------------------

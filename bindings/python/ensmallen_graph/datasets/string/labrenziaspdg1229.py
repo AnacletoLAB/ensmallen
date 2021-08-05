@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaSpDg1229.
+This file offers the methods to automatically retrieve the graph Labrenzia sp. DG1229.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaSpDg1229(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaSpDg1229 graph.
+    """Return new instance of the Labrenzia sp. DG1229 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrenziaSpDg1229(
 
     Returns
     -----------------------
-    Instace of LabrenziaSpDg1229 graph.
+    Instace of Labrenzia sp. DG1229 graph.
 
 	References
 	---------------------

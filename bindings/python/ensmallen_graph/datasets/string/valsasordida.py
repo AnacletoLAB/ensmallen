@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ValsaSordida.
+This file offers the methods to automatically retrieve the graph Valsa sordida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ValsaSordida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ValsaSordida graph.
+    """Return new instance of the Valsa sordida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ValsaSordida(
 
     Returns
     -----------------------
-    Instace of ValsaSordida graph.
+    Instace of Valsa sordida graph.
 
 	References
 	---------------------

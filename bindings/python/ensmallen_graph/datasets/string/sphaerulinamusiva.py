@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerulinaMusiva.
+This file offers the methods to automatically retrieve the graph Sphaerulina musiva.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerulinaMusiva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerulinaMusiva graph.
+    """Return new instance of the Sphaerulina musiva graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaerulinaMusiva(
 
     Returns
     -----------------------
-    Instace of SphaerulinaMusiva graph.
+    Instace of Sphaerulina musiva graph.
 
 	References
 	---------------------

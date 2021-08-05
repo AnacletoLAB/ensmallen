@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasKuykendallii.
+This file offers the methods to automatically retrieve the graph Pseudomonas kuykendallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasKuykendallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasKuykendallii graph.
+    """Return new instance of the Pseudomonas kuykendallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasKuykendallii(
 
     Returns
     -----------------------
-    Instace of PseudomonasKuykendallii graph.
+    Instace of Pseudomonas kuykendallii graph.
 
 	References
 	---------------------

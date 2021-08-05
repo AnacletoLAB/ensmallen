@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpMedpeSwcel.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. MedPE-SWcel.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpMedpeSwcel(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpMedpeSwcel graph.
+    """Return new instance of the Flavobacterium sp. MedPE-SWcel graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpMedpeSwcel(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpMedpeSwcel graph.
+    Instace of Flavobacterium sp. MedPE-SWcel graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasArabiensis.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas arabiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasArabiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasArabiensis graph.
+    """Return new instance of the Pseudoalteromonas arabiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasArabiensis(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasArabiensis graph.
+    Instace of Pseudoalteromonas arabiensis graph.
 
 	References
 	---------------------

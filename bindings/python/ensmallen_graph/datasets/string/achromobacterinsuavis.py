@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterInsuavis.
+This file offers the methods to automatically retrieve the graph Achromobacter insuavis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterInsuavis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterInsuavis graph.
+    """Return new instance of the Achromobacter insuavis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterInsuavis(
 
     Returns
     -----------------------
-    Instace of AchromobacterInsuavis graph.
+    Instace of Achromobacter insuavis graph.
 
 	References
 	---------------------

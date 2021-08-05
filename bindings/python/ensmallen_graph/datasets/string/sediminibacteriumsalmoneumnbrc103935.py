@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminibacteriumSalmoneumNbrc103935.
+This file offers the methods to automatically retrieve the graph Sediminibacterium salmoneum NBRC 103935.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminibacteriumSalmoneumNbrc103935(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminibacteriumSalmoneumNbrc103935 graph.
+    """Return new instance of the Sediminibacterium salmoneum NBRC 103935 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SediminibacteriumSalmoneumNbrc103935(
 
     Returns
     -----------------------
-    Instace of SediminibacteriumSalmoneumNbrc103935 graph.
+    Instace of Sediminibacterium salmoneum NBRC 103935 graph.
 
 	References
 	---------------------

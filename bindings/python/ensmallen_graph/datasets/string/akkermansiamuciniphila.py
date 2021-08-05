@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AkkermansiaMuciniphila.
+This file offers the methods to automatically retrieve the graph Akkermansia muciniphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AkkermansiaMuciniphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AkkermansiaMuciniphila graph.
+    """Return new instance of the Akkermansia muciniphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AkkermansiaMuciniphila(
 
     Returns
     -----------------------
-    Instace of AkkermansiaMuciniphila graph.
+    Instace of Akkermansia muciniphila graph.
 
 	References
 	---------------------

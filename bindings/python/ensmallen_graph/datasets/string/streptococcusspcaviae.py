@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpCaviae.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. caviae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpCaviae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpCaviae graph.
+    """Return new instance of the Streptococcus sp. caviae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSpCaviae(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpCaviae graph.
+    Instace of Streptococcus sp. caviae graph.
 
 	References
 	---------------------

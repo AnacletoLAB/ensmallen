@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaSubspEntericaSerovarTyphimuriumStrLt2.
+This file offers the methods to automatically retrieve the graph Salmonella enterica subsp. enterica serovar Typhimurium str. LT2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaSubspEntericaSerovarTyphimuriumStrLt2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaSubspEntericaSerovarTyphimuriumStrLt2 graph.
+    """Return new instance of the Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaSubspEntericaSerovarTyphimuriumStrLt2(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaSubspEntericaSerovarTyphimuriumStrLt2 graph.
+    Instace of Salmonella enterica subsp. enterica serovar Typhimurium str. LT2 graph.
 
 	References
 	---------------------

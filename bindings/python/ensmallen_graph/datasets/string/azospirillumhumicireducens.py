@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumHumicireducens.
+This file offers the methods to automatically retrieve the graph Azospirillum humicireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumHumicireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumHumicireducens graph.
+    """Return new instance of the Azospirillum humicireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumHumicireducens(
 
     Returns
     -----------------------
-    Instace of AzospirillumHumicireducens graph.
+    Instace of Azospirillum humicireducens graph.
 
 	References
 	---------------------

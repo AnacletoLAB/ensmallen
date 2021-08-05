@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumUreicelerivorans.
+This file offers the methods to automatically retrieve the graph Corynebacterium ureicelerivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumUreicelerivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumUreicelerivorans graph.
+    """Return new instance of the Corynebacterium ureicelerivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumUreicelerivorans(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumUreicelerivorans graph.
+    Instace of Corynebacterium ureicelerivorans graph.
 
 	References
 	---------------------

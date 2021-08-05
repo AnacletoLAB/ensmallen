@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusMaricopensis.
+This file offers the methods to automatically retrieve the graph Deinococcus maricopensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusMaricopensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusMaricopensis graph.
+    """Return new instance of the Deinococcus maricopensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusMaricopensis(
 
     Returns
     -----------------------
-    Instace of DeinococcusMaricopensis graph.
+    Instace of Deinococcus maricopensis graph.
 
 	References
 	---------------------

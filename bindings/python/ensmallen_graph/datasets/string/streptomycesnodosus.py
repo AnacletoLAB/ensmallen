@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesNodosus.
+This file offers the methods to automatically retrieve the graph Streptomyces nodosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesNodosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesNodosus graph.
+    """Return new instance of the Streptomyces nodosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesNodosus(
 
     Returns
     -----------------------
-    Instace of StreptomycesNodosus graph.
+    Instace of Streptomyces nodosus graph.
 
 	References
 	---------------------

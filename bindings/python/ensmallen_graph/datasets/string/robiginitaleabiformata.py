@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RobiginitaleaBiformata.
+This file offers the methods to automatically retrieve the graph Robiginitalea biformata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RobiginitaleaBiformata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RobiginitaleaBiformata graph.
+    """Return new instance of the Robiginitalea biformata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RobiginitaleaBiformata(
 
     Returns
     -----------------------
-    Instace of RobiginitaleaBiformata graph.
+    Instace of Robiginitalea biformata graph.
 
 	References
 	---------------------

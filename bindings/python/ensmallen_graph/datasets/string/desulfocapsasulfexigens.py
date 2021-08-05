@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfocapsaSulfexigens.
+This file offers the methods to automatically retrieve the graph Desulfocapsa sulfexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfocapsaSulfexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfocapsaSulfexigens graph.
+    """Return new instance of the Desulfocapsa sulfexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfocapsaSulfexigens(
 
     Returns
     -----------------------
-    Instace of DesulfocapsaSulfexigens graph.
+    Instace of Desulfocapsa sulfexigens graph.
 
 	References
 	---------------------

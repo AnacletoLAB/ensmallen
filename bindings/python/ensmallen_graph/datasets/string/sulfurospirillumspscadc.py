@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumSpScadc.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum sp. SCADC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumSpScadc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumSpScadc graph.
+    """Return new instance of the Sulfurospirillum sp. SCADC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurospirillumSpScadc(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumSpScadc graph.
+    Instace of Sulfurospirillum sp. SCADC graph.
 
 	References
 	---------------------

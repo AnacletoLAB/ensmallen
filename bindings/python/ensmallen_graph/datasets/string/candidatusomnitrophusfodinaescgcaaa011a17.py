@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusOmnitrophusFodinaeScgcAaa011A17.
+This file offers the methods to automatically retrieve the graph Candidatus Omnitrophus fodinae SCGC AAA011-A17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusOmnitrophusFodinaeScgcAaa011A17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusOmnitrophusFodinaeScgcAaa011A17 graph.
+    """Return new instance of the Candidatus Omnitrophus fodinae SCGC AAA011-A17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusOmnitrophusFodinaeScgcAaa011A17(
 
     Returns
     -----------------------
-    Instace of CandidatusOmnitrophusFodinaeScgcAaa011A17 graph.
+    Instace of Candidatus Omnitrophus fodinae SCGC AAA011-A17 graph.
 
 	References
 	---------------------

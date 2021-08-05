@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaSpCulex.
+This file offers the methods to automatically retrieve the graph Wolbachia sp. Culex.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaSpCulex(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaSpCulex graph.
+    """Return new instance of the Wolbachia sp. Culex graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaSpCulex(
 
     Returns
     -----------------------
-    Instace of WolbachiaSpCulex graph.
+    Instace of Wolbachia sp. Culex graph.
 
 	References
 	---------------------

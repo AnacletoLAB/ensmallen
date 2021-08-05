@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NegativicoccusMassiliensis.
+This file offers the methods to automatically retrieve the graph Negativicoccus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NegativicoccusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NegativicoccusMassiliensis graph.
+    """Return new instance of the Negativicoccus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NegativicoccusMassiliensis(
 
     Returns
     -----------------------
-    Instace of NegativicoccusMassiliensis graph.
+    Instace of Negativicoccus massiliensis graph.
 
 	References
 	---------------------

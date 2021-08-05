@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterSpT28.
+This file offers the methods to automatically retrieve the graph Maribacter sp. T28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterSpT28(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterSpT28 graph.
+    """Return new instance of the Maribacter sp. T28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterSpT28(
 
     Returns
     -----------------------
-    Instace of MaribacterSpT28 graph.
+    Instace of Maribacter sp. T28 graph.
 
 	References
 	---------------------

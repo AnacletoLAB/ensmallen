@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalogranumGelatinilyticum.
+This file offers the methods to automatically retrieve the graph Halogranum gelatinilyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalogranumGelatinilyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalogranumGelatinilyticum graph.
+    """Return new instance of the Halogranum gelatinilyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalogranumGelatinilyticum(
 
     Returns
     -----------------------
-    Instace of HalogranumGelatinilyticum graph.
+    Instace of Halogranum gelatinilyticum graph.
 
 	References
 	---------------------

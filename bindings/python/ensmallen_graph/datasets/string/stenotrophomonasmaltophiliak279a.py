@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasMaltophiliaK279a.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas maltophilia K279a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasMaltophiliaK279a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasMaltophiliaK279a graph.
+    """Return new instance of the Stenotrophomonas maltophilia K279a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StenotrophomonasMaltophiliaK279a(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasMaltophiliaK279a graph.
+    Instace of Stenotrophomonas maltophilia K279a graph.
 
 	References
 	---------------------

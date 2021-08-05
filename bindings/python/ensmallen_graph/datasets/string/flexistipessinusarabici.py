@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlexistipesSinusarabici.
+This file offers the methods to automatically retrieve the graph Flexistipes sinusarabici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlexistipesSinusarabici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlexistipesSinusarabici graph.
+    """Return new instance of the Flexistipes sinusarabici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlexistipesSinusarabici(
 
     Returns
     -----------------------
-    Instace of FlexistipesSinusarabici graph.
+    Instace of Flexistipes sinusarabici graph.
 
 	References
 	---------------------

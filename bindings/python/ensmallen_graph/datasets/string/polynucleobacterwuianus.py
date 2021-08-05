@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterWuianus.
+This file offers the methods to automatically retrieve the graph Polynucleobacter wuianus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterWuianus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterWuianus graph.
+    """Return new instance of the Polynucleobacter wuianus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterWuianus(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterWuianus graph.
+    Instace of Polynucleobacter wuianus graph.
 
 	References
 	---------------------

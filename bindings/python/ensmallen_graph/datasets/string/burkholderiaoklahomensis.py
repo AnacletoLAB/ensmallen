@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaOklahomensis.
+This file offers the methods to automatically retrieve the graph Burkholderia oklahomensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaOklahomensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaOklahomensis graph.
+    """Return new instance of the Burkholderia oklahomensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaOklahomensis(
 
     Returns
     -----------------------
-    Instace of BurkholderiaOklahomensis graph.
+    Instace of Burkholderia oklahomensis graph.
 
 	References
 	---------------------

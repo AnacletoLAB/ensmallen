@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LivejournalLinks.
+This file offers the methods to automatically retrieve the graph livejournal-links.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def LivejournalLinks(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LivejournalLinks graph.
+    """Return new instance of the livejournal-links graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def LivejournalLinks(
 
     Returns
     -----------------------
-    Instace of LivejournalLinks graph.
+    Instace of livejournal-links graph.
 
 	References
 	---------------------

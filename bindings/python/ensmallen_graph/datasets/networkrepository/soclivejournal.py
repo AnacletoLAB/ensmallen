@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocLivejournal.
+This file offers the methods to automatically retrieve the graph soc-livejournal.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def SocLivejournal(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocLivejournal graph.
+    """Return new instance of the soc-livejournal graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def SocLivejournal(
 
     Returns
     -----------------------
-    Instace of SocLivejournal graph.
+    Instace of soc-livejournal graph.
 
 	References
 	---------------------

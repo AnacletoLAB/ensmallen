@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumSpGbchlb.
+This file offers the methods to automatically retrieve the graph Chlorobium sp. GBChlB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumSpGbchlb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumSpGbchlb graph.
+    """Return new instance of the Chlorobium sp. GBChlB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumSpGbchlb(
 
     Returns
     -----------------------
-    Instace of ChlorobiumSpGbchlb graph.
+    Instace of Chlorobium sp. GBChlB graph.
 
 	References
 	---------------------

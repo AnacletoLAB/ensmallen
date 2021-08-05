@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaCuniculi.
+This file offers the methods to automatically retrieve the graph Gemella cuniculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaCuniculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaCuniculi graph.
+    """Return new instance of the Gemella cuniculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemellaCuniculi(
 
     Returns
     -----------------------
-    Instace of GemellaCuniculi graph.
+    Instace of Gemella cuniculi graph.
 
 	References
 	---------------------

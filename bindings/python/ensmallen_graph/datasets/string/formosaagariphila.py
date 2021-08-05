@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormosaAgariphila.
+This file offers the methods to automatically retrieve the graph Formosa agariphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormosaAgariphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormosaAgariphila graph.
+    """Return new instance of the Formosa agariphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FormosaAgariphila(
 
     Returns
     -----------------------
-    Instace of FormosaAgariphila graph.
+    Instace of Formosa agariphila graph.
 
 	References
 	---------------------

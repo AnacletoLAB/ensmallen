@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraXiamenensis.
+This file offers the methods to automatically retrieve the graph Thalassospira xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraXiamenensis graph.
+    """Return new instance of the Thalassospira xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassospiraXiamenensis(
 
     Returns
     -----------------------
-    Instace of ThalassospiraXiamenensis graph.
+    Instace of Thalassospira xiamenensis graph.
 
 	References
 	---------------------

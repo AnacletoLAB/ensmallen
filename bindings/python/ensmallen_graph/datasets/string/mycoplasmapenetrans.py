@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaPenetrans.
+This file offers the methods to automatically retrieve the graph Mycoplasma penetrans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaPenetrans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaPenetrans graph.
+    """Return new instance of the Mycoplasma penetrans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaPenetrans(
 
     Returns
     -----------------------
-    Instace of MycoplasmaPenetrans graph.
+    Instace of Mycoplasma penetrans graph.
 
 	References
 	---------------------

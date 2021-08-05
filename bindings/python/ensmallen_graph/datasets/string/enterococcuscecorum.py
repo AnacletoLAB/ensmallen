@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusCecorum.
+This file offers the methods to automatically retrieve the graph Enterococcus cecorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusCecorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusCecorum graph.
+    """Return new instance of the Enterococcus cecorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusCecorum(
 
     Returns
     -----------------------
-    Instace of EnterococcusCecorum graph.
+    Instace of Enterococcus cecorum graph.
 
 	References
 	---------------------

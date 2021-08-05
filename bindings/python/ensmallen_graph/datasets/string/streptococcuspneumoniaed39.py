@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPneumoniaeD39.
+This file offers the methods to automatically retrieve the graph Streptococcus pneumoniae D39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPneumoniaeD39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPneumoniaeD39 graph.
+    """Return new instance of the Streptococcus pneumoniae D39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPneumoniaeD39(
 
     Returns
     -----------------------
-    Instace of StreptococcusPneumoniaeD39 graph.
+    Instace of Streptococcus pneumoniae D39 graph.
 
 	References
 	---------------------

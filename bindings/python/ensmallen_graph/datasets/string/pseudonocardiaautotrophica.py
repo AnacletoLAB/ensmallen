@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaAutotrophica.
+This file offers the methods to automatically retrieve the graph Pseudonocardia autotrophica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaAutotrophica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaAutotrophica graph.
+    """Return new instance of the Pseudonocardia autotrophica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudonocardiaAutotrophica(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaAutotrophica graph.
+    Instace of Pseudonocardia autotrophica graph.
 
 	References
 	---------------------

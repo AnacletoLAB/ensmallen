@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulcanibacillusModesticaldus.
+This file offers the methods to automatically retrieve the graph Vulcanibacillus modesticaldus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulcanibacillusModesticaldus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulcanibacillusModesticaldus graph.
+    """Return new instance of the Vulcanibacillus modesticaldus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VulcanibacillusModesticaldus(
 
     Returns
     -----------------------
-    Instace of VulcanibacillusModesticaldus graph.
+    Instace of Vulcanibacillus modesticaldus graph.
 
 	References
 	---------------------

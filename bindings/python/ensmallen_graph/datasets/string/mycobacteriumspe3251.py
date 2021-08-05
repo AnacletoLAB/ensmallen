@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE3251.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E3251.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE3251(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE3251 graph.
+    """Return new instance of the Mycobacterium sp. E3251 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE3251(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE3251 graph.
+    Instace of Mycobacterium sp. E3251 graph.
 
 	References
 	---------------------

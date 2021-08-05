@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesGaoshouyii.
+This file offers the methods to automatically retrieve the graph Actinomyces gaoshouyii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesGaoshouyii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesGaoshouyii graph.
+    """Return new instance of the Actinomyces gaoshouyii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesGaoshouyii(
 
     Returns
     -----------------------
-    Instace of ActinomycesGaoshouyii graph.
+    Instace of Actinomyces gaoshouyii graph.
 
 	References
 	---------------------

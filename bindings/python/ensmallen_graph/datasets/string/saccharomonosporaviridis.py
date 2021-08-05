@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaViridis.
+This file offers the methods to automatically retrieve the graph Saccharomonospora viridis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaViridis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaViridis graph.
+    """Return new instance of the Saccharomonospora viridis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomonosporaViridis(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaViridis graph.
+    Instace of Saccharomonospora viridis graph.
 
 	References
 	---------------------

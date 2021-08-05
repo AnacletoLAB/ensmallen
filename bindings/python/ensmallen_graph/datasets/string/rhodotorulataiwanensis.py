@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodotorulaTaiwanensis.
+This file offers the methods to automatically retrieve the graph Rhodotorula taiwanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodotorulaTaiwanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodotorulaTaiwanensis graph.
+    """Return new instance of the Rhodotorula taiwanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodotorulaTaiwanensis(
 
     Returns
     -----------------------
-    Instace of RhodotorulaTaiwanensis graph.
+    Instace of Rhodotorula taiwanensis graph.
 
 	References
 	---------------------

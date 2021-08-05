@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterPedocola.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter pedocola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterPedocola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterPedocola graph.
+    """Return new instance of the Mucilaginibacter pedocola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterPedocola(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterPedocola graph.
+    Instace of Mucilaginibacter pedocola graph.
 
 	References
 	---------------------

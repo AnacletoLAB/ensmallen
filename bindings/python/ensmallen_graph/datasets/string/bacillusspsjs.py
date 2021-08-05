@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpSjs.
+This file offers the methods to automatically retrieve the graph Bacillus sp. SJS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpSjs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpSjs graph.
+    """Return new instance of the Bacillus sp. SJS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpSjs(
 
     Returns
     -----------------------
-    Instace of BacillusSpSjs graph.
+    Instace of Bacillus sp. SJS graph.
 
 	References
 	---------------------

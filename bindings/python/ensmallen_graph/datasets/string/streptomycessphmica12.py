@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpHmica12.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. HmicA12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpHmica12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpHmica12 graph.
+    """Return new instance of the Streptomyces sp. HmicA12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpHmica12(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpHmica12 graph.
+    Instace of Streptomyces sp. HmicA12 graph.
 
 	References
 	---------------------

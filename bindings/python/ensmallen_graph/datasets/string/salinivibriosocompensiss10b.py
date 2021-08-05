@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioSocompensisS10b.
+This file offers the methods to automatically retrieve the graph Salinivibrio socompensis S10B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinivibrioSocompensisS10b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioSocompensisS10b graph.
+    """Return new instance of the Salinivibrio socompensis S10B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinivibrioSocompensisS10b(
 
     Returns
     -----------------------
-    Instace of SalinivibrioSocompensisS10b graph.
+    Instace of Salinivibrio socompensis S10B graph.
 
 	References
 	---------------------

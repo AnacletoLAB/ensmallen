@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudarthrobacterSulfonivorans.
+This file offers the methods to automatically retrieve the graph Pseudarthrobacter sulfonivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudarthrobacterSulfonivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudarthrobacterSulfonivorans graph.
+    """Return new instance of the Pseudarthrobacter sulfonivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudarthrobacterSulfonivorans(
 
     Returns
     -----------------------
-    Instace of PseudarthrobacterSulfonivorans graph.
+    Instace of Pseudarthrobacter sulfonivorans graph.
 
 	References
 	---------------------

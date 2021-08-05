@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubrobacterAplysinae.
+This file offers the methods to automatically retrieve the graph Rubrobacter aplysinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubrobacterAplysinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubrobacterAplysinae graph.
+    """Return new instance of the Rubrobacter aplysinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubrobacterAplysinae(
 
     Returns
     -----------------------
-    Instace of RubrobacterAplysinae graph.
+    Instace of Rubrobacter aplysinae graph.
 
 	References
 	---------------------

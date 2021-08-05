@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosphaeraSpWgk6.
+This file offers the methods to automatically retrieve the graph Methanosphaera sp. WGK6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosphaeraSpWgk6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosphaeraSpWgk6 graph.
+    """Return new instance of the Methanosphaera sp. WGK6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosphaeraSpWgk6(
 
     Returns
     -----------------------
-    Instace of MethanosphaeraSpWgk6 graph.
+    Instace of Methanosphaera sp. WGK6 graph.
 
 	References
 	---------------------

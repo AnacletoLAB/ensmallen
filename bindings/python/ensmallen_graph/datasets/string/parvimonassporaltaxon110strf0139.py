@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvimonasSpOralTaxon110StrF0139.
+This file offers the methods to automatically retrieve the graph Parvimonas sp. oral taxon 110 str. F0139.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvimonasSpOralTaxon110StrF0139(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvimonasSpOralTaxon110StrF0139 graph.
+    """Return new instance of the Parvimonas sp. oral taxon 110 str. F0139 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParvimonasSpOralTaxon110StrF0139(
 
     Returns
     -----------------------
-    Instace of ParvimonasSpOralTaxon110StrF0139 graph.
+    Instace of Parvimonas sp. oral taxon 110 str. F0139 graph.
 
 	References
 	---------------------

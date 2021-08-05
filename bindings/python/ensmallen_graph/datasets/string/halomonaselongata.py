@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasElongata.
+This file offers the methods to automatically retrieve the graph Halomonas elongata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasElongata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasElongata graph.
+    """Return new instance of the Halomonas elongata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasElongata(
 
     Returns
     -----------------------
-    Instace of HalomonasElongata graph.
+    Instace of Halomonas elongata graph.
 
 	References
 	---------------------

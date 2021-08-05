@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScardoviaWiggsiae.
+This file offers the methods to automatically retrieve the graph Scardovia wiggsiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScardoviaWiggsiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScardoviaWiggsiae graph.
+    """Return new instance of the Scardovia wiggsiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ScardoviaWiggsiae(
 
     Returns
     -----------------------
-    Instace of ScardoviaWiggsiae graph.
+    Instace of Scardovia wiggsiae graph.
 
 	References
 	---------------------

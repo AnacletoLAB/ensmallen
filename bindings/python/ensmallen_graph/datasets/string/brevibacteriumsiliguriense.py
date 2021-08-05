@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacteriumSiliguriense.
+This file offers the methods to automatically retrieve the graph Brevibacterium siliguriense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacteriumSiliguriense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacteriumSiliguriense graph.
+    """Return new instance of the Brevibacterium siliguriense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacteriumSiliguriense(
 
     Returns
     -----------------------
-    Instace of BrevibacteriumSiliguriense graph.
+    Instace of Brevibacterium siliguriense graph.
 
 	References
 	---------------------

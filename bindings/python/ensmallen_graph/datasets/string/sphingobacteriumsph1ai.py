@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpH1ai.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. H1ai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpH1ai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpH1ai graph.
+    """Return new instance of the Sphingobacterium sp. H1ai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriumSpH1ai(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpH1ai graph.
+    Instace of Sphingobacterium sp. H1ai graph.
 
 	References
 	---------------------

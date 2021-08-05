@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSymbiosumWal14673.
+This file offers the methods to automatically retrieve the graph Clostridium symbiosum WAL14673.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSymbiosumWal14673(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSymbiosumWal14673 graph.
+    """Return new instance of the Clostridium symbiosum WAL14673 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSymbiosumWal14673(
 
     Returns
     -----------------------
-    Instace of ClostridiumSymbiosumWal14673 graph.
+    Instace of Clostridium symbiosum WAL14673 graph.
 
 	References
 	---------------------

@@ -77,7 +77,7 @@ def NR12month1(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="12month1",
+        graph_name="NR12month1",
         dataset="networkrepository",
         version=version,
         directed=directed,

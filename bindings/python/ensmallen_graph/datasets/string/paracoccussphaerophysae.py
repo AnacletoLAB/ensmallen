@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSphaerophysae.
+This file offers the methods to automatically retrieve the graph Paracoccus sphaerophysae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSphaerophysae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSphaerophysae graph.
+    """Return new instance of the Paracoccus sphaerophysae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusSphaerophysae(
 
     Returns
     -----------------------
-    Instace of ParacoccusSphaerophysae graph.
+    Instace of Paracoccus sphaerophysae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusCallidus.
+This file offers the methods to automatically retrieve the graph Ruminococcus callidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusCallidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusCallidus graph.
+    """Return new instance of the Ruminococcus callidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusCallidus(
 
     Returns
     -----------------------
-    Instace of RuminococcusCallidus graph.
+    Instace of Ruminococcus callidus graph.
 
 	References
 	---------------------

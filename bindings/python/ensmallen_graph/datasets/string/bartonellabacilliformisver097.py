@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaBacilliformisVer097.
+This file offers the methods to automatically retrieve the graph Bartonella bacilliformis Ver097.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaBacilliformisVer097(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaBacilliformisVer097 graph.
+    """Return new instance of the Bartonella bacilliformis Ver097 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaBacilliformisVer097(
 
     Returns
     -----------------------
-    Instace of BartonellaBacilliformisVer097 graph.
+    Instace of Bartonella bacilliformis Ver097 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasTunicata.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas tunicata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasTunicata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasTunicata graph.
+    """Return new instance of the Pseudoalteromonas tunicata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasTunicata(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasTunicata graph.
+    Instace of Pseudoalteromonas tunicata graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyramidobacterPiscolens.
+This file offers the methods to automatically retrieve the graph Pyramidobacter piscolens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyramidobacterPiscolens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyramidobacterPiscolens graph.
+    """Return new instance of the Pyramidobacter piscolens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyramidobacterPiscolens(
 
     Returns
     -----------------------
-    Instace of PyramidobacterPiscolens graph.
+    Instace of Pyramidobacter piscolens graph.
 
 	References
 	---------------------

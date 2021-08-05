@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaAlkalescens.
+This file offers the methods to automatically retrieve the graph Mycoplasma alkalescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaAlkalescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaAlkalescens graph.
+    """Return new instance of the Mycoplasma alkalescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaAlkalescens(
 
     Returns
     -----------------------
-    Instace of MycoplasmaAlkalescens graph.
+    Instace of Mycoplasma alkalescens graph.
 
 	References
 	---------------------

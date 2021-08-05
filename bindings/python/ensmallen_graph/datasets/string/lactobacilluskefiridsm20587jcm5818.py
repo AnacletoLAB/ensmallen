@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKefiriDsm20587Jcm5818.
+This file offers the methods to automatically retrieve the graph Lactobacillus kefiri DSM 20587 JCM 5818.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKefiriDsm20587Jcm5818(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKefiriDsm20587Jcm5818 graph.
+    """Return new instance of the Lactobacillus kefiri DSM 20587 JCM 5818 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKefiriDsm20587Jcm5818(
 
     Returns
     -----------------------
-    Instace of LactobacillusKefiriDsm20587Jcm5818 graph.
+    Instace of Lactobacillus kefiri DSM 20587 JCM 5818 graph.
 
 	References
 	---------------------

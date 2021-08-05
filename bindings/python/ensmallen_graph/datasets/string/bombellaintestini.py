@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BombellaIntestini.
+This file offers the methods to automatically retrieve the graph Bombella intestini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BombellaIntestini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BombellaIntestini graph.
+    """Return new instance of the Bombella intestini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BombellaIntestini(
 
     Returns
     -----------------------
-    Instace of BombellaIntestini graph.
+    Instace of Bombella intestini graph.
 
 	References
 	---------------------

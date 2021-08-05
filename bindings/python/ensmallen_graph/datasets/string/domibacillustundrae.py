@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DomibacillusTundrae.
+This file offers the methods to automatically retrieve the graph Domibacillus tundrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DomibacillusTundrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DomibacillusTundrae graph.
+    """Return new instance of the Domibacillus tundrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DomibacillusTundrae(
 
     Returns
     -----------------------
-    Instace of DomibacillusTundrae graph.
+    Instace of Domibacillus tundrae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosphaerulaPalustris.
+This file offers the methods to automatically retrieve the graph Methanosphaerula palustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosphaerulaPalustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosphaerulaPalustris graph.
+    """Return new instance of the Methanosphaerula palustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanosphaerulaPalustris(
 
     Returns
     -----------------------
-    Instace of MethanosphaerulaPalustris graph.
+    Instace of Methanosphaerula palustris graph.
 
 	References
 	---------------------

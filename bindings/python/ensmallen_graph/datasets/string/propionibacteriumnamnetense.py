@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumNamnetense.
+This file offers the methods to automatically retrieve the graph [Propionibacterium] namnetense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumNamnetense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumNamnetense graph.
+    """Return new instance of the [Propionibacterium] namnetense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionibacteriumNamnetense(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumNamnetense graph.
+    Instace of [Propionibacterium] namnetense graph.
 
 	References
 	---------------------

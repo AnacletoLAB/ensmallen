@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApisMellifera.
+This file offers the methods to automatically retrieve the graph Apis mellifera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApisMellifera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApisMellifera graph.
+    """Return new instance of the Apis mellifera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ApisMellifera(
 
     Returns
     -----------------------
-    Instace of ApisMellifera graph.
+    Instace of Apis mellifera graph.
 
 	References
 	---------------------

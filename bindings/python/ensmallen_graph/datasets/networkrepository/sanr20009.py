@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sanr20009.
+This file offers the methods to automatically retrieve the graph sanr200-0-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Sanr20009(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sanr20009 graph.
+    """Return new instance of the sanr200-0-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Sanr20009(
 
     Returns
     -----------------------
-    Instace of Sanr20009 graph.
+    Instace of sanr200-0-9 graph.
 
 	References
 	---------------------

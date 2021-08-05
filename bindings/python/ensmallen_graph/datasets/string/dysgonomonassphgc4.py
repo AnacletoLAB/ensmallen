@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasSpHgc4.
+This file offers the methods to automatically retrieve the graph Dysgonomonas sp. HGC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasSpHgc4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasSpHgc4 graph.
+    """Return new instance of the Dysgonomonas sp. HGC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DysgonomonasSpHgc4(
 
     Returns
     -----------------------
-    Instace of DysgonomonasSpHgc4 graph.
+    Instace of Dysgonomonas sp. HGC4 graph.
 
 	References
 	---------------------

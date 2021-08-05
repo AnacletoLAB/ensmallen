@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaCheerisanensis.
+This file offers the methods to automatically retrieve the graph Kitasatospora cheerisanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaCheerisanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaCheerisanensis graph.
+    """Return new instance of the Kitasatospora cheerisanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KitasatosporaCheerisanensis(
 
     Returns
     -----------------------
-    Instace of KitasatosporaCheerisanensis graph.
+    Instace of Kitasatospora cheerisanensis graph.
 
 	References
 	---------------------

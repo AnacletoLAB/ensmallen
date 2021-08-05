@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusPanacihumi.
+This file offers the methods to automatically retrieve the graph Brevibacillus panacihumi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusPanacihumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusPanacihumi graph.
+    """Return new instance of the Brevibacillus panacihumi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacillusPanacihumi(
 
     Returns
     -----------------------
-    Instace of BrevibacillusPanacihumi graph.
+    Instace of Brevibacillus panacihumi graph.
 
 	References
 	---------------------

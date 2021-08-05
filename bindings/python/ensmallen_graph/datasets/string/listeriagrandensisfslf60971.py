@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaGrandensisFslF60971.
+This file offers the methods to automatically retrieve the graph Listeria grandensis FSL F6-0971.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaGrandensisFslF60971(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaGrandensisFslF60971 graph.
+    """Return new instance of the Listeria grandensis FSL F6-0971 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaGrandensisFslF60971(
 
     Returns
     -----------------------
-    Instace of ListeriaGrandensisFslF60971 graph.
+    Instace of Listeria grandensis FSL F6-0971 graph.
 
 	References
 	---------------------

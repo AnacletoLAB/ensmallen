@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelotomaculumThermopropionicum.
+This file offers the methods to automatically retrieve the graph Pelotomaculum thermopropionicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelotomaculumThermopropionicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelotomaculumThermopropionicum graph.
+    """Return new instance of the Pelotomaculum thermopropionicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelotomaculumThermopropionicum(
 
     Returns
     -----------------------
-    Instace of PelotomaculumThermopropionicum graph.
+    Instace of Pelotomaculum thermopropionicum graph.
 
 	References
 	---------------------

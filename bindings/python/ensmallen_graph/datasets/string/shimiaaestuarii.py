@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimiaAestuarii.
+This file offers the methods to automatically retrieve the graph Shimia aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimiaAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimiaAestuarii graph.
+    """Return new instance of the Shimia aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShimiaAestuarii(
 
     Returns
     -----------------------
-    Instace of ShimiaAestuarii graph.
+    Instace of Shimia aestuarii graph.
 
 	References
 	---------------------

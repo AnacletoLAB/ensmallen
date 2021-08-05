@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UrsusMaritimus.
+This file offers the methods to automatically retrieve the graph Ursus maritimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UrsusMaritimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UrsusMaritimus graph.
+    """Return new instance of the Ursus maritimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UrsusMaritimus(
 
     Returns
     -----------------------
-    Instace of UrsusMaritimus graph.
+    Instace of Ursus maritimus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraCaerulea.
+This file offers the methods to automatically retrieve the graph Leisingera caerulea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraCaerulea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraCaerulea graph.
+    """Return new instance of the Leisingera caerulea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeisingeraCaerulea(
 
     Returns
     -----------------------
-    Instace of LeisingeraCaerulea graph.
+    Instace of Leisingera caerulea graph.
 
 	References
 	---------------------

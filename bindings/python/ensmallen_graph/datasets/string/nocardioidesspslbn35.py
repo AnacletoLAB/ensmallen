@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpSlbn35.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. SLBN-35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpSlbn35(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpSlbn35 graph.
+    """Return new instance of the Nocardioides sp. SLBN-35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpSlbn35(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpSlbn35 graph.
+    Instace of Nocardioides sp. SLBN-35 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSpChkci003.
+This file offers the methods to automatically retrieve the graph Alistipes sp. CHKCI003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSpChkci003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSpChkci003 graph.
+    """Return new instance of the Alistipes sp. CHKCI003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesSpChkci003(
 
     Returns
     -----------------------
-    Instace of AlistipesSpChkci003 graph.
+    Instace of Alistipes sp. CHKCI003 graph.
 
 	References
 	---------------------

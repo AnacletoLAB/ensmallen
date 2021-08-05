@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumDtu037.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium DTU037.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumDtu037(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumDtu037 graph.
+    """Return new instance of the Gammaproteobacteria bacterium DTU037 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumDtu037(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumDtu037 graph.
+    Instace of Gammaproteobacteria bacterium DTU037 graph.
 
 	References
 	---------------------

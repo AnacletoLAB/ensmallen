@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumAlkaliphilum121.
+This file offers the methods to automatically retrieve the graph Exiguobacterium alkaliphilum 12/1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumAlkaliphilum121(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumAlkaliphilum121 graph.
+    """Return new instance of the Exiguobacterium alkaliphilum 12/1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExiguobacteriumAlkaliphilum121(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumAlkaliphilum121 graph.
+    Instace of Exiguobacterium alkaliphilum 12/1 graph.
 
 	References
 	---------------------

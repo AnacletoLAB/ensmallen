@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFrumentiDsm13145.
+This file offers the methods to automatically retrieve the graph Lactobacillus frumenti DSM 13145.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFrumentiDsm13145(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFrumentiDsm13145 graph.
+    """Return new instance of the Lactobacillus frumenti DSM 13145 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusFrumentiDsm13145(
 
     Returns
     -----------------------
-    Instace of LactobacillusFrumentiDsm13145 graph.
+    Instace of Lactobacillus frumenti DSM 13145 graph.
 
 	References
 	---------------------

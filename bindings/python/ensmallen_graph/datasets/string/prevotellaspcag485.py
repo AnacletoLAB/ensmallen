@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpCag485.
+This file offers the methods to automatically retrieve the graph Prevotella sp. CAG:485.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpCag485(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpCag485 graph.
+    """Return new instance of the Prevotella sp. CAG:485 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpCag485(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpCag485 graph.
+    Instace of Prevotella sp. CAG:485 graph.
 
 	References
 	---------------------

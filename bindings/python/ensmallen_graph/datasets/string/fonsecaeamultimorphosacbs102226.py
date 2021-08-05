@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FonsecaeaMultimorphosaCbs102226.
+This file offers the methods to automatically retrieve the graph Fonsecaea multimorphosa CBS 102226.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FonsecaeaMultimorphosaCbs102226(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FonsecaeaMultimorphosaCbs102226 graph.
+    """Return new instance of the Fonsecaea multimorphosa CBS 102226 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FonsecaeaMultimorphosaCbs102226(
 
     Returns
     -----------------------
-    Instace of FonsecaeaMultimorphosaCbs102226 graph.
+    Instace of Fonsecaea multimorphosa CBS 102226 graph.
 
 	References
 	---------------------

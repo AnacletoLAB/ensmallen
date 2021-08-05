@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterSpUrha0019.
+This file offers the methods to automatically retrieve the graph Lysobacter sp. URHA0019.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterSpUrha0019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterSpUrha0019 graph.
+    """Return new instance of the Lysobacter sp. URHA0019 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterSpUrha0019(
 
     Returns
     -----------------------
-    Instace of LysobacterSpUrha0019 graph.
+    Instace of Lysobacter sp. URHA0019 graph.
 
 	References
 	---------------------

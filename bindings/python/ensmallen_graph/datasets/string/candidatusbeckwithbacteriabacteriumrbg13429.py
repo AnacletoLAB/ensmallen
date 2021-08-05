@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBeckwithbacteriaBacteriumRbg13429.
+This file offers the methods to automatically retrieve the graph Candidatus Beckwithbacteria bacterium RBG_13_42_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBeckwithbacteriaBacteriumRbg13429(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBeckwithbacteriaBacteriumRbg13429 graph.
+    """Return new instance of the Candidatus Beckwithbacteria bacterium RBG_13_42_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBeckwithbacteriaBacteriumRbg13429(
 
     Returns
     -----------------------
-    Instace of CandidatusBeckwithbacteriaBacteriumRbg13429 graph.
+    Instace of Candidatus Beckwithbacteria bacterium RBG_13_42_9 graph.
 
 	References
 	---------------------

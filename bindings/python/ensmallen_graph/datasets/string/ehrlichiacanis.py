@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaCanis.
+This file offers the methods to automatically retrieve the graph Ehrlichia canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaCanis graph.
+    """Return new instance of the Ehrlichia canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EhrlichiaCanis(
 
     Returns
     -----------------------
-    Instace of EhrlichiaCanis graph.
+    Instace of Ehrlichia canis graph.
 
 	References
 	---------------------

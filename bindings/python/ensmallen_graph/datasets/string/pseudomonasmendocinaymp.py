@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMendocinaYmp.
+This file offers the methods to automatically retrieve the graph Pseudomonas mendocina ymp.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMendocinaYmp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMendocinaYmp graph.
+    """Return new instance of the Pseudomonas mendocina ymp graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasMendocinaYmp(
 
     Returns
     -----------------------
-    Instace of PseudomonasMendocinaYmp graph.
+    Instace of Pseudomonas mendocina ymp graph.
 
 	References
 	---------------------

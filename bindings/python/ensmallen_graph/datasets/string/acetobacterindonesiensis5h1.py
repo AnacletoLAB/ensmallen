@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterIndonesiensis5h1.
+This file offers the methods to automatically retrieve the graph Acetobacter indonesiensis 5H-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterIndonesiensis5h1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterIndonesiensis5h1 graph.
+    """Return new instance of the Acetobacter indonesiensis 5H-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterIndonesiensis5h1(
 
     Returns
     -----------------------
-    Instace of AcetobacterIndonesiensis5h1 graph.
+    Instace of Acetobacter indonesiensis 5H-1 graph.
 
 	References
 	---------------------

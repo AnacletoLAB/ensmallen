@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpUrhb0020.
+This file offers the methods to automatically retrieve the graph Variovorax sp. URHB0020.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpUrhb0020(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpUrhb0020 graph.
+    """Return new instance of the Variovorax sp. URHB0020 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpUrhb0020(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpUrhb0020 graph.
+    Instace of Variovorax sp. URHB0020 graph.
 
 	References
 	---------------------

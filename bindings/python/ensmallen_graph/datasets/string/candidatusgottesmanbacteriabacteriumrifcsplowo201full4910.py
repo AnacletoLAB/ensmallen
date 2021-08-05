@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGottesmanbacteriaBacteriumRifcsplowo201Full4910.
+This file offers the methods to automatically retrieve the graph Candidatus Gottesmanbacteria bacterium RIFCSPLOWO2_01_FULL_49_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGottesmanbacteriaBacteriumRifcsplowo201Full4910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGottesmanbacteriaBacteriumRifcsplowo201Full4910 graph.
+    """Return new instance of the Candidatus Gottesmanbacteria bacterium RIFCSPLOWO2_01_FULL_49_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGottesmanbacteriaBacteriumRifcsplowo201Full4910(
 
     Returns
     -----------------------
-    Instace of CandidatusGottesmanbacteriaBacteriumRifcsplowo201Full4910 graph.
+    Instace of Candidatus Gottesmanbacteria bacterium RIFCSPLOWO2_01_FULL_49_10 graph.
 
 	References
 	---------------------

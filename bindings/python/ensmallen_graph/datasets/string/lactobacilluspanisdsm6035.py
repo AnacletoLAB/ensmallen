@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPanisDsm6035.
+This file offers the methods to automatically retrieve the graph Lactobacillus panis DSM 6035.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPanisDsm6035(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPanisDsm6035 graph.
+    """Return new instance of the Lactobacillus panis DSM 6035 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPanisDsm6035(
 
     Returns
     -----------------------
-    Instace of LactobacillusPanisDsm6035 graph.
+    Instace of Lactobacillus panis DSM 6035 graph.
 
 	References
 	---------------------

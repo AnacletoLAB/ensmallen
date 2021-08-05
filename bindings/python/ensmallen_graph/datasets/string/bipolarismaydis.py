@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisMaydis.
+This file offers the methods to automatically retrieve the graph Bipolaris maydis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisMaydis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisMaydis graph.
+    """Return new instance of the Bipolaris maydis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BipolarisMaydis(
 
     Returns
     -----------------------
-    Instace of BipolarisMaydis graph.
+    Instace of Bipolaris maydis graph.
 
 	References
 	---------------------

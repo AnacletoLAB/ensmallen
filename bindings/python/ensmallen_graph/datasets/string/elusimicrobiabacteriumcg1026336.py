@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElusimicrobiaBacteriumCg1026336.
+This file offers the methods to automatically retrieve the graph Elusimicrobia bacterium CG1_02_63_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElusimicrobiaBacteriumCg1026336(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElusimicrobiaBacteriumCg1026336 graph.
+    """Return new instance of the Elusimicrobia bacterium CG1_02_63_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElusimicrobiaBacteriumCg1026336(
 
     Returns
     -----------------------
-    Instace of ElusimicrobiaBacteriumCg1026336 graph.
+    Instace of Elusimicrobia bacterium CG1_02_63_36 graph.
 
 	References
 	---------------------

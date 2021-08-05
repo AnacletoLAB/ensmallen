@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferGlycinis.
+This file offers the methods to automatically retrieve the graph Ensifer glycinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferGlycinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferGlycinis graph.
+    """Return new instance of the Ensifer glycinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnsiferGlycinis(
 
     Returns
     -----------------------
-    Instace of EnsiferGlycinis graph.
+    Instace of Ensifer glycinis graph.
 
 	References
 	---------------------

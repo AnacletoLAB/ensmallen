@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFrederiksbergensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas frederiksbergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFrederiksbergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFrederiksbergensis graph.
+    """Return new instance of the Pseudomonas frederiksbergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasFrederiksbergensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasFrederiksbergensis graph.
+    Instace of Pseudomonas frederiksbergensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAdlerbacteriaBacteriumGw2011Gwb1547.
+This file offers the methods to automatically retrieve the graph Candidatus Adlerbacteria bacterium GW2011_GWB1_54_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAdlerbacteriaBacteriumGw2011Gwb1547(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAdlerbacteriaBacteriumGw2011Gwb1547 graph.
+    """Return new instance of the Candidatus Adlerbacteria bacterium GW2011_GWB1_54_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAdlerbacteriaBacteriumGw2011Gwb1547(
 
     Returns
     -----------------------
-    Instace of CandidatusAdlerbacteriaBacteriumGw2011Gwb1547 graph.
+    Instace of Candidatus Adlerbacteria bacterium GW2011_GWB1_54_7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFalkowbacteriaBacteriumRifoxyd2Full3916.
+This file offers the methods to automatically retrieve the graph Candidatus Falkowbacteria bacterium RIFOXYD2_FULL_39_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFalkowbacteriaBacteriumRifoxyd2Full3916(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFalkowbacteriaBacteriumRifoxyd2Full3916 graph.
+    """Return new instance of the Candidatus Falkowbacteria bacterium RIFOXYD2_FULL_39_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFalkowbacteriaBacteriumRifoxyd2Full3916(
 
     Returns
     -----------------------
-    Instace of CandidatusFalkowbacteriaBacteriumRifoxyd2Full3916 graph.
+    Instace of Candidatus Falkowbacteria bacterium RIFOXYD2_FULL_39_16 graph.
 
 	References
 	---------------------

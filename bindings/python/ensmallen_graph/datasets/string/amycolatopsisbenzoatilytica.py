@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisBenzoatilytica.
+This file offers the methods to automatically retrieve the graph Amycolatopsis benzoatilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisBenzoatilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisBenzoatilytica graph.
+    """Return new instance of the Amycolatopsis benzoatilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisBenzoatilytica(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisBenzoatilytica graph.
+    Instace of Amycolatopsis benzoatilytica graph.
 
 	References
 	---------------------

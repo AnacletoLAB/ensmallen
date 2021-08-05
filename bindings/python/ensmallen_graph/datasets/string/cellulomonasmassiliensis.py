@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasMassiliensis.
+This file offers the methods to automatically retrieve the graph Cellulomonas massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasMassiliensis graph.
+    """Return new instance of the Cellulomonas massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasMassiliensis(
 
     Returns
     -----------------------
-    Instace of CellulomonasMassiliensis graph.
+    Instace of Cellulomonas massiliensis graph.
 
 	References
 	---------------------

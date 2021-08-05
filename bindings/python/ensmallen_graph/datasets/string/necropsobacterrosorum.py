@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NecropsobacterRosorum.
+This file offers the methods to automatically retrieve the graph Necropsobacter rosorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NecropsobacterRosorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NecropsobacterRosorum graph.
+    """Return new instance of the Necropsobacter rosorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NecropsobacterRosorum(
 
     Returns
     -----------------------
-    Instace of NecropsobacterRosorum graph.
+    Instace of Necropsobacter rosorum graph.
 
 	References
 	---------------------

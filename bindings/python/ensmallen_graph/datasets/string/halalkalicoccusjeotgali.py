@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalalkalicoccusJeotgali.
+This file offers the methods to automatically retrieve the graph Halalkalicoccus jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalalkalicoccusJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalalkalicoccusJeotgali graph.
+    """Return new instance of the Halalkalicoccus jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalalkalicoccusJeotgali(
 
     Returns
     -----------------------
-    Instace of HalalkalicoccusJeotgali graph.
+    Instace of Halalkalicoccus jeotgali graph.
 
 	References
 	---------------------

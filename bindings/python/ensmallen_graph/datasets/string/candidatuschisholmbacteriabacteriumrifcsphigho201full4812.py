@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusChisholmbacteriaBacteriumRifcsphigho201Full4812.
+This file offers the methods to automatically retrieve the graph Candidatus Chisholmbacteria bacterium RIFCSPHIGHO2_01_FULL_48_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusChisholmbacteriaBacteriumRifcsphigho201Full4812(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusChisholmbacteriaBacteriumRifcsphigho201Full4812 graph.
+    """Return new instance of the Candidatus Chisholmbacteria bacterium RIFCSPHIGHO2_01_FULL_48_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusChisholmbacteriaBacteriumRifcsphigho201Full4812(
 
     Returns
     -----------------------
-    Instace of CandidatusChisholmbacteriaBacteriumRifcsphigho201Full4812 graph.
+    Instace of Candidatus Chisholmbacteria bacterium RIFCSPHIGHO2_01_FULL_48_12 graph.
 
 	References
 	---------------------

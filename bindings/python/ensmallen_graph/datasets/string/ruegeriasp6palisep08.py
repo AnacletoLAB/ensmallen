@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaSp6palisep08.
+This file offers the methods to automatically retrieve the graph Ruegeria sp. 6PALISEP08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaSp6palisep08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaSp6palisep08 graph.
+    """Return new instance of the Ruegeria sp. 6PALISEP08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaSp6palisep08(
 
     Returns
     -----------------------
-    Instace of RuegeriaSp6palisep08 graph.
+    Instace of Ruegeria sp. 6PALISEP08 graph.
 
 	References
 	---------------------

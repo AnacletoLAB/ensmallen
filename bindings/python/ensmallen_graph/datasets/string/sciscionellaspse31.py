@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SciscionellaSpSe31.
+This file offers the methods to automatically retrieve the graph Sciscionella sp. SE31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SciscionellaSpSe31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SciscionellaSpSe31 graph.
+    """Return new instance of the Sciscionella sp. SE31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SciscionellaSpSe31(
 
     Returns
     -----------------------
-    Instace of SciscionellaSpSe31 graph.
+    Instace of Sciscionella sp. SE31 graph.
 
 	References
 	---------------------

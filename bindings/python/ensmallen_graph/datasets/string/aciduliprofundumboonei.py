@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AciduliprofundumBoonei.
+This file offers the methods to automatically retrieve the graph Aciduliprofundum boonei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AciduliprofundumBoonei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AciduliprofundumBoonei graph.
+    """Return new instance of the Aciduliprofundum boonei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AciduliprofundumBoonei(
 
     Returns
     -----------------------
-    Instace of AciduliprofundumBoonei graph.
+    Instace of Aciduliprofundum boonei graph.
 
 	References
 	---------------------

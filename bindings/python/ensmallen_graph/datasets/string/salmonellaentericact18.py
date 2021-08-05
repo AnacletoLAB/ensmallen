@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaCt18.
+This file offers the methods to automatically retrieve the graph Salmonella enterica CT18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaCt18(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaCt18 graph.
+    """Return new instance of the Salmonella enterica CT18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaCt18(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaCt18 graph.
+    Instace of Salmonella enterica CT18 graph.
 
 	References
 	---------------------

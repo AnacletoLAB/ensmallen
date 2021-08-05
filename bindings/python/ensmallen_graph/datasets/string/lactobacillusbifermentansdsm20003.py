@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusBifermentansDsm20003.
+This file offers the methods to automatically retrieve the graph Lactobacillus bifermentans DSM 20003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusBifermentansDsm20003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusBifermentansDsm20003 graph.
+    """Return new instance of the Lactobacillus bifermentans DSM 20003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusBifermentansDsm20003(
 
     Returns
     -----------------------
-    Instace of LactobacillusBifermentansDsm20003 graph.
+    Instace of Lactobacillus bifermentans DSM 20003 graph.
 
 	References
 	---------------------

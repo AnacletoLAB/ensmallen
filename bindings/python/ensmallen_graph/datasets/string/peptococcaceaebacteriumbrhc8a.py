@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumBrhC8a.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium BRH_c8a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumBrhC8a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumBrhC8a graph.
+    """Return new instance of the Peptococcaceae bacterium BRH_c8a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumBrhC8a(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumBrhC8a graph.
+    Instace of Peptococcaceae bacterium BRH_c8a graph.
 
 	References
 	---------------------

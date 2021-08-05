@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaTeam.
+This file offers the methods to automatically retrieve the graph dbpedia-team.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaTeam(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaTeam graph.
+    """Return new instance of the dbpedia-team graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaTeam(
 
     Returns
     -----------------------
-    Instace of DbpediaTeam graph.
+    Instace of dbpedia-team graph.
 
 	References
 	---------------------

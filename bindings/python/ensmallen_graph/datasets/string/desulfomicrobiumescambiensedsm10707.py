@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfomicrobiumEscambienseDsm10707.
+This file offers the methods to automatically retrieve the graph Desulfomicrobium escambiense DSM 10707.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfomicrobiumEscambienseDsm10707(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfomicrobiumEscambienseDsm10707 graph.
+    """Return new instance of the Desulfomicrobium escambiense DSM 10707 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfomicrobiumEscambienseDsm10707(
 
     Returns
     -----------------------
-    Instace of DesulfomicrobiumEscambienseDsm10707 graph.
+    Instace of Desulfomicrobium escambiense DSM 10707 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyellaJiangningensis.
+This file offers the methods to automatically retrieve the graph Dyella jiangningensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyellaJiangningensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyellaJiangningensis graph.
+    """Return new instance of the Dyella jiangningensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyellaJiangningensis(
 
     Returns
     -----------------------
-    Instace of DyellaJiangningensis graph.
+    Instace of Dyella jiangningensis graph.
 
 	References
 	---------------------

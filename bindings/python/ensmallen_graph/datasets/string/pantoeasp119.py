@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSp119.
+This file offers the methods to automatically retrieve the graph Pantoea sp. 1.19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSp119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSp119 graph.
+    """Return new instance of the Pantoea sp. 1.19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaSp119(
 
     Returns
     -----------------------
-    Instace of PantoeaSp119 graph.
+    Instace of Pantoea sp. 1.19 graph.
 
 	References
 	---------------------

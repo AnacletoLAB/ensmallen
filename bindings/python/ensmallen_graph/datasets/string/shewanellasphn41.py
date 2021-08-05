@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaSpHn41.
+This file offers the methods to automatically retrieve the graph Shewanella sp. HN-41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaSpHn41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaSpHn41 graph.
+    """Return new instance of the Shewanella sp. HN-41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaSpHn41(
 
     Returns
     -----------------------
-    Instace of ShewanellaSpHn41 graph.
+    Instace of Shewanella sp. HN-41 graph.
 
 	References
 	---------------------

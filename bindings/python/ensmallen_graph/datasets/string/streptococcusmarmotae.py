@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMarmotae.
+This file offers the methods to automatically retrieve the graph Streptococcus marmotae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMarmotae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMarmotae graph.
+    """Return new instance of the Streptococcus marmotae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusMarmotae(
 
     Returns
     -----------------------
-    Instace of StreptococcusMarmotae graph.
+    Instace of Streptococcus marmotae graph.
 
 	References
 	---------------------

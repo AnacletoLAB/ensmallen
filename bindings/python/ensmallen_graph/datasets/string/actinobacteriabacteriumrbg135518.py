@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacteriumRbg135518.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium RBG_13_55_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacteriumRbg135518(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacteriumRbg135518 graph.
+    """Return new instance of the Actinobacteria bacterium RBG_13_55_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacteriumRbg135518(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacteriumRbg135518 graph.
+    Instace of Actinobacteria bacterium RBG_13_55_18 graph.
 
 	References
 	---------------------

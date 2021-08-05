@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliivibrioSalmonicida.
+This file offers the methods to automatically retrieve the graph Aliivibrio salmonicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliivibrioSalmonicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliivibrioSalmonicida graph.
+    """Return new instance of the Aliivibrio salmonicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AliivibrioSalmonicida(
 
     Returns
     -----------------------
-    Instace of AliivibrioSalmonicida graph.
+    Instace of Aliivibrio salmonicida graph.
 
 	References
 	---------------------

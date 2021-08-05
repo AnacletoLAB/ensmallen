@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarivirgaSericea.
+This file offers the methods to automatically retrieve the graph Marivirga sericea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarivirgaSericea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarivirgaSericea graph.
+    """Return new instance of the Marivirga sericea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarivirgaSericea(
 
     Returns
     -----------------------
-    Instace of MarivirgaSericea graph.
+    Instace of Marivirga sericea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaCarnea.
+This file offers the methods to automatically retrieve the graph Nocardia carnea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaCarnea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaCarnea graph.
+    """Return new instance of the Nocardia carnea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaCarnea(
 
     Returns
     -----------------------
-    Instace of NocardiaCarnea graph.
+    Instace of Nocardia carnea graph.
 
 	References
 	---------------------

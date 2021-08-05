@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasMassiliensis.
+This file offers the methods to automatically retrieve the graph Xanthomonas massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasMassiliensis graph.
+    """Return new instance of the Xanthomonas massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasMassiliensis(
 
     Returns
     -----------------------
-    Instace of XanthomonasMassiliensis graph.
+    Instace of Xanthomonas massiliensis graph.
 
 	References
 	---------------------

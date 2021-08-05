@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSpNd2010.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. ND2010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSpNd2010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSpNd2010 graph.
+    """Return new instance of the Selenomonas sp. ND2010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSpNd2010(
 
     Returns
     -----------------------
-    Instace of SelenomonasSpNd2010 graph.
+    Instace of Selenomonas sp. ND2010 graph.
 
 	References
 	---------------------

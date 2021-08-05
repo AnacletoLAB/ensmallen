@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Linux.
+This file offers the methods to automatically retrieve the graph linux.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Linux(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Linux graph.
+    """Return new instance of the linux graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Linux(
 
     Returns
     -----------------------
-    Instace of Linux graph.
+    Instace of linux graph.
 
 	References
 	---------------------

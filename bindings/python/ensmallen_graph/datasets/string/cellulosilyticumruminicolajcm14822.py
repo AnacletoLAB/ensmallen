@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulosilyticumRuminicolaJcm14822.
+This file offers the methods to automatically retrieve the graph Cellulosilyticum ruminicola JCM 14822.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulosilyticumRuminicolaJcm14822(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulosilyticumRuminicolaJcm14822 graph.
+    """Return new instance of the Cellulosilyticum ruminicola JCM 14822 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulosilyticumRuminicolaJcm14822(
 
     Returns
     -----------------------
-    Instace of CellulosilyticumRuminicolaJcm14822 graph.
+    Instace of Cellulosilyticum ruminicola JCM 14822 graph.
 
 	References
 	---------------------

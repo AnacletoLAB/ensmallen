@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpHeron.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. Heron.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpHeron(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpHeron graph.
+    """Return new instance of the Leptolyngbya sp. Heron graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptolyngbyaSpHeron(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpHeron graph.
+    Instace of Leptolyngbya sp. Heron graph.
 
 	References
 	---------------------

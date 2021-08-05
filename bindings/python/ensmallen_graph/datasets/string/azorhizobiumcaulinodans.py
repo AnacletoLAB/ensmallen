@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzorhizobiumCaulinodans.
+This file offers the methods to automatically retrieve the graph Azorhizobium caulinodans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzorhizobiumCaulinodans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzorhizobiumCaulinodans graph.
+    """Return new instance of the Azorhizobium caulinodans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzorhizobiumCaulinodans(
 
     Returns
     -----------------------
-    Instace of AzorhizobiumCaulinodans graph.
+    Instace of Azorhizobium caulinodans graph.
 
 	References
 	---------------------

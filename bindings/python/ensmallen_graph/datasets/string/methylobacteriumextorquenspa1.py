@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumExtorquensPa1.
+This file offers the methods to automatically retrieve the graph Methylobacterium extorquens PA1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumExtorquensPa1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumExtorquensPa1 graph.
+    """Return new instance of the Methylobacterium extorquens PA1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumExtorquensPa1(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumExtorquensPa1 graph.
+    Instace of Methylobacterium extorquens PA1 graph.
 
 	References
 	---------------------

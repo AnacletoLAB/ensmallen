@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasGotlandica.
+This file offers the methods to automatically retrieve the graph Sulfurimonas gotlandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasGotlandica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasGotlandica graph.
+    """Return new instance of the Sulfurimonas gotlandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurimonasGotlandica(
 
     Returns
     -----------------------
-    Instace of SulfurimonasGotlandica graph.
+    Instace of Sulfurimonas gotlandica graph.
 
 	References
 	---------------------

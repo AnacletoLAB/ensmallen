@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrachipleistophoraHominis.
+This file offers the methods to automatically retrieve the graph Trachipleistophora hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrachipleistophoraHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrachipleistophoraHominis graph.
+    """Return new instance of the Trachipleistophora hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrachipleistophoraHominis(
 
     Returns
     -----------------------
-    Instace of TrachipleistophoraHominis graph.
+    Instace of Trachipleistophora hominis graph.
 
 	References
 	---------------------

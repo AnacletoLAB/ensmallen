@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaBacterium4920.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria bacterium 49-20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaBacterium4920(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaBacterium4920 graph.
+    """Return new instance of the Candidatus Saccharibacteria bacterium 49-20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaBacterium4920(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaBacterium4920 graph.
+    Instace of Candidatus Saccharibacteria bacterium 49-20 graph.
 
 	References
 	---------------------

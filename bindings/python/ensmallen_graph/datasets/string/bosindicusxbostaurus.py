@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BosIndicusXBosTaurus.
+This file offers the methods to automatically retrieve the graph Bos indicus x Bos taurus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BosIndicusXBosTaurus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BosIndicusXBosTaurus graph.
+    """Return new instance of the Bos indicus x Bos taurus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BosIndicusXBosTaurus(
 
     Returns
     -----------------------
-    Instace of BosIndicusXBosTaurus graph.
+    Instace of Bos indicus x Bos taurus graph.
 
 	References
 	---------------------

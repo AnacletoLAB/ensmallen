@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SlackiaExigua.
+This file offers the methods to automatically retrieve the graph Slackia exigua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SlackiaExigua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SlackiaExigua graph.
+    """Return new instance of the Slackia exigua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SlackiaExigua(
 
     Returns
     -----------------------
-    Instace of SlackiaExigua graph.
+    Instace of Slackia exigua graph.
 
 	References
 	---------------------

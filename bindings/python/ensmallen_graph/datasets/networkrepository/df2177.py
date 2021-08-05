@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Df2177.
+This file offers the methods to automatically retrieve the graph df2177.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Df2177(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Df2177 graph.
+    """Return new instance of the df2177 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Df2177(
 
     Returns
     -----------------------
-    Instace of Df2177 graph.
+    Instace of df2177 graph.
 
 	References
 	---------------------

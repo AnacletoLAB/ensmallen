@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumJeikeium.
+This file offers the methods to automatically retrieve the graph Corynebacterium jeikeium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumJeikeium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumJeikeium graph.
+    """Return new instance of the Corynebacterium jeikeium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumJeikeium(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumJeikeium graph.
+    Instace of Corynebacterium jeikeium graph.
 
 	References
 	---------------------

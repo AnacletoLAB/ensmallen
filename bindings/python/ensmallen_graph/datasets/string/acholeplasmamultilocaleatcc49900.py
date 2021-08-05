@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaMultilocaleAtcc49900.
+This file offers the methods to automatically retrieve the graph Acholeplasma multilocale ATCC 49900.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaMultilocaleAtcc49900(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaMultilocaleAtcc49900 graph.
+    """Return new instance of the Acholeplasma multilocale ATCC 49900 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcholeplasmaMultilocaleAtcc49900(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaMultilocaleAtcc49900 graph.
+    Instace of Acholeplasma multilocale ATCC 49900 graph.
 
 	References
 	---------------------

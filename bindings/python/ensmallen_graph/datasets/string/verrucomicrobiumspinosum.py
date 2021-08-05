@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiumSpinosum.
+This file offers the methods to automatically retrieve the graph Verrucomicrobium spinosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiumSpinosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiumSpinosum graph.
+    """Return new instance of the Verrucomicrobium spinosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerrucomicrobiumSpinosum(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiumSpinosum graph.
+    Instace of Verrucomicrobium spinosum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhlebiaCentrifuga.
+This file offers the methods to automatically retrieve the graph Phlebia centrifuga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhlebiaCentrifuga(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhlebiaCentrifuga graph.
+    """Return new instance of the Phlebia centrifuga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhlebiaCentrifuga(
 
     Returns
     -----------------------
-    Instace of PhlebiaCentrifuga graph.
+    Instace of Phlebia centrifuga graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpMc2021.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. MC2021.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpMc2021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpMc2021 graph.
+    """Return new instance of the Butyrivibrio sp. MC2021 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioSpMc2021(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpMc2021 graph.
+    Instace of Butyrivibrio sp. MC2021 graph.
 
 	References
 	---------------------

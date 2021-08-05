@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioFluvialis.
+This file offers the methods to automatically retrieve the graph Vibrio fluvialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioFluvialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioFluvialis graph.
+    """Return new instance of the Vibrio fluvialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioFluvialis(
 
     Returns
     -----------------------
-    Instace of VibrioFluvialis graph.
+    Instace of Vibrio fluvialis graph.
 
 	References
 	---------------------

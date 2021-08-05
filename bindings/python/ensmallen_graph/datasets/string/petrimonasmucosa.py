@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PetrimonasMucosa.
+This file offers the methods to automatically retrieve the graph Petrimonas mucosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PetrimonasMucosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PetrimonasMucosa graph.
+    """Return new instance of the Petrimonas mucosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PetrimonasMucosa(
 
     Returns
     -----------------------
-    Instace of PetrimonasMucosa graph.
+    Instace of Petrimonas mucosa graph.
 
 	References
 	---------------------

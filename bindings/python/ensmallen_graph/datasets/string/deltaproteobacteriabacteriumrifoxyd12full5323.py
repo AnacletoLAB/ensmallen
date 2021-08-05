@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumRifoxyd12Full5323.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium RIFOXYD12_FULL_53_23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumRifoxyd12Full5323(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumRifoxyd12Full5323 graph.
+    """Return new instance of the Deltaproteobacteria bacterium RIFOXYD12_FULL_53_23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumRifoxyd12Full5323(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumRifoxyd12Full5323 graph.
+    Instace of Deltaproteobacteria bacterium RIFOXYD12_FULL_53_23 graph.
 
 	References
 	---------------------

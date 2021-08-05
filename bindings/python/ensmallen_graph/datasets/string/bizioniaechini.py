@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BizioniaEchini.
+This file offers the methods to automatically retrieve the graph Bizionia echini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BizioniaEchini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BizioniaEchini graph.
+    """Return new instance of the Bizionia echini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BizioniaEchini(
 
     Returns
     -----------------------
-    Instace of BizioniaEchini graph.
+    Instace of Bizionia echini graph.
 
 	References
 	---------------------

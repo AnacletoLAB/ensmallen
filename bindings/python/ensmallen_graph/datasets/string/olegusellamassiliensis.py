@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlegusellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Olegusella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlegusellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlegusellaMassiliensis graph.
+    """Return new instance of the Olegusella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlegusellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of OlegusellaMassiliensis graph.
+    Instace of Olegusella massiliensis graph.
 
 	References
 	---------------------

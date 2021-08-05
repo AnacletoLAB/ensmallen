@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IsosphaeraPallida.
+This file offers the methods to automatically retrieve the graph Isosphaera pallida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IsosphaeraPallida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IsosphaeraPallida graph.
+    """Return new instance of the Isosphaera pallida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IsosphaeraPallida(
 
     Returns
     -----------------------
-    Instace of IsosphaeraPallida graph.
+    Instace of Isosphaera pallida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolycyclovoransAlgicola.
+This file offers the methods to automatically retrieve the graph Polycyclovorans algicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolycyclovoransAlgicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolycyclovoransAlgicola graph.
+    """Return new instance of the Polycyclovorans algicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolycyclovoransAlgicola(
 
     Returns
     -----------------------
-    Instace of PolycyclovoransAlgicola graph.
+    Instace of Polycyclovorans algicola graph.
 
 	References
 	---------------------

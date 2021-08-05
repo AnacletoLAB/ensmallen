@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaBacteriumC7867008.
+This file offers the methods to automatically retrieve the graph Parcubacteria bacterium C7867-008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaBacteriumC7867008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaBacteriumC7867008 graph.
+    """Return new instance of the Parcubacteria bacterium C7867-008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaBacteriumC7867008(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaBacteriumC7867008 graph.
+    Instace of Parcubacteria bacterium C7867-008 graph.
 
 	References
 	---------------------

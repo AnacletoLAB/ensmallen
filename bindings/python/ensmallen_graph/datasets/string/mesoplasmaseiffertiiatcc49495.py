@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoplasmaSeiffertiiAtcc49495.
+This file offers the methods to automatically retrieve the graph Mesoplasma seiffertii ATCC 49495.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoplasmaSeiffertiiAtcc49495(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoplasmaSeiffertiiAtcc49495 graph.
+    """Return new instance of the Mesoplasma seiffertii ATCC 49495 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesoplasmaSeiffertiiAtcc49495(
 
     Returns
     -----------------------
-    Instace of MesoplasmaSeiffertiiAtcc49495 graph.
+    Instace of Mesoplasma seiffertii ATCC 49495 graph.
 
 	References
 	---------------------

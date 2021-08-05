@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusFischeriNrrl181.
+This file offers the methods to automatically retrieve the graph Aspergillus fischeri NRRL 181.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusFischeriNrrl181(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusFischeriNrrl181 graph.
+    """Return new instance of the Aspergillus fischeri NRRL 181 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusFischeriNrrl181(
 
     Returns
     -----------------------
-    Instace of AspergillusFischeriNrrl181 graph.
+    Instace of Aspergillus fischeri NRRL 181 graph.
 
 	References
 	---------------------

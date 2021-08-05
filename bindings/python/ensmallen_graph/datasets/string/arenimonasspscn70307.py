@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasSpScn70307.
+This file offers the methods to automatically retrieve the graph Arenimonas sp. SCN 70-307.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasSpScn70307(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasSpScn70307 graph.
+    """Return new instance of the Arenimonas sp. SCN 70-307 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArenimonasSpScn70307(
 
     Returns
     -----------------------
-    Instace of ArenimonasSpScn70307 graph.
+    Instace of Arenimonas sp. SCN 70-307 graph.
 
 	References
 	---------------------

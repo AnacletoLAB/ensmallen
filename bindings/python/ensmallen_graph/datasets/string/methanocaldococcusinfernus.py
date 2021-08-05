@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusInfernus.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus infernus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusInfernus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusInfernus graph.
+    """Return new instance of the Methanocaldococcus infernus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocaldococcusInfernus(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusInfernus graph.
+    Instace of Methanocaldococcus infernus graph.
 
 	References
 	---------------------

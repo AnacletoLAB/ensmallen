@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaErecta.
+This file offers the methods to automatically retrieve the graph Drosophila erecta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaErecta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaErecta graph.
+    """Return new instance of the Drosophila erecta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaErecta(
 
     Returns
     -----------------------
-    Instace of DrosophilaErecta graph.
+    Instace of Drosophila erecta graph.
 
 	References
 	---------------------

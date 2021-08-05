@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusJostii.
+This file offers the methods to automatically retrieve the graph Rhodococcus jostii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusJostii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusJostii graph.
+    """Return new instance of the Rhodococcus jostii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusJostii(
 
     Returns
     -----------------------
-    Instace of RhodococcusJostii graph.
+    Instace of Rhodococcus jostii graph.
 
 	References
 	---------------------

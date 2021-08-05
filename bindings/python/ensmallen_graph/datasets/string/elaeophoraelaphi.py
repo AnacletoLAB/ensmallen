@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElaeophoraElaphi.
+This file offers the methods to automatically retrieve the graph Elaeophora elaphi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElaeophoraElaphi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElaeophoraElaphi graph.
+    """Return new instance of the Elaeophora elaphi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElaeophoraElaphi(
 
     Returns
     -----------------------
-    Instace of ElaeophoraElaphi graph.
+    Instace of Elaeophora elaphi graph.
 
 	References
 	---------------------

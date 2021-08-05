@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudozymaHubeiensis.
+This file offers the methods to automatically retrieve the graph Pseudozyma hubeiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudozymaHubeiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudozymaHubeiensis graph.
+    """Return new instance of the Pseudozyma hubeiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudozymaHubeiensis(
 
     Returns
     -----------------------
-    Instace of PseudozymaHubeiensis graph.
+    Instace of Pseudozyma hubeiensis graph.
 
 	References
 	---------------------

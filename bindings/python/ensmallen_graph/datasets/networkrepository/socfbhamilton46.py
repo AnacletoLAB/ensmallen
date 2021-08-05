@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbHamilton46.
+This file offers the methods to automatically retrieve the graph socfb-Hamilton46.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbHamilton46(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbHamilton46 graph.
+    """Return new instance of the socfb-Hamilton46 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbHamilton46(
 
     Returns
     -----------------------
-    Instace of SocfbHamilton46 graph.
+    Instace of socfb-Hamilton46 graph.
 
 	References
 	---------------------

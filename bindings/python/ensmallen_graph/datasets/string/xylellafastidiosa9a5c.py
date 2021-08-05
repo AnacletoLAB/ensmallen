@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylellaFastidiosa9a5c.
+This file offers the methods to automatically retrieve the graph Xylella fastidiosa 9a5c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylellaFastidiosa9a5c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylellaFastidiosa9a5c graph.
+    """Return new instance of the Xylella fastidiosa 9a5c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XylellaFastidiosa9a5c(
 
     Returns
     -----------------------
-    Instace of XylellaFastidiosa9a5c graph.
+    Instace of Xylella fastidiosa 9a5c graph.
 
 	References
 	---------------------

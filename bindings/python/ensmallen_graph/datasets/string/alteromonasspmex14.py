@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasSpMex14.
+This file offers the methods to automatically retrieve the graph Alteromonas sp. Mex14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasSpMex14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasSpMex14 graph.
+    """Return new instance of the Alteromonas sp. Mex14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasSpMex14(
 
     Returns
     -----------------------
-    Instace of AlteromonasSpMex14 graph.
+    Instace of Alteromonas sp. Mex14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanibaculumNanhaiense.
+This file offers the methods to automatically retrieve the graph Oceanibaculum nanhaiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanibaculumNanhaiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanibaculumNanhaiense graph.
+    """Return new instance of the Oceanibaculum nanhaiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanibaculumNanhaiense(
 
     Returns
     -----------------------
-    Instace of OceanibaculumNanhaiense graph.
+    Instace of Oceanibaculum nanhaiense graph.
 
 	References
 	---------------------

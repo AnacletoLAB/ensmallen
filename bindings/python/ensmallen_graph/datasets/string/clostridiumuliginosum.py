@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumUliginosum.
+This file offers the methods to automatically retrieve the graph Clostridium uliginosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumUliginosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumUliginosum graph.
+    """Return new instance of the Clostridium uliginosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumUliginosum(
 
     Returns
     -----------------------
-    Instace of ClostridiumUliginosum graph.
+    Instace of Clostridium uliginosum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxSpDg881.
+This file offers the methods to automatically retrieve the graph Alcanivorax sp. DG881.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxSpDg881(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxSpDg881 graph.
+    """Return new instance of the Alcanivorax sp. DG881 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxSpDg881(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxSpDg881 graph.
+    Instace of Alcanivorax sp. DG881 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumOxysporumFSpCubenseRace1.
+This file offers the methods to automatically retrieve the graph Fusarium oxysporum f. sp. cubense race 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumOxysporumFSpCubenseRace1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumOxysporumFSpCubenseRace1 graph.
+    """Return new instance of the Fusarium oxysporum f. sp. cubense race 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumOxysporumFSpCubenseRace1(
 
     Returns
     -----------------------
-    Instace of FusariumOxysporumFSpCubenseRace1 graph.
+    Instace of Fusarium oxysporum f. sp. cubense race 1 graph.
 
 	References
 	---------------------

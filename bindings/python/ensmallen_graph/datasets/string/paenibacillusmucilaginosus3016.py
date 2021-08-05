@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusMucilaginosus3016.
+This file offers the methods to automatically retrieve the graph Paenibacillus mucilaginosus 3016.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusMucilaginosus3016(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusMucilaginosus3016 graph.
+    """Return new instance of the Paenibacillus mucilaginosus 3016 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusMucilaginosus3016(
 
     Returns
     -----------------------
-    Instace of PaenibacillusMucilaginosus3016 graph.
+    Instace of Paenibacillus mucilaginosus 3016 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBorbori.
+This file offers the methods to automatically retrieve the graph Pseudomonas borbori.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBorbori(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBorbori graph.
+    """Return new instance of the Pseudomonas borbori graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBorbori(
 
     Returns
     -----------------------
-    Instace of PseudomonasBorbori graph.
+    Instace of Pseudomonas borbori graph.
 
 	References
 	---------------------

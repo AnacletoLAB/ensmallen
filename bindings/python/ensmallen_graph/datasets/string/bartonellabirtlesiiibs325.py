@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaBirtlesiiIbs325.
+This file offers the methods to automatically retrieve the graph Bartonella birtlesii IBS 325.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaBirtlesiiIbs325(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaBirtlesiiIbs325 graph.
+    """Return new instance of the Bartonella birtlesii IBS 325 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaBirtlesiiIbs325(
 
     Returns
     -----------------------
-    Instace of BartonellaBirtlesiiIbs325 graph.
+    Instace of Bartonella birtlesii IBS 325 graph.
 
 	References
 	---------------------

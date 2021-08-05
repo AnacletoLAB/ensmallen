@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BombusImpatiens.
+This file offers the methods to automatically retrieve the graph Bombus impatiens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BombusImpatiens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BombusImpatiens graph.
+    """Return new instance of the Bombus impatiens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BombusImpatiens(
 
     Returns
     -----------------------
-    Instace of BombusImpatiens graph.
+    Instace of Bombus impatiens graph.
 
 	References
 	---------------------

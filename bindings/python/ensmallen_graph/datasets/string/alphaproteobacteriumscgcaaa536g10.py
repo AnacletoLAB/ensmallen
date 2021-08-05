@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumScgcAaa536G10.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium SCGC AAA536-G10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumScgcAaa536G10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumScgcAaa536G10 graph.
+    """Return new instance of the alpha proteobacterium SCGC AAA536-G10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumScgcAaa536G10(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumScgcAaa536G10 graph.
+    Instace of alpha proteobacterium SCGC AAA536-G10 graph.
 
 	References
 	---------------------

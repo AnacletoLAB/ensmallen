@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesJeddahensis.
+This file offers the methods to automatically retrieve the graph Streptomyces jeddahensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesJeddahensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesJeddahensis graph.
+    """Return new instance of the Streptomyces jeddahensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesJeddahensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesJeddahensis graph.
+    Instace of Streptomyces jeddahensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaTeleogrylli.
+This file offers the methods to automatically retrieve the graph [Erwinia] teleogrylli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaTeleogrylli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaTeleogrylli graph.
+    """Return new instance of the [Erwinia] teleogrylli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaTeleogrylli(
 
     Returns
     -----------------------
-    Instace of ErwiniaTeleogrylli graph.
+    Instace of [Erwinia] teleogrylli graph.
 
 	References
 	---------------------

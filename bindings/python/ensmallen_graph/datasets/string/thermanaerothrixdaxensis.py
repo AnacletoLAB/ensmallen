@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermanaerothrixDaxensis.
+This file offers the methods to automatically retrieve the graph Thermanaerothrix daxensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermanaerothrixDaxensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermanaerothrixDaxensis graph.
+    """Return new instance of the Thermanaerothrix daxensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermanaerothrixDaxensis(
 
     Returns
     -----------------------
-    Instace of ThermanaerothrixDaxensis graph.
+    Instace of Thermanaerothrix daxensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasCompostiDsm21721.
+This file offers the methods to automatically retrieve the graph Comamonas composti DSM 21721.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasCompostiDsm21721(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasCompostiDsm21721 graph.
+    """Return new instance of the Comamonas composti DSM 21721 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasCompostiDsm21721(
 
     Returns
     -----------------------
-    Instace of ComamonasCompostiDsm21721 graph.
+    Instace of Comamonas composti DSM 21721 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmatimonadetesBacteriumJgi0000077K19.
+This file offers the methods to automatically retrieve the graph Armatimonadetes bacterium JGI 0000077-K19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmatimonadetesBacteriumJgi0000077K19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmatimonadetesBacteriumJgi0000077K19 graph.
+    """Return new instance of the Armatimonadetes bacterium JGI 0000077-K19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmatimonadetesBacteriumJgi0000077K19(
 
     Returns
     -----------------------
-    Instace of ArmatimonadetesBacteriumJgi0000077K19 graph.
+    Instace of Armatimonadetes bacterium JGI 0000077-K19 graph.
 
 	References
 	---------------------

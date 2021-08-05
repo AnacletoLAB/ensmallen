@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrocebusMurinus.
+This file offers the methods to automatically retrieve the graph Microcebus murinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrocebusMurinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrocebusMurinus graph.
+    """Return new instance of the Microcebus murinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrocebusMurinus(
 
     Returns
     -----------------------
-    Instace of MicrocebusMurinus graph.
+    Instace of Microcebus murinus graph.
 
 	References
 	---------------------

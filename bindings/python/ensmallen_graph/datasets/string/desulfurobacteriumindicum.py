@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurobacteriumIndicum.
+This file offers the methods to automatically retrieve the graph Desulfurobacterium indicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurobacteriumIndicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurobacteriumIndicum graph.
+    """Return new instance of the Desulfurobacterium indicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfurobacteriumIndicum(
 
     Returns
     -----------------------
-    Instace of DesulfurobacteriumIndicum graph.
+    Instace of Desulfurobacterium indicum graph.
 
 	References
 	---------------------

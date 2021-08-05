@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpQa3.
+This file offers the methods to automatically retrieve the graph Frankia sp. QA3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpQa3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpQa3 graph.
+    """Return new instance of the Frankia sp. QA3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpQa3(
 
     Returns
     -----------------------
-    Instace of FrankiaSpQa3 graph.
+    Instace of Frankia sp. QA3 graph.
 
 	References
 	---------------------

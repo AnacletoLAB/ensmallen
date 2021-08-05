@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMustelae.
+This file offers the methods to automatically retrieve the graph Corynebacterium mustelae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMustelae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMustelae graph.
+    """Return new instance of the Corynebacterium mustelae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumMustelae(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMustelae graph.
+    Instace of Corynebacterium mustelae graph.
 
 	References
 	---------------------

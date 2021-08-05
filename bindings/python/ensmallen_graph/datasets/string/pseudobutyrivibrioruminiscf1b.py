@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobutyrivibrioRuminisCf1b.
+This file offers the methods to automatically retrieve the graph Pseudobutyrivibrio ruminis CF1b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobutyrivibrioRuminisCf1b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobutyrivibrioRuminisCf1b graph.
+    """Return new instance of the Pseudobutyrivibrio ruminis CF1b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudobutyrivibrioRuminisCf1b(
 
     Returns
     -----------------------
-    Instace of PseudobutyrivibrioRuminisCf1b graph.
+    Instace of Pseudobutyrivibrio ruminis CF1b graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusUrinalis228597.
+This file offers the methods to automatically retrieve the graph Streptococcus urinalis 228597.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusUrinalis228597(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusUrinalis228597 graph.
+    """Return new instance of the Streptococcus urinalis 228597 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusUrinalis228597(
 
     Returns
     -----------------------
-    Instace of StreptococcusUrinalis228597 graph.
+    Instace of Streptococcus urinalis 228597 graph.
 
 	References
 	---------------------

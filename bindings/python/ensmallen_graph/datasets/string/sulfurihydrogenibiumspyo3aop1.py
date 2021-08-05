@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurihydrogenibiumSpYo3aop1.
+This file offers the methods to automatically retrieve the graph Sulfurihydrogenibium sp. YO3AOP1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurihydrogenibiumSpYo3aop1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurihydrogenibiumSpYo3aop1 graph.
+    """Return new instance of the Sulfurihydrogenibium sp. YO3AOP1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurihydrogenibiumSpYo3aop1(
 
     Returns
     -----------------------
-    Instace of SulfurihydrogenibiumSpYo3aop1 graph.
+    Instace of Sulfurihydrogenibium sp. YO3AOP1 graph.
 
 	References
 	---------------------

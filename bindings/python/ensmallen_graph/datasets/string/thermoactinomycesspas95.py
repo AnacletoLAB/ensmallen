@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoactinomycesSpAs95.
+This file offers the methods to automatically retrieve the graph Thermoactinomyces sp. AS95.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoactinomycesSpAs95(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoactinomycesSpAs95 graph.
+    """Return new instance of the Thermoactinomyces sp. AS95 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoactinomycesSpAs95(
 
     Returns
     -----------------------
-    Instace of ThermoactinomycesSpAs95 graph.
+    Instace of Thermoactinomyces sp. AS95 graph.
 
 	References
 	---------------------

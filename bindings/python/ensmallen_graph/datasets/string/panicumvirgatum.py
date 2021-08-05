@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PanicumVirgatum.
+This file offers the methods to automatically retrieve the graph Panicum virgatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PanicumVirgatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PanicumVirgatum graph.
+    """Return new instance of the Panicum virgatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PanicumVirgatum(
 
     Returns
     -----------------------
-    Instace of PanicumVirgatum graph.
+    Instace of Panicum virgatum graph.
 
 	References
 	---------------------

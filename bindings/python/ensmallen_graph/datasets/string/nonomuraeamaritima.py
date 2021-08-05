@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaMaritima.
+This file offers the methods to automatically retrieve the graph Nonomuraea maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaMaritima graph.
+    """Return new instance of the Nonomuraea maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaMaritima(
 
     Returns
     -----------------------
-    Instace of NonomuraeaMaritima graph.
+    Instace of Nonomuraea maritima graph.
 
 	References
 	---------------------

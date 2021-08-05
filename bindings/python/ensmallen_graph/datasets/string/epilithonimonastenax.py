@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpilithonimonasTenax.
+This file offers the methods to automatically retrieve the graph Epilithonimonas tenax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpilithonimonasTenax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpilithonimonasTenax graph.
+    """Return new instance of the Epilithonimonas tenax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EpilithonimonasTenax(
 
     Returns
     -----------------------
-    Instace of EpilithonimonasTenax graph.
+    Instace of Epilithonimonas tenax graph.
 
 	References
 	---------------------

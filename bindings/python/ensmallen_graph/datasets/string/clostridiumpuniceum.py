@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPuniceum.
+This file offers the methods to automatically retrieve the graph Clostridium puniceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPuniceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPuniceum graph.
+    """Return new instance of the Clostridium puniceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPuniceum(
 
     Returns
     -----------------------
-    Instace of ClostridiumPuniceum graph.
+    Instace of Clostridium puniceum graph.
 
 	References
 	---------------------

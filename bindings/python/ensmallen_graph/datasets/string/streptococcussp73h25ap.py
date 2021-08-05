@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSp73h25ap.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. 73H25AP.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSp73h25ap(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSp73h25ap graph.
+    """Return new instance of the Streptococcus sp. 73H25AP graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSp73h25ap(
 
     Returns
     -----------------------
-    Instace of StreptococcusSp73h25ap graph.
+    Instace of Streptococcus sp. 73H25AP graph.
 
 	References
 	---------------------

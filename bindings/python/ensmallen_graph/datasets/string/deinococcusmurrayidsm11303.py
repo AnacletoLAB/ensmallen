@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusMurrayiDsm11303.
+This file offers the methods to automatically retrieve the graph Deinococcus murrayi DSM 11303.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusMurrayiDsm11303(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusMurrayiDsm11303 graph.
+    """Return new instance of the Deinococcus murrayi DSM 11303 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeinococcusMurrayiDsm11303(
 
     Returns
     -----------------------
-    Instace of DeinococcusMurrayiDsm11303 graph.
+    Instace of Deinococcus murrayi DSM 11303 graph.
 
 	References
 	---------------------

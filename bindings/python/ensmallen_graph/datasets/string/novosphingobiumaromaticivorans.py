@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumAromaticivorans.
+This file offers the methods to automatically retrieve the graph Novosphingobium aromaticivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumAromaticivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumAromaticivorans graph.
+    """Return new instance of the Novosphingobium aromaticivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NovosphingobiumAromaticivorans(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumAromaticivorans graph.
+    Instace of Novosphingobium aromaticivorans graph.
 
 	References
 	---------------------

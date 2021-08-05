@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasEchinoides.
+This file offers the methods to automatically retrieve the graph Sphingomonas echinoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasEchinoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasEchinoides graph.
+    """Return new instance of the Sphingomonas echinoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasEchinoides(
 
     Returns
     -----------------------
-    Instace of SphingomonasEchinoides graph.
+    Instace of Sphingomonas echinoides graph.
 
 	References
 	---------------------

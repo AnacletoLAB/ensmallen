@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndozoicomonasElysicola.
+This file offers the methods to automatically retrieve the graph Endozoicomonas elysicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndozoicomonasElysicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndozoicomonasElysicola graph.
+    """Return new instance of the Endozoicomonas elysicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndozoicomonasElysicola(
 
     Returns
     -----------------------
-    Instace of EndozoicomonasElysicola graph.
+    Instace of Endozoicomonas elysicola graph.
 
 	References
 	---------------------

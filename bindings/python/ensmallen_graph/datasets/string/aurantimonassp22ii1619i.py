@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AurantimonasSp22ii1619i.
+This file offers the methods to automatically retrieve the graph Aurantimonas sp. 22II-16-19i.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AurantimonasSp22ii1619i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AurantimonasSp22ii1619i graph.
+    """Return new instance of the Aurantimonas sp. 22II-16-19i graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AurantimonasSp22ii1619i(
 
     Returns
     -----------------------
-    Instace of AurantimonasSp22ii1619i graph.
+    Instace of Aurantimonas sp. 22II-16-19i graph.
 
 	References
 	---------------------

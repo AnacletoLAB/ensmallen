@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoccidioidesPosadasiiStrSilveira.
+This file offers the methods to automatically retrieve the graph Coccidioides posadasii str. Silveira.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoccidioidesPosadasiiStrSilveira(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoccidioidesPosadasiiStrSilveira graph.
+    """Return new instance of the Coccidioides posadasii str. Silveira graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoccidioidesPosadasiiStrSilveira(
 
     Returns
     -----------------------
-    Instace of CoccidioidesPosadasiiStrSilveira graph.
+    Instace of Coccidioides posadasii str. Silveira graph.
 
 	References
 	---------------------

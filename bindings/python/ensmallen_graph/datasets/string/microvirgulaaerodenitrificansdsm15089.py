@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgulaAerodenitrificansDsm15089.
+This file offers the methods to automatically retrieve the graph Microvirgula aerodenitrificans DSM 15089.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgulaAerodenitrificansDsm15089(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgulaAerodenitrificansDsm15089 graph.
+    """Return new instance of the Microvirgula aerodenitrificans DSM 15089 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrovirgulaAerodenitrificansDsm15089(
 
     Returns
     -----------------------
-    Instace of MicrovirgulaAerodenitrificansDsm15089 graph.
+    Instace of Microvirgula aerodenitrificans DSM 15089 graph.
 
 	References
 	---------------------

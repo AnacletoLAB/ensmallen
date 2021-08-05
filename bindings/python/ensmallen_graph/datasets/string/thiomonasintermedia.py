@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomonasIntermedia.
+This file offers the methods to automatically retrieve the graph Thiomonas intermedia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomonasIntermedia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomonasIntermedia graph.
+    """Return new instance of the Thiomonas intermedia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomonasIntermedia(
 
     Returns
     -----------------------
-    Instace of ThiomonasIntermedia graph.
+    Instace of Thiomonas intermedia graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllofustisSeminis.
+This file offers the methods to automatically retrieve the graph Allofustis seminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllofustisSeminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllofustisSeminis graph.
+    """Return new instance of the Allofustis seminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AllofustisSeminis(
 
     Returns
     -----------------------
-    Instace of AllofustisSeminis graph.
+    Instace of Allofustis seminis graph.
 
 	References
 	---------------------

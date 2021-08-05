@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaGenomosp13.
+This file offers the methods to automatically retrieve the graph Bordetella genomosp. 13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaGenomosp13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaGenomosp13 graph.
+    """Return new instance of the Bordetella genomosp. 13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BordetellaGenomosp13(
 
     Returns
     -----------------------
-    Instace of BordetellaGenomosp13 graph.
+    Instace of Bordetella genomosp. 13 graph.
 
 	References
 	---------------------

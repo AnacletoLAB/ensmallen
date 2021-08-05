@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TilletiaControversa.
+This file offers the methods to automatically retrieve the graph Tilletia controversa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TilletiaControversa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TilletiaControversa graph.
+    """Return new instance of the Tilletia controversa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TilletiaControversa(
 
     Returns
     -----------------------
-    Instace of TilletiaControversa graph.
+    Instace of Tilletia controversa graph.
 
 	References
 	---------------------

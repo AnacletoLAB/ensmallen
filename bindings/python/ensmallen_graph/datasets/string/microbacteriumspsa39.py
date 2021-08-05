@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpSa39.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. SA39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpSa39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpSa39 graph.
+    """Return new instance of the Microbacterium sp. SA39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpSa39(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpSa39 graph.
+    Instace of Microbacterium sp. SA39 graph.
 
 	References
 	---------------------

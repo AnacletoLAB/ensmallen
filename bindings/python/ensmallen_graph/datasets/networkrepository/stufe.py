@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Stufe.
+This file offers the methods to automatically retrieve the graph stufe.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Stufe(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Stufe graph.
+    """Return new instance of the stufe graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Stufe(
 
     Returns
     -----------------------
-    Instace of Stufe graph.
+    Instace of stufe graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasSpIs79a3.
+This file offers the methods to automatically retrieve the graph Nitrosomonas sp. Is79A3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasSpIs79a3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasSpIs79a3 graph.
+    """Return new instance of the Nitrosomonas sp. Is79A3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosomonasSpIs79a3(
 
     Returns
     -----------------------
-    Instace of NitrosomonasSpIs79a3 graph.
+    Instace of Nitrosomonas sp. Is79A3 graph.
 
 	References
 	---------------------

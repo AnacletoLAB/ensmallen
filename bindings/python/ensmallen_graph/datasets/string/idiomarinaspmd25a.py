@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaSpMd25a.
+This file offers the methods to automatically retrieve the graph Idiomarina sp. MD25a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaSpMd25a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaSpMd25a graph.
+    """Return new instance of the Idiomarina sp. MD25a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaSpMd25a(
 
     Returns
     -----------------------
-    Instace of IdiomarinaSpMd25a graph.
+    Instace of Idiomarina sp. MD25a graph.
 
 	References
 	---------------------

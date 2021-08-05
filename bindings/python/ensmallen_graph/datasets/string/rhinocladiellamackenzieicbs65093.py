@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhinocladiellaMackenzieiCbs65093.
+This file offers the methods to automatically retrieve the graph Rhinocladiella mackenziei CBS 650.93.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhinocladiellaMackenzieiCbs65093(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhinocladiellaMackenzieiCbs65093 graph.
+    """Return new instance of the Rhinocladiella mackenziei CBS 650.93 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhinocladiellaMackenzieiCbs65093(
 
     Returns
     -----------------------
-    Instace of RhinocladiellaMackenzieiCbs65093 graph.
+    Instace of Rhinocladiella mackenziei CBS 650.93 graph.
 
 	References
 	---------------------

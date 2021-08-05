@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobaculumAquaticum.
+This file offers the methods to automatically retrieve the graph Thermoanaerobaculum aquaticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobaculumAquaticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobaculumAquaticum graph.
+    """Return new instance of the Thermoanaerobaculum aquaticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerobaculumAquaticum(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobaculumAquaticum graph.
+    Instace of Thermoanaerobaculum aquaticum graph.
 
 	References
 	---------------------

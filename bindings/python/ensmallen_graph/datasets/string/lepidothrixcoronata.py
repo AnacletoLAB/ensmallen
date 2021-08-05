@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LepidothrixCoronata.
+This file offers the methods to automatically retrieve the graph Lepidothrix coronata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LepidothrixCoronata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LepidothrixCoronata graph.
+    """Return new instance of the Lepidothrix coronata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LepidothrixCoronata(
 
     Returns
     -----------------------
-    Instace of LepidothrixCoronata graph.
+    Instace of Lepidothrix coronata graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSediminis.
+This file offers the methods to automatically retrieve the graph Microbacterium sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSediminis graph.
+    """Return new instance of the Microbacterium sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSediminis(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSediminis graph.
+    Instace of Microbacterium sediminis graph.
 
 	References
 	---------------------

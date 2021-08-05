@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterHoylei.
+This file offers the methods to automatically retrieve the graph Janibacter hoylei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterHoylei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterHoylei graph.
+    """Return new instance of the Janibacter hoylei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanibacterHoylei(
 
     Returns
     -----------------------
-    Instace of JanibacterHoylei graph.
+    Instace of Janibacter hoylei graph.
 
 	References
 	---------------------

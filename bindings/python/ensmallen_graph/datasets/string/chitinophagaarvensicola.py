@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaArvensicola.
+This file offers the methods to automatically retrieve the graph Chitinophaga arvensicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaArvensicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaArvensicola graph.
+    """Return new instance of the Chitinophaga arvensicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaArvensicola(
 
     Returns
     -----------------------
-    Instace of ChitinophagaArvensicola graph.
+    Instace of Chitinophaga arvensicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaglaciecolaPolarisLmg21857.
+This file offers the methods to automatically retrieve the graph Paraglaciecola polaris LMG 21857.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaglaciecolaPolarisLmg21857(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaglaciecolaPolarisLmg21857 graph.
+    """Return new instance of the Paraglaciecola polaris LMG 21857 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaglaciecolaPolarisLmg21857(
 
     Returns
     -----------------------
-    Instace of ParaglaciecolaPolarisLmg21857 graph.
+    Instace of Paraglaciecola polaris LMG 21857 graph.
 
 	References
 	---------------------

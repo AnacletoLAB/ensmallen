@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TsukamurellaSp1534.
+This file offers the methods to automatically retrieve the graph Tsukamurella sp. 1534.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TsukamurellaSp1534(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TsukamurellaSp1534 graph.
+    """Return new instance of the Tsukamurella sp. 1534 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TsukamurellaSp1534(
 
     Returns
     -----------------------
-    Instace of TsukamurellaSp1534 graph.
+    Instace of Tsukamurella sp. 1534 graph.
 
 	References
 	---------------------

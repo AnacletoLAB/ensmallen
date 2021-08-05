@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpongiibacterMarinusDsm19753.
+This file offers the methods to automatically retrieve the graph Spongiibacter marinus DSM 19753.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpongiibacterMarinusDsm19753(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpongiibacterMarinusDsm19753 graph.
+    """Return new instance of the Spongiibacter marinus DSM 19753 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpongiibacterMarinusDsm19753(
 
     Returns
     -----------------------
-    Instace of SpongiibacterMarinusDsm19753 graph.
+    Instace of Spongiibacter marinus DSM 19753 graph.
 
 	References
 	---------------------

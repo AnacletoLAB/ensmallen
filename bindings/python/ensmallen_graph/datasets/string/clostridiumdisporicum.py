@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumDisporicum.
+This file offers the methods to automatically retrieve the graph Clostridium disporicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumDisporicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumDisporicum graph.
+    """Return new instance of the Clostridium disporicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumDisporicum(
 
     Returns
     -----------------------
-    Instace of ClostridiumDisporicum graph.
+    Instace of Clostridium disporicum graph.
 
 	References
 	---------------------

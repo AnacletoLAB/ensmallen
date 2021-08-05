@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiliocolobusTephrosceles.
+This file offers the methods to automatically retrieve the graph Piliocolobus tephrosceles.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiliocolobusTephrosceles(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiliocolobusTephrosceles graph.
+    """Return new instance of the Piliocolobus tephrosceles graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiliocolobusTephrosceles(
 
     Returns
     -----------------------
-    Instace of PiliocolobusTephrosceles graph.
+    Instace of Piliocolobus tephrosceles graph.
 
 	References
 	---------------------

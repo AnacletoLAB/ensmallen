@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimazuellaKribbensis.
+This file offers the methods to automatically retrieve the graph Shimazuella kribbensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimazuellaKribbensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimazuellaKribbensis graph.
+    """Return new instance of the Shimazuella kribbensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShimazuellaKribbensis(
 
     Returns
     -----------------------
-    Instace of ShimazuellaKribbensis graph.
+    Instace of Shimazuella kribbensis graph.
 
 	References
 	---------------------

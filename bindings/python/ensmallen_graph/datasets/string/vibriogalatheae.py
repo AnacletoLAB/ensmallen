@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioGalatheae.
+This file offers the methods to automatically retrieve the graph Vibrio galatheae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioGalatheae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioGalatheae graph.
+    """Return new instance of the Vibrio galatheae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioGalatheae(
 
     Returns
     -----------------------
-    Instace of VibrioGalatheae graph.
+    Instace of Vibrio galatheae graph.
 
 	References
 	---------------------

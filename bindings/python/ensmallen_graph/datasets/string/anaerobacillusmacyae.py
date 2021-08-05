@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobacillusMacyae.
+This file offers the methods to automatically retrieve the graph Anaerobacillus macyae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobacillusMacyae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobacillusMacyae graph.
+    """Return new instance of the Anaerobacillus macyae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerobacillusMacyae(
 
     Returns
     -----------------------
-    Instace of AnaerobacillusMacyae graph.
+    Instace of Anaerobacillus macyae graph.
 
 	References
 	---------------------

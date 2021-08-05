@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpHmsc067h01.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. HMSC067H01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpHmsc067h01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpHmsc067h01 graph.
+    """Return new instance of the Streptococcus sp. HMSC067H01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSpHmsc067h01(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpHmsc067h01 graph.
+    Instace of Streptococcus sp. HMSC067H01 graph.
 
 	References
 	---------------------

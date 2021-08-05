@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycicoccusCremeus.
+This file offers the methods to automatically retrieve the graph Phycicoccus cremeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycicoccusCremeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycicoccusCremeus graph.
+    """Return new instance of the Phycicoccus cremeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycicoccusCremeus(
 
     Returns
     -----------------------
-    Instace of PhycicoccusCremeus graph.
+    Instace of Phycicoccus cremeus graph.
 
 	References
 	---------------------

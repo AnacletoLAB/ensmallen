@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteococcusJaponicusLspLj1.
+This file offers the methods to automatically retrieve the graph Luteococcus japonicus LSP_Lj1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteococcusJaponicusLspLj1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteococcusJaponicusLspLj1 graph.
+    """Return new instance of the Luteococcus japonicus LSP_Lj1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteococcusJaponicusLspLj1(
 
     Returns
     -----------------------
-    Instace of LuteococcusJaponicusLspLj1 graph.
+    Instace of Luteococcus japonicus LSP_Lj1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaAcidipaludis.
+This file offers the methods to automatically retrieve the graph Burkholderia acidipaludis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaAcidipaludis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaAcidipaludis graph.
+    """Return new instance of the Burkholderia acidipaludis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaAcidipaludis(
 
     Returns
     -----------------------
-    Instace of BurkholderiaAcidipaludis graph.
+    Instace of Burkholderia acidipaludis graph.
 
 	References
 	---------------------

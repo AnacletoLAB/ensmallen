@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeanutWitchesbroom.
+This file offers the methods to automatically retrieve the graph Peanut witchesbroom.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeanutWitchesbroom(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeanutWitchesbroom graph.
+    """Return new instance of the Peanut witchesbroom graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeanutWitchesbroom(
 
     Returns
     -----------------------
-    Instace of PeanutWitchesbroom graph.
+    Instace of Peanut witchesbroom graph.
 
 	References
 	---------------------

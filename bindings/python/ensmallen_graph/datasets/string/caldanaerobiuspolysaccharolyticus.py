@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldanaerobiusPolysaccharolyticus.
+This file offers the methods to automatically retrieve the graph Caldanaerobius polysaccharolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldanaerobiusPolysaccharolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldanaerobiusPolysaccharolyticus graph.
+    """Return new instance of the Caldanaerobius polysaccharolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldanaerobiusPolysaccharolyticus(
 
     Returns
     -----------------------
-    Instace of CaldanaerobiusPolysaccharolyticus graph.
+    Instace of Caldanaerobius polysaccharolyticus graph.
 
 	References
 	---------------------

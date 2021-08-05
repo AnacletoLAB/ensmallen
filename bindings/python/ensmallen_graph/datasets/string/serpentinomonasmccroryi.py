@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerpentinomonasMccroryi.
+This file offers the methods to automatically retrieve the graph Serpentinomonas mccroryi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerpentinomonasMccroryi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerpentinomonasMccroryi graph.
+    """Return new instance of the Serpentinomonas mccroryi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerpentinomonasMccroryi(
 
     Returns
     -----------------------
-    Instace of SerpentinomonasMccroryi graph.
+    Instace of Serpentinomonas mccroryi graph.
 
 	References
 	---------------------

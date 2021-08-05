@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpNfr04.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. NFR04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpNfr04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpNfr04 graph.
+    """Return new instance of the Sphingomonas sp. NFR04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpNfr04(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpNfr04 graph.
+    Instace of Sphingomonas sp. NFR04 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TakifuguRubripes.
+This file offers the methods to automatically retrieve the graph Takifugu rubripes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TakifuguRubripes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TakifuguRubripes graph.
+    """Return new instance of the Takifugu rubripes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TakifuguRubripes(
 
     Returns
     -----------------------
-    Instace of TakifuguRubripes graph.
+    Instace of Takifugu rubripes graph.
 
 	References
 	---------------------

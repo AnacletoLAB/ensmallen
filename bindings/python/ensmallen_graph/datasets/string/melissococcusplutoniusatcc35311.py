@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MelissococcusPlutoniusAtcc35311.
+This file offers the methods to automatically retrieve the graph Melissococcus plutonius ATCC 35311.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MelissococcusPlutoniusAtcc35311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MelissococcusPlutoniusAtcc35311 graph.
+    """Return new instance of the Melissococcus plutonius ATCC 35311 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MelissococcusPlutoniusAtcc35311(
 
     Returns
     -----------------------
-    Instace of MelissococcusPlutoniusAtcc35311 graph.
+    Instace of Melissococcus plutonius ATCC 35311 graph.
 
 	References
 	---------------------

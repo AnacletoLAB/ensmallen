@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopirellulaIslandica.
+This file offers the methods to automatically retrieve the graph Rhodopirellula islandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopirellulaIslandica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopirellulaIslandica graph.
+    """Return new instance of the Rhodopirellula islandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodopirellulaIslandica(
 
     Returns
     -----------------------
-    Instace of RhodopirellulaIslandica graph.
+    Instace of Rhodopirellula islandica graph.
 
 	References
 	---------------------

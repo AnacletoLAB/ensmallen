@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusBoroniphilus.
+This file offers the methods to automatically retrieve the graph Bacillus boroniphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusBoroniphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusBoroniphilus graph.
+    """Return new instance of the Bacillus boroniphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusBoroniphilus(
 
     Returns
     -----------------------
-    Instace of BacillusBoroniphilus graph.
+    Instace of Bacillus boroniphilus graph.
 
 	References
 	---------------------

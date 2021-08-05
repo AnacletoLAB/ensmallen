@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JuglansRegia.
+This file offers the methods to automatically retrieve the graph Juglans regia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JuglansRegia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JuglansRegia graph.
+    """Return new instance of the Juglans regia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JuglansRegia(
 
     Returns
     -----------------------
-    Instace of JuglansRegia graph.
+    Instace of Juglans regia graph.
 
 	References
 	---------------------

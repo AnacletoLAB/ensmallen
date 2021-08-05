@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionZixi.
+This file offers the methods to automatically retrieve the graph candidate division ZIXI.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionZixi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionZixi graph.
+    """Return new instance of the candidate division ZIXI graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidateDivisionZixi(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionZixi graph.
+    Instace of candidate division ZIXI graph.
 
 	References
 	---------------------

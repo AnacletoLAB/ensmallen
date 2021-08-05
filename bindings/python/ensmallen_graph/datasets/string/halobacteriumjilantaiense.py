@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacteriumJilantaiense.
+This file offers the methods to automatically retrieve the graph Halobacterium jilantaiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacteriumJilantaiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacteriumJilantaiense graph.
+    """Return new instance of the Halobacterium jilantaiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacteriumJilantaiense(
 
     Returns
     -----------------------
-    Instace of HalobacteriumJilantaiense graph.
+    Instace of Halobacterium jilantaiense graph.
 
 	References
 	---------------------

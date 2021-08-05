@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GambusiaAffinis.
+This file offers the methods to automatically retrieve the graph Gambusia affinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GambusiaAffinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GambusiaAffinis graph.
+    """Return new instance of the Gambusia affinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GambusiaAffinis(
 
     Returns
     -----------------------
-    Instace of GambusiaAffinis graph.
+    Instace of Gambusia affinis graph.
 
 	References
 	---------------------

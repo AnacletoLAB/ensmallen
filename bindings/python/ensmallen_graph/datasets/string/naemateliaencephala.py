@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NaemateliaEncephala.
+This file offers the methods to automatically retrieve the graph Naematelia encephala.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NaemateliaEncephala(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NaemateliaEncephala graph.
+    """Return new instance of the Naematelia encephala graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NaemateliaEncephala(
 
     Returns
     -----------------------
-    Instace of NaemateliaEncephala graph.
+    Instace of Naematelia encephala graph.
 
 	References
 	---------------------

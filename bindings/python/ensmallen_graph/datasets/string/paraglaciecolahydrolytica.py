@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaglaciecolaHydrolytica.
+This file offers the methods to automatically retrieve the graph Paraglaciecola hydrolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaglaciecolaHydrolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaglaciecolaHydrolytica graph.
+    """Return new instance of the Paraglaciecola hydrolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaglaciecolaHydrolytica(
 
     Returns
     -----------------------
-    Instace of ParaglaciecolaHydrolytica graph.
+    Instace of Paraglaciecola hydrolytica graph.
 
 	References
 	---------------------

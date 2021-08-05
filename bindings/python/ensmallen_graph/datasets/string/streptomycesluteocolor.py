@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesLuteocolor.
+This file offers the methods to automatically retrieve the graph Streptomyces luteocolor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesLuteocolor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesLuteocolor graph.
+    """Return new instance of the Streptomyces luteocolor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesLuteocolor(
 
     Returns
     -----------------------
-    Instace of StreptomycesLuteocolor graph.
+    Instace of Streptomyces luteocolor graph.
 
 	References
 	---------------------

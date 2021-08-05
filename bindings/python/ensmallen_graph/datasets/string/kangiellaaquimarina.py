@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KangiellaAquimarina.
+This file offers the methods to automatically retrieve the graph Kangiella aquimarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KangiellaAquimarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KangiellaAquimarina graph.
+    """Return new instance of the Kangiella aquimarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KangiellaAquimarina(
 
     Returns
     -----------------------
-    Instace of KangiellaAquimarina graph.
+    Instace of Kangiella aquimarina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioTritonius.
+This file offers the methods to automatically retrieve the graph Vibrio tritonius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioTritonius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioTritonius graph.
+    """Return new instance of the Vibrio tritonius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioTritonius(
 
     Returns
     -----------------------
-    Instace of VibrioTritonius graph.
+    Instace of Vibrio tritonius graph.
 
 	References
 	---------------------

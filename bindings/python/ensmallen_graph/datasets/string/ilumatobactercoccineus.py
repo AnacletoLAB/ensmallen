@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IlumatobacterCoccineus.
+This file offers the methods to automatically retrieve the graph Ilumatobacter coccineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IlumatobacterCoccineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IlumatobacterCoccineus graph.
+    """Return new instance of the Ilumatobacter coccineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IlumatobacterCoccineus(
 
     Returns
     -----------------------
-    Instace of IlumatobacterCoccineus graph.
+    Instace of Ilumatobacter coccineus graph.
 
 	References
 	---------------------

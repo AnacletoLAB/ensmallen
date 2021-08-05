@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParafilimonasTerrae.
+This file offers the methods to automatically retrieve the graph Parafilimonas terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParafilimonasTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParafilimonasTerrae graph.
+    """Return new instance of the Parafilimonas terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParafilimonasTerrae(
 
     Returns
     -----------------------
-    Instace of ParafilimonasTerrae graph.
+    Instace of Parafilimonas terrae graph.
 
 	References
 	---------------------

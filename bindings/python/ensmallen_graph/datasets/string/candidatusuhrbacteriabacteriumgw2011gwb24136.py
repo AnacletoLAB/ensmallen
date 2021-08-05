@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusUhrbacteriaBacteriumGw2011Gwb24136.
+This file offers the methods to automatically retrieve the graph Candidatus Uhrbacteria bacterium GW2011_GWB2_41_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusUhrbacteriaBacteriumGw2011Gwb24136(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusUhrbacteriaBacteriumGw2011Gwb24136 graph.
+    """Return new instance of the Candidatus Uhrbacteria bacterium GW2011_GWB2_41_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusUhrbacteriaBacteriumGw2011Gwb24136(
 
     Returns
     -----------------------
-    Instace of CandidatusUhrbacteriaBacteriumGw2011Gwb24136 graph.
+    Instace of Candidatus Uhrbacteria bacterium GW2011_GWB2_41_36 graph.
 
 	References
 	---------------------

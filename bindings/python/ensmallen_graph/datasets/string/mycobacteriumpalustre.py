@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumPalustre.
+This file offers the methods to automatically retrieve the graph Mycobacterium palustre.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumPalustre(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumPalustre graph.
+    """Return new instance of the Mycobacterium palustre graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumPalustre(
 
     Returns
     -----------------------
-    Instace of MycobacteriumPalustre graph.
+    Instace of Mycobacterium palustre graph.
 
 	References
 	---------------------

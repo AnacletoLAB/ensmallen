@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlickrGroupmemberships.
+This file offers the methods to automatically retrieve the graph flickr-groupmemberships.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def FlickrGroupmemberships(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlickrGroupmemberships graph.
+    """Return new instance of the flickr-groupmemberships graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def FlickrGroupmemberships(
 
     Returns
     -----------------------
-    Instace of FlickrGroupmemberships graph.
+    Instace of flickr-groupmemberships graph.
 
 	References
 	---------------------

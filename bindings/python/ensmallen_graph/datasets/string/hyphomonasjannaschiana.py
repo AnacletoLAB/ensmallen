@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasJannaschiana.
+This file offers the methods to automatically retrieve the graph Hyphomonas jannaschiana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasJannaschiana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasJannaschiana graph.
+    """Return new instance of the Hyphomonas jannaschiana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasJannaschiana(
 
     Returns
     -----------------------
-    Instace of HyphomonasJannaschiana graph.
+    Instace of Hyphomonas jannaschiana graph.
 
 	References
 	---------------------

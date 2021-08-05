@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumEstertheticumSubspEstertheticum.
+This file offers the methods to automatically retrieve the graph Clostridium estertheticum subsp. estertheticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumEstertheticumSubspEstertheticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumEstertheticumSubspEstertheticum graph.
+    """Return new instance of the Clostridium estertheticum subsp. estertheticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumEstertheticumSubspEstertheticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumEstertheticumSubspEstertheticum graph.
+    Instace of Clostridium estertheticum subsp. estertheticum graph.
 
 	References
 	---------------------

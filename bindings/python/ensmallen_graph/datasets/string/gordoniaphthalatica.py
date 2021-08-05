@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaPhthalatica.
+This file offers the methods to automatically retrieve the graph Gordonia phthalatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaPhthalatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaPhthalatica graph.
+    """Return new instance of the Gordonia phthalatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaPhthalatica(
 
     Returns
     -----------------------
-    Instace of GordoniaPhthalatica graph.
+    Instace of Gordonia phthalatica graph.
 
 	References
 	---------------------

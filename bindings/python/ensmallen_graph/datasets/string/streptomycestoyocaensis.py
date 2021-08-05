@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesToyocaensis.
+This file offers the methods to automatically retrieve the graph Streptomyces toyocaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesToyocaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesToyocaensis graph.
+    """Return new instance of the Streptomyces toyocaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesToyocaensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesToyocaensis graph.
+    Instace of Streptomyces toyocaensis graph.
 
 	References
 	---------------------

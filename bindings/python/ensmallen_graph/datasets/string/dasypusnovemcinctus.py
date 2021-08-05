@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DasypusNovemcinctus.
+This file offers the methods to automatically retrieve the graph Dasypus novemcinctus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DasypusNovemcinctus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DasypusNovemcinctus graph.
+    """Return new instance of the Dasypus novemcinctus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DasypusNovemcinctus(
 
     Returns
     -----------------------
-    Instace of DasypusNovemcinctus graph.
+    Instace of Dasypus novemcinctus graph.
 
 	References
 	---------------------

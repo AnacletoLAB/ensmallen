@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSpA16.
+This file offers the methods to automatically retrieve the graph Devosia sp. A16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSpA16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSpA16 graph.
+    """Return new instance of the Devosia sp. A16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSpA16(
 
     Returns
     -----------------------
-    Instace of DevosiaSpA16 graph.
+    Instace of Devosia sp. A16 graph.
 
 	References
 	---------------------

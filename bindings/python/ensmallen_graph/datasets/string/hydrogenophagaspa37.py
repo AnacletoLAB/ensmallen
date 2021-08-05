@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpA37.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. A37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpA37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpA37 graph.
+    """Return new instance of the Hydrogenophaga sp. A37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpA37(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpA37 graph.
+    Instace of Hydrogenophaga sp. A37 graph.
 
 	References
 	---------------------

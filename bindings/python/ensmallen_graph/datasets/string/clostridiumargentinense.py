@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumArgentinense.
+This file offers the methods to automatically retrieve the graph Clostridium argentinense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumArgentinense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumArgentinense graph.
+    """Return new instance of the Clostridium argentinense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumArgentinense(
 
     Returns
     -----------------------
-    Instace of ClostridiumArgentinense graph.
+    Instace of Clostridium argentinense graph.
 
 	References
 	---------------------

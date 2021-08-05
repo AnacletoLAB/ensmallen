@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusErwiniaHaradaeae.
+This file offers the methods to automatically retrieve the graph Candidatus Erwinia haradaeae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusErwiniaHaradaeae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusErwiniaHaradaeae graph.
+    """Return new instance of the Candidatus Erwinia haradaeae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusErwiniaHaradaeae(
 
     Returns
     -----------------------
-    Instace of CandidatusErwiniaHaradaeae graph.
+    Instace of Candidatus Erwinia haradaeae graph.
 
 	References
 	---------------------

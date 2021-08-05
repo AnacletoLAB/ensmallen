@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetallibacteriumScheffleri.
+This file offers the methods to automatically retrieve the graph Metallibacterium scheffleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetallibacteriumScheffleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetallibacteriumScheffleri graph.
+    """Return new instance of the Metallibacterium scheffleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetallibacteriumScheffleri(
 
     Returns
     -----------------------
-    Instace of MetallibacteriumScheffleri graph.
+    Instace of Metallibacterium scheffleri graph.
 
 	References
 	---------------------

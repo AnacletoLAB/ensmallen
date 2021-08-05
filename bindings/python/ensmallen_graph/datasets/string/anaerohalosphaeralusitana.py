@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerohalosphaeraLusitana.
+This file offers the methods to automatically retrieve the graph Anaerohalosphaera lusitana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerohalosphaeraLusitana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerohalosphaeraLusitana graph.
+    """Return new instance of the Anaerohalosphaera lusitana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerohalosphaeraLusitana(
 
     Returns
     -----------------------
-    Instace of AnaerohalosphaeraLusitana graph.
+    Instace of Anaerohalosphaera lusitana graph.
 
 	References
 	---------------------

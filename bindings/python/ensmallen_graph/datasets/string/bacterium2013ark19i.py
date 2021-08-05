@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bacterium2013ark19i.
+This file offers the methods to automatically retrieve the graph bacterium 2013Ark19i.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Bacterium2013ark19i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bacterium2013ark19i graph.
+    """Return new instance of the bacterium 2013Ark19i graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Bacterium2013ark19i(
 
     Returns
     -----------------------
-    Instace of Bacterium2013ark19i graph.
+    Instace of bacterium 2013Ark19i graph.
 
 	References
 	---------------------

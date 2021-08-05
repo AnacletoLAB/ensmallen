@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalocynthiibacterNamhaensis.
+This file offers the methods to automatically retrieve the graph Halocynthiibacter namhaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalocynthiibacterNamhaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalocynthiibacterNamhaensis graph.
+    """Return new instance of the Halocynthiibacter namhaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalocynthiibacterNamhaensis(
 
     Returns
     -----------------------
-    Instace of HalocynthiibacterNamhaensis graph.
+    Instace of Halocynthiibacter namhaensis graph.
 
 	References
 	---------------------

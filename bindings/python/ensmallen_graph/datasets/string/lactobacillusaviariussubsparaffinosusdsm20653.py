@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAviariusSubspAraffinosusDsm20653.
+This file offers the methods to automatically retrieve the graph Lactobacillus aviarius subsp. araffinosus DSM 20653.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAviariusSubspAraffinosusDsm20653(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAviariusSubspAraffinosusDsm20653 graph.
+    """Return new instance of the Lactobacillus aviarius subsp. araffinosus DSM 20653 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAviariusSubspAraffinosusDsm20653(
 
     Returns
     -----------------------
-    Instace of LactobacillusAviariusSubspAraffinosusDsm20653 graph.
+    Instace of Lactobacillus aviarius subsp. araffinosus DSM 20653 graph.
 
 	References
 	---------------------

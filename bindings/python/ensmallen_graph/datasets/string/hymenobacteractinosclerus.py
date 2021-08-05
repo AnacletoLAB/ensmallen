@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterActinosclerus.
+This file offers the methods to automatically retrieve the graph Hymenobacter actinosclerus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterActinosclerus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterActinosclerus graph.
+    """Return new instance of the Hymenobacter actinosclerus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterActinosclerus(
 
     Returns
     -----------------------
-    Instace of HymenobacterActinosclerus graph.
+    Instace of Hymenobacter actinosclerus graph.
 
 	References
 	---------------------

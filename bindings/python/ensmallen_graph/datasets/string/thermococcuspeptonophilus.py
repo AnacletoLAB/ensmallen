@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusPeptonophilus.
+This file offers the methods to automatically retrieve the graph Thermococcus peptonophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusPeptonophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusPeptonophilus graph.
+    """Return new instance of the Thermococcus peptonophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusPeptonophilus(
 
     Returns
     -----------------------
-    Instace of ThermococcusPeptonophilus graph.
+    Instace of Thermococcus peptonophilus graph.
 
 	References
 	---------------------

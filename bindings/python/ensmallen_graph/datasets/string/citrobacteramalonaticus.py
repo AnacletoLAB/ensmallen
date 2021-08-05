@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterAmalonaticus.
+This file offers the methods to automatically retrieve the graph Citrobacter amalonaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterAmalonaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterAmalonaticus graph.
+    """Return new instance of the Citrobacter amalonaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrobacterAmalonaticus(
 
     Returns
     -----------------------
-    Instace of CitrobacterAmalonaticus graph.
+    Instace of Citrobacter amalonaticus graph.
 
 	References
 	---------------------

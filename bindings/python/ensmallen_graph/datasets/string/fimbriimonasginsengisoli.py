@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FimbriimonasGinsengisoli.
+This file offers the methods to automatically retrieve the graph Fimbriimonas ginsengisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FimbriimonasGinsengisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FimbriimonasGinsengisoli graph.
+    """Return new instance of the Fimbriimonas ginsengisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FimbriimonasGinsengisoli(
 
     Returns
     -----------------------
-    Instace of FimbriimonasGinsengisoli graph.
+    Instace of Fimbriimonas ginsengisoli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrasphaeraSpSoil756.
+This file offers the methods to automatically retrieve the graph Tetrasphaera sp. Soil756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrasphaeraSpSoil756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrasphaeraSpSoil756 graph.
+    """Return new instance of the Tetrasphaera sp. Soil756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrasphaeraSpSoil756(
 
     Returns
     -----------------------
-    Instace of TetrasphaeraSpSoil756 graph.
+    Instace of Tetrasphaera sp. Soil756 graph.
 
 	References
 	---------------------

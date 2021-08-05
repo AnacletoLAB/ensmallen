@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSpLc11.
+This file offers the methods to automatically retrieve the graph Ensifer sp. LC11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSpLc11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSpLc11 graph.
+    """Return new instance of the Ensifer sp. LC11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnsiferSpLc11(
 
     Returns
     -----------------------
-    Instace of EnsiferSpLc11 graph.
+    Instace of Ensifer sp. LC11 graph.
 
 	References
 	---------------------

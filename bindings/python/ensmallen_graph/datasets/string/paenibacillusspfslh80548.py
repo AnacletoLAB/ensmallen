@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpFslH80548.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. FSL H8-0548.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpFslH80548(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpFslH80548 graph.
+    """Return new instance of the Paenibacillus sp. FSL H8-0548 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpFslH80548(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpFslH80548 graph.
+    Instace of Paenibacillus sp. FSL H8-0548 graph.
 
 	References
 	---------------------

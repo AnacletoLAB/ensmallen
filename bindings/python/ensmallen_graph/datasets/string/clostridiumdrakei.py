@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumDrakei.
+This file offers the methods to automatically retrieve the graph Clostridium drakei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumDrakei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumDrakei graph.
+    """Return new instance of the Clostridium drakei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumDrakei(
 
     Returns
     -----------------------
-    Instace of ClostridiumDrakei graph.
+    Instace of Clostridium drakei graph.
 
 	References
 	---------------------

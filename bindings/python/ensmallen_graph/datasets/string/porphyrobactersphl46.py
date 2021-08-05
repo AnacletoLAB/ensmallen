@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyrobacterSpHl46.
+This file offers the methods to automatically retrieve the graph Porphyrobacter sp. HL46.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyrobacterSpHl46(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyrobacterSpHl46 graph.
+    """Return new instance of the Porphyrobacter sp. HL46 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyrobacterSpHl46(
 
     Returns
     -----------------------
-    Instace of PorphyrobacterSpHl46 graph.
+    Instace of Porphyrobacter sp. HL46 graph.
 
 	References
 	---------------------

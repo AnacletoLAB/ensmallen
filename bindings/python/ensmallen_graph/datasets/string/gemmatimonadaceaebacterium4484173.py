@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonadaceaeBacterium4484173.
+This file offers the methods to automatically retrieve the graph Gemmatimonadaceae bacterium 4484_173.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonadaceaeBacterium4484173(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonadaceaeBacterium4484173 graph.
+    """Return new instance of the Gemmatimonadaceae bacterium 4484_173 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemmatimonadaceaeBacterium4484173(
 
     Returns
     -----------------------
-    Instace of GemmatimonadaceaeBacterium4484173 graph.
+    Instace of Gemmatimonadaceae bacterium 4484_173 graph.
 
 	References
 	---------------------

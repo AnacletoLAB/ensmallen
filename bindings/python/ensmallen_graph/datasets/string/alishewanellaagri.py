@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlishewanellaAgri.
+This file offers the methods to automatically retrieve the graph Alishewanella agri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlishewanellaAgri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlishewanellaAgri graph.
+    """Return new instance of the Alishewanella agri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlishewanellaAgri(
 
     Returns
     -----------------------
-    Instace of AlishewanellaAgri graph.
+    Instace of Alishewanella agri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMycoplasmaHaemobos.
+This file offers the methods to automatically retrieve the graph Candidatus Mycoplasma haemobos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMycoplasmaHaemobos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMycoplasmaHaemobos graph.
+    """Return new instance of the Candidatus Mycoplasma haemobos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMycoplasmaHaemobos(
 
     Returns
     -----------------------
-    Instace of CandidatusMycoplasmaHaemobos graph.
+    Instace of Candidatus Mycoplasma haemobos graph.
 
 	References
 	---------------------

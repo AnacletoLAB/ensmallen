@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiumSpGas474.
+This file offers the methods to automatically retrieve the graph Verrucomicrobium sp. GAS474.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiumSpGas474(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiumSpGas474 graph.
+    """Return new instance of the Verrucomicrobium sp. GAS474 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiumSpGas474(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiumSpGas474 graph.
+    Instace of Verrucomicrobium sp. GAS474 graph.
 
 	References
 	---------------------

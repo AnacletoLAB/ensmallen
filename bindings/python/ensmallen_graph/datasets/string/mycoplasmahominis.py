@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHominis.
+This file offers the methods to automatically retrieve the graph Mycoplasma hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHominis graph.
+    """Return new instance of the Mycoplasma hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaHominis(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHominis graph.
+    Instace of Mycoplasma hominis graph.
 
 	References
 	---------------------

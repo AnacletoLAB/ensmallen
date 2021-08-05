@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoniaPhycicola.
+This file offers the methods to automatically retrieve the graph Mesonia phycicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoniaPhycicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoniaPhycicola graph.
+    """Return new instance of the Mesonia phycicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesoniaPhycicola(
 
     Returns
     -----------------------
-    Instace of MesoniaPhycicola graph.
+    Instace of Mesonia phycicola graph.
 
 	References
 	---------------------

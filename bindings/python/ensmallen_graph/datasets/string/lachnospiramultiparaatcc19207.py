@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraMultiparaAtcc19207.
+This file offers the methods to automatically retrieve the graph Lachnospira multipara ATCC19207.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraMultiparaAtcc19207(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraMultiparaAtcc19207 graph.
+    """Return new instance of the Lachnospira multipara ATCC19207 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraMultiparaAtcc19207(
 
     Returns
     -----------------------
-    Instace of LachnospiraMultiparaAtcc19207 graph.
+    Instace of Lachnospira multipara ATCC19207 graph.
 
 	References
 	---------------------

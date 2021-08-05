@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobacteriumAponinum.
+This file offers the methods to automatically retrieve the graph Cyanobacterium aponinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobacteriumAponinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobacteriumAponinum graph.
+    """Return new instance of the Cyanobacterium aponinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyanobacteriumAponinum(
 
     Returns
     -----------------------
-    Instace of CyanobacteriumAponinum graph.
+    Instace of Cyanobacterium aponinum graph.
 
 	References
 	---------------------

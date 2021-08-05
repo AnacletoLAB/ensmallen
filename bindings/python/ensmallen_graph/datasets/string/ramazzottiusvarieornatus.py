@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RamazzottiusVarieornatus.
+This file offers the methods to automatically retrieve the graph Ramazzottius varieornatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RamazzottiusVarieornatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RamazzottiusVarieornatus graph.
+    """Return new instance of the Ramazzottius varieornatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RamazzottiusVarieornatus(
 
     Returns
     -----------------------
-    Instace of RamazzottiusVarieornatus graph.
+    Instace of Ramazzottius varieornatus graph.
 
 	References
 	---------------------

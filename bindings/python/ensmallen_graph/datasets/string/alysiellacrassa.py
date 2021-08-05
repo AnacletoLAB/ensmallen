@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlysiellaCrassa.
+This file offers the methods to automatically retrieve the graph Alysiella crassa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlysiellaCrassa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlysiellaCrassa graph.
+    """Return new instance of the Alysiella crassa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlysiellaCrassa(
 
     Returns
     -----------------------
-    Instace of AlysiellaCrassa graph.
+    Instace of Alysiella crassa graph.
 
 	References
 	---------------------

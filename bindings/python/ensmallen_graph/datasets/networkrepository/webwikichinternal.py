@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebWikiChInternal.
+This file offers the methods to automatically retrieve the graph web-wiki-ch-internal.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def WebWikiChInternal(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebWikiChInternal graph.
+    """Return new instance of the web-wiki-ch-internal graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def WebWikiChInternal(
 
     Returns
     -----------------------
-    Instace of WebWikiChInternal graph.
+    Instace of web-wiki-ch-internal graph.
 
 	References
 	---------------------

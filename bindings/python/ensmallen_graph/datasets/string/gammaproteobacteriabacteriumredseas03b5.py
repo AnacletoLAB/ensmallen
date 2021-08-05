@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumRedseaS03B5.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium REDSEA-S03_B5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumRedseaS03B5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumRedseaS03B5 graph.
+    """Return new instance of the Gammaproteobacteria bacterium REDSEA-S03_B5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumRedseaS03B5(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumRedseaS03B5 graph.
+    Instace of Gammaproteobacteria bacterium REDSEA-S03_B5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpLeaf334.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. Leaf334.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpLeaf334(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpLeaf334 graph.
+    """Return new instance of the Cellulomonas sp. Leaf334 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasSpLeaf334(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpLeaf334 graph.
+    Instace of Cellulomonas sp. Leaf334 graph.
 
 	References
 	---------------------

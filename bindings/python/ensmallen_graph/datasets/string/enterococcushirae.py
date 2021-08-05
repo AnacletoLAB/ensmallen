@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusHirae.
+This file offers the methods to automatically retrieve the graph Enterococcus hirae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusHirae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusHirae graph.
+    """Return new instance of the Enterococcus hirae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusHirae(
 
     Returns
     -----------------------
-    Instace of EnterococcusHirae graph.
+    Instace of Enterococcus hirae graph.
 
 	References
 	---------------------

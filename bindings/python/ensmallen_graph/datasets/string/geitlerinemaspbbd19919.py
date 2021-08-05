@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeitlerinemaSpBbd19919.
+This file offers the methods to automatically retrieve the graph Geitlerinema sp. BBD 1991-9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeitlerinemaSpBbd19919(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeitlerinemaSpBbd19919 graph.
+    """Return new instance of the Geitlerinema sp. BBD 1991-9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeitlerinemaSpBbd19919(
 
     Returns
     -----------------------
-    Instace of GeitlerinemaSpBbd19919 graph.
+    Instace of Geitlerinema sp. BBD 1991-9 graph.
 
 	References
 	---------------------

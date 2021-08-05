@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptosporidiumParvumIowaIi.
+This file offers the methods to automatically retrieve the graph Cryptosporidium parvum Iowa II.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptosporidiumParvumIowaIi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptosporidiumParvumIowaIi graph.
+    """Return new instance of the Cryptosporidium parvum Iowa II graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptosporidiumParvumIowaIi(
 
     Returns
     -----------------------
-    Instace of CryptosporidiumParvumIowaIi graph.
+    Instace of Cryptosporidium parvum Iowa II graph.
 
 	References
 	---------------------

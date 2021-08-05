@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterAsymbioticus.
+This file offers the methods to automatically retrieve the graph Polynucleobacter asymbioticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterAsymbioticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterAsymbioticus graph.
+    """Return new instance of the Polynucleobacter asymbioticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterAsymbioticus(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterAsymbioticus graph.
+    Instace of Polynucleobacter asymbioticus graph.
 
 	References
 	---------------------

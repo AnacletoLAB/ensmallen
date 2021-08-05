@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucorAmbiguus.
+This file offers the methods to automatically retrieve the graph Mucor ambiguus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucorAmbiguus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucorAmbiguus graph.
+    """Return new instance of the Mucor ambiguus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucorAmbiguus(
 
     Returns
     -----------------------
-    Instace of MucorAmbiguus graph.
+    Instace of Mucor ambiguus graph.
 
 	References
 	---------------------

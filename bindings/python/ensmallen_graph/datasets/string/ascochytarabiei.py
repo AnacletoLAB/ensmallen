@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AscochytaRabiei.
+This file offers the methods to automatically retrieve the graph Ascochyta rabiei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AscochytaRabiei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AscochytaRabiei graph.
+    """Return new instance of the Ascochyta rabiei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AscochytaRabiei(
 
     Returns
     -----------------------
-    Instace of AscochytaRabiei graph.
+    Instace of Ascochyta rabiei graph.
 
 	References
 	---------------------

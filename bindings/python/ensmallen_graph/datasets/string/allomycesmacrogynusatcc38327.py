@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllomycesMacrogynusAtcc38327.
+This file offers the methods to automatically retrieve the graph Allomyces macrogynus ATCC 38327.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllomycesMacrogynusAtcc38327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllomycesMacrogynusAtcc38327 graph.
+    """Return new instance of the Allomyces macrogynus ATCC 38327 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AllomycesMacrogynusAtcc38327(
 
     Returns
     -----------------------
-    Instace of AllomycesMacrogynusAtcc38327 graph.
+    Instace of Allomyces macrogynus ATCC 38327 graph.
 
 	References
 	---------------------

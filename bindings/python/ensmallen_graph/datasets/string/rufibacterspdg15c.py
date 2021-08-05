@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterSpDg15c.
+This file offers the methods to automatically retrieve the graph Rufibacter sp. DG15C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RufibacterSpDg15c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterSpDg15c graph.
+    """Return new instance of the Rufibacter sp. DG15C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RufibacterSpDg15c(
 
     Returns
     -----------------------
-    Instace of RufibacterSpDg15c graph.
+    Instace of Rufibacter sp. DG15C graph.
 
 	References
 	---------------------

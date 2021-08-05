@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusWentiiDto134e9.
+This file offers the methods to automatically retrieve the graph Aspergillus wentii DTO 134E9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusWentiiDto134e9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusWentiiDto134e9 graph.
+    """Return new instance of the Aspergillus wentii DTO 134E9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusWentiiDto134e9(
 
     Returns
     -----------------------
-    Instace of AspergillusWentiiDto134e9 graph.
+    Instace of Aspergillus wentii DTO 134E9 graph.
 
 	References
 	---------------------

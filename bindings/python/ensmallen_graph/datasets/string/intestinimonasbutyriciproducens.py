@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntestinimonasButyriciproducens.
+This file offers the methods to automatically retrieve the graph Intestinimonas butyriciproducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IntestinimonasButyriciproducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntestinimonasButyriciproducens graph.
+    """Return new instance of the Intestinimonas butyriciproducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IntestinimonasButyriciproducens(
 
     Returns
     -----------------------
-    Instace of IntestinimonasButyriciproducens graph.
+    Instace of Intestinimonas butyriciproducens graph.
 
 	References
 	---------------------

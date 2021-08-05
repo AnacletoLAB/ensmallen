@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaGeestiana.
+This file offers the methods to automatically retrieve the graph Legionella geestiana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaGeestiana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaGeestiana graph.
+    """Return new instance of the Legionella geestiana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaGeestiana(
 
     Returns
     -----------------------
-    Instace of LegionellaGeestiana graph.
+    Instace of Legionella geestiana graph.
 
 	References
 	---------------------

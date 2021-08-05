@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumFlavescens.
+This file offers the methods to automatically retrieve the graph Corynebacterium flavescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumFlavescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumFlavescens graph.
+    """Return new instance of the Corynebacterium flavescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumFlavescens(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumFlavescens graph.
+    Instace of Corynebacterium flavescens graph.
 
 	References
 	---------------------

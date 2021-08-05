@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAcidophilusNcfm.
+This file offers the methods to automatically retrieve the graph Lactobacillus acidophilus NCFM.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAcidophilusNcfm(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAcidophilusNcfm graph.
+    """Return new instance of the Lactobacillus acidophilus NCFM graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusAcidophilusNcfm(
 
     Returns
     -----------------------
-    Instace of LactobacillusAcidophilusNcfm graph.
+    Instace of Lactobacillus acidophilus NCFM graph.
 
 	References
 	---------------------

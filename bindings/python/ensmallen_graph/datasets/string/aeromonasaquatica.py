@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasAquatica.
+This file offers the methods to automatically retrieve the graph Aeromonas aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasAquatica graph.
+    """Return new instance of the Aeromonas aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasAquatica(
 
     Returns
     -----------------------
-    Instace of AeromonasAquatica graph.
+    Instace of Aeromonas aquatica graph.
 
 	References
 	---------------------

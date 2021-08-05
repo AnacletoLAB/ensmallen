@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumSpAk27.
+This file offers the methods to automatically retrieve the graph Marinobacterium sp. AK27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumSpAk27(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumSpAk27 graph.
+    """Return new instance of the Marinobacterium sp. AK27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacteriumSpAk27(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumSpAk27 graph.
+    Instace of Marinobacterium sp. AK27 graph.
 
 	References
 	---------------------

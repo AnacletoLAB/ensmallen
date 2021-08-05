@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaMultivorans.
+This file offers the methods to automatically retrieve the graph Burkholderia multivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaMultivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaMultivorans graph.
+    """Return new instance of the Burkholderia multivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaMultivorans(
 
     Returns
     -----------------------
-    Instace of BurkholderiaMultivorans graph.
+    Instace of Burkholderia multivorans graph.
 
 	References
 	---------------------

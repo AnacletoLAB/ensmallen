@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerroglobusPlacidus.
+This file offers the methods to automatically retrieve the graph Ferroglobus placidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerroglobusPlacidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerroglobusPlacidus graph.
+    """Return new instance of the Ferroglobus placidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FerroglobusPlacidus(
 
     Returns
     -----------------------
-    Instace of FerroglobusPlacidus graph.
+    Instace of Ferroglobus placidus graph.
 
 	References
 	---------------------

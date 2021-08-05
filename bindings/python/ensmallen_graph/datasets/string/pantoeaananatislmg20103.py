@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaAnanatisLmg20103.
+This file offers the methods to automatically retrieve the graph Pantoea ananatis LMG20103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaAnanatisLmg20103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaAnanatisLmg20103 graph.
+    """Return new instance of the Pantoea ananatis LMG20103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaAnanatisLmg20103(
 
     Returns
     -----------------------
-    Instace of PantoeaAnanatisLmg20103 graph.
+    Instace of Pantoea ananatis LMG20103 graph.
 
 	References
 	---------------------

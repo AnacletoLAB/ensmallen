@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeliothisVirescens.
+This file offers the methods to automatically retrieve the graph Heliothis virescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeliothisVirescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeliothisVirescens graph.
+    """Return new instance of the Heliothis virescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HeliothisVirescens(
 
     Returns
     -----------------------
-    Instace of HeliothisVirescens graph.
+    Instace of Heliothis virescens graph.
 
 	References
 	---------------------

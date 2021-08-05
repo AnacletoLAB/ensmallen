@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeeuwenhoekiellaSpMar2009132.
+This file offers the methods to automatically retrieve the graph Leeuwenhoekiella sp. MAR2009132.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeeuwenhoekiellaSpMar2009132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeeuwenhoekiellaSpMar2009132 graph.
+    """Return new instance of the Leeuwenhoekiella sp. MAR2009132 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeeuwenhoekiellaSpMar2009132(
 
     Returns
     -----------------------
-    Instace of LeeuwenhoekiellaSpMar2009132 graph.
+    Instace of Leeuwenhoekiella sp. MAR2009132 graph.
 
 	References
 	---------------------

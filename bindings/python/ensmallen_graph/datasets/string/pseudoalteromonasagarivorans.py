@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasAgarivorans.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas agarivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasAgarivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasAgarivorans graph.
+    """Return new instance of the Pseudoalteromonas agarivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasAgarivorans(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasAgarivorans graph.
+    Instace of Pseudoalteromonas agarivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumNeworleansense.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium neworleansense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumNeworleansense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumNeworleansense graph.
+    """Return new instance of the Mycolicibacterium neworleansense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumNeworleansense(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumNeworleansense graph.
+    Instace of Mycolicibacterium neworleansense graph.
 
 	References
 	---------------------

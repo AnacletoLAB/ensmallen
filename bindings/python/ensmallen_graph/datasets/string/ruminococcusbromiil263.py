@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusBromiiL263.
+This file offers the methods to automatically retrieve the graph Ruminococcus bromii L2-63.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusBromiiL263(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusBromiiL263 graph.
+    """Return new instance of the Ruminococcus bromii L2-63 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusBromiiL263(
 
     Returns
     -----------------------
-    Instace of RuminococcusBromiiL263 graph.
+    Instace of Ruminococcus bromii L2-63 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptobacteriumCurtum.
+This file offers the methods to automatically retrieve the graph Cryptobacterium curtum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptobacteriumCurtum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptobacteriumCurtum graph.
+    """Return new instance of the Cryptobacterium curtum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CryptobacteriumCurtum(
 
     Returns
     -----------------------
-    Instace of CryptobacteriumCurtum graph.
+    Instace of Cryptobacterium curtum graph.
 
 	References
 	---------------------

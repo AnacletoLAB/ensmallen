@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusBarengoltziiG22.
+This file offers the methods to automatically retrieve the graph Paenibacillus barengoltzii G22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusBarengoltziiG22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusBarengoltziiG22 graph.
+    """Return new instance of the Paenibacillus barengoltzii G22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusBarengoltziiG22(
 
     Returns
     -----------------------
-    Instace of PaenibacillusBarengoltziiG22 graph.
+    Instace of Paenibacillus barengoltzii G22 graph.
 
 	References
 	---------------------

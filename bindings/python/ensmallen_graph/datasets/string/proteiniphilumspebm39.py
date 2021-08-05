@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniphilumSpEbm39.
+This file offers the methods to automatically retrieve the graph Proteiniphilum sp. EBM-39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniphilumSpEbm39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniphilumSpEbm39 graph.
+    """Return new instance of the Proteiniphilum sp. EBM-39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteiniphilumSpEbm39(
 
     Returns
     -----------------------
-    Instace of ProteiniphilumSpEbm39 graph.
+    Instace of Proteiniphilum sp. EBM-39 graph.
 
 	References
 	---------------------

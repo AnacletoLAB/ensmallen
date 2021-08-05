@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesSpCag10605727.
+This file offers the methods to automatically retrieve the graph Bacteroides sp. CAG:1060_57_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesSpCag10605727(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesSpCag10605727 graph.
+    """Return new instance of the Bacteroides sp. CAG:1060_57_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesSpCag10605727(
 
     Returns
     -----------------------
-    Instace of BacteroidesSpCag10605727 graph.
+    Instace of Bacteroides sp. CAG:1060_57_27 graph.
 
 	References
 	---------------------

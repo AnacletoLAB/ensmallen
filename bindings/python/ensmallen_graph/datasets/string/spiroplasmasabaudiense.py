@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaSabaudiense.
+This file offers the methods to automatically retrieve the graph Spiroplasma sabaudiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaSabaudiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaSabaudiense graph.
+    """Return new instance of the Spiroplasma sabaudiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaSabaudiense(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaSabaudiense graph.
+    Instace of Spiroplasma sabaudiense graph.
 
 	References
 	---------------------

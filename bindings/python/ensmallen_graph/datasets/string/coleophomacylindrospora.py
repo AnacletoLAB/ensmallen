@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColeophomaCylindrospora.
+This file offers the methods to automatically retrieve the graph Coleophoma cylindrospora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColeophomaCylindrospora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColeophomaCylindrospora graph.
+    """Return new instance of the Coleophoma cylindrospora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColeophomaCylindrospora(
 
     Returns
     -----------------------
-    Instace of ColeophomaCylindrospora graph.
+    Instace of Coleophoma cylindrospora graph.
 
 	References
 	---------------------

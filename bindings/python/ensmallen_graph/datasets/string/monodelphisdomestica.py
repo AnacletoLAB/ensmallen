@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonodelphisDomestica.
+This file offers the methods to automatically retrieve the graph Monodelphis domestica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonodelphisDomestica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonodelphisDomestica graph.
+    """Return new instance of the Monodelphis domestica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MonodelphisDomestica(
 
     Returns
     -----------------------
-    Instace of MonodelphisDomestica graph.
+    Instace of Monodelphis domestica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesGraevenitzii.
+This file offers the methods to automatically retrieve the graph Actinomyces graevenitzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesGraevenitzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesGraevenitzii graph.
+    """Return new instance of the Actinomyces graevenitzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesGraevenitzii(
 
     Returns
     -----------------------
-    Instace of ActinomycesGraevenitzii graph.
+    Instace of Actinomyces graevenitzii graph.
 
 	References
 	---------------------

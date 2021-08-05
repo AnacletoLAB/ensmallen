@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalococcoidesMccartyi195.
+This file offers the methods to automatically retrieve the graph Dehalococcoides mccartyi 195.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalococcoidesMccartyi195(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalococcoidesMccartyi195 graph.
+    """Return new instance of the Dehalococcoides mccartyi 195 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalococcoidesMccartyi195(
 
     Returns
     -----------------------
-    Instace of DehalococcoidesMccartyi195 graph.
+    Instace of Dehalococcoides mccartyi 195 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusHorikoshii.
+This file offers the methods to automatically retrieve the graph Bacillus horikoshii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusHorikoshii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusHorikoshii graph.
+    """Return new instance of the Bacillus horikoshii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusHorikoshii(
 
     Returns
     -----------------------
-    Instace of BacillusHorikoshii graph.
+    Instace of Bacillus horikoshii graph.
 
 	References
 	---------------------

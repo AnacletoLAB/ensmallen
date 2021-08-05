@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusJensenii272chn.
+This file offers the methods to automatically retrieve the graph Lactobacillus jensenii 272CHN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusJensenii272chn(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusJensenii272chn graph.
+    """Return new instance of the Lactobacillus jensenii 272CHN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusJensenii272chn(
 
     Returns
     -----------------------
-    Instace of LactobacillusJensenii272chn graph.
+    Instace of Lactobacillus jensenii 272CHN graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeolentinusLepideusHhb14362Ss1.
+This file offers the methods to automatically retrieve the graph Neolentinus lepideus HHB14362 ss-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeolentinusLepideusHhb14362Ss1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeolentinusLepideusHhb14362Ss1 graph.
+    """Return new instance of the Neolentinus lepideus HHB14362 ss-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeolentinusLepideusHhb14362Ss1(
 
     Returns
     -----------------------
-    Instace of NeolentinusLepideusHhb14362Ss1 graph.
+    Instace of Neolentinus lepideus HHB14362 ss-1 graph.
 
 	References
 	---------------------

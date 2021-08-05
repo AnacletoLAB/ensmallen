@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaFonticolaAuap2c.
+This file offers the methods to automatically retrieve the graph Serratia fonticola AUAP2C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaFonticolaAuap2c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaFonticolaAuap2c graph.
+    """Return new instance of the Serratia fonticola AUAP2C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaFonticolaAuap2c(
 
     Returns
     -----------------------
-    Instace of SerratiaFonticolaAuap2c graph.
+    Instace of Serratia fonticola AUAP2C graph.
 
 	References
 	---------------------

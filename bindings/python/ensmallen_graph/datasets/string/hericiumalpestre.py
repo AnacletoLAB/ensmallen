@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HericiumAlpestre.
+This file offers the methods to automatically retrieve the graph Hericium alpestre.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HericiumAlpestre(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HericiumAlpestre graph.
+    """Return new instance of the Hericium alpestre graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HericiumAlpestre(
 
     Returns
     -----------------------
-    Instace of HericiumAlpestre graph.
+    Instace of Hericium alpestre graph.
 
 	References
 	---------------------

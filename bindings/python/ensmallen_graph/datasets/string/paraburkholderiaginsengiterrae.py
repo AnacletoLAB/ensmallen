@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaGinsengiterrae.
+This file offers the methods to automatically retrieve the graph Paraburkholderia ginsengiterrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaGinsengiterrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaGinsengiterrae graph.
+    """Return new instance of the Paraburkholderia ginsengiterrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaGinsengiterrae(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaGinsengiterrae graph.
+    Instace of Paraburkholderia ginsengiterrae graph.
 
 	References
 	---------------------

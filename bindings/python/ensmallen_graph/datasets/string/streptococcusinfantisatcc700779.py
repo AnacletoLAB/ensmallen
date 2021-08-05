@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusInfantisAtcc700779.
+This file offers the methods to automatically retrieve the graph Streptococcus infantis ATCC700779.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusInfantisAtcc700779(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusInfantisAtcc700779 graph.
+    """Return new instance of the Streptococcus infantis ATCC700779 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusInfantisAtcc700779(
 
     Returns
     -----------------------
-    Instace of StreptococcusInfantisAtcc700779 graph.
+    Instace of Streptococcus infantis ATCC700779 graph.
 
 	References
 	---------------------

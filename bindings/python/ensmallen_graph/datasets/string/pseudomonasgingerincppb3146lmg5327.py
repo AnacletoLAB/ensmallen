@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasGingeriNcppb3146Lmg5327.
+This file offers the methods to automatically retrieve the graph Pseudomonas gingeri NCPPB 3146 LMG 5327.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasGingeriNcppb3146Lmg5327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasGingeriNcppb3146Lmg5327 graph.
+    """Return new instance of the Pseudomonas gingeri NCPPB 3146 LMG 5327 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasGingeriNcppb3146Lmg5327(
 
     Returns
     -----------------------
-    Instace of PseudomonasGingeriNcppb3146Lmg5327 graph.
+    Instace of Pseudomonas gingeri NCPPB 3146 LMG 5327 graph.
 
 	References
 	---------------------

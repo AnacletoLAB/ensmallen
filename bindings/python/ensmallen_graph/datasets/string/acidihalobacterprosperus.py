@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidihalobacterProsperus.
+This file offers the methods to automatically retrieve the graph Acidihalobacter prosperus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidihalobacterProsperus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidihalobacterProsperus graph.
+    """Return new instance of the Acidihalobacter prosperus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidihalobacterProsperus(
 
     Returns
     -----------------------
-    Instace of AcidihalobacterProsperus graph.
+    Instace of Acidihalobacter prosperus graph.
 
 	References
 	---------------------

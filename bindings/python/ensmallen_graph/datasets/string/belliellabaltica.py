@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BelliellaBaltica.
+This file offers the methods to automatically retrieve the graph Belliella baltica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BelliellaBaltica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BelliellaBaltica graph.
+    """Return new instance of the Belliella baltica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BelliellaBaltica(
 
     Returns
     -----------------------
-    Instace of BelliellaBaltica graph.
+    Instace of Belliella baltica graph.
 
 	References
 	---------------------

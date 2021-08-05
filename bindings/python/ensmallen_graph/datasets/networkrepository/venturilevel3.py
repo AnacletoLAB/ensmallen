@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Venturilevel3.
+This file offers the methods to automatically retrieve the graph venturiLevel3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Venturilevel3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Venturilevel3 graph.
+    """Return new instance of the venturiLevel3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Venturilevel3(
 
     Returns
     -----------------------
-    Instace of Venturilevel3 graph.
+    Instace of venturiLevel3 graph.
 
 	References
 	---------------------

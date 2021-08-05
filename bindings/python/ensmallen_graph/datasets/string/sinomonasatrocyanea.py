@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinomonasAtrocyanea.
+This file offers the methods to automatically retrieve the graph Sinomonas atrocyanea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinomonasAtrocyanea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinomonasAtrocyanea graph.
+    """Return new instance of the Sinomonas atrocyanea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinomonasAtrocyanea(
 
     Returns
     -----------------------
-    Instace of SinomonasAtrocyanea graph.
+    Instace of Sinomonas atrocyanea graph.
 
 	References
 	---------------------

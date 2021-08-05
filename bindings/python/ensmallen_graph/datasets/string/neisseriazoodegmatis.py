@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaZoodegmatis.
+This file offers the methods to automatically retrieve the graph Neisseria zoodegmatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaZoodegmatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaZoodegmatis graph.
+    """Return new instance of the Neisseria zoodegmatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaZoodegmatis(
 
     Returns
     -----------------------
-    Instace of NeisseriaZoodegmatis graph.
+    Instace of Neisseria zoodegmatis graph.
 
 	References
 	---------------------

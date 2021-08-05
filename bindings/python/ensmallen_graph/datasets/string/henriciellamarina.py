@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HenriciellaMarina.
+This file offers the methods to automatically retrieve the graph Henriciella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HenriciellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HenriciellaMarina graph.
+    """Return new instance of the Henriciella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HenriciellaMarina(
 
     Returns
     -----------------------
-    Instace of HenriciellaMarina graph.
+    Instace of Henriciella marina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumRufum.
+This file offers the methods to automatically retrieve the graph Mycobacterium rufum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumRufum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumRufum graph.
+    """Return new instance of the Mycobacterium rufum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumRufum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumRufum graph.
+    Instace of Mycobacterium rufum graph.
 
 	References
 	---------------------

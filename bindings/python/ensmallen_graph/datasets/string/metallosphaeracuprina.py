@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetallosphaeraCuprina.
+This file offers the methods to automatically retrieve the graph Metallosphaera cuprina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetallosphaeraCuprina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetallosphaeraCuprina graph.
+    """Return new instance of the Metallosphaera cuprina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MetallosphaeraCuprina(
 
     Returns
     -----------------------
-    Instace of MetallosphaeraCuprina graph.
+    Instace of Metallosphaera cuprina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasVranovensisDsm16006.
+This file offers the methods to automatically retrieve the graph Pseudomonas vranovensis DSM 16006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasVranovensisDsm16006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasVranovensisDsm16006 graph.
+    """Return new instance of the Pseudomonas vranovensis DSM 16006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasVranovensisDsm16006(
 
     Returns
     -----------------------
-    Instace of PseudomonasVranovensisDsm16006 graph.
+    Instace of Pseudomonas vranovensis DSM 16006 graph.
 
 	References
 	---------------------

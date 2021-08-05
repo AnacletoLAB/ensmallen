@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasHistidinilytica.
+This file offers the methods to automatically retrieve the graph Sphingomonas histidinilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasHistidinilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasHistidinilytica graph.
+    """Return new instance of the Sphingomonas histidinilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasHistidinilytica(
 
     Returns
     -----------------------
-    Instace of SphingomonasHistidinilytica graph.
+    Instace of Sphingomonas histidinilytica graph.
 
 	References
 	---------------------

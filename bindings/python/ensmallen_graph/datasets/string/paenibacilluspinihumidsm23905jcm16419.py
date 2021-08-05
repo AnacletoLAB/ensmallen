@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusPinihumiDsm23905Jcm16419.
+This file offers the methods to automatically retrieve the graph Paenibacillus pinihumi DSM 23905 JCM 16419.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusPinihumiDsm23905Jcm16419(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusPinihumiDsm23905Jcm16419 graph.
+    """Return new instance of the Paenibacillus pinihumi DSM 23905 JCM 16419 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusPinihumiDsm23905Jcm16419(
 
     Returns
     -----------------------
-    Instace of PaenibacillusPinihumiDsm23905Jcm16419 graph.
+    Instace of Paenibacillus pinihumi DSM 23905 JCM 16419 graph.
 
 	References
 	---------------------

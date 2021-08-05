@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermobaculumTerrenum.
+This file offers the methods to automatically retrieve the graph Thermobaculum terrenum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermobaculumTerrenum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermobaculumTerrenum graph.
+    """Return new instance of the Thermobaculum terrenum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermobaculumTerrenum(
 
     Returns
     -----------------------
-    Instace of ThermobaculumTerrenum graph.
+    Instace of Thermobaculum terrenum graph.
 
 	References
 	---------------------

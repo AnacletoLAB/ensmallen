@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisJaponica.
+This file offers the methods to automatically retrieve the graph Caenorhabditis japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisJaponica graph.
+    """Return new instance of the Caenorhabditis japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaenorhabditisJaponica(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisJaponica graph.
+    Instace of Caenorhabditis japonica graph.
 
 	References
 	---------------------

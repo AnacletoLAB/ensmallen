@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioCrossotus.
+This file offers the methods to automatically retrieve the graph Butyrivibrio crossotus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioCrossotus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioCrossotus graph.
+    """Return new instance of the Butyrivibrio crossotus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioCrossotus(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioCrossotus graph.
+    Instace of Butyrivibrio crossotus graph.
 
 	References
 	---------------------

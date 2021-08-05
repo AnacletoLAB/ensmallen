@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpAntH11.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Ant H11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpAntH11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpAntH11 graph.
+    """Return new instance of the Sphingomonas sp. Ant H11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpAntH11(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpAntH11 graph.
+    Instace of Sphingomonas sp. Ant H11 graph.
 
 	References
 	---------------------

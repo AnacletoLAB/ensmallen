@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpCsm2.
+This file offers the methods to automatically retrieve the graph Halomonas sp. CSM-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpCsm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpCsm2 graph.
+    """Return new instance of the Halomonas sp. CSM-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSpCsm2(
 
     Returns
     -----------------------
-    Instace of HalomonasSpCsm2 graph.
+    Instace of Halomonas sp. CSM-2 graph.
 
 	References
 	---------------------

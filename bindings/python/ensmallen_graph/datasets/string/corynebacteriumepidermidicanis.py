@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumEpidermidicanis.
+This file offers the methods to automatically retrieve the graph Corynebacterium epidermidicanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumEpidermidicanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumEpidermidicanis graph.
+    """Return new instance of the Corynebacterium epidermidicanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumEpidermidicanis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumEpidermidicanis graph.
+    Instace of Corynebacterium epidermidicanis graph.
 
 	References
 	---------------------

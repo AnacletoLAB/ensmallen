@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusSpG1w1.
+This file offers the methods to automatically retrieve the graph Geobacillus sp. G1w1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusSpG1w1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusSpG1w1 graph.
+    """Return new instance of the Geobacillus sp. G1w1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusSpG1w1(
 
     Returns
     -----------------------
-    Instace of GeobacillusSpG1w1 graph.
+    Instace of Geobacillus sp. G1w1 graph.
 
 	References
 	---------------------

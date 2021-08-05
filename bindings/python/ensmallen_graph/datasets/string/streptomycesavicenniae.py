@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAvicenniae.
+This file offers the methods to automatically retrieve the graph Streptomyces avicenniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAvicenniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAvicenniae graph.
+    """Return new instance of the Streptomyces avicenniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesAvicenniae(
 
     Returns
     -----------------------
-    Instace of StreptomycesAvicenniae graph.
+    Instace of Streptomyces avicenniae graph.
 
 	References
 	---------------------

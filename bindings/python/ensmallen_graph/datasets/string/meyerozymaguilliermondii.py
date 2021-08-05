@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeyerozymaGuilliermondii.
+This file offers the methods to automatically retrieve the graph Meyerozyma guilliermondii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeyerozymaGuilliermondii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeyerozymaGuilliermondii graph.
+    """Return new instance of the Meyerozyma guilliermondii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeyerozymaGuilliermondii(
 
     Returns
     -----------------------
-    Instace of MeyerozymaGuilliermondii graph.
+    Instace of Meyerozyma guilliermondii graph.
 
 	References
 	---------------------

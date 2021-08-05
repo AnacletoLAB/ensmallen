@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterYangtzensis.
+This file offers the methods to automatically retrieve the graph Polynucleobacter yangtzensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterYangtzensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterYangtzensis graph.
+    """Return new instance of the Polynucleobacter yangtzensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterYangtzensis(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterYangtzensis graph.
+    Instace of Polynucleobacter yangtzensis graph.
 
 	References
 	---------------------

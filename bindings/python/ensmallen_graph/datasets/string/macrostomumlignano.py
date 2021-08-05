@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacrostomumLignano.
+This file offers the methods to automatically retrieve the graph Macrostomum lignano.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacrostomumLignano(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacrostomumLignano graph.
+    """Return new instance of the Macrostomum lignano graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacrostomumLignano(
 
     Returns
     -----------------------
-    Instace of MacrostomumLignano graph.
+    Instace of Macrostomum lignano graph.
 
 	References
 	---------------------

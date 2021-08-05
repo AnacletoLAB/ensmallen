@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HamiltosporidiumMagnivora.
+This file offers the methods to automatically retrieve the graph Hamiltosporidium magnivora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HamiltosporidiumMagnivora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HamiltosporidiumMagnivora graph.
+    """Return new instance of the Hamiltosporidium magnivora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HamiltosporidiumMagnivora(
 
     Returns
     -----------------------
-    Instace of HamiltosporidiumMagnivora graph.
+    Instace of Hamiltosporidium magnivora graph.
 
 	References
 	---------------------

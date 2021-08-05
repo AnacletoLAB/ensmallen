@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimiaHaliotis.
+This file offers the methods to automatically retrieve the graph Shimia haliotis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimiaHaliotis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimiaHaliotis graph.
+    """Return new instance of the Shimia haliotis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShimiaHaliotis(
 
     Returns
     -----------------------
-    Instace of ShimiaHaliotis graph.
+    Instace of Shimia haliotis graph.
 
 	References
 	---------------------

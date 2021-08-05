@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinifilumFragileJcm15579.
+This file offers the methods to automatically retrieve the graph Marinifilum fragile JCM 15579.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinifilumFragileJcm15579(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinifilumFragileJcm15579 graph.
+    """Return new instance of the Marinifilum fragile JCM 15579 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinifilumFragileJcm15579(
 
     Returns
     -----------------------
-    Instace of MarinifilumFragileJcm15579 graph.
+    Instace of Marinifilum fragile JCM 15579 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumMetallidurans.
+This file offers the methods to automatically retrieve the graph Mesorhizobium metallidurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumMetallidurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumMetallidurans graph.
+    """Return new instance of the Mesorhizobium metallidurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumMetallidurans(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumMetallidurans graph.
+    Instace of Mesorhizobium metallidurans graph.
 
 	References
 	---------------------

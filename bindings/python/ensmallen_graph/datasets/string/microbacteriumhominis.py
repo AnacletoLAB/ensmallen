@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumHominis.
+This file offers the methods to automatically retrieve the graph Microbacterium hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumHominis graph.
+    """Return new instance of the Microbacterium hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumHominis(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumHominis graph.
+    Instace of Microbacterium hominis graph.
 
 	References
 	---------------------

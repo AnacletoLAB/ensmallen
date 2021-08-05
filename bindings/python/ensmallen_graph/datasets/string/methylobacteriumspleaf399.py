@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSpLeaf399.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. Leaf399.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSpLeaf399(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSpLeaf399 graph.
+    """Return new instance of the Methylobacterium sp. Leaf399 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumSpLeaf399(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSpLeaf399 graph.
+    Instace of Methylobacterium sp. Leaf399 graph.
 
 	References
 	---------------------

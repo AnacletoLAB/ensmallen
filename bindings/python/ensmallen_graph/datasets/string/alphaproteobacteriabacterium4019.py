@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacterium4019.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium 40-19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacterium4019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacterium4019 graph.
+    """Return new instance of the Alphaproteobacteria bacterium 40-19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacterium4019(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacterium4019 graph.
+    Instace of Alphaproteobacteria bacterium 40-19 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpBrhC22.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. BRH_c22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpBrhC22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpBrhC22 graph.
+    """Return new instance of the Hyphomonas sp. BRH_c22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomonasSpBrhC22(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpBrhC22 graph.
+    Instace of Hyphomonas sp. BRH_c22 graph.
 
 	References
 	---------------------

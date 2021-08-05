@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRiesiaPthiripubis.
+This file offers the methods to automatically retrieve the graph Candidatus Riesia pthiripubis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRiesiaPthiripubis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRiesiaPthiripubis graph.
+    """Return new instance of the Candidatus Riesia pthiripubis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRiesiaPthiripubis(
 
     Returns
     -----------------------
-    Instace of CandidatusRiesiaPthiripubis graph.
+    Instace of Candidatus Riesia pthiripubis graph.
 
 	References
 	---------------------

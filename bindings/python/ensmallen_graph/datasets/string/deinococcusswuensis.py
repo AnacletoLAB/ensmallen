@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusSwuensis.
+This file offers the methods to automatically retrieve the graph Deinococcus swuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusSwuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusSwuensis graph.
+    """Return new instance of the Deinococcus swuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeinococcusSwuensis(
 
     Returns
     -----------------------
-    Instace of DeinococcusSwuensis graph.
+    Instace of Deinococcus swuensis graph.
 
 	References
 	---------------------

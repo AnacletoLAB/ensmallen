@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NicotianaAttenuata.
+This file offers the methods to automatically retrieve the graph Nicotiana attenuata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NicotianaAttenuata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NicotianaAttenuata graph.
+    """Return new instance of the Nicotiana attenuata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NicotianaAttenuata(
 
     Returns
     -----------------------
-    Instace of NicotianaAttenuata graph.
+    Instace of Nicotiana attenuata graph.
 
 	References
 	---------------------

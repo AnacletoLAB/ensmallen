@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaricaulisSpJl2009.
+This file offers the methods to automatically retrieve the graph Maricaulis sp. JL2009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaricaulisSpJl2009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaricaulisSpJl2009 graph.
+    """Return new instance of the Maricaulis sp. JL2009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MaricaulisSpJl2009(
 
     Returns
     -----------------------
-    Instace of MaricaulisSpJl2009 graph.
+    Instace of Maricaulis sp. JL2009 graph.
 
 	References
 	---------------------

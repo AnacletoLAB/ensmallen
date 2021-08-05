@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasMarina.
+This file offers the methods to automatically retrieve the graph Cellulomonas marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasMarina graph.
+    """Return new instance of the Cellulomonas marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasMarina(
 
     Returns
     -----------------------
-    Instace of CellulomonasMarina graph.
+    Instace of Cellulomonas marina graph.
 
 	References
 	---------------------

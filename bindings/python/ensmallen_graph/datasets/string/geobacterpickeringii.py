@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterPickeringii.
+This file offers the methods to automatically retrieve the graph Geobacter pickeringii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterPickeringii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterPickeringii graph.
+    """Return new instance of the Geobacter pickeringii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacterPickeringii(
 
     Returns
     -----------------------
-    Instace of GeobacterPickeringii graph.
+    Instace of Geobacter pickeringii graph.
 
 	References
 	---------------------

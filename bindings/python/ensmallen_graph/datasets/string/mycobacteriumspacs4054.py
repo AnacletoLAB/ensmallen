@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpAcs4054.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. ACS4054.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpAcs4054(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpAcs4054 graph.
+    """Return new instance of the Mycobacterium sp. ACS4054 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpAcs4054(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpAcs4054 graph.
+    Instace of Mycobacterium sp. ACS4054 graph.
 
 	References
 	---------------------

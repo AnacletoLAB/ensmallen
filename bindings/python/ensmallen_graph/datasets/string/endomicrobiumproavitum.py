@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndomicrobiumProavitum.
+This file offers the methods to automatically retrieve the graph Endomicrobium proavitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndomicrobiumProavitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndomicrobiumProavitum graph.
+    """Return new instance of the Endomicrobium proavitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EndomicrobiumProavitum(
 
     Returns
     -----------------------
-    Instace of EndomicrobiumProavitum graph.
+    Instace of Endomicrobium proavitum graph.
 
 	References
 	---------------------

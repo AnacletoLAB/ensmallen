@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrososphaeraGargensisGa92.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrososphaera gargensis Ga9.2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrososphaeraGargensisGa92(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrososphaeraGargensisGa92 graph.
+    """Return new instance of the Candidatus Nitrososphaera gargensis Ga9.2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrososphaeraGargensisGa92(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrososphaeraGargensisGa92 graph.
+    Instace of Candidatus Nitrososphaera gargensis Ga9.2 graph.
 
 	References
 	---------------------

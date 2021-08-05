@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumThalpophilumDsm11723.
+This file offers the methods to automatically retrieve the graph Sphingobacterium thalpophilum DSM 11723.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumThalpophilumDsm11723(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumThalpophilumDsm11723 graph.
+    """Return new instance of the Sphingobacterium thalpophilum DSM 11723 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriumThalpophilumDsm11723(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumThalpophilumDsm11723 graph.
+    Instace of Sphingobacterium thalpophilum DSM 11723 graph.
 
 	References
 	---------------------

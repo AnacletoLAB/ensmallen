@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusGlucanolyticus.
+This file offers the methods to automatically retrieve the graph Paenibacillus glucanolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusGlucanolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusGlucanolyticus graph.
+    """Return new instance of the Paenibacillus glucanolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusGlucanolyticus(
 
     Returns
     -----------------------
-    Instace of PaenibacillusGlucanolyticus graph.
+    Instace of Paenibacillus glucanolyticus graph.
 
 	References
 	---------------------

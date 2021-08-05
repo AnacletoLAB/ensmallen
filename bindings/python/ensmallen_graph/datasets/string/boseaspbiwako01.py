@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpBiwako01.
+This file offers the methods to automatically retrieve the graph Bosea sp. BIWAKO-01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpBiwako01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpBiwako01 graph.
+    """Return new instance of the Bosea sp. BIWAKO-01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpBiwako01(
 
     Returns
     -----------------------
-    Instace of BoseaSpBiwako01 graph.
+    Instace of Bosea sp. BIWAKO-01 graph.
 
 	References
 	---------------------

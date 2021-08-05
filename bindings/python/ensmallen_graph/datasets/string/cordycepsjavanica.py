@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CordycepsJavanica.
+This file offers the methods to automatically retrieve the graph Cordyceps javanica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CordycepsJavanica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CordycepsJavanica graph.
+    """Return new instance of the Cordyceps javanica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CordycepsJavanica(
 
     Returns
     -----------------------
-    Instace of CordycepsJavanica graph.
+    Instace of Cordyceps javanica graph.
 
 	References
 	---------------------

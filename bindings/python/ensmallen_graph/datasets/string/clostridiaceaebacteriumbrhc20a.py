@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaceaeBacteriumBrhC20a.
+This file offers the methods to automatically retrieve the graph Clostridiaceae bacterium BRH_c20a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaceaeBacteriumBrhC20a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaceaeBacteriumBrhC20a graph.
+    """Return new instance of the Clostridiaceae bacterium BRH_c20a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiaceaeBacteriumBrhC20a(
 
     Returns
     -----------------------
-    Instace of ClostridiaceaeBacteriumBrhC20a graph.
+    Instace of Clostridiaceae bacterium BRH_c20a graph.
 
 	References
 	---------------------

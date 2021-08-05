@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumSpRoot1290.
+This file offers the methods to automatically retrieve the graph Phenylobacterium sp. Root1290.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumSpRoot1290(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumSpRoot1290 graph.
+    """Return new instance of the Phenylobacterium sp. Root1290 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhenylobacteriumSpRoot1290(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumSpRoot1290 graph.
+    Instace of Phenylobacterium sp. Root1290 graph.
 
 	References
 	---------------------

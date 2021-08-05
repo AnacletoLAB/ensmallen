@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaArthritidisNbrc100137.
+This file offers the methods to automatically retrieve the graph Nocardia arthritidis NBRC 100137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaArthritidisNbrc100137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaArthritidisNbrc100137 graph.
+    """Return new instance of the Nocardia arthritidis NBRC 100137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaArthritidisNbrc100137(
 
     Returns
     -----------------------
-    Instace of NocardiaArthritidisNbrc100137 graph.
+    Instace of Nocardia arthritidis NBRC 100137 graph.
 
 	References
 	---------------------

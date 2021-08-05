@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusOdysseyi.
+This file offers the methods to automatically retrieve the graph Lysinibacillus odysseyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusOdysseyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusOdysseyi graph.
+    """Return new instance of the Lysinibacillus odysseyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusOdysseyi(
 
     Returns
     -----------------------
-    Instace of LysinibacillusOdysseyi graph.
+    Instace of Lysinibacillus odysseyi graph.
 
 	References
 	---------------------

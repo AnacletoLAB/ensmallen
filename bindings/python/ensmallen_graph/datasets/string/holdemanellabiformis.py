@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoldemanellaBiformis.
+This file offers the methods to automatically retrieve the graph Holdemanella biformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoldemanellaBiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoldemanellaBiformis graph.
+    """Return new instance of the Holdemanella biformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HoldemanellaBiformis(
 
     Returns
     -----------------------
-    Instace of HoldemanellaBiformis graph.
+    Instace of Holdemanella biformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NakamurellaMultipartita.
+This file offers the methods to automatically retrieve the graph Nakamurella multipartita.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NakamurellaMultipartita(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NakamurellaMultipartita graph.
+    """Return new instance of the Nakamurella multipartita graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NakamurellaMultipartita(
 
     Returns
     -----------------------
-    Instace of NakamurellaMultipartita graph.
+    Instace of Nakamurella multipartita graph.
 
 	References
 	---------------------

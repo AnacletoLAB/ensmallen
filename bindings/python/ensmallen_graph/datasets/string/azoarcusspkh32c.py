@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzoarcusSpKh32c.
+This file offers the methods to automatically retrieve the graph Azoarcus sp. KH32C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzoarcusSpKh32c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzoarcusSpKh32c graph.
+    """Return new instance of the Azoarcus sp. KH32C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzoarcusSpKh32c(
 
     Returns
     -----------------------
-    Instace of AzoarcusSpKh32c graph.
+    Instace of Azoarcus sp. KH32C graph.
 
 	References
 	---------------------

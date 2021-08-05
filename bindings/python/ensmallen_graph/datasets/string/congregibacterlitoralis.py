@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CongregibacterLitoralis.
+This file offers the methods to automatically retrieve the graph Congregibacter litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CongregibacterLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CongregibacterLitoralis graph.
+    """Return new instance of the Congregibacter litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CongregibacterLitoralis(
 
     Returns
     -----------------------
-    Instace of CongregibacterLitoralis graph.
+    Instace of Congregibacter litoralis graph.
 
 	References
 	---------------------

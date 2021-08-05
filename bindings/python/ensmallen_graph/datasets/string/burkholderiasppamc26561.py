@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpPamc26561.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. PAMC 26561.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpPamc26561(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpPamc26561 graph.
+    """Return new instance of the Burkholderia sp. PAMC 26561 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpPamc26561(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpPamc26561 graph.
+    Instace of Burkholderia sp. PAMC 26561 graph.
 
 	References
 	---------------------

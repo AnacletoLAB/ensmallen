@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumSpMh3.
+This file offers the methods to automatically retrieve the graph Exiguobacterium sp. MH3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumSpMh3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumSpMh3 graph.
+    """Return new instance of the Exiguobacterium sp. MH3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumSpMh3(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumSpMh3 graph.
+    Instace of Exiguobacterium sp. MH3 graph.
 
 	References
 	---------------------

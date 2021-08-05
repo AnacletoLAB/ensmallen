@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkaliphilusOremlandii.
+This file offers the methods to automatically retrieve the graph Alkaliphilus oremlandii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkaliphilusOremlandii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkaliphilusOremlandii graph.
+    """Return new instance of the Alkaliphilus oremlandii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkaliphilusOremlandii(
 
     Returns
     -----------------------
-    Instace of AlkaliphilusOremlandii graph.
+    Instace of Alkaliphilus oremlandii graph.
 
 	References
 	---------------------

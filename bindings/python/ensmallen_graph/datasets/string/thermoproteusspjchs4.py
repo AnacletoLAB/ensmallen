@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoproteusSpJchs4.
+This file offers the methods to automatically retrieve the graph Thermoproteus sp. JCHS_4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoproteusSpJchs4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoproteusSpJchs4 graph.
+    """Return new instance of the Thermoproteus sp. JCHS_4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoproteusSpJchs4(
 
     Returns
     -----------------------
-    Instace of ThermoproteusSpJchs4 graph.
+    Instace of Thermoproteus sp. JCHS_4 graph.
 
 	References
 	---------------------

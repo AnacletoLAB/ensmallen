@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumSubtile.
+This file offers the methods to automatically retrieve the graph Bifidobacterium subtile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumSubtile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumSubtile graph.
+    """Return new instance of the Bifidobacterium subtile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumSubtile(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumSubtile graph.
+    Instace of Bifidobacterium subtile graph.
 
 	References
 	---------------------

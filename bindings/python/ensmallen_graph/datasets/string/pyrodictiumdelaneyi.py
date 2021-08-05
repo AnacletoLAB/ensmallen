@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrodictiumDelaneyi.
+This file offers the methods to automatically retrieve the graph Pyrodictium delaneyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrodictiumDelaneyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrodictiumDelaneyi graph.
+    """Return new instance of the Pyrodictium delaneyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrodictiumDelaneyi(
 
     Returns
     -----------------------
-    Instace of PyrodictiumDelaneyi graph.
+    Instace of Pyrodictium delaneyi graph.
 
 	References
 	---------------------

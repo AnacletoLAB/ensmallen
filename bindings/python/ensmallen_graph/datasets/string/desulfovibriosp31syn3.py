@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSp31syn3.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. 31syn3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSp31syn3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSp31syn3 graph.
+    """Return new instance of the Desulfovibrio sp. 31syn3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSp31syn3(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSp31syn3 graph.
+    Instace of Desulfovibrio sp. 31syn3 graph.
 
 	References
 	---------------------

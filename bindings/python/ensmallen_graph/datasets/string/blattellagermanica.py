@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattellaGermanica.
+This file offers the methods to automatically retrieve the graph Blattella germanica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattellaGermanica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattellaGermanica graph.
+    """Return new instance of the Blattella germanica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlattellaGermanica(
 
     Returns
     -----------------------
-    Instace of BlattellaGermanica graph.
+    Instace of Blattella germanica graph.
 
 	References
 	---------------------

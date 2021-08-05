@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpLf2.
+This file offers the methods to automatically retrieve the graph Clostridium sp. LF2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpLf2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpLf2 graph.
+    """Return new instance of the Clostridium sp. LF2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpLf2(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpLf2 graph.
+    Instace of Clostridium sp. LF2 graph.
 
 	References
 	---------------------

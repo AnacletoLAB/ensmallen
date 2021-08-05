@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyprinodonVariegatus.
+This file offers the methods to automatically retrieve the graph Cyprinodon variegatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyprinodonVariegatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyprinodonVariegatus graph.
+    """Return new instance of the Cyprinodon variegatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyprinodonVariegatus(
 
     Returns
     -----------------------
-    Instace of CyprinodonVariegatus graph.
+    Instace of Cyprinodon variegatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumCarotovorumPc1.
+This file offers the methods to automatically retrieve the graph Pectobacterium carotovorum PC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumCarotovorumPc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumCarotovorumPc1 graph.
+    """Return new instance of the Pectobacterium carotovorum PC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PectobacteriumCarotovorumPc1(
 
     Returns
     -----------------------
-    Instace of PectobacteriumCarotovorumPc1 graph.
+    Instace of Pectobacterium carotovorum PC1 graph.
 
 	References
 	---------------------

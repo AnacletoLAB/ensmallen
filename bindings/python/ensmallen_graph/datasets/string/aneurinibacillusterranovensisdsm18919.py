@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AneurinibacillusTerranovensisDsm18919.
+This file offers the methods to automatically retrieve the graph Aneurinibacillus terranovensis DSM 18919.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AneurinibacillusTerranovensisDsm18919(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AneurinibacillusTerranovensisDsm18919 graph.
+    """Return new instance of the Aneurinibacillus terranovensis DSM 18919 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AneurinibacillusTerranovensisDsm18919(
 
     Returns
     -----------------------
-    Instace of AneurinibacillusTerranovensisDsm18919 graph.
+    Instace of Aneurinibacillus terranovensis DSM 18919 graph.
 
 	References
 	---------------------

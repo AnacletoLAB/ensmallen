@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanimonasSpGk1.
+This file offers the methods to automatically retrieve the graph Oceanimonas sp. GK1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanimonasSpGk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanimonasSpGk1 graph.
+    """Return new instance of the Oceanimonas sp. GK1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanimonasSpGk1(
 
     Returns
     -----------------------
-    Instace of OceanimonasSpGk1 graph.
+    Instace of Oceanimonas sp. GK1 graph.
 
 	References
 	---------------------

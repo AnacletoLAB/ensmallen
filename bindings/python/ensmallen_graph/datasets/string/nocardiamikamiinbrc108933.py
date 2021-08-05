@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaMikamiiNbrc108933.
+This file offers the methods to automatically retrieve the graph Nocardia mikamii NBRC 108933.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaMikamiiNbrc108933(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaMikamiiNbrc108933 graph.
+    """Return new instance of the Nocardia mikamii NBRC 108933 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaMikamiiNbrc108933(
 
     Returns
     -----------------------
-    Instace of NocardiaMikamiiNbrc108933 graph.
+    Instace of Nocardia mikamii NBRC 108933 graph.
 
 	References
 	---------------------

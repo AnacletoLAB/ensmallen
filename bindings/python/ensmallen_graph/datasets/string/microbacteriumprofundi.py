@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumProfundi.
+This file offers the methods to automatically retrieve the graph Microbacterium profundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumProfundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumProfundi graph.
+    """Return new instance of the Microbacterium profundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumProfundi(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumProfundi graph.
+    Instace of Microbacterium profundi graph.
 
 	References
 	---------------------

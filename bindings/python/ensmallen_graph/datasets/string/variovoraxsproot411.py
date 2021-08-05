@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpRoot411.
+This file offers the methods to automatically retrieve the graph Variovorax sp. Root411.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpRoot411(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpRoot411 graph.
+    """Return new instance of the Variovorax sp. Root411 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpRoot411(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpRoot411 graph.
+    Instace of Variovorax sp. Root411 graph.
 
 	References
 	---------------------

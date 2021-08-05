@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterFulvus.
+This file offers the methods to automatically retrieve the graph Rhodanobacter fulvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterFulvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterFulvus graph.
+    """Return new instance of the Rhodanobacter fulvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodanobacterFulvus(
 
     Returns
     -----------------------
-    Instace of RhodanobacterFulvus graph.
+    Instace of Rhodanobacter fulvus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Farm.
+This file offers the methods to automatically retrieve the graph farm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Farm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Farm graph.
+    """Return new instance of the farm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Farm(
 
     Returns
     -----------------------
-    Instace of Farm graph.
+    Instace of farm graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriaceaeBacteriumDw12.
+This file offers the methods to automatically retrieve the graph Sphingobacteriaceae bacterium DW12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriaceaeBacteriumDw12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriaceaeBacteriumDw12 graph.
+    """Return new instance of the Sphingobacteriaceae bacterium DW12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriaceaeBacteriumDw12(
 
     Returns
     -----------------------
-    Instace of SphingobacteriaceaeBacteriumDw12 graph.
+    Instace of Sphingobacteriaceae bacterium DW12 graph.
 
 	References
 	---------------------

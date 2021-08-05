@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumTropici.
+This file offers the methods to automatically retrieve the graph Rhizobium tropici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumTropici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumTropici graph.
+    """Return new instance of the Rhizobium tropici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumTropici(
 
     Returns
     -----------------------
-    Instace of RhizobiumTropici graph.
+    Instace of Rhizobium tropici graph.
 
 	References
 	---------------------

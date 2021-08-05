@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSunkii.
+This file offers the methods to automatically retrieve the graph Lactobacillus sunkii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSunkii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSunkii graph.
+    """Return new instance of the Lactobacillus sunkii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSunkii(
 
     Returns
     -----------------------
-    Instace of LactobacillusSunkii graph.
+    Instace of Lactobacillus sunkii graph.
 
 	References
 	---------------------

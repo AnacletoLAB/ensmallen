@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DinoroseobacterShibae.
+This file offers the methods to automatically retrieve the graph Dinoroseobacter shibae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DinoroseobacterShibae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DinoroseobacterShibae graph.
+    """Return new instance of the Dinoroseobacter shibae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DinoroseobacterShibae(
 
     Returns
     -----------------------
-    Instace of DinoroseobacterShibae graph.
+    Instace of Dinoroseobacter shibae graph.
 
 	References
 	---------------------

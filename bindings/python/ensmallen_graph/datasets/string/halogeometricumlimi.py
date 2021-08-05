@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalogeometricumLimi.
+This file offers the methods to automatically retrieve the graph Halogeometricum limi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalogeometricumLimi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalogeometricumLimi graph.
+    """Return new instance of the Halogeometricum limi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalogeometricumLimi(
 
     Returns
     -----------------------
-    Instace of HalogeometricumLimi graph.
+    Instace of Halogeometricum limi graph.
 
 	References
 	---------------------

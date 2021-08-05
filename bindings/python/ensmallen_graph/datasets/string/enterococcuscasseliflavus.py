@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusCasseliflavus.
+This file offers the methods to automatically retrieve the graph Enterococcus casseliflavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusCasseliflavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusCasseliflavus graph.
+    """Return new instance of the Enterococcus casseliflavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusCasseliflavus(
 
     Returns
     -----------------------
-    Instace of EnterococcusCasseliflavus graph.
+    Instace of Enterococcus casseliflavus graph.
 
 	References
 	---------------------

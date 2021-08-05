@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnohabitansSp2kl3.
+This file offers the methods to automatically retrieve the graph Limnohabitans sp. 2KL-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnohabitansSp2kl3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnohabitansSp2kl3 graph.
+    """Return new instance of the Limnohabitans sp. 2KL-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnohabitansSp2kl3(
 
     Returns
     -----------------------
-    Instace of LimnohabitansSp2kl3 graph.
+    Instace of Limnohabitans sp. 2KL-3 graph.
 
 	References
 	---------------------

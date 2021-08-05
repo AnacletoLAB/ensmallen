@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMitisNctc12261.
+This file offers the methods to automatically retrieve the graph Streptococcus mitis NCTC 12261.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMitisNctc12261(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMitisNctc12261 graph.
+    """Return new instance of the Streptococcus mitis NCTC 12261 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMitisNctc12261(
 
     Returns
     -----------------------
-    Instace of StreptococcusMitisNctc12261 graph.
+    Instace of Streptococcus mitis NCTC 12261 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsellaRubella.
+This file offers the methods to automatically retrieve the graph Capsella rubella.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsellaRubella(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsellaRubella graph.
+    """Return new instance of the Capsella rubella graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapsellaRubella(
 
     Returns
     -----------------------
-    Instace of CapsellaRubella graph.
+    Instace of Capsella rubella graph.
 
 	References
 	---------------------

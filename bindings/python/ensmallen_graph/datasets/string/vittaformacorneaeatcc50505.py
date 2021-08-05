@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VittaformaCorneaeAtcc50505.
+This file offers the methods to automatically retrieve the graph Vittaforma corneae ATCC 50505.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VittaformaCorneaeAtcc50505(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VittaformaCorneaeAtcc50505 graph.
+    """Return new instance of the Vittaforma corneae ATCC 50505 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VittaformaCorneaeAtcc50505(
 
     Returns
     -----------------------
-    Instace of VittaformaCorneaeAtcc50505 graph.
+    Instace of Vittaforma corneae ATCC 50505 graph.
 
 	References
 	---------------------

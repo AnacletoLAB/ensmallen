@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelosinusPropionicusDsm13327.
+This file offers the methods to automatically retrieve the graph Pelosinus propionicus DSM 13327.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelosinusPropionicusDsm13327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelosinusPropionicusDsm13327 graph.
+    """Return new instance of the Pelosinus propionicus DSM 13327 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelosinusPropionicusDsm13327(
 
     Returns
     -----------------------
-    Instace of PelosinusPropionicusDsm13327 graph.
+    Instace of Pelosinus propionicus DSM 13327 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusPseudoaviumNbrc100491.
+This file offers the methods to automatically retrieve the graph Enterococcus pseudoavium NBRC 100491.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusPseudoaviumNbrc100491(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusPseudoaviumNbrc100491 graph.
+    """Return new instance of the Enterococcus pseudoavium NBRC 100491 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusPseudoaviumNbrc100491(
 
     Returns
     -----------------------
-    Instace of EnterococcusPseudoaviumNbrc100491 graph.
+    Instace of Enterococcus pseudoavium NBRC 100491 graph.
 
 	References
 	---------------------

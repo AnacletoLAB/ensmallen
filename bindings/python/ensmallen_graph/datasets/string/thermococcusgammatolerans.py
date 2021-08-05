@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusGammatolerans.
+This file offers the methods to automatically retrieve the graph Thermococcus gammatolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusGammatolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusGammatolerans graph.
+    """Return new instance of the Thermococcus gammatolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusGammatolerans(
 
     Returns
     -----------------------
-    Instace of ThermococcusGammatolerans graph.
+    Instace of Thermococcus gammatolerans graph.
 
 	References
 	---------------------

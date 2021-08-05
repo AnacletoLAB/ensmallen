@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusShizuokensisNbrc103103.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus shizuokensis NBRC 103103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusShizuokensisNbrc103103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusShizuokensisNbrc103103 graph.
+    """Return new instance of the Alicyclobacillus shizuokensis NBRC 103103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlicyclobacillusShizuokensisNbrc103103(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusShizuokensisNbrc103103 graph.
+    Instace of Alicyclobacillus shizuokensis NBRC 103103 graph.
 
 	References
 	---------------------

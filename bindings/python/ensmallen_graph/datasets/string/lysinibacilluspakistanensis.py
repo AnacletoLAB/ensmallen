@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusPakistanensis.
+This file offers the methods to automatically retrieve the graph Lysinibacillus pakistanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusPakistanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusPakistanensis graph.
+    """Return new instance of the Lysinibacillus pakistanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusPakistanensis(
 
     Returns
     -----------------------
-    Instace of LysinibacillusPakistanensis graph.
+    Instace of Lysinibacillus pakistanensis graph.
 
 	References
 	---------------------

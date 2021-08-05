@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BeijerinckiaSp28Yea48.
+This file offers the methods to automatically retrieve the graph Beijerinckia sp. 28-YEA-48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BeijerinckiaSp28Yea48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BeijerinckiaSp28Yea48 graph.
+    """Return new instance of the Beijerinckia sp. 28-YEA-48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BeijerinckiaSp28Yea48(
 
     Returns
     -----------------------
-    Instace of BeijerinckiaSp28Yea48 graph.
+    Instace of Beijerinckia sp. 28-YEA-48 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NafulsellaTurpanensis.
+This file offers the methods to automatically retrieve the graph Nafulsella turpanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NafulsellaTurpanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NafulsellaTurpanensis graph.
+    """Return new instance of the Nafulsella turpanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NafulsellaTurpanensis(
 
     Returns
     -----------------------
-    Instace of NafulsellaTurpanensis graph.
+    Instace of Nafulsella turpanensis graph.
 
 	References
 	---------------------

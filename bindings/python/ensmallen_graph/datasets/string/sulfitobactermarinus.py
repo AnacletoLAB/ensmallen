@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterMarinus.
+This file offers the methods to automatically retrieve the graph Sulfitobacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterMarinus graph.
+    """Return new instance of the Sulfitobacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterMarinus(
 
     Returns
     -----------------------
-    Instace of SulfitobacterMarinus graph.
+    Instace of Sulfitobacter marinus graph.
 
 	References
 	---------------------

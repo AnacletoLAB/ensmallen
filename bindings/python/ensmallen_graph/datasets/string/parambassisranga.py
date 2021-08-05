@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParambassisRanga.
+This file offers the methods to automatically retrieve the graph Parambassis ranga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParambassisRanga(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParambassisRanga graph.
+    """Return new instance of the Parambassis ranga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParambassisRanga(
 
     Returns
     -----------------------
-    Instace of ParambassisRanga graph.
+    Instace of Parambassis ranga graph.
 
 	References
 	---------------------

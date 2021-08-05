@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FructobacillusTropaeoli.
+This file offers the methods to automatically retrieve the graph Fructobacillus tropaeoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FructobacillusTropaeoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FructobacillusTropaeoli graph.
+    """Return new instance of the Fructobacillus tropaeoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FructobacillusTropaeoli(
 
     Returns
     -----------------------
-    Instace of FructobacillusTropaeoli graph.
+    Instace of Fructobacillus tropaeoli graph.
 
 	References
 	---------------------

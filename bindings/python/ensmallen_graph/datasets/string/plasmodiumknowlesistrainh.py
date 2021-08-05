@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumKnowlesiStrainH.
+This file offers the methods to automatically retrieve the graph Plasmodium knowlesi strain H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumKnowlesiStrainH(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumKnowlesiStrainH graph.
+    """Return new instance of the Plasmodium knowlesi strain H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlasmodiumKnowlesiStrainH(
 
     Returns
     -----------------------
-    Instace of PlasmodiumKnowlesiStrainH graph.
+    Instace of Plasmodium knowlesi strain H graph.
 
 	References
 	---------------------

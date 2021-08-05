@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasHalodenitrificansDsm735.
+This file offers the methods to automatically retrieve the graph Halomonas halodenitrificans DSM 735.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasHalodenitrificansDsm735(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasHalodenitrificansDsm735 graph.
+    """Return new instance of the Halomonas halodenitrificans DSM 735 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasHalodenitrificansDsm735(
 
     Returns
     -----------------------
-    Instace of HalomonasHalodenitrificansDsm735 graph.
+    Instace of Halomonas halodenitrificans DSM 735 graph.
 
 	References
 	---------------------

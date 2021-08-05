@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebUk2002All.
+This file offers the methods to automatically retrieve the graph web-uk-2002-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebUk2002All(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebUk2002All graph.
+    """Return new instance of the web-uk-2002-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebUk2002All(
 
     Returns
     -----------------------
-    Instace of WebUk2002All graph.
+    Instace of web-uk-2002-all graph.
 
 	References
 	---------------------

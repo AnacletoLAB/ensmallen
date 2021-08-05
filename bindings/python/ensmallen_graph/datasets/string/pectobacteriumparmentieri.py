@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumParmentieri.
+This file offers the methods to automatically retrieve the graph Pectobacterium parmentieri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumParmentieri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumParmentieri graph.
+    """Return new instance of the Pectobacterium parmentieri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PectobacteriumParmentieri(
 
     Returns
     -----------------------
-    Instace of PectobacteriumParmentieri graph.
+    Instace of Pectobacterium parmentieri graph.
 
 	References
 	---------------------

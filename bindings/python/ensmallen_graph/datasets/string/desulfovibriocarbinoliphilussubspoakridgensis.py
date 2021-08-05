@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioCarbinoliphilusSubspOakridgensis.
+This file offers the methods to automatically retrieve the graph Desulfovibrio carbinoliphilus subsp. oakridgensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioCarbinoliphilusSubspOakridgensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioCarbinoliphilusSubspOakridgensis graph.
+    """Return new instance of the Desulfovibrio carbinoliphilus subsp. oakridgensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioCarbinoliphilusSubspOakridgensis(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioCarbinoliphilusSubspOakridgensis graph.
+    Instace of Desulfovibrio carbinoliphilus subsp. oakridgensis graph.
 
 	References
 	---------------------

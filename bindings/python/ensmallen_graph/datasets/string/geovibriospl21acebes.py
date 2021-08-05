@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeovibrioSpL21acebes.
+This file offers the methods to automatically retrieve the graph Geovibrio sp. L21AceBES.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeovibrioSpL21acebes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeovibrioSpL21acebes graph.
+    """Return new instance of the Geovibrio sp. L21AceBES graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeovibrioSpL21acebes(
 
     Returns
     -----------------------
-    Instace of GeovibrioSpL21acebes graph.
+    Instace of Geovibrio sp. L21AceBES graph.
 
 	References
 	---------------------

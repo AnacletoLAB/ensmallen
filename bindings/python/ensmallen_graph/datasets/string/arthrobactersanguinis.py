@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSanguinis.
+This file offers the methods to automatically retrieve the graph Arthrobacter sanguinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSanguinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSanguinis graph.
+    """Return new instance of the Arthrobacter sanguinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSanguinis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSanguinis graph.
+    Instace of Arthrobacter sanguinis graph.
 
 	References
 	---------------------

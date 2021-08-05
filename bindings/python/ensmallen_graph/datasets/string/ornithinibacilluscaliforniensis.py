@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithinibacillusCaliforniensis.
+This file offers the methods to automatically retrieve the graph Ornithinibacillus californiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithinibacillusCaliforniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithinibacillusCaliforniensis graph.
+    """Return new instance of the Ornithinibacillus californiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrnithinibacillusCaliforniensis(
 
     Returns
     -----------------------
-    Instace of OrnithinibacillusCaliforniensis graph.
+    Instace of Ornithinibacillus californiensis graph.
 
 	References
 	---------------------

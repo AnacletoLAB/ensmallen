@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesKebangsaanensis.
+This file offers the methods to automatically retrieve the graph Streptomyces kebangsaanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesKebangsaanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesKebangsaanensis graph.
+    """Return new instance of the Streptomyces kebangsaanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesKebangsaanensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesKebangsaanensis graph.
+    Instace of Streptomyces kebangsaanensis graph.
 
 	References
 	---------------------

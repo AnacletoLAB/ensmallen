@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpP2b.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. P2b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpP2b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpP2b graph.
+    """Return new instance of the Arthrobacter sp. P2b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpP2b(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpP2b graph.
+    Instace of Arthrobacter sp. P2b graph.
 
 	References
 	---------------------

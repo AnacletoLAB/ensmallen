@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaGonorrhoeaeFa1090.
+This file offers the methods to automatically retrieve the graph Neisseria gonorrhoeae FA 1090.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaGonorrhoeaeFa1090(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaGonorrhoeaeFa1090 graph.
+    """Return new instance of the Neisseria gonorrhoeae FA 1090 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaGonorrhoeaeFa1090(
 
     Returns
     -----------------------
-    Instace of NeisseriaGonorrhoeaeFa1090 graph.
+    Instace of Neisseria gonorrhoeae FA 1090 graph.
 
 	References
 	---------------------

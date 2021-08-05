@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusBombycis.
+This file offers the methods to automatically retrieve the graph Aspergillus bombycis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusBombycis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusBombycis graph.
+    """Return new instance of the Aspergillus bombycis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusBombycis(
 
     Returns
     -----------------------
-    Instace of AspergillusBombycis graph.
+    Instace of Aspergillus bombycis graph.
 
 	References
 	---------------------

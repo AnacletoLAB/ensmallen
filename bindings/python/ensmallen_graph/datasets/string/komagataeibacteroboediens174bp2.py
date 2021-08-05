@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataeibacterOboediens174bp2.
+This file offers the methods to automatically retrieve the graph Komagataeibacter oboediens 174Bp2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataeibacterOboediens174bp2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataeibacterOboediens174bp2 graph.
+    """Return new instance of the Komagataeibacter oboediens 174Bp2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KomagataeibacterOboediens174bp2(
 
     Returns
     -----------------------
-    Instace of KomagataeibacterOboediens174bp2 graph.
+    Instace of Komagataeibacter oboediens 174Bp2 graph.
 
 	References
 	---------------------

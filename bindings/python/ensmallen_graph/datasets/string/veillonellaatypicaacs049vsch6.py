@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaAtypicaAcs049vsch6.
+This file offers the methods to automatically retrieve the graph Veillonella atypica ACS049VSch6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaAtypicaAcs049vsch6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaAtypicaAcs049vsch6 graph.
+    """Return new instance of the Veillonella atypica ACS049VSch6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaAtypicaAcs049vsch6(
 
     Returns
     -----------------------
-    Instace of VeillonellaAtypicaAcs049vsch6 graph.
+    Instace of Veillonella atypica ACS049VSch6 graph.
 
 	References
 	---------------------

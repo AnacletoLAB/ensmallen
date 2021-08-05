@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacteriumCasei.
+This file offers the methods to automatically retrieve the graph Brevibacterium casei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacteriumCasei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacteriumCasei graph.
+    """Return new instance of the Brevibacterium casei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacteriumCasei(
 
     Returns
     -----------------------
-    Instace of BrevibacteriumCasei graph.
+    Instace of Brevibacterium casei graph.
 
 	References
 	---------------------

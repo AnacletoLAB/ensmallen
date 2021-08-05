@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusBoritoleransDsm17298Jcm18970.
+This file offers the methods to automatically retrieve the graph Algoriphagus boritolerans DSM 17298 JCM 18970.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusBoritoleransDsm17298Jcm18970(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusBoritoleransDsm17298Jcm18970 graph.
+    """Return new instance of the Algoriphagus boritolerans DSM 17298 JCM 18970 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusBoritoleransDsm17298Jcm18970(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusBoritoleransDsm17298Jcm18970 graph.
+    Instace of Algoriphagus boritolerans DSM 17298 JCM 18970 graph.
 
 	References
 	---------------------

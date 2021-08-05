@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbusMediterraneusDsm13871.
+This file offers the methods to automatically retrieve the graph Desulfobulbus mediterraneus DSM 13871.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbusMediterraneusDsm13871(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbusMediterraneusDsm13871 graph.
+    """Return new instance of the Desulfobulbus mediterraneus DSM 13871 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobulbusMediterraneusDsm13871(
 
     Returns
     -----------------------
-    Instace of DesulfobulbusMediterraneusDsm13871 graph.
+    Instace of Desulfobulbus mediterraneus DSM 13871 graph.
 
 	References
 	---------------------

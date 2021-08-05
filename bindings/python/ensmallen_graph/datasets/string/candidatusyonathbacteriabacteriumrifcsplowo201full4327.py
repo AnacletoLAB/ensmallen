@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusYonathbacteriaBacteriumRifcsplowo201Full4327.
+This file offers the methods to automatically retrieve the graph Candidatus Yonathbacteria bacterium RIFCSPLOWO2_01_FULL_43_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusYonathbacteriaBacteriumRifcsplowo201Full4327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusYonathbacteriaBacteriumRifcsplowo201Full4327 graph.
+    """Return new instance of the Candidatus Yonathbacteria bacterium RIFCSPLOWO2_01_FULL_43_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusYonathbacteriaBacteriumRifcsplowo201Full4327(
 
     Returns
     -----------------------
-    Instace of CandidatusYonathbacteriaBacteriumRifcsplowo201Full4327 graph.
+    Instace of Candidatus Yonathbacteria bacterium RIFCSPLOWO2_01_FULL_43_27 graph.
 
 	References
 	---------------------

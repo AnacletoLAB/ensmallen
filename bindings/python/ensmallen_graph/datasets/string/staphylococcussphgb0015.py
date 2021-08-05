@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSpHgb0015.
+This file offers the methods to automatically retrieve the graph Staphylococcus sp. HGB0015.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSpHgb0015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSpHgb0015 graph.
+    """Return new instance of the Staphylococcus sp. HGB0015 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusSpHgb0015(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSpHgb0015 graph.
+    Instace of Staphylococcus sp. HGB0015 graph.
 
 	References
 	---------------------

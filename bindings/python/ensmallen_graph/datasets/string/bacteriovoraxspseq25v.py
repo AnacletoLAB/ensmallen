@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriovoraxSpSeq25v.
+This file offers the methods to automatically retrieve the graph Bacteriovorax sp. Seq25V.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriovoraxSpSeq25v(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriovoraxSpSeq25v graph.
+    """Return new instance of the Bacteriovorax sp. Seq25V graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteriovoraxSpSeq25v(
 
     Returns
     -----------------------
-    Instace of BacteriovoraxSpSeq25v graph.
+    Instace of Bacteriovorax sp. Seq25V graph.
 
 	References
 	---------------------

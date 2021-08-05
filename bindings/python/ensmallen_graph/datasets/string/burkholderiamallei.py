@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaMallei.
+This file offers the methods to automatically retrieve the graph Burkholderia mallei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaMallei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaMallei graph.
+    """Return new instance of the Burkholderia mallei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaMallei(
 
     Returns
     -----------------------
-    Instace of BurkholderiaMallei graph.
+    Instace of Burkholderia mallei graph.
 
 	References
 	---------------------

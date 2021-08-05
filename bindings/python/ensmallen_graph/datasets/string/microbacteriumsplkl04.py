@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpLkl04.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. LKL04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpLkl04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpLkl04 graph.
+    """Return new instance of the Microbacterium sp. LKL04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpLkl04(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpLkl04 graph.
+    Instace of Microbacterium sp. LKL04 graph.
 
 	References
 	---------------------

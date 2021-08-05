@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrionaceaeBacterium1162tS0a05.
+This file offers the methods to automatically retrieve the graph Cellvibrionaceae bacterium 1162T.S.0a.05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrionaceaeBacterium1162tS0a05(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrionaceaeBacterium1162tS0a05 graph.
+    """Return new instance of the Cellvibrionaceae bacterium 1162T.S.0a.05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellvibrionaceaeBacterium1162tS0a05(
 
     Returns
     -----------------------
-    Instace of CellvibrionaceaeBacterium1162tS0a05 graph.
+    Instace of Cellvibrionaceae bacterium 1162T.S.0a.05 graph.
 
 	References
 	---------------------

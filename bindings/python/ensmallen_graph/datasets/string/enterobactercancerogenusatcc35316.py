@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterCancerogenusAtcc35316.
+This file offers the methods to automatically retrieve the graph Enterobacter cancerogenus ATCC 35316.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterCancerogenusAtcc35316(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterCancerogenusAtcc35316 graph.
+    """Return new instance of the Enterobacter cancerogenus ATCC 35316 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterCancerogenusAtcc35316(
 
     Returns
     -----------------------
-    Instace of EnterobacterCancerogenusAtcc35316 graph.
+    Instace of Enterobacter cancerogenus ATCC 35316 graph.
 
 	References
 	---------------------

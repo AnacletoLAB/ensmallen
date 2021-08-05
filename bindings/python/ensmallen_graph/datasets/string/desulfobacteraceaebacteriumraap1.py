@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteraceaeBacteriumRaap1.
+This file offers the methods to automatically retrieve the graph Desulfobacteraceae bacterium RAAP-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteraceaeBacteriumRaap1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteraceaeBacteriumRaap1 graph.
+    """Return new instance of the Desulfobacteraceae bacterium RAAP-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobacteraceaeBacteriumRaap1(
 
     Returns
     -----------------------
-    Instace of DesulfobacteraceaeBacteriumRaap1 graph.
+    Instace of Desulfobacteraceae bacterium RAAP-1 graph.
 
 	References
 	---------------------

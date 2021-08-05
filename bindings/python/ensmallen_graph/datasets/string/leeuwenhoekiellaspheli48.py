@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeeuwenhoekiellaSpHeli48.
+This file offers the methods to automatically retrieve the graph Leeuwenhoekiella sp. HelI48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeeuwenhoekiellaSpHeli48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeeuwenhoekiellaSpHeli48 graph.
+    """Return new instance of the Leeuwenhoekiella sp. HelI48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeeuwenhoekiellaSpHeli48(
 
     Returns
     -----------------------
-    Instace of LeeuwenhoekiellaSpHeli48 graph.
+    Instace of Leeuwenhoekiella sp. HelI48 graph.
 
 	References
 	---------------------

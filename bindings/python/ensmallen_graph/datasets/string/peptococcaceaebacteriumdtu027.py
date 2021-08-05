@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumDtu027.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium DTU027.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumDtu027(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumDtu027 graph.
+    """Return new instance of the Peptococcaceae bacterium DTU027 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumDtu027(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumDtu027 graph.
+    Instace of Peptococcaceae bacterium DTU027 graph.
 
 	References
 	---------------------

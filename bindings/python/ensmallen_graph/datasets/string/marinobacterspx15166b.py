@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpX15166b.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. X15-166B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpX15166b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpX15166b graph.
+    """Return new instance of the Marinobacter sp. X15-166B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSpX15166b(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpX15166b graph.
+    Instace of Marinobacter sp. X15-166B graph.
 
 	References
 	---------------------

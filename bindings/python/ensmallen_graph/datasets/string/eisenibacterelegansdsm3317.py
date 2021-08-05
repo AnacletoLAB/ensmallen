@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EisenibacterElegansDsm3317.
+This file offers the methods to automatically retrieve the graph Eisenibacter elegans DSM 3317.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EisenibacterElegansDsm3317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EisenibacterElegansDsm3317 graph.
+    """Return new instance of the Eisenibacter elegans DSM 3317 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EisenibacterElegansDsm3317(
 
     Returns
     -----------------------
-    Instace of EisenibacterElegansDsm3317 graph.
+    Instace of Eisenibacter elegans DSM 3317 graph.
 
 	References
 	---------------------

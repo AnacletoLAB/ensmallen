@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AggregatibacterActinomycetemcomitansD7s1.
+This file offers the methods to automatically retrieve the graph Aggregatibacter actinomycetemcomitans D7S1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AggregatibacterActinomycetemcomitansD7s1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AggregatibacterActinomycetemcomitansD7s1 graph.
+    """Return new instance of the Aggregatibacter actinomycetemcomitans D7S1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AggregatibacterActinomycetemcomitansD7s1(
 
     Returns
     -----------------------
-    Instace of AggregatibacterActinomycetemcomitansD7s1 graph.
+    Instace of Aggregatibacter actinomycetemcomitans D7S1 graph.
 
 	References
 	---------------------

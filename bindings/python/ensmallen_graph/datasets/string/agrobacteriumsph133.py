@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumSpH133.
+This file offers the methods to automatically retrieve the graph Agrobacterium sp. H133.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumSpH133(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumSpH133 graph.
+    """Return new instance of the Agrobacterium sp. H133 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumSpH133(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumSpH133 graph.
+    Instace of Agrobacterium sp. H133 graph.
 
 	References
 	---------------------

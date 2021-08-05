@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DokdoniaSp4h375.
+This file offers the methods to automatically retrieve the graph Dokdonia sp. 4H375.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DokdoniaSp4h375(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DokdoniaSp4h375 graph.
+    """Return new instance of the Dokdonia sp. 4H375 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DokdoniaSp4h375(
 
     Returns
     -----------------------
-    Instace of DokdoniaSp4h375 graph.
+    Instace of Dokdonia sp. 4H375 graph.
 
 	References
 	---------------------

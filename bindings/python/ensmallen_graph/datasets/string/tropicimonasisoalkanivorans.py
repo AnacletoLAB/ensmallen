@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TropicimonasIsoalkanivorans.
+This file offers the methods to automatically retrieve the graph Tropicimonas isoalkanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TropicimonasIsoalkanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TropicimonasIsoalkanivorans graph.
+    """Return new instance of the Tropicimonas isoalkanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TropicimonasIsoalkanivorans(
 
     Returns
     -----------------------
-    Instace of TropicimonasIsoalkanivorans graph.
+    Instace of Tropicimonas isoalkanivorans graph.
 
 	References
 	---------------------

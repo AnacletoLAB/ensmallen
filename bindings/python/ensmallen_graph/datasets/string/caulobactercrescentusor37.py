@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterCrescentusOr37.
+This file offers the methods to automatically retrieve the graph Caulobacter crescentus OR37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterCrescentusOr37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterCrescentusOr37 graph.
+    """Return new instance of the Caulobacter crescentus OR37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterCrescentusOr37(
 
     Returns
     -----------------------
-    Instace of CaulobacterCrescentusOr37 graph.
+    Instace of Caulobacter crescentus OR37 graph.
 
 	References
 	---------------------

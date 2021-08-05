@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumFossorDsm15642.
+This file offers the methods to automatically retrieve the graph Atopobium fossor DSM 15642.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumFossorDsm15642(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumFossorDsm15642 graph.
+    """Return new instance of the Atopobium fossor DSM 15642 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtopobiumFossorDsm15642(
 
     Returns
     -----------------------
-    Instace of AtopobiumFossorDsm15642 graph.
+    Instace of Atopobium fossor DSM 15642 graph.
 
 	References
 	---------------------

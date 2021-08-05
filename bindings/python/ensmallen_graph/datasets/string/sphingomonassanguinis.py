@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSanguinis.
+This file offers the methods to automatically retrieve the graph Sphingomonas sanguinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSanguinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSanguinis graph.
+    """Return new instance of the Sphingomonas sanguinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSanguinis(
 
     Returns
     -----------------------
-    Instace of SphingomonasSanguinis graph.
+    Instace of Sphingomonas sanguinis graph.
 
 	References
 	---------------------

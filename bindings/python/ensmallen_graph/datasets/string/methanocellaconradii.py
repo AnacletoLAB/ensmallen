@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocellaConradii.
+This file offers the methods to automatically retrieve the graph Methanocella conradii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocellaConradii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocellaConradii graph.
+    """Return new instance of the Methanocella conradii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocellaConradii(
 
     Returns
     -----------------------
-    Instace of MethanocellaConradii graph.
+    Instace of Methanocella conradii graph.
 
 	References
 	---------------------

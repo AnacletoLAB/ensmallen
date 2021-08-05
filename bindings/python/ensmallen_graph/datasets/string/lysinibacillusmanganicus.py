@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusManganicus.
+This file offers the methods to automatically retrieve the graph Lysinibacillus manganicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusManganicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusManganicus graph.
+    """Return new instance of the Lysinibacillus manganicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusManganicus(
 
     Returns
     -----------------------
-    Instace of LysinibacillusManganicus graph.
+    Instace of Lysinibacillus manganicus graph.
 
 	References
 	---------------------

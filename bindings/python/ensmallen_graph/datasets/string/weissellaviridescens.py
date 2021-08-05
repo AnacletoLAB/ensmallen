@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaViridescens.
+This file offers the methods to automatically retrieve the graph Weissella viridescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaViridescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaViridescens graph.
+    """Return new instance of the Weissella viridescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WeissellaViridescens(
 
     Returns
     -----------------------
-    Instace of WeissellaViridescens graph.
+    Instace of Weissella viridescens graph.
 
 	References
 	---------------------

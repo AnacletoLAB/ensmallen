@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaSalina.
+This file offers the methods to automatically retrieve the graph Haloterrigena salina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaSalina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaSalina graph.
+    """Return new instance of the Haloterrigena salina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloterrigenaSalina(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaSalina graph.
+    Instace of Haloterrigena salina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpKks102.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. KKS102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpKks102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpKks102 graph.
+    """Return new instance of the Acidovorax sp. KKS102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidovoraxSpKks102(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpKks102 graph.
+    Instace of Acidovorax sp. KKS102 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinidiaChinensisVarChinensis.
+This file offers the methods to automatically retrieve the graph Actinidia chinensis var. chinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinidiaChinensisVarChinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinidiaChinensisVarChinensis graph.
+    """Return new instance of the Actinidia chinensis var. chinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinidiaChinensisVarChinensis(
 
     Returns
     -----------------------
-    Instace of ActinidiaChinensisVarChinensis graph.
+    Instace of Actinidia chinensis var. chinensis graph.
 
 	References
 	---------------------

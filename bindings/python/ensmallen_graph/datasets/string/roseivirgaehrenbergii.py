@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivirgaEhrenbergii.
+This file offers the methods to automatically retrieve the graph Roseivirga ehrenbergii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivirgaEhrenbergii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivirgaEhrenbergii graph.
+    """Return new instance of the Roseivirga ehrenbergii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseivirgaEhrenbergii(
 
     Returns
     -----------------------
-    Instace of RoseivirgaEhrenbergii graph.
+    Instace of Roseivirga ehrenbergii graph.
 
 	References
 	---------------------

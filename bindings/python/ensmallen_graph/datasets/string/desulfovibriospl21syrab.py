@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSpL21syrab.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. L21SyrAB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSpL21syrab(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSpL21syrab graph.
+    """Return new instance of the Desulfovibrio sp. L21SyrAB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSpL21syrab(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSpL21syrab graph.
+    Instace of Desulfovibrio sp. L21SyrAB graph.
 
 	References
 	---------------------

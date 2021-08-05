@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumL18.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium L18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumL18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumL18 graph.
+    """Return new instance of the gamma proteobacterium L18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumL18(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumL18 graph.
+    Instace of gamma proteobacterium L18 graph.
 
 	References
 	---------------------

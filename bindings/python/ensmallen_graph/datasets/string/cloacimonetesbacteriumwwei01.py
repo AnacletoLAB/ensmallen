@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CloacimonetesBacteriumWwei01.
+This file offers the methods to automatically retrieve the graph Cloacimonetes bacterium WWEI_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CloacimonetesBacteriumWwei01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CloacimonetesBacteriumWwei01 graph.
+    """Return new instance of the Cloacimonetes bacterium WWEI_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CloacimonetesBacteriumWwei01(
 
     Returns
     -----------------------
-    Instace of CloacimonetesBacteriumWwei01 graph.
+    Instace of Cloacimonetes bacterium WWEI_01 graph.
 
 	References
 	---------------------

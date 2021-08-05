@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScytonemaSpHk05.
+This file offers the methods to automatically retrieve the graph Scytonema sp. HK-05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScytonemaSpHk05(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScytonemaSpHk05 graph.
+    """Return new instance of the Scytonema sp. HK-05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScytonemaSpHk05(
 
     Returns
     -----------------------
-    Instace of ScytonemaSpHk05 graph.
+    Instace of Scytonema sp. HK-05 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanktothricoidesSpSr001.
+This file offers the methods to automatically retrieve the graph Planktothricoides sp. SR001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanktothricoidesSpSr001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanktothricoidesSpSr001 graph.
+    """Return new instance of the Planktothricoides sp. SR001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanktothricoidesSpSr001(
 
     Returns
     -----------------------
-    Instace of PlanktothricoidesSpSr001 graph.
+    Instace of Planktothricoides sp. SR001 graph.
 
 	References
 	---------------------

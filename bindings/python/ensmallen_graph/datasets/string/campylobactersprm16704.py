@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpRm16704.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. RM16704.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpRm16704(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpRm16704 graph.
+    """Return new instance of the Campylobacter sp. RM16704 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterSpRm16704(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpRm16704 graph.
+    Instace of Campylobacter sp. RM16704 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumImcc26134.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium IMCC26134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumImcc26134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumImcc26134 graph.
+    """Return new instance of the Verrucomicrobia bacterium IMCC26134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiaBacteriumImcc26134(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumImcc26134 graph.
+    Instace of Verrucomicrobia bacterium IMCC26134 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegamonasFuniformis.
+This file offers the methods to automatically retrieve the graph Megamonas funiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegamonasFuniformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegamonasFuniformis graph.
+    """Return new instance of the Megamonas funiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MegamonasFuniformis(
 
     Returns
     -----------------------
-    Instace of MegamonasFuniformis graph.
+    Instace of Megamonas funiformis graph.
 
 	References
 	---------------------

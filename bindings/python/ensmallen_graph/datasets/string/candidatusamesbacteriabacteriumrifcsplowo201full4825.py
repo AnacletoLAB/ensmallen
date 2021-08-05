@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAmesbacteriaBacteriumRifcsplowo201Full4825.
+This file offers the methods to automatically retrieve the graph Candidatus Amesbacteria bacterium RIFCSPLOWO2_01_FULL_48_25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAmesbacteriaBacteriumRifcsplowo201Full4825(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAmesbacteriaBacteriumRifcsplowo201Full4825 graph.
+    """Return new instance of the Candidatus Amesbacteria bacterium RIFCSPLOWO2_01_FULL_48_25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAmesbacteriaBacteriumRifcsplowo201Full4825(
 
     Returns
     -----------------------
-    Instace of CandidatusAmesbacteriaBacteriumRifcsplowo201Full4825 graph.
+    Instace of Candidatus Amesbacteria bacterium RIFCSPLOWO2_01_FULL_48_25 graph.
 
 	References
 	---------------------

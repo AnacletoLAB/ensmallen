@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FluoribacterBozemanae.
+This file offers the methods to automatically retrieve the graph Fluoribacter bozemanae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FluoribacterBozemanae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FluoribacterBozemanae graph.
+    """Return new instance of the Fluoribacter bozemanae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FluoribacterBozemanae(
 
     Returns
     -----------------------
-    Instace of FluoribacterBozemanae graph.
+    Instace of Fluoribacter bozemanae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidiaBacterium4341.
+This file offers the methods to automatically retrieve the graph Bacteroidia bacterium 43-41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidiaBacterium4341(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidiaBacterium4341 graph.
+    """Return new instance of the Bacteroidia bacterium 43-41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidiaBacterium4341(
 
     Returns
     -----------------------
-    Instace of BacteroidiaBacterium4341 graph.
+    Instace of Bacteroidia bacterium 43-41 graph.
 
 	References
 	---------------------

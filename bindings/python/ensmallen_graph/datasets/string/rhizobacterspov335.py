@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobacterSpOv335.
+This file offers the methods to automatically retrieve the graph Rhizobacter sp. OV335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobacterSpOv335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobacterSpOv335 graph.
+    """Return new instance of the Rhizobacter sp. OV335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobacterSpOv335(
 
     Returns
     -----------------------
-    Instace of RhizobacterSpOv335 graph.
+    Instace of Rhizobacter sp. OV335 graph.
 
 	References
 	---------------------

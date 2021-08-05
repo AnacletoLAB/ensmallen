@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWwe3BacteriumRifcsphigho201Full4815.
+This file offers the methods to automatically retrieve the graph candidate division WWE3 bacterium RIFCSPHIGHO2_01_FULL_48_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWwe3BacteriumRifcsphigho201Full4815(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWwe3BacteriumRifcsphigho201Full4815 graph.
+    """Return new instance of the candidate division WWE3 bacterium RIFCSPHIGHO2_01_FULL_48_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWwe3BacteriumRifcsphigho201Full4815(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWwe3BacteriumRifcsphigho201Full4815 graph.
+    Instace of candidate division WWE3 bacterium RIFCSPHIGHO2_01_FULL_48_15 graph.
 
 	References
 	---------------------

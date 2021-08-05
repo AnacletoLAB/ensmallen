@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DokdonellaImmobilis.
+This file offers the methods to automatically retrieve the graph Dokdonella immobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DokdonellaImmobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DokdonellaImmobilis graph.
+    """Return new instance of the Dokdonella immobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DokdonellaImmobilis(
 
     Returns
     -----------------------
-    Instace of DokdonellaImmobilis graph.
+    Instace of Dokdonella immobilis graph.
 
 	References
 	---------------------

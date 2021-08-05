@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterCapsulatus.
+This file offers the methods to automatically retrieve the graph Rhodobacter capsulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterCapsulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterCapsulatus graph.
+    """Return new instance of the Rhodobacter capsulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacterCapsulatus(
 
     Returns
     -----------------------
-    Instace of RhodobacterCapsulatus graph.
+    Instace of Rhodobacter capsulatus graph.
 
 	References
 	---------------------

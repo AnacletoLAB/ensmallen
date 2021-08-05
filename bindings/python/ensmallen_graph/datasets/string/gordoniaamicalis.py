@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaAmicalis.
+This file offers the methods to automatically retrieve the graph Gordonia amicalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaAmicalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaAmicalis graph.
+    """Return new instance of the Gordonia amicalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaAmicalis(
 
     Returns
     -----------------------
-    Instace of GordoniaAmicalis graph.
+    Instace of Gordonia amicalis graph.
 
 	References
 	---------------------

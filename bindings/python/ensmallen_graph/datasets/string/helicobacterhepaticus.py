@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterHepaticus.
+This file offers the methods to automatically retrieve the graph Helicobacter hepaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterHepaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterHepaticus graph.
+    """Return new instance of the Helicobacter hepaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterHepaticus(
 
     Returns
     -----------------------
-    Instace of HelicobacterHepaticus graph.
+    Instace of Helicobacter hepaticus graph.
 
 	References
 	---------------------

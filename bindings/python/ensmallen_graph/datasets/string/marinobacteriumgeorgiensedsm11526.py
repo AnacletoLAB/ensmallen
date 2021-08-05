@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumGeorgienseDsm11526.
+This file offers the methods to automatically retrieve the graph Marinobacterium georgiense DSM 11526.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumGeorgienseDsm11526(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumGeorgienseDsm11526 graph.
+    """Return new instance of the Marinobacterium georgiense DSM 11526 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacteriumGeorgienseDsm11526(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumGeorgienseDsm11526 graph.
+    Instace of Marinobacterium georgiense DSM 11526 graph.
 
 	References
 	---------------------

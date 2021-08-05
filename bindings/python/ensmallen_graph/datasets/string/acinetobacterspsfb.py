@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpSfb.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. SFB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpSfb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpSfb graph.
+    """Return new instance of the Acinetobacter sp. SFB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpSfb(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpSfb graph.
+    Instace of Acinetobacter sp. SFB graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrypanosomaCruziStrainClBrener.
+This file offers the methods to automatically retrieve the graph Trypanosoma cruzi strain CL Brener.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrypanosomaCruziStrainClBrener(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrypanosomaCruziStrainClBrener graph.
+    """Return new instance of the Trypanosoma cruzi strain CL Brener graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrypanosomaCruziStrainClBrener(
 
     Returns
     -----------------------
-    Instace of TrypanosomaCruziStrainClBrener graph.
+    Instace of Trypanosoma cruzi strain CL Brener graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PHat15001.
+This file offers the methods to automatically retrieve the graph p-hat1500-1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def PHat15001(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PHat15001 graph.
+    """Return new instance of the p-hat1500-1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def PHat15001(
 
     Returns
     -----------------------
-    Instace of PHat15001 graph.
+    Instace of p-hat1500-1 graph.
 
 	References
 	---------------------

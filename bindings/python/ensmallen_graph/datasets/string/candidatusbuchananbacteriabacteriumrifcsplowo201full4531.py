@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBuchananbacteriaBacteriumRifcsplowo201Full4531.
+This file offers the methods to automatically retrieve the graph Candidatus Buchananbacteria bacterium RIFCSPLOWO2_01_FULL_45_31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBuchananbacteriaBacteriumRifcsplowo201Full4531(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBuchananbacteriaBacteriumRifcsplowo201Full4531 graph.
+    """Return new instance of the Candidatus Buchananbacteria bacterium RIFCSPLOWO2_01_FULL_45_31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBuchananbacteriaBacteriumRifcsplowo201Full4531(
 
     Returns
     -----------------------
-    Instace of CandidatusBuchananbacteriaBacteriumRifcsplowo201Full4531 graph.
+    Instace of Candidatus Buchananbacteria bacterium RIFCSPLOWO2_01_FULL_45_31 graph.
 
 	References
 	---------------------

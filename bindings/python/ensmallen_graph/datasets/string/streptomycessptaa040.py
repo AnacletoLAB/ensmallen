@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpTaa040.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. TAA040.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpTaa040(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpTaa040 graph.
+    """Return new instance of the Streptomyces sp. TAA040 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpTaa040(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpTaa040 graph.
+    Instace of Streptomyces sp. TAA040 graph.
 
 	References
 	---------------------

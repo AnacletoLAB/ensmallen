@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSalivarius.
+This file offers the methods to automatically retrieve the graph Streptococcus salivarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSalivarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSalivarius graph.
+    """Return new instance of the Streptococcus salivarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSalivarius(
 
     Returns
     -----------------------
-    Instace of StreptococcusSalivarius graph.
+    Instace of Streptococcus salivarius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasAquatica.
+This file offers the methods to automatically retrieve the graph Comamonas aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasAquatica graph.
+    """Return new instance of the Comamonas aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ComamonasAquatica(
 
     Returns
     -----------------------
-    Instace of ComamonasAquatica graph.
+    Instace of Comamonas aquatica graph.
 
 	References
 	---------------------

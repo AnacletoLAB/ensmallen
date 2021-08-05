@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteraceaeBacteriumCg2305140.
+This file offers the methods to automatically retrieve the graph Desulfobacteraceae bacterium CG2_30_51_40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteraceaeBacteriumCg2305140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteraceaeBacteriumCg2305140 graph.
+    """Return new instance of the Desulfobacteraceae bacterium CG2_30_51_40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobacteraceaeBacteriumCg2305140(
 
     Returns
     -----------------------
-    Instace of DesulfobacteraceaeBacteriumCg2305140 graph.
+    Instace of Desulfobacteraceae bacterium CG2_30_51_40 graph.
 
 	References
 	---------------------

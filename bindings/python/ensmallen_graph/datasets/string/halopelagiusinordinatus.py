@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalopelagiusInordinatus.
+This file offers the methods to automatically retrieve the graph Halopelagius inordinatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalopelagiusInordinatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalopelagiusInordinatus graph.
+    """Return new instance of the Halopelagius inordinatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalopelagiusInordinatus(
 
     Returns
     -----------------------
-    Instace of HalopelagiusInordinatus graph.
+    Instace of Halopelagius inordinatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubritepidaFlocculans.
+This file offers the methods to automatically retrieve the graph Rubritepida flocculans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubritepidaFlocculans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubritepidaFlocculans graph.
+    """Return new instance of the Rubritepida flocculans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RubritepidaFlocculans(
 
     Returns
     -----------------------
-    Instace of RubritepidaFlocculans graph.
+    Instace of Rubritepida flocculans graph.
 
 	References
 	---------------------

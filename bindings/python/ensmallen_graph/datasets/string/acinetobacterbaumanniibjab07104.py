@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBaumanniiBjab07104.
+This file offers the methods to automatically retrieve the graph Acinetobacter baumannii BJAB07104.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBaumanniiBjab07104(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBaumanniiBjab07104 graph.
+    """Return new instance of the Acinetobacter baumannii BJAB07104 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterBaumanniiBjab07104(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBaumanniiBjab07104 graph.
+    Instace of Acinetobacter baumannii BJAB07104 graph.
 
 	References
 	---------------------

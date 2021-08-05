@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucorCircinelloidesFLusitanicusCbs27749.
+This file offers the methods to automatically retrieve the graph Mucor circinelloides f. lusitanicus CBS 277.49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucorCircinelloidesFLusitanicusCbs27749(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucorCircinelloidesFLusitanicusCbs27749 graph.
+    """Return new instance of the Mucor circinelloides f. lusitanicus CBS 277.49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucorCircinelloidesFLusitanicusCbs27749(
 
     Returns
     -----------------------
-    Instace of MucorCircinelloidesFLusitanicusCbs27749 graph.
+    Instace of Mucor circinelloides f. lusitanicus CBS 277.49 graph.
 
 	References
 	---------------------

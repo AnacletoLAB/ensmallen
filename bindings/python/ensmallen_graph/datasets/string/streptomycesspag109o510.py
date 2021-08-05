@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpAg109O510.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. Ag109_O5-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpAg109O510(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpAg109O510 graph.
+    """Return new instance of the Streptomyces sp. Ag109_O5-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpAg109O510(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpAg109O510 graph.
+    Instace of Streptomyces sp. Ag109_O5-10 graph.
 
 	References
 	---------------------

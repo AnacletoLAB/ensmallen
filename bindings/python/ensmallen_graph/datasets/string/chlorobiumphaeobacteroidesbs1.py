@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumPhaeobacteroidesBs1.
+This file offers the methods to automatically retrieve the graph Chlorobium phaeobacteroides BS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumPhaeobacteroidesBs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumPhaeobacteroidesBs1 graph.
+    """Return new instance of the Chlorobium phaeobacteroides BS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumPhaeobacteroidesBs1(
 
     Returns
     -----------------------
-    Instace of ChlorobiumPhaeobacteroidesBs1 graph.
+    Instace of Chlorobium phaeobacteroides BS1 graph.
 
 	References
 	---------------------

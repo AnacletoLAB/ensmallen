@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudocercosporaFijiensis.
+This file offers the methods to automatically retrieve the graph Pseudocercospora fijiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudocercosporaFijiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudocercosporaFijiensis graph.
+    """Return new instance of the Pseudocercospora fijiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudocercosporaFijiensis(
 
     Returns
     -----------------------
-    Instace of PseudocercosporaFijiensis graph.
+    Instace of Pseudocercospora fijiensis graph.
 
 	References
 	---------------------

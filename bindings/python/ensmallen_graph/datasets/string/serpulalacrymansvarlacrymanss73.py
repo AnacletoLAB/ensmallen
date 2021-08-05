@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerpulaLacrymansVarLacrymansS73.
+This file offers the methods to automatically retrieve the graph Serpula lacrymans var. lacrymans S7.3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerpulaLacrymansVarLacrymansS73(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerpulaLacrymansVarLacrymansS73 graph.
+    """Return new instance of the Serpula lacrymans var. lacrymans S7.3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerpulaLacrymansVarLacrymansS73(
 
     Returns
     -----------------------
-    Instace of SerpulaLacrymansVarLacrymansS73 graph.
+    Instace of Serpula lacrymans var. lacrymans S7.3 graph.
 
 	References
 	---------------------

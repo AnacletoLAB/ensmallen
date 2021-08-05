@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XiphophorusCouchianus.
+This file offers the methods to automatically retrieve the graph Xiphophorus couchianus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XiphophorusCouchianus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XiphophorusCouchianus graph.
+    """Return new instance of the Xiphophorus couchianus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XiphophorusCouchianus(
 
     Returns
     -----------------------
-    Instace of XiphophorusCouchianus graph.
+    Instace of Xiphophorus couchianus graph.
 
 	References
 	---------------------

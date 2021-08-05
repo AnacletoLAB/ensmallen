@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaMayonii.
+This file offers the methods to automatically retrieve the graph Borrelia mayonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaMayonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaMayonii graph.
+    """Return new instance of the Borrelia mayonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BorreliaMayonii(
 
     Returns
     -----------------------
-    Instace of BorreliaMayonii graph.
+    Instace of Borrelia mayonii graph.
 
 	References
 	---------------------

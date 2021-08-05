@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaFicariaNbrc102596.
+This file offers the methods to automatically retrieve the graph Serratia ficaria NBRC 102596.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaFicariaNbrc102596(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaFicariaNbrc102596 graph.
+    """Return new instance of the Serratia ficaria NBRC 102596 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerratiaFicariaNbrc102596(
 
     Returns
     -----------------------
-    Instace of SerratiaFicariaNbrc102596 graph.
+    Instace of Serratia ficaria NBRC 102596 graph.
 
 	References
 	---------------------

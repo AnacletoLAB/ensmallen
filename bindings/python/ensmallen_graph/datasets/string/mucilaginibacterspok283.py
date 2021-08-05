@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterSpOk283.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter sp. OK283.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterSpOk283(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterSpOk283 graph.
+    """Return new instance of the Mucilaginibacter sp. OK283 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterSpOk283(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterSpOk283 graph.
+    Instace of Mucilaginibacter sp. OK283 graph.
 
 	References
 	---------------------

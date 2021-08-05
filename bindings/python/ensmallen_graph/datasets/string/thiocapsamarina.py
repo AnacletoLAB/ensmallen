@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiocapsaMarina.
+This file offers the methods to automatically retrieve the graph Thiocapsa marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiocapsaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiocapsaMarina graph.
+    """Return new instance of the Thiocapsa marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiocapsaMarina(
 
     Returns
     -----------------------
-    Instace of ThiocapsaMarina graph.
+    Instace of Thiocapsa marina graph.
 
 	References
 	---------------------

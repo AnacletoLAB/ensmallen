@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TarsiusSyrichta.
+This file offers the methods to automatically retrieve the graph Tarsius syrichta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TarsiusSyrichta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TarsiusSyrichta graph.
+    """Return new instance of the Tarsius syrichta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TarsiusSyrichta(
 
     Returns
     -----------------------
-    Instace of TarsiusSyrichta graph.
+    Instace of Tarsius syrichta graph.
 
 	References
 	---------------------

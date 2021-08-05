@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZeaMays.
+This file offers the methods to automatically retrieve the graph Zea mays.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZeaMays(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZeaMays graph.
+    """Return new instance of the Zea mays graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZeaMays(
 
     Returns
     -----------------------
-    Instace of ZeaMays graph.
+    Instace of Zea mays graph.
 
 	References
 	---------------------

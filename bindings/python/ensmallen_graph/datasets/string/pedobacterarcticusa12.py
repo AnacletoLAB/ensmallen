@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterArcticusA12.
+This file offers the methods to automatically retrieve the graph Pedobacter arcticus A12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterArcticusA12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterArcticusA12 graph.
+    """Return new instance of the Pedobacter arcticus A12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterArcticusA12(
 
     Returns
     -----------------------
-    Instace of PedobacterArcticusA12 graph.
+    Instace of Pedobacter arcticus A12 graph.
 
 	References
 	---------------------

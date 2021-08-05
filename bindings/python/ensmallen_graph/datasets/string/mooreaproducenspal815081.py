@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MooreaProducensPal815081.
+This file offers the methods to automatically retrieve the graph Moorea producens PAL-8-15-08-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MooreaProducensPal815081(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MooreaProducensPal815081 graph.
+    """Return new instance of the Moorea producens PAL-8-15-08-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MooreaProducensPal815081(
 
     Returns
     -----------------------
-    Instace of MooreaProducensPal815081 graph.
+    Instace of Moorea producens PAL-8-15-08-1 graph.
 
 	References
 	---------------------

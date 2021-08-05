@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusYunnanensisNbrc103083.
+This file offers the methods to automatically retrieve the graph Rhodococcus yunnanensis NBRC 103083.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusYunnanensisNbrc103083(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusYunnanensisNbrc103083 graph.
+    """Return new instance of the Rhodococcus yunnanensis NBRC 103083 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusYunnanensisNbrc103083(
 
     Returns
     -----------------------
-    Instace of RhodococcusYunnanensisNbrc103083 graph.
+    Instace of Rhodococcus yunnanensis NBRC 103083 graph.
 
 	References
 	---------------------

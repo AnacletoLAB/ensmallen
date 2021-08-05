@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AvesWildbirdNetwork.
+This file offers the methods to automatically retrieve the graph aves-wildbird-network.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AvesWildbirdNetwork(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AvesWildbirdNetwork graph.
+    """Return new instance of the aves-wildbird-network graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AvesWildbirdNetwork(
 
     Returns
     -----------------------
-    Instace of AvesWildbirdNetwork graph.
+    Instace of aves-wildbird-network graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterCurvatus.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter curvatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterCurvatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterCurvatus graph.
+    """Return new instance of the Methanobrevibacter curvatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterCurvatus(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterCurvatus graph.
+    Instace of Methanobrevibacter curvatus graph.
 
 	References
 	---------------------

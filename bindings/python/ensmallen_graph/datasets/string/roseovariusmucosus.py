@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusMucosus.
+This file offers the methods to automatically retrieve the graph Roseovarius mucosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusMucosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusMucosus graph.
+    """Return new instance of the Roseovarius mucosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseovariusMucosus(
 
     Returns
     -----------------------
-    Instace of RoseovariusMucosus graph.
+    Instace of Roseovarius mucosus graph.
 
 	References
 	---------------------

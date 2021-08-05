@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaAldovae67083.
+This file offers the methods to automatically retrieve the graph Yersinia aldovae 670-83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaAldovae67083(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaAldovae67083 graph.
+    """Return new instance of the Yersinia aldovae 670-83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YersiniaAldovae67083(
 
     Returns
     -----------------------
-    Instace of YersiniaAldovae67083 graph.
+    Instace of Yersinia aldovae 670-83 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharibacillusKuerlensis.
+This file offers the methods to automatically retrieve the graph Saccharibacillus kuerlensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharibacillusKuerlensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharibacillusKuerlensis graph.
+    """Return new instance of the Saccharibacillus kuerlensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharibacillusKuerlensis(
 
     Returns
     -----------------------
-    Instace of SaccharibacillusKuerlensis graph.
+    Instace of Saccharibacillus kuerlensis graph.
 
 	References
 	---------------------

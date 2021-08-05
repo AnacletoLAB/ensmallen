@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TurneriellaParvaDsm21527.
+This file offers the methods to automatically retrieve the graph Turneriella parva DSM 21527.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TurneriellaParvaDsm21527(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TurneriellaParvaDsm21527 graph.
+    """Return new instance of the Turneriella parva DSM 21527 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TurneriellaParvaDsm21527(
 
     Returns
     -----------------------
-    Instace of TurneriellaParvaDsm21527 graph.
+    Instace of Turneriella parva DSM 21527 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusIslandicus.
+This file offers the methods to automatically retrieve the graph Thermus islandicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusIslandicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusIslandicus graph.
+    """Return new instance of the Thermus islandicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusIslandicus(
 
     Returns
     -----------------------
-    Instace of ThermusIslandicus graph.
+    Instace of Thermus islandicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCollierbacteriaBacteriumRifcsphigho201Full5025.
+This file offers the methods to automatically retrieve the graph Candidatus Collierbacteria bacterium RIFCSPHIGHO2_01_FULL_50_25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCollierbacteriaBacteriumRifcsphigho201Full5025(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCollierbacteriaBacteriumRifcsphigho201Full5025 graph.
+    """Return new instance of the Candidatus Collierbacteria bacterium RIFCSPHIGHO2_01_FULL_50_25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCollierbacteriaBacteriumRifcsphigho201Full5025(
 
     Returns
     -----------------------
-    Instace of CandidatusCollierbacteriaBacteriumRifcsphigho201Full5025 graph.
+    Instace of Candidatus Collierbacteria bacterium RIFCSPHIGHO2_01_FULL_50_25 graph.
 
 	References
 	---------------------

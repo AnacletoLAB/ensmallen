@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AphanomycesInvadans.
+This file offers the methods to automatically retrieve the graph Aphanomyces invadans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AphanomycesInvadans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AphanomycesInvadans graph.
+    """Return new instance of the Aphanomyces invadans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AphanomycesInvadans(
 
     Returns
     -----------------------
-    Instace of AphanomycesInvadans graph.
+    Instace of Aphanomyces invadans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasGingivalisW83.
+This file offers the methods to automatically retrieve the graph Porphyromonas gingivalis W83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasGingivalisW83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasGingivalisW83 graph.
+    """Return new instance of the Porphyromonas gingivalis W83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasGingivalisW83(
 
     Returns
     -----------------------
-    Instace of PorphyromonasGingivalisW83 graph.
+    Instace of Porphyromonas gingivalis W83 graph.
 
 	References
 	---------------------

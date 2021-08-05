@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusWulumuqiensis.
+This file offers the methods to automatically retrieve the graph Deinococcus wulumuqiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusWulumuqiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusWulumuqiensis graph.
+    """Return new instance of the Deinococcus wulumuqiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusWulumuqiensis(
 
     Returns
     -----------------------
-    Instace of DeinococcusWulumuqiensis graph.
+    Instace of Deinococcus wulumuqiensis graph.
 
 	References
 	---------------------

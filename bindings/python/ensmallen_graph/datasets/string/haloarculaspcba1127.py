@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarculaSpCba1127.
+This file offers the methods to automatically retrieve the graph Haloarcula sp. CBA1127.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarculaSpCba1127(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarculaSpCba1127 graph.
+    """Return new instance of the Haloarcula sp. CBA1127 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloarculaSpCba1127(
 
     Returns
     -----------------------
-    Instace of HaloarculaSpCba1127 graph.
+    Instace of Haloarcula sp. CBA1127 graph.
 
 	References
 	---------------------

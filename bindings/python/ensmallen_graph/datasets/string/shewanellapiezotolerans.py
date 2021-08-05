@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaPiezotolerans.
+This file offers the methods to automatically retrieve the graph Shewanella piezotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaPiezotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaPiezotolerans graph.
+    """Return new instance of the Shewanella piezotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaPiezotolerans(
 
     Returns
     -----------------------
-    Instace of ShewanellaPiezotolerans graph.
+    Instace of Shewanella piezotolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NosemaCeranaeBrl01.
+This file offers the methods to automatically retrieve the graph Nosema ceranae BRL01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NosemaCeranaeBrl01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NosemaCeranaeBrl01 graph.
+    """Return new instance of the Nosema ceranae BRL01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NosemaCeranaeBrl01(
 
     Returns
     -----------------------
-    Instace of NosemaCeranaeBrl01 graph.
+    Instace of Nosema ceranae BRL01 graph.
 
 	References
 	---------------------

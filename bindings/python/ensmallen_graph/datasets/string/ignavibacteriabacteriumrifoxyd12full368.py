@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriaBacteriumRifoxyd12Full368.
+This file offers the methods to automatically retrieve the graph Ignavibacteria bacterium RIFOXYD12_FULL_36_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriaBacteriumRifoxyd12Full368(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriaBacteriumRifoxyd12Full368 graph.
+    """Return new instance of the Ignavibacteria bacterium RIFOXYD12_FULL_36_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacteriaBacteriumRifoxyd12Full368(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriaBacteriumRifoxyd12Full368 graph.
+    Instace of Ignavibacteria bacterium RIFOXYD12_FULL_36_8 graph.
 
 	References
 	---------------------

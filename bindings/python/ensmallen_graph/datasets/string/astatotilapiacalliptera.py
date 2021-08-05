@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AstatotilapiaCalliptera.
+This file offers the methods to automatically retrieve the graph Astatotilapia calliptera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AstatotilapiaCalliptera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AstatotilapiaCalliptera graph.
+    """Return new instance of the Astatotilapia calliptera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AstatotilapiaCalliptera(
 
     Returns
     -----------------------
-    Instace of AstatotilapiaCalliptera graph.
+    Instace of Astatotilapia calliptera graph.
 
 	References
 	---------------------

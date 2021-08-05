@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StrongylocentrotusPurpuratus.
+This file offers the methods to automatically retrieve the graph Strongylocentrotus purpuratus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StrongylocentrotusPurpuratus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StrongylocentrotusPurpuratus graph.
+    """Return new instance of the Strongylocentrotus purpuratus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StrongylocentrotusPurpuratus(
 
     Returns
     -----------------------
-    Instace of StrongylocentrotusPurpuratus graph.
+    Instace of Strongylocentrotus purpuratus graph.
 
 	References
 	---------------------

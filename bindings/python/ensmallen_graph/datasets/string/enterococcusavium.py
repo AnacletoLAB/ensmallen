@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusAvium.
+This file offers the methods to automatically retrieve the graph Enterococcus avium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusAvium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusAvium graph.
+    """Return new instance of the Enterococcus avium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusAvium(
 
     Returns
     -----------------------
-    Instace of EnterococcusAvium graph.
+    Instace of Enterococcus avium graph.
 
 	References
 	---------------------

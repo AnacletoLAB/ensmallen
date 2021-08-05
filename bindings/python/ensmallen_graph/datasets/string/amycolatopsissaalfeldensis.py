@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisSaalfeldensis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis saalfeldensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisSaalfeldensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisSaalfeldensis graph.
+    """Return new instance of the Amycolatopsis saalfeldensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisSaalfeldensis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisSaalfeldensis graph.
+    Instace of Amycolatopsis saalfeldensis graph.
 
 	References
 	---------------------

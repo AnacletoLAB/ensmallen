@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoplasmaChauliocolaAtcc49578.
+This file offers the methods to automatically retrieve the graph Mesoplasma chauliocola ATCC 49578.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoplasmaChauliocolaAtcc49578(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoplasmaChauliocolaAtcc49578 graph.
+    """Return new instance of the Mesoplasma chauliocola ATCC 49578 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesoplasmaChauliocolaAtcc49578(
 
     Returns
     -----------------------
-    Instace of MesoplasmaChauliocolaAtcc49578 graph.
+    Instace of Mesoplasma chauliocola ATCC 49578 graph.
 
 	References
 	---------------------

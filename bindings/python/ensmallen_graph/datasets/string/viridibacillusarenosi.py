@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ViridibacillusArenosi.
+This file offers the methods to automatically retrieve the graph Viridibacillus arenosi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ViridibacillusArenosi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ViridibacillusArenosi graph.
+    """Return new instance of the Viridibacillus arenosi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ViridibacillusArenosi(
 
     Returns
     -----------------------
-    Instace of ViridibacillusArenosi graph.
+    Instace of Viridibacillus arenosi graph.
 
 	References
 	---------------------

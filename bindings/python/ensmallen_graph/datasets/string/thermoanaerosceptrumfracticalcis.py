@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerosceptrumFracticalcis.
+This file offers the methods to automatically retrieve the graph Thermoanaerosceptrum fracticalcis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerosceptrumFracticalcis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerosceptrumFracticalcis graph.
+    """Return new instance of the Thermoanaerosceptrum fracticalcis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerosceptrumFracticalcis(
 
     Returns
     -----------------------
-    Instace of ThermoanaerosceptrumFracticalcis graph.
+    Instace of Thermoanaerosceptrum fracticalcis graph.
 
 	References
 	---------------------

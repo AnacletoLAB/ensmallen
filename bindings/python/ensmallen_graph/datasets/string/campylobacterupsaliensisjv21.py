@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterUpsaliensisJv21.
+This file offers the methods to automatically retrieve the graph Campylobacter upsaliensis JV21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterUpsaliensisJv21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterUpsaliensisJv21 graph.
+    """Return new instance of the Campylobacter upsaliensis JV21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterUpsaliensisJv21(
 
     Returns
     -----------------------
-    Instace of CampylobacterUpsaliensisJv21 graph.
+    Instace of Campylobacter upsaliensis JV21 graph.
 
 	References
 	---------------------

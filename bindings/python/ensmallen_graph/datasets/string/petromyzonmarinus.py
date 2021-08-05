@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PetromyzonMarinus.
+This file offers the methods to automatically retrieve the graph Petromyzon marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PetromyzonMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PetromyzonMarinus graph.
+    """Return new instance of the Petromyzon marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PetromyzonMarinus(
 
     Returns
     -----------------------
-    Instace of PetromyzonMarinus graph.
+    Instace of Petromyzon marinus graph.
 
 	References
 	---------------------

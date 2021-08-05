@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaYangpuensis.
+This file offers the methods to automatically retrieve the graph Micromonospora yangpuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaYangpuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaYangpuensis graph.
+    """Return new instance of the Micromonospora yangpuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaYangpuensis(
 
     Returns
     -----------------------
-    Instace of MicromonosporaYangpuensis graph.
+    Instace of Micromonospora yangpuensis graph.
 
 	References
 	---------------------

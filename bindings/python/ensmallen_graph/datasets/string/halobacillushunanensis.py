@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusHunanensis.
+This file offers the methods to automatically retrieve the graph Halobacillus hunanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusHunanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusHunanensis graph.
+    """Return new instance of the Halobacillus hunanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacillusHunanensis(
 
     Returns
     -----------------------
-    Instace of HalobacillusHunanensis graph.
+    Instace of Halobacillus hunanensis graph.
 
 	References
 	---------------------

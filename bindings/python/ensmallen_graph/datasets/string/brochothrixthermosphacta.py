@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrochothrixThermosphacta.
+This file offers the methods to automatically retrieve the graph Brochothrix thermosphacta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrochothrixThermosphacta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrochothrixThermosphacta graph.
+    """Return new instance of the Brochothrix thermosphacta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrochothrixThermosphacta(
 
     Returns
     -----------------------
-    Instace of BrochothrixThermosphacta graph.
+    Instace of Brochothrix thermosphacta graph.
 
 	References
 	---------------------

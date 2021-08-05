@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterPsychrotoleransDsm18569.
+This file offers the methods to automatically retrieve the graph Hymenobacter psychrotolerans DSM 18569.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterPsychrotoleransDsm18569(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterPsychrotoleransDsm18569 graph.
+    """Return new instance of the Hymenobacter psychrotolerans DSM 18569 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterPsychrotoleransDsm18569(
 
     Returns
     -----------------------
-    Instace of HymenobacterPsychrotoleransDsm18569 graph.
+    Instace of Hymenobacter psychrotolerans DSM 18569 graph.
 
 	References
 	---------------------

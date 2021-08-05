@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSubterraneus.
+This file offers the methods to automatically retrieve the graph Arthrobacter subterraneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSubterraneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSubterraneus graph.
+    """Return new instance of the Arthrobacter subterraneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSubterraneus(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSubterraneus graph.
+    Instace of Arthrobacter subterraneus graph.
 
 	References
 	---------------------

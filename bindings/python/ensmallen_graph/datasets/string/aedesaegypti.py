@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AedesAegypti.
+This file offers the methods to automatically retrieve the graph Aedes aegypti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AedesAegypti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AedesAegypti graph.
+    """Return new instance of the Aedes aegypti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AedesAegypti(
 
     Returns
     -----------------------
-    Instace of AedesAegypti graph.
+    Instace of Aedes aegypti graph.
 
 	References
 	---------------------

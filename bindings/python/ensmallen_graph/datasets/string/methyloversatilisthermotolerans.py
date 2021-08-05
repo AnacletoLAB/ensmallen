@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloversatilisThermotolerans.
+This file offers the methods to automatically retrieve the graph Methyloversatilis thermotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloversatilisThermotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloversatilisThermotolerans graph.
+    """Return new instance of the Methyloversatilis thermotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloversatilisThermotolerans(
 
     Returns
     -----------------------
-    Instace of MethyloversatilisThermotolerans graph.
+    Instace of Methyloversatilis thermotolerans graph.
 
 	References
 	---------------------

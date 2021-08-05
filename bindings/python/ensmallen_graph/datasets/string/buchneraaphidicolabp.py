@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaBp.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola Bp.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaBp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaBp graph.
+    """Return new instance of the Buchnera aphidicola Bp graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BuchneraAphidicolaBp(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaBp graph.
+    Instace of Buchnera aphidicola Bp graph.
 
 	References
 	---------------------

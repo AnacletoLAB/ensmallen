@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarmoricolaScoriae.
+This file offers the methods to automatically retrieve the graph Marmoricola scoriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarmoricolaScoriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarmoricolaScoriae graph.
+    """Return new instance of the Marmoricola scoriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarmoricolaScoriae(
 
     Returns
     -----------------------
-    Instace of MarmoricolaScoriae graph.
+    Instace of Marmoricola scoriae graph.
 
 	References
 	---------------------

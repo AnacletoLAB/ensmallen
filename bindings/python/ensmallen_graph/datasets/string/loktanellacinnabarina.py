@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaCinnabarina.
+This file offers the methods to automatically retrieve the graph Loktanella cinnabarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaCinnabarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaCinnabarina graph.
+    """Return new instance of the Loktanella cinnabarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LoktanellaCinnabarina(
 
     Returns
     -----------------------
-    Instace of LoktanellaCinnabarina graph.
+    Instace of Loktanella cinnabarina graph.
 
 	References
 	---------------------

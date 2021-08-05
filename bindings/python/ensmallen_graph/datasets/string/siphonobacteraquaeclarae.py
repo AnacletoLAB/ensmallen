@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SiphonobacterAquaeclarae.
+This file offers the methods to automatically retrieve the graph Siphonobacter aquaeclarae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SiphonobacterAquaeclarae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SiphonobacterAquaeclarae graph.
+    """Return new instance of the Siphonobacter aquaeclarae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SiphonobacterAquaeclarae(
 
     Returns
     -----------------------
-    Instace of SiphonobacterAquaeclarae graph.
+    Instace of Siphonobacter aquaeclarae graph.
 
 	References
 	---------------------

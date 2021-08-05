@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnobacteriumBovis.
+This file offers the methods to automatically retrieve the graph Lachnobacterium bovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnobacteriumBovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnobacteriumBovis graph.
+    """Return new instance of the Lachnobacterium bovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnobacteriumBovis(
 
     Returns
     -----------------------
-    Instace of LachnobacteriumBovis graph.
+    Instace of Lachnobacterium bovis graph.
 
 	References
 	---------------------

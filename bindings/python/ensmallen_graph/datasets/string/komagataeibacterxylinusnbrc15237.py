@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataeibacterXylinusNbrc15237.
+This file offers the methods to automatically retrieve the graph Komagataeibacter xylinus NBRC 15237.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataeibacterXylinusNbrc15237(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataeibacterXylinusNbrc15237 graph.
+    """Return new instance of the Komagataeibacter xylinus NBRC 15237 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KomagataeibacterXylinusNbrc15237(
 
     Returns
     -----------------------
-    Instace of KomagataeibacterXylinusNbrc15237 graph.
+    Instace of Komagataeibacter xylinus NBRC 15237 graph.
 
 	References
 	---------------------

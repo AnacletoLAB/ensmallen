@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusKoppenhoeferi.
+This file offers the methods to automatically retrieve the graph Xenorhabdus koppenhoeferi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusKoppenhoeferi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusKoppenhoeferi graph.
+    """Return new instance of the Xenorhabdus koppenhoeferi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusKoppenhoeferi(
 
     Returns
     -----------------------
-    Instace of XenorhabdusKoppenhoeferi graph.
+    Instace of Xenorhabdus koppenhoeferi graph.
 
 	References
 	---------------------

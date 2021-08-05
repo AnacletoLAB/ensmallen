@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterMishustinae.
+This file offers the methods to automatically retrieve the graph Salegentibacter mishustinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterMishustinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterMishustinae graph.
+    """Return new instance of the Salegentibacter mishustinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterMishustinae(
 
     Returns
     -----------------------
-    Instace of SalegentibacterMishustinae graph.
+    Instace of Salegentibacter mishustinae graph.
 
 	References
 	---------------------

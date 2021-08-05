@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CronobacterDublinensisSubspLactaridiLmg23825.
+This file offers the methods to automatically retrieve the graph Cronobacter dublinensis subsp. lactaridi LMG 23825.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CronobacterDublinensisSubspLactaridiLmg23825(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CronobacterDublinensisSubspLactaridiLmg23825 graph.
+    """Return new instance of the Cronobacter dublinensis subsp. lactaridi LMG 23825 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CronobacterDublinensisSubspLactaridiLmg23825(
 
     Returns
     -----------------------
-    Instace of CronobacterDublinensisSubspLactaridiLmg23825 graph.
+    Instace of Cronobacter dublinensis subsp. lactaridi LMG 23825 graph.
 
 	References
 	---------------------

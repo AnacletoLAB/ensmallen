@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NoviherbaspirillumSpRoot189.
+This file offers the methods to automatically retrieve the graph Noviherbaspirillum sp. Root189.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NoviherbaspirillumSpRoot189(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NoviherbaspirillumSpRoot189 graph.
+    """Return new instance of the Noviherbaspirillum sp. Root189 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NoviherbaspirillumSpRoot189(
 
     Returns
     -----------------------
-    Instace of NoviherbaspirillumSpRoot189 graph.
+    Instace of Noviherbaspirillum sp. Root189 graph.
 
 	References
 	---------------------

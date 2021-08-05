@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpStF2.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. ST-F2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpStF2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpStF2 graph.
+    """Return new instance of the Mycobacterium sp. ST-F2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpStF2(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpStF2 graph.
+    Instace of Mycobacterium sp. ST-F2 graph.
 
 	References
 	---------------------

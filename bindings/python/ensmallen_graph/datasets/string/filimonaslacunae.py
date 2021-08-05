@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FilimonasLacunae.
+This file offers the methods to automatically retrieve the graph Filimonas lacunae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FilimonasLacunae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FilimonasLacunae graph.
+    """Return new instance of the Filimonas lacunae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FilimonasLacunae(
 
     Returns
     -----------------------
-    Instace of FilimonasLacunae graph.
+    Instace of Filimonas lacunae graph.
 
 	References
 	---------------------

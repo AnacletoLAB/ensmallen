@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AneurinibacillusMigulanus.
+This file offers the methods to automatically retrieve the graph Aneurinibacillus migulanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AneurinibacillusMigulanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AneurinibacillusMigulanus graph.
+    """Return new instance of the Aneurinibacillus migulanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AneurinibacillusMigulanus(
 
     Returns
     -----------------------
-    Instace of AneurinibacillusMigulanus graph.
+    Instace of Aneurinibacillus migulanus graph.
 
 	References
 	---------------------

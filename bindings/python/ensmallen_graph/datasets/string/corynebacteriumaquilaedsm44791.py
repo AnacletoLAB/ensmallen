@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumAquilaeDsm44791.
+This file offers the methods to automatically retrieve the graph Corynebacterium aquilae DSM 44791.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumAquilaeDsm44791(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumAquilaeDsm44791 graph.
+    """Return new instance of the Corynebacterium aquilae DSM 44791 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumAquilaeDsm44791(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumAquilaeDsm44791 graph.
+    Instace of Corynebacterium aquilae DSM 44791 graph.
 
 	References
 	---------------------

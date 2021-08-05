@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumRedseaS02B3.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium REDSEA-S02_B3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumRedseaS02B3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumRedseaS02B3 graph.
+    """Return new instance of the Rhodobacteraceae bacterium REDSEA-S02_B3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteraceaeBacteriumRedseaS02B3(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumRedseaS02B3 graph.
+    Instace of Rhodobacteraceae bacterium REDSEA-S02_B3 graph.
 
 	References
 	---------------------

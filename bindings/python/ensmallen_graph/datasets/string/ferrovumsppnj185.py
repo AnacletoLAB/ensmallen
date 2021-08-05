@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrovumSpPnJ185.
+This file offers the methods to automatically retrieve the graph Ferrovum sp. PN-J185.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrovumSpPnJ185(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrovumSpPnJ185 graph.
+    """Return new instance of the Ferrovum sp. PN-J185 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrovumSpPnJ185(
 
     Returns
     -----------------------
-    Instace of FerrovumSpPnJ185 graph.
+    Instace of Ferrovum sp. PN-J185 graph.
 
 	References
 	---------------------

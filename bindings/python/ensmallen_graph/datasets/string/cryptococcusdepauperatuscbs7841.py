@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptococcusDepauperatusCbs7841.
+This file offers the methods to automatically retrieve the graph Cryptococcus depauperatus CBS 7841.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptococcusDepauperatusCbs7841(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptococcusDepauperatusCbs7841 graph.
+    """Return new instance of the Cryptococcus depauperatus CBS 7841 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptococcusDepauperatusCbs7841(
 
     Returns
     -----------------------
-    Instace of CryptococcusDepauperatusCbs7841 graph.
+    Instace of Cryptococcus depauperatus CBS 7841 graph.
 
 	References
 	---------------------

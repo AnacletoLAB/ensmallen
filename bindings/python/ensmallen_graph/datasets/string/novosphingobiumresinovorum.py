@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumResinovorum.
+This file offers the methods to automatically retrieve the graph Novosphingobium resinovorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumResinovorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumResinovorum graph.
+    """Return new instance of the Novosphingobium resinovorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NovosphingobiumResinovorum(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumResinovorum graph.
+    Instace of Novosphingobium resinovorum graph.
 
 	References
 	---------------------

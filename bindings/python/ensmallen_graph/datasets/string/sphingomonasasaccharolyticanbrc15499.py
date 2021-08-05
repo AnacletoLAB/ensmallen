@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasAsaccharolyticaNbrc15499.
+This file offers the methods to automatically retrieve the graph Sphingomonas asaccharolytica NBRC 15499.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasAsaccharolyticaNbrc15499(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasAsaccharolyticaNbrc15499 graph.
+    """Return new instance of the Sphingomonas asaccharolytica NBRC 15499 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasAsaccharolyticaNbrc15499(
 
     Returns
     -----------------------
-    Instace of SphingomonasAsaccharolyticaNbrc15499 graph.
+    Instace of Sphingomonas asaccharolytica NBRC 15499 graph.
 
 	References
 	---------------------

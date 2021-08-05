@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudocercosporaMusae.
+This file offers the methods to automatically retrieve the graph Pseudocercospora musae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudocercosporaMusae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudocercosporaMusae graph.
+    """Return new instance of the Pseudocercospora musae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudocercosporaMusae(
 
     Returns
     -----------------------
-    Instace of PseudocercosporaMusae graph.
+    Instace of Pseudocercospora musae graph.
 
 	References
 	---------------------

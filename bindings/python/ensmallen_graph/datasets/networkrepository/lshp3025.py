@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lshp3025.
+This file offers the methods to automatically retrieve the graph lshp3025.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lshp3025(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lshp3025 graph.
+    """Return new instance of the lshp3025 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lshp3025(
 
     Returns
     -----------------------
-    Instace of Lshp3025 graph.
+    Instace of lshp3025 graph.
 
 	References
 	---------------------

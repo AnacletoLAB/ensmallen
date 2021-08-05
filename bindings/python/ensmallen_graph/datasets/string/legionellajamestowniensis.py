@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaJamestowniensis.
+This file offers the methods to automatically retrieve the graph Legionella jamestowniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaJamestowniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaJamestowniensis graph.
+    """Return new instance of the Legionella jamestowniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaJamestowniensis(
 
     Returns
     -----------------------
-    Instace of LegionellaJamestowniensis graph.
+    Instace of Legionella jamestowniensis graph.
 
 	References
 	---------------------

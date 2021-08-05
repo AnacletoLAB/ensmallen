@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpMa2016.
+This file offers the methods to automatically retrieve the graph Prevotella sp. MA2016.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpMa2016(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpMa2016 graph.
+    """Return new instance of the Prevotella sp. MA2016 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaSpMa2016(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpMa2016 graph.
+    Instace of Prevotella sp. MA2016 graph.
 
 	References
 	---------------------

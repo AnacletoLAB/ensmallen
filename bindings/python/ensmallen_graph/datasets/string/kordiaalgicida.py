@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KordiaAlgicida.
+This file offers the methods to automatically retrieve the graph Kordia algicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KordiaAlgicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KordiaAlgicida graph.
+    """Return new instance of the Kordia algicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KordiaAlgicida(
 
     Returns
     -----------------------
-    Instace of KordiaAlgicida graph.
+    Instace of Kordia algicida graph.
 
 	References
 	---------------------

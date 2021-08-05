@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSp67h29bp.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. 67H29BP.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSp67h29bp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSp67h29bp graph.
+    """Return new instance of the Selenomonas sp. 67H29BP graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSp67h29bp(
 
     Returns
     -----------------------
-    Instace of SelenomonasSp67h29bp graph.
+    Instace of Selenomonas sp. 67H29BP graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UlvibacterLitoralis.
+This file offers the methods to automatically retrieve the graph Ulvibacter litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UlvibacterLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UlvibacterLitoralis graph.
+    """Return new instance of the Ulvibacter litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UlvibacterLitoralis(
 
     Returns
     -----------------------
-    Instace of UlvibacterLitoralis graph.
+    Instace of Ulvibacter litoralis graph.
 
 	References
 	---------------------

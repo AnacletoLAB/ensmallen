@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterSpClo3.
+This file offers the methods to automatically retrieve the graph Helicobacter sp. CLO-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterSpClo3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterSpClo3 graph.
+    """Return new instance of the Helicobacter sp. CLO-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterSpClo3(
 
     Returns
     -----------------------
-    Instace of HelicobacterSpClo3 graph.
+    Instace of Helicobacter sp. CLO-3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfolunaSpongiiphila.
+This file offers the methods to automatically retrieve the graph Desulfoluna spongiiphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfolunaSpongiiphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfolunaSpongiiphila graph.
+    """Return new instance of the Desulfoluna spongiiphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfolunaSpongiiphila(
 
     Returns
     -----------------------
-    Instace of DesulfolunaSpongiiphila graph.
+    Instace of Desulfoluna spongiiphila graph.
 
 	References
 	---------------------

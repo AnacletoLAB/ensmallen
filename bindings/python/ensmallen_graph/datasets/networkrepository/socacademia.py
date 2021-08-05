@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocAcademia.
+This file offers the methods to automatically retrieve the graph soc-academia.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocAcademia(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocAcademia graph.
+    """Return new instance of the soc-academia graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocAcademia(
 
     Returns
     -----------------------
-    Instace of SocAcademia graph.
+    Instace of soc-academia graph.
 
 	References
 	---------------------

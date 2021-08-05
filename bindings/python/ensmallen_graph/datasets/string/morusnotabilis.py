@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MorusNotabilis.
+This file offers the methods to automatically retrieve the graph Morus notabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MorusNotabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MorusNotabilis graph.
+    """Return new instance of the Morus notabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MorusNotabilis(
 
     Returns
     -----------------------
-    Instace of MorusNotabilis graph.
+    Instace of Morus notabilis graph.
 
 	References
 	---------------------

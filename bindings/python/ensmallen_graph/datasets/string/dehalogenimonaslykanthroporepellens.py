@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalogenimonasLykanthroporepellens.
+This file offers the methods to automatically retrieve the graph Dehalogenimonas lykanthroporepellens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalogenimonasLykanthroporepellens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalogenimonasLykanthroporepellens graph.
+    """Return new instance of the Dehalogenimonas lykanthroporepellens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalogenimonasLykanthroporepellens(
 
     Returns
     -----------------------
-    Instace of DehalogenimonasLykanthroporepellens graph.
+    Instace of Dehalogenimonas lykanthroporepellens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrachymyrmexSeptentrionalis.
+This file offers the methods to automatically retrieve the graph Trachymyrmex septentrionalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrachymyrmexSeptentrionalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrachymyrmexSeptentrionalis graph.
+    """Return new instance of the Trachymyrmex septentrionalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrachymyrmexSeptentrionalis(
 
     Returns
     -----------------------
-    Instace of TrachymyrmexSeptentrionalis graph.
+    Instace of Trachymyrmex septentrionalis graph.
 
 	References
 	---------------------

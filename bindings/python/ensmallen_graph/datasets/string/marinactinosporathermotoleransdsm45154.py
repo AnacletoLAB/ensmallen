@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinactinosporaThermotoleransDsm45154.
+This file offers the methods to automatically retrieve the graph Marinactinospora thermotolerans DSM 45154.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinactinosporaThermotoleransDsm45154(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinactinosporaThermotoleransDsm45154 graph.
+    """Return new instance of the Marinactinospora thermotolerans DSM 45154 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinactinosporaThermotoleransDsm45154(
 
     Returns
     -----------------------
-    Instace of MarinactinosporaThermotoleransDsm45154 graph.
+    Instace of Marinactinospora thermotolerans DSM 45154 graph.
 
 	References
 	---------------------

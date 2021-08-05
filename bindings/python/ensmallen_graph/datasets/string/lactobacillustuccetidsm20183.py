@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusTuccetiDsm20183.
+This file offers the methods to automatically retrieve the graph Lactobacillus tucceti DSM 20183.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusTuccetiDsm20183(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusTuccetiDsm20183 graph.
+    """Return new instance of the Lactobacillus tucceti DSM 20183 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusTuccetiDsm20183(
 
     Returns
     -----------------------
-    Instace of LactobacillusTuccetiDsm20183 graph.
+    Instace of Lactobacillus tucceti DSM 20183 graph.
 
 	References
 	---------------------

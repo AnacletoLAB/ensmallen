@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NaumovozymaDairenensis.
+This file offers the methods to automatically retrieve the graph Naumovozyma dairenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NaumovozymaDairenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NaumovozymaDairenensis graph.
+    """Return new instance of the Naumovozyma dairenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NaumovozymaDairenensis(
 
     Returns
     -----------------------
-    Instace of NaumovozymaDairenensis graph.
+    Instace of Naumovozyma dairenensis graph.
 
 	References
 	---------------------

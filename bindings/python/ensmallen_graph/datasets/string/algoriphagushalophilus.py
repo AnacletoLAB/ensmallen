@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusHalophilus.
+This file offers the methods to automatically retrieve the graph Algoriphagus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusHalophilus graph.
+    """Return new instance of the Algoriphagus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusHalophilus(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusHalophilus graph.
+    Instace of Algoriphagus halophilus graph.
 
 	References
 	---------------------

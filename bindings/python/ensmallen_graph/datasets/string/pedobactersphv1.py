@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpHv1.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. Hv1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpHv1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpHv1 graph.
+    """Return new instance of the Pedobacter sp. Hv1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSpHv1(
 
     Returns
     -----------------------
-    Instace of PedobacterSpHv1 graph.
+    Instace of Pedobacter sp. Hv1 graph.
 
 	References
 	---------------------

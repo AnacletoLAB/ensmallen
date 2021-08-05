@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAidingensis.
+This file offers the methods to automatically retrieve the graph Bacillus aidingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAidingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAidingensis graph.
+    """Return new instance of the Bacillus aidingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAidingensis(
 
     Returns
     -----------------------
-    Instace of BacillusAidingensis graph.
+    Instace of Bacillus aidingensis graph.
 
 	References
 	---------------------

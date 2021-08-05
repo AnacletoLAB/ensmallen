@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PriciaAntarctica.
+This file offers the methods to automatically retrieve the graph Pricia antarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PriciaAntarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PriciaAntarctica graph.
+    """Return new instance of the Pricia antarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PriciaAntarctica(
 
     Returns
     -----------------------
-    Instace of PriciaAntarctica graph.
+    Instace of Pricia antarctica graph.
 
 	References
 	---------------------

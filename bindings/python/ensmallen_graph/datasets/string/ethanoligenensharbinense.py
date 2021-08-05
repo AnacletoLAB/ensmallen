@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EthanoligenensHarbinense.
+This file offers the methods to automatically retrieve the graph Ethanoligenens harbinense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EthanoligenensHarbinense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EthanoligenensHarbinense graph.
+    """Return new instance of the Ethanoligenens harbinense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EthanoligenensHarbinense(
 
     Returns
     -----------------------
-    Instace of EthanoligenensHarbinense graph.
+    Instace of Ethanoligenens harbinense graph.
 
 	References
 	---------------------

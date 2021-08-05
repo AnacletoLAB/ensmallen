@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumSm2361.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium SM23_61.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumSm2361(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumSm2361 graph.
+    """Return new instance of the Deltaproteobacteria bacterium SM23_61 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumSm2361(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumSm2361 graph.
+    Instace of Deltaproteobacteria bacterium SM23_61 graph.
 
 	References
 	---------------------

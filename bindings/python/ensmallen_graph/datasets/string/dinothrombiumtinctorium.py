@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DinothrombiumTinctorium.
+This file offers the methods to automatically retrieve the graph Dinothrombium tinctorium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DinothrombiumTinctorium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DinothrombiumTinctorium graph.
+    """Return new instance of the Dinothrombium tinctorium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DinothrombiumTinctorium(
 
     Returns
     -----------------------
-    Instace of DinothrombiumTinctorium graph.
+    Instace of Dinothrombium tinctorium graph.
 
 	References
 	---------------------

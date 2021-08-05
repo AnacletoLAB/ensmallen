@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterButzleriRm4018.
+This file offers the methods to automatically retrieve the graph Arcobacter butzleri RM4018.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterButzleriRm4018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterButzleriRm4018 graph.
+    """Return new instance of the Arcobacter butzleri RM4018 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterButzleriRm4018(
 
     Returns
     -----------------------
-    Instace of ArcobacterButzleriRm4018 graph.
+    Instace of Arcobacter butzleri RM4018 graph.
 
 	References
 	---------------------

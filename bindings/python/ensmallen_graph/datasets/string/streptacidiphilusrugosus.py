@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusRugosus.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus rugosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusRugosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusRugosus graph.
+    """Return new instance of the Streptacidiphilus rugosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptacidiphilusRugosus(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusRugosus graph.
+    Instace of Streptacidiphilus rugosus graph.
 
 	References
 	---------------------

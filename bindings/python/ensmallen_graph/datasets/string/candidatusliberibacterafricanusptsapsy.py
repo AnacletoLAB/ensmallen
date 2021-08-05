@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLiberibacterAfricanusPtsapsy.
+This file offers the methods to automatically retrieve the graph Candidatus Liberibacter africanus PTSAPSY.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLiberibacterAfricanusPtsapsy(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLiberibacterAfricanusPtsapsy graph.
+    """Return new instance of the Candidatus Liberibacter africanus PTSAPSY graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLiberibacterAfricanusPtsapsy(
 
     Returns
     -----------------------
-    Instace of CandidatusLiberibacterAfricanusPtsapsy graph.
+    Instace of Candidatus Liberibacter africanus PTSAPSY graph.
 
 	References
 	---------------------

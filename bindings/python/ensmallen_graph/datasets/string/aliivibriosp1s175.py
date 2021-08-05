@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliivibrioSp1s175.
+This file offers the methods to automatically retrieve the graph Aliivibrio sp. 1S175.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliivibrioSp1s175(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliivibrioSp1s175 graph.
+    """Return new instance of the Aliivibrio sp. 1S175 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliivibrioSp1s175(
 
     Returns
     -----------------------
-    Instace of AliivibrioSp1s175 graph.
+    Instace of Aliivibrio sp. 1S175 graph.
 
 	References
 	---------------------

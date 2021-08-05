@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusThioglobusAutotrophicus.
+This file offers the methods to automatically retrieve the graph Candidatus Thioglobus autotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusThioglobusAutotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusThioglobusAutotrophicus graph.
+    """Return new instance of the Candidatus Thioglobus autotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusThioglobusAutotrophicus(
 
     Returns
     -----------------------
-    Instace of CandidatusThioglobusAutotrophicus graph.
+    Instace of Candidatus Thioglobus autotrophicus graph.
 
 	References
 	---------------------

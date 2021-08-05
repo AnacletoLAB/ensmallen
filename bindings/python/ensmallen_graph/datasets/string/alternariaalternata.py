@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlternariaAlternata.
+This file offers the methods to automatically retrieve the graph Alternaria alternata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlternariaAlternata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlternariaAlternata graph.
+    """Return new instance of the Alternaria alternata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlternariaAlternata(
 
     Returns
     -----------------------
-    Instace of AlternariaAlternata graph.
+    Instace of Alternaria alternata graph.
 
 	References
 	---------------------

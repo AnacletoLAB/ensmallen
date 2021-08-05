@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminiclostridiumPapyrosolvensC7.
+This file offers the methods to automatically retrieve the graph Ruminiclostridium papyrosolvens C7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminiclostridiumPapyrosolvensC7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminiclostridiumPapyrosolvensC7 graph.
+    """Return new instance of the Ruminiclostridium papyrosolvens C7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminiclostridiumPapyrosolvensC7(
 
     Returns
     -----------------------
-    Instace of RuminiclostridiumPapyrosolvensC7 graph.
+    Instace of Ruminiclostridium papyrosolvens C7 graph.
 
 	References
 	---------------------

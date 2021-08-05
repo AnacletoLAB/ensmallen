@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumBifidumNcimb41171.
+This file offers the methods to automatically retrieve the graph Bifidobacterium bifidum NCIMB41171.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumBifidumNcimb41171(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumBifidumNcimb41171 graph.
+    """Return new instance of the Bifidobacterium bifidum NCIMB41171 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumBifidumNcimb41171(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumBifidumNcimb41171 graph.
+    Instace of Bifidobacterium bifidum NCIMB41171 graph.
 
 	References
 	---------------------

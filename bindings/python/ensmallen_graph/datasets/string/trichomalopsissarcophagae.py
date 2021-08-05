@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichomalopsisSarcophagae.
+This file offers the methods to automatically retrieve the graph Trichomalopsis sarcophagae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichomalopsisSarcophagae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichomalopsisSarcophagae graph.
+    """Return new instance of the Trichomalopsis sarcophagae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichomalopsisSarcophagae(
 
     Returns
     -----------------------
-    Instace of TrichomalopsisSarcophagae graph.
+    Instace of Trichomalopsis sarcophagae graph.
 
 	References
 	---------------------

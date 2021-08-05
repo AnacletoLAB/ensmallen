@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocorpusculumBavaricumDsm4179.
+This file offers the methods to automatically retrieve the graph Methanocorpusculum bavaricum DSM 4179.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocorpusculumBavaricumDsm4179(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocorpusculumBavaricumDsm4179 graph.
+    """Return new instance of the Methanocorpusculum bavaricum DSM 4179 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanocorpusculumBavaricumDsm4179(
 
     Returns
     -----------------------
-    Instace of MethanocorpusculumBavaricumDsm4179 graph.
+    Instace of Methanocorpusculum bavaricum DSM 4179 graph.
 
 	References
 	---------------------

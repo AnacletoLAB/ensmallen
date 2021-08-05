@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumGw2011Gwa2447.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium GW2011_GWA2_44_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumGw2011Gwa2447(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumGw2011Gwa2447 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium GW2011_GWA2_44_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumGw2011Gwa2447(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumGw2011Gwa2447 graph.
+    Instace of Candidatus Peregrinibacteria bacterium GW2011_GWA2_44_7 graph.
 
 	References
 	---------------------

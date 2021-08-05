@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FluviicolaTaffensis.
+This file offers the methods to automatically retrieve the graph Fluviicola taffensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FluviicolaTaffensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FluviicolaTaffensis graph.
+    """Return new instance of the Fluviicola taffensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FluviicolaTaffensis(
 
     Returns
     -----------------------
-    Instace of FluviicolaTaffensis graph.
+    Instace of Fluviicola taffensis graph.
 
 	References
 	---------------------

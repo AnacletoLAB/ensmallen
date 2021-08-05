@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasHortorum.
+This file offers the methods to automatically retrieve the graph Xanthomonas hortorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasHortorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasHortorum graph.
+    """Return new instance of the Xanthomonas hortorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasHortorum(
 
     Returns
     -----------------------
-    Instace of XanthomonasHortorum graph.
+    Instace of Xanthomonas hortorum graph.
 
 	References
 	---------------------

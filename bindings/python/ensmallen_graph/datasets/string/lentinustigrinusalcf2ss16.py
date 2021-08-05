@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentinusTigrinusAlcf2ss16.
+This file offers the methods to automatically retrieve the graph Lentinus tigrinus ALCF2SS1-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentinusTigrinusAlcf2ss16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentinusTigrinusAlcf2ss16 graph.
+    """Return new instance of the Lentinus tigrinus ALCF2SS1-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentinusTigrinusAlcf2ss16(
 
     Returns
     -----------------------
-    Instace of LentinusTigrinusAlcf2ss16 graph.
+    Instace of Lentinus tigrinus ALCF2SS1-6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpSat1.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. SAT1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpSat1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpSat1 graph.
+    """Return new instance of the Streptomyces sp. SAT1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpSat1(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpSat1 graph.
+    Instace of Streptomyces sp. SAT1 graph.
 
 	References
 	---------------------

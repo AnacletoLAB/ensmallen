@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRickettsiellaIsopodorum.
+This file offers the methods to automatically retrieve the graph Candidatus Rickettsiella isopodorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRickettsiellaIsopodorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRickettsiellaIsopodorum graph.
+    """Return new instance of the Candidatus Rickettsiella isopodorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRickettsiellaIsopodorum(
 
     Returns
     -----------------------
-    Instace of CandidatusRickettsiellaIsopodorum graph.
+    Instace of Candidatus Rickettsiella isopodorum graph.
 
 	References
 	---------------------

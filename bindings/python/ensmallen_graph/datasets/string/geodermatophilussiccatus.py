@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusSiccatus.
+This file offers the methods to automatically retrieve the graph Geodermatophilus siccatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusSiccatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusSiccatus graph.
+    """Return new instance of the Geodermatophilus siccatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusSiccatus(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusSiccatus graph.
+    Instace of Geodermatophilus siccatus graph.
 
 	References
 	---------------------

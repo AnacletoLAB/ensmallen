@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaCremea.
+This file offers the methods to automatically retrieve the graph Micromonospora cremea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaCremea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaCremea graph.
+    """Return new instance of the Micromonospora cremea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaCremea(
 
     Returns
     -----------------------
-    Instace of MicromonosporaCremea graph.
+    Instace of Micromonospora cremea graph.
 
 	References
 	---------------------

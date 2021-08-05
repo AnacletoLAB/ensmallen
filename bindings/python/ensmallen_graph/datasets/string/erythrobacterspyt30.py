@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpYt30.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. YT30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpYt30(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpYt30 graph.
+    """Return new instance of the Erythrobacter sp. YT30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpYt30(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpYt30 graph.
+    Instace of Erythrobacter sp. YT30 graph.
 
 	References
 	---------------------

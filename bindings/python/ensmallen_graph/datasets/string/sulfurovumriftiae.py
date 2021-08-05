@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurovumRiftiae.
+This file offers the methods to automatically retrieve the graph Sulfurovum riftiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurovumRiftiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurovumRiftiae graph.
+    """Return new instance of the Sulfurovum riftiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurovumRiftiae(
 
     Returns
     -----------------------
-    Instace of SulfurovumRiftiae graph.
+    Instace of Sulfurovum riftiae graph.
 
 	References
 	---------------------

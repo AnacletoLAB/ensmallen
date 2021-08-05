@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPametensis.
+This file offers the methods to automatically retrieve the graph Helicobacter pametensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPametensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPametensis graph.
+    """Return new instance of the Helicobacter pametensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPametensis(
 
     Returns
     -----------------------
-    Instace of HelicobacterPametensis graph.
+    Instace of Helicobacter pametensis graph.
 
 	References
 	---------------------

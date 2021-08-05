@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusSpSt04.
+This file offers the methods to automatically retrieve the graph Pyrococcus sp. ST04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusSpSt04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusSpSt04 graph.
+    """Return new instance of the Pyrococcus sp. ST04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusSpSt04(
 
     Returns
     -----------------------
-    Instace of PyrococcusSpSt04 graph.
+    Instace of Pyrococcus sp. ST04 graph.
 
 	References
 	---------------------

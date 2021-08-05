@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpZagget11.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. Zagget11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpZagget11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpZagget11 graph.
+    """Return new instance of the Ruminococcus sp. Zagget11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusSpZagget11(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpZagget11 graph.
+    Instace of Ruminococcus sp. Zagget11 graph.
 
 	References
 	---------------------

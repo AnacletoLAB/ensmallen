@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterButzleriEd1.
+This file offers the methods to automatically retrieve the graph Arcobacter butzleri ED1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterButzleriEd1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterButzleriEd1 graph.
+    """Return new instance of the Arcobacter butzleri ED1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterButzleriEd1(
 
     Returns
     -----------------------
-    Instace of ArcobacterButzleriEd1 graph.
+    Instace of Arcobacter butzleri ED1 graph.
 
 	References
 	---------------------

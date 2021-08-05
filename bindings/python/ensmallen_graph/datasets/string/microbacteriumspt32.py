@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpT32.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. T32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpT32(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpT32 graph.
+    """Return new instance of the Microbacterium sp. T32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpT32(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpT32 graph.
+    Instace of Microbacterium sp. T32 graph.
 
 	References
 	---------------------

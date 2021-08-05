@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AerococcusChristensenii.
+This file offers the methods to automatically retrieve the graph Aerococcus christensenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AerococcusChristensenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AerococcusChristensenii graph.
+    """Return new instance of the Aerococcus christensenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AerococcusChristensenii(
 
     Returns
     -----------------------
-    Instace of AerococcusChristensenii graph.
+    Instace of Aerococcus christensenii graph.
 
 	References
 	---------------------

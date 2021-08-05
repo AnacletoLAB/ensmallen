@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexusIslandicus.
+This file offers the methods to automatically retrieve the graph Chloroflexus islandicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexusIslandicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexusIslandicus graph.
+    """Return new instance of the Chloroflexus islandicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloroflexusIslandicus(
 
     Returns
     -----------------------
-    Instace of ChloroflexusIslandicus graph.
+    Instace of Chloroflexus islandicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProtomycesLactucaedebilis.
+This file offers the methods to automatically retrieve the graph Protomyces lactucaedebilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProtomycesLactucaedebilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProtomycesLactucaedebilis graph.
+    """Return new instance of the Protomyces lactucaedebilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProtomycesLactucaedebilis(
 
     Returns
     -----------------------
-    Instace of ProtomycesLactucaedebilis graph.
+    Instace of Protomyces lactucaedebilis graph.
 
 	References
 	---------------------

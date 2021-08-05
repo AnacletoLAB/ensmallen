@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAntarctica.
+This file offers the methods to automatically retrieve the graph Pseudomonas antarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAntarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAntarctica graph.
+    """Return new instance of the Pseudomonas antarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAntarctica(
 
     Returns
     -----------------------
-    Instace of PseudomonasAntarctica graph.
+    Instace of Pseudomonas antarctica graph.
 
 	References
 	---------------------

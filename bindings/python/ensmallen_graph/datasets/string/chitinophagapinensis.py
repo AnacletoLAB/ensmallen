@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaPinensis.
+This file offers the methods to automatically retrieve the graph Chitinophaga pinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaPinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaPinensis graph.
+    """Return new instance of the Chitinophaga pinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChitinophagaPinensis(
 
     Returns
     -----------------------
-    Instace of ChitinophagaPinensis graph.
+    Instace of Chitinophaga pinensis graph.
 
 	References
 	---------------------

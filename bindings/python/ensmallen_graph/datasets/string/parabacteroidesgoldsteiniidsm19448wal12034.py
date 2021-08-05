@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesGoldsteiniiDsm19448Wal12034.
+This file offers the methods to automatically retrieve the graph Parabacteroides goldsteinii DSM 19448 WAL 12034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesGoldsteiniiDsm19448Wal12034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesGoldsteiniiDsm19448Wal12034 graph.
+    """Return new instance of the Parabacteroides goldsteinii DSM 19448 WAL 12034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParabacteroidesGoldsteiniiDsm19448Wal12034(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesGoldsteiniiDsm19448Wal12034 graph.
+    Instace of Parabacteroides goldsteinii DSM 19448 WAL 12034 graph.
 
 	References
 	---------------------

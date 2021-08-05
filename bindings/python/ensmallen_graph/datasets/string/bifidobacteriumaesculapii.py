@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAesculapii.
+This file offers the methods to automatically retrieve the graph Bifidobacterium aesculapii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumAesculapii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAesculapii graph.
+    """Return new instance of the Bifidobacterium aesculapii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumAesculapii(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAesculapii graph.
+    Instace of Bifidobacterium aesculapii graph.
 
 	References
 	---------------------

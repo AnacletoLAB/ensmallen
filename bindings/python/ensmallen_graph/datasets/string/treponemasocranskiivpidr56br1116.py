@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSocranskiiVpidr56br1116.
+This file offers the methods to automatically retrieve the graph Treponema socranskii VPIDR56BR1116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSocranskiiVpidr56br1116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSocranskiiVpidr56br1116 graph.
+    """Return new instance of the Treponema socranskii VPIDR56BR1116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSocranskiiVpidr56br1116(
 
     Returns
     -----------------------
-    Instace of TreponemaSocranskiiVpidr56br1116 graph.
+    Instace of Treponema socranskii VPIDR56BR1116 graph.
 
 	References
 	---------------------

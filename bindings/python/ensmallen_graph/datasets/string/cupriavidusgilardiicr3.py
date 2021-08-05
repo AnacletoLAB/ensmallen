@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusGilardiiCr3.
+This file offers the methods to automatically retrieve the graph Cupriavidus gilardii CR3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusGilardiiCr3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusGilardiiCr3 graph.
+    """Return new instance of the Cupriavidus gilardii CR3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusGilardiiCr3(
 
     Returns
     -----------------------
-    Instace of CupriavidusGilardiiCr3 graph.
+    Instace of Cupriavidus gilardii CR3 graph.
 
 	References
 	---------------------

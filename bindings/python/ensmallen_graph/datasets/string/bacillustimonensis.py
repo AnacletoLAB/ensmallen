@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusTimonensis.
+This file offers the methods to automatically retrieve the graph Bacillus timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusTimonensis graph.
+    """Return new instance of the Bacillus timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusTimonensis(
 
     Returns
     -----------------------
-    Instace of BacillusTimonensis graph.
+    Instace of Bacillus timonensis graph.
 
 	References
 	---------------------

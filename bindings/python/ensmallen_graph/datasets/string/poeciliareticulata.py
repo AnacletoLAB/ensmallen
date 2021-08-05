@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PoeciliaReticulata.
+This file offers the methods to automatically retrieve the graph Poecilia reticulata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PoeciliaReticulata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PoeciliaReticulata graph.
+    """Return new instance of the Poecilia reticulata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PoeciliaReticulata(
 
     Returns
     -----------------------
-    Instace of PoeciliaReticulata graph.
+    Instace of Poecilia reticulata graph.
 
 	References
 	---------------------

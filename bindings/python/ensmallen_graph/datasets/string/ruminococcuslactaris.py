@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusLactaris.
+This file offers the methods to automatically retrieve the graph Ruminococcus lactaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusLactaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusLactaris graph.
+    """Return new instance of the Ruminococcus lactaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusLactaris(
 
     Returns
     -----------------------
-    Instace of RuminococcusLactaris graph.
+    Instace of Ruminococcus lactaris graph.
 
 	References
 	---------------------

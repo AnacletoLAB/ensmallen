@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DefluviitaleaPhaphyphila.
+This file offers the methods to automatically retrieve the graph Defluviitalea phaphyphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DefluviitaleaPhaphyphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DefluviitaleaPhaphyphila graph.
+    """Return new instance of the Defluviitalea phaphyphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DefluviitaleaPhaphyphila(
 
     Returns
     -----------------------
-    Instace of DefluviitaleaPhaphyphila graph.
+    Instace of Defluviitalea phaphyphila graph.
 
 	References
 	---------------------

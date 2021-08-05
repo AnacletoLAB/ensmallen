@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TranquillimonasAlkanivorans.
+This file offers the methods to automatically retrieve the graph Tranquillimonas alkanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TranquillimonasAlkanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TranquillimonasAlkanivorans graph.
+    """Return new instance of the Tranquillimonas alkanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TranquillimonasAlkanivorans(
 
     Returns
     -----------------------
-    Instace of TranquillimonasAlkanivorans graph.
+    Instace of Tranquillimonas alkanivorans graph.
 
 	References
 	---------------------

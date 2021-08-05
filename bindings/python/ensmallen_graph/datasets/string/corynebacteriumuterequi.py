@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumUterequi.
+This file offers the methods to automatically retrieve the graph Corynebacterium uterequi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumUterequi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumUterequi graph.
+    """Return new instance of the Corynebacterium uterequi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumUterequi(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumUterequi graph.
+    Instace of Corynebacterium uterequi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasOceanitis.
+This file offers the methods to automatically retrieve the graph Hyphomonas oceanitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasOceanitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasOceanitis graph.
+    """Return new instance of the Hyphomonas oceanitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasOceanitis(
 
     Returns
     -----------------------
-    Instace of HyphomonasOceanitis graph.
+    Instace of Hyphomonas oceanitis graph.
 
 	References
 	---------------------

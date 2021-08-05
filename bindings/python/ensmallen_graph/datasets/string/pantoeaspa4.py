@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSpA4.
+This file offers the methods to automatically retrieve the graph Pantoea sp. A4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSpA4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSpA4 graph.
+    """Return new instance of the Pantoea sp. A4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaSpA4(
 
     Returns
     -----------------------
-    Instace of PantoeaSpA4 graph.
+    Instace of Pantoea sp. A4 graph.
 
 	References
 	---------------------

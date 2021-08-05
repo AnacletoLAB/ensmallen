@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MangrovimonasSpTpbh4.
+This file offers the methods to automatically retrieve the graph Mangrovimonas sp. TPBH4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MangrovimonasSpTpbh4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MangrovimonasSpTpbh4 graph.
+    """Return new instance of the Mangrovimonas sp. TPBH4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MangrovimonasSpTpbh4(
 
     Returns
     -----------------------
-    Instace of MangrovimonasSpTpbh4 graph.
+    Instace of Mangrovimonas sp. TPBH4 graph.
 
 	References
 	---------------------

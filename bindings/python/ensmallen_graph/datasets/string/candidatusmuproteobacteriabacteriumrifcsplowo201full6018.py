@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMuproteobacteriaBacteriumRifcsplowo201Full6018.
+This file offers the methods to automatically retrieve the graph Candidatus Muproteobacteria bacterium RIFCSPLOWO2_01_FULL_60_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMuproteobacteriaBacteriumRifcsplowo201Full6018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMuproteobacteriaBacteriumRifcsplowo201Full6018 graph.
+    """Return new instance of the Candidatus Muproteobacteria bacterium RIFCSPLOWO2_01_FULL_60_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMuproteobacteriaBacteriumRifcsplowo201Full6018(
 
     Returns
     -----------------------
-    Instace of CandidatusMuproteobacteriaBacteriumRifcsplowo201Full6018 graph.
+    Instace of Candidatus Muproteobacteria bacterium RIFCSPLOWO2_01_FULL_60_18 graph.
 
 	References
 	---------------------

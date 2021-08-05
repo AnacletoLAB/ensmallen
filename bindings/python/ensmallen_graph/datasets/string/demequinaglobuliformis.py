@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaGlobuliformis.
+This file offers the methods to automatically retrieve the graph Demequina globuliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaGlobuliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaGlobuliformis graph.
+    """Return new instance of the Demequina globuliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaGlobuliformis(
 
     Returns
     -----------------------
-    Instace of DemequinaGlobuliformis graph.
+    Instace of Demequina globuliformis graph.
 
 	References
 	---------------------

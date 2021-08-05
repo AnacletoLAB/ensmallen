@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisOryzae.
+This file offers the methods to automatically retrieve the graph Bipolaris oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisOryzae graph.
+    """Return new instance of the Bipolaris oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BipolarisOryzae(
 
     Returns
     -----------------------
-    Instace of BipolarisOryzae graph.
+    Instace of Bipolaris oryzae graph.
 
 	References
 	---------------------

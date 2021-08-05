@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptococcusGattiiVgiiR265.
+This file offers the methods to automatically retrieve the graph Cryptococcus gattii VGII R265.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptococcusGattiiVgiiR265(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptococcusGattiiVgiiR265 graph.
+    """Return new instance of the Cryptococcus gattii VGII R265 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptococcusGattiiVgiiR265(
 
     Returns
     -----------------------
-    Instace of CryptococcusGattiiVgiiR265 graph.
+    Instace of Cryptococcus gattii VGII R265 graph.
 
 	References
 	---------------------

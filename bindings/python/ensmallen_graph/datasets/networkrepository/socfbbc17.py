@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBc17.
+This file offers the methods to automatically retrieve the graph socfb-BC17.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBc17(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBc17 graph.
+    """Return new instance of the socfb-BC17 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBc17(
 
     Returns
     -----------------------
-    Instace of SocfbBc17 graph.
+    Instace of socfb-BC17 graph.
 
 	References
 	---------------------

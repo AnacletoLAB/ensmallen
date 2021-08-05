@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumP7.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium P7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumP7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumP7 graph.
+    """Return new instance of the Ruminococcaceae bacterium P7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumP7(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumP7 graph.
+    Instace of Ruminococcaceae bacterium P7 graph.
 
 	References
 	---------------------

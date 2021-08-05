@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph QuadrisphaeraSpDsm44207.
+This file offers the methods to automatically retrieve the graph Quadrisphaera sp. DSM 44207.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def QuadrisphaeraSpDsm44207(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the QuadrisphaeraSpDsm44207 graph.
+    """Return new instance of the Quadrisphaera sp. DSM 44207 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def QuadrisphaeraSpDsm44207(
 
     Returns
     -----------------------
-    Instace of QuadrisphaeraSpDsm44207 graph.
+    Instace of Quadrisphaera sp. DSM 44207 graph.
 
 	References
 	---------------------

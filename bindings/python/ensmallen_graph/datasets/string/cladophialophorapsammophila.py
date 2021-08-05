@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CladophialophoraPsammophila.
+This file offers the methods to automatically retrieve the graph Cladophialophora psammophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CladophialophoraPsammophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CladophialophoraPsammophila graph.
+    """Return new instance of the Cladophialophora psammophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CladophialophoraPsammophila(
 
     Returns
     -----------------------
-    Instace of CladophialophoraPsammophila graph.
+    Instace of Cladophialophora psammophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWalczuchellaMonophlebidarum.
+This file offers the methods to automatically retrieve the graph Candidatus Walczuchella monophlebidarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWalczuchellaMonophlebidarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWalczuchellaMonophlebidarum graph.
+    """Return new instance of the Candidatus Walczuchella monophlebidarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWalczuchellaMonophlebidarum(
 
     Returns
     -----------------------
-    Instace of CandidatusWalczuchellaMonophlebidarum graph.
+    Instace of Candidatus Walczuchella monophlebidarum graph.
 
 	References
 	---------------------

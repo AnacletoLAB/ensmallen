@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Jagmesh9.
+This file offers the methods to automatically retrieve the graph jagmesh9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Jagmesh9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Jagmesh9 graph.
+    """Return new instance of the jagmesh9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Jagmesh9(
 
     Returns
     -----------------------
-    Instace of Jagmesh9 graph.
+    Instace of jagmesh9 graph.
 
 	References
 	---------------------

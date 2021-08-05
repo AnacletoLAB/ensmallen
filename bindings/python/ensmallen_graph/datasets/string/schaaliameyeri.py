@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchaaliaMeyeri.
+This file offers the methods to automatically retrieve the graph Schaalia meyeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchaaliaMeyeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchaaliaMeyeri graph.
+    """Return new instance of the Schaalia meyeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchaaliaMeyeri(
 
     Returns
     -----------------------
-    Instace of SchaaliaMeyeri graph.
+    Instace of Schaalia meyeri graph.
 
 	References
 	---------------------

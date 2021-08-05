@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoanaerobaculumSpObrc55.
+This file offers the methods to automatically retrieve the graph Lachnoanaerobaculum sp. OBRC5-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoanaerobaculumSpObrc55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoanaerobaculumSpObrc55 graph.
+    """Return new instance of the Lachnoanaerobaculum sp. OBRC5-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnoanaerobaculumSpObrc55(
 
     Returns
     -----------------------
-    Instace of LachnoanaerobaculumSpObrc55 graph.
+    Instace of Lachnoanaerobaculum sp. OBRC5-5 graph.
 
 	References
 	---------------------

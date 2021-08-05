@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusMangrovi.
+This file offers the methods to automatically retrieve the graph Halobacillus mangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusMangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusMangrovi graph.
+    """Return new instance of the Halobacillus mangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacillusMangrovi(
 
     Returns
     -----------------------
-    Instace of HalobacillusMangrovi graph.
+    Instace of Halobacillus mangrovi graph.
 
 	References
 	---------------------

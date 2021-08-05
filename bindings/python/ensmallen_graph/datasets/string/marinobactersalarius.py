@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSalarius.
+This file offers the methods to automatically retrieve the graph Marinobacter salarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSalarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSalarius graph.
+    """Return new instance of the Marinobacter salarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSalarius(
 
     Returns
     -----------------------
-    Instace of MarinobacterSalarius graph.
+    Instace of Marinobacter salarius graph.
 
 	References
 	---------------------

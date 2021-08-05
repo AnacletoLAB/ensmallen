@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusAlginolyticus.
+This file offers the methods to automatically retrieve the graph Paenibacillus alginolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusAlginolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusAlginolyticus graph.
+    """Return new instance of the Paenibacillus alginolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusAlginolyticus(
 
     Returns
     -----------------------
-    Instace of PaenibacillusAlginolyticus graph.
+    Instace of Paenibacillus alginolyticus graph.
 
 	References
 	---------------------

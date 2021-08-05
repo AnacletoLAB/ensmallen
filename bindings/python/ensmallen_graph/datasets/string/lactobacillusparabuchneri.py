@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusParabuchneri.
+This file offers the methods to automatically retrieve the graph Lactobacillus parabuchneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusParabuchneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusParabuchneri graph.
+    """Return new instance of the Lactobacillus parabuchneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusParabuchneri(
 
     Returns
     -----------------------
-    Instace of LactobacillusParabuchneri graph.
+    Instace of Lactobacillus parabuchneri graph.
 
 	References
 	---------------------

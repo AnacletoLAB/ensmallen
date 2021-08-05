@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterDubius.
+This file offers the methods to automatically retrieve the graph Sulfitobacter dubius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterDubius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterDubius graph.
+    """Return new instance of the Sulfitobacter dubius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterDubius(
 
     Returns
     -----------------------
-    Instace of SulfitobacterDubius graph.
+    Instace of Sulfitobacter dubius graph.
 
 	References
 	---------------------

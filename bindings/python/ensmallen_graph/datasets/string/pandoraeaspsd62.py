@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaSpSd62.
+This file offers the methods to automatically retrieve the graph Pandoraea sp. SD62.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaSpSd62(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaSpSd62 graph.
+    """Return new instance of the Pandoraea sp. SD62 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PandoraeaSpSd62(
 
     Returns
     -----------------------
-    Instace of PandoraeaSpSd62 graph.
+    Instace of Pandoraea sp. SD62 graph.
 
 	References
 	---------------------

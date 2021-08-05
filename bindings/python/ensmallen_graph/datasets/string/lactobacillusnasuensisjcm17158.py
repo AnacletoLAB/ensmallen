@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusNasuensisJcm17158.
+This file offers the methods to automatically retrieve the graph Lactobacillus nasuensis JCM 17158.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusNasuensisJcm17158(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusNasuensisJcm17158 graph.
+    """Return new instance of the Lactobacillus nasuensis JCM 17158 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusNasuensisJcm17158(
 
     Returns
     -----------------------
-    Instace of LactobacillusNasuensisJcm17158 graph.
+    Instace of Lactobacillus nasuensis JCM 17158 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumSpNdb2meth4.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium sp. NDB2Meth4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumSpNdb2meth4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumSpNdb2meth4 graph.
+    """Return new instance of the Hyphomicrobium sp. NDB2Meth4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomicrobiumSpNdb2meth4(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumSpNdb2meth4 graph.
+    Instace of Hyphomicrobium sp. NDB2Meth4 graph.
 
 	References
 	---------------------

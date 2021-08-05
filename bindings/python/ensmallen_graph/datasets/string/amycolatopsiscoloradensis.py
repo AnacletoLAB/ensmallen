@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisColoradensis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis coloradensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisColoradensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisColoradensis graph.
+    """Return new instance of the Amycolatopsis coloradensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisColoradensis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisColoradensis graph.
+    Instace of Amycolatopsis coloradensis graph.
 
 	References
 	---------------------

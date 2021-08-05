@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesterenkoniaSpAn1.
+This file offers the methods to automatically retrieve the graph Nesterenkonia sp. AN1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesterenkoniaSpAn1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesterenkoniaSpAn1 graph.
+    """Return new instance of the Nesterenkonia sp. AN1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NesterenkoniaSpAn1(
 
     Returns
     -----------------------
-    Instace of NesterenkoniaSpAn1 graph.
+    Instace of Nesterenkonia sp. AN1 graph.
 
 	References
 	---------------------

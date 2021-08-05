@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaucisalibacillusGlobulusDsm18846.
+This file offers the methods to automatically retrieve the graph Paucisalibacillus globulus DSM 18846.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaucisalibacillusGlobulusDsm18846(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaucisalibacillusGlobulusDsm18846 graph.
+    """Return new instance of the Paucisalibacillus globulus DSM 18846 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaucisalibacillusGlobulusDsm18846(
 
     Returns
     -----------------------
-    Instace of PaucisalibacillusGlobulusDsm18846 graph.
+    Instace of Paucisalibacillus globulus DSM 18846 graph.
 
 	References
 	---------------------

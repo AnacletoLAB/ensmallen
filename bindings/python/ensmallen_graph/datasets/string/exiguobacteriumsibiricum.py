@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumSibiricum.
+This file offers the methods to automatically retrieve the graph Exiguobacterium sibiricum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumSibiricum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumSibiricum graph.
+    """Return new instance of the Exiguobacterium sibiricum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumSibiricum(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumSibiricum graph.
+    Instace of Exiguobacterium sibiricum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacillusHalophilus.
+This file offers the methods to automatically retrieve the graph Pontibacillus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacillusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacillusHalophilus graph.
+    """Return new instance of the Pontibacillus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PontibacillusHalophilus(
 
     Returns
     -----------------------
-    Instace of PontibacillusHalophilus graph.
+    Instace of Pontibacillus halophilus graph.
 
 	References
 	---------------------

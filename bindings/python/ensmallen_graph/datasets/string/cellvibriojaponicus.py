@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioJaponicus.
+This file offers the methods to automatically retrieve the graph Cellvibrio japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioJaponicus graph.
+    """Return new instance of the Cellvibrio japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellvibrioJaponicus(
 
     Returns
     -----------------------
-    Instace of CellvibrioJaponicus graph.
+    Instace of Cellvibrio japonicus graph.
 
 	References
 	---------------------

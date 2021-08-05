@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlagellimonasFlava.
+This file offers the methods to automatically retrieve the graph Flagellimonas flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlagellimonasFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlagellimonasFlava graph.
+    """Return new instance of the Flagellimonas flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlagellimonasFlava(
 
     Returns
     -----------------------
-    Instace of FlagellimonasFlava graph.
+    Instace of Flagellimonas flava graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmataSpIil30.
+This file offers the methods to automatically retrieve the graph Gemmata sp. IIL30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmataSpIil30(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmataSpIil30 graph.
+    """Return new instance of the Gemmata sp. IIL30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemmataSpIil30(
 
     Returns
     -----------------------
-    Instace of GemmataSpIil30 graph.
+    Instace of Gemmata sp. IIL30 graph.
 
 	References
 	---------------------

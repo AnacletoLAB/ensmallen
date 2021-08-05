@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaRubrilucens.
+This file offers the methods to automatically retrieve the graph Legionella rubrilucens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaRubrilucens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaRubrilucens graph.
+    """Return new instance of the Legionella rubrilucens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaRubrilucens(
 
     Returns
     -----------------------
-    Instace of LegionellaRubrilucens graph.
+    Instace of Legionella rubrilucens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesXanthophaeus.
+This file offers the methods to automatically retrieve the graph Streptomyces xanthophaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesXanthophaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesXanthophaeus graph.
+    """Return new instance of the Streptomyces xanthophaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesXanthophaeus(
 
     Returns
     -----------------------
-    Instace of StreptomycesXanthophaeus graph.
+    Instace of Streptomyces xanthophaeus graph.
 
 	References
 	---------------------

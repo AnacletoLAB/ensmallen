@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpKbs0703.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. KBS0703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpKbs0703(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpKbs0703 graph.
+    """Return new instance of the Arthrobacter sp. KBS0703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpKbs0703(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpKbs0703 graph.
+    Instace of Arthrobacter sp. KBS0703 graph.
 
 	References
 	---------------------

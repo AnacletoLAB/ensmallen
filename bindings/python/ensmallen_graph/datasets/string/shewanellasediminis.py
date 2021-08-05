@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaSediminis.
+This file offers the methods to automatically retrieve the graph Shewanella sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaSediminis graph.
+    """Return new instance of the Shewanella sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaSediminis(
 
     Returns
     -----------------------
-    Instace of ShewanellaSediminis graph.
+    Instace of Shewanella sediminis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesStipitatus.
+This file offers the methods to automatically retrieve the graph Talaromyces stipitatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesStipitatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesStipitatus graph.
+    """Return new instance of the Talaromyces stipitatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TalaromycesStipitatus(
 
     Returns
     -----------------------
-    Instace of TalaromycesStipitatus graph.
+    Instace of Talaromyces stipitatus graph.
 
 	References
 	---------------------

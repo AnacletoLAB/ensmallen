@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterLanienae.
+This file offers the methods to automatically retrieve the graph Campylobacter lanienae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterLanienae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterLanienae graph.
+    """Return new instance of the Campylobacter lanienae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterLanienae(
 
     Returns
     -----------------------
-    Instace of CampylobacterLanienae graph.
+    Instace of Campylobacter lanienae graph.
 
 	References
 	---------------------

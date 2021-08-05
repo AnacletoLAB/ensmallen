@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeleribacterEthanolicus.
+This file offers the methods to automatically retrieve the graph Celeribacter ethanolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeleribacterEthanolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeleribacterEthanolicus graph.
+    """Return new instance of the Celeribacter ethanolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeleribacterEthanolicus(
 
     Returns
     -----------------------
-    Instace of CeleribacterEthanolicus graph.
+    Instace of Celeribacter ethanolicus graph.
 
 	References
 	---------------------

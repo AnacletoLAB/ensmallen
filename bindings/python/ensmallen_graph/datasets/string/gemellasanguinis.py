@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaSanguinis.
+This file offers the methods to automatically retrieve the graph Gemella sanguinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaSanguinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaSanguinis graph.
+    """Return new instance of the Gemella sanguinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemellaSanguinis(
 
     Returns
     -----------------------
-    Instace of GemellaSanguinis graph.
+    Instace of Gemella sanguinis graph.
 
 	References
 	---------------------

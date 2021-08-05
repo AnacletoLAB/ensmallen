@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaAquaticaFslS101188.
+This file offers the methods to automatically retrieve the graph Listeria aquatica FSL S10-1188.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaAquaticaFslS101188(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaAquaticaFslS101188 graph.
+    """Return new instance of the Listeria aquatica FSL S10-1188 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaAquaticaFslS101188(
 
     Returns
     -----------------------
-    Instace of ListeriaAquaticaFslS101188 graph.
+    Instace of Listeria aquatica FSL S10-1188 graph.
 
 	References
 	---------------------

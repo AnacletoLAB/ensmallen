@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumTetaniE88.
+This file offers the methods to automatically retrieve the graph Clostridium tetani E88.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumTetaniE88(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumTetaniE88 graph.
+    """Return new instance of the Clostridium tetani E88 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumTetaniE88(
 
     Returns
     -----------------------
-    Instace of ClostridiumTetaniE88 graph.
+    Instace of Clostridium tetani E88 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeminocystisHerdmanii.
+This file offers the methods to automatically retrieve the graph Geminocystis herdmanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeminocystisHerdmanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeminocystisHerdmanii graph.
+    """Return new instance of the Geminocystis herdmanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeminocystisHerdmanii(
 
     Returns
     -----------------------
-    Instace of GeminocystisHerdmanii graph.
+    Instace of Geminocystis herdmanii graph.
 
 	References
 	---------------------

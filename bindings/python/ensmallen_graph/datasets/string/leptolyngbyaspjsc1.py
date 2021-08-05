@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpJsc1.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. JSC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpJsc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpJsc1 graph.
+    """Return new instance of the Leptolyngbya sp. JSC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptolyngbyaSpJsc1(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpJsc1 graph.
+    Instace of Leptolyngbya sp. JSC1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasEuvesicatoria.
+This file offers the methods to automatically retrieve the graph Xanthomonas euvesicatoria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasEuvesicatoria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasEuvesicatoria graph.
+    """Return new instance of the Xanthomonas euvesicatoria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasEuvesicatoria(
 
     Returns
     -----------------------
-    Instace of XanthomonasEuvesicatoria graph.
+    Instace of Xanthomonas euvesicatoria graph.
 
 	References
 	---------------------

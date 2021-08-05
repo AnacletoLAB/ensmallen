@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasMediterranea.
+This file offers the methods to automatically retrieve the graph Marinomonas mediterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasMediterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasMediterranea graph.
+    """Return new instance of the Marinomonas mediterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinomonasMediterranea(
 
     Returns
     -----------------------
-    Instace of MarinomonasMediterranea graph.
+    Instace of Marinomonas mediterranea graph.
 
 	References
 	---------------------

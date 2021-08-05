@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpBolea5.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. BoleA5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpBolea5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpBolea5 graph.
+    """Return new instance of the Streptomyces sp. BoleA5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpBolea5(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpBolea5 graph.
+    Instace of Streptomyces sp. BoleA5 graph.
 
 	References
 	---------------------

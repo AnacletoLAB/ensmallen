@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermothielavioidesTerrestrisNrrl8126.
+This file offers the methods to automatically retrieve the graph Thermothielavioides terrestris NRRL 8126.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermothielavioidesTerrestrisNrrl8126(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermothielavioidesTerrestrisNrrl8126 graph.
+    """Return new instance of the Thermothielavioides terrestris NRRL 8126 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermothielavioidesTerrestrisNrrl8126(
 
     Returns
     -----------------------
-    Instace of ThermothielavioidesTerrestrisNrrl8126 graph.
+    Instace of Thermothielavioides terrestris NRRL 8126 graph.
 
 	References
 	---------------------

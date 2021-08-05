@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PestalotiopsisFiciW1061.
+This file offers the methods to automatically retrieve the graph Pestalotiopsis fici W106-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PestalotiopsisFiciW1061(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PestalotiopsisFiciW1061 graph.
+    """Return new instance of the Pestalotiopsis fici W106-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PestalotiopsisFiciW1061(
 
     Returns
     -----------------------
-    Instace of PestalotiopsisFiciW1061 graph.
+    Instace of Pestalotiopsis fici W106-1 graph.
 
 	References
 	---------------------

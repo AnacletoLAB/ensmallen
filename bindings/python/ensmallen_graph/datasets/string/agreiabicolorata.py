@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgreiaBicolorata.
+This file offers the methods to automatically retrieve the graph Agreia bicolorata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgreiaBicolorata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgreiaBicolorata graph.
+    """Return new instance of the Agreia bicolorata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgreiaBicolorata(
 
     Returns
     -----------------------
-    Instace of AgreiaBicolorata graph.
+    Instace of Agreia bicolorata graph.
 
 	References
 	---------------------

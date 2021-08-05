@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AscoideaRubescensDsm1968.
+This file offers the methods to automatically retrieve the graph Ascoidea rubescens DSM 1968.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AscoideaRubescensDsm1968(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AscoideaRubescensDsm1968 graph.
+    """Return new instance of the Ascoidea rubescens DSM 1968 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AscoideaRubescensDsm1968(
 
     Returns
     -----------------------
-    Instace of AscoideaRubescensDsm1968 graph.
+    Instace of Ascoidea rubescens DSM 1968 graph.
 
 	References
 	---------------------

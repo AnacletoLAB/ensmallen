@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerrisporobacterGlycolicus.
+This file offers the methods to automatically retrieve the graph Terrisporobacter glycolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerrisporobacterGlycolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerrisporobacterGlycolicus graph.
+    """Return new instance of the Terrisporobacter glycolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerrisporobacterGlycolicus(
 
     Returns
     -----------------------
-    Instace of TerrisporobacterGlycolicus graph.
+    Instace of Terrisporobacter glycolicus graph.
 
 	References
 	---------------------

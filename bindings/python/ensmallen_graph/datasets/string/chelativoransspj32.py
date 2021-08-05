@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelativoransSpJ32.
+This file offers the methods to automatically retrieve the graph Chelativorans sp. J32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelativoransSpJ32(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelativoransSpJ32 graph.
+    """Return new instance of the Chelativorans sp. J32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChelativoransSpJ32(
 
     Returns
     -----------------------
-    Instace of ChelativoransSpJ32 graph.
+    Instace of Chelativorans sp. J32 graph.
 
 	References
 	---------------------

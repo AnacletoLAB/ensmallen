@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalicoccusSp13mg44air.
+This file offers the methods to automatically retrieve the graph Jeotgalicoccus sp. 13MG44air.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalicoccusSp13mg44air(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalicoccusSp13mg44air graph.
+    """Return new instance of the Jeotgalicoccus sp. 13MG44air graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JeotgalicoccusSp13mg44air(
 
     Returns
     -----------------------
-    Instace of JeotgalicoccusSp13mg44air graph.
+    Instace of Jeotgalicoccus sp. 13MG44air graph.
 
 	References
 	---------------------

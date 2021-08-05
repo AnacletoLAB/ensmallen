@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterSpYs13.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter sp. YS13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterSpYs13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterSpYs13 graph.
+    """Return new instance of the Thermoanaerobacter sp. YS13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerobacterSpYs13(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterSpYs13 graph.
+    Instace of Thermoanaerobacter sp. YS13 graph.
 
 	References
 	---------------------

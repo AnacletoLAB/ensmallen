@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpKpl1859.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. KPL1859.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpKpl1859(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpKpl1859 graph.
+    """Return new instance of the Corynebacterium sp. KPL1859 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumSpKpl1859(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpKpl1859 graph.
+    Instace of Corynebacterium sp. KPL1859 graph.
 
 	References
 	---------------------

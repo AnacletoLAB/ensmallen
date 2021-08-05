@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaHoronobensisHb1Jcm15518.
+This file offers the methods to automatically retrieve the graph Methanosarcina horonobensis HB-1 JCM 15518.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaHoronobensisHb1Jcm15518(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaHoronobensisHb1Jcm15518 graph.
+    """Return new instance of the Methanosarcina horonobensis HB-1 JCM 15518 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaHoronobensisHb1Jcm15518(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaHoronobensisHb1Jcm15518 graph.
+    Instace of Methanosarcina horonobensis HB-1 JCM 15518 graph.
 
 	References
 	---------------------

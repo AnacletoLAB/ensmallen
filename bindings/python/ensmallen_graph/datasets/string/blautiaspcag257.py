@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaSpCag257.
+This file offers the methods to automatically retrieve the graph Blautia sp. CAG:257.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaSpCag257(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaSpCag257 graph.
+    """Return new instance of the Blautia sp. CAG:257 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaSpCag257(
 
     Returns
     -----------------------
-    Instace of BlautiaSpCag257 graph.
+    Instace of Blautia sp. CAG:257 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VitreoscillaStercoraria.
+This file offers the methods to automatically retrieve the graph Vitreoscilla stercoraria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VitreoscillaStercoraria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VitreoscillaStercoraria graph.
+    """Return new instance of the Vitreoscilla stercoraria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VitreoscillaStercoraria(
 
     Returns
     -----------------------
-    Instace of VitreoscillaStercoraria graph.
+    Instace of Vitreoscilla stercoraria graph.
 
 	References
 	---------------------

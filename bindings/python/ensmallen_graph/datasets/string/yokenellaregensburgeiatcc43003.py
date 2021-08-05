@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YokenellaRegensburgeiAtcc43003.
+This file offers the methods to automatically retrieve the graph Yokenella regensburgei ATCC 43003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YokenellaRegensburgeiAtcc43003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YokenellaRegensburgeiAtcc43003 graph.
+    """Return new instance of the Yokenella regensburgei ATCC 43003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YokenellaRegensburgeiAtcc43003(
 
     Returns
     -----------------------
-    Instace of YokenellaRegensburgeiAtcc43003 graph.
+    Instace of Yokenella regensburgei ATCC 43003 graph.
 
 	References
 	---------------------

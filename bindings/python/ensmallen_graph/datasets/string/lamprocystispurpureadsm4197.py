@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LamprocystisPurpureaDsm4197.
+This file offers the methods to automatically retrieve the graph Lamprocystis purpurea DSM 4197.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LamprocystisPurpureaDsm4197(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LamprocystisPurpureaDsm4197 graph.
+    """Return new instance of the Lamprocystis purpurea DSM 4197 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LamprocystisPurpureaDsm4197(
 
     Returns
     -----------------------
-    Instace of LamprocystisPurpureaDsm4197 graph.
+    Instace of Lamprocystis purpurea DSM 4197 graph.
 
 	References
 	---------------------

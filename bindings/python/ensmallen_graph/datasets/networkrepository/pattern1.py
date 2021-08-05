@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pattern1.
+This file offers the methods to automatically retrieve the graph pattern1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pattern1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pattern1 graph.
+    """Return new instance of the pattern1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pattern1(
 
     Returns
     -----------------------
-    Instace of Pattern1 graph.
+    Instace of pattern1 graph.
 
 	References
 	---------------------

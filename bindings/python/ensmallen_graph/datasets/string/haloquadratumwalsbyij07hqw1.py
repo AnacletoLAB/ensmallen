@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloquadratumWalsbyiJ07hqw1.
+This file offers the methods to automatically retrieve the graph Haloquadratum walsbyi J07HQW1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloquadratumWalsbyiJ07hqw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloquadratumWalsbyiJ07hqw1 graph.
+    """Return new instance of the Haloquadratum walsbyi J07HQW1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloquadratumWalsbyiJ07hqw1(
 
     Returns
     -----------------------
-    Instace of HaloquadratumWalsbyiJ07hqw1 graph.
+    Instace of Haloquadratum walsbyi J07HQW1 graph.
 
 	References
 	---------------------

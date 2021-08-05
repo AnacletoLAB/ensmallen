@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentisphaeraeBacteriumGwf24416.
+This file offers the methods to automatically retrieve the graph Lentisphaerae bacterium GWF2_44_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentisphaeraeBacteriumGwf24416(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentisphaeraeBacteriumGwf24416 graph.
+    """Return new instance of the Lentisphaerae bacterium GWF2_44_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentisphaeraeBacteriumGwf24416(
 
     Returns
     -----------------------
-    Instace of LentisphaeraeBacteriumGwf24416 graph.
+    Instace of Lentisphaerae bacterium GWF2_44_16 graph.
 
 	References
 	---------------------

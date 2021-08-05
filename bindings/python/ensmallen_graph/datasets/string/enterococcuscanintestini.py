@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusCanintestini.
+This file offers the methods to automatically retrieve the graph Enterococcus canintestini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusCanintestini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusCanintestini graph.
+    """Return new instance of the Enterococcus canintestini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusCanintestini(
 
     Returns
     -----------------------
-    Instace of EnterococcusCanintestini graph.
+    Instace of Enterococcus canintestini graph.
 
 	References
 	---------------------

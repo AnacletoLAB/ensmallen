@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumSpF0494.
+This file offers the methods to automatically retrieve the graph Atopobium sp. F0494.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumSpF0494(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumSpF0494 graph.
+    """Return new instance of the Atopobium sp. F0494 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AtopobiumSpF0494(
 
     Returns
     -----------------------
-    Instace of AtopobiumSpF0494 graph.
+    Instace of Atopobium sp. F0494 graph.
 
 	References
 	---------------------

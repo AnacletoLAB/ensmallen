@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpMebic08052.
+This file offers the methods to automatically retrieve the graph Vibrio sp. MEBiC08052.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpMebic08052(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpMebic08052 graph.
+    """Return new instance of the Vibrio sp. MEBiC08052 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioSpMebic08052(
 
     Returns
     -----------------------
-    Instace of VibrioSpMebic08052 graph.
+    Instace of Vibrio sp. MEBiC08052 graph.
 
 	References
 	---------------------

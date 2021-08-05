@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSp25b141.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. 25B141.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSp25b141(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSp25b141 graph.
+    """Return new instance of the Hyphomonas sp. 25B141 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasSp25b141(
 
     Returns
     -----------------------
-    Instace of HyphomonasSp25b141 graph.
+    Instace of Hyphomonas sp. 25B141 graph.
 
 	References
 	---------------------

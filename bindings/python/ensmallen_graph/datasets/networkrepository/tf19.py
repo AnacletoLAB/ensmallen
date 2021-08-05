@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf19.
+This file offers the methods to automatically retrieve the graph TF19.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf19(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf19 graph.
+    """Return new instance of the TF19 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf19(
 
     Returns
     -----------------------
-    Instace of Tf19 graph.
+    Instace of TF19 graph.
 
 	References
 	---------------------

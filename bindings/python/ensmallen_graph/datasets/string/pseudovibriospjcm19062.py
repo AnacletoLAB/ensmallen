@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudovibrioSpJcm19062.
+This file offers the methods to automatically retrieve the graph Pseudovibrio sp. JCM 19062.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudovibrioSpJcm19062(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudovibrioSpJcm19062 graph.
+    """Return new instance of the Pseudovibrio sp. JCM 19062 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudovibrioSpJcm19062(
 
     Returns
     -----------------------
-    Instace of PseudovibrioSpJcm19062 graph.
+    Instace of Pseudovibrio sp. JCM 19062 graph.
 
 	References
 	---------------------

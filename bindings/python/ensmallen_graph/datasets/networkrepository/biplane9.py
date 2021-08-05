@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Biplane9.
+This file offers the methods to automatically retrieve the graph biplane-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Biplane9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Biplane9 graph.
+    """Return new instance of the biplane-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Biplane9(
 
     Returns
     -----------------------
-    Instace of Biplane9 graph.
+    Instace of biplane-9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteraceaeBacterium4572351.
+This file offers the methods to automatically retrieve the graph Desulfobacteraceae bacterium 4572_35.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteraceaeBacterium4572351(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteraceaeBacterium4572351 graph.
+    """Return new instance of the Desulfobacteraceae bacterium 4572_35.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobacteraceaeBacterium4572351(
 
     Returns
     -----------------------
-    Instace of DesulfobacteraceaeBacterium4572351 graph.
+    Instace of Desulfobacteraceae bacterium 4572_35.1 graph.
 
 	References
 	---------------------

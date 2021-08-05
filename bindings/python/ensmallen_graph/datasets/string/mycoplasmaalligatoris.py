@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaAlligatoris.
+This file offers the methods to automatically retrieve the graph Mycoplasma alligatoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaAlligatoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaAlligatoris graph.
+    """Return new instance of the Mycoplasma alligatoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaAlligatoris(
 
     Returns
     -----------------------
-    Instace of MycoplasmaAlligatoris graph.
+    Instace of Mycoplasma alligatoris graph.
 
 	References
 	---------------------

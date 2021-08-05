@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusStearothermophilus.
+This file offers the methods to automatically retrieve the graph Geobacillus stearothermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusStearothermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusStearothermophilus graph.
+    """Return new instance of the Geobacillus stearothermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusStearothermophilus(
 
     Returns
     -----------------------
-    Instace of GeobacillusStearothermophilus graph.
+    Instace of Geobacillus stearothermophilus graph.
 
 	References
 	---------------------

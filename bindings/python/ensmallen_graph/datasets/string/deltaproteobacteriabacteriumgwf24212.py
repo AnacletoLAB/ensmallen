@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumGwf24212.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium GWF2_42_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumGwf24212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumGwf24212 graph.
+    """Return new instance of the Deltaproteobacteria bacterium GWF2_42_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumGwf24212(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumGwf24212 graph.
+    Instace of Deltaproteobacteria bacterium GWF2_42_12 graph.
 
 	References
 	---------------------

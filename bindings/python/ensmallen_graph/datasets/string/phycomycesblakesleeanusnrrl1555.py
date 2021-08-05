@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycomycesBlakesleeanusNrrl1555.
+This file offers the methods to automatically retrieve the graph Phycomyces blakesleeanus NRRL 1555(-).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycomycesBlakesleeanusNrrl1555(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycomycesBlakesleeanusNrrl1555 graph.
+    """Return new instance of the Phycomyces blakesleeanus NRRL 1555(-) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycomycesBlakesleeanusNrrl1555(
 
     Returns
     -----------------------
-    Instace of PhycomycesBlakesleeanusNrrl1555 graph.
+    Instace of Phycomyces blakesleeanus NRRL 1555(-) graph.
 
 	References
 	---------------------

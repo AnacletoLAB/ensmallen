@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusPrevotiiDsm20548.
+This file offers the methods to automatically retrieve the graph Anaerococcus prevotii DSM20548.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusPrevotiiDsm20548(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusPrevotiiDsm20548 graph.
+    """Return new instance of the Anaerococcus prevotii DSM20548 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusPrevotiiDsm20548(
 
     Returns
     -----------------------
-    Instace of AnaerococcusPrevotiiDsm20548 graph.
+    Instace of Anaerococcus prevotii DSM20548 graph.
 
 	References
 	---------------------

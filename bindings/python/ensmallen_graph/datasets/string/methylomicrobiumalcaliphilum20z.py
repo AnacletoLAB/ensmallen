@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomicrobiumAlcaliphilum20z.
+This file offers the methods to automatically retrieve the graph Methylomicrobium alcaliphilum 20Z.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomicrobiumAlcaliphilum20z(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomicrobiumAlcaliphilum20z graph.
+    """Return new instance of the Methylomicrobium alcaliphilum 20Z graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomicrobiumAlcaliphilum20z(
 
     Returns
     -----------------------
-    Instace of MethylomicrobiumAlcaliphilum20z graph.
+    Instace of Methylomicrobium alcaliphilum 20Z graph.
 
 	References
 	---------------------

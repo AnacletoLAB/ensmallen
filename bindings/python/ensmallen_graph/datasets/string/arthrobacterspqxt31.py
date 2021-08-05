@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpQxt31.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. QXT-31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpQxt31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpQxt31 graph.
+    """Return new instance of the Arthrobacter sp. QXT-31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpQxt31(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpQxt31 graph.
+    Instace of Arthrobacter sp. QXT-31 graph.
 
 	References
 	---------------------

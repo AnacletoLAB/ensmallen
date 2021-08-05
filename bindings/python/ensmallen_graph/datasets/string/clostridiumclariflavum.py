@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumClariflavum.
+This file offers the methods to automatically retrieve the graph Clostridium clariflavum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumClariflavum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumClariflavum graph.
+    """Return new instance of the Clostridium clariflavum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumClariflavum(
 
     Returns
     -----------------------
-    Instace of ClostridiumClariflavum graph.
+    Instace of Clostridium clariflavum graph.
 
 	References
 	---------------------

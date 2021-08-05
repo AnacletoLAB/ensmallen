@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonadaceaeBacteriumUrha0028.
+This file offers the methods to automatically retrieve the graph Comamonadaceae bacterium URHA0028.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonadaceaeBacteriumUrha0028(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonadaceaeBacteriumUrha0028 graph.
+    """Return new instance of the Comamonadaceae bacterium URHA0028 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonadaceaeBacteriumUrha0028(
 
     Returns
     -----------------------
-    Instace of ComamonadaceaeBacteriumUrha0028 graph.
+    Instace of Comamonadaceae bacterium URHA0028 graph.
 
 	References
 	---------------------

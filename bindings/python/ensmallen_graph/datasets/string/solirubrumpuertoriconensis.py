@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolirubrumPuertoriconensis.
+This file offers the methods to automatically retrieve the graph Solirubrum puertoriconensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolirubrumPuertoriconensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolirubrumPuertoriconensis graph.
+    """Return new instance of the Solirubrum puertoriconensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolirubrumPuertoriconensis(
 
     Returns
     -----------------------
-    Instace of SolirubrumPuertoriconensis graph.
+    Instace of Solirubrum puertoriconensis graph.
 
 	References
 	---------------------

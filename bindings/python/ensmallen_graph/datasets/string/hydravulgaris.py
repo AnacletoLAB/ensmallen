@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydraVulgaris.
+This file offers the methods to automatically retrieve the graph Hydra vulgaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydraVulgaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydraVulgaris graph.
+    """Return new instance of the Hydra vulgaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HydraVulgaris(
 
     Returns
     -----------------------
-    Instace of HydraVulgaris graph.
+    Instace of Hydra vulgaris graph.
 
 	References
 	---------------------

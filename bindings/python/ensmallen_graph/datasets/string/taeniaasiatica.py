@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TaeniaAsiatica.
+This file offers the methods to automatically retrieve the graph Taenia asiatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TaeniaAsiatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TaeniaAsiatica graph.
+    """Return new instance of the Taenia asiatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TaeniaAsiatica(
 
     Returns
     -----------------------
-    Instace of TaeniaAsiatica graph.
+    Instace of Taenia asiatica graph.
 
 	References
 	---------------------

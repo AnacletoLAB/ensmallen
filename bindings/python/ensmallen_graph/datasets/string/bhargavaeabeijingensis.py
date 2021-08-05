@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BhargavaeaBeijingensis.
+This file offers the methods to automatically retrieve the graph Bhargavaea beijingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BhargavaeaBeijingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BhargavaeaBeijingensis graph.
+    """Return new instance of the Bhargavaea beijingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BhargavaeaBeijingensis(
 
     Returns
     -----------------------
-    Instace of BhargavaeaBeijingensis graph.
+    Instace of Bhargavaea beijingensis graph.
 
 	References
 	---------------------

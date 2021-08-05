@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavonifractorPlautii.
+This file offers the methods to automatically retrieve the graph Flavonifractor plautii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavonifractorPlautii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavonifractorPlautii graph.
+    """Return new instance of the Flavonifractor plautii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavonifractorPlautii(
 
     Returns
     -----------------------
-    Instace of FlavonifractorPlautii graph.
+    Instace of Flavonifractor plautii graph.
 
 	References
 	---------------------

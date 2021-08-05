@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrocoleusSpPcc7113.
+This file offers the methods to automatically retrieve the graph Microcoleus sp. PCC7113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrocoleusSpPcc7113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrocoleusSpPcc7113 graph.
+    """Return new instance of the Microcoleus sp. PCC7113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrocoleusSpPcc7113(
 
     Returns
     -----------------------
-    Instace of MicrocoleusSpPcc7113 graph.
+    Instace of Microcoleus sp. PCC7113 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenovibrioHalophilusDsm15072.
+This file offers the methods to automatically retrieve the graph Hydrogenovibrio halophilus DSM 15072.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenovibrioHalophilusDsm15072(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenovibrioHalophilusDsm15072 graph.
+    """Return new instance of the Hydrogenovibrio halophilus DSM 15072 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenovibrioHalophilusDsm15072(
 
     Returns
     -----------------------
-    Instace of HydrogenovibrioHalophilusDsm15072 graph.
+    Instace of Hydrogenovibrio halophilus DSM 15072 graph.
 
 	References
 	---------------------

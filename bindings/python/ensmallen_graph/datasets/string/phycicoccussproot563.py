@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycicoccusSpRoot563.
+This file offers the methods to automatically retrieve the graph Phycicoccus sp. Root563.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycicoccusSpRoot563(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycicoccusSpRoot563 graph.
+    """Return new instance of the Phycicoccus sp. Root563 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycicoccusSpRoot563(
 
     Returns
     -----------------------
-    Instace of PhycicoccusSpRoot563 graph.
+    Instace of Phycicoccus sp. Root563 graph.
 
 	References
 	---------------------

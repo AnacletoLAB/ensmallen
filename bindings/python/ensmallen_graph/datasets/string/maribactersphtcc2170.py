@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterSpHtcc2170.
+This file offers the methods to automatically retrieve the graph Maribacter sp. HTCC2170.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterSpHtcc2170(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterSpHtcc2170 graph.
+    """Return new instance of the Maribacter sp. HTCC2170 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MaribacterSpHtcc2170(
 
     Returns
     -----------------------
-    Instace of MaribacterSpHtcc2170 graph.
+    Instace of Maribacter sp. HTCC2170 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HamadaeaTsunoensis.
+This file offers the methods to automatically retrieve the graph Hamadaea tsunoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HamadaeaTsunoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HamadaeaTsunoensis graph.
+    """Return new instance of the Hamadaea tsunoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HamadaeaTsunoensis(
 
     Returns
     -----------------------
-    Instace of HamadaeaTsunoensis graph.
+    Instace of Hamadaea tsunoensis graph.
 
 	References
 	---------------------

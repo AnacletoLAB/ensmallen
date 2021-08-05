@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPyloriSouthafrica7.
+This file offers the methods to automatically retrieve the graph Helicobacter pylori SouthAfrica7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPyloriSouthafrica7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPyloriSouthafrica7 graph.
+    """Return new instance of the Helicobacter pylori SouthAfrica7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPyloriSouthafrica7(
 
     Returns
     -----------------------
-    Instace of HelicobacterPyloriSouthafrica7 graph.
+    Instace of Helicobacter pylori SouthAfrica7 graph.
 
 	References
 	---------------------

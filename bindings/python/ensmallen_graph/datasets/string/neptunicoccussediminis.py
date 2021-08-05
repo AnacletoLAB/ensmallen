@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptunicoccusSediminis.
+This file offers the methods to automatically retrieve the graph Neptunicoccus sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptunicoccusSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptunicoccusSediminis graph.
+    """Return new instance of the Neptunicoccus sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptunicoccusSediminis(
 
     Returns
     -----------------------
-    Instace of NeptunicoccusSediminis graph.
+    Instace of Neptunicoccus sediminis graph.
 
 	References
 	---------------------

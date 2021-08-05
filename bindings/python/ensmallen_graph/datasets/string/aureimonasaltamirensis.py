@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasAltamirensis.
+This file offers the methods to automatically retrieve the graph Aureimonas altamirensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasAltamirensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasAltamirensis graph.
+    """Return new instance of the Aureimonas altamirensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureimonasAltamirensis(
 
     Returns
     -----------------------
-    Instace of AureimonasAltamirensis graph.
+    Instace of Aureimonas altamirensis graph.
 
 	References
 	---------------------

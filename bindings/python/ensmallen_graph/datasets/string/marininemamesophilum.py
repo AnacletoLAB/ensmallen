@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarininemaMesophilum.
+This file offers the methods to automatically retrieve the graph Marininema mesophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarininemaMesophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarininemaMesophilum graph.
+    """Return new instance of the Marininema mesophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarininemaMesophilum(
 
     Returns
     -----------------------
-    Instace of MarininemaMesophilum graph.
+    Instace of Marininema mesophilum graph.
 
 	References
 	---------------------

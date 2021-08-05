@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotignumBalticumDsm7044.
+This file offers the methods to automatically retrieve the graph Desulfotignum balticum DSM 7044.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotignumBalticumDsm7044(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotignumBalticumDsm7044 graph.
+    """Return new instance of the Desulfotignum balticum DSM 7044 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfotignumBalticumDsm7044(
 
     Returns
     -----------------------
-    Instace of DesulfotignumBalticumDsm7044 graph.
+    Instace of Desulfotignum balticum DSM 7044 graph.
 
 	References
 	---------------------

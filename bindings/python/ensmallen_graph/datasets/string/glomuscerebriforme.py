@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlomusCerebriforme.
+This file offers the methods to automatically retrieve the graph Glomus cerebriforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlomusCerebriforme(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlomusCerebriforme graph.
+    """Return new instance of the Glomus cerebriforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlomusCerebriforme(
 
     Returns
     -----------------------
-    Instace of GlomusCerebriforme graph.
+    Instace of Glomus cerebriforme graph.
 
 	References
 	---------------------

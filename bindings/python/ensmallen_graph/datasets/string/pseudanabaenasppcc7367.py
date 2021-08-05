@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudanabaenaSpPcc7367.
+This file offers the methods to automatically retrieve the graph Pseudanabaena sp. PCC7367.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudanabaenaSpPcc7367(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudanabaenaSpPcc7367 graph.
+    """Return new instance of the Pseudanabaena sp. PCC7367 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudanabaenaSpPcc7367(
 
     Returns
     -----------------------
-    Instace of PseudanabaenaSpPcc7367 graph.
+    Instace of Pseudanabaena sp. PCC7367 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerovibrioSpJc8.
+This file offers the methods to automatically retrieve the graph Anaerovibrio sp. JC8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerovibrioSpJc8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerovibrioSpJc8 graph.
+    """Return new instance of the Anaerovibrio sp. JC8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerovibrioSpJc8(
 
     Returns
     -----------------------
-    Instace of AnaerovibrioSpJc8 graph.
+    Instace of Anaerovibrio sp. JC8 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FabibacterSp4d4.
+This file offers the methods to automatically retrieve the graph Fabibacter sp. 4D4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FabibacterSp4d4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FabibacterSp4d4 graph.
+    """Return new instance of the Fabibacter sp. 4D4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FabibacterSp4d4(
 
     Returns
     -----------------------
-    Instace of FabibacterSp4d4 graph.
+    Instace of Fabibacter sp. 4D4 graph.
 
 	References
 	---------------------

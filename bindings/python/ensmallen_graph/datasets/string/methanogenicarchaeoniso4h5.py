@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanogenicArchaeonIso4H5.
+This file offers the methods to automatically retrieve the graph methanogenic archaeon ISO4-H5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanogenicArchaeonIso4H5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanogenicArchaeonIso4H5 graph.
+    """Return new instance of the methanogenic archaeon ISO4-H5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanogenicArchaeonIso4H5(
 
     Returns
     -----------------------
-    Instace of MethanogenicArchaeonIso4H5 graph.
+    Instace of methanogenic archaeon ISO4-H5 graph.
 
 	References
 	---------------------

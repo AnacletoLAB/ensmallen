@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpSd21.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. SD21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpSd21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpSd21 graph.
+    """Return new instance of the Erythrobacter sp. SD21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErythrobacterSpSd21(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpSd21 graph.
+    Instace of Erythrobacter sp. SD21 graph.
 
 	References
 	---------------------

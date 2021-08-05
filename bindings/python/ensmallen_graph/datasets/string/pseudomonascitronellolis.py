@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCitronellolis.
+This file offers the methods to automatically retrieve the graph Pseudomonas citronellolis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCitronellolis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCitronellolis graph.
+    """Return new instance of the Pseudomonas citronellolis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasCitronellolis(
 
     Returns
     -----------------------
-    Instace of PseudomonasCitronellolis graph.
+    Instace of Pseudomonas citronellolis graph.
 
 	References
 	---------------------

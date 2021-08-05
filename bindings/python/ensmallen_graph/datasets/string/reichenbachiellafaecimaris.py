@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ReichenbachiellaFaecimaris.
+This file offers the methods to automatically retrieve the graph Reichenbachiella faecimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ReichenbachiellaFaecimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ReichenbachiellaFaecimaris graph.
+    """Return new instance of the Reichenbachiella faecimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ReichenbachiellaFaecimaris(
 
     Returns
     -----------------------
-    Instace of ReichenbachiellaFaecimaris graph.
+    Instace of Reichenbachiella faecimaris graph.
 
 	References
 	---------------------

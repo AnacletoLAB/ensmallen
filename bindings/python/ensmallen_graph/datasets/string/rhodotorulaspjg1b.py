@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodotorulaSpJg1b.
+This file offers the methods to automatically retrieve the graph Rhodotorula sp. JG-1b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodotorulaSpJg1b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodotorulaSpJg1b graph.
+    """Return new instance of the Rhodotorula sp. JG-1b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodotorulaSpJg1b(
 
     Returns
     -----------------------
-    Instace of RhodotorulaSpJg1b graph.
+    Instace of Rhodotorula sp. JG-1b graph.
 
 	References
 	---------------------

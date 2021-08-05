@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumPeriodonticum.
+This file offers the methods to automatically retrieve the graph Fusobacterium periodonticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumPeriodonticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumPeriodonticum graph.
+    """Return new instance of the Fusobacterium periodonticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumPeriodonticum(
 
     Returns
     -----------------------
-    Instace of FusobacteriumPeriodonticum graph.
+    Instace of Fusobacterium periodonticum graph.
 
 	References
 	---------------------

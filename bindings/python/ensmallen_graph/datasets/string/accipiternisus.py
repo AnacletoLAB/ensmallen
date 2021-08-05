@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AccipiterNisus.
+This file offers the methods to automatically retrieve the graph Accipiter nisus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AccipiterNisus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AccipiterNisus graph.
+    """Return new instance of the Accipiter nisus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AccipiterNisus(
 
     Returns
     -----------------------
-    Instace of AccipiterNisus graph.
+    Instace of Accipiter nisus graph.
 
 	References
 	---------------------

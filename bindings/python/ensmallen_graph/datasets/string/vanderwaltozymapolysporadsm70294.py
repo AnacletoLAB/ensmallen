@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VanderwaltozymaPolysporaDsm70294.
+This file offers the methods to automatically retrieve the graph Vanderwaltozyma polyspora DSM 70294.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VanderwaltozymaPolysporaDsm70294(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VanderwaltozymaPolysporaDsm70294 graph.
+    """Return new instance of the Vanderwaltozyma polyspora DSM 70294 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VanderwaltozymaPolysporaDsm70294(
 
     Returns
     -----------------------
-    Instace of VanderwaltozymaPolysporaDsm70294 graph.
+    Instace of Vanderwaltozyma polyspora DSM 70294 graph.
 
 	References
 	---------------------

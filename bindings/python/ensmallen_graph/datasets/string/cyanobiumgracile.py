@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobiumGracile.
+This file offers the methods to automatically retrieve the graph Cyanobium gracile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobiumGracile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobiumGracile graph.
+    """Return new instance of the Cyanobium gracile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyanobiumGracile(
 
     Returns
     -----------------------
-    Instace of CyanobiumGracile graph.
+    Instace of Cyanobium gracile graph.
 
 	References
 	---------------------

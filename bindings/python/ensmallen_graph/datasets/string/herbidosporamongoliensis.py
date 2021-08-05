@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbidosporaMongoliensis.
+This file offers the methods to automatically retrieve the graph Herbidospora mongoliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbidosporaMongoliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbidosporaMongoliensis graph.
+    """Return new instance of the Herbidospora mongoliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbidosporaMongoliensis(
 
     Returns
     -----------------------
-    Instace of HerbidosporaMongoliensis graph.
+    Instace of Herbidospora mongoliensis graph.
 
 	References
 	---------------------

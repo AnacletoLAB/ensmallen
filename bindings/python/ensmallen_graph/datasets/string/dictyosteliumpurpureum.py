@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DictyosteliumPurpureum.
+This file offers the methods to automatically retrieve the graph Dictyostelium purpureum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DictyosteliumPurpureum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DictyosteliumPurpureum graph.
+    """Return new instance of the Dictyostelium purpureum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DictyosteliumPurpureum(
 
     Returns
     -----------------------
-    Instace of DictyosteliumPurpureum graph.
+    Instace of Dictyostelium purpureum graph.
 
 	References
 	---------------------

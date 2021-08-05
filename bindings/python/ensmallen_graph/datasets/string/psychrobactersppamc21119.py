@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpPamc21119.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. PAMC21119.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpPamc21119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpPamc21119 graph.
+    """Return new instance of the Psychrobacter sp. PAMC21119 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterSpPamc21119(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpPamc21119 graph.
+    Instace of Psychrobacter sp. PAMC21119 graph.
 
 	References
 	---------------------

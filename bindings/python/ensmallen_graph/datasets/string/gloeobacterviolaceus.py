@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeobacterViolaceus.
+This file offers the methods to automatically retrieve the graph Gloeobacter violaceus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GloeobacterViolaceus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeobacterViolaceus graph.
+    """Return new instance of the Gloeobacter violaceus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GloeobacterViolaceus(
 
     Returns
     -----------------------
-    Instace of GloeobacterViolaceus graph.
+    Instace of Gloeobacter violaceus graph.
 
 	References
 	---------------------

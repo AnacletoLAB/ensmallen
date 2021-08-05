@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusXylanilyticus.
+This file offers the methods to automatically retrieve the graph Lysinibacillus xylanilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusXylanilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusXylanilyticus graph.
+    """Return new instance of the Lysinibacillus xylanilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusXylanilyticus(
 
     Returns
     -----------------------
-    Instace of LysinibacillusXylanilyticus graph.
+    Instace of Lysinibacillus xylanilyticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterInsulae.
+This file offers the methods to automatically retrieve the graph Pedobacter insulae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterInsulae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterInsulae graph.
+    """Return new instance of the Pedobacter insulae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterInsulae(
 
     Returns
     -----------------------
-    Instace of PedobacterInsulae graph.
+    Instace of Pedobacter insulae graph.
 
 	References
 	---------------------

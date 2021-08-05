@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminobacteriumMobile.
+This file offers the methods to automatically retrieve the graph Aminobacterium mobile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminobacteriumMobile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminobacteriumMobile graph.
+    """Return new instance of the Aminobacterium mobile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AminobacteriumMobile(
 
     Returns
     -----------------------
-    Instace of AminobacteriumMobile graph.
+    Instace of Aminobacterium mobile graph.
 
 	References
 	---------------------

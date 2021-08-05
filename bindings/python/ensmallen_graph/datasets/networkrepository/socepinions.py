@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocEpinions.
+This file offers the methods to automatically retrieve the graph soc-epinions.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def SocEpinions(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocEpinions graph.
+    """Return new instance of the soc-epinions graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def SocEpinions(
 
     Returns
     -----------------------
-    Instace of SocEpinions graph.
+    Instace of soc-epinions graph.
 
 	References
 	---------------------

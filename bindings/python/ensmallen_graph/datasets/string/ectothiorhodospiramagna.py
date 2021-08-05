@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EctothiorhodospiraMagna.
+This file offers the methods to automatically retrieve the graph Ectothiorhodospira magna.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EctothiorhodospiraMagna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EctothiorhodospiraMagna graph.
+    """Return new instance of the Ectothiorhodospira magna graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EctothiorhodospiraMagna(
 
     Returns
     -----------------------
-    Instace of EctothiorhodospiraMagna graph.
+    Instace of Ectothiorhodospira magna graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionimicrobiumSpMarseilleP3275.
+This file offers the methods to automatically retrieve the graph Propionimicrobium sp. Marseille-P3275.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionimicrobiumSpMarseilleP3275(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionimicrobiumSpMarseilleP3275 graph.
+    """Return new instance of the Propionimicrobium sp. Marseille-P3275 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionimicrobiumSpMarseilleP3275(
 
     Returns
     -----------------------
-    Instace of PropionimicrobiumSpMarseilleP3275 graph.
+    Instace of Propionimicrobium sp. Marseille-P3275 graph.
 
 	References
 	---------------------

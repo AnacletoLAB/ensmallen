@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterSalsicius.
+This file offers the methods to automatically retrieve the graph Leucobacter salsicius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterSalsicius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterSalsicius graph.
+    """Return new instance of the Leucobacter salsicius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeucobacterSalsicius(
 
     Returns
     -----------------------
-    Instace of LeucobacterSalsicius graph.
+    Instace of Leucobacter salsicius graph.
 
 	References
 	---------------------

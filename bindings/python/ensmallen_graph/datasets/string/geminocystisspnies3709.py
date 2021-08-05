@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeminocystisSpNies3709.
+This file offers the methods to automatically retrieve the graph Geminocystis sp. NIES-3709.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeminocystisSpNies3709(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeminocystisSpNies3709 graph.
+    """Return new instance of the Geminocystis sp. NIES-3709 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeminocystisSpNies3709(
 
     Returns
     -----------------------
-    Instace of GeminocystisSpNies3709 graph.
+    Instace of Geminocystis sp. NIES-3709 graph.
 
 	References
 	---------------------

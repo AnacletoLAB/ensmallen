@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumOryzae.
+This file offers the methods to automatically retrieve the graph Azospirillum oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumOryzae graph.
+    """Return new instance of the Azospirillum oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumOryzae(
 
     Returns
     -----------------------
-    Instace of AzospirillumOryzae graph.
+    Instace of Azospirillum oryzae graph.
 
 	References
 	---------------------

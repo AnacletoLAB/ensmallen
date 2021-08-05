@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesFunestus.
+This file offers the methods to automatically retrieve the graph Anopheles funestus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesFunestus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesFunestus graph.
+    """Return new instance of the Anopheles funestus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesFunestus(
 
     Returns
     -----------------------
-    Instace of AnophelesFunestus graph.
+    Instace of Anopheles funestus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasSpRifcsplowo2123612.
+This file offers the methods to automatically retrieve the graph Sulfurimonas sp. RIFCSPLOWO2_12_36_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasSpRifcsplowo2123612(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasSpRifcsplowo2123612 graph.
+    """Return new instance of the Sulfurimonas sp. RIFCSPLOWO2_12_36_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurimonasSpRifcsplowo2123612(
 
     Returns
     -----------------------
-    Instace of SulfurimonasSpRifcsplowo2123612 graph.
+    Instace of Sulfurimonas sp. RIFCSPLOWO2_12_36_12 graph.
 
 	References
 	---------------------

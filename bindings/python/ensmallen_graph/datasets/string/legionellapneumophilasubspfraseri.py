@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaPneumophilaSubspFraseri.
+This file offers the methods to automatically retrieve the graph Legionella pneumophila subsp. fraseri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaPneumophilaSubspFraseri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaPneumophilaSubspFraseri graph.
+    """Return new instance of the Legionella pneumophila subsp. fraseri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaPneumophilaSubspFraseri(
 
     Returns
     -----------------------
-    Instace of LegionellaPneumophilaSubspFraseri graph.
+    Instace of Legionella pneumophila subsp. fraseri graph.
 
 	References
 	---------------------

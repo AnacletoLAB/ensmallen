@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasAsaccharolytica.
+This file offers the methods to automatically retrieve the graph Porphyromonas asaccharolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasAsaccharolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasAsaccharolytica graph.
+    """Return new instance of the Porphyromonas asaccharolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasAsaccharolytica(
 
     Returns
     -----------------------
-    Instace of PorphyromonasAsaccharolytica graph.
+    Instace of Porphyromonas asaccharolytica graph.
 
 	References
 	---------------------

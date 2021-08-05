@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterPersici.
+This file offers the methods to automatically retrieve the graph Acetobacter persici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterPersici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterPersici graph.
+    """Return new instance of the Acetobacter persici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterPersici(
 
     Returns
     -----------------------
-    Instace of AcetobacterPersici graph.
+    Instace of Acetobacter persici graph.
 
 	References
 	---------------------

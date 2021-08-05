@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaHumi.
+This file offers the methods to automatically retrieve the graph Caballeronia humi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaHumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaHumi graph.
+    """Return new instance of the Caballeronia humi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaHumi(
 
     Returns
     -----------------------
-    Instace of CaballeroniaHumi graph.
+    Instace of Caballeronia humi graph.
 
 	References
 	---------------------

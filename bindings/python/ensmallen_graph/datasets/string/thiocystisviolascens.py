@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiocystisViolascens.
+This file offers the methods to automatically retrieve the graph Thiocystis violascens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiocystisViolascens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiocystisViolascens graph.
+    """Return new instance of the Thiocystis violascens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiocystisViolascens(
 
     Returns
     -----------------------
-    Instace of ThiocystisViolascens graph.
+    Instace of Thiocystis violascens graph.
 
 	References
 	---------------------

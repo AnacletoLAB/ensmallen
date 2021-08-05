@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptostreptococcusAnaerobiusVpi4330.
+This file offers the methods to automatically retrieve the graph Peptostreptococcus anaerobius VPI4330.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptostreptococcusAnaerobiusVpi4330(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptostreptococcusAnaerobiusVpi4330 graph.
+    """Return new instance of the Peptostreptococcus anaerobius VPI4330 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptostreptococcusAnaerobiusVpi4330(
 
     Returns
     -----------------------
-    Instace of PeptostreptococcusAnaerobiusVpi4330 graph.
+    Instace of Peptostreptococcus anaerobius VPI4330 graph.
 
 	References
 	---------------------

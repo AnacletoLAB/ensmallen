@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaPattaloongensis.
+This file offers the methods to automatically retrieve the graph Micromonospora pattaloongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaPattaloongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaPattaloongensis graph.
+    """Return new instance of the Micromonospora pattaloongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaPattaloongensis(
 
     Returns
     -----------------------
-    Instace of MicromonosporaPattaloongensis graph.
+    Instace of Micromonospora pattaloongensis graph.
 
 	References
 	---------------------

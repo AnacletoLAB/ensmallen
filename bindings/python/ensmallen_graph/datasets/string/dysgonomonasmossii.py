@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasMossii.
+This file offers the methods to automatically retrieve the graph Dysgonomonas mossii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasMossii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasMossii graph.
+    """Return new instance of the Dysgonomonas mossii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DysgonomonasMossii(
 
     Returns
     -----------------------
-    Instace of DysgonomonasMossii graph.
+    Instace of Dysgonomonas mossii graph.
 
 	References
 	---------------------

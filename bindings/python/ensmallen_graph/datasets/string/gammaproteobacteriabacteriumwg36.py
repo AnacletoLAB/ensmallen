@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumWg36.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium WG36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumWg36(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumWg36 graph.
+    """Return new instance of the Gammaproteobacteria bacterium WG36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumWg36(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumWg36 graph.
+    Instace of Gammaproteobacteria bacterium WG36 graph.
 
 	References
 	---------------------

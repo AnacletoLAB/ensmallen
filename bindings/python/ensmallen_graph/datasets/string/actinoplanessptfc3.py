@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesSpTfc3.
+This file offers the methods to automatically retrieve the graph Actinoplanes sp. TFC3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesSpTfc3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesSpTfc3 graph.
+    """Return new instance of the Actinoplanes sp. TFC3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinoplanesSpTfc3(
 
     Returns
     -----------------------
-    Instace of ActinoplanesSpTfc3 graph.
+    Instace of Actinoplanes sp. TFC3 graph.
 
 	References
 	---------------------

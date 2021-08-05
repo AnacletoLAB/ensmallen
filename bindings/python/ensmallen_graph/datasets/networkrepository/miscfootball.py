@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscFootball.
+This file offers the methods to automatically retrieve the graph misc-football.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def MiscFootball(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscFootball graph.
+    """Return new instance of the misc-football graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def MiscFootball(
 
     Returns
     -----------------------
-    Instace of MiscFootball graph.
+    Instace of misc-football graph.
 
 	References
 	---------------------

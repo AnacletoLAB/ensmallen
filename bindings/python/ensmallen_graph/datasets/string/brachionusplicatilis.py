@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachionusPlicatilis.
+This file offers the methods to automatically retrieve the graph Brachionus plicatilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachionusPlicatilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachionusPlicatilis graph.
+    """Return new instance of the Brachionus plicatilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachionusPlicatilis(
 
     Returns
     -----------------------
-    Instace of BrachionusPlicatilis graph.
+    Instace of Brachionus plicatilis graph.
 
 	References
 	---------------------

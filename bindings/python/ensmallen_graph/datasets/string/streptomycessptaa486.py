@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpTaa486.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. TAA486.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpTaa486(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpTaa486 graph.
+    """Return new instance of the Streptomyces sp. TAA486 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpTaa486(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpTaa486 graph.
+    Instace of Streptomyces sp. TAA486 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PanPaniscus.
+This file offers the methods to automatically retrieve the graph Pan paniscus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PanPaniscus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PanPaniscus graph.
+    """Return new instance of the Pan paniscus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PanPaniscus(
 
     Returns
     -----------------------
-    Instace of PanPaniscus graph.
+    Instace of Pan paniscus graph.
 
 	References
 	---------------------

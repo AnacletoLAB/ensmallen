@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSpH5989.
+This file offers the methods to automatically retrieve the graph Devosia sp. H5989.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSpH5989(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSpH5989 graph.
+    """Return new instance of the Devosia sp. H5989 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSpH5989(
 
     Returns
     -----------------------
-    Instace of DevosiaSpH5989 graph.
+    Instace of Devosia sp. H5989 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriaBacteriumGwc23612.
+This file offers the methods to automatically retrieve the graph Ignavibacteria bacterium GWC2_36_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriaBacteriumGwc23612(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriaBacteriumGwc23612 graph.
+    """Return new instance of the Ignavibacteria bacterium GWC2_36_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacteriaBacteriumGwc23612(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriaBacteriumGwc23612 graph.
+    Instace of Ignavibacteria bacterium GWC2_36_12 graph.
 
 	References
 	---------------------

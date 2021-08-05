@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesTogonis.
+This file offers the methods to automatically retrieve the graph Bacteroides togonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesTogonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesTogonis graph.
+    """Return new instance of the Bacteroides togonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesTogonis(
 
     Returns
     -----------------------
-    Instace of BacteroidesTogonis graph.
+    Instace of Bacteroides togonis graph.
 
 	References
 	---------------------

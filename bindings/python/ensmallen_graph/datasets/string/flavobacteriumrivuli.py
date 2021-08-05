@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumRivuli.
+This file offers the methods to automatically retrieve the graph Flavobacterium rivuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumRivuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumRivuli graph.
+    """Return new instance of the Flavobacterium rivuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumRivuli(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumRivuli graph.
+    Instace of Flavobacterium rivuli graph.
 
 	References
 	---------------------

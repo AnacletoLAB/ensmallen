@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumShigense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium shigense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumShigense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumShigense graph.
+    """Return new instance of the Chryseobacterium shigense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumShigense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumShigense graph.
+    Instace of Chryseobacterium shigense graph.
 
 	References
 	---------------------

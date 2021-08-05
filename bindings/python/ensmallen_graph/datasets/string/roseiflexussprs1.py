@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseiflexusSpRs1.
+This file offers the methods to automatically retrieve the graph Roseiflexus sp. RS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseiflexusSpRs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseiflexusSpRs1 graph.
+    """Return new instance of the Roseiflexus sp. RS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseiflexusSpRs1(
 
     Returns
     -----------------------
-    Instace of RoseiflexusSpRs1 graph.
+    Instace of Roseiflexus sp. RS1 graph.
 
 	References
 	---------------------

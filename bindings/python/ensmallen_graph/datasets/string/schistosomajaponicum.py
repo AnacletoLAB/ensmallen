@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaJaponicum.
+This file offers the methods to automatically retrieve the graph Schistosoma japonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaJaponicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaJaponicum graph.
+    """Return new instance of the Schistosoma japonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaJaponicum(
 
     Returns
     -----------------------
-    Instace of SchistosomaJaponicum graph.
+    Instace of Schistosoma japonicum graph.
 
 	References
 	---------------------

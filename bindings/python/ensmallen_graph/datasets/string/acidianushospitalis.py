@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidianusHospitalis.
+This file offers the methods to automatically retrieve the graph Acidianus hospitalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidianusHospitalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidianusHospitalis graph.
+    """Return new instance of the Acidianus hospitalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidianusHospitalis(
 
     Returns
     -----------------------
-    Instace of AcidianusHospitalis graph.
+    Instace of Acidianus hospitalis graph.
 
 	References
 	---------------------

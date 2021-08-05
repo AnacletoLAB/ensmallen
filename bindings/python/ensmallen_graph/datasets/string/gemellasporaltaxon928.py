@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaSpOralTaxon928.
+This file offers the methods to automatically retrieve the graph Gemella sp. oral taxon 928.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaSpOralTaxon928(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaSpOralTaxon928 graph.
+    """Return new instance of the Gemella sp. oral taxon 928 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemellaSpOralTaxon928(
 
     Returns
     -----------------------
-    Instace of GemellaSpOralTaxon928 graph.
+    Instace of Gemella sp. oral taxon 928 graph.
 
 	References
 	---------------------

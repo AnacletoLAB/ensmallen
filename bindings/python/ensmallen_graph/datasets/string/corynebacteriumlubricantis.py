@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumLubricantis.
+This file offers the methods to automatically retrieve the graph Corynebacterium lubricantis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumLubricantis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumLubricantis graph.
+    """Return new instance of the Corynebacterium lubricantis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumLubricantis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumLubricantis graph.
+    Instace of Corynebacterium lubricantis graph.
 
 	References
 	---------------------

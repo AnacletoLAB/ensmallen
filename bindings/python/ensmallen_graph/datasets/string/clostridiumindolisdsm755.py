@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumIndolisDsm755.
+This file offers the methods to automatically retrieve the graph [Clostridium] indolis DSM 755.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumIndolisDsm755(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumIndolisDsm755 graph.
+    """Return new instance of the [Clostridium] indolis DSM 755 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumIndolisDsm755(
 
     Returns
     -----------------------
-    Instace of ClostridiumIndolisDsm755 graph.
+    Instace of [Clostridium] indolis DSM 755 graph.
 
 	References
 	---------------------

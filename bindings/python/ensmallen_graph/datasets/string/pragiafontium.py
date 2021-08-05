@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PragiaFontium.
+This file offers the methods to automatically retrieve the graph Pragia fontium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PragiaFontium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PragiaFontium graph.
+    """Return new instance of the Pragia fontium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PragiaFontium(
 
     Returns
     -----------------------
-    Instace of PragiaFontium graph.
+    Instace of Pragia fontium graph.
 
 	References
 	---------------------

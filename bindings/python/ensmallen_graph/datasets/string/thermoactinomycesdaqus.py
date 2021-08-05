@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoactinomycesDaqus.
+This file offers the methods to automatically retrieve the graph Thermoactinomyces daqus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoactinomycesDaqus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoactinomycesDaqus graph.
+    """Return new instance of the Thermoactinomyces daqus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoactinomycesDaqus(
 
     Returns
     -----------------------
-    Instace of ThermoactinomycesDaqus graph.
+    Instace of Thermoactinomyces daqus graph.
 
 	References
 	---------------------

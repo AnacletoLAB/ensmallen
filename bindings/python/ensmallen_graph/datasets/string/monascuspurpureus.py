@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonascusPurpureus.
+This file offers the methods to automatically retrieve the graph Monascus purpureus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonascusPurpureus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonascusPurpureus graph.
+    """Return new instance of the Monascus purpureus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonascusPurpureus(
 
     Returns
     -----------------------
-    Instace of MonascusPurpureus graph.
+    Instace of Monascus purpureus graph.
 
 	References
 	---------------------

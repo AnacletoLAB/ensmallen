@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosaetaHarundinacea6ac.
+This file offers the methods to automatically retrieve the graph Methanosaeta harundinacea 6Ac.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosaetaHarundinacea6ac(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosaetaHarundinacea6ac graph.
+    """Return new instance of the Methanosaeta harundinacea 6Ac graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosaetaHarundinacea6ac(
 
     Returns
     -----------------------
-    Instace of MethanosaetaHarundinacea6ac graph.
+    Instace of Methanosaeta harundinacea 6Ac graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPectinophilus.
+This file offers the methods to automatically retrieve the graph Bacteroides pectinophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPectinophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPectinophilus graph.
+    """Return new instance of the Bacteroides pectinophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesPectinophilus(
 
     Returns
     -----------------------
-    Instace of BacteroidesPectinophilus graph.
+    Instace of Bacteroides pectinophilus graph.
 
 	References
 	---------------------

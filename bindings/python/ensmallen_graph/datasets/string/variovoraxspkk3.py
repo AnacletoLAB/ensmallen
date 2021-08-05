@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpKk3.
+This file offers the methods to automatically retrieve the graph Variovorax sp. KK3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpKk3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpKk3 graph.
+    """Return new instance of the Variovorax sp. KK3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpKk3(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpKk3 graph.
+    Instace of Variovorax sp. KK3 graph.
 
 	References
 	---------------------

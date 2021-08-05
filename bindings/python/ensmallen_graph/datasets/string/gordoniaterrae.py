@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaTerrae.
+This file offers the methods to automatically retrieve the graph Gordonia terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaTerrae graph.
+    """Return new instance of the Gordonia terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaTerrae(
 
     Returns
     -----------------------
-    Instace of GordoniaTerrae graph.
+    Instace of Gordonia terrae graph.
 
 	References
 	---------------------

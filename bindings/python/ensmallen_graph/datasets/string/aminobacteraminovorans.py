@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminobacterAminovorans.
+This file offers the methods to automatically retrieve the graph Aminobacter aminovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminobacterAminovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminobacterAminovorans graph.
+    """Return new instance of the Aminobacter aminovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AminobacterAminovorans(
 
     Returns
     -----------------------
-    Instace of AminobacterAminovorans graph.
+    Instace of Aminobacter aminovorans graph.
 
 	References
 	---------------------

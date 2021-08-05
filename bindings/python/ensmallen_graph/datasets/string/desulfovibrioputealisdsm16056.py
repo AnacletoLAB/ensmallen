@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioPutealisDsm16056.
+This file offers the methods to automatically retrieve the graph Desulfovibrio putealis DSM 16056.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioPutealisDsm16056(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioPutealisDsm16056 graph.
+    """Return new instance of the Desulfovibrio putealis DSM 16056 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioPutealisDsm16056(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioPutealisDsm16056 graph.
+    Instace of Desulfovibrio putealis DSM 16056 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebSk2005All.
+This file offers the methods to automatically retrieve the graph web-sk-2005-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebSk2005All(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebSk2005All graph.
+    """Return new instance of the web-sk-2005-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebSk2005All(
 
     Returns
     -----------------------
-    Instace of WebSk2005All graph.
+    Instace of web-sk-2005-all graph.
 
 	References
 	---------------------

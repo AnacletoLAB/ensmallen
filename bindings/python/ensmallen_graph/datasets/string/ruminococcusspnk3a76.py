@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpNk3a76.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. NK3A76.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpNk3a76(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpNk3a76 graph.
+    """Return new instance of the Ruminococcus sp. NK3A76 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusSpNk3a76(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpNk3a76 graph.
+    Instace of Ruminococcus sp. NK3A76 graph.
 
 	References
 	---------------------

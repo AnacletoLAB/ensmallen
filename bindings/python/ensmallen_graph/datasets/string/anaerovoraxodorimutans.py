@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerovoraxOdorimutans.
+This file offers the methods to automatically retrieve the graph Anaerovorax odorimutans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerovoraxOdorimutans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerovoraxOdorimutans graph.
+    """Return new instance of the Anaerovorax odorimutans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerovoraxOdorimutans(
 
     Returns
     -----------------------
-    Instace of AnaerovoraxOdorimutans graph.
+    Instace of Anaerovorax odorimutans graph.
 
 	References
 	---------------------

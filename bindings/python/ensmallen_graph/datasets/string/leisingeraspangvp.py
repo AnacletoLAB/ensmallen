@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraSpAngVp.
+This file offers the methods to automatically retrieve the graph Leisingera sp. ANG-Vp.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraSpAngVp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraSpAngVp graph.
+    """Return new instance of the Leisingera sp. ANG-Vp graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeisingeraSpAngVp(
 
     Returns
     -----------------------
-    Instace of LeisingeraSpAngVp graph.
+    Instace of Leisingera sp. ANG-Vp graph.
 
 	References
 	---------------------

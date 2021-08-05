@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasAquamarina.
+This file offers the methods to automatically retrieve the graph Halomonas aquamarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasAquamarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasAquamarina graph.
+    """Return new instance of the Halomonas aquamarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasAquamarina(
 
     Returns
     -----------------------
-    Instace of HalomonasAquamarina graph.
+    Instace of Halomonas aquamarina graph.
 
 	References
 	---------------------

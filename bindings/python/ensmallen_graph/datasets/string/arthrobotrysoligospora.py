@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobotrysOligospora.
+This file offers the methods to automatically retrieve the graph Arthrobotrys oligospora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobotrysOligospora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobotrysOligospora graph.
+    """Return new instance of the Arthrobotrys oligospora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobotrysOligospora(
 
     Returns
     -----------------------
-    Instace of ArthrobotrysOligospora graph.
+    Instace of Arthrobotrys oligospora graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraSp27.
+This file offers the methods to automatically retrieve the graph Thauera sp. 27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraSp27(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraSp27 graph.
+    """Return new instance of the Thauera sp. 27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThaueraSp27(
 
     Returns
     -----------------------
-    Instace of ThaueraSp27 graph.
+    Instace of Thauera sp. 27 graph.
 
 	References
 	---------------------

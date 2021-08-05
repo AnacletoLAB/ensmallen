@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrateuriaAurantia.
+This file offers the methods to automatically retrieve the graph Frateuria aurantia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrateuriaAurantia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrateuriaAurantia graph.
+    """Return new instance of the Frateuria aurantia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrateuriaAurantia(
 
     Returns
     -----------------------
-    Instace of FrateuriaAurantia graph.
+    Instace of Frateuria aurantia graph.
 
 	References
 	---------------------

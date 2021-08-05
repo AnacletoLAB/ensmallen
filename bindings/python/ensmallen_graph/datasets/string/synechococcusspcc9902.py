@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpCc9902.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. CC9902.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpCc9902(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpCc9902 graph.
+    """Return new instance of the Synechococcus sp. CC9902 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpCc9902(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpCc9902 graph.
+    Instace of Synechococcus sp. CC9902 graph.
 
 	References
 	---------------------

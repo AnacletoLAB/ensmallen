@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacillusSpOk032.
+This file offers the methods to automatically retrieve the graph Psychrobacillus sp. OK032.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacillusSpOk032(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacillusSpOk032 graph.
+    """Return new instance of the Psychrobacillus sp. OK032 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacillusSpOk032(
 
     Returns
     -----------------------
-    Instace of PsychrobacillusSpOk032 graph.
+    Instace of Psychrobacillus sp. OK032 graph.
 
 	References
 	---------------------

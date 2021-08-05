@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumTrichothecenolyticum.
+This file offers the methods to automatically retrieve the graph Microbacterium trichothecenolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumTrichothecenolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumTrichothecenolyticum graph.
+    """Return new instance of the Microbacterium trichothecenolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumTrichothecenolyticum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumTrichothecenolyticum graph.
+    Instace of Microbacterium trichothecenolyticum graph.
 
 	References
 	---------------------

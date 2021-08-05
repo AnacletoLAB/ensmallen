@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpScgC07wgaEpuloa2.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. SCG-C07WGA-EpuloA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpScgC07wgaEpuloa2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpScgC07wgaEpuloa2 graph.
+    """Return new instance of the Epulopiscium sp. SCG-C07WGA-EpuloA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpScgC07wgaEpuloa2(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpScgC07wgaEpuloa2 graph.
+    Instace of Epulopiscium sp. SCG-C07WGA-EpuloA2 graph.
 
 	References
 	---------------------

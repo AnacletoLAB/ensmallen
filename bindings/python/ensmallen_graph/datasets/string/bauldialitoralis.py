@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BauldiaLitoralis.
+This file offers the methods to automatically retrieve the graph Bauldia litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BauldiaLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BauldiaLitoralis graph.
+    """Return new instance of the Bauldia litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BauldiaLitoralis(
 
     Returns
     -----------------------
-    Instace of BauldiaLitoralis graph.
+    Instace of Bauldia litoralis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AscodesmisNigricans.
+This file offers the methods to automatically retrieve the graph Ascodesmis nigricans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AscodesmisNigricans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AscodesmisNigricans graph.
+    """Return new instance of the Ascodesmis nigricans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AscodesmisNigricans(
 
     Returns
     -----------------------
-    Instace of AscodesmisNigricans graph.
+    Instace of Ascodesmis nigricans graph.
 
 	References
 	---------------------

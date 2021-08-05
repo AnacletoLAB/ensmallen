@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioPiezophilus.
+This file offers the methods to automatically retrieve the graph Desulfovibrio piezophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioPiezophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioPiezophilus graph.
+    """Return new instance of the Desulfovibrio piezophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioPiezophilus(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioPiezophilus graph.
+    Instace of Desulfovibrio piezophilus graph.
 
 	References
 	---------------------

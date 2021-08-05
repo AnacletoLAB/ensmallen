@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpOrs3359.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. ORS 3359.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpOrs3359(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpOrs3359 graph.
+    """Return new instance of the Mesorhizobium sp. ORS 3359 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumSpOrs3359(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpOrs3359 graph.
+    Instace of Mesorhizobium sp. ORS 3359 graph.
 
 	References
 	---------------------

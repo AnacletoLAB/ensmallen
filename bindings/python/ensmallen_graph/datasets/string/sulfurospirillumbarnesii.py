@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumBarnesii.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum barnesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumBarnesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumBarnesii graph.
+    """Return new instance of the Sulfurospirillum barnesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurospirillumBarnesii(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumBarnesii graph.
+    Instace of Sulfurospirillum barnesii graph.
 
 	References
 	---------------------

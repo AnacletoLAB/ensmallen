@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAccumulibacterAalborgensis.
+This file offers the methods to automatically retrieve the graph Candidatus Accumulibacter aalborgensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAccumulibacterAalborgensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAccumulibacterAalborgensis graph.
+    """Return new instance of the Candidatus Accumulibacter aalborgensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAccumulibacterAalborgensis(
 
     Returns
     -----------------------
-    Instace of CandidatusAccumulibacterAalborgensis graph.
+    Instace of Candidatus Accumulibacter aalborgensis graph.
 
 	References
 	---------------------

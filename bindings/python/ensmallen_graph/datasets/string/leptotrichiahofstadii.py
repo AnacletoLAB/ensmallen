@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaHofstadii.
+This file offers the methods to automatically retrieve the graph Leptotrichia hofstadii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaHofstadii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaHofstadii graph.
+    """Return new instance of the Leptotrichia hofstadii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaHofstadii(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaHofstadii graph.
+    Instace of Leptotrichia hofstadii graph.
 
 	References
 	---------------------

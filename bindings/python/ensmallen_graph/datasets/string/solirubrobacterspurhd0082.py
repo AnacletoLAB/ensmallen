@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolirubrobacterSpUrhd0082.
+This file offers the methods to automatically retrieve the graph Solirubrobacter sp. URHD0082.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolirubrobacterSpUrhd0082(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolirubrobacterSpUrhd0082 graph.
+    """Return new instance of the Solirubrobacter sp. URHD0082 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolirubrobacterSpUrhd0082(
 
     Returns
     -----------------------
-    Instace of SolirubrobacterSpUrhd0082 graph.
+    Instace of Solirubrobacter sp. URHD0082 graph.
 
 	References
 	---------------------

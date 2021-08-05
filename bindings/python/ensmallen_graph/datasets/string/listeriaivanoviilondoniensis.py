@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaIvanoviiLondoniensis.
+This file offers the methods to automatically retrieve the graph Listeria ivanovii londoniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaIvanoviiLondoniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaIvanoviiLondoniensis graph.
+    """Return new instance of the Listeria ivanovii londoniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaIvanoviiLondoniensis(
 
     Returns
     -----------------------
-    Instace of ListeriaIvanoviiLondoniensis graph.
+    Instace of Listeria ivanovii londoniensis graph.
 
 	References
 	---------------------

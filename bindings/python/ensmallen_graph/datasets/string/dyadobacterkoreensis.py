@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterKoreensis.
+This file offers the methods to automatically retrieve the graph Dyadobacter koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyadobacterKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterKoreensis graph.
+    """Return new instance of the Dyadobacter koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyadobacterKoreensis(
 
     Returns
     -----------------------
-    Instace of DyadobacterKoreensis graph.
+    Instace of Dyadobacter koreensis graph.
 
 	References
 	---------------------

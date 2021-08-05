@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasSpEur3121.
+This file offers the methods to automatically retrieve the graph Polaromonas sp. EUR3 1.2.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasSpEur3121(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasSpEur3121 graph.
+    """Return new instance of the Polaromonas sp. EUR3 1.2.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaromonasSpEur3121(
 
     Returns
     -----------------------
-    Instace of PolaromonasSpEur3121 graph.
+    Instace of Polaromonas sp. EUR3 1.2.1 graph.
 
 	References
 	---------------------

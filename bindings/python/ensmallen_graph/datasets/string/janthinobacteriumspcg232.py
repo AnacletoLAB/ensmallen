@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumSpCg232.
+This file offers the methods to automatically retrieve the graph Janthinobacterium sp. CG23_2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumSpCg232(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumSpCg232 graph.
+    """Return new instance of the Janthinobacterium sp. CG23_2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanthinobacteriumSpCg232(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumSpCg232 graph.
+    Instace of Janthinobacterium sp. CG23_2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumUniforme.
+This file offers the methods to automatically retrieve the graph Eubacterium uniforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumUniforme(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumUniforme graph.
+    """Return new instance of the Eubacterium uniforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumUniforme(
 
     Returns
     -----------------------
-    Instace of EubacteriumUniforme graph.
+    Instace of Eubacterium uniforme graph.
 
 	References
 	---------------------

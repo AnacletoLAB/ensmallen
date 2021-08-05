@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumSalinitoleransStrHayward0363.
+This file offers the methods to automatically retrieve the graph Agrobacterium salinitolerans str. Hayward 0363.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumSalinitoleransStrHayward0363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumSalinitoleransStrHayward0363 graph.
+    """Return new instance of the Agrobacterium salinitolerans str. Hayward 0363 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumSalinitoleransStrHayward0363(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumSalinitoleransStrHayward0363 graph.
+    Instace of Agrobacterium salinitolerans str. Hayward 0363 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaSchlechtendaliaChinensis.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola (Schlechtendalia chinensis).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaSchlechtendaliaChinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaSchlechtendaliaChinensis graph.
+    """Return new instance of the Buchnera aphidicola (Schlechtendalia chinensis) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaSchlechtendaliaChinensis(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaSchlechtendaliaChinensis graph.
+    Instace of Buchnera aphidicola (Schlechtendalia chinensis) graph.
 
 	References
 	---------------------

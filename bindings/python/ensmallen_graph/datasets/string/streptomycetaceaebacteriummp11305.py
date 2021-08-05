@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycetaceaeBacteriumMp11305.
+This file offers the methods to automatically retrieve the graph Streptomycetaceae bacterium MP113-05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycetaceaeBacteriumMp11305(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycetaceaeBacteriumMp11305 graph.
+    """Return new instance of the Streptomycetaceae bacterium MP113-05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycetaceaeBacteriumMp11305(
 
     Returns
     -----------------------
-    Instace of StreptomycetaceaeBacteriumMp11305 graph.
+    Instace of Streptomycetaceae bacterium MP113-05 graph.
 
 	References
 	---------------------

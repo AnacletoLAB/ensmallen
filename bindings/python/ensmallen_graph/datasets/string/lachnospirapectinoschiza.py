@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraPectinoschiza.
+This file offers the methods to automatically retrieve the graph Lachnospira pectinoschiza.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraPectinoschiza(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraPectinoschiza graph.
+    """Return new instance of the Lachnospira pectinoschiza graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnospiraPectinoschiza(
 
     Returns
     -----------------------
-    Instace of LachnospiraPectinoschiza graph.
+    Instace of Lachnospira pectinoschiza graph.
 
 	References
 	---------------------

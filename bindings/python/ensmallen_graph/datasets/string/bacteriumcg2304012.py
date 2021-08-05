@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumCg2304012.
+This file offers the methods to automatically retrieve the graph bacterium CG2_30_40_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumCg2304012(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumCg2304012 graph.
+    """Return new instance of the bacterium CG2_30_40_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumCg2304012(
 
     Returns
     -----------------------
-    Instace of BacteriumCg2304012 graph.
+    Instace of bacterium CG2_30_40_12 graph.
 
 	References
 	---------------------

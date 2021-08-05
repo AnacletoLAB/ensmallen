@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnncaliiaAlgeraePra339.
+This file offers the methods to automatically retrieve the graph Anncaliia algerae PRA339.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnncaliiaAlgeraePra339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnncaliiaAlgeraePra339 graph.
+    """Return new instance of the Anncaliia algerae PRA339 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnncaliiaAlgeraePra339(
 
     Returns
     -----------------------
-    Instace of AnncaliiaAlgeraePra339 graph.
+    Instace of Anncaliia algerae PRA339 graph.
 
 	References
 	---------------------

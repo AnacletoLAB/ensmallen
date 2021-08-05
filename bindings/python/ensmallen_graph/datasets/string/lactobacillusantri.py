@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAntri.
+This file offers the methods to automatically retrieve the graph Lactobacillus antri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAntri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAntri graph.
+    """Return new instance of the Lactobacillus antri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusAntri(
 
     Returns
     -----------------------
-    Instace of LactobacillusAntri graph.
+    Instace of Lactobacillus antri graph.
 
 	References
 	---------------------

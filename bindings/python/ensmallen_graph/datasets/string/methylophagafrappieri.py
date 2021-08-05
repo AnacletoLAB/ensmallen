@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophagaFrappieri.
+This file offers the methods to automatically retrieve the graph Methylophaga frappieri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophagaFrappieri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophagaFrappieri graph.
+    """Return new instance of the Methylophaga frappieri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophagaFrappieri(
 
     Returns
     -----------------------
-    Instace of MethylophagaFrappieri graph.
+    Instace of Methylophaga frappieri graph.
 
 	References
 	---------------------

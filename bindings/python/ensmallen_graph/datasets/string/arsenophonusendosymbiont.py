@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArsenophonusEndosymbiont.
+This file offers the methods to automatically retrieve the graph Arsenophonus endosymbiont.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArsenophonusEndosymbiont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArsenophonusEndosymbiont graph.
+    """Return new instance of the Arsenophonus endosymbiont graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArsenophonusEndosymbiont(
 
     Returns
     -----------------------
-    Instace of ArsenophonusEndosymbiont graph.
+    Instace of Arsenophonus endosymbiont graph.
 
 	References
 	---------------------

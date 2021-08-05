@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinispirillumAlkaliphilum.
+This file offers the methods to automatically retrieve the graph Chitinispirillum alkaliphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinispirillumAlkaliphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinispirillumAlkaliphilum graph.
+    """Return new instance of the Chitinispirillum alkaliphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinispirillumAlkaliphilum(
 
     Returns
     -----------------------
-    Instace of ChitinispirillumAlkaliphilum graph.
+    Instace of Chitinispirillum alkaliphilum graph.
 
 	References
 	---------------------

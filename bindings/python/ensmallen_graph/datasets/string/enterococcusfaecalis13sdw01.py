@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusFaecalis13sdw01.
+This file offers the methods to automatically retrieve the graph Enterococcus faecalis 13SDW01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusFaecalis13sdw01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusFaecalis13sdw01 graph.
+    """Return new instance of the Enterococcus faecalis 13SDW01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusFaecalis13sdw01(
 
     Returns
     -----------------------
-    Instace of EnterococcusFaecalis13sdw01 graph.
+    Instace of Enterococcus faecalis 13SDW01 graph.
 
 	References
 	---------------------

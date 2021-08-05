@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CladophialophoraCarrionii.
+This file offers the methods to automatically retrieve the graph Cladophialophora carrionii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CladophialophoraCarrionii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CladophialophoraCarrionii graph.
+    """Return new instance of the Cladophialophora carrionii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CladophialophoraCarrionii(
 
     Returns
     -----------------------
-    Instace of CladophialophoraCarrionii graph.
+    Instace of Cladophialophora carrionii graph.
 
 	References
 	---------------------

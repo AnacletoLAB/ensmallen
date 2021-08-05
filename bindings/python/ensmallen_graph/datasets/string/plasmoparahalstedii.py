@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmoparaHalstedii.
+This file offers the methods to automatically retrieve the graph Plasmopara halstedii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmoparaHalstedii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmoparaHalstedii graph.
+    """Return new instance of the Plasmopara halstedii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlasmoparaHalstedii(
 
     Returns
     -----------------------
-    Instace of PlasmoparaHalstedii graph.
+    Instace of Plasmopara halstedii graph.
 
 	References
 	---------------------

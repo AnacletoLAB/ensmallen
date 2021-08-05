@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaSpYr573.
+This file offers the methods to automatically retrieve the graph Chitinophaga sp. YR573.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaSpYr573(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaSpYr573 graph.
+    """Return new instance of the Chitinophaga sp. YR573 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaSpYr573(
 
     Returns
     -----------------------
-    Instace of ChitinophagaSpYr573 graph.
+    Instace of Chitinophaga sp. YR573 graph.
 
 	References
 	---------------------

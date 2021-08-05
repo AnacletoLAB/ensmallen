@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusMalodoratus.
+This file offers the methods to automatically retrieve the graph Enterococcus malodoratus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusMalodoratus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusMalodoratus graph.
+    """Return new instance of the Enterococcus malodoratus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusMalodoratus(
 
     Returns
     -----------------------
-    Instace of EnterococcusMalodoratus graph.
+    Instace of Enterococcus malodoratus graph.
 
 	References
 	---------------------

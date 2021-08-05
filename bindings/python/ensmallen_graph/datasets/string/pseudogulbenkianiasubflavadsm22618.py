@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogulbenkianiaSubflavaDsm22618.
+This file offers the methods to automatically retrieve the graph Pseudogulbenkiania subflava DSM 22618.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogulbenkianiaSubflavaDsm22618(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogulbenkianiaSubflavaDsm22618 graph.
+    """Return new instance of the Pseudogulbenkiania subflava DSM 22618 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudogulbenkianiaSubflavaDsm22618(
 
     Returns
     -----------------------
-    Instace of PseudogulbenkianiaSubflavaDsm22618 graph.
+    Instace of Pseudogulbenkiania subflava DSM 22618 graph.
 
 	References
 	---------------------

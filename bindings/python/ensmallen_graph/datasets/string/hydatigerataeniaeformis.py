@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydatigeraTaeniaeformis.
+This file offers the methods to automatically retrieve the graph Hydatigera taeniaeformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydatigeraTaeniaeformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydatigeraTaeniaeformis graph.
+    """Return new instance of the Hydatigera taeniaeformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydatigeraTaeniaeformis(
 
     Returns
     -----------------------
-    Instace of HydatigeraTaeniaeformis graph.
+    Instace of Hydatigera taeniaeformis graph.
 
 	References
 	---------------------

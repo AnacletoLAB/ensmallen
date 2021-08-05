@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaKandleri.
+This file offers the methods to automatically retrieve the graph Weissella kandleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaKandleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaKandleri graph.
+    """Return new instance of the Weissella kandleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WeissellaKandleri(
 
     Returns
     -----------------------
-    Instace of WeissellaKandleri graph.
+    Instace of Weissella kandleri graph.
 
 	References
 	---------------------

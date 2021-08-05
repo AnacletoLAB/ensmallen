@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CadophoraSpDse1049.
+This file offers the methods to automatically retrieve the graph Cadophora sp. DSE1049.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CadophoraSpDse1049(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CadophoraSpDse1049 graph.
+    """Return new instance of the Cadophora sp. DSE1049 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CadophoraSpDse1049(
 
     Returns
     -----------------------
-    Instace of CadophoraSpDse1049 graph.
+    Instace of Cadophora sp. DSE1049 graph.
 
 	References
 	---------------------

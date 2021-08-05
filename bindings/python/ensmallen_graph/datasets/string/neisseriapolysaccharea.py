@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaPolysaccharea.
+This file offers the methods to automatically retrieve the graph Neisseria polysaccharea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaPolysaccharea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaPolysaccharea graph.
+    """Return new instance of the Neisseria polysaccharea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaPolysaccharea(
 
     Returns
     -----------------------
-    Instace of NeisseriaPolysaccharea graph.
+    Instace of Neisseria polysaccharea graph.
 
 	References
 	---------------------

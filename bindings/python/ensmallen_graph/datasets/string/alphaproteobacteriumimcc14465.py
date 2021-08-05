@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumImcc14465.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium IMCC14465.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumImcc14465(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumImcc14465 graph.
+    """Return new instance of the alpha proteobacterium IMCC14465 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumImcc14465(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumImcc14465 graph.
+    Instace of alpha proteobacterium IMCC14465 graph.
 
 	References
 	---------------------

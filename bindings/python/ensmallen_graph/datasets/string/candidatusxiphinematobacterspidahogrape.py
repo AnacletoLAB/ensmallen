@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusXiphinematobacterSpIdahoGrape.
+This file offers the methods to automatically retrieve the graph Candidatus Xiphinematobacter sp. Idaho Grape.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusXiphinematobacterSpIdahoGrape(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusXiphinematobacterSpIdahoGrape graph.
+    """Return new instance of the Candidatus Xiphinematobacter sp. Idaho Grape graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusXiphinematobacterSpIdahoGrape(
 
     Returns
     -----------------------
-    Instace of CandidatusXiphinematobacterSpIdahoGrape graph.
+    Instace of Candidatus Xiphinematobacter sp. Idaho Grape graph.
 
 	References
 	---------------------

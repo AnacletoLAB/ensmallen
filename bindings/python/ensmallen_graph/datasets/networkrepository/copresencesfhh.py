@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceSfhh.
+This file offers the methods to automatically retrieve the graph copresence-SFHH.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceSfhh(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceSfhh graph.
+    """Return new instance of the copresence-SFHH graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceSfhh(
 
     Returns
     -----------------------
-    Instace of CopresenceSfhh graph.
+    Instace of copresence-SFHH graph.
 
 	References
 	---------------------

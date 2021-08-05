@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumHominis.
+This file offers the methods to automatically retrieve the graph Chryseobacterium hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumHominis graph.
+    """Return new instance of the Chryseobacterium hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumHominis(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumHominis graph.
+    Instace of Chryseobacterium hominis graph.
 
 	References
 	---------------------

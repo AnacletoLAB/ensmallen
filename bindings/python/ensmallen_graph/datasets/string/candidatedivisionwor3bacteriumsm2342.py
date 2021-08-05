@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWor3BacteriumSm2342.
+This file offers the methods to automatically retrieve the graph candidate division WOR_3 bacterium SM23_42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWor3BacteriumSm2342(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWor3BacteriumSm2342 graph.
+    """Return new instance of the candidate division WOR_3 bacterium SM23_42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWor3BacteriumSm2342(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWor3BacteriumSm2342 graph.
+    Instace of candidate division WOR_3 bacterium SM23_42 graph.
 
 	References
 	---------------------

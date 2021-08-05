@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Qa8fm.
+This file offers the methods to automatically retrieve the graph qa8fm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Qa8fm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Qa8fm graph.
+    """Return new instance of the qa8fm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Qa8fm(
 
     Returns
     -----------------------
-    Instace of Qa8fm graph.
+    Instace of qa8fm graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpSk140.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. SK140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpSk140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpSk140 graph.
+    """Return new instance of the Streptococcus sp. SK140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpSk140(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpSk140 graph.
+    Instace of Streptococcus sp. SK140 graph.
 
 	References
 	---------------------

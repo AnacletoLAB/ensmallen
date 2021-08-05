@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaShakespearei.
+This file offers the methods to automatically retrieve the graph Legionella shakespearei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaShakespearei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaShakespearei graph.
+    """Return new instance of the Legionella shakespearei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaShakespearei(
 
     Returns
     -----------------------
-    Instace of LegionellaShakespearei graph.
+    Instace of Legionella shakespearei graph.
 
 	References
 	---------------------

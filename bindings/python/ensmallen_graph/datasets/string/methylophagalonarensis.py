@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophagaLonarensis.
+This file offers the methods to automatically retrieve the graph Methylophaga lonarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophagaLonarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophagaLonarensis graph.
+    """Return new instance of the Methylophaga lonarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophagaLonarensis(
 
     Returns
     -----------------------
-    Instace of MethylophagaLonarensis graph.
+    Instace of Methylophaga lonarensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaProducer.
+This file offers the methods to automatically retrieve the graph dbpedia-producer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaProducer(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaProducer graph.
+    """Return new instance of the dbpedia-producer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaProducer(
 
     Returns
     -----------------------
-    Instace of DbpediaProducer graph.
+    Instace of dbpedia-producer graph.
 
 	References
 	---------------------

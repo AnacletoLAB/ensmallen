@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BelnapiaSpF41.
+This file offers the methods to automatically retrieve the graph Belnapia sp. F-4-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BelnapiaSpF41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BelnapiaSpF41 graph.
+    """Return new instance of the Belnapia sp. F-4-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BelnapiaSpF41(
 
     Returns
     -----------------------
-    Instace of BelnapiaSpF41 graph.
+    Instace of Belnapia sp. F-4-1 graph.
 
 	References
 	---------------------

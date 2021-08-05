@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioAcrylicus.
+This file offers the methods to automatically retrieve the graph Desulfovibrio acrylicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioAcrylicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioAcrylicus graph.
+    """Return new instance of the Desulfovibrio acrylicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioAcrylicus(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioAcrylicus graph.
+    Instace of Desulfovibrio acrylicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElsinoeAustralis.
+This file offers the methods to automatically retrieve the graph Elsinoe australis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElsinoeAustralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElsinoeAustralis graph.
+    """Return new instance of the Elsinoe australis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElsinoeAustralis(
 
     Returns
     -----------------------
-    Instace of ElsinoeAustralis graph.
+    Instace of Elsinoe australis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumSpMs4.
+This file offers the methods to automatically retrieve the graph Bacterium sp. MS4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumSpMs4(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumSpMs4 graph.
+    """Return new instance of the Bacterium sp. MS4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumSpMs4(
 
     Returns
     -----------------------
-    Instace of BacteriumSpMs4 graph.
+    Instace of Bacterium sp. MS4 graph.
 
 	References
 	---------------------

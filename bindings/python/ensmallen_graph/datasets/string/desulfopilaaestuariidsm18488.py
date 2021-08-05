@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfopilaAestuariiDsm18488.
+This file offers the methods to automatically retrieve the graph Desulfopila aestuarii DSM 18488.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfopilaAestuariiDsm18488(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfopilaAestuariiDsm18488 graph.
+    """Return new instance of the Desulfopila aestuarii DSM 18488 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfopilaAestuariiDsm18488(
 
     Returns
     -----------------------
-    Instace of DesulfopilaAestuariiDsm18488 graph.
+    Instace of Desulfopila aestuarii DSM 18488 graph.
 
 	References
 	---------------------

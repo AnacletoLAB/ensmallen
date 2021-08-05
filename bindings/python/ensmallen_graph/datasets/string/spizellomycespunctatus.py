@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpizellomycesPunctatus.
+This file offers the methods to automatically retrieve the graph Spizellomyces punctatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpizellomycesPunctatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpizellomycesPunctatus graph.
+    """Return new instance of the Spizellomyces punctatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpizellomycesPunctatus(
 
     Returns
     -----------------------
-    Instace of SpizellomycesPunctatus graph.
+    Instace of Spizellomyces punctatus graph.
 
 	References
 	---------------------

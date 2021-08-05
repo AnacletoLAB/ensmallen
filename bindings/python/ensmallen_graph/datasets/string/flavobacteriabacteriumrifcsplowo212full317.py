@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaBacteriumRifcsplowo212Full317.
+This file offers the methods to automatically retrieve the graph Flavobacteria bacterium RIFCSPLOWO2_12_FULL_31_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaBacteriumRifcsplowo212Full317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaBacteriumRifcsplowo212Full317 graph.
+    """Return new instance of the Flavobacteria bacterium RIFCSPLOWO2_12_FULL_31_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaBacteriumRifcsplowo212Full317(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaBacteriumRifcsplowo212Full317 graph.
+    Instace of Flavobacteria bacterium RIFCSPLOWO2_12_FULL_31_7 graph.
 
 	References
 	---------------------

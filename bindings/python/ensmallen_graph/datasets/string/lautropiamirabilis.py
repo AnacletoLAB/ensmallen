@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LautropiaMirabilis.
+This file offers the methods to automatically retrieve the graph Lautropia mirabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LautropiaMirabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LautropiaMirabilis graph.
+    """Return new instance of the Lautropia mirabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LautropiaMirabilis(
 
     Returns
     -----------------------
-    Instace of LautropiaMirabilis graph.
+    Instace of Lautropia mirabilis graph.
 
 	References
 	---------------------

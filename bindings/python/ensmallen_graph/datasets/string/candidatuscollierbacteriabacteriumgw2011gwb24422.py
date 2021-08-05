@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCollierbacteriaBacteriumGw2011Gwb24422.
+This file offers the methods to automatically retrieve the graph Candidatus Collierbacteria bacterium GW2011_GWB2_44_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCollierbacteriaBacteriumGw2011Gwb24422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCollierbacteriaBacteriumGw2011Gwb24422 graph.
+    """Return new instance of the Candidatus Collierbacteria bacterium GW2011_GWB2_44_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCollierbacteriaBacteriumGw2011Gwb24422(
 
     Returns
     -----------------------
-    Instace of CandidatusCollierbacteriaBacteriumGw2011Gwb24422 graph.
+    Instace of Candidatus Collierbacteria bacterium GW2011_GWB2_44_22 graph.
 
 	References
 	---------------------

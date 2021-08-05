@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusSpSk37.
+This file offers the methods to automatically retrieve the graph Virgibacillus sp. SK37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusSpSk37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusSpSk37 graph.
+    """Return new instance of the Virgibacillus sp. SK37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusSpSk37(
 
     Returns
     -----------------------
-    Instace of VirgibacillusSpSk37 graph.
+    Instace of Virgibacillus sp. SK37 graph.
 
 	References
 	---------------------

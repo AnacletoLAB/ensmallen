@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaMinasensis.
+This file offers the methods to automatically retrieve the graph Ehrlichia minasensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaMinasensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaMinasensis graph.
+    """Return new instance of the Ehrlichia minasensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EhrlichiaMinasensis(
 
     Returns
     -----------------------
-    Instace of EhrlichiaMinasensis graph.
+    Instace of Ehrlichia minasensis graph.
 
 	References
 	---------------------

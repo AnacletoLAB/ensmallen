@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffOrkutUser2groups.
+This file offers the methods to automatically retrieve the graph aff-orkut-user2groups.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def AffOrkutUser2groups(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffOrkutUser2groups graph.
+    """Return new instance of the aff-orkut-user2groups graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def AffOrkutUser2groups(
 
     Returns
     -----------------------
-    Instace of AffOrkutUser2groups graph.
+    Instace of aff-orkut-user2groups graph.
 
 	References
 	---------------------

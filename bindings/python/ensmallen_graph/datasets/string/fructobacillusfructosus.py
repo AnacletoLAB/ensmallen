@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FructobacillusFructosus.
+This file offers the methods to automatically retrieve the graph Fructobacillus fructosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FructobacillusFructosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FructobacillusFructosus graph.
+    """Return new instance of the Fructobacillus fructosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FructobacillusFructosus(
 
     Returns
     -----------------------
-    Instace of FructobacillusFructosus graph.
+    Instace of Fructobacillus fructosus graph.
 
 	References
 	---------------------

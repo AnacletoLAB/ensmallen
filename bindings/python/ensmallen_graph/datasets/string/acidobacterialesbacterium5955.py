@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacterialesBacterium5955.
+This file offers the methods to automatically retrieve the graph Acidobacteriales bacterium 59-55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacterialesBacterium5955(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacterialesBacterium5955 graph.
+    """Return new instance of the Acidobacteriales bacterium 59-55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacterialesBacterium5955(
 
     Returns
     -----------------------
-    Instace of AcidobacterialesBacterium5955 graph.
+    Instace of Acidobacteriales bacterium 59-55 graph.
 
 	References
 	---------------------

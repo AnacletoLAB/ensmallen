@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaTularensisSchus4.
+This file offers the methods to automatically retrieve the graph Francisella tularensis SCHUS4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaTularensisSchus4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaTularensisSchus4 graph.
+    """Return new instance of the Francisella tularensis SCHUS4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaTularensisSchus4(
 
     Returns
     -----------------------
-    Instace of FrancisellaTularensisSchus4 graph.
+    Instace of Francisella tularensis SCHUS4 graph.
 
 	References
 	---------------------

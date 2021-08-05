@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AequorivitaVladivostokensis.
+This file offers the methods to automatically retrieve the graph Aequorivita vladivostokensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AequorivitaVladivostokensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AequorivitaVladivostokensis graph.
+    """Return new instance of the Aequorivita vladivostokensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AequorivitaVladivostokensis(
 
     Returns
     -----------------------
-    Instace of AequorivitaVladivostokensis graph.
+    Instace of Aequorivita vladivostokensis graph.
 
 	References
 	---------------------

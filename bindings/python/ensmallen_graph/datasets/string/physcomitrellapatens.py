@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhyscomitrellaPatens.
+This file offers the methods to automatically retrieve the graph Physcomitrella patens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhyscomitrellaPatens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhyscomitrellaPatens graph.
+    """Return new instance of the Physcomitrella patens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhyscomitrellaPatens(
 
     Returns
     -----------------------
-    Instace of PhyscomitrellaPatens graph.
+    Instace of Physcomitrella patens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronospiraThiodismutans.
+This file offers the methods to automatically retrieve the graph Desulfonatronospira thiodismutans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronospiraThiodismutans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronospiraThiodismutans graph.
+    """Return new instance of the Desulfonatronospira thiodismutans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfonatronospiraThiodismutans(
 
     Returns
     -----------------------
-    Instace of DesulfonatronospiraThiodismutans graph.
+    Instace of Desulfonatronospira thiodismutans graph.
 
 	References
 	---------------------

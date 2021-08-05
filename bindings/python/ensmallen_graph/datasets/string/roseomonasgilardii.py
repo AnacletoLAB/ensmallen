@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseomonasGilardii.
+This file offers the methods to automatically retrieve the graph Roseomonas gilardii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseomonasGilardii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseomonasGilardii graph.
+    """Return new instance of the Roseomonas gilardii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseomonasGilardii(
 
     Returns
     -----------------------
-    Instace of RoseomonasGilardii graph.
+    Instace of Roseomonas gilardii graph.
 
 	References
 	---------------------

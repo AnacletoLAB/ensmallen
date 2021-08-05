@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpMl96.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. ML96.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpMl96(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpMl96 graph.
+    """Return new instance of the Pseudomonas sp. ML96 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpMl96(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpMl96 graph.
+    Instace of Pseudomonas sp. ML96 graph.
 
 	References
 	---------------------

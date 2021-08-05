@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpNr41.
+This file offers the methods to automatically retrieve the graph Massilia sp. NR 4-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpNr41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpNr41 graph.
+    """Return new instance of the Massilia sp. NR 4-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpNr41(
 
     Returns
     -----------------------
-    Instace of MassiliaSpNr41 graph.
+    Instace of Massilia sp. NR 4-1 graph.
 
 	References
 	---------------------

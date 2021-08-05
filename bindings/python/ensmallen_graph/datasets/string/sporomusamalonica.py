@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporomusaMalonica.
+This file offers the methods to automatically retrieve the graph Sporomusa malonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporomusaMalonica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporomusaMalonica graph.
+    """Return new instance of the Sporomusa malonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporomusaMalonica(
 
     Returns
     -----------------------
-    Instace of SporomusaMalonica graph.
+    Instace of Sporomusa malonica graph.
 
 	References
 	---------------------

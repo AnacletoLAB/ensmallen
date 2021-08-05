@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpS2151.
+This file offers the methods to automatically retrieve the graph Halomonas sp. S2151.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpS2151(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpS2151 graph.
+    """Return new instance of the Halomonas sp. S2151 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSpS2151(
 
     Returns
     -----------------------
-    Instace of HalomonasSpS2151 graph.
+    Instace of Halomonas sp. S2151 graph.
 
 	References
 	---------------------

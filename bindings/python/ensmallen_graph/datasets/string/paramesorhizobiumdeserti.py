@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParamesorhizobiumDeserti.
+This file offers the methods to automatically retrieve the graph Paramesorhizobium deserti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParamesorhizobiumDeserti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParamesorhizobiumDeserti graph.
+    """Return new instance of the Paramesorhizobium deserti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParamesorhizobiumDeserti(
 
     Returns
     -----------------------
-    Instace of ParamesorhizobiumDeserti graph.
+    Instace of Paramesorhizobium deserti graph.
 
 	References
 	---------------------

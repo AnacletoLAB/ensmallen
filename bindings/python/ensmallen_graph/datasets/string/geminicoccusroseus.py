@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeminicoccusRoseus.
+This file offers the methods to automatically retrieve the graph Geminicoccus roseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeminicoccusRoseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeminicoccusRoseus graph.
+    """Return new instance of the Geminicoccus roseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeminicoccusRoseus(
 
     Returns
     -----------------------
-    Instace of GeminicoccusRoseus graph.
+    Instace of Geminicoccus roseus graph.
 
 	References
 	---------------------

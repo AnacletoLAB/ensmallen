@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanofollisEthanolicus.
+This file offers the methods to automatically retrieve the graph Methanofollis ethanolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanofollisEthanolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanofollisEthanolicus graph.
+    """Return new instance of the Methanofollis ethanolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanofollisEthanolicus(
 
     Returns
     -----------------------
-    Instace of MethanofollisEthanolicus graph.
+    Instace of Methanofollis ethanolicus graph.
 
 	References
 	---------------------

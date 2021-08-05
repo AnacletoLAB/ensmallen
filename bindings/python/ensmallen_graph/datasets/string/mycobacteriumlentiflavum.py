@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumLentiflavum.
+This file offers the methods to automatically retrieve the graph Mycobacterium lentiflavum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumLentiflavum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumLentiflavum graph.
+    """Return new instance of the Mycobacterium lentiflavum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumLentiflavum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumLentiflavum graph.
+    Instace of Mycobacterium lentiflavum graph.
 
 	References
 	---------------------

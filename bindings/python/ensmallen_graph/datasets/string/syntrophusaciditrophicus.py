@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophusAciditrophicus.
+This file offers the methods to automatically retrieve the graph Syntrophus aciditrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophusAciditrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophusAciditrophicus graph.
+    """Return new instance of the Syntrophus aciditrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SyntrophusAciditrophicus(
 
     Returns
     -----------------------
-    Instace of SyntrophusAciditrophicus graph.
+    Instace of Syntrophus aciditrophicus graph.
 
 	References
 	---------------------

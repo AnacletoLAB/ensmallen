@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniborusEthanoligenes.
+This file offers the methods to automatically retrieve the graph Proteiniborus ethanoligenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniborusEthanoligenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniborusEthanoligenes graph.
+    """Return new instance of the Proteiniborus ethanoligenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteiniborusEthanoligenes(
 
     Returns
     -----------------------
-    Instace of ProteiniborusEthanoligenes graph.
+    Instace of Proteiniborus ethanoligenes graph.
 
 	References
 	---------------------

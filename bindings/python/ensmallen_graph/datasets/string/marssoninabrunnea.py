@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarssoninaBrunnea.
+This file offers the methods to automatically retrieve the graph Marssonina brunnea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarssoninaBrunnea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarssoninaBrunnea graph.
+    """Return new instance of the Marssonina brunnea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarssoninaBrunnea(
 
     Returns
     -----------------------
-    Instace of MarssoninaBrunnea graph.
+    Instace of Marssonina brunnea graph.
 
 	References
 	---------------------

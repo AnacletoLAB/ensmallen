@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusErythropolis.
+This file offers the methods to automatically retrieve the graph Rhodococcus erythropolis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusErythropolis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusErythropolis graph.
+    """Return new instance of the Rhodococcus erythropolis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusErythropolis(
 
     Returns
     -----------------------
-    Instace of RhodococcusErythropolis graph.
+    Instace of Rhodococcus erythropolis graph.
 
 	References
 	---------------------

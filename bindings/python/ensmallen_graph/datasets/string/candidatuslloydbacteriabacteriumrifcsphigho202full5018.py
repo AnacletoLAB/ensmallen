@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLloydbacteriaBacteriumRifcsphigho202Full5018.
+This file offers the methods to automatically retrieve the graph Candidatus Lloydbacteria bacterium RIFCSPHIGHO2_02_FULL_50_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLloydbacteriaBacteriumRifcsphigho202Full5018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLloydbacteriaBacteriumRifcsphigho202Full5018 graph.
+    """Return new instance of the Candidatus Lloydbacteria bacterium RIFCSPHIGHO2_02_FULL_50_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLloydbacteriaBacteriumRifcsphigho202Full5018(
 
     Returns
     -----------------------
-    Instace of CandidatusLloydbacteriaBacteriumRifcsphigho202Full5018 graph.
+    Instace of Candidatus Lloydbacteria bacterium RIFCSPHIGHO2_02_FULL_50_18 graph.
 
 	References
 	---------------------

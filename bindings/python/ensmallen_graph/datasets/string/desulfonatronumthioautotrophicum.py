@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronumThioautotrophicum.
+This file offers the methods to automatically retrieve the graph Desulfonatronum thioautotrophicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronumThioautotrophicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronumThioautotrophicum graph.
+    """Return new instance of the Desulfonatronum thioautotrophicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonatronumThioautotrophicum(
 
     Returns
     -----------------------
-    Instace of DesulfonatronumThioautotrophicum graph.
+    Instace of Desulfonatronum thioautotrophicum graph.
 
 	References
 	---------------------

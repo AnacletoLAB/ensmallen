@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBeckwithbacteriaBacteriumGw2011Gwa24310.
+This file offers the methods to automatically retrieve the graph Candidatus Beckwithbacteria bacterium GW2011_GWA2_43_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBeckwithbacteriaBacteriumGw2011Gwa24310(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBeckwithbacteriaBacteriumGw2011Gwa24310 graph.
+    """Return new instance of the Candidatus Beckwithbacteria bacterium GW2011_GWA2_43_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBeckwithbacteriaBacteriumGw2011Gwa24310(
 
     Returns
     -----------------------
-    Instace of CandidatusBeckwithbacteriaBacteriumGw2011Gwa24310 graph.
+    Instace of Candidatus Beckwithbacteria bacterium GW2011_GWA2_43_10 graph.
 
 	References
 	---------------------

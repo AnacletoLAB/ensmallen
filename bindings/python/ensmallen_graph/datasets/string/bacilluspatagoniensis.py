@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusPatagoniensis.
+This file offers the methods to automatically retrieve the graph Bacillus patagoniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusPatagoniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusPatagoniensis graph.
+    """Return new instance of the Bacillus patagoniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusPatagoniensis(
 
     Returns
     -----------------------
-    Instace of BacillusPatagoniensis graph.
+    Instace of Bacillus patagoniensis graph.
 
 	References
 	---------------------

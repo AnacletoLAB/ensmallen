@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioLongus.
+This file offers the methods to automatically retrieve the graph Desulfovibrio longus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioLongus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioLongus graph.
+    """Return new instance of the Desulfovibrio longus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioLongus(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioLongus graph.
+    Instace of Desulfovibrio longus graph.
 
 	References
 	---------------------

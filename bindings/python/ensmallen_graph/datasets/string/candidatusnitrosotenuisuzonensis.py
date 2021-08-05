@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosotenuisUzonensis.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosotenuis uzonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosotenuisUzonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosotenuisUzonensis graph.
+    """Return new instance of the Candidatus Nitrosotenuis uzonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosotenuisUzonensis(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosotenuisUzonensis graph.
+    Instace of Candidatus Nitrosotenuis uzonensis graph.
 
 	References
 	---------------------

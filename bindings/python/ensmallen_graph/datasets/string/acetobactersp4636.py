@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterSp4636.
+This file offers the methods to automatically retrieve the graph Acetobacter sp. 46_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterSp4636(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterSp4636 graph.
+    """Return new instance of the Acetobacter sp. 46_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterSp4636(
 
     Returns
     -----------------------
-    Instace of AcetobacterSp4636 graph.
+    Instace of Acetobacter sp. 46_36 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPoae.
+This file offers the methods to automatically retrieve the graph Pseudomonas poae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPoae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPoae graph.
+    """Return new instance of the Pseudomonas poae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPoae(
 
     Returns
     -----------------------
-    Instace of PseudomonasPoae graph.
+    Instace of Pseudomonas poae graph.
 
 	References
 	---------------------

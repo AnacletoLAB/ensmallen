@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSpTw10.
+This file offers the methods to automatically retrieve the graph Ensifer sp. TW10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSpTw10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSpTw10 graph.
+    """Return new instance of the Ensifer sp. TW10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnsiferSpTw10(
 
     Returns
     -----------------------
-    Instace of EnsiferSpTw10 graph.
+    Instace of Ensifer sp. TW10 graph.
 
 	References
 	---------------------

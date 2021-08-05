@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOligofermentansDsm15707Lmg22743.
+This file offers the methods to automatically retrieve the graph Lactobacillus oligofermentans DSM 15707 LMG 22743.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusOligofermentansDsm15707Lmg22743(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOligofermentansDsm15707Lmg22743 graph.
+    """Return new instance of the Lactobacillus oligofermentans DSM 15707 LMG 22743 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusOligofermentansDsm15707Lmg22743(
 
     Returns
     -----------------------
-    Instace of LactobacillusOligofermentansDsm15707Lmg22743 graph.
+    Instace of Lactobacillus oligofermentans DSM 15707 LMG 22743 graph.
 
 	References
 	---------------------

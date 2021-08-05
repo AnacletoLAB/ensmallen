@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermacetogeniumPhaeum.
+This file offers the methods to automatically retrieve the graph Thermacetogenium phaeum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermacetogeniumPhaeum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermacetogeniumPhaeum graph.
+    """Return new instance of the Thermacetogenium phaeum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermacetogeniumPhaeum(
 
     Returns
     -----------------------
-    Instace of ThermacetogeniumPhaeum graph.
+    Instace of Thermacetogenium phaeum graph.
 
 	References
 	---------------------

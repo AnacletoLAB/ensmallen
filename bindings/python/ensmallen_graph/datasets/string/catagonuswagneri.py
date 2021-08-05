@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatagonusWagneri.
+This file offers the methods to automatically retrieve the graph Catagonus wagneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatagonusWagneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatagonusWagneri graph.
+    """Return new instance of the Catagonus wagneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CatagonusWagneri(
 
     Returns
     -----------------------
-    Instace of CatagonusWagneri graph.
+    Instace of Catagonus wagneri graph.
 
 	References
 	---------------------

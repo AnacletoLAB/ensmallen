@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronincolaFerrireducens.
+This file offers the methods to automatically retrieve the graph Natronincola ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronincolaFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronincolaFerrireducens graph.
+    """Return new instance of the Natronincola ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronincolaFerrireducens(
 
     Returns
     -----------------------
-    Instace of NatronincolaFerrireducens graph.
+    Instace of Natronincola ferrireducens graph.
 
 	References
 	---------------------

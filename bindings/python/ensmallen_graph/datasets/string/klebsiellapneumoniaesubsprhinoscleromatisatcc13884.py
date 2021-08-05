@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884.
+This file offers the methods to automatically retrieve the graph Klebsiella pneumoniae subsp. rhinoscleromatis ATCC 13884.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884 graph.
+    """Return new instance of the Klebsiella pneumoniae subsp. rhinoscleromatis ATCC 13884 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884(
 
     Returns
     -----------------------
-    Instace of KlebsiellaPneumoniaeSubspRhinoscleromatisAtcc13884 graph.
+    Instace of Klebsiella pneumoniae subsp. rhinoscleromatis ATCC 13884 graph.
 
 	References
 	---------------------

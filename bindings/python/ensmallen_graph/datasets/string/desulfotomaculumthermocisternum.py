@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumThermocisternum.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum thermocisternum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumThermocisternum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumThermocisternum graph.
+    """Return new instance of the Desulfotomaculum thermocisternum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumThermocisternum(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumThermocisternum graph.
+    Instace of Desulfotomaculum thermocisternum graph.
 
 	References
 	---------------------

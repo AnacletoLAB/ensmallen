@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusMacrosporangiidus.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus macrosporangiidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusMacrosporangiidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusMacrosporangiidus graph.
+    """Return new instance of the Alicyclobacillus macrosporangiidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicyclobacillusMacrosporangiidus(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusMacrosporangiidus graph.
+    Instace of Alicyclobacillus macrosporangiidus graph.
 
 	References
 	---------------------

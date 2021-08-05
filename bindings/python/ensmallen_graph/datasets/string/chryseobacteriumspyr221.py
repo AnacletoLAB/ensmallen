@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpYr221.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. YR221.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpYr221(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpYr221 graph.
+    """Return new instance of the Chryseobacterium sp. YR221 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpYr221(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpYr221 graph.
+    Instace of Chryseobacterium sp. YR221 graph.
 
 	References
 	---------------------

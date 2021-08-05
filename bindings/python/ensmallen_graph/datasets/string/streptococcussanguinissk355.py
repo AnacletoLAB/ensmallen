@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSanguinisSk355.
+This file offers the methods to automatically retrieve the graph Streptococcus sanguinis SK355.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSanguinisSk355(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSanguinisSk355 graph.
+    """Return new instance of the Streptococcus sanguinis SK355 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSanguinisSk355(
 
     Returns
     -----------------------
-    Instace of StreptococcusSanguinisSk355 graph.
+    Instace of Streptococcus sanguinis SK355 graph.
 
 	References
 	---------------------

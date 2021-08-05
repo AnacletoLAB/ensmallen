@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumAngstadtii.
+This file offers the methods to automatically retrieve the graph Chryseobacterium angstadtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumAngstadtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumAngstadtii graph.
+    """Return new instance of the Chryseobacterium angstadtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumAngstadtii(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumAngstadtii graph.
+    Instace of Chryseobacterium angstadtii graph.
 
 	References
 	---------------------

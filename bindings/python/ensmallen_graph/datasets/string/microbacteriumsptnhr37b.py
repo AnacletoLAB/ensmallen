@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpTnhr37b.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. TNHR37B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpTnhr37b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpTnhr37b graph.
+    """Return new instance of the Microbacterium sp. TNHR37B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpTnhr37b(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpTnhr37b graph.
+    Instace of Microbacterium sp. TNHR37B graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumVariabile.
+This file offers the methods to automatically retrieve the graph Corynebacterium variabile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumVariabile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumVariabile graph.
+    """Return new instance of the Corynebacterium variabile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumVariabile(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumVariabile graph.
+    Instace of Corynebacterium variabile graph.
 
 	References
 	---------------------

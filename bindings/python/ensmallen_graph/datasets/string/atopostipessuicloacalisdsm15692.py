@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopostipesSuicloacalisDsm15692.
+This file offers the methods to automatically retrieve the graph Atopostipes suicloacalis DSM 15692.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopostipesSuicloacalisDsm15692(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopostipesSuicloacalisDsm15692 graph.
+    """Return new instance of the Atopostipes suicloacalis DSM 15692 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtopostipesSuicloacalisDsm15692(
 
     Returns
     -----------------------
-    Instace of AtopostipesSuicloacalisDsm15692 graph.
+    Instace of Atopostipes suicloacalis DSM 15692 graph.
 
 	References
 	---------------------

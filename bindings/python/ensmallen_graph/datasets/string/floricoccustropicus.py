@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FloricoccusTropicus.
+This file offers the methods to automatically retrieve the graph Floricoccus tropicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FloricoccusTropicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FloricoccusTropicus graph.
+    """Return new instance of the Floricoccus tropicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FloricoccusTropicus(
 
     Returns
     -----------------------
-    Instace of FloricoccusTropicus graph.
+    Instace of Floricoccus tropicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophaceaeBacteriumCg2304912.
+This file offers the methods to automatically retrieve the graph Syntrophaceae bacterium CG2_30_49_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophaceaeBacteriumCg2304912(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophaceaeBacteriumCg2304912 graph.
+    """Return new instance of the Syntrophaceae bacterium CG2_30_49_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophaceaeBacteriumCg2304912(
 
     Returns
     -----------------------
-    Instace of SyntrophaceaeBacteriumCg2304912 graph.
+    Instace of Syntrophaceae bacterium CG2_30_49_12 graph.
 
 	References
 	---------------------

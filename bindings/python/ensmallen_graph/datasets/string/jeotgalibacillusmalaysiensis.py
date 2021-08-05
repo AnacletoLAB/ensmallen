@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalibacillusMalaysiensis.
+This file offers the methods to automatically retrieve the graph Jeotgalibacillus malaysiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalibacillusMalaysiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalibacillusMalaysiensis graph.
+    """Return new instance of the Jeotgalibacillus malaysiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeotgalibacillusMalaysiensis(
 
     Returns
     -----------------------
-    Instace of JeotgalibacillusMalaysiensis graph.
+    Instace of Jeotgalibacillus malaysiensis graph.
 
 	References
 	---------------------

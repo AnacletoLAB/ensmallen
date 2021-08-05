@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumAcidaminophilum.
+This file offers the methods to automatically retrieve the graph Eubacterium acidaminophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumAcidaminophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumAcidaminophilum graph.
+    """Return new instance of the Eubacterium acidaminophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumAcidaminophilum(
 
     Returns
     -----------------------
-    Instace of EubacteriumAcidaminophilum graph.
+    Instace of Eubacterium acidaminophilum graph.
 
 	References
 	---------------------

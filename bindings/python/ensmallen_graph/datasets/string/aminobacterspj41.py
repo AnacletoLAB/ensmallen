@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminobacterSpJ41.
+This file offers the methods to automatically retrieve the graph Aminobacter sp. J41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminobacterSpJ41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminobacterSpJ41 graph.
+    """Return new instance of the Aminobacter sp. J41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AminobacterSpJ41(
 
     Returns
     -----------------------
-    Instace of AminobacterSpJ41 graph.
+    Instace of Aminobacter sp. J41 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaHelicoides.
+This file offers the methods to automatically retrieve the graph Spiroplasma helicoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaHelicoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaHelicoides graph.
+    """Return new instance of the Spiroplasma helicoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaHelicoides(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaHelicoides graph.
+    Instace of Spiroplasma helicoides graph.
 
 	References
 	---------------------

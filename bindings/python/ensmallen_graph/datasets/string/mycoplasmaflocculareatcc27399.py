@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaFlocculareAtcc27399.
+This file offers the methods to automatically retrieve the graph Mycoplasma flocculare ATCC 27399.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaFlocculareAtcc27399(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaFlocculareAtcc27399 graph.
+    """Return new instance of the Mycoplasma flocculare ATCC 27399 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaFlocculareAtcc27399(
 
     Returns
     -----------------------
-    Instace of MycoplasmaFlocculareAtcc27399 graph.
+    Instace of Mycoplasma flocculare ATCC 27399 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerostipesSp992a.
+This file offers the methods to automatically retrieve the graph Anaerostipes sp. 992a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerostipesSp992a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerostipesSp992a graph.
+    """Return new instance of the Anaerostipes sp. 992a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerostipesSp992a(
 
     Returns
     -----------------------
-    Instace of AnaerostipesSp992a graph.
+    Instace of Anaerostipes sp. 992a graph.
 
 	References
 	---------------------

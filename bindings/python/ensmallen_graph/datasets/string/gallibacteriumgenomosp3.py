@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallibacteriumGenomosp3.
+This file offers the methods to automatically retrieve the graph Gallibacterium genomosp. 3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallibacteriumGenomosp3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallibacteriumGenomosp3 graph.
+    """Return new instance of the Gallibacterium genomosp. 3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GallibacteriumGenomosp3(
 
     Returns
     -----------------------
-    Instace of GallibacteriumGenomosp3 graph.
+    Instace of Gallibacterium genomosp. 3 graph.
 
 	References
 	---------------------

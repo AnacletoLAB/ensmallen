@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusSpLeaf326.
+This file offers the methods to automatically retrieve the graph Deinococcus sp. Leaf326.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusSpLeaf326(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusSpLeaf326 graph.
+    """Return new instance of the Deinococcus sp. Leaf326 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeinococcusSpLeaf326(
 
     Returns
     -----------------------
-    Instace of DeinococcusSpLeaf326 graph.
+    Instace of Deinococcus sp. Leaf326 graph.
 
 	References
 	---------------------

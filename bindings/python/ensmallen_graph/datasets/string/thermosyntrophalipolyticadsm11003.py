@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosyntrophaLipolyticaDsm11003.
+This file offers the methods to automatically retrieve the graph Thermosyntropha lipolytica DSM 11003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosyntrophaLipolyticaDsm11003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosyntrophaLipolyticaDsm11003 graph.
+    """Return new instance of the Thermosyntropha lipolytica DSM 11003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermosyntrophaLipolyticaDsm11003(
 
     Returns
     -----------------------
-    Instace of ThermosyntrophaLipolyticaDsm11003 graph.
+    Instace of Thermosyntropha lipolytica DSM 11003 graph.
 
 	References
 	---------------------

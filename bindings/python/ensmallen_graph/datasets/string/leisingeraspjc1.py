@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraSpJc1.
+This file offers the methods to automatically retrieve the graph Leisingera sp. JC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraSpJc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraSpJc1 graph.
+    """Return new instance of the Leisingera sp. JC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeisingeraSpJc1(
 
     Returns
     -----------------------
-    Instace of LeisingeraSpJc1 graph.
+    Instace of Leisingera sp. JC1 graph.
 
 	References
 	---------------------

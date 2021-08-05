@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasFragariae.
+This file offers the methods to automatically retrieve the graph Xanthomonas fragariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasFragariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasFragariae graph.
+    """Return new instance of the Xanthomonas fragariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasFragariae(
 
     Returns
     -----------------------
-    Instace of XanthomonasFragariae graph.
+    Instace of Xanthomonas fragariae graph.
 
 	References
 	---------------------

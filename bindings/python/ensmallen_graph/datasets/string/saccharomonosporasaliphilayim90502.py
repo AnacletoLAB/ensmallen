@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaSaliphilaYim90502.
+This file offers the methods to automatically retrieve the graph Saccharomonospora saliphila YIM 90502.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaSaliphilaYim90502(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaSaliphilaYim90502 graph.
+    """Return new instance of the Saccharomonospora saliphila YIM 90502 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharomonosporaSaliphilaYim90502(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaSaliphilaYim90502 graph.
+    Instace of Saccharomonospora saliphila YIM 90502 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpPbn3.
+This file offers the methods to automatically retrieve the graph Halomonas sp. PBN3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpPbn3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpPbn3 graph.
+    """Return new instance of the Halomonas sp. PBN3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasSpPbn3(
 
     Returns
     -----------------------
-    Instace of HalomonasSpPbn3 graph.
+    Instace of Halomonas sp. PBN3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaPseudotuberculosis.
+This file offers the methods to automatically retrieve the graph Yersinia pseudotuberculosis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaPseudotuberculosis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaPseudotuberculosis graph.
+    """Return new instance of the Yersinia pseudotuberculosis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaPseudotuberculosis(
 
     Returns
     -----------------------
-    Instace of YersiniaPseudotuberculosis graph.
+    Instace of Yersinia pseudotuberculosis graph.
 
 	References
 	---------------------

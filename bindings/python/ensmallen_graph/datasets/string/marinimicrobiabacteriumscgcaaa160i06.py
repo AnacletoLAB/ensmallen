@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiaBacteriumScgcAaa160I06.
+This file offers the methods to automatically retrieve the graph Marinimicrobia bacterium SCGC AAA160-I06.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinimicrobiaBacteriumScgcAaa160I06(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiaBacteriumScgcAaa160I06 graph.
+    """Return new instance of the Marinimicrobia bacterium SCGC AAA160-I06 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinimicrobiaBacteriumScgcAaa160I06(
 
     Returns
     -----------------------
-    Instace of MarinimicrobiaBacteriumScgcAaa160I06 graph.
+    Instace of Marinimicrobia bacterium SCGC AAA160-I06 graph.
 
 	References
 	---------------------

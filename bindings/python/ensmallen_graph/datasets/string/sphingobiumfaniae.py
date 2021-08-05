@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumFaniae.
+This file offers the methods to automatically retrieve the graph Sphingobium faniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumFaniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumFaniae graph.
+    """Return new instance of the Sphingobium faniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumFaniae(
 
     Returns
     -----------------------
-    Instace of SphingobiumFaniae graph.
+    Instace of Sphingobium faniae graph.
 
 	References
 	---------------------

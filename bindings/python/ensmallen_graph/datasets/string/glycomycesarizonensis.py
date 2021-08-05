@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycomycesArizonensis.
+This file offers the methods to automatically retrieve the graph Glycomyces arizonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycomycesArizonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycomycesArizonensis graph.
+    """Return new instance of the Glycomyces arizonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlycomycesArizonensis(
 
     Returns
     -----------------------
-    Instace of GlycomycesArizonensis graph.
+    Instace of Glycomyces arizonensis graph.
 
 	References
 	---------------------

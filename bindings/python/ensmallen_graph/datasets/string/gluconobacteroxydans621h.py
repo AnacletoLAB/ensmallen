@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterOxydans621h.
+This file offers the methods to automatically retrieve the graph Gluconobacter oxydans 621H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterOxydans621h(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterOxydans621h graph.
+    """Return new instance of the Gluconobacter oxydans 621H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GluconobacterOxydans621h(
 
     Returns
     -----------------------
-    Instace of GluconobacterOxydans621h graph.
+    Instace of Gluconobacter oxydans 621H graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterSp12014mblMicdiv.
+This file offers the methods to automatically retrieve the graph Maribacter sp. 1_2014MBL_MicDiv.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterSp12014mblMicdiv(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterSp12014mblMicdiv graph.
+    """Return new instance of the Maribacter sp. 1_2014MBL_MicDiv graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterSp12014mblMicdiv(
 
     Returns
     -----------------------
-    Instace of MaribacterSp12014mblMicdiv graph.
+    Instace of Maribacter sp. 1_2014MBL_MicDiv graph.
 
 	References
 	---------------------

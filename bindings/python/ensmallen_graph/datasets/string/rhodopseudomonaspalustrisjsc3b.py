@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopseudomonasPalustrisJsc3b.
+This file offers the methods to automatically retrieve the graph Rhodopseudomonas palustris JSC-3b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopseudomonasPalustrisJsc3b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopseudomonasPalustrisJsc3b graph.
+    """Return new instance of the Rhodopseudomonas palustris JSC-3b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodopseudomonasPalustrisJsc3b(
 
     Returns
     -----------------------
-    Instace of RhodopseudomonasPalustrisJsc3b graph.
+    Instace of Rhodopseudomonas palustris JSC-3b graph.
 
 	References
 	---------------------

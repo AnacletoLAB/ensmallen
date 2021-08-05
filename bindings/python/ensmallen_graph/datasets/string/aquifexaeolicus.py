@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquifexAeolicus.
+This file offers the methods to automatically retrieve the graph Aquifex aeolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquifexAeolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquifexAeolicus graph.
+    """Return new instance of the Aquifex aeolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquifexAeolicus(
 
     Returns
     -----------------------
-    Instace of AquifexAeolicus graph.
+    Instace of Aquifex aeolicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMarinisedimentorum.
+This file offers the methods to automatically retrieve the graph Bacillus marinisedimentorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMarinisedimentorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMarinisedimentorum graph.
+    """Return new instance of the Bacillus marinisedimentorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMarinisedimentorum(
 
     Returns
     -----------------------
-    Instace of BacillusMarinisedimentorum graph.
+    Instace of Bacillus marinisedimentorum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzorhizobiumDoebereinerae.
+This file offers the methods to automatically retrieve the graph Azorhizobium doebereinerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzorhizobiumDoebereinerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzorhizobiumDoebereinerae graph.
+    """Return new instance of the Azorhizobium doebereinerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzorhizobiumDoebereinerae(
 
     Returns
     -----------------------
-    Instace of AzorhizobiumDoebereinerae graph.
+    Instace of Azorhizobium doebereinerae graph.
 
 	References
 	---------------------

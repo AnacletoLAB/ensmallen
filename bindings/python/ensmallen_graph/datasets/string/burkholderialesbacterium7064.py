@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacterium7064.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium 70-64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacterium7064(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacterium7064 graph.
+    """Return new instance of the Burkholderiales bacterium 70-64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacterium7064(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacterium7064 graph.
+    Instace of Burkholderiales bacterium 70-64 graph.
 
 	References
 	---------------------

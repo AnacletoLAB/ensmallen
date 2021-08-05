@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorellaVariabilis.
+This file offers the methods to automatically retrieve the graph Chlorella variabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorellaVariabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorellaVariabilis graph.
+    """Return new instance of the Chlorella variabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorellaVariabilis(
 
     Returns
     -----------------------
-    Instace of ChlorellaVariabilis graph.
+    Instace of Chlorella variabilis graph.
 
 	References
 	---------------------

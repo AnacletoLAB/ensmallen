@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaproniaCoronata.
+This file offers the methods to automatically retrieve the graph Capronia coronata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaproniaCoronata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaproniaCoronata graph.
+    """Return new instance of the Capronia coronata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaproniaCoronata(
 
     Returns
     -----------------------
-    Instace of CaproniaCoronata graph.
+    Instace of Capronia coronata graph.
 
 	References
 	---------------------

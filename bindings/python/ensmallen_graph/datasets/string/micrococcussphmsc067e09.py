@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrococcusSpHmsc067e09.
+This file offers the methods to automatically retrieve the graph Micrococcus sp. HMSC067E09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrococcusSpHmsc067e09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrococcusSpHmsc067e09 graph.
+    """Return new instance of the Micrococcus sp. HMSC067E09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrococcusSpHmsc067e09(
 
     Returns
     -----------------------
-    Instace of MicrococcusSpHmsc067e09 graph.
+    Instace of Micrococcus sp. HMSC067E09 graph.
 
 	References
 	---------------------

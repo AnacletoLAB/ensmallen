@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThecamonasTrahensAtcc50062.
+This file offers the methods to automatically retrieve the graph Thecamonas trahens ATCC 50062.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThecamonasTrahensAtcc50062(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThecamonasTrahensAtcc50062 graph.
+    """Return new instance of the Thecamonas trahens ATCC 50062 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThecamonasTrahensAtcc50062(
 
     Returns
     -----------------------
-    Instace of ThecamonasTrahensAtcc50062 graph.
+    Instace of Thecamonas trahens ATCC 50062 graph.
 
 	References
 	---------------------

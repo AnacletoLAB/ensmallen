@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpTc228.
+This file offers the methods to automatically retrieve the graph Prevotella sp. tc2-28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpTc228(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpTc228 graph.
+    """Return new instance of the Prevotella sp. tc2-28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpTc228(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpTc228 graph.
+    Instace of Prevotella sp. tc2-28 graph.
 
 	References
 	---------------------

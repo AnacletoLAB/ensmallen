@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelatococcusSpCo6.
+This file offers the methods to automatically retrieve the graph Chelatococcus sp. CO-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelatococcusSpCo6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelatococcusSpCo6 graph.
+    """Return new instance of the Chelatococcus sp. CO-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChelatococcusSpCo6(
 
     Returns
     -----------------------
-    Instace of ChelatococcusSpCo6 graph.
+    Instace of Chelatococcus sp. CO-6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquisalimonasAsiatica.
+This file offers the methods to automatically retrieve the graph Aquisalimonas asiatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquisalimonasAsiatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquisalimonasAsiatica graph.
+    """Return new instance of the Aquisalimonas asiatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquisalimonasAsiatica(
 
     Returns
     -----------------------
-    Instace of AquisalimonasAsiatica graph.
+    Instace of Aquisalimonas asiatica graph.
 
 	References
 	---------------------

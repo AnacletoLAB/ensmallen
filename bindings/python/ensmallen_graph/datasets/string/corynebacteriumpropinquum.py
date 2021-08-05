@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPropinquum.
+This file offers the methods to automatically retrieve the graph Corynebacterium propinquum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPropinquum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPropinquum graph.
+    """Return new instance of the Corynebacterium propinquum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumPropinquum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPropinquum graph.
+    Instace of Corynebacterium propinquum graph.
 
 	References
 	---------------------

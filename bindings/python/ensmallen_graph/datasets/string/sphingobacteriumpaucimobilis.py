@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumPaucimobilis.
+This file offers the methods to automatically retrieve the graph Sphingobacterium paucimobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumPaucimobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumPaucimobilis graph.
+    """Return new instance of the Sphingobacterium paucimobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriumPaucimobilis(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumPaucimobilis graph.
+    Instace of Sphingobacterium paucimobilis graph.
 
 	References
 	---------------------

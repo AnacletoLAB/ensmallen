@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusAquaticus.
+This file offers the methods to automatically retrieve the graph Thermus aquaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusAquaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusAquaticus graph.
+    """Return new instance of the Thermus aquaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusAquaticus(
 
     Returns
     -----------------------
-    Instace of ThermusAquaticus graph.
+    Instace of Thermus aquaticus graph.
 
 	References
 	---------------------

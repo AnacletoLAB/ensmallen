@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterActiniarumDsm19842.
+This file offers the methods to automatically retrieve the graph Pontibacter actiniarum DSM 19842.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterActiniarumDsm19842(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterActiniarumDsm19842 graph.
+    """Return new instance of the Pontibacter actiniarum DSM 19842 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterActiniarumDsm19842(
 
     Returns
     -----------------------
-    Instace of PontibacterActiniarumDsm19842 graph.
+    Instace of Pontibacter actiniarum DSM 19842 graph.
 
 	References
 	---------------------

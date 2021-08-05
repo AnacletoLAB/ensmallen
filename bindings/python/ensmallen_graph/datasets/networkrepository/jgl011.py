@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Jgl011.
+This file offers the methods to automatically retrieve the graph jgl011.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Jgl011(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Jgl011 graph.
+    """Return new instance of the jgl011 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Jgl011(
 
     Returns
     -----------------------
-    Instace of Jgl011 graph.
+    Instace of jgl011 graph.
 
 	References
 	---------------------

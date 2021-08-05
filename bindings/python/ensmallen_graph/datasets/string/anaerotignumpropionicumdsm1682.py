@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerotignumPropionicumDsm1682.
+This file offers the methods to automatically retrieve the graph Anaerotignum propionicum DSM 1682.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerotignumPropionicumDsm1682(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerotignumPropionicumDsm1682 graph.
+    """Return new instance of the Anaerotignum propionicum DSM 1682 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerotignumPropionicumDsm1682(
 
     Returns
     -----------------------
-    Instace of AnaerotignumPropionicumDsm1682 graph.
+    Instace of Anaerotignum propionicum DSM 1682 graph.
 
 	References
 	---------------------

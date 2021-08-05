@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolymorphumGilvum.
+This file offers the methods to automatically retrieve the graph Polymorphum gilvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolymorphumGilvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolymorphumGilvum graph.
+    """Return new instance of the Polymorphum gilvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolymorphumGilvum(
 
     Returns
     -----------------------
-    Instace of PolymorphumGilvum graph.
+    Instace of Polymorphum gilvum graph.
 
 	References
 	---------------------

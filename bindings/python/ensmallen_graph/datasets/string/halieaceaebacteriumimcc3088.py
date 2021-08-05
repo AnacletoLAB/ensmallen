@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalieaceaeBacteriumImcc3088.
+This file offers the methods to automatically retrieve the graph Halieaceae bacterium IMCC3088.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalieaceaeBacteriumImcc3088(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalieaceaeBacteriumImcc3088 graph.
+    """Return new instance of the Halieaceae bacterium IMCC3088 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalieaceaeBacteriumImcc3088(
 
     Returns
     -----------------------
-    Instace of HalieaceaeBacteriumImcc3088 graph.
+    Instace of Halieaceae bacterium IMCC3088 graph.
 
 	References
 	---------------------

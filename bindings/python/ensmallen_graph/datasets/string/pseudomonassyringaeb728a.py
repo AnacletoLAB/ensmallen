@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSyringaeB728a.
+This file offers the methods to automatically retrieve the graph Pseudomonas syringae B728a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSyringaeB728a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSyringaeB728a graph.
+    """Return new instance of the Pseudomonas syringae B728a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSyringaeB728a(
 
     Returns
     -----------------------
-    Instace of PseudomonasSyringaeB728a graph.
+    Instace of Pseudomonas syringae B728a graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LodderomycesElongisporus.
+This file offers the methods to automatically retrieve the graph Lodderomyces elongisporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LodderomycesElongisporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LodderomycesElongisporus graph.
+    """Return new instance of the Lodderomyces elongisporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LodderomycesElongisporus(
 
     Returns
     -----------------------
-    Instace of LodderomycesElongisporus graph.
+    Instace of Lodderomyces elongisporus graph.
 
 	References
 	---------------------

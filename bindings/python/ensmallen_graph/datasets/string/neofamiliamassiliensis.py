@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeofamiliaMassiliensis.
+This file offers the methods to automatically retrieve the graph Neofamilia massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeofamiliaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeofamiliaMassiliensis graph.
+    """Return new instance of the Neofamilia massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeofamiliaMassiliensis(
 
     Returns
     -----------------------
-    Instace of NeofamiliaMassiliensis graph.
+    Instace of Neofamilia massiliensis graph.
 
 	References
 	---------------------

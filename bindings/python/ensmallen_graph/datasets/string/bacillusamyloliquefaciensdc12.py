@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAmyloliquefaciensDc12.
+This file offers the methods to automatically retrieve the graph Bacillus amyloliquefaciens DC-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAmyloliquefaciensDc12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAmyloliquefaciensDc12 graph.
+    """Return new instance of the Bacillus amyloliquefaciens DC-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAmyloliquefaciensDc12(
 
     Returns
     -----------------------
-    Instace of BacillusAmyloliquefaciensDc12 graph.
+    Instace of Bacillus amyloliquefaciens DC-12 graph.
 
 	References
 	---------------------

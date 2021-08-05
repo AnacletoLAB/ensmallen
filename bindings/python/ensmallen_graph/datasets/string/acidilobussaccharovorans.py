@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidilobusSaccharovorans.
+This file offers the methods to automatically retrieve the graph Acidilobus saccharovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidilobusSaccharovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidilobusSaccharovorans graph.
+    """Return new instance of the Acidilobus saccharovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidilobusSaccharovorans(
 
     Returns
     -----------------------
-    Instace of AcidilobusSaccharovorans graph.
+    Instace of Acidilobus saccharovorans graph.
 
 	References
 	---------------------

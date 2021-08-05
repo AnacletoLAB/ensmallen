@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimonasKyonanensisDsm18153.
+This file offers the methods to automatically retrieve the graph Ferrimonas kyonanensis DSM 18153.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimonasKyonanensisDsm18153(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimonasKyonanensisDsm18153 graph.
+    """Return new instance of the Ferrimonas kyonanensis DSM 18153 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrimonasKyonanensisDsm18153(
 
     Returns
     -----------------------
-    Instace of FerrimonasKyonanensisDsm18153 graph.
+    Instace of Ferrimonas kyonanensis DSM 18153 graph.
 
 	References
 	---------------------

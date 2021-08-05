@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptonychotesWeddellii.
+This file offers the methods to automatically retrieve the graph Leptonychotes weddellii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptonychotesWeddellii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptonychotesWeddellii graph.
+    """Return new instance of the Leptonychotes weddellii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptonychotesWeddellii(
 
     Returns
     -----------------------
-    Instace of LeptonychotesWeddellii graph.
+    Instace of Leptonychotes weddellii graph.
 
 	References
 	---------------------

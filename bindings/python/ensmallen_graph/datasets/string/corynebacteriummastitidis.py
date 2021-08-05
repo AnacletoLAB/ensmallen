@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMastitidis.
+This file offers the methods to automatically retrieve the graph Corynebacterium mastitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMastitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMastitidis graph.
+    """Return new instance of the Corynebacterium mastitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumMastitidis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMastitidis graph.
+    Instace of Corynebacterium mastitidis graph.
 
 	References
 	---------------------

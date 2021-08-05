@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GryllotalpicolaGinsengisoli.
+This file offers the methods to automatically retrieve the graph Gryllotalpicola ginsengisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GryllotalpicolaGinsengisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GryllotalpicolaGinsengisoli graph.
+    """Return new instance of the Gryllotalpicola ginsengisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GryllotalpicolaGinsengisoli(
 
     Returns
     -----------------------
-    Instace of GryllotalpicolaGinsengisoli graph.
+    Instace of Gryllotalpicola ginsengisoli graph.
 
 	References
 	---------------------

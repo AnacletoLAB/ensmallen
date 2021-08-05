@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElusimicrobiaBacteriumRifoxyb2Full497.
+This file offers the methods to automatically retrieve the graph Elusimicrobia bacterium RIFOXYB2_FULL_49_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElusimicrobiaBacteriumRifoxyb2Full497(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElusimicrobiaBacteriumRifoxyb2Full497 graph.
+    """Return new instance of the Elusimicrobia bacterium RIFOXYB2_FULL_49_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElusimicrobiaBacteriumRifoxyb2Full497(
 
     Returns
     -----------------------
-    Instace of ElusimicrobiaBacteriumRifoxyb2Full497 graph.
+    Instace of Elusimicrobia bacterium RIFOXYB2_FULL_49_7 graph.
 
 	References
 	---------------------

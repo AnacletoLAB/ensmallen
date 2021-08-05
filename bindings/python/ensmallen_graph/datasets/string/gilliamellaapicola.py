@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilliamellaApicola.
+This file offers the methods to automatically retrieve the graph Gilliamella apicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilliamellaApicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilliamellaApicola graph.
+    """Return new instance of the Gilliamella apicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GilliamellaApicola(
 
     Returns
     -----------------------
-    Instace of GilliamellaApicola graph.
+    Instace of Gilliamella apicola graph.
 
 	References
 	---------------------

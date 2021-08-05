@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasMaltophiliaPml168.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas maltophilia PML168.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasMaltophiliaPml168(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasMaltophiliaPml168 graph.
+    """Return new instance of the Stenotrophomonas maltophilia PML168 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StenotrophomonasMaltophiliaPml168(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasMaltophiliaPml168 graph.
+    Instace of Stenotrophomonas maltophilia PML168 graph.
 
 	References
 	---------------------

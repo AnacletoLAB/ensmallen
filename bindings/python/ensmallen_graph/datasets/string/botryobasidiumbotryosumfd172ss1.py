@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BotryobasidiumBotryosumFd172Ss1.
+This file offers the methods to automatically retrieve the graph Botryobasidium botryosum FD-172 SS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BotryobasidiumBotryosumFd172Ss1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BotryobasidiumBotryosumFd172Ss1 graph.
+    """Return new instance of the Botryobasidium botryosum FD-172 SS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BotryobasidiumBotryosumFd172Ss1(
 
     Returns
     -----------------------
-    Instace of BotryobasidiumBotryosumFd172Ss1 graph.
+    Instace of Botryobasidium botryosum FD-172 SS1 graph.
 
 	References
 	---------------------

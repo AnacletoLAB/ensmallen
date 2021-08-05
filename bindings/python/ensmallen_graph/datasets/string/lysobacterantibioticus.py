@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterAntibioticus.
+This file offers the methods to automatically retrieve the graph Lysobacter antibioticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterAntibioticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterAntibioticus graph.
+    """Return new instance of the Lysobacter antibioticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysobacterAntibioticus(
 
     Returns
     -----------------------
-    Instace of LysobacterAntibioticus graph.
+    Instace of Lysobacter antibioticus graph.
 
 	References
 	---------------------

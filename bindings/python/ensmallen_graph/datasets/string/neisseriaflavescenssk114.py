@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaFlavescensSk114.
+This file offers the methods to automatically retrieve the graph Neisseria flavescens SK114.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaFlavescensSk114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaFlavescensSk114 graph.
+    """Return new instance of the Neisseria flavescens SK114 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaFlavescensSk114(
 
     Returns
     -----------------------
-    Instace of NeisseriaFlavescensSk114 graph.
+    Instace of Neisseria flavescens SK114 graph.
 
 	References
 	---------------------

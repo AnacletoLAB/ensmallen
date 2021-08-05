@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumMassiliodielmoense.
+This file offers the methods to automatically retrieve the graph Clostridium massiliodielmoense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumMassiliodielmoense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumMassiliodielmoense graph.
+    """Return new instance of the Clostridium massiliodielmoense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumMassiliodielmoense(
 
     Returns
     -----------------------
-    Instace of ClostridiumMassiliodielmoense graph.
+    Instace of Clostridium massiliodielmoense graph.
 
 	References
 	---------------------

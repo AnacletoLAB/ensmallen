@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferAggregans.
+This file offers the methods to automatically retrieve the graph Microbulbifer aggregans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferAggregans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferAggregans graph.
+    """Return new instance of the Microbulbifer aggregans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferAggregans(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferAggregans graph.
+    Instace of Microbulbifer aggregans graph.
 
 	References
 	---------------------

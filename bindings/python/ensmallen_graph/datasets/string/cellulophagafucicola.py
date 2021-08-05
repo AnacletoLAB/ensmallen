@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaFucicola.
+This file offers the methods to automatically retrieve the graph Cellulophaga fucicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaFucicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaFucicola graph.
+    """Return new instance of the Cellulophaga fucicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulophagaFucicola(
 
     Returns
     -----------------------
-    Instace of CellulophagaFucicola graph.
+    Instace of Cellulophaga fucicola graph.
 
 	References
 	---------------------

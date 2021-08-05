@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumOryziradicis.
+This file offers the methods to automatically retrieve the graph Rhizobium oryziradicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumOryziradicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumOryziradicis graph.
+    """Return new instance of the Rhizobium oryziradicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumOryziradicis(
 
     Returns
     -----------------------
-    Instace of RhizobiumOryziradicis graph.
+    Instace of Rhizobium oryziradicis graph.
 
 	References
 	---------------------

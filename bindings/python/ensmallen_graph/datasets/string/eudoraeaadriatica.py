@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EudoraeaAdriatica.
+This file offers the methods to automatically retrieve the graph Eudoraea adriatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EudoraeaAdriatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EudoraeaAdriatica graph.
+    """Return new instance of the Eudoraea adriatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EudoraeaAdriatica(
 
     Returns
     -----------------------
-    Instace of EudoraeaAdriatica graph.
+    Instace of Eudoraea adriatica graph.
 
 	References
 	---------------------

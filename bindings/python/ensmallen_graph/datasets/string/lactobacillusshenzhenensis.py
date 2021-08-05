@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusShenzhenensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus shenzhenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusShenzhenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusShenzhenensis graph.
+    """Return new instance of the Lactobacillus shenzhenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusShenzhenensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusShenzhenensis graph.
+    Instace of Lactobacillus shenzhenensis graph.
 
 	References
 	---------------------

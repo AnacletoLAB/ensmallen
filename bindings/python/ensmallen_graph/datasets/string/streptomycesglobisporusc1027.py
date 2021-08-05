@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesGlobisporusC1027.
+This file offers the methods to automatically retrieve the graph Streptomyces globisporus C-1027.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesGlobisporusC1027(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesGlobisporusC1027 graph.
+    """Return new instance of the Streptomyces globisporus C-1027 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesGlobisporusC1027(
 
     Returns
     -----------------------
-    Instace of StreptomycesGlobisporusC1027 graph.
+    Instace of Streptomyces globisporus C-1027 graph.
 
 	References
 	---------------------

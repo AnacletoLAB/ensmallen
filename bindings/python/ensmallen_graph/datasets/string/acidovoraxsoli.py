@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSoli.
+This file offers the methods to automatically retrieve the graph Acidovorax soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSoli graph.
+    """Return new instance of the Acidovorax soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSoli(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSoli graph.
+    Instace of Acidovorax soli graph.
 
 	References
 	---------------------

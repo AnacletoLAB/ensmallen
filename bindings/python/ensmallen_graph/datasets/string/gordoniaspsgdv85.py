@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSpSgdV85.
+This file offers the methods to automatically retrieve the graph Gordonia sp. SGD-V-85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSpSgdV85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSpSgdV85 graph.
+    """Return new instance of the Gordonia sp. SGD-V-85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaSpSgdV85(
 
     Returns
     -----------------------
-    Instace of GordoniaSpSgdV85 graph.
+    Instace of Gordonia sp. SGD-V-85 graph.
 
 	References
 	---------------------

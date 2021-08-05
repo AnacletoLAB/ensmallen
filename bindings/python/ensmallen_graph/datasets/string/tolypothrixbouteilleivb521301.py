@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TolypothrixBouteilleiVb521301.
+This file offers the methods to automatically retrieve the graph Tolypothrix bouteillei VB521301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TolypothrixBouteilleiVb521301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TolypothrixBouteilleiVb521301 graph.
+    """Return new instance of the Tolypothrix bouteillei VB521301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TolypothrixBouteilleiVb521301(
 
     Returns
     -----------------------
-    Instace of TolypothrixBouteilleiVb521301 graph.
+    Instace of Tolypothrix bouteillei VB521301 graph.
 
 	References
 	---------------------

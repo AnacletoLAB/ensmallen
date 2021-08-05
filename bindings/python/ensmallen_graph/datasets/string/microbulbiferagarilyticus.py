@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferAgarilyticus.
+This file offers the methods to automatically retrieve the graph Microbulbifer agarilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferAgarilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferAgarilyticus graph.
+    """Return new instance of the Microbulbifer agarilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobulbiferAgarilyticus(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferAgarilyticus graph.
+    Instace of Microbulbifer agarilyticus graph.
 
 	References
 	---------------------

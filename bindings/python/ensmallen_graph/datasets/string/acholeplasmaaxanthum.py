@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaAxanthum.
+This file offers the methods to automatically retrieve the graph Acholeplasma axanthum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaAxanthum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaAxanthum graph.
+    """Return new instance of the Acholeplasma axanthum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaAxanthum(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaAxanthum graph.
+    Instace of Acholeplasma axanthum graph.
 
 	References
 	---------------------

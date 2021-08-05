@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpDfci1.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. DFCI1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpDfci1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpDfci1 graph.
+    """Return new instance of the Bradyrhizobium sp. DFCI1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumSpDfci1(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpDfci1 graph.
+    Instace of Bradyrhizobium sp. DFCI1 graph.
 
 	References
 	---------------------

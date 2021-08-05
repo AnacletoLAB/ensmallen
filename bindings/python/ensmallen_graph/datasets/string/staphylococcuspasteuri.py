@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusPasteuri.
+This file offers the methods to automatically retrieve the graph Staphylococcus pasteuri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusPasteuri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusPasteuri graph.
+    """Return new instance of the Staphylococcus pasteuri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusPasteuri(
 
     Returns
     -----------------------
-    Instace of StaphylococcusPasteuri graph.
+    Instace of Staphylococcus pasteuri graph.
 
 	References
 	---------------------

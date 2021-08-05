@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAlkalitelluris.
+This file offers the methods to automatically retrieve the graph Bacillus alkalitelluris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAlkalitelluris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAlkalitelluris graph.
+    """Return new instance of the Bacillus alkalitelluris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAlkalitelluris(
 
     Returns
     -----------------------
-    Instace of BacillusAlkalitelluris graph.
+    Instace of Bacillus alkalitelluris graph.
 
 	References
 	---------------------

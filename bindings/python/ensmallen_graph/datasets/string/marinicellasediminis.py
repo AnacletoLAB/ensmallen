@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinicellaSediminis.
+This file offers the methods to automatically retrieve the graph Marinicella sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinicellaSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinicellaSediminis graph.
+    """Return new instance of the Marinicella sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinicellaSediminis(
 
     Returns
     -----------------------
-    Instace of MarinicellaSediminis graph.
+    Instace of Marinicella sediminis graph.
 
 	References
 	---------------------

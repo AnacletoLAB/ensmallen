@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrusSinensis.
+This file offers the methods to automatically retrieve the graph Citrus sinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrusSinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrusSinensis graph.
+    """Return new instance of the Citrus sinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrusSinensis(
 
     Returns
     -----------------------
-    Instace of CitrusSinensis graph.
+    Instace of Citrus sinensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterSpQlwP1data2.
+This file offers the methods to automatically retrieve the graph Polynucleobacter sp. QLW-P1DATA-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterSpQlwP1data2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterSpQlwP1data2 graph.
+    """Return new instance of the Polynucleobacter sp. QLW-P1DATA-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterSpQlwP1data2(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterSpQlwP1data2 graph.
+    Instace of Polynucleobacter sp. QLW-P1DATA-2 graph.
 
 	References
 	---------------------

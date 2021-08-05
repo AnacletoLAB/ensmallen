@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumMultivorans.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum multivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumMultivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumMultivorans graph.
+    """Return new instance of the Sulfurospirillum multivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurospirillumMultivorans(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumMultivorans graph.
+    Instace of Sulfurospirillum multivorans graph.
 
 	References
 	---------------------

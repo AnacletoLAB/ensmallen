@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusNigerAtcc1015.
+This file offers the methods to automatically retrieve the graph Aspergillus niger ATCC 1015.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusNigerAtcc1015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusNigerAtcc1015 graph.
+    """Return new instance of the Aspergillus niger ATCC 1015 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusNigerAtcc1015(
 
     Returns
     -----------------------
-    Instace of AspergillusNigerAtcc1015 graph.
+    Instace of Aspergillus niger ATCC 1015 graph.
 
 	References
 	---------------------

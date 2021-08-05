@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TemnothoraxLongispinosus.
+This file offers the methods to automatically retrieve the graph Temnothorax longispinosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TemnothoraxLongispinosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TemnothoraxLongispinosus graph.
+    """Return new instance of the Temnothorax longispinosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TemnothoraxLongispinosus(
 
     Returns
     -----------------------
-    Instace of TemnothoraxLongispinosus graph.
+    Instace of Temnothorax longispinosus graph.
 
 	References
 	---------------------

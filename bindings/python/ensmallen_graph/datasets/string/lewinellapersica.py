@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LewinellaPersica.
+This file offers the methods to automatically retrieve the graph Lewinella persica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LewinellaPersica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LewinellaPersica graph.
+    """Return new instance of the Lewinella persica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LewinellaPersica(
 
     Returns
     -----------------------
-    Instace of LewinellaPersica graph.
+    Instace of Lewinella persica graph.
 
 	References
 	---------------------

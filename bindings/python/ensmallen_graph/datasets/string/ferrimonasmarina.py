@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimonasMarina.
+This file offers the methods to automatically retrieve the graph Ferrimonas marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimonasMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimonasMarina graph.
+    """Return new instance of the Ferrimonas marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrimonasMarina(
 
     Returns
     -----------------------
-    Instace of FerrimonasMarina graph.
+    Instace of Ferrimonas marina graph.
 
 	References
 	---------------------

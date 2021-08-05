@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavisolibacterGinsengisoliDsm18119.
+This file offers the methods to automatically retrieve the graph Flavisolibacter ginsengisoli DSM 18119.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavisolibacterGinsengisoliDsm18119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavisolibacterGinsengisoliDsm18119 graph.
+    """Return new instance of the Flavisolibacter ginsengisoli DSM 18119 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavisolibacterGinsengisoliDsm18119(
 
     Returns
     -----------------------
-    Instace of FlavisolibacterGinsengisoliDsm18119 graph.
+    Instace of Flavisolibacter ginsengisoli DSM 18119 graph.
 
 	References
 	---------------------

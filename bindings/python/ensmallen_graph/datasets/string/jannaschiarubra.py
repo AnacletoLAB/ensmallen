@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaRubra.
+This file offers the methods to automatically retrieve the graph Jannaschia rubra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaRubra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaRubra graph.
+    """Return new instance of the Jannaschia rubra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaRubra(
 
     Returns
     -----------------------
-    Instace of JannaschiaRubra graph.
+    Instace of Jannaschia rubra graph.
 
 	References
 	---------------------

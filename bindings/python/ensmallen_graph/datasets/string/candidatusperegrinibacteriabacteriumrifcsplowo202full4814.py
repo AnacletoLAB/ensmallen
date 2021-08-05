@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumRifcsplowo202Full4814.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium RIFCSPLOWO2_02_FULL_48_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumRifcsplowo202Full4814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumRifcsplowo202Full4814 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium RIFCSPLOWO2_02_FULL_48_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumRifcsplowo202Full4814(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumRifcsplowo202Full4814 graph.
+    Instace of Candidatus Peregrinibacteria bacterium RIFCSPLOWO2_02_FULL_48_14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KozakiaBaliensis.
+This file offers the methods to automatically retrieve the graph Kozakia baliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KozakiaBaliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KozakiaBaliensis graph.
+    """Return new instance of the Kozakia baliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KozakiaBaliensis(
 
     Returns
     -----------------------
-    Instace of KozakiaBaliensis graph.
+    Instace of Kozakia baliensis graph.
 
 	References
 	---------------------

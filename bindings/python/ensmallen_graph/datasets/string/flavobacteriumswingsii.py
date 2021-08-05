@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSwingsii.
+This file offers the methods to automatically retrieve the graph Flavobacterium swingsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSwingsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSwingsii graph.
+    """Return new instance of the Flavobacterium swingsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSwingsii(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSwingsii graph.
+    Instace of Flavobacterium swingsii graph.
 
 	References
 	---------------------

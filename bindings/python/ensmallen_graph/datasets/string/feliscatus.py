@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FelisCatus.
+This file offers the methods to automatically retrieve the graph Felis catus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FelisCatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FelisCatus graph.
+    """Return new instance of the Felis catus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FelisCatus(
 
     Returns
     -----------------------
-    Instace of FelisCatus graph.
+    Instace of Felis catus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxPacificusW115.
+This file offers the methods to automatically retrieve the graph Alcanivorax pacificus W11-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxPacificusW115(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxPacificusW115 graph.
+    """Return new instance of the Alcanivorax pacificus W11-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlcanivoraxPacificusW115(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxPacificusW115 graph.
+    Instace of Alcanivorax pacificus W11-5 graph.
 
 	References
 	---------------------

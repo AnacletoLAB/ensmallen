@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalibacteriumPutridalgicola.
+This file offers the methods to automatically retrieve the graph Alkalibacterium putridalgicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalibacteriumPutridalgicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalibacteriumPutridalgicola graph.
+    """Return new instance of the Alkalibacterium putridalgicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalibacteriumPutridalgicola(
 
     Returns
     -----------------------
-    Instace of AlkalibacteriumPutridalgicola graph.
+    Instace of Alkalibacterium putridalgicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CytosporaLeucostoma.
+This file offers the methods to automatically retrieve the graph Cytospora leucostoma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CytosporaLeucostoma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CytosporaLeucostoma graph.
+    """Return new instance of the Cytospora leucostoma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CytosporaLeucostoma(
 
     Returns
     -----------------------
-    Instace of CytosporaLeucostoma graph.
+    Instace of Cytospora leucostoma graph.
 
 	References
 	---------------------

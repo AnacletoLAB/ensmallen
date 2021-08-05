@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WohlfahrtiimonasPopuli.
+This file offers the methods to automatically retrieve the graph Wohlfahrtiimonas populi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WohlfahrtiimonasPopuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WohlfahrtiimonasPopuli graph.
+    """Return new instance of the Wohlfahrtiimonas populi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WohlfahrtiimonasPopuli(
 
     Returns
     -----------------------
-    Instace of WohlfahrtiimonasPopuli graph.
+    Instace of Wohlfahrtiimonas populi graph.
 
 	References
 	---------------------

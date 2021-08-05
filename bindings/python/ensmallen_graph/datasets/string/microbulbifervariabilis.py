@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferVariabilis.
+This file offers the methods to automatically retrieve the graph Microbulbifer variabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferVariabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferVariabilis graph.
+    """Return new instance of the Microbulbifer variabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobulbiferVariabilis(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferVariabilis graph.
+    Instace of Microbulbifer variabilis graph.
 
 	References
 	---------------------

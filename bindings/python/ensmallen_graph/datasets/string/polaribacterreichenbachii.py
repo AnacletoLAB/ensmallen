@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterReichenbachii.
+This file offers the methods to automatically retrieve the graph Polaribacter reichenbachii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterReichenbachii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterReichenbachii graph.
+    """Return new instance of the Polaribacter reichenbachii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterReichenbachii(
 
     Returns
     -----------------------
-    Instace of PolaribacterReichenbachii graph.
+    Instace of Polaribacter reichenbachii graph.
 
 	References
 	---------------------

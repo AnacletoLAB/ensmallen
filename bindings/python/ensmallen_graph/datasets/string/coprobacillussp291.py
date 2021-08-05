@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprobacillusSp291.
+This file offers the methods to automatically retrieve the graph Coprobacillus sp. 291.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprobacillusSp291(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprobacillusSp291 graph.
+    """Return new instance of the Coprobacillus sp. 291 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoprobacillusSp291(
 
     Returns
     -----------------------
-    Instace of CoprobacillusSp291 graph.
+    Instace of Coprobacillus sp. 291 graph.
 
 	References
 	---------------------

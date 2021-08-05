@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TersicoccusPhoenicis.
+This file offers the methods to automatically retrieve the graph Tersicoccus phoenicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TersicoccusPhoenicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TersicoccusPhoenicis graph.
+    """Return new instance of the Tersicoccus phoenicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TersicoccusPhoenicis(
 
     Returns
     -----------------------
-    Instace of TersicoccusPhoenicis graph.
+    Instace of Tersicoccus phoenicis graph.
 
 	References
 	---------------------

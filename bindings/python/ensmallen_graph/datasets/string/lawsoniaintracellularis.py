@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LawsoniaIntracellularis.
+This file offers the methods to automatically retrieve the graph Lawsonia intracellularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LawsoniaIntracellularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LawsoniaIntracellularis graph.
+    """Return new instance of the Lawsonia intracellularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LawsoniaIntracellularis(
 
     Returns
     -----------------------
-    Instace of LawsoniaIntracellularis graph.
+    Instace of Lawsonia intracellularis graph.
 
 	References
 	---------------------

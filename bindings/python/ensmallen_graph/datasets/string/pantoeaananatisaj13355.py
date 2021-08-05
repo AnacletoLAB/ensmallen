@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaAnanatisAj13355.
+This file offers the methods to automatically retrieve the graph Pantoea ananatis AJ13355.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaAnanatisAj13355(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaAnanatisAj13355 graph.
+    """Return new instance of the Pantoea ananatis AJ13355 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaAnanatisAj13355(
 
     Returns
     -----------------------
-    Instace of PantoeaAnanatisAj13355 graph.
+    Instace of Pantoea ananatis AJ13355 graph.
 
 	References
 	---------------------

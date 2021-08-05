@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterGracilis.
+This file offers the methods to automatically retrieve the graph Campylobacter gracilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterGracilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterGracilis graph.
+    """Return new instance of the Campylobacter gracilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterGracilis(
 
     Returns
     -----------------------
-    Instace of CampylobacterGracilis graph.
+    Instace of Campylobacter gracilis graph.
 
 	References
 	---------------------

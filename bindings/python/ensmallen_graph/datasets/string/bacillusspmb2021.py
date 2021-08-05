@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpMb2021.
+This file offers the methods to automatically retrieve the graph Bacillus sp. MB2021.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpMb2021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpMb2021 graph.
+    """Return new instance of the Bacillus sp. MB2021 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpMb2021(
 
     Returns
     -----------------------
-    Instace of BacillusSpMb2021 graph.
+    Instace of Bacillus sp. MB2021 graph.
 
 	References
 	---------------------

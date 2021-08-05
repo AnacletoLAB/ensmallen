@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasEndophytica.
+This file offers the methods to automatically retrieve the graph Pseudomonas endophytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasEndophytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasEndophytica graph.
+    """Return new instance of the Pseudomonas endophytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasEndophytica(
 
     Returns
     -----------------------
-    Instace of PseudomonasEndophytica graph.
+    Instace of Pseudomonas endophytica graph.
 
 	References
 	---------------------

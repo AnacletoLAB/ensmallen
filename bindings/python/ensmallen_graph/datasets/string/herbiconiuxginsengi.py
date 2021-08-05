@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbiconiuxGinsengi.
+This file offers the methods to automatically retrieve the graph Herbiconiux ginsengi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbiconiuxGinsengi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbiconiuxGinsengi graph.
+    """Return new instance of the Herbiconiux ginsengi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbiconiuxGinsengi(
 
     Returns
     -----------------------
-    Instace of HerbiconiuxGinsengi graph.
+    Instace of Herbiconiux ginsengi graph.
 
 	References
 	---------------------

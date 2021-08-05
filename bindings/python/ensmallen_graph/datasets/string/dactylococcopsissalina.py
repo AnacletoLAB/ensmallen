@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DactylococcopsisSalina.
+This file offers the methods to automatically retrieve the graph Dactylococcopsis salina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DactylococcopsisSalina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DactylococcopsisSalina graph.
+    """Return new instance of the Dactylococcopsis salina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DactylococcopsisSalina(
 
     Returns
     -----------------------
-    Instace of DactylococcopsisSalina graph.
+    Instace of Dactylococcopsis salina graph.
 
 	References
 	---------------------

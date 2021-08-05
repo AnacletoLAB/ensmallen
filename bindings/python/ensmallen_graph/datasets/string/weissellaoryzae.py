@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaOryzae.
+This file offers the methods to automatically retrieve the graph Weissella oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaOryzae graph.
+    """Return new instance of the Weissella oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaOryzae(
 
     Returns
     -----------------------
-    Instace of WeissellaOryzae graph.
+    Instace of Weissella oryzae graph.
 
 	References
 	---------------------

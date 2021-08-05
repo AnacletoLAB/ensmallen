@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterPeloridisLmg23910.
+This file offers the methods to automatically retrieve the graph Campylobacter peloridis LMG 23910.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterPeloridisLmg23910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterPeloridisLmg23910 graph.
+    """Return new instance of the Campylobacter peloridis LMG 23910 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterPeloridisLmg23910(
 
     Returns
     -----------------------
-    Instace of CampylobacterPeloridisLmg23910 graph.
+    Instace of Campylobacter peloridis LMG 23910 graph.
 
 	References
 	---------------------

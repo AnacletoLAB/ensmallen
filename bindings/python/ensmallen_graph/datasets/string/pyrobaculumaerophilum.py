@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrobaculumAerophilum.
+This file offers the methods to automatically retrieve the graph Pyrobaculum aerophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrobaculumAerophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrobaculumAerophilum graph.
+    """Return new instance of the Pyrobaculum aerophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrobaculumAerophilum(
 
     Returns
     -----------------------
-    Instace of PyrobaculumAerophilum graph.
+    Instace of Pyrobaculum aerophilum graph.
 
 	References
 	---------------------

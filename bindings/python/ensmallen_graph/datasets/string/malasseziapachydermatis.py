@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalasseziaPachydermatis.
+This file offers the methods to automatically retrieve the graph Malassezia pachydermatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalasseziaPachydermatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalasseziaPachydermatis graph.
+    """Return new instance of the Malassezia pachydermatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalasseziaPachydermatis(
 
     Returns
     -----------------------
-    Instace of MalasseziaPachydermatis graph.
+    Instace of Malassezia pachydermatis graph.
 
 	References
 	---------------------

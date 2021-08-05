@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PavoCristatus.
+This file offers the methods to automatically retrieve the graph Pavo cristatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PavoCristatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PavoCristatus graph.
+    """Return new instance of the Pavo cristatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PavoCristatus(
 
     Returns
     -----------------------
-    Instace of PavoCristatus graph.
+    Instace of Pavo cristatus graph.
 
 	References
 	---------------------

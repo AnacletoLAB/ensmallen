@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronovibrioHydrogenovorans.
+This file offers the methods to automatically retrieve the graph Desulfonatronovibrio hydrogenovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronovibrioHydrogenovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronovibrioHydrogenovorans graph.
+    """Return new instance of the Desulfonatronovibrio hydrogenovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfonatronovibrioHydrogenovorans(
 
     Returns
     -----------------------
-    Instace of DesulfonatronovibrioHydrogenovorans graph.
+    Instace of Desulfonatronovibrio hydrogenovorans graph.
 
 	References
 	---------------------

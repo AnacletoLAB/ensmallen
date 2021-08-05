@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelatoclostridiumRamosum.
+This file offers the methods to automatically retrieve the graph Erysipelatoclostridium ramosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelatoclostridiumRamosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelatoclostridiumRamosum graph.
+    """Return new instance of the Erysipelatoclostridium ramosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErysipelatoclostridiumRamosum(
 
     Returns
     -----------------------
-    Instace of ErysipelatoclostridiumRamosum graph.
+    Instace of Erysipelatoclostridium ramosum graph.
 
 	References
 	---------------------

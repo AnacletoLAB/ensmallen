@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumUlcerans.
+This file offers the methods to automatically retrieve the graph Mycobacterium ulcerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumUlcerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumUlcerans graph.
+    """Return new instance of the Mycobacterium ulcerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumUlcerans(
 
     Returns
     -----------------------
-    Instace of MycobacteriumUlcerans graph.
+    Instace of Mycobacterium ulcerans graph.
 
 	References
 	---------------------

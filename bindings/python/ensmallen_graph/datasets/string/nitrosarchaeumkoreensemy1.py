@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosarchaeumKoreenseMy1.
+This file offers the methods to automatically retrieve the graph Nitrosarchaeum koreense MY1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosarchaeumKoreenseMy1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosarchaeumKoreenseMy1 graph.
+    """Return new instance of the Nitrosarchaeum koreense MY1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosarchaeumKoreenseMy1(
 
     Returns
     -----------------------
-    Instace of NitrosarchaeumKoreenseMy1 graph.
+    Instace of Nitrosarchaeum koreense MY1 graph.
 
 	References
 	---------------------

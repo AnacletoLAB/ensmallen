@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusYayanosii.
+This file offers the methods to automatically retrieve the graph Pyrococcus yayanosii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusYayanosii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusYayanosii graph.
+    """Return new instance of the Pyrococcus yayanosii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusYayanosii(
 
     Returns
     -----------------------
-    Instace of PyrococcusYayanosii graph.
+    Instace of Pyrococcus yayanosii graph.
 
 	References
 	---------------------

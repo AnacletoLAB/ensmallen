@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpGp183.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. GP183.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpGp183(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpGp183 graph.
+    """Return new instance of the Paenibacillus sp. GP183 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpGp183(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpGp183 graph.
+    Instace of Paenibacillus sp. GP183 graph.
 
 	References
 	---------------------

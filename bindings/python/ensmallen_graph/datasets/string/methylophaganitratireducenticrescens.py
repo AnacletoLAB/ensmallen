@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophagaNitratireducenticrescens.
+This file offers the methods to automatically retrieve the graph Methylophaga nitratireducenticrescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophagaNitratireducenticrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophagaNitratireducenticrescens graph.
+    """Return new instance of the Methylophaga nitratireducenticrescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophagaNitratireducenticrescens(
 
     Returns
     -----------------------
-    Instace of MethylophagaNitratireducenticrescens graph.
+    Instace of Methylophaga nitratireducenticrescens graph.
 
 	References
 	---------------------

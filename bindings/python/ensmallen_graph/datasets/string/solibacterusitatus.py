@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolibacterUsitatus.
+This file offers the methods to automatically retrieve the graph Solibacter usitatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolibacterUsitatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolibacterUsitatus graph.
+    """Return new instance of the Solibacter usitatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolibacterUsitatus(
 
     Returns
     -----------------------
-    Instace of SolibacterUsitatus graph.
+    Instace of Solibacter usitatus graph.
 
 	References
 	---------------------

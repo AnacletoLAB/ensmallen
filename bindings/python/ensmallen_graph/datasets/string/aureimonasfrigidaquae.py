@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasFrigidaquae.
+This file offers the methods to automatically retrieve the graph Aureimonas frigidaquae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasFrigidaquae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasFrigidaquae graph.
+    """Return new instance of the Aureimonas frigidaquae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureimonasFrigidaquae(
 
     Returns
     -----------------------
-    Instace of AureimonasFrigidaquae graph.
+    Instace of Aureimonas frigidaquae graph.
 
 	References
 	---------------------

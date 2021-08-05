@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaInsecticola.
+This file offers the methods to automatically retrieve the graph Burkholderia insecticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaInsecticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaInsecticola graph.
+    """Return new instance of the Burkholderia insecticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaInsecticola(
 
     Returns
     -----------------------
-    Instace of BurkholderiaInsecticola graph.
+    Instace of Burkholderia insecticola graph.
 
 	References
 	---------------------

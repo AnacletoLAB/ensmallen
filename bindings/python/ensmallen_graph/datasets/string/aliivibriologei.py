@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliivibrioLogei.
+This file offers the methods to automatically retrieve the graph Aliivibrio logei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliivibrioLogei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliivibrioLogei graph.
+    """Return new instance of the Aliivibrio logei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliivibrioLogei(
 
     Returns
     -----------------------
-    Instace of AliivibrioLogei graph.
+    Instace of Aliivibrio logei graph.
 
 	References
 	---------------------

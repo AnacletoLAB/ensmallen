@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSyringaeTomato.
+This file offers the methods to automatically retrieve the graph Pseudomonas syringae tomato.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSyringaeTomato(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSyringaeTomato graph.
+    """Return new instance of the Pseudomonas syringae tomato graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSyringaeTomato(
 
     Returns
     -----------------------
-    Instace of PseudomonasSyringaeTomato graph.
+    Instace of Pseudomonas syringae tomato graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaSpEjp617.
+This file offers the methods to automatically retrieve the graph Erwinia sp. Ejp617.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaSpEjp617(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaSpEjp617 graph.
+    """Return new instance of the Erwinia sp. Ejp617 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaSpEjp617(
 
     Returns
     -----------------------
-    Instace of ErwiniaSpEjp617 graph.
+    Instace of Erwinia sp. Ejp617 graph.
 
 	References
 	---------------------

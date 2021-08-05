@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocStudentCoop.
+This file offers the methods to automatically retrieve the graph soc-student-coop.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def SocStudentCoop(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocStudentCoop graph.
+    """Return new instance of the soc-student-coop graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def SocStudentCoop(
 
     Returns
     -----------------------
-    Instace of SocStudentCoop graph.
+    Instace of soc-student-coop graph.
 
 	References
 	---------------------

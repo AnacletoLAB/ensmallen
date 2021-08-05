@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumSpMarseille.
+This file offers the methods to automatically retrieve the graph Janthinobacterium sp. Marseille.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumSpMarseille(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumSpMarseille graph.
+    """Return new instance of the Janthinobacterium sp. Marseille graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanthinobacteriumSpMarseille(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumSpMarseille graph.
+    Instace of Janthinobacterium sp. Marseille graph.
 
 	References
 	---------------------

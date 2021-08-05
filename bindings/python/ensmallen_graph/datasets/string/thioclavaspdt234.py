@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioclavaSpDt234.
+This file offers the methods to automatically retrieve the graph Thioclava sp. DT234.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioclavaSpDt234(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioclavaSpDt234 graph.
+    """Return new instance of the Thioclava sp. DT234 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioclavaSpDt234(
 
     Returns
     -----------------------
-    Instace of ThioclavaSpDt234 graph.
+    Instace of Thioclava sp. DT234 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KaistiaAdipataDsm17808.
+This file offers the methods to automatically retrieve the graph Kaistia adipata DSM 17808.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KaistiaAdipataDsm17808(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KaistiaAdipataDsm17808 graph.
+    """Return new instance of the Kaistia adipata DSM 17808 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KaistiaAdipataDsm17808(
 
     Returns
     -----------------------
-    Instace of KaistiaAdipataDsm17808 graph.
+    Instace of Kaistia adipata DSM 17808 graph.
 
 	References
 	---------------------

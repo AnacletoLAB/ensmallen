@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AndreprevotiaLacusDsm23236.
+This file offers the methods to automatically retrieve the graph Andreprevotia lacus DSM 23236.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AndreprevotiaLacusDsm23236(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AndreprevotiaLacusDsm23236 graph.
+    """Return new instance of the Andreprevotia lacus DSM 23236 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AndreprevotiaLacusDsm23236(
 
     Returns
     -----------------------
-    Instace of AndreprevotiaLacusDsm23236 graph.
+    Instace of Andreprevotia lacus DSM 23236 graph.
 
 	References
 	---------------------

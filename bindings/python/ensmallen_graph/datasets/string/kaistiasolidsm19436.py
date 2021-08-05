@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KaistiaSoliDsm19436.
+This file offers the methods to automatically retrieve the graph Kaistia soli DSM 19436.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KaistiaSoliDsm19436(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KaistiaSoliDsm19436 graph.
+    """Return new instance of the Kaistia soli DSM 19436 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KaistiaSoliDsm19436(
 
     Returns
     -----------------------
-    Instace of KaistiaSoliDsm19436 graph.
+    Instace of Kaistia soli DSM 19436 graph.
 
 	References
 	---------------------

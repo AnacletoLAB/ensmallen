@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBu10.
+This file offers the methods to automatically retrieve the graph socfb-BU10.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBu10(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBu10 graph.
+    """Return new instance of the socfb-BU10 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBu10(
 
     Returns
     -----------------------
-    Instace of SocfbBu10 graph.
+    Instace of socfb-BU10 graph.
 
 	References
 	---------------------

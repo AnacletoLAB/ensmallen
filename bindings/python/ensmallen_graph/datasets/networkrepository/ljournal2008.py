@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ljournal2008.
+This file offers the methods to automatically retrieve the graph ljournal-2008.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ljournal2008(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ljournal2008 graph.
+    """Return new instance of the ljournal-2008 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ljournal2008(
 
     Returns
     -----------------------
-    Instace of Ljournal2008 graph.
+    Instace of ljournal-2008 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodolunaLacicola.
+This file offers the methods to automatically retrieve the graph Rhodoluna lacicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodolunaLacicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodolunaLacicola graph.
+    """Return new instance of the Rhodoluna lacicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodolunaLacicola(
 
     Returns
     -----------------------
-    Instace of RhodolunaLacicola graph.
+    Instace of Rhodoluna lacicola graph.
 
 	References
 	---------------------

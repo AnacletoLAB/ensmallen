@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeersiaPerrieri.
+This file offers the methods to automatically retrieve the graph Leersia perrieri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeersiaPerrieri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeersiaPerrieri graph.
+    """Return new instance of the Leersia perrieri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeersiaPerrieri(
 
     Returns
     -----------------------
-    Instace of LeersiaPerrieri graph.
+    Instace of Leersia perrieri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpCpu.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. Cpu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpCpu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpCpu graph.
+    """Return new instance of the Blattabacterium sp. Cpu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlattabacteriumSpCpu(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpCpu graph.
+    Instace of Blattabacterium sp. Cpu graph.
 
 	References
 	---------------------

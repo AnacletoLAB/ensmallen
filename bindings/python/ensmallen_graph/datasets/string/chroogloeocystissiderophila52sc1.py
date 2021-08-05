@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChroogloeocystisSiderophila52SC1.
+This file offers the methods to automatically retrieve the graph Chroogloeocystis siderophila 5.2 s.c.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChroogloeocystisSiderophila52SC1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChroogloeocystisSiderophila52SC1 graph.
+    """Return new instance of the Chroogloeocystis siderophila 5.2 s.c.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChroogloeocystisSiderophila52SC1(
 
     Returns
     -----------------------
-    Instace of ChroogloeocystisSiderophila52SC1 graph.
+    Instace of Chroogloeocystis siderophila 5.2 s.c.1 graph.
 
 	References
 	---------------------

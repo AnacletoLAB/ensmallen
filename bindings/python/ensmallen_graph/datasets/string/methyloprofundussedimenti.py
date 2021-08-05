@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloprofundusSedimenti.
+This file offers the methods to automatically retrieve the graph Methyloprofundus sedimenti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloprofundusSedimenti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloprofundusSedimenti graph.
+    """Return new instance of the Methyloprofundus sedimenti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloprofundusSedimenti(
 
     Returns
     -----------------------
-    Instace of MethyloprofundusSedimenti graph.
+    Instace of Methyloprofundus sedimenti graph.
 
 	References
 	---------------------

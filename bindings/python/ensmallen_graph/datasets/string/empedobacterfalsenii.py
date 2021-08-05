@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmpedobacterFalsenii.
+This file offers the methods to automatically retrieve the graph Empedobacter falsenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmpedobacterFalsenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmpedobacterFalsenii graph.
+    """Return new instance of the Empedobacter falsenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EmpedobacterFalsenii(
 
     Returns
     -----------------------
-    Instace of EmpedobacterFalsenii graph.
+    Instace of Empedobacter falsenii graph.
 
 	References
 	---------------------

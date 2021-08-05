@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeropyrumCamini.
+This file offers the methods to automatically retrieve the graph Aeropyrum camini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeropyrumCamini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeropyrumCamini graph.
+    """Return new instance of the Aeropyrum camini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeropyrumCamini(
 
     Returns
     -----------------------
-    Instace of AeropyrumCamini graph.
+    Instace of Aeropyrum camini graph.
 
 	References
 	---------------------

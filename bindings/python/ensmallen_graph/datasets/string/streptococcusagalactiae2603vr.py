@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAgalactiae2603vR.
+This file offers the methods to automatically retrieve the graph Streptococcus agalactiae 2603V/R.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAgalactiae2603vR(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAgalactiae2603vR graph.
+    """Return new instance of the Streptococcus agalactiae 2603V/R graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusAgalactiae2603vR(
 
     Returns
     -----------------------
-    Instace of StreptococcusAgalactiae2603vR graph.
+    Instace of Streptococcus agalactiae 2603V/R graph.
 
 	References
 	---------------------

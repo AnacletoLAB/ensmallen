@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuciliaCuprina.
+This file offers the methods to automatically retrieve the graph Lucilia cuprina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuciliaCuprina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuciliaCuprina graph.
+    """Return new instance of the Lucilia cuprina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuciliaCuprina(
 
     Returns
     -----------------------
-    Instace of LuciliaCuprina graph.
+    Instace of Lucilia cuprina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporolactobacillusVineae.
+This file offers the methods to automatically retrieve the graph Sporolactobacillus vineae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporolactobacillusVineae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporolactobacillusVineae graph.
+    """Return new instance of the Sporolactobacillus vineae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporolactobacillusVineae(
 
     Returns
     -----------------------
-    Instace of SporolactobacillusVineae graph.
+    Instace of Sporolactobacillus vineae graph.
 
 	References
 	---------------------

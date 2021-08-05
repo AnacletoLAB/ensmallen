@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriaBacteriumCg2303616.
+This file offers the methods to automatically retrieve the graph Ignavibacteria bacterium CG2_30_36_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriaBacteriumCg2303616(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriaBacteriumCg2303616 graph.
+    """Return new instance of the Ignavibacteria bacterium CG2_30_36_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacteriaBacteriumCg2303616(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriaBacteriumCg2303616 graph.
+    Instace of Ignavibacteria bacterium CG2_30_36_16 graph.
 
 	References
 	---------------------

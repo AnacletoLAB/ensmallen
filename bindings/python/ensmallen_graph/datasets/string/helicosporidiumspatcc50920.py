@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicosporidiumSpAtcc50920.
+This file offers the methods to automatically retrieve the graph Helicosporidium sp. ATCC 50920.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicosporidiumSpAtcc50920(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicosporidiumSpAtcc50920 graph.
+    """Return new instance of the Helicosporidium sp. ATCC 50920 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicosporidiumSpAtcc50920(
 
     Returns
     -----------------------
-    Instace of HelicosporidiumSpAtcc50920 graph.
+    Instace of Helicosporidium sp. ATCC 50920 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasCannabisPvPhaseoli.
+This file offers the methods to automatically retrieve the graph Xanthomonas cannabis pv. phaseoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasCannabisPvPhaseoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasCannabisPvPhaseoli graph.
+    """Return new instance of the Xanthomonas cannabis pv. phaseoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasCannabisPvPhaseoli(
 
     Returns
     -----------------------
-    Instace of XanthomonasCannabisPvPhaseoli graph.
+    Instace of Xanthomonas cannabis pv. phaseoli graph.
 
 	References
 	---------------------

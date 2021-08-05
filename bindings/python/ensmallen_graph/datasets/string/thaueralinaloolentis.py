@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraLinaloolentis.
+This file offers the methods to automatically retrieve the graph Thauera linaloolentis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraLinaloolentis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraLinaloolentis graph.
+    """Return new instance of the Thauera linaloolentis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThaueraLinaloolentis(
 
     Returns
     -----------------------
-    Instace of ThaueraLinaloolentis graph.
+    Instace of Thauera linaloolentis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasSpAlt199.
+This file offers the methods to automatically retrieve the graph Alteromonas sp. ALT199.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasSpAlt199(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasSpAlt199 graph.
+    """Return new instance of the Alteromonas sp. ALT199 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlteromonasSpAlt199(
 
     Returns
     -----------------------
-    Instace of AlteromonasSpAlt199 graph.
+    Instace of Alteromonas sp. ALT199 graph.
 
 	References
 	---------------------

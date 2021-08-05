@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoduganellaViolaceinigraDsm15887.
+This file offers the methods to automatically retrieve the graph Pseudoduganella violaceinigra DSM 15887.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoduganellaViolaceinigraDsm15887(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoduganellaViolaceinigraDsm15887 graph.
+    """Return new instance of the Pseudoduganella violaceinigra DSM 15887 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoduganellaViolaceinigraDsm15887(
 
     Returns
     -----------------------
-    Instace of PseudoduganellaViolaceinigraDsm15887 graph.
+    Instace of Pseudoduganella violaceinigra DSM 15887 graph.
 
 	References
 	---------------------

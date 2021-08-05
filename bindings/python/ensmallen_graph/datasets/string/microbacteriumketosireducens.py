@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumKetosireducens.
+This file offers the methods to automatically retrieve the graph Microbacterium ketosireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumKetosireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumKetosireducens graph.
+    """Return new instance of the Microbacterium ketosireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumKetosireducens(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumKetosireducens graph.
+    Instace of Microbacterium ketosireducens graph.
 
 	References
 	---------------------

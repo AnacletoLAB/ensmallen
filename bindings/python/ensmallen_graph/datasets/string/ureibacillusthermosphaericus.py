@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UreibacillusThermosphaericus.
+This file offers the methods to automatically retrieve the graph Ureibacillus thermosphaericus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UreibacillusThermosphaericus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UreibacillusThermosphaericus graph.
+    """Return new instance of the Ureibacillus thermosphaericus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UreibacillusThermosphaericus(
 
     Returns
     -----------------------
-    Instace of UreibacillusThermosphaericus graph.
+    Instace of Ureibacillus thermosphaericus graph.
 
 	References
 	---------------------

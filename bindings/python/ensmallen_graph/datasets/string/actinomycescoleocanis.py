@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesColeocanis.
+This file offers the methods to automatically retrieve the graph Actinomyces coleocanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesColeocanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesColeocanis graph.
+    """Return new instance of the Actinomyces coleocanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesColeocanis(
 
     Returns
     -----------------------
-    Instace of ActinomycesColeocanis graph.
+    Instace of Actinomyces coleocanis graph.
 
 	References
 	---------------------

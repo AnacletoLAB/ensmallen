@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaStewartii.
+This file offers the methods to automatically retrieve the graph Pantoea stewartii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaStewartii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaStewartii graph.
+    """Return new instance of the Pantoea stewartii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaStewartii(
 
     Returns
     -----------------------
-    Instace of PantoeaStewartii graph.
+    Instace of Pantoea stewartii graph.
 
 	References
 	---------------------

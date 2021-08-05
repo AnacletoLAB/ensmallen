@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpS7Ms2.
+This file offers the methods to automatically retrieve the graph Prevotella sp. S7 MS 2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpS7Ms2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpS7Ms2 graph.
+    """Return new instance of the Prevotella sp. S7 MS 2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaSpS7Ms2(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpS7Ms2 graph.
+    Instace of Prevotella sp. S7 MS 2 graph.
 
 	References
 	---------------------

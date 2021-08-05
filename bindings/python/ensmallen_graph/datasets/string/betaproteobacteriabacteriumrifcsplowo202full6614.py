@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumRifcsplowo202Full6614.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium RIFCSPLOWO2_02_FULL_66_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumRifcsplowo202Full6614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumRifcsplowo202Full6614 graph.
+    """Return new instance of the Betaproteobacteria bacterium RIFCSPLOWO2_02_FULL_66_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumRifcsplowo202Full6614(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumRifcsplowo202Full6614 graph.
+    Instace of Betaproteobacteria bacterium RIFCSPLOWO2_02_FULL_66_14 graph.
 
 	References
 	---------------------

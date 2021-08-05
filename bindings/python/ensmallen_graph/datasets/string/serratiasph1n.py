@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaSpH1n.
+This file offers the methods to automatically retrieve the graph Serratia sp. H1n.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaSpH1n(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaSpH1n graph.
+    """Return new instance of the Serratia sp. H1n graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaSpH1n(
 
     Returns
     -----------------------
-    Instace of SerratiaSpH1n graph.
+    Instace of Serratia sp. H1n graph.
 
 	References
 	---------------------

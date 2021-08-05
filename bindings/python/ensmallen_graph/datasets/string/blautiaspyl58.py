@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaSpYl58.
+This file offers the methods to automatically retrieve the graph Blautia sp. YL58.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaSpYl58(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaSpYl58 graph.
+    """Return new instance of the Blautia sp. YL58 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaSpYl58(
 
     Returns
     -----------------------
-    Instace of BlautiaSpYl58 graph.
+    Instace of Blautia sp. YL58 graph.
 
 	References
 	---------------------

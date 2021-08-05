@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisporaTropica.
+This file offers the methods to automatically retrieve the graph Salinispora tropica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisporaTropica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisporaTropica graph.
+    """Return new instance of the Salinispora tropica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinisporaTropica(
 
     Returns
     -----------------------
-    Instace of SalinisporaTropica graph.
+    Instace of Salinispora tropica graph.
 
 	References
 	---------------------

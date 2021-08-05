@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusObscuribacterPhosphatis.
+This file offers the methods to automatically retrieve the graph Candidatus Obscuribacter phosphatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusObscuribacterPhosphatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusObscuribacterPhosphatis graph.
+    """Return new instance of the Candidatus Obscuribacter phosphatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusObscuribacterPhosphatis(
 
     Returns
     -----------------------
-    Instace of CandidatusObscuribacterPhosphatis graph.
+    Instace of Candidatus Obscuribacter phosphatis graph.
 
 	References
 	---------------------

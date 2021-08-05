@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JaminaeaRosea.
+This file offers the methods to automatically retrieve the graph Jaminaea rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JaminaeaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JaminaeaRosea graph.
+    """Return new instance of the Jaminaea rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JaminaeaRosea(
 
     Returns
     -----------------------
-    Instace of JaminaeaRosea graph.
+    Instace of Jaminaea rosea graph.
 
 	References
 	---------------------

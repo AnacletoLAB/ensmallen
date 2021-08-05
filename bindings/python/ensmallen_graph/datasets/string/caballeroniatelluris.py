@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaTelluris.
+This file offers the methods to automatically retrieve the graph Caballeronia telluris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaTelluris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaTelluris graph.
+    """Return new instance of the Caballeronia telluris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaTelluris(
 
     Returns
     -----------------------
-    Instace of CaballeroniaTelluris graph.
+    Instace of Caballeronia telluris graph.
 
 	References
 	---------------------

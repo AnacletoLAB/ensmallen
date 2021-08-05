@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Finance256.
+This file offers the methods to automatically retrieve the graph finance256.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Finance256(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Finance256 graph.
+    """Return new instance of the finance256 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Finance256(
 
     Returns
     -----------------------
-    Instace of Finance256 graph.
+    Instace of finance256 graph.
 
 	References
 	---------------------

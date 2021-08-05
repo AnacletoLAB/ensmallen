@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumSolitum.
+This file offers the methods to automatically retrieve the graph Penicillium solitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumSolitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumSolitum graph.
+    """Return new instance of the Penicillium solitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumSolitum(
 
     Returns
     -----------------------
-    Instace of PenicilliumSolitum graph.
+    Instace of Penicillium solitum graph.
 
 	References
 	---------------------

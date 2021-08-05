@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasNitroreducensTx1.
+This file offers the methods to automatically retrieve the graph Pseudomonas nitroreducens TX1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasNitroreducensTx1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasNitroreducensTx1 graph.
+    """Return new instance of the Pseudomonas nitroreducens TX1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasNitroreducensTx1(
 
     Returns
     -----------------------
-    Instace of PseudomonasNitroreducensTx1 graph.
+    Instace of Pseudomonas nitroreducens TX1 graph.
 
 	References
 	---------------------

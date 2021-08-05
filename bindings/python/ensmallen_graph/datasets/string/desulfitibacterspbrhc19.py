@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitibacterSpBrhC19.
+This file offers the methods to automatically retrieve the graph Desulfitibacter sp. BRH_c19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitibacterSpBrhC19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitibacterSpBrhC19 graph.
+    """Return new instance of the Desulfitibacter sp. BRH_c19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfitibacterSpBrhC19(
 
     Returns
     -----------------------
-    Instace of DesulfitibacterSpBrhC19 graph.
+    Instace of Desulfitibacter sp. BRH_c19 graph.
 
 	References
 	---------------------

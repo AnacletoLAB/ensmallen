@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaLimiDsm17137.
+This file offers the methods to automatically retrieve the graph Devosia limi DSM 17137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaLimiDsm17137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaLimiDsm17137 graph.
+    """Return new instance of the Devosia limi DSM 17137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaLimiDsm17137(
 
     Returns
     -----------------------
-    Instace of DevosiaLimiDsm17137 graph.
+    Instace of Devosia limi DSM 17137 graph.
 
 	References
 	---------------------

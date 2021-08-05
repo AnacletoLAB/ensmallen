@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZunongwangiaMangrovi.
+This file offers the methods to automatically retrieve the graph Zunongwangia mangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZunongwangiaMangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZunongwangiaMangrovi graph.
+    """Return new instance of the Zunongwangia mangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZunongwangiaMangrovi(
 
     Returns
     -----------------------
-    Instace of ZunongwangiaMangrovi graph.
+    Instace of Zunongwangia mangrovi graph.
 
 	References
 	---------------------

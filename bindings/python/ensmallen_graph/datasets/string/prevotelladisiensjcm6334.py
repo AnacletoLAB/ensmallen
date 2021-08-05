@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaDisiensJcm6334.
+This file offers the methods to automatically retrieve the graph Prevotella disiens JCM6334.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaDisiensJcm6334(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaDisiensJcm6334 graph.
+    """Return new instance of the Prevotella disiens JCM6334 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaDisiensJcm6334(
 
     Returns
     -----------------------
-    Instace of PrevotellaDisiensJcm6334 graph.
+    Instace of Prevotella disiens JCM6334 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrenothrixSpD3.
+This file offers the methods to automatically retrieve the graph Crenothrix sp. D3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrenothrixSpD3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrenothrixSpD3 graph.
+    """Return new instance of the Crenothrix sp. D3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CrenothrixSpD3(
 
     Returns
     -----------------------
-    Instace of CrenothrixSpD3 graph.
+    Instace of Crenothrix sp. D3 graph.
 
 	References
 	---------------------

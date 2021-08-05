@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesIntestinalis.
+This file offers the methods to automatically retrieve the graph Bacteroides intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesIntestinalis graph.
+    """Return new instance of the Bacteroides intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesIntestinalis(
 
     Returns
     -----------------------
-    Instace of BacteroidesIntestinalis graph.
+    Instace of Bacteroides intestinalis graph.
 
 	References
 	---------------------

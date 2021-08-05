@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PygocentrusNattereri.
+This file offers the methods to automatically retrieve the graph Pygocentrus nattereri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PygocentrusNattereri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PygocentrusNattereri graph.
+    """Return new instance of the Pygocentrus nattereri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PygocentrusNattereri(
 
     Returns
     -----------------------
-    Instace of PygocentrusNattereri graph.
+    Instace of Pygocentrus nattereri graph.
 
 	References
 	---------------------

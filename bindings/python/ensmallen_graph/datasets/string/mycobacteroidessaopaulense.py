@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteroidesSaopaulense.
+This file offers the methods to automatically retrieve the graph Mycobacteroides saopaulense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteroidesSaopaulense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteroidesSaopaulense graph.
+    """Return new instance of the Mycobacteroides saopaulense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteroidesSaopaulense(
 
     Returns
     -----------------------
-    Instace of MycobacteroidesSaopaulense graph.
+    Instace of Mycobacteroides saopaulense graph.
 
 	References
 	---------------------

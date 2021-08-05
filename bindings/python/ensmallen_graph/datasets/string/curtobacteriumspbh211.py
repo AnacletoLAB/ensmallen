@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpBh211.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. BH-2-1-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpBh211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpBh211 graph.
+    """Return new instance of the Curtobacterium sp. BH-2-1-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpBh211(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpBh211 graph.
+    Instace of Curtobacterium sp. BH-2-1-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumConspicuum.
+This file offers the methods to automatically retrieve the graph Mycobacterium conspicuum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumConspicuum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumConspicuum graph.
+    """Return new instance of the Mycobacterium conspicuum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumConspicuum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumConspicuum graph.
+    Instace of Mycobacterium conspicuum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MitsuokellaMultacida.
+This file offers the methods to automatically retrieve the graph Mitsuokella multacida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MitsuokellaMultacida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MitsuokellaMultacida graph.
+    """Return new instance of the Mitsuokella multacida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MitsuokellaMultacida(
 
     Returns
     -----------------------
-    Instace of MitsuokellaMultacida graph.
+    Instace of Mitsuokella multacida graph.
 
 	References
 	---------------------

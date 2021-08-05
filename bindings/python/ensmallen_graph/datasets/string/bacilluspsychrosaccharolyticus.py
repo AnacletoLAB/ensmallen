@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusPsychrosaccharolyticus.
+This file offers the methods to automatically retrieve the graph Bacillus psychrosaccharolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusPsychrosaccharolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusPsychrosaccharolyticus graph.
+    """Return new instance of the Bacillus psychrosaccharolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusPsychrosaccharolyticus(
 
     Returns
     -----------------------
-    Instace of BacillusPsychrosaccharolyticus graph.
+    Instace of Bacillus psychrosaccharolyticus graph.
 
 	References
 	---------------------

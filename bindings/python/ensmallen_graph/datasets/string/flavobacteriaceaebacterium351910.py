@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacterium351910.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium 351910.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacterium351910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacterium351910 graph.
+    """Return new instance of the Flavobacteriaceae bacterium 351910 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriaceaeBacterium351910(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacterium351910 graph.
+    Instace of Flavobacteriaceae bacterium 351910 graph.
 
 	References
 	---------------------

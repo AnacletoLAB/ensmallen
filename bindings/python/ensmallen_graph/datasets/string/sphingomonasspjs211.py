@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpJs211.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. JS21-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpJs211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpJs211 graph.
+    """Return new instance of the Sphingomonas sp. JS21-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpJs211(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpJs211 graph.
+    Instace of Sphingomonas sp. JS21-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumLotiCj3sym.
+This file offers the methods to automatically retrieve the graph Mesorhizobium loti CJ3sym.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumLotiCj3sym(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumLotiCj3sym graph.
+    """Return new instance of the Mesorhizobium loti CJ3sym graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumLotiCj3sym(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumLotiCj3sym graph.
+    Instace of Mesorhizobium loti CJ3sym graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesVietnamensis.
+This file offers the methods to automatically retrieve the graph Streptomyces vietnamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesVietnamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesVietnamensis graph.
+    """Return new instance of the Streptomyces vietnamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesVietnamensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesVietnamensis graph.
+    Instace of Streptomyces vietnamensis graph.
 
 	References
 	---------------------

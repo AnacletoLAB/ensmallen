@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpHiyo8.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. Hiyo8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpHiyo8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpHiyo8 graph.
+    """Return new instance of the Arthrobacter sp. Hiyo8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpHiyo8(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpHiyo8 graph.
+    Instace of Arthrobacter sp. Hiyo8 graph.
 
 	References
 	---------------------

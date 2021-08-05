@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpRd272.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. Rd 27.2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpRd272(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpRd272 graph.
+    """Return new instance of the Psychrobacter sp. Rd 27.2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterSpRd272(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpRd272 graph.
+    Instace of Psychrobacter sp. Rd 27.2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptobacteriumSpCag338.
+This file offers the methods to automatically retrieve the graph Cryptobacterium sp. CAG:338.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptobacteriumSpCag338(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptobacteriumSpCag338 graph.
+    """Return new instance of the Cryptobacterium sp. CAG:338 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptobacteriumSpCag338(
 
     Returns
     -----------------------
-    Instace of CryptobacteriumSpCag338 graph.
+    Instace of Cryptobacterium sp. CAG:338 graph.
 
 	References
 	---------------------

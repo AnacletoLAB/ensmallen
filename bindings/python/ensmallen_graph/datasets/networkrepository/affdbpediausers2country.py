@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffDbpediaUsers2country.
+This file offers the methods to automatically retrieve the graph aff-dbpedia-users2country.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AffDbpediaUsers2country(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffDbpediaUsers2country graph.
+    """Return new instance of the aff-dbpedia-users2country graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AffDbpediaUsers2country(
 
     Returns
     -----------------------
-    Instace of AffDbpediaUsers2country graph.
+    Instace of aff-dbpedia-users2country graph.
 
 	References
 	---------------------

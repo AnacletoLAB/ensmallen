@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuthiaMagnifica.
+This file offers the methods to automatically retrieve the graph Ruthia magnifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuthiaMagnifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuthiaMagnifica graph.
+    """Return new instance of the Ruthia magnifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuthiaMagnifica(
 
     Returns
     -----------------------
-    Instace of RuthiaMagnifica graph.
+    Instace of Ruthia magnifica graph.
 
 	References
 	---------------------

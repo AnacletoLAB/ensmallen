@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TsukamurellaTyrosinosolvens.
+This file offers the methods to automatically retrieve the graph Tsukamurella tyrosinosolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TsukamurellaTyrosinosolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TsukamurellaTyrosinosolvens graph.
+    """Return new instance of the Tsukamurella tyrosinosolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TsukamurellaTyrosinosolvens(
 
     Returns
     -----------------------
-    Instace of TsukamurellaTyrosinosolvens graph.
+    Instace of Tsukamurella tyrosinosolvens graph.
 
 	References
 	---------------------

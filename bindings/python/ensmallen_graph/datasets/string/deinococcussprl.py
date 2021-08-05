@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusSpRl.
+This file offers the methods to automatically retrieve the graph Deinococcus sp. RL.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusSpRl(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusSpRl graph.
+    """Return new instance of the Deinococcus sp. RL graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusSpRl(
 
     Returns
     -----------------------
-    Instace of DeinococcusSpRl graph.
+    Instace of Deinococcus sp. RL graph.
 
 	References
 	---------------------

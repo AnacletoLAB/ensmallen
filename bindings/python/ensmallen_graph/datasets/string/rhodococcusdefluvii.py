@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusDefluvii.
+This file offers the methods to automatically retrieve the graph Rhodococcus defluvii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusDefluvii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusDefluvii graph.
+    """Return new instance of the Rhodococcus defluvii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusDefluvii(
 
     Returns
     -----------------------
-    Instace of RhodococcusDefluvii graph.
+    Instace of Rhodococcus defluvii graph.
 
 	References
 	---------------------

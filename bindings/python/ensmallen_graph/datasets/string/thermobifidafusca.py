@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermobifidaFusca.
+This file offers the methods to automatically retrieve the graph Thermobifida fusca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermobifidaFusca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermobifidaFusca graph.
+    """Return new instance of the Thermobifida fusca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermobifidaFusca(
 
     Returns
     -----------------------
-    Instace of ThermobifidaFusca graph.
+    Instace of Thermobifida fusca graph.
 
 	References
 	---------------------

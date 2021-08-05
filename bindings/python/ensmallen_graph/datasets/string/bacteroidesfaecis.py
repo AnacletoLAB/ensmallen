@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesFaecis.
+This file offers the methods to automatically retrieve the graph Bacteroides faecis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesFaecis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesFaecis graph.
+    """Return new instance of the Bacteroides faecis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesFaecis(
 
     Returns
     -----------------------
-    Instace of BacteroidesFaecis graph.
+    Instace of Bacteroides faecis graph.
 
 	References
 	---------------------

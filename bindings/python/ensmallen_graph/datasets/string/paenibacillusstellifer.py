@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusStellifer.
+This file offers the methods to automatically retrieve the graph Paenibacillus stellifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusStellifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusStellifer graph.
+    """Return new instance of the Paenibacillus stellifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusStellifer(
 
     Returns
     -----------------------
-    Instace of PaenibacillusStellifer graph.
+    Instace of Paenibacillus stellifer graph.
 
 	References
 	---------------------

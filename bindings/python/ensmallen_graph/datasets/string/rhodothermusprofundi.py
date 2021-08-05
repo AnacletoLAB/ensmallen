@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodothermusProfundi.
+This file offers the methods to automatically retrieve the graph Rhodothermus profundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodothermusProfundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodothermusProfundi graph.
+    """Return new instance of the Rhodothermus profundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodothermusProfundi(
 
     Returns
     -----------------------
-    Instace of RhodothermusProfundi graph.
+    Instace of Rhodothermus profundi graph.
 
 	References
 	---------------------

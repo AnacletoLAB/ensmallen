@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocYoutubeSnap.
+This file offers the methods to automatically retrieve the graph soc-youtube-snap.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def SocYoutubeSnap(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocYoutubeSnap graph.
+    """Return new instance of the soc-youtube-snap graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def SocYoutubeSnap(
 
     Returns
     -----------------------
-    Instace of SocYoutubeSnap graph.
+    Instace of soc-youtube-snap graph.
 
 	References
 	---------------------

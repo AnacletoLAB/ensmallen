@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArachidicoccusSpBs20.
+This file offers the methods to automatically retrieve the graph Arachidicoccus sp. BS20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArachidicoccusSpBs20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArachidicoccusSpBs20 graph.
+    """Return new instance of the Arachidicoccus sp. BS20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArachidicoccusSpBs20(
 
     Returns
     -----------------------
-    Instace of ArachidicoccusSpBs20 graph.
+    Instace of Arachidicoccus sp. BS20 graph.
 
 	References
 	---------------------

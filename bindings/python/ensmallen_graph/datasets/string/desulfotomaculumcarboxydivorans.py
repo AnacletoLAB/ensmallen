@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumCarboxydivorans.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum carboxydivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumCarboxydivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumCarboxydivorans graph.
+    """Return new instance of the Desulfotomaculum carboxydivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumCarboxydivorans(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumCarboxydivorans graph.
+    Instace of Desulfotomaculum carboxydivorans graph.
 
 	References
 	---------------------

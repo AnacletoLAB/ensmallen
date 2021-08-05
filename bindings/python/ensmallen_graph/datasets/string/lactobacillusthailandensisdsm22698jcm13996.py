@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusThailandensisDsm22698Jcm13996.
+This file offers the methods to automatically retrieve the graph Lactobacillus thailandensis DSM 22698 JCM 13996.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusThailandensisDsm22698Jcm13996(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusThailandensisDsm22698Jcm13996 graph.
+    """Return new instance of the Lactobacillus thailandensis DSM 22698 JCM 13996 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusThailandensisDsm22698Jcm13996(
 
     Returns
     -----------------------
-    Instace of LactobacillusThailandensisDsm22698Jcm13996 graph.
+    Instace of Lactobacillus thailandensis DSM 22698 JCM 13996 graph.
 
 	References
 	---------------------

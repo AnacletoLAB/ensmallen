@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumAmmoniigenesNbrc101786.
+This file offers the methods to automatically retrieve the graph Curtobacterium ammoniigenes NBRC 101786.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumAmmoniigenesNbrc101786(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumAmmoniigenesNbrc101786 graph.
+    """Return new instance of the Curtobacterium ammoniigenes NBRC 101786 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumAmmoniigenesNbrc101786(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumAmmoniigenesNbrc101786 graph.
+    Instace of Curtobacterium ammoniigenes NBRC 101786 graph.
 
 	References
 	---------------------

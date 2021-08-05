@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FischerellaMuscicola.
+This file offers the methods to automatically retrieve the graph Fischerella muscicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FischerellaMuscicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FischerellaMuscicola graph.
+    """Return new instance of the Fischerella muscicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FischerellaMuscicola(
 
     Returns
     -----------------------
-    Instace of FischerellaMuscicola graph.
+    Instace of Fischerella muscicola graph.
 
 	References
 	---------------------

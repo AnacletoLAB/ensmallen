@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraNoguchii.
+This file offers the methods to automatically retrieve the graph Leptospira noguchii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraNoguchii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraNoguchii graph.
+    """Return new instance of the Leptospira noguchii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraNoguchii(
 
     Returns
     -----------------------
-    Instace of LeptospiraNoguchii graph.
+    Instace of Leptospira noguchii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KtedonobacterRacemifer.
+This file offers the methods to automatically retrieve the graph Ktedonobacter racemifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KtedonobacterRacemifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KtedonobacterRacemifer graph.
+    """Return new instance of the Ktedonobacter racemifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KtedonobacterRacemifer(
 
     Returns
     -----------------------
-    Instace of KtedonobacterRacemifer graph.
+    Instace of Ktedonobacter racemifer graph.
 
 	References
 	---------------------

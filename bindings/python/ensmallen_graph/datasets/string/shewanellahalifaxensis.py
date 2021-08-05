@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaHalifaxensis.
+This file offers the methods to automatically retrieve the graph Shewanella halifaxensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaHalifaxensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaHalifaxensis graph.
+    """Return new instance of the Shewanella halifaxensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaHalifaxensis(
 
     Returns
     -----------------------
-    Instace of ShewanellaHalifaxensis graph.
+    Instace of Shewanella halifaxensis graph.
 
 	References
 	---------------------

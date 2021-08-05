@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpMum116.
+This file offers the methods to automatically retrieve the graph Bacillus sp. MUM 116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpMum116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpMum116 graph.
+    """Return new instance of the Bacillus sp. MUM 116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpMum116(
 
     Returns
     -----------------------
-    Instace of BacillusSpMum116 graph.
+    Instace of Bacillus sp. MUM 116 graph.
 
 	References
 	---------------------

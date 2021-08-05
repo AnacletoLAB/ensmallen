@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JonquetellaAnthropiDsm22815.
+This file offers the methods to automatically retrieve the graph Jonquetella anthropi DSM22815.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JonquetellaAnthropiDsm22815(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JonquetellaAnthropiDsm22815 graph.
+    """Return new instance of the Jonquetella anthropi DSM22815 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JonquetellaAnthropiDsm22815(
 
     Returns
     -----------------------
-    Instace of JonquetellaAnthropiDsm22815 graph.
+    Instace of Jonquetella anthropi DSM22815 graph.
 
 	References
 	---------------------

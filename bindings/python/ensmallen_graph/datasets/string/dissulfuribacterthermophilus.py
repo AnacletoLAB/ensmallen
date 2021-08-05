@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DissulfuribacterThermophilus.
+This file offers the methods to automatically retrieve the graph Dissulfuribacter thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DissulfuribacterThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DissulfuribacterThermophilus graph.
+    """Return new instance of the Dissulfuribacter thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DissulfuribacterThermophilus(
 
     Returns
     -----------------------
-    Instace of DissulfuribacterThermophilus graph.
+    Instace of Dissulfuribacter thermophilus graph.
 
 	References
 	---------------------

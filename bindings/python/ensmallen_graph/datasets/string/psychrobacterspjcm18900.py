@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpJcm18900.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. JCM18900.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpJcm18900(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpJcm18900 graph.
+    """Return new instance of the Psychrobacter sp. JCM18900 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterSpJcm18900(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpJcm18900 graph.
+    Instace of Psychrobacter sp. JCM18900 graph.
 
 	References
 	---------------------

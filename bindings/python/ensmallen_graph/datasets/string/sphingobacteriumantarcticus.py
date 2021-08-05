@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumAntarcticus.
+This file offers the methods to automatically retrieve the graph Sphingobacterium antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumAntarcticus graph.
+    """Return new instance of the Sphingobacterium antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriumAntarcticus(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumAntarcticus graph.
+    Instace of Sphingobacterium antarcticus graph.
 
 	References
 	---------------------

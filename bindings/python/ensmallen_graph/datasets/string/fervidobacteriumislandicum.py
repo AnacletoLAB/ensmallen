@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FervidobacteriumIslandicum.
+This file offers the methods to automatically retrieve the graph Fervidobacterium islandicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FervidobacteriumIslandicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FervidobacteriumIslandicum graph.
+    """Return new instance of the Fervidobacterium islandicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FervidobacteriumIslandicum(
 
     Returns
     -----------------------
-    Instace of FervidobacteriumIslandicum graph.
+    Instace of Fervidobacterium islandicum graph.
 
 	References
 	---------------------

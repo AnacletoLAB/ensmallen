@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniphilumAcetatigenes.
+This file offers the methods to automatically retrieve the graph Proteiniphilum acetatigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniphilumAcetatigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniphilumAcetatigenes graph.
+    """Return new instance of the Proteiniphilum acetatigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProteiniphilumAcetatigenes(
 
     Returns
     -----------------------
-    Instace of ProteiniphilumAcetatigenes graph.
+    Instace of Proteiniphilum acetatigenes graph.
 
 	References
 	---------------------

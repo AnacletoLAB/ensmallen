@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusGonensis.
+This file offers the methods to automatically retrieve the graph Anoxybacillus gonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusGonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusGonensis graph.
+    """Return new instance of the Anoxybacillus gonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnoxybacillusGonensis(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusGonensis graph.
+    Instace of Anoxybacillus gonensis graph.
 
 	References
 	---------------------

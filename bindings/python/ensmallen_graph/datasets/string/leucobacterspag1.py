@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterSpAg1.
+This file offers the methods to automatically retrieve the graph Leucobacter sp. Ag1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterSpAg1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterSpAg1 graph.
+    """Return new instance of the Leucobacter sp. Ag1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucobacterSpAg1(
 
     Returns
     -----------------------
-    Instace of LeucobacterSpAg1 graph.
+    Instace of Leucobacter sp. Ag1 graph.
 
 	References
 	---------------------

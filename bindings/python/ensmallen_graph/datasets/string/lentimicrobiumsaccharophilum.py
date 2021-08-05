@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentimicrobiumSaccharophilum.
+This file offers the methods to automatically retrieve the graph Lentimicrobium saccharophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentimicrobiumSaccharophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentimicrobiumSaccharophilum graph.
+    """Return new instance of the Lentimicrobium saccharophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentimicrobiumSaccharophilum(
 
     Returns
     -----------------------
-    Instace of LentimicrobiumSaccharophilum graph.
+    Instace of Lentimicrobium saccharophilum graph.
 
 	References
 	---------------------

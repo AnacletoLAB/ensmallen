@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpUnc280mftsu51.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. UNC280MFTsu51.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpUnc280mftsu51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpUnc280mftsu51 graph.
+    """Return new instance of the Mycobacterium sp. UNC280MFTsu51 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSpUnc280mftsu51(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpUnc280mftsu51 graph.
+    Instace of Mycobacterium sp. UNC280MFTsu51 graph.
 
 	References
 	---------------------

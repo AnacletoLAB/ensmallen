@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDesantisbacteriaBacteriumCg1023846.
+This file offers the methods to automatically retrieve the graph Candidatus Desantisbacteria bacterium CG1_02_38_46.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDesantisbacteriaBacteriumCg1023846(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDesantisbacteriaBacteriumCg1023846 graph.
+    """Return new instance of the Candidatus Desantisbacteria bacterium CG1_02_38_46 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDesantisbacteriaBacteriumCg1023846(
 
     Returns
     -----------------------
-    Instace of CandidatusDesantisbacteriaBacteriumCg1023846 graph.
+    Instace of Candidatus Desantisbacteria bacterium CG1_02_38_46 graph.
 
 	References
 	---------------------

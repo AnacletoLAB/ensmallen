@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumGlaciei.
+This file offers the methods to automatically retrieve the graph Chryseobacterium glaciei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumGlaciei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumGlaciei graph.
+    """Return new instance of the Chryseobacterium glaciei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumGlaciei(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumGlaciei graph.
+    Instace of Chryseobacterium glaciei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumZavarzinii.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium zavarzinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumZavarzinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumZavarzinii graph.
+    """Return new instance of the Hyphomicrobium zavarzinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomicrobiumZavarzinii(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumZavarzinii graph.
+    Instace of Hyphomicrobium zavarzinii graph.
 
 	References
 	---------------------

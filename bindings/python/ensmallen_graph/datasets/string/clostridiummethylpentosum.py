@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumMethylpentosum.
+This file offers the methods to automatically retrieve the graph Clostridium methylpentosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumMethylpentosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumMethylpentosum graph.
+    """Return new instance of the Clostridium methylpentosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumMethylpentosum(
 
     Returns
     -----------------------
-    Instace of ClostridiumMethylpentosum graph.
+    Instace of Clostridium methylpentosum graph.
 
 	References
 	---------------------

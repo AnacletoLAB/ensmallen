@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BesnoitiaBesnoiti.
+This file offers the methods to automatically retrieve the graph Besnoitia besnoiti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BesnoitiaBesnoiti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BesnoitiaBesnoiti graph.
+    """Return new instance of the Besnoitia besnoiti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BesnoitiaBesnoiti(
 
     Returns
     -----------------------
-    Instace of BesnoitiaBesnoiti graph.
+    Instace of Besnoitia besnoiti graph.
 
 	References
 	---------------------

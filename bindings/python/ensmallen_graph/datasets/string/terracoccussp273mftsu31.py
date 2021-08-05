@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerracoccusSp273mftsu31.
+This file offers the methods to automatically retrieve the graph Terracoccus sp. 273MFTsu31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerracoccusSp273mftsu31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerracoccusSp273mftsu31 graph.
+    """Return new instance of the Terracoccus sp. 273MFTsu31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TerracoccusSp273mftsu31(
 
     Returns
     -----------------------
-    Instace of TerracoccusSp273mftsu31 graph.
+    Instace of Terracoccus sp. 273MFTsu31 graph.
 
 	References
 	---------------------

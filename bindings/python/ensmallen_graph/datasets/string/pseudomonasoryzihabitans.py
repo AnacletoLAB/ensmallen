@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasOryzihabitans.
+This file offers the methods to automatically retrieve the graph Pseudomonas oryzihabitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasOryzihabitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasOryzihabitans graph.
+    """Return new instance of the Pseudomonas oryzihabitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasOryzihabitans(
 
     Returns
     -----------------------
-    Instace of PseudomonasOryzihabitans graph.
+    Instace of Pseudomonas oryzihabitans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusFerrarius.
+This file offers the methods to automatically retrieve the graph Paenibacillus ferrarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusFerrarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusFerrarius graph.
+    """Return new instance of the Paenibacillus ferrarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusFerrarius(
 
     Returns
     -----------------------
-    Instace of PaenibacillusFerrarius graph.
+    Instace of Paenibacillus ferrarius graph.
 
 	References
 	---------------------

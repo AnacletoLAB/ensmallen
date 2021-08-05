@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylococcusCapsulatus.
+This file offers the methods to automatically retrieve the graph Methylococcus capsulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylococcusCapsulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylococcusCapsulatus graph.
+    """Return new instance of the Methylococcus capsulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylococcusCapsulatus(
 
     Returns
     -----------------------
-    Instace of MethylococcusCapsulatus graph.
+    Instace of Methylococcus capsulatus graph.
 
 	References
 	---------------------

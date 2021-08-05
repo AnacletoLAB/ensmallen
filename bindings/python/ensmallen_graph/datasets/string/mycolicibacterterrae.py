@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacterTerrae.
+This file offers the methods to automatically retrieve the graph Mycolicibacter terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacterTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacterTerrae graph.
+    """Return new instance of the Mycolicibacter terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacterTerrae(
 
     Returns
     -----------------------
-    Instace of MycolicibacterTerrae graph.
+    Instace of Mycolicibacter terrae graph.
 
 	References
 	---------------------

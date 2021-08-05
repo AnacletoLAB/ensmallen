@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesResistomycificus.
+This file offers the methods to automatically retrieve the graph Streptomyces resistomycificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesResistomycificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesResistomycificus graph.
+    """Return new instance of the Streptomyces resistomycificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesResistomycificus(
 
     Returns
     -----------------------
-    Instace of StreptomycesResistomycificus graph.
+    Instace of Streptomyces resistomycificus graph.
 
 	References
 	---------------------

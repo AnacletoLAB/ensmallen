@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaVagans.
+This file offers the methods to automatically retrieve the graph Pantoea vagans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaVagans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaVagans graph.
+    """Return new instance of the Pantoea vagans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaVagans(
 
     Returns
     -----------------------
-    Instace of PantoeaVagans graph.
+    Instace of Pantoea vagans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterSpCcs2.
+This file offers the methods to automatically retrieve the graph Roseobacter sp. CCS2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterSpCcs2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterSpCcs2 graph.
+    """Return new instance of the Roseobacter sp. CCS2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterSpCcs2(
 
     Returns
     -----------------------
-    Instace of RoseobacterSpCcs2 graph.
+    Instace of Roseobacter sp. CCS2 graph.
 
 	References
 	---------------------

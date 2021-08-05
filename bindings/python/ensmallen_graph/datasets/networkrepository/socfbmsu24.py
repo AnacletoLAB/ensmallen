@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMsu24.
+This file offers the methods to automatically retrieve the graph socfb-MSU24.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMsu24(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMsu24 graph.
+    """Return new instance of the socfb-MSU24 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMsu24(
 
     Returns
     -----------------------
-    Instace of SocfbMsu24 graph.
+    Instace of socfb-MSU24 graph.
 
 	References
 	---------------------

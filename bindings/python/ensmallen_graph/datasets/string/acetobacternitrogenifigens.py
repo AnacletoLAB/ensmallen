@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterNitrogenifigens.
+This file offers the methods to automatically retrieve the graph Acetobacter nitrogenifigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterNitrogenifigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterNitrogenifigens graph.
+    """Return new instance of the Acetobacter nitrogenifigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacterNitrogenifigens(
 
     Returns
     -----------------------
-    Instace of AcetobacterNitrogenifigens graph.
+    Instace of Acetobacter nitrogenifigens graph.
 
 	References
 	---------------------

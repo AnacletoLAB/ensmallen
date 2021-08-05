@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisAlkaliphilaYim80379.
+This file offers the methods to automatically retrieve the graph Nocardiopsis alkaliphila YIM 80379.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisAlkaliphilaYim80379(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisAlkaliphilaYim80379 graph.
+    """Return new instance of the Nocardiopsis alkaliphila YIM 80379 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisAlkaliphilaYim80379(
 
     Returns
     -----------------------
-    Instace of NocardiopsisAlkaliphilaYim80379 graph.
+    Instace of Nocardiopsis alkaliphila YIM 80379 graph.
 
 	References
 	---------------------

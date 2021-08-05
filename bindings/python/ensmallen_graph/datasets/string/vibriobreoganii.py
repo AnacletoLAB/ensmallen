@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioBreoganii.
+This file offers the methods to automatically retrieve the graph Vibrio breoganii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioBreoganii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioBreoganii graph.
+    """Return new instance of the Vibrio breoganii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioBreoganii(
 
     Returns
     -----------------------
-    Instace of VibrioBreoganii graph.
+    Instace of Vibrio breoganii graph.
 
 	References
 	---------------------

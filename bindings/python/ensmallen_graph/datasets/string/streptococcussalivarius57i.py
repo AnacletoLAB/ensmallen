@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSalivarius57i.
+This file offers the methods to automatically retrieve the graph Streptococcus salivarius 57I.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSalivarius57i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSalivarius57i graph.
+    """Return new instance of the Streptococcus salivarius 57I graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSalivarius57i(
 
     Returns
     -----------------------
-    Instace of StreptococcusSalivarius57i graph.
+    Instace of Streptococcus salivarius 57I graph.
 
 	References
 	---------------------

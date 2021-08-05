@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaPneumoniaeM129.
+This file offers the methods to automatically retrieve the graph Mycoplasma pneumoniae M129.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaPneumoniaeM129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaPneumoniaeM129 graph.
+    """Return new instance of the Mycoplasma pneumoniae M129 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaPneumoniaeM129(
 
     Returns
     -----------------------
-    Instace of MycoplasmaPneumoniaeM129 graph.
+    Instace of Mycoplasma pneumoniae M129 graph.
 
 	References
 	---------------------

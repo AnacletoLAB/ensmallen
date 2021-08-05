@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumS714.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium S714.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumS714(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumS714 graph.
+    """Return new instance of the Clostridiales bacterium S714 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesBacteriumS714(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumS714 graph.
+    Instace of Clostridiales bacterium S714 graph.
 
 	References
 	---------------------

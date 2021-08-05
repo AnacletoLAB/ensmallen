@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraSpAngM1.
+This file offers the methods to automatically retrieve the graph Leisingera sp. ANG-M1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraSpAngM1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraSpAngM1 graph.
+    """Return new instance of the Leisingera sp. ANG-M1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeisingeraSpAngM1(
 
     Returns
     -----------------------
-    Instace of LeisingeraSpAngM1 graph.
+    Instace of Leisingera sp. ANG-M1 graph.
 
 	References
 	---------------------

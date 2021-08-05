@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaGallisepticumS6.
+This file offers the methods to automatically retrieve the graph Mycoplasma gallisepticum S6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaGallisepticumS6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaGallisepticumS6 graph.
+    """Return new instance of the Mycoplasma gallisepticum S6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaGallisepticumS6(
 
     Returns
     -----------------------
-    Instace of MycoplasmaGallisepticumS6 graph.
+    Instace of Mycoplasma gallisepticum S6 graph.
 
 	References
 	---------------------

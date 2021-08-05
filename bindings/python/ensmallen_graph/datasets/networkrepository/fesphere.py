@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FeSphere.
+This file offers the methods to automatically retrieve the graph fe-sphere.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def FeSphere(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FeSphere graph.
+    """Return new instance of the fe-sphere graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def FeSphere(
 
     Returns
     -----------------------
-    Instace of FeSphere graph.
+    Instace of fe-sphere graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenibacterAlgicola.
+This file offers the methods to automatically retrieve the graph Arenibacter algicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenibacterAlgicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenibacterAlgicola graph.
+    """Return new instance of the Arenibacter algicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenibacterAlgicola(
 
     Returns
     -----------------------
-    Instace of ArenibacterAlgicola graph.
+    Instace of Arenibacter algicola graph.
 
 	References
 	---------------------

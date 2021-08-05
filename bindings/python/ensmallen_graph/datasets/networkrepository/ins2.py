@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ins2.
+This file offers the methods to automatically retrieve the graph ins2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ins2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ins2 graph.
+    """Return new instance of the ins2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ins2(
 
     Returns
     -----------------------
-    Instace of Ins2 graph.
+    Instace of ins2 graph.
 
 	References
 	---------------------

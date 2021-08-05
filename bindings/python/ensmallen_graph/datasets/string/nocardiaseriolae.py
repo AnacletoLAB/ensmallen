@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSeriolae.
+This file offers the methods to automatically retrieve the graph Nocardia seriolae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSeriolae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSeriolae graph.
+    """Return new instance of the Nocardia seriolae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaSeriolae(
 
     Returns
     -----------------------
-    Instace of NocardiaSeriolae graph.
+    Instace of Nocardia seriolae graph.
 
 	References
 	---------------------

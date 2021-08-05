@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCaseiDsm20011.
+This file offers the methods to automatically retrieve the graph Lactobacillus casei DSM20011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCaseiDsm20011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCaseiDsm20011 graph.
+    """Return new instance of the Lactobacillus casei DSM20011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCaseiDsm20011(
 
     Returns
     -----------------------
-    Instace of LactobacillusCaseiDsm20011 graph.
+    Instace of Lactobacillus casei DSM20011 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrassicaNapus.
+This file offers the methods to automatically retrieve the graph Brassica napus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrassicaNapus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrassicaNapus graph.
+    """Return new instance of the Brassica napus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrassicaNapus(
 
     Returns
     -----------------------
-    Instace of BrassicaNapus graph.
+    Instace of Brassica napus graph.
 
 	References
 	---------------------

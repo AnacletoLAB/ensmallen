@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionimicrobiumSpBv2f7.
+This file offers the methods to automatically retrieve the graph Propionimicrobium sp. BV2F7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionimicrobiumSpBv2f7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionimicrobiumSpBv2f7 graph.
+    """Return new instance of the Propionimicrobium sp. BV2F7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionimicrobiumSpBv2f7(
 
     Returns
     -----------------------
-    Instace of PropionimicrobiumSpBv2f7 graph.
+    Instace of Propionimicrobium sp. BV2F7 graph.
 
 	References
 	---------------------

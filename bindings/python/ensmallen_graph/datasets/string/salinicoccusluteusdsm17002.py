@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusLuteusDsm17002.
+This file offers the methods to automatically retrieve the graph Salinicoccus luteus DSM 17002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusLuteusDsm17002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusLuteusDsm17002 graph.
+    """Return new instance of the Salinicoccus luteus DSM 17002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusLuteusDsm17002(
 
     Returns
     -----------------------
-    Instace of SalinicoccusLuteusDsm17002 graph.
+    Instace of Salinicoccus luteus DSM 17002 graph.
 
 	References
 	---------------------

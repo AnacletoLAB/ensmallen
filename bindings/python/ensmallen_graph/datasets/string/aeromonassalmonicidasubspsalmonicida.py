@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSalmonicidaSubspSalmonicida.
+This file offers the methods to automatically retrieve the graph Aeromonas salmonicida subsp. salmonicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSalmonicidaSubspSalmonicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSalmonicidaSubspSalmonicida graph.
+    """Return new instance of the Aeromonas salmonicida subsp. salmonicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSalmonicidaSubspSalmonicida(
 
     Returns
     -----------------------
-    Instace of AeromonasSalmonicidaSubspSalmonicida graph.
+    Instace of Aeromonas salmonicida subsp. salmonicida graph.
 
 	References
 	---------------------

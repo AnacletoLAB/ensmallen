@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnteractinococcusHelveticum.
+This file offers the methods to automatically retrieve the graph Enteractinococcus helveticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnteractinococcusHelveticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnteractinococcusHelveticum graph.
+    """Return new instance of the Enteractinococcus helveticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnteractinococcusHelveticum(
 
     Returns
     -----------------------
-    Instace of EnteractinococcusHelveticum graph.
+    Instace of Enteractinococcus helveticum graph.
 
 	References
 	---------------------

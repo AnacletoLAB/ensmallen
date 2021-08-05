@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumUndae.
+This file offers the methods to automatically retrieve the graph Exiguobacterium undae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumUndae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumUndae graph.
+    """Return new instance of the Exiguobacterium undae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumUndae(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumUndae graph.
+    Instace of Exiguobacterium undae graph.
 
 	References
 	---------------------

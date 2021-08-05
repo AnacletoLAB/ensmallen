@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSpHpa0247.
+This file offers the methods to automatically retrieve the graph Actinomyces sp. HPA0247.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSpHpa0247(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSpHpa0247 graph.
+    """Return new instance of the Actinomyces sp. HPA0247 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesSpHpa0247(
 
     Returns
     -----------------------
-    Instace of ActinomycesSpHpa0247 graph.
+    Instace of Actinomyces sp. HPA0247 graph.
 
 	References
 	---------------------

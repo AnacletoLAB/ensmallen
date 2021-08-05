@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalogranumSalarium.
+This file offers the methods to automatically retrieve the graph Halogranum salarium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalogranumSalarium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalogranumSalarium graph.
+    """Return new instance of the Halogranum salarium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalogranumSalarium(
 
     Returns
     -----------------------
-    Instace of HalogranumSalarium graph.
+    Instace of Halogranum salarium graph.
 
 	References
 	---------------------

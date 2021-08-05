@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidiaBacteriumGa0077558.
+This file offers the methods to automatically retrieve the graph Bacteroidia bacterium Ga0077558.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidiaBacteriumGa0077558(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidiaBacteriumGa0077558 graph.
+    """Return new instance of the Bacteroidia bacterium Ga0077558 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidiaBacteriumGa0077558(
 
     Returns
     -----------------------
-    Instace of BacteroidiaBacteriumGa0077558 graph.
+    Instace of Bacteroidia bacterium Ga0077558 graph.
 
 	References
 	---------------------

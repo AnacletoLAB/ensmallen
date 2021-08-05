@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCloacimonetesBacterium457255.
+This file offers the methods to automatically retrieve the graph Candidatus Cloacimonetes bacterium 4572_55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCloacimonetesBacterium457255(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCloacimonetesBacterium457255 graph.
+    """Return new instance of the Candidatus Cloacimonetes bacterium 4572_55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCloacimonetesBacterium457255(
 
     Returns
     -----------------------
-    Instace of CandidatusCloacimonetesBacterium457255 graph.
+    Instace of Candidatus Cloacimonetes bacterium 4572_55 graph.
 
 	References
 	---------------------

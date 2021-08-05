@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NaegleriaGruberi.
+This file offers the methods to automatically retrieve the graph Naegleria gruberi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NaegleriaGruberi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NaegleriaGruberi graph.
+    """Return new instance of the Naegleria gruberi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NaegleriaGruberi(
 
     Returns
     -----------------------
-    Instace of NaegleriaGruberi graph.
+    Instace of Naegleria gruberi graph.
 
 	References
 	---------------------

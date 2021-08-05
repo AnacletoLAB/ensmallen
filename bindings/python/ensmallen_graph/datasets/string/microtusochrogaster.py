@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrotusOchrogaster.
+This file offers the methods to automatically retrieve the graph Microtus ochrogaster.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrotusOchrogaster(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrotusOchrogaster graph.
+    """Return new instance of the Microtus ochrogaster graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrotusOchrogaster(
 
     Returns
     -----------------------
-    Instace of MicrotusOchrogaster graph.
+    Instace of Microtus ochrogaster graph.
 
 	References
 	---------------------

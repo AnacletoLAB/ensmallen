@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSuis05zyh33.
+This file offers the methods to automatically retrieve the graph Streptococcus suis 05ZYH33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSuis05zyh33(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSuis05zyh33 graph.
+    """Return new instance of the Streptococcus suis 05ZYH33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSuis05zyh33(
 
     Returns
     -----------------------
-    Instace of StreptococcusSuis05zyh33 graph.
+    Instace of Streptococcus suis 05ZYH33 graph.
 
 	References
 	---------------------

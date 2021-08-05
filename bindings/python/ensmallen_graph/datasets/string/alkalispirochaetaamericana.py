@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalispirochaetaAmericana.
+This file offers the methods to automatically retrieve the graph Alkalispirochaeta americana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalispirochaetaAmericana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalispirochaetaAmericana graph.
+    """Return new instance of the Alkalispirochaeta americana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalispirochaetaAmericana(
 
     Returns
     -----------------------
-    Instace of AlkalispirochaetaAmericana graph.
+    Instace of Alkalispirochaeta americana graph.
 
 	References
 	---------------------

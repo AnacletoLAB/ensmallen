@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimihaloglobusSulfuriphilus.
+This file offers the methods to automatically retrieve the graph Limihaloglobus sulfuriphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimihaloglobusSulfuriphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimihaloglobusSulfuriphilus graph.
+    """Return new instance of the Limihaloglobus sulfuriphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimihaloglobusSulfuriphilus(
 
     Returns
     -----------------------
-    Instace of LimihaloglobusSulfuriphilus graph.
+    Instace of Limihaloglobus sulfuriphilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DolosicoccusPaucivorans.
+This file offers the methods to automatically retrieve the graph Dolosicoccus paucivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DolosicoccusPaucivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DolosicoccusPaucivorans graph.
+    """Return new instance of the Dolosicoccus paucivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DolosicoccusPaucivorans(
 
     Returns
     -----------------------
-    Instace of DolosicoccusPaucivorans graph.
+    Instace of Dolosicoccus paucivorans graph.
 
 	References
 	---------------------

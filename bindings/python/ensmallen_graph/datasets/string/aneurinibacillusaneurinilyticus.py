@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AneurinibacillusAneurinilyticus.
+This file offers the methods to automatically retrieve the graph Aneurinibacillus aneurinilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AneurinibacillusAneurinilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AneurinibacillusAneurinilyticus graph.
+    """Return new instance of the Aneurinibacillus aneurinilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AneurinibacillusAneurinilyticus(
 
     Returns
     -----------------------
-    Instace of AneurinibacillusAneurinilyticus graph.
+    Instace of Aneurinibacillus aneurinilyticus graph.
 
 	References
 	---------------------

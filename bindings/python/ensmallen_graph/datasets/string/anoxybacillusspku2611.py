@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusSpKu2611.
+This file offers the methods to automatically retrieve the graph Anoxybacillus sp. KU2-6(11).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusSpKu2611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusSpKu2611 graph.
+    """Return new instance of the Anoxybacillus sp. KU2-6(11) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnoxybacillusSpKu2611(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusSpKu2611 graph.
+    Instace of Anoxybacillus sp. KU2-6(11) graph.
 
 	References
 	---------------------

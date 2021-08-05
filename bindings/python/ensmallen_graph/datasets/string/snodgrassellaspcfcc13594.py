@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SnodgrassellaSpCfcc13594.
+This file offers the methods to automatically retrieve the graph Snodgrassella sp. CFCC 13594.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SnodgrassellaSpCfcc13594(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SnodgrassellaSpCfcc13594 graph.
+    """Return new instance of the Snodgrassella sp. CFCC 13594 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SnodgrassellaSpCfcc13594(
 
     Returns
     -----------------------
-    Instace of SnodgrassellaSpCfcc13594 graph.
+    Instace of Snodgrassella sp. CFCC 13594 graph.
 
 	References
 	---------------------

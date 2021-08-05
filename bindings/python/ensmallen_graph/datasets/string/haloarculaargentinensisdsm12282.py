@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarculaArgentinensisDsm12282.
+This file offers the methods to automatically retrieve the graph Haloarcula argentinensis DSM 12282.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarculaArgentinensisDsm12282(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarculaArgentinensisDsm12282 graph.
+    """Return new instance of the Haloarcula argentinensis DSM 12282 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloarculaArgentinensisDsm12282(
 
     Returns
     -----------------------
-    Instace of HaloarculaArgentinensisDsm12282 graph.
+    Instace of Haloarcula argentinensis DSM 12282 graph.
 
 	References
 	---------------------

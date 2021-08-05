@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSpLeaf336.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. Leaf336.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaSpLeaf336(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSpLeaf336 graph.
+    """Return new instance of the Leifsonia sp. Leaf336 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeifsoniaSpLeaf336(
 
     Returns
     -----------------------
-    Instace of LeifsoniaSpLeaf336 graph.
+    Instace of Leifsonia sp. Leaf336 graph.
 
 	References
 	---------------------

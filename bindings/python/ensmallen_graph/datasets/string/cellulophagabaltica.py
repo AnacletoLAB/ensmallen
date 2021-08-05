@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaBaltica.
+This file offers the methods to automatically retrieve the graph Cellulophaga baltica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaBaltica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaBaltica graph.
+    """Return new instance of the Cellulophaga baltica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulophagaBaltica(
 
     Returns
     -----------------------
-    Instace of CellulophagaBaltica graph.
+    Instace of Cellulophaga baltica graph.
 
 	References
 	---------------------

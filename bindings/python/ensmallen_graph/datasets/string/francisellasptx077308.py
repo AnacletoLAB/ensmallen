@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaSpTx077308.
+This file offers the methods to automatically retrieve the graph Francisella sp. TX077308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaSpTx077308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaSpTx077308 graph.
+    """Return new instance of the Francisella sp. TX077308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaSpTx077308(
 
     Returns
     -----------------------
-    Instace of FrancisellaSpTx077308 graph.
+    Instace of Francisella sp. TX077308 graph.
 
 	References
 	---------------------

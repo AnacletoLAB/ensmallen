@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioWormnetV3Benchmark.
+This file offers the methods to automatically retrieve the graph bio-WormNet-v3-benchmark.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioWormnetV3Benchmark(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioWormnetV3Benchmark graph.
+    """Return new instance of the bio-WormNet-v3-benchmark graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioWormnetV3Benchmark(
 
     Returns
     -----------------------
-    Instace of BioWormnetV3Benchmark graph.
+    Instace of bio-WormNet-v3-benchmark graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpCcge1001.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. CCGE1001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpCcge1001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpCcge1001 graph.
+    """Return new instance of the Burkholderia sp. CCGE1001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaSpCcge1001(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpCcge1001 graph.
+    Instace of Burkholderia sp. CCGE1001 graph.
 
 	References
 	---------------------

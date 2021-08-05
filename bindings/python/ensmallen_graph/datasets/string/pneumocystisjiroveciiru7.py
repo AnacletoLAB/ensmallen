@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PneumocystisJiroveciiRu7.
+This file offers the methods to automatically retrieve the graph Pneumocystis jirovecii RU7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PneumocystisJiroveciiRu7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PneumocystisJiroveciiRu7 graph.
+    """Return new instance of the Pneumocystis jirovecii RU7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PneumocystisJiroveciiRu7(
 
     Returns
     -----------------------
-    Instace of PneumocystisJiroveciiRu7 graph.
+    Instace of Pneumocystis jirovecii RU7 graph.
 
 	References
 	---------------------

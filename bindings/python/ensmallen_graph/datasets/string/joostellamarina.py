@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JoostellaMarina.
+This file offers the methods to automatically retrieve the graph Joostella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JoostellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JoostellaMarina graph.
+    """Return new instance of the Joostella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JoostellaMarina(
 
     Returns
     -----------------------
-    Instace of JoostellaMarina graph.
+    Instace of Joostella marina graph.
 
 	References
 	---------------------

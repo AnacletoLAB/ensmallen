@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioThiocyanodenitrificans.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio thiocyanodenitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioThiocyanodenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioThiocyanodenitrificans graph.
+    """Return new instance of the Thioalkalivibrio thiocyanodenitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalivibrioThiocyanodenitrificans(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioThiocyanodenitrificans graph.
+    Instace of Thioalkalivibrio thiocyanodenitrificans graph.
 
 	References
 	---------------------

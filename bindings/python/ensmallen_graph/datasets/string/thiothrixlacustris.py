@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiothrixLacustris.
+This file offers the methods to automatically retrieve the graph Thiothrix lacustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiothrixLacustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiothrixLacustris graph.
+    """Return new instance of the Thiothrix lacustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiothrixLacustris(
 
     Returns
     -----------------------
-    Instace of ThiothrixLacustris graph.
+    Instace of Thiothrix lacustris graph.
 
 	References
 	---------------------

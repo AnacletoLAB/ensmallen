@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutibacterMaritimus.
+This file offers the methods to automatically retrieve the graph Lutibacter maritimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutibacterMaritimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutibacterMaritimus graph.
+    """Return new instance of the Lutibacter maritimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutibacterMaritimus(
 
     Returns
     -----------------------
-    Instace of LutibacterMaritimus graph.
+    Instace of Lutibacter maritimus graph.
 
 	References
 	---------------------

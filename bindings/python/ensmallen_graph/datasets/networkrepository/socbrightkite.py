@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocBrightkite.
+This file offers the methods to automatically retrieve the graph soc-brightkite.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocBrightkite(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocBrightkite graph.
+    """Return new instance of the soc-brightkite graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocBrightkite(
 
     Returns
     -----------------------
-    Instace of SocBrightkite graph.
+    Instace of soc-brightkite graph.
 
 	References
 	---------------------

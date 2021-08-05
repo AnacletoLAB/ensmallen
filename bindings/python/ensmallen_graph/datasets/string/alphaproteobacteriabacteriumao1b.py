@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumAo1B.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium AO1-B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumAo1B(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumAo1B graph.
+    """Return new instance of the Alphaproteobacteria bacterium AO1-B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumAo1B(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumAo1B graph.
+    Instace of Alphaproteobacteria bacterium AO1-B graph.
 
 	References
 	---------------------

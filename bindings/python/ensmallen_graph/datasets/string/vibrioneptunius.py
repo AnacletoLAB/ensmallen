@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioNeptunius.
+This file offers the methods to automatically retrieve the graph Vibrio neptunius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioNeptunius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioNeptunius graph.
+    """Return new instance of the Vibrio neptunius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioNeptunius(
 
     Returns
     -----------------------
-    Instace of VibrioNeptunius graph.
+    Instace of Vibrio neptunius graph.
 
 	References
 	---------------------

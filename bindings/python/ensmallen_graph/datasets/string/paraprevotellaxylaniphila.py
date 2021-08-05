@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaprevotellaXylaniphila.
+This file offers the methods to automatically retrieve the graph Paraprevotella xylaniphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaprevotellaXylaniphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaprevotellaXylaniphila graph.
+    """Return new instance of the Paraprevotella xylaniphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParaprevotellaXylaniphila(
 
     Returns
     -----------------------
-    Instace of ParaprevotellaXylaniphila graph.
+    Instace of Paraprevotella xylaniphila graph.
 
 	References
 	---------------------

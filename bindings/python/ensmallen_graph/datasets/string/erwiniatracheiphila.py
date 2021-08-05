@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaTracheiphila.
+This file offers the methods to automatically retrieve the graph Erwinia tracheiphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaTracheiphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaTracheiphila graph.
+    """Return new instance of the Erwinia tracheiphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaTracheiphila(
 
     Returns
     -----------------------
-    Instace of ErwiniaTracheiphila graph.
+    Instace of Erwinia tracheiphila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolobusPsychrophilus.
+This file offers the methods to automatically retrieve the graph Methanolobus psychrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolobusPsychrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolobusPsychrophilus graph.
+    """Return new instance of the Methanolobus psychrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanolobusPsychrophilus(
 
     Returns
     -----------------------
-    Instace of MethanolobusPsychrophilus graph.
+    Instace of Methanolobus psychrophilus graph.
 
 	References
 	---------------------

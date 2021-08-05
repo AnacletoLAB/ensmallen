@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaFermentati.
+This file offers the methods to automatically retrieve the graph Lachancea fermentati.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaFermentati(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaFermentati graph.
+    """Return new instance of the Lachancea fermentati graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachanceaFermentati(
 
     Returns
     -----------------------
-    Instace of LachanceaFermentati graph.
+    Instace of Lachancea fermentati graph.
 
 	References
 	---------------------

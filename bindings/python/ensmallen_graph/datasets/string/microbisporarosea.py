@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobisporaRosea.
+This file offers the methods to automatically retrieve the graph Microbispora rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobisporaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobisporaRosea graph.
+    """Return new instance of the Microbispora rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobisporaRosea(
 
     Returns
     -----------------------
-    Instace of MicrobisporaRosea graph.
+    Instace of Microbispora rosea graph.
 
 	References
 	---------------------

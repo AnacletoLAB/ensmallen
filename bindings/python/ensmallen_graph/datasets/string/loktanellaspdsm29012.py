@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaSpDsm29012.
+This file offers the methods to automatically retrieve the graph Loktanella sp. DSM 29012.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaSpDsm29012(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaSpDsm29012 graph.
+    """Return new instance of the Loktanella sp. DSM 29012 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LoktanellaSpDsm29012(
 
     Returns
     -----------------------
-    Instace of LoktanellaSpDsm29012 graph.
+    Instace of Loktanella sp. DSM 29012 graph.
 
 	References
 	---------------------

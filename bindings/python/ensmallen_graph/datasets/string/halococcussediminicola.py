@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusSediminicola.
+This file offers the methods to automatically retrieve the graph Halococcus sediminicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusSediminicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusSediminicola graph.
+    """Return new instance of the Halococcus sediminicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalococcusSediminicola(
 
     Returns
     -----------------------
-    Instace of HalococcusSediminicola graph.
+    Instace of Halococcus sediminicola graph.
 
 	References
 	---------------------

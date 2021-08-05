@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumJoshi001.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium JOSHI001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumJoshi001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumJoshi001 graph.
+    """Return new instance of the Burkholderiales bacterium JOSHI001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderialesBacteriumJoshi001(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumJoshi001 graph.
+    Instace of Burkholderiales bacterium JOSHI001 graph.
 
 	References
 	---------------------

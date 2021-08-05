@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesMissouriensis.
+This file offers the methods to automatically retrieve the graph Actinoplanes missouriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesMissouriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesMissouriensis graph.
+    """Return new instance of the Actinoplanes missouriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesMissouriensis(
 
     Returns
     -----------------------
-    Instace of ActinoplanesMissouriensis graph.
+    Instace of Actinoplanes missouriensis graph.
 
 	References
 	---------------------

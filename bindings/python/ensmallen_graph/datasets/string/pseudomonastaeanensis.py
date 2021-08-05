@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasTaeanensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas taeanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasTaeanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasTaeanensis graph.
+    """Return new instance of the Pseudomonas taeanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasTaeanensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasTaeanensis graph.
+    Instace of Pseudomonas taeanensis graph.
 
 	References
 	---------------------

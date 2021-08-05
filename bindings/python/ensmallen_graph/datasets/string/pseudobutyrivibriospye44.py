@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobutyrivibrioSpYe44.
+This file offers the methods to automatically retrieve the graph Pseudobutyrivibrio sp. YE44.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobutyrivibrioSpYe44(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobutyrivibrioSpYe44 graph.
+    """Return new instance of the Pseudobutyrivibrio sp. YE44 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudobutyrivibrioSpYe44(
 
     Returns
     -----------------------
-    Instace of PseudobutyrivibrioSpYe44 graph.
+    Instace of Pseudobutyrivibrio sp. YE44 graph.
 
 	References
 	---------------------

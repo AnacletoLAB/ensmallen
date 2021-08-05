@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpPacm27299.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. PACM 27299.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpPacm27299(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpPacm27299 graph.
+    """Return new instance of the Pedobacter sp. PACM 27299 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSpPacm27299(
 
     Returns
     -----------------------
-    Instace of PedobacterSpPacm27299 graph.
+    Instace of Pedobacter sp. PACM 27299 graph.
 
 	References
 	---------------------

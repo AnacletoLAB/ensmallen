@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioQuintilis.
+This file offers the methods to automatically retrieve the graph Vibrio quintilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioQuintilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioQuintilis graph.
+    """Return new instance of the Vibrio quintilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioQuintilis(
 
     Returns
     -----------------------
-    Instace of VibrioQuintilis graph.
+    Instace of Vibrio quintilis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilvimarinusAgarilyticus.
+This file offers the methods to automatically retrieve the graph Gilvimarinus agarilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilvimarinusAgarilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilvimarinusAgarilyticus graph.
+    """Return new instance of the Gilvimarinus agarilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GilvimarinusAgarilyticus(
 
     Returns
     -----------------------
-    Instace of GilvimarinusAgarilyticus graph.
+    Instace of Gilvimarinus agarilyticus graph.
 
 	References
 	---------------------

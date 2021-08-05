@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusNantensisDsm16982.
+This file offers the methods to automatically retrieve the graph Lactobacillus nantensis DSM 16982.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusNantensisDsm16982(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusNantensisDsm16982 graph.
+    """Return new instance of the Lactobacillus nantensis DSM 16982 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusNantensisDsm16982(
 
     Returns
     -----------------------
-    Instace of LactobacillusNantensisDsm16982 graph.
+    Instace of Lactobacillus nantensis DSM 16982 graph.
 
 	References
 	---------------------

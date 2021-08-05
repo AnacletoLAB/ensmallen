@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumTaeniosporum.
+This file offers the methods to automatically retrieve the graph Clostridium taeniosporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumTaeniosporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumTaeniosporum graph.
+    """Return new instance of the Clostridium taeniosporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumTaeniosporum(
 
     Returns
     -----------------------
-    Instace of ClostridiumTaeniosporum graph.
+    Instace of Clostridium taeniosporum graph.
 
 	References
 	---------------------

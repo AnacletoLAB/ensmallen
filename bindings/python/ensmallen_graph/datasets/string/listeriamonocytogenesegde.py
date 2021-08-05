@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaMonocytogenesEgde.
+This file offers the methods to automatically retrieve the graph Listeria monocytogenes EGDe.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaMonocytogenesEgde(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaMonocytogenesEgde graph.
+    """Return new instance of the Listeria monocytogenes EGDe graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaMonocytogenesEgde(
 
     Returns
     -----------------------
-    Instace of ListeriaMonocytogenesEgde graph.
+    Instace of Listeria monocytogenes EGDe graph.
 
 	References
 	---------------------

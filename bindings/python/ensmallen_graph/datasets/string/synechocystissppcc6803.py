@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechocystisSpPcc6803.
+This file offers the methods to automatically retrieve the graph Synechocystis sp. PCC6803.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechocystisSpPcc6803(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechocystisSpPcc6803 graph.
+    """Return new instance of the Synechocystis sp. PCC6803 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechocystisSpPcc6803(
 
     Returns
     -----------------------
-    Instace of SynechocystisSpPcc6803 graph.
+    Instace of Synechocystis sp. PCC6803 graph.
 
 	References
 	---------------------

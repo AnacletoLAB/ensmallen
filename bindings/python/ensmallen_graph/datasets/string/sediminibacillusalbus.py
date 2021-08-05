@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminibacillusAlbus.
+This file offers the methods to automatically retrieve the graph Sediminibacillus albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminibacillusAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminibacillusAlbus graph.
+    """Return new instance of the Sediminibacillus albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SediminibacillusAlbus(
 
     Returns
     -----------------------
-    Instace of SediminibacillusAlbus graph.
+    Instace of Sediminibacillus albus graph.
 
 	References
 	---------------------

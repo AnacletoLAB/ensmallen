@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusFlavefaciens007c.
+This file offers the methods to automatically retrieve the graph Ruminococcus flavefaciens 007c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusFlavefaciens007c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusFlavefaciens007c graph.
+    """Return new instance of the Ruminococcus flavefaciens 007c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusFlavefaciens007c(
 
     Returns
     -----------------------
-    Instace of RuminococcusFlavefaciens007c graph.
+    Instace of Ruminococcus flavefaciens 007c graph.
 
 	References
 	---------------------

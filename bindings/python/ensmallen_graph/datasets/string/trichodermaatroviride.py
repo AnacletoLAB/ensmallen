@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaAtroviride.
+This file offers the methods to automatically retrieve the graph Trichoderma atroviride.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichodermaAtroviride(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaAtroviride graph.
+    """Return new instance of the Trichoderma atroviride graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichodermaAtroviride(
 
     Returns
     -----------------------
-    Instace of TrichodermaAtroviride graph.
+    Instace of Trichoderma atroviride graph.
 
 	References
 	---------------------

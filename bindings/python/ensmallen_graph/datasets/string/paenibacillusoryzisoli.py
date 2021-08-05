@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusOryzisoli.
+This file offers the methods to automatically retrieve the graph Paenibacillus oryzisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusOryzisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusOryzisoli graph.
+    """Return new instance of the Paenibacillus oryzisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusOryzisoli(
 
     Returns
     -----------------------
-    Instace of PaenibacillusOryzisoli graph.
+    Instace of Paenibacillus oryzisoli graph.
 
 	References
 	---------------------

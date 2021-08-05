@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedEubacteriumSp.
+This file offers the methods to automatically retrieve the graph uncultured Eubacterium sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedEubacteriumSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedEubacteriumSp graph.
+    """Return new instance of the uncultured Eubacterium sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedEubacteriumSp(
 
     Returns
     -----------------------
-    Instace of UnculturedEubacteriumSp graph.
+    Instace of uncultured Eubacterium sp. graph.
 
 	References
 	---------------------

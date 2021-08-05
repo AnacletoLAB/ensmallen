@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KamptonemaFormosum.
+This file offers the methods to automatically retrieve the graph Kamptonema formosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KamptonemaFormosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KamptonemaFormosum graph.
+    """Return new instance of the Kamptonema formosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KamptonemaFormosum(
 
     Returns
     -----------------------
-    Instace of KamptonemaFormosum graph.
+    Instace of Kamptonema formosum graph.
 
 	References
 	---------------------

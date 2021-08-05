@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CobetiaCrustatorum.
+This file offers the methods to automatically retrieve the graph Cobetia crustatorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CobetiaCrustatorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CobetiaCrustatorum graph.
+    """Return new instance of the Cobetia crustatorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CobetiaCrustatorum(
 
     Returns
     -----------------------
-    Instace of CobetiaCrustatorum graph.
+    Instace of Cobetia crustatorum graph.
 
 	References
 	---------------------

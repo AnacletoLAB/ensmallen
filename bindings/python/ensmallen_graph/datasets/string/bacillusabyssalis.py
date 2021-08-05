@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAbyssalis.
+This file offers the methods to automatically retrieve the graph Bacillus abyssalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAbyssalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAbyssalis graph.
+    """Return new instance of the Bacillus abyssalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAbyssalis(
 
     Returns
     -----------------------
-    Instace of BacillusAbyssalis graph.
+    Instace of Bacillus abyssalis graph.
 
 	References
 	---------------------

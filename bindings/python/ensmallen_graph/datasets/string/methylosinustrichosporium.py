@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylosinusTrichosporium.
+This file offers the methods to automatically retrieve the graph Methylosinus trichosporium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylosinusTrichosporium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylosinusTrichosporium graph.
+    """Return new instance of the Methylosinus trichosporium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylosinusTrichosporium(
 
     Returns
     -----------------------
-    Instace of MethylosinusTrichosporium graph.
+    Instace of Methylosinus trichosporium graph.
 
 	References
 	---------------------

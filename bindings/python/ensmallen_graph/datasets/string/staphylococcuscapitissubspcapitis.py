@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusCapitisSubspCapitis.
+This file offers the methods to automatically retrieve the graph Staphylococcus capitis subsp. capitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusCapitisSubspCapitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusCapitisSubspCapitis graph.
+    """Return new instance of the Staphylococcus capitis subsp. capitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusCapitisSubspCapitis(
 
     Returns
     -----------------------
-    Instace of StaphylococcusCapitisSubspCapitis graph.
+    Instace of Staphylococcus capitis subsp. capitis graph.
 
 	References
 	---------------------

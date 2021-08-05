@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSteynii.
+This file offers the methods to automatically retrieve the graph Pedobacter steynii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSteynii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSteynii graph.
+    """Return new instance of the Pedobacter steynii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSteynii(
 
     Returns
     -----------------------
-    Instace of PedobacterSteynii graph.
+    Instace of Pedobacter steynii graph.
 
 	References
 	---------------------

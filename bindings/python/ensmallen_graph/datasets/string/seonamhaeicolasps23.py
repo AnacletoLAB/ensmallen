@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SeonamhaeicolaSpS23.
+This file offers the methods to automatically retrieve the graph Seonamhaeicola sp. S2-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SeonamhaeicolaSpS23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SeonamhaeicolaSpS23 graph.
+    """Return new instance of the Seonamhaeicola sp. S2-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SeonamhaeicolaSpS23(
 
     Returns
     -----------------------
-    Instace of SeonamhaeicolaSpS23 graph.
+    Instace of Seonamhaeicola sp. S2-3 graph.
 
 	References
 	---------------------

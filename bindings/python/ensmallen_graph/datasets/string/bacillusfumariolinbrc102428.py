@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusFumarioliNbrc102428.
+This file offers the methods to automatically retrieve the graph Bacillus fumarioli NBRC 102428.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusFumarioliNbrc102428(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusFumarioliNbrc102428 graph.
+    """Return new instance of the Bacillus fumarioli NBRC 102428 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusFumarioliNbrc102428(
 
     Returns
     -----------------------
-    Instace of BacillusFumarioliNbrc102428 graph.
+    Instace of Bacillus fumarioli NBRC 102428 graph.
 
 	References
 	---------------------

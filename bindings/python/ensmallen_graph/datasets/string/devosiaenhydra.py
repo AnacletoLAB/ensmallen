@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaEnhydra.
+This file offers the methods to automatically retrieve the graph Devosia enhydra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaEnhydra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaEnhydra graph.
+    """Return new instance of the Devosia enhydra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaEnhydra(
 
     Returns
     -----------------------
-    Instace of DevosiaEnhydra graph.
+    Instace of Devosia enhydra graph.
 
 	References
 	---------------------

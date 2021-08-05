@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusUreilyticus.
+This file offers the methods to automatically retrieve the graph Gracilibacillus ureilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusUreilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusUreilyticus graph.
+    """Return new instance of the Gracilibacillus ureilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilibacillusUreilyticus(
 
     Returns
     -----------------------
-    Instace of GracilibacillusUreilyticus graph.
+    Instace of Gracilibacillus ureilyticus graph.
 
 	References
 	---------------------

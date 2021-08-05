@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UstilagoMaydis.
+This file offers the methods to automatically retrieve the graph Ustilago maydis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UstilagoMaydis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UstilagoMaydis graph.
+    """Return new instance of the Ustilago maydis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UstilagoMaydis(
 
     Returns
     -----------------------
-    Instace of UstilagoMaydis graph.
+    Instace of Ustilago maydis graph.
 
 	References
 	---------------------

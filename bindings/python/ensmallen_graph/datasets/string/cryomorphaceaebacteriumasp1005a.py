@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryomorphaceaeBacteriumAsp1005a.
+This file offers the methods to automatically retrieve the graph Cryomorphaceae bacterium ASP10-05a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryomorphaceaeBacteriumAsp1005a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryomorphaceaeBacteriumAsp1005a graph.
+    """Return new instance of the Cryomorphaceae bacterium ASP10-05a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryomorphaceaeBacteriumAsp1005a(
 
     Returns
     -----------------------
-    Instace of CryomorphaceaeBacteriumAsp1005a graph.
+    Instace of Cryomorphaceae bacterium ASP10-05a graph.
 
 	References
 	---------------------

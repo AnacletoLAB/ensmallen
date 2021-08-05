@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonajaTextilis.
+This file offers the methods to automatically retrieve the graph Pseudonaja textilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonajaTextilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonajaTextilis graph.
+    """Return new instance of the Pseudonaja textilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonajaTextilis(
 
     Returns
     -----------------------
-    Instace of PseudonajaTextilis graph.
+    Instace of Pseudonaja textilis graph.
 
 	References
 	---------------------

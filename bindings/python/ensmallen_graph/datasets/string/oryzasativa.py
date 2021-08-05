@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaSativa.
+This file offers the methods to automatically retrieve the graph Oryza sativa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaSativa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaSativa graph.
+    """Return new instance of the Oryza sativa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryzaSativa(
 
     Returns
     -----------------------
-    Instace of OryzaSativa graph.
+    Instace of Oryza sativa graph.
 
 	References
 	---------------------

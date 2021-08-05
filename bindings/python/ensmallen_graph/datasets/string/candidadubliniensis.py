@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaDubliniensis.
+This file offers the methods to automatically retrieve the graph Candida dubliniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaDubliniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaDubliniensis graph.
+    """Return new instance of the Candida dubliniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaDubliniensis(
 
     Returns
     -----------------------
-    Instace of CandidaDubliniensis graph.
+    Instace of Candida dubliniensis graph.
 
 	References
 	---------------------

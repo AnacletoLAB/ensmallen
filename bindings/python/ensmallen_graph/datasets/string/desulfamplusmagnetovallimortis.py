@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfamplusMagnetovallimortis.
+This file offers the methods to automatically retrieve the graph Desulfamplus magnetovallimortis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfamplusMagnetovallimortis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfamplusMagnetovallimortis graph.
+    """Return new instance of the Desulfamplus magnetovallimortis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfamplusMagnetovallimortis(
 
     Returns
     -----------------------
-    Instace of DesulfamplusMagnetovallimortis graph.
+    Instace of Desulfamplus magnetovallimortis graph.
 
 	References
 	---------------------

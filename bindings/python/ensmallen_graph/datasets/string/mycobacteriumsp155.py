@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSp155.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. 155.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSp155(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSp155 graph.
+    """Return new instance of the Mycobacterium sp. 155 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSp155(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSp155 graph.
+    Instace of Mycobacterium sp. 155 graph.
 
 	References
 	---------------------

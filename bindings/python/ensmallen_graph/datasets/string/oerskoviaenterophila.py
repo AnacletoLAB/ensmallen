@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OerskoviaEnterophila.
+This file offers the methods to automatically retrieve the graph Oerskovia enterophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OerskoviaEnterophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OerskoviaEnterophila graph.
+    """Return new instance of the Oerskovia enterophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OerskoviaEnterophila(
 
     Returns
     -----------------------
-    Instace of OerskoviaEnterophila graph.
+    Instace of Oerskovia enterophila graph.
 
 	References
 	---------------------

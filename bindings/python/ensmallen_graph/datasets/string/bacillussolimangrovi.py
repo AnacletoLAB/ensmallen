@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSolimangrovi.
+This file offers the methods to automatically retrieve the graph Bacillus solimangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSolimangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSolimangrovi graph.
+    """Return new instance of the Bacillus solimangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSolimangrovi(
 
     Returns
     -----------------------
-    Instace of BacillusSolimangrovi graph.
+    Instace of Bacillus solimangrovi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumAtrosepticum.
+This file offers the methods to automatically retrieve the graph Pectobacterium atrosepticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumAtrosepticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumAtrosepticum graph.
+    """Return new instance of the Pectobacterium atrosepticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PectobacteriumAtrosepticum(
 
     Returns
     -----------------------
-    Instace of PectobacteriumAtrosepticum graph.
+    Instace of Pectobacterium atrosepticum graph.
 
 	References
 	---------------------

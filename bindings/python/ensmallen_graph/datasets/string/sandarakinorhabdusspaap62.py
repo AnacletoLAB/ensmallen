@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SandarakinorhabdusSpAap62.
+This file offers the methods to automatically retrieve the graph Sandarakinorhabdus sp. AAP62.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SandarakinorhabdusSpAap62(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SandarakinorhabdusSpAap62 graph.
+    """Return new instance of the Sandarakinorhabdus sp. AAP62 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SandarakinorhabdusSpAap62(
 
     Returns
     -----------------------
-    Instace of SandarakinorhabdusSpAap62 graph.
+    Instace of Sandarakinorhabdus sp. AAP62 graph.
 
 	References
 	---------------------

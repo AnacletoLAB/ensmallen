@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumSublineola.
+This file offers the methods to automatically retrieve the graph Colletotrichum sublineola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumSublineola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumSublineola graph.
+    """Return new instance of the Colletotrichum sublineola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ColletotrichumSublineola(
 
     Returns
     -----------------------
-    Instace of ColletotrichumSublineola graph.
+    Instace of Colletotrichum sublineola graph.
 
 	References
 	---------------------

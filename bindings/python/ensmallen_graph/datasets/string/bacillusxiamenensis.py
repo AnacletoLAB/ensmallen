@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusXiamenensis.
+This file offers the methods to automatically retrieve the graph Bacillus xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusXiamenensis graph.
+    """Return new instance of the Bacillus xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusXiamenensis(
 
     Returns
     -----------------------
-    Instace of BacillusXiamenensis graph.
+    Instace of Bacillus xiamenensis graph.
 
 	References
 	---------------------

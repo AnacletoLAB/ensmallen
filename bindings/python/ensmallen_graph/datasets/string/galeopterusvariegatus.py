@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GaleopterusVariegatus.
+This file offers the methods to automatically retrieve the graph Galeopterus variegatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GaleopterusVariegatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GaleopterusVariegatus graph.
+    """Return new instance of the Galeopterus variegatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GaleopterusVariegatus(
 
     Returns
     -----------------------
-    Instace of GaleopterusVariegatus graph.
+    Instace of Galeopterus variegatus graph.
 
 	References
 	---------------------

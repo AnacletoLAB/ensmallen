@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaRattaustraliani.
+This file offers the methods to automatically retrieve the graph Bartonella rattaustraliani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaRattaustraliani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaRattaustraliani graph.
+    """Return new instance of the Bartonella rattaustraliani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaRattaustraliani(
 
     Returns
     -----------------------
-    Instace of BartonellaRattaustraliani graph.
+    Instace of Bartonella rattaustraliani graph.
 
 	References
 	---------------------

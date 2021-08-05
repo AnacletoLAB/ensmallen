@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaBrevicatena.
+This file offers the methods to automatically retrieve the graph Nocardia brevicatena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaBrevicatena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaBrevicatena graph.
+    """Return new instance of the Nocardia brevicatena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaBrevicatena(
 
     Returns
     -----------------------
-    Instace of NocardiaBrevicatena graph.
+    Instace of Nocardia brevicatena graph.
 
 	References
 	---------------------

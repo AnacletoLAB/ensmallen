@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaRocourtiaeFslF6920.
+This file offers the methods to automatically retrieve the graph Listeria rocourtiae FSL F6-920.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaRocourtiaeFslF6920(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaRocourtiaeFslF6920 graph.
+    """Return new instance of the Listeria rocourtiae FSL F6-920 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaRocourtiaeFslF6920(
 
     Returns
     -----------------------
-    Instace of ListeriaRocourtiaeFslF6920 graph.
+    Instace of Listeria rocourtiae FSL F6-920 graph.
 
 	References
 	---------------------

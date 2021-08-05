@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumKnowlesi.
+This file offers the methods to automatically retrieve the graph Plasmodium knowlesi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumKnowlesi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumKnowlesi graph.
+    """Return new instance of the Plasmodium knowlesi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumKnowlesi(
 
     Returns
     -----------------------
-    Instace of PlasmodiumKnowlesi graph.
+    Instace of Plasmodium knowlesi graph.
 
 	References
 	---------------------

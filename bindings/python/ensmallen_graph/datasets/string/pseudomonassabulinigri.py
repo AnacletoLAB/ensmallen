@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSabulinigri.
+This file offers the methods to automatically retrieve the graph Pseudomonas sabulinigri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSabulinigri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSabulinigri graph.
+    """Return new instance of the Pseudomonas sabulinigri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSabulinigri(
 
     Returns
     -----------------------
-    Instace of PseudomonasSabulinigri graph.
+    Instace of Pseudomonas sabulinigri graph.
 
 	References
 	---------------------

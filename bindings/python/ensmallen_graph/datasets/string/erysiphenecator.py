@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipheNecator.
+This file offers the methods to automatically retrieve the graph Erysiphe necator.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipheNecator(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipheNecator graph.
+    """Return new instance of the Erysiphe necator graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErysipheNecator(
 
     Returns
     -----------------------
-    Instace of ErysipheNecator graph.
+    Instace of Erysiphe necator graph.
 
 	References
 	---------------------

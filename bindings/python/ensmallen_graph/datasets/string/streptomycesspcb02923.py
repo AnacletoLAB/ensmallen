@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCb02923.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CB02923.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCb02923(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCb02923 graph.
+    """Return new instance of the Streptomyces sp. CB02923 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpCb02923(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCb02923 graph.
+    Instace of Streptomyces sp. CB02923 graph.
 
 	References
 	---------------------

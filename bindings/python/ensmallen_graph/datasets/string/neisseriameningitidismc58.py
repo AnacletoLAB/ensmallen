@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaMeningitidisMc58.
+This file offers the methods to automatically retrieve the graph Neisseria meningitidis MC58.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaMeningitidisMc58(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaMeningitidisMc58 graph.
+    """Return new instance of the Neisseria meningitidis MC58 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaMeningitidisMc58(
 
     Returns
     -----------------------
-    Instace of NeisseriaMeningitidisMc58 graph.
+    Instace of Neisseria meningitidis MC58 graph.
 
 	References
 	---------------------

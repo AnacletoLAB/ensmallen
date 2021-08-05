@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmatimonadetesBacteriumDc.
+This file offers the methods to automatically retrieve the graph Armatimonadetes bacterium DC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmatimonadetesBacteriumDc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmatimonadetesBacteriumDc graph.
+    """Return new instance of the Armatimonadetes bacterium DC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmatimonadetesBacteriumDc(
 
     Returns
     -----------------------
-    Instace of ArmatimonadetesBacteriumDc graph.
+    Instace of Armatimonadetes bacterium DC graph.
 
 	References
 	---------------------

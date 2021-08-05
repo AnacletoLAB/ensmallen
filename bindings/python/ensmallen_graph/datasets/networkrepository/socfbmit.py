@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMit.
+This file offers the methods to automatically retrieve the graph socfb-MIT.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMit(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMit graph.
+    """Return new instance of the socfb-MIT graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMit(
 
     Returns
     -----------------------
-    Instace of SocfbMit graph.
+    Instace of socfb-MIT graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpHix.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. HIX.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpHix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpHix graph.
+    """Return new instance of the Sphingopyxis sp. HIX graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSpHix(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpHix graph.
+    Instace of Sphingopyxis sp. HIX graph.
 
 	References
 	---------------------

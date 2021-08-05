@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpCnj954.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. CNJ-954.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpCnj954(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpCnj954 graph.
+    """Return new instance of the Corynebacterium sp. CNJ-954 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSpCnj954(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpCnj954 graph.
+    Instace of Corynebacterium sp. CNJ-954 graph.
 
 	References
 	---------------------

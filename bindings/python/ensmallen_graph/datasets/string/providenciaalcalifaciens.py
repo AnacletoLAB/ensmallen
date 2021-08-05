@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaAlcalifaciens.
+This file offers the methods to automatically retrieve the graph Providencia alcalifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaAlcalifaciens(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaAlcalifaciens graph.
+    """Return new instance of the Providencia alcalifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProvidenciaAlcalifaciens(
 
     Returns
     -----------------------
-    Instace of ProvidenciaAlcalifaciens graph.
+    Instace of Providencia alcalifaciens graph.
 
 	References
 	---------------------

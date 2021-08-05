@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotaleaMetallivorans.
+This file offers the methods to automatically retrieve the graph Thermotalea metallivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotaleaMetallivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotaleaMetallivorans graph.
+    """Return new instance of the Thermotalea metallivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermotaleaMetallivorans(
 
     Returns
     -----------------------
-    Instace of ThermotaleaMetallivorans graph.
+    Instace of Thermotalea metallivorans graph.
 
 	References
 	---------------------

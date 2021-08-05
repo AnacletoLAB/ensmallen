@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminobacterSpRoot100.
+This file offers the methods to automatically retrieve the graph Aminobacter sp. Root100.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminobacterSpRoot100(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminobacterSpRoot100 graph.
+    """Return new instance of the Aminobacter sp. Root100 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AminobacterSpRoot100(
 
     Returns
     -----------------------
-    Instace of AminobacterSpRoot100 graph.
+    Instace of Aminobacter sp. Root100 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cage3.
+This file offers the methods to automatically retrieve the graph cage3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cage3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cage3 graph.
+    """Return new instance of the cage3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cage3(
 
     Returns
     -----------------------
-    Instace of Cage3 graph.
+    Instace of cage3 graph.
 
 	References
 	---------------------

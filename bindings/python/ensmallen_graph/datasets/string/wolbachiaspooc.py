@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaSpOoc.
+This file offers the methods to automatically retrieve the graph Wolbachia sp. Ooc.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaSpOoc(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaSpOoc graph.
+    """Return new instance of the Wolbachia sp. Ooc graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaSpOoc(
 
     Returns
     -----------------------
-    Instace of WolbachiaSpOoc graph.
+    Instace of Wolbachia sp. Ooc graph.
 
 	References
 	---------------------

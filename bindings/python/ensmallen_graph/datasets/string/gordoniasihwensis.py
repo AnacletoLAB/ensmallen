@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSihwensis.
+This file offers the methods to automatically retrieve the graph Gordonia sihwensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSihwensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSihwensis graph.
+    """Return new instance of the Gordonia sihwensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaSihwensis(
 
     Returns
     -----------------------
-    Instace of GordoniaSihwensis graph.
+    Instace of Gordonia sihwensis graph.
 
 	References
 	---------------------

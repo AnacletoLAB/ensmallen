@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutibaculumBaratangense.
+This file offers the methods to automatically retrieve the graph Lutibaculum baratangense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutibaculumBaratangense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutibaculumBaratangense graph.
+    """Return new instance of the Lutibaculum baratangense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LutibaculumBaratangense(
 
     Returns
     -----------------------
-    Instace of LutibaculumBaratangense graph.
+    Instace of Lutibaculum baratangense graph.
 
 	References
 	---------------------

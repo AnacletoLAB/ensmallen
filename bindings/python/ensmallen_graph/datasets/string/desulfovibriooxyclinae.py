@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioOxyclinae.
+This file offers the methods to automatically retrieve the graph Desulfovibrio oxyclinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioOxyclinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioOxyclinae graph.
+    """Return new instance of the Desulfovibrio oxyclinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioOxyclinae(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioOxyclinae graph.
+    Instace of Desulfovibrio oxyclinae graph.
 
 	References
 	---------------------

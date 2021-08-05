@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElephantulusEdwardii.
+This file offers the methods to automatically retrieve the graph Elephantulus edwardii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElephantulusEdwardii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElephantulusEdwardii graph.
+    """Return new instance of the Elephantulus edwardii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ElephantulusEdwardii(
 
     Returns
     -----------------------
-    Instace of ElephantulusEdwardii graph.
+    Instace of Elephantulus edwardii graph.
 
 	References
 	---------------------

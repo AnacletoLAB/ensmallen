@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothrixThermoacetophilaPt.
+This file offers the methods to automatically retrieve the graph Methanothrix thermoacetophila PT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothrixThermoacetophilaPt(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothrixThermoacetophilaPt graph.
+    """Return new instance of the Methanothrix thermoacetophila PT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothrixThermoacetophilaPt(
 
     Returns
     -----------------------
-    Instace of MethanothrixThermoacetophilaPt graph.
+    Instace of Methanothrix thermoacetophila PT graph.
 
 	References
 	---------------------

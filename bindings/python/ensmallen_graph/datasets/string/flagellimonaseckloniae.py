@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlagellimonasEckloniae.
+This file offers the methods to automatically retrieve the graph Flagellimonas eckloniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlagellimonasEckloniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlagellimonasEckloniae graph.
+    """Return new instance of the Flagellimonas eckloniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlagellimonasEckloniae(
 
     Returns
     -----------------------
-    Instace of FlagellimonasEckloniae graph.
+    Instace of Flagellimonas eckloniae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TulasnellaCalosporaMut4182.
+This file offers the methods to automatically retrieve the graph Tulasnella calospora MUT 4182.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TulasnellaCalosporaMut4182(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TulasnellaCalosporaMut4182 graph.
+    """Return new instance of the Tulasnella calospora MUT 4182 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TulasnellaCalosporaMut4182(
 
     Returns
     -----------------------
-    Instace of TulasnellaCalosporaMut4182 graph.
+    Instace of Tulasnella calospora MUT 4182 graph.
 
 	References
 	---------------------

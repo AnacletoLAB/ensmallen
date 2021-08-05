@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusThailandensis.
+This file offers the methods to automatically retrieve the graph Halococcus thailandensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusThailandensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusThailandensis graph.
+    """Return new instance of the Halococcus thailandensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalococcusThailandensis(
 
     Returns
     -----------------------
-    Instace of HalococcusThailandensis graph.
+    Instace of Halococcus thailandensis graph.
 
 	References
 	---------------------

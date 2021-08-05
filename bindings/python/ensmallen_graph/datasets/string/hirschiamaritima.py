@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HirschiaMaritima.
+This file offers the methods to automatically retrieve the graph Hirschia maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HirschiaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HirschiaMaritima graph.
+    """Return new instance of the Hirschia maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HirschiaMaritima(
 
     Returns
     -----------------------
-    Instace of HirschiaMaritima graph.
+    Instace of Hirschia maritima graph.
 
 	References
 	---------------------

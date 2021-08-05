@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloversatilisUniversalisEhg5.
+This file offers the methods to automatically retrieve the graph Methyloversatilis universalis EHg5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloversatilisUniversalisEhg5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloversatilisUniversalisEhg5 graph.
+    """Return new instance of the Methyloversatilis universalis EHg5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloversatilisUniversalisEhg5(
 
     Returns
     -----------------------
-    Instace of MethyloversatilisUniversalisEhg5 graph.
+    Instace of Methyloversatilis universalis EHg5 graph.
 
 	References
 	---------------------

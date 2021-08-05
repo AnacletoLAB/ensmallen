@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaDoshiae.
+This file offers the methods to automatically retrieve the graph Bartonella doshiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaDoshiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaDoshiae graph.
+    """Return new instance of the Bartonella doshiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaDoshiae(
 
     Returns
     -----------------------
-    Instace of BartonellaDoshiae graph.
+    Instace of Bartonella doshiae graph.
 
 	References
 	---------------------

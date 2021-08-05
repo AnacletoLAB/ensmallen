@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrimontiaHollisae.
+This file offers the methods to automatically retrieve the graph Grimontia hollisae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrimontiaHollisae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrimontiaHollisae graph.
+    """Return new instance of the Grimontia hollisae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GrimontiaHollisae(
 
     Returns
     -----------------------
-    Instace of GrimontiaHollisae graph.
+    Instace of Grimontia hollisae graph.
 
 	References
 	---------------------

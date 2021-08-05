@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitobacteriumHafniense.
+This file offers the methods to automatically retrieve the graph Desulfitobacterium hafniense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitobacteriumHafniense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitobacteriumHafniense graph.
+    """Return new instance of the Desulfitobacterium hafniense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfitobacteriumHafniense(
 
     Returns
     -----------------------
-    Instace of DesulfitobacteriumHafniense graph.
+    Instace of Desulfitobacterium hafniense graph.
 
 	References
 	---------------------

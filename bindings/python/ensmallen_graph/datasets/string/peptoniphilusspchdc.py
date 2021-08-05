@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSpChdc.
+This file offers the methods to automatically retrieve the graph Peptoniphilus sp. ChDC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSpChdc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSpChdc graph.
+    """Return new instance of the Peptoniphilus sp. ChDC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusSpChdc(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSpChdc graph.
+    Instace of Peptoniphilus sp. ChDC graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacearchaeotaArchaeonRbg133326.
+This file offers the methods to automatically retrieve the graph Candidatus Pacearchaeota archaeon RBG_13_33_26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPacearchaeotaArchaeonRbg133326(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacearchaeotaArchaeonRbg133326 graph.
+    """Return new instance of the Candidatus Pacearchaeota archaeon RBG_13_33_26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPacearchaeotaArchaeonRbg133326(
 
     Returns
     -----------------------
-    Instace of CandidatusPacearchaeotaArchaeonRbg133326 graph.
+    Instace of Candidatus Pacearchaeota archaeon RBG_13_33_26 graph.
 
 	References
 	---------------------

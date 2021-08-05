@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BavariicoccusSeileri.
+This file offers the methods to automatically retrieve the graph Bavariicoccus seileri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BavariicoccusSeileri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BavariicoccusSeileri graph.
+    """Return new instance of the Bavariicoccus seileri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BavariicoccusSeileri(
 
     Returns
     -----------------------
-    Instace of BavariicoccusSeileri graph.
+    Instace of Bavariicoccus seileri graph.
 
 	References
 	---------------------

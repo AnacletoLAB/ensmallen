@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RunellaLimosaDsm17973.
+This file offers the methods to automatically retrieve the graph Runella limosa DSM 17973.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RunellaLimosaDsm17973(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RunellaLimosaDsm17973 graph.
+    """Return new instance of the Runella limosa DSM 17973 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RunellaLimosaDsm17973(
 
     Returns
     -----------------------
-    Instace of RunellaLimosaDsm17973 graph.
+    Instace of Runella limosa DSM 17973 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloranaerobacterFerrireducens.
+This file offers the methods to automatically retrieve the graph Caloranaerobacter ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloranaerobacterFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloranaerobacterFerrireducens graph.
+    """Return new instance of the Caloranaerobacter ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaloranaerobacterFerrireducens(
 
     Returns
     -----------------------
-    Instace of CaloranaerobacterFerrireducens graph.
+    Instace of Caloranaerobacter ferrireducens graph.
 
 	References
 	---------------------

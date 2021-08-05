@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosopumilusSpLsAoa.
+This file offers the methods to automatically retrieve the graph Nitrosopumilus sp. LS_AOA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosopumilusSpLsAoa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosopumilusSpLsAoa graph.
+    """Return new instance of the Nitrosopumilus sp. LS_AOA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosopumilusSpLsAoa(
 
     Returns
     -----------------------
-    Instace of NitrosopumilusSpLsAoa graph.
+    Instace of Nitrosopumilus sp. LS_AOA graph.
 
 	References
 	---------------------

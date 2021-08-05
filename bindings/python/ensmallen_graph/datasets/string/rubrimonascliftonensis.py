@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubrimonasCliftonensis.
+This file offers the methods to automatically retrieve the graph Rubrimonas cliftonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubrimonasCliftonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubrimonasCliftonensis graph.
+    """Return new instance of the Rubrimonas cliftonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubrimonasCliftonensis(
 
     Returns
     -----------------------
-    Instace of RubrimonasCliftonensis graph.
+    Instace of Rubrimonas cliftonensis graph.
 
 	References
 	---------------------

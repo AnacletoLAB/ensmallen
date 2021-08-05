@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CercosporaZeina.
+This file offers the methods to automatically retrieve the graph Cercospora zeina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CercosporaZeina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CercosporaZeina graph.
+    """Return new instance of the Cercospora zeina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CercosporaZeina(
 
     Returns
     -----------------------
-    Instace of CercosporaZeina graph.
+    Instace of Cercospora zeina graph.
 
 	References
 	---------------------

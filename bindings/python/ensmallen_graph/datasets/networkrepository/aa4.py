@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Aa4.
+This file offers the methods to automatically retrieve the graph aa4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Aa4(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Aa4 graph.
+    """Return new instance of the aa4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Aa4(
 
     Returns
     -----------------------
-    Instace of Aa4 graph.
+    Instace of aa4 graph.
 
 	References
 	---------------------

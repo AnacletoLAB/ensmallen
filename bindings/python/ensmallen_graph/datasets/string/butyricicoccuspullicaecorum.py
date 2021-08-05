@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyricicoccusPullicaecorum.
+This file offers the methods to automatically retrieve the graph Butyricicoccus pullicaecorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyricicoccusPullicaecorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyricicoccusPullicaecorum graph.
+    """Return new instance of the Butyricicoccus pullicaecorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyricicoccusPullicaecorum(
 
     Returns
     -----------------------
-    Instace of ButyricicoccusPullicaecorum graph.
+    Instace of Butyricicoccus pullicaecorum graph.
 
 	References
 	---------------------

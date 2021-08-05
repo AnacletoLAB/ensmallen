@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaConjunctivae.
+This file offers the methods to automatically retrieve the graph Mycoplasma conjunctivae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaConjunctivae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaConjunctivae graph.
+    """Return new instance of the Mycoplasma conjunctivae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaConjunctivae(
 
     Returns
     -----------------------
-    Instace of MycoplasmaConjunctivae graph.
+    Instace of Mycoplasma conjunctivae graph.
 
 	References
 	---------------------

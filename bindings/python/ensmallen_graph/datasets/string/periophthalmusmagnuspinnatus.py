@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeriophthalmusMagnuspinnatus.
+This file offers the methods to automatically retrieve the graph Periophthalmus magnuspinnatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeriophthalmusMagnuspinnatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeriophthalmusMagnuspinnatus graph.
+    """Return new instance of the Periophthalmus magnuspinnatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeriophthalmusMagnuspinnatus(
 
     Returns
     -----------------------
-    Instace of PeriophthalmusMagnuspinnatus graph.
+    Instace of Periophthalmus magnuspinnatus graph.
 
 	References
 	---------------------

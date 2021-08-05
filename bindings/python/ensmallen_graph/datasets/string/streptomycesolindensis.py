@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesOlindensis.
+This file offers the methods to automatically retrieve the graph Streptomyces olindensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesOlindensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesOlindensis graph.
+    """Return new instance of the Streptomyces olindensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesOlindensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesOlindensis graph.
+    Instace of Streptomyces olindensis graph.
 
 	References
 	---------------------

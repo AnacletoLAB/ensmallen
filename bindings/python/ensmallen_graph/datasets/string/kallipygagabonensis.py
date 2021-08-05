@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KallipygaGabonensis.
+This file offers the methods to automatically retrieve the graph Kallipyga gabonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KallipygaGabonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KallipygaGabonensis graph.
+    """Return new instance of the Kallipyga gabonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KallipygaGabonensis(
 
     Returns
     -----------------------
-    Instace of KallipygaGabonensis graph.
+    Instace of Kallipyga gabonensis graph.
 
 	References
 	---------------------

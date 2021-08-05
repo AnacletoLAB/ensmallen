@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentibacterAlgarum.
+This file offers the methods to automatically retrieve the graph Lentibacter algarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentibacterAlgarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentibacterAlgarum graph.
+    """Return new instance of the Lentibacter algarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentibacterAlgarum(
 
     Returns
     -----------------------
-    Instace of LentibacterAlgarum graph.
+    Instace of Lentibacter algarum graph.
 
 	References
 	---------------------

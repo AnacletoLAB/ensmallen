@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IndibacterAlkaliphilus.
+This file offers the methods to automatically retrieve the graph Indibacter alkaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IndibacterAlkaliphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IndibacterAlkaliphilus graph.
+    """Return new instance of the Indibacter alkaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IndibacterAlkaliphilus(
 
     Returns
     -----------------------
-    Instace of IndibacterAlkaliphilus graph.
+    Instace of Indibacter alkaliphilus graph.
 
 	References
 	---------------------

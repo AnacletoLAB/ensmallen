@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomycesParvus.
+This file offers the methods to automatically retrieve the graph Blastomyces parvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomycesParvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomycesParvus graph.
+    """Return new instance of the Blastomyces parvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomycesParvus(
 
     Returns
     -----------------------
-    Instace of BlastomycesParvus graph.
+    Instace of Blastomyces parvus graph.
 
 	References
 	---------------------

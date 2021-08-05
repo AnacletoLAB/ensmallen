@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriumSar116.
+This file offers the methods to automatically retrieve the graph Alphaproteobacterium SAR116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriumSar116(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriumSar116 graph.
+    """Return new instance of the Alphaproteobacterium SAR116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriumSar116(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriumSar116 graph.
+    Instace of Alphaproteobacterium SAR116 graph.
 
 	References
 	---------------------

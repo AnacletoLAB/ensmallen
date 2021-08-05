@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE1747.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E1747.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE1747(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE1747 graph.
+    """Return new instance of the Mycobacterium sp. E1747 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE1747(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE1747 graph.
+    Instace of Mycobacterium sp. E1747 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiO157h7.
+This file offers the methods to automatically retrieve the graph Escherichia coli O157H7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiO157h7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiO157h7 graph.
+    """Return new instance of the Escherichia coli O157H7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaColiO157h7(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiO157h7 graph.
+    Instace of Escherichia coli O157H7 graph.
 
 	References
 	---------------------

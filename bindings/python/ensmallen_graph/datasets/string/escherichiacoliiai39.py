@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiIai39.
+This file offers the methods to automatically retrieve the graph Escherichia coli IAI39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiIai39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiIai39 graph.
+    """Return new instance of the Escherichia coli IAI39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EscherichiaColiIai39(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiIai39 graph.
+    Instace of Escherichia coli IAI39 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgreiaSpLeaf210.
+This file offers the methods to automatically retrieve the graph Agreia sp. Leaf210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgreiaSpLeaf210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgreiaSpLeaf210 graph.
+    """Return new instance of the Agreia sp. Leaf210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgreiaSpLeaf210(
 
     Returns
     -----------------------
-    Instace of AgreiaSpLeaf210 graph.
+    Instace of Agreia sp. Leaf210 graph.
 
 	References
 	---------------------

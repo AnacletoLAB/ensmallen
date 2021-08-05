@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydialesBacterium3826.
+This file offers the methods to automatically retrieve the graph Chlamydiales bacterium 38-26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydialesBacterium3826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydialesBacterium3826 graph.
+    """Return new instance of the Chlamydiales bacterium 38-26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydialesBacterium3826(
 
     Returns
     -----------------------
-    Instace of ChlamydialesBacterium3826 graph.
+    Instace of Chlamydiales bacterium 38-26 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesF0058.
+This file offers the methods to automatically retrieve the graph Bacteroidetes F0058.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesF0058(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesF0058 graph.
+    """Return new instance of the Bacteroidetes F0058 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidetesF0058(
 
     Returns
     -----------------------
-    Instace of BacteroidetesF0058 graph.
+    Instace of Bacteroidetes F0058 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioFischeri.
+This file offers the methods to automatically retrieve the graph Vibrio fischeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioFischeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioFischeri graph.
+    """Return new instance of the Vibrio fischeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioFischeri(
 
     Returns
     -----------------------
-    Instace of VibrioFischeri graph.
+    Instace of Vibrio fischeri graph.
 
 	References
 	---------------------

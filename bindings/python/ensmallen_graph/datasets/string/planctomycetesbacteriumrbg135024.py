@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycetesBacteriumRbg135024.
+This file offers the methods to automatically retrieve the graph Planctomycetes bacterium RBG_13_50_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycetesBacteriumRbg135024(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycetesBacteriumRbg135024 graph.
+    """Return new instance of the Planctomycetes bacterium RBG_13_50_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctomycetesBacteriumRbg135024(
 
     Returns
     -----------------------
-    Instace of PlanctomycetesBacteriumRbg135024 graph.
+    Instace of Planctomycetes bacterium RBG_13_50_24 graph.
 
 	References
 	---------------------

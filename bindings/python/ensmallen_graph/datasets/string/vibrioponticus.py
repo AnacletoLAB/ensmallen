@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioPonticus.
+This file offers the methods to automatically retrieve the graph Vibrio ponticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioPonticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioPonticus graph.
+    """Return new instance of the Vibrio ponticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioPonticus(
 
     Returns
     -----------------------
-    Instace of VibrioPonticus graph.
+    Instace of Vibrio ponticus graph.
 
 	References
 	---------------------

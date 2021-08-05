@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasAtlantica.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas atlantica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasAtlantica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasAtlantica graph.
+    """Return new instance of the Pseudoalteromonas atlantica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasAtlantica(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasAtlantica graph.
+    Instace of Pseudoalteromonas atlantica graph.
 
 	References
 	---------------------

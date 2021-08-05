@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmadillidiumVulgare.
+This file offers the methods to automatically retrieve the graph Armadillidium vulgare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmadillidiumVulgare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmadillidiumVulgare graph.
+    """Return new instance of the Armadillidium vulgare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmadillidiumVulgare(
 
     Returns
     -----------------------
-    Instace of ArmadillidiumVulgare graph.
+    Instace of Armadillidium vulgare graph.
 
 	References
 	---------------------

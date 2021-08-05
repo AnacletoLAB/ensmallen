@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminiphilusCircumscriptus.
+This file offers the methods to automatically retrieve the graph Aminiphilus circumscriptus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminiphilusCircumscriptus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminiphilusCircumscriptus graph.
+    """Return new instance of the Aminiphilus circumscriptus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AminiphilusCircumscriptus(
 
     Returns
     -----------------------
-    Instace of AminiphilusCircumscriptus graph.
+    Instace of Aminiphilus circumscriptus graph.
 
 	References
 	---------------------

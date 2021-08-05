@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterSpMgh106.
+This file offers the methods to automatically retrieve the graph Citrobacter sp. MGH106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterSpMgh106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterSpMgh106 graph.
+    """Return new instance of the Citrobacter sp. MGH106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CitrobacterSpMgh106(
 
     Returns
     -----------------------
-    Instace of CitrobacterSpMgh106 graph.
+    Instace of Citrobacter sp. MGH106 graph.
 
 	References
 	---------------------

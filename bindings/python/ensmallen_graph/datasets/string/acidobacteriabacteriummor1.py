@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacteriumMor1.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium Mor1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacteriumMor1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacteriumMor1 graph.
+    """Return new instance of the Acidobacteria bacterium Mor1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacteriumMor1(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacteriumMor1 graph.
+    Instace of Acidobacteria bacterium Mor1 graph.
 
 	References
 	---------------------

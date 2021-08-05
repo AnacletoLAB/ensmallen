@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FictibacillusPhosphorivorans.
+This file offers the methods to automatically retrieve the graph Fictibacillus phosphorivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FictibacillusPhosphorivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FictibacillusPhosphorivorans graph.
+    """Return new instance of the Fictibacillus phosphorivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FictibacillusPhosphorivorans(
 
     Returns
     -----------------------
-    Instace of FictibacillusPhosphorivorans graph.
+    Instace of Fictibacillus phosphorivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaSp22iis11g.
+This file offers the methods to automatically retrieve the graph Oceanicola sp. 22IIS11g.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaSp22iis11g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaSp22iis11g graph.
+    """Return new instance of the Oceanicola sp. 22IIS11g graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicolaSp22iis11g(
 
     Returns
     -----------------------
-    Instace of OceanicolaSp22iis11g graph.
+    Instace of Oceanicola sp. 22IIS11g graph.
 
 	References
 	---------------------

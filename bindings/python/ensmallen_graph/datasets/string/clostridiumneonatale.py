@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumNeonatale.
+This file offers the methods to automatically retrieve the graph Clostridium neonatale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumNeonatale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumNeonatale graph.
+    """Return new instance of the Clostridium neonatale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumNeonatale(
 
     Returns
     -----------------------
-    Instace of ClostridiumNeonatale graph.
+    Instace of Clostridium neonatale graph.
 
 	References
 	---------------------

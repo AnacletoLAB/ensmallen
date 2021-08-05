@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeiothermusSilvanus.
+This file offers the methods to automatically retrieve the graph Meiothermus silvanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeiothermusSilvanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeiothermusSilvanus graph.
+    """Return new instance of the Meiothermus silvanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeiothermusSilvanus(
 
     Returns
     -----------------------
-    Instace of MeiothermusSilvanus graph.
+    Instace of Meiothermus silvanus graph.
 
 	References
 	---------------------

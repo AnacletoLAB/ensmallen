@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterHeparinus.
+This file offers the methods to automatically retrieve the graph Pedobacter heparinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterHeparinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterHeparinus graph.
+    """Return new instance of the Pedobacter heparinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterHeparinus(
 
     Returns
     -----------------------
-    Instace of PedobacterHeparinus graph.
+    Instace of Pedobacter heparinus graph.
 
 	References
 	---------------------

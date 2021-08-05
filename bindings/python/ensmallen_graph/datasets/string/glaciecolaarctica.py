@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaArctica.
+This file offers the methods to automatically retrieve the graph Glaciecola arctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaArctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaArctica graph.
+    """Return new instance of the Glaciecola arctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaArctica(
 
     Returns
     -----------------------
-    Instace of GlaciecolaArctica graph.
+    Instace of Glaciecola arctica graph.
 
 	References
 	---------------------

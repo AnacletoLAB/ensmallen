@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterBrevis.
+This file offers the methods to automatically retrieve the graph Sulfitobacter brevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterBrevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterBrevis graph.
+    """Return new instance of the Sulfitobacter brevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterBrevis(
 
     Returns
     -----------------------
-    Instace of SulfitobacterBrevis graph.
+    Instace of Sulfitobacter brevis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidesmisPriestleyiUlc007.
+This file offers the methods to automatically retrieve the graph Phormidesmis priestleyi ULC007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhormidesmisPriestleyiUlc007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidesmisPriestleyiUlc007 graph.
+    """Return new instance of the Phormidesmis priestleyi ULC007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhormidesmisPriestleyiUlc007(
 
     Returns
     -----------------------
-    Instace of PhormidesmisPriestleyiUlc007 graph.
+    Instace of Phormidesmis priestleyi ULC007 graph.
 
 	References
 	---------------------

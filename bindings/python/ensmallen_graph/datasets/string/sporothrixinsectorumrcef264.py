@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporothrixInsectorumRcef264.
+This file offers the methods to automatically retrieve the graph Sporothrix insectorum RCEF 264.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporothrixInsectorumRcef264(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporothrixInsectorumRcef264 graph.
+    """Return new instance of the Sporothrix insectorum RCEF 264 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporothrixInsectorumRcef264(
 
     Returns
     -----------------------
-    Instace of SporothrixInsectorumRcef264 graph.
+    Instace of Sporothrix insectorum RCEF 264 graph.
 
 	References
 	---------------------

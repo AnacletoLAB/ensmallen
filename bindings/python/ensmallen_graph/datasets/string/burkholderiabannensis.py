@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaBannensis.
+This file offers the methods to automatically retrieve the graph Burkholderia bannensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaBannensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaBannensis graph.
+    """Return new instance of the Burkholderia bannensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaBannensis(
 
     Returns
     -----------------------
-    Instace of BurkholderiaBannensis graph.
+    Instace of Burkholderia bannensis graph.
 
 	References
 	---------------------

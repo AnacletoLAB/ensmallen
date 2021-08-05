@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesCerinusSubspCerinus.
+This file offers the methods to automatically retrieve the graph Agromyces cerinus subsp. cerinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesCerinusSubspCerinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesCerinusSubspCerinus graph.
+    """Return new instance of the Agromyces cerinus subsp. cerinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgromycesCerinusSubspCerinus(
 
     Returns
     -----------------------
-    Instace of AgromycesCerinusSubspCerinus graph.
+    Instace of Agromyces cerinus subsp. cerinus graph.
 
 	References
 	---------------------

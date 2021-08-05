@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaprospiraGrandis.
+This file offers the methods to automatically retrieve the graph Saprospira grandis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaprospiraGrandis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaprospiraGrandis graph.
+    """Return new instance of the Saprospira grandis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaprospiraGrandis(
 
     Returns
     -----------------------
-    Instace of SaprospiraGrandis graph.
+    Instace of Saprospira grandis graph.
 
 	References
 	---------------------

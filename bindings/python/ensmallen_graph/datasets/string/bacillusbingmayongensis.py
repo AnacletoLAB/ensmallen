@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusBingmayongensis.
+This file offers the methods to automatically retrieve the graph Bacillus bingmayongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusBingmayongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusBingmayongensis graph.
+    """Return new instance of the Bacillus bingmayongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusBingmayongensis(
 
     Returns
     -----------------------
-    Instace of BacillusBingmayongensis graph.
+    Instace of Bacillus bingmayongensis graph.
 
 	References
 	---------------------

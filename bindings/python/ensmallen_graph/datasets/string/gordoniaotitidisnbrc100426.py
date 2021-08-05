@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaOtitidisNbrc100426.
+This file offers the methods to automatically retrieve the graph Gordonia otitidis NBRC 100426.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaOtitidisNbrc100426(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaOtitidisNbrc100426 graph.
+    """Return new instance of the Gordonia otitidis NBRC 100426 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaOtitidisNbrc100426(
 
     Returns
     -----------------------
-    Instace of GordoniaOtitidisNbrc100426 graph.
+    Instace of Gordonia otitidis NBRC 100426 graph.
 
 	References
 	---------------------

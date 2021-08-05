@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaSpWwm596.
+This file offers the methods to automatically retrieve the graph Methanosarcina sp. WWM596.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaSpWwm596(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaSpWwm596 graph.
+    """Return new instance of the Methanosarcina sp. WWM596 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaSpWwm596(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaSpWwm596 graph.
+    Instace of Methanosarcina sp. WWM596 graph.
 
 	References
 	---------------------

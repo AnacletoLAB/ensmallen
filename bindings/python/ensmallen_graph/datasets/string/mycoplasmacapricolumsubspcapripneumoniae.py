@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCapricolumSubspCapripneumoniae.
+This file offers the methods to automatically retrieve the graph Mycoplasma capricolum subsp. capripneumoniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCapricolumSubspCapripneumoniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCapricolumSubspCapripneumoniae graph.
+    """Return new instance of the Mycoplasma capricolum subsp. capripneumoniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaCapricolumSubspCapripneumoniae(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCapricolumSubspCapripneumoniae graph.
+    Instace of Mycoplasma capricolum subsp. capripneumoniae graph.
 
 	References
 	---------------------

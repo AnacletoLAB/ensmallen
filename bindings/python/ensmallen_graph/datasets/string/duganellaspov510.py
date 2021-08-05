@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpOv510.
+This file offers the methods to automatically retrieve the graph Duganella sp. OV510.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpOv510(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpOv510 graph.
+    """Return new instance of the Duganella sp. OV510 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpOv510(
 
     Returns
     -----------------------
-    Instace of DuganellaSpOv510 graph.
+    Instace of Duganella sp. OV510 graph.
 
 	References
 	---------------------

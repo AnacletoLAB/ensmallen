@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterSpVk13.
+This file offers the methods to automatically retrieve the graph Polynucleobacter sp. VK13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterSpVk13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterSpVk13 graph.
+    """Return new instance of the Polynucleobacter sp. VK13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterSpVk13(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterSpVk13 graph.
+    Instace of Polynucleobacter sp. VK13 graph.
 
 	References
 	---------------------

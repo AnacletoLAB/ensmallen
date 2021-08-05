@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasSpBgc7.
+This file offers the methods to automatically retrieve the graph Dysgonomonas sp. BGC7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasSpBgc7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasSpBgc7 graph.
+    """Return new instance of the Dysgonomonas sp. BGC7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DysgonomonasSpBgc7(
 
     Returns
     -----------------------
-    Instace of DysgonomonasSpBgc7 graph.
+    Instace of Dysgonomonas sp. BGC7 graph.
 
 	References
 	---------------------

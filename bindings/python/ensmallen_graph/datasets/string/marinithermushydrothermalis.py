@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinithermusHydrothermalis.
+This file offers the methods to automatically retrieve the graph Marinithermus hydrothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinithermusHydrothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinithermusHydrothermalis graph.
+    """Return new instance of the Marinithermus hydrothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinithermusHydrothermalis(
 
     Returns
     -----------------------
-    Instace of MarinithermusHydrothermalis graph.
+    Instace of Marinithermus hydrothermalis graph.
 
 	References
 	---------------------

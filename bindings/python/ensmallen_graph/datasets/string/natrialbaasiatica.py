@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaAsiatica.
+This file offers the methods to automatically retrieve the graph Natrialba asiatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaAsiatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaAsiatica graph.
+    """Return new instance of the Natrialba asiatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatrialbaAsiatica(
 
     Returns
     -----------------------
-    Instace of NatrialbaAsiatica graph.
+    Instace of Natrialba asiatica graph.
 
 	References
 	---------------------

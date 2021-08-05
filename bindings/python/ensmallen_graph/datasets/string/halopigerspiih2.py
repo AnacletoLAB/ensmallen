@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalopigerSpIih2.
+This file offers the methods to automatically retrieve the graph Halopiger sp. IIH2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalopigerSpIih2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalopigerSpIih2 graph.
+    """Return new instance of the Halopiger sp. IIH2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalopigerSpIih2(
 
     Returns
     -----------------------
-    Instace of HalopigerSpIih2 graph.
+    Instace of Halopiger sp. IIH2 graph.
 
 	References
 	---------------------

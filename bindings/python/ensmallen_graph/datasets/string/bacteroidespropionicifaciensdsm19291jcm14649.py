@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPropionicifaciensDsm19291Jcm14649.
+This file offers the methods to automatically retrieve the graph Bacteroides propionicifaciens DSM 19291 JCM 14649.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPropionicifaciensDsm19291Jcm14649(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPropionicifaciensDsm19291Jcm14649 graph.
+    """Return new instance of the Bacteroides propionicifaciens DSM 19291 JCM 14649 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesPropionicifaciensDsm19291Jcm14649(
 
     Returns
     -----------------------
-    Instace of BacteroidesPropionicifaciensDsm19291Jcm14649 graph.
+    Instace of Bacteroides propionicifaciens DSM 19291 JCM 14649 graph.
 
 	References
 	---------------------

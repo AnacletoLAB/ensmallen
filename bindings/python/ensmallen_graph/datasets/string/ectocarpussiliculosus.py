@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EctocarpusSiliculosus.
+This file offers the methods to automatically retrieve the graph Ectocarpus siliculosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EctocarpusSiliculosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EctocarpusSiliculosus graph.
+    """Return new instance of the Ectocarpus siliculosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EctocarpusSiliculosus(
 
     Returns
     -----------------------
-    Instace of EctocarpusSiliculosus graph.
+    Instace of Ectocarpus siliculosus graph.
 
 	References
 	---------------------

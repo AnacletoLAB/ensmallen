@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LonchuraStriataDomestica.
+This file offers the methods to automatically retrieve the graph Lonchura striata domestica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LonchuraStriataDomestica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LonchuraStriataDomestica graph.
+    """Return new instance of the Lonchura striata domestica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LonchuraStriataDomestica(
 
     Returns
     -----------------------
-    Instace of LonchuraStriataDomestica graph.
+    Instace of Lonchura striata domestica graph.
 
 	References
 	---------------------

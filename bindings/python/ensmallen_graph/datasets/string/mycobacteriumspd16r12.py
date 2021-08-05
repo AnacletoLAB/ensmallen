@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpD16r12.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. D16R12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpD16r12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpD16r12 graph.
+    """Return new instance of the Mycobacterium sp. D16R12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpD16r12(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpD16r12 graph.
+    Instace of Mycobacterium sp. D16R12 graph.
 
 	References
 	---------------------

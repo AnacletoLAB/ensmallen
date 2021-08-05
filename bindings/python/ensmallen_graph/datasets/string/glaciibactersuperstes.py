@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciibacterSuperstes.
+This file offers the methods to automatically retrieve the graph Glaciibacter superstes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciibacterSuperstes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciibacterSuperstes graph.
+    """Return new instance of the Glaciibacter superstes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciibacterSuperstes(
 
     Returns
     -----------------------
-    Instace of GlaciibacterSuperstes graph.
+    Instace of Glaciibacter superstes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScleropagesFormosus.
+This file offers the methods to automatically retrieve the graph Scleropages formosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScleropagesFormosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScleropagesFormosus graph.
+    """Return new instance of the Scleropages formosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScleropagesFormosus(
 
     Returns
     -----------------------
-    Instace of ScleropagesFormosus graph.
+    Instace of Scleropages formosus graph.
 
 	References
 	---------------------

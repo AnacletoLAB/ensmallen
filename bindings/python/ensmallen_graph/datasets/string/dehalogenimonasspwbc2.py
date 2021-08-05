@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalogenimonasSpWbc2.
+This file offers the methods to automatically retrieve the graph Dehalogenimonas sp. WBC-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalogenimonasSpWbc2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalogenimonasSpWbc2 graph.
+    """Return new instance of the Dehalogenimonas sp. WBC-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DehalogenimonasSpWbc2(
 
     Returns
     -----------------------
-    Instace of DehalogenimonasSpWbc2 graph.
+    Instace of Dehalogenimonas sp. WBC-2 graph.
 
 	References
 	---------------------

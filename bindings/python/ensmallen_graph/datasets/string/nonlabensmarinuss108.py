@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonlabensMarinusS108.
+This file offers the methods to automatically retrieve the graph Nonlabens marinus S1-08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonlabensMarinusS108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonlabensMarinusS108 graph.
+    """Return new instance of the Nonlabens marinus S1-08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonlabensMarinusS108(
 
     Returns
     -----------------------
-    Instace of NonlabensMarinusS108 graph.
+    Instace of Nonlabens marinus S1-08 graph.
 
 	References
 	---------------------

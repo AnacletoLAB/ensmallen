@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarivirgaSpAntB6.
+This file offers the methods to automatically retrieve the graph Marivirga sp. ANT-B6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarivirgaSpAntB6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarivirgaSpAntB6 graph.
+    """Return new instance of the Marivirga sp. ANT-B6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarivirgaSpAntB6(
 
     Returns
     -----------------------
-    Instace of MarivirgaSpAntB6 graph.
+    Instace of Marivirga sp. ANT-B6 graph.
 
 	References
 	---------------------

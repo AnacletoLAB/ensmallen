@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumLimigenitum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium limigenitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumLimigenitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumLimigenitum graph.
+    """Return new instance of the Chryseobacterium limigenitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumLimigenitum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumLimigenitum graph.
+    Instace of Chryseobacterium limigenitum graph.
 
 	References
 	---------------------

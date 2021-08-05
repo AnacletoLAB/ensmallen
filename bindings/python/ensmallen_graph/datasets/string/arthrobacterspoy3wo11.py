@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpOy3wo11.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. OY3WO11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpOy3wo11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpOy3wo11 graph.
+    """Return new instance of the Arthrobacter sp. OY3WO11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpOy3wo11(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpOy3wo11 graph.
+    Instace of Arthrobacter sp. OY3WO11 graph.
 
 	References
 	---------------------

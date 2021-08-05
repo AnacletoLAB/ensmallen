@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaJiangxiensis.
+This file offers the methods to automatically retrieve the graph Nonomuraea jiangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaJiangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaJiangxiensis graph.
+    """Return new instance of the Nonomuraea jiangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaJiangxiensis(
 
     Returns
     -----------------------
-    Instace of NonomuraeaJiangxiensis graph.
+    Instace of Nonomuraea jiangxiensis graph.
 
 	References
 	---------------------

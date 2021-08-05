@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusNageliiDsm13675.
+This file offers the methods to automatically retrieve the graph Lactobacillus nagelii DSM 13675.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusNageliiDsm13675(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusNageliiDsm13675 graph.
+    """Return new instance of the Lactobacillus nagelii DSM 13675 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusNageliiDsm13675(
 
     Returns
     -----------------------
-    Instace of LactobacillusNageliiDsm13675 graph.
+    Instace of Lactobacillus nagelii DSM 13675 graph.
 
 	References
 	---------------------

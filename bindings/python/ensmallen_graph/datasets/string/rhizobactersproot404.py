@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobacterSpRoot404.
+This file offers the methods to automatically retrieve the graph Rhizobacter sp. Root404.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobacterSpRoot404(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobacterSpRoot404 graph.
+    """Return new instance of the Rhizobacter sp. Root404 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobacterSpRoot404(
 
     Returns
     -----------------------
-    Instace of RhizobacterSpRoot404 graph.
+    Instace of Rhizobacter sp. Root404 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloglycomycesAlbus.
+This file offers the methods to automatically retrieve the graph Haloglycomyces albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloglycomycesAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloglycomycesAlbus graph.
+    """Return new instance of the Haloglycomyces albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloglycomycesAlbus(
 
     Returns
     -----------------------
-    Instace of HaloglycomycesAlbus graph.
+    Instace of Haloglycomyces albus graph.
 
 	References
 	---------------------

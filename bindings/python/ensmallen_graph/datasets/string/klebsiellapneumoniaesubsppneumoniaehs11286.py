@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaPneumoniaeSubspPneumoniaeHs11286.
+This file offers the methods to automatically retrieve the graph Klebsiella pneumoniae subsp. pneumoniae HS11286.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaPneumoniaeSubspPneumoniaeHs11286(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaPneumoniaeSubspPneumoniaeHs11286 graph.
+    """Return new instance of the Klebsiella pneumoniae subsp. pneumoniae HS11286 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsiellaPneumoniaeSubspPneumoniaeHs11286(
 
     Returns
     -----------------------
-    Instace of KlebsiellaPneumoniaeSubspPneumoniaeHs11286 graph.
+    Instace of Klebsiella pneumoniae subsp. pneumoniae HS11286 graph.
 
 	References
 	---------------------

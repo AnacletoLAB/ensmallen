@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermocrinisRuber.
+This file offers the methods to automatically retrieve the graph Thermocrinis ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermocrinisRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermocrinisRuber graph.
+    """Return new instance of the Thermocrinis ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermocrinisRuber(
 
     Returns
     -----------------------
-    Instace of ThermocrinisRuber graph.
+    Instace of Thermocrinis ruber graph.
 
 	References
 	---------------------

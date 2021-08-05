@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaAvium.
+This file offers the methods to automatically retrieve the graph Bordetella avium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaAvium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaAvium graph.
+    """Return new instance of the Bordetella avium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaAvium(
 
     Returns
     -----------------------
-    Instace of BordetellaAvium graph.
+    Instace of Bordetella avium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeobacterKilaueensis.
+This file offers the methods to automatically retrieve the graph Gloeobacter kilaueensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GloeobacterKilaueensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeobacterKilaueensis graph.
+    """Return new instance of the Gloeobacter kilaueensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GloeobacterKilaueensis(
 
     Returns
     -----------------------
-    Instace of GloeobacterKilaueensis graph.
+    Instace of Gloeobacter kilaueensis graph.
 
 	References
 	---------------------

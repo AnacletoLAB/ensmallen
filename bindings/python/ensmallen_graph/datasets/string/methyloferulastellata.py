@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloferulaStellata.
+This file offers the methods to automatically retrieve the graph Methyloferula stellata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloferulaStellata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloferulaStellata graph.
+    """Return new instance of the Methyloferula stellata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloferulaStellata(
 
     Returns
     -----------------------
-    Instace of MethyloferulaStellata graph.
+    Instace of Methyloferula stellata graph.
 
 	References
 	---------------------

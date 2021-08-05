@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermococcusThermolithotrophicus.
+This file offers the methods to automatically retrieve the graph Methanothermococcus thermolithotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermococcusThermolithotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermococcusThermolithotrophicus graph.
+    """Return new instance of the Methanothermococcus thermolithotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanothermococcusThermolithotrophicus(
 
     Returns
     -----------------------
-    Instace of MethanothermococcusThermolithotrophicus graph.
+    Instace of Methanothermococcus thermolithotrophicus graph.
 
 	References
 	---------------------

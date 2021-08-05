@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisSpCnt312.
+This file offers the methods to automatically retrieve the graph Nocardiopsis sp. CNT312.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisSpCnt312(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisSpCnt312 graph.
+    """Return new instance of the Nocardiopsis sp. CNT312 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisSpCnt312(
 
     Returns
     -----------------------
-    Instace of NocardiopsisSpCnt312 graph.
+    Instace of Nocardiopsis sp. CNT312 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiaBacteriumScgcAaa298D23.
+This file offers the methods to automatically retrieve the graph Marinimicrobia bacterium SCGC AAA298-D23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinimicrobiaBacteriumScgcAaa298D23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiaBacteriumScgcAaa298D23 graph.
+    """Return new instance of the Marinimicrobia bacterium SCGC AAA298-D23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinimicrobiaBacteriumScgcAaa298D23(
 
     Returns
     -----------------------
-    Instace of MarinimicrobiaBacteriumScgcAaa298D23 graph.
+    Instace of Marinimicrobia bacterium SCGC AAA298-D23 graph.
 
 	References
 	---------------------

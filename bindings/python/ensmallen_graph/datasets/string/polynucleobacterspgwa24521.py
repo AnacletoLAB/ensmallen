@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterSpGwa24521.
+This file offers the methods to automatically retrieve the graph Polynucleobacter sp. GWA2_45_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterSpGwa24521(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterSpGwa24521 graph.
+    """Return new instance of the Polynucleobacter sp. GWA2_45_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterSpGwa24521(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterSpGwa24521 graph.
+    Instace of Polynucleobacter sp. GWA2_45_21 graph.
 
 	References
 	---------------------

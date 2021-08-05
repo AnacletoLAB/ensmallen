@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusShacheensis.
+This file offers the methods to automatically retrieve the graph Bacillus shacheensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusShacheensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusShacheensis graph.
+    """Return new instance of the Bacillus shacheensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusShacheensis(
 
     Returns
     -----------------------
-    Instace of BacillusShacheensis graph.
+    Instace of Bacillus shacheensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioKanaloae.
+This file offers the methods to automatically retrieve the graph Vibrio kanaloae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioKanaloae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioKanaloae graph.
+    """Return new instance of the Vibrio kanaloae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioKanaloae(
 
     Returns
     -----------------------
-    Instace of VibrioKanaloae graph.
+    Instace of Vibrio kanaloae graph.
 
 	References
 	---------------------

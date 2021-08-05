@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SedimenticolaThiotaurini.
+This file offers the methods to automatically retrieve the graph Sedimenticola thiotaurini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SedimenticolaThiotaurini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SedimenticolaThiotaurini graph.
+    """Return new instance of the Sedimenticola thiotaurini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SedimenticolaThiotaurini(
 
     Returns
     -----------------------
-    Instace of SedimenticolaThiotaurini graph.
+    Instace of Sedimenticola thiotaurini graph.
 
 	References
 	---------------------

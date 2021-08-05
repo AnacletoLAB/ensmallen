@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteobacteriaBacteriumStBin14.
+This file offers the methods to automatically retrieve the graph Proteobacteria bacterium ST_bin14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteobacteriaBacteriumStBin14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteobacteriaBacteriumStBin14 graph.
+    """Return new instance of the Proteobacteria bacterium ST_bin14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteobacteriaBacteriumStBin14(
 
     Returns
     -----------------------
-    Instace of ProteobacteriaBacteriumStBin14 graph.
+    Instace of Proteobacteria bacterium ST_bin14 graph.
 
 	References
 	---------------------

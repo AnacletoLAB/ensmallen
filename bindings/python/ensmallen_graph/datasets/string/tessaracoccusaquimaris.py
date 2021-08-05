@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusAquimaris.
+This file offers the methods to automatically retrieve the graph Tessaracoccus aquimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusAquimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusAquimaris graph.
+    """Return new instance of the Tessaracoccus aquimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusAquimaris(
 
     Returns
     -----------------------
-    Instace of TessaracoccusAquimaris graph.
+    Instace of Tessaracoccus aquimaris graph.
 
 	References
 	---------------------

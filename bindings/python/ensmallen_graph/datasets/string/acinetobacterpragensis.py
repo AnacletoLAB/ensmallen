@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterPragensis.
+This file offers the methods to automatically retrieve the graph Acinetobacter pragensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterPragensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterPragensis graph.
+    """Return new instance of the Acinetobacter pragensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterPragensis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterPragensis graph.
+    Instace of Acinetobacter pragensis graph.
 
 	References
 	---------------------

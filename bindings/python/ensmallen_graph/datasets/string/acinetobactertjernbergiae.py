@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterTjernbergiae.
+This file offers the methods to automatically retrieve the graph Acinetobacter tjernbergiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterTjernbergiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterTjernbergiae graph.
+    """Return new instance of the Acinetobacter tjernbergiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterTjernbergiae(
 
     Returns
     -----------------------
-    Instace of AcinetobacterTjernbergiae graph.
+    Instace of Acinetobacter tjernbergiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaShahii.
+This file offers the methods to automatically retrieve the graph Prevotella shahii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaShahii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaShahii graph.
+    """Return new instance of the Prevotella shahii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaShahii(
 
     Returns
     -----------------------
-    Instace of PrevotellaShahii graph.
+    Instace of Prevotella shahii graph.
 
 	References
 	---------------------

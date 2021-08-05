@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeishmaniaMajor.
+This file offers the methods to automatically retrieve the graph Leishmania major.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeishmaniaMajor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeishmaniaMajor graph.
+    """Return new instance of the Leishmania major graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeishmaniaMajor(
 
     Returns
     -----------------------
-    Instace of LeishmaniaMajor graph.
+    Instace of Leishmania major graph.
 
 	References
 	---------------------

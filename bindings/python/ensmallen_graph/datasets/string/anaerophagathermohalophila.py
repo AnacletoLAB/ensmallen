@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerophagaThermohalophila.
+This file offers the methods to automatically retrieve the graph Anaerophaga thermohalophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerophagaThermohalophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerophagaThermohalophila graph.
+    """Return new instance of the Anaerophaga thermohalophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerophagaThermohalophila(
 
     Returns
     -----------------------
-    Instace of AnaerophagaThermohalophila graph.
+    Instace of Anaerophaga thermohalophila graph.
 
 	References
 	---------------------

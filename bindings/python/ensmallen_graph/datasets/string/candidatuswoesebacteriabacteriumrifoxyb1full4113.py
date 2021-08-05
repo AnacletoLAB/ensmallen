@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWoesebacteriaBacteriumRifoxyb1Full4113.
+This file offers the methods to automatically retrieve the graph Candidatus Woesebacteria bacterium RIFOXYB1_FULL_41_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWoesebacteriaBacteriumRifoxyb1Full4113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWoesebacteriaBacteriumRifoxyb1Full4113 graph.
+    """Return new instance of the Candidatus Woesebacteria bacterium RIFOXYB1_FULL_41_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWoesebacteriaBacteriumRifoxyb1Full4113(
 
     Returns
     -----------------------
-    Instace of CandidatusWoesebacteriaBacteriumRifoxyb1Full4113 graph.
+    Instace of Candidatus Woesebacteria bacterium RIFOXYB1_FULL_41_13 graph.
 
 	References
 	---------------------

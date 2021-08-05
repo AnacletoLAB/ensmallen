@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumCg1023572.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium CG1_02_35_72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumCg1023572(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumCg1023572 graph.
+    """Return new instance of the Flavobacteriaceae bacterium CG1_02_35_72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumCg1023572(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumCg1023572 graph.
+    Instace of Flavobacteriaceae bacterium CG1_02_35_72 graph.
 
 	References
 	---------------------

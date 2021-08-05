@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsialesBacteriumAc37b.
+This file offers the methods to automatically retrieve the graph Rickettsiales bacterium Ac37b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsialesBacteriumAc37b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsialesBacteriumAc37b graph.
+    """Return new instance of the Rickettsiales bacterium Ac37b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsialesBacteriumAc37b(
 
     Returns
     -----------------------
-    Instace of RickettsialesBacteriumAc37b graph.
+    Instace of Rickettsiales bacterium Ac37b graph.
 
 	References
 	---------------------

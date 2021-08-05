@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaSicca.
+This file offers the methods to automatically retrieve the graph Neisseria sicca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaSicca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaSicca graph.
+    """Return new instance of the Neisseria sicca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaSicca(
 
     Returns
     -----------------------
-    Instace of NeisseriaSicca graph.
+    Instace of Neisseria sicca graph.
 
 	References
 	---------------------

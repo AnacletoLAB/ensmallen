@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpUrha0041.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. URHA0041.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpUrha0041(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpUrha0041 graph.
+    """Return new instance of the Streptomyces sp. URHA0041 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpUrha0041(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpUrha0041 graph.
+    Instace of Streptomyces sp. URHA0041 graph.
 
 	References
 	---------------------

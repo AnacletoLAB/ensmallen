@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAdiutrixIntracellularis.
+This file offers the methods to automatically retrieve the graph Candidatus Adiutrix intracellularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAdiutrixIntracellularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAdiutrixIntracellularis graph.
+    """Return new instance of the Candidatus Adiutrix intracellularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAdiutrixIntracellularis(
 
     Returns
     -----------------------
-    Instace of CandidatusAdiutrixIntracellularis graph.
+    Instace of Candidatus Adiutrix intracellularis graph.
 
 	References
 	---------------------

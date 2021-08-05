@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MusSpretus.
+This file offers the methods to automatically retrieve the graph Mus spretus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MusSpretus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MusSpretus graph.
+    """Return new instance of the Mus spretus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MusSpretus(
 
     Returns
     -----------------------
-    Instace of MusSpretus graph.
+    Instace of Mus spretus graph.
 
 	References
 	---------------------

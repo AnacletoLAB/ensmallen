@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromohalobacterJaponicus.
+This file offers the methods to automatically retrieve the graph Chromohalobacter japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromohalobacterJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromohalobacterJaponicus graph.
+    """Return new instance of the Chromohalobacter japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromohalobacterJaponicus(
 
     Returns
     -----------------------
-    Instace of ChromohalobacterJaponicus graph.
+    Instace of Chromohalobacter japonicus graph.
 
 	References
 	---------------------

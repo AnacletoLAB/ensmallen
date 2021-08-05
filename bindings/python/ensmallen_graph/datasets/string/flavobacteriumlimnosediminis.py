@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumLimnosediminis.
+This file offers the methods to automatically retrieve the graph Flavobacterium limnosediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumLimnosediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumLimnosediminis graph.
+    """Return new instance of the Flavobacterium limnosediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumLimnosediminis(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumLimnosediminis graph.
+    Instace of Flavobacterium limnosediminis graph.
 
 	References
 	---------------------

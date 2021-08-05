@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyrobacterSanguineus.
+This file offers the methods to automatically retrieve the graph Porphyrobacter sanguineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyrobacterSanguineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyrobacterSanguineus graph.
+    """Return new instance of the Porphyrobacter sanguineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyrobacterSanguineus(
 
     Returns
     -----------------------
-    Instace of PorphyrobacterSanguineus graph.
+    Instace of Porphyrobacter sanguineus graph.
 
 	References
 	---------------------

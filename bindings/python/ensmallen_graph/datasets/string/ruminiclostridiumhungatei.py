@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminiclostridiumHungatei.
+This file offers the methods to automatically retrieve the graph Ruminiclostridium hungatei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminiclostridiumHungatei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminiclostridiumHungatei graph.
+    """Return new instance of the Ruminiclostridium hungatei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminiclostridiumHungatei(
 
     Returns
     -----------------------
-    Instace of RuminiclostridiumHungatei graph.
+    Instace of Ruminiclostridium hungatei graph.
 
 	References
 	---------------------

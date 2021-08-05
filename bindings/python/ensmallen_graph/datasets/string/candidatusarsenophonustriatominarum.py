@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusArsenophonusTriatominarum.
+This file offers the methods to automatically retrieve the graph Candidatus Arsenophonus triatominarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusArsenophonusTriatominarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusArsenophonusTriatominarum graph.
+    """Return new instance of the Candidatus Arsenophonus triatominarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusArsenophonusTriatominarum(
 
     Returns
     -----------------------
-    Instace of CandidatusArsenophonusTriatominarum graph.
+    Instace of Candidatus Arsenophonus triatominarum graph.
 
 	References
 	---------------------

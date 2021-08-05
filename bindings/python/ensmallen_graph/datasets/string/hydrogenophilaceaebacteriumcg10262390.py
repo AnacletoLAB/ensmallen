@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophilaceaeBacteriumCg10262390.
+This file offers the methods to automatically retrieve the graph Hydrogenophilaceae bacterium CG1_02_62_390.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophilaceaeBacteriumCg10262390(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophilaceaeBacteriumCg10262390 graph.
+    """Return new instance of the Hydrogenophilaceae bacterium CG1_02_62_390 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophilaceaeBacteriumCg10262390(
 
     Returns
     -----------------------
-    Instace of HydrogenophilaceaeBacteriumCg10262390 graph.
+    Instace of Hydrogenophilaceae bacterium CG1_02_62_390 graph.
 
 	References
 	---------------------

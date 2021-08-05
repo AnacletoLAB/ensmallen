@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KnoelliaAerolata.
+This file offers the methods to automatically retrieve the graph Knoellia aerolata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KnoelliaAerolata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KnoelliaAerolata graph.
+    """Return new instance of the Knoellia aerolata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KnoelliaAerolata(
 
     Returns
     -----------------------
-    Instace of KnoelliaAerolata graph.
+    Instace of Knoellia aerolata graph.
 
 	References
 	---------------------

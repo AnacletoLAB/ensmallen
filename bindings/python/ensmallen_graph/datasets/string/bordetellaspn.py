@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaSpN.
+This file offers the methods to automatically retrieve the graph Bordetella sp. N.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaSpN(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaSpN graph.
+    """Return new instance of the Bordetella sp. N graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BordetellaSpN(
 
     Returns
     -----------------------
-    Instace of BordetellaSpN graph.
+    Instace of Bordetella sp. N graph.
 
 	References
 	---------------------

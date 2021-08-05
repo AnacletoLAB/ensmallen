@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeomicrococcusAestuarii.
+This file offers the methods to automatically retrieve the graph Neomicrococcus aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeomicrococcusAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeomicrococcusAestuarii graph.
+    """Return new instance of the Neomicrococcus aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeomicrococcusAestuarii(
 
     Returns
     -----------------------
-    Instace of NeomicrococcusAestuarii graph.
+    Instace of Neomicrococcus aestuarii graph.
 
 	References
 	---------------------

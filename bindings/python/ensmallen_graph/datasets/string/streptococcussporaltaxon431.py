@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpOralTaxon431.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. oral taxon 431.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpOralTaxon431(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpOralTaxon431 graph.
+    """Return new instance of the Streptococcus sp. oral taxon 431 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSpOralTaxon431(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpOralTaxon431 graph.
+    Instace of Streptococcus sp. oral taxon 431 graph.
 
 	References
 	---------------------

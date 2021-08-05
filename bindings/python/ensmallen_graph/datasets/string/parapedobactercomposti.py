@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParapedobacterComposti.
+This file offers the methods to automatically retrieve the graph Parapedobacter composti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParapedobacterComposti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParapedobacterComposti graph.
+    """Return new instance of the Parapedobacter composti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParapedobacterComposti(
 
     Returns
     -----------------------
-    Instace of ParapedobacterComposti graph.
+    Instace of Parapedobacter composti graph.
 
 	References
 	---------------------

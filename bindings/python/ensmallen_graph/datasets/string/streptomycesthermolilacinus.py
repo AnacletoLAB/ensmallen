@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesThermolilacinus.
+This file offers the methods to automatically retrieve the graph Streptomyces thermolilacinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesThermolilacinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesThermolilacinus graph.
+    """Return new instance of the Streptomyces thermolilacinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesThermolilacinus(
 
     Returns
     -----------------------
-    Instace of StreptomycesThermolilacinus graph.
+    Instace of Streptomyces thermolilacinus graph.
 
 	References
 	---------------------

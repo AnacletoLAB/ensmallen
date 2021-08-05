@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasHelleri.
+This file offers the methods to automatically retrieve the graph Pseudomonas helleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasHelleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasHelleri graph.
+    """Return new instance of the Pseudomonas helleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasHelleri(
 
     Returns
     -----------------------
-    Instace of PseudomonasHelleri graph.
+    Instace of Pseudomonas helleri graph.
 
 	References
 	---------------------

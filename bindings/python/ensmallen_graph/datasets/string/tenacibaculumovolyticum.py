@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumOvolyticum.
+This file offers the methods to automatically retrieve the graph Tenacibaculum ovolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumOvolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumOvolyticum graph.
+    """Return new instance of the Tenacibaculum ovolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumOvolyticum(
 
     Returns
     -----------------------
-    Instace of TenacibaculumOvolyticum graph.
+    Instace of Tenacibaculum ovolyticum graph.
 
 	References
 	---------------------

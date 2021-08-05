@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusPauculus.
+This file offers the methods to automatically retrieve the graph Cupriavidus pauculus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusPauculus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusPauculus graph.
+    """Return new instance of the Cupriavidus pauculus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusPauculus(
 
     Returns
     -----------------------
-    Instace of CupriavidusPauculus graph.
+    Instace of Cupriavidus pauculus graph.
 
 	References
 	---------------------

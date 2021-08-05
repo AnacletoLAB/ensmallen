@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferAdhaerensOv14.
+This file offers the methods to automatically retrieve the graph Ensifer adhaerens OV14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferAdhaerensOv14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferAdhaerensOv14 graph.
+    """Return new instance of the Ensifer adhaerens OV14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnsiferAdhaerensOv14(
 
     Returns
     -----------------------
-    Instace of EnsiferAdhaerensOv14 graph.
+    Instace of Ensifer adhaerens OV14 graph.
 
 	References
 	---------------------

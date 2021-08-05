@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterGottschalkii.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter gottschalkii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterGottschalkii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterGottschalkii graph.
+    """Return new instance of the Methanobrevibacter gottschalkii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterGottschalkii(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterGottschalkii graph.
+    Instace of Methanobrevibacter gottschalkii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpNfacc26.
+This file offers the methods to automatically retrieve the graph Variovorax sp. NFACC26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpNfacc26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpNfacc26 graph.
+    """Return new instance of the Variovorax sp. NFACC26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpNfacc26(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpNfacc26 graph.
+    Instace of Variovorax sp. NFACC26 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusClaussenii.
+This file offers the methods to automatically retrieve the graph Pediococcus claussenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusClaussenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusClaussenii graph.
+    """Return new instance of the Pediococcus claussenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PediococcusClaussenii(
 
     Returns
     -----------------------
-    Instace of PediococcusClaussenii graph.
+    Instace of Pediococcus claussenii graph.
 
 	References
 	---------------------

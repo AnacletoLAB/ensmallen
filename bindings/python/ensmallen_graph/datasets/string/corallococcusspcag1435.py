@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorallococcusSpCag1435.
+This file offers the methods to automatically retrieve the graph Corallococcus sp. CAG:1435.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorallococcusSpCag1435(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorallococcusSpCag1435 graph.
+    """Return new instance of the Corallococcus sp. CAG:1435 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorallococcusSpCag1435(
 
     Returns
     -----------------------
-    Instace of CorallococcusSpCag1435 graph.
+    Instace of Corallococcus sp. CAG:1435 graph.
 
 	References
 	---------------------

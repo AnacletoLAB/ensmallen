@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaribaculumTimonense.
+This file offers the methods to automatically retrieve the graph Varibaculum timonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaribaculumTimonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaribaculumTimonense graph.
+    """Return new instance of the Varibaculum timonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VaribaculumTimonense(
 
     Returns
     -----------------------
-    Instace of VaribaculumTimonense graph.
+    Instace of Varibaculum timonense graph.
 
 	References
 	---------------------

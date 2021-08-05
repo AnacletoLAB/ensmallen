@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilliamellaIntestini.
+This file offers the methods to automatically retrieve the graph Gilliamella intestini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilliamellaIntestini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilliamellaIntestini graph.
+    """Return new instance of the Gilliamella intestini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GilliamellaIntestini(
 
     Returns
     -----------------------
-    Instace of GilliamellaIntestini graph.
+    Instace of Gilliamella intestini graph.
 
 	References
 	---------------------

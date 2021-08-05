@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrenochaetaSpDs3say3a.
+This file offers the methods to automatically retrieve the graph Pyrenochaeta sp. DS3sAY3a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrenochaetaSpDs3say3a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrenochaetaSpDs3say3a graph.
+    """Return new instance of the Pyrenochaeta sp. DS3sAY3a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrenochaetaSpDs3say3a(
 
     Returns
     -----------------------
-    Instace of PyrenochaetaSpDs3say3a graph.
+    Instace of Pyrenochaeta sp. DS3sAY3a graph.
 
 	References
 	---------------------

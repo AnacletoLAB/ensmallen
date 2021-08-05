@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymomonasMobilisAtcc10988.
+This file offers the methods to automatically retrieve the graph Zymomonas mobilis ATCC10988.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymomonasMobilisAtcc10988(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymomonasMobilisAtcc10988 graph.
+    """Return new instance of the Zymomonas mobilis ATCC10988 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZymomonasMobilisAtcc10988(
 
     Returns
     -----------------------
-    Instace of ZymomonasMobilisAtcc10988 graph.
+    Instace of Zymomonas mobilis ATCC10988 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalobacterSpFth1.
+This file offers the methods to automatically retrieve the graph Dehalobacter sp. FTH1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalobacterSpFth1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalobacterSpFth1 graph.
+    """Return new instance of the Dehalobacter sp. FTH1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalobacterSpFth1(
 
     Returns
     -----------------------
-    Instace of DehalobacterSpFth1 graph.
+    Instace of Dehalobacter sp. FTH1 graph.
 
 	References
 	---------------------

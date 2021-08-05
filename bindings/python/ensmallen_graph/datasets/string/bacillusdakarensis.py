@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusDakarensis.
+This file offers the methods to automatically retrieve the graph Bacillus dakarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusDakarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusDakarensis graph.
+    """Return new instance of the Bacillus dakarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusDakarensis(
 
     Returns
     -----------------------
-    Instace of BacillusDakarensis graph.
+    Instace of Bacillus dakarensis graph.
 
 	References
 	---------------------

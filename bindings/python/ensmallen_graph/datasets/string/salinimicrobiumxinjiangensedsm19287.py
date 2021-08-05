@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinimicrobiumXinjiangenseDsm19287.
+This file offers the methods to automatically retrieve the graph Salinimicrobium xinjiangense DSM 19287.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinimicrobiumXinjiangenseDsm19287(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinimicrobiumXinjiangenseDsm19287 graph.
+    """Return new instance of the Salinimicrobium xinjiangense DSM 19287 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinimicrobiumXinjiangenseDsm19287(
 
     Returns
     -----------------------
-    Instace of SalinimicrobiumXinjiangenseDsm19287 graph.
+    Instace of Salinimicrobium xinjiangense DSM 19287 graph.
 
 	References
 	---------------------

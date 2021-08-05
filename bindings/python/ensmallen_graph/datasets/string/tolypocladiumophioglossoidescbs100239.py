@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TolypocladiumOphioglossoidesCbs100239.
+This file offers the methods to automatically retrieve the graph Tolypocladium ophioglossoides CBS 100239.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TolypocladiumOphioglossoidesCbs100239(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TolypocladiumOphioglossoidesCbs100239 graph.
+    """Return new instance of the Tolypocladium ophioglossoides CBS 100239 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TolypocladiumOphioglossoidesCbs100239(
 
     Returns
     -----------------------
-    Instace of TolypocladiumOphioglossoidesCbs100239 graph.
+    Instace of Tolypocladium ophioglossoides CBS 100239 graph.
 
 	References
 	---------------------

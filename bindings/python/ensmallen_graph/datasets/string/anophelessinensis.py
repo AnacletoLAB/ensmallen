@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesSinensis.
+This file offers the methods to automatically retrieve the graph Anopheles sinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesSinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesSinensis graph.
+    """Return new instance of the Anopheles sinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesSinensis(
 
     Returns
     -----------------------
-    Instace of AnophelesSinensis graph.
+    Instace of Anopheles sinensis graph.
 
 	References
 	---------------------

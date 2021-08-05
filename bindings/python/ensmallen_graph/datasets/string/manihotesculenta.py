@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ManihotEsculenta.
+This file offers the methods to automatically retrieve the graph Manihot esculenta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ManihotEsculenta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ManihotEsculenta graph.
+    """Return new instance of the Manihot esculenta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ManihotEsculenta(
 
     Returns
     -----------------------
-    Instace of ManihotEsculenta graph.
+    Instace of Manihot esculenta graph.
 
 	References
 	---------------------

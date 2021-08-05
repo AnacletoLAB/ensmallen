@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzoarcusSpBh72.
+This file offers the methods to automatically retrieve the graph Azoarcus sp. BH72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzoarcusSpBh72(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzoarcusSpBh72 graph.
+    """Return new instance of the Azoarcus sp. BH72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzoarcusSpBh72(
 
     Returns
     -----------------------
-    Instace of AzoarcusSpBh72 graph.
+    Instace of Azoarcus sp. BH72 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChrysiogenesArsenatis.
+This file offers the methods to automatically retrieve the graph Chrysiogenes arsenatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChrysiogenesArsenatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChrysiogenesArsenatis graph.
+    """Return new instance of the Chrysiogenes arsenatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChrysiogenesArsenatis(
 
     Returns
     -----------------------
-    Instace of ChrysiogenesArsenatis graph.
+    Instace of Chrysiogenes arsenatis graph.
 
 	References
 	---------------------

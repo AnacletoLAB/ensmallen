@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSubterranea.
+This file offers the methods to automatically retrieve the graph Halomonas subterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSubterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSubterranea graph.
+    """Return new instance of the Halomonas subterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSubterranea(
 
     Returns
     -----------------------
-    Instace of HalomonasSubterranea graph.
+    Instace of Halomonas subterranea graph.
 
 	References
 	---------------------

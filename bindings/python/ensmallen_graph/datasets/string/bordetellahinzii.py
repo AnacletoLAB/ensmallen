@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaHinzii.
+This file offers the methods to automatically retrieve the graph Bordetella hinzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaHinzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaHinzii graph.
+    """Return new instance of the Bordetella hinzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaHinzii(
 
     Returns
     -----------------------
-    Instace of BordetellaHinzii graph.
+    Instace of Bordetella hinzii graph.
 
 	References
 	---------------------

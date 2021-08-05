@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpCf394.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. CF394.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpCf394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpCf394 graph.
+    """Return new instance of the Rhizobium sp. CF394 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpCf394(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpCf394 graph.
+    Instace of Rhizobium sp. CF394 graph.
 
 	References
 	---------------------

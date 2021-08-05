@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxSpP2s70.
+This file offers the methods to automatically retrieve the graph Alcanivorax sp. P2S70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxSpP2s70(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxSpP2s70 graph.
+    """Return new instance of the Alcanivorax sp. P2S70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxSpP2s70(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxSpP2s70 graph.
+    Instace of Alcanivorax sp. P2S70 graph.
 
 	References
 	---------------------

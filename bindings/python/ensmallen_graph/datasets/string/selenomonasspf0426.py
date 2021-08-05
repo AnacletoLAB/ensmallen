@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSpF0426.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. F0426.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSpF0426(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSpF0426 graph.
+    """Return new instance of the Selenomonas sp. F0426 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSpF0426(
 
     Returns
     -----------------------
-    Instace of SelenomonasSpF0426 graph.
+    Instace of Selenomonas sp. F0426 graph.
 
 	References
 	---------------------

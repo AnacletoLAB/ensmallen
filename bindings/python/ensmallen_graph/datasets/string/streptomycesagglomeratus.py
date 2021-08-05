@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAgglomeratus.
+This file offers the methods to automatically retrieve the graph Streptomyces agglomeratus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAgglomeratus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAgglomeratus graph.
+    """Return new instance of the Streptomyces agglomeratus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesAgglomeratus(
 
     Returns
     -----------------------
-    Instace of StreptomycesAgglomeratus graph.
+    Instace of Streptomyces agglomeratus graph.
 
 	References
 	---------------------

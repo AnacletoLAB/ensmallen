@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMitis2F0392.
+This file offers the methods to automatically retrieve the graph Streptococcus mitis 2 F0392.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMitis2F0392(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMitis2F0392 graph.
+    """Return new instance of the Streptococcus mitis 2 F0392 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMitis2F0392(
 
     Returns
     -----------------------
-    Instace of StreptococcusMitis2F0392 graph.
+    Instace of Streptococcus mitis 2 F0392 graph.
 
 	References
 	---------------------

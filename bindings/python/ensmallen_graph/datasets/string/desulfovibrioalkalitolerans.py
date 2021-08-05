@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioAlkalitolerans.
+This file offers the methods to automatically retrieve the graph Desulfovibrio alkalitolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioAlkalitolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioAlkalitolerans graph.
+    """Return new instance of the Desulfovibrio alkalitolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioAlkalitolerans(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioAlkalitolerans graph.
+    Instace of Desulfovibrio alkalitolerans graph.
 
 	References
 	---------------------

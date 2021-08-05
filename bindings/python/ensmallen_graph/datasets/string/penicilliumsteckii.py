@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumSteckii.
+This file offers the methods to automatically retrieve the graph Penicillium steckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumSteckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumSteckii graph.
+    """Return new instance of the Penicillium steckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumSteckii(
 
     Returns
     -----------------------
-    Instace of PenicilliumSteckii graph.
+    Instace of Penicillium steckii graph.
 
 	References
 	---------------------

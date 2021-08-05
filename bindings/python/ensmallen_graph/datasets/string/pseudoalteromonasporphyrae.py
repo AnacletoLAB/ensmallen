@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasPorphyrae.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas porphyrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasPorphyrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasPorphyrae graph.
+    """Return new instance of the Pseudoalteromonas porphyrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasPorphyrae(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasPorphyrae graph.
+    Instace of Pseudoalteromonas porphyrae graph.
 
 	References
 	---------------------

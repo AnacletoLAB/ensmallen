@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GiardiaLambliaAtcc50803.
+This file offers the methods to automatically retrieve the graph Giardia lamblia ATCC 50803.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GiardiaLambliaAtcc50803(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GiardiaLambliaAtcc50803 graph.
+    """Return new instance of the Giardia lamblia ATCC 50803 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GiardiaLambliaAtcc50803(
 
     Returns
     -----------------------
-    Instace of GiardiaLambliaAtcc50803 graph.
+    Instace of Giardia lamblia ATCC 50803 graph.
 
 	References
 	---------------------

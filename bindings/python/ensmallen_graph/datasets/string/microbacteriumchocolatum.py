@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumChocolatum.
+This file offers the methods to automatically retrieve the graph Microbacterium chocolatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumChocolatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumChocolatum graph.
+    """Return new instance of the Microbacterium chocolatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumChocolatum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumChocolatum graph.
+    Instace of Microbacterium chocolatum graph.
 
 	References
 	---------------------

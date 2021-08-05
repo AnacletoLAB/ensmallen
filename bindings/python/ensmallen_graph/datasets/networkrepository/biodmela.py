@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioDmela.
+This file offers the methods to automatically retrieve the graph bio-dmela.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def BioDmela(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioDmela graph.
+    """Return new instance of the bio-dmela graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def BioDmela(
 
     Returns
     -----------------------
-    Instace of BioDmela graph.
+    Instace of bio-dmela graph.
 
 	References
 	---------------------

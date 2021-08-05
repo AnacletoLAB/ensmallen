@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlautiaStali.
+This file offers the methods to automatically retrieve the graph Plautia stali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlautiaStali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlautiaStali graph.
+    """Return new instance of the Plautia stali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlautiaStali(
 
     Returns
     -----------------------
-    Instace of PlautiaStali graph.
+    Instace of Plautia stali graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasEnteropelogenes.
+This file offers the methods to automatically retrieve the graph Aeromonas enteropelogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasEnteropelogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasEnteropelogenes graph.
+    """Return new instance of the Aeromonas enteropelogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasEnteropelogenes(
 
     Returns
     -----------------------
-    Instace of AeromonasEnteropelogenes graph.
+    Instace of Aeromonas enteropelogenes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonlabensDokdonensis.
+This file offers the methods to automatically retrieve the graph Nonlabens dokdonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonlabensDokdonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonlabensDokdonensis graph.
+    """Return new instance of the Nonlabens dokdonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NonlabensDokdonensis(
 
     Returns
     -----------------------
-    Instace of NonlabensDokdonensis graph.
+    Instace of Nonlabens dokdonensis graph.
 
 	References
 	---------------------

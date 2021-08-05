@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaSp499.
+This file offers the methods to automatically retrieve the graph Roseburia sp. 499.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaSp499(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaSp499 graph.
+    """Return new instance of the Roseburia sp. 499 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseburiaSp499(
 
     Returns
     -----------------------
-    Instace of RoseburiaSp499 graph.
+    Instace of Roseburia sp. 499 graph.
 
 	References
 	---------------------

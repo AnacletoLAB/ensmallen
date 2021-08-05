@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillaceaeBacteriumBrhC57.
+This file offers the methods to automatically retrieve the graph Rhodospirillaceae bacterium BRH_c57.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillaceaeBacteriumBrhC57(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillaceaeBacteriumBrhC57 graph.
+    """Return new instance of the Rhodospirillaceae bacterium BRH_c57 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillaceaeBacteriumBrhC57(
 
     Returns
     -----------------------
-    Instace of RhodospirillaceaeBacteriumBrhC57 graph.
+    Instace of Rhodospirillaceae bacterium BRH_c57 graph.
 
 	References
 	---------------------

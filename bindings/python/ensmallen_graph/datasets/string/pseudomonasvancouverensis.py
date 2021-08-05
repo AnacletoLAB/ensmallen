@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasVancouverensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas vancouverensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasVancouverensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasVancouverensis graph.
+    """Return new instance of the Pseudomonas vancouverensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasVancouverensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasVancouverensis graph.
+    Instace of Pseudomonas vancouverensis graph.
 
 	References
 	---------------------

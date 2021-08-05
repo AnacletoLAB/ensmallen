@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCurtissbacteriaBacteriumGw2011Gwa1409.
+This file offers the methods to automatically retrieve the graph Candidatus Curtissbacteria bacterium GW2011_GWA1_40_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCurtissbacteriaBacteriumGw2011Gwa1409(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCurtissbacteriaBacteriumGw2011Gwa1409 graph.
+    """Return new instance of the Candidatus Curtissbacteria bacterium GW2011_GWA1_40_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCurtissbacteriaBacteriumGw2011Gwa1409(
 
     Returns
     -----------------------
-    Instace of CandidatusCurtissbacteriaBacteriumGw2011Gwa1409 graph.
+    Instace of Candidatus Curtissbacteria bacterium GW2011_GWA1_40_9 graph.
 
 	References
 	---------------------

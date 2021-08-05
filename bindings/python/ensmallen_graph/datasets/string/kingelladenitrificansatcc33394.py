@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KingellaDenitrificansAtcc33394.
+This file offers the methods to automatically retrieve the graph Kingella denitrificans ATCC 33394.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KingellaDenitrificansAtcc33394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KingellaDenitrificansAtcc33394 graph.
+    """Return new instance of the Kingella denitrificans ATCC 33394 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KingellaDenitrificansAtcc33394(
 
     Returns
     -----------------------
-    Instace of KingellaDenitrificansAtcc33394 graph.
+    Instace of Kingella denitrificans ATCC 33394 graph.
 
 	References
 	---------------------

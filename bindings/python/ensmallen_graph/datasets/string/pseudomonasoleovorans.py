@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasOleovorans.
+This file offers the methods to automatically retrieve the graph Pseudomonas oleovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasOleovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasOleovorans graph.
+    """Return new instance of the Pseudomonas oleovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasOleovorans(
 
     Returns
     -----------------------
-    Instace of PseudomonasOleovorans graph.
+    Instace of Pseudomonas oleovorans graph.
 
 	References
 	---------------------

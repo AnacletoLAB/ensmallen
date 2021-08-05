@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioHungatei.
+This file offers the methods to automatically retrieve the graph Butyrivibrio hungatei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioHungatei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioHungatei graph.
+    """Return new instance of the Butyrivibrio hungatei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioHungatei(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioHungatei graph.
+    Instace of Butyrivibrio hungatei graph.
 
 	References
 	---------------------

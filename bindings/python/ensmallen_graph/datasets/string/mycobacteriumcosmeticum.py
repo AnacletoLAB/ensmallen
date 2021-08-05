@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumCosmeticum.
+This file offers the methods to automatically retrieve the graph Mycobacterium cosmeticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumCosmeticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumCosmeticum graph.
+    """Return new instance of the Mycobacterium cosmeticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumCosmeticum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumCosmeticum graph.
+    Instace of Mycobacterium cosmeticum graph.
 
 	References
 	---------------------

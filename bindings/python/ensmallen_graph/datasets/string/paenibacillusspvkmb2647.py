@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpVkmB2647.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. VKM B-2647.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpVkmB2647(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpVkmB2647 graph.
+    """Return new instance of the Paenibacillus sp. VKM B-2647 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpVkmB2647(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpVkmB2647 graph.
+    Instace of Paenibacillus sp. VKM B-2647 graph.
 
 	References
 	---------------------

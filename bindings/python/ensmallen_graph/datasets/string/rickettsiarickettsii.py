@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaRickettsii.
+This file offers the methods to automatically retrieve the graph Rickettsia rickettsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaRickettsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaRickettsii graph.
+    """Return new instance of the Rickettsia rickettsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaRickettsii(
 
     Returns
     -----------------------
-    Instace of RickettsiaRickettsii graph.
+    Instace of Rickettsia rickettsii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterJaponicus.
+This file offers the methods to automatically retrieve the graph Gluconobacter japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterJaponicus graph.
+    """Return new instance of the Gluconobacter japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GluconobacterJaponicus(
 
     Returns
     -----------------------
-    Instace of GluconobacterJaponicus graph.
+    Instace of Gluconobacter japonicus graph.
 
 	References
 	---------------------

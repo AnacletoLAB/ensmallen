@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DenitrovibrioAcetiphilus.
+This file offers the methods to automatically retrieve the graph Denitrovibrio acetiphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DenitrovibrioAcetiphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DenitrovibrioAcetiphilus graph.
+    """Return new instance of the Denitrovibrio acetiphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DenitrovibrioAcetiphilus(
 
     Returns
     -----------------------
-    Instace of DenitrovibrioAcetiphilus graph.
+    Instace of Denitrovibrio acetiphilus graph.
 
 	References
 	---------------------

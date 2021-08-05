@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusFaeciumC68.
+This file offers the methods to automatically retrieve the graph Enterococcus faecium C68.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusFaeciumC68(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusFaeciumC68 graph.
+    """Return new instance of the Enterococcus faecium C68 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusFaeciumC68(
 
     Returns
     -----------------------
-    Instace of EnterococcusFaeciumC68 graph.
+    Instace of Enterococcus faecium C68 graph.
 
 	References
 	---------------------

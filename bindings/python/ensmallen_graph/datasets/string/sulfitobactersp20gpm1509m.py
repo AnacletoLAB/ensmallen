@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSp20gpm1509m.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. 20GPM1509m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSp20gpm1509m(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSp20gpm1509m graph.
+    """Return new instance of the Sulfitobacter sp. 20GPM1509m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterSp20gpm1509m(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSp20gpm1509m graph.
+    Instace of Sulfitobacter sp. 20GPM1509m graph.
 
 	References
 	---------------------

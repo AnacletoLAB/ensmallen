@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EikenellaCorrodensAtcc23834.
+This file offers the methods to automatically retrieve the graph Eikenella corrodens ATCC23834.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EikenellaCorrodensAtcc23834(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EikenellaCorrodensAtcc23834 graph.
+    """Return new instance of the Eikenella corrodens ATCC23834 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EikenellaCorrodensAtcc23834(
 
     Returns
     -----------------------
-    Instace of EikenellaCorrodensAtcc23834 graph.
+    Instace of Eikenella corrodens ATCC23834 graph.
 
 	References
 	---------------------

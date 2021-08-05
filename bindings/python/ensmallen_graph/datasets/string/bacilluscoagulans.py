@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCoagulans.
+This file offers the methods to automatically retrieve the graph Bacillus coagulans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCoagulans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCoagulans graph.
+    """Return new instance of the Bacillus coagulans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusCoagulans(
 
     Returns
     -----------------------
-    Instace of BacillusCoagulans graph.
+    Instace of Bacillus coagulans graph.
 
 	References
 	---------------------

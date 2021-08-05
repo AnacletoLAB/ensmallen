@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaZhejiangensis.
+This file offers the methods to automatically retrieve the graph Caballeronia zhejiangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaZhejiangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaZhejiangensis graph.
+    """Return new instance of the Caballeronia zhejiangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaZhejiangensis(
 
     Returns
     -----------------------
-    Instace of CaballeroniaZhejiangensis graph.
+    Instace of Caballeronia zhejiangensis graph.
 
 	References
 	---------------------

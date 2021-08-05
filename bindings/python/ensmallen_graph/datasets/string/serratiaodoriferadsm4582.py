@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaOdoriferaDsm4582.
+This file offers the methods to automatically retrieve the graph Serratia odorifera DSM 4582.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaOdoriferaDsm4582(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaOdoriferaDsm4582 graph.
+    """Return new instance of the Serratia odorifera DSM 4582 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerratiaOdoriferaDsm4582(
 
     Returns
     -----------------------
-    Instace of SerratiaOdoriferaDsm4582 graph.
+    Instace of Serratia odorifera DSM 4582 graph.
 
 	References
 	---------------------

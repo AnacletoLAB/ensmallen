@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumRhodesiaeJs60.
+This file offers the methods to automatically retrieve the graph Mycobacterium rhodesiae JS60.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumRhodesiaeJs60(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumRhodesiaeJs60 graph.
+    """Return new instance of the Mycobacterium rhodesiae JS60 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumRhodesiaeJs60(
 
     Returns
     -----------------------
-    Instace of MycobacteriumRhodesiaeJs60 graph.
+    Instace of Mycobacterium rhodesiae JS60 graph.
 
 	References
 	---------------------

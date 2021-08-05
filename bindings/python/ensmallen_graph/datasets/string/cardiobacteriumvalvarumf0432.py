@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CardiobacteriumValvarumF0432.
+This file offers the methods to automatically retrieve the graph Cardiobacterium valvarum F0432.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CardiobacteriumValvarumF0432(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CardiobacteriumValvarumF0432 graph.
+    """Return new instance of the Cardiobacterium valvarum F0432 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CardiobacteriumValvarumF0432(
 
     Returns
     -----------------------
-    Instace of CardiobacteriumValvarumF0432 graph.
+    Instace of Cardiobacterium valvarum F0432 graph.
 
 	References
 	---------------------

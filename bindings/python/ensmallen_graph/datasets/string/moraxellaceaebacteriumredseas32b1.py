@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaceaeBacteriumRedseaS32B1.
+This file offers the methods to automatically retrieve the graph Moraxellaceae bacterium REDSEA-S32_B1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaceaeBacteriumRedseaS32B1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaceaeBacteriumRedseaS32B1 graph.
+    """Return new instance of the Moraxellaceae bacterium REDSEA-S32_B1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaceaeBacteriumRedseaS32B1(
 
     Returns
     -----------------------
-    Instace of MoraxellaceaeBacteriumRedseaS32B1 graph.
+    Instace of Moraxellaceae bacterium REDSEA-S32_B1 graph.
 
 	References
 	---------------------

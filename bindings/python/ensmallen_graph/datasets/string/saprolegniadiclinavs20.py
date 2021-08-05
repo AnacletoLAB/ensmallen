@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaprolegniaDiclinaVs20.
+This file offers the methods to automatically retrieve the graph Saprolegnia diclina VS20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaprolegniaDiclinaVs20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaprolegniaDiclinaVs20 graph.
+    """Return new instance of the Saprolegnia diclina VS20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaprolegniaDiclinaVs20(
 
     Returns
     -----------------------
-    Instace of SaprolegniaDiclinaVs20 graph.
+    Instace of Saprolegnia diclina VS20 graph.
 
 	References
 	---------------------

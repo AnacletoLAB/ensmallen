@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermopetrobacterSpTc1.
+This file offers the methods to automatically retrieve the graph Thermopetrobacter sp. TC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermopetrobacterSpTc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermopetrobacterSpTc1 graph.
+    """Return new instance of the Thermopetrobacter sp. TC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermopetrobacterSpTc1(
 
     Returns
     -----------------------
-    Instace of ThermopetrobacterSpTc1 graph.
+    Instace of Thermopetrobacter sp. TC1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastococcusSaxobsidens.
+This file offers the methods to automatically retrieve the graph Blastococcus saxobsidens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastococcusSaxobsidens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastococcusSaxobsidens graph.
+    """Return new instance of the Blastococcus saxobsidens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlastococcusSaxobsidens(
 
     Returns
     -----------------------
-    Instace of BlastococcusSaxobsidens graph.
+    Instace of Blastococcus saxobsidens graph.
 
 	References
 	---------------------

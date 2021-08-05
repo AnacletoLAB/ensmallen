@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterSulfurreducens.
+This file offers the methods to automatically retrieve the graph Geobacter sulfurreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterSulfurreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterSulfurreducens graph.
+    """Return new instance of the Geobacter sulfurreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacterSulfurreducens(
 
     Returns
     -----------------------
-    Instace of GeobacterSulfurreducens graph.
+    Instace of Geobacter sulfurreducens graph.
 
 	References
 	---------------------

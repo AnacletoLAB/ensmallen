@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoplasmaFlorum.
+This file offers the methods to automatically retrieve the graph Mesoplasma florum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoplasmaFlorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoplasmaFlorum graph.
+    """Return new instance of the Mesoplasma florum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesoplasmaFlorum(
 
     Returns
     -----------------------
-    Instace of MesoplasmaFlorum graph.
+    Instace of Mesoplasma florum graph.
 
 	References
 	---------------------

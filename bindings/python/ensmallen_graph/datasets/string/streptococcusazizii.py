@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAzizii.
+This file offers the methods to automatically retrieve the graph Streptococcus azizii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAzizii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAzizii graph.
+    """Return new instance of the Streptococcus azizii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusAzizii(
 
     Returns
     -----------------------
-    Instace of StreptococcusAzizii graph.
+    Instace of Streptococcus azizii graph.
 
 	References
 	---------------------

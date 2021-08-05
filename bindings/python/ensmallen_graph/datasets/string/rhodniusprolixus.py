@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodniusProlixus.
+This file offers the methods to automatically retrieve the graph Rhodnius prolixus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodniusProlixus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodniusProlixus graph.
+    """Return new instance of the Rhodnius prolixus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodniusProlixus(
 
     Returns
     -----------------------
-    Instace of RhodniusProlixus graph.
+    Instace of Rhodnius prolixus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpPamc26642.
+This file offers the methods to automatically retrieve the graph Bosea sp. PAMC 26642.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpPamc26642(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpPamc26642 graph.
+    """Return new instance of the Bosea sp. PAMC 26642 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpPamc26642(
 
     Returns
     -----------------------
-    Instace of BoseaSpPamc26642 graph.
+    Instace of Bosea sp. PAMC 26642 graph.
 
 	References
 	---------------------

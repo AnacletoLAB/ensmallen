@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriaceaeArchaeon41258.
+This file offers the methods to automatically retrieve the graph Methanobacteriaceae archaeon 41_258.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriaceaeArchaeon41258(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriaceaeArchaeon41258 graph.
+    """Return new instance of the Methanobacteriaceae archaeon 41_258 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobacteriaceaeArchaeon41258(
 
     Returns
     -----------------------
-    Instace of MethanobacteriaceaeArchaeon41258 graph.
+    Instace of Methanobacteriaceae archaeon 41_258 graph.
 
 	References
 	---------------------

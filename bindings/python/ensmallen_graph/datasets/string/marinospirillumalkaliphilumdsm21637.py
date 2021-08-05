@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinospirillumAlkaliphilumDsm21637.
+This file offers the methods to automatically retrieve the graph Marinospirillum alkaliphilum DSM 21637.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinospirillumAlkaliphilumDsm21637(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinospirillumAlkaliphilumDsm21637 graph.
+    """Return new instance of the Marinospirillum alkaliphilum DSM 21637 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinospirillumAlkaliphilumDsm21637(
 
     Returns
     -----------------------
-    Instace of MarinospirillumAlkaliphilumDsm21637 graph.
+    Instace of Marinospirillum alkaliphilum DSM 21637 graph.
 
 	References
 	---------------------

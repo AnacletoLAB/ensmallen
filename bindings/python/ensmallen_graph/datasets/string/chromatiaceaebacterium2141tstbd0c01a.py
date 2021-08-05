@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromatiaceaeBacterium2141tStbd0c01a.
+This file offers the methods to automatically retrieve the graph Chromatiaceae bacterium 2141T.STBD.0c.01a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromatiaceaeBacterium2141tStbd0c01a graph.
+    """Return new instance of the Chromatiaceae bacterium 2141T.STBD.0c.01a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromatiaceaeBacterium2141tStbd0c01a(
 
     Returns
     -----------------------
-    Instace of ChromatiaceaeBacterium2141tStbd0c01a graph.
+    Instace of Chromatiaceae bacterium 2141T.STBD.0c.01a graph.
 
 	References
 	---------------------

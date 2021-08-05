@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusSpLeaf369.
+This file offers the methods to automatically retrieve the graph Geodermatophilus sp. Leaf369.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusSpLeaf369(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusSpLeaf369 graph.
+    """Return new instance of the Geodermatophilus sp. Leaf369 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusSpLeaf369(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusSpLeaf369 graph.
+    Instace of Geodermatophilus sp. Leaf369 graph.
 
 	References
 	---------------------

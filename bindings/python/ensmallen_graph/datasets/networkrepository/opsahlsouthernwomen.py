@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpsahlSouthernwomen.
+This file offers the methods to automatically retrieve the graph opsahl-southernwomen.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OpsahlSouthernwomen(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpsahlSouthernwomen graph.
+    """Return new instance of the opsahl-southernwomen graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OpsahlSouthernwomen(
 
     Returns
     -----------------------
-    Instace of OpsahlSouthernwomen graph.
+    Instace of opsahl-southernwomen graph.
 
 	References
 	---------------------

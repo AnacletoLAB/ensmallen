@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvencibacteriumMassiliense.
+This file offers the methods to automatically retrieve the graph Provencibacterium massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvencibacteriumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvencibacteriumMassiliense graph.
+    """Return new instance of the Provencibacterium massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProvencibacteriumMassiliense(
 
     Returns
     -----------------------
-    Instace of ProvencibacteriumMassiliense graph.
+    Instace of Provencibacterium massiliense graph.
 
 	References
 	---------------------

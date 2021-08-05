@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpRoot70.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. Root70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpRoot70(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpRoot70 graph.
+    """Return new instance of the Acidovorax sp. Root70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSpRoot70(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpRoot70 graph.
+    Instace of Acidovorax sp. Root70 graph.
 
 	References
 	---------------------

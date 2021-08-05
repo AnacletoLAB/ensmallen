@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSpGm95.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas sp. GM95.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSpGm95(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSpGm95 graph.
+    """Return new instance of the Pseudoxanthomonas sp. GM95 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasSpGm95(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSpGm95 graph.
+    Instace of Pseudoxanthomonas sp. GM95 graph.
 
 	References
 	---------------------

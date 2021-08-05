@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaSpA28l.
+This file offers the methods to automatically retrieve the graph Idiomarina sp. A28L.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaSpA28l(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaSpA28l graph.
+    """Return new instance of the Idiomarina sp. A28L graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IdiomarinaSpA28l(
 
     Returns
     -----------------------
-    Instace of IdiomarinaSpA28l graph.
+    Instace of Idiomarina sp. A28L graph.
 
 	References
 	---------------------

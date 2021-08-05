@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusAureusSubspAureusNctc8325.
+This file offers the methods to automatically retrieve the graph Staphylococcus aureus subsp. aureus NCTC 8325.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusAureusSubspAureusNctc8325(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusAureusSubspAureusNctc8325 graph.
+    """Return new instance of the Staphylococcus aureus subsp. aureus NCTC 8325 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusAureusSubspAureusNctc8325(
 
     Returns
     -----------------------
-    Instace of StaphylococcusAureusSubspAureusNctc8325 graph.
+    Instace of Staphylococcus aureus subsp. aureus NCTC 8325 graph.
 
 	References
 	---------------------

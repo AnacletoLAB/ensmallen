@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillatoriaAcuminata.
+This file offers the methods to automatically retrieve the graph Oscillatoria acuminata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillatoriaAcuminata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillatoriaAcuminata graph.
+    """Return new instance of the Oscillatoria acuminata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillatoriaAcuminata(
 
     Returns
     -----------------------
-    Instace of OscillatoriaAcuminata graph.
+    Instace of Oscillatoria acuminata graph.
 
 	References
 	---------------------

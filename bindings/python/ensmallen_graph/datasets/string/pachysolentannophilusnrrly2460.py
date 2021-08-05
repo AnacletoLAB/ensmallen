@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PachysolenTannophilusNrrlY2460.
+This file offers the methods to automatically retrieve the graph Pachysolen tannophilus NRRL Y-2460.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PachysolenTannophilusNrrlY2460(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PachysolenTannophilusNrrlY2460 graph.
+    """Return new instance of the Pachysolen tannophilus NRRL Y-2460 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PachysolenTannophilusNrrlY2460(
 
     Returns
     -----------------------
-    Instace of PachysolenTannophilusNrrlY2460 graph.
+    Instace of Pachysolen tannophilus NRRL Y-2460 graph.
 
 	References
 	---------------------

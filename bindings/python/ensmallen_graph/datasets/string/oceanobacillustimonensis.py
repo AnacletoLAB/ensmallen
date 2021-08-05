@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusTimonensis.
+This file offers the methods to automatically retrieve the graph Oceanobacillus timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusTimonensis graph.
+    """Return new instance of the Oceanobacillus timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusTimonensis(
 
     Returns
     -----------------------
-    Instace of OceanobacillusTimonensis graph.
+    Instace of Oceanobacillus timonensis graph.
 
 	References
 	---------------------

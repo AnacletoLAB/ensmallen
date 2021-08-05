@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BarnesiellaViscericola.
+This file offers the methods to automatically retrieve the graph Barnesiella viscericola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BarnesiellaViscericola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BarnesiellaViscericola graph.
+    """Return new instance of the Barnesiella viscericola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BarnesiellaViscericola(
 
     Returns
     -----------------------
-    Instace of BarnesiellaViscericola graph.
+    Instace of Barnesiella viscericola graph.
 
 	References
 	---------------------

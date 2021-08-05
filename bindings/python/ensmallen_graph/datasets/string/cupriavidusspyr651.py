@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusSpYr651.
+This file offers the methods to automatically retrieve the graph Cupriavidus sp. YR651.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusSpYr651(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusSpYr651 graph.
+    """Return new instance of the Cupriavidus sp. YR651 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusSpYr651(
 
     Returns
     -----------------------
-    Instace of CupriavidusSpYr651 graph.
+    Instace of Cupriavidus sp. YR651 graph.
 
 	References
 	---------------------

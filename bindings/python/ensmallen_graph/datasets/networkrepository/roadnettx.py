@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadnetTx.
+This file offers the methods to automatically retrieve the graph roadNet-TX.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadnetTx(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadnetTx graph.
+    """Return new instance of the roadNet-TX graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadnetTx(
 
     Returns
     -----------------------
-    Instace of RoadnetTx graph.
+    Instace of roadNet-TX graph.
 
 	References
 	---------------------

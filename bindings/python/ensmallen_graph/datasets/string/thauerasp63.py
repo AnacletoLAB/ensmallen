@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraSp63.
+This file offers the methods to automatically retrieve the graph Thauera sp. 63.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraSp63(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraSp63 graph.
+    """Return new instance of the Thauera sp. 63 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThaueraSp63(
 
     Returns
     -----------------------
-    Instace of ThaueraSp63 graph.
+    Instace of Thauera sp. 63 graph.
 
 	References
 	---------------------

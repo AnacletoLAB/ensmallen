@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TanticharoeniaSakaeratensisNbrc103193.
+This file offers the methods to automatically retrieve the graph Tanticharoenia sakaeratensis NBRC 103193.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TanticharoeniaSakaeratensisNbrc103193(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TanticharoeniaSakaeratensisNbrc103193 graph.
+    """Return new instance of the Tanticharoenia sakaeratensis NBRC 103193 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TanticharoeniaSakaeratensisNbrc103193(
 
     Returns
     -----------------------
-    Instace of TanticharoeniaSakaeratensisNbrc103193 graph.
+    Instace of Tanticharoenia sakaeratensis NBRC 103193 graph.
 
 	References
 	---------------------

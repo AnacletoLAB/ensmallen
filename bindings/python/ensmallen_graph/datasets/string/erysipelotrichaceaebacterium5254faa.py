@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelotrichaceaeBacterium5254faa.
+This file offers the methods to automatically retrieve the graph Erysipelotrichaceae bacterium 5254FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelotrichaceaeBacterium5254faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelotrichaceaeBacterium5254faa graph.
+    """Return new instance of the Erysipelotrichaceae bacterium 5254FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErysipelotrichaceaeBacterium5254faa(
 
     Returns
     -----------------------
-    Instace of ErysipelotrichaceaeBacterium5254faa graph.
+    Instace of Erysipelotrichaceae bacterium 5254FAA graph.
 
 	References
 	---------------------

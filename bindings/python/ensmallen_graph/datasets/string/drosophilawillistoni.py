@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaWillistoni.
+This file offers the methods to automatically retrieve the graph Drosophila willistoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaWillistoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaWillistoni graph.
+    """Return new instance of the Drosophila willistoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaWillistoni(
 
     Returns
     -----------------------
-    Instace of DrosophilaWillistoni graph.
+    Instace of Drosophila willistoni graph.
 
 	References
 	---------------------

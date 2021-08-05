@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaBelliiOsu85389.
+This file offers the methods to automatically retrieve the graph Rickettsia bellii OSU85389.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaBelliiOsu85389(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaBelliiOsu85389 graph.
+    """Return new instance of the Rickettsia bellii OSU85389 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaBelliiOsu85389(
 
     Returns
     -----------------------
-    Instace of RickettsiaBelliiOsu85389 graph.
+    Instace of Rickettsia bellii OSU85389 graph.
 
 	References
 	---------------------

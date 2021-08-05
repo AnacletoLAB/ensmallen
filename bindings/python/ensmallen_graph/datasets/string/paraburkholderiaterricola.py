@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaTerricola.
+This file offers the methods to automatically retrieve the graph Paraburkholderia terricola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaTerricola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaTerricola graph.
+    """Return new instance of the Paraburkholderia terricola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaTerricola(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaTerricola graph.
+    Instace of Paraburkholderia terricola graph.
 
 	References
 	---------------------

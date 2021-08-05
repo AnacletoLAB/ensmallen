@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaceaeSpMortierella.
+This file offers the methods to automatically retrieve the graph Burkholderiaceae sp. Mortierella.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaceaeSpMortierella(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaceaeSpMortierella graph.
+    """Return new instance of the Burkholderiaceae sp. Mortierella graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaceaeSpMortierella(
 
     Returns
     -----------------------
-    Instace of BurkholderiaceaeSpMortierella graph.
+    Instace of Burkholderiaceae sp. Mortierella graph.
 
 	References
 	---------------------

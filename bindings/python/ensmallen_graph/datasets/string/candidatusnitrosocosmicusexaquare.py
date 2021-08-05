@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosocosmicusExaquare.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosocosmicus exaquare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosocosmicusExaquare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosocosmicusExaquare graph.
+    """Return new instance of the Candidatus Nitrosocosmicus exaquare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosocosmicusExaquare(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosocosmicusExaquare graph.
+    Instace of Candidatus Nitrosocosmicus exaquare graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasHaloplanktisTac125.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas haloplanktis TAC125.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasHaloplanktisTac125(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasHaloplanktisTac125 graph.
+    """Return new instance of the Pseudoalteromonas haloplanktis TAC125 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasHaloplanktisTac125(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasHaloplanktisTac125 graph.
+    Instace of Pseudoalteromonas haloplanktis TAC125 graph.
 
 	References
 	---------------------

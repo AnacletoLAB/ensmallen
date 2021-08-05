@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpCci3.
+This file offers the methods to automatically retrieve the graph Frankia sp. CcI3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpCci3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpCci3 graph.
+    """Return new instance of the Frankia sp. CcI3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpCci3(
 
     Returns
     -----------------------
-    Instace of FrankiaSpCci3 graph.
+    Instace of Frankia sp. CcI3 graph.
 
 	References
 	---------------------

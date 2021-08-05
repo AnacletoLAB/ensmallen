@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusThiodiazotrophaEndoloripes.
+This file offers the methods to automatically retrieve the graph Candidatus Thiodiazotropha endoloripes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusThiodiazotrophaEndoloripes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusThiodiazotrophaEndoloripes graph.
+    """Return new instance of the Candidatus Thiodiazotropha endoloripes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusThiodiazotrophaEndoloripes(
 
     Returns
     -----------------------
-    Instace of CandidatusThiodiazotrophaEndoloripes graph.
+    Instace of Candidatus Thiodiazotropha endoloripes graph.
 
 	References
 	---------------------

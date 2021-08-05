@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonadaceaeBacteriumBs31.
+This file offers the methods to automatically retrieve the graph Alteromonadaceae bacterium Bs31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonadaceaeBacteriumBs31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonadaceaeBacteriumBs31 graph.
+    """Return new instance of the Alteromonadaceae bacterium Bs31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonadaceaeBacteriumBs31(
 
     Returns
     -----------------------
-    Instace of AlteromonadaceaeBacteriumBs31 graph.
+    Instace of Alteromonadaceae bacterium Bs31 graph.
 
 	References
 	---------------------

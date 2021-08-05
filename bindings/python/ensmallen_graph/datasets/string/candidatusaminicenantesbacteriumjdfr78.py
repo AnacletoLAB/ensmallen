@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAminicenantesBacteriumJdfr78.
+This file offers the methods to automatically retrieve the graph Candidatus Aminicenantes bacterium JdFR-78.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAminicenantesBacteriumJdfr78(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAminicenantesBacteriumJdfr78 graph.
+    """Return new instance of the Candidatus Aminicenantes bacterium JdFR-78 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAminicenantesBacteriumJdfr78(
 
     Returns
     -----------------------
-    Instace of CandidatusAminicenantesBacteriumJdfr78 graph.
+    Instace of Candidatus Aminicenantes bacterium JdFR-78 graph.
 
 	References
 	---------------------

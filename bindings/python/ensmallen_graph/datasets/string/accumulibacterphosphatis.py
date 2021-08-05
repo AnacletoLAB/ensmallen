@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AccumulibacterPhosphatis.
+This file offers the methods to automatically retrieve the graph Accumulibacter phosphatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AccumulibacterPhosphatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AccumulibacterPhosphatis graph.
+    """Return new instance of the Accumulibacter phosphatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AccumulibacterPhosphatis(
 
     Returns
     -----------------------
-    Instace of AccumulibacterPhosphatis graph.
+    Instace of Accumulibacter phosphatis graph.
 
 	References
 	---------------------

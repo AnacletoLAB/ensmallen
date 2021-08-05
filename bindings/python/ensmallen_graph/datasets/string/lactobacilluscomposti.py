@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusComposti.
+This file offers the methods to automatically retrieve the graph Lactobacillus composti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusComposti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusComposti graph.
+    """Return new instance of the Lactobacillus composti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusComposti(
 
     Returns
     -----------------------
-    Instace of LactobacillusComposti graph.
+    Instace of Lactobacillus composti graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArabidopsisLyrataSubspLyrata.
+This file offers the methods to automatically retrieve the graph Arabidopsis lyrata subsp. lyrata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArabidopsisLyrataSubspLyrata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArabidopsisLyrataSubspLyrata graph.
+    """Return new instance of the Arabidopsis lyrata subsp. lyrata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArabidopsisLyrataSubspLyrata(
 
     Returns
     -----------------------
-    Instace of ArabidopsisLyrataSubspLyrata graph.
+    Instace of Arabidopsis lyrata subsp. lyrata graph.
 
 	References
 	---------------------

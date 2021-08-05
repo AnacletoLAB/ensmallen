@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaMacacae.
+This file offers the methods to automatically retrieve the graph Moraxella macacae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaMacacae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaMacacae graph.
+    """Return new instance of the Moraxella macacae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoraxellaMacacae(
 
     Returns
     -----------------------
-    Instace of MoraxellaMacacae graph.
+    Instace of Moraxella macacae graph.
 
 	References
 	---------------------

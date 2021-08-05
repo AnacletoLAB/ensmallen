@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacterium4128.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium 41-28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacterium4128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacterium4128 graph.
+    """Return new instance of the Alphaproteobacteria bacterium 41-28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacterium4128(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacterium4128 graph.
+    Instace of Alphaproteobacteria bacterium 41-28 graph.
 
 	References
 	---------------------

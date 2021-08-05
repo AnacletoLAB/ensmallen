@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VitisVinifera.
+This file offers the methods to automatically retrieve the graph Vitis vinifera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VitisVinifera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VitisVinifera graph.
+    """Return new instance of the Vitis vinifera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VitisVinifera(
 
     Returns
     -----------------------
-    Instace of VitisVinifera graph.
+    Instace of Vitis vinifera graph.
 
 	References
 	---------------------

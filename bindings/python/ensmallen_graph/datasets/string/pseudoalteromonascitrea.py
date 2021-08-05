@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasCitrea.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas citrea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasCitrea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasCitrea graph.
+    """Return new instance of the Pseudoalteromonas citrea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasCitrea(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasCitrea graph.
+    Instace of Pseudoalteromonas citrea graph.
 
 	References
 	---------------------

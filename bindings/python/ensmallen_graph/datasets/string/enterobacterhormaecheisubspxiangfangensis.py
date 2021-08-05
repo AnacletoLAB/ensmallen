@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterHormaecheiSubspXiangfangensis.
+This file offers the methods to automatically retrieve the graph Enterobacter hormaechei subsp. xiangfangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterHormaecheiSubspXiangfangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterHormaecheiSubspXiangfangensis graph.
+    """Return new instance of the Enterobacter hormaechei subsp. xiangfangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterHormaecheiSubspXiangfangensis(
 
     Returns
     -----------------------
-    Instace of EnterobacterHormaecheiSubspXiangfangensis graph.
+    Instace of Enterobacter hormaechei subsp. xiangfangensis graph.
 
 	References
 	---------------------

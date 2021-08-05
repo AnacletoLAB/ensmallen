@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioLitoralisDsm11393.
+This file offers the methods to automatically retrieve the graph Desulfovibrio litoralis DSM 11393.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioLitoralisDsm11393(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioLitoralisDsm11393 graph.
+    """Return new instance of the Desulfovibrio litoralis DSM 11393 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioLitoralisDsm11393(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioLitoralisDsm11393 graph.
+    Instace of Desulfovibrio litoralis DSM 11393 graph.
 
 	References
 	---------------------

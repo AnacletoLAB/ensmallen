@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RikenellaceaeBacteriumM3.
+This file offers the methods to automatically retrieve the graph Rikenellaceae bacterium M3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RikenellaceaeBacteriumM3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RikenellaceaeBacteriumM3 graph.
+    """Return new instance of the Rikenellaceae bacterium M3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RikenellaceaeBacteriumM3(
 
     Returns
     -----------------------
-    Instace of RikenellaceaeBacteriumM3 graph.
+    Instace of Rikenellaceae bacterium M3 graph.
 
 	References
 	---------------------

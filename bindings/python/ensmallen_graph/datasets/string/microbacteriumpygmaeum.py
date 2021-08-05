@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumPygmaeum.
+This file offers the methods to automatically retrieve the graph Microbacterium pygmaeum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumPygmaeum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumPygmaeum graph.
+    """Return new instance of the Microbacterium pygmaeum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumPygmaeum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumPygmaeum graph.
+    Instace of Microbacterium pygmaeum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterSpKt25b.
+This file offers the methods to automatically retrieve the graph Polaribacter sp. KT25b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterSpKt25b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterSpKt25b graph.
+    """Return new instance of the Polaribacter sp. KT25b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterSpKt25b(
 
     Returns
     -----------------------
-    Instace of PolaribacterSpKt25b graph.
+    Instace of Polaribacter sp. KT25b graph.
 
 	References
 	---------------------

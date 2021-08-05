@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhouiaAmylolytica.
+This file offers the methods to automatically retrieve the graph Zhouia amylolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZhouiaAmylolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhouiaAmylolytica graph.
+    """Return new instance of the Zhouia amylolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZhouiaAmylolytica(
 
     Returns
     -----------------------
-    Instace of ZhouiaAmylolytica graph.
+    Instace of Zhouia amylolytica graph.
 
 	References
 	---------------------

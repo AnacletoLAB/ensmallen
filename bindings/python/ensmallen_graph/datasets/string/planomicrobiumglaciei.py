@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanomicrobiumGlaciei.
+This file offers the methods to automatically retrieve the graph Planomicrobium glaciei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanomicrobiumGlaciei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanomicrobiumGlaciei graph.
+    """Return new instance of the Planomicrobium glaciei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanomicrobiumGlaciei(
 
     Returns
     -----------------------
-    Instace of PlanomicrobiumGlaciei graph.
+    Instace of Planomicrobium glaciei graph.
 
 	References
 	---------------------

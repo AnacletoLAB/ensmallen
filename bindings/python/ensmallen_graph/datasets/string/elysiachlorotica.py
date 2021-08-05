@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElysiaChlorotica.
+This file offers the methods to automatically retrieve the graph Elysia chlorotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElysiaChlorotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElysiaChlorotica graph.
+    """Return new instance of the Elysia chlorotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElysiaChlorotica(
 
     Returns
     -----------------------
-    Instace of ElysiaChlorotica graph.
+    Instace of Elysia chlorotica graph.
 
 	References
 	---------------------

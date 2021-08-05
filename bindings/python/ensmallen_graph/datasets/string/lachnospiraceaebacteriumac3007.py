@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumAc3007.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium AC3007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumAc3007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumAc3007 graph.
+    """Return new instance of the Lachnospiraceae bacterium AC3007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumAc3007(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumAc3007 graph.
+    Instace of Lachnospiraceae bacterium AC3007 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedClostridiumSp.
+This file offers the methods to automatically retrieve the graph uncultured Clostridium sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedClostridiumSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedClostridiumSp graph.
+    """Return new instance of the uncultured Clostridium sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedClostridiumSp(
 
     Returns
     -----------------------
-    Instace of UnculturedClostridiumSp graph.
+    Instace of uncultured Clostridium sp. graph.
 
 	References
 	---------------------

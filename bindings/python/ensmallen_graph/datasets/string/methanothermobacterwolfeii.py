@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermobacterWolfeii.
+This file offers the methods to automatically retrieve the graph Methanothermobacter wolfeii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermobacterWolfeii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermobacterWolfeii graph.
+    """Return new instance of the Methanothermobacter wolfeii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothermobacterWolfeii(
 
     Returns
     -----------------------
-    Instace of MethanothermobacterWolfeii graph.
+    Instace of Methanothermobacter wolfeii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YooniaRosea.
+This file offers the methods to automatically retrieve the graph Yoonia rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YooniaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YooniaRosea graph.
+    """Return new instance of the Yoonia rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YooniaRosea(
 
     Returns
     -----------------------
-    Instace of YooniaRosea graph.
+    Instace of Yoonia rosea graph.
 
 	References
 	---------------------

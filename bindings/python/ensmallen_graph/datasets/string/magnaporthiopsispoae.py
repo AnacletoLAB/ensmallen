@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnaporthiopsisPoae.
+This file offers the methods to automatically retrieve the graph Magnaporthiopsis poae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnaporthiopsisPoae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnaporthiopsisPoae graph.
+    """Return new instance of the Magnaporthiopsis poae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MagnaporthiopsisPoae(
 
     Returns
     -----------------------
-    Instace of MagnaporthiopsisPoae graph.
+    Instace of Magnaporthiopsis poae graph.
 
 	References
 	---------------------

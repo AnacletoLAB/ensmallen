@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWoesebacteriaBacteriumGw2011Gwa2407b.
+This file offers the methods to automatically retrieve the graph Candidatus Woesebacteria bacterium GW2011_GWA2_40_7b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWoesebacteriaBacteriumGw2011Gwa2407b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWoesebacteriaBacteriumGw2011Gwa2407b graph.
+    """Return new instance of the Candidatus Woesebacteria bacterium GW2011_GWA2_40_7b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWoesebacteriaBacteriumGw2011Gwa2407b(
 
     Returns
     -----------------------
-    Instace of CandidatusWoesebacteriaBacteriumGw2011Gwa2407b graph.
+    Instace of Candidatus Woesebacteria bacterium GW2011_GWA2_40_7b graph.
 
 	References
 	---------------------

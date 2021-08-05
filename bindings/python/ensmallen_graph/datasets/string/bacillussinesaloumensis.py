@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSinesaloumensis.
+This file offers the methods to automatically retrieve the graph Bacillus sinesaloumensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSinesaloumensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSinesaloumensis graph.
+    """Return new instance of the Bacillus sinesaloumensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSinesaloumensis(
 
     Returns
     -----------------------
-    Instace of BacillusSinesaloumensis graph.
+    Instace of Bacillus sinesaloumensis graph.
 
 	References
 	---------------------

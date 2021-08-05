@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusMeridiei.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus meridiei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusMeridiei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusMeridiei graph.
+    """Return new instance of the Desulfosporosinus meridiei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfosporosinusMeridiei(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusMeridiei graph.
+    Instace of Desulfosporosinus meridiei graph.
 
 	References
 	---------------------

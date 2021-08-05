@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPseudogenitalium.
+This file offers the methods to automatically retrieve the graph Corynebacterium pseudogenitalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPseudogenitalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPseudogenitalium graph.
+    """Return new instance of the Corynebacterium pseudogenitalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumPseudogenitalium(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPseudogenitalium graph.
+    Instace of Corynebacterium pseudogenitalium graph.
 
 	References
 	---------------------

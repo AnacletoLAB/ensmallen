@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubellimicrobiumMesophilumDsm19309.
+This file offers the methods to automatically retrieve the graph Rubellimicrobium mesophilum DSM 19309.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubellimicrobiumMesophilumDsm19309(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubellimicrobiumMesophilumDsm19309 graph.
+    """Return new instance of the Rubellimicrobium mesophilum DSM 19309 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubellimicrobiumMesophilumDsm19309(
 
     Returns
     -----------------------
-    Instace of RubellimicrobiumMesophilumDsm19309 graph.
+    Instace of Rubellimicrobium mesophilum DSM 19309 graph.
 
 	References
 	---------------------

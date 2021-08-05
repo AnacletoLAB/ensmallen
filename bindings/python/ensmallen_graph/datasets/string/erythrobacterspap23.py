@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpAp23.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. AP23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpAp23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpAp23 graph.
+    """Return new instance of the Erythrobacter sp. AP23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpAp23(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpAp23 graph.
+    Instace of Erythrobacter sp. AP23 graph.
 
 	References
 	---------------------

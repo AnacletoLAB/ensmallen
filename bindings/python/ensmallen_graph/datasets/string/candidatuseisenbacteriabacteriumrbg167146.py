@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusEisenbacteriaBacteriumRbg167146.
+This file offers the methods to automatically retrieve the graph Candidatus Eisenbacteria bacterium RBG_16_71_46.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusEisenbacteriaBacteriumRbg167146(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusEisenbacteriaBacteriumRbg167146 graph.
+    """Return new instance of the Candidatus Eisenbacteria bacterium RBG_16_71_46 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusEisenbacteriaBacteriumRbg167146(
 
     Returns
     -----------------------
-    Instace of CandidatusEisenbacteriaBacteriumRbg167146 graph.
+    Instace of Candidatus Eisenbacteria bacterium RBG_16_71_46 graph.
 
 	References
 	---------------------

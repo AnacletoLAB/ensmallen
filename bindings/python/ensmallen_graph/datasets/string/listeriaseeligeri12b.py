@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaSeeligeri12b.
+This file offers the methods to automatically retrieve the graph Listeria seeligeri 12b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaSeeligeri12b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaSeeligeri12b graph.
+    """Return new instance of the Listeria seeligeri 12b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaSeeligeri12b(
 
     Returns
     -----------------------
-    Instace of ListeriaSeeligeri12b graph.
+    Instace of Listeria seeligeri 12b graph.
 
 	References
 	---------------------

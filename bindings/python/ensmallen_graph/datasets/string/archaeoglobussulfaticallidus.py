@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobusSulfaticallidus.
+This file offers the methods to automatically retrieve the graph Archaeoglobus sulfaticallidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobusSulfaticallidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobusSulfaticallidus graph.
+    """Return new instance of the Archaeoglobus sulfaticallidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArchaeoglobusSulfaticallidus(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobusSulfaticallidus graph.
+    Instace of Archaeoglobus sulfaticallidus graph.
 
 	References
 	---------------------

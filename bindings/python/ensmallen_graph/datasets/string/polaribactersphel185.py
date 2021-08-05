@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterSpHel185.
+This file offers the methods to automatically retrieve the graph Polaribacter sp. Hel185.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterSpHel185(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterSpHel185 graph.
+    """Return new instance of the Polaribacter sp. Hel185 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolaribacterSpHel185(
 
     Returns
     -----------------------
-    Instace of PolaribacterSpHel185 graph.
+    Instace of Polaribacter sp. Hel185 graph.
 
 	References
 	---------------------

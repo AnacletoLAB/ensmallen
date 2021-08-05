@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSp10.
+This file offers the methods to automatically retrieve the graph Prevotella sp. 10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSp10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSp10 graph.
+    """Return new instance of the Prevotella sp. 10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaSp10(
 
     Returns
     -----------------------
-    Instace of PrevotellaSp10 graph.
+    Instace of Prevotella sp. 10 graph.
 
 	References
 	---------------------

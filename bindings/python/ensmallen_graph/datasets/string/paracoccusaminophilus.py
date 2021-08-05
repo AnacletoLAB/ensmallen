@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusAminophilus.
+This file offers the methods to automatically retrieve the graph Paracoccus aminophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusAminophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusAminophilus graph.
+    """Return new instance of the Paracoccus aminophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusAminophilus(
 
     Returns
     -----------------------
-    Instace of ParacoccusAminophilus graph.
+    Instace of Paracoccus aminophilus graph.
 
 	References
 	---------------------

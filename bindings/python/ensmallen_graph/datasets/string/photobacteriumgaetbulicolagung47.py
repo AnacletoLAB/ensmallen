@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumGaetbulicolaGung47.
+This file offers the methods to automatically retrieve the graph Photobacterium gaetbulicola Gung47.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumGaetbulicolaGung47(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumGaetbulicolaGung47 graph.
+    """Return new instance of the Photobacterium gaetbulicola Gung47 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumGaetbulicolaGung47(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumGaetbulicolaGung47 graph.
+    Instace of Photobacterium gaetbulicola Gung47 graph.
 
 	References
 	---------------------

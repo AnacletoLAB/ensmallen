@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalolactibacillusMiurensis.
+This file offers the methods to automatically retrieve the graph Halolactibacillus miurensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalolactibacillusMiurensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalolactibacillusMiurensis graph.
+    """Return new instance of the Halolactibacillus miurensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalolactibacillusMiurensis(
 
     Returns
     -----------------------
-    Instace of HalolactibacillusMiurensis graph.
+    Instace of Halolactibacillus miurensis graph.
 
 	References
 	---------------------

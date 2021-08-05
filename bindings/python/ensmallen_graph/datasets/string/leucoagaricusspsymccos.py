@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucoagaricusSpSymcCos.
+This file offers the methods to automatically retrieve the graph Leucoagaricus sp. SymC.cos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucoagaricusSpSymcCos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucoagaricusSpSymcCos graph.
+    """Return new instance of the Leucoagaricus sp. SymC.cos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucoagaricusSpSymcCos(
 
     Returns
     -----------------------
-    Instace of LeucoagaricusSpSymcCos graph.
+    Instace of Leucoagaricus sp. SymC.cos graph.
 
 	References
 	---------------------

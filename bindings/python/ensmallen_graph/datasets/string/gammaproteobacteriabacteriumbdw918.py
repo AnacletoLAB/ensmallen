@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumBdw918.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium BDW918.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumBdw918(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumBdw918 graph.
+    """Return new instance of the Gammaproteobacteria bacterium BDW918 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumBdw918(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumBdw918 graph.
+    Instace of Gammaproteobacteria bacterium BDW918 graph.
 
 	References
 	---------------------

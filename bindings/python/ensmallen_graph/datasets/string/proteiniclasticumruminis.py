@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniclasticumRuminis.
+This file offers the methods to automatically retrieve the graph Proteiniclasticum ruminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniclasticumRuminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniclasticumRuminis graph.
+    """Return new instance of the Proteiniclasticum ruminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProteiniclasticumRuminis(
 
     Returns
     -----------------------
-    Instace of ProteiniclasticumRuminis graph.
+    Instace of Proteiniclasticum ruminis graph.
 
 	References
 	---------------------

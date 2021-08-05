@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelotrichaceaeBacteriumNk3d112.
+This file offers the methods to automatically retrieve the graph Erysipelotrichaceae bacterium NK3D112.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelotrichaceaeBacteriumNk3d112(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelotrichaceaeBacteriumNk3d112 graph.
+    """Return new instance of the Erysipelotrichaceae bacterium NK3D112 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErysipelotrichaceaeBacteriumNk3d112(
 
     Returns
     -----------------------
-    Instace of ErysipelotrichaceaeBacteriumNk3d112 graph.
+    Instace of Erysipelotrichaceae bacterium NK3D112 graph.
 
 	References
 	---------------------

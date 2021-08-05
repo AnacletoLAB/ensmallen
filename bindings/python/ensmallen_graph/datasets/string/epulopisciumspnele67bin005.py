@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpNele67Bin005.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. Nele67-Bin005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpNele67Bin005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpNele67Bin005 graph.
+    """Return new instance of the Epulopiscium sp. Nele67-Bin005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpNele67Bin005(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpNele67Bin005 graph.
+    Instace of Epulopiscium sp. Nele67-Bin005 graph.
 
 	References
 	---------------------

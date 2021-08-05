@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusHumi.
+This file offers the methods to automatically retrieve the graph Bacillus humi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusHumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusHumi graph.
+    """Return new instance of the Bacillus humi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusHumi(
 
     Returns
     -----------------------
-    Instace of BacillusHumi graph.
+    Instace of Bacillus humi graph.
 
 	References
 	---------------------

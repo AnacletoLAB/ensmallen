@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogymnoascusSp233421I1.
+This file offers the methods to automatically retrieve the graph Pseudogymnoascus sp. 23342-1-I1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogymnoascusSp233421I1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogymnoascusSp233421I1 graph.
+    """Return new instance of the Pseudogymnoascus sp. 23342-1-I1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudogymnoascusSp233421I1(
 
     Returns
     -----------------------
-    Instace of PseudogymnoascusSp233421I1 graph.
+    Instace of Pseudogymnoascus sp. 23342-1-I1 graph.
 
 	References
 	---------------------

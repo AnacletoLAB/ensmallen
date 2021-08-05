@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoplasmatalesArchaeonEPlasma.
+This file offers the methods to automatically retrieve the graph Thermoplasmatales archaeon E-plasma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoplasmatalesArchaeonEPlasma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoplasmatalesArchaeonEPlasma graph.
+    """Return new instance of the Thermoplasmatales archaeon E-plasma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoplasmatalesArchaeonEPlasma(
 
     Returns
     -----------------------
-    Instace of ThermoplasmatalesArchaeonEPlasma graph.
+    Instace of Thermoplasmatales archaeon E-plasma graph.
 
 	References
 	---------------------

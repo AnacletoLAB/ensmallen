@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaSp513.
+This file offers the methods to automatically retrieve the graph Idiomarina sp. 5.13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaSp513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaSp513 graph.
+    """Return new instance of the Idiomarina sp. 5.13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaSp513(
 
     Returns
     -----------------------
-    Instace of IdiomarinaSp513 graph.
+    Instace of Idiomarina sp. 5.13 graph.
 
 	References
 	---------------------

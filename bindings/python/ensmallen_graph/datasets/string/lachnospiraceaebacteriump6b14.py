@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumP6b14.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium P6B14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumP6b14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumP6b14 graph.
+    """Return new instance of the Lachnospiraceae bacterium P6B14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumP6b14(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumP6b14 graph.
+    Instace of Lachnospiraceae bacterium P6B14 graph.
 
 	References
 	---------------------

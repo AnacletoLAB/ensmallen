@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HungateiclostridiumStraminisolvensJcm21531.
+This file offers the methods to automatically retrieve the graph Hungateiclostridium straminisolvens JCM 21531.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HungateiclostridiumStraminisolvensJcm21531(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HungateiclostridiumStraminisolvensJcm21531 graph.
+    """Return new instance of the Hungateiclostridium straminisolvens JCM 21531 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HungateiclostridiumStraminisolvensJcm21531(
 
     Returns
     -----------------------
-    Instace of HungateiclostridiumStraminisolvensJcm21531 graph.
+    Instace of Hungateiclostridium straminisolvens JCM 21531 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EchinopsTelfairi.
+This file offers the methods to automatically retrieve the graph Echinops telfairi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EchinopsTelfairi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EchinopsTelfairi graph.
+    """Return new instance of the Echinops telfairi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EchinopsTelfairi(
 
     Returns
     -----------------------
-    Instace of EchinopsTelfairi graph.
+    Instace of Echinops telfairi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaPsittaci10139811.
+This file offers the methods to automatically retrieve the graph Chlamydia psittaci 10139811.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaPsittaci10139811(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaPsittaci10139811 graph.
+    """Return new instance of the Chlamydia psittaci 10139811 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaPsittaci10139811(
 
     Returns
     -----------------------
-    Instace of ChlamydiaPsittaci10139811 graph.
+    Instace of Chlamydia psittaci 10139811 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraVersatilis7.
+This file offers the methods to automatically retrieve the graph Methylotenera versatilis 7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraVersatilis7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraVersatilis7 graph.
+    """Return new instance of the Methylotenera versatilis 7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloteneraVersatilis7(
 
     Returns
     -----------------------
-    Instace of MethyloteneraVersatilis7 graph.
+    Instace of Methylotenera versatilis 7 graph.
 
 	References
 	---------------------

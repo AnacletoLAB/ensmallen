@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaThermophilaDsm6578.
+This file offers the methods to automatically retrieve the graph Spirochaeta thermophila DSM 6578.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaThermophilaDsm6578(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaThermophilaDsm6578 graph.
+    """Return new instance of the Spirochaeta thermophila DSM 6578 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetaThermophilaDsm6578(
 
     Returns
     -----------------------
-    Instace of SpirochaetaThermophilaDsm6578 graph.
+    Instace of Spirochaeta thermophila DSM 6578 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumMarinum.
+This file offers the methods to automatically retrieve the graph Mycobacterium marinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumMarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumMarinum graph.
+    """Return new instance of the Mycobacterium marinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumMarinum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumMarinum graph.
+    Instace of Mycobacterium marinum graph.
 
 	References
 	---------------------

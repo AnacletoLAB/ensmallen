@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PoseidonocellaPacifica.
+This file offers the methods to automatically retrieve the graph Poseidonocella pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PoseidonocellaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PoseidonocellaPacifica graph.
+    """Return new instance of the Poseidonocella pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PoseidonocellaPacifica(
 
     Returns
     -----------------------
-    Instace of PoseidonocellaPacifica graph.
+    Instace of Poseidonocella pacifica graph.
 
 	References
 	---------------------

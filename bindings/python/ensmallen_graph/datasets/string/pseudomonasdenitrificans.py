@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasDenitrificans.
+This file offers the methods to automatically retrieve the graph Pseudomonas denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasDenitrificans graph.
+    """Return new instance of the Pseudomonas denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasDenitrificans(
 
     Returns
     -----------------------
-    Instace of PseudomonasDenitrificans graph.
+    Instace of Pseudomonas denitrificans graph.
 
 	References
 	---------------------

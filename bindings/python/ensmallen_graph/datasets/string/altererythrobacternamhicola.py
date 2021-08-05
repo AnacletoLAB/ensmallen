@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterNamhicola.
+This file offers the methods to automatically retrieve the graph Altererythrobacter namhicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterNamhicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterNamhicola graph.
+    """Return new instance of the Altererythrobacter namhicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterNamhicola(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterNamhicola graph.
+    Instace of Altererythrobacter namhicola graph.
 
 	References
 	---------------------

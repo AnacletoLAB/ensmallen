@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenopusTropicalis.
+This file offers the methods to automatically retrieve the graph Xenopus tropicalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenopusTropicalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenopusTropicalis graph.
+    """Return new instance of the Xenopus tropicalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XenopusTropicalis(
 
     Returns
     -----------------------
-    Instace of XenopusTropicalis graph.
+    Instace of Xenopus tropicalis graph.
 
 	References
 	---------------------

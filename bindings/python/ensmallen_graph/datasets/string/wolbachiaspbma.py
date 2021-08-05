@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaSpBma.
+This file offers the methods to automatically retrieve the graph Wolbachia sp. Bma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaSpBma(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaSpBma graph.
+    """Return new instance of the Wolbachia sp. Bma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaSpBma(
 
     Returns
     -----------------------
-    Instace of WolbachiaSpBma graph.
+    Instace of Wolbachia sp. Bma graph.
 
 	References
 	---------------------

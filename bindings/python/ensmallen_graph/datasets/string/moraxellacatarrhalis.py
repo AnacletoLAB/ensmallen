@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaCatarrhalis.
+This file offers the methods to automatically retrieve the graph Moraxella catarrhalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaCatarrhalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaCatarrhalis graph.
+    """Return new instance of the Moraxella catarrhalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoraxellaCatarrhalis(
 
     Returns
     -----------------------
-    Instace of MoraxellaCatarrhalis graph.
+    Instace of Moraxella catarrhalis graph.
 
 	References
 	---------------------

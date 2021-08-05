@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph M3plates.
+This file offers the methods to automatically retrieve the graph m3plates.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def M3plates(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the M3plates graph.
+    """Return new instance of the m3plates graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def M3plates(
 
     Returns
     -----------------------
-    Instace of M3plates graph.
+    Instace of m3plates graph.
 
 	References
 	---------------------

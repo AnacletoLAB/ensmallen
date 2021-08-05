@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaIowae.
+This file offers the methods to automatically retrieve the graph Mycoplasma iowae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaIowae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaIowae graph.
+    """Return new instance of the Mycoplasma iowae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaIowae(
 
     Returns
     -----------------------
-    Instace of MycoplasmaIowae graph.
+    Instace of Mycoplasma iowae graph.
 
 	References
 	---------------------

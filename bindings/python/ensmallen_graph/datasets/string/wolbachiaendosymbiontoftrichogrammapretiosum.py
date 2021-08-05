@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfTrichogrammaPretiosum.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Trichogramma pretiosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfTrichogrammaPretiosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfTrichogrammaPretiosum graph.
+    """Return new instance of the Wolbachia endosymbiont of Trichogramma pretiosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfTrichogrammaPretiosum(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfTrichogrammaPretiosum graph.
+    Instace of Wolbachia endosymbiont of Trichogramma pretiosum graph.
 
 	References
 	---------------------

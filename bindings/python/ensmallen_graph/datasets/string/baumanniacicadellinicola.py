@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BaumanniaCicadellinicola.
+This file offers the methods to automatically retrieve the graph Baumannia cicadellinicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BaumanniaCicadellinicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BaumanniaCicadellinicola graph.
+    """Return new instance of the Baumannia cicadellinicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BaumanniaCicadellinicola(
 
     Returns
     -----------------------
-    Instace of BaumanniaCicadellinicola graph.
+    Instace of Baumannia cicadellinicola graph.
 
 	References
 	---------------------

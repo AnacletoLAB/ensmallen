@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidithiobacillusThiooxidans.
+This file offers the methods to automatically retrieve the graph Acidithiobacillus thiooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidithiobacillusThiooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidithiobacillusThiooxidans graph.
+    """Return new instance of the Acidithiobacillus thiooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidithiobacillusThiooxidans(
 
     Returns
     -----------------------
-    Instace of AcidithiobacillusThiooxidans graph.
+    Instace of Acidithiobacillus thiooxidans graph.
 
 	References
 	---------------------

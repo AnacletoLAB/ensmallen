@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFukatsuiaSymbiotica.
+This file offers the methods to automatically retrieve the graph Candidatus Fukatsuia symbiotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFukatsuiaSymbiotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFukatsuiaSymbiotica graph.
+    """Return new instance of the Candidatus Fukatsuia symbiotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFukatsuiaSymbiotica(
 
     Returns
     -----------------------
-    Instace of CandidatusFukatsuiaSymbiotica graph.
+    Instace of Candidatus Fukatsuia symbiotica graph.
 
 	References
 	---------------------

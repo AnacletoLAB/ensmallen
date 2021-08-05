@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHyosynoviae.
+This file offers the methods to automatically retrieve the graph Mycoplasma hyosynoviae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHyosynoviae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHyosynoviae graph.
+    """Return new instance of the Mycoplasma hyosynoviae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaHyosynoviae(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHyosynoviae graph.
+    Instace of Mycoplasma hyosynoviae graph.
 
 	References
 	---------------------

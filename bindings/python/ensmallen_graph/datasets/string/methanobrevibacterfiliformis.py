@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterFiliformis.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter filiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterFiliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterFiliformis graph.
+    """Return new instance of the Methanobrevibacter filiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterFiliformis(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterFiliformis graph.
+    Instace of Methanobrevibacter filiformis graph.
 
 	References
 	---------------------

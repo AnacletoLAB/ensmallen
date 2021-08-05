@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523.
+This file offers the methods to automatically retrieve the graph Leptospira yanagawae serovar Saopaulo str. Sao Paulo ATCC 700523.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523 graph.
+    """Return new instance of the Leptospira yanagawae serovar Saopaulo str. Sao Paulo ATCC 700523 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523(
 
     Returns
     -----------------------
-    Instace of LeptospiraYanagawaeSerovarSaopauloStrSaoPauloAtcc700523 graph.
+    Instace of Leptospira yanagawae serovar Saopaulo str. Sao Paulo ATCC 700523 graph.
 
 	References
 	---------------------

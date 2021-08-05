@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminococcusSpCag542.
+This file offers the methods to automatically retrieve the graph Acidaminococcus sp. CAG:542.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminococcusSpCag542(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminococcusSpCag542 graph.
+    """Return new instance of the Acidaminococcus sp. CAG:542 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidaminococcusSpCag542(
 
     Returns
     -----------------------
-    Instace of AcidaminococcusSpCag542 graph.
+    Instace of Acidaminococcus sp. CAG:542 graph.
 
 	References
 	---------------------

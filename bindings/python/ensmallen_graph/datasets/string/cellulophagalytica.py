@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaLytica.
+This file offers the methods to automatically retrieve the graph Cellulophaga lytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaLytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaLytica graph.
+    """Return new instance of the Cellulophaga lytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulophagaLytica(
 
     Returns
     -----------------------
-    Instace of CellulophagaLytica graph.
+    Instace of Cellulophaga lytica graph.
 
 	References
 	---------------------

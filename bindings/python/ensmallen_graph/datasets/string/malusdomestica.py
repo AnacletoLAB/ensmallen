@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalusDomestica.
+This file offers the methods to automatically retrieve the graph Malus domestica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalusDomestica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalusDomestica graph.
+    """Return new instance of the Malus domestica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MalusDomestica(
 
     Returns
     -----------------------
-    Instace of MalusDomestica graph.
+    Instace of Malus domestica graph.
 
 	References
 	---------------------

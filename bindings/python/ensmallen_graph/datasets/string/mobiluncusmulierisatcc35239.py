@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MobiluncusMulierisAtcc35239.
+This file offers the methods to automatically retrieve the graph Mobiluncus mulieris ATCC 35239.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MobiluncusMulierisAtcc35239(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MobiluncusMulierisAtcc35239 graph.
+    """Return new instance of the Mobiluncus mulieris ATCC 35239 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MobiluncusMulierisAtcc35239(
 
     Returns
     -----------------------
-    Instace of MobiluncusMulierisAtcc35239 graph.
+    Instace of Mobiluncus mulieris ATCC 35239 graph.
 
 	References
 	---------------------

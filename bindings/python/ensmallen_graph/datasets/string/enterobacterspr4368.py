@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterSpR4368.
+This file offers the methods to automatically retrieve the graph Enterobacter sp. R4368.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterSpR4368(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterSpR4368 graph.
+    """Return new instance of the Enterobacter sp. R4368 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacterSpR4368(
 
     Returns
     -----------------------
-    Instace of EnterobacterSpR4368 graph.
+    Instace of Enterobacter sp. R4368 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaTobetsuensis.
+This file offers the methods to automatically retrieve the graph Veillonella tobetsuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaTobetsuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaTobetsuensis graph.
+    """Return new instance of the Veillonella tobetsuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaTobetsuensis(
 
     Returns
     -----------------------
-    Instace of VeillonellaTobetsuensis graph.
+    Instace of Veillonella tobetsuensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GelidibacterAlgens.
+This file offers the methods to automatically retrieve the graph Gelidibacter algens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GelidibacterAlgens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GelidibacterAlgens graph.
+    """Return new instance of the Gelidibacter algens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GelidibacterAlgens(
 
     Returns
     -----------------------
-    Instace of GelidibacterAlgens graph.
+    Instace of Gelidibacter algens graph.
 
 	References
 	---------------------

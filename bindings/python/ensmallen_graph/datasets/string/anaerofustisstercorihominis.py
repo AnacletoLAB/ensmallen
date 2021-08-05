@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerofustisStercorihominis.
+This file offers the methods to automatically retrieve the graph Anaerofustis stercorihominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerofustisStercorihominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerofustisStercorihominis graph.
+    """Return new instance of the Anaerofustis stercorihominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerofustisStercorihominis(
 
     Returns
     -----------------------
-    Instace of AnaerofustisStercorihominis graph.
+    Instace of Anaerofustis stercorihominis graph.
 
 	References
 	---------------------

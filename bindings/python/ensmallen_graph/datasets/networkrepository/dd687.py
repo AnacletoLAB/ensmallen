@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dd687.
+This file offers the methods to automatically retrieve the graph DD687.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dd687(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dd687 graph.
+    """Return new instance of the DD687 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dd687(
 
     Returns
     -----------------------
-    Instace of Dd687 graph.
+    Instace of DD687 graph.
 
 	References
 	---------------------

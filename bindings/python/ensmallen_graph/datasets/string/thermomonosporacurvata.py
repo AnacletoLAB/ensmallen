@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomonosporaCurvata.
+This file offers the methods to automatically retrieve the graph Thermomonospora curvata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomonosporaCurvata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomonosporaCurvata graph.
+    """Return new instance of the Thermomonospora curvata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermomonosporaCurvata(
 
     Returns
     -----------------------
-    Instace of ThermomonosporaCurvata graph.
+    Instace of Thermomonospora curvata graph.
 
 	References
 	---------------------

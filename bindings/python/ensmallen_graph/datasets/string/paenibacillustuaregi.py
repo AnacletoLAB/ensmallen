@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusTuaregi.
+This file offers the methods to automatically retrieve the graph Paenibacillus tuaregi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusTuaregi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusTuaregi graph.
+    """Return new instance of the Paenibacillus tuaregi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusTuaregi(
 
     Returns
     -----------------------
-    Instace of PaenibacillusTuaregi graph.
+    Instace of Paenibacillus tuaregi graph.
 
 	References
 	---------------------

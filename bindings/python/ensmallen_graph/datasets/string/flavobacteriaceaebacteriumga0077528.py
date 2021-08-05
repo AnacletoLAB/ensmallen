@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumGa0077528.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium Ga0077528.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumGa0077528(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumGa0077528 graph.
+    """Return new instance of the Flavobacteriaceae bacterium Ga0077528 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumGa0077528(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumGa0077528 graph.
+    Instace of Flavobacteriaceae bacterium Ga0077528 graph.
 
 	References
 	---------------------

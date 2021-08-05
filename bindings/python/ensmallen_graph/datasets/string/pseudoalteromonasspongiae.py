@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpongiae.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas spongiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSpongiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpongiae graph.
+    """Return new instance of the Pseudoalteromonas spongiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasSpongiae(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpongiae graph.
+    Instace of Pseudoalteromonas spongiae graph.
 
 	References
 	---------------------

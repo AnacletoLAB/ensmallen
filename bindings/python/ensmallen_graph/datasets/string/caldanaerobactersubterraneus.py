@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldanaerobacterSubterraneus.
+This file offers the methods to automatically retrieve the graph Caldanaerobacter subterraneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldanaerobacterSubterraneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldanaerobacterSubterraneus graph.
+    """Return new instance of the Caldanaerobacter subterraneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldanaerobacterSubterraneus(
 
     Returns
     -----------------------
-    Instace of CaldanaerobacterSubterraneus graph.
+    Instace of Caldanaerobacter subterraneus graph.
 
 	References
 	---------------------

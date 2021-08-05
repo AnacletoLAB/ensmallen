@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DenticepsClupeoides.
+This file offers the methods to automatically retrieve the graph Denticeps clupeoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DenticepsClupeoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DenticepsClupeoides graph.
+    """Return new instance of the Denticeps clupeoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DenticepsClupeoides(
 
     Returns
     -----------------------
-    Instace of DenticepsClupeoides graph.
+    Instace of Denticeps clupeoides graph.
 
 	References
 	---------------------

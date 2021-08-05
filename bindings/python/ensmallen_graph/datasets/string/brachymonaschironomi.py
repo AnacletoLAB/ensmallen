@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachymonasChironomi.
+This file offers the methods to automatically retrieve the graph Brachymonas chironomi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachymonasChironomi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachymonasChironomi graph.
+    """Return new instance of the Brachymonas chironomi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachymonasChironomi(
 
     Returns
     -----------------------
-    Instace of BrachymonasChironomi graph.
+    Instace of Brachymonas chironomi graph.
 
 	References
 	---------------------

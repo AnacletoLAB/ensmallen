@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YoungiibacterFragilis.
+This file offers the methods to automatically retrieve the graph Youngiibacter fragilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YoungiibacterFragilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YoungiibacterFragilis graph.
+    """Return new instance of the Youngiibacter fragilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YoungiibacterFragilis(
 
     Returns
     -----------------------
-    Instace of YoungiibacterFragilis graph.
+    Instace of Youngiibacter fragilis graph.
 
 	References
 	---------------------

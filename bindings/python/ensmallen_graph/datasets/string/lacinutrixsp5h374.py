@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacinutrixSp5h374.
+This file offers the methods to automatically retrieve the graph Lacinutrix sp. 5H374.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacinutrixSp5h374(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacinutrixSp5h374 graph.
+    """Return new instance of the Lacinutrix sp. 5H374 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LacinutrixSp5h374(
 
     Returns
     -----------------------
-    Instace of LacinutrixSp5h374 graph.
+    Instace of Lacinutrix sp. 5H374 graph.
 
 	References
 	---------------------

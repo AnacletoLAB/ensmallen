@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentibacterSpPpn85.
+This file offers the methods to automatically retrieve the graph Rodentibacter sp. Ppn85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentibacterSpPpn85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentibacterSpPpn85 graph.
+    """Return new instance of the Rodentibacter sp. Ppn85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentibacterSpPpn85(
 
     Returns
     -----------------------
-    Instace of RodentibacterSpPpn85 graph.
+    Instace of Rodentibacter sp. Ppn85 graph.
 
 	References
 	---------------------

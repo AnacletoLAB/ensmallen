@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaSpTw09308.
+This file offers the methods to automatically retrieve the graph Escherichia sp. TW09308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaSpTw09308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaSpTw09308 graph.
+    """Return new instance of the Escherichia sp. TW09308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaSpTw09308(
 
     Returns
     -----------------------
-    Instace of EscherichiaSpTw09308 graph.
+    Instace of Escherichia sp. TW09308 graph.
 
 	References
 	---------------------

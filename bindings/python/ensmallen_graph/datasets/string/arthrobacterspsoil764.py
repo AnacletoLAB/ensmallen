@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpSoil764.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. Soil764.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpSoil764(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpSoil764 graph.
+    """Return new instance of the Arthrobacter sp. Soil764 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpSoil764(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpSoil764 graph.
+    Instace of Arthrobacter sp. Soil764 graph.
 
 	References
 	---------------------

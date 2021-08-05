@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfCimexLectularius.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Cimex lectularius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfCimexLectularius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfCimexLectularius graph.
+    """Return new instance of the Wolbachia endosymbiont of Cimex lectularius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfCimexLectularius(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfCimexLectularius graph.
+    Instace of Wolbachia endosymbiont of Cimex lectularius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobotrysFlagrans.
+This file offers the methods to automatically retrieve the graph Arthrobotrys flagrans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobotrysFlagrans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobotrysFlagrans graph.
+    """Return new instance of the Arthrobotrys flagrans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobotrysFlagrans(
 
     Returns
     -----------------------
-    Instace of ArthrobotrysFlagrans graph.
+    Instace of Arthrobotrys flagrans graph.
 
 	References
 	---------------------

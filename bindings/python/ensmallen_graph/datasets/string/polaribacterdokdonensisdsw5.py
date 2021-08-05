@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterDokdonensisDsw5.
+This file offers the methods to automatically retrieve the graph Polaribacter dokdonensis DSW-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterDokdonensisDsw5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterDokdonensisDsw5 graph.
+    """Return new instance of the Polaribacter dokdonensis DSW-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterDokdonensisDsw5(
 
     Returns
     -----------------------
-    Instace of PolaribacterDokdonensisDsw5 graph.
+    Instace of Polaribacter dokdonensis DSW-5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscellaneousCrenarchaeotaGroup6ArchaeonAd81.
+This file offers the methods to automatically retrieve the graph miscellaneous Crenarchaeota group-6 archaeon AD8-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MiscellaneousCrenarchaeotaGroup6ArchaeonAd81(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscellaneousCrenarchaeotaGroup6ArchaeonAd81 graph.
+    """Return new instance of the miscellaneous Crenarchaeota group-6 archaeon AD8-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MiscellaneousCrenarchaeotaGroup6ArchaeonAd81(
 
     Returns
     -----------------------
-    Instace of MiscellaneousCrenarchaeotaGroup6ArchaeonAd81 graph.
+    Instace of miscellaneous Crenarchaeota group-6 archaeon AD8-1 graph.
 
 	References
 	---------------------

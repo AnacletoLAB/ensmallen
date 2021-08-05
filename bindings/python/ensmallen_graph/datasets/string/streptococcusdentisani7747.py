@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDentisani7747.
+This file offers the methods to automatically retrieve the graph Streptococcus dentisani 7747.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDentisani7747(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDentisani7747 graph.
+    """Return new instance of the Streptococcus dentisani 7747 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDentisani7747(
 
     Returns
     -----------------------
-    Instace of StreptococcusDentisani7747 graph.
+    Instace of Streptococcus dentisani 7747 graph.
 
 	References
 	---------------------

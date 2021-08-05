@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DothistromaSeptosporumNze10.
+This file offers the methods to automatically retrieve the graph Dothistroma septosporum NZE10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DothistromaSeptosporumNze10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DothistromaSeptosporumNze10 graph.
+    """Return new instance of the Dothistroma septosporum NZE10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DothistromaSeptosporumNze10(
 
     Returns
     -----------------------
-    Instace of DothistromaSeptosporumNze10 graph.
+    Instace of Dothistroma septosporum NZE10 graph.
 
 	References
 	---------------------

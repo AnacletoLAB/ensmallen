@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmatimonadetesBacterium5513.
+This file offers the methods to automatically retrieve the graph Armatimonadetes bacterium 55-13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmatimonadetesBacterium5513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmatimonadetesBacterium5513 graph.
+    """Return new instance of the Armatimonadetes bacterium 55-13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmatimonadetesBacterium5513(
 
     Returns
     -----------------------
-    Instace of ArmatimonadetesBacterium5513 graph.
+    Instace of Armatimonadetes bacterium 55-13 graph.
 
 	References
 	---------------------

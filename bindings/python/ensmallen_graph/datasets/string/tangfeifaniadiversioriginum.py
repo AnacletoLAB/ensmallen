@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TangfeifaniaDiversioriginum.
+This file offers the methods to automatically retrieve the graph Tangfeifania diversioriginum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TangfeifaniaDiversioriginum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TangfeifaniaDiversioriginum graph.
+    """Return new instance of the Tangfeifania diversioriginum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TangfeifaniaDiversioriginum(
 
     Returns
     -----------------------
-    Instace of TangfeifaniaDiversioriginum graph.
+    Instace of Tangfeifania diversioriginum graph.
 
 	References
 	---------------------

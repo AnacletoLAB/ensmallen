@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusTengchongensis.
+This file offers the methods to automatically retrieve the graph Thermus tengchongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusTengchongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusTengchongensis graph.
+    """Return new instance of the Thermus tengchongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusTengchongensis(
 
     Returns
     -----------------------
-    Instace of ThermusTengchongensis graph.
+    Instace of Thermus tengchongensis graph.
 
 	References
 	---------------------

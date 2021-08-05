@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrocodylusPorosus.
+This file offers the methods to automatically retrieve the graph Crocodylus porosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrocodylusPorosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrocodylusPorosus graph.
+    """Return new instance of the Crocodylus porosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CrocodylusPorosus(
 
     Returns
     -----------------------
-    Instace of CrocodylusPorosus graph.
+    Instace of Crocodylus porosus graph.
 
 	References
 	---------------------

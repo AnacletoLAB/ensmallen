@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaBronchialis.
+This file offers the methods to automatically retrieve the graph Bordetella bronchialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaBronchialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaBronchialis graph.
+    """Return new instance of the Bordetella bronchialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BordetellaBronchialis(
 
     Returns
     -----------------------
-    Instace of BordetellaBronchialis graph.
+    Instace of Bordetella bronchialis graph.
 
 	References
 	---------------------

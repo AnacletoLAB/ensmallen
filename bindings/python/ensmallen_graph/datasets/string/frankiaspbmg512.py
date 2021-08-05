@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpBmg512.
+This file offers the methods to automatically retrieve the graph Frankia sp. BMG512.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpBmg512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpBmg512 graph.
+    """Return new instance of the Frankia sp. BMG512 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpBmg512(
 
     Returns
     -----------------------
-    Instace of FrankiaSpBmg512 graph.
+    Instace of Frankia sp. BMG512 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpHr7.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. HR7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpHr7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpHr7 graph.
+    """Return new instance of the Acinetobacter sp. HR7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSpHr7(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpHr7 graph.
+    Instace of Acinetobacter sp. HR7 graph.
 
 	References
 	---------------------

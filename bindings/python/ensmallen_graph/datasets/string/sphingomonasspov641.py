@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpOv641.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. OV641.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpOv641(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpOv641 graph.
+    """Return new instance of the Sphingomonas sp. OV641 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpOv641(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpOv641 graph.
+    Instace of Sphingomonas sp. OV641 graph.
 
 	References
 	---------------------

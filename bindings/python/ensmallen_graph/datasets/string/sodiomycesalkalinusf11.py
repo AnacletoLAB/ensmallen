@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SodiomycesAlkalinusF11.
+This file offers the methods to automatically retrieve the graph Sodiomyces alkalinus F11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SodiomycesAlkalinusF11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SodiomycesAlkalinusF11 graph.
+    """Return new instance of the Sodiomyces alkalinus F11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SodiomycesAlkalinusF11(
 
     Returns
     -----------------------
-    Instace of SodiomycesAlkalinusF11 graph.
+    Instace of Sodiomyces alkalinus F11 graph.
 
 	References
 	---------------------

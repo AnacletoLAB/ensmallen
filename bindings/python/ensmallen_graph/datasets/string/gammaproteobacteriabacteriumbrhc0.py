@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumBrhC0.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium BRH_c0.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumBrhC0(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumBrhC0 graph.
+    """Return new instance of the Gammaproteobacteria bacterium BRH_c0 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumBrhC0(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumBrhC0 graph.
+    Instace of Gammaproteobacteria bacterium BRH_c0 graph.
 
 	References
 	---------------------

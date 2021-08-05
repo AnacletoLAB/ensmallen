@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SistotremastrumSuecicumHhb10207Ss3.
+This file offers the methods to automatically retrieve the graph Sistotremastrum suecicum HHB10207 ss-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SistotremastrumSuecicumHhb10207Ss3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SistotremastrumSuecicumHhb10207Ss3 graph.
+    """Return new instance of the Sistotremastrum suecicum HHB10207 ss-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SistotremastrumSuecicumHhb10207Ss3(
 
     Returns
     -----------------------
-    Instace of SistotremastrumSuecicumHhb10207Ss3 graph.
+    Instace of Sistotremastrum suecicum HHB10207 ss-3 graph.
 
 	References
 	---------------------

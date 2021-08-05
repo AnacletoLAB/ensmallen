@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaLaterculaDsm2041.
+This file offers the methods to automatically retrieve the graph Aquimarina latercula DSM 2041.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaLaterculaDsm2041(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaLaterculaDsm2041 graph.
+    """Return new instance of the Aquimarina latercula DSM 2041 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquimarinaLaterculaDsm2041(
 
     Returns
     -----------------------
-    Instace of AquimarinaLaterculaDsm2041 graph.
+    Instace of Aquimarina latercula DSM 2041 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacebacteriaBacteriumGw2011Gwa14610.
+This file offers the methods to automatically retrieve the graph Candidatus Pacebacteria bacterium GW2011_GWA1_46_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPacebacteriaBacteriumGw2011Gwa14610(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacebacteriaBacteriumGw2011Gwa14610 graph.
+    """Return new instance of the Candidatus Pacebacteria bacterium GW2011_GWA1_46_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPacebacteriaBacteriumGw2011Gwa14610(
 
     Returns
     -----------------------
-    Instace of CandidatusPacebacteriaBacteriumGw2011Gwa14610 graph.
+    Instace of Candidatus Pacebacteria bacterium GW2011_GWA1_46_10 graph.
 
 	References
 	---------------------

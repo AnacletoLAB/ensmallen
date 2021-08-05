@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaChrysopicola.
+This file offers the methods to automatically retrieve the graph Spiroplasma chrysopicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaChrysopicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaChrysopicola graph.
+    """Return new instance of the Spiroplasma chrysopicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaChrysopicola(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaChrysopicola graph.
+    Instace of Spiroplasma chrysopicola graph.
 
 	References
 	---------------------

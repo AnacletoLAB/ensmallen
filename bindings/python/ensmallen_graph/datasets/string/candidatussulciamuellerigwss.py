@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSulciaMuelleriGwss.
+This file offers the methods to automatically retrieve the graph Candidatus Sulcia muelleri GWSS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSulciaMuelleriGwss(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSulciaMuelleriGwss graph.
+    """Return new instance of the Candidatus Sulcia muelleri GWSS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSulciaMuelleriGwss(
 
     Returns
     -----------------------
-    Instace of CandidatusSulciaMuelleriGwss graph.
+    Instace of Candidatus Sulcia muelleri GWSS graph.
 
 	References
 	---------------------

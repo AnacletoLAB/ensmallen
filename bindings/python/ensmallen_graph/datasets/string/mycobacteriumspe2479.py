@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE2479.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E2479.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE2479(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE2479 graph.
+    """Return new instance of the Mycobacterium sp. E2479 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE2479(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE2479 graph.
+    Instace of Mycobacterium sp. E2479 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucosisporaSediminis.
+This file offers the methods to automatically retrieve the graph Verrucosispora sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucosisporaSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucosisporaSediminis graph.
+    """Return new instance of the Verrucosispora sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucosisporaSediminis(
 
     Returns
     -----------------------
-    Instace of VerrucosisporaSediminis graph.
+    Instace of Verrucosispora sediminis graph.
 
 	References
 	---------------------

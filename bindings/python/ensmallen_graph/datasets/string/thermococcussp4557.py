@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusSp4557.
+This file offers the methods to automatically retrieve the graph Thermococcus sp. 4557.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusSp4557(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusSp4557 graph.
+    """Return new instance of the Thermococcus sp. 4557 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusSp4557(
 
     Returns
     -----------------------
-    Instace of ThermococcusSp4557 graph.
+    Instace of Thermococcus sp. 4557 graph.
 
 	References
 	---------------------

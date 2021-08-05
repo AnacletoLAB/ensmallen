@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatumellaSpNml063099.
+This file offers the methods to automatically retrieve the graph Tatumella sp. NML063099.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatumellaSpNml063099(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatumellaSpNml063099 graph.
+    """Return new instance of the Tatumella sp. NML063099 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TatumellaSpNml063099(
 
     Returns
     -----------------------
-    Instace of TatumellaSpNml063099 graph.
+    Instace of Tatumella sp. NML063099 graph.
 
 	References
 	---------------------

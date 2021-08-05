@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesEggerthii.
+This file offers the methods to automatically retrieve the graph Bacteroides eggerthii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesEggerthii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesEggerthii graph.
+    """Return new instance of the Bacteroides eggerthii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesEggerthii(
 
     Returns
     -----------------------
-    Instace of BacteroidesEggerthii graph.
+    Instace of Bacteroides eggerthii graph.
 
 	References
 	---------------------

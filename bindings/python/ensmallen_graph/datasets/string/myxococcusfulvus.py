@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyxococcusFulvus.
+This file offers the methods to automatically retrieve the graph Myxococcus fulvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyxococcusFulvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyxococcusFulvus graph.
+    """Return new instance of the Myxococcus fulvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyxococcusFulvus(
 
     Returns
     -----------------------
-    Instace of MyxococcusFulvus graph.
+    Instace of Myxococcus fulvus graph.
 
 	References
 	---------------------

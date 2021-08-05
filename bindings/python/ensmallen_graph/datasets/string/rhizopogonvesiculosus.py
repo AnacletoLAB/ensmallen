@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizopogonVesiculosus.
+This file offers the methods to automatically retrieve the graph Rhizopogon vesiculosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizopogonVesiculosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizopogonVesiculosus graph.
+    """Return new instance of the Rhizopogon vesiculosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizopogonVesiculosus(
 
     Returns
     -----------------------
-    Instace of RhizopogonVesiculosus graph.
+    Instace of Rhizopogon vesiculosus graph.
 
 	References
 	---------------------

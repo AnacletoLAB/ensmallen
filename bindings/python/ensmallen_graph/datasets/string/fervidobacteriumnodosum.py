@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FervidobacteriumNodosum.
+This file offers the methods to automatically retrieve the graph Fervidobacterium nodosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FervidobacteriumNodosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FervidobacteriumNodosum graph.
+    """Return new instance of the Fervidobacterium nodosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FervidobacteriumNodosum(
 
     Returns
     -----------------------
-    Instace of FervidobacteriumNodosum graph.
+    Instace of Fervidobacterium nodosum graph.
 
 	References
 	---------------------

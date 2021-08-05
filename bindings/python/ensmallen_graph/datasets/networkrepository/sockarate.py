@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocKarate.
+This file offers the methods to automatically retrieve the graph soc-karate.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocKarate(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocKarate graph.
+    """Return new instance of the soc-karate graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocKarate(
 
     Returns
     -----------------------
-    Instace of SocKarate graph.
+    Instace of soc-karate graph.
 
 	References
 	---------------------

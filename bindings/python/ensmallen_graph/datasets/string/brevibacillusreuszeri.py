@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusReuszeri.
+This file offers the methods to automatically retrieve the graph Brevibacillus reuszeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusReuszeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusReuszeri graph.
+    """Return new instance of the Brevibacillus reuszeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacillusReuszeri(
 
     Returns
     -----------------------
-    Instace of BrevibacillusReuszeri graph.
+    Instace of Brevibacillus reuszeri graph.
 
 	References
 	---------------------

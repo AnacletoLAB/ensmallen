@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterAestuarii.
+This file offers the methods to automatically retrieve the graph Rhodobacter aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterAestuarii graph.
+    """Return new instance of the Rhodobacter aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacterAestuarii(
 
     Returns
     -----------------------
-    Instace of RhodobacterAestuarii graph.
+    Instace of Rhodobacter aestuarii graph.
 
 	References
 	---------------------

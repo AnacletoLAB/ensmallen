@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumSpSma27.
+This file offers the methods to automatically retrieve the graph Methanobacterium sp. SMA-27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumSpSma27(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumSpSma27 graph.
+    """Return new instance of the Methanobacterium sp. SMA-27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobacteriumSpSma27(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumSpSma27 graph.
+    Instace of Methanobacterium sp. SMA-27 graph.
 
 	References
 	---------------------

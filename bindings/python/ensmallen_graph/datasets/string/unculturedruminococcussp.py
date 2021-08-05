@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedRuminococcusSp.
+This file offers the methods to automatically retrieve the graph uncultured Ruminococcus sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedRuminococcusSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedRuminococcusSp graph.
+    """Return new instance of the uncultured Ruminococcus sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedRuminococcusSp(
 
     Returns
     -----------------------
-    Instace of UnculturedRuminococcusSp graph.
+    Instace of uncultured Ruminococcus sp. graph.
 
 	References
 	---------------------

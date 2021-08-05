@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylibiumSpRoot1272.
+This file offers the methods to automatically retrieve the graph Methylibium sp. Root1272.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylibiumSpRoot1272(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylibiumSpRoot1272 graph.
+    """Return new instance of the Methylibium sp. Root1272 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylibiumSpRoot1272(
 
     Returns
     -----------------------
-    Instace of MethylibiumSpRoot1272 graph.
+    Instace of Methylibium sp. Root1272 graph.
 
 	References
 	---------------------

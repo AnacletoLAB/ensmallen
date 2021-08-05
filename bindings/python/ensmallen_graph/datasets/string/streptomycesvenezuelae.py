@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesVenezuelae.
+This file offers the methods to automatically retrieve the graph Streptomyces venezuelae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesVenezuelae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesVenezuelae graph.
+    """Return new instance of the Streptomyces venezuelae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesVenezuelae(
 
     Returns
     -----------------------
-    Instace of StreptomycesVenezuelae graph.
+    Instace of Streptomyces venezuelae graph.
 
 	References
 	---------------------

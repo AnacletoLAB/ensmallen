@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSherrisii.
+This file offers the methods to automatically retrieve the graph Mycobacterium sherrisii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSherrisii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSherrisii graph.
+    """Return new instance of the Mycobacterium sherrisii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSherrisii(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSherrisii graph.
+    Instace of Mycobacterium sherrisii graph.
 
 	References
 	---------------------

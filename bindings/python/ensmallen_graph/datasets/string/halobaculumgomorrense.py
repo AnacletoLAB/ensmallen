@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobaculumGomorrense.
+This file offers the methods to automatically retrieve the graph Halobaculum gomorrense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobaculumGomorrense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobaculumGomorrense graph.
+    """Return new instance of the Halobaculum gomorrense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobaculumGomorrense(
 
     Returns
     -----------------------
-    Instace of HalobaculumGomorrense graph.
+    Instace of Halobaculum gomorrense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSpLeaf456.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. Leaf456.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSpLeaf456(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSpLeaf456 graph.
+    """Return new instance of the Methylobacterium sp. Leaf456 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumSpLeaf456(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSpLeaf456 graph.
+    Instace of Methylobacterium sp. Leaf456 graph.
 
 	References
 	---------------------

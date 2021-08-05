@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SubdoligranulumVariabile.
+This file offers the methods to automatically retrieve the graph Subdoligranulum variabile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SubdoligranulumVariabile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SubdoligranulumVariabile graph.
+    """Return new instance of the Subdoligranulum variabile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SubdoligranulumVariabile(
 
     Returns
     -----------------------
-    Instace of SubdoligranulumVariabile graph.
+    Instace of Subdoligranulum variabile graph.
 
 	References
 	---------------------

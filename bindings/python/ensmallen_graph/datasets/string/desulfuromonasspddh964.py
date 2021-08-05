@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonasSpDdh964.
+This file offers the methods to automatically retrieve the graph Desulfuromonas sp. DDH964.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonasSpDdh964(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonasSpDdh964 graph.
+    """Return new instance of the Desulfuromonas sp. DDH964 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuromonasSpDdh964(
 
     Returns
     -----------------------
-    Instace of DesulfuromonasSpDdh964 graph.
+    Instace of Desulfuromonas sp. DDH964 graph.
 
 	References
 	---------------------

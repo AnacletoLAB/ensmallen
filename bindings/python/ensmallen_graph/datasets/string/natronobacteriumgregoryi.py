@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronobacteriumGregoryi.
+This file offers the methods to automatically retrieve the graph Natronobacterium gregoryi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronobacteriumGregoryi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronobacteriumGregoryi graph.
+    """Return new instance of the Natronobacterium gregoryi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatronobacteriumGregoryi(
 
     Returns
     -----------------------
-    Instace of NatronobacteriumGregoryi graph.
+    Instace of Natronobacterium gregoryi graph.
 
 	References
 	---------------------

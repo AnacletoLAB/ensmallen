@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterRoseus.
+This file offers the methods to automatically retrieve the graph Gluconobacter roseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterRoseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterRoseus graph.
+    """Return new instance of the Gluconobacter roseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GluconobacterRoseus(
 
     Returns
     -----------------------
-    Instace of GluconobacterRoseus graph.
+    Instace of Gluconobacter roseus graph.
 
 	References
 	---------------------

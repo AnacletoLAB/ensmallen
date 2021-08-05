@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaAtypicaKon.
+This file offers the methods to automatically retrieve the graph Veillonella atypica KON.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaAtypicaKon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaAtypicaKon graph.
+    """Return new instance of the Veillonella atypica KON graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaAtypicaKon(
 
     Returns
     -----------------------
-    Instace of VeillonellaAtypicaKon graph.
+    Instace of Veillonella atypica KON graph.
 
 	References
 	---------------------

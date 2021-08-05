@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccidioidesSpLutzii.
+This file offers the methods to automatically retrieve the graph Paracoccidioides sp. lutzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccidioidesSpLutzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccidioidesSpLutzii graph.
+    """Return new instance of the Paracoccidioides sp. lutzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccidioidesSpLutzii(
 
     Returns
     -----------------------
-    Instace of ParacoccidioidesSpLutzii graph.
+    Instace of Paracoccidioides sp. lutzii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioNigripulchritudo.
+This file offers the methods to automatically retrieve the graph Vibrio nigripulchritudo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioNigripulchritudo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioNigripulchritudo graph.
+    """Return new instance of the Vibrio nigripulchritudo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioNigripulchritudo(
 
     Returns
     -----------------------
-    Instace of VibrioNigripulchritudo graph.
+    Instace of Vibrio nigripulchritudo graph.
 
 	References
 	---------------------

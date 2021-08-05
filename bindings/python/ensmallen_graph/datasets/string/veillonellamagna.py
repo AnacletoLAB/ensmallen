@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaMagna.
+This file offers the methods to automatically retrieve the graph Veillonella magna.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaMagna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaMagna graph.
+    """Return new instance of the Veillonella magna graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaMagna(
 
     Returns
     -----------------------
-    Instace of VeillonellaMagna graph.
+    Instace of Veillonella magna graph.
 
 	References
 	---------------------

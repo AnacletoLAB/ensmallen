@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBeijerinckii.
+This file offers the methods to automatically retrieve the graph Clostridium beijerinckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBeijerinckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBeijerinckii graph.
+    """Return new instance of the Clostridium beijerinckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBeijerinckii(
 
     Returns
     -----------------------
-    Instace of ClostridiumBeijerinckii graph.
+    Instace of Clostridium beijerinckii graph.
 
 	References
 	---------------------

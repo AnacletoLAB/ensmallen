@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaHarenaeNbrc108248.
+This file offers the methods to automatically retrieve the graph Nocardia harenae NBRC 108248.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaHarenaeNbrc108248(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaHarenaeNbrc108248 graph.
+    """Return new instance of the Nocardia harenae NBRC 108248 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaHarenaeNbrc108248(
 
     Returns
     -----------------------
-    Instace of NocardiaHarenaeNbrc108248 graph.
+    Instace of Nocardia harenae NBRC 108248 graph.
 
 	References
 	---------------------

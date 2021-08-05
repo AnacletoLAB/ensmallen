@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DokdoniaSpPro95.
+This file offers the methods to automatically retrieve the graph Dokdonia sp. PRO95.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DokdoniaSpPro95(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DokdoniaSpPro95 graph.
+    """Return new instance of the Dokdonia sp. PRO95 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DokdoniaSpPro95(
 
     Returns
     -----------------------
-    Instace of DokdoniaSpPro95 graph.
+    Instace of Dokdonia sp. PRO95 graph.
 
 	References
 	---------------------

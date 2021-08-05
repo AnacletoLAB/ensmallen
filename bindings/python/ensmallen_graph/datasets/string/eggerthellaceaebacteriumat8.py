@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EggerthellaceaeBacteriumAt8.
+This file offers the methods to automatically retrieve the graph Eggerthellaceae bacterium AT8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EggerthellaceaeBacteriumAt8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EggerthellaceaeBacteriumAt8 graph.
+    """Return new instance of the Eggerthellaceae bacterium AT8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EggerthellaceaeBacteriumAt8(
 
     Returns
     -----------------------
-    Instace of EggerthellaceaeBacteriumAt8 graph.
+    Instace of Eggerthellaceae bacterium AT8 graph.
 
 	References
 	---------------------

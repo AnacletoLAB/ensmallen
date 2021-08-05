@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterorhabdusCaecimuris.
+This file offers the methods to automatically retrieve the graph Enterorhabdus caecimuris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterorhabdusCaecimuris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterorhabdusCaecimuris graph.
+    """Return new instance of the Enterorhabdus caecimuris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterorhabdusCaecimuris(
 
     Returns
     -----------------------
-    Instace of EnterorhabdusCaecimuris graph.
+    Instace of Enterorhabdus caecimuris graph.
 
 	References
 	---------------------

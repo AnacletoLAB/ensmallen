@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaeBacteriumGa0074140.
+This file offers the methods to automatically retrieve the graph Chlamydiae bacterium Ga0074140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaeBacteriumGa0074140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaeBacteriumGa0074140 graph.
+    """Return new instance of the Chlamydiae bacterium Ga0074140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaeBacteriumGa0074140(
 
     Returns
     -----------------------
-    Instace of ChlamydiaeBacteriumGa0074140 graph.
+    Instace of Chlamydiae bacterium Ga0074140 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichobilharziaRegenti.
+This file offers the methods to automatically retrieve the graph Trichobilharzia regenti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichobilharziaRegenti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichobilharziaRegenti graph.
+    """Return new instance of the Trichobilharzia regenti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichobilharziaRegenti(
 
     Returns
     -----------------------
-    Instace of TrichobilharziaRegenti graph.
+    Instace of Trichobilharzia regenti graph.
 
 	References
 	---------------------

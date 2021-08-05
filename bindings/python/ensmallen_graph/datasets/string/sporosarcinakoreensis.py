@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaKoreensis.
+This file offers the methods to automatically retrieve the graph Sporosarcina koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaKoreensis graph.
+    """Return new instance of the Sporosarcina koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaKoreensis(
 
     Returns
     -----------------------
-    Instace of SporosarcinaKoreensis graph.
+    Instace of Sporosarcina koreensis graph.
 
 	References
 	---------------------

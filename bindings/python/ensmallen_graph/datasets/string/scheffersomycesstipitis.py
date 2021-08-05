@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScheffersomycesStipitis.
+This file offers the methods to automatically retrieve the graph Scheffersomyces stipitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScheffersomycesStipitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScheffersomycesStipitis graph.
+    """Return new instance of the Scheffersomyces stipitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ScheffersomycesStipitis(
 
     Returns
     -----------------------
-    Instace of ScheffersomycesStipitis graph.
+    Instace of Scheffersomyces stipitis graph.
 
 	References
 	---------------------

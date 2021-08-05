@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosopumilusSpAr2.
+This file offers the methods to automatically retrieve the graph Nitrosopumilus sp. AR2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosopumilusSpAr2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosopumilusSpAr2 graph.
+    """Return new instance of the Nitrosopumilus sp. AR2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosopumilusSpAr2(
 
     Returns
     -----------------------
-    Instace of NitrosopumilusSpAr2 graph.
+    Instace of Nitrosopumilus sp. AR2 graph.
 
 	References
 	---------------------

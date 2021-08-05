@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronomonasPharaonis.
+This file offers the methods to automatically retrieve the graph Natronomonas pharaonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronomonasPharaonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronomonasPharaonis graph.
+    """Return new instance of the Natronomonas pharaonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatronomonasPharaonis(
 
     Returns
     -----------------------
-    Instace of NatronomonasPharaonis graph.
+    Instace of Natronomonas pharaonis graph.
 
 	References
 	---------------------

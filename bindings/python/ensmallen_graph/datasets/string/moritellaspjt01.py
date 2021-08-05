@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoritellaSpJt01.
+This file offers the methods to automatically retrieve the graph Moritella sp. JT01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoritellaSpJt01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoritellaSpJt01 graph.
+    """Return new instance of the Moritella sp. JT01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoritellaSpJt01(
 
     Returns
     -----------------------
-    Instace of MoritellaSpJt01 graph.
+    Instace of Moritella sp. JT01 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CajanusCajan.
+This file offers the methods to automatically retrieve the graph Cajanus cajan.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CajanusCajan(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CajanusCajan graph.
+    """Return new instance of the Cajanus cajan graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CajanusCajan(
 
     Returns
     -----------------------
-    Instace of CajanusCajan graph.
+    Instace of Cajanus cajan graph.
 
 	References
 	---------------------

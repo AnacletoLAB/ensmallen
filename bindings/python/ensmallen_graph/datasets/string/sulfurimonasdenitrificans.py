@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasDenitrificans.
+This file offers the methods to automatically retrieve the graph Sulfurimonas denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasDenitrificans graph.
+    """Return new instance of the Sulfurimonas denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurimonasDenitrificans(
 
     Returns
     -----------------------
-    Instace of SulfurimonasDenitrificans graph.
+    Instace of Sulfurimonas denitrificans graph.
 
 	References
 	---------------------

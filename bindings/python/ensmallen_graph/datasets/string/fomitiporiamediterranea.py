@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FomitiporiaMediterranea.
+This file offers the methods to automatically retrieve the graph Fomitiporia mediterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FomitiporiaMediterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FomitiporiaMediterranea graph.
+    """Return new instance of the Fomitiporia mediterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FomitiporiaMediterranea(
 
     Returns
     -----------------------
-    Instace of FomitiporiaMediterranea graph.
+    Instace of Fomitiporia mediterranea graph.
 
 	References
 	---------------------

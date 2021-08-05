@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterAlpinus.
+This file offers the methods to automatically retrieve the graph Arthrobacter alpinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterAlpinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterAlpinus graph.
+    """Return new instance of the Arthrobacter alpinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterAlpinus(
 
     Returns
     -----------------------
-    Instace of ArthrobacterAlpinus graph.
+    Instace of Arthrobacter alpinus graph.
 
 	References
 	---------------------

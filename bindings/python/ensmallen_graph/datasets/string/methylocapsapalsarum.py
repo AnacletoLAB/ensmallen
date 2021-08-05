@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocapsaPalsarum.
+This file offers the methods to automatically retrieve the graph Methylocapsa palsarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocapsaPalsarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocapsaPalsarum graph.
+    """Return new instance of the Methylocapsa palsarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylocapsaPalsarum(
 
     Returns
     -----------------------
-    Instace of MethylocapsaPalsarum graph.
+    Instace of Methylocapsa palsarum graph.
 
 	References
 	---------------------

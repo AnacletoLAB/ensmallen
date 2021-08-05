@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Aa6.
+This file offers the methods to automatically retrieve the graph aa6.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Aa6(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Aa6 graph.
+    """Return new instance of the aa6 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Aa6(
 
     Returns
     -----------------------
-    Instace of Aa6 graph.
+    Instace of aa6 graph.
 
 	References
 	---------------------

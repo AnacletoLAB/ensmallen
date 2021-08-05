@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNeoehrlichiaLotorisStrRac413.
+This file offers the methods to automatically retrieve the graph Candidatus Neoehrlichia lotoris str. RAC413.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNeoehrlichiaLotorisStrRac413(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNeoehrlichiaLotorisStrRac413 graph.
+    """Return new instance of the Candidatus Neoehrlichia lotoris str. RAC413 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNeoehrlichiaLotorisStrRac413(
 
     Returns
     -----------------------
-    Instace of CandidatusNeoehrlichiaLotorisStrRac413 graph.
+    Instace of Candidatus Neoehrlichia lotoris str. RAC413 graph.
 
 	References
 	---------------------

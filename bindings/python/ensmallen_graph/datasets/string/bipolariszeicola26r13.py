@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisZeicola26R13.
+This file offers the methods to automatically retrieve the graph Bipolaris zeicola 26-R-13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisZeicola26R13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisZeicola26R13 graph.
+    """Return new instance of the Bipolaris zeicola 26-R-13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BipolarisZeicola26R13(
 
     Returns
     -----------------------
-    Instace of BipolarisZeicola26R13 graph.
+    Instace of Bipolaris zeicola 26-R-13 graph.
 
 	References
 	---------------------

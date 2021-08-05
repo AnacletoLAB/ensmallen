@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabeoRohita.
+This file offers the methods to automatically retrieve the graph Labeo rohita.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabeoRohita(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabeoRohita graph.
+    """Return new instance of the Labeo rohita graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabeoRohita(
 
     Returns
     -----------------------
-    Instace of LabeoRohita graph.
+    Instace of Labeo rohita graph.
 
 	References
 	---------------------

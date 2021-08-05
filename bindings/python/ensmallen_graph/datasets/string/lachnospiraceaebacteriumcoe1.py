@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumCoe1.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium COE1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumCoe1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumCoe1 graph.
+    """Return new instance of the Lachnospiraceae bacterium COE1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumCoe1(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumCoe1 graph.
+    Instace of Lachnospiraceae bacterium COE1 graph.
 
 	References
 	---------------------

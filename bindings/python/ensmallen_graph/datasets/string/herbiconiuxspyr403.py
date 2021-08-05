@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbiconiuxSpYr403.
+This file offers the methods to automatically retrieve the graph Herbiconiux sp. YR403.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbiconiuxSpYr403(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbiconiuxSpYr403 graph.
+    """Return new instance of the Herbiconiux sp. YR403 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbiconiuxSpYr403(
 
     Returns
     -----------------------
-    Instace of HerbiconiuxSpYr403 graph.
+    Instace of Herbiconiux sp. YR403 graph.
 
 	References
 	---------------------

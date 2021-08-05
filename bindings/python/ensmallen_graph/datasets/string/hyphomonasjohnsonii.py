@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasJohnsonii.
+This file offers the methods to automatically retrieve the graph Hyphomonas johnsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasJohnsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasJohnsonii graph.
+    """Return new instance of the Hyphomonas johnsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasJohnsonii(
 
     Returns
     -----------------------
-    Instace of HyphomonasJohnsonii graph.
+    Instace of Hyphomonas johnsonii graph.
 
 	References
 	---------------------

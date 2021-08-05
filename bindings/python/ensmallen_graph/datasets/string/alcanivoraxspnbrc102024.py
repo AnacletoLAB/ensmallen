@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxSpNbrc102024.
+This file offers the methods to automatically retrieve the graph Alcanivorax sp. NBRC 102024.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxSpNbrc102024(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxSpNbrc102024 graph.
+    """Return new instance of the Alcanivorax sp. NBRC 102024 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlcanivoraxSpNbrc102024(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxSpNbrc102024 graph.
+    Instace of Alcanivorax sp. NBRC 102024 graph.
 
 	References
 	---------------------

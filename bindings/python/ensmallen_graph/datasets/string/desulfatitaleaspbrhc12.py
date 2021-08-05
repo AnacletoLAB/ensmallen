@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatitaleaSpBrhC12.
+This file offers the methods to automatically retrieve the graph Desulfatitalea sp. BRH_c12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatitaleaSpBrhC12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatitaleaSpBrhC12 graph.
+    """Return new instance of the Desulfatitalea sp. BRH_c12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfatitaleaSpBrhC12(
 
     Returns
     -----------------------
-    Instace of DesulfatitaleaSpBrhC12 graph.
+    Instace of Desulfatitalea sp. BRH_c12 graph.
 
 	References
 	---------------------

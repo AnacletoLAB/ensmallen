@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharospirillumImpatiens.
+This file offers the methods to automatically retrieve the graph Saccharospirillum impatiens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharospirillumImpatiens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharospirillumImpatiens graph.
+    """Return new instance of the Saccharospirillum impatiens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharospirillumImpatiens(
 
     Returns
     -----------------------
-    Instace of SaccharospirillumImpatiens graph.
+    Instace of Saccharospirillum impatiens graph.
 
 	References
 	---------------------

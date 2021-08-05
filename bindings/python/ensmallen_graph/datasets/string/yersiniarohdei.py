@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaRohdei.
+This file offers the methods to automatically retrieve the graph Yersinia rohdei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaRohdei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaRohdei graph.
+    """Return new instance of the Yersinia rohdei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YersiniaRohdei(
 
     Returns
     -----------------------
-    Instace of YersiniaRohdei graph.
+    Instace of Yersinia rohdei graph.
 
 	References
 	---------------------

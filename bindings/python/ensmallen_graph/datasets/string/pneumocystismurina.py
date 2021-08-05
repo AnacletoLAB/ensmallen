@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PneumocystisMurina.
+This file offers the methods to automatically retrieve the graph Pneumocystis murina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PneumocystisMurina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PneumocystisMurina graph.
+    """Return new instance of the Pneumocystis murina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PneumocystisMurina(
 
     Returns
     -----------------------
-    Instace of PneumocystisMurina graph.
+    Instace of Pneumocystis murina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosinusCarboxydivorans.
+This file offers the methods to automatically retrieve the graph Thermosinus carboxydivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosinusCarboxydivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosinusCarboxydivorans graph.
+    """Return new instance of the Thermosinus carboxydivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermosinusCarboxydivorans(
 
     Returns
     -----------------------
-    Instace of ThermosinusCarboxydivorans graph.
+    Instace of Thermosinus carboxydivorans graph.
 
 	References
 	---------------------

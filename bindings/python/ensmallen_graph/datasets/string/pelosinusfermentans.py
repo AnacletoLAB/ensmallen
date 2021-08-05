@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelosinusFermentans.
+This file offers the methods to automatically retrieve the graph Pelosinus fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelosinusFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelosinusFermentans graph.
+    """Return new instance of the Pelosinus fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelosinusFermentans(
 
     Returns
     -----------------------
-    Instace of PelosinusFermentans graph.
+    Instace of Pelosinus fermentans graph.
 
 	References
 	---------------------

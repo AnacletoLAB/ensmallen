@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumPhlei.
+This file offers the methods to automatically retrieve the graph Mycobacterium phlei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumPhlei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumPhlei graph.
+    """Return new instance of the Mycobacterium phlei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumPhlei(
 
     Returns
     -----------------------
-    Instace of MycobacteriumPhlei graph.
+    Instace of Mycobacterium phlei graph.
 
 	References
 	---------------------

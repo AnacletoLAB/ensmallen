@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpEhc04.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. EhC04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSpEhc04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpEhc04 graph.
+    """Return new instance of the Sulfitobacter sp. EhC04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterSpEhc04(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpEhc04 graph.
+    Instace of Sulfitobacter sp. EhC04 graph.
 
 	References
 	---------------------

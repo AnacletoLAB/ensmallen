@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NanohaloarchaeaArchaeonB1Br10U2g1.
+This file offers the methods to automatically retrieve the graph Nanohaloarchaea archaeon B1-Br10_U2g1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NanohaloarchaeaArchaeonB1Br10U2g1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NanohaloarchaeaArchaeonB1Br10U2g1 graph.
+    """Return new instance of the Nanohaloarchaea archaeon B1-Br10_U2g1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NanohaloarchaeaArchaeonB1Br10U2g1(
 
     Returns
     -----------------------
-    Instace of NanohaloarchaeaArchaeonB1Br10U2g1 graph.
+    Instace of Nanohaloarchaea archaeon B1-Br10_U2g1 graph.
 
 	References
 	---------------------

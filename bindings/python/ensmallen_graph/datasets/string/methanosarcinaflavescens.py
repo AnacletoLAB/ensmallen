@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaFlavescens.
+This file offers the methods to automatically retrieve the graph Methanosarcina flavescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaFlavescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaFlavescens graph.
+    """Return new instance of the Methanosarcina flavescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaFlavescens(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaFlavescens graph.
+    Instace of Methanosarcina flavescens graph.
 
 	References
 	---------------------

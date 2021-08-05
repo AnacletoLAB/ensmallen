@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraSpA13l.
+This file offers the methods to automatically retrieve the graph Rheinheimera sp. A13L.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraSpA13l(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraSpA13l graph.
+    """Return new instance of the Rheinheimera sp. A13L graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RheinheimeraSpA13l(
 
     Returns
     -----------------------
-    Instace of RheinheimeraSpA13l graph.
+    Instace of Rheinheimera sp. A13L graph.
 
 	References
 	---------------------

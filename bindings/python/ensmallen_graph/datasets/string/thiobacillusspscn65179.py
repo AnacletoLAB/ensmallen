@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusSpScn65179.
+This file offers the methods to automatically retrieve the graph Thiobacillus sp. SCN 65-179.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusSpScn65179(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusSpScn65179 graph.
+    """Return new instance of the Thiobacillus sp. SCN 65-179 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiobacillusSpScn65179(
 
     Returns
     -----------------------
-    Instace of ThiobacillusSpScn65179 graph.
+    Instace of Thiobacillus sp. SCN 65-179 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinocyclocheilusGrahami.
+This file offers the methods to automatically retrieve the graph Sinocyclocheilus grahami.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinocyclocheilusGrahami(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinocyclocheilusGrahami graph.
+    """Return new instance of the Sinocyclocheilus grahami graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinocyclocheilusGrahami(
 
     Returns
     -----------------------
-    Instace of SinocyclocheilusGrahami graph.
+    Instace of Sinocyclocheilus grahami graph.
 
 	References
 	---------------------

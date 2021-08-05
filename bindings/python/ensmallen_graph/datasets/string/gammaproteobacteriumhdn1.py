@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumHdn1.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium HdN1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumHdn1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumHdn1 graph.
+    """Return new instance of the gamma proteobacterium HdN1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumHdn1(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumHdn1 graph.
+    Instace of gamma proteobacterium HdN1 graph.
 
 	References
 	---------------------

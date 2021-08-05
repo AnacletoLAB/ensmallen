@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacterium32.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium 32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacterium32(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacterium32 graph.
+    """Return new instance of the Lachnospiraceae bacterium 32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacterium32(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacterium32 graph.
+    Instace of Lachnospiraceae bacterium 32 graph.
 
 	References
 	---------------------

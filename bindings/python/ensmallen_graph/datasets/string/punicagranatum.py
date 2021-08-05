@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PunicaGranatum.
+This file offers the methods to automatically retrieve the graph Punica granatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PunicaGranatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PunicaGranatum graph.
+    """Return new instance of the Punica granatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PunicaGranatum(
 
     Returns
     -----------------------
-    Instace of PunicaGranatum graph.
+    Instace of Punica granatum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FischerellaSpPcc9339.
+This file offers the methods to automatically retrieve the graph Fischerella sp. PCC9339.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FischerellaSpPcc9339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FischerellaSpPcc9339 graph.
+    """Return new instance of the Fischerella sp. PCC9339 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FischerellaSpPcc9339(
 
     Returns
     -----------------------
-    Instace of FischerellaSpPcc9339 graph.
+    Instace of Fischerella sp. PCC9339 graph.
 
 	References
 	---------------------

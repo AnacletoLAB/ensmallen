@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumChubuense.
+This file offers the methods to automatically retrieve the graph Mycobacterium chubuense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumChubuense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumChubuense graph.
+    """Return new instance of the Mycobacterium chubuense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumChubuense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumChubuense graph.
+    Instace of Mycobacterium chubuense graph.
 
 	References
 	---------------------

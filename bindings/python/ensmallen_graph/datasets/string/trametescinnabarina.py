@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrametesCinnabarina.
+This file offers the methods to automatically retrieve the graph Trametes cinnabarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrametesCinnabarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrametesCinnabarina graph.
+    """Return new instance of the Trametes cinnabarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrametesCinnabarina(
 
     Returns
     -----------------------
-    Instace of TrametesCinnabarina graph.
+    Instace of Trametes cinnabarina graph.
 
 	References
 	---------------------

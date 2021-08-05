@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterLignolyticus.
+This file offers the methods to automatically retrieve the graph Enterobacter lignolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterLignolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterLignolyticus graph.
+    """Return new instance of the Enterobacter lignolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacterLignolyticus(
 
     Returns
     -----------------------
-    Instace of EnterobacterLignolyticus graph.
+    Instace of Enterobacter lignolyticus graph.
 
 	References
 	---------------------

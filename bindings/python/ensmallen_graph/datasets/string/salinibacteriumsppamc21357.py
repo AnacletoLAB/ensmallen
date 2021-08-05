@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinibacteriumSpPamc21357.
+This file offers the methods to automatically retrieve the graph Salinibacterium sp. PAMC 21357.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinibacteriumSpPamc21357(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinibacteriumSpPamc21357 graph.
+    """Return new instance of the Salinibacterium sp. PAMC 21357 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinibacteriumSpPamc21357(
 
     Returns
     -----------------------
-    Instace of SalinibacteriumSpPamc21357 graph.
+    Instace of Salinibacterium sp. PAMC 21357 graph.
 
 	References
 	---------------------

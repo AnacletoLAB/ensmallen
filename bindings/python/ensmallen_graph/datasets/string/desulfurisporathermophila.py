@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurisporaThermophila.
+This file offers the methods to automatically retrieve the graph Desulfurispora thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurisporaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurisporaThermophila graph.
+    """Return new instance of the Desulfurispora thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurisporaThermophila(
 
     Returns
     -----------------------
-    Instace of DesulfurisporaThermophila graph.
+    Instace of Desulfurispora thermophila graph.
 
 	References
 	---------------------

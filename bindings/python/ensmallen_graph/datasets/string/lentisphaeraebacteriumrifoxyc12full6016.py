@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentisphaeraeBacteriumRifoxyc12Full6016.
+This file offers the methods to automatically retrieve the graph Lentisphaerae bacterium RIFOXYC12_FULL_60_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentisphaeraeBacteriumRifoxyc12Full6016(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentisphaeraeBacteriumRifoxyc12Full6016 graph.
+    """Return new instance of the Lentisphaerae bacterium RIFOXYC12_FULL_60_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentisphaeraeBacteriumRifoxyc12Full6016(
 
     Returns
     -----------------------
-    Instace of LentisphaeraeBacteriumRifoxyc12Full6016 graph.
+    Instace of Lentisphaerae bacterium RIFOXYC12_FULL_60_16 graph.
 
 	References
 	---------------------

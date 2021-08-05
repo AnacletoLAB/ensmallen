@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KosmotogaPacifica.
+This file offers the methods to automatically retrieve the graph Kosmotoga pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KosmotogaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KosmotogaPacifica graph.
+    """Return new instance of the Kosmotoga pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KosmotogaPacifica(
 
     Returns
     -----------------------
-    Instace of KosmotogaPacifica graph.
+    Instace of Kosmotoga pacifica graph.
 
 	References
 	---------------------

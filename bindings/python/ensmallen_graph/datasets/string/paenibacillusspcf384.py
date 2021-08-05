@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpCf384.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. CF384.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpCf384(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpCf384 graph.
+    """Return new instance of the Paenibacillus sp. CF384 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpCf384(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpCf384 graph.
+    Instace of Paenibacillus sp. CF384 graph.
 
 	References
 	---------------------

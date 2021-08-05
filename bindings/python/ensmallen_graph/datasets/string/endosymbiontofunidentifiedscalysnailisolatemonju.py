@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndosymbiontOfUnidentifiedScalySnailIsolateMonju.
+This file offers the methods to automatically retrieve the graph endosymbiont of unidentified scaly snail isolate Monju.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndosymbiontOfUnidentifiedScalySnailIsolateMonju(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndosymbiontOfUnidentifiedScalySnailIsolateMonju graph.
+    """Return new instance of the endosymbiont of unidentified scaly snail isolate Monju graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EndosymbiontOfUnidentifiedScalySnailIsolateMonju(
 
     Returns
     -----------------------
-    Instace of EndosymbiontOfUnidentifiedScalySnailIsolateMonju graph.
+    Instace of endosymbiont of unidentified scaly snail isolate Monju graph.
 
 	References
 	---------------------

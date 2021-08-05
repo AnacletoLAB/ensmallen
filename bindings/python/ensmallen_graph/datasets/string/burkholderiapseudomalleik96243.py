@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaPseudomalleiK96243.
+This file offers the methods to automatically retrieve the graph Burkholderia pseudomallei K96243.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaPseudomalleiK96243(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaPseudomalleiK96243 graph.
+    """Return new instance of the Burkholderia pseudomallei K96243 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaPseudomalleiK96243(
 
     Returns
     -----------------------
-    Instace of BurkholderiaPseudomalleiK96243 graph.
+    Instace of Burkholderia pseudomallei K96243 graph.
 
 	References
 	---------------------

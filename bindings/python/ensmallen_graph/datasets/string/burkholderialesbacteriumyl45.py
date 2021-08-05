@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumYl45.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium YL45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumYl45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumYl45 graph.
+    """Return new instance of the Burkholderiales bacterium YL45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacteriumYl45(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumYl45 graph.
+    Instace of Burkholderiales bacterium YL45 graph.
 
 	References
 	---------------------

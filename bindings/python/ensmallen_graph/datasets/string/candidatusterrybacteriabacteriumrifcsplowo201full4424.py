@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTerrybacteriaBacteriumRifcsplowo201Full4424.
+This file offers the methods to automatically retrieve the graph Candidatus Terrybacteria bacterium RIFCSPLOWO2_01_FULL_44_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTerrybacteriaBacteriumRifcsplowo201Full4424(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTerrybacteriaBacteriumRifcsplowo201Full4424 graph.
+    """Return new instance of the Candidatus Terrybacteria bacterium RIFCSPLOWO2_01_FULL_44_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTerrybacteriaBacteriumRifcsplowo201Full4424(
 
     Returns
     -----------------------
-    Instace of CandidatusTerrybacteriaBacteriumRifcsplowo201Full4424 graph.
+    Instace of Candidatus Terrybacteria bacterium RIFCSPLOWO2_01_FULL_44_24 graph.
 
 	References
 	---------------------

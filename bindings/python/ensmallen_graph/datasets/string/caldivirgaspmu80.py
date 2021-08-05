@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldivirgaSpMu80.
+This file offers the methods to automatically retrieve the graph Caldivirga sp. MU80.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldivirgaSpMu80(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldivirgaSpMu80 graph.
+    """Return new instance of the Caldivirga sp. MU80 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldivirgaSpMu80(
 
     Returns
     -----------------------
-    Instace of CaldivirgaSpMu80 graph.
+    Instace of Caldivirga sp. MU80 graph.
 
 	References
 	---------------------

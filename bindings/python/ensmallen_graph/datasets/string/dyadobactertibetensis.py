@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterTibetensis.
+This file offers the methods to automatically retrieve the graph Dyadobacter tibetensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyadobacterTibetensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterTibetensis graph.
+    """Return new instance of the Dyadobacter tibetensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DyadobacterTibetensis(
 
     Returns
     -----------------------
-    Instace of DyadobacterTibetensis graph.
+    Instace of Dyadobacter tibetensis graph.
 
 	References
 	---------------------

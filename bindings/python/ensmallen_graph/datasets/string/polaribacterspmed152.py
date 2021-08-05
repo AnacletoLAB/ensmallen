@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterSpMed152.
+This file offers the methods to automatically retrieve the graph Polaribacter sp. MED152.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterSpMed152(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterSpMed152 graph.
+    """Return new instance of the Polaribacter sp. MED152 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolaribacterSpMed152(
 
     Returns
     -----------------------
-    Instace of PolaribacterSpMed152 graph.
+    Instace of Polaribacter sp. MED152 graph.
 
 	References
 	---------------------

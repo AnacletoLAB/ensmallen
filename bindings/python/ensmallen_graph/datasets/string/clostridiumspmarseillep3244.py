@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpMarseilleP3244.
+This file offers the methods to automatically retrieve the graph Clostridium sp. Marseille-P3244.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpMarseilleP3244(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpMarseilleP3244 graph.
+    """Return new instance of the Clostridium sp. Marseille-P3244 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpMarseilleP3244(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpMarseilleP3244 graph.
+    Instace of Clostridium sp. Marseille-P3244 graph.
 
 	References
 	---------------------

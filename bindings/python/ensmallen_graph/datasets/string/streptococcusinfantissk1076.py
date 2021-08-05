@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusInfantisSk1076.
+This file offers the methods to automatically retrieve the graph Streptococcus infantis SK1076.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusInfantisSk1076(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusInfantisSk1076 graph.
+    """Return new instance of the Streptococcus infantis SK1076 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusInfantisSk1076(
 
     Returns
     -----------------------
-    Instace of StreptococcusInfantisSk1076 graph.
+    Instace of Streptococcus infantis SK1076 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumMangrovi.
+This file offers the methods to automatically retrieve the graph Microbacterium mangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumMangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumMangrovi graph.
+    """Return new instance of the Microbacterium mangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumMangrovi(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumMangrovi graph.
+    Instace of Microbacterium mangrovi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyricimonasSynergistica.
+This file offers the methods to automatically retrieve the graph Butyricimonas synergistica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyricimonasSynergistica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyricimonasSynergistica graph.
+    """Return new instance of the Butyricimonas synergistica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyricimonasSynergistica(
 
     Returns
     -----------------------
-    Instace of ButyricimonasSynergistica graph.
+    Instace of Butyricimonas synergistica graph.
 
 	References
 	---------------------

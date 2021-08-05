@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FriedmanniomycesEndolithicus.
+This file offers the methods to automatically retrieve the graph Friedmanniomyces endolithicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FriedmanniomycesEndolithicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FriedmanniomycesEndolithicus graph.
+    """Return new instance of the Friedmanniomyces endolithicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FriedmanniomycesEndolithicus(
 
     Returns
     -----------------------
-    Instace of FriedmanniomycesEndolithicus graph.
+    Instace of Friedmanniomyces endolithicus graph.
 
 	References
 	---------------------

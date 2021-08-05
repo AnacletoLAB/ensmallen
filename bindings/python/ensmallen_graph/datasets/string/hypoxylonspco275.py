@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HypoxylonSpCo275.
+This file offers the methods to automatically retrieve the graph Hypoxylon sp. CO27-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HypoxylonSpCo275(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HypoxylonSpCo275 graph.
+    """Return new instance of the Hypoxylon sp. CO27-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HypoxylonSpCo275(
 
     Returns
     -----------------------
-    Instace of HypoxylonSpCo275 graph.
+    Instace of Hypoxylon sp. CO27-5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusAcidilactici.
+This file offers the methods to automatically retrieve the graph Pediococcus acidilactici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusAcidilactici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusAcidilactici graph.
+    """Return new instance of the Pediococcus acidilactici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PediococcusAcidilactici(
 
     Returns
     -----------------------
-    Instace of PediococcusAcidilactici graph.
+    Instace of Pediococcus acidilactici graph.
 
 	References
 	---------------------

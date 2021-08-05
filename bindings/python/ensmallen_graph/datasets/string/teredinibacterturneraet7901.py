@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TeredinibacterTurneraeT7901.
+This file offers the methods to automatically retrieve the graph Teredinibacter turnerae T7901.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TeredinibacterTurneraeT7901(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TeredinibacterTurneraeT7901 graph.
+    """Return new instance of the Teredinibacter turnerae T7901 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TeredinibacterTurneraeT7901(
 
     Returns
     -----------------------
-    Instace of TeredinibacterTurneraeT7901 graph.
+    Instace of Teredinibacter turnerae T7901 graph.
 
 	References
 	---------------------

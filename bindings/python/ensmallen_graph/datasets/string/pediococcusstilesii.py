@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusStilesii.
+This file offers the methods to automatically retrieve the graph Pediococcus stilesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusStilesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusStilesii graph.
+    """Return new instance of the Pediococcus stilesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PediococcusStilesii(
 
     Returns
     -----------------------
-    Instace of PediococcusStilesii graph.
+    Instace of Pediococcus stilesii graph.
 
 	References
 	---------------------

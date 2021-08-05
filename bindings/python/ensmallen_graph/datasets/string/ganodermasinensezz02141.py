@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GanodermaSinenseZz02141.
+This file offers the methods to automatically retrieve the graph Ganoderma sinense ZZ0214-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GanodermaSinenseZz02141(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GanodermaSinenseZz02141 graph.
+    """Return new instance of the Ganoderma sinense ZZ0214-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GanodermaSinenseZz02141(
 
     Returns
     -----------------------
-    Instace of GanodermaSinenseZz02141 graph.
+    Instace of Ganoderma sinense ZZ0214-1 graph.
 
 	References
 	---------------------

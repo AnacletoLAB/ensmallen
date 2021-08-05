@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RahnellaAquatilisHx2.
+This file offers the methods to automatically retrieve the graph Rahnella aquatilis HX2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RahnellaAquatilisHx2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RahnellaAquatilisHx2 graph.
+    """Return new instance of the Rahnella aquatilis HX2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RahnellaAquatilisHx2(
 
     Returns
     -----------------------
-    Instace of RahnellaAquatilisHx2 graph.
+    Instace of Rahnella aquatilis HX2 graph.
 
 	References
 	---------------------

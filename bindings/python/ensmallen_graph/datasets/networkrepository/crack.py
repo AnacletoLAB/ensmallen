@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Crack.
+This file offers the methods to automatically retrieve the graph crack.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Crack(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Crack graph.
+    """Return new instance of the crack graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Crack(
 
     Returns
     -----------------------
-    Instace of Crack graph.
+    Instace of crack graph.
 
 	References
 	---------------------

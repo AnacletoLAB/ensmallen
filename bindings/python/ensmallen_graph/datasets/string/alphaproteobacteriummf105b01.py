@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumMf105b01.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium Mf 105b01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumMf105b01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumMf105b01 graph.
+    """Return new instance of the alpha proteobacterium Mf 105b01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumMf105b01(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumMf105b01 graph.
+    Instace of alpha proteobacterium Mf 105b01 graph.
 
 	References
 	---------------------

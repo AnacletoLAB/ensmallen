@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScShipsec5.
+This file offers the methods to automatically retrieve the graph sc-shipsec5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScShipsec5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScShipsec5 graph.
+    """Return new instance of the sc-shipsec5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScShipsec5(
 
     Returns
     -----------------------
-    Instace of ScShipsec5 graph.
+    Instace of sc-shipsec5 graph.
 
 	References
 	---------------------

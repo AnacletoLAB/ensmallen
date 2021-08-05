@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GuillardiaTheta.
+This file offers the methods to automatically retrieve the graph Guillardia theta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GuillardiaTheta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GuillardiaTheta graph.
+    """Return new instance of the Guillardia theta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GuillardiaTheta(
 
     Returns
     -----------------------
-    Instace of GuillardiaTheta graph.
+    Instace of Guillardia theta graph.
 
 	References
 	---------------------

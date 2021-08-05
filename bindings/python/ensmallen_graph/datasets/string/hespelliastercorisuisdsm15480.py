@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HespelliaStercorisuisDsm15480.
+This file offers the methods to automatically retrieve the graph Hespellia stercorisuis DSM 15480.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HespelliaStercorisuisDsm15480(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HespelliaStercorisuisDsm15480 graph.
+    """Return new instance of the Hespellia stercorisuis DSM 15480 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HespelliaStercorisuisDsm15480(
 
     Returns
     -----------------------
-    Instace of HespelliaStercorisuisDsm15480 graph.
+    Instace of Hespellia stercorisuis DSM 15480 graph.
 
 	References
 	---------------------

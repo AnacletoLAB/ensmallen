@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumRutilum.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium rutilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumRutilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumRutilum graph.
+    """Return new instance of the Mycolicibacterium rutilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumRutilum(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumRutilum graph.
+    Instace of Mycolicibacterium rutilum graph.
 
 	References
 	---------------------

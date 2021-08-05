@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrimarySchoolProximity.
+This file offers the methods to automatically retrieve the graph primary-school-proximity.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def PrimarySchoolProximity(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrimarySchoolProximity graph.
+    """Return new instance of the primary-school-proximity graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def PrimarySchoolProximity(
 
     Returns
     -----------------------
-    Instace of PrimarySchoolProximity graph.
+    Instace of primary-school-proximity graph.
 
 	References
 	---------------------

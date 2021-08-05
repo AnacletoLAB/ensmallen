@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeterosteliumAlbumPn500.
+This file offers the methods to automatically retrieve the graph Heterostelium album PN500.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeterosteliumAlbumPn500(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeterosteliumAlbumPn500 graph.
+    """Return new instance of the Heterostelium album PN500 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HeterosteliumAlbumPn500(
 
     Returns
     -----------------------
-    Instace of HeterosteliumAlbumPn500 graph.
+    Instace of Heterostelium album PN500 graph.
 
 	References
 	---------------------

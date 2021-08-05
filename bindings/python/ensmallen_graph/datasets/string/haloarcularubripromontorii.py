@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarculaRubripromontorii.
+This file offers the methods to automatically retrieve the graph Haloarcula rubripromontorii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarculaRubripromontorii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarculaRubripromontorii graph.
+    """Return new instance of the Haloarcula rubripromontorii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloarculaRubripromontorii(
 
     Returns
     -----------------------
-    Instace of HaloarculaRubripromontorii graph.
+    Instace of Haloarcula rubripromontorii graph.
 
 	References
 	---------------------

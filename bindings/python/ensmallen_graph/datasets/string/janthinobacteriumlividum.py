@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumLividum.
+This file offers the methods to automatically retrieve the graph Janthinobacterium lividum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumLividum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumLividum graph.
+    """Return new instance of the Janthinobacterium lividum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanthinobacteriumLividum(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumLividum graph.
+    Instace of Janthinobacterium lividum graph.
 
 	References
 	---------------------

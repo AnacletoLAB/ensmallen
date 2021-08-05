@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusSpTm1035.
+This file offers the methods to automatically retrieve the graph Roseovarius sp. TM1035.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusSpTm1035(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusSpTm1035 graph.
+    """Return new instance of the Roseovarius sp. TM1035 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseovariusSpTm1035(
 
     Returns
     -----------------------
-    Instace of RoseovariusSpTm1035 graph.
+    Instace of Roseovarius sp. TM1035 graph.
 
 	References
 	---------------------

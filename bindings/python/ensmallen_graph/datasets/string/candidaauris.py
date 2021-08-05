@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaAuris.
+This file offers the methods to automatically retrieve the graph [Candida] auris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaAuris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaAuris graph.
+    """Return new instance of the [Candida] auris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaAuris(
 
     Returns
     -----------------------
-    Instace of CandidaAuris graph.
+    Instace of [Candida] auris graph.
 
 	References
 	---------------------

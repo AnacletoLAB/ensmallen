@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcyrthosiphonPisum.
+This file offers the methods to automatically retrieve the graph Acyrthosiphon pisum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcyrthosiphonPisum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcyrthosiphonPisum graph.
+    """Return new instance of the Acyrthosiphon pisum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcyrthosiphonPisum(
 
     Returns
     -----------------------
-    Instace of AcyrthosiphonPisum graph.
+    Instace of Acyrthosiphon pisum graph.
 
 	References
 	---------------------

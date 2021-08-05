@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CastellaniellaCaeniNbrc101664.
+This file offers the methods to automatically retrieve the graph Castellaniella caeni NBRC 101664.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CastellaniellaCaeniNbrc101664(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CastellaniellaCaeniNbrc101664 graph.
+    """Return new instance of the Castellaniella caeni NBRC 101664 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CastellaniellaCaeniNbrc101664(
 
     Returns
     -----------------------
-    Instace of CastellaniellaCaeniNbrc101664 graph.
+    Instace of Castellaniella caeni NBRC 101664 graph.
 
 	References
 	---------------------

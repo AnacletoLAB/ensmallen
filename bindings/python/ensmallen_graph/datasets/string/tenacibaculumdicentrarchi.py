@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumDicentrarchi.
+This file offers the methods to automatically retrieve the graph Tenacibaculum dicentrarchi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumDicentrarchi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumDicentrarchi graph.
+    """Return new instance of the Tenacibaculum dicentrarchi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumDicentrarchi(
 
     Returns
     -----------------------
-    Instace of TenacibaculumDicentrarchi graph.
+    Instace of Tenacibaculum dicentrarchi graph.
 
 	References
 	---------------------

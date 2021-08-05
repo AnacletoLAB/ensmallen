@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaDisiensFb03509an.
+This file offers the methods to automatically retrieve the graph Prevotella disiens FB03509AN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaDisiensFb03509an(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaDisiensFb03509an graph.
+    """Return new instance of the Prevotella disiens FB03509AN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaDisiensFb03509an(
 
     Returns
     -----------------------
-    Instace of PrevotellaDisiensFb03509an graph.
+    Instace of Prevotella disiens FB03509AN graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlbidiferaxSpOv413.
+This file offers the methods to automatically retrieve the graph Albidiferax sp. OV413.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlbidiferaxSpOv413(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlbidiferaxSpOv413 graph.
+    """Return new instance of the Albidiferax sp. OV413 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlbidiferaxSpOv413(
 
     Returns
     -----------------------
-    Instace of AlbidiferaxSpOv413 graph.
+    Instace of Albidiferax sp. OV413 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraMurdochii.
+This file offers the methods to automatically retrieve the graph Brachyspira murdochii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraMurdochii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraMurdochii graph.
+    """Return new instance of the Brachyspira murdochii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachyspiraMurdochii(
 
     Returns
     -----------------------
-    Instace of BrachyspiraMurdochii graph.
+    Instace of Brachyspira murdochii graph.
 
 	References
 	---------------------

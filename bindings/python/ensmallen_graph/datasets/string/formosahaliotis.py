@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormosaHaliotis.
+This file offers the methods to automatically retrieve the graph Formosa haliotis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormosaHaliotis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormosaHaliotis graph.
+    """Return new instance of the Formosa haliotis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FormosaHaliotis(
 
     Returns
     -----------------------
-    Instace of FormosaHaliotis graph.
+    Instace of Formosa haliotis graph.
 
 	References
 	---------------------

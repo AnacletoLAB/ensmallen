@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoxiellaBurnetii.
+This file offers the methods to automatically retrieve the graph Coxiella burnetii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoxiellaBurnetii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoxiellaBurnetii graph.
+    """Return new instance of the Coxiella burnetii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoxiellaBurnetii(
 
     Returns
     -----------------------
-    Instace of CoxiellaBurnetii graph.
+    Instace of Coxiella burnetii graph.
 
 	References
 	---------------------

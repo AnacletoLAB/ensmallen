@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaGlabrataCbs138.
+This file offers the methods to automatically retrieve the graph [Candida] glabrata CBS 138.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaGlabrataCbs138(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaGlabrataCbs138 graph.
+    """Return new instance of the [Candida] glabrata CBS 138 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaGlabrataCbs138(
 
     Returns
     -----------------------
-    Instace of CandidaGlabrataCbs138 graph.
+    Instace of [Candida] glabrata CBS 138 graph.
 
 	References
 	---------------------

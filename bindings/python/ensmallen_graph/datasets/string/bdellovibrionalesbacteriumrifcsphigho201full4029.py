@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrionalesBacteriumRifcsphigho201Full4029.
+This file offers the methods to automatically retrieve the graph Bdellovibrionales bacterium RIFCSPHIGHO2_01_FULL_40_29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrionalesBacteriumRifcsphigho201Full4029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrionalesBacteriumRifcsphigho201Full4029 graph.
+    """Return new instance of the Bdellovibrionales bacterium RIFCSPHIGHO2_01_FULL_40_29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrionalesBacteriumRifcsphigho201Full4029(
 
     Returns
     -----------------------
-    Instace of BdellovibrionalesBacteriumRifcsphigho201Full4029 graph.
+    Instace of Bdellovibrionales bacterium RIFCSPHIGHO2_01_FULL_40_29 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCgr1.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. CGR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpCgr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCgr1 graph.
+    """Return new instance of the Microbacterium sp. CGR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpCgr1(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCgr1 graph.
+    Instace of Microbacterium sp. CGR1 graph.
 
 	References
 	---------------------

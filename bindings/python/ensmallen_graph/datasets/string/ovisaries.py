@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OvisAries.
+This file offers the methods to automatically retrieve the graph Ovis aries.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OvisAries(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OvisAries graph.
+    """Return new instance of the Ovis aries graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OvisAries(
 
     Returns
     -----------------------
-    Instace of OvisAries graph.
+    Instace of Ovis aries graph.
 
 	References
 	---------------------

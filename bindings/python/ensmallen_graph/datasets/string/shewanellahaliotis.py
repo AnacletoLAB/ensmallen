@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaHaliotis.
+This file offers the methods to automatically retrieve the graph Shewanella haliotis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaHaliotis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaHaliotis graph.
+    """Return new instance of the Shewanella haliotis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaHaliotis(
 
     Returns
     -----------------------
-    Instace of ShewanellaHaliotis graph.
+    Instace of Shewanella haliotis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraSpCag700.
+This file offers the methods to automatically retrieve the graph Brachyspira sp. CAG:700.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraSpCag700(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraSpCag700 graph.
+    """Return new instance of the Brachyspira sp. CAG:700 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachyspiraSpCag700(
 
     Returns
     -----------------------
-    Instace of BrachyspiraSpCag700 graph.
+    Instace of Brachyspira sp. CAG:700 graph.
 
 	References
 	---------------------

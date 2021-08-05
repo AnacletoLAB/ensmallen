@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPelagibacterSpRs39.
+This file offers the methods to automatically retrieve the graph Candidatus Pelagibacter sp. RS39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPelagibacterSpRs39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPelagibacterSpRs39 graph.
+    """Return new instance of the Candidatus Pelagibacter sp. RS39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPelagibacterSpRs39(
 
     Returns
     -----------------------
-    Instace of CandidatusPelagibacterSpRs39 graph.
+    Instace of Candidatus Pelagibacter sp. RS39 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpLeaf261.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. Leaf261.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpLeaf261(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpLeaf261 graph.
+    """Return new instance of the Curtobacterium sp. Leaf261 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpLeaf261(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpLeaf261 graph.
+    Instace of Curtobacterium sp. Leaf261 graph.
 
 	References
 	---------------------

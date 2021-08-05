@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumHallii.
+This file offers the methods to automatically retrieve the graph Eubacterium hallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumHallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumHallii graph.
+    """Return new instance of the Eubacterium hallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumHallii(
 
     Returns
     -----------------------
-    Instace of EubacteriumHallii graph.
+    Instace of Eubacterium hallii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OidiumNeolycopersici.
+This file offers the methods to automatically retrieve the graph Oidium neolycopersici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OidiumNeolycopersici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OidiumNeolycopersici graph.
+    """Return new instance of the Oidium neolycopersici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OidiumNeolycopersici(
 
     Returns
     -----------------------
-    Instace of OidiumNeolycopersici graph.
+    Instace of Oidium neolycopersici graph.
 
 	References
 	---------------------

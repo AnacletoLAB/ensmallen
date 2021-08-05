@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterGerneri.
+This file offers the methods to automatically retrieve the graph Acinetobacter gerneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterGerneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterGerneri graph.
+    """Return new instance of the Acinetobacter gerneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterGerneri(
 
     Returns
     -----------------------
-    Instace of AcinetobacterGerneri graph.
+    Instace of Acinetobacter gerneri graph.
 
 	References
 	---------------------

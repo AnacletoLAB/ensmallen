@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpLeaf72.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. Leaf72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpLeaf72(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpLeaf72 graph.
+    """Return new instance of the Paenibacillus sp. Leaf72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpLeaf72(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpLeaf72 graph.
+    Instace of Paenibacillus sp. Leaf72 graph.
 
 	References
 	---------------------

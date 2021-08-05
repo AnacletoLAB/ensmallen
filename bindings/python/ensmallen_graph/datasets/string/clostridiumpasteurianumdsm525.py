@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPasteurianumDsm525.
+This file offers the methods to automatically retrieve the graph Clostridium pasteurianum DSM525.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPasteurianumDsm525(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPasteurianumDsm525 graph.
+    """Return new instance of the Clostridium pasteurianum DSM525 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumPasteurianumDsm525(
 
     Returns
     -----------------------
-    Instace of ClostridiumPasteurianumDsm525 graph.
+    Instace of Clostridium pasteurianum DSM525 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusHalodurans.
+This file offers the methods to automatically retrieve the graph Bacillus halodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusHalodurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusHalodurans graph.
+    """Return new instance of the Bacillus halodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusHalodurans(
 
     Returns
     -----------------------
-    Instace of BacillusHalodurans graph.
+    Instace of Bacillus halodurans graph.
 
 	References
 	---------------------

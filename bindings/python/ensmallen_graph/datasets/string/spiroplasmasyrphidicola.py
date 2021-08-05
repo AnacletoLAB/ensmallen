@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaSyrphidicola.
+This file offers the methods to automatically retrieve the graph Spiroplasma syrphidicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaSyrphidicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaSyrphidicola graph.
+    """Return new instance of the Spiroplasma syrphidicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaSyrphidicola(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaSyrphidicola graph.
+    Instace of Spiroplasma syrphidicola graph.
 
 	References
 	---------------------

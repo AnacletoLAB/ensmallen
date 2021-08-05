@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusChinensis.
+This file offers the methods to automatically retrieve the graph Paracoccus chinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusChinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusChinensis graph.
+    """Return new instance of the Paracoccus chinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusChinensis(
 
     Returns
     -----------------------
-    Instace of ParacoccusChinensis graph.
+    Instace of Paracoccus chinensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrassicaOleraceaVarOleracea.
+This file offers the methods to automatically retrieve the graph Brassica oleracea var. oleracea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrassicaOleraceaVarOleracea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrassicaOleraceaVarOleracea graph.
+    """Return new instance of the Brassica oleracea var. oleracea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrassicaOleraceaVarOleracea(
 
     Returns
     -----------------------
-    Instace of BrassicaOleraceaVarOleracea graph.
+    Instace of Brassica oleracea var. oleracea graph.
 
 	References
 	---------------------

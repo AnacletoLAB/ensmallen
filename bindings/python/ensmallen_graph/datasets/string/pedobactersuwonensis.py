@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSuwonensis.
+This file offers the methods to automatically retrieve the graph Pedobacter suwonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSuwonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSuwonensis graph.
+    """Return new instance of the Pedobacter suwonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSuwonensis(
 
     Returns
     -----------------------
-    Instace of PedobacterSuwonensis graph.
+    Instace of Pedobacter suwonensis graph.
 
 	References
 	---------------------

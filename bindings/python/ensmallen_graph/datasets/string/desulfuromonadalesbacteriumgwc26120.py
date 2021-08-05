@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonadalesBacteriumGwc26120.
+This file offers the methods to automatically retrieve the graph Desulfuromonadales bacterium GWC2_61_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonadalesBacteriumGwc26120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonadalesBacteriumGwc26120 graph.
+    """Return new instance of the Desulfuromonadales bacterium GWC2_61_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuromonadalesBacteriumGwc26120(
 
     Returns
     -----------------------
-    Instace of DesulfuromonadalesBacteriumGwc26120 graph.
+    Instace of Desulfuromonadales bacterium GWC2_61_20 graph.
 
 	References
 	---------------------

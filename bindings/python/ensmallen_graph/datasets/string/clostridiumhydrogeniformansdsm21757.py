@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumHydrogeniformansDsm21757.
+This file offers the methods to automatically retrieve the graph Clostridium hydrogeniformans DSM 21757.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumHydrogeniformansDsm21757(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumHydrogeniformansDsm21757 graph.
+    """Return new instance of the Clostridium hydrogeniformans DSM 21757 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumHydrogeniformansDsm21757(
 
     Returns
     -----------------------
-    Instace of ClostridiumHydrogeniformansDsm21757 graph.
+    Instace of Clostridium hydrogeniformans DSM 21757 graph.
 
 	References
 	---------------------

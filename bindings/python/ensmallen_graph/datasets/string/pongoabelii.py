@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PongoAbelii.
+This file offers the methods to automatically retrieve the graph Pongo abelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PongoAbelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PongoAbelii graph.
+    """Return new instance of the Pongo abelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PongoAbelii(
 
     Returns
     -----------------------
-    Instace of PongoAbelii graph.
+    Instace of Pongo abelii graph.
 
 	References
 	---------------------

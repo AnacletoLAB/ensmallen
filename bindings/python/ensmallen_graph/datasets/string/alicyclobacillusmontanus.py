@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusMontanus.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus montanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusMontanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusMontanus graph.
+    """Return new instance of the Alicyclobacillus montanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlicyclobacillusMontanus(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusMontanus graph.
+    Instace of Alicyclobacillus montanus graph.
 
 	References
 	---------------------

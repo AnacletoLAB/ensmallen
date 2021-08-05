@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrauserellaMarina.
+This file offers the methods to automatically retrieve the graph Prauserella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrauserellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrauserellaMarina graph.
+    """Return new instance of the Prauserella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrauserellaMarina(
 
     Returns
     -----------------------
-    Instace of PrauserellaMarina graph.
+    Instace of Prauserella marina graph.
 
 	References
 	---------------------

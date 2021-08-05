@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumStylosanthis.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium stylosanthis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumStylosanthis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumStylosanthis graph.
+    """Return new instance of the Bradyrhizobium stylosanthis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumStylosanthis(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumStylosanthis graph.
+    Instace of Bradyrhizobium stylosanthis graph.
 
 	References
 	---------------------

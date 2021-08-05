@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylibiumSpCf059.
+This file offers the methods to automatically retrieve the graph Methylibium sp. CF059.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylibiumSpCf059(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylibiumSpCf059 graph.
+    """Return new instance of the Methylibium sp. CF059 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylibiumSpCf059(
 
     Returns
     -----------------------
-    Instace of MethylibiumSpCf059 graph.
+    Instace of Methylibium sp. CF059 graph.
 
 	References
 	---------------------

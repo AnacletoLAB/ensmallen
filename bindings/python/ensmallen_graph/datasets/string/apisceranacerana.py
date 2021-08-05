@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApisCeranaCerana.
+This file offers the methods to automatically retrieve the graph Apis cerana cerana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApisCeranaCerana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApisCeranaCerana graph.
+    """Return new instance of the Apis cerana cerana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApisCeranaCerana(
 
     Returns
     -----------------------
-    Instace of ApisCeranaCerana graph.
+    Instace of Apis cerana cerana graph.
 
 	References
 	---------------------

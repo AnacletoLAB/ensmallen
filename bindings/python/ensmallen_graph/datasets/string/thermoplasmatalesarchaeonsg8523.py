@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoplasmatalesArchaeonSg8523.
+This file offers the methods to automatically retrieve the graph Thermoplasmatales archaeon SG8-52-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoplasmatalesArchaeonSg8523(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoplasmatalesArchaeonSg8523 graph.
+    """Return new instance of the Thermoplasmatales archaeon SG8-52-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoplasmatalesArchaeonSg8523(
 
     Returns
     -----------------------
-    Instace of ThermoplasmatalesArchaeonSg8523 graph.
+    Instace of Thermoplasmatales archaeon SG8-52-3 graph.
 
 	References
 	---------------------

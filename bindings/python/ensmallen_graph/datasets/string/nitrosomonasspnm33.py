@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasSpNm33.
+This file offers the methods to automatically retrieve the graph Nitrosomonas sp. Nm33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasSpNm33(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasSpNm33 graph.
+    """Return new instance of the Nitrosomonas sp. Nm33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasSpNm33(
 
     Returns
     -----------------------
-    Instace of NitrosomonasSpNm33 graph.
+    Instace of Nitrosomonas sp. Nm33 graph.
 
 	References
 	---------------------

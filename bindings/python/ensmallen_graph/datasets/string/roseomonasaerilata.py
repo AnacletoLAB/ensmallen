@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseomonasAerilata.
+This file offers the methods to automatically retrieve the graph Roseomonas aerilata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseomonasAerilata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseomonasAerilata graph.
+    """Return new instance of the Roseomonas aerilata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseomonasAerilata(
 
     Returns
     -----------------------
-    Instace of RoseomonasAerilata graph.
+    Instace of Roseomonas aerilata graph.
 
 	References
 	---------------------

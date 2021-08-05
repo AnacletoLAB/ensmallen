@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisSpTsri0078.
+This file offers the methods to automatically retrieve the graph Nocardiopsis sp. TSRI0078.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisSpTsri0078(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisSpTsri0078 graph.
+    """Return new instance of the Nocardiopsis sp. TSRI0078 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisSpTsri0078(
 
     Returns
     -----------------------
-    Instace of NocardiopsisSpTsri0078 graph.
+    Instace of Nocardiopsis sp. TSRI0078 graph.
 
 	References
 	---------------------

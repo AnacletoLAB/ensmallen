@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaRuckeri.
+This file offers the methods to automatically retrieve the graph Yersinia ruckeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaRuckeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaRuckeri graph.
+    """Return new instance of the Yersinia ruckeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaRuckeri(
 
     Returns
     -----------------------
-    Instace of YersiniaRuckeri graph.
+    Instace of Yersinia ruckeri graph.
 
 	References
 	---------------------

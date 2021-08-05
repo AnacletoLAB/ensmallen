@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusHominisSk119.
+This file offers the methods to automatically retrieve the graph Staphylococcus hominis SK119.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusHominisSk119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusHominisSk119 graph.
+    """Return new instance of the Staphylococcus hominis SK119 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusHominisSk119(
 
     Returns
     -----------------------
-    Instace of StaphylococcusHominisSk119 graph.
+    Instace of Staphylococcus hominis SK119 graph.
 
 	References
 	---------------------

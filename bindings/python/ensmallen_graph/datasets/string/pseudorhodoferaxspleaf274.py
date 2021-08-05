@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudorhodoferaxSpLeaf274.
+This file offers the methods to automatically retrieve the graph Pseudorhodoferax sp. Leaf274.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudorhodoferaxSpLeaf274(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudorhodoferaxSpLeaf274 graph.
+    """Return new instance of the Pseudorhodoferax sp. Leaf274 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudorhodoferaxSpLeaf274(
 
     Returns
     -----------------------
-    Instace of PseudorhodoferaxSpLeaf274 graph.
+    Instace of Pseudorhodoferax sp. Leaf274 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaMultocida.
+This file offers the methods to automatically retrieve the graph Pasteurella multocida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaMultocida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaMultocida graph.
+    """Return new instance of the Pasteurella multocida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PasteurellaMultocida(
 
     Returns
     -----------------------
-    Instace of PasteurellaMultocida graph.
+    Instace of Pasteurella multocida graph.
 
 	References
 	---------------------

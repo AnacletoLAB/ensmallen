@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesSpGa6a2.
+This file offers the methods to automatically retrieve the graph Bacteroides sp. Ga6A2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesSpGa6a2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesSpGa6a2 graph.
+    """Return new instance of the Bacteroides sp. Ga6A2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesSpGa6a2(
 
     Returns
     -----------------------
-    Instace of BacteroidesSpGa6a2 graph.
+    Instace of Bacteroides sp. Ga6A2 graph.
 
 	References
 	---------------------

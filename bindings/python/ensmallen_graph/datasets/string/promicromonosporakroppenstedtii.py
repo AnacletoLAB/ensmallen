@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PromicromonosporaKroppenstedtii.
+This file offers the methods to automatically retrieve the graph Promicromonospora kroppenstedtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PromicromonosporaKroppenstedtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PromicromonosporaKroppenstedtii graph.
+    """Return new instance of the Promicromonospora kroppenstedtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PromicromonosporaKroppenstedtii(
 
     Returns
     -----------------------
-    Instace of PromicromonosporaKroppenstedtii graph.
+    Instace of Promicromonospora kroppenstedtii graph.
 
 	References
 	---------------------

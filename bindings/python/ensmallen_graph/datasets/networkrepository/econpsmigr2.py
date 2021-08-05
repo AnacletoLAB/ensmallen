@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EconPsmigr2.
+This file offers the methods to automatically retrieve the graph econ-psmigr2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EconPsmigr2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EconPsmigr2 graph.
+    """Return new instance of the econ-psmigr2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EconPsmigr2(
 
     Returns
     -----------------------
-    Instace of EconPsmigr2 graph.
+    Instace of econ-psmigr2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaLactamica.
+This file offers the methods to automatically retrieve the graph Neisseria lactamica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaLactamica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaLactamica graph.
+    """Return new instance of the Neisseria lactamica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaLactamica(
 
     Returns
     -----------------------
-    Instace of NeisseriaLactamica graph.
+    Instace of Neisseria lactamica graph.
 
 	References
 	---------------------

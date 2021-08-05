@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OttowiaThiooxydansDsm14619.
+This file offers the methods to automatically retrieve the graph Ottowia thiooxydans DSM 14619.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OttowiaThiooxydansDsm14619(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OttowiaThiooxydansDsm14619 graph.
+    """Return new instance of the Ottowia thiooxydans DSM 14619 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OttowiaThiooxydansDsm14619(
 
     Returns
     -----------------------
-    Instace of OttowiaThiooxydansDsm14619 graph.
+    Instace of Ottowia thiooxydans DSM 14619 graph.
 
 	References
 	---------------------

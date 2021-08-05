@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar324ClusterBacteriumSar324Ctd7b.
+This file offers the methods to automatically retrieve the graph SAR324 cluster bacterium SAR324-CTD7B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Sar324ClusterBacteriumSar324Ctd7b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar324ClusterBacteriumSar324Ctd7b graph.
+    """Return new instance of the SAR324 cluster bacterium SAR324-CTD7B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Sar324ClusterBacteriumSar324Ctd7b(
 
     Returns
     -----------------------
-    Instace of Sar324ClusterBacteriumSar324Ctd7b graph.
+    Instace of SAR324 cluster bacterium SAR324-CTD7B graph.
 
 	References
 	---------------------

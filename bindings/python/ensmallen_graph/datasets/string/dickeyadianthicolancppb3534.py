@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaDianthicolaNcppb3534.
+This file offers the methods to automatically retrieve the graph Dickeya dianthicola NCPPB 3534.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaDianthicolaNcppb3534(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaDianthicolaNcppb3534 graph.
+    """Return new instance of the Dickeya dianthicola NCPPB 3534 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DickeyaDianthicolaNcppb3534(
 
     Returns
     -----------------------
-    Instace of DickeyaDianthicolaNcppb3534 graph.
+    Instace of Dickeya dianthicola NCPPB 3534 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumScgcAaa164E04.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium SCGC AAA164-E04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumScgcAaa164E04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumScgcAaa164E04 graph.
+    """Return new instance of the Verrucomicrobia bacterium SCGC AAA164-E04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiaBacteriumScgcAaa164E04(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumScgcAaa164E04 graph.
+    Instace of Verrucomicrobia bacterium SCGC AAA164-E04 graph.
 
 	References
 	---------------------

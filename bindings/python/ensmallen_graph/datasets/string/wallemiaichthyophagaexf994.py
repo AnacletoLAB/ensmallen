@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WallemiaIchthyophagaExf994.
+This file offers the methods to automatically retrieve the graph Wallemia ichthyophaga EXF-994.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WallemiaIchthyophagaExf994(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WallemiaIchthyophagaExf994 graph.
+    """Return new instance of the Wallemia ichthyophaga EXF-994 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WallemiaIchthyophagaExf994(
 
     Returns
     -----------------------
-    Instace of WallemiaIchthyophagaExf994 graph.
+    Instace of Wallemia ichthyophaga EXF-994 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusIners.
+This file offers the methods to automatically retrieve the graph Lactobacillus iners.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusIners(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusIners graph.
+    """Return new instance of the Lactobacillus iners graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusIners(
 
     Returns
     -----------------------
-    Instace of LactobacillusIners graph.
+    Instace of Lactobacillus iners graph.
 
 	References
 	---------------------

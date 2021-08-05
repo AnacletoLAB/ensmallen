@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterEchinorum.
+This file offers the methods to automatically retrieve the graph Salegentibacter echinorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterEchinorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterEchinorum graph.
+    """Return new instance of the Salegentibacter echinorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterEchinorum(
 
     Returns
     -----------------------
-    Instace of SalegentibacterEchinorum graph.
+    Instace of Salegentibacter echinorum graph.
 
 	References
 	---------------------

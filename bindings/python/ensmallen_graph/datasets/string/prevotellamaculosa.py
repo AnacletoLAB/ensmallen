@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaMaculosa.
+This file offers the methods to automatically retrieve the graph Prevotella maculosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaMaculosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaMaculosa graph.
+    """Return new instance of the Prevotella maculosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaMaculosa(
 
     Returns
     -----------------------
-    Instace of PrevotellaMaculosa graph.
+    Instace of Prevotella maculosa graph.
 
 	References
 	---------------------

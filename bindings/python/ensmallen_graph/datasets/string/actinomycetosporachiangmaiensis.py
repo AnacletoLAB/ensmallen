@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycetosporaChiangmaiensis.
+This file offers the methods to automatically retrieve the graph Actinomycetospora chiangmaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycetosporaChiangmaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycetosporaChiangmaiensis graph.
+    """Return new instance of the Actinomycetospora chiangmaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycetosporaChiangmaiensis(
 
     Returns
     -----------------------
-    Instace of ActinomycetosporaChiangmaiensis graph.
+    Instace of Actinomycetospora chiangmaiensis graph.
 
 	References
 	---------------------

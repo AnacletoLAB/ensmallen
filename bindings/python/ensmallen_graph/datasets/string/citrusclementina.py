@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrusClementina.
+This file offers the methods to automatically retrieve the graph Citrus clementina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrusClementina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrusClementina graph.
+    """Return new instance of the Citrus clementina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrusClementina(
 
     Returns
     -----------------------
-    Instace of CitrusClementina graph.
+    Instace of Citrus clementina graph.
 
 	References
 	---------------------

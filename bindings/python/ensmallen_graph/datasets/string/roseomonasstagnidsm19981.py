@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseomonasStagniDsm19981.
+This file offers the methods to automatically retrieve the graph Roseomonas stagni DSM 19981.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseomonasStagniDsm19981(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseomonasStagniDsm19981 graph.
+    """Return new instance of the Roseomonas stagni DSM 19981 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseomonasStagniDsm19981(
 
     Returns
     -----------------------
-    Instace of RoseomonasStagniDsm19981 graph.
+    Instace of Roseomonas stagni DSM 19981 graph.
 
 	References
 	---------------------

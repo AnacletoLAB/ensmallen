@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumSpBv3ac4.
+This file offers the methods to automatically retrieve the graph Atopobium sp. BV3Ac4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumSpBv3ac4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumSpBv3ac4 graph.
+    """Return new instance of the Atopobium sp. BV3Ac4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AtopobiumSpBv3ac4(
 
     Returns
     -----------------------
-    Instace of AtopobiumSpBv3ac4 graph.
+    Instace of Atopobium sp. BV3Ac4 graph.
 
 	References
 	---------------------

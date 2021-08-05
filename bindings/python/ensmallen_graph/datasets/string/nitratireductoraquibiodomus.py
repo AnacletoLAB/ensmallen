@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratireductorAquibiodomus.
+This file offers the methods to automatically retrieve the graph Nitratireductor aquibiodomus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratireductorAquibiodomus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratireductorAquibiodomus graph.
+    """Return new instance of the Nitratireductor aquibiodomus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitratireductorAquibiodomus(
 
     Returns
     -----------------------
-    Instace of NitratireductorAquibiodomus graph.
+    Instace of Nitratireductor aquibiodomus graph.
 
 	References
 	---------------------

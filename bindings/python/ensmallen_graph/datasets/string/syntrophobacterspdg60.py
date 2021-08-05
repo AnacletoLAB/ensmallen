@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophobacterSpDg60.
+This file offers the methods to automatically retrieve the graph Syntrophobacter sp. DG_60.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophobacterSpDg60(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophobacterSpDg60 graph.
+    """Return new instance of the Syntrophobacter sp. DG_60 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophobacterSpDg60(
 
     Returns
     -----------------------
-    Instace of SyntrophobacterSpDg60 graph.
+    Instace of Syntrophobacter sp. DG_60 graph.
 
 	References
 	---------------------

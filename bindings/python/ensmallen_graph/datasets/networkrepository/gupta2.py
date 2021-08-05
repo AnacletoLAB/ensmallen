@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gupta2.
+This file offers the methods to automatically retrieve the graph gupta2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Gupta2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gupta2 graph.
+    """Return new instance of the gupta2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Gupta2(
 
     Returns
     -----------------------
-    Instace of Gupta2 graph.
+    Instace of gupta2 graph.
 
 	References
 	---------------------

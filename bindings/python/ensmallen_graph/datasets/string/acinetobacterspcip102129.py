@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpCip102129.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. CIP102129.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpCip102129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpCip102129 graph.
+    """Return new instance of the Acinetobacter sp. CIP102129 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSpCip102129(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpCip102129 graph.
+    Instace of Acinetobacter sp. CIP102129 graph.
 
 	References
 	---------------------

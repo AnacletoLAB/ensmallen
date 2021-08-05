@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChondromycesApiculatus.
+This file offers the methods to automatically retrieve the graph Chondromyces apiculatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChondromycesApiculatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChondromycesApiculatus graph.
+    """Return new instance of the Chondromyces apiculatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChondromycesApiculatus(
 
     Returns
     -----------------------
-    Instace of ChondromycesApiculatus graph.
+    Instace of Chondromyces apiculatus graph.
 
 	References
 	---------------------

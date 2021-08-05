@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusGorillae.
+This file offers the methods to automatically retrieve the graph Paenibacillus gorillae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusGorillae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusGorillae graph.
+    """Return new instance of the Paenibacillus gorillae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusGorillae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusGorillae graph.
+    Instace of Paenibacillus gorillae graph.
 
 	References
 	---------------------

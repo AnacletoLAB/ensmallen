@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPyogenesDsm20611.
+This file offers the methods to automatically retrieve the graph Bacteroides pyogenes DSM20611.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPyogenesDsm20611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPyogenesDsm20611 graph.
+    """Return new instance of the Bacteroides pyogenes DSM20611 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesPyogenesDsm20611(
 
     Returns
     -----------------------
-    Instace of BacteroidesPyogenesDsm20611 graph.
+    Instace of Bacteroides pyogenes DSM20611 graph.
 
 	References
 	---------------------

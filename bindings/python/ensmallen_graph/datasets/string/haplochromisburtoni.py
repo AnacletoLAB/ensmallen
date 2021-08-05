@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaplochromisBurtoni.
+This file offers the methods to automatically retrieve the graph Haplochromis burtoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaplochromisBurtoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaplochromisBurtoni graph.
+    """Return new instance of the Haplochromis burtoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaplochromisBurtoni(
 
     Returns
     -----------------------
-    Instace of HaplochromisBurtoni graph.
+    Instace of Haplochromis burtoni graph.
 
 	References
 	---------------------

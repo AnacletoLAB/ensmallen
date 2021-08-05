@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusStreptomycesMassiliensisAp10.
+This file offers the methods to automatically retrieve the graph Candidatus Streptomyces massiliensis AP10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusStreptomycesMassiliensisAp10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusStreptomycesMassiliensisAp10 graph.
+    """Return new instance of the Candidatus Streptomyces massiliensis AP10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusStreptomycesMassiliensisAp10(
 
     Returns
     -----------------------
-    Instace of CandidatusStreptomycesMassiliensisAp10 graph.
+    Instace of Candidatus Streptomyces massiliensis AP10 graph.
 
 	References
 	---------------------

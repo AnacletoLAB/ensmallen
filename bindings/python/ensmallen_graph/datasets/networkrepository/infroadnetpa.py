@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfRoadnetPa.
+This file offers the methods to automatically retrieve the graph inf-roadNet-PA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def InfRoadnetPa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfRoadnetPa graph.
+    """Return new instance of the inf-roadNet-PA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def InfRoadnetPa(
 
     Returns
     -----------------------
-    Instace of InfRoadnetPa graph.
+    Instace of inf-roadNet-PA graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTusciae.
+This file offers the methods to automatically retrieve the graph Mycobacterium tusciae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTusciae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTusciae graph.
+    """Return new instance of the Mycobacterium tusciae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumTusciae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTusciae graph.
+    Instace of Mycobacterium tusciae graph.
 
 	References
 	---------------------

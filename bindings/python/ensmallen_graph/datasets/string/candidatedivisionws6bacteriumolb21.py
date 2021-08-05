@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWs6BacteriumOlb21.
+This file offers the methods to automatically retrieve the graph candidate division WS6 bacterium OLB21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWs6BacteriumOlb21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWs6BacteriumOlb21 graph.
+    """Return new instance of the candidate division WS6 bacterium OLB21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWs6BacteriumOlb21(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWs6BacteriumOlb21 graph.
+    Instace of candidate division WS6 bacterium OLB21 graph.
 
 	References
 	---------------------

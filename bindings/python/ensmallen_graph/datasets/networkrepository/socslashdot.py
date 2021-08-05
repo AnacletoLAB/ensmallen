@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocSlashdot.
+This file offers the methods to automatically retrieve the graph soc-slashdot.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def SocSlashdot(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocSlashdot graph.
+    """Return new instance of the soc-slashdot graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def SocSlashdot(
 
     Returns
     -----------------------
-    Instace of SocSlashdot graph.
+    Instace of soc-slashdot graph.
 
 	References
 	---------------------

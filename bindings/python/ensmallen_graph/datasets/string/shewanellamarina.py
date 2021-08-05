@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaMarina.
+This file offers the methods to automatically retrieve the graph Shewanella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaMarina graph.
+    """Return new instance of the Shewanella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaMarina(
 
     Returns
     -----------------------
-    Instace of ShewanellaMarina graph.
+    Instace of Shewanella marina graph.
 
 	References
 	---------------------

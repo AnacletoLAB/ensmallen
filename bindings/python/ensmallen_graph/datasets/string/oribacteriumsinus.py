@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSinus.
+This file offers the methods to automatically retrieve the graph Oribacterium sinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSinus graph.
+    """Return new instance of the Oribacterium sinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OribacteriumSinus(
 
     Returns
     -----------------------
-    Instace of OribacteriumSinus graph.
+    Instace of Oribacterium sinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterRodentium.
+This file offers the methods to automatically retrieve the graph Citrobacter rodentium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterRodentium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterRodentium graph.
+    """Return new instance of the Citrobacter rodentium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrobacterRodentium(
 
     Returns
     -----------------------
-    Instace of CitrobacterRodentium graph.
+    Instace of Citrobacter rodentium graph.
 
 	References
 	---------------------

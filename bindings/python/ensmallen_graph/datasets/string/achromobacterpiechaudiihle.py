@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterPiechaudiiHle.
+This file offers the methods to automatically retrieve the graph Achromobacter piechaudii HLE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterPiechaudiiHle(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterPiechaudiiHle graph.
+    """Return new instance of the Achromobacter piechaudii HLE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterPiechaudiiHle(
 
     Returns
     -----------------------
-    Instace of AchromobacterPiechaudiiHle graph.
+    Instace of Achromobacter piechaudii HLE graph.
 
 	References
 	---------------------

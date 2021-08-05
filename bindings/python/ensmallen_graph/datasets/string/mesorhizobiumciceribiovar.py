@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumCiceriBiovar.
+This file offers the methods to automatically retrieve the graph Mesorhizobium ciceri biovar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumCiceriBiovar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumCiceriBiovar graph.
+    """Return new instance of the Mesorhizobium ciceri biovar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumCiceriBiovar(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumCiceriBiovar graph.
+    Instace of Mesorhizobium ciceri biovar graph.
 
 	References
 	---------------------

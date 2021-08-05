@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLentusNbrc16444.
+This file offers the methods to automatically retrieve the graph Bacillus lentus NBRC 16444.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLentusNbrc16444(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLentusNbrc16444 graph.
+    """Return new instance of the Bacillus lentus NBRC 16444 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusLentusNbrc16444(
 
     Returns
     -----------------------
-    Instace of BacillusLentusNbrc16444 graph.
+    Instace of Bacillus lentus NBRC 16444 graph.
 
 	References
 	---------------------

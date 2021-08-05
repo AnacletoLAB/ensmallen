@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalibacteriumThalassium.
+This file offers the methods to automatically retrieve the graph Alkalibacterium thalassium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalibacteriumThalassium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalibacteriumThalassium graph.
+    """Return new instance of the Alkalibacterium thalassium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalibacteriumThalassium(
 
     Returns
     -----------------------
-    Instace of AlkalibacteriumThalassium graph.
+    Instace of Alkalibacterium thalassium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlexilineaFlocculi.
+This file offers the methods to automatically retrieve the graph Flexilinea flocculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlexilineaFlocculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlexilineaFlocculi graph.
+    """Return new instance of the Flexilinea flocculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlexilineaFlocculi(
 
     Returns
     -----------------------
-    Instace of FlexilineaFlocculi graph.
+    Instace of Flexilinea flocculi graph.
 
 	References
 	---------------------

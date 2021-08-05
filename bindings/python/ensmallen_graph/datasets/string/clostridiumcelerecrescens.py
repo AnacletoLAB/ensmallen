@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCelerecrescens.
+This file offers the methods to automatically retrieve the graph [Clostridium] celerecrescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCelerecrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCelerecrescens graph.
+    """Return new instance of the [Clostridium] celerecrescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumCelerecrescens(
 
     Returns
     -----------------------
-    Instace of ClostridiumCelerecrescens graph.
+    Instace of [Clostridium] celerecrescens graph.
 
 	References
 	---------------------

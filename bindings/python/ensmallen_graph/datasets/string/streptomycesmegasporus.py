@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesMegasporus.
+This file offers the methods to automatically retrieve the graph Streptomyces megasporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesMegasporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesMegasporus graph.
+    """Return new instance of the Streptomyces megasporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesMegasporus(
 
     Returns
     -----------------------
-    Instace of StreptomycesMegasporus graph.
+    Instace of Streptomyces megasporus graph.
 
 	References
 	---------------------

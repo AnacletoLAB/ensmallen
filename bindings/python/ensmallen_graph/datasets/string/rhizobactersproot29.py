@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobacterSpRoot29.
+This file offers the methods to automatically retrieve the graph Rhizobacter sp. Root29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobacterSpRoot29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobacterSpRoot29 graph.
+    """Return new instance of the Rhizobacter sp. Root29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobacterSpRoot29(
 
     Returns
     -----------------------
-    Instace of RhizobacterSpRoot29 graph.
+    Instace of Rhizobacter sp. Root29 graph.
 
 	References
 	---------------------

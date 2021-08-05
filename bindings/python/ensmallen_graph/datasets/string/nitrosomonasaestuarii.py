@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasAestuarii.
+This file offers the methods to automatically retrieve the graph Nitrosomonas aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasAestuarii graph.
+    """Return new instance of the Nitrosomonas aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasAestuarii(
 
     Returns
     -----------------------
-    Instace of NitrosomonasAestuarii graph.
+    Instace of Nitrosomonas aestuarii graph.
 
 	References
 	---------------------

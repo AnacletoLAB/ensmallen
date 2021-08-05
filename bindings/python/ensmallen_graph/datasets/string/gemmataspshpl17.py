@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmataSpShPl17.
+This file offers the methods to automatically retrieve the graph Gemmata sp. SH-PL17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmataSpShPl17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmataSpShPl17 graph.
+    """Return new instance of the Gemmata sp. SH-PL17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemmataSpShPl17(
 
     Returns
     -----------------------
-    Instace of GemmataSpShPl17 graph.
+    Instace of Gemmata sp. SH-PL17 graph.
 
 	References
 	---------------------

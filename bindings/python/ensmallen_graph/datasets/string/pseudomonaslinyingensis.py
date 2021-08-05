@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasLinyingensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas linyingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasLinyingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasLinyingensis graph.
+    """Return new instance of the Pseudomonas linyingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasLinyingensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasLinyingensis graph.
+    Instace of Pseudomonas linyingensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumFlorentinum.
+This file offers the methods to automatically retrieve the graph Mycobacterium florentinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumFlorentinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumFlorentinum graph.
+    """Return new instance of the Mycobacterium florentinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumFlorentinum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumFlorentinum graph.
+    Instace of Mycobacterium florentinum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BulleidiaExtructa.
+This file offers the methods to automatically retrieve the graph Bulleidia extructa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BulleidiaExtructa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BulleidiaExtructa graph.
+    """Return new instance of the Bulleidia extructa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BulleidiaExtructa(
 
     Returns
     -----------------------
-    Instace of BulleidiaExtructa graph.
+    Instace of Bulleidia extructa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusIheyensis.
+This file offers the methods to automatically retrieve the graph Oceanobacillus iheyensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusIheyensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusIheyensis graph.
+    """Return new instance of the Oceanobacillus iheyensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanobacillusIheyensis(
 
     Returns
     -----------------------
-    Instace of OceanobacillusIheyensis graph.
+    Instace of Oceanobacillus iheyensis graph.
 
 	References
 	---------------------

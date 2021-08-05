@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudozobelliaThermophila.
+This file offers the methods to automatically retrieve the graph Pseudozobellia thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudozobelliaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudozobelliaThermophila graph.
+    """Return new instance of the Pseudozobellia thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudozobelliaThermophila(
 
     Returns
     -----------------------
-    Instace of PseudozobelliaThermophila graph.
+    Instace of Pseudozobellia thermophila graph.
 
 	References
 	---------------------

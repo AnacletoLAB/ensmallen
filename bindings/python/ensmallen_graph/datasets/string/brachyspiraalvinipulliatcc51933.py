@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraAlvinipulliAtcc51933.
+This file offers the methods to automatically retrieve the graph Brachyspira alvinipulli ATCC 51933.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraAlvinipulliAtcc51933(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraAlvinipulliAtcc51933 graph.
+    """Return new instance of the Brachyspira alvinipulli ATCC 51933 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachyspiraAlvinipulliAtcc51933(
 
     Returns
     -----------------------
-    Instace of BrachyspiraAlvinipulliAtcc51933 graph.
+    Instace of Brachyspira alvinipulli ATCC 51933 graph.
 
 	References
 	---------------------

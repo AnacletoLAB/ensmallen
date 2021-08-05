@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpRoot154.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. Root154.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpRoot154(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpRoot154 graph.
+    """Return new instance of the Sphingopyxis sp. Root154 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSpRoot154(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpRoot154 graph.
+    Instace of Sphingopyxis sp. Root154 graph.
 
 	References
 	---------------------

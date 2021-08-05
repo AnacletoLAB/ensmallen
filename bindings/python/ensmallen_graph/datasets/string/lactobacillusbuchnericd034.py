@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusBuchneriCd034.
+This file offers the methods to automatically retrieve the graph Lactobacillus buchneri CD034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusBuchneriCd034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusBuchneriCd034 graph.
+    """Return new instance of the Lactobacillus buchneri CD034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusBuchneriCd034(
 
     Returns
     -----------------------
-    Instace of LactobacillusBuchneriCd034 graph.
+    Instace of Lactobacillus buchneri CD034 graph.
 
 	References
 	---------------------

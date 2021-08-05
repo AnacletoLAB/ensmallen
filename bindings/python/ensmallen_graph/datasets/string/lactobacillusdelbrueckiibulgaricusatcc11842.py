@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusDelbrueckiiBulgaricusAtcc11842.
+This file offers the methods to automatically retrieve the graph Lactobacillus delbrueckii bulgaricus ATCC 11842.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusDelbrueckiiBulgaricusAtcc11842(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusDelbrueckiiBulgaricusAtcc11842 graph.
+    """Return new instance of the Lactobacillus delbrueckii bulgaricus ATCC 11842 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusDelbrueckiiBulgaricusAtcc11842(
 
     Returns
     -----------------------
-    Instace of LactobacillusDelbrueckiiBulgaricusAtcc11842 graph.
+    Instace of Lactobacillus delbrueckii bulgaricus ATCC 11842 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatonellaMorbi.
+This file offers the methods to automatically retrieve the graph Catonella morbi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatonellaMorbi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatonellaMorbi graph.
+    """Return new instance of the Catonella morbi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CatonellaMorbi(
 
     Returns
     -----------------------
-    Instace of CatonellaMorbi graph.
+    Instace of Catonella morbi graph.
 
 	References
 	---------------------

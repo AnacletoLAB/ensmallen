@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizophagusClarus.
+This file offers the methods to automatically retrieve the graph Rhizophagus clarus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizophagusClarus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizophagusClarus graph.
+    """Return new instance of the Rhizophagus clarus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizophagusClarus(
 
     Returns
     -----------------------
-    Instace of RhizophagusClarus graph.
+    Instace of Rhizophagus clarus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkaliphilusPeptidifermentansDsm18978.
+This file offers the methods to automatically retrieve the graph Alkaliphilus peptidifermentans DSM 18978.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkaliphilusPeptidifermentansDsm18978(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkaliphilusPeptidifermentansDsm18978 graph.
+    """Return new instance of the Alkaliphilus peptidifermentans DSM 18978 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkaliphilusPeptidifermentansDsm18978(
 
     Returns
     -----------------------
-    Instace of AlkaliphilusPeptidifermentansDsm18978 graph.
+    Instace of Alkaliphilus peptidifermentans DSM 18978 graph.
 
 	References
 	---------------------

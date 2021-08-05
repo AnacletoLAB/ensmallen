@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumGillisiae.
+This file offers the methods to automatically retrieve the graph Flavobacterium gillisiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumGillisiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumGillisiae graph.
+    """Return new instance of the Flavobacterium gillisiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumGillisiae(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumGillisiae graph.
+    Instace of Flavobacterium gillisiae graph.
 
 	References
 	---------------------

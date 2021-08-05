@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanotheceSpAtcc51142.
+This file offers the methods to automatically retrieve the graph Cyanothece sp. ATCC51142.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanotheceSpAtcc51142(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanotheceSpAtcc51142 graph.
+    """Return new instance of the Cyanothece sp. ATCC51142 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyanotheceSpAtcc51142(
 
     Returns
     -----------------------
-    Instace of CyanotheceSpAtcc51142 graph.
+    Instace of Cyanothece sp. ATCC51142 graph.
 
 	References
 	---------------------

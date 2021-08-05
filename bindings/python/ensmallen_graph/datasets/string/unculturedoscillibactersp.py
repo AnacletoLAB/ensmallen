@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedOscillibacterSp.
+This file offers the methods to automatically retrieve the graph uncultured Oscillibacter sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedOscillibacterSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedOscillibacterSp graph.
+    """Return new instance of the uncultured Oscillibacter sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedOscillibacterSp(
 
     Returns
     -----------------------
-    Instace of UnculturedOscillibacterSp graph.
+    Instace of uncultured Oscillibacter sp. graph.
 
 	References
 	---------------------

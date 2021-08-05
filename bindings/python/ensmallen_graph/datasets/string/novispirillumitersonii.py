@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovispirillumItersonii.
+This file offers the methods to automatically retrieve the graph Novispirillum itersonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovispirillumItersonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovispirillumItersonii graph.
+    """Return new instance of the Novispirillum itersonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NovispirillumItersonii(
 
     Returns
     -----------------------
-    Instace of NovispirillumItersonii graph.
+    Instace of Novispirillum itersonii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentibacillusAmyloliquefaciens.
+This file offers the methods to automatically retrieve the graph Lentibacillus amyloliquefaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentibacillusAmyloliquefaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentibacillusAmyloliquefaciens graph.
+    """Return new instance of the Lentibacillus amyloliquefaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentibacillusAmyloliquefaciens(
 
     Returns
     -----------------------
-    Instace of LentibacillusAmyloliquefaciens graph.
+    Instace of Lentibacillus amyloliquefaciens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DermabacterVaginalis.
+This file offers the methods to automatically retrieve the graph Dermabacter vaginalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DermabacterVaginalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DermabacterVaginalis graph.
+    """Return new instance of the Dermabacter vaginalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DermabacterVaginalis(
 
     Returns
     -----------------------
-    Instace of DermabacterVaginalis graph.
+    Instace of Dermabacter vaginalis graph.
 
 	References
 	---------------------

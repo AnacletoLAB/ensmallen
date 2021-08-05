@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpKnhs205.
+This file offers the methods to automatically retrieve the graph Clostridium sp. KNHs205.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpKnhs205(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpKnhs205 graph.
+    """Return new instance of the Clostridium sp. KNHs205 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpKnhs205(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpKnhs205 graph.
+    Instace of Clostridium sp. KNHs205 graph.
 
 	References
 	---------------------

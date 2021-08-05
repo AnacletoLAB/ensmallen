@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumAquaticum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium aquaticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumAquaticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumAquaticum graph.
+    """Return new instance of the Chryseobacterium aquaticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumAquaticum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumAquaticum graph.
+    Instace of Chryseobacterium aquaticum graph.
 
 	References
 	---------------------

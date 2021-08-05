@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCoryniformisKctc3167.
+This file offers the methods to automatically retrieve the graph Lactobacillus coryniformis KCTC3167.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCoryniformisKctc3167(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCoryniformisKctc3167 graph.
+    """Return new instance of the Lactobacillus coryniformis KCTC3167 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCoryniformisKctc3167(
 
     Returns
     -----------------------
-    Instace of LactobacillusCoryniformisKctc3167 graph.
+    Instace of Lactobacillus coryniformis KCTC3167 graph.
 
 	References
 	---------------------

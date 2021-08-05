@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocaldumSp14b.
+This file offers the methods to automatically retrieve the graph Methylocaldum sp. 14B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocaldumSp14b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocaldumSp14b graph.
+    """Return new instance of the Methylocaldum sp. 14B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylocaldumSp14b(
 
     Returns
     -----------------------
-    Instace of MethylocaldumSp14b graph.
+    Instace of Methylocaldum sp. 14B graph.
 
 	References
 	---------------------

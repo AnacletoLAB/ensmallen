@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfarculaceaeBacteriumJdfr97.
+This file offers the methods to automatically retrieve the graph Desulfarculaceae bacterium JdFR-97.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfarculaceaeBacteriumJdfr97(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfarculaceaeBacteriumJdfr97 graph.
+    """Return new instance of the Desulfarculaceae bacterium JdFR-97 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfarculaceaeBacteriumJdfr97(
 
     Returns
     -----------------------
-    Instace of DesulfarculaceaeBacteriumJdfr97 graph.
+    Instace of Desulfarculaceae bacterium JdFR-97 graph.
 
 	References
 	---------------------

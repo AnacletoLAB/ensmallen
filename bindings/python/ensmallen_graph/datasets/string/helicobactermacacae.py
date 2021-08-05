@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterMacacae.
+This file offers the methods to automatically retrieve the graph Helicobacter macacae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterMacacae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterMacacae graph.
+    """Return new instance of the Helicobacter macacae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterMacacae(
 
     Returns
     -----------------------
-    Instace of HelicobacterMacacae graph.
+    Instace of Helicobacter macacae graph.
 
 	References
 	---------------------

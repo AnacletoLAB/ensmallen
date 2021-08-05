@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaMazei.
+This file offers the methods to automatically retrieve the graph Methanosarcina mazei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaMazei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaMazei graph.
+    """Return new instance of the Methanosarcina mazei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanosarcinaMazei(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaMazei graph.
+    Instace of Methanosarcina mazei graph.
 
 	References
 	---------------------

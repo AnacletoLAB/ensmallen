@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLiptonbacteriaBacteriumRifcsplowo212Full6015.
+This file offers the methods to automatically retrieve the graph Candidatus Liptonbacteria bacterium RIFCSPLOWO2_12_FULL_60_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLiptonbacteriaBacteriumRifcsplowo212Full6015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLiptonbacteriaBacteriumRifcsplowo212Full6015 graph.
+    """Return new instance of the Candidatus Liptonbacteria bacterium RIFCSPLOWO2_12_FULL_60_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLiptonbacteriaBacteriumRifcsplowo212Full6015(
 
     Returns
     -----------------------
-    Instace of CandidatusLiptonbacteriaBacteriumRifcsplowo212Full6015 graph.
+    Instace of Candidatus Liptonbacteria bacterium RIFCSPLOWO2_12_FULL_60_15 graph.
 
 	References
 	---------------------

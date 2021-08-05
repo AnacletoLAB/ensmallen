@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KosakoniaCowanii.
+This file offers the methods to automatically retrieve the graph Kosakonia cowanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KosakoniaCowanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KosakoniaCowanii graph.
+    """Return new instance of the Kosakonia cowanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KosakoniaCowanii(
 
     Returns
     -----------------------
-    Instace of KosakoniaCowanii graph.
+    Instace of Kosakonia cowanii graph.
 
 	References
 	---------------------

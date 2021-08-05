@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusZeae.
+This file offers the methods to automatically retrieve the graph Lactobacillus zeae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusZeae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusZeae graph.
+    """Return new instance of the Lactobacillus zeae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusZeae(
 
     Returns
     -----------------------
-    Instace of LactobacillusZeae graph.
+    Instace of Lactobacillus zeae graph.
 
 	References
 	---------------------

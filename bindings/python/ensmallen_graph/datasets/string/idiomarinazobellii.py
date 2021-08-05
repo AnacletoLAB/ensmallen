@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaZobellii.
+This file offers the methods to automatically retrieve the graph Idiomarina zobellii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaZobellii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaZobellii graph.
+    """Return new instance of the Idiomarina zobellii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaZobellii(
 
     Returns
     -----------------------
-    Instace of IdiomarinaZobellii graph.
+    Instace of Idiomarina zobellii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumMediterraneense.
+This file offers the methods to automatically retrieve the graph Clostridium mediterraneense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumMediterraneense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumMediterraneense graph.
+    """Return new instance of the Clostridium mediterraneense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumMediterraneense(
 
     Returns
     -----------------------
-    Instace of ClostridiumMediterraneense graph.
+    Instace of Clostridium mediterraneense graph.
 
 	References
 	---------------------

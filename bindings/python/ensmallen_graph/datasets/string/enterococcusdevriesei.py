@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusDevriesei.
+This file offers the methods to automatically retrieve the graph Enterococcus devriesei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusDevriesei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusDevriesei graph.
+    """Return new instance of the Enterococcus devriesei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusDevriesei(
 
     Returns
     -----------------------
-    Instace of EnterococcusDevriesei graph.
+    Instace of Enterococcus devriesei graph.
 
 	References
 	---------------------

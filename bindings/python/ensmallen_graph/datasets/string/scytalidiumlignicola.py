@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScytalidiumLignicola.
+This file offers the methods to automatically retrieve the graph Scytalidium lignicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScytalidiumLignicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScytalidiumLignicola graph.
+    """Return new instance of the Scytalidium lignicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScytalidiumLignicola(
 
     Returns
     -----------------------
-    Instace of ScytalidiumLignicola graph.
+    Instace of Scytalidium lignicola graph.
 
 	References
 	---------------------

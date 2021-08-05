@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSaelicesensis.
+This file offers the methods to automatically retrieve the graph Micromonospora saelicesensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSaelicesensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSaelicesensis graph.
+    """Return new instance of the Micromonospora saelicesensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSaelicesensis(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSaelicesensis graph.
+    Instace of Micromonospora saelicesensis graph.
 
 	References
 	---------------------

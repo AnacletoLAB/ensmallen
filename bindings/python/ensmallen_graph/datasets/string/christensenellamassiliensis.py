@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChristensenellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Christensenella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChristensenellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChristensenellaMassiliensis graph.
+    """Return new instance of the Christensenella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChristensenellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of ChristensenellaMassiliensis graph.
+    Instace of Christensenella massiliensis graph.
 
 	References
 	---------------------

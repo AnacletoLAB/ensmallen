@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphenodonPunctatus.
+This file offers the methods to automatically retrieve the graph Sphenodon punctatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphenodonPunctatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphenodonPunctatus graph.
+    """Return new instance of the Sphenodon punctatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphenodonPunctatus(
 
     Returns
     -----------------------
-    Instace of SphenodonPunctatus graph.
+    Instace of Sphenodon punctatus graph.
 
 	References
 	---------------------

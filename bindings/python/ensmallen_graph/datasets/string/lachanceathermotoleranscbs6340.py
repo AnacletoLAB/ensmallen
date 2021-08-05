@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaThermotoleransCbs6340.
+This file offers the methods to automatically retrieve the graph Lachancea thermotolerans CBS 6340.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaThermotoleransCbs6340(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaThermotoleransCbs6340 graph.
+    """Return new instance of the Lachancea thermotolerans CBS 6340 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachanceaThermotoleransCbs6340(
 
     Returns
     -----------------------
-    Instace of LachanceaThermotoleransCbs6340 graph.
+    Instace of Lachancea thermotolerans CBS 6340 graph.
 
 	References
 	---------------------

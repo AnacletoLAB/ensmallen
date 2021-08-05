@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiAtcc8739.
+This file offers the methods to automatically retrieve the graph Escherichia coli ATCC8739.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiAtcc8739(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiAtcc8739 graph.
+    """Return new instance of the Escherichia coli ATCC8739 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaColiAtcc8739(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiAtcc8739 graph.
+    Instace of Escherichia coli ATCC8739 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrochothrixCampestrisFslF61037.
+This file offers the methods to automatically retrieve the graph Brochothrix campestris FSL F6-1037.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrochothrixCampestrisFslF61037(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrochothrixCampestrisFslF61037 graph.
+    """Return new instance of the Brochothrix campestris FSL F6-1037 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrochothrixCampestrisFslF61037(
 
     Returns
     -----------------------
-    Instace of BrochothrixCampestrisFslF61037 graph.
+    Instace of Brochothrix campestris FSL F6-1037 graph.
 
 	References
 	---------------------

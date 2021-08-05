@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KnoelliaSinensis.
+This file offers the methods to automatically retrieve the graph Knoellia sinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KnoelliaSinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KnoelliaSinensis graph.
+    """Return new instance of the Knoellia sinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KnoelliaSinensis(
 
     Returns
     -----------------------
-    Instace of KnoelliaSinensis graph.
+    Instace of Knoellia sinensis graph.
 
 	References
 	---------------------

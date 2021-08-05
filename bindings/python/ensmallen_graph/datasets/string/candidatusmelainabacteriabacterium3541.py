@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMelainabacteriaBacterium3541.
+This file offers the methods to automatically retrieve the graph Candidatus Melainabacteria bacterium 35_41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMelainabacteriaBacterium3541(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMelainabacteriaBacterium3541 graph.
+    """Return new instance of the Candidatus Melainabacteria bacterium 35_41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMelainabacteriaBacterium3541(
 
     Returns
     -----------------------
-    Instace of CandidatusMelainabacteriaBacterium3541 graph.
+    Instace of Candidatus Melainabacteria bacterium 35_41 graph.
 
 	References
 	---------------------

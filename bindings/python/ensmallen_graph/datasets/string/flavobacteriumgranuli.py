@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumGranuli.
+This file offers the methods to automatically retrieve the graph Flavobacterium granuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumGranuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumGranuli graph.
+    """Return new instance of the Flavobacterium granuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumGranuli(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumGranuli graph.
+    Instace of Flavobacterium granuli graph.
 
 	References
 	---------------------

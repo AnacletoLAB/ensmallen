@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisValliformis.
+This file offers the methods to automatically retrieve the graph Nocardiopsis valliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisValliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisValliformis graph.
+    """Return new instance of the Nocardiopsis valliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisValliformis(
 
     Returns
     -----------------------
-    Instace of NocardiopsisValliformis graph.
+    Instace of Nocardiopsis valliformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaLutea.
+This file offers the methods to automatically retrieve the graph Demequina lutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaLutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaLutea graph.
+    """Return new instance of the Demequina lutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaLutea(
 
     Returns
     -----------------------
-    Instace of DemequinaLutea graph.
+    Instace of Demequina lutea graph.
 
 	References
 	---------------------

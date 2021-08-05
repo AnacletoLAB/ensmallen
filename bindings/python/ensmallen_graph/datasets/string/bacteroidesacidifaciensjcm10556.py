@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesAcidifaciensJcm10556.
+This file offers the methods to automatically retrieve the graph Bacteroides acidifaciens JCM 10556.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesAcidifaciensJcm10556(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesAcidifaciensJcm10556 graph.
+    """Return new instance of the Bacteroides acidifaciens JCM 10556 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesAcidifaciensJcm10556(
 
     Returns
     -----------------------
-    Instace of BacteroidesAcidifaciensJcm10556 graph.
+    Instace of Bacteroides acidifaciens JCM 10556 graph.
 
 	References
 	---------------------

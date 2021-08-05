@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AequorivitaSoesokkakensis.
+This file offers the methods to automatically retrieve the graph Aequorivita soesokkakensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AequorivitaSoesokkakensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AequorivitaSoesokkakensis graph.
+    """Return new instance of the Aequorivita soesokkakensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AequorivitaSoesokkakensis(
 
     Returns
     -----------------------
-    Instace of AequorivitaSoesokkakensis graph.
+    Instace of Aequorivita soesokkakensis graph.
 
 	References
 	---------------------

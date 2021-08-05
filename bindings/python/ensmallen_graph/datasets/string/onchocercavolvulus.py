@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OnchocercaVolvulus.
+This file offers the methods to automatically retrieve the graph Onchocerca volvulus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OnchocercaVolvulus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OnchocercaVolvulus graph.
+    """Return new instance of the Onchocerca volvulus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OnchocercaVolvulus(
 
     Returns
     -----------------------
-    Instace of OnchocercaVolvulus graph.
+    Instace of Onchocerca volvulus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacteriumSpPsu2.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacterium sp. PSU-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacteriumSpPsu2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacteriumSpPsu2 graph.
+    """Return new instance of the Thermoanaerobacterium sp. PSU-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerobacteriumSpPsu2(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacteriumSpPsu2 graph.
+    Instace of Thermoanaerobacterium sp. PSU-2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacteraceaeBacteriumGomA1.
+This file offers the methods to automatically retrieve the graph Pelagibacteraceae bacterium GOM-A1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacteraceaeBacteriumGomA1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacteraceaeBacteriumGomA1 graph.
+    """Return new instance of the Pelagibacteraceae bacterium GOM-A1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelagibacteraceaeBacteriumGomA1(
 
     Returns
     -----------------------
-    Instace of PelagibacteraceaeBacteriumGomA1 graph.
+    Instace of Pelagibacteraceae bacterium GOM-A1 graph.
 
 	References
 	---------------------

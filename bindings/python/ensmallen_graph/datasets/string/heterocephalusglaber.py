@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeterocephalusGlaber.
+This file offers the methods to automatically retrieve the graph Heterocephalus glaber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeterocephalusGlaber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeterocephalusGlaber graph.
+    """Return new instance of the Heterocephalus glaber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HeterocephalusGlaber(
 
     Returns
     -----------------------
-    Instace of HeterocephalusGlaber graph.
+    Instace of Heterocephalus glaber graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHodgkiniaCicadicola.
+This file offers the methods to automatically retrieve the graph Candidatus Hodgkinia cicadicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHodgkiniaCicadicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHodgkiniaCicadicola graph.
+    """Return new instance of the Candidatus Hodgkinia cicadicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHodgkiniaCicadicola(
 
     Returns
     -----------------------
-    Instace of CandidatusHodgkiniaCicadicola graph.
+    Instace of Candidatus Hodgkinia cicadicola graph.
 
 	References
 	---------------------

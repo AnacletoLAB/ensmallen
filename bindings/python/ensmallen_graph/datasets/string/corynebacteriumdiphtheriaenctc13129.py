@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumDiphtheriaeNctc13129.
+This file offers the methods to automatically retrieve the graph Corynebacterium diphtheriae NCTC 13129.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumDiphtheriaeNctc13129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumDiphtheriaeNctc13129 graph.
+    """Return new instance of the Corynebacterium diphtheriae NCTC 13129 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumDiphtheriaeNctc13129(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumDiphtheriaeNctc13129 graph.
+    Instace of Corynebacterium diphtheriae NCTC 13129 graph.
 
 	References
 	---------------------

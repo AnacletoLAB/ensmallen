@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaJaponica.
+This file offers the methods to automatically retrieve the graph Shewanella japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaJaponica graph.
+    """Return new instance of the Shewanella japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaJaponica(
 
     Returns
     -----------------------
-    Instace of ShewanellaJaponica graph.
+    Instace of Shewanella japonica graph.
 
 	References
 	---------------------

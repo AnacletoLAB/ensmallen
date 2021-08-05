@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusRhinitidis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus rhinitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusRhinitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusRhinitidis graph.
+    """Return new instance of the Peptoniphilus rhinitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusRhinitidis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusRhinitidis graph.
+    Instace of Peptoniphilus rhinitidis graph.
 
 	References
 	---------------------

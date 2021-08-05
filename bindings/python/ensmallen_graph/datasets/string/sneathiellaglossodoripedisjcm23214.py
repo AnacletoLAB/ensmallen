@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SneathiellaGlossodoripedisJcm23214.
+This file offers the methods to automatically retrieve the graph Sneathiella glossodoripedis JCM 23214.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SneathiellaGlossodoripedisJcm23214(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SneathiellaGlossodoripedisJcm23214 graph.
+    """Return new instance of the Sneathiella glossodoripedis JCM 23214 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SneathiellaGlossodoripedisJcm23214(
 
     Returns
     -----------------------
-    Instace of SneathiellaGlossodoripedisJcm23214 graph.
+    Instace of Sneathiella glossodoripedis JCM 23214 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoccidioidesImmitis.
+This file offers the methods to automatically retrieve the graph Coccidioides immitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoccidioidesImmitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoccidioidesImmitis graph.
+    """Return new instance of the Coccidioides immitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoccidioidesImmitis(
 
     Returns
     -----------------------
-    Instace of CoccidioidesImmitis graph.
+    Instace of Coccidioides immitis graph.
 
 	References
 	---------------------

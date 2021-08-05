@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMaine59.
+This file offers the methods to automatically retrieve the graph socfb-Maine59.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMaine59(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMaine59 graph.
+    """Return new instance of the socfb-Maine59 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMaine59(
 
     Returns
     -----------------------
-    Instace of SocfbMaine59 graph.
+    Instace of socfb-Maine59 graph.
 
 	References
 	---------------------

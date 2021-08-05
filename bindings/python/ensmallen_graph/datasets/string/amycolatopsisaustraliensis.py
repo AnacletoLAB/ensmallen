@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisAustraliensis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis australiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisAustraliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisAustraliensis graph.
+    """Return new instance of the Amycolatopsis australiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisAustraliensis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisAustraliensis graph.
+    Instace of Amycolatopsis australiensis graph.
 
 	References
 	---------------------

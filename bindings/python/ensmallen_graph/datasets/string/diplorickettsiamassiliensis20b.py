@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplorickettsiaMassiliensis20b.
+This file offers the methods to automatically retrieve the graph Diplorickettsia massiliensis 20B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiplorickettsiaMassiliensis20b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplorickettsiaMassiliensis20b graph.
+    """Return new instance of the Diplorickettsia massiliensis 20B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiplorickettsiaMassiliensis20b(
 
     Returns
     -----------------------
-    Instace of DiplorickettsiaMassiliensis20b graph.
+    Instace of Diplorickettsia massiliensis 20B graph.
 
 	References
 	---------------------

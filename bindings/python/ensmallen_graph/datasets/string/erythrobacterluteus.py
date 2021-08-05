@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterLuteus.
+This file offers the methods to automatically retrieve the graph Erythrobacter luteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterLuteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterLuteus graph.
+    """Return new instance of the Erythrobacter luteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterLuteus(
 
     Returns
     -----------------------
-    Instace of ErythrobacterLuteus graph.
+    Instace of Erythrobacter luteus graph.
 
 	References
 	---------------------

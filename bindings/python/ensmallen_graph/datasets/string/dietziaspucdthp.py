@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DietziaSpUcdthp.
+This file offers the methods to automatically retrieve the graph Dietzia sp. UCDTHP.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DietziaSpUcdthp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DietziaSpUcdthp graph.
+    """Return new instance of the Dietzia sp. UCDTHP graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DietziaSpUcdthp(
 
     Returns
     -----------------------
-    Instace of DietziaSpUcdthp graph.
+    Instace of Dietzia sp. UCDTHP graph.
 
 	References
 	---------------------

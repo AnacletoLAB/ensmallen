@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpNku1.
+This file offers the methods to automatically retrieve the graph Clostridium sp. NkU-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpNku1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpNku1 graph.
+    """Return new instance of the Clostridium sp. NkU-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpNku1(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpNku1 graph.
+    Instace of Clostridium sp. NkU-1 graph.
 
 	References
 	---------------------

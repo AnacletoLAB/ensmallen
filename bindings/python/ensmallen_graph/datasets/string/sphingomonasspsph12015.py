@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpSph12015.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Sph1(2015).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpSph12015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpSph12015 graph.
+    """Return new instance of the Sphingomonas sp. Sph1(2015) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpSph12015(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpSph12015 graph.
+    Instace of Sphingomonas sp. Sph1(2015) graph.
 
 	References
 	---------------------

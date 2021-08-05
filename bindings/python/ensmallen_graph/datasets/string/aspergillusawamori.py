@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusAwamori.
+This file offers the methods to automatically retrieve the graph Aspergillus awamori.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusAwamori(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusAwamori graph.
+    """Return new instance of the Aspergillus awamori graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusAwamori(
 
     Returns
     -----------------------
-    Instace of AspergillusAwamori graph.
+    Instace of Aspergillus awamori graph.
 
 	References
 	---------------------

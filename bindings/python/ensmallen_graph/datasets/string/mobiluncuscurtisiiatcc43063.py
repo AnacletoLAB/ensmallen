@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MobiluncusCurtisiiAtcc43063.
+This file offers the methods to automatically retrieve the graph Mobiluncus curtisii ATCC43063.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MobiluncusCurtisiiAtcc43063(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MobiluncusCurtisiiAtcc43063 graph.
+    """Return new instance of the Mobiluncus curtisii ATCC43063 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MobiluncusCurtisiiAtcc43063(
 
     Returns
     -----------------------
-    Instace of MobiluncusCurtisiiAtcc43063 graph.
+    Instace of Mobiluncus curtisii ATCC43063 graph.
 
 	References
 	---------------------

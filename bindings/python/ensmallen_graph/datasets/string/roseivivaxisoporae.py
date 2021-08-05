@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivivaxIsoporae.
+This file offers the methods to automatically retrieve the graph Roseivivax isoporae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivivaxIsoporae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivivaxIsoporae graph.
+    """Return new instance of the Roseivivax isoporae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseivivaxIsoporae(
 
     Returns
     -----------------------
-    Instace of RoseivivaxIsoporae graph.
+    Instace of Roseivivax isoporae graph.
 
 	References
 	---------------------

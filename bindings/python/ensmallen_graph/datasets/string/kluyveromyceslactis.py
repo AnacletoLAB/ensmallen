@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KluyveromycesLactis.
+This file offers the methods to automatically retrieve the graph Kluyveromyces lactis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KluyveromycesLactis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KluyveromycesLactis graph.
+    """Return new instance of the Kluyveromyces lactis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KluyveromycesLactis(
 
     Returns
     -----------------------
-    Instace of KluyveromycesLactis graph.
+    Instace of Kluyveromyces lactis graph.
 
 	References
 	---------------------

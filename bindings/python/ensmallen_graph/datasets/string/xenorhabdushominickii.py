@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusHominickii.
+This file offers the methods to automatically retrieve the graph Xenorhabdus hominickii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusHominickii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusHominickii graph.
+    """Return new instance of the Xenorhabdus hominickii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusHominickii(
 
     Returns
     -----------------------
-    Instace of XenorhabdusHominickii graph.
+    Instace of Xenorhabdus hominickii graph.
 
 	References
 	---------------------

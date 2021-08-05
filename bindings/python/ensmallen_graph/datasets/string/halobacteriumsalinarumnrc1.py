@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacteriumSalinarumNrc1.
+This file offers the methods to automatically retrieve the graph Halobacterium salinarum NRC-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacteriumSalinarumNrc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacteriumSalinarumNrc1 graph.
+    """Return new instance of the Halobacterium salinarum NRC-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacteriumSalinarumNrc1(
 
     Returns
     -----------------------
-    Instace of HalobacteriumSalinarumNrc1 graph.
+    Instace of Halobacterium salinarum NRC-1 graph.
 
 	References
 	---------------------

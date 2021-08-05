@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumNk3b98.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium NK3B98.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumNk3b98(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumNk3b98 graph.
+    """Return new instance of the Clostridiales bacterium NK3B98 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesBacteriumNk3b98(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumNk3b98 graph.
+    Instace of Clostridiales bacterium NK3B98 graph.
 
 	References
 	---------------------

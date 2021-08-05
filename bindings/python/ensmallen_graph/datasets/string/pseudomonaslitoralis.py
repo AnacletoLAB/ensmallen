@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasLitoralis.
+This file offers the methods to automatically retrieve the graph Pseudomonas litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasLitoralis graph.
+    """Return new instance of the Pseudomonas litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasLitoralis(
 
     Returns
     -----------------------
-    Instace of PseudomonasLitoralis graph.
+    Instace of Pseudomonas litoralis graph.
 
 	References
 	---------------------

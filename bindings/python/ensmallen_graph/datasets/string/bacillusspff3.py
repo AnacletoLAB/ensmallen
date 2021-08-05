@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpFf3.
+This file offers the methods to automatically retrieve the graph Bacillus sp. FF3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpFf3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpFf3 graph.
+    """Return new instance of the Bacillus sp. FF3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpFf3(
 
     Returns
     -----------------------
-    Instace of BacillusSpFf3 graph.
+    Instace of Bacillus sp. FF3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Johnson1624.
+This file offers the methods to automatically retrieve the graph johnson16-2-4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Johnson1624(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Johnson1624 graph.
+    """Return new instance of the johnson16-2-4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Johnson1624(
 
     Returns
     -----------------------
-    Instace of Johnson1624 graph.
+    Instace of johnson16-2-4 graph.
 
 	References
 	---------------------

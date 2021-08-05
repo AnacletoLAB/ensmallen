@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrovumSpZ31.
+This file offers the methods to automatically retrieve the graph Ferrovum sp. Z-31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrovumSpZ31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrovumSpZ31 graph.
+    """Return new instance of the Ferrovum sp. Z-31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrovumSpZ31(
 
     Returns
     -----------------------
-    Instace of FerrovumSpZ31 graph.
+    Instace of Ferrovum sp. Z-31 graph.
 
 	References
 	---------------------

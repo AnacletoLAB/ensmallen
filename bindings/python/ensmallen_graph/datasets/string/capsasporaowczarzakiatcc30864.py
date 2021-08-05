@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsasporaOwczarzakiAtcc30864.
+This file offers the methods to automatically retrieve the graph Capsaspora owczarzaki ATCC 30864.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsasporaOwczarzakiAtcc30864(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsasporaOwczarzakiAtcc30864 graph.
+    """Return new instance of the Capsaspora owczarzaki ATCC 30864 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CapsasporaOwczarzakiAtcc30864(
 
     Returns
     -----------------------
-    Instace of CapsasporaOwczarzakiAtcc30864 graph.
+    Instace of Capsaspora owczarzaki ATCC 30864 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KiloniellaSpongiae.
+This file offers the methods to automatically retrieve the graph Kiloniella spongiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KiloniellaSpongiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KiloniellaSpongiae graph.
+    """Return new instance of the Kiloniella spongiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KiloniellaSpongiae(
 
     Returns
     -----------------------
-    Instace of KiloniellaSpongiae graph.
+    Instace of Kiloniella spongiae graph.
 
 	References
 	---------------------

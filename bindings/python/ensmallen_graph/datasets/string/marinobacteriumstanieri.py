@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumStanieri.
+This file offers the methods to automatically retrieve the graph Marinobacterium stanieri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumStanieri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumStanieri graph.
+    """Return new instance of the Marinobacterium stanieri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacteriumStanieri(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumStanieri graph.
+    Instace of Marinobacterium stanieri graph.
 
 	References
 	---------------------

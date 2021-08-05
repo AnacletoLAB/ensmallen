@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaMarginaleFlorida.
+This file offers the methods to automatically retrieve the graph Anaplasma marginale Florida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaplasmaMarginaleFlorida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaMarginaleFlorida graph.
+    """Return new instance of the Anaplasma marginale Florida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaplasmaMarginaleFlorida(
 
     Returns
     -----------------------
-    Instace of AnaplasmaMarginaleFlorida graph.
+    Instace of Anaplasma marginale Florida graph.
 
 	References
 	---------------------

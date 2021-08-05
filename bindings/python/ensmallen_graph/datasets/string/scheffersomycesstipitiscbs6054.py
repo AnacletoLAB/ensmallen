@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScheffersomycesStipitisCbs6054.
+This file offers the methods to automatically retrieve the graph Scheffersomyces stipitis CBS 6054.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScheffersomycesStipitisCbs6054(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScheffersomycesStipitisCbs6054 graph.
+    """Return new instance of the Scheffersomyces stipitis CBS 6054 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScheffersomycesStipitisCbs6054(
 
     Returns
     -----------------------
-    Instace of ScheffersomycesStipitisCbs6054 graph.
+    Instace of Scheffersomyces stipitis CBS 6054 graph.
 
 	References
 	---------------------

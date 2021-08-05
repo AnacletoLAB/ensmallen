@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpAcam123.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. ACAM123.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpAcam123(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpAcam123 graph.
+    """Return new instance of the Flavobacterium sp. ACAM123 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSpAcam123(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpAcam123 graph.
+    Instace of Flavobacterium sp. ACAM123 graph.
 
 	References
 	---------------------

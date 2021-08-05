@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlumeriaGraminisFSpHordeiDh14.
+This file offers the methods to automatically retrieve the graph Blumeria graminis f. sp. hordei DH14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlumeriaGraminisFSpHordeiDh14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlumeriaGraminisFSpHordeiDh14 graph.
+    """Return new instance of the Blumeria graminis f. sp. hordei DH14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlumeriaGraminisFSpHordeiDh14(
 
     Returns
     -----------------------
-    Instace of BlumeriaGraminisFSpHordeiDh14 graph.
+    Instace of Blumeria graminis f. sp. hordei DH14 graph.
 
 	References
 	---------------------

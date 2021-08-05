@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpMsp13.
+This file offers the methods to automatically retrieve the graph Bacillus sp. MSP13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpMsp13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpMsp13 graph.
+    """Return new instance of the Bacillus sp. MSP13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpMsp13(
 
     Returns
     -----------------------
-    Instace of BacillusSpMsp13 graph.
+    Instace of Bacillus sp. MSP13 graph.
 
 	References
 	---------------------

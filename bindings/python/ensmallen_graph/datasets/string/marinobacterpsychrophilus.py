@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterPsychrophilus.
+This file offers the methods to automatically retrieve the graph Marinobacter psychrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterPsychrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterPsychrophilus graph.
+    """Return new instance of the Marinobacter psychrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterPsychrophilus(
 
     Returns
     -----------------------
-    Instace of MarinobacterPsychrophilus graph.
+    Instace of Marinobacter psychrophilus graph.
 
 	References
 	---------------------

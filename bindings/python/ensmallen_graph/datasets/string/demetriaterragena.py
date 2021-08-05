@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemetriaTerragena.
+This file offers the methods to automatically retrieve the graph Demetria terragena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemetriaTerragena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemetriaTerragena graph.
+    """Return new instance of the Demetria terragena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DemetriaTerragena(
 
     Returns
     -----------------------
-    Instace of DemetriaTerragena graph.
+    Instace of Demetria terragena graph.
 
 	References
 	---------------------

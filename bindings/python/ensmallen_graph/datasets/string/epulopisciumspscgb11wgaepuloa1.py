@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpScgB11wgaEpuloa1.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. SCG-B11WGA-EpuloA1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpScgB11wgaEpuloa1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpScgB11wgaEpuloa1 graph.
+    """Return new instance of the Epulopiscium sp. SCG-B11WGA-EpuloA1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpScgB11wgaEpuloa1(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpScgB11wgaEpuloa1 graph.
+    Instace of Epulopiscium sp. SCG-B11WGA-EpuloA1 graph.
 
 	References
 	---------------------

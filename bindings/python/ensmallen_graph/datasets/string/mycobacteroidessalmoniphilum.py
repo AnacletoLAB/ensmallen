@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteroidesSalmoniphilum.
+This file offers the methods to automatically retrieve the graph Mycobacteroides salmoniphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteroidesSalmoniphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteroidesSalmoniphilum graph.
+    """Return new instance of the Mycobacteroides salmoniphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteroidesSalmoniphilum(
 
     Returns
     -----------------------
-    Instace of MycobacteroidesSalmoniphilum graph.
+    Instace of Mycobacteroides salmoniphilum graph.
 
 	References
 	---------------------

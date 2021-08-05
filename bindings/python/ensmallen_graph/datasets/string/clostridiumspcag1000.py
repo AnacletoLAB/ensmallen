@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpCag1000.
+This file offers the methods to automatically retrieve the graph Clostridium sp. CAG:1000.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpCag1000(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpCag1000 graph.
+    """Return new instance of the Clostridium sp. CAG:1000 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpCag1000(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpCag1000 graph.
+    Instace of Clostridium sp. CAG:1000 graph.
 
 	References
 	---------------------

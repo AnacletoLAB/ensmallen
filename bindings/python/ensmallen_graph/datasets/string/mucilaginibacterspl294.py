@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterSpL294.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter sp. L294.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterSpL294(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterSpL294 graph.
+    """Return new instance of the Mucilaginibacter sp. L294 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterSpL294(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterSpL294 graph.
+    Instace of Mucilaginibacter sp. L294 graph.
 
 	References
 	---------------------

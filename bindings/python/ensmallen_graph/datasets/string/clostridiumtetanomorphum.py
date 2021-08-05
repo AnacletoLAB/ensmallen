@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumTetanomorphum.
+This file offers the methods to automatically retrieve the graph Clostridium tetanomorphum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumTetanomorphum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumTetanomorphum graph.
+    """Return new instance of the Clostridium tetanomorphum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumTetanomorphum(
 
     Returns
     -----------------------
-    Instace of ClostridiumTetanomorphum graph.
+    Instace of Clostridium tetanomorphum graph.
 
 	References
 	---------------------

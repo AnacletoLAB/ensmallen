@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PatulibacterMinatonensis.
+This file offers the methods to automatically retrieve the graph Patulibacter minatonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PatulibacterMinatonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PatulibacterMinatonensis graph.
+    """Return new instance of the Patulibacter minatonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PatulibacterMinatonensis(
 
     Returns
     -----------------------
-    Instace of PatulibacterMinatonensis graph.
+    Instace of Patulibacter minatonensis graph.
 
 	References
 	---------------------

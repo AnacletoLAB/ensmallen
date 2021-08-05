@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaFaecimaris.
+This file offers the methods to automatically retrieve the graph Jannaschia faecimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaFaecimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaFaecimaris graph.
+    """Return new instance of the Jannaschia faecimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaFaecimaris(
 
     Returns
     -----------------------
-    Instace of JannaschiaFaecimaris graph.
+    Instace of Jannaschia faecimaris graph.
 
 	References
 	---------------------

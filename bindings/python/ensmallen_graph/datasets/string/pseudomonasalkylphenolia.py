@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAlkylphenolia.
+This file offers the methods to automatically retrieve the graph Pseudomonas alkylphenolia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAlkylphenolia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAlkylphenolia graph.
+    """Return new instance of the Pseudomonas alkylphenolia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasAlkylphenolia(
 
     Returns
     -----------------------
-    Instace of PseudomonasAlkylphenolia graph.
+    Instace of Pseudomonas alkylphenolia graph.
 
 	References
 	---------------------

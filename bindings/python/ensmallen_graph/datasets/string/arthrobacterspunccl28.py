@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpUnccl28.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. UNCCL28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpUnccl28(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpUnccl28 graph.
+    """Return new instance of the Arthrobacter sp. UNCCL28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpUnccl28(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpUnccl28 graph.
+    Instace of Arthrobacter sp. UNCCL28 graph.
 
 	References
 	---------------------

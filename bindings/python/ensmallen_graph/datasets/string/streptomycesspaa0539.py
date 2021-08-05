@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpAa0539.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. AA0539.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpAa0539(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpAa0539 graph.
+    """Return new instance of the Streptomyces sp. AA0539 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpAa0539(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpAa0539 graph.
+    Instace of Streptomyces sp. AA0539 graph.
 
 	References
 	---------------------

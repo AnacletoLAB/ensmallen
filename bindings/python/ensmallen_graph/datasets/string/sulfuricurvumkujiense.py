@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricurvumKujiense.
+This file offers the methods to automatically retrieve the graph Sulfuricurvum kujiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricurvumKujiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricurvumKujiense graph.
+    """Return new instance of the Sulfuricurvum kujiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfuricurvumKujiense(
 
     Returns
     -----------------------
-    Instace of SulfuricurvumKujiense graph.
+    Instace of Sulfuricurvum kujiense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSuisEa183292.
+This file offers the methods to automatically retrieve the graph Streptococcus suis EA183292.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSuisEa183292(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSuisEa183292 graph.
+    """Return new instance of the Streptococcus suis EA183292 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSuisEa183292(
 
     Returns
     -----------------------
-    Instace of StreptococcusSuisEa183292 graph.
+    Instace of Streptococcus suis EA183292 graph.
 
 	References
 	---------------------

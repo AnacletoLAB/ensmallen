@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalicoccusMarinus.
+This file offers the methods to automatically retrieve the graph Jeotgalicoccus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalicoccusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalicoccusMarinus graph.
+    """Return new instance of the Jeotgalicoccus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JeotgalicoccusMarinus(
 
     Returns
     -----------------------
-    Instace of JeotgalicoccusMarinus graph.
+    Instace of Jeotgalicoccus marinus graph.
 
 	References
 	---------------------

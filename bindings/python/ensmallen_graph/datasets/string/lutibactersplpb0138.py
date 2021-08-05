@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutibacterSpLpb0138.
+This file offers the methods to automatically retrieve the graph Lutibacter sp. LPB0138.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutibacterSpLpb0138(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutibacterSpLpb0138 graph.
+    """Return new instance of the Lutibacter sp. LPB0138 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutibacterSpLpb0138(
 
     Returns
     -----------------------
-    Instace of LutibacterSpLpb0138 graph.
+    Instace of Lutibacter sp. LPB0138 graph.
 
 	References
 	---------------------

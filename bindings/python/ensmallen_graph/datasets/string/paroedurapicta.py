@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParoeduraPicta.
+This file offers the methods to automatically retrieve the graph Paroedura picta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParoeduraPicta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParoeduraPicta graph.
+    """Return new instance of the Paroedura picta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParoeduraPicta(
 
     Returns
     -----------------------
-    Instace of ParoeduraPicta graph.
+    Instace of Paroedura picta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumRubrisubalbicansM1.
+This file offers the methods to automatically retrieve the graph Herbaspirillum rubrisubalbicans M1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumRubrisubalbicansM1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumRubrisubalbicansM1 graph.
+    """Return new instance of the Herbaspirillum rubrisubalbicans M1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbaspirillumRubrisubalbicansM1(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumRubrisubalbicansM1 graph.
+    Instace of Herbaspirillum rubrisubalbicans M1 graph.
 
 	References
 	---------------------

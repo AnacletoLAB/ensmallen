@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterMalorum.
+This file offers the methods to automatically retrieve the graph Acetobacter malorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterMalorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterMalorum graph.
+    """Return new instance of the Acetobacter malorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacterMalorum(
 
     Returns
     -----------------------
-    Instace of AcetobacterMalorum graph.
+    Instace of Acetobacter malorum graph.
 
 	References
 	---------------------

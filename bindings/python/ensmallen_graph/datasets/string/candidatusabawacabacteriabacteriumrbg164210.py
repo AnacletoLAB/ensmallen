@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAbawacabacteriaBacteriumRbg164210.
+This file offers the methods to automatically retrieve the graph Candidatus Abawacabacteria bacterium RBG_16_42_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAbawacabacteriaBacteriumRbg164210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAbawacabacteriaBacteriumRbg164210 graph.
+    """Return new instance of the Candidatus Abawacabacteria bacterium RBG_16_42_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAbawacabacteriaBacteriumRbg164210(
 
     Returns
     -----------------------
-    Instace of CandidatusAbawacabacteriaBacteriumRbg164210 graph.
+    Instace of Candidatus Abawacabacteria bacterium RBG_16_42_10 graph.
 
 	References
 	---------------------

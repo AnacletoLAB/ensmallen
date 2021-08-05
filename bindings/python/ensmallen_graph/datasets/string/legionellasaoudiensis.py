@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaSaoudiensis.
+This file offers the methods to automatically retrieve the graph Legionella saoudiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaSaoudiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaSaoudiensis graph.
+    """Return new instance of the Legionella saoudiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaSaoudiensis(
 
     Returns
     -----------------------
-    Instace of LegionellaSaoudiensis graph.
+    Instace of Legionella saoudiensis graph.
 
 	References
 	---------------------

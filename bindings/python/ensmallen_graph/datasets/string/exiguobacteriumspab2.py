@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumSpAb2.
+This file offers the methods to automatically retrieve the graph Exiguobacterium sp. AB2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumSpAb2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumSpAb2 graph.
+    """Return new instance of the Exiguobacterium sp. AB2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumSpAb2(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumSpAb2 graph.
+    Instace of Exiguobacterium sp. AB2 graph.
 
 	References
 	---------------------

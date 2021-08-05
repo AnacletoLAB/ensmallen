@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassilibacteroidesVaginae.
+This file offers the methods to automatically retrieve the graph Massilibacteroides vaginae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassilibacteroidesVaginae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassilibacteroidesVaginae graph.
+    """Return new instance of the Massilibacteroides vaginae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassilibacteroidesVaginae(
 
     Returns
     -----------------------
-    Instace of MassilibacteroidesVaginae graph.
+    Instace of Massilibacteroides vaginae graph.
 
 	References
 	---------------------

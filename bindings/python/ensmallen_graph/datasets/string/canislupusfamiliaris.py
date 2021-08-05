@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CanisLupusFamiliaris.
+This file offers the methods to automatically retrieve the graph Canis lupus familiaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CanisLupusFamiliaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CanisLupusFamiliaris graph.
+    """Return new instance of the Canis lupus familiaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CanisLupusFamiliaris(
 
     Returns
     -----------------------
-    Instace of CanisLupusFamiliaris graph.
+    Instace of Canis lupus familiaris graph.
 
 	References
 	---------------------

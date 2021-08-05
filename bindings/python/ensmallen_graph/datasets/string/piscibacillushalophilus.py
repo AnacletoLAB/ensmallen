@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiscibacillusHalophilus.
+This file offers the methods to automatically retrieve the graph Piscibacillus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiscibacillusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiscibacillusHalophilus graph.
+    """Return new instance of the Piscibacillus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiscibacillusHalophilus(
 
     Returns
     -----------------------
-    Instace of PiscibacillusHalophilus graph.
+    Instace of Piscibacillus halophilus graph.
 
 	References
 	---------------------

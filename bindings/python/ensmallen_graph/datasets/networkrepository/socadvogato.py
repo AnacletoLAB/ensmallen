@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocAdvogato.
+This file offers the methods to automatically retrieve the graph soc-advogato.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocAdvogato(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocAdvogato graph.
+    """Return new instance of the soc-advogato graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocAdvogato(
 
     Returns
     -----------------------
-    Instace of SocAdvogato graph.
+    Instace of soc-advogato graph.
 
 	References
 	---------------------

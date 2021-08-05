@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaematobacterMissouriensis.
+This file offers the methods to automatically retrieve the graph Haematobacter missouriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaematobacterMissouriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaematobacterMissouriensis graph.
+    """Return new instance of the Haematobacter missouriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaematobacterMissouriensis(
 
     Returns
     -----------------------
-    Instace of HaematobacterMissouriensis graph.
+    Instace of Haematobacter missouriensis graph.
 
 	References
 	---------------------

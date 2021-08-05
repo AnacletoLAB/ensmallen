@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobotryumLychnidisDioicaeP1a1Lamole.
+This file offers the methods to automatically retrieve the graph Microbotryum lychnidis-dioicae p1A1 Lamole.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobotryumLychnidisDioicaeP1a1Lamole(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobotryumLychnidisDioicaeP1a1Lamole graph.
+    """Return new instance of the Microbotryum lychnidis-dioicae p1A1 Lamole graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobotryumLychnidisDioicaeP1a1Lamole(
 
     Returns
     -----------------------
-    Instace of MicrobotryumLychnidisDioicaeP1a1Lamole graph.
+    Instace of Microbotryum lychnidis-dioicae p1A1 Lamole graph.
 
 	References
 	---------------------

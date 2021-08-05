@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpRoot480.
+This file offers the methods to automatically retrieve the graph Rhodanobacter sp. Root480.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpRoot480(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpRoot480 graph.
+    """Return new instance of the Rhodanobacter sp. Root480 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodanobacterSpRoot480(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpRoot480 graph.
+    Instace of Rhodanobacter sp. Root480 graph.
 
 	References
 	---------------------

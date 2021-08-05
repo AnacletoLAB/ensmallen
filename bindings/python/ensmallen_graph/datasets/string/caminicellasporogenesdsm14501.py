@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaminicellaSporogenesDsm14501.
+This file offers the methods to automatically retrieve the graph Caminicella sporogenes DSM 14501.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaminicellaSporogenesDsm14501(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaminicellaSporogenesDsm14501 graph.
+    """Return new instance of the Caminicella sporogenes DSM 14501 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaminicellaSporogenesDsm14501(
 
     Returns
     -----------------------
-    Instace of CaminicellaSporogenesDsm14501 graph.
+    Instace of Caminicella sporogenes DSM 14501 graph.
 
 	References
 	---------------------

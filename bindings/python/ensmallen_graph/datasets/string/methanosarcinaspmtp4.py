@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaSpMtp4.
+This file offers the methods to automatically retrieve the graph Methanosarcina sp. MTP4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaSpMtp4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaSpMtp4 graph.
+    """Return new instance of the Methanosarcina sp. MTP4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaSpMtp4(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaSpMtp4 graph.
+    Instace of Methanosarcina sp. MTP4 graph.
 
 	References
 	---------------------

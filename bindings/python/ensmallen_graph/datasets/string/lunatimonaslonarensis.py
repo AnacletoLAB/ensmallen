@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LunatimonasLonarensis.
+This file offers the methods to automatically retrieve the graph Lunatimonas lonarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LunatimonasLonarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LunatimonasLonarensis graph.
+    """Return new instance of the Lunatimonas lonarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LunatimonasLonarensis(
 
     Returns
     -----------------------
-    Instace of LunatimonasLonarensis graph.
+    Instace of Lunatimonas lonarensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoturnixJaponica.
+This file offers the methods to automatically retrieve the graph Coturnix japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoturnixJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoturnixJaponica graph.
+    """Return new instance of the Coturnix japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoturnixJaponica(
 
     Returns
     -----------------------
-    Instace of CoturnixJaponica graph.
+    Instace of Coturnix japonica graph.
 
 	References
 	---------------------

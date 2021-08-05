@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasCircumdentaria.
+This file offers the methods to automatically retrieve the graph Porphyromonas circumdentaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasCircumdentaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasCircumdentaria graph.
+    """Return new instance of the Porphyromonas circumdentaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonasCircumdentaria(
 
     Returns
     -----------------------
-    Instace of PorphyromonasCircumdentaria graph.
+    Instace of Porphyromonas circumdentaria graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioclavaSpSk1.
+This file offers the methods to automatically retrieve the graph Thioclava sp. SK-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioclavaSpSk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioclavaSpSk1 graph.
+    """Return new instance of the Thioclava sp. SK-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioclavaSpSk1(
 
     Returns
     -----------------------
-    Instace of ThioclavaSpSk1 graph.
+    Instace of Thioclava sp. SK-1 graph.
 
 	References
 	---------------------

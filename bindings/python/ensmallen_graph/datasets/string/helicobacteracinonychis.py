@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterAcinonychis.
+This file offers the methods to automatically retrieve the graph Helicobacter acinonychis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterAcinonychis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterAcinonychis graph.
+    """Return new instance of the Helicobacter acinonychis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterAcinonychis(
 
     Returns
     -----------------------
-    Instace of HelicobacterAcinonychis graph.
+    Instace of Helicobacter acinonychis graph.
 
 	References
 	---------------------

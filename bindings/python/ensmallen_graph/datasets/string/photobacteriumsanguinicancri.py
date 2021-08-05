@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumSanguinicancri.
+This file offers the methods to automatically retrieve the graph Photobacterium sanguinicancri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumSanguinicancri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumSanguinicancri graph.
+    """Return new instance of the Photobacterium sanguinicancri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumSanguinicancri(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumSanguinicancri graph.
+    Instace of Photobacterium sanguinicancri graph.
 
 	References
 	---------------------

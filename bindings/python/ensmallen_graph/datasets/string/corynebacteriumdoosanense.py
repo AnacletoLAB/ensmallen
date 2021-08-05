@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumDoosanense.
+This file offers the methods to automatically retrieve the graph Corynebacterium doosanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumDoosanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumDoosanense graph.
+    """Return new instance of the Corynebacterium doosanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumDoosanense(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumDoosanense graph.
+    Instace of Corynebacterium doosanense graph.
 
 	References
 	---------------------

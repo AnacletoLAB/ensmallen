@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesChristyi.
+This file offers the methods to automatically retrieve the graph Anopheles christyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesChristyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesChristyi graph.
+    """Return new instance of the Anopheles christyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesChristyi(
 
     Returns
     -----------------------
-    Instace of AnophelesChristyi graph.
+    Instace of Anopheles christyi graph.
 
 	References
 	---------------------

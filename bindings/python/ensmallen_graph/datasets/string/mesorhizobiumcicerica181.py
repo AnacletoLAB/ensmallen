@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumCiceriCa181.
+This file offers the methods to automatically retrieve the graph Mesorhizobium ciceri ca181.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumCiceriCa181(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumCiceriCa181 graph.
+    """Return new instance of the Mesorhizobium ciceri ca181 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumCiceriCa181(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumCiceriCa181 graph.
+    Instace of Mesorhizobium ciceri ca181 graph.
 
 	References
 	---------------------

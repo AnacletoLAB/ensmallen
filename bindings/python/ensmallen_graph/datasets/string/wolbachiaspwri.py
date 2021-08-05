@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaSpWri.
+This file offers the methods to automatically retrieve the graph Wolbachia sp. wRi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaSpWri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaSpWri graph.
+    """Return new instance of the Wolbachia sp. wRi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaSpWri(
 
     Returns
     -----------------------
-    Instace of WolbachiaSpWri graph.
+    Instace of Wolbachia sp. wRi graph.
 
 	References
 	---------------------

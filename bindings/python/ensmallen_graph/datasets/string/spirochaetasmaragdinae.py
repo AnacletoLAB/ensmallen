@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaSmaragdinae.
+This file offers the methods to automatically retrieve the graph Spirochaeta smaragdinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaSmaragdinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaSmaragdinae graph.
+    """Return new instance of the Spirochaeta smaragdinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirochaetaSmaragdinae(
 
     Returns
     -----------------------
-    Instace of SpirochaetaSmaragdinae graph.
+    Instace of Spirochaeta smaragdinae graph.
 
 	References
 	---------------------

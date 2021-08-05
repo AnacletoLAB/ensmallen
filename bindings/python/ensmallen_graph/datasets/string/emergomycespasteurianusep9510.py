@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmergomycesPasteurianusEp9510.
+This file offers the methods to automatically retrieve the graph Emergomyces pasteurianus Ep9510.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmergomycesPasteurianusEp9510(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmergomycesPasteurianusEp9510 graph.
+    """Return new instance of the Emergomyces pasteurianus Ep9510 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EmergomycesPasteurianusEp9510(
 
     Returns
     -----------------------
-    Instace of EmergomycesPasteurianusEp9510 graph.
+    Instace of Emergomyces pasteurianus Ep9510 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquiflexumBalticumDsm16537.
+This file offers the methods to automatically retrieve the graph Aquiflexum balticum DSM 16537.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquiflexumBalticumDsm16537(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquiflexumBalticumDsm16537 graph.
+    """Return new instance of the Aquiflexum balticum DSM 16537 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquiflexumBalticumDsm16537(
 
     Returns
     -----------------------
-    Instace of AquiflexumBalticumDsm16537 graph.
+    Instace of Aquiflexum balticum DSM 16537 graph.
 
 	References
 	---------------------

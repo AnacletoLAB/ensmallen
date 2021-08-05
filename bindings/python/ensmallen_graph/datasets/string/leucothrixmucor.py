@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucothrixMucor.
+This file offers the methods to automatically retrieve the graph Leucothrix mucor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucothrixMucor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucothrixMucor graph.
+    """Return new instance of the Leucothrix mucor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeucothrixMucor(
 
     Returns
     -----------------------
-    Instace of LeucothrixMucor graph.
+    Instace of Leucothrix mucor graph.
 
 	References
 	---------------------

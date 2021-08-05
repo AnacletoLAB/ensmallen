@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterGuillouiae.
+This file offers the methods to automatically retrieve the graph Acinetobacter guillouiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterGuillouiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterGuillouiae graph.
+    """Return new instance of the Acinetobacter guillouiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterGuillouiae(
 
     Returns
     -----------------------
-    Instace of AcinetobacterGuillouiae graph.
+    Instace of Acinetobacter guillouiae graph.
 
 	References
 	---------------------

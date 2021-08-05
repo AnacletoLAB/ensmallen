@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioSharmensis.
+This file offers the methods to automatically retrieve the graph Salinivibrio sharmensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinivibrioSharmensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioSharmensis graph.
+    """Return new instance of the Salinivibrio sharmensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinivibrioSharmensis(
 
     Returns
     -----------------------
-    Instace of SalinivibrioSharmensis graph.
+    Instace of Salinivibrio sharmensis graph.
 
 	References
 	---------------------

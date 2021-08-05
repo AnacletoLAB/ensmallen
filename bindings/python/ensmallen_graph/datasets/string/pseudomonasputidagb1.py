@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPutidaGb1.
+This file offers the methods to automatically retrieve the graph Pseudomonas putida GB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPutidaGb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPutidaGb1 graph.
+    """Return new instance of the Pseudomonas putida GB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPutidaGb1(
 
     Returns
     -----------------------
-    Instace of PseudomonasPutidaGb1 graph.
+    Instace of Pseudomonas putida GB1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobialesBacterium637.
+This file offers the methods to automatically retrieve the graph Rhizobiales bacterium 63-7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobialesBacterium637(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobialesBacterium637 graph.
+    """Return new instance of the Rhizobiales bacterium 63-7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobialesBacterium637(
 
     Returns
     -----------------------
-    Instace of RhizobialesBacterium637 graph.
+    Instace of Rhizobiales bacterium 63-7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorhabdusTiamatea.
+This file offers the methods to automatically retrieve the graph Halorhabdus tiamatea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorhabdusTiamatea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorhabdusTiamatea graph.
+    """Return new instance of the Halorhabdus tiamatea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalorhabdusTiamatea(
 
     Returns
     -----------------------
-    Instace of HalorhabdusTiamatea graph.
+    Instace of Halorhabdus tiamatea graph.
 
 	References
 	---------------------

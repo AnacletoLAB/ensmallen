@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumT5Br10B2g0.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium T5-Br10_B2g0.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumT5Br10B2g0(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumT5Br10B2g0 graph.
+    """Return new instance of the Flavobacteriaceae bacterium T5-Br10_B2g0 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumT5Br10B2g0(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumT5Br10B2g0 graph.
+    Instace of Flavobacteriaceae bacterium T5-Br10_B2g0 graph.
 
 	References
 	---------------------

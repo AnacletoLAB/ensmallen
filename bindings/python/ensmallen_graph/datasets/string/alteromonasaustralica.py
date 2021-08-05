@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasAustralica.
+This file offers the methods to automatically retrieve the graph Alteromonas australica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasAustralica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasAustralica graph.
+    """Return new instance of the Alteromonas australica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlteromonasAustralica(
 
     Returns
     -----------------------
-    Instace of AlteromonasAustralica graph.
+    Instace of Alteromonas australica graph.
 
 	References
 	---------------------

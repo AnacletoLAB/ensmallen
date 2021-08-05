@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasProtegensCha0.
+This file offers the methods to automatically retrieve the graph Pseudomonas protegens CHA0.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasProtegensCha0(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasProtegensCha0 graph.
+    """Return new instance of the Pseudomonas protegens CHA0 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasProtegensCha0(
 
     Returns
     -----------------------
-    Instace of PseudomonasProtegensCha0 graph.
+    Instace of Pseudomonas protegens CHA0 graph.
 
 	References
 	---------------------

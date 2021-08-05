@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCrudilactis.
+This file offers the methods to automatically retrieve the graph Corynebacterium crudilactis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCrudilactis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCrudilactis graph.
+    """Return new instance of the Corynebacterium crudilactis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumCrudilactis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCrudilactis graph.
+    Instace of Corynebacterium crudilactis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaceaeBacteriumUrhe0068.
+This file offers the methods to automatically retrieve the graph Acidobacteriaceae bacterium URHE0068.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaceaeBacteriumUrhe0068(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaceaeBacteriumUrhe0068 graph.
+    """Return new instance of the Acidobacteriaceae bacterium URHE0068 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaceaeBacteriumUrhe0068(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaceaeBacteriumUrhe0068 graph.
+    Instace of Acidobacteriaceae bacterium URHE0068 graph.
 
 	References
 	---------------------

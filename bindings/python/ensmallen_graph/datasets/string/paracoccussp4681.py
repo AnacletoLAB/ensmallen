@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSp4681.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. 4681.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSp4681(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSp4681 graph.
+    """Return new instance of the Paracoccus sp. 4681 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusSp4681(
 
     Returns
     -----------------------
-    Instace of ParacoccusSp4681 graph.
+    Instace of Paracoccus sp. 4681 graph.
 
 	References
 	---------------------

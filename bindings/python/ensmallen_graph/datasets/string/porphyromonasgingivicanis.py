@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasGingivicanis.
+This file offers the methods to automatically retrieve the graph Porphyromonas gingivicanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasGingivicanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasGingivicanis graph.
+    """Return new instance of the Porphyromonas gingivicanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasGingivicanis(
 
     Returns
     -----------------------
-    Instace of PorphyromonasGingivicanis graph.
+    Instace of Porphyromonas gingivicanis graph.
 
 	References
 	---------------------

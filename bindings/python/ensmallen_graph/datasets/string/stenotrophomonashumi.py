@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasHumi.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas humi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasHumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasHumi graph.
+    """Return new instance of the Stenotrophomonas humi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasHumi(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasHumi graph.
+    Instace of Stenotrophomonas humi graph.
 
 	References
 	---------------------

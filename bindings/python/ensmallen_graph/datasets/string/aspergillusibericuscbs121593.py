@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusIbericusCbs121593.
+This file offers the methods to automatically retrieve the graph Aspergillus ibericus CBS 121593.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusIbericusCbs121593(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusIbericusCbs121593 graph.
+    """Return new instance of the Aspergillus ibericus CBS 121593 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusIbericusCbs121593(
 
     Returns
     -----------------------
-    Instace of AspergillusIbericusCbs121593 graph.
+    Instace of Aspergillus ibericus CBS 121593 graph.
 
 	References
 	---------------------

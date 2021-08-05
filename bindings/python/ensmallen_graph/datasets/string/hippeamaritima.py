@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HippeaMaritima.
+This file offers the methods to automatically retrieve the graph Hippea maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HippeaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HippeaMaritima graph.
+    """Return new instance of the Hippea maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HippeaMaritima(
 
     Returns
     -----------------------
-    Instace of HippeaMaritima graph.
+    Instace of Hippea maritima graph.
 
 	References
 	---------------------

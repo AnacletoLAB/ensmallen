@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterTandoii.
+This file offers the methods to automatically retrieve the graph Acinetobacter tandoii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterTandoii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterTandoii graph.
+    """Return new instance of the Acinetobacter tandoii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterTandoii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterTandoii graph.
+    Instace of Acinetobacter tandoii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpCp53.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. Cp53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpCp53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpCp53 graph.
+    """Return new instance of the Bradyrhizobium sp. Cp53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumSpCp53(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpCp53 graph.
+    Instace of Bradyrhizobium sp. Cp53 graph.
 
 	References
 	---------------------

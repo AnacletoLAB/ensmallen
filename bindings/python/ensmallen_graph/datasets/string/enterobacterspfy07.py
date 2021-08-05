@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterSpFy07.
+This file offers the methods to automatically retrieve the graph Enterobacter sp. FY-07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterSpFy07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterSpFy07 graph.
+    """Return new instance of the Enterobacter sp. FY-07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterSpFy07(
 
     Returns
     -----------------------
-    Instace of EnterobacterSpFy07 graph.
+    Instace of Enterobacter sp. FY-07 graph.
 
 	References
 	---------------------

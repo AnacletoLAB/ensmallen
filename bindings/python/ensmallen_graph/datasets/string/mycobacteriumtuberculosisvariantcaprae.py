@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTuberculosisVariantCaprae.
+This file offers the methods to automatically retrieve the graph Mycobacterium tuberculosis variant caprae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTuberculosisVariantCaprae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTuberculosisVariantCaprae graph.
+    """Return new instance of the Mycobacterium tuberculosis variant caprae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumTuberculosisVariantCaprae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTuberculosisVariantCaprae graph.
+    Instace of Mycobacterium tuberculosis variant caprae graph.
 
 	References
 	---------------------

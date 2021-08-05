@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUillinois.
+This file offers the methods to automatically retrieve the graph socfb-UIllinois.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUillinois(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUillinois graph.
+    """Return new instance of the socfb-UIllinois graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUillinois(
 
     Returns
     -----------------------
-    Instace of SocfbUillinois graph.
+    Instace of socfb-UIllinois graph.
 
 	References
 	---------------------

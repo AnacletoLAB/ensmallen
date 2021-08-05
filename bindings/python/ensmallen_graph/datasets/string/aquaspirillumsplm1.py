@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquaspirillumSpLm1.
+This file offers the methods to automatically retrieve the graph Aquaspirillum sp. LM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquaspirillumSpLm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquaspirillumSpLm1 graph.
+    """Return new instance of the Aquaspirillum sp. LM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquaspirillumSpLm1(
 
     Returns
     -----------------------
-    Instace of AquaspirillumSpLm1 graph.
+    Instace of Aquaspirillum sp. LM1 graph.
 
 	References
 	---------------------

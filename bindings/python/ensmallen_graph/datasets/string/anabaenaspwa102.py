@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabaenaSpWa102.
+This file offers the methods to automatically retrieve the graph Anabaena sp. WA102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabaenaSpWa102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabaenaSpWa102 graph.
+    """Return new instance of the Anabaena sp. WA102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnabaenaSpWa102(
 
     Returns
     -----------------------
-    Instace of AnabaenaSpWa102 graph.
+    Instace of Anabaena sp. WA102 graph.
 
 	References
 	---------------------

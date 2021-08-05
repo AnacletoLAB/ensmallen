@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpYr768.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. YR768.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpYr768(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpYr768 graph.
+    """Return new instance of the Sphingobium sp. YR768 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpYr768(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpYr768 graph.
+    Instace of Sphingobium sp. YR768 graph.
 
 	References
 	---------------------

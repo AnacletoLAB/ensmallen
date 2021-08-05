@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AiluropodaMelanoleuca.
+This file offers the methods to automatically retrieve the graph Ailuropoda melanoleuca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AiluropodaMelanoleuca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AiluropodaMelanoleuca graph.
+    """Return new instance of the Ailuropoda melanoleuca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AiluropodaMelanoleuca(
 
     Returns
     -----------------------
-    Instace of AiluropodaMelanoleuca graph.
+    Instace of Ailuropoda melanoleuca graph.
 
 	References
 	---------------------

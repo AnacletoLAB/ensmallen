@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SunxiuqiniaElliptica.
+This file offers the methods to automatically retrieve the graph Sunxiuqinia elliptica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SunxiuqiniaElliptica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SunxiuqiniaElliptica graph.
+    """Return new instance of the Sunxiuqinia elliptica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SunxiuqiniaElliptica(
 
     Returns
     -----------------------
-    Instace of SunxiuqiniaElliptica graph.
+    Instace of Sunxiuqinia elliptica graph.
 
 	References
 	---------------------

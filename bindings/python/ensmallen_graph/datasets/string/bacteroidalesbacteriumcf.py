@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidalesBacteriumCf.
+This file offers the methods to automatically retrieve the graph Bacteroidales bacterium CF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidalesBacteriumCf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidalesBacteriumCf graph.
+    """Return new instance of the Bacteroidales bacterium CF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidalesBacteriumCf(
 
     Returns
     -----------------------
-    Instace of BacteroidalesBacteriumCf graph.
+    Instace of Bacteroidales bacterium CF graph.
 
 	References
 	---------------------

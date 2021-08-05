@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumEtliMimosae.
+This file offers the methods to automatically retrieve the graph Rhizobium etli mimosae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumEtliMimosae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumEtliMimosae graph.
+    """Return new instance of the Rhizobium etli mimosae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumEtliMimosae(
 
     Returns
     -----------------------
-    Instace of RhizobiumEtliMimosae graph.
+    Instace of Rhizobium etli mimosae graph.
 
 	References
 	---------------------

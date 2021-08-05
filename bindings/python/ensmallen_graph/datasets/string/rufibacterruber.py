@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterRuber.
+This file offers the methods to automatically retrieve the graph Rufibacter ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RufibacterRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterRuber graph.
+    """Return new instance of the Rufibacter ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RufibacterRuber(
 
     Returns
     -----------------------
-    Instace of RufibacterRuber graph.
+    Instace of Rufibacter ruber graph.
 
 	References
 	---------------------

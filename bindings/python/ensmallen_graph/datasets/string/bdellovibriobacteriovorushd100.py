@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrioBacteriovorusHd100.
+This file offers the methods to automatically retrieve the graph Bdellovibrio bacteriovorus HD100.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrioBacteriovorusHd100(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrioBacteriovorusHd100 graph.
+    """Return new instance of the Bdellovibrio bacteriovorus HD100 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BdellovibrioBacteriovorusHd100(
 
     Returns
     -----------------------
-    Instace of BdellovibrioBacteriovorusHd100 graph.
+    Instace of Bdellovibrio bacteriovorus HD100 graph.
 
 	References
 	---------------------

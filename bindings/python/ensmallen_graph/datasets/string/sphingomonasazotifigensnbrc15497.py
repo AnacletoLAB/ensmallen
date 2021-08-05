@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasAzotifigensNbrc15497.
+This file offers the methods to automatically retrieve the graph Sphingomonas azotifigens NBRC 15497.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasAzotifigensNbrc15497(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasAzotifigensNbrc15497 graph.
+    """Return new instance of the Sphingomonas azotifigens NBRC 15497 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasAzotifigensNbrc15497(
 
     Returns
     -----------------------
-    Instace of SphingomonasAzotifigensNbrc15497 graph.
+    Instace of Sphingomonas azotifigens NBRC 15497 graph.
 
 	References
 	---------------------

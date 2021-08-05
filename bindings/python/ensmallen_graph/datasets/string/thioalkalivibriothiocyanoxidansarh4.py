@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioThiocyanoxidansArh4.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio thiocyanoxidans ARh4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioThiocyanoxidansArh4(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioThiocyanoxidansArh4 graph.
+    """Return new instance of the Thioalkalivibrio thiocyanoxidans ARh4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioalkalivibrioThiocyanoxidansArh4(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioThiocyanoxidansArh4 graph.
+    Instace of Thioalkalivibrio thiocyanoxidans ARh4 graph.
 
 	References
 	---------------------

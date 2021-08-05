@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitobacteriumMetallireducens.
+This file offers the methods to automatically retrieve the graph Desulfitobacterium metallireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitobacteriumMetallireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitobacteriumMetallireducens graph.
+    """Return new instance of the Desulfitobacterium metallireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfitobacteriumMetallireducens(
 
     Returns
     -----------------------
-    Instace of DesulfitobacteriumMetallireducens graph.
+    Instace of Desulfitobacterium metallireducens graph.
 
 	References
 	---------------------

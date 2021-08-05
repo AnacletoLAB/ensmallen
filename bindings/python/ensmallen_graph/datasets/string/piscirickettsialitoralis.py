@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiscirickettsiaLitoralis.
+This file offers the methods to automatically retrieve the graph Piscirickettsia litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiscirickettsiaLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiscirickettsiaLitoralis graph.
+    """Return new instance of the Piscirickettsia litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiscirickettsiaLitoralis(
 
     Returns
     -----------------------
-    Instace of PiscirickettsiaLitoralis graph.
+    Instace of Piscirickettsia litoralis graph.
 
 	References
 	---------------------

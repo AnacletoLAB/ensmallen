@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZimmermannellaFaecalis.
+This file offers the methods to automatically retrieve the graph Zimmermannella faecalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZimmermannellaFaecalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZimmermannellaFaecalis graph.
+    """Return new instance of the Zimmermannella faecalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZimmermannellaFaecalis(
 
     Returns
     -----------------------
-    Instace of ZimmermannellaFaecalis graph.
+    Instace of Zimmermannella faecalis graph.
 
 	References
 	---------------------

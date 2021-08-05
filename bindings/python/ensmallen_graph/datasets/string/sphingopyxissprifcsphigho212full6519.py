@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpRifcsphigho212Full6519.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. RIFCSPHIGHO2_12_FULL_65_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpRifcsphigho212Full6519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpRifcsphigho212Full6519 graph.
+    """Return new instance of the Sphingopyxis sp. RIFCSPHIGHO2_12_FULL_65_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSpRifcsphigho212Full6519(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpRifcsphigho212Full6519 graph.
+    Instace of Sphingopyxis sp. RIFCSPHIGHO2_12_FULL_65_19 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumAb4001.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium AB4001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumAb4001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumAb4001 graph.
+    """Return new instance of the Ruminococcaceae bacterium AB4001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcaceaeBacteriumAb4001(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumAb4001 graph.
+    Instace of Ruminococcaceae bacterium AB4001 graph.
 
 	References
 	---------------------

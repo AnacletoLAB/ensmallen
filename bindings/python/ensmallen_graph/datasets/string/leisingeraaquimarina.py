@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraAquimarina.
+This file offers the methods to automatically retrieve the graph Leisingera aquimarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraAquimarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraAquimarina graph.
+    """Return new instance of the Leisingera aquimarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeisingeraAquimarina(
 
     Returns
     -----------------------
-    Instace of LeisingeraAquimarina graph.
+    Instace of Leisingera aquimarina graph.
 
 	References
 	---------------------

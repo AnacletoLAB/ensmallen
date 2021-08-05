@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosopumilusSpNsub.
+This file offers the methods to automatically retrieve the graph Nitrosopumilus sp. Nsub.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosopumilusSpNsub(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosopumilusSpNsub graph.
+    """Return new instance of the Nitrosopumilus sp. Nsub graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosopumilusSpNsub(
 
     Returns
     -----------------------
-    Instace of NitrosopumilusSpNsub graph.
+    Instace of Nitrosopumilus sp. Nsub graph.
 
 	References
 	---------------------

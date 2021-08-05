@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraProfundimaris.
+This file offers the methods to automatically retrieve the graph Thalassospira profundimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraProfundimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraProfundimaris graph.
+    """Return new instance of the Thalassospira profundimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassospiraProfundimaris(
 
     Returns
     -----------------------
-    Instace of ThalassospiraProfundimaris graph.
+    Instace of Thalassospira profundimaris graph.
 
 	References
 	---------------------

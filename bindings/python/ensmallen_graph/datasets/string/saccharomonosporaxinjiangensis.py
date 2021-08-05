@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaXinjiangensis.
+This file offers the methods to automatically retrieve the graph Saccharomonospora xinjiangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaXinjiangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaXinjiangensis graph.
+    """Return new instance of the Saccharomonospora xinjiangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomonosporaXinjiangensis(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaXinjiangensis graph.
+    Instace of Saccharomonospora xinjiangensis graph.
 
 	References
 	---------------------

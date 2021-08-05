@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilvimarinusChinensis.
+This file offers the methods to automatically retrieve the graph Gilvimarinus chinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilvimarinusChinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilvimarinusChinensis graph.
+    """Return new instance of the Gilvimarinus chinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GilvimarinusChinensis(
 
     Returns
     -----------------------
-    Instace of GilvimarinusChinensis graph.
+    Instace of Gilvimarinus chinensis graph.
 
 	References
 	---------------------

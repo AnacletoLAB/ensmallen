@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterNicotinovorans.
+This file offers the methods to automatically retrieve the graph Arthrobacter nicotinovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterNicotinovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterNicotinovorans graph.
+    """Return new instance of the Arthrobacter nicotinovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterNicotinovorans(
 
     Returns
     -----------------------
-    Instace of ArthrobacterNicotinovorans graph.
+    Instace of Arthrobacter nicotinovorans graph.
 
 	References
 	---------------------

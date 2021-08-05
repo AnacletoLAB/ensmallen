@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpMst1.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. MSt1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpMst1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpMst1 graph.
+    """Return new instance of the Paenibacillus sp. MSt1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpMst1(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpMst1 graph.
+    Instace of Paenibacillus sp. MSt1 graph.
 
 	References
 	---------------------

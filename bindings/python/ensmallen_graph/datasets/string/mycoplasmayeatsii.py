@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaYeatsii.
+This file offers the methods to automatically retrieve the graph Mycoplasma yeatsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaYeatsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaYeatsii graph.
+    """Return new instance of the Mycoplasma yeatsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaYeatsii(
 
     Returns
     -----------------------
-    Instace of MycoplasmaYeatsii graph.
+    Instace of Mycoplasma yeatsii graph.
 
 	References
 	---------------------

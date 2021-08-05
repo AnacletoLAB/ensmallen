@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusPanaciterraeDsm19096.
+This file offers the methods to automatically retrieve the graph Bacillus panaciterrae DSM 19096.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusPanaciterraeDsm19096(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusPanaciterraeDsm19096 graph.
+    """Return new instance of the Bacillus panaciterrae DSM 19096 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusPanaciterraeDsm19096(
 
     Returns
     -----------------------
-    Instace of BacillusPanaciterraeDsm19096 graph.
+    Instace of Bacillus panaciterrae DSM 19096 graph.
 
 	References
 	---------------------

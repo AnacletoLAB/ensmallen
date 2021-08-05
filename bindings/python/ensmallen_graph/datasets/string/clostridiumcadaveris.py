@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCadaveris.
+This file offers the methods to automatically retrieve the graph Clostridium cadaveris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCadaveris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCadaveris graph.
+    """Return new instance of the Clostridium cadaveris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumCadaveris(
 
     Returns
     -----------------------
-    Instace of ClostridiumCadaveris graph.
+    Instace of Clostridium cadaveris graph.
 
 	References
 	---------------------

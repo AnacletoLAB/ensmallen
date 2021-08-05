@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusMacroides.
+This file offers the methods to automatically retrieve the graph Lysinibacillus macroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusMacroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusMacroides graph.
+    """Return new instance of the Lysinibacillus macroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusMacroides(
 
     Returns
     -----------------------
-    Instace of LysinibacillusMacroides graph.
+    Instace of Lysinibacillus macroides graph.
 
 	References
 	---------------------

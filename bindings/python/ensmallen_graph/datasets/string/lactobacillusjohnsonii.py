@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusJohnsonii.
+This file offers the methods to automatically retrieve the graph Lactobacillus johnsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusJohnsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusJohnsonii graph.
+    """Return new instance of the Lactobacillus johnsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusJohnsonii(
 
     Returns
     -----------------------
-    Instace of LactobacillusJohnsonii graph.
+    Instace of Lactobacillus johnsonii graph.
 
 	References
 	---------------------

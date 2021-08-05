@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpLappah95.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. LaPpAH95.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpLappah95(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpLappah95 graph.
+    """Return new instance of the Streptomyces sp. LaPpAH95 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpLappah95(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpLappah95 graph.
+    Instace of Streptomyces sp. LaPpAH95 graph.
 
 	References
 	---------------------

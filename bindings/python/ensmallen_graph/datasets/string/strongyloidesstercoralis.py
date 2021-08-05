@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StrongyloidesStercoralis.
+This file offers the methods to automatically retrieve the graph Strongyloides stercoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StrongyloidesStercoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StrongyloidesStercoralis graph.
+    """Return new instance of the Strongyloides stercoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StrongyloidesStercoralis(
 
     Returns
     -----------------------
-    Instace of StrongyloidesStercoralis graph.
+    Instace of Strongyloides stercoralis graph.
 
 	References
 	---------------------

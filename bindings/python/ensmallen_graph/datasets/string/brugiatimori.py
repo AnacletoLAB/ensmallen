@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrugiaTimori.
+This file offers the methods to automatically retrieve the graph Brugia timori.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrugiaTimori(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrugiaTimori graph.
+    """Return new instance of the Brugia timori graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrugiaTimori(
 
     Returns
     -----------------------
-    Instace of BrugiaTimori graph.
+    Instace of Brugia timori graph.
 
 	References
 	---------------------

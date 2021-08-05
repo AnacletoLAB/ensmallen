@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumTodarodis.
+This file offers the methods to automatically retrieve the graph Tenacibaculum todarodis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumTodarodis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumTodarodis graph.
+    """Return new instance of the Tenacibaculum todarodis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumTodarodis(
 
     Returns
     -----------------------
-    Instace of TenacibaculumTodarodis graph.
+    Instace of Tenacibaculum todarodis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacteraceaeBacterium4484166.
+This file offers the methods to automatically retrieve the graph Campylobacteraceae bacterium 4484_166.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacteraceaeBacterium4484166(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacteraceaeBacterium4484166 graph.
+    """Return new instance of the Campylobacteraceae bacterium 4484_166 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacteraceaeBacterium4484166(
 
     Returns
     -----------------------
-    Instace of CampylobacteraceaeBacterium4484166 graph.
+    Instace of Campylobacteraceae bacterium 4484_166 graph.
 
 	References
 	---------------------

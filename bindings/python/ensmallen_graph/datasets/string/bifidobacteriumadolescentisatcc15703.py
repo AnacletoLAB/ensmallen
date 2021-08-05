@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAdolescentisAtcc15703.
+This file offers the methods to automatically retrieve the graph Bifidobacterium adolescentis ATCC 15703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumAdolescentisAtcc15703(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAdolescentisAtcc15703 graph.
+    """Return new instance of the Bifidobacterium adolescentis ATCC 15703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumAdolescentisAtcc15703(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAdolescentisAtcc15703 graph.
+    Instace of Bifidobacterium adolescentis ATCC 15703 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelotrichaceaeBacteriumMtc7.
+This file offers the methods to automatically retrieve the graph Erysipelotrichaceae bacterium MTC7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelotrichaceaeBacteriumMtc7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelotrichaceaeBacteriumMtc7 graph.
+    """Return new instance of the Erysipelotrichaceae bacterium MTC7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErysipelotrichaceaeBacteriumMtc7(
 
     Returns
     -----------------------
-    Instace of ErysipelotrichaceaeBacteriumMtc7 graph.
+    Instace of Erysipelotrichaceae bacterium MTC7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexusSpY3961.
+This file offers the methods to automatically retrieve the graph Chloroflexus sp. Y3961.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexusSpY3961(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexusSpY3961 graph.
+    """Return new instance of the Chloroflexus sp. Y3961 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChloroflexusSpY3961(
 
     Returns
     -----------------------
-    Instace of ChloroflexusSpY3961 graph.
+    Instace of Chloroflexus sp. Y3961 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSpExBiomphalariaGlabrata.
+This file offers the methods to automatically retrieve the graph Mycoplasma sp. (ex Biomphalaria glabrata).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSpExBiomphalariaGlabrata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSpExBiomphalariaGlabrata graph.
+    """Return new instance of the Mycoplasma sp. (ex Biomphalaria glabrata) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaSpExBiomphalariaGlabrata(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSpExBiomphalariaGlabrata graph.
+    Instace of Mycoplasma sp. (ex Biomphalaria glabrata) graph.
 
 	References
 	---------------------

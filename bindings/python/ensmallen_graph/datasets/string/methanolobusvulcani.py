@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolobusVulcani.
+This file offers the methods to automatically retrieve the graph Methanolobus vulcani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolobusVulcani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolobusVulcani graph.
+    """Return new instance of the Methanolobus vulcani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanolobusVulcani(
 
     Returns
     -----------------------
-    Instace of MethanolobusVulcani graph.
+    Instace of Methanolobus vulcani graph.
 
 	References
 	---------------------

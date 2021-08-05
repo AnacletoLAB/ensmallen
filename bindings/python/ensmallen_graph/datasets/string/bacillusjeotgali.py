@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusJeotgali.
+This file offers the methods to automatically retrieve the graph Bacillus jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusJeotgali graph.
+    """Return new instance of the Bacillus jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusJeotgali(
 
     Returns
     -----------------------
-    Instace of BacillusJeotgali graph.
+    Instace of Bacillus jeotgali graph.
 
 	References
 	---------------------

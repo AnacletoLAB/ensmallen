@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpTb64.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. TB64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSpTb64(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpTb64 graph.
+    """Return new instance of the Pseudoalteromonas sp. TB64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasSpTb64(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpTb64 graph.
+    Instace of Pseudoalteromonas sp. TB64 graph.
 
 	References
 	---------------------

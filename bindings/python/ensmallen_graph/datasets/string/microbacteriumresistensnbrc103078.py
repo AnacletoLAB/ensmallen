@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumResistensNbrc103078.
+This file offers the methods to automatically retrieve the graph Microbacterium resistens NBRC 103078.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumResistensNbrc103078(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumResistensNbrc103078 graph.
+    """Return new instance of the Microbacterium resistens NBRC 103078 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumResistensNbrc103078(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumResistensNbrc103078 graph.
+    Instace of Microbacterium resistens NBRC 103078 graph.
 
 	References
 	---------------------

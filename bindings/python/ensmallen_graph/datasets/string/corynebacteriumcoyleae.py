@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCoyleae.
+This file offers the methods to automatically retrieve the graph Corynebacterium coyleae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCoyleae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCoyleae graph.
+    """Return new instance of the Corynebacterium coyleae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumCoyleae(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCoyleae graph.
+    Instace of Corynebacterium coyleae graph.
 
 	References
 	---------------------

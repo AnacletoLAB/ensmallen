@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuccinispiraMobilis.
+This file offers the methods to automatically retrieve the graph Succinispira mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuccinispiraMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuccinispiraMobilis graph.
+    """Return new instance of the Succinispira mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SuccinispiraMobilis(
 
     Returns
     -----------------------
-    Instace of SuccinispiraMobilis graph.
+    Instace of Succinispira mobilis graph.
 
 	References
 	---------------------

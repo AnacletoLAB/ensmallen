@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumMiluonense.
+This file offers the methods to automatically retrieve the graph Rhizobium miluonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumMiluonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumMiluonense graph.
+    """Return new instance of the Rhizobium miluonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumMiluonense(
 
     Returns
     -----------------------
-    Instace of RhizobiumMiluonense graph.
+    Instace of Rhizobium miluonense graph.
 
 	References
 	---------------------

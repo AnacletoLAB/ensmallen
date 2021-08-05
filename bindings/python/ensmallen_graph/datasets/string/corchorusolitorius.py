@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorchorusOlitorius.
+This file offers the methods to automatically retrieve the graph Corchorus olitorius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorchorusOlitorius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorchorusOlitorius graph.
+    """Return new instance of the Corchorus olitorius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorchorusOlitorius(
 
     Returns
     -----------------------
-    Instace of CorchorusOlitorius graph.
+    Instace of Corchorus olitorius graph.
 
 	References
 	---------------------

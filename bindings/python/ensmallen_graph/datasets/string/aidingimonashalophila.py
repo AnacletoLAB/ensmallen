@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AidingimonasHalophila.
+This file offers the methods to automatically retrieve the graph Aidingimonas halophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AidingimonasHalophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AidingimonasHalophila graph.
+    """Return new instance of the Aidingimonas halophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AidingimonasHalophila(
 
     Returns
     -----------------------
-    Instace of AidingimonasHalophila graph.
+    Instace of Aidingimonas halophila graph.
 
 	References
 	---------------------

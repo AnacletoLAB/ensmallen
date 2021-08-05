@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinilyticumLitopenaeiDsm21440.
+This file offers the methods to automatically retrieve the graph Chitinilyticum litopenaei DSM 21440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinilyticumLitopenaeiDsm21440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinilyticumLitopenaeiDsm21440 graph.
+    """Return new instance of the Chitinilyticum litopenaei DSM 21440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinilyticumLitopenaeiDsm21440(
 
     Returns
     -----------------------
-    Instace of ChitinilyticumLitopenaeiDsm21440 graph.
+    Instace of Chitinilyticum litopenaei DSM 21440 graph.
 
 	References
 	---------------------

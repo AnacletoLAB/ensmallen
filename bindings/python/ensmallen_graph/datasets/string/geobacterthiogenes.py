@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterThiogenes.
+This file offers the methods to automatically retrieve the graph Geobacter thiogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterThiogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterThiogenes graph.
+    """Return new instance of the Geobacter thiogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacterThiogenes(
 
     Returns
     -----------------------
-    Instace of GeobacterThiogenes graph.
+    Instace of Geobacter thiogenes graph.
 
 	References
 	---------------------

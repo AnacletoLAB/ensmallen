@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrifolaFrondosa.
+This file offers the methods to automatically retrieve the graph Grifola frondosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrifolaFrondosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrifolaFrondosa graph.
+    """Return new instance of the Grifola frondosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GrifolaFrondosa(
 
     Returns
     -----------------------
-    Instace of GrifolaFrondosa graph.
+    Instace of Grifola frondosa graph.
 
 	References
 	---------------------

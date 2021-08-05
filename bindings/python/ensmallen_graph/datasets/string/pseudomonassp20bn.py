@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSp20bn.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. 20BN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSp20bn(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSp20bn graph.
+    """Return new instance of the Pseudomonas sp. 20BN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSp20bn(
 
     Returns
     -----------------------
-    Instace of PseudomonasSp20bn graph.
+    Instace of Pseudomonas sp. 20BN graph.
 
 	References
 	---------------------

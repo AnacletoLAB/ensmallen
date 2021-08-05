@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusDelbrueckiiBulgaricus2038.
+This file offers the methods to automatically retrieve the graph Lactobacillus delbrueckii bulgaricus 2038.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusDelbrueckiiBulgaricus2038(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusDelbrueckiiBulgaricus2038 graph.
+    """Return new instance of the Lactobacillus delbrueckii bulgaricus 2038 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusDelbrueckiiBulgaricus2038(
 
     Returns
     -----------------------
-    Instace of LactobacillusDelbrueckiiBulgaricus2038 graph.
+    Instace of Lactobacillus delbrueckii bulgaricus 2038 graph.
 
 	References
 	---------------------

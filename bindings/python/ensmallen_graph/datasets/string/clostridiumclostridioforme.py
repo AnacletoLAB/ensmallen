@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumClostridioforme.
+This file offers the methods to automatically retrieve the graph Clostridium clostridioforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumClostridioforme(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumClostridioforme graph.
+    """Return new instance of the Clostridium clostridioforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumClostridioforme(
 
     Returns
     -----------------------
-    Instace of ClostridiumClostridioforme graph.
+    Instace of Clostridium clostridioforme graph.
 
 	References
 	---------------------

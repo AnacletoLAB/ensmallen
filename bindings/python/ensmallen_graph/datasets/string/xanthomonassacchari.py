@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasSacchari.
+This file offers the methods to automatically retrieve the graph Xanthomonas sacchari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasSacchari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasSacchari graph.
+    """Return new instance of the Xanthomonas sacchari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasSacchari(
 
     Returns
     -----------------------
-    Instace of XanthomonasSacchari graph.
+    Instace of Xanthomonas sacchari graph.
 
 	References
 	---------------------

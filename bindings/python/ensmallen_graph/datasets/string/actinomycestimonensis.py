@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesTimonensis.
+This file offers the methods to automatically retrieve the graph Actinomyces timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesTimonensis graph.
+    """Return new instance of the Actinomyces timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesTimonensis(
 
     Returns
     -----------------------
-    Instace of ActinomycesTimonensis graph.
+    Instace of Actinomyces timonensis graph.
 
 	References
 	---------------------

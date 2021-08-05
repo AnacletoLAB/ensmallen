@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalotaleaAlkalilenta.
+This file offers the methods to automatically retrieve the graph Halotalea alkalilenta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalotaleaAlkalilenta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalotaleaAlkalilenta graph.
+    """Return new instance of the Halotalea alkalilenta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalotaleaAlkalilenta(
 
     Returns
     -----------------------
-    Instace of HalotaleaAlkalilenta graph.
+    Instace of Halotalea alkalilenta graph.
 
 	References
 	---------------------

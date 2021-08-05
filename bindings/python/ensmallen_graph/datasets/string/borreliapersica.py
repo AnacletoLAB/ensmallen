@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaPersica.
+This file offers the methods to automatically retrieve the graph Borrelia persica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaPersica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaPersica graph.
+    """Return new instance of the Borrelia persica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaPersica(
 
     Returns
     -----------------------
-    Instace of BorreliaPersica graph.
+    Instace of Borrelia persica graph.
 
 	References
 	---------------------

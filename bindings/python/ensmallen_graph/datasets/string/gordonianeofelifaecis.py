@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaNeofelifaecis.
+This file offers the methods to automatically retrieve the graph Gordonia neofelifaecis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaNeofelifaecis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaNeofelifaecis graph.
+    """Return new instance of the Gordonia neofelifaecis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaNeofelifaecis(
 
     Returns
     -----------------------
-    Instace of GordoniaNeofelifaecis graph.
+    Instace of Gordonia neofelifaecis graph.
 
 	References
 	---------------------

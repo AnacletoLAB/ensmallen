@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PusillimonasSpT77.
+This file offers the methods to automatically retrieve the graph Pusillimonas sp. T77.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PusillimonasSpT77(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PusillimonasSpT77 graph.
+    """Return new instance of the Pusillimonas sp. T77 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PusillimonasSpT77(
 
     Returns
     -----------------------
-    Instace of PusillimonasSpT77 graph.
+    Instace of Pusillimonas sp. T77 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgibacterAlginicilyticus.
+This file offers the methods to automatically retrieve the graph Algibacter alginicilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgibacterAlginicilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgibacterAlginicilyticus graph.
+    """Return new instance of the Algibacter alginicilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgibacterAlginicilyticus(
 
     Returns
     -----------------------
-    Instace of AlgibacterAlginicilyticus graph.
+    Instace of Algibacter alginicilyticus graph.
 
 	References
 	---------------------

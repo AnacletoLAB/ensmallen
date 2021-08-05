@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TropicibacterNaphthalenivorans.
+This file offers the methods to automatically retrieve the graph Tropicibacter naphthalenivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TropicibacterNaphthalenivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TropicibacterNaphthalenivorans graph.
+    """Return new instance of the Tropicibacter naphthalenivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TropicibacterNaphthalenivorans(
 
     Returns
     -----------------------
-    Instace of TropicibacterNaphthalenivorans graph.
+    Instace of Tropicibacter naphthalenivorans graph.
 
 	References
 	---------------------

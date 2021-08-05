@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b.
+This file offers the methods to automatically retrieve the graph Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b graph.
+    """Return new instance of the Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b(
 
     Returns
     -----------------------
-    Instace of CandidatusCurtissbacteriaBacteriumRifcsphigho202Full4016b graph.
+    Instace of Candidatus Curtissbacteria bacterium RIFCSPHIGHO2_02_FULL_40_16b graph.
 
 	References
 	---------------------

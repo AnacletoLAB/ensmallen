@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FontimonasThermophila.
+This file offers the methods to automatically retrieve the graph Fontimonas thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FontimonasThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FontimonasThermophila graph.
+    """Return new instance of the Fontimonas thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FontimonasThermophila(
 
     Returns
     -----------------------
-    Instace of FontimonasThermophila graph.
+    Instace of Fontimonas thermophila graph.
 
 	References
 	---------------------

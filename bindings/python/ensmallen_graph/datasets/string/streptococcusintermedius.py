@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusIntermedius.
+This file offers the methods to automatically retrieve the graph Streptococcus intermedius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusIntermedius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusIntermedius graph.
+    """Return new instance of the Streptococcus intermedius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusIntermedius(
 
     Returns
     -----------------------
-    Instace of StreptococcusIntermedius graph.
+    Instace of Streptococcus intermedius graph.
 
 	References
 	---------------------

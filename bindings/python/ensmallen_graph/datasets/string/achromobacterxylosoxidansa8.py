@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterXylosoxidansA8.
+This file offers the methods to automatically retrieve the graph Achromobacter xylosoxidans A8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterXylosoxidansA8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterXylosoxidansA8 graph.
+    """Return new instance of the Achromobacter xylosoxidans A8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterXylosoxidansA8(
 
     Returns
     -----------------------
-    Instace of AchromobacterXylosoxidansA8 graph.
+    Instace of Achromobacter xylosoxidans A8 graph.
 
 	References
 	---------------------

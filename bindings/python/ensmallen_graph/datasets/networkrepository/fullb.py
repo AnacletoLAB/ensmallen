@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Fullb.
+This file offers the methods to automatically retrieve the graph fullb.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Fullb(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Fullb graph.
+    """Return new instance of the fullb graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Fullb(
 
     Returns
     -----------------------
-    Instace of Fullb graph.
+    Instace of fullb graph.
 
 	References
 	---------------------

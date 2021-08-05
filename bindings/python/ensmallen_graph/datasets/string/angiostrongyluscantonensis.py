@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AngiostrongylusCantonensis.
+This file offers the methods to automatically retrieve the graph Angiostrongylus cantonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AngiostrongylusCantonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AngiostrongylusCantonensis graph.
+    """Return new instance of the Angiostrongylus cantonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AngiostrongylusCantonensis(
 
     Returns
     -----------------------
-    Instace of AngiostrongylusCantonensis graph.
+    Instace of Angiostrongylus cantonensis graph.
 
 	References
 	---------------------

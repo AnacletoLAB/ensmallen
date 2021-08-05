@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelosinusSpUfo1.
+This file offers the methods to automatically retrieve the graph Pelosinus sp. UFO1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelosinusSpUfo1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelosinusSpUfo1 graph.
+    """Return new instance of the Pelosinus sp. UFO1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelosinusSpUfo1(
 
     Returns
     -----------------------
-    Instace of PelosinusSpUfo1 graph.
+    Instace of Pelosinus sp. UFO1 graph.
 
 	References
 	---------------------

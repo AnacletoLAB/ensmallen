@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicycliphilusDenitrificansK601.
+This file offers the methods to automatically retrieve the graph Alicycliphilus denitrificans K601.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicycliphilusDenitrificansK601(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicycliphilusDenitrificansK601 graph.
+    """Return new instance of the Alicycliphilus denitrificans K601 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicycliphilusDenitrificansK601(
 
     Returns
     -----------------------
-    Instace of AlicycliphilusDenitrificansK601 graph.
+    Instace of Alicycliphilus denitrificans K601 graph.
 
 	References
 	---------------------

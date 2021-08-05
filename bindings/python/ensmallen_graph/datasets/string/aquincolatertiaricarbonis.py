@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquincolaTertiaricarbonis.
+This file offers the methods to automatically retrieve the graph Aquincola tertiaricarbonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquincolaTertiaricarbonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquincolaTertiaricarbonis graph.
+    """Return new instance of the Aquincola tertiaricarbonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquincolaTertiaricarbonis(
 
     Returns
     -----------------------
-    Instace of AquincolaTertiaricarbonis graph.
+    Instace of Aquincola tertiaricarbonis graph.
 
 	References
 	---------------------

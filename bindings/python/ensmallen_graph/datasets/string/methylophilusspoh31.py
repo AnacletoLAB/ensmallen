@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilusSpOh31.
+This file offers the methods to automatically retrieve the graph Methylophilus sp. OH31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilusSpOh31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilusSpOh31 graph.
+    """Return new instance of the Methylophilus sp. OH31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophilusSpOh31(
 
     Returns
     -----------------------
-    Instace of MethylophilusSpOh31 graph.
+    Instace of Methylophilus sp. OH31 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaBacteriumSg824.
+This file offers the methods to automatically retrieve the graph Parcubacteria bacterium SG8_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaBacteriumSg824(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaBacteriumSg824 graph.
+    """Return new instance of the Parcubacteria bacterium SG8_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaBacteriumSg824(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaBacteriumSg824 graph.
+    Instace of Parcubacteria bacterium SG8_24 graph.
 
 	References
 	---------------------

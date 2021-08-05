@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaSpZbg7a.
+This file offers the methods to automatically retrieve the graph Sporosarcina sp. ZBG7A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaSpZbg7a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaSpZbg7a graph.
+    """Return new instance of the Sporosarcina sp. ZBG7A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaSpZbg7a(
 
     Returns
     -----------------------
-    Instace of SporosarcinaSpZbg7a graph.
+    Instace of Sporosarcina sp. ZBG7A graph.
 
 	References
 	---------------------

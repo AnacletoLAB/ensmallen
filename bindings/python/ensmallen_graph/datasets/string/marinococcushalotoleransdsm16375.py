@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinococcusHalotoleransDsm16375.
+This file offers the methods to automatically retrieve the graph Marinococcus halotolerans DSM 16375.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinococcusHalotoleransDsm16375(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinococcusHalotoleransDsm16375 graph.
+    """Return new instance of the Marinococcus halotolerans DSM 16375 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinococcusHalotoleransDsm16375(
 
     Returns
     -----------------------
-    Instace of MarinococcusHalotoleransDsm16375 graph.
+    Instace of Marinococcus halotolerans DSM 16375 graph.
 
 	References
 	---------------------

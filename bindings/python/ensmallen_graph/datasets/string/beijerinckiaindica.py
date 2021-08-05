@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BeijerinckiaIndica.
+This file offers the methods to automatically retrieve the graph Beijerinckia indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BeijerinckiaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BeijerinckiaIndica graph.
+    """Return new instance of the Beijerinckia indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BeijerinckiaIndica(
 
     Returns
     -----------------------
-    Instace of BeijerinckiaIndica graph.
+    Instace of Beijerinckia indica graph.
 
 	References
 	---------------------

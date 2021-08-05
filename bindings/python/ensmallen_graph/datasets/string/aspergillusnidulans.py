@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusNidulans.
+This file offers the methods to automatically retrieve the graph Aspergillus nidulans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusNidulans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusNidulans graph.
+    """Return new instance of the Aspergillus nidulans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusNidulans(
 
     Returns
     -----------------------
-    Instace of AspergillusNidulans graph.
+    Instace of Aspergillus nidulans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylariaGrammica.
+This file offers the methods to automatically retrieve the graph Xylaria grammica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylariaGrammica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylariaGrammica graph.
+    """Return new instance of the Xylaria grammica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XylariaGrammica(
 
     Returns
     -----------------------
-    Instace of XylariaGrammica graph.
+    Instace of Xylaria grammica graph.
 
 	References
 	---------------------

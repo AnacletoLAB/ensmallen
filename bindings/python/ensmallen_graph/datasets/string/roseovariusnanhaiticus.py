@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusNanhaiticus.
+This file offers the methods to automatically retrieve the graph Roseovarius nanhaiticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusNanhaiticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusNanhaiticus graph.
+    """Return new instance of the Roseovarius nanhaiticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseovariusNanhaiticus(
 
     Returns
     -----------------------
-    Instace of RoseovariusNanhaiticus graph.
+    Instace of Roseovarius nanhaiticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusVelezensisTrigocor1448.
+This file offers the methods to automatically retrieve the graph Bacillus velezensis TrigoCor1448.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusVelezensisTrigocor1448(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusVelezensisTrigocor1448 graph.
+    """Return new instance of the Bacillus velezensis TrigoCor1448 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusVelezensisTrigocor1448(
 
     Returns
     -----------------------
-    Instace of BacillusVelezensisTrigocor1448 graph.
+    Instace of Bacillus velezensis TrigoCor1448 graph.
 
 	References
 	---------------------

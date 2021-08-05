@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyceliophthoraThermophila.
+This file offers the methods to automatically retrieve the graph Myceliophthora thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyceliophthoraThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyceliophthoraThermophila graph.
+    """Return new instance of the Myceliophthora thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyceliophthoraThermophila(
 
     Returns
     -----------------------
-    Instace of MyceliophthoraThermophila graph.
+    Instace of Myceliophthora thermophila graph.
 
 	References
 	---------------------

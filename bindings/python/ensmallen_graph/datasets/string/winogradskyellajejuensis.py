@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WinogradskyellaJejuensis.
+This file offers the methods to automatically retrieve the graph Winogradskyella jejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WinogradskyellaJejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WinogradskyellaJejuensis graph.
+    """Return new instance of the Winogradskyella jejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WinogradskyellaJejuensis(
 
     Returns
     -----------------------
-    Instace of WinogradskyellaJejuensis graph.
+    Instace of Winogradskyella jejuensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTuberculosisVariantBovis.
+This file offers the methods to automatically retrieve the graph Mycobacterium tuberculosis variant bovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTuberculosisVariantBovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTuberculosisVariantBovis graph.
+    """Return new instance of the Mycobacterium tuberculosis variant bovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumTuberculosisVariantBovis(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTuberculosisVariantBovis graph.
+    Instace of Mycobacterium tuberculosis variant bovis graph.
 
 	References
 	---------------------

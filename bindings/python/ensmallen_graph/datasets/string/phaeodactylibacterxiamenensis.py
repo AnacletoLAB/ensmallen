@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeodactylibacterXiamenensis.
+This file offers the methods to automatically retrieve the graph Phaeodactylibacter xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeodactylibacterXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeodactylibacterXiamenensis graph.
+    """Return new instance of the Phaeodactylibacter xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhaeodactylibacterXiamenensis(
 
     Returns
     -----------------------
-    Instace of PhaeodactylibacterXiamenensis graph.
+    Instace of Phaeodactylibacter xiamenensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaSpUcdKl21.
+This file offers the methods to automatically retrieve the graph Shewanella sp. UCD-KL21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaSpUcdKl21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaSpUcdKl21 graph.
+    """Return new instance of the Shewanella sp. UCD-KL21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaSpUcdKl21(
 
     Returns
     -----------------------
-    Instace of ShewanellaSpUcdKl21 graph.
+    Instace of Shewanella sp. UCD-KL21 graph.
 
 	References
 	---------------------

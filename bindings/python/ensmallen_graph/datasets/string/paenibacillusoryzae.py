@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusOryzae.
+This file offers the methods to automatically retrieve the graph Paenibacillus oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusOryzae graph.
+    """Return new instance of the Paenibacillus oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusOryzae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusOryzae graph.
+    Instace of Paenibacillus oryzae graph.
 
 	References
 	---------------------

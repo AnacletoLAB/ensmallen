@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSp23gom1509m.
+This file offers the methods to automatically retrieve the graph Halomonas sp. 23GOM1509m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSp23gom1509m(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSp23gom1509m graph.
+    """Return new instance of the Halomonas sp. 23GOM1509m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasSp23gom1509m(
 
     Returns
     -----------------------
-    Instace of HalomonasSp23gom1509m graph.
+    Instace of Halomonas sp. 23GOM1509m graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumCellulosolvensLd2006.
+This file offers the methods to automatically retrieve the graph Eubacterium cellulosolvens LD2006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumCellulosolvensLd2006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumCellulosolvensLd2006 graph.
+    """Return new instance of the Eubacterium cellulosolvens LD2006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumCellulosolvensLd2006(
 
     Returns
     -----------------------
-    Instace of EubacteriumCellulosolvensLd2006 graph.
+    Instace of Eubacterium cellulosolvens LD2006 graph.
 
 	References
 	---------------------

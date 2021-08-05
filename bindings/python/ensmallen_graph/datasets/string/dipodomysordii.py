@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DipodomysOrdii.
+This file offers the methods to automatically retrieve the graph Dipodomys ordii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DipodomysOrdii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DipodomysOrdii graph.
+    """Return new instance of the Dipodomys ordii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DipodomysOrdii(
 
     Returns
     -----------------------
-    Instace of DipodomysOrdii graph.
+    Instace of Dipodomys ordii graph.
 
 	References
 	---------------------

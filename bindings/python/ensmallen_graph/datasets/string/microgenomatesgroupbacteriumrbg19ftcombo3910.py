@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesGroupBacteriumRbg19ftCombo3910.
+This file offers the methods to automatically retrieve the graph Microgenomates group bacterium RBG_19FT_COMBO_39_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesGroupBacteriumRbg19ftCombo3910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesGroupBacteriumRbg19ftCombo3910 graph.
+    """Return new instance of the Microgenomates group bacterium RBG_19FT_COMBO_39_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesGroupBacteriumRbg19ftCombo3910(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesGroupBacteriumRbg19ftCombo3910 graph.
+    Instace of Microgenomates group bacterium RBG_19FT_COMBO_39_10 graph.
 
 	References
 	---------------------

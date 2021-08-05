@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HypsizygusMarmoreus.
+This file offers the methods to automatically retrieve the graph Hypsizygus marmoreus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HypsizygusMarmoreus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HypsizygusMarmoreus graph.
+    """Return new instance of the Hypsizygus marmoreus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HypsizygusMarmoreus(
 
     Returns
     -----------------------
-    Instace of HypsizygusMarmoreus graph.
+    Instace of Hypsizygus marmoreus graph.
 
 	References
 	---------------------

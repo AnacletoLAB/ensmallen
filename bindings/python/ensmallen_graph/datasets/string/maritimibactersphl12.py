@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaritimibacterSpHl12.
+This file offers the methods to automatically retrieve the graph Maritimibacter sp. HL-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaritimibacterSpHl12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaritimibacterSpHl12 graph.
+    """Return new instance of the Maritimibacter sp. HL-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaritimibacterSpHl12(
 
     Returns
     -----------------------
-    Instace of MaritimibacterSpHl12 graph.
+    Instace of Maritimibacter sp. HL-12 graph.
 
 	References
 	---------------------

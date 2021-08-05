@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumEmbrapense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium embrapense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumEmbrapense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumEmbrapense graph.
+    """Return new instance of the Bradyrhizobium embrapense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumEmbrapense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumEmbrapense graph.
+    Instace of Bradyrhizobium embrapense graph.
 
 	References
 	---------------------

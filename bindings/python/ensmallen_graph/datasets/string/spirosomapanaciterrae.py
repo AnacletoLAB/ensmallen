@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaPanaciterrae.
+This file offers the methods to automatically retrieve the graph Spirosoma panaciterrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaPanaciterrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaPanaciterrae graph.
+    """Return new instance of the Spirosoma panaciterrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirosomaPanaciterrae(
 
     Returns
     -----------------------
-    Instace of SpirosomaPanaciterrae graph.
+    Instace of Spirosoma panaciterrae graph.
 
 	References
 	---------------------

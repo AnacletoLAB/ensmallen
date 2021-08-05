@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobaculaToluolicaTol2.
+This file offers the methods to automatically retrieve the graph Desulfobacula toluolica Tol2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobaculaToluolicaTol2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobaculaToluolicaTol2 graph.
+    """Return new instance of the Desulfobacula toluolica Tol2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobaculaToluolicaTol2(
 
     Returns
     -----------------------
-    Instace of DesulfobaculaToluolicaTol2 graph.
+    Instace of Desulfobacula toluolica Tol2 graph.
 
 	References
 	---------------------

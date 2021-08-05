@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaAlexandrii.
+This file offers the methods to automatically retrieve the graph Labrenzia alexandrii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaAlexandrii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaAlexandrii graph.
+    """Return new instance of the Labrenzia alexandrii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrenziaAlexandrii(
 
     Returns
     -----------------------
-    Instace of LabrenziaAlexandrii graph.
+    Instace of Labrenzia alexandrii graph.
 
 	References
 	---------------------

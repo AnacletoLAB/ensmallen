@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanospirillumBeijerinckiiDsm7166.
+This file offers the methods to automatically retrieve the graph Oceanospirillum beijerinckii DSM 7166.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanospirillumBeijerinckiiDsm7166(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanospirillumBeijerinckiiDsm7166 graph.
+    """Return new instance of the Oceanospirillum beijerinckii DSM 7166 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanospirillumBeijerinckiiDsm7166(
 
     Returns
     -----------------------
-    Instace of OceanospirillumBeijerinckiiDsm7166 graph.
+    Instace of Oceanospirillum beijerinckii DSM 7166 graph.
 
 	References
 	---------------------

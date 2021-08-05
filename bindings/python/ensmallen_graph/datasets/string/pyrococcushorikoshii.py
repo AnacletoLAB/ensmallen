@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusHorikoshii.
+This file offers the methods to automatically retrieve the graph Pyrococcus horikoshii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusHorikoshii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusHorikoshii graph.
+    """Return new instance of the Pyrococcus horikoshii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusHorikoshii(
 
     Returns
     -----------------------
-    Instace of PyrococcusHorikoshii graph.
+    Instace of Pyrococcus horikoshii graph.
 
 	References
 	---------------------

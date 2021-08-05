@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudospirillumJaponicum.
+This file offers the methods to automatically retrieve the graph Pseudospirillum japonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudospirillumJaponicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudospirillumJaponicum graph.
+    """Return new instance of the Pseudospirillum japonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudospirillumJaponicum(
 
     Returns
     -----------------------
-    Instace of PseudospirillumJaponicum graph.
+    Instace of Pseudospirillum japonicum graph.
 
 	References
 	---------------------

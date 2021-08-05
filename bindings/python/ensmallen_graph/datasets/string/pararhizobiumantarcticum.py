@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PararhizobiumAntarcticum.
+This file offers the methods to automatically retrieve the graph Pararhizobium antarcticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PararhizobiumAntarcticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PararhizobiumAntarcticum graph.
+    """Return new instance of the Pararhizobium antarcticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PararhizobiumAntarcticum(
 
     Returns
     -----------------------
-    Instace of PararhizobiumAntarcticum graph.
+    Instace of Pararhizobium antarcticum graph.
 
 	References
 	---------------------

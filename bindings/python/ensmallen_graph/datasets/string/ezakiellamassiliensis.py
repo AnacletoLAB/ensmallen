@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EzakiellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Ezakiella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EzakiellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EzakiellaMassiliensis graph.
+    """Return new instance of the Ezakiella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EzakiellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of EzakiellaMassiliensis graph.
+    Instace of Ezakiella massiliensis graph.
 
 	References
 	---------------------

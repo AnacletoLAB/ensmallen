@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaPneumoniaeSubspOzaenaeNbrc105683.
+This file offers the methods to automatically retrieve the graph Klebsiella pneumoniae subsp. ozaenae NBRC 105683.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaPneumoniaeSubspOzaenaeNbrc105683(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaPneumoniaeSubspOzaenaeNbrc105683 graph.
+    """Return new instance of the Klebsiella pneumoniae subsp. ozaenae NBRC 105683 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsiellaPneumoniaeSubspOzaenaeNbrc105683(
 
     Returns
     -----------------------
-    Instace of KlebsiellaPneumoniaeSubspOzaenaeNbrc105683 graph.
+    Instace of Klebsiella pneumoniae subsp. ozaenae NBRC 105683 graph.
 
 	References
 	---------------------

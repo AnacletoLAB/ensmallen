@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUc64.
+This file offers the methods to automatically retrieve the graph socfb-UC64.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUc64(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUc64 graph.
+    """Return new instance of the socfb-UC64 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUc64(
 
     Returns
     -----------------------
-    Instace of SocfbUc64 graph.
+    Instace of socfb-UC64 graph.
 
 	References
 	---------------------

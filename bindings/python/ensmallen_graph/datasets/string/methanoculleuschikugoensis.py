@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoculleusChikugoensis.
+This file offers the methods to automatically retrieve the graph Methanoculleus chikugoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoculleusChikugoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoculleusChikugoensis graph.
+    """Return new instance of the Methanoculleus chikugoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanoculleusChikugoensis(
 
     Returns
     -----------------------
-    Instace of MethanoculleusChikugoensis graph.
+    Instace of Methanoculleus chikugoensis graph.
 
 	References
 	---------------------

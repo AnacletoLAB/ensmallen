@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpUnc305mfcol52.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. UNC305MFCol52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpUnc305mfcol52(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpUnc305mfcol52 graph.
+    """Return new instance of the Sphingomonas sp. UNC305MFCol52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasSpUnc305mfcol52(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpUnc305mfcol52 graph.
+    Instace of Sphingomonas sp. UNC305MFCol52 graph.
 
 	References
 	---------------------

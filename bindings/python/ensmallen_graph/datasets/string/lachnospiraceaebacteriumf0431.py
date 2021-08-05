@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumF0431.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium F0431.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumF0431(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumF0431 graph.
+    """Return new instance of the Lachnospiraceae bacterium F0431 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumF0431(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumF0431 graph.
+    Instace of Lachnospiraceae bacterium F0431 graph.
 
 	References
 	---------------------

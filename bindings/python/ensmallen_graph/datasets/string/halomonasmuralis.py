@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasMuralis.
+This file offers the methods to automatically retrieve the graph Halomonas muralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasMuralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasMuralis graph.
+    """Return new instance of the Halomonas muralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasMuralis(
 
     Returns
     -----------------------
-    Instace of HalomonasMuralis graph.
+    Instace of Halomonas muralis graph.
 
 	References
 	---------------------

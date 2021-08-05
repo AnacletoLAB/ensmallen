@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisAlba.
+This file offers the methods to automatically retrieve the graph Nocardiopsis alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisAlba graph.
+    """Return new instance of the Nocardiopsis alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisAlba(
 
     Returns
     -----------------------
-    Instace of NocardiopsisAlba graph.
+    Instace of Nocardiopsis alba graph.
 
 	References
 	---------------------

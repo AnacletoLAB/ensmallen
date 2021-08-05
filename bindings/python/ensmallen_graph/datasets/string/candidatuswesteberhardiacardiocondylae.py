@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWesteberhardiaCardiocondylae.
+This file offers the methods to automatically retrieve the graph Candidatus Westeberhardia cardiocondylae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWesteberhardiaCardiocondylae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWesteberhardiaCardiocondylae graph.
+    """Return new instance of the Candidatus Westeberhardia cardiocondylae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWesteberhardiaCardiocondylae(
 
     Returns
     -----------------------
-    Instace of CandidatusWesteberhardiaCardiocondylae graph.
+    Instace of Candidatus Westeberhardia cardiocondylae graph.
 
 	References
 	---------------------

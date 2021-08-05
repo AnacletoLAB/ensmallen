@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaParkeri.
+This file offers the methods to automatically retrieve the graph Borrelia parkeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaParkeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaParkeri graph.
+    """Return new instance of the Borrelia parkeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaParkeri(
 
     Returns
     -----------------------
-    Instace of BorreliaParkeri graph.
+    Instace of Borrelia parkeri graph.
 
 	References
 	---------------------

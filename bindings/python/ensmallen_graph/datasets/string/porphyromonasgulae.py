@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasGulae.
+This file offers the methods to automatically retrieve the graph Porphyromonas gulae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasGulae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasGulae graph.
+    """Return new instance of the Porphyromonas gulae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasGulae(
 
     Returns
     -----------------------
-    Instace of PorphyromonasGulae graph.
+    Instace of Porphyromonas gulae graph.
 
 	References
 	---------------------

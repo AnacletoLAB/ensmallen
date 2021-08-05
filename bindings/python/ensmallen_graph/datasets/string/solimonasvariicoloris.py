@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolimonasVariicoloris.
+This file offers the methods to automatically retrieve the graph Solimonas variicoloris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolimonasVariicoloris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolimonasVariicoloris graph.
+    """Return new instance of the Solimonas variicoloris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolimonasVariicoloris(
 
     Returns
     -----------------------
-    Instace of SolimonasVariicoloris graph.
+    Instace of Solimonas variicoloris graph.
 
 	References
 	---------------------

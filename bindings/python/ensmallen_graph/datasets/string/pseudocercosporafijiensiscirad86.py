@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudocercosporaFijiensisCirad86.
+This file offers the methods to automatically retrieve the graph Pseudocercospora fijiensis CIRAD86.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudocercosporaFijiensisCirad86(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudocercosporaFijiensisCirad86 graph.
+    """Return new instance of the Pseudocercospora fijiensis CIRAD86 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudocercosporaFijiensisCirad86(
 
     Returns
     -----------------------
-    Instace of PseudocercosporaFijiensisCirad86 graph.
+    Instace of Pseudocercospora fijiensis CIRAD86 graph.
 
 	References
 	---------------------

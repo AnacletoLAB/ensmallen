@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesFriuliensis.
+This file offers the methods to automatically retrieve the graph Actinoplanes friuliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesFriuliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesFriuliensis graph.
+    """Return new instance of the Actinoplanes friuliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesFriuliensis(
 
     Returns
     -----------------------
-    Instace of ActinoplanesFriuliensis graph.
+    Instace of Actinoplanes friuliensis graph.
 
 	References
 	---------------------

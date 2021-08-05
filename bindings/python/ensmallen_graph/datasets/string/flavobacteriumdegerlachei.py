@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumDegerlachei.
+This file offers the methods to automatically retrieve the graph Flavobacterium degerlachei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumDegerlachei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumDegerlachei graph.
+    """Return new instance of the Flavobacterium degerlachei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumDegerlachei(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumDegerlachei graph.
+    Instace of Flavobacterium degerlachei graph.
 
 	References
 	---------------------

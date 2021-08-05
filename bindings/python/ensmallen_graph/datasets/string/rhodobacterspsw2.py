@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSpSw2.
+This file offers the methods to automatically retrieve the graph Rhodobacter sp. SW2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSpSw2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSpSw2 graph.
+    """Return new instance of the Rhodobacter sp. SW2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacterSpSw2(
 
     Returns
     -----------------------
-    Instace of RhodobacterSpSw2 graph.
+    Instace of Rhodobacter sp. SW2 graph.
 
 	References
 	---------------------

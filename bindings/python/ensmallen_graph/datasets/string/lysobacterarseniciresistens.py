@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterArseniciresistens.
+This file offers the methods to automatically retrieve the graph Lysobacter arseniciresistens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterArseniciresistens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterArseniciresistens graph.
+    """Return new instance of the Lysobacter arseniciresistens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysobacterArseniciresistens(
 
     Returns
     -----------------------
-    Instace of LysobacterArseniciresistens graph.
+    Instace of Lysobacter arseniciresistens graph.
 
 	References
 	---------------------

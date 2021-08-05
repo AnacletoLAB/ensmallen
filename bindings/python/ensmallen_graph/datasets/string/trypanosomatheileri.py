@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrypanosomaTheileri.
+This file offers the methods to automatically retrieve the graph Trypanosoma theileri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrypanosomaTheileri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrypanosomaTheileri graph.
+    """Return new instance of the Trypanosoma theileri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrypanosomaTheileri(
 
     Returns
     -----------------------
-    Instace of TrypanosomaTheileri graph.
+    Instace of Trypanosoma theileri graph.
 
 	References
 	---------------------

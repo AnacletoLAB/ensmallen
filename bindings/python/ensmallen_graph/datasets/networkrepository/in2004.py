@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph In2004.
+This file offers the methods to automatically retrieve the graph in-2004.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def In2004(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the In2004 graph.
+    """Return new instance of the in-2004 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def In2004(
 
     Returns
     -----------------------
-    Instace of In2004 graph.
+    Instace of in-2004 graph.
 
 	References
 	---------------------

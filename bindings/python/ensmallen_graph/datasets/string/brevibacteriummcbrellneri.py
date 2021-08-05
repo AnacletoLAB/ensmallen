@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacteriumMcbrellneri.
+This file offers the methods to automatically retrieve the graph Brevibacterium mcbrellneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacteriumMcbrellneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacteriumMcbrellneri graph.
+    """Return new instance of the Brevibacterium mcbrellneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacteriumMcbrellneri(
 
     Returns
     -----------------------
-    Instace of BrevibacteriumMcbrellneri graph.
+    Instace of Brevibacterium mcbrellneri graph.
 
 	References
 	---------------------

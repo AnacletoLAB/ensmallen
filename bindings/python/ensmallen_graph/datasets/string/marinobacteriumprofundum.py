@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumProfundum.
+This file offers the methods to automatically retrieve the graph Marinobacterium profundum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumProfundum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumProfundum graph.
+    """Return new instance of the Marinobacterium profundum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacteriumProfundum(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumProfundum graph.
+    Instace of Marinobacterium profundum graph.
 
 	References
 	---------------------

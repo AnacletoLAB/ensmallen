@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SusScrofa.
+This file offers the methods to automatically retrieve the graph Sus scrofa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SusScrofa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SusScrofa graph.
+    """Return new instance of the Sus scrofa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SusScrofa(
 
     Returns
     -----------------------
-    Instace of SusScrofa graph.
+    Instace of Sus scrofa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSteyniiIbt23096.
+This file offers the methods to automatically retrieve the graph Aspergillus steynii IBT 23096.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSteyniiIbt23096(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSteyniiIbt23096 graph.
+    """Return new instance of the Aspergillus steynii IBT 23096 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSteyniiIbt23096(
 
     Returns
     -----------------------
-    Instace of AspergillusSteyniiIbt23096 graph.
+    Instace of Aspergillus steynii IBT 23096 graph.
 
 	References
 	---------------------

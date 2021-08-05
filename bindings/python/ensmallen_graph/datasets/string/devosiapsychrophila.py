@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaPsychrophila.
+This file offers the methods to automatically retrieve the graph Devosia psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaPsychrophila graph.
+    """Return new instance of the Devosia psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaPsychrophila(
 
     Returns
     -----------------------
-    Instace of DevosiaPsychrophila graph.
+    Instace of Devosia psychrophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZygosaccharomycesRouxiiCbs732.
+This file offers the methods to automatically retrieve the graph Zygosaccharomyces rouxii CBS 732.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZygosaccharomycesRouxiiCbs732(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZygosaccharomycesRouxiiCbs732 graph.
+    """Return new instance of the Zygosaccharomyces rouxii CBS 732 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZygosaccharomycesRouxiiCbs732(
 
     Returns
     -----------------------
-    Instace of ZygosaccharomycesRouxiiCbs732 graph.
+    Instace of Zygosaccharomyces rouxii CBS 732 graph.
 
 	References
 	---------------------

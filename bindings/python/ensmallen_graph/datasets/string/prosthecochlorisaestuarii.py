@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProsthecochlorisAestuarii.
+This file offers the methods to automatically retrieve the graph Prosthecochloris aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProsthecochlorisAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProsthecochlorisAestuarii graph.
+    """Return new instance of the Prosthecochloris aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProsthecochlorisAestuarii(
 
     Returns
     -----------------------
-    Instace of ProsthecochlorisAestuarii graph.
+    Instace of Prosthecochloris aestuarii graph.
 
 	References
 	---------------------

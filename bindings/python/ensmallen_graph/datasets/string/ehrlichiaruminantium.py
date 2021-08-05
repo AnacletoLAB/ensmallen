@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaRuminantium.
+This file offers the methods to automatically retrieve the graph Ehrlichia ruminantium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaRuminantium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaRuminantium graph.
+    """Return new instance of the Ehrlichia ruminantium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EhrlichiaRuminantium(
 
     Returns
     -----------------------
-    Instace of EhrlichiaRuminantium graph.
+    Instace of Ehrlichia ruminantium graph.
 
 	References
 	---------------------

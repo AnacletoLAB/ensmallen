@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodothermaceaeBacteriumTcBr11B2g67.
+This file offers the methods to automatically retrieve the graph Rhodothermaceae bacterium Tc-Br11_B2g6_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodothermaceaeBacteriumTcBr11B2g67(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodothermaceaeBacteriumTcBr11B2g67 graph.
+    """Return new instance of the Rhodothermaceae bacterium Tc-Br11_B2g6_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodothermaceaeBacteriumTcBr11B2g67(
 
     Returns
     -----------------------
-    Instace of RhodothermaceaeBacteriumTcBr11B2g67 graph.
+    Instace of Rhodothermaceae bacterium Tc-Br11_B2g6_7 graph.
 
 	References
 	---------------------

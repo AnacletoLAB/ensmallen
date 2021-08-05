@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaPertussis18323.
+This file offers the methods to automatically retrieve the graph Bordetella pertussis 18323.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaPertussis18323(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaPertussis18323 graph.
+    """Return new instance of the Bordetella pertussis 18323 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaPertussis18323(
 
     Returns
     -----------------------
-    Instace of BordetellaPertussis18323 graph.
+    Instace of Bordetella pertussis 18323 graph.
 
 	References
 	---------------------

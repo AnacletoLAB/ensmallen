@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPohangensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas pohangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPohangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPohangensis graph.
+    """Return new instance of the Pseudomonas pohangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasPohangensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasPohangensis graph.
+    Instace of Pseudomonas pohangensis graph.
 
 	References
 	---------------------

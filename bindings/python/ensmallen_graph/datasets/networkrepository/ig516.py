@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ig516.
+This file offers the methods to automatically retrieve the graph IG5-16.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ig516(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ig516 graph.
+    """Return new instance of the IG5-16 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ig516(
 
     Returns
     -----------------------
-    Instace of Ig516 graph.
+    Instace of IG5-16 graph.
 
 	References
 	---------------------

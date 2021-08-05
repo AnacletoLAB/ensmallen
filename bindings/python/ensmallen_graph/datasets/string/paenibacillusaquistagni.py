@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusAquistagni.
+This file offers the methods to automatically retrieve the graph Paenibacillus aquistagni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusAquistagni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusAquistagni graph.
+    """Return new instance of the Paenibacillus aquistagni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusAquistagni(
 
     Returns
     -----------------------
-    Instace of PaenibacillusAquistagni graph.
+    Instace of Paenibacillus aquistagni graph.
 
 	References
 	---------------------

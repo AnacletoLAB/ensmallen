@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCarsonellaRuddiiPcIsolateNhv.
+This file offers the methods to automatically retrieve the graph Candidatus Carsonella ruddii PC isolate NHV.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCarsonellaRuddiiPcIsolateNhv(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCarsonellaRuddiiPcIsolateNhv graph.
+    """Return new instance of the Candidatus Carsonella ruddii PC isolate NHV graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCarsonellaRuddiiPcIsolateNhv(
 
     Returns
     -----------------------
-    Instace of CandidatusCarsonellaRuddiiPcIsolateNhv graph.
+    Instace of Candidatus Carsonella ruddii PC isolate NHV graph.
 
 	References
 	---------------------

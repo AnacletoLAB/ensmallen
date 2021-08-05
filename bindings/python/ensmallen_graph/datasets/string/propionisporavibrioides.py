@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionisporaVibrioides.
+This file offers the methods to automatically retrieve the graph Propionispora vibrioides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionisporaVibrioides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionisporaVibrioides graph.
+    """Return new instance of the Propionispora vibrioides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionisporaVibrioides(
 
     Returns
     -----------------------
-    Instace of PropionisporaVibrioides graph.
+    Instace of Propionispora vibrioides graph.
 
 	References
 	---------------------

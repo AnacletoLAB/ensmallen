@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoplasmaAcidophilum.
+This file offers the methods to automatically retrieve the graph Thermoplasma acidophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoplasmaAcidophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoplasmaAcidophilum graph.
+    """Return new instance of the Thermoplasma acidophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoplasmaAcidophilum(
 
     Returns
     -----------------------
-    Instace of ThermoplasmaAcidophilum graph.
+    Instace of Thermoplasma acidophilum graph.
 
 	References
 	---------------------

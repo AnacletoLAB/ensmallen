@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumWanjuense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium wanjuense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumWanjuense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumWanjuense graph.
+    """Return new instance of the Chryseobacterium wanjuense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumWanjuense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumWanjuense graph.
+    Instace of Chryseobacterium wanjuense graph.
 
 	References
 	---------------------

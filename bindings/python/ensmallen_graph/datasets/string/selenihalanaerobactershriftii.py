@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenihalanaerobacterShriftii.
+This file offers the methods to automatically retrieve the graph Selenihalanaerobacter shriftii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenihalanaerobacterShriftii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenihalanaerobacterShriftii graph.
+    """Return new instance of the Selenihalanaerobacter shriftii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SelenihalanaerobacterShriftii(
 
     Returns
     -----------------------
-    Instace of SelenihalanaerobacterShriftii graph.
+    Instace of Selenihalanaerobacter shriftii graph.
 
 	References
 	---------------------

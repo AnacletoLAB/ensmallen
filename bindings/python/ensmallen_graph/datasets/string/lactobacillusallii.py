@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAllii.
+This file offers the methods to automatically retrieve the graph Lactobacillus allii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAllii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAllii graph.
+    """Return new instance of the Lactobacillus allii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAllii(
 
     Returns
     -----------------------
-    Instace of LactobacillusAllii graph.
+    Instace of Lactobacillus allii graph.
 
 	References
 	---------------------

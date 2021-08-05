@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RappaportIsraeli.
+This file offers the methods to automatically retrieve the graph Rappaport israeli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RappaportIsraeli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RappaportIsraeli graph.
+    """Return new instance of the Rappaport israeli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RappaportIsraeli(
 
     Returns
     -----------------------
-    Instace of RappaportIsraeli graph.
+    Instace of Rappaport israeli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeterobasidionIrregulare.
+This file offers the methods to automatically retrieve the graph Heterobasidion irregulare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeterobasidionIrregulare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeterobasidionIrregulare graph.
+    """Return new instance of the Heterobasidion irregulare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HeterobasidionIrregulare(
 
     Returns
     -----------------------
-    Instace of HeterobasidionIrregulare graph.
+    Instace of Heterobasidion irregulare graph.
 
 	References
 	---------------------

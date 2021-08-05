@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbOr.
+This file offers the methods to automatically retrieve the graph socfb-OR.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbOr(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbOr graph.
+    """Return new instance of the socfb-OR graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbOr(
 
     Returns
     -----------------------
-    Instace of SocfbOr graph.
+    Instace of socfb-OR graph.
 
 	References
 	---------------------

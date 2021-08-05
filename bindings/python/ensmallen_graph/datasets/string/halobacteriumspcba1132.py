@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacteriumSpCba1132.
+This file offers the methods to automatically retrieve the graph Halobacterium sp. CBA1132.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacteriumSpCba1132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacteriumSpCba1132 graph.
+    """Return new instance of the Halobacterium sp. CBA1132 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacteriumSpCba1132(
 
     Returns
     -----------------------
-    Instace of HalobacteriumSpCba1132 graph.
+    Instace of Halobacterium sp. CBA1132 graph.
 
 	References
 	---------------------

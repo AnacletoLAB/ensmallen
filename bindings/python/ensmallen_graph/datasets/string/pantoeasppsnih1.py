@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSpPsnih1.
+This file offers the methods to automatically retrieve the graph Pantoea sp. PSNIH1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSpPsnih1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSpPsnih1 graph.
+    """Return new instance of the Pantoea sp. PSNIH1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaSpPsnih1(
 
     Returns
     -----------------------
-    Instace of PantoeaSpPsnih1 graph.
+    Instace of Pantoea sp. PSNIH1 graph.
 
 	References
 	---------------------

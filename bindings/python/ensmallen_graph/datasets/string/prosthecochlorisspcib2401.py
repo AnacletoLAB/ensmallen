@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProsthecochlorisSpCib2401.
+This file offers the methods to automatically retrieve the graph Prosthecochloris sp. CIB 2401.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProsthecochlorisSpCib2401(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProsthecochlorisSpCib2401 graph.
+    """Return new instance of the Prosthecochloris sp. CIB 2401 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProsthecochlorisSpCib2401(
 
     Returns
     -----------------------
-    Instace of ProsthecochlorisSpCib2401 graph.
+    Instace of Prosthecochloris sp. CIB 2401 graph.
 
 	References
 	---------------------

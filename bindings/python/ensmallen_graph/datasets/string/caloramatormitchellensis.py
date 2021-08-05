@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloramatorMitchellensis.
+This file offers the methods to automatically retrieve the graph Caloramator mitchellensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloramatorMitchellensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloramatorMitchellensis graph.
+    """Return new instance of the Caloramator mitchellensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaloramatorMitchellensis(
 
     Returns
     -----------------------
-    Instace of CaloramatorMitchellensis graph.
+    Instace of Caloramator mitchellensis graph.
 
 	References
 	---------------------

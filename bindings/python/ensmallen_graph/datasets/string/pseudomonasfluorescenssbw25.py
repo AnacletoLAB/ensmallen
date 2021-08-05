@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFluorescensSbw25.
+This file offers the methods to automatically retrieve the graph Pseudomonas fluorescens SBW25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFluorescensSbw25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFluorescensSbw25 graph.
+    """Return new instance of the Pseudomonas fluorescens SBW25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasFluorescensSbw25(
 
     Returns
     -----------------------
-    Instace of PseudomonasFluorescensSbw25 graph.
+    Instace of Pseudomonas fluorescens SBW25 graph.
 
 	References
 	---------------------

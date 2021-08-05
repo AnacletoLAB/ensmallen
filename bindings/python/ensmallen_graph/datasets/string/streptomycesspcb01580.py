@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCb01580.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CB01580.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCb01580(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCb01580 graph.
+    """Return new instance of the Streptomyces sp. CB01580 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpCb01580(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCb01580 graph.
+    Instace of Streptomyces sp. CB01580 graph.
 
 	References
 	---------------------

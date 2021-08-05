@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBerkiellaCookevillensis.
+This file offers the methods to automatically retrieve the graph Candidatus Berkiella cookevillensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBerkiellaCookevillensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBerkiellaCookevillensis graph.
+    """Return new instance of the Candidatus Berkiella cookevillensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBerkiellaCookevillensis(
 
     Returns
     -----------------------
-    Instace of CandidatusBerkiellaCookevillensis graph.
+    Instace of Candidatus Berkiella cookevillensis graph.
 
 	References
 	---------------------

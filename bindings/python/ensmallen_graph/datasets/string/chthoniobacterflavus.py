@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChthoniobacterFlavus.
+This file offers the methods to automatically retrieve the graph Chthoniobacter flavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChthoniobacterFlavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChthoniobacterFlavus graph.
+    """Return new instance of the Chthoniobacter flavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChthoniobacterFlavus(
 
     Returns
     -----------------------
-    Instace of ChthoniobacterFlavus graph.
+    Instace of Chthoniobacter flavus graph.
 
 	References
 	---------------------

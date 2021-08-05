@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ToxocaraCanis.
+This file offers the methods to automatically retrieve the graph Toxocara canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ToxocaraCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ToxocaraCanis graph.
+    """Return new instance of the Toxocara canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ToxocaraCanis(
 
     Returns
     -----------------------
-    Instace of ToxocaraCanis graph.
+    Instace of Toxocara canis graph.
 
 	References
 	---------------------

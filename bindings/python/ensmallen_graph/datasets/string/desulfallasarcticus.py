@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfallasArcticus.
+This file offers the methods to automatically retrieve the graph Desulfallas arcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfallasArcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfallasArcticus graph.
+    """Return new instance of the Desulfallas arcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfallasArcticus(
 
     Returns
     -----------------------
-    Instace of DesulfallasArcticus graph.
+    Instace of Desulfallas arcticus graph.
 
 	References
 	---------------------

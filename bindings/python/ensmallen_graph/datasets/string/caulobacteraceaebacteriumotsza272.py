@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacteraceaeBacteriumOtszA272.
+This file offers the methods to automatically retrieve the graph Caulobacteraceae bacterium OTSz_A_272.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacteraceaeBacteriumOtszA272(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacteraceaeBacteriumOtszA272 graph.
+    """Return new instance of the Caulobacteraceae bacterium OTSz_A_272 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacteraceaeBacteriumOtszA272(
 
     Returns
     -----------------------
-    Instace of CaulobacteraceaeBacteriumOtszA272 graph.
+    Instace of Caulobacteraceae bacterium OTSz_A_272 graph.
 
 	References
 	---------------------

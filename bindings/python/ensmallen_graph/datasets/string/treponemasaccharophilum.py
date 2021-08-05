@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSaccharophilum.
+This file offers the methods to automatically retrieve the graph Treponema saccharophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSaccharophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSaccharophilum graph.
+    """Return new instance of the Treponema saccharophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSaccharophilum(
 
     Returns
     -----------------------
-    Instace of TreponemaSaccharophilum graph.
+    Instace of Treponema saccharophilum graph.
 
 	References
 	---------------------

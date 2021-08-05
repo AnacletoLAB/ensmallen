@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerulinaMusivaSo2202.
+This file offers the methods to automatically retrieve the graph Sphaerulina musiva SO2202.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerulinaMusivaSo2202(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerulinaMusivaSo2202 graph.
+    """Return new instance of the Sphaerulina musiva SO2202 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphaerulinaMusivaSo2202(
 
     Returns
     -----------------------
-    Instace of SphaerulinaMusivaSo2202 graph.
+    Instace of Sphaerulina musiva SO2202 graph.
 
 	References
 	---------------------

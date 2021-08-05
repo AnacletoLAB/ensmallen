@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyxococcusXanthus.
+This file offers the methods to automatically retrieve the graph Myxococcus xanthus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyxococcusXanthus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyxococcusXanthus graph.
+    """Return new instance of the Myxococcus xanthus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyxococcusXanthus(
 
     Returns
     -----------------------
-    Instace of MyxococcusXanthus graph.
+    Instace of Myxococcus xanthus graph.
 
 	References
 	---------------------

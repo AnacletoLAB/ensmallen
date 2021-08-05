@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaIntermedia.
+This file offers the methods to automatically retrieve the graph Yersinia intermedia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaIntermedia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaIntermedia graph.
+    """Return new instance of the Yersinia intermedia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaIntermedia(
 
     Returns
     -----------------------
-    Instace of YersiniaIntermedia graph.
+    Instace of Yersinia intermedia graph.
 
 	References
 	---------------------

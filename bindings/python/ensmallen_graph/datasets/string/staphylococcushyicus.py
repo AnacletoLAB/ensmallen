@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusHyicus.
+This file offers the methods to automatically retrieve the graph Staphylococcus hyicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusHyicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusHyicus graph.
+    """Return new instance of the Staphylococcus hyicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusHyicus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusHyicus graph.
+    Instace of Staphylococcus hyicus graph.
 
 	References
 	---------------------

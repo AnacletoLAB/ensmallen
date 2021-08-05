@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaBerlinense.
+This file offers the methods to automatically retrieve the graph Treponema berlinense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaBerlinense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaBerlinense graph.
+    """Return new instance of the Treponema berlinense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaBerlinense(
 
     Returns
     -----------------------
-    Instace of TreponemaBerlinense graph.
+    Instace of Treponema berlinense graph.
 
 	References
 	---------------------

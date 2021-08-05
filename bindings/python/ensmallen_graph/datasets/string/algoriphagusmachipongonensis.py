@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusMachipongonensis.
+This file offers the methods to automatically retrieve the graph Algoriphagus machipongonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusMachipongonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusMachipongonensis graph.
+    """Return new instance of the Algoriphagus machipongonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgoriphagusMachipongonensis(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusMachipongonensis graph.
+    Instace of Algoriphagus machipongonensis graph.
 
 	References
 	---------------------

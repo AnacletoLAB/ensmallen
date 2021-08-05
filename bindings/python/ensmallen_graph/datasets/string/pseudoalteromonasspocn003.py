@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpOcn003.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. OCN003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSpOcn003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpOcn003 graph.
+    """Return new instance of the Pseudoalteromonas sp. OCN003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasSpOcn003(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpOcn003 graph.
+    Instace of Pseudoalteromonas sp. OCN003 graph.
 
 	References
 	---------------------

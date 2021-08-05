@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrilyobacterAtlanticusDsm19335.
+This file offers the methods to automatically retrieve the graph Psychrilyobacter atlanticus DSM 19335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrilyobacterAtlanticusDsm19335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrilyobacterAtlanticusDsm19335 graph.
+    """Return new instance of the Psychrilyobacter atlanticus DSM 19335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrilyobacterAtlanticusDsm19335(
 
     Returns
     -----------------------
-    Instace of PsychrilyobacterAtlanticusDsm19335 graph.
+    Instace of Psychrilyobacter atlanticus DSM 19335 graph.
 
 	References
 	---------------------

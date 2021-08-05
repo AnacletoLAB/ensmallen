@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaLitoreus.
+This file offers the methods to automatically retrieve the graph Oceanicola litoreus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaLitoreus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaLitoreus graph.
+    """Return new instance of the Oceanicola litoreus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanicolaLitoreus(
 
     Returns
     -----------------------
-    Instace of OceanicolaLitoreus graph.
+    Instace of Oceanicola litoreus graph.
 
 	References
 	---------------------

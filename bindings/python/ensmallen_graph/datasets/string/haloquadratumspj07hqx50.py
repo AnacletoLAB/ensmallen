@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloquadratumSpJ07hqx50.
+This file offers the methods to automatically retrieve the graph Haloquadratum sp. J07HQX50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloquadratumSpJ07hqx50(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloquadratumSpJ07hqx50 graph.
+    """Return new instance of the Haloquadratum sp. J07HQX50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloquadratumSpJ07hqx50(
 
     Returns
     -----------------------
-    Instace of HaloquadratumSpJ07hqx50 graph.
+    Instace of Haloquadratum sp. J07HQX50 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusMarinusPastoris.
+This file offers the methods to automatically retrieve the graph Prochlorococcus marinus pastoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusMarinusPastoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusMarinusPastoris graph.
+    """Return new instance of the Prochlorococcus marinus pastoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProchlorococcusMarinusPastoris(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusMarinusPastoris graph.
+    Instace of Prochlorococcus marinus pastoris graph.
 
 	References
 	---------------------

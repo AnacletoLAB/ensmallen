@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ValsaMalicola.
+This file offers the methods to automatically retrieve the graph Valsa malicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ValsaMalicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ValsaMalicola graph.
+    """Return new instance of the Valsa malicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ValsaMalicola(
 
     Returns
     -----------------------
-    Instace of ValsaMalicola graph.
+    Instace of Valsa malicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpHjm029.
+This file offers the methods to automatically retrieve the graph Prevotella sp. HJM029.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpHjm029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpHjm029 graph.
+    """Return new instance of the Prevotella sp. HJM029 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpHjm029(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpHjm029 graph.
+    Instace of Prevotella sp. HJM029 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaBryophila.
+This file offers the methods to automatically retrieve the graph Burkholderia bryophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaBryophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaBryophila graph.
+    """Return new instance of the Burkholderia bryophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaBryophila(
 
     Returns
     -----------------------
-    Instace of BurkholderiaBryophila graph.
+    Instace of Burkholderia bryophila graph.
 
 	References
 	---------------------

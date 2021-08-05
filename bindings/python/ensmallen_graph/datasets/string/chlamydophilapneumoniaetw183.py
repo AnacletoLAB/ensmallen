@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydophilaPneumoniaeTw183.
+This file offers the methods to automatically retrieve the graph Chlamydophila pneumoniae TW183.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydophilaPneumoniaeTw183(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydophilaPneumoniaeTw183 graph.
+    """Return new instance of the Chlamydophila pneumoniae TW183 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydophilaPneumoniaeTw183(
 
     Returns
     -----------------------
-    Instace of ChlamydophilaPneumoniaeTw183 graph.
+    Instace of Chlamydophila pneumoniae TW183 graph.
 
 	References
 	---------------------

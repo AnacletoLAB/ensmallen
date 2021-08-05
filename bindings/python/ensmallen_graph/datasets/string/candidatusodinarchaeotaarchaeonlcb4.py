@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusOdinarchaeotaArchaeonLcb4.
+This file offers the methods to automatically retrieve the graph Candidatus Odinarchaeota archaeon LCB_4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusOdinarchaeotaArchaeonLcb4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusOdinarchaeotaArchaeonLcb4 graph.
+    """Return new instance of the Candidatus Odinarchaeota archaeon LCB_4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusOdinarchaeotaArchaeonLcb4(
 
     Returns
     -----------------------
-    Instace of CandidatusOdinarchaeotaArchaeonLcb4 graph.
+    Instace of Candidatus Odinarchaeota archaeon LCB_4 graph.
 
 	References
 	---------------------

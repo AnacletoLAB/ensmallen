@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaParvirubraYit11816.
+This file offers the methods to automatically retrieve the graph Sutterella parvirubra YIT 11816.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SutterellaParvirubraYit11816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaParvirubraYit11816 graph.
+    """Return new instance of the Sutterella parvirubra YIT 11816 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SutterellaParvirubraYit11816(
 
     Returns
     -----------------------
-    Instace of SutterellaParvirubraYit11816 graph.
+    Instace of Sutterella parvirubra YIT 11816 graph.
 
 	References
 	---------------------

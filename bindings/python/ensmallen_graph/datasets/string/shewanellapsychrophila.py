@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaPsychrophila.
+This file offers the methods to automatically retrieve the graph Shewanella psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaPsychrophila graph.
+    """Return new instance of the Shewanella psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaPsychrophila(
 
     Returns
     -----------------------
-    Instace of ShewanellaPsychrophila graph.
+    Instace of Shewanella psychrophila graph.
 
 	References
 	---------------------

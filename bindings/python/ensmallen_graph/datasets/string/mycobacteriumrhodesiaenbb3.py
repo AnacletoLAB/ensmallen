@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumRhodesiaeNbb3.
+This file offers the methods to automatically retrieve the graph Mycobacterium rhodesiae NBB3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumRhodesiaeNbb3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumRhodesiaeNbb3 graph.
+    """Return new instance of the Mycobacterium rhodesiae NBB3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumRhodesiaeNbb3(
 
     Returns
     -----------------------
-    Instace of MycobacteriumRhodesiaeNbb3 graph.
+    Instace of Mycobacterium rhodesiae NBB3 graph.
 
 	References
 	---------------------

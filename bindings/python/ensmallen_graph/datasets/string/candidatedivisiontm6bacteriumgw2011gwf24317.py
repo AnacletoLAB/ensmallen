@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionTm6BacteriumGw2011Gwf24317.
+This file offers the methods to automatically retrieve the graph candidate division TM6 bacterium GW2011_GWF2_43_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionTm6BacteriumGw2011Gwf24317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionTm6BacteriumGw2011Gwf24317 graph.
+    """Return new instance of the candidate division TM6 bacterium GW2011_GWF2_43_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionTm6BacteriumGw2011Gwf24317(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionTm6BacteriumGw2011Gwf24317 graph.
+    Instace of candidate division TM6 bacterium GW2011_GWF2_43_17 graph.
 
 	References
 	---------------------

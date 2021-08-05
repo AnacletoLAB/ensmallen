@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmithellaSpScadc.
+This file offers the methods to automatically retrieve the graph Smithella sp. SCADC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmithellaSpScadc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmithellaSpScadc graph.
+    """Return new instance of the Smithella sp. SCADC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmithellaSpScadc(
 
     Returns
     -----------------------
-    Instace of SmithellaSpScadc graph.
+    Instace of Smithella sp. SCADC graph.
 
 	References
 	---------------------

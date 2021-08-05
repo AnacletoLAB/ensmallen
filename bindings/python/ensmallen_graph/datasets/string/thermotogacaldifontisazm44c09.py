@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaCaldifontisAzm44c09.
+This file offers the methods to automatically retrieve the graph Thermotoga caldifontis AZM44c09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaCaldifontisAzm44c09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaCaldifontisAzm44c09 graph.
+    """Return new instance of the Thermotoga caldifontis AZM44c09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermotogaCaldifontisAzm44c09(
 
     Returns
     -----------------------
-    Instace of ThermotogaCaldifontisAzm44c09 graph.
+    Instace of Thermotoga caldifontis AZM44c09 graph.
 
 	References
 	---------------------

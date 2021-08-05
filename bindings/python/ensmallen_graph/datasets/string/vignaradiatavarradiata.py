@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VignaRadiataVarRadiata.
+This file offers the methods to automatically retrieve the graph Vigna radiata var. radiata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VignaRadiataVarRadiata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VignaRadiataVarRadiata graph.
+    """Return new instance of the Vigna radiata var. radiata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VignaRadiataVarRadiata(
 
     Returns
     -----------------------
-    Instace of VignaRadiataVarRadiata graph.
+    Instace of Vigna radiata var. radiata graph.
 
 	References
 	---------------------

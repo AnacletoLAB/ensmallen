@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaPsychrerythraea.
+This file offers the methods to automatically retrieve the graph Colwellia psychrerythraea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaPsychrerythraea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaPsychrerythraea graph.
+    """Return new instance of the Colwellia psychrerythraea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ColwelliaPsychrerythraea(
 
     Returns
     -----------------------
-    Instace of ColwelliaPsychrerythraea graph.
+    Instace of Colwellia psychrerythraea graph.
 
 	References
 	---------------------

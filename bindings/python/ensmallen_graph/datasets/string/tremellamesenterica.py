@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TremellaMesenterica.
+This file offers the methods to automatically retrieve the graph Tremella mesenterica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TremellaMesenterica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TremellaMesenterica graph.
+    """Return new instance of the Tremella mesenterica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TremellaMesenterica(
 
     Returns
     -----------------------
-    Instace of TremellaMesenterica graph.
+    Instace of Tremella mesenterica graph.
 
 	References
 	---------------------

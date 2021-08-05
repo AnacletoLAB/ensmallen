@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaSpA12.
+This file offers the methods to automatically retrieve the graph Ralstonia sp. A12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaSpA12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaSpA12 graph.
+    """Return new instance of the Ralstonia sp. A12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RalstoniaSpA12(
 
     Returns
     -----------------------
-    Instace of RalstoniaSpA12 graph.
+    Instace of Ralstonia sp. A12 graph.
 
 	References
 	---------------------

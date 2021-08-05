@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CholoepusHoffmanni.
+This file offers the methods to automatically retrieve the graph Choloepus hoffmanni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CholoepusHoffmanni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CholoepusHoffmanni graph.
+    """Return new instance of the Choloepus hoffmanni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CholoepusHoffmanni(
 
     Returns
     -----------------------
-    Instace of CholoepusHoffmanni graph.
+    Instace of Choloepus hoffmanni graph.
 
 	References
 	---------------------

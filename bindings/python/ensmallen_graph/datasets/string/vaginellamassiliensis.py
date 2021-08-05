@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaginellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Vaginella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaginellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaginellaMassiliensis graph.
+    """Return new instance of the Vaginella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VaginellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of VaginellaMassiliensis graph.
+    Instace of Vaginella massiliensis graph.
 
 	References
 	---------------------

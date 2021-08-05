@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumGwf16617.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium GWF1_66_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumGwf16617(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumGwf16617 graph.
+    """Return new instance of the Burkholderiales bacterium GWF1_66_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacteriumGwf16617(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumGwf16617 graph.
+    Instace of Burkholderiales bacterium GWF1_66_17 graph.
 
 	References
 	---------------------

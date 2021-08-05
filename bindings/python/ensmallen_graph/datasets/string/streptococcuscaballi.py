@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusCaballi.
+This file offers the methods to automatically retrieve the graph Streptococcus caballi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusCaballi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusCaballi graph.
+    """Return new instance of the Streptococcus caballi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusCaballi(
 
     Returns
     -----------------------
-    Instace of StreptococcusCaballi graph.
+    Instace of Streptococcus caballi graph.
 
 	References
 	---------------------

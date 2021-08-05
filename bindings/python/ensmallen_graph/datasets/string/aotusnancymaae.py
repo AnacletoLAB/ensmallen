@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AotusNancymaae.
+This file offers the methods to automatically retrieve the graph Aotus nancymaae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AotusNancymaae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AotusNancymaae graph.
+    """Return new instance of the Aotus nancymaae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AotusNancymaae(
 
     Returns
     -----------------------
-    Instace of AotusNancymaae graph.
+    Instace of Aotus nancymaae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaXiamenensis.
+This file offers the methods to automatically retrieve the graph Idiomarina xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaXiamenensis graph.
+    """Return new instance of the Idiomarina xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IdiomarinaXiamenensis(
 
     Returns
     -----------------------
-    Instace of IdiomarinaXiamenensis graph.
+    Instace of Idiomarina xiamenensis graph.
 
 	References
 	---------------------

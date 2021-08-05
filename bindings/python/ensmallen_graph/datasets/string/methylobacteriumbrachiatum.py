@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumBrachiatum.
+This file offers the methods to automatically retrieve the graph Methylobacterium brachiatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumBrachiatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumBrachiatum graph.
+    """Return new instance of the Methylobacterium brachiatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumBrachiatum(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumBrachiatum graph.
+    Instace of Methylobacterium brachiatum graph.
 
 	References
 	---------------------

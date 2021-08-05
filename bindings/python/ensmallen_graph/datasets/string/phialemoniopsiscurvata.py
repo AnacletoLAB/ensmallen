@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhialemoniopsisCurvata.
+This file offers the methods to automatically retrieve the graph Phialemoniopsis curvata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhialemoniopsisCurvata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhialemoniopsisCurvata graph.
+    """Return new instance of the Phialemoniopsis curvata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhialemoniopsisCurvata(
 
     Returns
     -----------------------
-    Instace of PhialemoniopsisCurvata graph.
+    Instace of Phialemoniopsis curvata graph.
 
 	References
 	---------------------

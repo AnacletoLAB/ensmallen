@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptuniibacterMarinus.
+This file offers the methods to automatically retrieve the graph Neptuniibacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptuniibacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptuniibacterMarinus graph.
+    """Return new instance of the Neptuniibacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptuniibacterMarinus(
 
     Returns
     -----------------------
-    Instace of NeptuniibacterMarinus graph.
+    Instace of Neptuniibacter marinus graph.
 
 	References
 	---------------------

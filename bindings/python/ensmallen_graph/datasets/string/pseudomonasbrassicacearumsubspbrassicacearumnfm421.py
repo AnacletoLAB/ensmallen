@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBrassicacearumSubspBrassicacearumNfm421.
+This file offers the methods to automatically retrieve the graph Pseudomonas brassicacearum subsp. brassicacearum NFM421.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBrassicacearumSubspBrassicacearumNfm421(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBrassicacearumSubspBrassicacearumNfm421 graph.
+    """Return new instance of the Pseudomonas brassicacearum subsp. brassicacearum NFM421 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBrassicacearumSubspBrassicacearumNfm421(
 
     Returns
     -----------------------
-    Instace of PseudomonasBrassicacearumSubspBrassicacearumNfm421 graph.
+    Instace of Pseudomonas brassicacearum subsp. brassicacearum NFM421 graph.
 
 	References
 	---------------------

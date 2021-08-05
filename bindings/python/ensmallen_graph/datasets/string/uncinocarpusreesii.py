@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UncinocarpusReesii.
+This file offers the methods to automatically retrieve the graph Uncinocarpus reesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UncinocarpusReesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UncinocarpusReesii graph.
+    """Return new instance of the Uncinocarpus reesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UncinocarpusReesii(
 
     Returns
     -----------------------
-    Instace of UncinocarpusReesii graph.
+    Instace of Uncinocarpus reesii graph.
 
 	References
 	---------------------

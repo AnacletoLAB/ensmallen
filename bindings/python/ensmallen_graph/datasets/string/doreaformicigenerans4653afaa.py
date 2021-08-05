@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaFormicigenerans4653afaa.
+This file offers the methods to automatically retrieve the graph Dorea formicigenerans 4653AFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaFormicigenerans4653afaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaFormicigenerans4653afaa graph.
+    """Return new instance of the Dorea formicigenerans 4653AFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DoreaFormicigenerans4653afaa(
 
     Returns
     -----------------------
-    Instace of DoreaFormicigenerans4653afaa graph.
+    Instace of Dorea formicigenerans 4653AFAA graph.
 
 	References
 	---------------------

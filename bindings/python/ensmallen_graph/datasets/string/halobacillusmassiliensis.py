@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusMassiliensis.
+This file offers the methods to automatically retrieve the graph Halobacillus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusMassiliensis graph.
+    """Return new instance of the Halobacillus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacillusMassiliensis(
 
     Returns
     -----------------------
-    Instace of HalobacillusMassiliensis graph.
+    Instace of Halobacillus massiliensis graph.
 
 	References
 	---------------------

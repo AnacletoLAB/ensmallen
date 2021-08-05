@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrellaAestuarina.
+This file offers the methods to automatically retrieve the graph Fibrella aestuarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrellaAestuarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrellaAestuarina graph.
+    """Return new instance of the Fibrella aestuarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FibrellaAestuarina(
 
     Returns
     -----------------------
-    Instace of FibrellaAestuarina graph.
+    Instace of Fibrella aestuarina graph.
 
 	References
 	---------------------

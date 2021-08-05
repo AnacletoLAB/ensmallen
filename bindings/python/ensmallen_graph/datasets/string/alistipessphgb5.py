@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSpHgb5.
+This file offers the methods to automatically retrieve the graph Alistipes sp. HGB5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSpHgb5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSpHgb5 graph.
+    """Return new instance of the Alistipes sp. HGB5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesSpHgb5(
 
     Returns
     -----------------------
-    Instace of AlistipesSpHgb5 graph.
+    Instace of Alistipes sp. HGB5 graph.
 
 	References
 	---------------------

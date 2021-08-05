@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpAp50.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. AP50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpAp50(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpAp50 graph.
+    """Return new instance of the Sphingobium sp. AP50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpAp50(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpAp50 graph.
+    Instace of Sphingobium sp. AP50 graph.
 
 	References
 	---------------------

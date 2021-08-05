@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FuchsiellaAlkaliacetigena.
+This file offers the methods to automatically retrieve the graph Fuchsiella alkaliacetigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FuchsiellaAlkaliacetigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FuchsiellaAlkaliacetigena graph.
+    """Return new instance of the Fuchsiella alkaliacetigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FuchsiellaAlkaliacetigena(
 
     Returns
     -----------------------
-    Instace of FuchsiellaAlkaliacetigena graph.
+    Instace of Fuchsiella alkaliacetigena graph.
 
 	References
 	---------------------

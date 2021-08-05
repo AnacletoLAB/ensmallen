@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaSpDme.
+This file offers the methods to automatically retrieve the graph Wolbachia sp. Dme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaSpDme(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaSpDme graph.
+    """Return new instance of the Wolbachia sp. Dme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaSpDme(
 
     Returns
     -----------------------
-    Instace of WolbachiaSpDme graph.
+    Instace of Wolbachia sp. Dme graph.
 
 	References
 	---------------------

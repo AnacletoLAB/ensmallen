@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OttowiaSpOralTaxon894.
+This file offers the methods to automatically retrieve the graph Ottowia sp. oral taxon 894.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OttowiaSpOralTaxon894(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OttowiaSpOralTaxon894 graph.
+    """Return new instance of the Ottowia sp. oral taxon 894 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OttowiaSpOralTaxon894(
 
     Returns
     -----------------------
-    Instace of OttowiaSpOralTaxon894 graph.
+    Instace of Ottowia sp. oral taxon 894 graph.
 
 	References
 	---------------------

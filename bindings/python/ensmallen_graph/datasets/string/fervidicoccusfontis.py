@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FervidicoccusFontis.
+This file offers the methods to automatically retrieve the graph Fervidicoccus fontis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FervidicoccusFontis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FervidicoccusFontis graph.
+    """Return new instance of the Fervidicoccus fontis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FervidicoccusFontis(
 
     Returns
     -----------------------
-    Instace of FervidicoccusFontis graph.
+    Instace of Fervidicoccus fontis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuribacillusStibiiarsenatis.
+This file offers the methods to automatically retrieve the graph Desulfuribacillus stibiiarsenatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuribacillusStibiiarsenatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuribacillusStibiiarsenatis graph.
+    """Return new instance of the Desulfuribacillus stibiiarsenatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuribacillusStibiiarsenatis(
 
     Returns
     -----------------------
-    Instace of DesulfuribacillusStibiiarsenatis graph.
+    Instace of Desulfuribacillus stibiiarsenatis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpLeaf288.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. Leaf288.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpLeaf288(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpLeaf288 graph.
+    """Return new instance of the Microbacterium sp. Leaf288 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpLeaf288(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpLeaf288 graph.
+    Instace of Microbacterium sp. Leaf288 graph.
 
 	References
 	---------------------

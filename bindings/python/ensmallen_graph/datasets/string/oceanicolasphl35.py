@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaSpHl35.
+This file offers the methods to automatically retrieve the graph Oceanicola sp. HL35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaSpHl35(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaSpHl35 graph.
+    """Return new instance of the Oceanicola sp. HL35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicolaSpHl35(
 
     Returns
     -----------------------
-    Instace of OceanicolaSpHl35 graph.
+    Instace of Oceanicola sp. HL35 graph.
 
 	References
 	---------------------

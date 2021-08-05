@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCsiV.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. CSI-V.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpCsiV(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCsiV graph.
+    """Return new instance of the Microbacterium sp. CSI-V graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpCsiV(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCsiV graph.
+    Instace of Microbacterium sp. CSI-V graph.
 
 	References
 	---------------------

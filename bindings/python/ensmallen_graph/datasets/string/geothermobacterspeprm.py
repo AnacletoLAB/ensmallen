@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeothermobacterSpEprM.
+This file offers the methods to automatically retrieve the graph Geothermobacter sp. EPR-M.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeothermobacterSpEprM(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeothermobacterSpEprM graph.
+    """Return new instance of the Geothermobacter sp. EPR-M graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeothermobacterSpEprM(
 
     Returns
     -----------------------
-    Instace of GeothermobacterSpEprM graph.
+    Instace of Geothermobacter sp. EPR-M graph.
 
 	References
 	---------------------

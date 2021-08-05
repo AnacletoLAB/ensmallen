@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusEpidermidisRp62a.
+This file offers the methods to automatically retrieve the graph Staphylococcus epidermidis RP62A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusEpidermidisRp62a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusEpidermidisRp62a graph.
+    """Return new instance of the Staphylococcus epidermidis RP62A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusEpidermidisRp62a(
 
     Returns
     -----------------------
-    Instace of StaphylococcusEpidermidisRp62a graph.
+    Instace of Staphylococcus epidermidis RP62A graph.
 
 	References
 	---------------------

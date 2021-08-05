@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocystisParvus.
+This file offers the methods to automatically retrieve the graph Methylocystis parvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocystisParvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocystisParvus graph.
+    """Return new instance of the Methylocystis parvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylocystisParvus(
 
     Returns
     -----------------------
-    Instace of MethylocystisParvus graph.
+    Instace of Methylocystis parvus graph.
 
 	References
 	---------------------

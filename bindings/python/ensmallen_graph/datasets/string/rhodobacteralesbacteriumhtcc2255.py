@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteralesBacteriumHtcc2255.
+This file offers the methods to automatically retrieve the graph Rhodobacterales bacterium HTCC2255.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteralesBacteriumHtcc2255(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteralesBacteriumHtcc2255 graph.
+    """Return new instance of the Rhodobacterales bacterium HTCC2255 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacteralesBacteriumHtcc2255(
 
     Returns
     -----------------------
-    Instace of RhodobacteralesBacteriumHtcc2255 graph.
+    Instace of Rhodobacterales bacterium HTCC2255 graph.
 
 	References
 	---------------------

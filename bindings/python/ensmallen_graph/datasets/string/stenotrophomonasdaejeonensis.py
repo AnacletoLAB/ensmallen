@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasDaejeonensis.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas daejeonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasDaejeonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasDaejeonensis graph.
+    """Return new instance of the Stenotrophomonas daejeonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasDaejeonensis(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasDaejeonensis graph.
+    Instace of Stenotrophomonas daejeonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophagaThiooxydans.
+This file offers the methods to automatically retrieve the graph Methylophaga thiooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophagaThiooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophagaThiooxydans graph.
+    """Return new instance of the Methylophaga thiooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylophagaThiooxydans(
 
     Returns
     -----------------------
-    Instace of MethylophagaThiooxydans graph.
+    Instace of Methylophaga thiooxydans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RikenellaceaeBacteriumDtu001.
+This file offers the methods to automatically retrieve the graph Rikenellaceae bacterium DTU001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RikenellaceaeBacteriumDtu001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RikenellaceaeBacteriumDtu001 graph.
+    """Return new instance of the Rikenellaceae bacterium DTU001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RikenellaceaeBacteriumDtu001(
 
     Returns
     -----------------------
-    Instace of RikenellaceaeBacteriumDtu001 graph.
+    Instace of Rikenellaceae bacterium DTU001 graph.
 
 	References
 	---------------------

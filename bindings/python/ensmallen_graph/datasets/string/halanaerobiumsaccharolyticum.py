@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumSaccharolyticum.
+This file offers the methods to automatically retrieve the graph Halanaerobium saccharolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumSaccharolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumSaccharolyticum graph.
+    """Return new instance of the Halanaerobium saccharolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalanaerobiumSaccharolyticum(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumSaccharolyticum graph.
+    Instace of Halanaerobium saccharolyticum graph.
 
 	References
 	---------------------

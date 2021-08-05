@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeotrichumCandidum.
+This file offers the methods to automatically retrieve the graph Geotrichum candidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeotrichumCandidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeotrichumCandidum graph.
+    """Return new instance of the Geotrichum candidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeotrichumCandidum(
 
     Returns
     -----------------------
-    Instace of GeotrichumCandidum graph.
+    Instace of Geotrichum candidum graph.
 
 	References
 	---------------------

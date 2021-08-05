@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaBacilliformis.
+This file offers the methods to automatically retrieve the graph Bartonella bacilliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaBacilliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaBacilliformis graph.
+    """Return new instance of the Bartonella bacilliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaBacilliformis(
 
     Returns
     -----------------------
-    Instace of BartonellaBacilliformis graph.
+    Instace of Bartonella bacilliformis graph.
 
 	References
 	---------------------

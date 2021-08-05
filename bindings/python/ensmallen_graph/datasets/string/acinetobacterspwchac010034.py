@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpWchac010034.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. WCHAc010034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpWchac010034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpWchac010034 graph.
+    """Return new instance of the Acinetobacter sp. WCHAc010034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpWchac010034(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpWchac010034 graph.
+    Instace of Acinetobacter sp. WCHAc010034 graph.
 
 	References
 	---------------------

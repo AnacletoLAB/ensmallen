@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaProfundi.
+This file offers the methods to automatically retrieve the graph Ruegeria profundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaProfundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaProfundi graph.
+    """Return new instance of the Ruegeria profundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaProfundi(
 
     Returns
     -----------------------
-    Instace of RuegeriaProfundi graph.
+    Instace of Ruegeria profundi graph.
 
 	References
 	---------------------

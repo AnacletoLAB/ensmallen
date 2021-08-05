@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMargulisbacteriaBacteriumGwd239127.
+This file offers the methods to automatically retrieve the graph Candidatus Margulisbacteria bacterium GWD2_39_127.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMargulisbacteriaBacteriumGwd239127(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMargulisbacteriaBacteriumGwd239127 graph.
+    """Return new instance of the Candidatus Margulisbacteria bacterium GWD2_39_127 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMargulisbacteriaBacteriumGwd239127(
 
     Returns
     -----------------------
-    Instace of CandidatusMargulisbacteriaBacteriumGwd239127 graph.
+    Instace of Candidatus Margulisbacteria bacterium GWD2_39_127 graph.
 
 	References
 	---------------------

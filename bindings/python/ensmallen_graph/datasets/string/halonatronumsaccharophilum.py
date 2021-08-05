@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalonatronumSaccharophilum.
+This file offers the methods to automatically retrieve the graph Halonatronum saccharophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalonatronumSaccharophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalonatronumSaccharophilum graph.
+    """Return new instance of the Halonatronum saccharophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalonatronumSaccharophilum(
 
     Returns
     -----------------------
-    Instace of HalonatronumSaccharophilum graph.
+    Instace of Halonatronum saccharophilum graph.
 
 	References
 	---------------------

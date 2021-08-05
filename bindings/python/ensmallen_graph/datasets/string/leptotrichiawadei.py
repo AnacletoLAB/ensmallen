@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaWadei.
+This file offers the methods to automatically retrieve the graph Leptotrichia wadei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaWadei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaWadei graph.
+    """Return new instance of the Leptotrichia wadei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaWadei(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaWadei graph.
+    Instace of Leptotrichia wadei graph.
 
 	References
 	---------------------

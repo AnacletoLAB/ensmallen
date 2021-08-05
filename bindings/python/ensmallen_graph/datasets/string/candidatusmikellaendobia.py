@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMikellaEndobia.
+This file offers the methods to automatically retrieve the graph Candidatus Mikella endobia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMikellaEndobia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMikellaEndobia graph.
+    """Return new instance of the Candidatus Mikella endobia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMikellaEndobia(
 
     Returns
     -----------------------
-    Instace of CandidatusMikellaEndobia graph.
+    Instace of Candidatus Mikella endobia graph.
 
 	References
 	---------------------

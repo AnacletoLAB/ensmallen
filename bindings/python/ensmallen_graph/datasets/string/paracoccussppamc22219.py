@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSpPamc22219.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. PAMC22219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSpPamc22219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSpPamc22219 graph.
+    """Return new instance of the Paracoccus sp. PAMC22219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusSpPamc22219(
 
     Returns
     -----------------------
-    Instace of ParacoccusSpPamc22219 graph.
+    Instace of Paracoccus sp. PAMC22219 graph.
 
 	References
 	---------------------

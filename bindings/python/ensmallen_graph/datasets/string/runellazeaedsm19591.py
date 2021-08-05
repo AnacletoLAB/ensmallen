@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RunellaZeaeDsm19591.
+This file offers the methods to automatically retrieve the graph Runella zeae DSM 19591.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RunellaZeaeDsm19591(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RunellaZeaeDsm19591 graph.
+    """Return new instance of the Runella zeae DSM 19591 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RunellaZeaeDsm19591(
 
     Returns
     -----------------------
-    Instace of RunellaZeaeDsm19591 graph.
+    Instace of Runella zeae DSM 19591 graph.
 
 	References
 	---------------------

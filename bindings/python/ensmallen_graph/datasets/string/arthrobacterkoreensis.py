@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterKoreensis.
+This file offers the methods to automatically retrieve the graph Arthrobacter koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterKoreensis graph.
+    """Return new instance of the Arthrobacter koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterKoreensis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterKoreensis graph.
+    Instace of Arthrobacter koreensis graph.
 
 	References
 	---------------------

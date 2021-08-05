@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubrivivaxSpScn71131.
+This file offers the methods to automatically retrieve the graph Rubrivivax sp. SCN 71-131.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubrivivaxSpScn71131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubrivivaxSpScn71131 graph.
+    """Return new instance of the Rubrivivax sp. SCN 71-131 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubrivivaxSpScn71131(
 
     Returns
     -----------------------
-    Instace of RubrivivaxSpScn71131 graph.
+    Instace of Rubrivivax sp. SCN 71-131 graph.
 
 	References
 	---------------------

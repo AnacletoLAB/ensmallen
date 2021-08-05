@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomicrostromaGlucosiphilum.
+This file offers the methods to automatically retrieve the graph Pseudomicrostroma glucosiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomicrostromaGlucosiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomicrostromaGlucosiphilum graph.
+    """Return new instance of the Pseudomicrostroma glucosiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomicrostromaGlucosiphilum(
 
     Returns
     -----------------------
-    Instace of PseudomicrostromaGlucosiphilum graph.
+    Instace of Pseudomicrostroma glucosiphilum graph.
 
 	References
 	---------------------

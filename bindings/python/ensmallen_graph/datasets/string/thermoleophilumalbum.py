@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoleophilumAlbum.
+This file offers the methods to automatically retrieve the graph Thermoleophilum album.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoleophilumAlbum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoleophilumAlbum graph.
+    """Return new instance of the Thermoleophilum album graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoleophilumAlbum(
 
     Returns
     -----------------------
-    Instace of ThermoleophilumAlbum graph.
+    Instace of Thermoleophilum album graph.
 
 	References
 	---------------------

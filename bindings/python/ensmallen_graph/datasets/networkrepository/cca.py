@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cca.
+This file offers the methods to automatically retrieve the graph cca.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cca(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cca graph.
+    """Return new instance of the cca graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cca(
 
     Returns
     -----------------------
-    Instace of Cca graph.
+    Instace of cca graph.
 
 	References
 	---------------------

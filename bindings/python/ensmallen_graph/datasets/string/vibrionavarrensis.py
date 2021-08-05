@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioNavarrensis.
+This file offers the methods to automatically retrieve the graph Vibrio navarrensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioNavarrensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioNavarrensis graph.
+    """Return new instance of the Vibrio navarrensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioNavarrensis(
 
     Returns
     -----------------------
-    Instace of VibrioNavarrensis graph.
+    Instace of Vibrio navarrensis graph.
 
 	References
 	---------------------

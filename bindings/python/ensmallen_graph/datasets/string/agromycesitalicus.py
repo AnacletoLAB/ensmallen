@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesItalicus.
+This file offers the methods to automatically retrieve the graph Agromyces italicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesItalicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesItalicus graph.
+    """Return new instance of the Agromyces italicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgromycesItalicus(
 
     Returns
     -----------------------
-    Instace of AgromycesItalicus graph.
+    Instace of Agromyces italicus graph.
 
 	References
 	---------------------

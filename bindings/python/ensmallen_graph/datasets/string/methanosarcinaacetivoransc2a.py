@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaAcetivoransC2a.
+This file offers the methods to automatically retrieve the graph Methanosarcina acetivorans C2A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaAcetivoransC2a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaAcetivoransC2a graph.
+    """Return new instance of the Methanosarcina acetivorans C2A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaAcetivoransC2a(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaAcetivoransC2a graph.
+    Instace of Methanosarcina acetivorans C2A graph.
 
 	References
 	---------------------

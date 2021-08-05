@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterPersicus.
+This file offers the methods to automatically retrieve the graph Marinobacter persicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterPersicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterPersicus graph.
+    """Return new instance of the Marinobacter persicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterPersicus(
 
     Returns
     -----------------------
-    Instace of MarinobacterPersicus graph.
+    Instace of Marinobacter persicus graph.
 
 	References
 	---------------------

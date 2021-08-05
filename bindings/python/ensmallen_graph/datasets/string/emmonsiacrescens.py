@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmmonsiaCrescens.
+This file offers the methods to automatically retrieve the graph Emmonsia crescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmmonsiaCrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmmonsiaCrescens graph.
+    """Return new instance of the Emmonsia crescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EmmonsiaCrescens(
 
     Returns
     -----------------------
-    Instace of EmmonsiaCrescens graph.
+    Instace of Emmonsia crescens graph.
 
 	References
 	---------------------

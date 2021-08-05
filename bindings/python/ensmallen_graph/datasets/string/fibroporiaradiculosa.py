@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibroporiaRadiculosa.
+This file offers the methods to automatically retrieve the graph Fibroporia radiculosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibroporiaRadiculosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibroporiaRadiculosa graph.
+    """Return new instance of the Fibroporia radiculosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibroporiaRadiculosa(
 
     Returns
     -----------------------
-    Instace of FibroporiaRadiculosa graph.
+    Instace of Fibroporia radiculosa graph.
 
 	References
 	---------------------

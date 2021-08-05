@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoorellaGlycerini.
+This file offers the methods to automatically retrieve the graph Moorella glycerini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoorellaGlycerini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoorellaGlycerini graph.
+    """Return new instance of the Moorella glycerini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoorellaGlycerini(
 
     Returns
     -----------------------
-    Instace of MoorellaGlycerini graph.
+    Instace of Moorella glycerini graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacterArupensis.
+This file offers the methods to automatically retrieve the graph Mycolicibacter arupensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacterArupensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacterArupensis graph.
+    """Return new instance of the Mycolicibacter arupensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacterArupensis(
 
     Returns
     -----------------------
-    Instace of MycolicibacterArupensis graph.
+    Instace of Mycolicibacter arupensis graph.
 
 	References
 	---------------------

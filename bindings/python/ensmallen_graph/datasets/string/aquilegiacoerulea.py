@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquilegiaCoerulea.
+This file offers the methods to automatically retrieve the graph Aquilegia coerulea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquilegiaCoerulea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquilegiaCoerulea graph.
+    """Return new instance of the Aquilegia coerulea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquilegiaCoerulea(
 
     Returns
     -----------------------
-    Instace of AquilegiaCoerulea graph.
+    Instace of Aquilegia coerulea graph.
 
 	References
 	---------------------

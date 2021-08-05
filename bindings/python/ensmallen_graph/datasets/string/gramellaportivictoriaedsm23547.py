@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaPortivictoriaeDsm23547.
+This file offers the methods to automatically retrieve the graph Gramella portivictoriae DSM 23547.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaPortivictoriaeDsm23547(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaPortivictoriaeDsm23547 graph.
+    """Return new instance of the Gramella portivictoriae DSM 23547 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GramellaPortivictoriaeDsm23547(
 
     Returns
     -----------------------
-    Instace of GramellaPortivictoriaeDsm23547 graph.
+    Instace of Gramella portivictoriae DSM 23547 graph.
 
 	References
 	---------------------

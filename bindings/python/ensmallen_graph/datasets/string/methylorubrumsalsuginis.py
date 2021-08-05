@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylorubrumSalsuginis.
+This file offers the methods to automatically retrieve the graph Methylorubrum salsuginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylorubrumSalsuginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylorubrumSalsuginis graph.
+    """Return new instance of the Methylorubrum salsuginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylorubrumSalsuginis(
 
     Returns
     -----------------------
-    Instace of MethylorubrumSalsuginis graph.
+    Instace of Methylorubrum salsuginis graph.
 
 	References
 	---------------------

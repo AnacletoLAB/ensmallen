@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrionalesBacteriumRbg16408.
+This file offers the methods to automatically retrieve the graph Bdellovibrionales bacterium RBG_16_40_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrionalesBacteriumRbg16408(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrionalesBacteriumRbg16408 graph.
+    """Return new instance of the Bdellovibrionales bacterium RBG_16_40_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrionalesBacteriumRbg16408(
 
     Returns
     -----------------------
-    Instace of BdellovibrionalesBacteriumRbg16408 graph.
+    Instace of Bdellovibrionales bacterium RBG_16_40_8 graph.
 
 	References
 	---------------------

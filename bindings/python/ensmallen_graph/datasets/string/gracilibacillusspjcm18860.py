@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusSpJcm18860.
+This file offers the methods to automatically retrieve the graph Gracilibacillus sp. JCM 18860.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusSpJcm18860(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusSpJcm18860 graph.
+    """Return new instance of the Gracilibacillus sp. JCM 18860 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilibacillusSpJcm18860(
 
     Returns
     -----------------------
-    Instace of GracilibacillusSpJcm18860 graph.
+    Instace of Gracilibacillus sp. JCM 18860 graph.
 
 	References
 	---------------------

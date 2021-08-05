@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloversatilisUniversalisFam5.
+This file offers the methods to automatically retrieve the graph Methyloversatilis universalis FAM5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloversatilisUniversalisFam5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloversatilisUniversalisFam5 graph.
+    """Return new instance of the Methyloversatilis universalis FAM5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloversatilisUniversalisFam5(
 
     Returns
     -----------------------
-    Instace of MethyloversatilisUniversalisFam5 graph.
+    Instace of Methyloversatilis universalis FAM5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfobacillusThermosulfidooxidans.
+This file offers the methods to automatically retrieve the graph Sulfobacillus thermosulfidooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfobacillusThermosulfidooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfobacillusThermosulfidooxidans graph.
+    """Return new instance of the Sulfobacillus thermosulfidooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfobacillusThermosulfidooxidans(
 
     Returns
     -----------------------
-    Instace of SulfobacillusThermosulfidooxidans graph.
+    Instace of Sulfobacillus thermosulfidooxidans graph.
 
 	References
 	---------------------

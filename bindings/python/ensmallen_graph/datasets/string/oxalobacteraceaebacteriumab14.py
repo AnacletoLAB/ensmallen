@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OxalobacteraceaeBacteriumAb14.
+This file offers the methods to automatically retrieve the graph Oxalobacteraceae bacterium AB_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OxalobacteraceaeBacteriumAb14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OxalobacteraceaeBacteriumAb14 graph.
+    """Return new instance of the Oxalobacteraceae bacterium AB_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OxalobacteraceaeBacteriumAb14(
 
     Returns
     -----------------------
-    Instace of OxalobacteraceaeBacteriumAb14 graph.
+    Instace of Oxalobacteraceae bacterium AB_14 graph.
 
 	References
 	---------------------

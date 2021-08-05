@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CanisLupusDingo.
+This file offers the methods to automatically retrieve the graph Canis lupus dingo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CanisLupusDingo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CanisLupusDingo graph.
+    """Return new instance of the Canis lupus dingo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CanisLupusDingo(
 
     Returns
     -----------------------
-    Instace of CanisLupusDingo graph.
+    Instace of Canis lupus dingo graph.
 
 	References
 	---------------------

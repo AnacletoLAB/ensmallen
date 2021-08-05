@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithinimicrobiumPekingense.
+This file offers the methods to automatically retrieve the graph Ornithinimicrobium pekingense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithinimicrobiumPekingense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithinimicrobiumPekingense graph.
+    """Return new instance of the Ornithinimicrobium pekingense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OrnithinimicrobiumPekingense(
 
     Returns
     -----------------------
-    Instace of OrnithinimicrobiumPekingense graph.
+    Instace of Ornithinimicrobium pekingense graph.
 
 	References
 	---------------------

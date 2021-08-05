@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterSpMhB5.
+This file offers the methods to automatically retrieve the graph Altererythrobacter sp. MH-B5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterSpMhB5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterSpMhB5 graph.
+    """Return new instance of the Altererythrobacter sp. MH-B5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterSpMhB5(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterSpMhB5 graph.
+    Instace of Altererythrobacter sp. MH-B5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyaloscyphaBicolorE.
+This file offers the methods to automatically retrieve the graph Hyaloscypha bicolor E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyaloscyphaBicolorE(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyaloscyphaBicolorE graph.
+    """Return new instance of the Hyaloscypha bicolor E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyaloscyphaBicolorE(
 
     Returns
     -----------------------
-    Instace of HyaloscyphaBicolorE graph.
+    Instace of Hyaloscypha bicolor E graph.
 
 	References
 	---------------------

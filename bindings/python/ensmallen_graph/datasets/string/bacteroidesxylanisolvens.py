@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesXylanisolvens.
+This file offers the methods to automatically retrieve the graph Bacteroides xylanisolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesXylanisolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesXylanisolvens graph.
+    """Return new instance of the Bacteroides xylanisolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesXylanisolvens(
 
     Returns
     -----------------------
-    Instace of BacteroidesXylanisolvens graph.
+    Instace of Bacteroides xylanisolvens graph.
 
 	References
 	---------------------

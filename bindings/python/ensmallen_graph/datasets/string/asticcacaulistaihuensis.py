@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisTaihuensis.
+This file offers the methods to automatically retrieve the graph Asticcacaulis taihuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisTaihuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisTaihuensis graph.
+    """Return new instance of the Asticcacaulis taihuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsticcacaulisTaihuensis(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisTaihuensis graph.
+    Instace of Asticcacaulis taihuensis graph.
 
 	References
 	---------------------

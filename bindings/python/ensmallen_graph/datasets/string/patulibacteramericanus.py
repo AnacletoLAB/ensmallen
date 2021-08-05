@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PatulibacterAmericanus.
+This file offers the methods to automatically retrieve the graph Patulibacter americanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PatulibacterAmericanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PatulibacterAmericanus graph.
+    """Return new instance of the Patulibacter americanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PatulibacterAmericanus(
 
     Returns
     -----------------------
-    Instace of PatulibacterAmericanus graph.
+    Instace of Patulibacter americanus graph.
 
 	References
 	---------------------

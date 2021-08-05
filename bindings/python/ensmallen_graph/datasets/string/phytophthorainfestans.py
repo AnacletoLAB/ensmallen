@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraInfestans.
+This file offers the methods to automatically retrieve the graph Phytophthora infestans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraInfestans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraInfestans graph.
+    """Return new instance of the Phytophthora infestans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytophthoraInfestans(
 
     Returns
     -----------------------
-    Instace of PhytophthoraInfestans graph.
+    Instace of Phytophthora infestans graph.
 
 	References
 	---------------------

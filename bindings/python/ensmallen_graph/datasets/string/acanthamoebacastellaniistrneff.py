@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcanthamoebaCastellaniiStrNeff.
+This file offers the methods to automatically retrieve the graph Acanthamoeba castellanii str. Neff.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcanthamoebaCastellaniiStrNeff(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcanthamoebaCastellaniiStrNeff graph.
+    """Return new instance of the Acanthamoeba castellanii str. Neff graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcanthamoebaCastellaniiStrNeff(
 
     Returns
     -----------------------
-    Instace of AcanthamoebaCastellaniiStrNeff graph.
+    Instace of Acanthamoeba castellanii str. Neff graph.
 
 	References
 	---------------------

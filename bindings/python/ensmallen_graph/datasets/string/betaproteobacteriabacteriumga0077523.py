@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumGa0077523.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium Ga0077523.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumGa0077523(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumGa0077523 graph.
+    """Return new instance of the Betaproteobacteria bacterium Ga0077523 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumGa0077523(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumGa0077523 graph.
+    Instace of Betaproteobacteria bacterium Ga0077523 graph.
 
 	References
 	---------------------

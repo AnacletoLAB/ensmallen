@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasMaltophiliaR5513.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas maltophilia R5513.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasMaltophiliaR5513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasMaltophiliaR5513 graph.
+    """Return new instance of the Stenotrophomonas maltophilia R5513 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StenotrophomonasMaltophiliaR5513(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasMaltophiliaR5513 graph.
+    Instace of Stenotrophomonas maltophilia R5513 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MelampsoraLaricipopulina.
+This file offers the methods to automatically retrieve the graph Melampsora laricipopulina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MelampsoraLaricipopulina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MelampsoraLaricipopulina graph.
+    """Return new instance of the Melampsora laricipopulina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MelampsoraLaricipopulina(
 
     Returns
     -----------------------
-    Instace of MelampsoraLaricipopulina graph.
+    Instace of Melampsora laricipopulina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterTibetensis.
+This file offers the methods to automatically retrieve the graph Rufibacter tibetensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RufibacterTibetensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterTibetensis graph.
+    """Return new instance of the Rufibacter tibetensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RufibacterTibetensis(
 
     Returns
     -----------------------
-    Instace of RufibacterTibetensis graph.
+    Instace of Rufibacter tibetensis graph.
 
 	References
 	---------------------

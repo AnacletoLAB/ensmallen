@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CloacibacteriumNormanense.
+This file offers the methods to automatically retrieve the graph Cloacibacterium normanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CloacibacteriumNormanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CloacibacteriumNormanense graph.
+    """Return new instance of the Cloacibacterium normanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CloacibacteriumNormanense(
 
     Returns
     -----------------------
-    Instace of CloacibacteriumNormanense graph.
+    Instace of Cloacibacterium normanense graph.
 
 	References
 	---------------------

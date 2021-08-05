@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AbyssisolibacterFermentans.
+This file offers the methods to automatically retrieve the graph Abyssisolibacter fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AbyssisolibacterFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AbyssisolibacterFermentans graph.
+    """Return new instance of the Abyssisolibacter fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AbyssisolibacterFermentans(
 
     Returns
     -----------------------
-    Instace of AbyssisolibacterFermentans graph.
+    Instace of Abyssisolibacter fermentans graph.
 
 	References
 	---------------------

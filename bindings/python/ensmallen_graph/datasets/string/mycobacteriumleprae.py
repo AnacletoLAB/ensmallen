@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumLeprae.
+This file offers the methods to automatically retrieve the graph Mycobacterium leprae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumLeprae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumLeprae graph.
+    """Return new instance of the Mycobacterium leprae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumLeprae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumLeprae graph.
+    Instace of Mycobacterium leprae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumLsSob.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium LS_SOB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumLsSob(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumLsSob graph.
+    """Return new instance of the Gammaproteobacteria bacterium LS_SOB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumLsSob(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumLsSob graph.
+    Instace of Gammaproteobacteria bacterium LS_SOB graph.
 
 	References
 	---------------------

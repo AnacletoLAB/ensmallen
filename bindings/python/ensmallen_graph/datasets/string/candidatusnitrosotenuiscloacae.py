@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosotenuisCloacae.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosotenuis cloacae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosotenuisCloacae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosotenuisCloacae graph.
+    """Return new instance of the Candidatus Nitrosotenuis cloacae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosotenuisCloacae(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosotenuisCloacae graph.
+    Instace of Candidatus Nitrosotenuis cloacae graph.
 
 	References
 	---------------------

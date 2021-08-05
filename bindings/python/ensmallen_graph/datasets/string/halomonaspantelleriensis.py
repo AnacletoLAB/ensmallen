@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasPantelleriensis.
+This file offers the methods to automatically retrieve the graph Halomonas pantelleriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasPantelleriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasPantelleriensis graph.
+    """Return new instance of the Halomonas pantelleriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasPantelleriensis(
 
     Returns
     -----------------------
-    Instace of HalomonasPantelleriensis graph.
+    Instace of Halomonas pantelleriensis graph.
 
 	References
 	---------------------

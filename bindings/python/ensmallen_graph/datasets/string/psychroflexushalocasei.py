@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusHalocasei.
+This file offers the methods to automatically retrieve the graph Psychroflexus halocasei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusHalocasei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusHalocasei graph.
+    """Return new instance of the Psychroflexus halocasei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychroflexusHalocasei(
 
     Returns
     -----------------------
-    Instace of PsychroflexusHalocasei graph.
+    Instace of Psychroflexus halocasei graph.
 
 	References
 	---------------------

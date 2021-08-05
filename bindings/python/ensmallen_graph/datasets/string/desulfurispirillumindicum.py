@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurispirillumIndicum.
+This file offers the methods to automatically retrieve the graph Desulfurispirillum indicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurispirillumIndicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurispirillumIndicum graph.
+    """Return new instance of the Desulfurispirillum indicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurispirillumIndicum(
 
     Returns
     -----------------------
-    Instace of DesulfurispirillumIndicum graph.
+    Instace of Desulfurispirillum indicum graph.
 
 	References
 	---------------------

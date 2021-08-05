@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaEchinicola.
+This file offers the methods to automatically retrieve the graph Gramella echinicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaEchinicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaEchinicola graph.
+    """Return new instance of the Gramella echinicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GramellaEchinicola(
 
     Returns
     -----------------------
-    Instace of GramellaEchinicola graph.
+    Instace of Gramella echinicola graph.
 
 	References
 	---------------------

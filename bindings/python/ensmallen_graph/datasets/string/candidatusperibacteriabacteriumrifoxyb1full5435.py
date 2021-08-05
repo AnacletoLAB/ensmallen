@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeribacteriaBacteriumRifoxyb1Full5435.
+This file offers the methods to automatically retrieve the graph Candidatus Peribacteria bacterium RIFOXYB1_FULL_54_35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeribacteriaBacteriumRifoxyb1Full5435(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeribacteriaBacteriumRifoxyb1Full5435 graph.
+    """Return new instance of the Candidatus Peribacteria bacterium RIFOXYB1_FULL_54_35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeribacteriaBacteriumRifoxyb1Full5435(
 
     Returns
     -----------------------
-    Instace of CandidatusPeribacteriaBacteriumRifoxyb1Full5435 graph.
+    Instace of Candidatus Peribacteria bacterium RIFOXYB1_FULL_54_35 graph.
 
 	References
 	---------------------

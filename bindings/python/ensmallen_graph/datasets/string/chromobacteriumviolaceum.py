@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromobacteriumViolaceum.
+This file offers the methods to automatically retrieve the graph Chromobacterium violaceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromobacteriumViolaceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromobacteriumViolaceum graph.
+    """Return new instance of the Chromobacterium violaceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChromobacteriumViolaceum(
 
     Returns
     -----------------------
-    Instace of ChromobacteriumViolaceum graph.
+    Instace of Chromobacterium violaceum graph.
 
 	References
 	---------------------

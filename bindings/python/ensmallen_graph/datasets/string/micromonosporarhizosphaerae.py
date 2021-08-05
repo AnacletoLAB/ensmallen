@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Micromonospora rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaRhizosphaerae graph.
+    """Return new instance of the Micromonospora rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of MicromonosporaRhizosphaerae graph.
+    Instace of Micromonospora rhizosphaerae graph.
 
 	References
 	---------------------

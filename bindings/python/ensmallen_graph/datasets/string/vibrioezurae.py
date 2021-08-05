@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioEzurae.
+This file offers the methods to automatically retrieve the graph Vibrio ezurae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioEzurae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioEzurae graph.
+    """Return new instance of the Vibrio ezurae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioEzurae(
 
     Returns
     -----------------------
-    Instace of VibrioEzurae graph.
+    Instace of Vibrio ezurae graph.
 
 	References
 	---------------------

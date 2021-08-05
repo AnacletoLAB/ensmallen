@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusReticulitermitis.
+This file offers the methods to automatically retrieve the graph Deinococcus reticulitermitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusReticulitermitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusReticulitermitis graph.
+    """Return new instance of the Deinococcus reticulitermitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeinococcusReticulitermitis(
 
     Returns
     -----------------------
-    Instace of DeinococcusReticulitermitis graph.
+    Instace of Deinococcus reticulitermitis graph.
 
 	References
 	---------------------

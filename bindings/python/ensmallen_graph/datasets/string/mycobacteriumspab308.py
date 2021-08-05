@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpAb308.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. AB308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpAb308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpAb308 graph.
+    """Return new instance of the Mycobacterium sp. AB308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpAb308(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpAb308 graph.
+    Instace of Mycobacterium sp. AB308 graph.
 
 	References
 	---------------------

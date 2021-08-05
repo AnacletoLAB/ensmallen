@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaMargrebowiei.
+This file offers the methods to automatically retrieve the graph Schistosoma margrebowiei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaMargrebowiei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaMargrebowiei graph.
+    """Return new instance of the Schistosoma margrebowiei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaMargrebowiei(
 
     Returns
     -----------------------
-    Instace of SchistosomaMargrebowiei graph.
+    Instace of Schistosoma margrebowiei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GulbenkianiaIndica.
+This file offers the methods to automatically retrieve the graph Gulbenkiania indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GulbenkianiaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GulbenkianiaIndica graph.
+    """Return new instance of the Gulbenkiania indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GulbenkianiaIndica(
 
     Returns
     -----------------------
-    Instace of GulbenkianiaIndica graph.
+    Instace of Gulbenkiania indica graph.
 
 	References
 	---------------------

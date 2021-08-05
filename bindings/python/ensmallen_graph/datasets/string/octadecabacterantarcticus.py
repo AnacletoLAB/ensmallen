@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OctadecabacterAntarcticus.
+This file offers the methods to automatically retrieve the graph Octadecabacter antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OctadecabacterAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OctadecabacterAntarcticus graph.
+    """Return new instance of the Octadecabacter antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OctadecabacterAntarcticus(
 
     Returns
     -----------------------
-    Instace of OctadecabacterAntarcticus graph.
+    Instace of Octadecabacter antarcticus graph.
 
 	References
 	---------------------

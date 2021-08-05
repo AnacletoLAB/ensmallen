@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadRoadUsa.
+This file offers the methods to automatically retrieve the graph road-road-usa.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadRoadUsa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadRoadUsa graph.
+    """Return new instance of the road-road-usa graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadRoadUsa(
 
     Returns
     -----------------------
-    Instace of RoadRoadUsa graph.
+    Instace of road-road-usa graph.
 
 	References
 	---------------------

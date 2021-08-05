@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SimkaniaNegevensis.
+This file offers the methods to automatically retrieve the graph Simkania negevensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SimkaniaNegevensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SimkaniaNegevensis graph.
+    """Return new instance of the Simkania negevensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SimkaniaNegevensis(
 
     Returns
     -----------------------
-    Instace of SimkaniaNegevensis graph.
+    Instace of Simkania negevensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesVulgatus.
+This file offers the methods to automatically retrieve the graph Bacteroides vulgatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesVulgatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesVulgatus graph.
+    """Return new instance of the Bacteroides vulgatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesVulgatus(
 
     Returns
     -----------------------
-    Instace of BacteroidesVulgatus graph.
+    Instace of Bacteroides vulgatus graph.
 
 	References
 	---------------------

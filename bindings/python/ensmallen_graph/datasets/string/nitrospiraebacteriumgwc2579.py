@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumGwc2579.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium GWC2_57_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumGwc2579(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumGwc2579 graph.
+    """Return new instance of the Nitrospirae bacterium GWC2_57_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumGwc2579(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumGwc2579 graph.
+    Instace of Nitrospirae bacterium GWC2_57_9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dolphins.
+This file offers the methods to automatically retrieve the graph dolphins.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dolphins(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dolphins graph.
+    """Return new instance of the dolphins graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dolphins(
 
     Returns
     -----------------------
-    Instace of Dolphins graph.
+    Instace of dolphins graph.
 
 	References
 	---------------------

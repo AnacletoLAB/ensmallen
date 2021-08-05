@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacillusChungwhensis.
+This file offers the methods to automatically retrieve the graph Pontibacillus chungwhensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacillusChungwhensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacillusChungwhensis graph.
+    """Return new instance of the Pontibacillus chungwhensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PontibacillusChungwhensis(
 
     Returns
     -----------------------
-    Instace of PontibacillusChungwhensis graph.
+    Instace of Pontibacillus chungwhensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusNamurensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus namurensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusNamurensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusNamurensis graph.
+    """Return new instance of the Lactobacillus namurensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusNamurensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusNamurensis graph.
+    Instace of Lactobacillus namurensis graph.
 
 	References
 	---------------------

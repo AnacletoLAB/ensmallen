@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Grid2.
+This file offers the methods to automatically retrieve the graph grid2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Grid2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Grid2 graph.
+    """Return new instance of the grid2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Grid2(
 
     Returns
     -----------------------
-    Instace of Grid2 graph.
+    Instace of grid2 graph.
 
 	References
 	---------------------

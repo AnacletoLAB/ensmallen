@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BelliellaPelovolcani.
+This file offers the methods to automatically retrieve the graph Belliella pelovolcani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BelliellaPelovolcani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BelliellaPelovolcani graph.
+    """Return new instance of the Belliella pelovolcani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BelliellaPelovolcani(
 
     Returns
     -----------------------
-    Instace of BelliellaPelovolcani graph.
+    Instace of Belliella pelovolcani graph.
 
 	References
 	---------------------

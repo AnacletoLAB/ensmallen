@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterNyackensis.
+This file offers the methods to automatically retrieve the graph Pedobacter nyackensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterNyackensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterNyackensis graph.
+    """Return new instance of the Pedobacter nyackensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterNyackensis(
 
     Returns
     -----------------------
-    Instace of PedobacterNyackensis graph.
+    Instace of Pedobacter nyackensis graph.
 
 	References
 	---------------------

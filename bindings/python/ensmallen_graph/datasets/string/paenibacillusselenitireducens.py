@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSelenitireducens.
+This file offers the methods to automatically retrieve the graph Paenibacillus selenitireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSelenitireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSelenitireducens graph.
+    """Return new instance of the Paenibacillus selenitireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSelenitireducens(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSelenitireducens graph.
+    Instace of Paenibacillus selenitireducens graph.
 
 	References
 	---------------------

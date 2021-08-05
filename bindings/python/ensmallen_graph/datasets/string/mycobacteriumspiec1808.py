@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpIec1808.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. IEC1808.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpIec1808(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpIec1808 graph.
+    """Return new instance of the Mycobacterium sp. IEC1808 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpIec1808(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpIec1808 graph.
+    Instace of Mycobacterium sp. IEC1808 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrassicaRapaSubspPekinensis.
+This file offers the methods to automatically retrieve the graph Brassica rapa subsp. pekinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrassicaRapaSubspPekinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrassicaRapaSubspPekinensis graph.
+    """Return new instance of the Brassica rapa subsp. pekinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrassicaRapaSubspPekinensis(
 
     Returns
     -----------------------
-    Instace of BrassicaRapaSubspPekinensis graph.
+    Instace of Brassica rapa subsp. pekinensis graph.
 
 	References
 	---------------------

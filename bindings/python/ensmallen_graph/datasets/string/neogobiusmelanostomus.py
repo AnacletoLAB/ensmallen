@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeogobiusMelanostomus.
+This file offers the methods to automatically retrieve the graph Neogobius melanostomus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeogobiusMelanostomus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeogobiusMelanostomus graph.
+    """Return new instance of the Neogobius melanostomus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeogobiusMelanostomus(
 
     Returns
     -----------------------
-    Instace of NeogobiusMelanostomus graph.
+    Instace of Neogobius melanostomus graph.
 
 	References
 	---------------------

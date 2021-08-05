@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaHippikon.
+This file offers the methods to automatically retrieve the graph Acholeplasma hippikon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaHippikon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaHippikon graph.
+    """Return new instance of the Acholeplasma hippikon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaHippikon(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaHippikon graph.
+    Instace of Acholeplasma hippikon graph.
 
 	References
 	---------------------

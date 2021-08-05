@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpragueaLophii42110.
+This file offers the methods to automatically retrieve the graph Spraguea lophii 42_110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpragueaLophii42110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpragueaLophii42110 graph.
+    """Return new instance of the Spraguea lophii 42_110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpragueaLophii42110(
 
     Returns
     -----------------------
-    Instace of SpragueaLophii42110 graph.
+    Instace of Spraguea lophii 42_110 graph.
 
 	References
 	---------------------

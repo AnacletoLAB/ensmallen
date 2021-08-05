@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumFuchskuhlense.
+This file offers the methods to automatically retrieve the graph Novosphingobium fuchskuhlense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumFuchskuhlense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumFuchskuhlense graph.
+    """Return new instance of the Novosphingobium fuchskuhlense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumFuchskuhlense(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumFuchskuhlense graph.
+    Instace of Novosphingobium fuchskuhlense graph.
 
 	References
 	---------------------

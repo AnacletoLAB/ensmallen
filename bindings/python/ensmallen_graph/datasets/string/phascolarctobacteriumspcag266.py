@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhascolarctobacteriumSpCag266.
+This file offers the methods to automatically retrieve the graph Phascolarctobacterium sp. CAG266.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhascolarctobacteriumSpCag266(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhascolarctobacteriumSpCag266 graph.
+    """Return new instance of the Phascolarctobacterium sp. CAG266 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhascolarctobacteriumSpCag266(
 
     Returns
     -----------------------
-    Instace of PhascolarctobacteriumSpCag266 graph.
+    Instace of Phascolarctobacterium sp. CAG266 graph.
 
 	References
 	---------------------

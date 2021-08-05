@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrenarchaeotaArchaeon13140cm35217.
+This file offers the methods to automatically retrieve the graph Crenarchaeota archaeon 13_1_40CM_3_52_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrenarchaeotaArchaeon13140cm35217(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrenarchaeotaArchaeon13140cm35217 graph.
+    """Return new instance of the Crenarchaeota archaeon 13_1_40CM_3_52_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CrenarchaeotaArchaeon13140cm35217(
 
     Returns
     -----------------------
-    Instace of CrenarchaeotaArchaeon13140cm35217 graph.
+    Instace of Crenarchaeota archaeon 13_1_40CM_3_52_17 graph.
 
 	References
 	---------------------

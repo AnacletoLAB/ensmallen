@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonosporascusSpCrb83.
+This file offers the methods to automatically retrieve the graph Monosporascus sp. CRB-8-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonosporascusSpCrb83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonosporascusSpCrb83 graph.
+    """Return new instance of the Monosporascus sp. CRB-8-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonosporascusSpCrb83(
 
     Returns
     -----------------------
-    Instace of MonosporascusSpCrb83 graph.
+    Instace of Monosporascus sp. CRB-8-3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpUcdGka.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. UCD-GKA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpUcdGka(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpUcdGka graph.
+    """Return new instance of the Arthrobacter sp. UCD-GKA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpUcdGka(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpUcdGka graph.
+    Instace of Arthrobacter sp. UCD-GKA graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoactinosporaRubra.
+This file offers the methods to automatically retrieve the graph Thermoactinospora rubra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoactinosporaRubra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoactinosporaRubra graph.
+    """Return new instance of the Thermoactinospora rubra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoactinosporaRubra(
 
     Returns
     -----------------------
-    Instace of ThermoactinosporaRubra graph.
+    Instace of Thermoactinospora rubra graph.
 
 	References
 	---------------------

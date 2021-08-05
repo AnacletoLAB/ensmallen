@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterAlgicola.
+This file offers the methods to automatically retrieve the graph Marinobacter algicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterAlgicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterAlgicola graph.
+    """Return new instance of the Marinobacter algicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterAlgicola(
 
     Returns
     -----------------------
-    Instace of MarinobacterAlgicola graph.
+    Instace of Marinobacter algicola graph.
 
 	References
 	---------------------

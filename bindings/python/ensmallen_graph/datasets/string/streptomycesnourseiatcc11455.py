@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesNourseiAtcc11455.
+This file offers the methods to automatically retrieve the graph Streptomyces noursei ATCC 11455.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesNourseiAtcc11455(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesNourseiAtcc11455 graph.
+    """Return new instance of the Streptomyces noursei ATCC 11455 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesNourseiAtcc11455(
 
     Returns
     -----------------------
-    Instace of StreptomycesNourseiAtcc11455 graph.
+    Instace of Streptomyces noursei ATCC 11455 graph.
 
 	References
 	---------------------

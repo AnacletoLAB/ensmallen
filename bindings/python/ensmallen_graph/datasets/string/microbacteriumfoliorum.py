@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumFoliorum.
+This file offers the methods to automatically retrieve the graph Microbacterium foliorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumFoliorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumFoliorum graph.
+    """Return new instance of the Microbacterium foliorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumFoliorum(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumFoliorum graph.
+    Instace of Microbacterium foliorum graph.
 
 	References
 	---------------------

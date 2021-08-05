@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobacterArenae.
+This file offers the methods to automatically retrieve the graph Thalassobacter arenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobacterArenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobacterArenae graph.
+    """Return new instance of the Thalassobacter arenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassobacterArenae(
 
     Returns
     -----------------------
-    Instace of ThalassobacterArenae graph.
+    Instace of Thalassobacter arenae graph.
 
 	References
 	---------------------

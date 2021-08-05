@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FonsecaeaErecta.
+This file offers the methods to automatically retrieve the graph Fonsecaea erecta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FonsecaeaErecta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FonsecaeaErecta graph.
+    """Return new instance of the Fonsecaea erecta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FonsecaeaErecta(
 
     Returns
     -----------------------
-    Instace of FonsecaeaErecta graph.
+    Instace of Fonsecaea erecta graph.
 
 	References
 	---------------------

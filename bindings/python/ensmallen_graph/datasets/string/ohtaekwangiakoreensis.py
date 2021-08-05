@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OhtaekwangiaKoreensis.
+This file offers the methods to automatically retrieve the graph Ohtaekwangia koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OhtaekwangiaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OhtaekwangiaKoreensis graph.
+    """Return new instance of the Ohtaekwangia koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OhtaekwangiaKoreensis(
 
     Returns
     -----------------------
-    Instace of OhtaekwangiaKoreensis graph.
+    Instace of Ohtaekwangia koreensis graph.
 
 	References
 	---------------------

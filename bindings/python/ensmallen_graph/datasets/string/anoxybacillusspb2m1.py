@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusSpB2m1.
+This file offers the methods to automatically retrieve the graph Anoxybacillus sp. B2M1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusSpB2m1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusSpB2m1 graph.
+    """Return new instance of the Anoxybacillus sp. B2M1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnoxybacillusSpB2m1(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusSpB2m1 graph.
+    Instace of Anoxybacillus sp. B2M1 graph.
 
 	References
 	---------------------

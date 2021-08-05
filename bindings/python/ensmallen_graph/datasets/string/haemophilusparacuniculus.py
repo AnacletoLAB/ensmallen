@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusParacuniculus.
+This file offers the methods to automatically retrieve the graph Haemophilus paracuniculus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusParacuniculus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusParacuniculus graph.
+    """Return new instance of the Haemophilus paracuniculus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaemophilusParacuniculus(
 
     Returns
     -----------------------
-    Instace of HaemophilusParacuniculus graph.
+    Instace of Haemophilus paracuniculus graph.
 
 	References
 	---------------------

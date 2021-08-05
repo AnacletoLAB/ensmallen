@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenaeusVannamei.
+This file offers the methods to automatically retrieve the graph Penaeus vannamei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenaeusVannamei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenaeusVannamei graph.
+    """Return new instance of the Penaeus vannamei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenaeusVannamei(
 
     Returns
     -----------------------
-    Instace of PenaeusVannamei graph.
+    Instace of Penaeus vannamei graph.
 
 	References
 	---------------------

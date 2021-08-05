@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosiphoAfricanus.
+This file offers the methods to automatically retrieve the graph Thermosipho africanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosiphoAfricanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosiphoAfricanus graph.
+    """Return new instance of the Thermosipho africanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermosiphoAfricanus(
 
     Returns
     -----------------------
-    Instace of ThermosiphoAfricanus graph.
+    Instace of Thermosipho africanus graph.
 
 	References
 	---------------------

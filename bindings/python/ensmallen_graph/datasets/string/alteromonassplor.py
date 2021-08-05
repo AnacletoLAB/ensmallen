@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasSpLor.
+This file offers the methods to automatically retrieve the graph Alteromonas sp. LOR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasSpLor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasSpLor graph.
+    """Return new instance of the Alteromonas sp. LOR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlteromonasSpLor(
 
     Returns
     -----------------------
-    Instace of AlteromonasSpLor graph.
+    Instace of Alteromonas sp. LOR graph.
 
 	References
 	---------------------

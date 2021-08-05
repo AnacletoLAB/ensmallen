@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumParadoxumJwYl7Dsm7308.
+This file offers the methods to automatically retrieve the graph [Clostridium] paradoxum JW-YL-7 DSM 7308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumParadoxumJwYl7Dsm7308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumParadoxumJwYl7Dsm7308 graph.
+    """Return new instance of the [Clostridium] paradoxum JW-YL-7 DSM 7308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumParadoxumJwYl7Dsm7308(
 
     Returns
     -----------------------
-    Instace of ClostridiumParadoxumJwYl7Dsm7308 graph.
+    Instace of [Clostridium] paradoxum JW-YL-7 DSM 7308 graph.
 
 	References
 	---------------------

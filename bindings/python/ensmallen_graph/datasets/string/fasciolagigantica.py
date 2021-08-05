@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FasciolaGigantica.
+This file offers the methods to automatically retrieve the graph Fasciola gigantica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FasciolaGigantica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FasciolaGigantica graph.
+    """Return new instance of the Fasciola gigantica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FasciolaGigantica(
 
     Returns
     -----------------------
-    Instace of FasciolaGigantica graph.
+    Instace of Fasciola gigantica graph.
 
 	References
 	---------------------

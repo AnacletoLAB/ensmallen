@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOulorumJcm14966.
+This file offers the methods to automatically retrieve the graph Prevotella oulorum JCM14966.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOulorumJcm14966(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOulorumJcm14966 graph.
+    """Return new instance of the Prevotella oulorum JCM14966 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaOulorumJcm14966(
 
     Returns
     -----------------------
-    Instace of PrevotellaOulorumJcm14966 graph.
+    Instace of Prevotella oulorum JCM14966 graph.
 
 	References
 	---------------------

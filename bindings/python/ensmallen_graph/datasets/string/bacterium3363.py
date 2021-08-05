@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bacterium3363.
+This file offers the methods to automatically retrieve the graph bacterium 336/3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Bacterium3363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bacterium3363 graph.
+    """Return new instance of the bacterium 336/3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Bacterium3363(
 
     Returns
     -----------------------
-    Instace of Bacterium3363 graph.
+    Instace of bacterium 336/3 graph.
 
 	References
 	---------------------

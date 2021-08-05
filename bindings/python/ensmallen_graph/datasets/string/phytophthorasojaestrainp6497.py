@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraSojaeStrainP6497.
+This file offers the methods to automatically retrieve the graph Phytophthora sojae strain P6497.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraSojaeStrainP6497(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraSojaeStrainP6497 graph.
+    """Return new instance of the Phytophthora sojae strain P6497 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytophthoraSojaeStrainP6497(
 
     Returns
     -----------------------
-    Instace of PhytophthoraSojaeStrainP6497 graph.
+    Instace of Phytophthora sojae strain P6497 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeitlerinemaSpPcc9228.
+This file offers the methods to automatically retrieve the graph Geitlerinema sp. PCC 9228.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeitlerinemaSpPcc9228(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeitlerinemaSpPcc9228 graph.
+    """Return new instance of the Geitlerinema sp. PCC 9228 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeitlerinemaSpPcc9228(
 
     Returns
     -----------------------
-    Instace of GeitlerinemaSpPcc9228 graph.
+    Instace of Geitlerinema sp. PCC 9228 graph.
 
 	References
 	---------------------

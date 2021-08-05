@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionSr1BacteriumAalborgAaw1.
+This file offers the methods to automatically retrieve the graph candidate division SR1 bacterium Aalborg_AAW-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionSr1BacteriumAalborgAaw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionSr1BacteriumAalborgAaw1 graph.
+    """Return new instance of the candidate division SR1 bacterium Aalborg_AAW-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionSr1BacteriumAalborgAaw1(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionSr1BacteriumAalborgAaw1 graph.
+    Instace of candidate division SR1 bacterium Aalborg_AAW-1 graph.
 
 	References
 	---------------------

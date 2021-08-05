@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaPallidipes.
+This file offers the methods to automatically retrieve the graph Glossina pallidipes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaPallidipes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaPallidipes graph.
+    """Return new instance of the Glossina pallidipes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaPallidipes(
 
     Returns
     -----------------------
-    Instace of GlossinaPallidipes graph.
+    Instace of Glossina pallidipes graph.
 
 	References
 	---------------------

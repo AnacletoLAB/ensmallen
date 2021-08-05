@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumVanbaalenii.
+This file offers the methods to automatically retrieve the graph Mycobacterium vanbaalenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumVanbaalenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumVanbaalenii graph.
+    """Return new instance of the Mycobacterium vanbaalenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumVanbaalenii(
 
     Returns
     -----------------------
-    Instace of MycobacteriumVanbaalenii graph.
+    Instace of Mycobacterium vanbaalenii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpAap58.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. AAP58.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpAap58(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpAap58 graph.
+    """Return new instance of the Brevundimonas sp. AAP58 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpAap58(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpAap58 graph.
+    Instace of Brevundimonas sp. AAP58 graph.
 
 	References
 	---------------------

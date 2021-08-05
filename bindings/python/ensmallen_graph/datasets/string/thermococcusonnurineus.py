@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusOnnurineus.
+This file offers the methods to automatically retrieve the graph Thermococcus onnurineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusOnnurineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusOnnurineus graph.
+    """Return new instance of the Thermococcus onnurineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusOnnurineus(
 
     Returns
     -----------------------
-    Instace of ThermococcusOnnurineus graph.
+    Instace of Thermococcus onnurineus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaXyliCtcb07.
+This file offers the methods to automatically retrieve the graph Leifsonia xyli CTCB07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaXyliCtcb07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaXyliCtcb07 graph.
+    """Return new instance of the Leifsonia xyli CTCB07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeifsoniaXyliCtcb07(
 
     Returns
     -----------------------
-    Instace of LeifsoniaXyliCtcb07 graph.
+    Instace of Leifsonia xyli CTCB07 graph.
 
 	References
 	---------------------

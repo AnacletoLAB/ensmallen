@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRoizmanbacteriaBacteriumRifoxyd1Full4124.
+This file offers the methods to automatically retrieve the graph Candidatus Roizmanbacteria bacterium RIFOXYD1_FULL_41_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRoizmanbacteriaBacteriumRifoxyd1Full4124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRoizmanbacteriaBacteriumRifoxyd1Full4124 graph.
+    """Return new instance of the Candidatus Roizmanbacteria bacterium RIFOXYD1_FULL_41_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRoizmanbacteriaBacteriumRifoxyd1Full4124(
 
     Returns
     -----------------------
-    Instace of CandidatusRoizmanbacteriaBacteriumRifoxyd1Full4124 graph.
+    Instace of Candidatus Roizmanbacteria bacterium RIFOXYD1_FULL_41_24 graph.
 
 	References
 	---------------------

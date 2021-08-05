@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFluorescensNz007.
+This file offers the methods to automatically retrieve the graph Pseudomonas fluorescens NZ007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFluorescensNz007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFluorescensNz007 graph.
+    """Return new instance of the Pseudomonas fluorescens NZ007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasFluorescensNz007(
 
     Returns
     -----------------------
-    Instace of PseudomonasFluorescensNz007 graph.
+    Instace of Pseudomonas fluorescens NZ007 graph.
 
 	References
 	---------------------

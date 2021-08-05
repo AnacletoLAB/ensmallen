@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusViolaceofuscusCbs115571.
+This file offers the methods to automatically retrieve the graph Aspergillus violaceofuscus CBS 115571.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusViolaceofuscusCbs115571(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusViolaceofuscusCbs115571 graph.
+    """Return new instance of the Aspergillus violaceofuscus CBS 115571 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusViolaceofuscusCbs115571(
 
     Returns
     -----------------------
-    Instace of AspergillusViolaceofuscusCbs115571 graph.
+    Instace of Aspergillus violaceofuscus CBS 115571 graph.
 
 	References
 	---------------------

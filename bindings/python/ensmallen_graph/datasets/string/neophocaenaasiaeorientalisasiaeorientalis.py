@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeophocaenaAsiaeorientalisAsiaeorientalis.
+This file offers the methods to automatically retrieve the graph Neophocaena asiaeorientalis asiaeorientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeophocaenaAsiaeorientalisAsiaeorientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeophocaenaAsiaeorientalisAsiaeorientalis graph.
+    """Return new instance of the Neophocaena asiaeorientalis asiaeorientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeophocaenaAsiaeorientalisAsiaeorientalis(
 
     Returns
     -----------------------
-    Instace of NeophocaenaAsiaeorientalisAsiaeorientalis graph.
+    Instace of Neophocaena asiaeorientalis asiaeorientalis graph.
 
 	References
 	---------------------

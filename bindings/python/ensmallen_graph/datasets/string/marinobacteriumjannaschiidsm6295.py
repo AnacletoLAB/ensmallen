@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumJannaschiiDsm6295.
+This file offers the methods to automatically retrieve the graph Marinobacterium jannaschii DSM 6295.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumJannaschiiDsm6295(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumJannaschiiDsm6295 graph.
+    """Return new instance of the Marinobacterium jannaschii DSM 6295 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacteriumJannaschiiDsm6295(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumJannaschiiDsm6295 graph.
+    Instace of Marinobacterium jannaschii DSM 6295 graph.
 
 	References
 	---------------------

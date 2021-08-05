@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SorangiineaeBacteriumNic37a2.
+This file offers the methods to automatically retrieve the graph Sorangiineae bacterium NIC37A_2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SorangiineaeBacteriumNic37a2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SorangiineaeBacteriumNic37a2 graph.
+    """Return new instance of the Sorangiineae bacterium NIC37A_2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SorangiineaeBacteriumNic37a2(
 
     Returns
     -----------------------
-    Instace of SorangiineaeBacteriumNic37a2 graph.
+    Instace of Sorangiineae bacterium NIC37A_2 graph.
 
 	References
 	---------------------

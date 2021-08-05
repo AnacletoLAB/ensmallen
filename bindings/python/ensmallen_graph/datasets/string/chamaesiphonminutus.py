@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChamaesiphonMinutus.
+This file offers the methods to automatically retrieve the graph Chamaesiphon minutus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChamaesiphonMinutus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChamaesiphonMinutus graph.
+    """Return new instance of the Chamaesiphon minutus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChamaesiphonMinutus(
 
     Returns
     -----------------------
-    Instace of ChamaesiphonMinutus graph.
+    Instace of Chamaesiphon minutus graph.
 
 	References
 	---------------------

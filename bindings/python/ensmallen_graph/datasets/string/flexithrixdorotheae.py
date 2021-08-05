@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlexithrixDorotheae.
+This file offers the methods to automatically retrieve the graph Flexithrix dorotheae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlexithrixDorotheae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlexithrixDorotheae graph.
+    """Return new instance of the Flexithrix dorotheae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlexithrixDorotheae(
 
     Returns
     -----------------------
-    Instace of FlexithrixDorotheae graph.
+    Instace of Flexithrix dorotheae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RobiginitomaculumAntarcticum.
+This file offers the methods to automatically retrieve the graph Robiginitomaculum antarcticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RobiginitomaculumAntarcticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RobiginitomaculumAntarcticum graph.
+    """Return new instance of the Robiginitomaculum antarcticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RobiginitomaculumAntarcticum(
 
     Returns
     -----------------------
-    Instace of RobiginitomaculumAntarcticum graph.
+    Instace of Robiginitomaculum antarcticum graph.
 
 	References
 	---------------------

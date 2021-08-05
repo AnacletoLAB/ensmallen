@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAcetireducensDsm10703.
+This file offers the methods to automatically retrieve the graph Clostridium acetireducens DSM 10703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAcetireducensDsm10703(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAcetireducensDsm10703 graph.
+    """Return new instance of the Clostridium acetireducens DSM 10703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumAcetireducensDsm10703(
 
     Returns
     -----------------------
-    Instace of ClostridiumAcetireducensDsm10703 graph.
+    Instace of Clostridium acetireducens DSM 10703 graph.
 
 	References
 	---------------------

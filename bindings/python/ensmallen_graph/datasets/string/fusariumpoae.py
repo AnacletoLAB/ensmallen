@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumPoae.
+This file offers the methods to automatically retrieve the graph Fusarium poae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumPoae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumPoae graph.
+    """Return new instance of the Fusarium poae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumPoae(
 
     Returns
     -----------------------
-    Instace of FusariumPoae graph.
+    Instace of Fusarium poae graph.
 
 	References
 	---------------------

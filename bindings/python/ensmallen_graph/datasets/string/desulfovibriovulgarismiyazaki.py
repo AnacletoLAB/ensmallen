@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioVulgarisMiyazaki.
+This file offers the methods to automatically retrieve the graph Desulfovibrio vulgaris Miyazaki.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioVulgarisMiyazaki(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioVulgarisMiyazaki graph.
+    """Return new instance of the Desulfovibrio vulgaris Miyazaki graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioVulgarisMiyazaki(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioVulgarisMiyazaki graph.
+    Instace of Desulfovibrio vulgaris Miyazaki graph.
 
 	References
 	---------------------

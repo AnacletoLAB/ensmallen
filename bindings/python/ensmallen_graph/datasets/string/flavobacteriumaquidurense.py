@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumAquidurense.
+This file offers the methods to automatically retrieve the graph Flavobacterium aquidurense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumAquidurense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumAquidurense graph.
+    """Return new instance of the Flavobacterium aquidurense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumAquidurense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumAquidurense graph.
+    Instace of Flavobacterium aquidurense graph.
 
 	References
 	---------------------

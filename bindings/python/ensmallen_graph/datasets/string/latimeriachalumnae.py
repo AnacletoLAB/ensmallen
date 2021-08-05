@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LatimeriaChalumnae.
+This file offers the methods to automatically retrieve the graph Latimeria chalumnae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LatimeriaChalumnae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LatimeriaChalumnae graph.
+    """Return new instance of the Latimeria chalumnae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LatimeriaChalumnae(
 
     Returns
     -----------------------
-    Instace of LatimeriaChalumnae graph.
+    Instace of Latimeria chalumnae graph.
 
 	References
 	---------------------

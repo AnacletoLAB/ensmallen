@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgaAerilata.
+This file offers the methods to automatically retrieve the graph Microvirga aerilata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgaAerilata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgaAerilata graph.
+    """Return new instance of the Microvirga aerilata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrovirgaAerilata(
 
     Returns
     -----------------------
-    Instace of MicrovirgaAerilata graph.
+    Instace of Microvirga aerilata graph.
 
 	References
 	---------------------

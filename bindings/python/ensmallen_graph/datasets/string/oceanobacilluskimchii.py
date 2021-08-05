@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusKimchii.
+This file offers the methods to automatically retrieve the graph Oceanobacillus kimchii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusKimchii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusKimchii graph.
+    """Return new instance of the Oceanobacillus kimchii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanobacillusKimchii(
 
     Returns
     -----------------------
-    Instace of OceanobacillusKimchii graph.
+    Instace of Oceanobacillus kimchii graph.
 
 	References
 	---------------------

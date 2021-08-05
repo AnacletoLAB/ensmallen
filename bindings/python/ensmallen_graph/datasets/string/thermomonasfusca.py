@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomonasFusca.
+This file offers the methods to automatically retrieve the graph Thermomonas fusca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomonasFusca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomonasFusca graph.
+    """Return new instance of the Thermomonas fusca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermomonasFusca(
 
     Returns
     -----------------------
-    Instace of ThermomonasFusca graph.
+    Instace of Thermomonas fusca graph.
 
 	References
 	---------------------

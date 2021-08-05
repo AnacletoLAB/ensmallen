@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaAlbaNbrc108234.
+This file offers the methods to automatically retrieve the graph Nocardia alba NBRC 108234.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaAlbaNbrc108234(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaAlbaNbrc108234 graph.
+    """Return new instance of the Nocardia alba NBRC 108234 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaAlbaNbrc108234(
 
     Returns
     -----------------------
-    Instace of NocardiaAlbaNbrc108234 graph.
+    Instace of Nocardia alba NBRC 108234 graph.
 
 	References
 	---------------------

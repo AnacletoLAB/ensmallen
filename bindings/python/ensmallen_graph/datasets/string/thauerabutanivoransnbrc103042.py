@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraButanivoransNbrc103042.
+This file offers the methods to automatically retrieve the graph Thauera butanivorans NBRC 103042.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraButanivoransNbrc103042(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraButanivoransNbrc103042 graph.
+    """Return new instance of the Thauera butanivorans NBRC 103042 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaueraButanivoransNbrc103042(
 
     Returns
     -----------------------
-    Instace of ThaueraButanivoransNbrc103042 graph.
+    Instace of Thauera butanivorans NBRC 103042 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaHellenica.
+This file offers the methods to automatically retrieve the graph Weissella hellenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaHellenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaHellenica graph.
+    """Return new instance of the Weissella hellenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaHellenica(
 
     Returns
     -----------------------
-    Instace of WeissellaHellenica graph.
+    Instace of Weissella hellenica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaSpHf.
+This file offers the methods to automatically retrieve the graph Ehrlichia sp. HF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaSpHf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaSpHf graph.
+    """Return new instance of the Ehrlichia sp. HF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EhrlichiaSpHf(
 
     Returns
     -----------------------
-    Instace of EhrlichiaSpHf graph.
+    Instace of Ehrlichia sp. HF graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraChibensisNbrc106107.
+This file offers the methods to automatically retrieve the graph Actinomadura chibensis NBRC 106107.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraChibensisNbrc106107(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraChibensisNbrc106107 graph.
+    """Return new instance of the Actinomadura chibensis NBRC 106107 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraChibensisNbrc106107(
 
     Returns
     -----------------------
-    Instace of ActinomaduraChibensisNbrc106107 graph.
+    Instace of Actinomadura chibensis NBRC 106107 graph.
 
 	References
 	---------------------

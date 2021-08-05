@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacteriaceaeBacteriumStrain.
+This file offers the methods to automatically retrieve the graph Enterobacteriaceae bacterium strain.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacteriaceaeBacteriumStrain(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacteriaceaeBacteriumStrain graph.
+    """Return new instance of the Enterobacteriaceae bacterium strain graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacteriaceaeBacteriumStrain(
 
     Returns
     -----------------------
-    Instace of EnterobacteriaceaeBacteriumStrain graph.
+    Instace of Enterobacteriaceae bacterium strain graph.
 
 	References
 	---------------------

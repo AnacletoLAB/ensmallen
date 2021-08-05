@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridFissionYeast.
+This file offers the methods to automatically retrieve the graph bio-grid-fission-yeast.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridFissionYeast(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridFissionYeast graph.
+    """Return new instance of the bio-grid-fission-yeast graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridFissionYeast(
 
     Returns
     -----------------------
-    Instace of BioGridFissionYeast graph.
+    Instace of bio-grid-fission-yeast graph.
 
 	References
 	---------------------

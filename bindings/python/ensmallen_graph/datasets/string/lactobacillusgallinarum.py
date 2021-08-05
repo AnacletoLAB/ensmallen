@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGallinarum.
+This file offers the methods to automatically retrieve the graph Lactobacillus gallinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGallinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGallinarum graph.
+    """Return new instance of the Lactobacillus gallinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusGallinarum(
 
     Returns
     -----------------------
-    Instace of LactobacillusGallinarum graph.
+    Instace of Lactobacillus gallinarum graph.
 
 	References
 	---------------------

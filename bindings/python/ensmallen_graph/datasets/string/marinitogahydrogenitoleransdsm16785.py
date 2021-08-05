@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinitogaHydrogenitoleransDsm16785.
+This file offers the methods to automatically retrieve the graph Marinitoga hydrogenitolerans DSM 16785.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinitogaHydrogenitoleransDsm16785(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinitogaHydrogenitoleransDsm16785 graph.
+    """Return new instance of the Marinitoga hydrogenitolerans DSM 16785 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinitogaHydrogenitoleransDsm16785(
 
     Returns
     -----------------------
-    Instace of MarinitogaHydrogenitoleransDsm16785 graph.
+    Instace of Marinitoga hydrogenitolerans DSM 16785 graph.
 
 	References
 	---------------------

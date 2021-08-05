@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymophilusRaffinosivorans.
+This file offers the methods to automatically retrieve the graph Zymophilus raffinosivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymophilusRaffinosivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymophilusRaffinosivorans graph.
+    """Return new instance of the Zymophilus raffinosivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZymophilusRaffinosivorans(
 
     Returns
     -----------------------
-    Instace of ZymophilusRaffinosivorans graph.
+    Instace of Zymophilus raffinosivorans graph.
 
 	References
 	---------------------

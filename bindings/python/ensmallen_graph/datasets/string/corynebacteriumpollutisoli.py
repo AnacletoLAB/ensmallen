@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPollutisoli.
+This file offers the methods to automatically retrieve the graph Corynebacterium pollutisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPollutisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPollutisoli graph.
+    """Return new instance of the Corynebacterium pollutisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumPollutisoli(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPollutisoli graph.
+    Instace of Corynebacterium pollutisoli graph.
 
 	References
 	---------------------

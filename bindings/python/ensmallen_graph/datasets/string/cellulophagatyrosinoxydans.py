@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaTyrosinoxydans.
+This file offers the methods to automatically retrieve the graph Cellulophaga tyrosinoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaTyrosinoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaTyrosinoxydans graph.
+    """Return new instance of the Cellulophaga tyrosinoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulophagaTyrosinoxydans(
 
     Returns
     -----------------------
-    Instace of CellulophagaTyrosinoxydans graph.
+    Instace of Cellulophaga tyrosinoxydans graph.
 
 	References
 	---------------------

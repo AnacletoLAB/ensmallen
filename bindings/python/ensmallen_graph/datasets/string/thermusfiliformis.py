@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusFiliformis.
+This file offers the methods to automatically retrieve the graph Thermus filiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusFiliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusFiliformis graph.
+    """Return new instance of the Thermus filiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermusFiliformis(
 
     Returns
     -----------------------
-    Instace of ThermusFiliformis graph.
+    Instace of Thermus filiformis graph.
 
 	References
 	---------------------

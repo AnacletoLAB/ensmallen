@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriumScgcAaa024D14.
+This file offers the methods to automatically retrieve the graph actinobacterium SCGC AAA024-D14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriumScgcAaa024D14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriumScgcAaa024D14 graph.
+    """Return new instance of the actinobacterium SCGC AAA024-D14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriumScgcAaa024D14(
 
     Returns
     -----------------------
-    Instace of ActinobacteriumScgcAaa024D14 graph.
+    Instace of actinobacterium SCGC AAA024-D14 graph.
 
 	References
 	---------------------

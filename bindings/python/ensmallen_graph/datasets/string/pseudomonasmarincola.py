@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMarincola.
+This file offers the methods to automatically retrieve the graph Pseudomonas marincola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMarincola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMarincola graph.
+    """Return new instance of the Pseudomonas marincola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasMarincola(
 
     Returns
     -----------------------
-    Instace of PseudomonasMarincola graph.
+    Instace of Pseudomonas marincola graph.
 
 	References
 	---------------------

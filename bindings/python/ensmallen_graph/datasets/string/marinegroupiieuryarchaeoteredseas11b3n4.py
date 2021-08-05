@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineGroupIiEuryarchaeoteRedseaS11B3n4.
+This file offers the methods to automatically retrieve the graph Marine group II euryarchaeote REDSEA-S11_B3N4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineGroupIiEuryarchaeoteRedseaS11B3n4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineGroupIiEuryarchaeoteRedseaS11B3n4 graph.
+    """Return new instance of the Marine group II euryarchaeote REDSEA-S11_B3N4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineGroupIiEuryarchaeoteRedseaS11B3n4(
 
     Returns
     -----------------------
-    Instace of MarineGroupIiEuryarchaeoteRedseaS11B3n4 graph.
+    Instace of Marine group II euryarchaeote REDSEA-S11_B3N4 graph.
 
 	References
 	---------------------

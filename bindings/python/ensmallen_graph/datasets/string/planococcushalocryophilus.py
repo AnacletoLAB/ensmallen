@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusHalocryophilus.
+This file offers the methods to automatically retrieve the graph Planococcus halocryophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusHalocryophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusHalocryophilus graph.
+    """Return new instance of the Planococcus halocryophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusHalocryophilus(
 
     Returns
     -----------------------
-    Instace of PlanococcusHalocryophilus graph.
+    Instace of Planococcus halocryophilus graph.
 
 	References
 	---------------------

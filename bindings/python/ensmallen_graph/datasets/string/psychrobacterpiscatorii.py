@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterPiscatorii.
+This file offers the methods to automatically retrieve the graph Psychrobacter piscatorii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterPiscatorii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterPiscatorii graph.
+    """Return new instance of the Psychrobacter piscatorii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterPiscatorii(
 
     Returns
     -----------------------
-    Instace of PsychrobacterPiscatorii graph.
+    Instace of Psychrobacter piscatorii graph.
 
 	References
 	---------------------

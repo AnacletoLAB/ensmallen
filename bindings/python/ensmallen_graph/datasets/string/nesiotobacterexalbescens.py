@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesiotobacterExalbescens.
+This file offers the methods to automatically retrieve the graph Nesiotobacter exalbescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesiotobacterExalbescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesiotobacterExalbescens graph.
+    """Return new instance of the Nesiotobacter exalbescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NesiotobacterExalbescens(
 
     Returns
     -----------------------
-    Instace of NesiotobacterExalbescens graph.
+    Instace of Nesiotobacter exalbescens graph.
 
 	References
 	---------------------

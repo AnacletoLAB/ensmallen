@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaritaleaMyrionectaeDsm19524.
+This file offers the methods to automatically retrieve the graph Maritalea myrionectae DSM 19524.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaritaleaMyrionectaeDsm19524(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaritaleaMyrionectaeDsm19524 graph.
+    """Return new instance of the Maritalea myrionectae DSM 19524 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaritaleaMyrionectaeDsm19524(
 
     Returns
     -----------------------
-    Instace of MaritaleaMyrionectaeDsm19524 graph.
+    Instace of Maritalea myrionectae DSM 19524 graph.
 
 	References
 	---------------------

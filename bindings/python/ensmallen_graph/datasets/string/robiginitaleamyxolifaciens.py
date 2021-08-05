@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RobiginitaleaMyxolifaciens.
+This file offers the methods to automatically retrieve the graph Robiginitalea myxolifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RobiginitaleaMyxolifaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RobiginitaleaMyxolifaciens graph.
+    """Return new instance of the Robiginitalea myxolifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RobiginitaleaMyxolifaciens(
 
     Returns
     -----------------------
-    Instace of RobiginitaleaMyxolifaciens graph.
+    Instace of Robiginitalea myxolifaciens graph.
 
 	References
 	---------------------

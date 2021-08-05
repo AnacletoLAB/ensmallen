@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCeti.
+This file offers the methods to automatically retrieve the graph Lactobacillus ceti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCeti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCeti graph.
+    """Return new instance of the Lactobacillus ceti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCeti(
 
     Returns
     -----------------------
-    Instace of LactobacillusCeti graph.
+    Instace of Lactobacillus ceti graph.
 
 	References
 	---------------------

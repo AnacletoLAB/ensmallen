@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeosporaCaninum.
+This file offers the methods to automatically retrieve the graph Neospora caninum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeosporaCaninum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeosporaCaninum graph.
+    """Return new instance of the Neospora caninum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeosporaCaninum(
 
     Returns
     -----------------------
-    Instace of NeosporaCaninum graph.
+    Instace of Neospora caninum graph.
 
 	References
 	---------------------

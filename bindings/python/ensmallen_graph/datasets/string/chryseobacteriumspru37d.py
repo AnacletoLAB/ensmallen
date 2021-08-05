@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpRu37d.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. RU37D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpRu37d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpRu37d graph.
+    """Return new instance of the Chryseobacterium sp. RU37D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpRu37d(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpRu37d graph.
+    Instace of Chryseobacterium sp. RU37D graph.
 
 	References
 	---------------------

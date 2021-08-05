@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaAgalactiaePg2.
+This file offers the methods to automatically retrieve the graph Mycoplasma agalactiae PG2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaAgalactiaePg2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaAgalactiaePg2 graph.
+    """Return new instance of the Mycoplasma agalactiae PG2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaAgalactiaePg2(
 
     Returns
     -----------------------
-    Instace of MycoplasmaAgalactiaePg2 graph.
+    Instace of Mycoplasma agalactiae PG2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioSpPsbb023.
+This file offers the methods to automatically retrieve the graph Cellvibrio sp. PSBB023.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioSpPsbb023(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioSpPsbb023 graph.
+    """Return new instance of the Cellvibrio sp. PSBB023 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellvibrioSpPsbb023(
 
     Returns
     -----------------------
-    Instace of CellvibrioSpPsbb023 graph.
+    Instace of Cellvibrio sp. PSBB023 graph.
 
 	References
 	---------------------

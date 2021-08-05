@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpisthorchisFelineus.
+This file offers the methods to automatically retrieve the graph Opisthorchis felineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpisthorchisFelineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpisthorchisFelineus graph.
+    """Return new instance of the Opisthorchis felineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OpisthorchisFelineus(
 
     Returns
     -----------------------
-    Instace of OpisthorchisFelineus graph.
+    Instace of Opisthorchis felineus graph.
 
 	References
 	---------------------

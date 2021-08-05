@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpSpg23.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. SPG23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpSpg23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpSpg23 graph.
+    """Return new instance of the Arthrobacter sp. SPG23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpSpg23(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpSpg23 graph.
+    Instace of Arthrobacter sp. SPG23 graph.
 
 	References
 	---------------------

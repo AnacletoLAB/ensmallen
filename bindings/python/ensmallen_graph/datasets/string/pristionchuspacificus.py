@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PristionchusPacificus.
+This file offers the methods to automatically retrieve the graph Pristionchus pacificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PristionchusPacificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PristionchusPacificus graph.
+    """Return new instance of the Pristionchus pacificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PristionchusPacificus(
 
     Returns
     -----------------------
-    Instace of PristionchusPacificus graph.
+    Instace of Pristionchus pacificus graph.
 
 	References
 	---------------------

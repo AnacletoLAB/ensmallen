@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSimiae.
+This file offers the methods to automatically retrieve the graph Pseudomonas simiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSimiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSimiae graph.
+    """Return new instance of the Pseudomonas simiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSimiae(
 
     Returns
     -----------------------
-    Instace of PseudomonasSimiae graph.
+    Instace of Pseudomonas simiae graph.
 
 	References
 	---------------------

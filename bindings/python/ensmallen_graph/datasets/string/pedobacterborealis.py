@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterBorealis.
+This file offers the methods to automatically retrieve the graph Pedobacter borealis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterBorealis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterBorealis graph.
+    """Return new instance of the Pedobacter borealis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterBorealis(
 
     Returns
     -----------------------
-    Instace of PedobacterBorealis graph.
+    Instace of Pedobacter borealis graph.
 
 	References
 	---------------------

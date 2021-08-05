@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpitutaceaeBacteriumTsb47.
+This file offers the methods to automatically retrieve the graph Opitutaceae bacterium TSB47.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpitutaceaeBacteriumTsb47(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpitutaceaeBacteriumTsb47 graph.
+    """Return new instance of the Opitutaceae bacterium TSB47 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OpitutaceaeBacteriumTsb47(
 
     Returns
     -----------------------
-    Instace of OpitutaceaeBacteriumTsb47 graph.
+    Instace of Opitutaceae bacterium TSB47 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumXenophagum.
+This file offers the methods to automatically retrieve the graph Sphingobium xenophagum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumXenophagum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumXenophagum graph.
+    """Return new instance of the Sphingobium xenophagum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumXenophagum(
 
     Returns
     -----------------------
-    Instace of SphingobiumXenophagum graph.
+    Instace of Sphingobium xenophagum graph.
 
 	References
 	---------------------

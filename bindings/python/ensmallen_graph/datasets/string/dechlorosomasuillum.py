@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DechlorosomaSuillum.
+This file offers the methods to automatically retrieve the graph Dechlorosoma suillum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DechlorosomaSuillum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DechlorosomaSuillum graph.
+    """Return new instance of the Dechlorosoma suillum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DechlorosomaSuillum(
 
     Returns
     -----------------------
-    Instace of DechlorosomaSuillum graph.
+    Instace of Dechlorosoma suillum graph.
 
 	References
 	---------------------

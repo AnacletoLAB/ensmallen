@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCellulolyticum.
+This file offers the methods to automatically retrieve the graph Clostridium cellulolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCellulolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCellulolyticum graph.
+    """Return new instance of the Clostridium cellulolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumCellulolyticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumCellulolyticum graph.
+    Instace of Clostridium cellulolyticum graph.
 
 	References
 	---------------------

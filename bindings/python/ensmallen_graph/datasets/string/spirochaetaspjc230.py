@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaSpJc230.
+This file offers the methods to automatically retrieve the graph Spirochaeta sp. JC230.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaSpJc230(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaSpJc230 graph.
+    """Return new instance of the Spirochaeta sp. JC230 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirochaetaSpJc230(
 
     Returns
     -----------------------
-    Instace of SpirochaetaSpJc230 graph.
+    Instace of Spirochaeta sp. JC230 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTriplex.
+This file offers the methods to automatically retrieve the graph Mycobacterium triplex.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTriplex(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTriplex graph.
+    """Return new instance of the Mycobacterium triplex graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumTriplex(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTriplex graph.
+    Instace of Mycobacterium triplex graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TilletiopsisWashingtonensis.
+This file offers the methods to automatically retrieve the graph Tilletiopsis washingtonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TilletiopsisWashingtonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TilletiopsisWashingtonensis graph.
+    """Return new instance of the Tilletiopsis washingtonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TilletiopsisWashingtonensis(
 
     Returns
     -----------------------
-    Instace of TilletiopsisWashingtonensis graph.
+    Instace of Tilletiopsis washingtonensis graph.
 
 	References
 	---------------------

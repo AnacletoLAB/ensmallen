@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermusFervidusDsm2088.
+This file offers the methods to automatically retrieve the graph Methanothermus fervidus DSM 2088.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermusFervidusDsm2088(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermusFervidusDsm2088 graph.
+    """Return new instance of the Methanothermus fervidus DSM 2088 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothermusFervidusDsm2088(
 
     Returns
     -----------------------
-    Instace of MethanothermusFervidusDsm2088 graph.
+    Instace of Methanothermus fervidus DSM 2088 graph.
 
 	References
 	---------------------

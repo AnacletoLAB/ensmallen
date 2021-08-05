@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaLimicola.
+This file offers the methods to automatically retrieve the graph Haloterrigena limicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaLimicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaLimicola graph.
+    """Return new instance of the Haloterrigena limicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloterrigenaLimicola(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaLimicola graph.
+    Instace of Haloterrigena limicola graph.
 
 	References
 	---------------------

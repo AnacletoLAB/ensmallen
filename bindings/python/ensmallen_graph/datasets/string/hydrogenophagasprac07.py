@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpRac07.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. RAC07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpRac07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpRac07 graph.
+    """Return new instance of the Hydrogenophaga sp. RAC07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpRac07(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpRac07 graph.
+    Instace of Hydrogenophaga sp. RAC07 graph.
 
 	References
 	---------------------

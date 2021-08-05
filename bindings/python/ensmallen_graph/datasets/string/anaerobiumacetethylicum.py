@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobiumAcetethylicum.
+This file offers the methods to automatically retrieve the graph Anaerobium acetethylicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobiumAcetethylicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobiumAcetethylicum graph.
+    """Return new instance of the Anaerobium acetethylicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerobiumAcetethylicum(
 
     Returns
     -----------------------
-    Instace of AnaerobiumAcetethylicum graph.
+    Instace of Anaerobium acetethylicum graph.
 
 	References
 	---------------------

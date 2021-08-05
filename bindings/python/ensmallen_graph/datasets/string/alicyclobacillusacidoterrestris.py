@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusAcidoterrestris.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus acidoterrestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusAcidoterrestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusAcidoterrestris graph.
+    """Return new instance of the Alicyclobacillus acidoterrestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicyclobacillusAcidoterrestris(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusAcidoterrestris graph.
+    Instace of Alicyclobacillus acidoterrestris graph.
 
 	References
 	---------------------

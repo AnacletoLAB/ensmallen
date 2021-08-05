@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpRuh2624.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. RUH2624.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpRuh2624(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpRuh2624 graph.
+    """Return new instance of the Acinetobacter sp. RUH2624 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSpRuh2624(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpRuh2624 graph.
+    Instace of Acinetobacter sp. RUH2624 graph.
 
 	References
 	---------------------

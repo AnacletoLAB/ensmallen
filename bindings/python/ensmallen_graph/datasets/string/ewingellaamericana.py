@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EwingellaAmericana.
+This file offers the methods to automatically retrieve the graph Ewingella americana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EwingellaAmericana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EwingellaAmericana graph.
+    """Return new instance of the Ewingella americana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EwingellaAmericana(
 
     Returns
     -----------------------
-    Instace of EwingellaAmericana graph.
+    Instace of Ewingella americana graph.
 
 	References
 	---------------------

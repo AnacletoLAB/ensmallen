@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnasPlatyrhynchosPlatyrhynchos.
+This file offers the methods to automatically retrieve the graph Anas platyrhynchos platyrhynchos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnasPlatyrhynchosPlatyrhynchos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnasPlatyrhynchosPlatyrhynchos graph.
+    """Return new instance of the Anas platyrhynchos platyrhynchos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnasPlatyrhynchosPlatyrhynchos(
 
     Returns
     -----------------------
-    Instace of AnasPlatyrhynchosPlatyrhynchos graph.
+    Instace of Anas platyrhynchos platyrhynchos graph.
 
 	References
 	---------------------

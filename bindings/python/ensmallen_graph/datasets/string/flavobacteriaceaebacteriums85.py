@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumS85.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium S85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumS85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumS85 graph.
+    """Return new instance of the Flavobacteriaceae bacterium S85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriaceaeBacteriumS85(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumS85 graph.
+    Instace of Flavobacteriaceae bacterium S85 graph.
 
 	References
 	---------------------

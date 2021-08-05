@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichophytonRubrum.
+This file offers the methods to automatically retrieve the graph Trichophyton rubrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichophytonRubrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichophytonRubrum graph.
+    """Return new instance of the Trichophyton rubrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichophytonRubrum(
 
     Returns
     -----------------------
-    Instace of TrichophytonRubrum graph.
+    Instace of Trichophyton rubrum graph.
 
 	References
 	---------------------

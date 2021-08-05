@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumLuteum.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium luteum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumLuteum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumLuteum graph.
+    """Return new instance of the Lysinimicrobium luteum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinimicrobiumLuteum(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumLuteum graph.
+    Instace of Lysinimicrobium luteum graph.
 
 	References
 	---------------------

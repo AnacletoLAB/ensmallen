@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MitsuariaSp7.
+This file offers the methods to automatically retrieve the graph Mitsuaria sp. 7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MitsuariaSp7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MitsuariaSp7 graph.
+    """Return new instance of the Mitsuaria sp. 7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MitsuariaSp7(
 
     Returns
     -----------------------
-    Instace of MitsuariaSp7 graph.
+    Instace of Mitsuaria sp. 7 graph.
 
 	References
 	---------------------

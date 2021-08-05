@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SilvanigrellaAquatica.
+This file offers the methods to automatically retrieve the graph Silvanigrella aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SilvanigrellaAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SilvanigrellaAquatica graph.
+    """Return new instance of the Silvanigrella aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SilvanigrellaAquatica(
 
     Returns
     -----------------------
-    Instace of SilvanigrellaAquatica graph.
+    Instace of Silvanigrella aquatica graph.
 
 	References
 	---------------------

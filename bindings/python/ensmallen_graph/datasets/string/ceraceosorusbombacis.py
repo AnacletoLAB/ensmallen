@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeraceosorusBombacis.
+This file offers the methods to automatically retrieve the graph Ceraceosorus bombacis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeraceosorusBombacis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeraceosorusBombacis graph.
+    """Return new instance of the Ceraceosorus bombacis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeraceosorusBombacis(
 
     Returns
     -----------------------
-    Instace of CeraceosorusBombacis graph.
+    Instace of Ceraceosorus bombacis graph.
 
 	References
 	---------------------

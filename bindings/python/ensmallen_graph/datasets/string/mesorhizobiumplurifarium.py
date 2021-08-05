@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumPlurifarium.
+This file offers the methods to automatically retrieve the graph Mesorhizobium plurifarium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumPlurifarium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumPlurifarium graph.
+    """Return new instance of the Mesorhizobium plurifarium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumPlurifarium(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumPlurifarium graph.
+    Instace of Mesorhizobium plurifarium graph.
 
 	References
 	---------------------

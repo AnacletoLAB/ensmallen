@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AequorivitaViscosa.
+This file offers the methods to automatically retrieve the graph Aequorivita viscosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AequorivitaViscosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AequorivitaViscosa graph.
+    """Return new instance of the Aequorivita viscosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AequorivitaViscosa(
 
     Returns
     -----------------------
-    Instace of AequorivitaViscosa graph.
+    Instace of Aequorivita viscosa graph.
 
 	References
 	---------------------

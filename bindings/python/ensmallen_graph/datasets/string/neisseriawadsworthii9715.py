@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaWadsworthii9715.
+This file offers the methods to automatically retrieve the graph Neisseria wadsworthii 9715.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaWadsworthii9715(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaWadsworthii9715 graph.
+    """Return new instance of the Neisseria wadsworthii 9715 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaWadsworthii9715(
 
     Returns
     -----------------------
-    Instace of NeisseriaWadsworthii9715 graph.
+    Instace of Neisseria wadsworthii 9715 graph.
 
 	References
 	---------------------

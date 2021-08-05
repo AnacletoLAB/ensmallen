@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesRubrolavendulae.
+This file offers the methods to automatically retrieve the graph Streptomyces rubrolavendulae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesRubrolavendulae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesRubrolavendulae graph.
+    """Return new instance of the Streptomyces rubrolavendulae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesRubrolavendulae(
 
     Returns
     -----------------------
-    Instace of StreptomycesRubrolavendulae graph.
+    Instace of Streptomyces rubrolavendulae graph.
 
 	References
 	---------------------

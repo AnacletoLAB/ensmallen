@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasGinsengisoli.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas ginsengisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasGinsengisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasGinsengisoli graph.
+    """Return new instance of the Stenotrophomonas ginsengisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasGinsengisoli(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasGinsengisoli graph.
+    Instace of Stenotrophomonas ginsengisoli graph.
 
 	References
 	---------------------

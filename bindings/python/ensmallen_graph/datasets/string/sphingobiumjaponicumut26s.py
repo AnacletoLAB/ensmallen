@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumJaponicumUt26s.
+This file offers the methods to automatically retrieve the graph Sphingobium japonicum UT26S.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumJaponicumUt26s(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumJaponicumUt26s graph.
+    """Return new instance of the Sphingobium japonicum UT26S graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumJaponicumUt26s(
 
     Returns
     -----------------------
-    Instace of SphingobiumJaponicumUt26s graph.
+    Instace of Sphingobium japonicum UT26S graph.
 
 	References
 	---------------------

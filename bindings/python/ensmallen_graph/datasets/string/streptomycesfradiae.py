@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesFradiae.
+This file offers the methods to automatically retrieve the graph Streptomyces fradiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesFradiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesFradiae graph.
+    """Return new instance of the Streptomyces fradiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesFradiae(
 
     Returns
     -----------------------
-    Instace of StreptomycesFradiae graph.
+    Instace of Streptomyces fradiae graph.
 
 	References
 	---------------------

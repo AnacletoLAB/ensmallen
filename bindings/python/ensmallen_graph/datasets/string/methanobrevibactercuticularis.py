@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterCuticularis.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter cuticularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterCuticularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterCuticularis graph.
+    """Return new instance of the Methanobrevibacter cuticularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterCuticularis(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterCuticularis graph.
+    Instace of Methanobrevibacter cuticularis graph.
 
 	References
 	---------------------

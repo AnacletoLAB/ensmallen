@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusLaterosporusLmg15441.
+This file offers the methods to automatically retrieve the graph Brevibacillus laterosporus LMG15441.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusLaterosporusLmg15441(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusLaterosporusLmg15441 graph.
+    """Return new instance of the Brevibacillus laterosporus LMG15441 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacillusLaterosporusLmg15441(
 
     Returns
     -----------------------
-    Instace of BrevibacillusLaterosporusLmg15441 graph.
+    Instace of Brevibacillus laterosporus LMG15441 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterFrateurii.
+This file offers the methods to automatically retrieve the graph Gluconobacter frateurii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterFrateurii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterFrateurii graph.
+    """Return new instance of the Gluconobacter frateurii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GluconobacterFrateurii(
 
     Returns
     -----------------------
-    Instace of GluconobacterFrateurii graph.
+    Instace of Gluconobacter frateurii graph.
 
 	References
 	---------------------

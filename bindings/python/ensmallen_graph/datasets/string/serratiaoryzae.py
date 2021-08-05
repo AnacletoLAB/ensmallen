@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaOryzae.
+This file offers the methods to automatically retrieve the graph Serratia oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaOryzae graph.
+    """Return new instance of the Serratia oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerratiaOryzae(
 
     Returns
     -----------------------
-    Instace of SerratiaOryzae graph.
+    Instace of Serratia oryzae graph.
 
 	References
 	---------------------

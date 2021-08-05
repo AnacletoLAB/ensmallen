@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrothrixParvicella.
+This file offers the methods to automatically retrieve the graph Microthrix parvicella.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrothrixParvicella(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrothrixParvicella graph.
+    """Return new instance of the Microthrix parvicella graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrothrixParvicella(
 
     Returns
     -----------------------
-    Instace of MicrothrixParvicella graph.
+    Instace of Microthrix parvicella graph.
 
 	References
 	---------------------

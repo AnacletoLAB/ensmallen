@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassomonasActiniarum.
+This file offers the methods to automatically retrieve the graph Thalassomonas actiniarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassomonasActiniarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassomonasActiniarum graph.
+    """Return new instance of the Thalassomonas actiniarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassomonasActiniarum(
 
     Returns
     -----------------------
-    Instace of ThalassomonasActiniarum graph.
+    Instace of Thalassomonas actiniarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsasporaOwczarzaki.
+This file offers the methods to automatically retrieve the graph Capsaspora owczarzaki.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsasporaOwczarzaki(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsasporaOwczarzaki graph.
+    """Return new instance of the Capsaspora owczarzaki graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapsasporaOwczarzaki(
 
     Returns
     -----------------------
-    Instace of CapsasporaOwczarzaki graph.
+    Instace of Capsaspora owczarzaki graph.
 
 	References
 	---------------------

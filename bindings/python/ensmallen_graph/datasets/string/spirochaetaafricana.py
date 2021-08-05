@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaAfricana.
+This file offers the methods to automatically retrieve the graph Spirochaeta africana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaAfricana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaAfricana graph.
+    """Return new instance of the Spirochaeta africana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirochaetaAfricana(
 
     Returns
     -----------------------
-    Instace of SpirochaetaAfricana graph.
+    Instace of Spirochaeta africana graph.
 
 	References
 	---------------------

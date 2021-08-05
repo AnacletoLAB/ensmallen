@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaPetrophila.
+This file offers the methods to automatically retrieve the graph Thermotoga petrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaPetrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaPetrophila graph.
+    """Return new instance of the Thermotoga petrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaPetrophila(
 
     Returns
     -----------------------
-    Instace of ThermotogaPetrophila graph.
+    Instace of Thermotoga petrophila graph.
 
 	References
 	---------------------

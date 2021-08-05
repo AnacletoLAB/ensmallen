@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumRubensWisconsin541255.
+This file offers the methods to automatically retrieve the graph Penicillium rubens Wisconsin 54-1255.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumRubensWisconsin541255(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumRubensWisconsin541255 graph.
+    """Return new instance of the Penicillium rubens Wisconsin 54-1255 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumRubensWisconsin541255(
 
     Returns
     -----------------------
-    Instace of PenicilliumRubensWisconsin541255 graph.
+    Instace of Penicillium rubens Wisconsin 54-1255 graph.
 
 	References
 	---------------------

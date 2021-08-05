@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DictyoglomusThermophilum.
+This file offers the methods to automatically retrieve the graph Dictyoglomus thermophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DictyoglomusThermophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DictyoglomusThermophilum graph.
+    """Return new instance of the Dictyoglomus thermophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DictyoglomusThermophilum(
 
     Returns
     -----------------------
-    Instace of DictyoglomusThermophilum graph.
+    Instace of Dictyoglomus thermophilum graph.
 
 	References
 	---------------------

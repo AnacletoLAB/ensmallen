@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiromycesFinnis.
+This file offers the methods to automatically retrieve the graph Piromyces finnis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiromycesFinnis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiromycesFinnis graph.
+    """Return new instance of the Piromyces finnis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiromycesFinnis(
 
     Returns
     -----------------------
-    Instace of PiromycesFinnis graph.
+    Instace of Piromyces finnis graph.
 
 	References
 	---------------------

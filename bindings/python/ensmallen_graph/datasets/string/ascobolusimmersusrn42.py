@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AscobolusImmersusRn42.
+This file offers the methods to automatically retrieve the graph Ascobolus immersus RN42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AscobolusImmersusRn42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AscobolusImmersusRn42 graph.
+    """Return new instance of the Ascobolus immersus RN42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AscobolusImmersusRn42(
 
     Returns
     -----------------------
-    Instace of AscobolusImmersusRn42 graph.
+    Instace of Ascobolus immersus RN42 graph.
 
 	References
 	---------------------

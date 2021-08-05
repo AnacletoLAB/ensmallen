@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraPilosicoli.
+This file offers the methods to automatically retrieve the graph Brachyspira pilosicoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraPilosicoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraPilosicoli graph.
+    """Return new instance of the Brachyspira pilosicoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachyspiraPilosicoli(
 
     Returns
     -----------------------
-    Instace of BrachyspiraPilosicoli graph.
+    Instace of Brachyspira pilosicoli graph.
 
 	References
 	---------------------

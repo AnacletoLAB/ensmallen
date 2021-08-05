@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PowellomycesHirtus.
+This file offers the methods to automatically retrieve the graph Powellomyces hirtus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PowellomycesHirtus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PowellomycesHirtus graph.
+    """Return new instance of the Powellomyces hirtus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PowellomycesHirtus(
 
     Returns
     -----------------------
-    Instace of PowellomycesHirtus graph.
+    Instace of Powellomyces hirtus graph.
 
 	References
 	---------------------

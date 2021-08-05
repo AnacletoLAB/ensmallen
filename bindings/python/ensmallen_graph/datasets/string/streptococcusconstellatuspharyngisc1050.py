@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusConstellatusPharyngisC1050.
+This file offers the methods to automatically retrieve the graph Streptococcus constellatus pharyngis C1050.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusConstellatusPharyngisC1050(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusConstellatusPharyngisC1050 graph.
+    """Return new instance of the Streptococcus constellatus pharyngis C1050 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusConstellatusPharyngisC1050(
 
     Returns
     -----------------------
-    Instace of StreptococcusConstellatusPharyngisC1050 graph.
+    Instace of Streptococcus constellatus pharyngis C1050 graph.
 
 	References
 	---------------------

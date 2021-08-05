@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpUnc23mfcrub11.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. UNC23MFCrub11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpUnc23mfcrub11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpUnc23mfcrub11 graph.
+    """Return new instance of the Rhodococcus sp. UNC23MFCrub11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusSpUnc23mfcrub11(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpUnc23mfcrub11 graph.
+    Instace of Rhodococcus sp. UNC23MFCrub11 graph.
 
 	References
 	---------------------

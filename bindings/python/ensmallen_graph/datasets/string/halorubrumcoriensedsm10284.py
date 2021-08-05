@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumCorienseDsm10284.
+This file offers the methods to automatically retrieve the graph Halorubrum coriense DSM 10284.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumCorienseDsm10284(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumCorienseDsm10284 graph.
+    """Return new instance of the Halorubrum coriense DSM 10284 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumCorienseDsm10284(
 
     Returns
     -----------------------
-    Instace of HalorubrumCorienseDsm10284 graph.
+    Instace of Halorubrum coriense DSM 10284 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SingulisphaeraSpGp187.
+This file offers the methods to automatically retrieve the graph Singulisphaera sp. GP187.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SingulisphaeraSpGp187(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SingulisphaeraSpGp187 graph.
+    """Return new instance of the Singulisphaera sp. GP187 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SingulisphaeraSpGp187(
 
     Returns
     -----------------------
-    Instace of SingulisphaeraSpGp187 graph.
+    Instace of Singulisphaera sp. GP187 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpRit357.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. RIT357.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpRit357(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpRit357 graph.
+    """Return new instance of the Pseudomonas sp. RIT357 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpRit357(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpRit357 graph.
+    Instace of Pseudomonas sp. RIT357 graph.
 
 	References
 	---------------------

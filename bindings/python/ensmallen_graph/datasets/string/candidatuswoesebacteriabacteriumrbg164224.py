@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWoesebacteriaBacteriumRbg164224.
+This file offers the methods to automatically retrieve the graph Candidatus Woesebacteria bacterium RBG_16_42_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWoesebacteriaBacteriumRbg164224(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWoesebacteriaBacteriumRbg164224 graph.
+    """Return new instance of the Candidatus Woesebacteria bacterium RBG_16_42_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWoesebacteriaBacteriumRbg164224(
 
     Returns
     -----------------------
-    Instace of CandidatusWoesebacteriaBacteriumRbg164224 graph.
+    Instace of Candidatus Woesebacteria bacterium RBG_16_42_24 graph.
 
 	References
 	---------------------

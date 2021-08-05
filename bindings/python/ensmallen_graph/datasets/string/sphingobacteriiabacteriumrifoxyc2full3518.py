@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriiaBacteriumRifoxyc2Full3518.
+This file offers the methods to automatically retrieve the graph Sphingobacteriia bacterium RIFOXYC2_FULL_35_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriiaBacteriumRifoxyc2Full3518 graph.
+    """Return new instance of the Sphingobacteriia bacterium RIFOXYC2_FULL_35_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriiaBacteriumRifoxyc2Full3518(
 
     Returns
     -----------------------
-    Instace of SphingobacteriiaBacteriumRifoxyc2Full3518 graph.
+    Instace of Sphingobacteriia bacterium RIFOXYC2_FULL_35_18 graph.
 
 	References
 	---------------------

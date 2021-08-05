@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomagnumIshizawai.
+This file offers the methods to automatically retrieve the graph Methylomagnum ishizawai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomagnumIshizawai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomagnumIshizawai graph.
+    """Return new instance of the Methylomagnum ishizawai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomagnumIshizawai(
 
     Returns
     -----------------------
-    Instace of MethylomagnumIshizawai graph.
+    Instace of Methylomagnum ishizawai graph.
 
 	References
 	---------------------

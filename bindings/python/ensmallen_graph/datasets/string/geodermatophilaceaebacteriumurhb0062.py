@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilaceaeBacteriumUrhb0062.
+This file offers the methods to automatically retrieve the graph Geodermatophilaceae bacterium URHB0062.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilaceaeBacteriumUrhb0062(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilaceaeBacteriumUrhb0062 graph.
+    """Return new instance of the Geodermatophilaceae bacterium URHB0062 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilaceaeBacteriumUrhb0062(
 
     Returns
     -----------------------
-    Instace of GeodermatophilaceaeBacteriumUrhb0062 graph.
+    Instace of Geodermatophilaceae bacterium URHB0062 graph.
 
 	References
 	---------------------

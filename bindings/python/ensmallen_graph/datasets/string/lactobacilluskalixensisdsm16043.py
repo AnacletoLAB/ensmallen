@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKalixensisDsm16043.
+This file offers the methods to automatically retrieve the graph Lactobacillus kalixensis DSM 16043.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKalixensisDsm16043(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKalixensisDsm16043 graph.
+    """Return new instance of the Lactobacillus kalixensis DSM 16043 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKalixensisDsm16043(
 
     Returns
     -----------------------
-    Instace of LactobacillusKalixensisDsm16043 graph.
+    Instace of Lactobacillus kalixensis DSM 16043 graph.
 
 	References
 	---------------------

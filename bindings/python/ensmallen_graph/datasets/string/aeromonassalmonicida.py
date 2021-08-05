@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSalmonicida.
+This file offers the methods to automatically retrieve the graph Aeromonas salmonicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSalmonicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSalmonicida graph.
+    """Return new instance of the Aeromonas salmonicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeromonasSalmonicida(
 
     Returns
     -----------------------
-    Instace of AeromonasSalmonicida graph.
+    Instace of Aeromonas salmonicida graph.
 
 	References
 	---------------------

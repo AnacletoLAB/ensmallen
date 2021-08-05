@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiabellaAurantiaca.
+This file offers the methods to automatically retrieve the graph Niabella aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiabellaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiabellaAurantiaca graph.
+    """Return new instance of the Niabella aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NiabellaAurantiaca(
 
     Returns
     -----------------------
-    Instace of NiabellaAurantiaca graph.
+    Instace of Niabella aurantiaca graph.
 
 	References
 	---------------------

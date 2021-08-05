@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelianthusAnnuus.
+This file offers the methods to automatically retrieve the graph Helianthus annuus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelianthusAnnuus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelianthusAnnuus graph.
+    """Return new instance of the Helianthus annuus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelianthusAnnuus(
 
     Returns
     -----------------------
-    Instace of HelianthusAnnuus graph.
+    Instace of Helianthus annuus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacteriumDehalogenansDsm11527.
+This file offers the methods to automatically retrieve the graph Acetobacterium dehalogenans DSM 11527.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacteriumDehalogenansDsm11527(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacteriumDehalogenansDsm11527 graph.
+    """Return new instance of the Acetobacterium dehalogenans DSM 11527 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacteriumDehalogenansDsm11527(
 
     Returns
     -----------------------
-    Instace of AcetobacteriumDehalogenansDsm11527 graph.
+    Instace of Acetobacterium dehalogenans DSM 11527 graph.
 
 	References
 	---------------------

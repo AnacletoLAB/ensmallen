@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusVersicolorCbs58365.
+This file offers the methods to automatically retrieve the graph Aspergillus versicolor CBS 583.65.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusVersicolorCbs58365(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusVersicolorCbs58365 graph.
+    """Return new instance of the Aspergillus versicolor CBS 583.65 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusVersicolorCbs58365(
 
     Returns
     -----------------------
-    Instace of AspergillusVersicolorCbs58365 graph.
+    Instace of Aspergillus versicolor CBS 583.65 graph.
 
 	References
 	---------------------

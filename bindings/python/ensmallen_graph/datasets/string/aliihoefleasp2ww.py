@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliihoefleaSp2ww.
+This file offers the methods to automatically retrieve the graph Aliihoeflea sp. 2WW.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliihoefleaSp2ww(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliihoefleaSp2ww graph.
+    """Return new instance of the Aliihoeflea sp. 2WW graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AliihoefleaSp2ww(
 
     Returns
     -----------------------
-    Instace of AliihoefleaSp2ww graph.
+    Instace of Aliihoeflea sp. 2WW graph.
 
 	References
 	---------------------

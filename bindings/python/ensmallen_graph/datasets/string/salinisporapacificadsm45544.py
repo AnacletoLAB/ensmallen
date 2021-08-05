@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisporaPacificaDsm45544.
+This file offers the methods to automatically retrieve the graph Salinispora pacifica DSM 45544.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisporaPacificaDsm45544(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisporaPacificaDsm45544 graph.
+    """Return new instance of the Salinispora pacifica DSM 45544 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinisporaPacificaDsm45544(
 
     Returns
     -----------------------
-    Instace of SalinisporaPacificaDsm45544 graph.
+    Instace of Salinispora pacifica DSM 45544 graph.
 
 	References
 	---------------------

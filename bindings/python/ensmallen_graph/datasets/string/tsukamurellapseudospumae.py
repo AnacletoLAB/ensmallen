@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TsukamurellaPseudospumae.
+This file offers the methods to automatically retrieve the graph Tsukamurella pseudospumae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TsukamurellaPseudospumae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TsukamurellaPseudospumae graph.
+    """Return new instance of the Tsukamurella pseudospumae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TsukamurellaPseudospumae(
 
     Returns
     -----------------------
-    Instace of TsukamurellaPseudospumae graph.
+    Instace of Tsukamurella pseudospumae graph.
 
 	References
 	---------------------

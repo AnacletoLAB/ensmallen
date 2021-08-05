@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpSoapLake7.
+This file offers the methods to automatically retrieve the graph Halomonas sp. Soap Lake #7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpSoapLake7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpSoapLake7 graph.
+    """Return new instance of the Halomonas sp. Soap Lake #7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSpSoapLake7(
 
     Returns
     -----------------------
-    Instace of HalomonasSpSoapLake7 graph.
+    Instace of Halomonas sp. Soap Lake #7 graph.
 
 	References
 	---------------------

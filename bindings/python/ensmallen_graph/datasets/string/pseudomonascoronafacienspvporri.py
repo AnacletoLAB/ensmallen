@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCoronafaciensPvPorri.
+This file offers the methods to automatically retrieve the graph Pseudomonas coronafaciens pv. porri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCoronafaciensPvPorri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCoronafaciensPvPorri graph.
+    """Return new instance of the Pseudomonas coronafaciens pv. porri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasCoronafaciensPvPorri(
 
     Returns
     -----------------------
-    Instace of PseudomonasCoronafaciensPvPorri graph.
+    Instace of Pseudomonas coronafaciens pv. porri graph.
 
 	References
 	---------------------

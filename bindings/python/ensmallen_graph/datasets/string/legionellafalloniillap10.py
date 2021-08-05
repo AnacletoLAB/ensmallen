@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaFalloniiLlap10.
+This file offers the methods to automatically retrieve the graph Legionella fallonii LLAP-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaFalloniiLlap10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaFalloniiLlap10 graph.
+    """Return new instance of the Legionella fallonii LLAP-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaFalloniiLlap10(
 
     Returns
     -----------------------
-    Instace of LegionellaFalloniiLlap10 graph.
+    Instace of Legionella fallonii LLAP-10 graph.
 
 	References
 	---------------------

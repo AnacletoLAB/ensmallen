@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvimonasMicra.
+This file offers the methods to automatically retrieve the graph Parvimonas micra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvimonasMicra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvimonasMicra graph.
+    """Return new instance of the Parvimonas micra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParvimonasMicra(
 
     Returns
     -----------------------
-    Instace of ParvimonasMicra graph.
+    Instace of Parvimonas micra graph.
 
 	References
 	---------------------

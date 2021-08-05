@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesQaidamensis.
+This file offers the methods to automatically retrieve the graph Streptomyces qaidamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesQaidamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesQaidamensis graph.
+    """Return new instance of the Streptomyces qaidamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesQaidamensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesQaidamensis graph.
+    Instace of Streptomyces qaidamensis graph.
 
 	References
 	---------------------

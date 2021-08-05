@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SecondaryEndosymbiontOfHeteropsyllaCubana.
+This file offers the methods to automatically retrieve the graph secondary endosymbiont of Heteropsylla cubana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SecondaryEndosymbiontOfHeteropsyllaCubana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SecondaryEndosymbiontOfHeteropsyllaCubana graph.
+    """Return new instance of the secondary endosymbiont of Heteropsylla cubana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SecondaryEndosymbiontOfHeteropsyllaCubana(
 
     Returns
     -----------------------
-    Instace of SecondaryEndosymbiontOfHeteropsyllaCubana graph.
+    Instace of secondary endosymbiont of Heteropsylla cubana graph.
 
 	References
 	---------------------

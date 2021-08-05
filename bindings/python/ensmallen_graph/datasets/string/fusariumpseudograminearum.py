@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumPseudograminearum.
+This file offers the methods to automatically retrieve the graph Fusarium pseudograminearum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumPseudograminearum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumPseudograminearum graph.
+    """Return new instance of the Fusarium pseudograminearum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusariumPseudograminearum(
 
     Returns
     -----------------------
-    Instace of FusariumPseudograminearum graph.
+    Instace of Fusarium pseudograminearum graph.
 
 	References
 	---------------------

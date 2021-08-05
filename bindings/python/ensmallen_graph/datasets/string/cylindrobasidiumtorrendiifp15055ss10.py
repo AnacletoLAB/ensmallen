@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CylindrobasidiumTorrendiiFp15055Ss10.
+This file offers the methods to automatically retrieve the graph Cylindrobasidium torrendii FP15055 ss-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CylindrobasidiumTorrendiiFp15055Ss10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CylindrobasidiumTorrendiiFp15055Ss10 graph.
+    """Return new instance of the Cylindrobasidium torrendii FP15055 ss-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CylindrobasidiumTorrendiiFp15055Ss10(
 
     Returns
     -----------------------
-    Instace of CylindrobasidiumTorrendiiFp15055Ss10 graph.
+    Instace of Cylindrobasidium torrendii FP15055 ss-10 graph.
 
 	References
 	---------------------

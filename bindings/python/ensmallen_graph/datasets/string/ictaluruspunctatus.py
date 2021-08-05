@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IctalurusPunctatus.
+This file offers the methods to automatically retrieve the graph Ictalurus punctatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IctalurusPunctatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IctalurusPunctatus graph.
+    """Return new instance of the Ictalurus punctatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IctalurusPunctatus(
 
     Returns
     -----------------------
-    Instace of IctalurusPunctatus graph.
+    Instace of Ictalurus punctatus graph.
 
 	References
 	---------------------

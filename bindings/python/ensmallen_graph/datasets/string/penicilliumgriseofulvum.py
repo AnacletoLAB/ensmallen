@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumGriseofulvum.
+This file offers the methods to automatically retrieve the graph Penicillium griseofulvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumGriseofulvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumGriseofulvum graph.
+    """Return new instance of the Penicillium griseofulvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumGriseofulvum(
 
     Returns
     -----------------------
-    Instace of PenicilliumGriseofulvum graph.
+    Instace of Penicillium griseofulvum graph.
 
 	References
 	---------------------

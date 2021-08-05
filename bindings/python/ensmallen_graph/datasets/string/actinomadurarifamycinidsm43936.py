@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraRifamyciniDsm43936.
+This file offers the methods to automatically retrieve the graph Actinomadura rifamycini DSM 43936.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraRifamyciniDsm43936(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraRifamyciniDsm43936 graph.
+    """Return new instance of the Actinomadura rifamycini DSM 43936 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraRifamyciniDsm43936(
 
     Returns
     -----------------------
-    Instace of ActinomaduraRifamyciniDsm43936 graph.
+    Instace of Actinomadura rifamycini DSM 43936 graph.
 
 	References
 	---------------------

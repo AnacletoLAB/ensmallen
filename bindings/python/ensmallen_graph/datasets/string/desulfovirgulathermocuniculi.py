@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovirgulaThermocuniculi.
+This file offers the methods to automatically retrieve the graph Desulfovirgula thermocuniculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovirgulaThermocuniculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovirgulaThermocuniculi graph.
+    """Return new instance of the Desulfovirgula thermocuniculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovirgulaThermocuniculi(
 
     Returns
     -----------------------
-    Instace of DesulfovirgulaThermocuniculi graph.
+    Instace of Desulfovirgula thermocuniculi graph.
 
 	References
 	---------------------

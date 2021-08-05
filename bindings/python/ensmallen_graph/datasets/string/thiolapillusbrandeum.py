@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiolapillusBrandeum.
+This file offers the methods to automatically retrieve the graph Thiolapillus brandeum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiolapillusBrandeum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiolapillusBrandeum graph.
+    """Return new instance of the Thiolapillus brandeum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiolapillusBrandeum(
 
     Returns
     -----------------------
-    Instace of ThiolapillusBrandeum graph.
+    Instace of Thiolapillus brandeum graph.
 
 	References
 	---------------------

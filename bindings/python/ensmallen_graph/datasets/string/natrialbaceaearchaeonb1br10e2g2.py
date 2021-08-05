@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaceaeArchaeonB1Br10E2g2.
+This file offers the methods to automatically retrieve the graph Natrialbaceae archaeon B1-Br10_E2g2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaceaeArchaeonB1Br10E2g2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaceaeArchaeonB1Br10E2g2 graph.
+    """Return new instance of the Natrialbaceae archaeon B1-Br10_E2g2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatrialbaceaeArchaeonB1Br10E2g2(
 
     Returns
     -----------------------
-    Instace of NatrialbaceaeArchaeonB1Br10E2g2 graph.
+    Instace of Natrialbaceae archaeon B1-Br10_E2g2 graph.
 
 	References
 	---------------------

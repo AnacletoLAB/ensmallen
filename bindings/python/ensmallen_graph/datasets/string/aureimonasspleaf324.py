@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasSpLeaf324.
+This file offers the methods to automatically retrieve the graph Aureimonas sp. Leaf324.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasSpLeaf324(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasSpLeaf324 graph.
+    """Return new instance of the Aureimonas sp. Leaf324 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureimonasSpLeaf324(
 
     Returns
     -----------------------
-    Instace of AureimonasSpLeaf324 graph.
+    Instace of Aureimonas sp. Leaf324 graph.
 
 	References
 	---------------------

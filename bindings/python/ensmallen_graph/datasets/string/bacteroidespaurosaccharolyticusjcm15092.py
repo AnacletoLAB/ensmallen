@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPaurosaccharolyticusJcm15092.
+This file offers the methods to automatically retrieve the graph Bacteroides paurosaccharolyticus JCM 15092.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPaurosaccharolyticusJcm15092(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPaurosaccharolyticusJcm15092 graph.
+    """Return new instance of the Bacteroides paurosaccharolyticus JCM 15092 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesPaurosaccharolyticusJcm15092(
 
     Returns
     -----------------------
-    Instace of BacteroidesPaurosaccharolyticusJcm15092 graph.
+    Instace of Bacteroides paurosaccharolyticus JCM 15092 graph.
 
 	References
 	---------------------

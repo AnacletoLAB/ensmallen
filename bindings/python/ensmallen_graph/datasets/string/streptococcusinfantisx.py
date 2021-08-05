@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusInfantisX.
+This file offers the methods to automatically retrieve the graph Streptococcus infantis X.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusInfantisX(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusInfantisX graph.
+    """Return new instance of the Streptococcus infantis X graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusInfantisX(
 
     Returns
     -----------------------
-    Instace of StreptococcusInfantisX graph.
+    Instace of Streptococcus infantis X graph.
 
 	References
 	---------------------

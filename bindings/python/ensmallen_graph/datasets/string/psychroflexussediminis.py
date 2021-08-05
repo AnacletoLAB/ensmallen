@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusSediminis.
+This file offers the methods to automatically retrieve the graph Psychroflexus sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusSediminis graph.
+    """Return new instance of the Psychroflexus sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychroflexusSediminis(
 
     Returns
     -----------------------
-    Instace of PsychroflexusSediminis graph.
+    Instace of Psychroflexus sediminis graph.
 
 	References
 	---------------------

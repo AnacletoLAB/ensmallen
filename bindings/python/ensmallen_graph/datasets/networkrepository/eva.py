@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Eva.
+This file offers the methods to automatically retrieve the graph EVA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Eva(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Eva graph.
+    """Return new instance of the EVA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Eva(
 
     Returns
     -----------------------
-    Instace of Eva graph.
+    Instace of EVA graph.
 
 	References
 	---------------------

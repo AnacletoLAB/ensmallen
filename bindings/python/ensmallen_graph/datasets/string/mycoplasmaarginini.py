@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaArginini.
+This file offers the methods to automatically retrieve the graph Mycoplasma arginini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaArginini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaArginini graph.
+    """Return new instance of the Mycoplasma arginini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaArginini(
 
     Returns
     -----------------------
-    Instace of MycoplasmaArginini graph.
+    Instace of Mycoplasma arginini graph.
 
 	References
 	---------------------

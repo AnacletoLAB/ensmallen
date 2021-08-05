@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusContaminans.
+This file offers the methods to automatically retrieve the graph Paracoccus contaminans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusContaminans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusContaminans graph.
+    """Return new instance of the Paracoccus contaminans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusContaminans(
 
     Returns
     -----------------------
-    Instace of ParacoccusContaminans graph.
+    Instace of Paracoccus contaminans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsicumBaccatum.
+This file offers the methods to automatically retrieve the graph Capsicum baccatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsicumBaccatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsicumBaccatum graph.
+    """Return new instance of the Capsicum baccatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CapsicumBaccatum(
 
     Returns
     -----------------------
-    Instace of CapsicumBaccatum graph.
+    Instace of Capsicum baccatum graph.
 
 	References
 	---------------------

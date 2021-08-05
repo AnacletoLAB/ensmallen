@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaStarring.
+This file offers the methods to automatically retrieve the graph dbpedia-starring.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaStarring(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaStarring graph.
+    """Return new instance of the dbpedia-starring graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaStarring(
 
     Returns
     -----------------------
-    Instace of DbpediaStarring graph.
+    Instace of dbpedia-starring graph.
 
 	References
 	---------------------

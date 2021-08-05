@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumOranimense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium oranimense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumOranimense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumOranimense graph.
+    """Return new instance of the Chryseobacterium oranimense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumOranimense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumOranimense graph.
+    Instace of Chryseobacterium oranimense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKaiserbacteriaBacteriumRifoxyb1Full4614.
+This file offers the methods to automatically retrieve the graph Candidatus Kaiserbacteria bacterium RIFOXYB1_FULL_46_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKaiserbacteriaBacteriumRifoxyb1Full4614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKaiserbacteriaBacteriumRifoxyb1Full4614 graph.
+    """Return new instance of the Candidatus Kaiserbacteria bacterium RIFOXYB1_FULL_46_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKaiserbacteriaBacteriumRifoxyb1Full4614(
 
     Returns
     -----------------------
-    Instace of CandidatusKaiserbacteriaBacteriumRifoxyb1Full4614 graph.
+    Instace of Candidatus Kaiserbacteria bacterium RIFOXYB1_FULL_46_14 graph.
 
 	References
 	---------------------

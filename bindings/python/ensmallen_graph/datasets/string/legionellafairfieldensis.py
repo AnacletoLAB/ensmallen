@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaFairfieldensis.
+This file offers the methods to automatically retrieve the graph Legionella fairfieldensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaFairfieldensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaFairfieldensis graph.
+    """Return new instance of the Legionella fairfieldensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaFairfieldensis(
 
     Returns
     -----------------------
-    Instace of LegionellaFairfieldensis graph.
+    Instace of Legionella fairfieldensis graph.
 
 	References
 	---------------------

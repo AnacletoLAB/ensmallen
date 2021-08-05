@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisBiprosthecum.
+This file offers the methods to automatically retrieve the graph Asticcacaulis biprosthecum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisBiprosthecum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisBiprosthecum graph.
+    """Return new instance of the Asticcacaulis biprosthecum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AsticcacaulisBiprosthecum(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisBiprosthecum graph.
+    Instace of Asticcacaulis biprosthecum graph.
 
 	References
 	---------------------

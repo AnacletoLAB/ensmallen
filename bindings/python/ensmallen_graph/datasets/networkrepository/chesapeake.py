@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Chesapeake.
+This file offers the methods to automatically retrieve the graph chesapeake.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Chesapeake(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Chesapeake graph.
+    """Return new instance of the chesapeake graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Chesapeake(
 
     Returns
     -----------------------
-    Instace of Chesapeake graph.
+    Instace of chesapeake graph.
 
 	References
 	---------------------

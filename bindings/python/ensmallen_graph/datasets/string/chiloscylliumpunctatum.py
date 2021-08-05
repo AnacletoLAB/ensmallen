@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChiloscylliumPunctatum.
+This file offers the methods to automatically retrieve the graph Chiloscyllium punctatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChiloscylliumPunctatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChiloscylliumPunctatum graph.
+    """Return new instance of the Chiloscyllium punctatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChiloscylliumPunctatum(
 
     Returns
     -----------------------
-    Instace of ChiloscylliumPunctatum graph.
+    Instace of Chiloscyllium punctatum graph.
 
 	References
 	---------------------

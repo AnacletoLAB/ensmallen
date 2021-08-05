@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerinicoccusSpJlt9.
+This file offers the methods to automatically retrieve the graph Serinicoccus sp. JLT9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerinicoccusSpJlt9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerinicoccusSpJlt9 graph.
+    """Return new instance of the Serinicoccus sp. JLT9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerinicoccusSpJlt9(
 
     Returns
     -----------------------
-    Instace of SerinicoccusSpJlt9 graph.
+    Instace of Serinicoccus sp. JLT9 graph.
 
 	References
 	---------------------

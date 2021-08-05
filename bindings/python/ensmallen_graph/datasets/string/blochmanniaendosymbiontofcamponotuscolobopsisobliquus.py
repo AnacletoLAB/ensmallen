@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus.
+This file offers the methods to automatically retrieve the graph Blochmannia endosymbiont of Camponotus (Colobopsis) obliquus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus graph.
+    """Return new instance of the Blochmannia endosymbiont of Camponotus (Colobopsis) obliquus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus(
 
     Returns
     -----------------------
-    Instace of BlochmanniaEndosymbiontOfCamponotusColobopsisObliquus graph.
+    Instace of Blochmannia endosymbiont of Camponotus (Colobopsis) obliquus graph.
 
 	References
 	---------------------

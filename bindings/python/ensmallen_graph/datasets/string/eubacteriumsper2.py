@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSpEr2.
+This file offers the methods to automatically retrieve the graph Eubacterium sp. ER2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSpEr2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSpEr2 graph.
+    """Return new instance of the Eubacterium sp. ER2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumSpEr2(
 
     Returns
     -----------------------
-    Instace of EubacteriumSpEr2 graph.
+    Instace of Eubacterium sp. ER2 graph.
 
 	References
 	---------------------

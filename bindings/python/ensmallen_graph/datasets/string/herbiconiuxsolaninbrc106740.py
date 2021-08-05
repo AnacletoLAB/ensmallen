@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbiconiuxSolaniNbrc106740.
+This file offers the methods to automatically retrieve the graph Herbiconiux solani NBRC 106740.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbiconiuxSolaniNbrc106740(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbiconiuxSolaniNbrc106740 graph.
+    """Return new instance of the Herbiconiux solani NBRC 106740 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbiconiuxSolaniNbrc106740(
 
     Returns
     -----------------------
-    Instace of HerbiconiuxSolaniNbrc106740 graph.
+    Instace of Herbiconiux solani NBRC 106740 graph.
 
 	References
 	---------------------

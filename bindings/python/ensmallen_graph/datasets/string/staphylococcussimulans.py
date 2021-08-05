@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSimulans.
+This file offers the methods to automatically retrieve the graph Staphylococcus simulans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSimulans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSimulans graph.
+    """Return new instance of the Staphylococcus simulans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusSimulans(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSimulans graph.
+    Instace of Staphylococcus simulans graph.
 
 	References
 	---------------------

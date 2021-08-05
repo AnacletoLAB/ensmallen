@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumParaffinicum.
+This file offers the methods to automatically retrieve the graph Mycobacterium paraffinicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumParaffinicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumParaffinicum graph.
+    """Return new instance of the Mycobacterium paraffinicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumParaffinicum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumParaffinicum graph.
+    Instace of Mycobacterium paraffinicum graph.
 
 	References
 	---------------------

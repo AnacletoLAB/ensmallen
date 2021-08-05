@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KangiellaKoreensis.
+This file offers the methods to automatically retrieve the graph Kangiella koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KangiellaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KangiellaKoreensis graph.
+    """Return new instance of the Kangiella koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KangiellaKoreensis(
 
     Returns
     -----------------------
-    Instace of KangiellaKoreensis graph.
+    Instace of Kangiella koreensis graph.
 
 	References
 	---------------------

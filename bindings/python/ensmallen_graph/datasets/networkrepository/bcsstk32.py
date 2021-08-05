@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstk32.
+This file offers the methods to automatically retrieve the graph bcsstk32.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstk32(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstk32 graph.
+    """Return new instance of the bcsstk32 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstk32(
 
     Returns
     -----------------------
-    Instace of Bcsstk32 graph.
+    Instace of bcsstk32 graph.
 
 	References
 	---------------------

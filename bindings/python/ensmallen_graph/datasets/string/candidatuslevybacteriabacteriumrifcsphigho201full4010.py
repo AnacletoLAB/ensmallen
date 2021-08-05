@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLevybacteriaBacteriumRifcsphigho201Full4010.
+This file offers the methods to automatically retrieve the graph Candidatus Levybacteria bacterium RIFCSPHIGHO2_01_FULL_40_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLevybacteriaBacteriumRifcsphigho201Full4010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLevybacteriaBacteriumRifcsphigho201Full4010 graph.
+    """Return new instance of the Candidatus Levybacteria bacterium RIFCSPHIGHO2_01_FULL_40_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLevybacteriaBacteriumRifcsphigho201Full4010(
 
     Returns
     -----------------------
-    Instace of CandidatusLevybacteriaBacteriumRifcsphigho201Full4010 graph.
+    Instace of Candidatus Levybacteria bacterium RIFCSPHIGHO2_01_FULL_40_10 graph.
 
 	References
 	---------------------

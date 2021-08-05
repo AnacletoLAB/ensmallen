@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaludisphaeraBorealis.
+This file offers the methods to automatically retrieve the graph Paludisphaera borealis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaludisphaeraBorealis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaludisphaeraBorealis graph.
+    """Return new instance of the Paludisphaera borealis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaludisphaeraBorealis(
 
     Returns
     -----------------------
-    Instace of PaludisphaeraBorealis graph.
+    Instace of Paludisphaera borealis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraBiflexaSerovarPatocStrainPatoc1Paris.
+This file offers the methods to automatically retrieve the graph Leptospira biflexa serovar Patoc strain Patoc 1 (Paris).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraBiflexaSerovarPatocStrainPatoc1Paris graph.
+    """Return new instance of the Leptospira biflexa serovar Patoc strain Patoc 1 (Paris) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraBiflexaSerovarPatocStrainPatoc1Paris(
 
     Returns
     -----------------------
-    Instace of LeptospiraBiflexaSerovarPatocStrainPatoc1Paris graph.
+    Instace of Leptospira biflexa serovar Patoc strain Patoc 1 (Paris) graph.
 
 	References
 	---------------------

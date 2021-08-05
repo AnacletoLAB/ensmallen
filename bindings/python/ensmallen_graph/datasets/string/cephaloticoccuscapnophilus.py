@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CephaloticoccusCapnophilus.
+This file offers the methods to automatically retrieve the graph Cephaloticoccus capnophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CephaloticoccusCapnophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CephaloticoccusCapnophilus graph.
+    """Return new instance of the Cephaloticoccus capnophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CephaloticoccusCapnophilus(
 
     Returns
     -----------------------
-    Instace of CephaloticoccusCapnophilus graph.
+    Instace of Cephaloticoccus capnophilus graph.
 
 	References
 	---------------------

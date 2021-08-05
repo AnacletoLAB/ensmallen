@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMagnetobacteriumCasensis.
+This file offers the methods to automatically retrieve the graph Candidatus Magnetobacterium casensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMagnetobacteriumCasensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMagnetobacteriumCasensis graph.
+    """Return new instance of the Candidatus Magnetobacterium casensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMagnetobacteriumCasensis(
 
     Returns
     -----------------------
-    Instace of CandidatusMagnetobacteriumCasensis graph.
+    Instace of Candidatus Magnetobacterium casensis graph.
 
 	References
 	---------------------

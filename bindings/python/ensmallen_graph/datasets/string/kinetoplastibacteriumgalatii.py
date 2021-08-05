@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KinetoplastibacteriumGalatii.
+This file offers the methods to automatically retrieve the graph Kinetoplastibacterium galatii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KinetoplastibacteriumGalatii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KinetoplastibacteriumGalatii graph.
+    """Return new instance of the Kinetoplastibacterium galatii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KinetoplastibacteriumGalatii(
 
     Returns
     -----------------------
-    Instace of KinetoplastibacteriumGalatii graph.
+    Instace of Kinetoplastibacterium galatii graph.
 
 	References
 	---------------------

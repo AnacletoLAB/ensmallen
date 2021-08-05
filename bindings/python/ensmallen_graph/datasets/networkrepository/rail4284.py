@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rail4284.
+This file offers the methods to automatically retrieve the graph rail4284.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rail4284(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rail4284 graph.
+    """Return new instance of the rail4284 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rail4284(
 
     Returns
     -----------------------
-    Instace of Rail4284 graph.
+    Instace of rail4284 graph.
 
 	References
 	---------------------

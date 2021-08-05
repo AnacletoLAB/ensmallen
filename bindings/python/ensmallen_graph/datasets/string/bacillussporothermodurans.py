@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSporothermodurans.
+This file offers the methods to automatically retrieve the graph Bacillus sporothermodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSporothermodurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSporothermodurans graph.
+    """Return new instance of the Bacillus sporothermodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSporothermodurans(
 
     Returns
     -----------------------
-    Instace of BacillusSporothermodurans graph.
+    Instace of Bacillus sporothermodurans graph.
 
 	References
 	---------------------

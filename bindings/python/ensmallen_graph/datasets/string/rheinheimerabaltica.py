@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraBaltica.
+This file offers the methods to automatically retrieve the graph Rheinheimera baltica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraBaltica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraBaltica graph.
+    """Return new instance of the Rheinheimera baltica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RheinheimeraBaltica(
 
     Returns
     -----------------------
-    Instace of RheinheimeraBaltica graph.
+    Instace of Rheinheimera baltica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCanis.
+This file offers the methods to automatically retrieve the graph Mycoplasma canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCanis graph.
+    """Return new instance of the Mycoplasma canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaCanis(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCanis graph.
+    Instace of Mycoplasma canis graph.
 
 	References
 	---------------------

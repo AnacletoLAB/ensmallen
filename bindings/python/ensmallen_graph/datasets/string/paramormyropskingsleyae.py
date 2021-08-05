@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParamormyropsKingsleyae.
+This file offers the methods to automatically retrieve the graph Paramormyrops kingsleyae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParamormyropsKingsleyae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParamormyropsKingsleyae graph.
+    """Return new instance of the Paramormyrops kingsleyae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParamormyropsKingsleyae(
 
     Returns
     -----------------------
-    Instace of ParamormyropsKingsleyae graph.
+    Instace of Paramormyrops kingsleyae graph.
 
 	References
 	---------------------

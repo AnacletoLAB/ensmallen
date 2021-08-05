@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FonticulaAlba.
+This file offers the methods to automatically retrieve the graph Fonticula alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FonticulaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FonticulaAlba graph.
+    """Return new instance of the Fonticula alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FonticulaAlba(
 
     Returns
     -----------------------
-    Instace of FonticulaAlba graph.
+    Instace of Fonticula alba graph.
 
 	References
 	---------------------

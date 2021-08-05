@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf16.
+This file offers the methods to automatically retrieve the graph TF16.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf16(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf16 graph.
+    """Return new instance of the TF16 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf16(
 
     Returns
     -----------------------
-    Instace of Tf16 graph.
+    Instace of TF16 graph.
 
 	References
 	---------------------

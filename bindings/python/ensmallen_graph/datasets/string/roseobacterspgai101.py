@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterSpGai101.
+This file offers the methods to automatically retrieve the graph Roseobacter sp. GAI101.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterSpGai101(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterSpGai101 graph.
+    """Return new instance of the Roseobacter sp. GAI101 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterSpGai101(
 
     Returns
     -----------------------
-    Instace of RoseobacterSpGai101 graph.
+    Instace of Roseobacter sp. GAI101 graph.
 
 	References
 	---------------------

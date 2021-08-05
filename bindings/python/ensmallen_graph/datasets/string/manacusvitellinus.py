@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ManacusVitellinus.
+This file offers the methods to automatically retrieve the graph Manacus vitellinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ManacusVitellinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ManacusVitellinus graph.
+    """Return new instance of the Manacus vitellinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ManacusVitellinus(
 
     Returns
     -----------------------
-    Instace of ManacusVitellinus graph.
+    Instace of Manacus vitellinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferacalesArchaeonDl31.
+This file offers the methods to automatically retrieve the graph Haloferacales archaeon DL31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferacalesArchaeonDl31(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferacalesArchaeonDl31 graph.
+    """Return new instance of the Haloferacales archaeon DL31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloferacalesArchaeonDl31(
 
     Returns
     -----------------------
-    Instace of HaloferacalesArchaeonDl31 graph.
+    Instace of Haloferacales archaeon DL31 graph.
 
 	References
 	---------------------

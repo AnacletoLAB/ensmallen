@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumDaejeonense.
+This file offers the methods to automatically retrieve the graph Flavobacterium daejeonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumDaejeonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumDaejeonense graph.
+    """Return new instance of the Flavobacterium daejeonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumDaejeonense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumDaejeonense graph.
+    Instace of Flavobacterium daejeonense graph.
 
 	References
 	---------------------

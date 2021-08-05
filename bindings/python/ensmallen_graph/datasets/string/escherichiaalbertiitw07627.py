@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaAlbertiiTw07627.
+This file offers the methods to automatically retrieve the graph Escherichia albertii TW07627.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaAlbertiiTw07627(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaAlbertiiTw07627 graph.
+    """Return new instance of the Escherichia albertii TW07627 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaAlbertiiTw07627(
 
     Returns
     -----------------------
-    Instace of EscherichiaAlbertiiTw07627 graph.
+    Instace of Escherichia albertii TW07627 graph.
 
 	References
 	---------------------

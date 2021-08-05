@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpJcm10914.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. JCM 10914.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpJcm10914(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpJcm10914 graph.
+    """Return new instance of the Paenibacillus sp. JCM 10914 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpJcm10914(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpJcm10914 graph.
+    Instace of Paenibacillus sp. JCM 10914 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpPrM31.
+This file offers the methods to automatically retrieve the graph Halomonas sp. PR-M31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpPrM31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpPrM31 graph.
+    """Return new instance of the Halomonas sp. PR-M31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSpPrM31(
 
     Returns
     -----------------------
-    Instace of HalomonasSpPrM31 graph.
+    Instace of Halomonas sp. PR-M31 graph.
 
 	References
 	---------------------

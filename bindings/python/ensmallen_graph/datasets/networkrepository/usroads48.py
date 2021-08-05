@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Usroads48.
+This file offers the methods to automatically retrieve the graph usroads-48.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Usroads48(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Usroads48 graph.
+    """Return new instance of the usroads-48 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Usroads48(
 
     Returns
     -----------------------
-    Instace of Usroads48 graph.
+    Instace of usroads-48 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenibacterTroitsensis.
+This file offers the methods to automatically retrieve the graph Arenibacter troitsensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenibacterTroitsensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenibacterTroitsensis graph.
+    """Return new instance of the Arenibacter troitsensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArenibacterTroitsensis(
 
     Returns
     -----------------------
-    Instace of ArenibacterTroitsensis graph.
+    Instace of Arenibacter troitsensis graph.
 
 	References
 	---------------------

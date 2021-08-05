@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerticilliumDahliae.
+This file offers the methods to automatically retrieve the graph Verticillium dahliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerticilliumDahliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerticilliumDahliae graph.
+    """Return new instance of the Verticillium dahliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerticilliumDahliae(
 
     Returns
     -----------------------
-    Instace of VerticilliumDahliae graph.
+    Instace of Verticillium dahliae graph.
 
 	References
 	---------------------

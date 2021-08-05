@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFructivorans.
+This file offers the methods to automatically retrieve the graph Lactobacillus fructivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFructivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFructivorans graph.
+    """Return new instance of the Lactobacillus fructivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusFructivorans(
 
     Returns
     -----------------------
-    Instace of LactobacillusFructivorans graph.
+    Instace of Lactobacillus fructivorans graph.
 
 	References
 	---------------------

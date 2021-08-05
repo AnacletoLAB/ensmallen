@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusKuroshimensis.
+This file offers the methods to automatically retrieve the graph Halobacillus kuroshimensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusKuroshimensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusKuroshimensis graph.
+    """Return new instance of the Halobacillus kuroshimensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobacillusKuroshimensis(
 
     Returns
     -----------------------
-    Instace of HalobacillusKuroshimensis graph.
+    Instace of Halobacillus kuroshimensis graph.
 
 	References
 	---------------------

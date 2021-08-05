@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMidichloriaMitochondriiIricva.
+This file offers the methods to automatically retrieve the graph Candidatus Midichloria mitochondrii IricVA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMidichloriaMitochondriiIricva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMidichloriaMitochondriiIricva graph.
+    """Return new instance of the Candidatus Midichloria mitochondrii IricVA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMidichloriaMitochondriiIricva(
 
     Returns
     -----------------------
-    Instace of CandidatusMidichloriaMitochondriiIricva graph.
+    Instace of Candidatus Midichloria mitochondrii IricVA graph.
 
 	References
 	---------------------

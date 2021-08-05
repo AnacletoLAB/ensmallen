@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpCcgeLa001.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. CCGE-LA001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpCcgeLa001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpCcgeLa001 graph.
+    """Return new instance of the Bradyrhizobium sp. CCGE-LA001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumSpCcgeLa001(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpCcgeLa001 graph.
+    Instace of Bradyrhizobium sp. CCGE-LA001 graph.
 
 	References
 	---------------------

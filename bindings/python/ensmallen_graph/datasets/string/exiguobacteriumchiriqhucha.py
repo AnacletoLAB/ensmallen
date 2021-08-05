@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumChiriqhucha.
+This file offers the methods to automatically retrieve the graph Exiguobacterium chiriqhucha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumChiriqhucha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumChiriqhucha graph.
+    """Return new instance of the Exiguobacterium chiriqhucha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExiguobacteriumChiriqhucha(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumChiriqhucha graph.
+    Instace of Exiguobacterium chiriqhucha graph.
 
 	References
 	---------------------

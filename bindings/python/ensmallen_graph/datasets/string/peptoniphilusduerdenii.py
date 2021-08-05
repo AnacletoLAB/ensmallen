@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusDuerdenii.
+This file offers the methods to automatically retrieve the graph Peptoniphilus duerdenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusDuerdenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusDuerdenii graph.
+    """Return new instance of the Peptoniphilus duerdenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusDuerdenii(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusDuerdenii graph.
+    Instace of Peptoniphilus duerdenii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuricaudaSpMar201075.
+This file offers the methods to automatically retrieve the graph Muricauda sp. MAR201075.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuricaudaSpMar201075(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuricaudaSpMar201075 graph.
+    """Return new instance of the Muricauda sp. MAR201075 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MuricaudaSpMar201075(
 
     Returns
     -----------------------
-    Instace of MuricaudaSpMar201075 graph.
+    Instace of Muricauda sp. MAR201075 graph.
 
 	References
 	---------------------

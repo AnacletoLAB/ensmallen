@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumSpCag439.
+This file offers the methods to automatically retrieve the graph Fusobacterium sp. CAG:439.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumSpCag439(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumSpCag439 graph.
+    """Return new instance of the Fusobacterium sp. CAG:439 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusobacteriumSpCag439(
 
     Returns
     -----------------------
-    Instace of FusobacteriumSpCag439 graph.
+    Instace of Fusobacterium sp. CAG:439 graph.
 
 	References
 	---------------------

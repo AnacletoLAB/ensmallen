@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Halfb.
+This file offers the methods to automatically retrieve the graph halfb.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Halfb(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Halfb graph.
+    """Return new instance of the halfb graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Halfb(
 
     Returns
     -----------------------
-    Instace of Halfb graph.
+    Instace of halfb graph.
 
 	References
 	---------------------

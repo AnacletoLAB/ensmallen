@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrettanomycesBruxellensis.
+This file offers the methods to automatically retrieve the graph Brettanomyces bruxellensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrettanomycesBruxellensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrettanomycesBruxellensis graph.
+    """Return new instance of the Brettanomyces bruxellensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrettanomycesBruxellensis(
 
     Returns
     -----------------------
-    Instace of BrettanomycesBruxellensis graph.
+    Instace of Brettanomyces bruxellensis graph.
 
 	References
 	---------------------

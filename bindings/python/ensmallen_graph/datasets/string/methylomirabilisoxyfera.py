@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomirabilisOxyfera.
+This file offers the methods to automatically retrieve the graph Methylomirabilis oxyfera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomirabilisOxyfera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomirabilisOxyfera graph.
+    """Return new instance of the Methylomirabilis oxyfera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylomirabilisOxyfera(
 
     Returns
     -----------------------
-    Instace of MethylomirabilisOxyfera graph.
+    Instace of Methylomirabilis oxyfera graph.
 
 	References
 	---------------------

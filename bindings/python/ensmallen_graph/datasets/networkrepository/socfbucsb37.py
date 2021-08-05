@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUcsb37.
+This file offers the methods to automatically retrieve the graph socfb-UCSB37.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUcsb37(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUcsb37 graph.
+    """Return new instance of the socfb-UCSB37 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUcsb37(
 
     Returns
     -----------------------
-    Instace of SocfbUcsb37 graph.
+    Instace of socfb-UCSB37 graph.
 
 	References
 	---------------------

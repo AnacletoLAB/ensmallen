@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DolichospermumCircinaleAwqc131c.
+This file offers the methods to automatically retrieve the graph Dolichospermum circinale AWQC131C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DolichospermumCircinaleAwqc131c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DolichospermumCircinaleAwqc131c graph.
+    """Return new instance of the Dolichospermum circinale AWQC131C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DolichospermumCircinaleAwqc131c(
 
     Returns
     -----------------------
-    Instace of DolichospermumCircinaleAwqc131c graph.
+    Instace of Dolichospermum circinale AWQC131C graph.
 
 	References
 	---------------------

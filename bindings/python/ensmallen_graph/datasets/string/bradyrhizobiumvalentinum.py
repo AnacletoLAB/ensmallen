@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumValentinum.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium valentinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumValentinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumValentinum graph.
+    """Return new instance of the Bradyrhizobium valentinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumValentinum(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumValentinum graph.
+    Instace of Bradyrhizobium valentinum graph.
 
 	References
 	---------------------

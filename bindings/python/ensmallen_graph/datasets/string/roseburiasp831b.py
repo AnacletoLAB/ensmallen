@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaSp831b.
+This file offers the methods to automatically retrieve the graph Roseburia sp. 831b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaSp831b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaSp831b graph.
+    """Return new instance of the Roseburia sp. 831b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseburiaSp831b(
 
     Returns
     -----------------------
-    Instace of RoseburiaSp831b graph.
+    Instace of Roseburia sp. 831b graph.
 
 	References
 	---------------------

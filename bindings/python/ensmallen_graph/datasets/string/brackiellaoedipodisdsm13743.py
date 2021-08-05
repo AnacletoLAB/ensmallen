@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrackiellaOedipodisDsm13743.
+This file offers the methods to automatically retrieve the graph Brackiella oedipodis DSM 13743.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrackiellaOedipodisDsm13743(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrackiellaOedipodisDsm13743 graph.
+    """Return new instance of the Brackiella oedipodis DSM 13743 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrackiellaOedipodisDsm13743(
 
     Returns
     -----------------------
-    Instace of BrackiellaOedipodisDsm13743 graph.
+    Instace of Brackiella oedipodis DSM 13743 graph.
 
 	References
 	---------------------

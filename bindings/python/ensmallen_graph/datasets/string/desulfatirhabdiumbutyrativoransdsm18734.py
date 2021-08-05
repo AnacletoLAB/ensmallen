@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatirhabdiumButyrativoransDsm18734.
+This file offers the methods to automatically retrieve the graph Desulfatirhabdium butyrativorans DSM 18734.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatirhabdiumButyrativoransDsm18734(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatirhabdiumButyrativoransDsm18734 graph.
+    """Return new instance of the Desulfatirhabdium butyrativorans DSM 18734 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfatirhabdiumButyrativoransDsm18734(
 
     Returns
     -----------------------
-    Instace of DesulfatirhabdiumButyrativoransDsm18734 graph.
+    Instace of Desulfatirhabdium butyrativorans DSM 18734 graph.
 
 	References
 	---------------------

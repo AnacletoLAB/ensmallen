@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudacidovoraxSpRu35e.
+This file offers the methods to automatically retrieve the graph Pseudacidovorax sp. RU35E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudacidovoraxSpRu35e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudacidovoraxSpRu35e graph.
+    """Return new instance of the Pseudacidovorax sp. RU35E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudacidovoraxSpRu35e(
 
     Returns
     -----------------------
-    Instace of PseudacidovoraxSpRu35e graph.
+    Instace of Pseudacidovorax sp. RU35E graph.
 
 	References
 	---------------------

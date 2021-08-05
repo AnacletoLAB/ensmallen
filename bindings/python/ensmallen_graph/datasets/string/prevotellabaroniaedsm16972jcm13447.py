@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaBaroniaeDsm16972Jcm13447.
+This file offers the methods to automatically retrieve the graph Prevotella baroniae DSM 16972 JCM 13447.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaBaroniaeDsm16972Jcm13447(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaBaroniaeDsm16972Jcm13447 graph.
+    """Return new instance of the Prevotella baroniae DSM 16972 JCM 13447 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaBaroniaeDsm16972Jcm13447(
 
     Returns
     -----------------------
-    Instace of PrevotellaBaroniaeDsm16972Jcm13447 graph.
+    Instace of Prevotella baroniae DSM 16972 JCM 13447 graph.
 
 	References
 	---------------------

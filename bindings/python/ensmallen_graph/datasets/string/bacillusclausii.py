@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusClausii.
+This file offers the methods to automatically retrieve the graph Bacillus clausii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusClausii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusClausii graph.
+    """Return new instance of the Bacillus clausii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusClausii(
 
     Returns
     -----------------------
-    Instace of BacillusClausii graph.
+    Instace of Bacillus clausii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCereus.
+This file offers the methods to automatically retrieve the graph Bacillus cereus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCereus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCereus graph.
+    """Return new instance of the Bacillus cereus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusCereus(
 
     Returns
     -----------------------
-    Instace of BacillusCereus graph.
+    Instace of Bacillus cereus graph.
 
 	References
 	---------------------

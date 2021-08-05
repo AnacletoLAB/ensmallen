@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrigoribacteriumSpLeaf172.
+This file offers the methods to automatically retrieve the graph Frigoribacterium sp. Leaf172.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrigoribacteriumSpLeaf172(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrigoribacteriumSpLeaf172 graph.
+    """Return new instance of the Frigoribacterium sp. Leaf172 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrigoribacteriumSpLeaf172(
 
     Returns
     -----------------------
-    Instace of FrigoribacteriumSpLeaf172 graph.
+    Instace of Frigoribacterium sp. Leaf172 graph.
 
 	References
 	---------------------

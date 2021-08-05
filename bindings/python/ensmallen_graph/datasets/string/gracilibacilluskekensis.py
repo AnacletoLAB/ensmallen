@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusKekensis.
+This file offers the methods to automatically retrieve the graph Gracilibacillus kekensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusKekensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusKekensis graph.
+    """Return new instance of the Gracilibacillus kekensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilibacillusKekensis(
 
     Returns
     -----------------------
-    Instace of GracilibacillusKekensis graph.
+    Instace of Gracilibacillus kekensis graph.
 
 	References
 	---------------------

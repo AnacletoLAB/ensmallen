@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OmnitrophicaBacteriumGwa2528.
+This file offers the methods to automatically retrieve the graph Omnitrophica bacterium GWA2_52_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OmnitrophicaBacteriumGwa2528(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OmnitrophicaBacteriumGwa2528 graph.
+    """Return new instance of the Omnitrophica bacterium GWA2_52_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OmnitrophicaBacteriumGwa2528(
 
     Returns
     -----------------------
-    Instace of OmnitrophicaBacteriumGwa2528 graph.
+    Instace of Omnitrophica bacterium GWA2_52_8 graph.
 
 	References
 	---------------------

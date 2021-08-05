@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLatescibacterAnaerobiusScgcAaa252E07.
+This file offers the methods to automatically retrieve the graph Candidatus Latescibacter anaerobius SCGC AAA252-E07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLatescibacterAnaerobiusScgcAaa252E07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLatescibacterAnaerobiusScgcAaa252E07 graph.
+    """Return new instance of the Candidatus Latescibacter anaerobius SCGC AAA252-E07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLatescibacterAnaerobiusScgcAaa252E07(
 
     Returns
     -----------------------
-    Instace of CandidatusLatescibacterAnaerobiusScgcAaa252E07 graph.
+    Instace of Candidatus Latescibacter anaerobius SCGC AAA252-E07 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanofollisLiminatansDsm4140.
+This file offers the methods to automatically retrieve the graph Methanofollis liminatans DSM 4140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanofollisLiminatansDsm4140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanofollisLiminatansDsm4140 graph.
+    """Return new instance of the Methanofollis liminatans DSM 4140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanofollisLiminatansDsm4140(
 
     Returns
     -----------------------
-    Instace of MethanofollisLiminatansDsm4140 graph.
+    Instace of Methanofollis liminatans DSM 4140 graph.
 
 	References
 	---------------------

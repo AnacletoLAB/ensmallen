@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumHydrothermale.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum hydrothermale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumHydrothermale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumHydrothermale graph.
+    """Return new instance of the Desulfotomaculum hydrothermale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumHydrothermale(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumHydrothermale graph.
+    Instace of Desulfotomaculum hydrothermale graph.
 
 	References
 	---------------------

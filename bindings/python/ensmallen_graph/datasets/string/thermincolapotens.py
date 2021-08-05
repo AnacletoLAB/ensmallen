@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermincolaPotens.
+This file offers the methods to automatically retrieve the graph Thermincola potens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermincolaPotens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermincolaPotens graph.
+    """Return new instance of the Thermincola potens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermincolaPotens(
 
     Returns
     -----------------------
-    Instace of ThermincolaPotens graph.
+    Instace of Thermincola potens graph.
 
 	References
 	---------------------

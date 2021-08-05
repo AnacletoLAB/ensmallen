@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSpLcm4579.
+This file offers the methods to automatically retrieve the graph Ensifer sp. LCM 4579.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSpLcm4579(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSpLcm4579 graph.
+    """Return new instance of the Ensifer sp. LCM 4579 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnsiferSpLcm4579(
 
     Returns
     -----------------------
-    Instace of EnsiferSpLcm4579 graph.
+    Instace of Ensifer sp. LCM 4579 graph.
 
 	References
 	---------------------

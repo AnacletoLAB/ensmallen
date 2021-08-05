@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacteraceaeBacteriumPmmr1.
+This file offers the methods to automatically retrieve the graph Caulobacteraceae bacterium PMMR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacteraceaeBacteriumPmmr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacteraceaeBacteriumPmmr1 graph.
+    """Return new instance of the Caulobacteraceae bacterium PMMR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacteraceaeBacteriumPmmr1(
 
     Returns
     -----------------------
-    Instace of CaulobacteraceaeBacteriumPmmr1 graph.
+    Instace of Caulobacteraceae bacterium PMMR1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WallemiaSebi.
+This file offers the methods to automatically retrieve the graph Wallemia sebi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WallemiaSebi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WallemiaSebi graph.
+    """Return new instance of the Wallemia sebi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WallemiaSebi(
 
     Returns
     -----------------------
-    Instace of WallemiaSebi graph.
+    Instace of Wallemia sebi graph.
 
 	References
 	---------------------

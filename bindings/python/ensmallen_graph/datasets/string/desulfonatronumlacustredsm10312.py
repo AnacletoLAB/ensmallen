@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronumLacustreDsm10312.
+This file offers the methods to automatically retrieve the graph Desulfonatronum lacustre DSM 10312.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronumLacustreDsm10312(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronumLacustreDsm10312 graph.
+    """Return new instance of the Desulfonatronum lacustre DSM 10312 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonatronumLacustreDsm10312(
 
     Returns
     -----------------------
-    Instace of DesulfonatronumLacustreDsm10312 graph.
+    Instace of Desulfonatronum lacustre DSM 10312 graph.
 
 	References
 	---------------------

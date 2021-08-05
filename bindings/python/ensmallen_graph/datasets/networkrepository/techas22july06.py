@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechAs22july06.
+This file offers the methods to automatically retrieve the graph tech-as-22july06.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechAs22july06(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechAs22july06 graph.
+    """Return new instance of the tech-as-22july06 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechAs22july06(
 
     Returns
     -----------------------
-    Instace of TechAs22july06 graph.
+    Instace of tech-as-22july06 graph.
 
 	References
 	---------------------

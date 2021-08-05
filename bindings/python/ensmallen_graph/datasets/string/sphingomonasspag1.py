@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpAg1.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Ag1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpAg1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpAg1 graph.
+    """Return new instance of the Sphingomonas sp. Ag1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpAg1(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpAg1 graph.
+    Instace of Sphingomonas sp. Ag1 graph.
 
 	References
 	---------------------

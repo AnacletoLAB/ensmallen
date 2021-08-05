@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BariatricusMassiliensis.
+This file offers the methods to automatically retrieve the graph Bariatricus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BariatricusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BariatricusMassiliensis graph.
+    """Return new instance of the Bariatricus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BariatricusMassiliensis(
 
     Returns
     -----------------------
-    Instace of BariatricusMassiliensis graph.
+    Instace of Bariatricus massiliensis graph.
 
 	References
 	---------------------

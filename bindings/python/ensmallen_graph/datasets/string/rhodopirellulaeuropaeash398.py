@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopirellulaEuropaeaSh398.
+This file offers the methods to automatically retrieve the graph Rhodopirellula europaea SH398.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopirellulaEuropaeaSh398(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopirellulaEuropaeaSh398 graph.
+    """Return new instance of the Rhodopirellula europaea SH398 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodopirellulaEuropaeaSh398(
 
     Returns
     -----------------------
-    Instace of RhodopirellulaEuropaeaSh398 graph.
+    Instace of Rhodopirellula europaea SH398 graph.
 
 	References
 	---------------------

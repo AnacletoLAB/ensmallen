@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalimicrobiumSpMj3.
+This file offers the methods to automatically retrieve the graph Salimicrobium sp. MJ3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalimicrobiumSpMj3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalimicrobiumSpMj3 graph.
+    """Return new instance of the Salimicrobium sp. MJ3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalimicrobiumSpMj3(
 
     Returns
     -----------------------
-    Instace of SalimicrobiumSpMj3 graph.
+    Instace of Salimicrobium sp. MJ3 graph.
 
 	References
 	---------------------

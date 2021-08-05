@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumScadc123.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium SCADC1_2_3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumScadc123(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumScadc123 graph.
+    """Return new instance of the Peptococcaceae bacterium SCADC1_2_3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumScadc123(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumScadc123 graph.
+    Instace of Peptococcaceae bacterium SCADC1_2_3 graph.
 
 	References
 	---------------------

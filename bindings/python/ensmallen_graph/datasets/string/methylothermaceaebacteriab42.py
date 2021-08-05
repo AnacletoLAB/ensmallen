@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylothermaceaeBacteriaB42.
+This file offers the methods to automatically retrieve the graph Methylothermaceae bacteria B42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylothermaceaeBacteriaB42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylothermaceaeBacteriaB42 graph.
+    """Return new instance of the Methylothermaceae bacteria B42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylothermaceaeBacteriaB42(
 
     Returns
     -----------------------
-    Instace of MethylothermaceaeBacteriaB42 graph.
+    Instace of Methylothermaceae bacteria B42 graph.
 
 	References
 	---------------------

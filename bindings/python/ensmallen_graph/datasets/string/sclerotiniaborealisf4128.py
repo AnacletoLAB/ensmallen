@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SclerotiniaBorealisF4128.
+This file offers the methods to automatically retrieve the graph Sclerotinia borealis F-4128.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SclerotiniaBorealisF4128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SclerotiniaBorealisF4128 graph.
+    """Return new instance of the Sclerotinia borealis F-4128 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SclerotiniaBorealisF4128(
 
     Returns
     -----------------------
-    Instace of SclerotiniaBorealisF4128 graph.
+    Instace of Sclerotinia borealis F-4128 graph.
 
 	References
 	---------------------

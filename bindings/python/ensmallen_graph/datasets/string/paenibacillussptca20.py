@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpTca20.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. TCA20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpTca20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpTca20 graph.
+    """Return new instance of the Paenibacillus sp. TCA20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpTca20(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpTca20 graph.
+    Instace of Paenibacillus sp. TCA20 graph.
 
 	References
 	---------------------

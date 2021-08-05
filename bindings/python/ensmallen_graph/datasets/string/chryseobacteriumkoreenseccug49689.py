@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumKoreenseCcug49689.
+This file offers the methods to automatically retrieve the graph Chryseobacterium koreense CCUG 49689.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumKoreenseCcug49689(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumKoreenseCcug49689 graph.
+    """Return new instance of the Chryseobacterium koreense CCUG 49689 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumKoreenseCcug49689(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumKoreenseCcug49689 graph.
+    Instace of Chryseobacterium koreense CCUG 49689 graph.
 
 	References
 	---------------------

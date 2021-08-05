@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumNk4a179.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium NK4A179.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumNk4a179(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumNk4a179 graph.
+    """Return new instance of the Lachnospiraceae bacterium NK4A179 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumNk4a179(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumNk4a179 graph.
+    Instace of Lachnospiraceae bacterium NK4A179 graph.
 
 	References
 	---------------------

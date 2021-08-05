@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaMattheei.
+This file offers the methods to automatically retrieve the graph Schistosoma mattheei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaMattheei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaMattheei graph.
+    """Return new instance of the Schistosoma mattheei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaMattheei(
 
     Returns
     -----------------------
-    Instace of SchistosomaMattheei graph.
+    Instace of Schistosoma mattheei graph.
 
 	References
 	---------------------

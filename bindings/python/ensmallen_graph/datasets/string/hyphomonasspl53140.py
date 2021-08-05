@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpL53140.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. L53140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpL53140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpL53140 graph.
+    """Return new instance of the Hyphomonas sp. L53140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasSpL53140(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpL53140 graph.
+    Instace of Hyphomonas sp. L53140 graph.
 
 	References
 	---------------------

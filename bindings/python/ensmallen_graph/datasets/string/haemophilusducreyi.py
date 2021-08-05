@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusDucreyi.
+This file offers the methods to automatically retrieve the graph Haemophilus ducreyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusDucreyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusDucreyi graph.
+    """Return new instance of the Haemophilus ducreyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaemophilusDucreyi(
 
     Returns
     -----------------------
-    Instace of HaemophilusDucreyi graph.
+    Instace of Haemophilus ducreyi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchmidhempeliaBombi.
+This file offers the methods to automatically retrieve the graph Schmidhempelia bombi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchmidhempeliaBombi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchmidhempeliaBombi graph.
+    """Return new instance of the Schmidhempelia bombi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchmidhempeliaBombi(
 
     Returns
     -----------------------
-    Instace of SchmidhempeliaBombi graph.
+    Instace of Schmidhempelia bombi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAcetothermiaBacteriumJdfr48.
+This file offers the methods to automatically retrieve the graph Candidatus Acetothermia bacterium JdFR-48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAcetothermiaBacteriumJdfr48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAcetothermiaBacteriumJdfr48 graph.
+    """Return new instance of the Candidatus Acetothermia bacterium JdFR-48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAcetothermiaBacteriumJdfr48(
 
     Returns
     -----------------------
-    Instace of CandidatusAcetothermiaBacteriumJdfr48 graph.
+    Instace of Candidatus Acetothermia bacterium JdFR-48 graph.
 
 	References
 	---------------------

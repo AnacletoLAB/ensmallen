@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMuralis.
+This file offers the methods to automatically retrieve the graph Bacillus muralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMuralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMuralis graph.
+    """Return new instance of the Bacillus muralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMuralis(
 
     Returns
     -----------------------
-    Instace of BacillusMuralis graph.
+    Instace of Bacillus muralis graph.
 
 	References
 	---------------------

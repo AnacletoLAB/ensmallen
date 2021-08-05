@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumLitorale.
+This file offers the methods to automatically retrieve the graph Clostridium litorale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumLitorale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumLitorale graph.
+    """Return new instance of the Clostridium litorale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumLitorale(
 
     Returns
     -----------------------
-    Instace of ClostridiumLitorale graph.
+    Instace of Clostridium litorale graph.
 
 	References
 	---------------------

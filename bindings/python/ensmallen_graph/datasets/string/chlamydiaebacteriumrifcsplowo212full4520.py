@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaeBacteriumRifcsplowo212Full4520.
+This file offers the methods to automatically retrieve the graph Chlamydiae bacterium RIFCSPLOWO2_12_FULL_45_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaeBacteriumRifcsplowo212Full4520(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaeBacteriumRifcsplowo212Full4520 graph.
+    """Return new instance of the Chlamydiae bacterium RIFCSPLOWO2_12_FULL_45_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaeBacteriumRifcsplowo212Full4520(
 
     Returns
     -----------------------
-    Instace of ChlamydiaeBacteriumRifcsplowo212Full4520 graph.
+    Instace of Chlamydiae bacterium RIFCSPLOWO2_12_FULL_45_20 graph.
 
 	References
 	---------------------

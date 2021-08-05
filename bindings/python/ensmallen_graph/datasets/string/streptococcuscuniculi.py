@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusCuniculi.
+This file offers the methods to automatically retrieve the graph Streptococcus cuniculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusCuniculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusCuniculi graph.
+    """Return new instance of the Streptococcus cuniculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusCuniculi(
 
     Returns
     -----------------------
-    Instace of StreptococcusCuniculi graph.
+    Instace of Streptococcus cuniculi graph.
 
 	References
 	---------------------

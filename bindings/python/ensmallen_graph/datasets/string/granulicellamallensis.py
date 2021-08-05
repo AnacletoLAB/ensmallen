@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulicellaMallensis.
+This file offers the methods to automatically retrieve the graph Granulicella mallensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulicellaMallensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulicellaMallensis graph.
+    """Return new instance of the Granulicella mallensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GranulicellaMallensis(
 
     Returns
     -----------------------
-    Instace of GranulicellaMallensis graph.
+    Instace of Granulicella mallensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumGw2011Gwc23313.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium GW2011_GWC2_33_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumGw2011Gwc23313(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumGw2011Gwc23313 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium GW2011_GWC2_33_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumGw2011Gwc23313(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumGw2011Gwc23313 graph.
+    Instace of Candidatus Peregrinibacteria bacterium GW2011_GWC2_33_13 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusTaiwanensisDsm18679.
+This file offers the methods to automatically retrieve the graph Paenibacillus taiwanensis DSM 18679.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusTaiwanensisDsm18679(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusTaiwanensisDsm18679 graph.
+    """Return new instance of the Paenibacillus taiwanensis DSM 18679 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusTaiwanensisDsm18679(
 
     Returns
     -----------------------
-    Instace of PaenibacillusTaiwanensisDsm18679 graph.
+    Instace of Paenibacillus taiwanensis DSM 18679 graph.
 
 	References
 	---------------------

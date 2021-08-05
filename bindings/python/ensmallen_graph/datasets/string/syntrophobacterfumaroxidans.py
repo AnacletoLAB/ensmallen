@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophobacterFumaroxidans.
+This file offers the methods to automatically retrieve the graph Syntrophobacter fumaroxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophobacterFumaroxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophobacterFumaroxidans graph.
+    """Return new instance of the Syntrophobacter fumaroxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SyntrophobacterFumaroxidans(
 
     Returns
     -----------------------
-    Instace of SyntrophobacterFumaroxidans graph.
+    Instace of Syntrophobacter fumaroxidans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumLuteum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium luteum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumLuteum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumLuteum graph.
+    """Return new instance of the Chryseobacterium luteum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumLuteum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumLuteum graph.
+    Instace of Chryseobacterium luteum graph.
 
 	References
 	---------------------

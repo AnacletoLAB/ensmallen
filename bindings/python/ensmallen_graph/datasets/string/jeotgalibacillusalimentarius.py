@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalibacillusAlimentarius.
+This file offers the methods to automatically retrieve the graph Jeotgalibacillus alimentarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalibacillusAlimentarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalibacillusAlimentarius graph.
+    """Return new instance of the Jeotgalibacillus alimentarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeotgalibacillusAlimentarius(
 
     Returns
     -----------------------
-    Instace of JeotgalibacillusAlimentarius graph.
+    Instace of Jeotgalibacillus alimentarius graph.
 
 	References
 	---------------------

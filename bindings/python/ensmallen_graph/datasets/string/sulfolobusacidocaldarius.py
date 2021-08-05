@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusAcidocaldarius.
+This file offers the methods to automatically retrieve the graph Sulfolobus acidocaldarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusAcidocaldarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusAcidocaldarius graph.
+    """Return new instance of the Sulfolobus acidocaldarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfolobusAcidocaldarius(
 
     Returns
     -----------------------
-    Instace of SulfolobusAcidocaldarius graph.
+    Instace of Sulfolobus acidocaldarius graph.
 
 	References
 	---------------------

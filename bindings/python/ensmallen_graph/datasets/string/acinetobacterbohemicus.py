@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBohemicus.
+This file offers the methods to automatically retrieve the graph Acinetobacter bohemicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBohemicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBohemicus graph.
+    """Return new instance of the Acinetobacter bohemicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterBohemicus(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBohemicus graph.
+    Instace of Acinetobacter bohemicus graph.
 
 	References
 	---------------------

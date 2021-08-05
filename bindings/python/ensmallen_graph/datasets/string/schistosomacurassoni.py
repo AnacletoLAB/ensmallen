@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaCurassoni.
+This file offers the methods to automatically retrieve the graph Schistosoma curassoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaCurassoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaCurassoni graph.
+    """Return new instance of the Schistosoma curassoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaCurassoni(
 
     Returns
     -----------------------
-    Instace of SchistosomaCurassoni graph.
+    Instace of Schistosoma curassoni graph.
 
 	References
 	---------------------

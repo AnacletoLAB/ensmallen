@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KordiaZhangzhouensis.
+This file offers the methods to automatically retrieve the graph Kordia zhangzhouensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KordiaZhangzhouensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KordiaZhangzhouensis graph.
+    """Return new instance of the Kordia zhangzhouensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KordiaZhangzhouensis(
 
     Returns
     -----------------------
-    Instace of KordiaZhangzhouensis graph.
+    Instace of Kordia zhangzhouensis graph.
 
 	References
 	---------------------

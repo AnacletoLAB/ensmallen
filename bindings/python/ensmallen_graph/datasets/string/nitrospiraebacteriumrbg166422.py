@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumRbg166422.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium RBG_16_64_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumRbg166422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumRbg166422 graph.
+    """Return new instance of the Nitrospirae bacterium RBG_16_64_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumRbg166422(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumRbg166422 graph.
+    Instace of Nitrospirae bacterium RBG_16_64_22 graph.
 
 	References
 	---------------------

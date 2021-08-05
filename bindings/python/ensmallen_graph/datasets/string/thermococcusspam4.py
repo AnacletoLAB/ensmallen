@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusSpAm4.
+This file offers the methods to automatically retrieve the graph Thermococcus sp. AM4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusSpAm4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusSpAm4 graph.
+    """Return new instance of the Thermococcus sp. AM4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusSpAm4(
 
     Returns
     -----------------------
-    Instace of ThermococcusSpAm4 graph.
+    Instace of Thermococcus sp. AM4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaMarginaleMaries.
+This file offers the methods to automatically retrieve the graph Anaplasma marginale Maries.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaplasmaMarginaleMaries(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaMarginaleMaries graph.
+    """Return new instance of the Anaplasma marginale Maries graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaplasmaMarginaleMaries(
 
     Returns
     -----------------------
-    Instace of AnaplasmaMarginaleMaries graph.
+    Instace of Anaplasma marginale Maries graph.
 
 	References
 	---------------------

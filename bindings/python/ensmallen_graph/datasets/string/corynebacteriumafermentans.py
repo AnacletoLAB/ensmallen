@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumAfermentans.
+This file offers the methods to automatically retrieve the graph Corynebacterium afermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumAfermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumAfermentans graph.
+    """Return new instance of the Corynebacterium afermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumAfermentans(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumAfermentans graph.
+    Instace of Corynebacterium afermentans graph.
 
 	References
 	---------------------

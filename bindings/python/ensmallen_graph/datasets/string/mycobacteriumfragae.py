@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumFragae.
+This file offers the methods to automatically retrieve the graph Mycobacterium fragae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumFragae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumFragae graph.
+    """Return new instance of the Mycobacterium fragae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumFragae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumFragae graph.
+    Instace of Mycobacterium fragae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrococcusRivularisNies593.
+This file offers the methods to automatically retrieve the graph Hydrococcus rivularis NIES-593.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrococcusRivularisNies593(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrococcusRivularisNies593 graph.
+    """Return new instance of the Hydrococcus rivularis NIES-593 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrococcusRivularisNies593(
 
     Returns
     -----------------------
-    Instace of HydrococcusRivularisNies593 graph.
+    Instace of Hydrococcus rivularis NIES-593 graph.
 
 	References
 	---------------------

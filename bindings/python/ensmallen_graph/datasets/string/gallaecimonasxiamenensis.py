@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallaecimonasXiamenensis.
+This file offers the methods to automatically retrieve the graph Gallaecimonas xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallaecimonasXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallaecimonasXiamenensis graph.
+    """Return new instance of the Gallaecimonas xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GallaecimonasXiamenensis(
 
     Returns
     -----------------------
-    Instace of GallaecimonasXiamenensis graph.
+    Instace of Gallaecimonas xiamenensis graph.
 
 	References
 	---------------------

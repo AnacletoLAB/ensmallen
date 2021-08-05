@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSericytochromatiaBacteriumS15bMn24Raac196.
+This file offers the methods to automatically retrieve the graph Candidatus Sericytochromatia bacterium S15B-MN24 RAAC_196.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSericytochromatiaBacteriumS15bMn24Raac196(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSericytochromatiaBacteriumS15bMn24Raac196 graph.
+    """Return new instance of the Candidatus Sericytochromatia bacterium S15B-MN24 RAAC_196 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSericytochromatiaBacteriumS15bMn24Raac196(
 
     Returns
     -----------------------
-    Instace of CandidatusSericytochromatiaBacteriumS15bMn24Raac196 graph.
+    Instace of Candidatus Sericytochromatia bacterium S15B-MN24 RAAC_196 graph.
 
 	References
 	---------------------

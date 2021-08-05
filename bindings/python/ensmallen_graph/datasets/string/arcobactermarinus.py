@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterMarinus.
+This file offers the methods to automatically retrieve the graph Arcobacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterMarinus graph.
+    """Return new instance of the Arcobacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcobacterMarinus(
 
     Returns
     -----------------------
-    Instace of ArcobacterMarinus graph.
+    Instace of Arcobacter marinus graph.
 
 	References
 	---------------------

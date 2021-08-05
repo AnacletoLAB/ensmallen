@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioParadoxusArh1.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio paradoxus ARh 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioParadoxusArh1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioParadoxusArh1 graph.
+    """Return new instance of the Thioalkalivibrio paradoxus ARh 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioalkalivibrioParadoxusArh1(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioParadoxusArh1 graph.
+    Instace of Thioalkalivibrio paradoxus ARh 1 graph.
 
 	References
 	---------------------

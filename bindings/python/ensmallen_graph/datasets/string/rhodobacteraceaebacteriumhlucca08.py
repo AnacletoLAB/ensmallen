@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumHlucca08.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium HLUCCA08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumHlucca08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumHlucca08 graph.
+    """Return new instance of the Rhodobacteraceae bacterium HLUCCA08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteraceaeBacteriumHlucca08(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumHlucca08 graph.
+    Instace of Rhodobacteraceae bacterium HLUCCA08 graph.
 
 	References
 	---------------------

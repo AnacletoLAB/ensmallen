@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpEjy3.
+This file offers the methods to automatically retrieve the graph Vibrio sp. EJY3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpEjy3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpEjy3 graph.
+    """Return new instance of the Vibrio sp. EJY3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioSpEjy3(
 
     Returns
     -----------------------
-    Instace of VibrioSpEjy3 graph.
+    Instace of Vibrio sp. EJY3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpJce.
+This file offers the methods to automatically retrieve the graph Bacillus sp. JCE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpJce(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpJce graph.
+    """Return new instance of the Bacillus sp. JCE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpJce(
 
     Returns
     -----------------------
-    Instace of BacillusSpJce graph.
+    Instace of Bacillus sp. JCE graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogymnoascusSp05ny08.
+This file offers the methods to automatically retrieve the graph Pseudogymnoascus sp. 05NY08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogymnoascusSp05ny08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogymnoascusSp05ny08 graph.
+    """Return new instance of the Pseudogymnoascus sp. 05NY08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudogymnoascusSp05ny08(
 
     Returns
     -----------------------
-    Instace of PseudogymnoascusSp05ny08 graph.
+    Instace of Pseudogymnoascus sp. 05NY08 graph.
 
 	References
 	---------------------

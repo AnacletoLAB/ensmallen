@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSp1nla3e.
+This file offers the methods to automatically retrieve the graph Bacillus sp. 1NLA3E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSp1nla3e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSp1nla3e graph.
+    """Return new instance of the Bacillus sp. 1NLA3E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSp1nla3e(
 
     Returns
     -----------------------
-    Instace of BacillusSp1nla3e graph.
+    Instace of Bacillus sp. 1NLA3E graph.
 
 	References
 	---------------------

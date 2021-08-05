@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusSpJf8.
+This file offers the methods to automatically retrieve the graph Geobacillus sp. JF8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusSpJf8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusSpJf8 graph.
+    """Return new instance of the Geobacillus sp. JF8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusSpJf8(
 
     Returns
     -----------------------
-    Instace of GeobacillusSpJf8 graph.
+    Instace of Geobacillus sp. JF8 graph.
 
 	References
 	---------------------

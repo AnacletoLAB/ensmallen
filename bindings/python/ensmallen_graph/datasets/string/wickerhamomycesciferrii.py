@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WickerhamomycesCiferrii.
+This file offers the methods to automatically retrieve the graph Wickerhamomyces ciferrii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WickerhamomycesCiferrii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WickerhamomycesCiferrii graph.
+    """Return new instance of the Wickerhamomyces ciferrii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WickerhamomycesCiferrii(
 
     Returns
     -----------------------
-    Instace of WickerhamomycesCiferrii graph.
+    Instace of Wickerhamomyces ciferrii graph.
 
 	References
 	---------------------

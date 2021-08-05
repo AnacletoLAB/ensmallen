@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterKorlensis.
+This file offers the methods to automatically retrieve the graph Pontibacter korlensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterKorlensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterKorlensis graph.
+    """Return new instance of the Pontibacter korlensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterKorlensis(
 
     Returns
     -----------------------
-    Instace of PontibacterKorlensis graph.
+    Instace of Pontibacter korlensis graph.
 
 	References
 	---------------------

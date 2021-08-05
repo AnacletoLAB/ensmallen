@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusOdorifer.
+This file offers the methods to automatically retrieve the graph Paenibacillus odorifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusOdorifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusOdorifer graph.
+    """Return new instance of the Paenibacillus odorifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusOdorifer(
 
     Returns
     -----------------------
-    Instace of PaenibacillusOdorifer graph.
+    Instace of Paenibacillus odorifer graph.
 
 	References
 	---------------------

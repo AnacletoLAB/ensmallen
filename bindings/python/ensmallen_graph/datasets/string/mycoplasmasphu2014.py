@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSpHu2014.
+This file offers the methods to automatically retrieve the graph Mycoplasma sp. HU2014.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSpHu2014(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSpHu2014 graph.
+    """Return new instance of the Mycoplasma sp. HU2014 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaSpHu2014(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSpHu2014 graph.
+    Instace of Mycoplasma sp. HU2014 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaTularensisNovicida.
+This file offers the methods to automatically retrieve the graph Francisella tularensis novicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaTularensisNovicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaTularensisNovicida graph.
+    """Return new instance of the Francisella tularensis novicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaTularensisNovicida(
 
     Returns
     -----------------------
-    Instace of FrancisellaTularensisNovicida graph.
+    Instace of Francisella tularensis novicida graph.
 
 	References
 	---------------------

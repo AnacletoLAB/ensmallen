@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAcidianusCopahuensis.
+This file offers the methods to automatically retrieve the graph Candidatus Acidianus copahuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAcidianusCopahuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAcidianusCopahuensis graph.
+    """Return new instance of the Candidatus Acidianus copahuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAcidianusCopahuensis(
 
     Returns
     -----------------------
-    Instace of CandidatusAcidianusCopahuensis graph.
+    Instace of Candidatus Acidianus copahuensis graph.
 
 	References
 	---------------------

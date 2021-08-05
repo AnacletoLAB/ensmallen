@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprococcusPhoceensis.
+This file offers the methods to automatically retrieve the graph Coprococcus phoceensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprococcusPhoceensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprococcusPhoceensis graph.
+    """Return new instance of the Coprococcus phoceensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprococcusPhoceensis(
 
     Returns
     -----------------------
-    Instace of CoprococcusPhoceensis graph.
+    Instace of Coprococcus phoceensis graph.
 
 	References
 	---------------------

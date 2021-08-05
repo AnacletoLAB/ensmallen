@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesSubtropicus.
+This file offers the methods to automatically retrieve the graph Actinoplanes subtropicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesSubtropicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesSubtropicus graph.
+    """Return new instance of the Actinoplanes subtropicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesSubtropicus(
 
     Returns
     -----------------------
-    Instace of ActinoplanesSubtropicus graph.
+    Instace of Actinoplanes subtropicus graph.
 
 	References
 	---------------------

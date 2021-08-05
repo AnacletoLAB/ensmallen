@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusCarnicancri.
+This file offers the methods to automatically retrieve the graph Salinicoccus carnicancri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusCarnicancri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusCarnicancri graph.
+    """Return new instance of the Salinicoccus carnicancri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinicoccusCarnicancri(
 
     Returns
     -----------------------
-    Instace of SalinicoccusCarnicancri graph.
+    Instace of Salinicoccus carnicancri graph.
 
 	References
 	---------------------

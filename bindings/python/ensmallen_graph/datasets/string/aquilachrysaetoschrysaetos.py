@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquilaChrysaetosChrysaetos.
+This file offers the methods to automatically retrieve the graph Aquila chrysaetos chrysaetos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquilaChrysaetosChrysaetos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquilaChrysaetosChrysaetos graph.
+    """Return new instance of the Aquila chrysaetos chrysaetos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquilaChrysaetosChrysaetos(
 
     Returns
     -----------------------
-    Instace of AquilaChrysaetosChrysaetos graph.
+    Instace of Aquila chrysaetos chrysaetos graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZetaproteobacteriaBacteriumTag1.
+This file offers the methods to automatically retrieve the graph Zetaproteobacteria bacterium TAG1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZetaproteobacteriaBacteriumTag1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZetaproteobacteriaBacteriumTag1 graph.
+    """Return new instance of the Zetaproteobacteria bacterium TAG1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZetaproteobacteriaBacteriumTag1(
 
     Returns
     -----------------------
-    Instace of ZetaproteobacteriaBacteriumTag1 graph.
+    Instace of Zetaproteobacteria bacterium TAG1 graph.
 
 	References
 	---------------------

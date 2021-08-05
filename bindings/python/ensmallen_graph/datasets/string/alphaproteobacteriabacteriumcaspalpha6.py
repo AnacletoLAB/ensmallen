@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumCaspAlpha6.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium casp-alpha6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumCaspAlpha6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumCaspAlpha6 graph.
+    """Return new instance of the Alphaproteobacteria bacterium casp-alpha6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumCaspAlpha6(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumCaspAlpha6 graph.
+    Instace of Alphaproteobacteria bacterium casp-alpha6 graph.
 
 	References
 	---------------------

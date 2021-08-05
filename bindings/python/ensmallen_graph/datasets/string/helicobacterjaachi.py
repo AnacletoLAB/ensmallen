@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterJaachi.
+This file offers the methods to automatically retrieve the graph Helicobacter jaachi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterJaachi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterJaachi graph.
+    """Return new instance of the Helicobacter jaachi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterJaachi(
 
     Returns
     -----------------------
-    Instace of HelicobacterJaachi graph.
+    Instace of Helicobacter jaachi graph.
 
 	References
 	---------------------

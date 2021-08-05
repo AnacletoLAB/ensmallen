@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurellaAcetivorans.
+This file offers the methods to automatically retrieve the graph Desulfurella acetivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurellaAcetivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurellaAcetivorans graph.
+    """Return new instance of the Desulfurella acetivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurellaAcetivorans(
 
     Returns
     -----------------------
-    Instace of DesulfurellaAcetivorans graph.
+    Instace of Desulfurella acetivorans graph.
 
 	References
 	---------------------

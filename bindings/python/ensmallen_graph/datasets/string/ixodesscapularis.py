@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IxodesScapularis.
+This file offers the methods to automatically retrieve the graph Ixodes scapularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IxodesScapularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IxodesScapularis graph.
+    """Return new instance of the Ixodes scapularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IxodesScapularis(
 
     Returns
     -----------------------
-    Instace of IxodesScapularis graph.
+    Instace of Ixodes scapularis graph.
 
 	References
 	---------------------

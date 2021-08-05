@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaeroarchaeumSulfurireducens.
+This file offers the methods to automatically retrieve the graph Halanaeroarchaeum sulfurireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaeroarchaeumSulfurireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaeroarchaeumSulfurireducens graph.
+    """Return new instance of the Halanaeroarchaeum sulfurireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalanaeroarchaeumSulfurireducens(
 
     Returns
     -----------------------
-    Instace of HalanaeroarchaeumSulfurireducens graph.
+    Instace of Halanaeroarchaeum sulfurireducens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSeohaensis.
+This file offers the methods to automatically retrieve the graph Acinetobacter seohaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSeohaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSeohaensis graph.
+    """Return new instance of the Acinetobacter seohaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSeohaensis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSeohaensis graph.
+    Instace of Acinetobacter seohaensis graph.
 
 	References
 	---------------------

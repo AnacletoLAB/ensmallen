@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpV48.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. V48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpV48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpV48 graph.
+    """Return new instance of the Pedobacter sp. V48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterSpV48(
 
     Returns
     -----------------------
-    Instace of PedobacterSpV48 graph.
+    Instace of Pedobacter sp. V48 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetakosakoniaMassiliensisJc163.
+This file offers the methods to automatically retrieve the graph Metakosakonia massiliensis JC163.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetakosakoniaMassiliensisJc163(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetakosakoniaMassiliensisJc163 graph.
+    """Return new instance of the Metakosakonia massiliensis JC163 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetakosakoniaMassiliensisJc163(
 
     Returns
     -----------------------
-    Instace of MetakosakoniaMassiliensisJc163 graph.
+    Instace of Metakosakonia massiliensis JC163 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasLutea.
+This file offers the methods to automatically retrieve the graph Halomonas lutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasLutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasLutea graph.
+    """Return new instance of the Halomonas lutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasLutea(
 
     Returns
     -----------------------
-    Instace of HalomonasLutea graph.
+    Instace of Halomonas lutea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSphenisciDsm44792.
+This file offers the methods to automatically retrieve the graph Corynebacterium sphenisci DSM 44792.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSphenisciDsm44792(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSphenisciDsm44792 graph.
+    """Return new instance of the Corynebacterium sphenisci DSM 44792 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSphenisciDsm44792(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSphenisciDsm44792 graph.
+    Instace of Corynebacterium sphenisci DSM 44792 graph.
 
 	References
 	---------------------

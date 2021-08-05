@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodovulumSpP5.
+This file offers the methods to automatically retrieve the graph Rhodovulum sp. P5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodovulumSpP5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodovulumSpP5 graph.
+    """Return new instance of the Rhodovulum sp. P5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodovulumSpP5(
 
     Returns
     -----------------------
-    Instace of RhodovulumSpP5 graph.
+    Instace of Rhodovulum sp. P5 graph.
 
 	References
 	---------------------

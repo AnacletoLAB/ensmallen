@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SecondaryEndosymbiontOfTrabutinaMannipara.
+This file offers the methods to automatically retrieve the graph secondary endosymbiont of Trabutina mannipara.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SecondaryEndosymbiontOfTrabutinaMannipara graph.
+    """Return new instance of the secondary endosymbiont of Trabutina mannipara graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SecondaryEndosymbiontOfTrabutinaMannipara(
 
     Returns
     -----------------------
-    Instace of SecondaryEndosymbiontOfTrabutinaMannipara graph.
+    Instace of secondary endosymbiont of Trabutina mannipara graph.
 
 	References
 	---------------------

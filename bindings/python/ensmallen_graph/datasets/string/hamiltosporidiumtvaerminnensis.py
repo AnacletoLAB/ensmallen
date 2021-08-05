@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HamiltosporidiumTvaerminnensis.
+This file offers the methods to automatically retrieve the graph Hamiltosporidium tvaerminnensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HamiltosporidiumTvaerminnensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HamiltosporidiumTvaerminnensis graph.
+    """Return new instance of the Hamiltosporidium tvaerminnensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HamiltosporidiumTvaerminnensis(
 
     Returns
     -----------------------
-    Instace of HamiltosporidiumTvaerminnensis graph.
+    Instace of Hamiltosporidium tvaerminnensis graph.
 
 	References
 	---------------------

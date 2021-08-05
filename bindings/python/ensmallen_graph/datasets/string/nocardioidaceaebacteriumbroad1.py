@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidaceaeBacteriumBroad1.
+This file offers the methods to automatically retrieve the graph Nocardioidaceae bacterium Broad1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidaceaeBacteriumBroad1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidaceaeBacteriumBroad1 graph.
+    """Return new instance of the Nocardioidaceae bacterium Broad1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardioidaceaeBacteriumBroad1(
 
     Returns
     -----------------------
-    Instace of NocardioidaceaeBacteriumBroad1 graph.
+    Instace of Nocardioidaceae bacterium Broad1 graph.
 
 	References
 	---------------------

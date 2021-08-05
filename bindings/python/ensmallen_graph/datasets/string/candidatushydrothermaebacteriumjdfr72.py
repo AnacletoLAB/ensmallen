@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHydrothermaeBacteriumJdfr72.
+This file offers the methods to automatically retrieve the graph Candidatus Hydrothermae bacterium JdFR-72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHydrothermaeBacteriumJdfr72(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHydrothermaeBacteriumJdfr72 graph.
+    """Return new instance of the Candidatus Hydrothermae bacterium JdFR-72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHydrothermaeBacteriumJdfr72(
 
     Returns
     -----------------------
-    Instace of CandidatusHydrothermaeBacteriumJdfr72 graph.
+    Instace of Candidatus Hydrothermae bacterium JdFR-72 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUc33.
+This file offers the methods to automatically retrieve the graph socfb-UC33.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUc33(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUc33 graph.
+    """Return new instance of the socfb-UC33 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUc33(
 
     Returns
     -----------------------
-    Instace of SocfbUc33 graph.
+    Instace of socfb-UC33 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpRedseaS34B3.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. REDSEA-S34_B3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpRedseaS34B3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpRedseaS34B3 graph.
+    """Return new instance of the Erythrobacter sp. REDSEA-S34_B3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpRedseaS34B3(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpRedseaS34B3 graph.
+    Instace of Erythrobacter sp. REDSEA-S34_B3 graph.
 
 	References
 	---------------------

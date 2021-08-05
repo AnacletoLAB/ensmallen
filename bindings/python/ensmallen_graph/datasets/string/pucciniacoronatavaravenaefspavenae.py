@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaCoronataVarAvenaeFSpAvenae.
+This file offers the methods to automatically retrieve the graph Puccinia coronata var. avenae f. sp. avenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaCoronataVarAvenaeFSpAvenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaCoronataVarAvenaeFSpAvenae graph.
+    """Return new instance of the Puccinia coronata var. avenae f. sp. avenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PucciniaCoronataVarAvenaeFSpAvenae(
 
     Returns
     -----------------------
-    Instace of PucciniaCoronataVarAvenaeFSpAvenae graph.
+    Instace of Puccinia coronata var. avenae f. sp. avenae graph.
 
 	References
 	---------------------

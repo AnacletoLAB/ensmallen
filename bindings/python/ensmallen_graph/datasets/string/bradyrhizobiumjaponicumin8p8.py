@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumJaponicumIn8p8.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium japonicum in8p8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumJaponicumIn8p8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumJaponicumIn8p8 graph.
+    """Return new instance of the Bradyrhizobium japonicum in8p8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumJaponicumIn8p8(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumJaponicumIn8p8 graph.
+    Instace of Bradyrhizobium japonicum in8p8 graph.
 
 	References
 	---------------------

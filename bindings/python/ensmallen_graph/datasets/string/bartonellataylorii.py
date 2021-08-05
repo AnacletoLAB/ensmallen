@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaTaylorii.
+This file offers the methods to automatically retrieve the graph Bartonella taylorii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaTaylorii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaTaylorii graph.
+    """Return new instance of the Bartonella taylorii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaTaylorii(
 
     Returns
     -----------------------
-    Instace of BartonellaTaylorii graph.
+    Instace of Bartonella taylorii graph.
 
 	References
 	---------------------

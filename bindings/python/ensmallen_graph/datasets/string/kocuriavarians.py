@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaVarians.
+This file offers the methods to automatically retrieve the graph Kocuria varians.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaVarians(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaVarians graph.
+    """Return new instance of the Kocuria varians graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KocuriaVarians(
 
     Returns
     -----------------------
-    Instace of KocuriaVarians graph.
+    Instace of Kocuria varians graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSp73145.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. 73-145.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSp73145(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSp73145 graph.
+    """Return new instance of the Cellulomonas sp. 73-145 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasSp73145(
 
     Returns
     -----------------------
-    Instace of CellulomonasSp73145 graph.
+    Instace of Cellulomonas sp. 73-145 graph.
 
 	References
 	---------------------

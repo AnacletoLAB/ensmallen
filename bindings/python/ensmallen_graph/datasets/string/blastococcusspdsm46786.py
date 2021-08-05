@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastococcusSpDsm46786.
+This file offers the methods to automatically retrieve the graph Blastococcus sp. DSM 46786.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastococcusSpDsm46786(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastococcusSpDsm46786 graph.
+    """Return new instance of the Blastococcus sp. DSM 46786 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastococcusSpDsm46786(
 
     Returns
     -----------------------
-    Instace of BlastococcusSpDsm46786 graph.
+    Instace of Blastococcus sp. DSM 46786 graph.
 
 	References
 	---------------------

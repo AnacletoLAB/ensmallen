@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterCryohalolentis.
+This file offers the methods to automatically retrieve the graph Psychrobacter cryohalolentis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterCryohalolentis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterCryohalolentis graph.
+    """Return new instance of the Psychrobacter cryohalolentis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterCryohalolentis(
 
     Returns
     -----------------------
-    Instace of PsychrobacterCryohalolentis graph.
+    Instace of Psychrobacter cryohalolentis graph.
 
 	References
 	---------------------

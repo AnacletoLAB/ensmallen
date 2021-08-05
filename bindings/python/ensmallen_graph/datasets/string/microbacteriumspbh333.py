@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpBh333.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. BH-3-3-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpBh333(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpBh333 graph.
+    """Return new instance of the Microbacterium sp. BH-3-3-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpBh333(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpBh333 graph.
+    Instace of Microbacterium sp. BH-3-3-3 graph.
 
 	References
 	---------------------

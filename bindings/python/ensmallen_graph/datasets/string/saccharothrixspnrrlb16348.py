@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharothrixSpNrrlB16348.
+This file offers the methods to automatically retrieve the graph Saccharothrix sp. NRRL B-16348.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharothrixSpNrrlB16348(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharothrixSpNrrlB16348 graph.
+    """Return new instance of the Saccharothrix sp. NRRL B-16348 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharothrixSpNrrlB16348(
 
     Returns
     -----------------------
-    Instace of SaccharothrixSpNrrlB16348 graph.
+    Instace of Saccharothrix sp. NRRL B-16348 graph.
 
 	References
 	---------------------

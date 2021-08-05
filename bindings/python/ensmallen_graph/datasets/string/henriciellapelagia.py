@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HenriciellaPelagia.
+This file offers the methods to automatically retrieve the graph Henriciella pelagia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HenriciellaPelagia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HenriciellaPelagia graph.
+    """Return new instance of the Henriciella pelagia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HenriciellaPelagia(
 
     Returns
     -----------------------
-    Instace of HenriciellaPelagia graph.
+    Instace of Henriciella pelagia graph.
 
 	References
 	---------------------

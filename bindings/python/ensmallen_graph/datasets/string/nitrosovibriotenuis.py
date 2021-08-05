@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosovibrioTenuis.
+This file offers the methods to automatically retrieve the graph Nitrosovibrio tenuis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosovibrioTenuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosovibrioTenuis graph.
+    """Return new instance of the Nitrosovibrio tenuis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosovibrioTenuis(
 
     Returns
     -----------------------
-    Instace of NitrosovibrioTenuis graph.
+    Instace of Nitrosovibrio tenuis graph.
 
 	References
 	---------------------

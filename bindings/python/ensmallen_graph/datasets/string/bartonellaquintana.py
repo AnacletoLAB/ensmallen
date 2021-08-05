@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaQuintana.
+This file offers the methods to automatically retrieve the graph Bartonella quintana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaQuintana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaQuintana graph.
+    """Return new instance of the Bartonella quintana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaQuintana(
 
     Returns
     -----------------------
-    Instace of BartonellaQuintana graph.
+    Instace of Bartonella quintana graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheobromaCacao.
+This file offers the methods to automatically retrieve the graph Theobroma cacao.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheobromaCacao(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheobromaCacao graph.
+    """Return new instance of the Theobroma cacao graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TheobromaCacao(
 
     Returns
     -----------------------
-    Instace of TheobromaCacao graph.
+    Instace of Theobroma cacao graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCattleya.
+This file offers the methods to automatically retrieve the graph Streptomyces cattleya.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCattleya(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCattleya graph.
+    """Return new instance of the Streptomyces cattleya graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCattleya(
 
     Returns
     -----------------------
-    Instace of StreptomycesCattleya graph.
+    Instace of Streptomyces cattleya graph.
 
 	References
 	---------------------

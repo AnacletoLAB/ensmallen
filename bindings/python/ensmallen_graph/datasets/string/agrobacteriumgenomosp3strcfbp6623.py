@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumGenomosp3StrCfbp6623.
+This file offers the methods to automatically retrieve the graph Agrobacterium genomosp. 3 str. CFBP 6623.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumGenomosp3StrCfbp6623(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumGenomosp3StrCfbp6623 graph.
+    """Return new instance of the Agrobacterium genomosp. 3 str. CFBP 6623 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumGenomosp3StrCfbp6623(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumGenomosp3StrCfbp6623 graph.
+    Instace of Agrobacterium genomosp. 3 str. CFBP 6623 graph.
 
 	References
 	---------------------

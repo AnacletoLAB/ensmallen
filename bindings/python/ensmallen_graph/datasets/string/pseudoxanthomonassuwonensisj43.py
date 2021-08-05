@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSuwonensisJ43.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas suwonensis J43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSuwonensisJ43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSuwonensisJ43 graph.
+    """Return new instance of the Pseudoxanthomonas suwonensis J43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoxanthomonasSuwonensisJ43(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSuwonensisJ43 graph.
+    Instace of Pseudoxanthomonas suwonensis J43 graph.
 
 	References
 	---------------------

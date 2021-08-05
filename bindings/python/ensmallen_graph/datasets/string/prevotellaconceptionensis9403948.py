@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaConceptionensis9403948.
+This file offers the methods to automatically retrieve the graph Prevotella conceptionensis 9403948.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaConceptionensis9403948(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaConceptionensis9403948 graph.
+    """Return new instance of the Prevotella conceptionensis 9403948 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaConceptionensis9403948(
 
     Returns
     -----------------------
-    Instace of PrevotellaConceptionensis9403948 graph.
+    Instace of Prevotella conceptionensis 9403948 graph.
 
 	References
 	---------------------

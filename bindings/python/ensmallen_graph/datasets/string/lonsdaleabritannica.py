@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LonsdaleaBritannica.
+This file offers the methods to automatically retrieve the graph Lonsdalea britannica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LonsdaleaBritannica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LonsdaleaBritannica graph.
+    """Return new instance of the Lonsdalea britannica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LonsdaleaBritannica(
 
     Returns
     -----------------------
-    Instace of LonsdaleaBritannica graph.
+    Instace of Lonsdalea britannica graph.
 
 	References
 	---------------------

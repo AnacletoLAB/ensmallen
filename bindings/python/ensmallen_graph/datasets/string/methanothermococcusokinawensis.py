@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermococcusOkinawensis.
+This file offers the methods to automatically retrieve the graph Methanothermococcus okinawensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermococcusOkinawensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermococcusOkinawensis graph.
+    """Return new instance of the Methanothermococcus okinawensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanothermococcusOkinawensis(
 
     Returns
     -----------------------
-    Instace of MethanothermococcusOkinawensis graph.
+    Instace of Methanothermococcus okinawensis graph.
 
 	References
 	---------------------

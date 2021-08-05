@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSpeluncaeNbrc108251.
+This file offers the methods to automatically retrieve the graph Nocardia speluncae NBRC 108251.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSpeluncaeNbrc108251(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSpeluncaeNbrc108251 graph.
+    """Return new instance of the Nocardia speluncae NBRC 108251 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaSpeluncaeNbrc108251(
 
     Returns
     -----------------------
-    Instace of NocardiaSpeluncaeNbrc108251 graph.
+    Instace of Nocardia speluncae NBRC 108251 graph.
 
 	References
 	---------------------

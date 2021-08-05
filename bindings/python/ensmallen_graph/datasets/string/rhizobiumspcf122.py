@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpCf122.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. CF122.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpCf122(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpCf122 graph.
+    """Return new instance of the Rhizobium sp. CF122 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpCf122(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpCf122 graph.
+    Instace of Rhizobium sp. CF122 graph.
 
 	References
 	---------------------

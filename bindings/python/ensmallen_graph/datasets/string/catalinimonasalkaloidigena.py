@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatalinimonasAlkaloidigena.
+This file offers the methods to automatically retrieve the graph Catalinimonas alkaloidigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatalinimonasAlkaloidigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatalinimonasAlkaloidigena graph.
+    """Return new instance of the Catalinimonas alkaloidigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CatalinimonasAlkaloidigena(
 
     Returns
     -----------------------
-    Instace of CatalinimonasAlkaloidigena graph.
+    Instace of Catalinimonas alkaloidigena graph.
 
 	References
 	---------------------

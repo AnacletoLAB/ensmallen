@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterGlacincola.
+This file offers the methods to automatically retrieve the graph Psychrobacter glacincola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterGlacincola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterGlacincola graph.
+    """Return new instance of the Psychrobacter glacincola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterGlacincola(
 
     Returns
     -----------------------
-    Instace of PsychrobacterGlacincola graph.
+    Instace of Psychrobacter glacincola graph.
 
 	References
 	---------------------

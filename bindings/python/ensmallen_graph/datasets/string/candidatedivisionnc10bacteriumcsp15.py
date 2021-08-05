@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionNc10BacteriumCsp15.
+This file offers the methods to automatically retrieve the graph candidate division NC10 bacterium CSP1-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionNc10BacteriumCsp15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionNc10BacteriumCsp15 graph.
+    """Return new instance of the candidate division NC10 bacterium CSP1-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionNc10BacteriumCsp15(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionNc10BacteriumCsp15 graph.
+    Instace of candidate division NC10 bacterium CSP1-5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCoagulans36d1.
+This file offers the methods to automatically retrieve the graph Bacillus coagulans 36D1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCoagulans36d1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCoagulans36d1 graph.
+    """Return new instance of the Bacillus coagulans 36D1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusCoagulans36d1(
 
     Returns
     -----------------------
-    Instace of BacillusCoagulans36d1 graph.
+    Instace of Bacillus coagulans 36D1 graph.
 
 	References
 	---------------------

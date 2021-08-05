@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumSpRac06.
+This file offers the methods to automatically retrieve the graph Agrobacterium sp. RAC06.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumSpRac06(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumSpRac06 graph.
+    """Return new instance of the Agrobacterium sp. RAC06 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumSpRac06(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumSpRac06 graph.
+    Instace of Agrobacterium sp. RAC06 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumDurum.
+This file offers the methods to automatically retrieve the graph Corynebacterium durum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumDurum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumDurum graph.
+    """Return new instance of the Corynebacterium durum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumDurum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumDurum graph.
+    Instace of Corynebacterium durum graph.
 
 	References
 	---------------------

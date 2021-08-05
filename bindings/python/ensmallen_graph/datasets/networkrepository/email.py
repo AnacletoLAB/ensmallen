@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Email.
+This file offers the methods to automatically retrieve the graph email.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Email(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Email graph.
+    """Return new instance of the email graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Email(
 
     Returns
     -----------------------
-    Instace of Email graph.
+    Instace of email graph.
 
 	References
 	---------------------

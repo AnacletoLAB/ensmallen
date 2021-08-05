@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioDesulfuricansNd132.
+This file offers the methods to automatically retrieve the graph Desulfovibrio desulfuricans ND132.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioDesulfuricansNd132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioDesulfuricansNd132 graph.
+    """Return new instance of the Desulfovibrio desulfuricans ND132 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioDesulfuricansNd132(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioDesulfuricansNd132 graph.
+    Instace of Desulfovibrio desulfuricans ND132 graph.
 
 	References
 	---------------------

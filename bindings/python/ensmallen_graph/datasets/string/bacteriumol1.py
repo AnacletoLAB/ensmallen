@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumOl1.
+This file offers the methods to automatically retrieve the graph bacterium OL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumOl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumOl1 graph.
+    """Return new instance of the bacterium OL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumOl1(
 
     Returns
     -----------------------
-    Instace of BacteriumOl1 graph.
+    Instace of bacterium OL1 graph.
 
 	References
 	---------------------

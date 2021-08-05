@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpBsc265.
+This file offers the methods to automatically retrieve the graph Massilia sp. BSC265.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpBsc265(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpBsc265 graph.
+    """Return new instance of the Massilia sp. BSC265 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpBsc265(
 
     Returns
     -----------------------
-    Instace of MassiliaSpBsc265 graph.
+    Instace of Massilia sp. BSC265 graph.
 
 	References
 	---------------------

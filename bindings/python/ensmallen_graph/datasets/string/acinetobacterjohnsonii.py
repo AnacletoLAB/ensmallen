@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterJohnsonii.
+This file offers the methods to automatically retrieve the graph Acinetobacter johnsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterJohnsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterJohnsonii graph.
+    """Return new instance of the Acinetobacter johnsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterJohnsonii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterJohnsonii graph.
+    Instace of Acinetobacter johnsonii graph.
 
 	References
 	---------------------

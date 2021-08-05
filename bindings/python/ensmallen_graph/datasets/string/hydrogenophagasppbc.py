@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpPbc.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. PBC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpPbc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpPbc graph.
+    """Return new instance of the Hydrogenophaga sp. PBC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpPbc(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpPbc graph.
+    Instace of Hydrogenophaga sp. PBC graph.
 
 	References
 	---------------------

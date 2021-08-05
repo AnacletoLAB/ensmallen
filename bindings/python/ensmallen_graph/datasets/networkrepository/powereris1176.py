@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PowerEris1176.
+This file offers the methods to automatically retrieve the graph power-eris1176.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def PowerEris1176(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PowerEris1176 graph.
+    """Return new instance of the power-eris1176 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def PowerEris1176(
 
     Returns
     -----------------------
-    Instace of PowerEris1176 graph.
+    Instace of power-eris1176 graph.
 
 	References
 	---------------------

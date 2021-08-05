@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaAgarilytica.
+This file offers the methods to automatically retrieve the graph Aquimarina agarilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaAgarilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaAgarilytica graph.
+    """Return new instance of the Aquimarina agarilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquimarinaAgarilytica(
 
     Returns
     -----------------------
-    Instace of AquimarinaAgarilytica graph.
+    Instace of Aquimarina agarilytica graph.
 
 	References
 	---------------------

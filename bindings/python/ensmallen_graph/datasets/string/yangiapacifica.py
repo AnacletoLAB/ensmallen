@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YangiaPacifica.
+This file offers the methods to automatically retrieve the graph Yangia pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YangiaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YangiaPacifica graph.
+    """Return new instance of the Yangia pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YangiaPacifica(
 
     Returns
     -----------------------
-    Instace of YangiaPacifica graph.
+    Instace of Yangia pacifica graph.
 
 	References
 	---------------------

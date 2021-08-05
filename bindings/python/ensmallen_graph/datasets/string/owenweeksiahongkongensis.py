@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OwenweeksiaHongkongensis.
+This file offers the methods to automatically retrieve the graph Owenweeksia hongkongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OwenweeksiaHongkongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OwenweeksiaHongkongensis graph.
+    """Return new instance of the Owenweeksia hongkongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OwenweeksiaHongkongensis(
 
     Returns
     -----------------------
-    Instace of OwenweeksiaHongkongensis graph.
+    Instace of Owenweeksia hongkongensis graph.
 
 	References
 	---------------------

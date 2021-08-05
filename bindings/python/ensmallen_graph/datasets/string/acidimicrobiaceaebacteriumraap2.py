@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimicrobiaceaeBacteriumRaap2.
+This file offers the methods to automatically retrieve the graph Acidimicrobiaceae bacterium RAAP-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidimicrobiaceaeBacteriumRaap2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimicrobiaceaeBacteriumRaap2 graph.
+    """Return new instance of the Acidimicrobiaceae bacterium RAAP-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidimicrobiaceaeBacteriumRaap2(
 
     Returns
     -----------------------
-    Instace of AcidimicrobiaceaeBacteriumRaap2 graph.
+    Instace of Acidimicrobiaceae bacterium RAAP-2 graph.
 
 	References
 	---------------------

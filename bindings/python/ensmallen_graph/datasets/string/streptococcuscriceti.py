@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusCriceti.
+This file offers the methods to automatically retrieve the graph Streptococcus criceti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusCriceti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusCriceti graph.
+    """Return new instance of the Streptococcus criceti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusCriceti(
 
     Returns
     -----------------------
-    Instace of StreptococcusCriceti graph.
+    Instace of Streptococcus criceti graph.
 
 	References
 	---------------------

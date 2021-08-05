@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbJohnshopkins55.
+This file offers the methods to automatically retrieve the graph socfb-JohnsHopkins55.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbJohnshopkins55(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbJohnshopkins55 graph.
+    """Return new instance of the socfb-JohnsHopkins55 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbJohnshopkins55(
 
     Returns
     -----------------------
-    Instace of SocfbJohnshopkins55 graph.
+    Instace of socfb-JohnsHopkins55 graph.
 
 	References
 	---------------------

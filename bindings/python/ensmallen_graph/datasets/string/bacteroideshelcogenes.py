@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesHelcogenes.
+This file offers the methods to automatically retrieve the graph Bacteroides helcogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesHelcogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesHelcogenes graph.
+    """Return new instance of the Bacteroides helcogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesHelcogenes(
 
     Returns
     -----------------------
-    Instace of BacteroidesHelcogenes graph.
+    Instace of Bacteroides helcogenes graph.
 
 	References
 	---------------------

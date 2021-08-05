@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumLotiMaff303099.
+This file offers the methods to automatically retrieve the graph Mesorhizobium loti MAFF303099.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumLotiMaff303099(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumLotiMaff303099 graph.
+    """Return new instance of the Mesorhizobium loti MAFF303099 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumLotiMaff303099(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumLotiMaff303099 graph.
+    Instace of Mesorhizobium loti MAFF303099 graph.
 
 	References
 	---------------------

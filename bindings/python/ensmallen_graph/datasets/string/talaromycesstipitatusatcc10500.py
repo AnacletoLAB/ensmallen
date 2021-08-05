@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesStipitatusAtcc10500.
+This file offers the methods to automatically retrieve the graph Talaromyces stipitatus ATCC 10500.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesStipitatusAtcc10500(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesStipitatusAtcc10500 graph.
+    """Return new instance of the Talaromyces stipitatus ATCC 10500 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TalaromycesStipitatusAtcc10500(
 
     Returns
     -----------------------
-    Instace of TalaromycesStipitatusAtcc10500 graph.
+    Instace of Talaromyces stipitatus ATCC 10500 graph.
 
 	References
 	---------------------

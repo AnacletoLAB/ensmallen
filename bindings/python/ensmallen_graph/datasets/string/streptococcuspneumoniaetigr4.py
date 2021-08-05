@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPneumoniaeTigr4.
+This file offers the methods to automatically retrieve the graph Streptococcus pneumoniae TIGR4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPneumoniaeTigr4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPneumoniaeTigr4 graph.
+    """Return new instance of the Streptococcus pneumoniae TIGR4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPneumoniaeTigr4(
 
     Returns
     -----------------------
-    Instace of StreptococcusPneumoniaeTigr4 graph.
+    Instace of Streptococcus pneumoniae TIGR4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaArctica.
+This file offers the methods to automatically retrieve the graph Neisseria arctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaArctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaArctica graph.
+    """Return new instance of the Neisseria arctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaArctica(
 
     Returns
     -----------------------
-    Instace of NeisseriaArctica graph.
+    Instace of Neisseria arctica graph.
 
 	References
 	---------------------

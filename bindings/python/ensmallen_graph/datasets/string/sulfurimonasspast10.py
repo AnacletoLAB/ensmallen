@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasSpAst10.
+This file offers the methods to automatically retrieve the graph Sulfurimonas sp. AST10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasSpAst10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasSpAst10 graph.
+    """Return new instance of the Sulfurimonas sp. AST10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurimonasSpAst10(
 
     Returns
     -----------------------
-    Instace of SulfurimonasSpAst10 graph.
+    Instace of Sulfurimonas sp. AST10 graph.
 
 	References
 	---------------------

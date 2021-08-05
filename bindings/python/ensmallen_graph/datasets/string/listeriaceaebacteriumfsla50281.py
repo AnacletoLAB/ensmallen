@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaceaeBacteriumFsla50281.
+This file offers the methods to automatically retrieve the graph Listeriaceae bacterium FSLA50281.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaceaeBacteriumFsla50281(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaceaeBacteriumFsla50281 graph.
+    """Return new instance of the Listeriaceae bacterium FSLA50281 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaceaeBacteriumFsla50281(
 
     Returns
     -----------------------
-    Instace of ListeriaceaeBacteriumFsla50281 graph.
+    Instace of Listeriaceae bacterium FSLA50281 graph.
 
 	References
 	---------------------

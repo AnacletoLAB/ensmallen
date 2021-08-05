@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314.
+This file offers the methods to automatically retrieve the graph Candidatus Woykebacteria bacterium RIFCSPLOWO2_01_FULL_43_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314 graph.
+    """Return new instance of the Candidatus Woykebacteria bacterium RIFCSPLOWO2_01_FULL_43_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314(
 
     Returns
     -----------------------
-    Instace of CandidatusWoykebacteriaBacteriumRifcsplowo201Full4314 graph.
+    Instace of Candidatus Woykebacteria bacterium RIFCSPLOWO2_01_FULL_43_14 graph.
 
 	References
 	---------------------

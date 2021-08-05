@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolysporaMortivallis.
+This file offers the methods to automatically retrieve the graph Actinopolyspora mortivallis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolysporaMortivallis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolysporaMortivallis graph.
+    """Return new instance of the Actinopolyspora mortivallis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinopolysporaMortivallis(
 
     Returns
     -----------------------
-    Instace of ActinopolysporaMortivallis graph.
+    Instace of Actinopolyspora mortivallis graph.
 
 	References
 	---------------------

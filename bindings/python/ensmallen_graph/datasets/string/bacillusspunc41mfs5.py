@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpUnc41mfs5.
+This file offers the methods to automatically retrieve the graph Bacillus sp. UNC41MFS5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpUnc41mfs5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpUnc41mfs5 graph.
+    """Return new instance of the Bacillus sp. UNC41MFS5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpUnc41mfs5(
 
     Returns
     -----------------------
-    Instace of BacillusSpUnc41mfs5 graph.
+    Instace of Bacillus sp. UNC41MFS5 graph.
 
 	References
 	---------------------

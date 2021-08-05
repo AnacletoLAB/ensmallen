@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UrmitellaTimonensis.
+This file offers the methods to automatically retrieve the graph Urmitella timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UrmitellaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UrmitellaTimonensis graph.
+    """Return new instance of the Urmitella timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UrmitellaTimonensis(
 
     Returns
     -----------------------
-    Instace of UrmitellaTimonensis graph.
+    Instace of Urmitella timonensis graph.
 
 	References
 	---------------------

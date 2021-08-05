@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaGeojensis.
+This file offers the methods to automatically retrieve the graph Devosia geojensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaGeojensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaGeojensis graph.
+    """Return new instance of the Devosia geojensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaGeojensis(
 
     Returns
     -----------------------
-    Instace of DevosiaGeojensis graph.
+    Instace of Devosia geojensis graph.
 
 	References
 	---------------------

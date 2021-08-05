@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusTurcosus.
+This file offers the methods to automatically retrieve the graph Aspergillus turcosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusTurcosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusTurcosus graph.
+    """Return new instance of the Aspergillus turcosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusTurcosus(
 
     Returns
     -----------------------
-    Instace of AspergillusTurcosus graph.
+    Instace of Aspergillus turcosus graph.
 
 	References
 	---------------------

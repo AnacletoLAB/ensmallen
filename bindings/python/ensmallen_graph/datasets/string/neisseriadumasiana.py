@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaDumasiana.
+This file offers the methods to automatically retrieve the graph Neisseria dumasiana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaDumasiana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaDumasiana graph.
+    """Return new instance of the Neisseria dumasiana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaDumasiana(
 
     Returns
     -----------------------
-    Instace of NeisseriaDumasiana graph.
+    Instace of Neisseria dumasiana graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloplasmaContractile.
+This file offers the methods to automatically retrieve the graph Haloplasma contractile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloplasmaContractile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloplasmaContractile graph.
+    """Return new instance of the Haloplasma contractile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloplasmaContractile(
 
     Returns
     -----------------------
-    Instace of HaloplasmaContractile graph.
+    Instace of Haloplasma contractile graph.
 
 	References
 	---------------------

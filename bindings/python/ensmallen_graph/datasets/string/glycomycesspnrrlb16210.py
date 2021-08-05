@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycomycesSpNrrlb16210.
+This file offers the methods to automatically retrieve the graph Glycomyces sp. NRRLB16210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycomycesSpNrrlb16210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycomycesSpNrrlb16210 graph.
+    """Return new instance of the Glycomyces sp. NRRLB16210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlycomycesSpNrrlb16210(
 
     Returns
     -----------------------
-    Instace of GlycomycesSpNrrlb16210 graph.
+    Instace of Glycomyces sp. NRRLB16210 graph.
 
 	References
 	---------------------

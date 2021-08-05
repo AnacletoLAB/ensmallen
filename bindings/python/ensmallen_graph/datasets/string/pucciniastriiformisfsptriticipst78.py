@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaStriiformisFSpTriticiPst78.
+This file offers the methods to automatically retrieve the graph Puccinia striiformis f. sp. tritici PST-78.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaStriiformisFSpTriticiPst78(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaStriiformisFSpTriticiPst78 graph.
+    """Return new instance of the Puccinia striiformis f. sp. tritici PST-78 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PucciniaStriiformisFSpTriticiPst78(
 
     Returns
     -----------------------
-    Instace of PucciniaStriiformisFSpTriticiPst78 graph.
+    Instace of Puccinia striiformis f. sp. tritici PST-78 graph.
 
 	References
 	---------------------

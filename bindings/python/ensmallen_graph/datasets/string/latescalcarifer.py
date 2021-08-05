@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LatesCalcarifer.
+This file offers the methods to automatically retrieve the graph Lates calcarifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LatesCalcarifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LatesCalcarifer graph.
+    """Return new instance of the Lates calcarifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LatesCalcarifer(
 
     Returns
     -----------------------
-    Instace of LatesCalcarifer graph.
+    Instace of Lates calcarifer graph.
 
 	References
 	---------------------

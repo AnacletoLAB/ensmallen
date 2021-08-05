@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycesBrasiliensis.
+This file offers the methods to automatically retrieve the graph Planctomyces brasiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycesBrasiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycesBrasiliensis graph.
+    """Return new instance of the Planctomyces brasiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanctomycesBrasiliensis(
 
     Returns
     -----------------------
-    Instace of PlanctomycesBrasiliensis graph.
+    Instace of Planctomyces brasiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusSpOv096.
+This file offers the methods to automatically retrieve the graph Cupriavidus sp. OV096.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusSpOv096(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusSpOv096 graph.
+    """Return new instance of the Cupriavidus sp. OV096 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusSpOv096(
 
     Returns
     -----------------------
-    Instace of CupriavidusSpOv096 graph.
+    Instace of Cupriavidus sp. OV096 graph.
 
 	References
 	---------------------

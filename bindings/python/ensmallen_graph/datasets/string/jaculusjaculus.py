@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JaculusJaculus.
+This file offers the methods to automatically retrieve the graph Jaculus jaculus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JaculusJaculus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JaculusJaculus graph.
+    """Return new instance of the Jaculus jaculus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JaculusJaculus(
 
     Returns
     -----------------------
-    Instace of JaculusJaculus graph.
+    Instace of Jaculus jaculus graph.
 
 	References
 	---------------------

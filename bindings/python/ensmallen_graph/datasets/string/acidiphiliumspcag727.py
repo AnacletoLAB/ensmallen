@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiphiliumSpCag727.
+This file offers the methods to automatically retrieve the graph Acidiphilium sp. CAG:727.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidiphiliumSpCag727(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiphiliumSpCag727 graph.
+    """Return new instance of the Acidiphilium sp. CAG:727 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidiphiliumSpCag727(
 
     Returns
     -----------------------
-    Instace of AcidiphiliumSpCag727 graph.
+    Instace of Acidiphilium sp. CAG:727 graph.
 
 	References
 	---------------------

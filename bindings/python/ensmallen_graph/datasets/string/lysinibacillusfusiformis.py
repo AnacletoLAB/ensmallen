@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusFusiformis.
+This file offers the methods to automatically retrieve the graph Lysinibacillus fusiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusFusiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusFusiformis graph.
+    """Return new instance of the Lysinibacillus fusiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusFusiformis(
 
     Returns
     -----------------------
-    Instace of LysinibacillusFusiformis graph.
+    Instace of Lysinibacillus fusiformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OmnitrophicaBacteriumOlb16.
+This file offers the methods to automatically retrieve the graph Omnitrophica bacterium OLB16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OmnitrophicaBacteriumOlb16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OmnitrophicaBacteriumOlb16 graph.
+    """Return new instance of the Omnitrophica bacterium OLB16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OmnitrophicaBacteriumOlb16(
 
     Returns
     -----------------------
-    Instace of OmnitrophicaBacteriumOlb16 graph.
+    Instace of Omnitrophica bacterium OLB16 graph.
 
 	References
 	---------------------

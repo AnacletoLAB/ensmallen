@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Crystm03.
+This file offers the methods to automatically retrieve the graph crystm03.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Crystm03(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Crystm03 graph.
+    """Return new instance of the crystm03 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Crystm03(
 
     Returns
     -----------------------
-    Instace of Crystm03 graph.
+    Instace of crystm03 graph.
 
 	References
 	---------------------

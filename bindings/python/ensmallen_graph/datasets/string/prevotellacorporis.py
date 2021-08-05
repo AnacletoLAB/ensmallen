@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaCorporis.
+This file offers the methods to automatically retrieve the graph Prevotella corporis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaCorporis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaCorporis graph.
+    """Return new instance of the Prevotella corporis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaCorporis(
 
     Returns
     -----------------------
-    Instace of PrevotellaCorporis graph.
+    Instace of Prevotella corporis graph.
 
 	References
 	---------------------

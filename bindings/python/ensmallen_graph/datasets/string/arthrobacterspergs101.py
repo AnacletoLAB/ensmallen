@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpErgs101.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. ERGS1:01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpErgs101(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpErgs101 graph.
+    """Return new instance of the Arthrobacter sp. ERGS1:01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpErgs101(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpErgs101 graph.
+    Instace of Arthrobacter sp. ERGS1:01 graph.
 
 	References
 	---------------------

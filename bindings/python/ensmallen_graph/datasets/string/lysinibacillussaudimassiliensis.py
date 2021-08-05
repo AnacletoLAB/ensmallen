@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSaudimassiliensis.
+This file offers the methods to automatically retrieve the graph Lysinibacillus saudimassiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSaudimassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSaudimassiliensis graph.
+    """Return new instance of the Lysinibacillus saudimassiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusSaudimassiliensis(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSaudimassiliensis graph.
+    Instace of Lysinibacillus saudimassiliensis graph.
 
 	References
 	---------------------

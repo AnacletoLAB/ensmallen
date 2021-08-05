@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusCalidoustus.
+This file offers the methods to automatically retrieve the graph Aspergillus calidoustus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusCalidoustus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusCalidoustus graph.
+    """Return new instance of the Aspergillus calidoustus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusCalidoustus(
 
     Returns
     -----------------------
-    Instace of AspergillusCalidoustus graph.
+    Instace of Aspergillus calidoustus graph.
 
 	References
 	---------------------

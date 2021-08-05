@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporisoriumScitamineum.
+This file offers the methods to automatically retrieve the graph Sporisorium scitamineum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporisoriumScitamineum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporisoriumScitamineum graph.
+    """Return new instance of the Sporisorium scitamineum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporisoriumScitamineum(
 
     Returns
     -----------------------
-    Instace of SporisoriumScitamineum graph.
+    Instace of Sporisorium scitamineum graph.
 
 	References
 	---------------------

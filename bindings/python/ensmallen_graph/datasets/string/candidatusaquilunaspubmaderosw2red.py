@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAquilunaSpUbMaderosw2red.
+This file offers the methods to automatically retrieve the graph Candidatus Aquiluna sp. UB-MaderosW2red.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAquilunaSpUbMaderosw2red(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAquilunaSpUbMaderosw2red graph.
+    """Return new instance of the Candidatus Aquiluna sp. UB-MaderosW2red graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAquilunaSpUbMaderosw2red(
 
     Returns
     -----------------------
-    Instace of CandidatusAquilunaSpUbMaderosw2red graph.
+    Instace of Candidatus Aquiluna sp. UB-MaderosW2red graph.
 
 	References
 	---------------------

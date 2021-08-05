@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraSpL2l1.
+This file offers the methods to automatically retrieve the graph Methylotenera sp. L2L1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraSpL2l1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraSpL2l1 graph.
+    """Return new instance of the Methylotenera sp. L2L1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloteneraSpL2l1(
 
     Returns
     -----------------------
-    Instace of MethyloteneraSpL2l1 graph.
+    Instace of Methylotenera sp. L2L1 graph.
 
 	References
 	---------------------

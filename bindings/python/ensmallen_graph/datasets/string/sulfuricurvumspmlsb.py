@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricurvumSpMlsb.
+This file offers the methods to automatically retrieve the graph Sulfuricurvum sp. MLSB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricurvumSpMlsb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricurvumSpMlsb graph.
+    """Return new instance of the Sulfuricurvum sp. MLSB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfuricurvumSpMlsb(
 
     Returns
     -----------------------
-    Instace of SulfuricurvumSpMlsb graph.
+    Instace of Sulfuricurvum sp. MLSB graph.
 
 	References
 	---------------------

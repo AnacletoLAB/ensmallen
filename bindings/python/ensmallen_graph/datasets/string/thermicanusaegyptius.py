@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermicanusAegyptius.
+This file offers the methods to automatically retrieve the graph Thermicanus aegyptius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermicanusAegyptius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermicanusAegyptius graph.
+    """Return new instance of the Thermicanus aegyptius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermicanusAegyptius(
 
     Returns
     -----------------------
-    Instace of ThermicanusAegyptius graph.
+    Instace of Thermicanus aegyptius graph.
 
 	References
 	---------------------

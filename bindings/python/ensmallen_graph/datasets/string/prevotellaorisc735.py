@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOrisC735.
+This file offers the methods to automatically retrieve the graph Prevotella oris C735.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOrisC735(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOrisC735 graph.
+    """Return new instance of the Prevotella oris C735 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaOrisC735(
 
     Returns
     -----------------------
-    Instace of PrevotellaOrisC735 graph.
+    Instace of Prevotella oris C735 graph.
 
 	References
 	---------------------

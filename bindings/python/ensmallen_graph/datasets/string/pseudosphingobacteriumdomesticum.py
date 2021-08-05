@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudosphingobacteriumDomesticum.
+This file offers the methods to automatically retrieve the graph Pseudosphingobacterium domesticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudosphingobacteriumDomesticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudosphingobacteriumDomesticum graph.
+    """Return new instance of the Pseudosphingobacterium domesticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudosphingobacteriumDomesticum(
 
     Returns
     -----------------------
-    Instace of PseudosphingobacteriumDomesticum graph.
+    Instace of Pseudosphingobacterium domesticum graph.
 
 	References
 	---------------------

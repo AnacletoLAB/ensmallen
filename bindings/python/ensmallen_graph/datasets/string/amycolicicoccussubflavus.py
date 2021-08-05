@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolicicoccusSubflavus.
+This file offers the methods to automatically retrieve the graph Amycolicicoccus subflavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolicicoccusSubflavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolicicoccusSubflavus graph.
+    """Return new instance of the Amycolicicoccus subflavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolicicoccusSubflavus(
 
     Returns
     -----------------------
-    Instace of AmycolicicoccusSubflavus graph.
+    Instace of Amycolicicoccus subflavus graph.
 
 	References
 	---------------------

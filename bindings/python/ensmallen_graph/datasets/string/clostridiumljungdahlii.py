@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumLjungdahlii.
+This file offers the methods to automatically retrieve the graph Clostridium ljungdahlii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumLjungdahlii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumLjungdahlii graph.
+    """Return new instance of the Clostridium ljungdahlii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumLjungdahlii(
 
     Returns
     -----------------------
-    Instace of ClostridiumLjungdahlii graph.
+    Instace of Clostridium ljungdahlii graph.
 
 	References
 	---------------------

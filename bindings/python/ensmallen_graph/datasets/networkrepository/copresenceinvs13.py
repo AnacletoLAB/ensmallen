@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceInvs13.
+This file offers the methods to automatically retrieve the graph copresence-InVS13.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceInvs13(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceInvs13 graph.
+    """Return new instance of the copresence-InVS13 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceInvs13(
 
     Returns
     -----------------------
-    Instace of CopresenceInvs13 graph.
+    Instace of copresence-InVS13 graph.
 
 	References
 	---------------------

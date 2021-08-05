@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterRuminantium.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter ruminantium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterRuminantium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterRuminantium graph.
+    """Return new instance of the Methanobrevibacter ruminantium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobrevibacterRuminantium(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterRuminantium graph.
+    Instace of Methanobrevibacter ruminantium graph.
 
 	References
 	---------------------

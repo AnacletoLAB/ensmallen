@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaSolanacearumGmi1000.
+This file offers the methods to automatically retrieve the graph Ralstonia solanacearum GMI1000.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaSolanacearumGmi1000(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaSolanacearumGmi1000 graph.
+    """Return new instance of the Ralstonia solanacearum GMI1000 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RalstoniaSolanacearumGmi1000(
 
     Returns
     -----------------------
-    Instace of RalstoniaSolanacearumGmi1000 graph.
+    Instace of Ralstonia solanacearum GMI1000 graph.
 
 	References
 	---------------------

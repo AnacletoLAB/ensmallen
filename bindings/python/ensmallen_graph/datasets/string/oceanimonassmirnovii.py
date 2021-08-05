@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanimonasSmirnovii.
+This file offers the methods to automatically retrieve the graph Oceanimonas smirnovii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanimonasSmirnovii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanimonasSmirnovii graph.
+    """Return new instance of the Oceanimonas smirnovii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanimonasSmirnovii(
 
     Returns
     -----------------------
-    Instace of OceanimonasSmirnovii graph.
+    Instace of Oceanimonas smirnovii graph.
 
 	References
 	---------------------

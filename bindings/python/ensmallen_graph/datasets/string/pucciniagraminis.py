@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaGraminis.
+This file offers the methods to automatically retrieve the graph Puccinia graminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaGraminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaGraminis graph.
+    """Return new instance of the Puccinia graminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PucciniaGraminis(
 
     Returns
     -----------------------
-    Instace of PucciniaGraminis graph.
+    Instace of Puccinia graminis graph.
 
 	References
 	---------------------

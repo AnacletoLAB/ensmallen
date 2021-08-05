@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanFaa.
+This file offers the methods to automatically retrieve the graph maayan-faa.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanFaa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanFaa graph.
+    """Return new instance of the maayan-faa graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanFaa(
 
     Returns
     -----------------------
-    Instace of MaayanFaa graph.
+    Instace of maayan-faa graph.
 
 	References
 	---------------------

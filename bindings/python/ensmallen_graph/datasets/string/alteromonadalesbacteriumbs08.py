@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonadalesBacteriumBs08.
+This file offers the methods to automatically retrieve the graph Alteromonadales bacterium BS08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonadalesBacteriumBs08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonadalesBacteriumBs08 graph.
+    """Return new instance of the Alteromonadales bacterium BS08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonadalesBacteriumBs08(
 
     Returns
     -----------------------
-    Instace of AlteromonadalesBacteriumBs08 graph.
+    Instace of Alteromonadales bacterium BS08 graph.
 
 	References
 	---------------------

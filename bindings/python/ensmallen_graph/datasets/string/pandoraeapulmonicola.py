@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaPulmonicola.
+This file offers the methods to automatically retrieve the graph Pandoraea pulmonicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaPulmonicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaPulmonicola graph.
+    """Return new instance of the Pandoraea pulmonicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaPulmonicola(
 
     Returns
     -----------------------
-    Instace of PandoraeaPulmonicola graph.
+    Instace of Pandoraea pulmonicola graph.
 
 	References
 	---------------------

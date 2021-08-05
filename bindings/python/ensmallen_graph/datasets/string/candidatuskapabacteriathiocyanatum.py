@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKapabacteriaThiocyanatum.
+This file offers the methods to automatically retrieve the graph Candidatus Kapabacteria thiocyanatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKapabacteriaThiocyanatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKapabacteriaThiocyanatum graph.
+    """Return new instance of the Candidatus Kapabacteria thiocyanatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKapabacteriaThiocyanatum(
 
     Returns
     -----------------------
-    Instace of CandidatusKapabacteriaThiocyanatum graph.
+    Instace of Candidatus Kapabacteria thiocyanatum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldisphaeraLagunensis.
+This file offers the methods to automatically retrieve the graph Caldisphaera lagunensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldisphaeraLagunensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldisphaeraLagunensis graph.
+    """Return new instance of the Caldisphaera lagunensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldisphaeraLagunensis(
 
     Returns
     -----------------------
-    Instace of CaldisphaeraLagunensis graph.
+    Instace of Caldisphaera lagunensis graph.
 
 	References
 	---------------------

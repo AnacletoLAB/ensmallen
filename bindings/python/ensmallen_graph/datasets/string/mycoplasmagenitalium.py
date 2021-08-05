@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaGenitalium.
+This file offers the methods to automatically retrieve the graph Mycoplasma genitalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaGenitalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaGenitalium graph.
+    """Return new instance of the Mycoplasma genitalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaGenitalium(
 
     Returns
     -----------------------
-    Instace of MycoplasmaGenitalium graph.
+    Instace of Mycoplasma genitalium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EggerthiaCatenaformis.
+This file offers the methods to automatically retrieve the graph Eggerthia catenaformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EggerthiaCatenaformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EggerthiaCatenaformis graph.
+    """Return new instance of the Eggerthia catenaformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EggerthiaCatenaformis(
 
     Returns
     -----------------------
-    Instace of EggerthiaCatenaformis graph.
+    Instace of Eggerthia catenaformis graph.
 
 	References
 	---------------------

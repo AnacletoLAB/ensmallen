@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobaculumSpF0552.
+This file offers the methods to automatically retrieve the graph Actinobaculum sp. F0552.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobaculumSpF0552(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobaculumSpF0552 graph.
+    """Return new instance of the Actinobaculum sp. F0552 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobaculumSpF0552(
 
     Returns
     -----------------------
-    Instace of ActinobaculumSpF0552 graph.
+    Instace of Actinobaculum sp. F0552 graph.
 
 	References
 	---------------------

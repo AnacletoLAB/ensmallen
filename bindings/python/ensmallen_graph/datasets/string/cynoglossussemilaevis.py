@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CynoglossusSemilaevis.
+This file offers the methods to automatically retrieve the graph Cynoglossus semilaevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CynoglossusSemilaevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CynoglossusSemilaevis graph.
+    """Return new instance of the Cynoglossus semilaevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CynoglossusSemilaevis(
 
     Returns
     -----------------------
-    Instace of CynoglossusSemilaevis graph.
+    Instace of Cynoglossus semilaevis graph.
 
 	References
 	---------------------

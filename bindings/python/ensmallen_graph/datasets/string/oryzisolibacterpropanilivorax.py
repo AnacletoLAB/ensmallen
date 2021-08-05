@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzisolibacterPropanilivorax.
+This file offers the methods to automatically retrieve the graph Oryzisolibacter propanilivorax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzisolibacterPropanilivorax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzisolibacterPropanilivorax graph.
+    """Return new instance of the Oryzisolibacter propanilivorax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OryzisolibacterPropanilivorax(
 
     Returns
     -----------------------
-    Instace of OryzisolibacterPropanilivorax graph.
+    Instace of Oryzisolibacter propanilivorax graph.
 
 	References
 	---------------------

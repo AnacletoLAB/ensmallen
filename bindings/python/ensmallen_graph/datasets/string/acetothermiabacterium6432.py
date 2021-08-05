@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetothermiaBacterium6432.
+This file offers the methods to automatically retrieve the graph Acetothermia bacterium 64_32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetothermiaBacterium6432(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetothermiaBacterium6432 graph.
+    """Return new instance of the Acetothermia bacterium 64_32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetothermiaBacterium6432(
 
     Returns
     -----------------------
-    Instace of AcetothermiaBacterium6432 graph.
+    Instace of Acetothermia bacterium 64_32 graph.
 
 	References
 	---------------------

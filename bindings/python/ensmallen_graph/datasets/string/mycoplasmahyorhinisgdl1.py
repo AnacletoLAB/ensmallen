@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHyorhinisGdl1.
+This file offers the methods to automatically retrieve the graph Mycoplasma hyorhinis GDL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHyorhinisGdl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHyorhinisGdl1 graph.
+    """Return new instance of the Mycoplasma hyorhinis GDL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaHyorhinisGdl1(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHyorhinisGdl1 graph.
+    Instace of Mycoplasma hyorhinis GDL1 graph.
 
 	References
 	---------------------

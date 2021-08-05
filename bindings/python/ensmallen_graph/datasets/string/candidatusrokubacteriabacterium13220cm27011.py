@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRokubacteriaBacterium13220cm27011.
+This file offers the methods to automatically retrieve the graph Candidatus Rokubacteria bacterium 13_2_20CM_2_70_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRokubacteriaBacterium13220cm27011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRokubacteriaBacterium13220cm27011 graph.
+    """Return new instance of the Candidatus Rokubacteria bacterium 13_2_20CM_2_70_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRokubacteriaBacterium13220cm27011(
 
     Returns
     -----------------------
-    Instace of CandidatusRokubacteriaBacterium13220cm27011 graph.
+    Instace of Candidatus Rokubacteria bacterium 13_2_20CM_2_70_11 graph.
 
 	References
 	---------------------

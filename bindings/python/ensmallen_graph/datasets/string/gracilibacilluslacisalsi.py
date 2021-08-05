@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusLacisalsi.
+This file offers the methods to automatically retrieve the graph Gracilibacillus lacisalsi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusLacisalsi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusLacisalsi graph.
+    """Return new instance of the Gracilibacillus lacisalsi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GracilibacillusLacisalsi(
 
     Returns
     -----------------------
-    Instace of GracilibacillusLacisalsi graph.
+    Instace of Gracilibacillus lacisalsi graph.
 
 	References
 	---------------------

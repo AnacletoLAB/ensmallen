@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllosalinactinosporaLopnorensis.
+This file offers the methods to automatically retrieve the graph Allosalinactinospora lopnorensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllosalinactinosporaLopnorensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllosalinactinosporaLopnorensis graph.
+    """Return new instance of the Allosalinactinospora lopnorensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AllosalinactinosporaLopnorensis(
 
     Returns
     -----------------------
-    Instace of AllosalinactinosporaLopnorensis graph.
+    Instace of Allosalinactinospora lopnorensis graph.
 
 	References
 	---------------------

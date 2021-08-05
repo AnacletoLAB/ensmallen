@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OmnitrophicaWor2BacteriumRbg134110.
+This file offers the methods to automatically retrieve the graph Omnitrophica WOR_2 bacterium RBG_13_41_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OmnitrophicaWor2BacteriumRbg134110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OmnitrophicaWor2BacteriumRbg134110 graph.
+    """Return new instance of the Omnitrophica WOR_2 bacterium RBG_13_41_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OmnitrophicaWor2BacteriumRbg134110(
 
     Returns
     -----------------------
-    Instace of OmnitrophicaWor2BacteriumRbg134110 graph.
+    Instace of Omnitrophica WOR_2 bacterium RBG_13_41_10 graph.
 
 	References
 	---------------------

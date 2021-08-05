@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHomeothermusArabinoxylanisolvens.
+This file offers the methods to automatically retrieve the graph Candidatus Homeothermus arabinoxylanisolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHomeothermusArabinoxylanisolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHomeothermusArabinoxylanisolvens graph.
+    """Return new instance of the Candidatus Homeothermus arabinoxylanisolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHomeothermusArabinoxylanisolvens(
 
     Returns
     -----------------------
-    Instace of CandidatusHomeothermusArabinoxylanisolvens graph.
+    Instace of Candidatus Homeothermus arabinoxylanisolvens graph.
 
 	References
 	---------------------

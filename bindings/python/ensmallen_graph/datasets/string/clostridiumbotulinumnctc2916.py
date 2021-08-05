@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumNctc2916.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum NCTC2916.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumNctc2916(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumNctc2916 graph.
+    """Return new instance of the Clostridium botulinum NCTC2916 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumNctc2916(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumNctc2916 graph.
+    Instace of Clostridium botulinum NCTC2916 graph.
 
 	References
 	---------------------

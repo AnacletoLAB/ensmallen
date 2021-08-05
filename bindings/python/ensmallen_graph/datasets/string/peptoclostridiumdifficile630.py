@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoclostridiumDifficile630.
+This file offers the methods to automatically retrieve the graph Peptoclostridium difficile 630.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoclostridiumDifficile630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoclostridiumDifficile630 graph.
+    """Return new instance of the Peptoclostridium difficile 630 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoclostridiumDifficile630(
 
     Returns
     -----------------------
-    Instace of PeptoclostridiumDifficile630 graph.
+    Instace of Peptoclostridium difficile 630 graph.
 
 	References
 	---------------------

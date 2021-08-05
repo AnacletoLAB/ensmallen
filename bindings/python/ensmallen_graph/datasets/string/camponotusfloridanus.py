@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CamponotusFloridanus.
+This file offers the methods to automatically retrieve the graph Camponotus floridanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CamponotusFloridanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CamponotusFloridanus graph.
+    """Return new instance of the Camponotus floridanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CamponotusFloridanus(
 
     Returns
     -----------------------
-    Instace of CamponotusFloridanus graph.
+    Instace of Camponotus floridanus graph.
 
 	References
 	---------------------

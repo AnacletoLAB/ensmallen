@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlomeribacterGigasporarum.
+This file offers the methods to automatically retrieve the graph Glomeribacter gigasporarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlomeribacterGigasporarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlomeribacterGigasporarum graph.
+    """Return new instance of the Glomeribacter gigasporarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlomeribacterGigasporarum(
 
     Returns
     -----------------------
-    Instace of GlomeribacterGigasporarum graph.
+    Instace of Glomeribacter gigasporarum graph.
 
 	References
 	---------------------

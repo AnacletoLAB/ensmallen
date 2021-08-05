@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaForsetii.
+This file offers the methods to automatically retrieve the graph Gramella forsetii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaForsetii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaForsetii graph.
+    """Return new instance of the Gramella forsetii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GramellaForsetii(
 
     Returns
     -----------------------
-    Instace of GramellaForsetii graph.
+    Instace of Gramella forsetii graph.
 
 	References
 	---------------------

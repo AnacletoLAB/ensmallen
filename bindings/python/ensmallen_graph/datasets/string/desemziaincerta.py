@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesemziaIncerta.
+This file offers the methods to automatically retrieve the graph Desemzia incerta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesemziaIncerta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesemziaIncerta graph.
+    """Return new instance of the Desemzia incerta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesemziaIncerta(
 
     Returns
     -----------------------
-    Instace of DesemziaIncerta graph.
+    Instace of Desemzia incerta graph.
 
 	References
 	---------------------

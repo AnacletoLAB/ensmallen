@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumRifoxya2Full3321.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium RIFOXYA2_FULL_33_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumRifoxya2Full3321(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumRifoxya2Full3321 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium RIFOXYA2_FULL_33_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumRifoxya2Full3321(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumRifoxya2Full3321 graph.
+    Instace of Candidatus Peregrinibacteria bacterium RIFOXYA2_FULL_33_21 graph.
 
 	References
 	---------------------

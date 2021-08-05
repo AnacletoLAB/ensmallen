@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusSediminis.
+This file offers the methods to automatically retrieve the graph Salinicoccus sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusSediminis graph.
+    """Return new instance of the Salinicoccus sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusSediminis(
 
     Returns
     -----------------------
-    Instace of SalinicoccusSediminis graph.
+    Instace of Salinicoccus sediminis graph.
 
 	References
 	---------------------

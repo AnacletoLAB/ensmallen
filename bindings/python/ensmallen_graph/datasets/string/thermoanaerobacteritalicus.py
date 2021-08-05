@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterItalicus.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter italicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterItalicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterItalicus graph.
+    """Return new instance of the Thermoanaerobacter italicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoanaerobacterItalicus(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterItalicus graph.
+    Instace of Thermoanaerobacter italicus graph.
 
 	References
 	---------------------

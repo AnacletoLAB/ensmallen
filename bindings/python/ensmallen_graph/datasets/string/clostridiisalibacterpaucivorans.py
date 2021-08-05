@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiisalibacterPaucivorans.
+This file offers the methods to automatically retrieve the graph Clostridiisalibacter paucivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiisalibacterPaucivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiisalibacterPaucivorans graph.
+    """Return new instance of the Clostridiisalibacter paucivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiisalibacterPaucivorans(
 
     Returns
     -----------------------
-    Instace of ClostridiisalibacterPaucivorans graph.
+    Instace of Clostridiisalibacter paucivorans graph.
 
 	References
 	---------------------

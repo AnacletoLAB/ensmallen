@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasMelonisTy.
+This file offers the methods to automatically retrieve the graph Sphingomonas melonis TY.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasMelonisTy(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasMelonisTy graph.
+    """Return new instance of the Sphingomonas melonis TY graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasMelonisTy(
 
     Returns
     -----------------------
-    Instace of SphingomonasMelonisTy graph.
+    Instace of Sphingomonas melonis TY graph.
 
 	References
 	---------------------

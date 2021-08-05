@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronorubrumThiooxidans.
+This file offers the methods to automatically retrieve the graph Natronorubrum thiooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronorubrumThiooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronorubrumThiooxidans graph.
+    """Return new instance of the Natronorubrum thiooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronorubrumThiooxidans(
 
     Returns
     -----------------------
-    Instace of NatronorubrumThiooxidans graph.
+    Instace of Natronorubrum thiooxidans graph.
 
 	References
 	---------------------

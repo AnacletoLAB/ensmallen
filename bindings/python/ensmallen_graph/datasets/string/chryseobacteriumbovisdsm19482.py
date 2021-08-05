@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumBovisDsm19482.
+This file offers the methods to automatically retrieve the graph Chryseobacterium bovis DSM 19482.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumBovisDsm19482(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumBovisDsm19482 graph.
+    """Return new instance of the Chryseobacterium bovis DSM 19482 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumBovisDsm19482(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumBovisDsm19482 graph.
+    Instace of Chryseobacterium bovis DSM 19482 graph.
 
 	References
 	---------------------

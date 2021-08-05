@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebItalycnr2000.
+This file offers the methods to automatically retrieve the graph web-italycnr-2000.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebItalycnr2000(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebItalycnr2000 graph.
+    """Return new instance of the web-italycnr-2000 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebItalycnr2000(
 
     Returns
     -----------------------
-    Instace of WebItalycnr2000 graph.
+    Instace of web-italycnr-2000 graph.
 
 	References
 	---------------------

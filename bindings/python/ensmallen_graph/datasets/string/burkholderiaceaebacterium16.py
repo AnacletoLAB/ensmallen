@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaceaeBacterium16.
+This file offers the methods to automatically retrieve the graph Burkholderiaceae bacterium 16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaceaeBacterium16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaceaeBacterium16 graph.
+    """Return new instance of the Burkholderiaceae bacterium 16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaceaeBacterium16(
 
     Returns
     -----------------------
-    Instace of BurkholderiaceaeBacterium16 graph.
+    Instace of Burkholderiaceae bacterium 16 graph.
 
 	References
 	---------------------

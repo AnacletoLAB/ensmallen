@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterRuber.
+This file offers the methods to automatically retrieve the graph Pedobacter ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterRuber graph.
+    """Return new instance of the Pedobacter ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterRuber(
 
     Returns
     -----------------------
-    Instace of PedobacterRuber graph.
+    Instace of Pedobacter ruber graph.
 
 	References
 	---------------------

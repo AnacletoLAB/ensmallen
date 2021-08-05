@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpCl6col.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. cl6col.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpCl6col(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpCl6col graph.
+    """Return new instance of the Paenibacillus sp. cl6col graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpCl6col(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpCl6col graph.
+    Instace of Paenibacillus sp. cl6col graph.
 
 	References
 	---------------------

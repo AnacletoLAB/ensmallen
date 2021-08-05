@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesMerdae.
+This file offers the methods to automatically retrieve the graph Parabacteroides merdae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesMerdae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesMerdae graph.
+    """Return new instance of the Parabacteroides merdae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParabacteroidesMerdae(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesMerdae graph.
+    Instace of Parabacteroides merdae graph.
 
 	References
 	---------------------

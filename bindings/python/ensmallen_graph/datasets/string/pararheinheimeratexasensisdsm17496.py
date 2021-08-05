@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PararheinheimeraTexasensisDsm17496.
+This file offers the methods to automatically retrieve the graph Pararheinheimera texasensis DSM 17496.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PararheinheimeraTexasensisDsm17496(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PararheinheimeraTexasensisDsm17496 graph.
+    """Return new instance of the Pararheinheimera texasensis DSM 17496 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PararheinheimeraTexasensisDsm17496(
 
     Returns
     -----------------------
-    Instace of PararheinheimeraTexasensisDsm17496 graph.
+    Instace of Pararheinheimera texasensis DSM 17496 graph.
 
 	References
 	---------------------

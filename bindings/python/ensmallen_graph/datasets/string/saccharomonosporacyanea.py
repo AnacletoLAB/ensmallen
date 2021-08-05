@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaCyanea.
+This file offers the methods to automatically retrieve the graph Saccharomonospora cyanea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaCyanea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaCyanea graph.
+    """Return new instance of the Saccharomonospora cyanea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomonosporaCyanea(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaCyanea graph.
+    Instace of Saccharomonospora cyanea graph.
 
 	References
 	---------------------

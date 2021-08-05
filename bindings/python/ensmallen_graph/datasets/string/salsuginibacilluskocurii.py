@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalsuginibacillusKocurii.
+This file offers the methods to automatically retrieve the graph Salsuginibacillus kocurii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalsuginibacillusKocurii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalsuginibacillusKocurii graph.
+    """Return new instance of the Salsuginibacillus kocurii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalsuginibacillusKocurii(
 
     Returns
     -----------------------
-    Instace of SalsuginibacillusKocurii graph.
+    Instace of Salsuginibacillus kocurii graph.
 
 	References
 	---------------------

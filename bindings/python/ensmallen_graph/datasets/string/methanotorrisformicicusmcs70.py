@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanotorrisFormicicusMcS70.
+This file offers the methods to automatically retrieve the graph Methanotorris formicicus Mc-S-70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanotorrisFormicicusMcS70(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanotorrisFormicicusMcS70 graph.
+    """Return new instance of the Methanotorris formicicus Mc-S-70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanotorrisFormicicusMcS70(
 
     Returns
     -----------------------
-    Instace of MethanotorrisFormicicusMcS70 graph.
+    Instace of Methanotorris formicicus Mc-S-70 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DichomitusSqualens.
+This file offers the methods to automatically retrieve the graph Dichomitus squalens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DichomitusSqualens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DichomitusSqualens graph.
+    """Return new instance of the Dichomitus squalens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DichomitusSqualens(
 
     Returns
     -----------------------
-    Instace of DichomitusSqualens graph.
+    Instace of Dichomitus squalens graph.
 
 	References
 	---------------------

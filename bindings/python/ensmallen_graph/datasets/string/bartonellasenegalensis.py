@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSenegalensis.
+This file offers the methods to automatically retrieve the graph Bartonella senegalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSenegalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSenegalensis graph.
+    """Return new instance of the Bartonella senegalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaSenegalensis(
 
     Returns
     -----------------------
-    Instace of BartonellaSenegalensis graph.
+    Instace of Bartonella senegalensis graph.
 
 	References
 	---------------------

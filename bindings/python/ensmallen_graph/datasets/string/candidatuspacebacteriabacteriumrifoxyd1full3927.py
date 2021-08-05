@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacebacteriaBacteriumRifoxyd1Full3927.
+This file offers the methods to automatically retrieve the graph Candidatus Pacebacteria bacterium RIFOXYD1_FULL_39_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPacebacteriaBacteriumRifoxyd1Full3927(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacebacteriaBacteriumRifoxyd1Full3927 graph.
+    """Return new instance of the Candidatus Pacebacteria bacterium RIFOXYD1_FULL_39_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPacebacteriaBacteriumRifoxyd1Full3927(
 
     Returns
     -----------------------
-    Instace of CandidatusPacebacteriaBacteriumRifoxyd1Full3927 graph.
+    Instace of Candidatus Pacebacteria bacterium RIFOXYD1_FULL_39_27 graph.
 
 	References
 	---------------------

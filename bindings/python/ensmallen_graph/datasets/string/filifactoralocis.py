@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FilifactorAlocis.
+This file offers the methods to automatically retrieve the graph Filifactor alocis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FilifactorAlocis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FilifactorAlocis graph.
+    """Return new instance of the Filifactor alocis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FilifactorAlocis(
 
     Returns
     -----------------------
-    Instace of FilifactorAlocis graph.
+    Instace of Filifactor alocis graph.
 
 	References
 	---------------------

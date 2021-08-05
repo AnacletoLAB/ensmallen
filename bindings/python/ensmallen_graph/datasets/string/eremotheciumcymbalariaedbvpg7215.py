@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremotheciumCymbalariaeDbvpg7215.
+This file offers the methods to automatically retrieve the graph Eremothecium cymbalariae DBVPG#7215.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremotheciumCymbalariaeDbvpg7215(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremotheciumCymbalariaeDbvpg7215 graph.
+    """Return new instance of the Eremothecium cymbalariae DBVPG#7215 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EremotheciumCymbalariaeDbvpg7215(
 
     Returns
     -----------------------
-    Instace of EremotheciumCymbalariaeDbvpg7215 graph.
+    Instace of Eremothecium cymbalariae DBVPG#7215 graph.
 
 	References
 	---------------------

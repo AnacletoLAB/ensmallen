@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminicenantesBacteriumScgcAaa252a02.
+This file offers the methods to automatically retrieve the graph Aminicenantes bacterium SCGC AAA252A02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminicenantesBacteriumScgcAaa252a02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminicenantesBacteriumScgcAaa252a02 graph.
+    """Return new instance of the Aminicenantes bacterium SCGC AAA252A02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AminicenantesBacteriumScgcAaa252a02(
 
     Returns
     -----------------------
-    Instace of AminicenantesBacteriumScgcAaa252a02 graph.
+    Instace of Aminicenantes bacterium SCGC AAA252A02 graph.
 
 	References
 	---------------------

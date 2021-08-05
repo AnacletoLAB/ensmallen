@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumGsub.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium Gsub.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumGsub(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumGsub graph.
+    """Return new instance of the Gammaproteobacteria bacterium Gsub graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumGsub(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumGsub graph.
+    Instace of Gammaproteobacteria bacterium Gsub graph.
 
 	References
 	---------------------

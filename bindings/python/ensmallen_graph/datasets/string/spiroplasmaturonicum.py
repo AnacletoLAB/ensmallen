@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaTuronicum.
+This file offers the methods to automatically retrieve the graph Spiroplasma turonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaTuronicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaTuronicum graph.
+    """Return new instance of the Spiroplasma turonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaTuronicum(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaTuronicum graph.
+    Instace of Spiroplasma turonicum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGraminisDsm20719.
+This file offers the methods to automatically retrieve the graph Lactobacillus graminis DSM 20719.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGraminisDsm20719(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGraminisDsm20719 graph.
+    """Return new instance of the Lactobacillus graminis DSM 20719 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusGraminisDsm20719(
 
     Returns
     -----------------------
-    Instace of LactobacillusGraminisDsm20719 graph.
+    Instace of Lactobacillus graminis DSM 20719 graph.
 
 	References
 	---------------------

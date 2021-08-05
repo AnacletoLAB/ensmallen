@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioCholeraeO395.
+This file offers the methods to automatically retrieve the graph Vibrio cholerae O395.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioCholeraeO395(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioCholeraeO395 graph.
+    """Return new instance of the Vibrio cholerae O395 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioCholeraeO395(
 
     Returns
     -----------------------
-    Instace of VibrioCholeraeO395 graph.
+    Instace of Vibrio cholerae O395 graph.
 
 	References
 	---------------------

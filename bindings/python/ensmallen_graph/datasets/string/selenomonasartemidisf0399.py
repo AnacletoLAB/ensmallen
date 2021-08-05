@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasArtemidisF0399.
+This file offers the methods to automatically retrieve the graph Selenomonas artemidis F0399.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasArtemidisF0399(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasArtemidisF0399 graph.
+    """Return new instance of the Selenomonas artemidis F0399 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SelenomonasArtemidisF0399(
 
     Returns
     -----------------------
-    Instace of SelenomonasArtemidisF0399 graph.
+    Instace of Selenomonas artemidis F0399 graph.
 
 	References
 	---------------------

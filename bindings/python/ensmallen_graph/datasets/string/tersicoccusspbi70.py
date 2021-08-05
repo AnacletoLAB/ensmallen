@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TersicoccusSpBi70.
+This file offers the methods to automatically retrieve the graph Tersicoccus sp. Bi-70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TersicoccusSpBi70(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TersicoccusSpBi70 graph.
+    """Return new instance of the Tersicoccus sp. Bi-70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TersicoccusSpBi70(
 
     Returns
     -----------------------
-    Instace of TersicoccusSpBi70 graph.
+    Instace of Tersicoccus sp. Bi-70 graph.
 
 	References
 	---------------------

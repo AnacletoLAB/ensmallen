@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbusJaponicus.
+This file offers the methods to automatically retrieve the graph Desulfobulbus japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbusJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbusJaponicus graph.
+    """Return new instance of the Desulfobulbus japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfobulbusJaponicus(
 
     Returns
     -----------------------
-    Instace of DesulfobulbusJaponicus graph.
+    Instace of Desulfobulbus japonicus graph.
 
 	References
 	---------------------

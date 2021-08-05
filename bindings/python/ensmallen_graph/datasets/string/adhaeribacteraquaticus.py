@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AdhaeribacterAquaticus.
+This file offers the methods to automatically retrieve the graph Adhaeribacter aquaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AdhaeribacterAquaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AdhaeribacterAquaticus graph.
+    """Return new instance of the Adhaeribacter aquaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AdhaeribacterAquaticus(
 
     Returns
     -----------------------
-    Instace of AdhaeribacterAquaticus graph.
+    Instace of Adhaeribacter aquaticus graph.
 
 	References
 	---------------------

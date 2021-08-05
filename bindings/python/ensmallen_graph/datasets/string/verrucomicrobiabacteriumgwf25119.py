@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumGwf25119.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium GWF2_51_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumGwf25119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumGwf25119 graph.
+    """Return new instance of the Verrucomicrobia bacterium GWF2_51_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiaBacteriumGwf25119(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumGwf25119 graph.
+    Instace of Verrucomicrobia bacterium GWF2_51_19 graph.
 
 	References
 	---------------------

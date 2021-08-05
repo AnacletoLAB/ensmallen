@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CriibacteriumBergeronii.
+This file offers the methods to automatically retrieve the graph Criibacterium bergeronii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CriibacteriumBergeronii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CriibacteriumBergeronii graph.
+    """Return new instance of the Criibacterium bergeronii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CriibacteriumBergeronii(
 
     Returns
     -----------------------
-    Instace of CriibacteriumBergeronii graph.
+    Instace of Criibacterium bergeronii graph.
 
 	References
 	---------------------

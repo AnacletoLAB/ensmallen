@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpKjj.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. KJJ.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpKjj(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpKjj graph.
+    """Return new instance of the Flavobacterium sp. KJJ graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSpKjj(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpKjj graph.
+    Instace of Flavobacterium sp. KJJ graph.
 
 	References
 	---------------------

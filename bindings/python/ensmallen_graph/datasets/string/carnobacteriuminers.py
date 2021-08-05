@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumIners.
+This file offers the methods to automatically retrieve the graph Carnobacterium iners.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumIners(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumIners graph.
+    """Return new instance of the Carnobacterium iners graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarnobacteriumIners(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumIners graph.
+    Instace of Carnobacterium iners graph.
 
 	References
 	---------------------

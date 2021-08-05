@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParusMajor.
+This file offers the methods to automatically retrieve the graph Parus major.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParusMajor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParusMajor graph.
+    """Return new instance of the Parus major graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParusMajor(
 
     Returns
     -----------------------
-    Instace of ParusMajor graph.
+    Instace of Parus major graph.
 
 	References
 	---------------------

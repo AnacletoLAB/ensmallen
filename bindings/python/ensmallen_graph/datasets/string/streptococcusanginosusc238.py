@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAnginosusC238.
+This file offers the methods to automatically retrieve the graph Streptococcus anginosus C238.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAnginosusC238(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAnginosusC238 graph.
+    """Return new instance of the Streptococcus anginosus C238 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAnginosusC238(
 
     Returns
     -----------------------
-    Instace of StreptococcusAnginosusC238 graph.
+    Instace of Streptococcus anginosus C238 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumNuruki.
+This file offers the methods to automatically retrieve the graph Corynebacterium nuruki.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumNuruki(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumNuruki graph.
+    """Return new instance of the Corynebacterium nuruki graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumNuruki(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumNuruki graph.
+    Instace of Corynebacterium nuruki graph.
 
 	References
 	---------------------

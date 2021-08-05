@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoldemaniaFiliformis.
+This file offers the methods to automatically retrieve the graph Holdemania filiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoldemaniaFiliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoldemaniaFiliformis graph.
+    """Return new instance of the Holdemania filiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HoldemaniaFiliformis(
 
     Returns
     -----------------------
-    Instace of HoldemaniaFiliformis graph.
+    Instace of Holdemania filiformis graph.
 
 	References
 	---------------------

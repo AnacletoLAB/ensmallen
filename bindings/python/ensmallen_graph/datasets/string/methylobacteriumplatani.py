@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumPlatani.
+This file offers the methods to automatically retrieve the graph Methylobacterium platani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumPlatani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumPlatani graph.
+    """Return new instance of the Methylobacterium platani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumPlatani(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumPlatani graph.
+    Instace of Methylobacterium platani graph.
 
 	References
 	---------------------

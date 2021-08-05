@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetivibrioEthanolgignens.
+This file offers the methods to automatically retrieve the graph Acetivibrio ethanolgignens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetivibrioEthanolgignens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetivibrioEthanolgignens graph.
+    """Return new instance of the Acetivibrio ethanolgignens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetivibrioEthanolgignens(
 
     Returns
     -----------------------
-    Instace of AcetivibrioEthanolgignens graph.
+    Instace of Acetivibrio ethanolgignens graph.
 
 	References
 	---------------------

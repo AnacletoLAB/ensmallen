@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UreaplasmaUrealyticum.
+This file offers the methods to automatically retrieve the graph Ureaplasma urealyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UreaplasmaUrealyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UreaplasmaUrealyticum graph.
+    """Return new instance of the Ureaplasma urealyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UreaplasmaUrealyticum(
 
     Returns
     -----------------------
-    Instace of UreaplasmaUrealyticum graph.
+    Instace of Ureaplasma urealyticum graph.
 
 	References
 	---------------------

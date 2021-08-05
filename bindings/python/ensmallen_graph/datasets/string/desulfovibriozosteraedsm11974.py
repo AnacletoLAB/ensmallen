@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioZosteraeDsm11974.
+This file offers the methods to automatically retrieve the graph Desulfovibrio zosterae DSM 11974.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioZosteraeDsm11974(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioZosteraeDsm11974 graph.
+    """Return new instance of the Desulfovibrio zosterae DSM 11974 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioZosteraeDsm11974(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioZosteraeDsm11974 graph.
+    Instace of Desulfovibrio zosterae DSM 11974 graph.
 
 	References
 	---------------------

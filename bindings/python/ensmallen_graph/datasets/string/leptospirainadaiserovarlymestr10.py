@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraInadaiSerovarLymeStr10.
+This file offers the methods to automatically retrieve the graph Leptospira inadai serovar Lyme str. 10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraInadaiSerovarLymeStr10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraInadaiSerovarLymeStr10 graph.
+    """Return new instance of the Leptospira inadai serovar Lyme str. 10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraInadaiSerovarLymeStr10(
 
     Returns
     -----------------------
-    Instace of LeptospiraInadaiSerovarLymeStr10 graph.
+    Instace of Leptospira inadai serovar Lyme str. 10 graph.
 
 	References
 	---------------------

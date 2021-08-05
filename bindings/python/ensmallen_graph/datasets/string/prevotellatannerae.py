@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaTannerae.
+This file offers the methods to automatically retrieve the graph Prevotella tannerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaTannerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaTannerae graph.
+    """Return new instance of the Prevotella tannerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaTannerae(
 
     Returns
     -----------------------
-    Instace of PrevotellaTannerae graph.
+    Instace of Prevotella tannerae graph.
 
 	References
 	---------------------

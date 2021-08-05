@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucorCircinelloides.
+This file offers the methods to automatically retrieve the graph Mucor circinelloides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucorCircinelloides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucorCircinelloides graph.
+    """Return new instance of the Mucor circinelloides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MucorCircinelloides(
 
     Returns
     -----------------------
-    Instace of MucorCircinelloides graph.
+    Instace of Mucor circinelloides graph.
 
 	References
 	---------------------

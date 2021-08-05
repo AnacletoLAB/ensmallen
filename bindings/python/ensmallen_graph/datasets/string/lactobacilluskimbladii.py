@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKimbladii.
+This file offers the methods to automatically retrieve the graph Lactobacillus kimbladii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKimbladii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKimbladii graph.
+    """Return new instance of the Lactobacillus kimbladii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKimbladii(
 
     Returns
     -----------------------
-    Instace of LactobacillusKimbladii graph.
+    Instace of Lactobacillus kimbladii graph.
 
 	References
 	---------------------

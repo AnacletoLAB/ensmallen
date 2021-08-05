@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBathyarchaeotaArchaeonB25.
+This file offers the methods to automatically retrieve the graph Candidatus Bathyarchaeota archaeon B25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBathyarchaeotaArchaeonB25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBathyarchaeotaArchaeonB25 graph.
+    """Return new instance of the Candidatus Bathyarchaeota archaeon B25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBathyarchaeotaArchaeonB25(
 
     Returns
     -----------------------
-    Instace of CandidatusBathyarchaeotaArchaeonB25 graph.
+    Instace of Candidatus Bathyarchaeota archaeon B25 graph.
 
 	References
 	---------------------

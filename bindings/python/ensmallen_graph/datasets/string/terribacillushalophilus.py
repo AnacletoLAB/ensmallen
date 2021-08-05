@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerribacillusHalophilus.
+This file offers the methods to automatically retrieve the graph Terribacillus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerribacillusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerribacillusHalophilus graph.
+    """Return new instance of the Terribacillus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerribacillusHalophilus(
 
     Returns
     -----------------------
-    Instace of TerribacillusHalophilus graph.
+    Instace of Terribacillus halophilus graph.
 
 	References
 	---------------------

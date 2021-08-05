@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClupeaHarengus.
+This file offers the methods to automatically retrieve the graph Clupea harengus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClupeaHarengus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClupeaHarengus graph.
+    """Return new instance of the Clupea harengus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClupeaHarengus(
 
     Returns
     -----------------------
-    Instace of ClupeaHarengus graph.
+    Instace of Clupea harengus graph.
 
 	References
 	---------------------

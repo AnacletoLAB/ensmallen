@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TannerellaSpOralTaxonHot286.
+This file offers the methods to automatically retrieve the graph Tannerella sp. oral taxon HOT-286.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TannerellaSpOralTaxonHot286(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TannerellaSpOralTaxonHot286 graph.
+    """Return new instance of the Tannerella sp. oral taxon HOT-286 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TannerellaSpOralTaxonHot286(
 
     Returns
     -----------------------
-    Instace of TannerellaSpOralTaxonHot286 graph.
+    Instace of Tannerella sp. oral taxon HOT-286 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLevybacteriaBacteriumGw2011Gwa13716.
+This file offers the methods to automatically retrieve the graph Candidatus Levybacteria bacterium GW2011_GWA1_37_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLevybacteriaBacteriumGw2011Gwa13716(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLevybacteriaBacteriumGw2011Gwa13716 graph.
+    """Return new instance of the Candidatus Levybacteria bacterium GW2011_GWA1_37_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLevybacteriaBacteriumGw2011Gwa13716(
 
     Returns
     -----------------------
-    Instace of CandidatusLevybacteriaBacteriumGw2011Gwa13716 graph.
+    Instace of Candidatus Levybacteria bacterium GW2011_GWA1_37_16 graph.
 
 	References
 	---------------------

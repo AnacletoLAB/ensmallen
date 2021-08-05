@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaWenchangensis.
+This file offers the methods to automatically retrieve the graph Nonomuraea wenchangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaWenchangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaWenchangensis graph.
+    """Return new instance of the Nonomuraea wenchangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaWenchangensis(
 
     Returns
     -----------------------
-    Instace of NonomuraeaWenchangensis graph.
+    Instace of Nonomuraea wenchangensis graph.
 
 	References
 	---------------------

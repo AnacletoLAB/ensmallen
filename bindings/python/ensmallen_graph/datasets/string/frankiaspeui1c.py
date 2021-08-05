@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpEui1c.
+This file offers the methods to automatically retrieve the graph Frankia sp. EuI1c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpEui1c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpEui1c graph.
+    """Return new instance of the Frankia sp. EuI1c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpEui1c(
 
     Returns
     -----------------------
-    Instace of FrankiaSpEui1c graph.
+    Instace of Frankia sp. EuI1c graph.
 
 	References
 	---------------------

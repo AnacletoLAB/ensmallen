@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusGrossensis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus grossensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusGrossensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusGrossensis graph.
+    """Return new instance of the Peptoniphilus grossensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusGrossensis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusGrossensis graph.
+    Instace of Peptoniphilus grossensis graph.
 
 	References
 	---------------------

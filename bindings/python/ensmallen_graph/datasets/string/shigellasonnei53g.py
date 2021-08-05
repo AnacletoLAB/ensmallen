@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShigellaSonnei53g.
+This file offers the methods to automatically retrieve the graph Shigella sonnei 53G.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShigellaSonnei53g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShigellaSonnei53g graph.
+    """Return new instance of the Shigella sonnei 53G graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShigellaSonnei53g(
 
     Returns
     -----------------------
-    Instace of ShigellaSonnei53g graph.
+    Instace of Shigella sonnei 53G graph.
 
 	References
 	---------------------

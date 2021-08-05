@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusKoreensis.
+This file offers the methods to automatically retrieve the graph Bacillus koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusKoreensis graph.
+    """Return new instance of the Bacillus koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusKoreensis(
 
     Returns
     -----------------------
-    Instace of BacillusKoreensis graph.
+    Instace of Bacillus koreensis graph.
 
 	References
 	---------------------

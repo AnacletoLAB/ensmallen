@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaMirantina.
+This file offers the methods to automatically retrieve the graph Lachancea mirantina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaMirantina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaMirantina graph.
+    """Return new instance of the Lachancea mirantina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachanceaMirantina(
 
     Returns
     -----------------------
-    Instace of LachanceaMirantina graph.
+    Instace of Lachancea mirantina graph.
 
 	References
 	---------------------

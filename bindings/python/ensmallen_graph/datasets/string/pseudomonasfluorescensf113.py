@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFluorescensF113.
+This file offers the methods to automatically retrieve the graph Pseudomonas fluorescens F113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFluorescensF113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFluorescensF113 graph.
+    """Return new instance of the Pseudomonas fluorescens F113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasFluorescensF113(
 
     Returns
     -----------------------
-    Instace of PseudomonasFluorescensF113 graph.
+    Instace of Pseudomonas fluorescens F113 graph.
 
 	References
 	---------------------

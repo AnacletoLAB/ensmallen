@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChaetomiumThermophilum.
+This file offers the methods to automatically retrieve the graph Chaetomium thermophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChaetomiumThermophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChaetomiumThermophilum graph.
+    """Return new instance of the Chaetomium thermophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChaetomiumThermophilum(
 
     Returns
     -----------------------
-    Instace of ChaetomiumThermophilum graph.
+    Instace of Chaetomium thermophilum graph.
 
 	References
 	---------------------

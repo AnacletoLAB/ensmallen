@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaBacteriumUc511d2.
+This file offers the methods to automatically retrieve the graph Clostridia bacterium UC5.1-1D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaBacteriumUc511d2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaBacteriumUc511d2 graph.
+    """Return new instance of the Clostridia bacterium UC5.1-1D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiaBacteriumUc511d2(
 
     Returns
     -----------------------
-    Instace of ClostridiaBacteriumUc511d2 graph.
+    Instace of Clostridia bacterium UC5.1-1D2 graph.
 
 	References
 	---------------------

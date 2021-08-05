@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasBacteroides.
+This file offers the methods to automatically retrieve the graph Brevundimonas bacteroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasBacteroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasBacteroides graph.
+    """Return new instance of the Brevundimonas bacteroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevundimonasBacteroides(
 
     Returns
     -----------------------
-    Instace of BrevundimonasBacteroides graph.
+    Instace of Brevundimonas bacteroides graph.
 
 	References
 	---------------------

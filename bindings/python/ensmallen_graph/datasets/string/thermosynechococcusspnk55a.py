@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosynechococcusSpNk55a.
+This file offers the methods to automatically retrieve the graph Thermosynechococcus sp. NK55a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosynechococcusSpNk55a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosynechococcusSpNk55a graph.
+    """Return new instance of the Thermosynechococcus sp. NK55a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermosynechococcusSpNk55a(
 
     Returns
     -----------------------
-    Instace of ThermosynechococcusSpNk55a graph.
+    Instace of Thermosynechococcus sp. NK55a graph.
 
 	References
 	---------------------

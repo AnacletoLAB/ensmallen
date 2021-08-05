@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcaryochlorisMarina.
+This file offers the methods to automatically retrieve the graph Acaryochloris marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcaryochlorisMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcaryochlorisMarina graph.
+    """Return new instance of the Acaryochloris marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcaryochlorisMarina(
 
     Returns
     -----------------------
-    Instace of AcaryochlorisMarina graph.
+    Instace of Acaryochloris marina graph.
 
 	References
 	---------------------

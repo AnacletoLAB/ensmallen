@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusSpA2.
+This file offers the methods to automatically retrieve the graph Roseovarius sp. A-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusSpA2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusSpA2 graph.
+    """Return new instance of the Roseovarius sp. A-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseovariusSpA2(
 
     Returns
     -----------------------
-    Instace of RoseovariusSpA2 graph.
+    Instace of Roseovarius sp. A-2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFuscovaginae.
+This file offers the methods to automatically retrieve the graph Pseudomonas fuscovaginae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFuscovaginae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFuscovaginae graph.
+    """Return new instance of the Pseudomonas fuscovaginae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasFuscovaginae(
 
     Returns
     -----------------------
-    Instace of PseudomonasFuscovaginae graph.
+    Instace of Pseudomonas fuscovaginae graph.
 
 	References
 	---------------------

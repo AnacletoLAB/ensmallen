@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaSp2812b.
+This file offers the methods to automatically retrieve the graph Thermotoga sp. 2812B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaSp2812b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaSp2812b graph.
+    """Return new instance of the Thermotoga sp. 2812B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermotogaSp2812b(
 
     Returns
     -----------------------
-    Instace of ThermotogaSp2812b graph.
+    Instace of Thermotoga sp. 2812B graph.
 
 	References
 	---------------------

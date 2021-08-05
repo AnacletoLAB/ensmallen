@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicaulisSpHl87.
+This file offers the methods to automatically retrieve the graph Oceanicaulis sp. HL87.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicaulisSpHl87(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicaulisSpHl87 graph.
+    """Return new instance of the Oceanicaulis sp. HL87 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicaulisSpHl87(
 
     Returns
     -----------------------
-    Instace of OceanicaulisSpHl87 graph.
+    Instace of Oceanicaulis sp. HL87 graph.
 
 	References
 	---------------------

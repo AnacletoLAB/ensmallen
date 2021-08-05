@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexiBacteriumRifcsplowo202Full7116.
+This file offers the methods to automatically retrieve the graph Chloroflexi bacterium RIFCSPLOWO2_02_FULL_71_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexiBacteriumRifcsplowo202Full7116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexiBacteriumRifcsplowo202Full7116 graph.
+    """Return new instance of the Chloroflexi bacterium RIFCSPLOWO2_02_FULL_71_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloroflexiBacteriumRifcsplowo202Full7116(
 
     Returns
     -----------------------
-    Instace of ChloroflexiBacteriumRifcsplowo202Full7116 graph.
+    Instace of Chloroflexi bacterium RIFCSPLOWO2_02_FULL_71_16 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevinemaAndersonii.
+This file offers the methods to automatically retrieve the graph Brevinema andersonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevinemaAndersonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevinemaAndersonii graph.
+    """Return new instance of the Brevinema andersonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevinemaAndersonii(
 
     Returns
     -----------------------
-    Instace of BrevinemaAndersonii graph.
+    Instace of Brevinema andersonii graph.
 
 	References
 	---------------------

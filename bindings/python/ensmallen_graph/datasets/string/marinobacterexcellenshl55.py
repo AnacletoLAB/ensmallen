@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterExcellensHl55.
+This file offers the methods to automatically retrieve the graph Marinobacter excellens HL-55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterExcellensHl55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterExcellensHl55 graph.
+    """Return new instance of the Marinobacter excellens HL-55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterExcellensHl55(
 
     Returns
     -----------------------
-    Instace of MarinobacterExcellensHl55 graph.
+    Instace of Marinobacter excellens HL-55 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumParaconglomeratum.
+This file offers the methods to automatically retrieve the graph Brachybacterium paraconglomeratum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumParaconglomeratum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumParaconglomeratum graph.
+    """Return new instance of the Brachybacterium paraconglomeratum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachybacteriumParaconglomeratum(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumParaconglomeratum graph.
+    Instace of Brachybacterium paraconglomeratum graph.
 
 	References
 	---------------------

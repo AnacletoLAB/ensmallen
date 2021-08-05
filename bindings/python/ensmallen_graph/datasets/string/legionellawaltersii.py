@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaWaltersii.
+This file offers the methods to automatically retrieve the graph Legionella waltersii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaWaltersii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaWaltersii graph.
+    """Return new instance of the Legionella waltersii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaWaltersii(
 
     Returns
     -----------------------
-    Instace of LegionellaWaltersii graph.
+    Instace of Legionella waltersii graph.
 
 	References
 	---------------------

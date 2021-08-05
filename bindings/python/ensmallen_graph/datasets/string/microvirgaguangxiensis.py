@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgaGuangxiensis.
+This file offers the methods to automatically retrieve the graph Microvirga guangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgaGuangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgaGuangxiensis graph.
+    """Return new instance of the Microvirga guangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrovirgaGuangxiensis(
 
     Returns
     -----------------------
-    Instace of MicrovirgaGuangxiensis graph.
+    Instace of Microvirga guangxiensis graph.
 
 	References
 	---------------------

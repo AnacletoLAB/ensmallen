@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoriobacterialesBacteriumDnf00809.
+This file offers the methods to automatically retrieve the graph Coriobacteriales bacterium DNF00809.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoriobacterialesBacteriumDnf00809(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoriobacterialesBacteriumDnf00809 graph.
+    """Return new instance of the Coriobacteriales bacterium DNF00809 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoriobacterialesBacteriumDnf00809(
 
     Returns
     -----------------------
-    Instace of CoriobacterialesBacteriumDnf00809 graph.
+    Instace of Coriobacteriales bacterium DNF00809 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpDlviii.
+This file offers the methods to automatically retrieve the graph Clostridium sp. DLVIII.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpDlviii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpDlviii graph.
+    """Return new instance of the Clostridium sp. DLVIII graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpDlviii(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpDlviii graph.
+    Instace of Clostridium sp. DLVIII graph.
 
 	References
 	---------------------

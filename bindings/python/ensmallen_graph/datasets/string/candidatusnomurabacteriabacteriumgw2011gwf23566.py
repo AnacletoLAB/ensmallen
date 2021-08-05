@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNomurabacteriaBacteriumGw2011Gwf23566.
+This file offers the methods to automatically retrieve the graph Candidatus Nomurabacteria bacterium GW2011_GWF2_35_66.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNomurabacteriaBacteriumGw2011Gwf23566(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNomurabacteriaBacteriumGw2011Gwf23566 graph.
+    """Return new instance of the Candidatus Nomurabacteria bacterium GW2011_GWF2_35_66 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNomurabacteriaBacteriumGw2011Gwf23566(
 
     Returns
     -----------------------
-    Instace of CandidatusNomurabacteriaBacteriumGw2011Gwf23566 graph.
+    Instace of Candidatus Nomurabacteria bacterium GW2011_GWF2_35_66 graph.
 
 	References
 	---------------------

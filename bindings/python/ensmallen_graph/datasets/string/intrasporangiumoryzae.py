@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntrasporangiumOryzae.
+This file offers the methods to automatically retrieve the graph Intrasporangium oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IntrasporangiumOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntrasporangiumOryzae graph.
+    """Return new instance of the Intrasporangium oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IntrasporangiumOryzae(
 
     Returns
     -----------------------
-    Instace of IntrasporangiumOryzae graph.
+    Instace of Intrasporangium oryzae graph.
 
 	References
 	---------------------

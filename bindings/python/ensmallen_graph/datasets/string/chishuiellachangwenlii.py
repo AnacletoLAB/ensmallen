@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChishuiellaChangwenlii.
+This file offers the methods to automatically retrieve the graph Chishuiella changwenlii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChishuiellaChangwenlii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChishuiellaChangwenlii graph.
+    """Return new instance of the Chishuiella changwenlii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChishuiellaChangwenlii(
 
     Returns
     -----------------------
-    Instace of ChishuiellaChangwenlii graph.
+    Instace of Chishuiella changwenlii graph.
 
 	References
 	---------------------

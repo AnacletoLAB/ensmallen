@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaSpMar2010102.
+This file offers the methods to automatically retrieve the graph Gramella sp. MAR_2010_102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaSpMar2010102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaSpMar2010102 graph.
+    """Return new instance of the Gramella sp. MAR_2010_102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GramellaSpMar2010102(
 
     Returns
     -----------------------
-    Instace of GramellaSpMar2010102 graph.
+    Instace of Gramella sp. MAR_2010_102 graph.
 
 	References
 	---------------------

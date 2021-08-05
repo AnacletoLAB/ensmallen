@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumXenopi.
+This file offers the methods to automatically retrieve the graph Mycobacterium xenopi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumXenopi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumXenopi graph.
+    """Return new instance of the Mycobacterium xenopi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumXenopi(
 
     Returns
     -----------------------
-    Instace of MycobacteriumXenopi graph.
+    Instace of Mycobacterium xenopi graph.
 
 	References
 	---------------------

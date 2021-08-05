@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumMarseilleP2935.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium Marseille-P2935.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumMarseilleP2935(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumMarseilleP2935 graph.
+    """Return new instance of the Ruminococcaceae bacterium Marseille-P2935 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumMarseilleP2935(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumMarseilleP2935 graph.
+    Instace of Ruminococcaceae bacterium Marseille-P2935 graph.
 
 	References
 	---------------------

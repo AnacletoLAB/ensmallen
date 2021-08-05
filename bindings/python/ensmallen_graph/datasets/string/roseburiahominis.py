@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaHominis.
+This file offers the methods to automatically retrieve the graph Roseburia hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaHominis graph.
+    """Return new instance of the Roseburia hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseburiaHominis(
 
     Returns
     -----------------------
-    Instace of RoseburiaHominis graph.
+    Instace of Roseburia hominis graph.
 
 	References
 	---------------------

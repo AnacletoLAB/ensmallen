@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusRossiae.
+This file offers the methods to automatically retrieve the graph Lactobacillus rossiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusRossiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusRossiae graph.
+    """Return new instance of the Lactobacillus rossiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusRossiae(
 
     Returns
     -----------------------
-    Instace of LactobacillusRossiae graph.
+    Instace of Lactobacillus rossiae graph.
 
 	References
 	---------------------

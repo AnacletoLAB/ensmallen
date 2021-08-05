@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAndersenbacteriaBacteriumRifcsphigho201Full4636.
+This file offers the methods to automatically retrieve the graph Candidatus Andersenbacteria bacterium RIFCSPHIGHO2_01_FULL_46_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAndersenbacteriaBacteriumRifcsphigho201Full4636(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAndersenbacteriaBacteriumRifcsphigho201Full4636 graph.
+    """Return new instance of the Candidatus Andersenbacteria bacterium RIFCSPHIGHO2_01_FULL_46_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAndersenbacteriaBacteriumRifcsphigho201Full4636(
 
     Returns
     -----------------------
-    Instace of CandidatusAndersenbacteriaBacteriumRifcsphigho201Full4636 graph.
+    Instace of Candidatus Andersenbacteria bacterium RIFCSPHIGHO2_01_FULL_46_36 graph.
 
 	References
 	---------------------

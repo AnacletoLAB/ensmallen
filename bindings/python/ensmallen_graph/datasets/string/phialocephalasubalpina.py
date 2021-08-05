@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhialocephalaSubalpina.
+This file offers the methods to automatically retrieve the graph Phialocephala subalpina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhialocephalaSubalpina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhialocephalaSubalpina graph.
+    """Return new instance of the Phialocephala subalpina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhialocephalaSubalpina(
 
     Returns
     -----------------------
-    Instace of PhialocephalaSubalpina graph.
+    Instace of Phialocephala subalpina graph.
 
 	References
 	---------------------

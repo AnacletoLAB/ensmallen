@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomicrobiumZhouii.
+This file offers the methods to automatically retrieve the graph Halomicrobium zhouii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomicrobiumZhouii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomicrobiumZhouii graph.
+    """Return new instance of the Halomicrobium zhouii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomicrobiumZhouii(
 
     Returns
     -----------------------
-    Instace of HalomicrobiumZhouii graph.
+    Instace of Halomicrobium zhouii graph.
 
 	References
 	---------------------

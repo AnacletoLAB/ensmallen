@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobacillusSpC254.
+This file offers the methods to automatically retrieve the graph Thalassobacillus sp. C254.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobacillusSpC254(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobacillusSpC254 graph.
+    """Return new instance of the Thalassobacillus sp. C254 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobacillusSpC254(
 
     Returns
     -----------------------
-    Instace of ThalassobacillusSpC254 graph.
+    Instace of Thalassobacillus sp. C254 graph.
 
 	References
 	---------------------

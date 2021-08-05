@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumYoeliiYoelii.
+This file offers the methods to automatically retrieve the graph Plasmodium yoelii yoelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumYoeliiYoelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumYoeliiYoelii graph.
+    """Return new instance of the Plasmodium yoelii yoelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlasmodiumYoeliiYoelii(
 
     Returns
     -----------------------
-    Instace of PlasmodiumYoeliiYoelii graph.
+    Instace of Plasmodium yoelii yoelii graph.
 
 	References
 	---------------------

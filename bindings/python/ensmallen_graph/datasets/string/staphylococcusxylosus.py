@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusXylosus.
+This file offers the methods to automatically retrieve the graph Staphylococcus xylosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusXylosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusXylosus graph.
+    """Return new instance of the Staphylococcus xylosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusXylosus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusXylosus graph.
+    Instace of Staphylococcus xylosus graph.
 
 	References
 	---------------------

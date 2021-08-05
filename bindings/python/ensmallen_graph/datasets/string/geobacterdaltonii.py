@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterDaltonii.
+This file offers the methods to automatically retrieve the graph Geobacter daltonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterDaltonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterDaltonii graph.
+    """Return new instance of the Geobacter daltonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacterDaltonii(
 
     Returns
     -----------------------
-    Instace of GeobacterDaltonii graph.
+    Instace of Geobacter daltonii graph.
 
 	References
 	---------------------

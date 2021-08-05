@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallionellaCapsiferriformans.
+This file offers the methods to automatically retrieve the graph Gallionella capsiferriformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallionellaCapsiferriformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallionellaCapsiferriformans graph.
+    """Return new instance of the Gallionella capsiferriformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GallionellaCapsiferriformans(
 
     Returns
     -----------------------
-    Instace of GallionellaCapsiferriformans graph.
+    Instace of Gallionella capsiferriformans graph.
 
 	References
 	---------------------

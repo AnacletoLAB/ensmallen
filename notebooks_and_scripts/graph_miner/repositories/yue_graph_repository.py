@@ -11,7 +11,7 @@ from .graph_repository import GraphRepository
 class YueGraphRepository(GraphRepository):
 
     def __init__(self):
-        """Create new String Graph Repository object."""
+        """Create new Yue Graph Repository object."""
         super().__init__()
         self._data = compress_json.local_load("yue.json")
 

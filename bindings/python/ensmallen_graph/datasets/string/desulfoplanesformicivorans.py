@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfoplanesFormicivorans.
+This file offers the methods to automatically retrieve the graph Desulfoplanes formicivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfoplanesFormicivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfoplanesFormicivorans graph.
+    """Return new instance of the Desulfoplanes formicivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfoplanesFormicivorans(
 
     Returns
     -----------------------
-    Instace of DesulfoplanesFormicivorans graph.
+    Instace of Desulfoplanes formicivorans graph.
 
 	References
 	---------------------

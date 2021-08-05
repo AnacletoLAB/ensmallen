@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBlackburnbacteriaBacteriumRifcsphigho202Full4420.
+This file offers the methods to automatically retrieve the graph Candidatus Blackburnbacteria bacterium RIFCSPHIGHO2_02_FULL_44_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBlackburnbacteriaBacteriumRifcsphigho202Full4420(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBlackburnbacteriaBacteriumRifcsphigho202Full4420 graph.
+    """Return new instance of the Candidatus Blackburnbacteria bacterium RIFCSPHIGHO2_02_FULL_44_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBlackburnbacteriaBacteriumRifcsphigho202Full4420(
 
     Returns
     -----------------------
-    Instace of CandidatusBlackburnbacteriaBacteriumRifcsphigho202Full4420 graph.
+    Instace of Candidatus Blackburnbacteria bacterium RIFCSPHIGHO2_02_FULL_44_20 graph.
 
 	References
 	---------------------

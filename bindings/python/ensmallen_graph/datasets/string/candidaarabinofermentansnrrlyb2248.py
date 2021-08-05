@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaArabinofermentansNrrlYb2248.
+This file offers the methods to automatically retrieve the graph [Candida] arabinofermentans NRRL YB-2248.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaArabinofermentansNrrlYb2248(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaArabinofermentansNrrlYb2248 graph.
+    """Return new instance of the [Candida] arabinofermentans NRRL YB-2248 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaArabinofermentansNrrlYb2248(
 
     Returns
     -----------------------
-    Instace of CandidaArabinofermentansNrrlYb2248 graph.
+    Instace of [Candida] arabinofermentans NRRL YB-2248 graph.
 
 	References
 	---------------------

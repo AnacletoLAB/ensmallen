@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasRhizophila.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas rhizophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasRhizophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasRhizophila graph.
+    """Return new instance of the Stenotrophomonas rhizophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasRhizophila(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasRhizophila graph.
+    Instace of Stenotrophomonas rhizophila graph.
 
 	References
 	---------------------

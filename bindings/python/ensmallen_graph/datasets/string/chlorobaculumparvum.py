@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobaculumParvum.
+This file offers the methods to automatically retrieve the graph Chlorobaculum parvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobaculumParvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobaculumParvum graph.
+    """Return new instance of the Chlorobaculum parvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobaculumParvum(
 
     Returns
     -----------------------
-    Instace of ChlorobaculumParvum graph.
+    Instace of Chlorobaculum parvum graph.
 
 	References
 	---------------------

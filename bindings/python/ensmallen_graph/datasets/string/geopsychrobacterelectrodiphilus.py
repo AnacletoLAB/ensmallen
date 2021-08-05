@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeopsychrobacterElectrodiphilus.
+This file offers the methods to automatically retrieve the graph Geopsychrobacter electrodiphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeopsychrobacterElectrodiphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeopsychrobacterElectrodiphilus graph.
+    """Return new instance of the Geopsychrobacter electrodiphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeopsychrobacterElectrodiphilus(
 
     Returns
     -----------------------
-    Instace of GeopsychrobacterElectrodiphilus graph.
+    Instace of Geopsychrobacter electrodiphilus graph.
 
 	References
 	---------------------

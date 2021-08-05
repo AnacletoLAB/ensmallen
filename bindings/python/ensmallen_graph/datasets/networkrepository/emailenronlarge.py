@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailEnronLarge.
+This file offers the methods to automatically retrieve the graph email-enron-large.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailEnronLarge(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailEnronLarge graph.
+    """Return new instance of the email-enron-large graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailEnronLarge(
 
     Returns
     -----------------------
-    Instace of EmailEnronLarge graph.
+    Instace of email-enron-large graph.
 
 	References
 	---------------------

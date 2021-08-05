@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusKorlensisNbrc107688.
+This file offers the methods to automatically retrieve the graph Bacillus korlensis NBRC 107688.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusKorlensisNbrc107688(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusKorlensisNbrc107688 graph.
+    """Return new instance of the Bacillus korlensis NBRC 107688 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusKorlensisNbrc107688(
 
     Returns
     -----------------------
-    Instace of BacillusKorlensisNbrc107688 graph.
+    Instace of Bacillus korlensis NBRC 107688 graph.
 
 	References
 	---------------------

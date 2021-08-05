@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCommune.
+This file offers the methods to automatically retrieve the graph Flavobacterium commune.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumCommune(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCommune graph.
+    """Return new instance of the Flavobacterium commune graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumCommune(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCommune graph.
+    Instace of Flavobacterium commune graph.
 
 	References
 	---------------------

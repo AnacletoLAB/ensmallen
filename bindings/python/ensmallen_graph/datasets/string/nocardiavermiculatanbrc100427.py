@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaVermiculataNbrc100427.
+This file offers the methods to automatically retrieve the graph Nocardia vermiculata NBRC 100427.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaVermiculataNbrc100427(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaVermiculataNbrc100427 graph.
+    """Return new instance of the Nocardia vermiculata NBRC 100427 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaVermiculataNbrc100427(
 
     Returns
     -----------------------
-    Instace of NocardiaVermiculataNbrc100427 graph.
+    Instace of Nocardia vermiculata NBRC 100427 graph.
 
 	References
 	---------------------

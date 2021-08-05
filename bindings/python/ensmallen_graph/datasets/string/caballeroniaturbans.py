@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaTurbans.
+This file offers the methods to automatically retrieve the graph Caballeronia turbans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaTurbans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaTurbans graph.
+    """Return new instance of the Caballeronia turbans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaTurbans(
 
     Returns
     -----------------------
-    Instace of CaballeroniaTurbans graph.
+    Instace of Caballeronia turbans graph.
 
 	References
 	---------------------

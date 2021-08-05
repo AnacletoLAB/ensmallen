@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumTegetincolaDsm22377.
+This file offers the methods to automatically retrieve the graph Flavobacterium tegetincola DSM 22377.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumTegetincolaDsm22377(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumTegetincolaDsm22377 graph.
+    """Return new instance of the Flavobacterium tegetincola DSM 22377 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumTegetincolaDsm22377(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumTegetincolaDsm22377 graph.
+    Instace of Flavobacterium tegetincola DSM 22377 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeophyllumTrabeumAtcc11539.
+This file offers the methods to automatically retrieve the graph Gloeophyllum trabeum ATCC 11539.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GloeophyllumTrabeumAtcc11539(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeophyllumTrabeumAtcc11539 graph.
+    """Return new instance of the Gloeophyllum trabeum ATCC 11539 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GloeophyllumTrabeumAtcc11539(
 
     Returns
     -----------------------
-    Instace of GloeophyllumTrabeumAtcc11539 graph.
+    Instace of Gloeophyllum trabeum ATCC 11539 graph.
 
 	References
 	---------------------

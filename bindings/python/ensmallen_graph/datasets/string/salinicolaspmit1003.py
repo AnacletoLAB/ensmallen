@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicolaSpMit1003.
+This file offers the methods to automatically retrieve the graph Salinicola sp. MIT1003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicolaSpMit1003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicolaSpMit1003 graph.
+    """Return new instance of the Salinicola sp. MIT1003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicolaSpMit1003(
 
     Returns
     -----------------------
-    Instace of SalinicolaSpMit1003 graph.
+    Instace of Salinicola sp. MIT1003 graph.
 
 	References
 	---------------------

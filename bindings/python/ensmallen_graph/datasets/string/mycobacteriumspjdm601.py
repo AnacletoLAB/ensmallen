@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpJdm601.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. JDM601.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpJdm601(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpJdm601 graph.
+    """Return new instance of the Mycobacterium sp. JDM601 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSpJdm601(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpJdm601 graph.
+    Instace of Mycobacterium sp. JDM601 graph.
 
 	References
 	---------------------

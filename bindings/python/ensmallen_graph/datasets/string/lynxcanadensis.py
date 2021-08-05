@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LynxCanadensis.
+This file offers the methods to automatically retrieve the graph Lynx canadensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LynxCanadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LynxCanadensis graph.
+    """Return new instance of the Lynx canadensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LynxCanadensis(
 
     Returns
     -----------------------
-    Instace of LynxCanadensis graph.
+    Instace of Lynx canadensis graph.
 
 	References
 	---------------------

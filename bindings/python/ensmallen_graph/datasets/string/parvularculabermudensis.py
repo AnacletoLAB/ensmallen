@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvularculaBermudensis.
+This file offers the methods to automatically retrieve the graph Parvularcula bermudensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvularculaBermudensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvularculaBermudensis graph.
+    """Return new instance of the Parvularcula bermudensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParvularculaBermudensis(
 
     Returns
     -----------------------
-    Instace of ParvularculaBermudensis graph.
+    Instace of Parvularcula bermudensis graph.
 
 	References
 	---------------------

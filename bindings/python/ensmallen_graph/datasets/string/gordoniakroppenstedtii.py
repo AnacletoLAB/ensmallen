@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaKroppenstedtii.
+This file offers the methods to automatically retrieve the graph Gordonia kroppenstedtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaKroppenstedtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaKroppenstedtii graph.
+    """Return new instance of the Gordonia kroppenstedtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaKroppenstedtii(
 
     Returns
     -----------------------
-    Instace of GordoniaKroppenstedtii graph.
+    Instace of Gordonia kroppenstedtii graph.
 
 	References
 	---------------------

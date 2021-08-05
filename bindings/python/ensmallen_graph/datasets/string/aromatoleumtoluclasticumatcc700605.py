@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AromatoleumToluclasticumAtcc700605.
+This file offers the methods to automatically retrieve the graph Aromatoleum toluclasticum ATCC 700605.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AromatoleumToluclasticumAtcc700605(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AromatoleumToluclasticumAtcc700605 graph.
+    """Return new instance of the Aromatoleum toluclasticum ATCC 700605 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AromatoleumToluclasticumAtcc700605(
 
     Returns
     -----------------------
-    Instace of AromatoleumToluclasticumAtcc700605 graph.
+    Instace of Aromatoleum toluclasticum ATCC 700605 graph.
 
 	References
 	---------------------

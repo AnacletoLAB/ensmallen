@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoxiellaLikeEndosymbiont.
+This file offers the methods to automatically retrieve the graph Coxiella-like endosymbiont.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoxiellaLikeEndosymbiont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoxiellaLikeEndosymbiont graph.
+    """Return new instance of the Coxiella-like endosymbiont graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoxiellaLikeEndosymbiont(
 
     Returns
     -----------------------
-    Instace of CoxiellaLikeEndosymbiont graph.
+    Instace of Coxiella-like endosymbiont graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpCag624043.
+This file offers the methods to automatically retrieve the graph Clostridium sp. CAG:62_40_43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpCag624043(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpCag624043 graph.
+    """Return new instance of the Clostridium sp. CAG:62_40_43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpCag624043(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpCag624043 graph.
+    Instace of Clostridium sp. CAG:62_40_43 graph.
 
 	References
 	---------------------

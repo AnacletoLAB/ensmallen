@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterMuridarum.
+This file offers the methods to automatically retrieve the graph Helicobacter muridarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterMuridarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterMuridarum graph.
+    """Return new instance of the Helicobacter muridarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterMuridarum(
 
     Returns
     -----------------------
-    Instace of HelicobacterMuridarum graph.
+    Instace of Helicobacter muridarum graph.
 
 	References
 	---------------------

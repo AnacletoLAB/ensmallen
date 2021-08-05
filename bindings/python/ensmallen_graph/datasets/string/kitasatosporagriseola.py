@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaGriseola.
+This file offers the methods to automatically retrieve the graph Kitasatospora griseola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaGriseola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaGriseola graph.
+    """Return new instance of the Kitasatospora griseola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KitasatosporaGriseola(
 
     Returns
     -----------------------
-    Instace of KitasatosporaGriseola graph.
+    Instace of Kitasatospora griseola graph.
 
 	References
 	---------------------

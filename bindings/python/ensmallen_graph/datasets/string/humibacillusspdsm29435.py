@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HumibacillusSpDsm29435.
+This file offers the methods to automatically retrieve the graph Humibacillus sp. DSM 29435.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HumibacillusSpDsm29435(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HumibacillusSpDsm29435 graph.
+    """Return new instance of the Humibacillus sp. DSM 29435 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HumibacillusSpDsm29435(
 
     Returns
     -----------------------
-    Instace of HumibacillusSpDsm29435 graph.
+    Instace of Humibacillus sp. DSM 29435 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphibacillusXylanus.
+This file offers the methods to automatically retrieve the graph Amphibacillus xylanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmphibacillusXylanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphibacillusXylanus graph.
+    """Return new instance of the Amphibacillus xylanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmphibacillusXylanus(
 
     Returns
     -----------------------
-    Instace of AmphibacillusXylanus graph.
+    Instace of Amphibacillus xylanus graph.
 
 	References
 	---------------------

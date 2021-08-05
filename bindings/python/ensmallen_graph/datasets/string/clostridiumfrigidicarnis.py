@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumFrigidicarnis.
+This file offers the methods to automatically retrieve the graph Clostridium frigidicarnis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumFrigidicarnis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumFrigidicarnis graph.
+    """Return new instance of the Clostridium frigidicarnis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumFrigidicarnis(
 
     Returns
     -----------------------
-    Instace of ClostridiumFrigidicarnis graph.
+    Instace of Clostridium frigidicarnis graph.
 
 	References
 	---------------------

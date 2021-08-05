@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaMahii.
+This file offers the methods to automatically retrieve the graph Haloterrigena mahii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaMahii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaMahii graph.
+    """Return new instance of the Haloterrigena mahii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloterrigenaMahii(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaMahii graph.
+    Instace of Haloterrigena mahii graph.
 
 	References
 	---------------------

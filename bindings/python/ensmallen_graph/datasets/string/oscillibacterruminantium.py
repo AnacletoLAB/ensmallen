@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterRuminantium.
+This file offers the methods to automatically retrieve the graph Oscillibacter ruminantium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterRuminantium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterRuminantium graph.
+    """Return new instance of the Oscillibacter ruminantium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillibacterRuminantium(
 
     Returns
     -----------------------
-    Instace of OscillibacterRuminantium graph.
+    Instace of Oscillibacter ruminantium graph.
 
 	References
 	---------------------

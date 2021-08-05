@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaSpP5210.
+This file offers the methods to automatically retrieve the graph Afipia sp. P5210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaSpP5210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaSpP5210 graph.
+    """Return new instance of the Afipia sp. P5210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AfipiaSpP5210(
 
     Returns
     -----------------------
-    Instace of AfipiaSpP5210 graph.
+    Instace of Afipia sp. P5210 graph.
 
 	References
 	---------------------

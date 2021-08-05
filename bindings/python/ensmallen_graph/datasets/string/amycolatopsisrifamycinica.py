@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisRifamycinica.
+This file offers the methods to automatically retrieve the graph Amycolatopsis rifamycinica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisRifamycinica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisRifamycinica graph.
+    """Return new instance of the Amycolatopsis rifamycinica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisRifamycinica(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisRifamycinica graph.
+    Instace of Amycolatopsis rifamycinica graph.
 
 	References
 	---------------------

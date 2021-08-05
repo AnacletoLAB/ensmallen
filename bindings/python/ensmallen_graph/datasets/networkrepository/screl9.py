@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScRel9.
+This file offers the methods to automatically retrieve the graph sc-rel9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScRel9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScRel9 graph.
+    """Return new instance of the sc-rel9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScRel9(
 
     Returns
     -----------------------
-    Instace of ScRel9 graph.
+    Instace of sc-rel9 graph.
 
 	References
 	---------------------

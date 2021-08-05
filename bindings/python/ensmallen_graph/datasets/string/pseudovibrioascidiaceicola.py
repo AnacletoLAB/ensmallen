@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudovibrioAscidiaceicola.
+This file offers the methods to automatically retrieve the graph Pseudovibrio ascidiaceicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudovibrioAscidiaceicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudovibrioAscidiaceicola graph.
+    """Return new instance of the Pseudovibrio ascidiaceicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudovibrioAscidiaceicola(
 
     Returns
     -----------------------
-    Instace of PseudovibrioAscidiaceicola graph.
+    Instace of Pseudovibrio ascidiaceicola graph.
 
 	References
 	---------------------

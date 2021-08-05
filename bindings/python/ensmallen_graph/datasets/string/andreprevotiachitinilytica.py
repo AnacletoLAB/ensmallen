@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AndreprevotiaChitinilytica.
+This file offers the methods to automatically retrieve the graph Andreprevotia chitinilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AndreprevotiaChitinilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AndreprevotiaChitinilytica graph.
+    """Return new instance of the Andreprevotia chitinilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AndreprevotiaChitinilytica(
 
     Returns
     -----------------------
-    Instace of AndreprevotiaChitinilytica graph.
+    Instace of Andreprevotia chitinilytica graph.
 
 	References
 	---------------------

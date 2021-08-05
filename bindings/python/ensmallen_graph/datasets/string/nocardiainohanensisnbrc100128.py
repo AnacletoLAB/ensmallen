@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaInohanensisNbrc100128.
+This file offers the methods to automatically retrieve the graph Nocardia inohanensis NBRC 100128.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaInohanensisNbrc100128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaInohanensisNbrc100128 graph.
+    """Return new instance of the Nocardia inohanensis NBRC 100128 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaInohanensisNbrc100128(
 
     Returns
     -----------------------
-    Instace of NocardiaInohanensisNbrc100128 graph.
+    Instace of Nocardia inohanensis NBRC 100128 graph.
 
 	References
 	---------------------

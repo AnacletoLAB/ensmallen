@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaBacteriumBrhC25.
+This file offers the methods to automatically retrieve the graph Clostridia bacterium BRH_c25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaBacteriumBrhC25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaBacteriumBrhC25 graph.
+    """Return new instance of the Clostridia bacterium BRH_c25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiaBacteriumBrhC25(
 
     Returns
     -----------------------
-    Instace of ClostridiaBacteriumBrhC25 graph.
+    Instace of Clostridia bacterium BRH_c25 graph.
 
 	References
 	---------------------

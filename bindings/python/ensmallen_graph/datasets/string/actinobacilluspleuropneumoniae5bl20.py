@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusPleuropneumoniae5bL20.
+This file offers the methods to automatically retrieve the graph Actinobacillus pleuropneumoniae 5b L20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusPleuropneumoniae5bL20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusPleuropneumoniae5bL20 graph.
+    """Return new instance of the Actinobacillus pleuropneumoniae 5b L20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusPleuropneumoniae5bL20(
 
     Returns
     -----------------------
-    Instace of ActinobacillusPleuropneumoniae5bL20 graph.
+    Instace of Actinobacillus pleuropneumoniae 5b L20 graph.
 
 	References
 	---------------------

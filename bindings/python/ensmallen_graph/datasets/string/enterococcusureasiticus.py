@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusUreasiticus.
+This file offers the methods to automatically retrieve the graph Enterococcus ureasiticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusUreasiticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusUreasiticus graph.
+    """Return new instance of the Enterococcus ureasiticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusUreasiticus(
 
     Returns
     -----------------------
-    Instace of EnterococcusUreasiticus graph.
+    Instace of Enterococcus ureasiticus graph.
 
 	References
 	---------------------

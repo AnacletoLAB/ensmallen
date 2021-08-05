@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseomonasMucosa.
+This file offers the methods to automatically retrieve the graph Roseomonas mucosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseomonasMucosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseomonasMucosa graph.
+    """Return new instance of the Roseomonas mucosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseomonasMucosa(
 
     Returns
     -----------------------
-    Instace of RoseomonasMucosa graph.
+    Instace of Roseomonas mucosa graph.
 
 	References
 	---------------------

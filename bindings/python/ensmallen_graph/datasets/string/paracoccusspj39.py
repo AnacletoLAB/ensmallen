@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSpJ39.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. J39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSpJ39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSpJ39 graph.
+    """Return new instance of the Paracoccus sp. J39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusSpJ39(
 
     Returns
     -----------------------
-    Instace of ParacoccusSpJ39 graph.
+    Instace of Paracoccus sp. J39 graph.
 
 	References
 	---------------------

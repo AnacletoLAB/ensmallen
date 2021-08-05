@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDoudnabacteriaBacteriumRifcsplowo201Full4421.
+This file offers the methods to automatically retrieve the graph Candidatus Doudnabacteria bacterium RIFCSPLOWO2_01_FULL_44_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDoudnabacteriaBacteriumRifcsplowo201Full4421(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDoudnabacteriaBacteriumRifcsplowo201Full4421 graph.
+    """Return new instance of the Candidatus Doudnabacteria bacterium RIFCSPLOWO2_01_FULL_44_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDoudnabacteriaBacteriumRifcsplowo201Full4421(
 
     Returns
     -----------------------
-    Instace of CandidatusDoudnabacteriaBacteriumRifcsplowo201Full4421 graph.
+    Instace of Candidatus Doudnabacteria bacterium RIFCSPLOWO2_01_FULL_44_21 graph.
 
 	References
 	---------------------

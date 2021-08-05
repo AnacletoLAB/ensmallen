@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AestuariimicrobiumKwangyangense.
+This file offers the methods to automatically retrieve the graph Aestuariimicrobium kwangyangense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AestuariimicrobiumKwangyangense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AestuariimicrobiumKwangyangense graph.
+    """Return new instance of the Aestuariimicrobium kwangyangense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AestuariimicrobiumKwangyangense(
 
     Returns
     -----------------------
-    Instace of AestuariimicrobiumKwangyangense graph.
+    Instace of Aestuariimicrobium kwangyangense graph.
 
 	References
 	---------------------

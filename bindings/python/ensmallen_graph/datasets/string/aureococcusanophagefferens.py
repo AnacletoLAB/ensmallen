@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureococcusAnophagefferens.
+This file offers the methods to automatically retrieve the graph Aureococcus anophagefferens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureococcusAnophagefferens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureococcusAnophagefferens graph.
+    """Return new instance of the Aureococcus anophagefferens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AureococcusAnophagefferens(
 
     Returns
     -----------------------
-    Instace of AureococcusAnophagefferens graph.
+    Instace of Aureococcus anophagefferens graph.
 
 	References
 	---------------------

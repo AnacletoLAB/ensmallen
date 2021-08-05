@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasRuthenica.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas ruthenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasRuthenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasRuthenica graph.
+    """Return new instance of the Pseudoalteromonas ruthenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasRuthenica(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasRuthenica graph.
+    Instace of Pseudoalteromonas ruthenica graph.
 
 	References
 	---------------------

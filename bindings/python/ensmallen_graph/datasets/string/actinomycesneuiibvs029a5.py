@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesNeuiiBvs029a5.
+This file offers the methods to automatically retrieve the graph Actinomyces neuii BVS029A5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesNeuiiBvs029a5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesNeuiiBvs029a5 graph.
+    """Return new instance of the Actinomyces neuii BVS029A5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesNeuiiBvs029a5(
 
     Returns
     -----------------------
-    Instace of ActinomycesNeuiiBvs029a5 graph.
+    Instace of Actinomyces neuii BVS029A5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScytonemaHofmanni.
+This file offers the methods to automatically retrieve the graph Scytonema hofmanni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScytonemaHofmanni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScytonemaHofmanni graph.
+    """Return new instance of the Scytonema hofmanni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ScytonemaHofmanni(
 
     Returns
     -----------------------
-    Instace of ScytonemaHofmanni graph.
+    Instace of Scytonema hofmanni graph.
 
 	References
 	---------------------

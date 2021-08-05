@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpInlla21.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. INlla21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpInlla21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpInlla21 graph.
+    """Return new instance of the Butyrivibrio sp. INlla21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioSpInlla21(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpInlla21 graph.
+    Instace of Butyrivibrio sp. INlla21 graph.
 
 	References
 	---------------------

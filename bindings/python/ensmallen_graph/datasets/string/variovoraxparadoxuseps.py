@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxParadoxusEps.
+This file offers the methods to automatically retrieve the graph Variovorax paradoxus EPS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxParadoxusEps(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxParadoxusEps graph.
+    """Return new instance of the Variovorax paradoxus EPS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VariovoraxParadoxusEps(
 
     Returns
     -----------------------
-    Instace of VariovoraxParadoxusEps graph.
+    Instace of Variovorax paradoxus EPS graph.
 
 	References
 	---------------------

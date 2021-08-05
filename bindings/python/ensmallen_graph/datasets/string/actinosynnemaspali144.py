@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinosynnemaSpAli144.
+This file offers the methods to automatically retrieve the graph Actinosynnema sp. ALI-1.44.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinosynnemaSpAli144(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinosynnemaSpAli144 graph.
+    """Return new instance of the Actinosynnema sp. ALI-1.44 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinosynnemaSpAli144(
 
     Returns
     -----------------------
-    Instace of ActinosynnemaSpAli144 graph.
+    Instace of Actinosynnema sp. ALI-1.44 graph.
 
 	References
 	---------------------

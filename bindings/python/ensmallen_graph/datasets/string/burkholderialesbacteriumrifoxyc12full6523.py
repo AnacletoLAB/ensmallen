@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumRifoxyc12Full6523.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium RIFOXYC12_FULL_65_23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumRifoxyc12Full6523(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumRifoxyc12Full6523 graph.
+    """Return new instance of the Burkholderiales bacterium RIFOXYC12_FULL_65_23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacteriumRifoxyc12Full6523(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumRifoxyc12Full6523 graph.
+    Instace of Burkholderiales bacterium RIFOXYC12_FULL_65_23 graph.
 
 	References
 	---------------------

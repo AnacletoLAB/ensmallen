@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerinicoccusChungangensis.
+This file offers the methods to automatically retrieve the graph Serinicoccus chungangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerinicoccusChungangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerinicoccusChungangensis graph.
+    """Return new instance of the Serinicoccus chungangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerinicoccusChungangensis(
 
     Returns
     -----------------------
-    Instace of SerinicoccusChungangensis graph.
+    Instace of Serinicoccus chungangensis graph.
 
 	References
 	---------------------

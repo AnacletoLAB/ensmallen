@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumJaponicum.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium japonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumJaponicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumJaponicum graph.
+    """Return new instance of the Bradyrhizobium japonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumJaponicum(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumJaponicum graph.
+    Instace of Bradyrhizobium japonicum graph.
 
 	References
 	---------------------

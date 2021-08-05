@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumFujikuroiImi58289.
+This file offers the methods to automatically retrieve the graph Fusarium fujikuroi IMI 58289.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumFujikuroiImi58289(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumFujikuroiImi58289 graph.
+    """Return new instance of the Fusarium fujikuroi IMI 58289 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumFujikuroiImi58289(
 
     Returns
     -----------------------
-    Instace of FusariumFujikuroiImi58289 graph.
+    Instace of Fusarium fujikuroi IMI 58289 graph.
 
 	References
 	---------------------

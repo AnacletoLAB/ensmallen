@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioMediterranei.
+This file offers the methods to automatically retrieve the graph Vibrio mediterranei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioMediterranei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioMediterranei graph.
+    """Return new instance of the Vibrio mediterranei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioMediterranei(
 
     Returns
     -----------------------
-    Instace of VibrioMediterranei graph.
+    Instace of Vibrio mediterranei graph.
 
 	References
 	---------------------

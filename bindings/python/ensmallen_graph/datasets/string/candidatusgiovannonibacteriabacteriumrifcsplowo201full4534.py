@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGiovannonibacteriaBacteriumRifcsplowo201Full4534.
+This file offers the methods to automatically retrieve the graph Candidatus Giovannonibacteria bacterium RIFCSPLOWO2_01_FULL_45_34.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGiovannonibacteriaBacteriumRifcsplowo201Full4534(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGiovannonibacteriaBacteriumRifcsplowo201Full4534 graph.
+    """Return new instance of the Candidatus Giovannonibacteria bacterium RIFCSPLOWO2_01_FULL_45_34 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGiovannonibacteriaBacteriumRifcsplowo201Full4534(
 
     Returns
     -----------------------
-    Instace of CandidatusGiovannonibacteriaBacteriumRifcsplowo201Full4534 graph.
+    Instace of Candidatus Giovannonibacteria bacterium RIFCSPLOWO2_01_FULL_45_34 graph.
 
 	References
 	---------------------

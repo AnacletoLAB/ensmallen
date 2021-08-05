@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyramidobacterSpC128.
+This file offers the methods to automatically retrieve the graph Pyramidobacter sp. C12-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyramidobacterSpC128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyramidobacterSpC128 graph.
+    """Return new instance of the Pyramidobacter sp. C12-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyramidobacterSpC128(
 
     Returns
     -----------------------
-    Instace of PyramidobacterSpC128 graph.
+    Instace of Pyramidobacter sp. C12-8 graph.
 
 	References
 	---------------------

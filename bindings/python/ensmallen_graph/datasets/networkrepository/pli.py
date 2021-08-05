@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pli.
+This file offers the methods to automatically retrieve the graph pli.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pli(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pli graph.
+    """Return new instance of the pli graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pli(
 
     Returns
     -----------------------
-    Instace of Pli graph.
+    Instace of pli graph.
 
 	References
 	---------------------

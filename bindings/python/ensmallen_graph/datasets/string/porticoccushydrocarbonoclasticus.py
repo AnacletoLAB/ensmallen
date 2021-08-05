@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorticoccusHydrocarbonoclasticus.
+This file offers the methods to automatically retrieve the graph Porticoccus hydrocarbonoclasticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorticoccusHydrocarbonoclasticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorticoccusHydrocarbonoclasticus graph.
+    """Return new instance of the Porticoccus hydrocarbonoclasticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorticoccusHydrocarbonoclasticus(
 
     Returns
     -----------------------
-    Instace of PorticoccusHydrocarbonoclasticus graph.
+    Instace of Porticoccus hydrocarbonoclasticus graph.
 
 	References
 	---------------------

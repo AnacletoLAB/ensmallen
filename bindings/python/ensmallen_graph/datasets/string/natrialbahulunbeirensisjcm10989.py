@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaHulunbeirensisJcm10989.
+This file offers the methods to automatically retrieve the graph Natrialba hulunbeirensis JCM 10989.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaHulunbeirensisJcm10989(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaHulunbeirensisJcm10989 graph.
+    """Return new instance of the Natrialba hulunbeirensis JCM 10989 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatrialbaHulunbeirensisJcm10989(
 
     Returns
     -----------------------
-    Instace of NatrialbaHulunbeirensisJcm10989 graph.
+    Instace of Natrialba hulunbeirensis JCM 10989 graph.
 
 	References
 	---------------------

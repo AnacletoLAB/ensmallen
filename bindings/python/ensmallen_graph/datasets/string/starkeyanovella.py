@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StarkeyaNovella.
+This file offers the methods to automatically retrieve the graph Starkeya novella.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StarkeyaNovella(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StarkeyaNovella graph.
+    """Return new instance of the Starkeya novella graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StarkeyaNovella(
 
     Returns
     -----------------------
-    Instace of StarkeyaNovella graph.
+    Instace of Starkeya novella graph.
 
 	References
 	---------------------

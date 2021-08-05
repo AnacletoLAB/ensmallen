@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocapsaAcidiphila.
+This file offers the methods to automatically retrieve the graph Methylocapsa acidiphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocapsaAcidiphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocapsaAcidiphila graph.
+    """Return new instance of the Methylocapsa acidiphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylocapsaAcidiphila(
 
     Returns
     -----------------------
-    Instace of MethylocapsaAcidiphila graph.
+    Instace of Methylocapsa acidiphila graph.
 
 	References
 	---------------------

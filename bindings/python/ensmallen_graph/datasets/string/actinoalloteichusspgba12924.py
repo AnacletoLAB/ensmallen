@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoalloteichusSpGba12924.
+This file offers the methods to automatically retrieve the graph Actinoalloteichus sp. GBA129-24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoalloteichusSpGba12924(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoalloteichusSpGba12924 graph.
+    """Return new instance of the Actinoalloteichus sp. GBA129-24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinoalloteichusSpGba12924(
 
     Returns
     -----------------------
-    Instace of ActinoalloteichusSpGba12924 graph.
+    Instace of Actinoalloteichus sp. GBA129-24 graph.
 
 	References
 	---------------------

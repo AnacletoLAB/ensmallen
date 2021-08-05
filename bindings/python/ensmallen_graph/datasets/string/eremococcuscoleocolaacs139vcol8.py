@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremococcusColeocolaAcs139vcol8.
+This file offers the methods to automatically retrieve the graph Eremococcus coleocola ACS139VCol8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremococcusColeocolaAcs139vcol8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremococcusColeocolaAcs139vcol8 graph.
+    """Return new instance of the Eremococcus coleocola ACS139VCol8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EremococcusColeocolaAcs139vcol8(
 
     Returns
     -----------------------
-    Instace of EremococcusColeocolaAcs139vcol8 graph.
+    Instace of Eremococcus coleocola ACS139VCol8 graph.
 
 	References
 	---------------------

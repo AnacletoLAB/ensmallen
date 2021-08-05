@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Engine.
+This file offers the methods to automatically retrieve the graph engine.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Engine(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Engine graph.
+    """Return new instance of the engine graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Engine(
 
     Returns
     -----------------------
-    Instace of Engine graph.
+    Instace of engine graph.
 
 	References
 	---------------------

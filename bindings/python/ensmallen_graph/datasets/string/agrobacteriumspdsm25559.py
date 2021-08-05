@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumSpDsm25559.
+This file offers the methods to automatically retrieve the graph Agrobacterium sp. DSM 25559.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumSpDsm25559(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumSpDsm25559 graph.
+    """Return new instance of the Agrobacterium sp. DSM 25559 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumSpDsm25559(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumSpDsm25559 graph.
+    Instace of Agrobacterium sp. DSM 25559 graph.
 
 	References
 	---------------------

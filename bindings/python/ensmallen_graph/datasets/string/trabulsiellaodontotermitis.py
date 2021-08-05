@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrabulsiellaOdontotermitis.
+This file offers the methods to automatically retrieve the graph Trabulsiella odontotermitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrabulsiellaOdontotermitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrabulsiellaOdontotermitis graph.
+    """Return new instance of the Trabulsiella odontotermitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrabulsiellaOdontotermitis(
 
     Returns
     -----------------------
-    Instace of TrabulsiellaOdontotermitis graph.
+    Instace of Trabulsiella odontotermitis graph.
 
 	References
 	---------------------

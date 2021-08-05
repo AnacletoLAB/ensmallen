@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexiBacteriumRbg19ftCombo5516.
+This file offers the methods to automatically retrieve the graph Chloroflexi bacterium RBG_19FT_COMBO_55_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexiBacteriumRbg19ftCombo5516(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexiBacteriumRbg19ftCombo5516 graph.
+    """Return new instance of the Chloroflexi bacterium RBG_19FT_COMBO_55_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloroflexiBacteriumRbg19ftCombo5516(
 
     Returns
     -----------------------
-    Instace of ChloroflexiBacteriumRbg19ftCombo5516 graph.
+    Instace of Chloroflexi bacterium RBG_19FT_COMBO_55_16 graph.
 
 	References
 	---------------------

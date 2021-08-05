@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonadaceaeBacteriumT822.
+This file offers the methods to automatically retrieve the graph Halomonadaceae bacterium T82-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonadaceaeBacteriumT822(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonadaceaeBacteriumT822 graph.
+    """Return new instance of the Halomonadaceae bacterium T82-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonadaceaeBacteriumT822(
 
     Returns
     -----------------------
-    Instace of HalomonadaceaeBacteriumT822 graph.
+    Instace of Halomonadaceae bacterium T82-2 graph.
 
 	References
 	---------------------

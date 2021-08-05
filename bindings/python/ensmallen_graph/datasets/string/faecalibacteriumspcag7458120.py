@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FaecalibacteriumSpCag7458120.
+This file offers the methods to automatically retrieve the graph Faecalibacterium sp. CAG:74_58_120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FaecalibacteriumSpCag7458120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FaecalibacteriumSpCag7458120 graph.
+    """Return new instance of the Faecalibacterium sp. CAG:74_58_120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FaecalibacteriumSpCag7458120(
 
     Returns
     -----------------------
-    Instace of FaecalibacteriumSpCag7458120 graph.
+    Instace of Faecalibacterium sp. CAG:74_58_120 graph.
 
 	References
 	---------------------

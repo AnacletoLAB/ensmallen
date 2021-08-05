@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DongiaSpUrhe0060.
+This file offers the methods to automatically retrieve the graph Dongia sp. URHE0060.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DongiaSpUrhe0060(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DongiaSpUrhe0060 graph.
+    """Return new instance of the Dongia sp. URHE0060 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DongiaSpUrhe0060(
 
     Returns
     -----------------------
-    Instace of DongiaSpUrhe0060 graph.
+    Instace of Dongia sp. URHE0060 graph.
 
 	References
 	---------------------

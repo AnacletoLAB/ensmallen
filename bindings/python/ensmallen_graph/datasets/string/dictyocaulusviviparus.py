@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DictyocaulusViviparus.
+This file offers the methods to automatically retrieve the graph Dictyocaulus viviparus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DictyocaulusViviparus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DictyocaulusViviparus graph.
+    """Return new instance of the Dictyocaulus viviparus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DictyocaulusViviparus(
 
     Returns
     -----------------------
-    Instace of DictyocaulusViviparus graph.
+    Instace of Dictyocaulus viviparus graph.
 
 	References
 	---------------------

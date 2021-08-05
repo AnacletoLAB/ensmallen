@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumAlcoholivorax.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum alcoholivorax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumAlcoholivorax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumAlcoholivorax graph.
+    """Return new instance of the Desulfotomaculum alcoholivorax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumAlcoholivorax(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumAlcoholivorax graph.
+    Instace of Desulfotomaculum alcoholivorax graph.
 
 	References
 	---------------------

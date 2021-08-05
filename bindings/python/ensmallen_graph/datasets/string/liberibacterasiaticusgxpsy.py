@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LiberibacterAsiaticusGxpsy.
+This file offers the methods to automatically retrieve the graph Liberibacter asiaticus gxpsy.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LiberibacterAsiaticusGxpsy(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LiberibacterAsiaticusGxpsy graph.
+    """Return new instance of the Liberibacter asiaticus gxpsy graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LiberibacterAsiaticusGxpsy(
 
     Returns
     -----------------------
-    Instace of LiberibacterAsiaticusGxpsy graph.
+    Instace of Liberibacter asiaticus gxpsy graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpEhn03.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. EhN03.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpEhn03(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpEhn03 graph.
+    """Return new instance of the Erythrobacter sp. EhN03 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpEhn03(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpEhn03 graph.
+    Instace of Erythrobacter sp. EhN03 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioDiseasome.
+This file offers the methods to automatically retrieve the graph bio-diseasome.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def BioDiseasome(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioDiseasome graph.
+    """Return new instance of the bio-diseasome graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def BioDiseasome(
 
     Returns
     -----------------------
-    Instace of BioDiseasome graph.
+    Instace of bio-diseasome graph.
 
 	References
 	---------------------

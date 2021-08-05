@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusSpCcbus3uf1.
+This file offers the methods to automatically retrieve the graph Thermus sp. CCBUS3UF1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusSpCcbus3uf1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusSpCcbus3uf1 graph.
+    """Return new instance of the Thermus sp. CCBUS3UF1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusSpCcbus3uf1(
 
     Returns
     -----------------------
-    Instace of ThermusSpCcbus3uf1 graph.
+    Instace of Thermus sp. CCBUS3UF1 graph.
 
 	References
 	---------------------

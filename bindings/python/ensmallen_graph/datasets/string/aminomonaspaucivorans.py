@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminomonasPaucivorans.
+This file offers the methods to automatically retrieve the graph Aminomonas paucivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminomonasPaucivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminomonasPaucivorans graph.
+    """Return new instance of the Aminomonas paucivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AminomonasPaucivorans(
 
     Returns
     -----------------------
-    Instace of AminomonasPaucivorans graph.
+    Instace of Aminomonas paucivorans graph.
 
 	References
 	---------------------

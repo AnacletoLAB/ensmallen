@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSpSm22m07.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. SM22M-07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSpSm22m07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSpSm22m07 graph.
+    """Return new instance of the Paracoccus sp. SM22M-07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusSpSm22m07(
 
     Returns
     -----------------------
-    Instace of ParacoccusSpSm22m07 graph.
+    Instace of Paracoccus sp. SM22M-07 graph.
 
 	References
 	---------------------

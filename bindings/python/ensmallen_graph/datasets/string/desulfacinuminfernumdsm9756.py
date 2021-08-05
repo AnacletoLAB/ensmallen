@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfacinumInfernumDsm9756.
+This file offers the methods to automatically retrieve the graph Desulfacinum infernum DSM 9756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfacinumInfernumDsm9756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfacinumInfernumDsm9756 graph.
+    """Return new instance of the Desulfacinum infernum DSM 9756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfacinumInfernumDsm9756(
 
     Returns
     -----------------------
-    Instace of DesulfacinumInfernumDsm9756 graph.
+    Instace of Desulfacinum infernum DSM 9756 graph.
 
 	References
 	---------------------

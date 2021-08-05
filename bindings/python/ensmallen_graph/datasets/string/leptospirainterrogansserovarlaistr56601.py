@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraInterrogansSerovarLaiStr56601.
+This file offers the methods to automatically retrieve the graph Leptospira interrogans serovar Lai str. 56601.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraInterrogansSerovarLaiStr56601(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraInterrogansSerovarLaiStr56601 graph.
+    """Return new instance of the Leptospira interrogans serovar Lai str. 56601 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraInterrogansSerovarLaiStr56601(
 
     Returns
     -----------------------
-    Instace of LeptospiraInterrogansSerovarLaiStr56601 graph.
+    Instace of Leptospira interrogans serovar Lai str. 56601 graph.
 
 	References
 	---------------------

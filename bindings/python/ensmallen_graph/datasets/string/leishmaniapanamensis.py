@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeishmaniaPanamensis.
+This file offers the methods to automatically retrieve the graph Leishmania panamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeishmaniaPanamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeishmaniaPanamensis graph.
+    """Return new instance of the Leishmania panamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeishmaniaPanamensis(
 
     Returns
     -----------------------
-    Instace of LeishmaniaPanamensis graph.
+    Instace of Leishmania panamensis graph.
 
 	References
 	---------------------

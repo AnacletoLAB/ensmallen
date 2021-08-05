@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaSpW5c.
+This file offers the methods to automatically retrieve the graph Cellulophaga sp. W5C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaSpW5c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaSpW5c graph.
+    """Return new instance of the Cellulophaga sp. W5C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulophagaSpW5c(
 
     Returns
     -----------------------
-    Instace of CellulophagaSpW5c graph.
+    Instace of Cellulophaga sp. W5C graph.
 
 	References
 	---------------------

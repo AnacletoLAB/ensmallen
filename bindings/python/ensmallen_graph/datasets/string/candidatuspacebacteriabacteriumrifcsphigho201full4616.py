@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPacebacteriaBacteriumRifcsphigho201Full4616.
+This file offers the methods to automatically retrieve the graph Candidatus Pacebacteria bacterium RIFCSPHIGHO2_01_FULL_46_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPacebacteriaBacteriumRifcsphigho201Full4616(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPacebacteriaBacteriumRifcsphigho201Full4616 graph.
+    """Return new instance of the Candidatus Pacebacteria bacterium RIFCSPHIGHO2_01_FULL_46_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPacebacteriaBacteriumRifcsphigho201Full4616(
 
     Returns
     -----------------------
-    Instace of CandidatusPacebacteriaBacteriumRifcsphigho201Full4616 graph.
+    Instace of Candidatus Pacebacteria bacterium RIFCSPHIGHO2_01_FULL_46_16 graph.
 
 	References
 	---------------------

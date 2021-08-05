@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAtroolivaceus.
+This file offers the methods to automatically retrieve the graph Streptomyces atroolivaceus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAtroolivaceus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAtroolivaceus graph.
+    """Return new instance of the Streptomyces atroolivaceus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesAtroolivaceus(
 
     Returns
     -----------------------
-    Instace of StreptomycesAtroolivaceus graph.
+    Instace of Streptomyces atroolivaceus graph.
 
 	References
 	---------------------

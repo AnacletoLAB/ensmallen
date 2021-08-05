@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioAzureus.
+This file offers the methods to automatically retrieve the graph Vibrio azureus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioAzureus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioAzureus graph.
+    """Return new instance of the Vibrio azureus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioAzureus(
 
     Returns
     -----------------------
-    Instace of VibrioAzureus graph.
+    Instace of Vibrio azureus graph.
 
 	References
 	---------------------

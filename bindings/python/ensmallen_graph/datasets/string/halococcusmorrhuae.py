@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusMorrhuae.
+This file offers the methods to automatically retrieve the graph Halococcus morrhuae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusMorrhuae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusMorrhuae graph.
+    """Return new instance of the Halococcus morrhuae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalococcusMorrhuae(
 
     Returns
     -----------------------
-    Instace of HalococcusMorrhuae graph.
+    Instace of Halococcus morrhuae graph.
 
 	References
 	---------------------

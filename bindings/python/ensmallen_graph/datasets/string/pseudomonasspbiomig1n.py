@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpBiomig1n.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. BIOMIG1N.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpBiomig1n(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpBiomig1n graph.
+    """Return new instance of the Pseudomonas sp. BIOMIG1N graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpBiomig1n(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpBiomig1n graph.
+    Instace of Pseudomonas sp. BIOMIG1N graph.
 
 	References
 	---------------------

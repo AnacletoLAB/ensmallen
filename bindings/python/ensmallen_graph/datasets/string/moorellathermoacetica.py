@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoorellaThermoacetica.
+This file offers the methods to automatically retrieve the graph Moorella thermoacetica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoorellaThermoacetica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoorellaThermoacetica graph.
+    """Return new instance of the Moorella thermoacetica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoorellaThermoacetica(
 
     Returns
     -----------------------
-    Instace of MoorellaThermoacetica graph.
+    Instace of Moorella thermoacetica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSpNk2b42.
+This file offers the methods to automatically retrieve the graph Oribacterium sp. NK2B42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSpNk2b42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSpNk2b42 graph.
+    """Return new instance of the Oribacterium sp. NK2B42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OribacteriumSpNk2b42(
 
     Returns
     -----------------------
-    Instace of OribacteriumSpNk2b42 graph.
+    Instace of Oribacterium sp. NK2B42 graph.
 
 	References
 	---------------------

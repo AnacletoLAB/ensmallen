@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusCorynebacterioides.
+This file offers the methods to automatically retrieve the graph Rhodococcus corynebacterioides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusCorynebacterioides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusCorynebacterioides graph.
+    """Return new instance of the Rhodococcus corynebacterioides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusCorynebacterioides(
 
     Returns
     -----------------------
-    Instace of RhodococcusCorynebacterioides graph.
+    Instace of Rhodococcus corynebacterioides graph.
 
 	References
 	---------------------

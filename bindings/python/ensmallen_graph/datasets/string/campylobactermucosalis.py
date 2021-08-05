@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterMucosalis.
+This file offers the methods to automatically retrieve the graph Campylobacter mucosalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterMucosalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterMucosalis graph.
+    """Return new instance of the Campylobacter mucosalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterMucosalis(
 
     Returns
     -----------------------
-    Instace of CampylobacterMucosalis graph.
+    Instace of Campylobacter mucosalis graph.
 
 	References
 	---------------------

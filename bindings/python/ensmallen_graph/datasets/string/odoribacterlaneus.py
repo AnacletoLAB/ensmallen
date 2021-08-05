@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OdoribacterLaneus.
+This file offers the methods to automatically retrieve the graph Odoribacter laneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OdoribacterLaneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OdoribacterLaneus graph.
+    """Return new instance of the Odoribacter laneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OdoribacterLaneus(
 
     Returns
     -----------------------
-    Instace of OdoribacterLaneus graph.
+    Instace of Odoribacter laneus graph.
 
 	References
 	---------------------

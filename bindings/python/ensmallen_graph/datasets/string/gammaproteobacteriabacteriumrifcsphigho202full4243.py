@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumRifcsphigho202Full4243.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_42_43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumRifcsphigho202Full4243(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumRifcsphigho202Full4243 graph.
+    """Return new instance of the Gammaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_42_43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumRifcsphigho202Full4243(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumRifcsphigho202Full4243 graph.
+    Instace of Gammaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_42_43 graph.
 
 	References
 	---------------------

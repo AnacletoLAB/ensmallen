@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinilactibacillusPiezotolerans.
+This file offers the methods to automatically retrieve the graph Marinilactibacillus piezotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinilactibacillusPiezotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinilactibacillusPiezotolerans graph.
+    """Return new instance of the Marinilactibacillus piezotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinilactibacillusPiezotolerans(
 
     Returns
     -----------------------
-    Instace of MarinilactibacillusPiezotolerans graph.
+    Instace of Marinilactibacillus piezotolerans graph.
 
 	References
 	---------------------

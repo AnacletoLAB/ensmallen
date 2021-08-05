@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaTaeniospiralisNbrc102512.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga taeniospiralis NBRC 102512.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaTaeniospiralisNbrc102512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaTaeniospiralisNbrc102512 graph.
+    """Return new instance of the Hydrogenophaga taeniospiralis NBRC 102512 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaTaeniospiralisNbrc102512(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaTaeniospiralisNbrc102512 graph.
+    Instace of Hydrogenophaga taeniospiralis NBRC 102512 graph.
 
 	References
 	---------------------

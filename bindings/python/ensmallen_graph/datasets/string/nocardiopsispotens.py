@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisPotens.
+This file offers the methods to automatically retrieve the graph Nocardiopsis potens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisPotens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisPotens graph.
+    """Return new instance of the Nocardiopsis potens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisPotens(
 
     Returns
     -----------------------
-    Instace of NocardiopsisPotens graph.
+    Instace of Nocardiopsis potens graph.
 
 	References
 	---------------------

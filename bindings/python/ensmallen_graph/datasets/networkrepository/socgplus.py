@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocGplus.
+This file offers the methods to automatically retrieve the graph soc-gplus.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocGplus(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocGplus graph.
+    """Return new instance of the soc-gplus graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocGplus(
 
     Returns
     -----------------------
-    Instace of SocGplus graph.
+    Instace of soc-gplus graph.
 
 	References
 	---------------------

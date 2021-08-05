@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumPerfoetens.
+This file offers the methods to automatically retrieve the graph Fusobacterium perfoetens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumPerfoetens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumPerfoetens graph.
+    """Return new instance of the Fusobacterium perfoetens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumPerfoetens(
 
     Returns
     -----------------------
-    Instace of FusobacteriumPerfoetens graph.
+    Instace of Fusobacterium perfoetens graph.
 
 	References
 	---------------------

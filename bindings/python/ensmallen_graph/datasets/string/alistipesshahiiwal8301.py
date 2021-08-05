@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesShahiiWal8301.
+This file offers the methods to automatically retrieve the graph Alistipes shahii WAL 8301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesShahiiWal8301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesShahiiWal8301 graph.
+    """Return new instance of the Alistipes shahii WAL 8301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesShahiiWal8301(
 
     Returns
     -----------------------
-    Instace of AlistipesShahiiWal8301 graph.
+    Instace of Alistipes shahii WAL 8301 graph.
 
 	References
 	---------------------

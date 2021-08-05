@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospirillumFerriphilumMl04.
+This file offers the methods to automatically retrieve the graph Leptospirillum ferriphilum ML-04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospirillumFerriphilumMl04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospirillumFerriphilumMl04 graph.
+    """Return new instance of the Leptospirillum ferriphilum ML-04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospirillumFerriphilumMl04(
 
     Returns
     -----------------------
-    Instace of LeptospirillumFerriphilumMl04 graph.
+    Instace of Leptospirillum ferriphilum ML-04 graph.
 
 	References
 	---------------------

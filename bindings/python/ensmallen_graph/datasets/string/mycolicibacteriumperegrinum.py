@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumPeregrinum.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium peregrinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumPeregrinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumPeregrinum graph.
+    """Return new instance of the Mycolicibacterium peregrinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumPeregrinum(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumPeregrinum graph.
+    Instace of Mycolicibacterium peregrinum graph.
 
 	References
 	---------------------

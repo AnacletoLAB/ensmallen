@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Aa5.
+This file offers the methods to automatically retrieve the graph aa5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Aa5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Aa5 graph.
+    """Return new instance of the aa5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Aa5(
 
     Returns
     -----------------------
-    Instace of Aa5 graph.
+    Instace of aa5 graph.
 
 	References
 	---------------------

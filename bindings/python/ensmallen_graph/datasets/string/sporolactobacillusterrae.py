@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporolactobacillusTerrae.
+This file offers the methods to automatically retrieve the graph Sporolactobacillus terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporolactobacillusTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporolactobacillusTerrae graph.
+    """Return new instance of the Sporolactobacillus terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporolactobacillusTerrae(
 
     Returns
     -----------------------
-    Instace of SporolactobacillusTerrae graph.
+    Instace of Sporolactobacillus terrae graph.
 
 	References
 	---------------------

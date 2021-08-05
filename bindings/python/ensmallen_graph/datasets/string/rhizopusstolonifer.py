@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizopusStolonifer.
+This file offers the methods to automatically retrieve the graph Rhizopus stolonifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizopusStolonifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizopusStolonifer graph.
+    """Return new instance of the Rhizopus stolonifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizopusStolonifer(
 
     Returns
     -----------------------
-    Instace of RhizopusStolonifer graph.
+    Instace of Rhizopus stolonifer graph.
 
 	References
 	---------------------

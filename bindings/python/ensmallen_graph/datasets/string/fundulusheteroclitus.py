@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FundulusHeteroclitus.
+This file offers the methods to automatically retrieve the graph Fundulus heteroclitus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FundulusHeteroclitus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FundulusHeteroclitus graph.
+    """Return new instance of the Fundulus heteroclitus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FundulusHeteroclitus(
 
     Returns
     -----------------------
-    Instace of FundulusHeteroclitus graph.
+    Instace of Fundulus heteroclitus graph.
 
 	References
 	---------------------

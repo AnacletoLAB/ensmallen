@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasSpLeaf131.
+This file offers the methods to automatically retrieve the graph Xanthomonas sp. Leaf131.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasSpLeaf131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasSpLeaf131 graph.
+    """Return new instance of the Xanthomonas sp. Leaf131 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasSpLeaf131(
 
     Returns
     -----------------------
-    Instace of XanthomonasSpLeaf131 graph.
+    Instace of Xanthomonas sp. Leaf131 graph.
 
 	References
 	---------------------

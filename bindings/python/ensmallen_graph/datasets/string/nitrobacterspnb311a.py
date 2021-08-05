@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrobacterSpNb311a.
+This file offers the methods to automatically retrieve the graph Nitrobacter sp. Nb-311A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrobacterSpNb311a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrobacterSpNb311a graph.
+    """Return new instance of the Nitrobacter sp. Nb-311A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrobacterSpNb311a(
 
     Returns
     -----------------------
-    Instace of NitrobacterSpNb311a graph.
+    Instace of Nitrobacter sp. Nb-311A graph.
 
 	References
 	---------------------

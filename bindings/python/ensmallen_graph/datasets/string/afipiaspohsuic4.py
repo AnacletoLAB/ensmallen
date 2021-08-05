@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaSpOhsuic4.
+This file offers the methods to automatically retrieve the graph Afipia sp. OHSUIC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaSpOhsuic4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaSpOhsuic4 graph.
+    """Return new instance of the Afipia sp. OHSUIC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AfipiaSpOhsuic4(
 
     Returns
     -----------------------
-    Instace of AfipiaSpOhsuic4 graph.
+    Instace of Afipia sp. OHSUIC4 graph.
 
 	References
 	---------------------

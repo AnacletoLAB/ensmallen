@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasDiminuta.
+This file offers the methods to automatically retrieve the graph Brevundimonas diminuta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasDiminuta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasDiminuta graph.
+    """Return new instance of the Brevundimonas diminuta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasDiminuta(
 
     Returns
     -----------------------
-    Instace of BrevundimonasDiminuta graph.
+    Instace of Brevundimonas diminuta graph.
 
 	References
 	---------------------

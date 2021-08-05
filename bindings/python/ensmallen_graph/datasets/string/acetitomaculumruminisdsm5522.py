@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetitomaculumRuminisDsm5522.
+This file offers the methods to automatically retrieve the graph Acetitomaculum ruminis DSM 5522.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetitomaculumRuminisDsm5522(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetitomaculumRuminisDsm5522 graph.
+    """Return new instance of the Acetitomaculum ruminis DSM 5522 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetitomaculumRuminisDsm5522(
 
     Returns
     -----------------------
-    Instace of AcetitomaculumRuminisDsm5522 graph.
+    Instace of Acetitomaculum ruminis DSM 5522 graph.
 
 	References
 	---------------------

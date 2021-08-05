@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesUrogenitalisDsm15434.
+This file offers the methods to automatically retrieve the graph Actinomyces urogenitalis DSM15434.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesUrogenitalisDsm15434(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesUrogenitalisDsm15434 graph.
+    """Return new instance of the Actinomyces urogenitalis DSM15434 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesUrogenitalisDsm15434(
 
     Returns
     -----------------------
-    Instace of ActinomycesUrogenitalisDsm15434 graph.
+    Instace of Actinomyces urogenitalis DSM15434 graph.
 
 	References
 	---------------------

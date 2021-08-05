@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSacchari.
+This file offers the methods to automatically retrieve the graph Burkholderia sacchari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSacchari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSacchari graph.
+    """Return new instance of the Burkholderia sacchari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaSacchari(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSacchari graph.
+    Instace of Burkholderia sacchari graph.
 
 	References
 	---------------------

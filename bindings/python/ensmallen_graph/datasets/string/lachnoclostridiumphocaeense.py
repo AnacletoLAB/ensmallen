@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoclostridiumPhocaeense.
+This file offers the methods to automatically retrieve the graph Lachnoclostridium phocaeense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoclostridiumPhocaeense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoclostridiumPhocaeense graph.
+    """Return new instance of the Lachnoclostridium phocaeense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnoclostridiumPhocaeense(
 
     Returns
     -----------------------
-    Instace of LachnoclostridiumPhocaeense graph.
+    Instace of Lachnoclostridium phocaeense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Nw14.
+This file offers the methods to automatically retrieve the graph nw14.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Nw14(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Nw14 graph.
+    """Return new instance of the nw14 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Nw14(
 
     Returns
     -----------------------
-    Instace of Nw14 graph.
+    Instace of nw14 graph.
 
 	References
 	---------------------

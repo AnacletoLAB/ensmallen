@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalogranumRubrum.
+This file offers the methods to automatically retrieve the graph Halogranum rubrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalogranumRubrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalogranumRubrum graph.
+    """Return new instance of the Halogranum rubrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalogranumRubrum(
 
     Returns
     -----------------------
-    Instace of HalogranumRubrum graph.
+    Instace of Halogranum rubrum graph.
 
 	References
 	---------------------

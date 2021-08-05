@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph L9.
+This file offers the methods to automatically retrieve the graph L-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def L9(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the L9 graph.
+    """Return new instance of the L-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def L9(
 
     Returns
     -----------------------
-    Instace of L9 graph.
+    Instace of L-9 graph.
 
 	References
 	---------------------

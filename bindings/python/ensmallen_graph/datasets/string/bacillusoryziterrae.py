@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusOryziterrae.
+This file offers the methods to automatically retrieve the graph Bacillus oryziterrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusOryziterrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusOryziterrae graph.
+    """Return new instance of the Bacillus oryziterrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusOryziterrae(
 
     Returns
     -----------------------
-    Instace of BacillusOryziterrae graph.
+    Instace of Bacillus oryziterrae graph.
 
 	References
 	---------------------

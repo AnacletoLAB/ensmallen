@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusSputorum.
+This file offers the methods to automatically retrieve the graph Haemophilus sputorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusSputorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusSputorum graph.
+    """Return new instance of the Haemophilus sputorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaemophilusSputorum(
 
     Returns
     -----------------------
-    Instace of HaemophilusSputorum graph.
+    Instace of Haemophilus sputorum graph.
 
 	References
 	---------------------

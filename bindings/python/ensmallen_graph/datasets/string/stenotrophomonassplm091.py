@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasSpLm091.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas sp. LM091.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasSpLm091(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasSpLm091 graph.
+    """Return new instance of the Stenotrophomonas sp. LM091 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasSpLm091(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasSpLm091 graph.
+    Instace of Stenotrophomonas sp. LM091 graph.
 
 	References
 	---------------------

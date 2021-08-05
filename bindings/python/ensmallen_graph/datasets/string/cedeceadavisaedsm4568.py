@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CedeceaDavisaeDsm4568.
+This file offers the methods to automatically retrieve the graph Cedecea davisae DSM 4568.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CedeceaDavisaeDsm4568(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CedeceaDavisaeDsm4568 graph.
+    """Return new instance of the Cedecea davisae DSM 4568 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CedeceaDavisaeDsm4568(
 
     Returns
     -----------------------
-    Instace of CedeceaDavisaeDsm4568 graph.
+    Instace of Cedecea davisae DSM 4568 graph.
 
 	References
 	---------------------

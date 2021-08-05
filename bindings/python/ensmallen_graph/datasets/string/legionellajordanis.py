@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaJordanis.
+This file offers the methods to automatically retrieve the graph Legionella jordanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaJordanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaJordanis graph.
+    """Return new instance of the Legionella jordanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaJordanis(
 
     Returns
     -----------------------
-    Instace of LegionellaJordanis graph.
+    Instace of Legionella jordanis graph.
 
 	References
 	---------------------

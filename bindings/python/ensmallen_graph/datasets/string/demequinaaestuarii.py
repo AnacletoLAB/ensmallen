@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaAestuarii.
+This file offers the methods to automatically retrieve the graph Demequina aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaAestuarii graph.
+    """Return new instance of the Demequina aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaAestuarii(
 
     Returns
     -----------------------
-    Instace of DemequinaAestuarii graph.
+    Instace of Demequina aestuarii graph.
 
 	References
 	---------------------

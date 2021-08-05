@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSzulgai.
+This file offers the methods to automatically retrieve the graph Mycobacterium szulgai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSzulgai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSzulgai graph.
+    """Return new instance of the Mycobacterium szulgai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSzulgai(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSzulgai graph.
+    Instace of Mycobacterium szulgai graph.
 
 	References
 	---------------------

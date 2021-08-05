@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaFlavaNbrc102514.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga flava NBRC 102514.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaFlavaNbrc102514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaFlavaNbrc102514 graph.
+    """Return new instance of the Hydrogenophaga flava NBRC 102514 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaFlavaNbrc102514(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaFlavaNbrc102514 graph.
+    Instace of Hydrogenophaga flava NBRC 102514 graph.
 
 	References
 	---------------------

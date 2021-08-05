@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaRettgeriDsm1131.
+This file offers the methods to automatically retrieve the graph Providencia rettgeri DSM1131.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaRettgeriDsm1131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaRettgeriDsm1131 graph.
+    """Return new instance of the Providencia rettgeri DSM1131 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProvidenciaRettgeriDsm1131(
 
     Returns
     -----------------------
-    Instace of ProvidenciaRettgeriDsm1131 graph.
+    Instace of Providencia rettgeri DSM1131 graph.
 
 	References
 	---------------------

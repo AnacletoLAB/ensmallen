@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobacillusCyri.
+This file offers the methods to automatically retrieve the graph Thalassobacillus cyri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobacillusCyri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobacillusCyri graph.
+    """Return new instance of the Thalassobacillus cyri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobacillusCyri(
 
     Returns
     -----------------------
-    Instace of ThalassobacillusCyri graph.
+    Instace of Thalassobacillus cyri graph.
 
 	References
 	---------------------

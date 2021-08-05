@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaNiabensis.
+This file offers the methods to automatically retrieve the graph Chitinophaga niabensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaNiabensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaNiabensis graph.
+    """Return new instance of the Chitinophaga niabensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaNiabensis(
 
     Returns
     -----------------------
-    Instace of ChitinophagaNiabensis graph.
+    Instace of Chitinophaga niabensis graph.
 
 	References
 	---------------------

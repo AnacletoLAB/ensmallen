@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DomibacillusRobiginosus.
+This file offers the methods to automatically retrieve the graph Domibacillus robiginosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DomibacillusRobiginosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DomibacillusRobiginosus graph.
+    """Return new instance of the Domibacillus robiginosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DomibacillusRobiginosus(
 
     Returns
     -----------------------
-    Instace of DomibacillusRobiginosus graph.
+    Instace of Domibacillus robiginosus graph.
 
 	References
 	---------------------

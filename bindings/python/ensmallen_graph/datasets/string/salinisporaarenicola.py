@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisporaArenicola.
+This file offers the methods to automatically retrieve the graph Salinispora arenicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisporaArenicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisporaArenicola graph.
+    """Return new instance of the Salinispora arenicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinisporaArenicola(
 
     Returns
     -----------------------
-    Instace of SalinisporaArenicola graph.
+    Instace of Salinispora arenicola graph.
 
 	References
 	---------------------

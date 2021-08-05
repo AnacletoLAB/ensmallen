@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDevriesei.
+This file offers the methods to automatically retrieve the graph Streptococcus devriesei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDevriesei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDevriesei graph.
+    """Return new instance of the Streptococcus devriesei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDevriesei(
 
     Returns
     -----------------------
-    Instace of StreptococcusDevriesei graph.
+    Instace of Streptococcus devriesei graph.
 
 	References
 	---------------------

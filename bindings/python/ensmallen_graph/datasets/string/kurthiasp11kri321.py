@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KurthiaSp11kri321.
+This file offers the methods to automatically retrieve the graph Kurthia sp. 11kri321.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KurthiaSp11kri321(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KurthiaSp11kri321 graph.
+    """Return new instance of the Kurthia sp. 11kri321 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KurthiaSp11kri321(
 
     Returns
     -----------------------
-    Instace of KurthiaSp11kri321 graph.
+    Instace of Kurthia sp. 11kri321 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dblp2010.
+This file offers the methods to automatically retrieve the graph dblp-2010.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dblp2010(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dblp2010 graph.
+    """Return new instance of the dblp-2010 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dblp2010(
 
     Returns
     -----------------------
-    Instace of Dblp2010 graph.
+    Instace of dblp-2010 graph.
 
 	References
 	---------------------

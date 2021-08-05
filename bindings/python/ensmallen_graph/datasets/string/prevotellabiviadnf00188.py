@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaBiviaDnf00188.
+This file offers the methods to automatically retrieve the graph Prevotella bivia DNF00188.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaBiviaDnf00188(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaBiviaDnf00188 graph.
+    """Return new instance of the Prevotella bivia DNF00188 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaBiviaDnf00188(
 
     Returns
     -----------------------
-    Instace of PrevotellaBiviaDnf00188 graph.
+    Instace of Prevotella bivia DNF00188 graph.
 
 	References
 	---------------------

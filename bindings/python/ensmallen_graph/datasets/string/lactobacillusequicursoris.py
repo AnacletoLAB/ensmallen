@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusEquicursoris.
+This file offers the methods to automatically retrieve the graph Lactobacillus equicursoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusEquicursoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusEquicursoris graph.
+    """Return new instance of the Lactobacillus equicursoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusEquicursoris(
 
     Returns
     -----------------------
-    Instace of LactobacillusEquicursoris graph.
+    Instace of Lactobacillus equicursoris graph.
 
 	References
 	---------------------

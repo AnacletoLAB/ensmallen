@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHarbinensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus harbinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHarbinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHarbinensis graph.
+    """Return new instance of the Lactobacillus harbinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusHarbinensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusHarbinensis graph.
+    Instace of Lactobacillus harbinensis graph.
 
 	References
 	---------------------

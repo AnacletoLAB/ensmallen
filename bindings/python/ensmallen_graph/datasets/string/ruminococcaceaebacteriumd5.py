@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumD5.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium D5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumD5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumD5 graph.
+    """Return new instance of the Ruminococcaceae bacterium D5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumD5(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumD5 graph.
+    Instace of Ruminococcaceae bacterium D5 graph.
 
 	References
 	---------------------

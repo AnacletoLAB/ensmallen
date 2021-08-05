@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpSoil772.
+This file offers the methods to automatically retrieve the graph Rhodanobacter sp. Soil772.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpSoil772(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpSoil772 graph.
+    """Return new instance of the Rhodanobacter sp. Soil772 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodanobacterSpSoil772(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpSoil772 graph.
+    Instace of Rhodanobacter sp. Soil772 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterNanhaisediminis.
+This file offers the methods to automatically retrieve the graph Erythrobacter nanhaisediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterNanhaisediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterNanhaisediminis graph.
+    """Return new instance of the Erythrobacter nanhaisediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterNanhaisediminis(
 
     Returns
     -----------------------
-    Instace of ErythrobacterNanhaisediminis graph.
+    Instace of Erythrobacter nanhaisediminis graph.
 
 	References
 	---------------------

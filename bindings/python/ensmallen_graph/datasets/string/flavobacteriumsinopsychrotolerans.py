@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSinopsychrotolerans.
+This file offers the methods to automatically retrieve the graph Flavobacterium sinopsychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSinopsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSinopsychrotolerans graph.
+    """Return new instance of the Flavobacterium sinopsychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSinopsychrotolerans(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSinopsychrotolerans graph.
+    Instace of Flavobacterium sinopsychrotolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacterium1747faa.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium 1747FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacterium1747faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacterium1747faa graph.
+    """Return new instance of the Clostridiales bacterium 1747FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesBacterium1747faa(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacterium1747faa graph.
+    Instace of Clostridiales bacterium 1747FAA graph.
 
 	References
 	---------------------

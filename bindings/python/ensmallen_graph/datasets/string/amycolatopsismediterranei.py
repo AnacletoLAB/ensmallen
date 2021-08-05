@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisMediterranei.
+This file offers the methods to automatically retrieve the graph Amycolatopsis mediterranei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisMediterranei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisMediterranei graph.
+    """Return new instance of the Amycolatopsis mediterranei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisMediterranei(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisMediterranei graph.
+    Instace of Amycolatopsis mediterranei graph.
 
 	References
 	---------------------

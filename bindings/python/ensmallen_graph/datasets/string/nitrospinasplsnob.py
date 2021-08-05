@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospinaSpLsNob.
+This file offers the methods to automatically retrieve the graph Nitrospina sp. LS_NOB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospinaSpLsNob(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospinaSpLsNob graph.
+    """Return new instance of the Nitrospina sp. LS_NOB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospinaSpLsNob(
 
     Returns
     -----------------------
-    Instace of NitrospinaSpLsNob graph.
+    Instace of Nitrospina sp. LS_NOB graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSplendidus.
+This file offers the methods to automatically retrieve the graph Vibrio splendidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSplendidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSplendidus graph.
+    """Return new instance of the Vibrio splendidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioSplendidus(
 
     Returns
     -----------------------
-    Instace of VibrioSplendidus graph.
+    Instace of Vibrio splendidus graph.
 
 	References
 	---------------------

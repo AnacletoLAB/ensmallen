@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopseudomonasPalustrisHaa2.
+This file offers the methods to automatically retrieve the graph Rhodopseudomonas palustris HaA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopseudomonasPalustrisHaa2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopseudomonasPalustrisHaa2 graph.
+    """Return new instance of the Rhodopseudomonas palustris HaA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodopseudomonasPalustrisHaa2(
 
     Returns
     -----------------------
-    Instace of RhodopseudomonasPalustrisHaa2 graph.
+    Instace of Rhodopseudomonas palustris HaA2 graph.
 
 	References
 	---------------------

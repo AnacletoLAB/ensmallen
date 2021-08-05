@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyclobacteriumAmurskyense.
+This file offers the methods to automatically retrieve the graph Cyclobacterium amurskyense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyclobacteriumAmurskyense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyclobacteriumAmurskyense graph.
+    """Return new instance of the Cyclobacterium amurskyense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyclobacteriumAmurskyense(
 
     Returns
     -----------------------
-    Instace of CyclobacteriumAmurskyense graph.
+    Instace of Cyclobacterium amurskyense graph.
 
 	References
 	---------------------

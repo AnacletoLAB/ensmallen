@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpLpb0140.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. LPB0140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpLpb0140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpLpb0140 graph.
+    """Return new instance of the Sphingopyxis sp. LPB0140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSpLpb0140(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpLpb0140 graph.
+    Instace of Sphingopyxis sp. LPB0140 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioDesulfuricansAtcc27774.
+This file offers the methods to automatically retrieve the graph Desulfovibrio desulfuricans ATCC27774.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioDesulfuricansAtcc27774(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioDesulfuricansAtcc27774 graph.
+    """Return new instance of the Desulfovibrio desulfuricans ATCC27774 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioDesulfuricansAtcc27774(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioDesulfuricansAtcc27774 graph.
+    Instace of Desulfovibrio desulfuricans ATCC27774 graph.
 
 	References
 	---------------------

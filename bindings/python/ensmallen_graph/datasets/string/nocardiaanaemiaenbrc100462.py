@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaAnaemiaeNbrc100462.
+This file offers the methods to automatically retrieve the graph Nocardia anaemiae NBRC 100462.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaAnaemiaeNbrc100462(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaAnaemiaeNbrc100462 graph.
+    """Return new instance of the Nocardia anaemiae NBRC 100462 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaAnaemiaeNbrc100462(
 
     Returns
     -----------------------
-    Instace of NocardiaAnaemiaeNbrc100462 graph.
+    Instace of Nocardia anaemiae NBRC 100462 graph.
 
 	References
 	---------------------

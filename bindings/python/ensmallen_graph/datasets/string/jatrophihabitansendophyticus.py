@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JatrophihabitansEndophyticus.
+This file offers the methods to automatically retrieve the graph Jatrophihabitans endophyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JatrophihabitansEndophyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JatrophihabitansEndophyticus graph.
+    """Return new instance of the Jatrophihabitans endophyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JatrophihabitansEndophyticus(
 
     Returns
     -----------------------
-    Instace of JatrophihabitansEndophyticus graph.
+    Instace of Jatrophihabitans endophyticus graph.
 
 	References
 	---------------------

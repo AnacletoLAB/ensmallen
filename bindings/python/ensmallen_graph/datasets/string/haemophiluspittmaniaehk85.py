@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusPittmaniaeHk85.
+This file offers the methods to automatically retrieve the graph Haemophilus pittmaniae HK 85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusPittmaniaeHk85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusPittmaniaeHk85 graph.
+    """Return new instance of the Haemophilus pittmaniae HK 85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaemophilusPittmaniaeHk85(
 
     Returns
     -----------------------
-    Instace of HaemophilusPittmaniaeHk85 graph.
+    Instace of Haemophilus pittmaniae HK 85 graph.
 
 	References
 	---------------------

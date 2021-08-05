@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TermitomycesSpJ132.
+This file offers the methods to automatically retrieve the graph Termitomyces sp. J132.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TermitomycesSpJ132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TermitomycesSpJ132 graph.
+    """Return new instance of the Termitomyces sp. J132 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TermitomycesSpJ132(
 
     Returns
     -----------------------
-    Instace of TermitomycesSpJ132 graph.
+    Instace of Termitomyces sp. J132 graph.
 
 	References
 	---------------------

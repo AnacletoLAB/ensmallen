@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSp85201450255Sch5639931.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. 852014-50255_SCH5639931.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSp85201450255Sch5639931(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSp85201450255Sch5639931 graph.
+    """Return new instance of the Mycobacterium sp. 852014-50255_SCH5639931 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSp85201450255Sch5639931(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSp85201450255Sch5639931 graph.
+    Instace of Mycobacterium sp. 852014-50255_SCH5639931 graph.
 
 	References
 	---------------------

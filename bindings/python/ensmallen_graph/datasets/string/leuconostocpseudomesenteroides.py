@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocPseudomesenteroides.
+This file offers the methods to automatically retrieve the graph Leuconostoc pseudomesenteroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocPseudomesenteroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocPseudomesenteroides graph.
+    """Return new instance of the Leuconostoc pseudomesenteroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocPseudomesenteroides(
 
     Returns
     -----------------------
-    Instace of LeuconostocPseudomesenteroides graph.
+    Instace of Leuconostoc pseudomesenteroides graph.
 
 	References
 	---------------------

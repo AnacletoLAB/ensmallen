@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCaatingaensis.
+This file offers the methods to automatically retrieve the graph Streptomyces caatingaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCaatingaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCaatingaensis graph.
+    """Return new instance of the Streptomyces caatingaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesCaatingaensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesCaatingaensis graph.
+    Instace of Streptomyces caatingaensis graph.
 
 	References
 	---------------------

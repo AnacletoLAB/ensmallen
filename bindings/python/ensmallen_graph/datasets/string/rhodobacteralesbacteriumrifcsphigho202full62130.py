@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteralesBacteriumRifcsphigho202Full62130.
+This file offers the methods to automatically retrieve the graph Rhodobacterales bacterium RIFCSPHIGHO2_02_FULL_62_130.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteralesBacteriumRifcsphigho202Full62130(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteralesBacteriumRifcsphigho202Full62130 graph.
+    """Return new instance of the Rhodobacterales bacterium RIFCSPHIGHO2_02_FULL_62_130 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteralesBacteriumRifcsphigho202Full62130(
 
     Returns
     -----------------------
-    Instace of RhodobacteralesBacteriumRifcsphigho202Full62130 graph.
+    Instace of Rhodobacterales bacterium RIFCSPHIGHO2_02_FULL_62_130 graph.
 
 	References
 	---------------------

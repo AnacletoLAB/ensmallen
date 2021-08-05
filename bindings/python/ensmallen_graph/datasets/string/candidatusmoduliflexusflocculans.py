@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusModuliflexusFlocculans.
+This file offers the methods to automatically retrieve the graph Candidatus Moduliflexus flocculans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusModuliflexusFlocculans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusModuliflexusFlocculans graph.
+    """Return new instance of the Candidatus Moduliflexus flocculans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusModuliflexusFlocculans(
 
     Returns
     -----------------------
-    Instace of CandidatusModuliflexusFlocculans graph.
+    Instace of Candidatus Moduliflexus flocculans graph.
 
 	References
 	---------------------

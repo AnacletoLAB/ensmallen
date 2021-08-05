@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinarimonadaceaeBacteriumHl109.
+This file offers the methods to automatically retrieve the graph Salinarimonadaceae bacterium HL-109.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinarimonadaceaeBacteriumHl109(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinarimonadaceaeBacteriumHl109 graph.
+    """Return new instance of the Salinarimonadaceae bacterium HL-109 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinarimonadaceaeBacteriumHl109(
 
     Returns
     -----------------------
-    Instace of SalinarimonadaceaeBacteriumHl109 graph.
+    Instace of Salinarimonadaceae bacterium HL-109 graph.
 
 	References
 	---------------------

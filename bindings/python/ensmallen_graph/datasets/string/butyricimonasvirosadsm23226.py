@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyricimonasVirosaDsm23226.
+This file offers the methods to automatically retrieve the graph Butyricimonas virosa DSM 23226.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyricimonasVirosaDsm23226(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyricimonasVirosaDsm23226 graph.
+    """Return new instance of the Butyricimonas virosa DSM 23226 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyricimonasVirosaDsm23226(
 
     Returns
     -----------------------
-    Instace of ButyricimonasVirosaDsm23226 graph.
+    Instace of Butyricimonas virosa DSM 23226 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaAll.
+This file offers the methods to automatically retrieve the graph dbpedia-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaAll(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaAll graph.
+    """Return new instance of the dbpedia-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaAll(
 
     Returns
     -----------------------
-    Instace of DbpediaAll graph.
+    Instace of dbpedia-all graph.
 
 	References
 	---------------------

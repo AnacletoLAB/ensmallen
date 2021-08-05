@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasFlueggei.
+This file offers the methods to automatically retrieve the graph Selenomonas flueggei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasFlueggei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasFlueggei graph.
+    """Return new instance of the Selenomonas flueggei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasFlueggei(
 
     Returns
     -----------------------
-    Instace of SelenomonasFlueggei graph.
+    Instace of Selenomonas flueggei graph.
 
 	References
 	---------------------

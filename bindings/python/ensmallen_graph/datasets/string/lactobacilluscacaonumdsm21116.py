@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCacaonumDsm21116.
+This file offers the methods to automatically retrieve the graph Lactobacillus cacaonum DSM 21116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCacaonumDsm21116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCacaonumDsm21116 graph.
+    """Return new instance of the Lactobacillus cacaonum DSM 21116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusCacaonumDsm21116(
 
     Returns
     -----------------------
-    Instace of LactobacillusCacaonumDsm21116 graph.
+    Instace of Lactobacillus cacaonum DSM 21116 graph.
 
 	References
 	---------------------

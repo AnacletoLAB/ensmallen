@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpH105.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. H105.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSpH105(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpH105 graph.
+    """Return new instance of the Pseudoalteromonas sp. H105 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasSpH105(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpH105 graph.
+    Instace of Pseudoalteromonas sp. H105 graph.
 
 	References
 	---------------------

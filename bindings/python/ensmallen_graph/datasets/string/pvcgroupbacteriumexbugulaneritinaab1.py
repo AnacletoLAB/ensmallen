@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PvcGroupBacteriumExBugulaNeritinaAb1.
+This file offers the methods to automatically retrieve the graph PVC group bacterium (ex Bugula neritina AB1).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PvcGroupBacteriumExBugulaNeritinaAb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PvcGroupBacteriumExBugulaNeritinaAb1 graph.
+    """Return new instance of the PVC group bacterium (ex Bugula neritina AB1) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PvcGroupBacteriumExBugulaNeritinaAb1(
 
     Returns
     -----------------------
-    Instace of PvcGroupBacteriumExBugulaNeritinaAb1 graph.
+    Instace of PVC group bacterium (ex Bugula neritina AB1) graph.
 
 	References
 	---------------------

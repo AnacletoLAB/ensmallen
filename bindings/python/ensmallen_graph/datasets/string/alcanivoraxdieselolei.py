@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxDieselolei.
+This file offers the methods to automatically retrieve the graph Alcanivorax dieselolei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxDieselolei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxDieselolei graph.
+    """Return new instance of the Alcanivorax dieselolei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxDieselolei(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxDieselolei graph.
+    Instace of Alcanivorax dieselolei graph.
 
 	References
 	---------------------

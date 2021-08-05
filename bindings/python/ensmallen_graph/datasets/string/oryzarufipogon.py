@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaRufipogon.
+This file offers the methods to automatically retrieve the graph Oryza rufipogon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaRufipogon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaRufipogon graph.
+    """Return new instance of the Oryza rufipogon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryzaRufipogon(
 
     Returns
     -----------------------
-    Instace of OryzaRufipogon graph.
+    Instace of Oryza rufipogon graph.
 
 	References
 	---------------------

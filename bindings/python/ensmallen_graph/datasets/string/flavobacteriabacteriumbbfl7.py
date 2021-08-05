@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaBacteriumBbfl7.
+This file offers the methods to automatically retrieve the graph Flavobacteria bacterium BBFL7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaBacteriumBbfl7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaBacteriumBbfl7 graph.
+    """Return new instance of the Flavobacteria bacterium BBFL7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaBacteriumBbfl7(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaBacteriumBbfl7 graph.
+    Instace of Flavobacteria bacterium BBFL7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasMacleodii.
+This file offers the methods to automatically retrieve the graph Alteromonas macleodii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasMacleodii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasMacleodii graph.
+    """Return new instance of the Alteromonas macleodii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasMacleodii(
 
     Returns
     -----------------------
-    Instace of AlteromonasMacleodii graph.
+    Instace of Alteromonas macleodii graph.
 
 	References
 	---------------------

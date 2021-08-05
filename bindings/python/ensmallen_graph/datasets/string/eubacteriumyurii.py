@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumYurii.
+This file offers the methods to automatically retrieve the graph Eubacterium yurii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumYurii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumYurii graph.
+    """Return new instance of the Eubacterium yurii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumYurii(
 
     Returns
     -----------------------
-    Instace of EubacteriumYurii graph.
+    Instace of Eubacterium yurii graph.
 
 	References
 	---------------------

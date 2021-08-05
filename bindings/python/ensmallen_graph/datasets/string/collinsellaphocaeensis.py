@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaPhocaeensis.
+This file offers the methods to automatically retrieve the graph Collinsella phocaeensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaPhocaeensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaPhocaeensis graph.
+    """Return new instance of the Collinsella phocaeensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollinsellaPhocaeensis(
 
     Returns
     -----------------------
-    Instace of CollinsellaPhocaeensis graph.
+    Instace of Collinsella phocaeensis graph.
 
 	References
 	---------------------

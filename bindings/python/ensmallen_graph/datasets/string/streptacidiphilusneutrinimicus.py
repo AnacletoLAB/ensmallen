@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusNeutrinimicus.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus neutrinimicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusNeutrinimicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusNeutrinimicus graph.
+    """Return new instance of the Streptacidiphilus neutrinimicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptacidiphilusNeutrinimicus(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusNeutrinimicus graph.
+    Instace of Streptacidiphilus neutrinimicus graph.
 
 	References
 	---------------------

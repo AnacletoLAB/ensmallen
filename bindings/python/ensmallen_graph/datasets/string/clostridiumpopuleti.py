@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPopuleti.
+This file offers the methods to automatically retrieve the graph [Clostridium] populeti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPopuleti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPopuleti graph.
+    """Return new instance of the [Clostridium] populeti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPopuleti(
 
     Returns
     -----------------------
-    Instace of ClostridiumPopuleti graph.
+    Instace of [Clostridium] populeti graph.
 
 	References
 	---------------------

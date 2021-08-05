@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeofilumRubicundumJcm15548.
+This file offers the methods to automatically retrieve the graph Geofilum rubicundum JCM 15548.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeofilumRubicundumJcm15548(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeofilumRubicundumJcm15548 graph.
+    """Return new instance of the Geofilum rubicundum JCM 15548 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeofilumRubicundumJcm15548(
 
     Returns
     -----------------------
-    Instace of GeofilumRubicundumJcm15548 graph.
+    Instace of Geofilum rubicundum JCM 15548 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryziasMelastigma.
+This file offers the methods to automatically retrieve the graph Oryzias melastigma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryziasMelastigma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryziasMelastigma graph.
+    """Return new instance of the Oryzias melastigma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OryziasMelastigma(
 
     Returns
     -----------------------
-    Instace of OryziasMelastigma graph.
+    Instace of Oryzias melastigma graph.
 
 	References
 	---------------------

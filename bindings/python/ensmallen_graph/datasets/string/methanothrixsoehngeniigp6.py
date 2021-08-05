@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothrixSoehngeniiGp6.
+This file offers the methods to automatically retrieve the graph Methanothrix soehngenii GP6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothrixSoehngeniiGp6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothrixSoehngeniiGp6 graph.
+    """Return new instance of the Methanothrix soehngenii GP6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothrixSoehngeniiGp6(
 
     Returns
     -----------------------
-    Instace of MethanothrixSoehngeniiGp6 graph.
+    Instace of Methanothrix soehngenii GP6 graph.
 
 	References
 	---------------------

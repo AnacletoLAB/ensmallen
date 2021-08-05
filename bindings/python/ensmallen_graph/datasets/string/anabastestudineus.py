@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabasTestudineus.
+This file offers the methods to automatically retrieve the graph Anabas testudineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabasTestudineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabasTestudineus graph.
+    """Return new instance of the Anabas testudineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnabasTestudineus(
 
     Returns
     -----------------------
-    Instace of AnabasTestudineus graph.
+    Instace of Anabas testudineus graph.
 
 	References
 	---------------------

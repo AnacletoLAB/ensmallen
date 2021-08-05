@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph San400073.
+This file offers the methods to automatically retrieve the graph san400-0-7-3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def San400073(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the San400073 graph.
+    """Return new instance of the san400-0-7-3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def San400073(
 
     Returns
     -----------------------
-    Instace of San400073 graph.
+    Instace of san400-0-7-3 graph.
 
 	References
 	---------------------

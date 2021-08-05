@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZetaProteobacteriumScgcAb137C09.
+This file offers the methods to automatically retrieve the graph zeta proteobacterium SCGC AB-137-C09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZetaProteobacteriumScgcAb137C09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZetaProteobacteriumScgcAb137C09 graph.
+    """Return new instance of the zeta proteobacterium SCGC AB-137-C09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZetaProteobacteriumScgcAb137C09(
 
     Returns
     -----------------------
-    Instace of ZetaProteobacteriumScgcAb137C09 graph.
+    Instace of zeta proteobacterium SCGC AB-137-C09 graph.
 
 	References
 	---------------------

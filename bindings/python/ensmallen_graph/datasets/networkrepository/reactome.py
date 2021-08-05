@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Reactome.
+This file offers the methods to automatically retrieve the graph reactome.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Reactome(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Reactome graph.
+    """Return new instance of the reactome graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Reactome(
 
     Returns
     -----------------------
-    Instace of Reactome graph.
+    Instace of reactome graph.
 
 	References
 	---------------------

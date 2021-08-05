@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaSpMctg156.
+This file offers the methods to automatically retrieve the graph Oceanicola sp. MCTG156.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaSpMctg156(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaSpMctg156 graph.
+    """Return new instance of the Oceanicola sp. MCTG156 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicolaSpMctg156(
 
     Returns
     -----------------------
-    Instace of OceanicolaSpMctg156 graph.
+    Instace of Oceanicola sp. MCTG156 graph.
 
 	References
 	---------------------

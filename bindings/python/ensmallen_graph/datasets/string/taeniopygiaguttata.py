@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TaeniopygiaGuttata.
+This file offers the methods to automatically retrieve the graph Taeniopygia guttata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TaeniopygiaGuttata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TaeniopygiaGuttata graph.
+    """Return new instance of the Taeniopygia guttata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TaeniopygiaGuttata(
 
     Returns
     -----------------------
-    Instace of TaeniopygiaGuttata graph.
+    Instace of Taeniopygia guttata graph.
 
 	References
 	---------------------

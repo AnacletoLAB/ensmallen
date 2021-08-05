@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfatatorIndicus.
+This file offers the methods to automatically retrieve the graph Thermodesulfatator indicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfatatorIndicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfatatorIndicus graph.
+    """Return new instance of the Thermodesulfatator indicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermodesulfatatorIndicus(
 
     Returns
     -----------------------
-    Instace of ThermodesulfatatorIndicus graph.
+    Instace of Thermodesulfatator indicus graph.
 
 	References
 	---------------------

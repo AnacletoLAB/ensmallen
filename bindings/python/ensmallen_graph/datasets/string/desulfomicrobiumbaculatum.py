@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfomicrobiumBaculatum.
+This file offers the methods to automatically retrieve the graph Desulfomicrobium baculatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfomicrobiumBaculatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfomicrobiumBaculatum graph.
+    """Return new instance of the Desulfomicrobium baculatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfomicrobiumBaculatum(
 
     Returns
     -----------------------
-    Instace of DesulfomicrobiumBaculatum graph.
+    Instace of Desulfomicrobium baculatum graph.
 
 	References
 	---------------------

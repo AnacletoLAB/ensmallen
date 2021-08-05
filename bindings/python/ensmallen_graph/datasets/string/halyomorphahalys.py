@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalyomorphaHalys.
+This file offers the methods to automatically retrieve the graph Halyomorpha halys.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalyomorphaHalys(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalyomorphaHalys graph.
+    """Return new instance of the Halyomorpha halys graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalyomorphaHalys(
 
     Returns
     -----------------------
-    Instace of HalyomorphaHalys graph.
+    Instace of Halyomorpha halys graph.
 
 	References
 	---------------------

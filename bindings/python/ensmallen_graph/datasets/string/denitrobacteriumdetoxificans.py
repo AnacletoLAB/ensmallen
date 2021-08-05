@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DenitrobacteriumDetoxificans.
+This file offers the methods to automatically retrieve the graph Denitrobacterium detoxificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DenitrobacteriumDetoxificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DenitrobacteriumDetoxificans graph.
+    """Return new instance of the Denitrobacterium detoxificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DenitrobacteriumDetoxificans(
 
     Returns
     -----------------------
-    Instace of DenitrobacteriumDetoxificans graph.
+    Instace of Denitrobacterium detoxificans graph.
 
 	References
 	---------------------

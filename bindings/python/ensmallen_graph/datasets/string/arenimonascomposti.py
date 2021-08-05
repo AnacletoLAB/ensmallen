@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasComposti.
+This file offers the methods to automatically retrieve the graph Arenimonas composti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasComposti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasComposti graph.
+    """Return new instance of the Arenimonas composti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenimonasComposti(
 
     Returns
     -----------------------
-    Instace of ArenimonasComposti graph.
+    Instace of Arenimonas composti graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterShowaeCsunswcd.
+This file offers the methods to automatically retrieve the graph Campylobacter showae CSUNSWCD.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterShowaeCsunswcd(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterShowaeCsunswcd graph.
+    """Return new instance of the Campylobacter showae CSUNSWCD graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterShowaeCsunswcd(
 
     Returns
     -----------------------
-    Instace of CampylobacterShowaeCsunswcd graph.
+    Instace of Campylobacter showae CSUNSWCD graph.
 
 	References
 	---------------------

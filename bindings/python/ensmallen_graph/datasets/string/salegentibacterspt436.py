@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterSpT436.
+This file offers the methods to automatically retrieve the graph Salegentibacter sp. T436.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterSpT436(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterSpT436 graph.
+    """Return new instance of the Salegentibacter sp. T436 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterSpT436(
 
     Returns
     -----------------------
-    Instace of SalegentibacterSpT436 graph.
+    Instace of Salegentibacter sp. T436 graph.
 
 	References
 	---------------------

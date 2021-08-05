@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpRac01.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. RAC01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpRac01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpRac01 graph.
+    """Return new instance of the Acidovorax sp. RAC01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSpRac01(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpRac01 graph.
+    Instace of Acidovorax sp. RAC01 graph.
 
 	References
 	---------------------

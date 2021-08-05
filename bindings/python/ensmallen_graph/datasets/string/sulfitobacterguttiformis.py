@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterGuttiformis.
+This file offers the methods to automatically retrieve the graph Sulfitobacter guttiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterGuttiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterGuttiformis graph.
+    """Return new instance of the Sulfitobacter guttiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterGuttiformis(
 
     Returns
     -----------------------
-    Instace of SulfitobacterGuttiformis graph.
+    Instace of Sulfitobacter guttiformis graph.
 
 	References
 	---------------------

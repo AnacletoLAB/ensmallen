@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDoolittleaEndobia.
+This file offers the methods to automatically retrieve the graph Candidatus Doolittlea endobia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDoolittleaEndobia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDoolittleaEndobia graph.
+    """Return new instance of the Candidatus Doolittlea endobia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDoolittleaEndobia(
 
     Returns
     -----------------------
-    Instace of CandidatusDoolittleaEndobia graph.
+    Instace of Candidatus Doolittlea endobia graph.
 
 	References
 	---------------------

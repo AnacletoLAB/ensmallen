@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaPsychrophila.
+This file offers the methods to automatically retrieve the graph Sporosarcina psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaPsychrophila graph.
+    """Return new instance of the Sporosarcina psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaPsychrophila(
 
     Returns
     -----------------------
-    Instace of SporosarcinaPsychrophila graph.
+    Instace of Sporosarcina psychrophila graph.
 
 	References
 	---------------------

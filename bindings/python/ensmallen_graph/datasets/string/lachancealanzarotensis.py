@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaLanzarotensis.
+This file offers the methods to automatically retrieve the graph Lachancea lanzarotensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaLanzarotensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaLanzarotensis graph.
+    """Return new instance of the Lachancea lanzarotensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachanceaLanzarotensis(
 
     Returns
     -----------------------
-    Instace of LachanceaLanzarotensis graph.
+    Instace of Lachancea lanzarotensis graph.
 
 	References
 	---------------------

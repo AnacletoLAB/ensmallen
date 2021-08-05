@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaBiviaJcvihmp010.
+This file offers the methods to automatically retrieve the graph Prevotella bivia JCVIHMP010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaBiviaJcvihmp010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaBiviaJcvihmp010 graph.
+    """Return new instance of the Prevotella bivia JCVIHMP010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaBiviaJcvihmp010(
 
     Returns
     -----------------------
-    Instace of PrevotellaBiviaJcvihmp010 graph.
+    Instace of Prevotella bivia JCVIHMP010 graph.
 
 	References
 	---------------------

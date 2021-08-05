@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacterTundripaludum.
+This file offers the methods to automatically retrieve the graph Methylobacter tundripaludum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacterTundripaludum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacterTundripaludum graph.
+    """Return new instance of the Methylobacter tundripaludum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacterTundripaludum(
 
     Returns
     -----------------------
-    Instace of MethylobacterTundripaludum graph.
+    Instace of Methylobacter tundripaludum graph.
 
 	References
 	---------------------

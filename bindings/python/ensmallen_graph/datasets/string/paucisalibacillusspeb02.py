@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaucisalibacillusSpEb02.
+This file offers the methods to automatically retrieve the graph Paucisalibacillus sp. EB02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaucisalibacillusSpEb02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaucisalibacillusSpEb02 graph.
+    """Return new instance of the Paucisalibacillus sp. EB02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaucisalibacillusSpEb02(
 
     Returns
     -----------------------
-    Instace of PaucisalibacillusSpEb02 graph.
+    Instace of Paucisalibacillus sp. EB02 graph.
 
 	References
 	---------------------

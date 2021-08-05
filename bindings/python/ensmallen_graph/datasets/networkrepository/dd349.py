@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dd349.
+This file offers the methods to automatically retrieve the graph DD349.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dd349(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dd349 graph.
+    """Return new instance of the DD349 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dd349(
 
     Returns
     -----------------------
-    Instace of Dd349 graph.
+    Instace of DD349 graph.
 
 	References
 	---------------------

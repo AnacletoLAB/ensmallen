@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPluripotens.
+This file offers the methods to automatically retrieve the graph Streptomyces pluripotens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPluripotens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPluripotens graph.
+    """Return new instance of the Streptomyces pluripotens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesPluripotens(
 
     Returns
     -----------------------
-    Instace of StreptomycesPluripotens graph.
+    Instace of Streptomyces pluripotens graph.
 
 	References
 	---------------------

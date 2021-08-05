@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcusMaripaludisS2.
+This file offers the methods to automatically retrieve the graph Methanococcus maripaludis S2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcusMaripaludisS2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcusMaripaludisS2 graph.
+    """Return new instance of the Methanococcus maripaludis S2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanococcusMaripaludisS2(
 
     Returns
     -----------------------
-    Instace of MethanococcusMaripaludisS2 graph.
+    Instace of Methanococcus maripaludis S2 graph.
 
 	References
 	---------------------

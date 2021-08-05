@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocGelidumKctc3527.
+This file offers the methods to automatically retrieve the graph Leuconostoc gelidum KCTC3527.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocGelidumKctc3527(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocGelidumKctc3527 graph.
+    """Return new instance of the Leuconostoc gelidum KCTC3527 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocGelidumKctc3527(
 
     Returns
     -----------------------
-    Instace of LeuconostocGelidumKctc3527 graph.
+    Instace of Leuconostoc gelidum KCTC3527 graph.
 
 	References
 	---------------------

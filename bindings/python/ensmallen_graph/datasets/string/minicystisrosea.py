@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MinicystisRosea.
+This file offers the methods to automatically retrieve the graph Minicystis rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MinicystisRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MinicystisRosea graph.
+    """Return new instance of the Minicystis rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MinicystisRosea(
 
     Returns
     -----------------------
-    Instace of MinicystisRosea graph.
+    Instace of Minicystis rosea graph.
 
 	References
 	---------------------

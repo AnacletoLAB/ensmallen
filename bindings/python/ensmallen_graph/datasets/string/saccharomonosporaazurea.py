@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaAzurea.
+This file offers the methods to automatically retrieve the graph Saccharomonospora azurea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaAzurea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaAzurea graph.
+    """Return new instance of the Saccharomonospora azurea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomonosporaAzurea(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaAzurea graph.
+    Instace of Saccharomonospora azurea graph.
 
 	References
 	---------------------

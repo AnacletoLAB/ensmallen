@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BasileaPsittacipulmonis.
+This file offers the methods to automatically retrieve the graph Basilea psittacipulmonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BasileaPsittacipulmonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BasileaPsittacipulmonis graph.
+    """Return new instance of the Basilea psittacipulmonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BasileaPsittacipulmonis(
 
     Returns
     -----------------------
-    Instace of BasileaPsittacipulmonis graph.
+    Instace of Basilea psittacipulmonis graph.
 
 	References
 	---------------------

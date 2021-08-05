@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesSpLeaf222.
+This file offers the methods to automatically retrieve the graph Agromyces sp. Leaf222.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesSpLeaf222(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesSpLeaf222 graph.
+    """Return new instance of the Agromyces sp. Leaf222 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgromycesSpLeaf222(
 
     Returns
     -----------------------
-    Instace of AgromycesSpLeaf222 graph.
+    Instace of Agromyces sp. Leaf222 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonasPusillaCcmp1545.
+This file offers the methods to automatically retrieve the graph Micromonas pusilla CCMP1545.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonasPusillaCcmp1545(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonasPusillaCcmp1545 graph.
+    """Return new instance of the Micromonas pusilla CCMP1545 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonasPusillaCcmp1545(
 
     Returns
     -----------------------
-    Instace of MicromonasPusillaCcmp1545 graph.
+    Instace of Micromonas pusilla CCMP1545 graph.
 
 	References
 	---------------------

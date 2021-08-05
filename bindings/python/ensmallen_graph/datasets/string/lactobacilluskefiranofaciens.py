@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKefiranofaciens.
+This file offers the methods to automatically retrieve the graph Lactobacillus kefiranofaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKefiranofaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKefiranofaciens graph.
+    """Return new instance of the Lactobacillus kefiranofaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusKefiranofaciens(
 
     Returns
     -----------------------
-    Instace of LactobacillusKefiranofaciens graph.
+    Instace of Lactobacillus kefiranofaciens graph.
 
 	References
 	---------------------

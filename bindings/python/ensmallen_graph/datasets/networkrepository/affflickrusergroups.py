@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffFlickrUserGroups.
+This file offers the methods to automatically retrieve the graph aff-flickr-user-groups.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AffFlickrUserGroups(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffFlickrUserGroups graph.
+    """Return new instance of the aff-flickr-user-groups graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AffFlickrUserGroups(
 
     Returns
     -----------------------
-    Instace of AffFlickrUserGroups graph.
+    Instace of aff-flickr-user-groups graph.
 
 	References
 	---------------------

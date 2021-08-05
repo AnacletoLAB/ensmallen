@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElusimicrobiaBacteriumGwd26328.
+This file offers the methods to automatically retrieve the graph Elusimicrobia bacterium GWD2_63_28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElusimicrobiaBacteriumGwd26328(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElusimicrobiaBacteriumGwd26328 graph.
+    """Return new instance of the Elusimicrobia bacterium GWD2_63_28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElusimicrobiaBacteriumGwd26328(
 
     Returns
     -----------------------
-    Instace of ElusimicrobiaBacteriumGwd26328 graph.
+    Instace of Elusimicrobia bacterium GWD2_63_28 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaScopos.
+This file offers the methods to automatically retrieve the graph Prevotella scopos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaScopos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaScopos graph.
+    """Return new instance of the Prevotella scopos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaScopos(
 
     Returns
     -----------------------
-    Instace of PrevotellaScopos graph.
+    Instace of Prevotella scopos graph.
 
 	References
 	---------------------

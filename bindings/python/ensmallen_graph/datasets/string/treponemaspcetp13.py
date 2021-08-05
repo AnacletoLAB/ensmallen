@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSpCetp13.
+This file offers the methods to automatically retrieve the graph Treponema sp. CETP13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSpCetp13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSpCetp13 graph.
+    """Return new instance of the Treponema sp. CETP13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaSpCetp13(
 
     Returns
     -----------------------
-    Instace of TreponemaSpCetp13 graph.
+    Instace of Treponema sp. CETP13 graph.
 
 	References
 	---------------------

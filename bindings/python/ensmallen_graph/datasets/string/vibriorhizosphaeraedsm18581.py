@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioRhizosphaeraeDsm18581.
+This file offers the methods to automatically retrieve the graph Vibrio rhizosphaerae DSM 18581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioRhizosphaeraeDsm18581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioRhizosphaeraeDsm18581 graph.
+    """Return new instance of the Vibrio rhizosphaerae DSM 18581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioRhizosphaeraeDsm18581(
 
     Returns
     -----------------------
-    Instace of VibrioRhizosphaeraeDsm18581 graph.
+    Instace of Vibrio rhizosphaerae DSM 18581 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ibm32.
+This file offers the methods to automatically retrieve the graph ibm32.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ibm32(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ibm32 graph.
+    """Return new instance of the ibm32 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ibm32(
 
     Returns
     -----------------------
-    Instace of Ibm32 graph.
+    Instace of ibm32 graph.
 
 	References
 	---------------------

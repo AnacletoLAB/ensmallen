@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph T520.
+This file offers the methods to automatically retrieve the graph t520.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def T520(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the T520 graph.
+    """Return new instance of the t520 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def T520(
 
     Returns
     -----------------------
-    Instace of T520 graph.
+    Instace of t520 graph.
 
 	References
 	---------------------

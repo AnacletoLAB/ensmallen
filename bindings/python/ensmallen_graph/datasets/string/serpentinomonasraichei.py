@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerpentinomonasRaichei.
+This file offers the methods to automatically retrieve the graph Serpentinomonas raichei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerpentinomonasRaichei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerpentinomonasRaichei graph.
+    """Return new instance of the Serpentinomonas raichei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerpentinomonasRaichei(
 
     Returns
     -----------------------
-    Instace of SerpentinomonasRaichei graph.
+    Instace of Serpentinomonas raichei graph.
 
 	References
 	---------------------

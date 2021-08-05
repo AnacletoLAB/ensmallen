@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelativoransSpBnc1.
+This file offers the methods to automatically retrieve the graph Chelativorans sp. BNC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelativoransSpBnc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelativoransSpBnc1 graph.
+    """Return new instance of the Chelativorans sp. BNC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChelativoransSpBnc1(
 
     Returns
     -----------------------
-    Instace of ChelativoransSpBnc1 graph.
+    Instace of Chelativorans sp. BNC1 graph.
 
 	References
 	---------------------

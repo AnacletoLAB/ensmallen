@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquilunaSpImcc13023.
+This file offers the methods to automatically retrieve the graph Aquiluna sp. IMCC13023.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquilunaSpImcc13023(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquilunaSpImcc13023 graph.
+    """Return new instance of the Aquiluna sp. IMCC13023 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquilunaSpImcc13023(
 
     Returns
     -----------------------
-    Instace of AquilunaSpImcc13023 graph.
+    Instace of Aquiluna sp. IMCC13023 graph.
 
 	References
 	---------------------

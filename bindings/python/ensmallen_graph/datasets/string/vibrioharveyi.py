@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioHarveyi.
+This file offers the methods to automatically retrieve the graph Vibrio harveyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioHarveyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioHarveyi graph.
+    """Return new instance of the Vibrio harveyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioHarveyi(
 
     Returns
     -----------------------
-    Instace of VibrioHarveyi graph.
+    Instace of Vibrio harveyi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KribbellaFlavida.
+This file offers the methods to automatically retrieve the graph Kribbella flavida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KribbellaFlavida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KribbellaFlavida graph.
+    """Return new instance of the Kribbella flavida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KribbellaFlavida(
 
     Returns
     -----------------------
-    Instace of KribbellaFlavida graph.
+    Instace of Kribbella flavida graph.
 
 	References
 	---------------------

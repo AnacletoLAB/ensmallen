@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumLavalense.
+This file offers the methods to automatically retrieve the graph [Clostridium] lavalense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumLavalense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumLavalense graph.
+    """Return new instance of the [Clostridium] lavalense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumLavalense(
 
     Returns
     -----------------------
-    Instace of ClostridiumLavalense graph.
+    Instace of [Clostridium] lavalense graph.
 
 	References
 	---------------------

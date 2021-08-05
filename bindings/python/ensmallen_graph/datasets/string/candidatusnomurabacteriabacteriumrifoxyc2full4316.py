@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNomurabacteriaBacteriumRifoxyc2Full4316.
+This file offers the methods to automatically retrieve the graph Candidatus Nomurabacteria bacterium RIFOXYC2_FULL_43_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNomurabacteriaBacteriumRifoxyc2Full4316(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNomurabacteriaBacteriumRifoxyc2Full4316 graph.
+    """Return new instance of the Candidatus Nomurabacteria bacterium RIFOXYC2_FULL_43_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNomurabacteriaBacteriumRifoxyc2Full4316(
 
     Returns
     -----------------------
-    Instace of CandidatusNomurabacteriaBacteriumRifoxyc2Full4316 graph.
+    Instace of Candidatus Nomurabacteria bacterium RIFOXYC2_FULL_43_16 graph.
 
 	References
 	---------------------

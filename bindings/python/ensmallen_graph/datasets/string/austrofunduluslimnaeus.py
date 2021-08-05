@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AustrofundulusLimnaeus.
+This file offers the methods to automatically retrieve the graph Austrofundulus limnaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AustrofundulusLimnaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AustrofundulusLimnaeus graph.
+    """Return new instance of the Austrofundulus limnaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AustrofundulusLimnaeus(
 
     Returns
     -----------------------
-    Instace of AustrofundulusLimnaeus graph.
+    Instace of Austrofundulus limnaeus graph.
 
 	References
 	---------------------

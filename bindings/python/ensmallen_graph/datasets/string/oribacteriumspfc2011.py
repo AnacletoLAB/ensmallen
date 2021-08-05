@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSpFc2011.
+This file offers the methods to automatically retrieve the graph Oribacterium sp. FC2011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSpFc2011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSpFc2011 graph.
+    """Return new instance of the Oribacterium sp. FC2011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OribacteriumSpFc2011(
 
     Returns
     -----------------------
-    Instace of OribacteriumSpFc2011 graph.
+    Instace of Oribacterium sp. FC2011 graph.
 
 	References
 	---------------------

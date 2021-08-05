@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DomibacillusMangrovi.
+This file offers the methods to automatically retrieve the graph Domibacillus mangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DomibacillusMangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DomibacillusMangrovi graph.
+    """Return new instance of the Domibacillus mangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DomibacillusMangrovi(
 
     Returns
     -----------------------
-    Instace of DomibacillusMangrovi graph.
+    Instace of Domibacillus mangrovi graph.
 
 	References
 	---------------------

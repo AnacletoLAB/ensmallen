@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeoasaiaChiangmaiensis.
+This file offers the methods to automatically retrieve the graph Neoasaia chiangmaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeoasaiaChiangmaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeoasaiaChiangmaiensis graph.
+    """Return new instance of the Neoasaia chiangmaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeoasaiaChiangmaiensis(
 
     Returns
     -----------------------
-    Instace of NeoasaiaChiangmaiensis graph.
+    Instace of Neoasaia chiangmaiensis graph.
 
 	References
 	---------------------

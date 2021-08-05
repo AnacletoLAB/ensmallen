@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioProteoclasticusP6b7.
+This file offers the methods to automatically retrieve the graph Butyrivibrio proteoclasticus P6B7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioProteoclasticusP6b7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioProteoclasticusP6b7 graph.
+    """Return new instance of the Butyrivibrio proteoclasticus P6B7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioProteoclasticusP6b7(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioProteoclasticusP6b7 graph.
+    Instace of Butyrivibrio proteoclasticus P6B7 graph.
 
 	References
 	---------------------

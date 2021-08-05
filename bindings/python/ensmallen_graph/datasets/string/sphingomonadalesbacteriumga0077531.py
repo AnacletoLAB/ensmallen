@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonadalesBacteriumGa0077531.
+This file offers the methods to automatically retrieve the graph Sphingomonadales bacterium Ga0077531.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonadalesBacteriumGa0077531(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonadalesBacteriumGa0077531 graph.
+    """Return new instance of the Sphingomonadales bacterium Ga0077531 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonadalesBacteriumGa0077531(
 
     Returns
     -----------------------
-    Instace of SphingomonadalesBacteriumGa0077531 graph.
+    Instace of Sphingomonadales bacterium Ga0077531 graph.
 
 	References
 	---------------------

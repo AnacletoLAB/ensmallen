@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumPhaseoli.
+This file offers the methods to automatically retrieve the graph Rhizobium phaseoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumPhaseoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumPhaseoli graph.
+    """Return new instance of the Rhizobium phaseoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumPhaseoli(
 
     Returns
     -----------------------
-    Instace of RhizobiumPhaseoli graph.
+    Instace of Rhizobium phaseoli graph.
 
 	References
 	---------------------

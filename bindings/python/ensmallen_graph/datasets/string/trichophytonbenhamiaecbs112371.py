@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichophytonBenhamiaeCbs112371.
+This file offers the methods to automatically retrieve the graph Trichophyton benhamiae CBS 112371.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichophytonBenhamiaeCbs112371(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichophytonBenhamiaeCbs112371 graph.
+    """Return new instance of the Trichophyton benhamiae CBS 112371 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichophytonBenhamiaeCbs112371(
 
     Returns
     -----------------------
-    Instace of TrichophytonBenhamiaeCbs112371 graph.
+    Instace of Trichophyton benhamiae CBS 112371 graph.
 
 	References
 	---------------------

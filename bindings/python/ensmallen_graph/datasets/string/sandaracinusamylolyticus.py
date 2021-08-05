@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SandaracinusAmylolyticus.
+This file offers the methods to automatically retrieve the graph Sandaracinus amylolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SandaracinusAmylolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SandaracinusAmylolyticus graph.
+    """Return new instance of the Sandaracinus amylolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SandaracinusAmylolyticus(
 
     Returns
     -----------------------
-    Instace of SandaracinusAmylolyticus graph.
+    Instace of Sandaracinus amylolyticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaSpPamc20917.
+This file offers the methods to automatically retrieve the graph Colwellia sp. PAMC 20917.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaSpPamc20917(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaSpPamc20917 graph.
+    """Return new instance of the Colwellia sp. PAMC 20917 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaSpPamc20917(
 
     Returns
     -----------------------
-    Instace of ColwelliaSpPamc20917 graph.
+    Instace of Colwellia sp. PAMC 20917 graph.
 
 	References
 	---------------------

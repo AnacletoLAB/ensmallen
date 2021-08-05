@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumFlaccumfaciens.
+This file offers the methods to automatically retrieve the graph Curtobacterium flaccumfaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumFlaccumfaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumFlaccumfaciens graph.
+    """Return new instance of the Curtobacterium flaccumfaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumFlaccumfaciens(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumFlaccumfaciens graph.
+    Instace of Curtobacterium flaccumfaciens graph.
 
 	References
 	---------------------

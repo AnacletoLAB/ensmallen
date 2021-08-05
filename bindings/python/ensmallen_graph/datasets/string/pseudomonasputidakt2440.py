@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPutidaKt2440.
+This file offers the methods to automatically retrieve the graph Pseudomonas putida KT2440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPutidaKt2440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPutidaKt2440 graph.
+    """Return new instance of the Pseudomonas putida KT2440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPutidaKt2440(
 
     Returns
     -----------------------
-    Instace of PseudomonasPutidaKt2440 graph.
+    Instace of Pseudomonas putida KT2440 graph.
 
 	References
 	---------------------

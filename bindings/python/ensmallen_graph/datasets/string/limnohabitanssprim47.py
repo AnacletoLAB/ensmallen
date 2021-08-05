@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnohabitansSpRim47.
+This file offers the methods to automatically retrieve the graph Limnohabitans sp. Rim47.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnohabitansSpRim47(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnohabitansSpRim47 graph.
+    """Return new instance of the Limnohabitans sp. Rim47 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LimnohabitansSpRim47(
 
     Returns
     -----------------------
-    Instace of LimnohabitansSpRim47 graph.
+    Instace of Limnohabitans sp. Rim47 graph.
 
 	References
 	---------------------

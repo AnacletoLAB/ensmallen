@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntrasporangiaceaeBacteriumUrhb0013.
+This file offers the methods to automatically retrieve the graph Intrasporangiaceae bacterium URHB0013.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IntrasporangiaceaeBacteriumUrhb0013(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntrasporangiaceaeBacteriumUrhb0013 graph.
+    """Return new instance of the Intrasporangiaceae bacterium URHB0013 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IntrasporangiaceaeBacteriumUrhb0013(
 
     Returns
     -----------------------
-    Instace of IntrasporangiaceaeBacteriumUrhb0013 graph.
+    Instace of Intrasporangiaceae bacterium URHB0013 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhocaeicolaAbscessusCcug55929.
+This file offers the methods to automatically retrieve the graph Phocaeicola abscessus CCUG 55929.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhocaeicolaAbscessusCcug55929(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhocaeicolaAbscessusCcug55929 graph.
+    """Return new instance of the Phocaeicola abscessus CCUG 55929 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhocaeicolaAbscessusCcug55929(
 
     Returns
     -----------------------
-    Instace of PhocaeicolaAbscessusCcug55929 graph.
+    Instace of Phocaeicola abscessus CCUG 55929 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfospiraJoergensenii.
+This file offers the methods to automatically retrieve the graph Desulfospira joergensenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfospiraJoergensenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfospiraJoergensenii graph.
+    """Return new instance of the Desulfospira joergensenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfospiraJoergensenii(
 
     Returns
     -----------------------
-    Instace of DesulfospiraJoergensenii graph.
+    Instace of Desulfospira joergensenii graph.
 
 	References
 	---------------------

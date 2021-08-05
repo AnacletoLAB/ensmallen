@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusTengchongensis.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus tengchongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusTengchongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusTengchongensis graph.
+    """Return new instance of the Alicyclobacillus tengchongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlicyclobacillusTengchongensis(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusTengchongensis graph.
+    Instace of Alicyclobacillus tengchongensis graph.
 
 	References
 	---------------------

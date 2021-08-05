@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusMellifer.
+This file offers the methods to automatically retrieve the graph Lactobacillus mellifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusMellifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusMellifer graph.
+    """Return new instance of the Lactobacillus mellifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusMellifer(
 
     Returns
     -----------------------
-    Instace of LactobacillusMellifer graph.
+    Instace of Lactobacillus mellifer graph.
 
 	References
 	---------------------

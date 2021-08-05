@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpNctc7422.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. NCTC 7422.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpNctc7422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpNctc7422 graph.
+    """Return new instance of the Acinetobacter sp. NCTC 7422 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSpNctc7422(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpNctc7422 graph.
+    Instace of Acinetobacter sp. NCTC 7422 graph.
 
 	References
 	---------------------

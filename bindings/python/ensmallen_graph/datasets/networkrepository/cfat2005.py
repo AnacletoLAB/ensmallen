@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CFat2005.
+This file offers the methods to automatically retrieve the graph c-fat200-5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def CFat2005(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CFat2005 graph.
+    """Return new instance of the c-fat200-5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def CFat2005(
 
     Returns
     -----------------------
-    Instace of CFat2005 graph.
+    Instace of c-fat200-5 graph.
 
 	References
 	---------------------

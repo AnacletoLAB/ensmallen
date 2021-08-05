@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaAlni.
+This file offers the methods to automatically retrieve the graph Frankia alni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaAlni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaAlni graph.
+    """Return new instance of the Frankia alni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaAlni(
 
     Returns
     -----------------------
-    Instace of FrankiaAlni graph.
+    Instace of Frankia alni graph.
 
 	References
 	---------------------

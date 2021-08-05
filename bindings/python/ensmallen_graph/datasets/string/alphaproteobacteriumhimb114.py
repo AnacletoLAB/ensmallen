@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumHimb114.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium HIMB114.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumHimb114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumHimb114 graph.
+    """Return new instance of the alpha proteobacterium HIMB114 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumHimb114(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumHimb114 graph.
+    Instace of alpha proteobacterium HIMB114 graph.
 
 	References
 	---------------------

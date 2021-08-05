@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusBrevisX23.
+This file offers the methods to automatically retrieve the graph Brevibacillus brevis X23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusBrevisX23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusBrevisX23 graph.
+    """Return new instance of the Brevibacillus brevis X23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacillusBrevisX23(
 
     Returns
     -----------------------
-    Instace of BrevibacillusBrevisX23 graph.
+    Instace of Brevibacillus brevis X23 graph.
 
 	References
 	---------------------

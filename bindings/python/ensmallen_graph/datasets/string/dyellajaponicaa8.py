@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyellaJaponicaA8.
+This file offers the methods to automatically retrieve the graph Dyella japonica A8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyellaJaponicaA8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyellaJaponicaA8 graph.
+    """Return new instance of the Dyella japonica A8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyellaJaponicaA8(
 
     Returns
     -----------------------
-    Instace of DyellaJaponicaA8 graph.
+    Instace of Dyella japonica A8 graph.
 
 	References
 	---------------------

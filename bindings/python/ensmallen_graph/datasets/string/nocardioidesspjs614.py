@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpJs614.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. JS614.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpJs614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpJs614 graph.
+    """Return new instance of the Nocardioides sp. JS614 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardioidesSpJs614(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpJs614 graph.
+    Instace of Nocardioides sp. JS614 graph.
 
 	References
 	---------------------

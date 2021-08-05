@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterSpHeli6.
+This file offers the methods to automatically retrieve the graph Salegentibacter sp. HelI6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterSpHeli6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterSpHeli6 graph.
+    """Return new instance of the Salegentibacter sp. HelI6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalegentibacterSpHeli6(
 
     Returns
     -----------------------
-    Instace of SalegentibacterSpHeli6 graph.
+    Instace of Salegentibacter sp. HelI6 graph.
 
 	References
 	---------------------

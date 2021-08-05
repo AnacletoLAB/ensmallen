@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoflavibacterZeaxanthinifaciensS86.
+This file offers the methods to automatically retrieve the graph Mesoflavibacter zeaxanthinifaciens S86.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoflavibacterZeaxanthinifaciensS86(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoflavibacterZeaxanthinifaciensS86 graph.
+    """Return new instance of the Mesoflavibacter zeaxanthinifaciens S86 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesoflavibacterZeaxanthinifaciensS86(
 
     Returns
     -----------------------
-    Instace of MesoflavibacterZeaxanthinifaciensS86 graph.
+    Instace of Mesoflavibacter zeaxanthinifaciens S86 graph.
 
 	References
 	---------------------

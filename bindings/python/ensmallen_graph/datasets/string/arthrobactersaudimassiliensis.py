@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSaudimassiliensis.
+This file offers the methods to automatically retrieve the graph Arthrobacter saudimassiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSaudimassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSaudimassiliensis graph.
+    """Return new instance of the Arthrobacter saudimassiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSaudimassiliensis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSaudimassiliensis graph.
+    Instace of Arthrobacter saudimassiliensis graph.
 
 	References
 	---------------------

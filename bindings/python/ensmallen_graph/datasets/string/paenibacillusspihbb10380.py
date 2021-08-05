@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpIhbb10380.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. IHBB 10380.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpIhbb10380(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpIhbb10380 graph.
+    """Return new instance of the Paenibacillus sp. IHBB 10380 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpIhbb10380(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpIhbb10380 graph.
+    Instace of Paenibacillus sp. IHBB 10380 graph.
 
 	References
 	---------------------

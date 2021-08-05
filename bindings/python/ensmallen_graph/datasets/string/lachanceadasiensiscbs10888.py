@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaDasiensisCbs10888.
+This file offers the methods to automatically retrieve the graph Lachancea dasiensis CBS 10888.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaDasiensisCbs10888(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaDasiensisCbs10888 graph.
+    """Return new instance of the Lachancea dasiensis CBS 10888 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachanceaDasiensisCbs10888(
 
     Returns
     -----------------------
-    Instace of LachanceaDasiensisCbs10888 graph.
+    Instace of Lachancea dasiensis CBS 10888 graph.
 
 	References
 	---------------------

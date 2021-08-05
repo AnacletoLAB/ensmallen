@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumKushneri.
+This file offers the methods to automatically retrieve the graph Halanaerobium kushneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumKushneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumKushneri graph.
+    """Return new instance of the Halanaerobium kushneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalanaerobiumKushneri(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumKushneri graph.
+    Instace of Halanaerobium kushneri graph.
 
 	References
 	---------------------

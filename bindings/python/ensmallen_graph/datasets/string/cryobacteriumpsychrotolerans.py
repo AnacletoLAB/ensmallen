@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryobacteriumPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Cryobacterium psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryobacteriumPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryobacteriumPsychrotolerans graph.
+    """Return new instance of the Cryobacterium psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryobacteriumPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of CryobacteriumPsychrotolerans graph.
+    Instace of Cryobacterium psychrotolerans graph.
 
 	References
 	---------------------

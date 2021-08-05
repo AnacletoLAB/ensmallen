@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumArachidis.
+This file offers the methods to automatically retrieve the graph Chryseobacterium arachidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumArachidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumArachidis graph.
+    """Return new instance of the Chryseobacterium arachidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumArachidis(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumArachidis graph.
+    Instace of Chryseobacterium arachidis graph.
 
 	References
 	---------------------

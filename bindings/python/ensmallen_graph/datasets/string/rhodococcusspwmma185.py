@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpWmma185.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. WMMA185.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpWmma185(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpWmma185 graph.
+    """Return new instance of the Rhodococcus sp. WMMA185 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusSpWmma185(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpWmma185 graph.
+    Instace of Rhodococcus sp. WMMA185 graph.
 
 	References
 	---------------------

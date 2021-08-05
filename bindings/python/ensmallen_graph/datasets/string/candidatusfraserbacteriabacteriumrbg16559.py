@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFraserbacteriaBacteriumRbg16559.
+This file offers the methods to automatically retrieve the graph Candidatus Fraserbacteria bacterium RBG_16_55_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFraserbacteriaBacteriumRbg16559(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFraserbacteriaBacteriumRbg16559 graph.
+    """Return new instance of the Candidatus Fraserbacteria bacterium RBG_16_55_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFraserbacteriaBacteriumRbg16559(
 
     Returns
     -----------------------
-    Instace of CandidatusFraserbacteriaBacteriumRbg16559 graph.
+    Instace of Candidatus Fraserbacteria bacterium RBG_16_55_9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumTerrigena.
+This file offers the methods to automatically retrieve the graph Flavobacterium terrigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumTerrigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumTerrigena graph.
+    """Return new instance of the Flavobacterium terrigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumTerrigena(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumTerrigena graph.
+    Instace of Flavobacterium terrigena graph.
 
 	References
 	---------------------

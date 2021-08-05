@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterTropicalis.
+This file offers the methods to automatically retrieve the graph Acetobacter tropicalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterTropicalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterTropicalis graph.
+    """Return new instance of the Acetobacter tropicalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterTropicalis(
 
     Returns
     -----------------------
-    Instace of AcetobacterTropicalis graph.
+    Instace of Acetobacter tropicalis graph.
 
 	References
 	---------------------

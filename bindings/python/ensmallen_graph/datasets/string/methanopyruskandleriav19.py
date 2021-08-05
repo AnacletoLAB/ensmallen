@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanopyrusKandleriAv19.
+This file offers the methods to automatically retrieve the graph Methanopyrus kandleri AV19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanopyrusKandleriAv19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanopyrusKandleriAv19 graph.
+    """Return new instance of the Methanopyrus kandleri AV19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanopyrusKandleriAv19(
 
     Returns
     -----------------------
-    Instace of MethanopyrusKandleriAv19 graph.
+    Instace of Methanopyrus kandleri AV19 graph.
 
 	References
 	---------------------

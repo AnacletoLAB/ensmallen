@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioPalustris.
+This file offers the methods to automatically retrieve the graph Vibrio palustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioPalustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioPalustris graph.
+    """Return new instance of the Vibrio palustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioPalustris(
 
     Returns
     -----------------------
-    Instace of VibrioPalustris graph.
+    Instace of Vibrio palustris graph.
 
 	References
 	---------------------

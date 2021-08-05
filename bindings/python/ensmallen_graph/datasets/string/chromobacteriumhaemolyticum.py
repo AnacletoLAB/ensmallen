@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromobacteriumHaemolyticum.
+This file offers the methods to automatically retrieve the graph Chromobacterium haemolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromobacteriumHaemolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromobacteriumHaemolyticum graph.
+    """Return new instance of the Chromobacterium haemolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromobacteriumHaemolyticum(
 
     Returns
     -----------------------
-    Instace of ChromobacteriumHaemolyticum graph.
+    Instace of Chromobacterium haemolyticum graph.
 
 	References
 	---------------------

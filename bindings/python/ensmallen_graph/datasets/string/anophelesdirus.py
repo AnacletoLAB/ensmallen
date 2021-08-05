@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesDirus.
+This file offers the methods to automatically retrieve the graph Anopheles dirus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesDirus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesDirus graph.
+    """Return new instance of the Anopheles dirus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesDirus(
 
     Returns
     -----------------------
-    Instace of AnophelesDirus graph.
+    Instace of Anopheles dirus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusHomiensis.
+This file offers the methods to automatically retrieve the graph Paracoccus homiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusHomiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusHomiensis graph.
+    """Return new instance of the Paracoccus homiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusHomiensis(
 
     Returns
     -----------------------
-    Instace of ParacoccusHomiensis graph.
+    Instace of Paracoccus homiensis graph.
 
 	References
 	---------------------

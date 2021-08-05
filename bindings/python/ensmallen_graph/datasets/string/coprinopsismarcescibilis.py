@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprinopsisMarcescibilis.
+This file offers the methods to automatically retrieve the graph Coprinopsis marcescibilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprinopsisMarcescibilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprinopsisMarcescibilis graph.
+    """Return new instance of the Coprinopsis marcescibilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprinopsisMarcescibilis(
 
     Returns
     -----------------------
-    Instace of CoprinopsisMarcescibilis graph.
+    Instace of Coprinopsis marcescibilis graph.
 
 	References
 	---------------------

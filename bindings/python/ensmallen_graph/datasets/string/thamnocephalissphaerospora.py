@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThamnocephalisSphaerospora.
+This file offers the methods to automatically retrieve the graph Thamnocephalis sphaerospora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThamnocephalisSphaerospora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThamnocephalisSphaerospora graph.
+    """Return new instance of the Thamnocephalis sphaerospora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThamnocephalisSphaerospora(
 
     Returns
     -----------------------
-    Instace of ThamnocephalisSphaerospora graph.
+    Instace of Thamnocephalis sphaerospora graph.
 
 	References
 	---------------------

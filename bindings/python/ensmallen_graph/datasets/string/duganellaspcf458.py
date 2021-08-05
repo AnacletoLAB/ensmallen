@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpCf458.
+This file offers the methods to automatically retrieve the graph Duganella sp. CF458.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpCf458(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpCf458 graph.
+    """Return new instance of the Duganella sp. CF458 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpCf458(
 
     Returns
     -----------------------
-    Instace of DuganellaSpCf458 graph.
+    Instace of Duganella sp. CF458 graph.
 
 	References
 	---------------------

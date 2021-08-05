@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraSalexigens.
+This file offers the methods to automatically retrieve the graph Rheinheimera salexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraSalexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraSalexigens graph.
+    """Return new instance of the Rheinheimera salexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RheinheimeraSalexigens(
 
     Returns
     -----------------------
-    Instace of RheinheimeraSalexigens graph.
+    Instace of Rheinheimera salexigens graph.
 
 	References
 	---------------------

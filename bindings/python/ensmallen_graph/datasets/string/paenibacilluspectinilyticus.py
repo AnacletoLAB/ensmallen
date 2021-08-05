@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusPectinilyticus.
+This file offers the methods to automatically retrieve the graph Paenibacillus pectinilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusPectinilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusPectinilyticus graph.
+    """Return new instance of the Paenibacillus pectinilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusPectinilyticus(
 
     Returns
     -----------------------
-    Instace of PaenibacillusPectinilyticus graph.
+    Instace of Paenibacillus pectinilyticus graph.
 
 	References
 	---------------------

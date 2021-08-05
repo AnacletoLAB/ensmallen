@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpGw1013h11.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. GW101-3H11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpGw1013h11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpGw1013h11 graph.
+    """Return new instance of the Acidovorax sp. GW101-3H11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSpGw1013h11(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpGw1013h11 graph.
+    Instace of Acidovorax sp. GW101-3H11 graph.
 
 	References
 	---------------------

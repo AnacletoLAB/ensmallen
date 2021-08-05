@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChiloSuppressalis.
+This file offers the methods to automatically retrieve the graph Chilo suppressalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChiloSuppressalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChiloSuppressalis graph.
+    """Return new instance of the Chilo suppressalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChiloSuppressalis(
 
     Returns
     -----------------------
-    Instace of ChiloSuppressalis graph.
+    Instace of Chilo suppressalis graph.
 
 	References
 	---------------------

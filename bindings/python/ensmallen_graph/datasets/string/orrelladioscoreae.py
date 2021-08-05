@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrrellaDioscoreae.
+This file offers the methods to automatically retrieve the graph Orrella dioscoreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrrellaDioscoreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrrellaDioscoreae graph.
+    """Return new instance of the Orrella dioscoreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrrellaDioscoreae(
 
     Returns
     -----------------------
-    Instace of OrrellaDioscoreae graph.
+    Instace of Orrella dioscoreae graph.
 
 	References
 	---------------------

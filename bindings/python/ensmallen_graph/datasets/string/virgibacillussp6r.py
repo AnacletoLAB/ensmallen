@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusSp6r.
+This file offers the methods to automatically retrieve the graph Virgibacillus sp. 6R.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusSp6r(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusSp6r graph.
+    """Return new instance of the Virgibacillus sp. 6R graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusSp6r(
 
     Returns
     -----------------------
-    Instace of VirgibacillusSp6r graph.
+    Instace of Virgibacillus sp. 6R graph.
 
 	References
 	---------------------

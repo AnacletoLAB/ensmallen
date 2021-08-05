@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferSpZgt114.
+This file offers the methods to automatically retrieve the graph Microbulbifer sp. ZGT114.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferSpZgt114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferSpZgt114 graph.
+    """Return new instance of the Microbulbifer sp. ZGT114 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferSpZgt114(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferSpZgt114 graph.
+    Instace of Microbulbifer sp. ZGT114 graph.
 
 	References
 	---------------------

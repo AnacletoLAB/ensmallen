@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptostreptococcaceaeBacteriumPga8.
+This file offers the methods to automatically retrieve the graph Peptostreptococcaceae bacterium pGA-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptostreptococcaceaeBacteriumPga8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptostreptococcaceaeBacteriumPga8 graph.
+    """Return new instance of the Peptostreptococcaceae bacterium pGA-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptostreptococcaceaeBacteriumPga8(
 
     Returns
     -----------------------
-    Instace of PeptostreptococcaceaeBacteriumPga8 graph.
+    Instace of Peptostreptococcaceae bacterium pGA-8 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NosocomiicoccusAmpullae.
+This file offers the methods to automatically retrieve the graph Nosocomiicoccus ampullae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NosocomiicoccusAmpullae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NosocomiicoccusAmpullae graph.
+    """Return new instance of the Nosocomiicoccus ampullae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NosocomiicoccusAmpullae(
 
     Returns
     -----------------------
-    Instace of NosocomiicoccusAmpullae graph.
+    Instace of Nosocomiicoccus ampullae graph.
 
 	References
 	---------------------

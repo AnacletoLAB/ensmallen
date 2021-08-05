@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridWorm.
+This file offers the methods to automatically retrieve the graph bio-grid-worm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridWorm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridWorm graph.
+    """Return new instance of the bio-grid-worm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridWorm(
 
     Returns
     -----------------------
-    Instace of BioGridWorm graph.
+    Instace of bio-grid-worm graph.
 
 	References
 	---------------------

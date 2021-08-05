@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacterSpImcc9063.
+This file offers the methods to automatically retrieve the graph Pelagibacter sp. IMCC9063.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacterSpImcc9063(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacterSpImcc9063 graph.
+    """Return new instance of the Pelagibacter sp. IMCC9063 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacterSpImcc9063(
 
     Returns
     -----------------------
-    Instace of PelagibacterSpImcc9063 graph.
+    Instace of Pelagibacter sp. IMCC9063 graph.
 
 	References
 	---------------------

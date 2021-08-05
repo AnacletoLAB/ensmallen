@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumHeckeshornense.
+This file offers the methods to automatically retrieve the graph Mycobacterium heckeshornense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumHeckeshornense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumHeckeshornense graph.
+    """Return new instance of the Mycobacterium heckeshornense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumHeckeshornense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumHeckeshornense graph.
+    Instace of Mycobacterium heckeshornense graph.
 
 	References
 	---------------------

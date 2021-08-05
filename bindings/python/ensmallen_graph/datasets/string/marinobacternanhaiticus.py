@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterNanhaiticus.
+This file offers the methods to automatically retrieve the graph Marinobacter nanhaiticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterNanhaiticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterNanhaiticus graph.
+    """Return new instance of the Marinobacter nanhaiticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterNanhaiticus(
 
     Returns
     -----------------------
-    Instace of MarinobacterNanhaiticus graph.
+    Instace of Marinobacter nanhaiticus graph.
 
 	References
 	---------------------

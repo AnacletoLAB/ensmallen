@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumPiperi.
+This file offers the methods to automatically retrieve the graph Chryseobacterium piperi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumPiperi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumPiperi graph.
+    """Return new instance of the Chryseobacterium piperi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumPiperi(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumPiperi graph.
+    Instace of Chryseobacterium piperi graph.
 
 	References
 	---------------------

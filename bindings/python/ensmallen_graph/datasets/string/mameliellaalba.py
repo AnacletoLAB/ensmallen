@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MameliellaAlba.
+This file offers the methods to automatically retrieve the graph Mameliella alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MameliellaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MameliellaAlba graph.
+    """Return new instance of the Mameliella alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MameliellaAlba(
 
     Returns
     -----------------------
-    Instace of MameliellaAlba graph.
+    Instace of Mameliella alba graph.
 
 	References
 	---------------------

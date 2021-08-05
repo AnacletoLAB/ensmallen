@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FodinicurvataSediminis.
+This file offers the methods to automatically retrieve the graph Fodinicurvata sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FodinicurvataSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FodinicurvataSediminis graph.
+    """Return new instance of the Fodinicurvata sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FodinicurvataSediminis(
 
     Returns
     -----------------------
-    Instace of FodinicurvataSediminis graph.
+    Instace of Fodinicurvata sediminis graph.
 
 	References
 	---------------------

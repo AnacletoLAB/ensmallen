@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCoryniformisSubspCoryniformisCect5711.
+This file offers the methods to automatically retrieve the graph Lactobacillus coryniformis subsp. coryniformis CECT 5711.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCoryniformisSubspCoryniformisCect5711(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCoryniformisSubspCoryniformisCect5711 graph.
+    """Return new instance of the Lactobacillus coryniformis subsp. coryniformis CECT 5711 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusCoryniformisSubspCoryniformisCect5711(
 
     Returns
     -----------------------
-    Instace of LactobacillusCoryniformisSubspCoryniformisCect5711 graph.
+    Instace of Lactobacillus coryniformis subsp. coryniformis CECT 5711 graph.
 
 	References
 	---------------------

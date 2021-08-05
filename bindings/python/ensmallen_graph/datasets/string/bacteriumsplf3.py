@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumSpLf3.
+This file offers the methods to automatically retrieve the graph Bacterium sp. LF3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumSpLf3(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumSpLf3 graph.
+    """Return new instance of the Bacterium sp. LF3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumSpLf3(
 
     Returns
     -----------------------
-    Instace of BacteriumSpLf3 graph.
+    Instace of Bacterium sp. LF3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpTcuHl1.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. TCU-HL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpTcuHl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpTcuHl1 graph.
+    """Return new instance of the Pseudomonas sp. TCU-HL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpTcuHl1(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpTcuHl1 graph.
+    Instace of Pseudomonas sp. TCU-HL1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Minnesota.
+This file offers the methods to automatically retrieve the graph minnesota.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Minnesota(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Minnesota graph.
+    """Return new instance of the minnesota graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Minnesota(
 
     Returns
     -----------------------
-    Instace of Minnesota graph.
+    Instace of minnesota graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaWorsleiensis.
+This file offers the methods to automatically retrieve the graph Legionella worsleiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaWorsleiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaWorsleiensis graph.
+    """Return new instance of the Legionella worsleiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaWorsleiensis(
 
     Returns
     -----------------------
-    Instace of LegionellaWorsleiensis graph.
+    Instace of Legionella worsleiensis graph.
 
 	References
 	---------------------

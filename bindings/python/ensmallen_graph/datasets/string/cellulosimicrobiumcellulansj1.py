@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulosimicrobiumCellulansJ1.
+This file offers the methods to automatically retrieve the graph Cellulosimicrobium cellulans J1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulosimicrobiumCellulansJ1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulosimicrobiumCellulansJ1 graph.
+    """Return new instance of the Cellulosimicrobium cellulans J1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulosimicrobiumCellulansJ1(
 
     Returns
     -----------------------
-    Instace of CellulosimicrobiumCellulansJ1 graph.
+    Instace of Cellulosimicrobium cellulans J1 graph.
 
 	References
 	---------------------

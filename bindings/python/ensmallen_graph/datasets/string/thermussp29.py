@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusSp29.
+This file offers the methods to automatically retrieve the graph Thermus sp. 2.9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusSp29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusSp29 graph.
+    """Return new instance of the Thermus sp. 2.9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermusSp29(
 
     Returns
     -----------------------
-    Instace of ThermusSp29 graph.
+    Instace of Thermus sp. 2.9 graph.
 
 	References
 	---------------------

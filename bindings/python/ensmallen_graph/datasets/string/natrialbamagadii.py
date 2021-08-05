@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaMagadii.
+This file offers the methods to automatically retrieve the graph Natrialba magadii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaMagadii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaMagadii graph.
+    """Return new instance of the Natrialba magadii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatrialbaMagadii(
 
     Returns
     -----------------------
-    Instace of NatrialbaMagadii graph.
+    Instace of Natrialba magadii graph.
 
 	References
 	---------------------

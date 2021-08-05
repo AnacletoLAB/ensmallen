@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EikenellaSpNml02A017.
+This file offers the methods to automatically retrieve the graph Eikenella sp. NML02-A-017.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EikenellaSpNml02A017(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EikenellaSpNml02A017 graph.
+    """Return new instance of the Eikenella sp. NML02-A-017 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EikenellaSpNml02A017(
 
     Returns
     -----------------------
-    Instace of EikenellaSpNml02A017 graph.
+    Instace of Eikenella sp. NML02-A-017 graph.
 
 	References
 	---------------------

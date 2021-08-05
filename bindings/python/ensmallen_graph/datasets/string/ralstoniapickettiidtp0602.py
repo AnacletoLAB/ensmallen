@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaPickettiiDtp0602.
+This file offers the methods to automatically retrieve the graph Ralstonia pickettii DTP0602.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaPickettiiDtp0602(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaPickettiiDtp0602 graph.
+    """Return new instance of the Ralstonia pickettii DTP0602 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RalstoniaPickettiiDtp0602(
 
     Returns
     -----------------------
-    Instace of RalstoniaPickettiiDtp0602 graph.
+    Instace of Ralstonia pickettii DTP0602 graph.
 
 	References
 	---------------------

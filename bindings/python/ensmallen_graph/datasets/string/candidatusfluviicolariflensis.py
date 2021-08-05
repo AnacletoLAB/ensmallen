@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFluviicolaRiflensis.
+This file offers the methods to automatically retrieve the graph Candidatus Fluviicola riflensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFluviicolaRiflensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFluviicolaRiflensis graph.
+    """Return new instance of the Candidatus Fluviicola riflensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFluviicolaRiflensis(
 
     Returns
     -----------------------
-    Instace of CandidatusFluviicolaRiflensis graph.
+    Instace of Candidatus Fluviicola riflensis graph.
 
 	References
 	---------------------

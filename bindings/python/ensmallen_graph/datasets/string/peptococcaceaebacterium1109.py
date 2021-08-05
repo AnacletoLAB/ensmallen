@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacterium1109.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium 1109.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacterium1109(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacterium1109 graph.
+    """Return new instance of the Peptococcaceae bacterium 1109 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacterium1109(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacterium1109 graph.
+    Instace of Peptococcaceae bacterium 1109 graph.
 
 	References
 	---------------------

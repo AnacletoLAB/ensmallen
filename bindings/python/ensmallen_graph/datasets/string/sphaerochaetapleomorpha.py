@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerochaetaPleomorpha.
+This file offers the methods to automatically retrieve the graph Sphaerochaeta pleomorpha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerochaetaPleomorpha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerochaetaPleomorpha graph.
+    """Return new instance of the Sphaerochaeta pleomorpha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaerochaetaPleomorpha(
 
     Returns
     -----------------------
-    Instace of SphaerochaetaPleomorpha graph.
+    Instace of Sphaerochaeta pleomorpha graph.
 
 	References
 	---------------------

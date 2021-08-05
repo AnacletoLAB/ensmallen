@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKaiserbacteriaBacteriumRifcsphigho202Full5630.
+This file offers the methods to automatically retrieve the graph Candidatus Kaiserbacteria bacterium RIFCSPHIGHO2_02_FULL_56_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKaiserbacteriaBacteriumRifcsphigho202Full5630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKaiserbacteriaBacteriumRifcsphigho202Full5630 graph.
+    """Return new instance of the Candidatus Kaiserbacteria bacterium RIFCSPHIGHO2_02_FULL_56_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKaiserbacteriaBacteriumRifcsphigho202Full5630(
 
     Returns
     -----------------------
-    Instace of CandidatusKaiserbacteriaBacteriumRifcsphigho202Full5630 graph.
+    Instace of Candidatus Kaiserbacteria bacterium RIFCSPHIGHO2_02_FULL_56_30 graph.
 
 	References
 	---------------------

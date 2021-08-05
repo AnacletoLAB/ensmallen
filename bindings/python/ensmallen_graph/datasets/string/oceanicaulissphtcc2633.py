@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicaulisSpHtcc2633.
+This file offers the methods to automatically retrieve the graph Oceanicaulis sp. HTCC2633.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicaulisSpHtcc2633(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicaulisSpHtcc2633 graph.
+    """Return new instance of the Oceanicaulis sp. HTCC2633 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicaulisSpHtcc2633(
 
     Returns
     -----------------------
-    Instace of OceanicaulisSpHtcc2633 graph.
+    Instace of Oceanicaulis sp. HTCC2633 graph.
 
 	References
 	---------------------

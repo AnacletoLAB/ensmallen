@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalibacaDankookensis.
+This file offers the methods to automatically retrieve the graph Jeotgalibaca dankookensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalibacaDankookensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalibacaDankookensis graph.
+    """Return new instance of the Jeotgalibaca dankookensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeotgalibacaDankookensis(
 
     Returns
     -----------------------
-    Instace of JeotgalibacaDankookensis graph.
+    Instace of Jeotgalibaca dankookensis graph.
 
 	References
 	---------------------

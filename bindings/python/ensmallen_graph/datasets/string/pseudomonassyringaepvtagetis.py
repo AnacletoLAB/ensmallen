@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSyringaePvTagetis.
+This file offers the methods to automatically retrieve the graph Pseudomonas syringae pv. tagetis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSyringaePvTagetis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSyringaePvTagetis graph.
+    """Return new instance of the Pseudomonas syringae pv. tagetis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSyringaePvTagetis(
 
     Returns
     -----------------------
-    Instace of PseudomonasSyringaePvTagetis graph.
+    Instace of Pseudomonas syringae pv. tagetis graph.
 
 	References
 	---------------------

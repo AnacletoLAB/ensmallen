@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaAsymbiotica.
+This file offers the methods to automatically retrieve the graph Frankia asymbiotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaAsymbiotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaAsymbiotica graph.
+    """Return new instance of the Frankia asymbiotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrankiaAsymbiotica(
 
     Returns
     -----------------------
-    Instace of FrankiaAsymbiotica graph.
+    Instace of Frankia asymbiotica graph.
 
 	References
 	---------------------

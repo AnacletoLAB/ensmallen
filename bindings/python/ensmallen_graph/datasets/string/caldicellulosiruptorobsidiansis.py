@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorObsidiansis.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor obsidiansis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorObsidiansis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorObsidiansis graph.
+    """Return new instance of the Caldicellulosiruptor obsidiansis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldicellulosiruptorObsidiansis(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorObsidiansis graph.
+    Instace of Caldicellulosiruptor obsidiansis graph.
 
 	References
 	---------------------

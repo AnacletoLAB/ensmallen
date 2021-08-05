@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiplasmaSpMba1.
+This file offers the methods to automatically retrieve the graph Acidiplasma sp. MBA-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidiplasmaSpMba1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiplasmaSpMba1 graph.
+    """Return new instance of the Acidiplasma sp. MBA-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidiplasmaSpMba1(
 
     Returns
     -----------------------
-    Instace of AcidiplasmaSpMba1 graph.
+    Instace of Acidiplasma sp. MBA-1 graph.
 
 	References
 	---------------------

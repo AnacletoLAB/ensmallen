@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSpCag2416221.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. CAG:241_62_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterSpCag2416221(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSpCag2416221 graph.
+    """Return new instance of the Oscillibacter sp. CAG:241_62_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OscillibacterSpCag2416221(
 
     Returns
     -----------------------
-    Instace of OscillibacterSpCag2416221 graph.
+    Instace of Oscillibacter sp. CAG:241_62_21 graph.
 
 	References
 	---------------------

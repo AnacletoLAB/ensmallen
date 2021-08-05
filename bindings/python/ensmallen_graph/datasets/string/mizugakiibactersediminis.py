@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MizugakiibacterSediminis.
+This file offers the methods to automatically retrieve the graph Mizugakiibacter sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MizugakiibacterSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MizugakiibacterSediminis graph.
+    """Return new instance of the Mizugakiibacter sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MizugakiibacterSediminis(
 
     Returns
     -----------------------
-    Instace of MizugakiibacterSediminis graph.
+    Instace of Mizugakiibacter sediminis graph.
 
 	References
 	---------------------

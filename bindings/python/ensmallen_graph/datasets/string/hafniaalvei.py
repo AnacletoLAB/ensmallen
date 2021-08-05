@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HafniaAlvei.
+This file offers the methods to automatically retrieve the graph Hafnia alvei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HafniaAlvei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HafniaAlvei graph.
+    """Return new instance of the Hafnia alvei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HafniaAlvei(
 
     Returns
     -----------------------
-    Instace of HafniaAlvei graph.
+    Instace of Hafnia alvei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumSpMaddingley.
+This file offers the methods to automatically retrieve the graph Methanobacterium sp. Maddingley.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumSpMaddingley(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumSpMaddingley graph.
+    """Return new instance of the Methanobacterium sp. Maddingley graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobacteriumSpMaddingley(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumSpMaddingley graph.
+    Instace of Methanobacterium sp. Maddingley graph.
 
 	References
 	---------------------

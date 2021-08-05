@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaSpF0517.
+This file offers the methods to automatically retrieve the graph Capnocytophaga sp. F0517.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaSpF0517(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaSpF0517 graph.
+    """Return new instance of the Capnocytophaga sp. F0517 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaSpF0517(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaSpF0517 graph.
+    Instace of Capnocytophaga sp. F0517 graph.
 
 	References
 	---------------------

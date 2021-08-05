@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulochytriumProtostelioides.
+This file offers the methods to automatically retrieve the graph Caulochytrium protostelioides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulochytriumProtostelioides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulochytriumProtostelioides graph.
+    """Return new instance of the Caulochytrium protostelioides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulochytriumProtostelioides(
 
     Returns
     -----------------------
-    Instace of CaulochytriumProtostelioides graph.
+    Instace of Caulochytrium protostelioides graph.
 
 	References
 	---------------------

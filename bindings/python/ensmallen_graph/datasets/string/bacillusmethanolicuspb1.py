@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMethanolicusPb1.
+This file offers the methods to automatically retrieve the graph Bacillus methanolicus PB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMethanolicusPb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMethanolicusPb1 graph.
+    """Return new instance of the Bacillus methanolicus PB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusMethanolicusPb1(
 
     Returns
     -----------------------
-    Instace of BacillusMethanolicusPb1 graph.
+    Instace of Bacillus methanolicus PB1 graph.
 
 	References
 	---------------------

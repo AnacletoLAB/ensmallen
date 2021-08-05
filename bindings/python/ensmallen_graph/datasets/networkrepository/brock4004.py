@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Brock4004.
+This file offers the methods to automatically retrieve the graph brock400-4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Brock4004(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Brock4004 graph.
+    """Return new instance of the brock400-4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Brock4004(
 
     Returns
     -----------------------
-    Instace of Brock4004 graph.
+    Instace of brock400-4 graph.
 
 	References
 	---------------------

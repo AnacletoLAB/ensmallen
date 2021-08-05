@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesRadicidentis.
+This file offers the methods to automatically retrieve the graph Actinomyces radicidentis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesRadicidentis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesRadicidentis graph.
+    """Return new instance of the Actinomyces radicidentis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesRadicidentis(
 
     Returns
     -----------------------
-    Instace of ActinomycesRadicidentis graph.
+    Instace of Actinomyces radicidentis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrobaculumOguniense.
+This file offers the methods to automatically retrieve the graph Pyrobaculum oguniense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrobaculumOguniense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrobaculumOguniense graph.
+    """Return new instance of the Pyrobaculum oguniense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrobaculumOguniense(
 
     Returns
     -----------------------
-    Instace of PyrobaculumOguniense graph.
+    Instace of Pyrobaculum oguniense graph.
 
 	References
 	---------------------

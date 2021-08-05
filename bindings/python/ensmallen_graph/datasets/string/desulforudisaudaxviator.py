@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulforudisAudaxviator.
+This file offers the methods to automatically retrieve the graph Desulforudis audaxviator.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulforudisAudaxviator(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulforudisAudaxviator graph.
+    """Return new instance of the Desulforudis audaxviator graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulforudisAudaxviator(
 
     Returns
     -----------------------
-    Instace of DesulforudisAudaxviator graph.
+    Instace of Desulforudis audaxviator graph.
 
 	References
 	---------------------

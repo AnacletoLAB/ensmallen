@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeocapsaSpPcc73106.
+This file offers the methods to automatically retrieve the graph Gloeocapsa sp. PCC73106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GloeocapsaSpPcc73106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeocapsaSpPcc73106 graph.
+    """Return new instance of the Gloeocapsa sp. PCC73106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GloeocapsaSpPcc73106(
 
     Returns
     -----------------------
-    Instace of GloeocapsaSpPcc73106 graph.
+    Instace of Gloeocapsa sp. PCC73106 graph.
 
 	References
 	---------------------

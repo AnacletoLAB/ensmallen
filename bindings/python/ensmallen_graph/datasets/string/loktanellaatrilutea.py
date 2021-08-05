@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaAtrilutea.
+This file offers the methods to automatically retrieve the graph Loktanella atrilutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaAtrilutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaAtrilutea graph.
+    """Return new instance of the Loktanella atrilutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LoktanellaAtrilutea(
 
     Returns
     -----------------------
-    Instace of LoktanellaAtrilutea graph.
+    Instace of Loktanella atrilutea graph.
 
 	References
 	---------------------

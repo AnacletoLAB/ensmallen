@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSp5139bfaa.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. 5139BFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSp5139bfaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSp5139bfaa graph.
+    """Return new instance of the Ruminococcus sp. 5139BFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusSp5139bfaa(
 
     Returns
     -----------------------
-    Instace of RuminococcusSp5139bfaa graph.
+    Instace of Ruminococcus sp. 5139BFAA graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusFujiensisJcm16395.
+This file offers the methods to automatically retrieve the graph Lactococcus fujiensis JCM 16395.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusFujiensisJcm16395(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusFujiensisJcm16395 graph.
+    """Return new instance of the Lactococcus fujiensis JCM 16395 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactococcusFujiensisJcm16395(
 
     Returns
     -----------------------
-    Instace of LactococcusFujiensisJcm16395 graph.
+    Instace of Lactococcus fujiensis JCM 16395 graph.
 
 	References
 	---------------------

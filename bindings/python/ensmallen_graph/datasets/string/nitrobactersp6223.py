@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrobacterSp6223.
+This file offers the methods to automatically retrieve the graph Nitrobacter sp. 62-23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrobacterSp6223(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrobacterSp6223 graph.
+    """Return new instance of the Nitrobacter sp. 62-23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrobacterSp6223(
 
     Returns
     -----------------------
-    Instace of NitrobacterSp6223 graph.
+    Instace of Nitrobacter sp. 62-23 graph.
 
 	References
 	---------------------

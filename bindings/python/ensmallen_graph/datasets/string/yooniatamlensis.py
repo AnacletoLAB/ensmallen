@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YooniaTamlensis.
+This file offers the methods to automatically retrieve the graph Yoonia tamlensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YooniaTamlensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YooniaTamlensis graph.
+    """Return new instance of the Yoonia tamlensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YooniaTamlensis(
 
     Returns
     -----------------------
-    Instace of YooniaTamlensis graph.
+    Instace of Yoonia tamlensis graph.
 
 	References
 	---------------------

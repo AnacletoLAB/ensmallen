@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpDsm11652.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. DSM 11652.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpDsm11652(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpDsm11652 graph.
+    """Return new instance of the Acinetobacter sp. DSM 11652 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpDsm11652(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpDsm11652 graph.
+    Instace of Acinetobacter sp. DSM 11652 graph.
 
 	References
 	---------------------

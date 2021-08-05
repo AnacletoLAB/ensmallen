@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutibacterOricola.
+This file offers the methods to automatically retrieve the graph Lutibacter oricola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutibacterOricola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutibacterOricola graph.
+    """Return new instance of the Lutibacter oricola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutibacterOricola(
 
     Returns
     -----------------------
-    Instace of LutibacterOricola graph.
+    Instace of Lutibacter oricola graph.
 
 	References
 	---------------------

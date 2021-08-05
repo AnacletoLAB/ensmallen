@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterDenitrificans.
+This file offers the methods to automatically retrieve the graph Roseobacter denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterDenitrificans graph.
+    """Return new instance of the Roseobacter denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterDenitrificans(
 
     Returns
     -----------------------
-    Instace of RoseobacterDenitrificans graph.
+    Instace of Roseobacter denitrificans graph.
 
 	References
 	---------------------

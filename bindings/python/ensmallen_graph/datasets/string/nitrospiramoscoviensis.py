@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraMoscoviensis.
+This file offers the methods to automatically retrieve the graph Nitrospira moscoviensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraMoscoviensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraMoscoviensis graph.
+    """Return new instance of the Nitrospira moscoviensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraMoscoviensis(
 
     Returns
     -----------------------
-    Instace of NitrospiraMoscoviensis graph.
+    Instace of Nitrospira moscoviensis graph.
 
 	References
 	---------------------

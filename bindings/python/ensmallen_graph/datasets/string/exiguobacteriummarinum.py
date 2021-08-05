@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumMarinum.
+This file offers the methods to automatically retrieve the graph Exiguobacterium marinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumMarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumMarinum graph.
+    """Return new instance of the Exiguobacterium marinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumMarinum(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumMarinum graph.
+    Instace of Exiguobacterium marinum graph.
 
 	References
 	---------------------

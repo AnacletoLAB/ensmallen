@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GorillaGorilla.
+This file offers the methods to automatically retrieve the graph Gorilla gorilla.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GorillaGorilla(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GorillaGorilla graph.
+    """Return new instance of the Gorilla gorilla graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GorillaGorilla(
 
     Returns
     -----------------------
-    Instace of GorillaGorilla graph.
+    Instace of Gorilla gorilla graph.
 
 	References
 	---------------------

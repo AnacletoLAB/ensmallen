@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillospiraceaeBacteriumZagget6.
+This file offers the methods to automatically retrieve the graph Oscillospiraceae bacterium Zagget6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillospiraceaeBacteriumZagget6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillospiraceaeBacteriumZagget6 graph.
+    """Return new instance of the Oscillospiraceae bacterium Zagget6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OscillospiraceaeBacteriumZagget6(
 
     Returns
     -----------------------
-    Instace of OscillospiraceaeBacteriumZagget6 graph.
+    Instace of Oscillospiraceae bacterium Zagget6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaAustraliense.
+This file offers the methods to automatically retrieve the graph Phytoplasma australiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaAustraliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaAustraliense graph.
+    """Return new instance of the Phytoplasma australiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytoplasmaAustraliense(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaAustraliense graph.
+    Instace of Phytoplasma australiense graph.
 
 	References
 	---------------------

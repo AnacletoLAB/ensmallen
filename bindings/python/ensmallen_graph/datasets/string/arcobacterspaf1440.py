@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterSpAf1440.
+This file offers the methods to automatically retrieve the graph Arcobacter sp. AF1440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterSpAf1440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterSpAf1440 graph.
+    """Return new instance of the Arcobacter sp. AF1440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterSpAf1440(
 
     Returns
     -----------------------
-    Instace of ArcobacterSpAf1440 graph.
+    Instace of Arcobacter sp. AF1440 graph.
 
 	References
 	---------------------

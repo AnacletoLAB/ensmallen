@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaAmphilecti.
+This file offers the methods to automatically retrieve the graph Aquimarina amphilecti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaAmphilecti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaAmphilecti graph.
+    """Return new instance of the Aquimarina amphilecti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquimarinaAmphilecti(
 
     Returns
     -----------------------
-    Instace of AquimarinaAmphilecti graph.
+    Instace of Aquimarina amphilecti graph.
 
 	References
 	---------------------

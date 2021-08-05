@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyroidesOdoratimimus.
+This file offers the methods to automatically retrieve the graph Myroides odoratimimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyroidesOdoratimimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyroidesOdoratimimus graph.
+    """Return new instance of the Myroides odoratimimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyroidesOdoratimimus(
 
     Returns
     -----------------------
-    Instace of MyroidesOdoratimimus graph.
+    Instace of Myroides odoratimimus graph.
 
 	References
 	---------------------

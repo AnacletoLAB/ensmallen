@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpSyk6.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. SYK6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpSyk6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpSyk6 graph.
+    """Return new instance of the Sphingobium sp. SYK6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumSpSyk6(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpSyk6 graph.
+    Instace of Sphingobium sp. SYK6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanospirillaceaeBacteriumAsp1002a.
+This file offers the methods to automatically retrieve the graph Oceanospirillaceae bacterium ASP10-02a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanospirillaceaeBacteriumAsp1002a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanospirillaceaeBacteriumAsp1002a graph.
+    """Return new instance of the Oceanospirillaceae bacterium ASP10-02a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanospirillaceaeBacteriumAsp1002a(
 
     Returns
     -----------------------
-    Instace of OceanospirillaceaeBacteriumAsp1002a graph.
+    Instace of Oceanospirillaceae bacterium ASP10-02a graph.
 
 	References
 	---------------------

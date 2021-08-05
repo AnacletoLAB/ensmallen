@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBenzenivorans.
+This file offers the methods to automatically retrieve the graph Pseudomonas benzenivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBenzenivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBenzenivorans graph.
+    """Return new instance of the Pseudomonas benzenivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBenzenivorans(
 
     Returns
     -----------------------
-    Instace of PseudomonasBenzenivorans graph.
+    Instace of Pseudomonas benzenivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSzechwanensis.
+This file offers the methods to automatically retrieve the graph Nocardioides szechwanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSzechwanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSzechwanensis graph.
+    """Return new instance of the Nocardioides szechwanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSzechwanensis(
 
     Returns
     -----------------------
-    Instace of NocardioidesSzechwanensis graph.
+    Instace of Nocardioides szechwanensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusWynnii.
+This file offers the methods to automatically retrieve the graph Paenibacillus wynnii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusWynnii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusWynnii graph.
+    """Return new instance of the Paenibacillus wynnii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusWynnii(
 
     Returns
     -----------------------
-    Instace of PaenibacillusWynnii graph.
+    Instace of Paenibacillus wynnii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumLotiR88b.
+This file offers the methods to automatically retrieve the graph Mesorhizobium loti R88b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumLotiR88b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumLotiR88b graph.
+    """Return new instance of the Mesorhizobium loti R88b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumLotiR88b(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumLotiR88b graph.
+    Instace of Mesorhizobium loti R88b graph.
 
 	References
 	---------------------

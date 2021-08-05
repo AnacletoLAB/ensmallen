@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaPulmonis.
+This file offers the methods to automatically retrieve the graph Mycoplasma pulmonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaPulmonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaPulmonis graph.
+    """Return new instance of the Mycoplasma pulmonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaPulmonis(
 
     Returns
     -----------------------
-    Instace of MycoplasmaPulmonis graph.
+    Instace of Mycoplasma pulmonis graph.
 
 	References
 	---------------------

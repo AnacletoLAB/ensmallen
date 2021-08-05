@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermanaerovibrioVelox.
+This file offers the methods to automatically retrieve the graph Thermanaerovibrio velox.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermanaerovibrioVelox(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermanaerovibrioVelox graph.
+    """Return new instance of the Thermanaerovibrio velox graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermanaerovibrioVelox(
 
     Returns
     -----------------------
-    Instace of ThermanaerovibrioVelox graph.
+    Instace of Thermanaerovibrio velox graph.
 
 	References
 	---------------------

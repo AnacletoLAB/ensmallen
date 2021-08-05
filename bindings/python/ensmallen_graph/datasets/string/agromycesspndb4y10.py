@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesSpNdb4y10.
+This file offers the methods to automatically retrieve the graph Agromyces sp. NDB4Y10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesSpNdb4y10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesSpNdb4y10 graph.
+    """Return new instance of the Agromyces sp. NDB4Y10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgromycesSpNdb4y10(
 
     Returns
     -----------------------
-    Instace of AgromycesSpNdb4y10 graph.
+    Instace of Agromyces sp. NDB4Y10 graph.
 
 	References
 	---------------------

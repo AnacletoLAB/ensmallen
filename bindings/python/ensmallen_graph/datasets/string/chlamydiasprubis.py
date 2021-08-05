@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaSpRubis.
+This file offers the methods to automatically retrieve the graph Chlamydia sp. Rubis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaSpRubis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaSpRubis graph.
+    """Return new instance of the Chlamydia sp. Rubis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaSpRubis(
 
     Returns
     -----------------------
-    Instace of ChlamydiaSpRubis graph.
+    Instace of Chlamydia sp. Rubis graph.
 
 	References
 	---------------------

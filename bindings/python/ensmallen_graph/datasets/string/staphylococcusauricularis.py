@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusAuricularis.
+This file offers the methods to automatically retrieve the graph Staphylococcus auricularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusAuricularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusAuricularis graph.
+    """Return new instance of the Staphylococcus auricularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusAuricularis(
 
     Returns
     -----------------------
-    Instace of StaphylococcusAuricularis graph.
+    Instace of Staphylococcus auricularis graph.
 
 	References
 	---------------------

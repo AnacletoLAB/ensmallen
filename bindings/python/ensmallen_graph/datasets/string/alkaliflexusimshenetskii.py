@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkaliflexusImshenetskii.
+This file offers the methods to automatically retrieve the graph Alkaliflexus imshenetskii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkaliflexusImshenetskii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkaliflexusImshenetskii graph.
+    """Return new instance of the Alkaliflexus imshenetskii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkaliflexusImshenetskii(
 
     Returns
     -----------------------
-    Instace of AlkaliflexusImshenetskii graph.
+    Instace of Alkaliflexus imshenetskii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidanaerobacterSyntrophicus.
+This file offers the methods to automatically retrieve the graph Tepidanaerobacter syntrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidanaerobacterSyntrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidanaerobacterSyntrophicus graph.
+    """Return new instance of the Tepidanaerobacter syntrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TepidanaerobacterSyntrophicus(
 
     Returns
     -----------------------
-    Instace of TepidanaerobacterSyntrophicus graph.
+    Instace of Tepidanaerobacter syntrophicus graph.
 
 	References
 	---------------------

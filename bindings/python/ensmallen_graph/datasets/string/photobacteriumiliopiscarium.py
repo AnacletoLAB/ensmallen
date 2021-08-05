@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumIliopiscarium.
+This file offers the methods to automatically retrieve the graph Photobacterium iliopiscarium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumIliopiscarium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumIliopiscarium graph.
+    """Return new instance of the Photobacterium iliopiscarium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumIliopiscarium(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumIliopiscarium graph.
+    Instace of Photobacterium iliopiscarium graph.
 
 	References
 	---------------------

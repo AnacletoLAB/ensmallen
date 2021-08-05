@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConiosporiumApollinisCbs100218.
+This file offers the methods to automatically retrieve the graph Coniosporium apollinis CBS 100218.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConiosporiumApollinisCbs100218(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConiosporiumApollinisCbs100218 graph.
+    """Return new instance of the Coniosporium apollinis CBS 100218 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConiosporiumApollinisCbs100218(
 
     Returns
     -----------------------
-    Instace of ConiosporiumApollinisCbs100218 graph.
+    Instace of Coniosporium apollinis CBS 100218 graph.
 
 	References
 	---------------------

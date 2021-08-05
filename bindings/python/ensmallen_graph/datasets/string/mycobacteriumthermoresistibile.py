@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumThermoresistibile.
+This file offers the methods to automatically retrieve the graph Mycobacterium thermoresistibile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumThermoresistibile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumThermoresistibile graph.
+    """Return new instance of the Mycobacterium thermoresistibile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumThermoresistibile(
 
     Returns
     -----------------------
-    Instace of MycobacteriumThermoresistibile graph.
+    Instace of Mycobacterium thermoresistibile graph.
 
 	References
 	---------------------

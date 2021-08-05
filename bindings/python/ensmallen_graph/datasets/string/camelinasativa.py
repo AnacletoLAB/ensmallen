@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CamelinaSativa.
+This file offers the methods to automatically retrieve the graph Camelina sativa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CamelinaSativa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CamelinaSativa graph.
+    """Return new instance of the Camelina sativa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CamelinaSativa(
 
     Returns
     -----------------------
-    Instace of CamelinaSativa graph.
+    Instace of Camelina sativa graph.
 
 	References
 	---------------------

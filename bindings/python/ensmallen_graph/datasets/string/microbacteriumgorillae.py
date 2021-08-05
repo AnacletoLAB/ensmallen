@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumGorillae.
+This file offers the methods to automatically retrieve the graph Microbacterium gorillae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumGorillae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumGorillae graph.
+    """Return new instance of the Microbacterium gorillae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumGorillae(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumGorillae graph.
+    Instace of Microbacterium gorillae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaVacciniiNbrc15922.
+This file offers the methods to automatically retrieve the graph Nocardia vaccinii NBRC 15922.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaVacciniiNbrc15922(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaVacciniiNbrc15922 graph.
+    """Return new instance of the Nocardia vaccinii NBRC 15922 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaVacciniiNbrc15922(
 
     Returns
     -----------------------
-    Instace of NocardiaVacciniiNbrc15922 graph.
+    Instace of Nocardia vaccinii NBRC 15922 graph.
 
 	References
 	---------------------

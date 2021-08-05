@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremotheciumCymbalariae.
+This file offers the methods to automatically retrieve the graph Eremothecium cymbalariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremotheciumCymbalariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremotheciumCymbalariae graph.
+    """Return new instance of the Eremothecium cymbalariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EremotheciumCymbalariae(
 
     Returns
     -----------------------
-    Instace of EremotheciumCymbalariae graph.
+    Instace of Eremothecium cymbalariae graph.
 
 	References
 	---------------------

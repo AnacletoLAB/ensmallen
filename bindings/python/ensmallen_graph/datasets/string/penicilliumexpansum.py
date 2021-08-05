@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumExpansum.
+This file offers the methods to automatically retrieve the graph Penicillium expansum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumExpansum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumExpansum graph.
+    """Return new instance of the Penicillium expansum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumExpansum(
 
     Returns
     -----------------------
-    Instace of PenicilliumExpansum graph.
+    Instace of Penicillium expansum graph.
 
 	References
 	---------------------

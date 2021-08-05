@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterAnodireducens.
+This file offers the methods to automatically retrieve the graph Geobacter anodireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterAnodireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterAnodireducens graph.
+    """Return new instance of the Geobacter anodireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacterAnodireducens(
 
     Returns
     -----------------------
-    Instace of GeobacterAnodireducens graph.
+    Instace of Geobacter anodireducens graph.
 
 	References
 	---------------------

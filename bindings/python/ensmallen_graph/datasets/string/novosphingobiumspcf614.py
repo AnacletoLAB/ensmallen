@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSpCf614.
+This file offers the methods to automatically retrieve the graph Novosphingobium sp. CF614.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSpCf614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSpCf614 graph.
+    """Return new instance of the Novosphingobium sp. CF614 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSpCf614(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSpCf614 graph.
+    Instace of Novosphingobium sp. CF614 graph.
 
 	References
 	---------------------

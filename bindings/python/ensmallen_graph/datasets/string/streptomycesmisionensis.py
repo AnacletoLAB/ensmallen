@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesMisionensis.
+This file offers the methods to automatically retrieve the graph Streptomyces misionensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesMisionensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesMisionensis graph.
+    """Return new instance of the Streptomyces misionensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesMisionensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesMisionensis graph.
+    Instace of Streptomyces misionensis graph.
 
 	References
 	---------------------

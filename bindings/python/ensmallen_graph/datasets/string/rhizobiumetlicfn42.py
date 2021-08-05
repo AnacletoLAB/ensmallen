@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumEtliCfn42.
+This file offers the methods to automatically retrieve the graph Rhizobium etli CFN42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumEtliCfn42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumEtliCfn42 graph.
+    """Return new instance of the Rhizobium etli CFN42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumEtliCfn42(
 
     Returns
     -----------------------
-    Instace of RhizobiumEtliCfn42 graph.
+    Instace of Rhizobium etli CFN42 graph.
 
 	References
 	---------------------

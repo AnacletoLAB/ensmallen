@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGottesmanbacteriaBacteriumGw2011Gwa14311.
+This file offers the methods to automatically retrieve the graph Candidatus Gottesmanbacteria bacterium GW2011_GWA1_43_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGottesmanbacteriaBacteriumGw2011Gwa14311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGottesmanbacteriaBacteriumGw2011Gwa14311 graph.
+    """Return new instance of the Candidatus Gottesmanbacteria bacterium GW2011_GWA1_43_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGottesmanbacteriaBacteriumGw2011Gwa14311(
 
     Returns
     -----------------------
-    Instace of CandidatusGottesmanbacteriaBacteriumGw2011Gwa14311 graph.
+    Instace of Candidatus Gottesmanbacteria bacterium GW2011_GWA1_43_11 graph.
 
 	References
 	---------------------

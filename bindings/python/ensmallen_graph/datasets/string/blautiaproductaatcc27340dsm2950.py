@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaProductaAtcc27340Dsm2950.
+This file offers the methods to automatically retrieve the graph Blautia producta ATCC 27340 DSM 2950.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaProductaAtcc27340Dsm2950(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaProductaAtcc27340Dsm2950 graph.
+    """Return new instance of the Blautia producta ATCC 27340 DSM 2950 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaProductaAtcc27340Dsm2950(
 
     Returns
     -----------------------
-    Instace of BlautiaProductaAtcc27340Dsm2950 graph.
+    Instace of Blautia producta ATCC 27340 DSM 2950 graph.
 
 	References
 	---------------------

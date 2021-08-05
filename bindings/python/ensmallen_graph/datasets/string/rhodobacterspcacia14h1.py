@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSpCacia14h1.
+This file offers the methods to automatically retrieve the graph Rhodobacter sp. CACIA14H1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSpCacia14h1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSpCacia14h1 graph.
+    """Return new instance of the Rhodobacter sp. CACIA14H1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacterSpCacia14h1(
 
     Returns
     -----------------------
-    Instace of RhodobacterSpCacia14h1 graph.
+    Instace of Rhodobacter sp. CACIA14H1 graph.
 
 	References
 	---------------------

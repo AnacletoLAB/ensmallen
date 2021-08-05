@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpheniscorum.
+This file offers the methods to automatically retrieve the graph Corynebacterium spheniscorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpheniscorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpheniscorum graph.
+    """Return new instance of the Corynebacterium spheniscorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSpheniscorum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpheniscorum graph.
+    Instace of Corynebacterium spheniscorum graph.
 
 	References
 	---------------------

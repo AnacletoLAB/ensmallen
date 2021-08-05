@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpA12.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. A12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpA12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpA12 graph.
+    """Return new instance of the Streptococcus sp. A12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSpA12(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpA12 graph.
+    Instace of Streptococcus sp. A12 graph.
 
 	References
 	---------------------

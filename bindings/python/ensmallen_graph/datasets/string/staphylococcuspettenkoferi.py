@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusPettenkoferi.
+This file offers the methods to automatically retrieve the graph Staphylococcus pettenkoferi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusPettenkoferi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusPettenkoferi graph.
+    """Return new instance of the Staphylococcus pettenkoferi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusPettenkoferi(
 
     Returns
     -----------------------
-    Instace of StaphylococcusPettenkoferi graph.
+    Instace of Staphylococcus pettenkoferi graph.
 
 	References
 	---------------------

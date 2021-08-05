@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SharpeaAzabuensis.
+This file offers the methods to automatically retrieve the graph Sharpea azabuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SharpeaAzabuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SharpeaAzabuensis graph.
+    """Return new instance of the Sharpea azabuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SharpeaAzabuensis(
 
     Returns
     -----------------------
-    Instace of SharpeaAzabuensis graph.
+    Instace of Sharpea azabuensis graph.
 
 	References
 	---------------------

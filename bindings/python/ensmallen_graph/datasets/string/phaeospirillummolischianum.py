@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeospirillumMolischianum.
+This file offers the methods to automatically retrieve the graph Phaeospirillum molischianum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeospirillumMolischianum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeospirillumMolischianum graph.
+    """Return new instance of the Phaeospirillum molischianum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhaeospirillumMolischianum(
 
     Returns
     -----------------------
-    Instace of PhaeospirillumMolischianum graph.
+    Instace of Phaeospirillum molischianum graph.
 
 	References
 	---------------------

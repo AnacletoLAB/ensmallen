@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusThioglobusSpRedseaS12B1.
+This file offers the methods to automatically retrieve the graph Candidatus Thioglobus sp. REDSEA-S12_B1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusThioglobusSpRedseaS12B1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusThioglobusSpRedseaS12B1 graph.
+    """Return new instance of the Candidatus Thioglobus sp. REDSEA-S12_B1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusThioglobusSpRedseaS12B1(
 
     Returns
     -----------------------
-    Instace of CandidatusThioglobusSpRedseaS12B1 graph.
+    Instace of Candidatus Thioglobus sp. REDSEA-S12_B1 graph.
 
 	References
 	---------------------

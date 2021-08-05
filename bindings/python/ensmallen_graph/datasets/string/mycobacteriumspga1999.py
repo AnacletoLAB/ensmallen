@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpGa1999.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. GA-1999.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpGa1999(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpGa1999 graph.
+    """Return new instance of the Mycobacterium sp. GA-1999 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpGa1999(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpGa1999 graph.
+    Instace of Mycobacterium sp. GA-1999 graph.
 
 	References
 	---------------------

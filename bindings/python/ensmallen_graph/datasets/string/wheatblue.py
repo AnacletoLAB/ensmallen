@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WheatBlue.
+This file offers the methods to automatically retrieve the graph Wheat blue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WheatBlue(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WheatBlue graph.
+    """Return new instance of the Wheat blue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WheatBlue(
 
     Returns
     -----------------------
-    Instace of WheatBlue graph.
+    Instace of Wheat blue graph.
 
 	References
 	---------------------

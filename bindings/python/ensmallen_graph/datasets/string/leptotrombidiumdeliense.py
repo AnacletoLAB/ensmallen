@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrombidiumDeliense.
+This file offers the methods to automatically retrieve the graph Leptotrombidium deliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrombidiumDeliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrombidiumDeliense graph.
+    """Return new instance of the Leptotrombidium deliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptotrombidiumDeliense(
 
     Returns
     -----------------------
-    Instace of LeptotrombidiumDeliense graph.
+    Instace of Leptotrombidium deliense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBowdoin47.
+This file offers the methods to automatically retrieve the graph socfb-Bowdoin47.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBowdoin47(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBowdoin47 graph.
+    """Return new instance of the socfb-Bowdoin47 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBowdoin47(
 
     Returns
     -----------------------
-    Instace of SocfbBowdoin47 graph.
+    Instace of socfb-Bowdoin47 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaHansenii.
+This file offers the methods to automatically retrieve the graph Blautia hansenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaHansenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaHansenii graph.
+    """Return new instance of the Blautia hansenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlautiaHansenii(
 
     Returns
     -----------------------
-    Instace of BlautiaHansenii graph.
+    Instace of Blautia hansenii graph.
 
 	References
 	---------------------

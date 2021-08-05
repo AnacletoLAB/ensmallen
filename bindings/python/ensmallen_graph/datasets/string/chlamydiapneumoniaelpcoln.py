@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaPneumoniaeLpcoln.
+This file offers the methods to automatically retrieve the graph Chlamydia pneumoniae LPCoLN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaPneumoniaeLpcoln(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaPneumoniaeLpcoln graph.
+    """Return new instance of the Chlamydia pneumoniae LPCoLN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaPneumoniaeLpcoln(
 
     Returns
     -----------------------
-    Instace of ChlamydiaPneumoniaeLpcoln graph.
+    Instace of Chlamydia pneumoniae LPCoLN graph.
 
 	References
 	---------------------

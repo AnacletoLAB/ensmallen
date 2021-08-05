@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporanaerobacterAcetigenesDsm13106.
+This file offers the methods to automatically retrieve the graph Sporanaerobacter acetigenes DSM 13106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporanaerobacterAcetigenesDsm13106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporanaerobacterAcetigenesDsm13106 graph.
+    """Return new instance of the Sporanaerobacter acetigenes DSM 13106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporanaerobacterAcetigenesDsm13106(
 
     Returns
     -----------------------
-    Instace of SporanaerobacterAcetigenesDsm13106 graph.
+    Instace of Sporanaerobacter acetigenes DSM 13106 graph.
 
 	References
 	---------------------

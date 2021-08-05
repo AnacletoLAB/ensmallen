@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaNiwaeNbrc108934Dsm45340.
+This file offers the methods to automatically retrieve the graph Nocardia niwae NBRC 108934 DSM 45340.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaNiwaeNbrc108934Dsm45340(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaNiwaeNbrc108934Dsm45340 graph.
+    """Return new instance of the Nocardia niwae NBRC 108934 DSM 45340 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaNiwaeNbrc108934Dsm45340(
 
     Returns
     -----------------------
-    Instace of NocardiaNiwaeNbrc108934Dsm45340 graph.
+    Instace of Nocardia niwae NBRC 108934 DSM 45340 graph.
 
 	References
 	---------------------

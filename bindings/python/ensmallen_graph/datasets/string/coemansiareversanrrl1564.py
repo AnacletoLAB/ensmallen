@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoemansiaReversaNrrl1564.
+This file offers the methods to automatically retrieve the graph Coemansia reversa NRRL 1564.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoemansiaReversaNrrl1564(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoemansiaReversaNrrl1564 graph.
+    """Return new instance of the Coemansia reversa NRRL 1564 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoemansiaReversaNrrl1564(
 
     Returns
     -----------------------
-    Instace of CoemansiaReversaNrrl1564 graph.
+    Instace of Coemansia reversa NRRL 1564 graph.
 
 	References
 	---------------------

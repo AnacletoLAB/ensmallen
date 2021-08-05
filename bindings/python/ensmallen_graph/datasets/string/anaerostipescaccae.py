@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerostipesCaccae.
+This file offers the methods to automatically retrieve the graph Anaerostipes caccae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerostipesCaccae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerostipesCaccae graph.
+    """Return new instance of the Anaerostipes caccae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerostipesCaccae(
 
     Returns
     -----------------------
-    Instace of AnaerostipesCaccae graph.
+    Instace of Anaerostipes caccae graph.
 
 	References
 	---------------------

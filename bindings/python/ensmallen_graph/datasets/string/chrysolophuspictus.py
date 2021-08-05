@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChrysolophusPictus.
+This file offers the methods to automatically retrieve the graph Chrysolophus pictus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChrysolophusPictus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChrysolophusPictus graph.
+    """Return new instance of the Chrysolophus pictus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChrysolophusPictus(
 
     Returns
     -----------------------
-    Instace of ChrysolophusPictus graph.
+    Instace of Chrysolophus pictus graph.
 
 	References
 	---------------------

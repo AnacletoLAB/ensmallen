@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BermanellaMarisrubri.
+This file offers the methods to automatically retrieve the graph Bermanella marisrubri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BermanellaMarisrubri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BermanellaMarisrubri graph.
+    """Return new instance of the Bermanella marisrubri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BermanellaMarisrubri(
 
     Returns
     -----------------------
-    Instace of BermanellaMarisrubri graph.
+    Instace of Bermanella marisrubri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurellaAmilsii.
+This file offers the methods to automatically retrieve the graph Desulfurella amilsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurellaAmilsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurellaAmilsii graph.
+    """Return new instance of the Desulfurella amilsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfurellaAmilsii(
 
     Returns
     -----------------------
-    Instace of DesulfurellaAmilsii graph.
+    Instace of Desulfurella amilsii graph.
 
 	References
 	---------------------

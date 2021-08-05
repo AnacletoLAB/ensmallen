@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurovumSpAr.
+This file offers the methods to automatically retrieve the graph Sulfurovum sp. AR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurovumSpAr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurovumSpAr graph.
+    """Return new instance of the Sulfurovum sp. AR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurovumSpAr(
 
     Returns
     -----------------------
-    Instace of SulfurovumSpAr graph.
+    Instace of Sulfurovum sp. AR graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoxiellaEndosymbiontOfAmblyommaAmericanum.
+This file offers the methods to automatically retrieve the graph Coxiella endosymbiont of Amblyomma americanum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoxiellaEndosymbiontOfAmblyommaAmericanum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoxiellaEndosymbiontOfAmblyommaAmericanum graph.
+    """Return new instance of the Coxiella endosymbiont of Amblyomma americanum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoxiellaEndosymbiontOfAmblyommaAmericanum(
 
     Returns
     -----------------------
-    Instace of CoxiellaEndosymbiontOfAmblyommaAmericanum graph.
+    Instace of Coxiella endosymbiont of Amblyomma americanum graph.
 
 	References
 	---------------------

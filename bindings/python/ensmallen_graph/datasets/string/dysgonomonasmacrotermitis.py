@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasMacrotermitis.
+This file offers the methods to automatically retrieve the graph Dysgonomonas macrotermitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasMacrotermitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasMacrotermitis graph.
+    """Return new instance of the Dysgonomonas macrotermitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DysgonomonasMacrotermitis(
 
     Returns
     -----------------------
-    Instace of DysgonomonasMacrotermitis graph.
+    Instace of Dysgonomonas macrotermitis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumGjE10.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium GJ-E10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumGjE10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumGjE10 graph.
+    """Return new instance of the Burkholderiales bacterium GJ-E10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacteriumGjE10(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumGjE10 graph.
+    Instace of Burkholderiales bacterium GJ-E10 graph.
 
 	References
 	---------------------

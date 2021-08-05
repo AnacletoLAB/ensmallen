@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KriegellaAquimaris.
+This file offers the methods to automatically retrieve the graph Kriegella aquimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KriegellaAquimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KriegellaAquimaris graph.
+    """Return new instance of the Kriegella aquimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KriegellaAquimaris(
 
     Returns
     -----------------------
-    Instace of KriegellaAquimaris graph.
+    Instace of Kriegella aquimaris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TardiphagaRobiniae.
+This file offers the methods to automatically retrieve the graph Tardiphaga robiniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TardiphagaRobiniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TardiphagaRobiniae graph.
+    """Return new instance of the Tardiphaga robiniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TardiphagaRobiniae(
 
     Returns
     -----------------------
-    Instace of TardiphagaRobiniae graph.
+    Instace of Tardiphaga robiniae graph.
 
 	References
 	---------------------

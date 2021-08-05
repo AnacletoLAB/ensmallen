@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaMesophila.
+This file offers the methods to automatically retrieve the graph Glaciecola mesophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaMesophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaMesophila graph.
+    """Return new instance of the Glaciecola mesophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaMesophila(
 
     Returns
     -----------------------
-    Instace of GlaciecolaMesophila graph.
+    Instace of Glaciecola mesophila graph.
 
 	References
 	---------------------

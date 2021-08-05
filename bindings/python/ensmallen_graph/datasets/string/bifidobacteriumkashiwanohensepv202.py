@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumKashiwanohensePv202.
+This file offers the methods to automatically retrieve the graph Bifidobacterium kashiwanohense PV20-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumKashiwanohensePv202(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumKashiwanohensePv202 graph.
+    """Return new instance of the Bifidobacterium kashiwanohense PV20-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumKashiwanohensePv202(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumKashiwanohensePv202 graph.
+    Instace of Bifidobacterium kashiwanohense PV20-2 graph.
 
 	References
 	---------------------

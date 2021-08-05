@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobrancaGottschalkiiDsm13577.
+This file offers the methods to automatically retrieve the graph Anaerobranca gottschalkii DSM 13577.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobrancaGottschalkiiDsm13577(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobrancaGottschalkiiDsm13577 graph.
+    """Return new instance of the Anaerobranca gottschalkii DSM 13577 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerobrancaGottschalkiiDsm13577(
 
     Returns
     -----------------------
-    Instace of AnaerobrancaGottschalkiiDsm13577 graph.
+    Instace of Anaerobranca gottschalkii DSM 13577 graph.
 
 	References
 	---------------------

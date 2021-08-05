@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Skirt.
+This file offers the methods to automatically retrieve the graph skirt.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Skirt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Skirt graph.
+    """Return new instance of the skirt graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Skirt(
 
     Returns
     -----------------------
-    Instace of Skirt graph.
+    Instace of skirt graph.
 
 	References
 	---------------------

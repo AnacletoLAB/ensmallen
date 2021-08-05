@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaFlabilis.
+This file offers the methods to automatically retrieve the graph Bordetella flabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaFlabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaFlabilis graph.
+    """Return new instance of the Bordetella flabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BordetellaFlabilis(
 
     Returns
     -----------------------
-    Instace of BordetellaFlabilis graph.
+    Instace of Bordetella flabilis graph.
 
 	References
 	---------------------

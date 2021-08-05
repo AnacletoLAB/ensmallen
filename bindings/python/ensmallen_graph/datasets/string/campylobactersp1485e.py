@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSp1485e.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. 1485E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSp1485e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSp1485e graph.
+    """Return new instance of the Campylobacter sp. 1485E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterSp1485e(
 
     Returns
     -----------------------
-    Instace of CampylobacterSp1485e graph.
+    Instace of Campylobacter sp. 1485E graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusObesiPh1.
+This file offers the methods to automatically retrieve the graph Peptoniphilus obesi ph1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusObesiPh1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusObesiPh1 graph.
+    """Return new instance of the Peptoniphilus obesi ph1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusObesiPh1(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusObesiPh1 graph.
+    Instace of Peptoniphilus obesi ph1 graph.
 
 	References
 	---------------------

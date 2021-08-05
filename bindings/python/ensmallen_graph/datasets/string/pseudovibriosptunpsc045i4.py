@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudovibrioSpTunPsc045I4.
+This file offers the methods to automatically retrieve the graph Pseudovibrio sp. Tun.PSC04-5.I4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudovibrioSpTunPsc045I4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudovibrioSpTunPsc045I4 graph.
+    """Return new instance of the Pseudovibrio sp. Tun.PSC04-5.I4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudovibrioSpTunPsc045I4(
 
     Returns
     -----------------------
-    Instace of PseudovibrioSpTunPsc045I4 graph.
+    Instace of Pseudovibrio sp. Tun.PSC04-5.I4 graph.
 
 	References
 	---------------------

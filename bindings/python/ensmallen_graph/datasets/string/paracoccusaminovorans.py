@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusAminovorans.
+This file offers the methods to automatically retrieve the graph Paracoccus aminovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusAminovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusAminovorans graph.
+    """Return new instance of the Paracoccus aminovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusAminovorans(
 
     Returns
     -----------------------
-    Instace of ParacoccusAminovorans graph.
+    Instace of Paracoccus aminovorans graph.
 
 	References
 	---------------------

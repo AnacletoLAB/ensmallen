@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerroplasmaAcidiphilum.
+This file offers the methods to automatically retrieve the graph Ferroplasma acidiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerroplasmaAcidiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerroplasmaAcidiphilum graph.
+    """Return new instance of the Ferroplasma acidiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerroplasmaAcidiphilum(
 
     Returns
     -----------------------
-    Instace of FerroplasmaAcidiphilum graph.
+    Instace of Ferroplasma acidiphilum graph.
 
 	References
 	---------------------

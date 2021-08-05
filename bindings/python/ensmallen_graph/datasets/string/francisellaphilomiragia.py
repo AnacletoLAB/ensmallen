@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaPhilomiragia.
+This file offers the methods to automatically retrieve the graph Francisella philomiragia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaPhilomiragia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaPhilomiragia graph.
+    """Return new instance of the Francisella philomiragia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaPhilomiragia(
 
     Returns
     -----------------------
-    Instace of FrancisellaPhilomiragia graph.
+    Instace of Francisella philomiragia graph.
 
 	References
 	---------------------

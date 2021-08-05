@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaJiangxiensis.
+This file offers the methods to automatically retrieve the graph Nocardia jiangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaJiangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaJiangxiensis graph.
+    """Return new instance of the Nocardia jiangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaJiangxiensis(
 
     Returns
     -----------------------
-    Instace of NocardiaJiangxiensis graph.
+    Instace of Nocardia jiangxiensis graph.
 
 	References
 	---------------------

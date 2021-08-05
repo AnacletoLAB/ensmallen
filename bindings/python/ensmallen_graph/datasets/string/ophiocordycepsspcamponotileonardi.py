@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OphiocordycepsSpCamponotiLeonardi.
+This file offers the methods to automatically retrieve the graph Ophiocordyceps sp. camponoti-leonardi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OphiocordycepsSpCamponotiLeonardi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OphiocordycepsSpCamponotiLeonardi graph.
+    """Return new instance of the Ophiocordyceps sp. camponoti-leonardi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OphiocordycepsSpCamponotiLeonardi(
 
     Returns
     -----------------------
-    Instace of OphiocordycepsSpCamponotiLeonardi graph.
+    Instace of Ophiocordyceps sp. camponoti-leonardi graph.
 
 	References
 	---------------------

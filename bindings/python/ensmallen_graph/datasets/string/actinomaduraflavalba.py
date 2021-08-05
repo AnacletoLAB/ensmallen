@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraFlavalba.
+This file offers the methods to automatically retrieve the graph Actinomadura flavalba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraFlavalba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraFlavalba graph.
+    """Return new instance of the Actinomadura flavalba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomaduraFlavalba(
 
     Returns
     -----------------------
-    Instace of ActinomaduraFlavalba graph.
+    Instace of Actinomadura flavalba graph.
 
 	References
 	---------------------

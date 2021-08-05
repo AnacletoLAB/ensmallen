@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasAbyssalisTar001.
+This file offers the methods to automatically retrieve the graph Brevundimonas abyssalis TAR-001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasAbyssalisTar001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasAbyssalisTar001 graph.
+    """Return new instance of the Brevundimonas abyssalis TAR-001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasAbyssalisTar001(
 
     Returns
     -----------------------
-    Instace of BrevundimonasAbyssalisTar001 graph.
+    Instace of Brevundimonas abyssalis TAR-001 graph.
 
 	References
 	---------------------

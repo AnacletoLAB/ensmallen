@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumVitis.
+This file offers the methods to automatically retrieve the graph Agrobacterium vitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumVitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumVitis graph.
+    """Return new instance of the Agrobacterium vitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumVitis(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumVitis graph.
+    Instace of Agrobacterium vitis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterArcticus.
+This file offers the methods to automatically retrieve the graph Psychrobacter arcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterArcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterArcticus graph.
+    """Return new instance of the Psychrobacter arcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterArcticus(
 
     Returns
     -----------------------
-    Instace of PsychrobacterArcticus graph.
+    Instace of Psychrobacter arcticus graph.
 
 	References
 	---------------------

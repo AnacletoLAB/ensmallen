@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSp35w.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. 35W.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSp35w(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSp35w graph.
+    """Return new instance of the Arthrobacter sp. 35W graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSp35w(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSp35w graph.
+    Instace of Arthrobacter sp. 35W graph.
 
 	References
 	---------------------

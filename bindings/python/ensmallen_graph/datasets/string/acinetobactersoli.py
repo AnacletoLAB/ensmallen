@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSoli.
+This file offers the methods to automatically retrieve the graph Acinetobacter soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSoli graph.
+    """Return new instance of the Acinetobacter soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSoli(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSoli graph.
+    Instace of Acinetobacter soli graph.
 
 	References
 	---------------------

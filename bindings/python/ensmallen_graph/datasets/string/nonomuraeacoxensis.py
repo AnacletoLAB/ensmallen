@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaCoxensis.
+This file offers the methods to automatically retrieve the graph Nonomuraea coxensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaCoxensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaCoxensis graph.
+    """Return new instance of the Nonomuraea coxensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NonomuraeaCoxensis(
 
     Returns
     -----------------------
-    Instace of NonomuraeaCoxensis graph.
+    Instace of Nonomuraea coxensis graph.
 
 	References
 	---------------------

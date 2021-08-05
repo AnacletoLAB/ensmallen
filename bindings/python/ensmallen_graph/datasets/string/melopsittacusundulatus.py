@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MelopsittacusUndulatus.
+This file offers the methods to automatically retrieve the graph Melopsittacus undulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MelopsittacusUndulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MelopsittacusUndulatus graph.
+    """Return new instance of the Melopsittacus undulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MelopsittacusUndulatus(
 
     Returns
     -----------------------
-    Instace of MelopsittacusUndulatus graph.
+    Instace of Melopsittacus undulatus graph.
 
 	References
 	---------------------

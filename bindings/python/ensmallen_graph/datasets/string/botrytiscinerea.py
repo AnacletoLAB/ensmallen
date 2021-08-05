@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BotrytisCinerea.
+This file offers the methods to automatically retrieve the graph Botrytis cinerea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BotrytisCinerea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BotrytisCinerea graph.
+    """Return new instance of the Botrytis cinerea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BotrytisCinerea(
 
     Returns
     -----------------------
-    Instace of BotrytisCinerea graph.
+    Instace of Botrytis cinerea graph.
 
 	References
 	---------------------

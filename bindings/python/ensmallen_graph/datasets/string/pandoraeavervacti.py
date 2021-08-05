@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaVervacti.
+This file offers the methods to automatically retrieve the graph Pandoraea vervacti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaVervacti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaVervacti graph.
+    """Return new instance of the Pandoraea vervacti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaVervacti(
 
     Returns
     -----------------------
-    Instace of PandoraeaVervacti graph.
+    Instace of Pandoraea vervacti graph.
 
 	References
 	---------------------

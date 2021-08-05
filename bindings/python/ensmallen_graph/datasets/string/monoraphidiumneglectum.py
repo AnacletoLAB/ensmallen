@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonoraphidiumNeglectum.
+This file offers the methods to automatically retrieve the graph Monoraphidium neglectum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonoraphidiumNeglectum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonoraphidiumNeglectum graph.
+    """Return new instance of the Monoraphidium neglectum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonoraphidiumNeglectum(
 
     Returns
     -----------------------
-    Instace of MonoraphidiumNeglectum graph.
+    Instace of Monoraphidium neglectum graph.
 
 	References
 	---------------------

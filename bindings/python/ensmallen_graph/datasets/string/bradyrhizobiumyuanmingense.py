@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumYuanmingense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium yuanmingense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumYuanmingense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumYuanmingense graph.
+    """Return new instance of the Bradyrhizobium yuanmingense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumYuanmingense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumYuanmingense graph.
+    Instace of Bradyrhizobium yuanmingense graph.
 
 	References
 	---------------------

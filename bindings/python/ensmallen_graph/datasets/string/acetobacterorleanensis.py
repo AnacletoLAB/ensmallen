@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterOrleanensis.
+This file offers the methods to automatically retrieve the graph Acetobacter orleanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterOrleanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterOrleanensis graph.
+    """Return new instance of the Acetobacter orleanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterOrleanensis(
 
     Returns
     -----------------------
-    Instace of AcetobacterOrleanensis graph.
+    Instace of Acetobacter orleanensis graph.
 
 	References
 	---------------------

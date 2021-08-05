@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParageobacillusThermantarcticus.
+This file offers the methods to automatically retrieve the graph Parageobacillus thermantarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParageobacillusThermantarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParageobacillusThermantarcticus graph.
+    """Return new instance of the Parageobacillus thermantarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParageobacillusThermantarcticus(
 
     Returns
     -----------------------
-    Instace of ParageobacillusThermantarcticus graph.
+    Instace of Parageobacillus thermantarcticus graph.
 
 	References
 	---------------------

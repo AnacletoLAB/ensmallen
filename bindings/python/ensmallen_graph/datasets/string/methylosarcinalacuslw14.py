@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylosarcinaLacusLw14.
+This file offers the methods to automatically retrieve the graph Methylosarcina lacus LW14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylosarcinaLacusLw14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylosarcinaLacusLw14 graph.
+    """Return new instance of the Methylosarcina lacus LW14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylosarcinaLacusLw14(
 
     Returns
     -----------------------
-    Instace of MethylosarcinaLacusLw14 graph.
+    Instace of Methylosarcina lacus LW14 graph.
 
 	References
 	---------------------

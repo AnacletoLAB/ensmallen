@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSpechtbacteriaBacteriumRifcsplowo212Full3822.
+This file offers the methods to automatically retrieve the graph Candidatus Spechtbacteria bacterium RIFCSPLOWO2_12_FULL_38_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSpechtbacteriaBacteriumRifcsplowo212Full3822(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSpechtbacteriaBacteriumRifcsplowo212Full3822 graph.
+    """Return new instance of the Candidatus Spechtbacteria bacterium RIFCSPLOWO2_12_FULL_38_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSpechtbacteriaBacteriumRifcsplowo212Full3822(
 
     Returns
     -----------------------
-    Instace of CandidatusSpechtbacteriaBacteriumRifcsplowo212Full3822 graph.
+    Instace of Candidatus Spechtbacteria bacterium RIFCSPLOWO2_12_FULL_38_22 graph.
 
 	References
 	---------------------

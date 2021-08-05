@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusKocurii.
+This file offers the methods to automatically retrieve the graph Planococcus kocurii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusKocurii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusKocurii graph.
+    """Return new instance of the Planococcus kocurii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusKocurii(
 
     Returns
     -----------------------
-    Instace of PlanococcusKocurii graph.
+    Instace of Planococcus kocurii graph.
 
 	References
 	---------------------

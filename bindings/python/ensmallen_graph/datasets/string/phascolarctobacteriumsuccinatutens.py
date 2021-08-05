@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhascolarctobacteriumSuccinatutens.
+This file offers the methods to automatically retrieve the graph Phascolarctobacterium succinatutens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhascolarctobacteriumSuccinatutens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhascolarctobacteriumSuccinatutens graph.
+    """Return new instance of the Phascolarctobacterium succinatutens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhascolarctobacteriumSuccinatutens(
 
     Returns
     -----------------------
-    Instace of PhascolarctobacteriumSuccinatutens graph.
+    Instace of Phascolarctobacterium succinatutens graph.
 
 	References
 	---------------------

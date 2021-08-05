@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaCostaii.
+This file offers the methods to automatically retrieve the graph Chitinophaga costaii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaCostaii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaCostaii graph.
+    """Return new instance of the Chitinophaga costaii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaCostaii(
 
     Returns
     -----------------------
-    Instace of ChitinophagaCostaii graph.
+    Instace of Chitinophaga costaii graph.
 
 	References
 	---------------------

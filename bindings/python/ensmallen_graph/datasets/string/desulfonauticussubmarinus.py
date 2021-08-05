@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonauticusSubmarinus.
+This file offers the methods to automatically retrieve the graph Desulfonauticus submarinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonauticusSubmarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonauticusSubmarinus graph.
+    """Return new instance of the Desulfonauticus submarinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonauticusSubmarinus(
 
     Returns
     -----------------------
-    Instace of DesulfonauticusSubmarinus graph.
+    Instace of Desulfonauticus submarinus graph.
 
 	References
 	---------------------

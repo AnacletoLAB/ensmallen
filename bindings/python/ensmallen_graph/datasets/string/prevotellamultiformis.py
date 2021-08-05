@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaMultiformis.
+This file offers the methods to automatically retrieve the graph Prevotella multiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaMultiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaMultiformis graph.
+    """Return new instance of the Prevotella multiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaMultiformis(
 
     Returns
     -----------------------
-    Instace of PrevotellaMultiformis graph.
+    Instace of Prevotella multiformis graph.
 
 	References
 	---------------------

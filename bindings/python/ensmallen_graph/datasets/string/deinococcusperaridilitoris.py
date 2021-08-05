@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusPeraridilitoris.
+This file offers the methods to automatically retrieve the graph Deinococcus peraridilitoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusPeraridilitoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusPeraridilitoris graph.
+    """Return new instance of the Deinococcus peraridilitoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusPeraridilitoris(
 
     Returns
     -----------------------
-    Instace of DeinococcusPeraridilitoris graph.
+    Instace of Deinococcus peraridilitoris graph.
 
 	References
 	---------------------

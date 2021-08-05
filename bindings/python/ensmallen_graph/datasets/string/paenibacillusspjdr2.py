@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpJdr2.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. JDR2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpJdr2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpJdr2 graph.
+    """Return new instance of the Paenibacillus sp. JDR2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpJdr2(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpJdr2 graph.
+    Instace of Paenibacillus sp. JDR2 graph.
 
 	References
 	---------------------

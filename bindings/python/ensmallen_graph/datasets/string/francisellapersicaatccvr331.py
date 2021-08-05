@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaPersicaAtccVr331.
+This file offers the methods to automatically retrieve the graph Francisella persica ATCC VR-331.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaPersicaAtccVr331(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaPersicaAtccVr331 graph.
+    """Return new instance of the Francisella persica ATCC VR-331 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrancisellaPersicaAtccVr331(
 
     Returns
     -----------------------
-    Instace of FrancisellaPersicaAtccVr331 graph.
+    Instace of Francisella persica ATCC VR-331 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumCelatum.
+This file offers the methods to automatically retrieve the graph Mycobacterium celatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumCelatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumCelatum graph.
+    """Return new instance of the Mycobacterium celatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumCelatum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumCelatum graph.
+    Instace of Mycobacterium celatum graph.
 
 	References
 	---------------------

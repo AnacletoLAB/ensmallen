@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromicrobiumErythreum.
+This file offers the methods to automatically retrieve the graph Aeromicrobium erythreum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromicrobiumErythreum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromicrobiumErythreum graph.
+    """Return new instance of the Aeromicrobium erythreum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromicrobiumErythreum(
 
     Returns
     -----------------------
-    Instace of AeromicrobiumErythreum graph.
+    Instace of Aeromicrobium erythreum graph.
 
 	References
 	---------------------

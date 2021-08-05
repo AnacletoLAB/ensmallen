@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSp3211.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. 3211.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSp3211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSp3211 graph.
+    """Return new instance of the Streptomyces sp. 3211 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSp3211(
 
     Returns
     -----------------------
-    Instace of StreptomycesSp3211 graph.
+    Instace of Streptomyces sp. 3211 graph.
 
 	References
 	---------------------

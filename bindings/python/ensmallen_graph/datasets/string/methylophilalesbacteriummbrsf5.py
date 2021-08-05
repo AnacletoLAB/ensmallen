@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilalesBacteriumMbrsf5.
+This file offers the methods to automatically retrieve the graph Methylophilales bacterium MBRSF5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilalesBacteriumMbrsf5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilalesBacteriumMbrsf5 graph.
+    """Return new instance of the Methylophilales bacterium MBRSF5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylophilalesBacteriumMbrsf5(
 
     Returns
     -----------------------
-    Instace of MethylophilalesBacteriumMbrsf5 graph.
+    Instace of Methylophilales bacterium MBRSF5 graph.
 
 	References
 	---------------------

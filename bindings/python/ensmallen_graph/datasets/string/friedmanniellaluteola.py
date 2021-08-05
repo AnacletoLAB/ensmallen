@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FriedmanniellaLuteola.
+This file offers the methods to automatically retrieve the graph Friedmanniella luteola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FriedmanniellaLuteola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FriedmanniellaLuteola graph.
+    """Return new instance of the Friedmanniella luteola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FriedmanniellaLuteola(
 
     Returns
     -----------------------
-    Instace of FriedmanniellaLuteola graph.
+    Instace of Friedmanniella luteola graph.
 
 	References
 	---------------------

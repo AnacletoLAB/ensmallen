@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesIlei.
+This file offers the methods to automatically retrieve the graph Bacteroides ilei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesIlei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesIlei graph.
+    """Return new instance of the Bacteroides ilei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesIlei(
 
     Returns
     -----------------------
-    Instace of BacteroidesIlei graph.
+    Instace of Bacteroides ilei graph.
 
 	References
 	---------------------

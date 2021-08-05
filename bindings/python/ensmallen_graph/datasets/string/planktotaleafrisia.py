@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanktotaleaFrisia.
+This file offers the methods to automatically retrieve the graph Planktotalea frisia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanktotaleaFrisia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanktotaleaFrisia graph.
+    """Return new instance of the Planktotalea frisia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanktotaleaFrisia(
 
     Returns
     -----------------------
-    Instace of PlanktotaleaFrisia graph.
+    Instace of Planktotalea frisia graph.
 
 	References
 	---------------------

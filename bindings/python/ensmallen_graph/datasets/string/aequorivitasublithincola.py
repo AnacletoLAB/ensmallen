@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AequorivitaSublithincola.
+This file offers the methods to automatically retrieve the graph Aequorivita sublithincola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AequorivitaSublithincola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AequorivitaSublithincola graph.
+    """Return new instance of the Aequorivita sublithincola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AequorivitaSublithincola(
 
     Returns
     -----------------------
-    Instace of AequorivitaSublithincola graph.
+    Instace of Aequorivita sublithincola graph.
 
 	References
 	---------------------

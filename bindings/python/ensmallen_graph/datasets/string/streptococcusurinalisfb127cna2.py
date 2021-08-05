@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusUrinalisFb127cna2.
+This file offers the methods to automatically retrieve the graph Streptococcus urinalis FB127CNA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusUrinalisFb127cna2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusUrinalisFb127cna2 graph.
+    """Return new instance of the Streptococcus urinalis FB127CNA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusUrinalisFb127cna2(
 
     Returns
     -----------------------
-    Instace of StreptococcusUrinalisFb127cna2 graph.
+    Instace of Streptococcus urinalis FB127CNA2 graph.
 
 	References
 	---------------------

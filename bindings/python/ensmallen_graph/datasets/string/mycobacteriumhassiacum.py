@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumHassiacum.
+This file offers the methods to automatically retrieve the graph Mycobacterium hassiacum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumHassiacum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumHassiacum graph.
+    """Return new instance of the Mycobacterium hassiacum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumHassiacum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumHassiacum graph.
+    Instace of Mycobacterium hassiacum graph.
 
 	References
 	---------------------

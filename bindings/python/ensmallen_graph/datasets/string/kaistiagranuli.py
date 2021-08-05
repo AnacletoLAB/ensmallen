@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KaistiaGranuli.
+This file offers the methods to automatically retrieve the graph Kaistia granuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KaistiaGranuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KaistiaGranuli graph.
+    """Return new instance of the Kaistia granuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KaistiaGranuli(
 
     Returns
     -----------------------
-    Instace of KaistiaGranuli graph.
+    Instace of Kaistia granuli graph.
 
 	References
 	---------------------

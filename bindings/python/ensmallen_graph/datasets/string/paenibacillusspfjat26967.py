@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpFjat26967.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. FJAT-26967.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpFjat26967(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpFjat26967 graph.
+    """Return new instance of the Paenibacillus sp. FJAT-26967 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpFjat26967(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpFjat26967 graph.
+    Instace of Paenibacillus sp. FJAT-26967 graph.
 
 	References
 	---------------------

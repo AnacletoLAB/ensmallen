@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaSpRoot123d2.
+This file offers the methods to automatically retrieve the graph Afipia sp. Root123D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaSpRoot123d2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaSpRoot123d2 graph.
+    """Return new instance of the Afipia sp. Root123D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AfipiaSpRoot123d2(
 
     Returns
     -----------------------
-    Instace of AfipiaSpRoot123d2 graph.
+    Instace of Afipia sp. Root123D2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioSpK90mix.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio sp. K90mix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioSpK90mix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioSpK90mix graph.
+    """Return new instance of the Thioalkalivibrio sp. K90mix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalivibrioSpK90mix(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioSpK90mix graph.
+    Instace of Thioalkalivibrio sp. K90mix graph.
 
 	References
 	---------------------

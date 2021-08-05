@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Hollywood2009.
+This file offers the methods to automatically retrieve the graph hollywood-2009.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Hollywood2009(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Hollywood2009 graph.
+    """Return new instance of the hollywood-2009 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Hollywood2009(
 
     Returns
     -----------------------
-    Instace of Hollywood2009 graph.
+    Instace of hollywood-2009 graph.
 
 	References
 	---------------------

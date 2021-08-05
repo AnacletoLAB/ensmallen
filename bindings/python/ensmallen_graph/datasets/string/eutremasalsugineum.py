@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EutremaSalsugineum.
+This file offers the methods to automatically retrieve the graph Eutrema salsugineum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EutremaSalsugineum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EutremaSalsugineum graph.
+    """Return new instance of the Eutrema salsugineum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EutremaSalsugineum(
 
     Returns
     -----------------------
-    Instace of EutremaSalsugineum graph.
+    Instace of Eutrema salsugineum graph.
 
 	References
 	---------------------

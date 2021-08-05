@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacteriumHalotolerans.
+This file offers the methods to automatically retrieve the graph Pelagibacterium halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacteriumHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacteriumHalotolerans graph.
+    """Return new instance of the Pelagibacterium halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacteriumHalotolerans(
 
     Returns
     -----------------------
-    Instace of PelagibacteriumHalotolerans graph.
+    Instace of Pelagibacterium halotolerans graph.
 
 	References
 	---------------------

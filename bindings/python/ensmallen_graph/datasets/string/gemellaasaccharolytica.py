@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaAsaccharolytica.
+This file offers the methods to automatically retrieve the graph Gemella asaccharolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaAsaccharolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaAsaccharolytica graph.
+    """Return new instance of the Gemella asaccharolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemellaAsaccharolytica(
 
     Returns
     -----------------------
-    Instace of GemellaAsaccharolytica graph.
+    Instace of Gemella asaccharolytica graph.
 
 	References
 	---------------------

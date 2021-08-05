@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCnq509.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CNQ-509.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCnq509(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCnq509 graph.
+    """Return new instance of the Streptomyces sp. CNQ-509 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpCnq509(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCnq509 graph.
+    Instace of Streptomyces sp. CNQ-509 graph.
 
 	References
 	---------------------

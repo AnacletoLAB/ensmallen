@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobaculumMassiliense.
+This file offers the methods to automatically retrieve the graph Actinobaculum massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobaculumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobaculumMassiliense graph.
+    """Return new instance of the Actinobaculum massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobaculumMassiliense(
 
     Returns
     -----------------------
-    Instace of ActinobaculumMassiliense graph.
+    Instace of Actinobaculum massiliense graph.
 
 	References
 	---------------------

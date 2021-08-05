@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IzhakiellaAustraliensis.
+This file offers the methods to automatically retrieve the graph Izhakiella australiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IzhakiellaAustraliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IzhakiellaAustraliensis graph.
+    """Return new instance of the Izhakiella australiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IzhakiellaAustraliensis(
 
     Returns
     -----------------------
-    Instace of IzhakiellaAustraliensis graph.
+    Instace of Izhakiella australiensis graph.
 
 	References
 	---------------------

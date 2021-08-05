@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronohydrobacterThiooxidans.
+This file offers the methods to automatically retrieve the graph Natronohydrobacter thiooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronohydrobacterThiooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronohydrobacterThiooxidans graph.
+    """Return new instance of the Natronohydrobacter thiooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronohydrobacterThiooxidans(
 
     Returns
     -----------------------
-    Instace of NatronohydrobacterThiooxidans graph.
+    Instace of Natronohydrobacter thiooxidans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumMerdae.
+This file offers the methods to automatically retrieve the graph Clostridium merdae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumMerdae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumMerdae graph.
+    """Return new instance of the Clostridium merdae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumMerdae(
 
     Returns
     -----------------------
-    Instace of ClostridiumMerdae graph.
+    Instace of Clostridium merdae graph.
 
 	References
 	---------------------

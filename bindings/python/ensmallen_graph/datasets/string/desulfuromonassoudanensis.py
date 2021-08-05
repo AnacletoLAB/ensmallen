@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonasSoudanensis.
+This file offers the methods to automatically retrieve the graph Desulfuromonas soudanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonasSoudanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonasSoudanensis graph.
+    """Return new instance of the Desulfuromonas soudanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuromonasSoudanensis(
 
     Returns
     -----------------------
-    Instace of DesulfuromonasSoudanensis graph.
+    Instace of Desulfuromonas soudanensis graph.
 
 	References
 	---------------------

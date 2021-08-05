@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaBajacaliforniensis.
+This file offers the methods to automatically retrieve the graph Spirochaeta bajacaliforniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaBajacaliforniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaBajacaliforniensis graph.
+    """Return new instance of the Spirochaeta bajacaliforniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirochaetaBajacaliforniensis(
 
     Returns
     -----------------------
-    Instace of SpirochaetaBajacaliforniensis graph.
+    Instace of Spirochaeta bajacaliforniensis graph.
 
 	References
 	---------------------

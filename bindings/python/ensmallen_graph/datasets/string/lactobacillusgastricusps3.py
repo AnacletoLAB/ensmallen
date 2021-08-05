@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGastricusPs3.
+This file offers the methods to automatically retrieve the graph Lactobacillus gastricus PS3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGastricusPs3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGastricusPs3 graph.
+    """Return new instance of the Lactobacillus gastricus PS3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusGastricusPs3(
 
     Returns
     -----------------------
-    Instace of LactobacillusGastricusPs3 graph.
+    Instace of Lactobacillus gastricus PS3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumStriatum.
+This file offers the methods to automatically retrieve the graph Corynebacterium striatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumStriatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumStriatum graph.
+    """Return new instance of the Corynebacterium striatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumStriatum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumStriatum graph.
+    Instace of Corynebacterium striatum graph.
 
 	References
 	---------------------

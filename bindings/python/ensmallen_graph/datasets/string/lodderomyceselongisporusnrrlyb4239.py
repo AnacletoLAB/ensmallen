@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LodderomycesElongisporusNrrlYb4239.
+This file offers the methods to automatically retrieve the graph Lodderomyces elongisporus NRRL YB-4239.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LodderomycesElongisporusNrrlYb4239(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LodderomycesElongisporusNrrlYb4239 graph.
+    """Return new instance of the Lodderomyces elongisporus NRRL YB-4239 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LodderomycesElongisporusNrrlYb4239(
 
     Returns
     -----------------------
-    Instace of LodderomycesElongisporusNrrlYb4239 graph.
+    Instace of Lodderomyces elongisporus NRRL YB-4239 graph.
 
 	References
 	---------------------

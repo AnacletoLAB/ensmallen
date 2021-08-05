@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpAw25m09.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. AW25M09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpAw25m09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpAw25m09 graph.
+    """Return new instance of the Rhodococcus sp. AW25M09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusSpAw25m09(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpAw25m09 graph.
+    Instace of Rhodococcus sp. AW25M09 graph.
 
 	References
 	---------------------

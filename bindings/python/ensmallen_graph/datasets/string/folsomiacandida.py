@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FolsomiaCandida.
+This file offers the methods to automatically retrieve the graph Folsomia candida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FolsomiaCandida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FolsomiaCandida graph.
+    """Return new instance of the Folsomia candida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FolsomiaCandida(
 
     Returns
     -----------------------
-    Instace of FolsomiaCandida graph.
+    Instace of Folsomia candida graph.
 
 	References
 	---------------------

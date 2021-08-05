@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCibi.
+This file offers the methods to automatically retrieve the graph Bacillus cibi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCibi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCibi graph.
+    """Return new instance of the Bacillus cibi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusCibi(
 
     Returns
     -----------------------
-    Instace of BacillusCibi graph.
+    Instace of Bacillus cibi graph.
 
 	References
 	---------------------

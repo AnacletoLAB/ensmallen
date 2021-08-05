@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpOk909.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. ok909.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpOk909(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpOk909 graph.
+    """Return new instance of the Arthrobacter sp. ok909 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpOk909(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpOk909 graph.
+    Instace of Arthrobacter sp. ok909 graph.
 
 	References
 	---------------------

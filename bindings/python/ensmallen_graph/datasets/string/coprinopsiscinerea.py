@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprinopsisCinerea.
+This file offers the methods to automatically retrieve the graph Coprinopsis cinerea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprinopsisCinerea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprinopsisCinerea graph.
+    """Return new instance of the Coprinopsis cinerea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoprinopsisCinerea(
 
     Returns
     -----------------------
-    Instace of CoprinopsisCinerea graph.
+    Instace of Coprinopsis cinerea graph.
 
 	References
 	---------------------

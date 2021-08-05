@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NostocSpPcc7524.
+This file offers the methods to automatically retrieve the graph Nostoc sp. PCC7524.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NostocSpPcc7524(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NostocSpPcc7524 graph.
+    """Return new instance of the Nostoc sp. PCC7524 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NostocSpPcc7524(
 
     Returns
     -----------------------
-    Instace of NostocSpPcc7524 graph.
+    Instace of Nostoc sp. PCC7524 graph.
 
 	References
 	---------------------

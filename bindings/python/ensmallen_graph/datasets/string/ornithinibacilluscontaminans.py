@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithinibacillusContaminans.
+This file offers the methods to automatically retrieve the graph Ornithinibacillus contaminans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithinibacillusContaminans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithinibacillusContaminans graph.
+    """Return new instance of the Ornithinibacillus contaminans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrnithinibacillusContaminans(
 
     Returns
     -----------------------
-    Instace of OrnithinibacillusContaminans graph.
+    Instace of Ornithinibacillus contaminans graph.
 
 	References
 	---------------------

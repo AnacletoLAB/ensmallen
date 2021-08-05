@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillatoriaSpPcc10802.
+This file offers the methods to automatically retrieve the graph Oscillatoria sp. PCC10802.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillatoriaSpPcc10802(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillatoriaSpPcc10802 graph.
+    """Return new instance of the Oscillatoria sp. PCC10802 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillatoriaSpPcc10802(
 
     Returns
     -----------------------
-    Instace of OscillatoriaSpPcc10802 graph.
+    Instace of Oscillatoria sp. PCC10802 graph.
 
 	References
 	---------------------

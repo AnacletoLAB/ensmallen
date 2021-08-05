@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelatococcusSpGw1.
+This file offers the methods to automatically retrieve the graph Chelatococcus sp. GW1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelatococcusSpGw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelatococcusSpGw1 graph.
+    """Return new instance of the Chelatococcus sp. GW1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChelatococcusSpGw1(
 
     Returns
     -----------------------
-    Instace of ChelatococcusSpGw1 graph.
+    Instace of Chelatococcus sp. GW1 graph.
 
 	References
 	---------------------

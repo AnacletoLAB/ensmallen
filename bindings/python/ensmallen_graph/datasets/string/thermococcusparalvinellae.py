@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusParalvinellae.
+This file offers the methods to automatically retrieve the graph Thermococcus paralvinellae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusParalvinellae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusParalvinellae graph.
+    """Return new instance of the Thermococcus paralvinellae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusParalvinellae(
 
     Returns
     -----------------------
-    Instace of ThermococcusParalvinellae graph.
+    Instace of Thermococcus paralvinellae graph.
 
 	References
 	---------------------

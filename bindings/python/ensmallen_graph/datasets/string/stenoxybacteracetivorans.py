@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenoxybacterAcetivorans.
+This file offers the methods to automatically retrieve the graph Stenoxybacter acetivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenoxybacterAcetivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenoxybacterAcetivorans graph.
+    """Return new instance of the Stenoxybacter acetivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StenoxybacterAcetivorans(
 
     Returns
     -----------------------
-    Instace of StenoxybacterAcetivorans graph.
+    Instace of Stenoxybacter acetivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScardoviaInopinataJcm12537.
+This file offers the methods to automatically retrieve the graph Scardovia inopinata JCM 12537.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScardoviaInopinataJcm12537(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScardoviaInopinataJcm12537 graph.
+    """Return new instance of the Scardovia inopinata JCM 12537 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScardoviaInopinataJcm12537(
 
     Returns
     -----------------------
-    Instace of ScardoviaInopinataJcm12537 graph.
+    Instace of Scardovia inopinata JCM 12537 graph.
 
 	References
 	---------------------

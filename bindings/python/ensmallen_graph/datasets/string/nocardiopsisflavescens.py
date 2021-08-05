@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisFlavescens.
+This file offers the methods to automatically retrieve the graph Nocardiopsis flavescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisFlavescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisFlavescens graph.
+    """Return new instance of the Nocardiopsis flavescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisFlavescens(
 
     Returns
     -----------------------
-    Instace of NocardiopsisFlavescens graph.
+    Instace of Nocardiopsis flavescens graph.
 
 	References
 	---------------------

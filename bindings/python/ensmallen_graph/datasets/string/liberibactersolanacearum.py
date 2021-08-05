@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LiberibacterSolanacearum.
+This file offers the methods to automatically retrieve the graph Liberibacter solanacearum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LiberibacterSolanacearum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LiberibacterSolanacearum graph.
+    """Return new instance of the Liberibacter solanacearum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LiberibacterSolanacearum(
 
     Returns
     -----------------------
-    Instace of LiberibacterSolanacearum graph.
+    Instace of Liberibacter solanacearum graph.
 
 	References
 	---------------------

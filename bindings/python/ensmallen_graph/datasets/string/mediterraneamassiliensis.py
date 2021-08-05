@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MediterraneaMassiliensis.
+This file offers the methods to automatically retrieve the graph Mediterranea massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MediterraneaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MediterraneaMassiliensis graph.
+    """Return new instance of the Mediterranea massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MediterraneaMassiliensis(
 
     Returns
     -----------------------
-    Instace of MediterraneaMassiliensis graph.
+    Instace of Mediterranea massiliensis graph.
 
 	References
 	---------------------

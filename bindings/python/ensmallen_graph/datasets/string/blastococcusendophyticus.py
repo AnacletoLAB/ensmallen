@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastococcusEndophyticus.
+This file offers the methods to automatically retrieve the graph Blastococcus endophyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastococcusEndophyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastococcusEndophyticus graph.
+    """Return new instance of the Blastococcus endophyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastococcusEndophyticus(
 
     Returns
     -----------------------
-    Instace of BlastococcusEndophyticus graph.
+    Instace of Blastococcus endophyticus graph.
 
 	References
 	---------------------

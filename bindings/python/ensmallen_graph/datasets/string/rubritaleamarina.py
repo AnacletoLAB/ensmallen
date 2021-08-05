@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubritaleaMarina.
+This file offers the methods to automatically retrieve the graph Rubritalea marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubritaleaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubritaleaMarina graph.
+    """Return new instance of the Rubritalea marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RubritaleaMarina(
 
     Returns
     -----------------------
-    Instace of RubritaleaMarina graph.
+    Instace of Rubritalea marina graph.
 
 	References
 	---------------------

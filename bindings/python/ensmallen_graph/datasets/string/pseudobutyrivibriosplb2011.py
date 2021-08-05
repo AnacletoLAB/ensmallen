@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobutyrivibrioSpLb2011.
+This file offers the methods to automatically retrieve the graph Pseudobutyrivibrio sp. LB2011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobutyrivibrioSpLb2011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobutyrivibrioSpLb2011 graph.
+    """Return new instance of the Pseudobutyrivibrio sp. LB2011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudobutyrivibrioSpLb2011(
 
     Returns
     -----------------------
-    Instace of PseudobutyrivibrioSpLb2011 graph.
+    Instace of Pseudobutyrivibrio sp. LB2011 graph.
 
 	References
 	---------------------

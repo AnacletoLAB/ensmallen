@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSpRu39b.
+This file offers the methods to automatically retrieve the graph Aeromonas sp. RU39B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSpRu39b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSpRu39b graph.
+    """Return new instance of the Aeromonas sp. RU39B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSpRu39b(
 
     Returns
     -----------------------
-    Instace of AeromonasSpRu39b graph.
+    Instace of Aeromonas sp. RU39B graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromicrobiumMassiliense.
+This file offers the methods to automatically retrieve the graph Aeromicrobium massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromicrobiumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromicrobiumMassiliense graph.
+    """Return new instance of the Aeromicrobium massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeromicrobiumMassiliense(
 
     Returns
     -----------------------
-    Instace of AeromicrobiumMassiliense graph.
+    Instace of Aeromicrobium massiliense graph.
 
 	References
 	---------------------

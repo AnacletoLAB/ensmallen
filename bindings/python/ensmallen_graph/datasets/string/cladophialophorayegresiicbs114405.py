@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CladophialophoraYegresiiCbs114405.
+This file offers the methods to automatically retrieve the graph Cladophialophora yegresii CBS 114405.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CladophialophoraYegresiiCbs114405(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CladophialophoraYegresiiCbs114405 graph.
+    """Return new instance of the Cladophialophora yegresii CBS 114405 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CladophialophoraYegresiiCbs114405(
 
     Returns
     -----------------------
-    Instace of CladophialophoraYegresiiCbs114405 graph.
+    Instace of Cladophialophora yegresii CBS 114405 graph.
 
 	References
 	---------------------

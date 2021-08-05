@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterUrativorans.
+This file offers the methods to automatically retrieve the graph Psychrobacter urativorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterUrativorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterUrativorans graph.
+    """Return new instance of the Psychrobacter urativorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterUrativorans(
 
     Returns
     -----------------------
-    Instace of PsychrobacterUrativorans graph.
+    Instace of Psychrobacter urativorans graph.
 
 	References
 	---------------------

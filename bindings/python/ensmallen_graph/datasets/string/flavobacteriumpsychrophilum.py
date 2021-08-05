@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumPsychrophilum.
+This file offers the methods to automatically retrieve the graph Flavobacterium psychrophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumPsychrophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumPsychrophilum graph.
+    """Return new instance of the Flavobacterium psychrophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumPsychrophilum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumPsychrophilum graph.
+    Instace of Flavobacterium psychrophilum graph.
 
 	References
 	---------------------

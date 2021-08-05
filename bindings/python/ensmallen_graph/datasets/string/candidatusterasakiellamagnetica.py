@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTerasakiellaMagnetica.
+This file offers the methods to automatically retrieve the graph Candidatus Terasakiella magnetica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTerasakiellaMagnetica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTerasakiellaMagnetica graph.
+    """Return new instance of the Candidatus Terasakiella magnetica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTerasakiellaMagnetica(
 
     Returns
     -----------------------
-    Instace of CandidatusTerasakiellaMagnetica graph.
+    Instace of Candidatus Terasakiella magnetica graph.
 
 	References
 	---------------------

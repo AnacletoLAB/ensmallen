@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusSalarius.
+This file offers the methods to automatically retrieve the graph Psychroflexus salarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusSalarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusSalarius graph.
+    """Return new instance of the Psychroflexus salarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychroflexusSalarius(
 
     Returns
     -----------------------
-    Instace of PsychroflexusSalarius graph.
+    Instace of Psychroflexus salarius graph.
 
 	References
 	---------------------

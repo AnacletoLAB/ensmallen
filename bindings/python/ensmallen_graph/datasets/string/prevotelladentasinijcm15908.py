@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaDentasiniJcm15908.
+This file offers the methods to automatically retrieve the graph Prevotella dentasini JCM 15908.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaDentasiniJcm15908(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaDentasiniJcm15908 graph.
+    """Return new instance of the Prevotella dentasini JCM 15908 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaDentasiniJcm15908(
 
     Returns
     -----------------------
-    Instace of PrevotellaDentasiniJcm15908 graph.
+    Instace of Prevotella dentasini JCM 15908 graph.
 
 	References
 	---------------------

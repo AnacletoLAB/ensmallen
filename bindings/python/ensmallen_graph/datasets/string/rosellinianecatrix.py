@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoselliniaNecatrix.
+This file offers the methods to automatically retrieve the graph Rosellinia necatrix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoselliniaNecatrix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoselliniaNecatrix graph.
+    """Return new instance of the Rosellinia necatrix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoselliniaNecatrix(
 
     Returns
     -----------------------
-    Instace of RoselliniaNecatrix graph.
+    Instace of Rosellinia necatrix graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaProteobacteriumMlsD.
+This file offers the methods to automatically retrieve the graph delta proteobacterium MLS_D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaProteobacteriumMlsD(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaProteobacteriumMlsD graph.
+    """Return new instance of the delta proteobacterium MLS_D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaProteobacteriumMlsD(
 
     Returns
     -----------------------
-    Instace of DeltaProteobacteriumMlsD graph.
+    Instace of delta proteobacterium MLS_D graph.
 
 	References
 	---------------------

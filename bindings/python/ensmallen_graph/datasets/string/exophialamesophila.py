@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaMesophila.
+This file offers the methods to automatically retrieve the graph Exophiala mesophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaMesophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaMesophila graph.
+    """Return new instance of the Exophiala mesophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaMesophila(
 
     Returns
     -----------------------
-    Instace of ExophialaMesophila graph.
+    Instace of Exophiala mesophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusAlkenifer.
+This file offers the methods to automatically retrieve the graph Paracoccus alkenifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusAlkenifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusAlkenifer graph.
+    """Return new instance of the Paracoccus alkenifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusAlkenifer(
 
     Returns
     -----------------------
-    Instace of ParacoccusAlkenifer graph.
+    Instace of Paracoccus alkenifer graph.
 
 	References
 	---------------------

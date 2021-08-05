@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TinamusGuttatus.
+This file offers the methods to automatically retrieve the graph Tinamus guttatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TinamusGuttatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TinamusGuttatus graph.
+    """Return new instance of the Tinamus guttatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TinamusGuttatus(
 
     Returns
     -----------------------
-    Instace of TinamusGuttatus graph.
+    Instace of Tinamus guttatus graph.
 
 	References
 	---------------------

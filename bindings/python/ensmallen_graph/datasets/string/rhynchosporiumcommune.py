@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhynchosporiumCommune.
+This file offers the methods to automatically retrieve the graph Rhynchosporium commune.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhynchosporiumCommune(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhynchosporiumCommune graph.
+    """Return new instance of the Rhynchosporium commune graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhynchosporiumCommune(
 
     Returns
     -----------------------
-    Instace of RhynchosporiumCommune graph.
+    Instace of Rhynchosporium commune graph.
 
 	References
 	---------------------

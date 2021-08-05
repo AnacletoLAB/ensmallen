@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobaculumSchaalii.
+This file offers the methods to automatically retrieve the graph Actinobaculum schaalii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobaculumSchaalii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobaculumSchaalii graph.
+    """Return new instance of the Actinobaculum schaalii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobaculumSchaalii(
 
     Returns
     -----------------------
-    Instace of ActinobaculumSchaalii graph.
+    Instace of Actinobaculum schaalii graph.
 
 	References
 	---------------------

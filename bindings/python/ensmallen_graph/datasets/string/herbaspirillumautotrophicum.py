@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumAutotrophicum.
+This file offers the methods to automatically retrieve the graph Herbaspirillum autotrophicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumAutotrophicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumAutotrophicum graph.
+    """Return new instance of the Herbaspirillum autotrophicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbaspirillumAutotrophicum(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumAutotrophicum graph.
+    Instace of Herbaspirillum autotrophicum graph.
 
 	References
 	---------------------

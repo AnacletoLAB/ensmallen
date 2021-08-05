@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HepatoplasmaCrinochetorum.
+This file offers the methods to automatically retrieve the graph Hepatoplasma crinochetorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HepatoplasmaCrinochetorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HepatoplasmaCrinochetorum graph.
+    """Return new instance of the Hepatoplasma crinochetorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HepatoplasmaCrinochetorum(
 
     Returns
     -----------------------
-    Instace of HepatoplasmaCrinochetorum graph.
+    Instace of Hepatoplasma crinochetorum graph.
 
 	References
 	---------------------

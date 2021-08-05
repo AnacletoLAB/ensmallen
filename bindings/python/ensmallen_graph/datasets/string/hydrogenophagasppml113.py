@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpPml113.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. PML113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpPml113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpPml113 graph.
+    """Return new instance of the Hydrogenophaga sp. PML113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpPml113(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpPml113 graph.
+    Instace of Hydrogenophaga sp. PML113 graph.
 
 	References
 	---------------------

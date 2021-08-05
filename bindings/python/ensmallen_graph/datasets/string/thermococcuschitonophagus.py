@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusChitonophagus.
+This file offers the methods to automatically retrieve the graph Thermococcus chitonophagus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusChitonophagus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusChitonophagus graph.
+    """Return new instance of the Thermococcus chitonophagus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusChitonophagus(
 
     Returns
     -----------------------
-    Instace of ThermococcusChitonophagus graph.
+    Instace of Thermococcus chitonophagus graph.
 
 	References
 	---------------------

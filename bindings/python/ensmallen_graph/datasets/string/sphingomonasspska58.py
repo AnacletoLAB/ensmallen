@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpSka58.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. SKA58.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpSka58(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpSka58 graph.
+    """Return new instance of the Sphingomonas sp. SKA58 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasSpSka58(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpSka58 graph.
+    Instace of Sphingomonas sp. SKA58 graph.
 
 	References
 	---------------------

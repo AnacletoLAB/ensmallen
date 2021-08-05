@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlloiococcusOtitis.
+This file offers the methods to automatically retrieve the graph Alloiococcus otitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlloiococcusOtitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlloiococcusOtitis graph.
+    """Return new instance of the Alloiococcus otitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlloiococcusOtitis(
 
     Returns
     -----------------------
-    Instace of AlloiococcusOtitis graph.
+    Instace of Alloiococcus otitis graph.
 
 	References
 	---------------------

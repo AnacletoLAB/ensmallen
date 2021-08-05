@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OligellaUreolytica.
+This file offers the methods to automatically retrieve the graph Oligella ureolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OligellaUreolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OligellaUreolytica graph.
+    """Return new instance of the Oligella ureolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OligellaUreolytica(
 
     Returns
     -----------------------
-    Instace of OligellaUreolytica graph.
+    Instace of Oligella ureolytica graph.
 
 	References
 	---------------------

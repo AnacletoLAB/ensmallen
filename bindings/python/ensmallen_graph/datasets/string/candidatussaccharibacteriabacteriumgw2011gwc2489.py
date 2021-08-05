@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaBacteriumGw2011Gwc2489.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria bacterium GW2011_GWC2_48_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaBacteriumGw2011Gwc2489(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaBacteriumGw2011Gwc2489 graph.
+    """Return new instance of the Candidatus Saccharibacteria bacterium GW2011_GWC2_48_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaBacteriumGw2011Gwc2489(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaBacteriumGw2011Gwc2489 graph.
+    Instace of Candidatus Saccharibacteria bacterium GW2011_GWC2_48_9 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpTtu2014080asc.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. TTU2014-080ASC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpTtu2014080asc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpTtu2014080asc graph.
+    """Return new instance of the Pseudomonas sp. TTU2014-080ASC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpTtu2014080asc(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpTtu2014080asc graph.
+    Instace of Pseudomonas sp. TTU2014-080ASC graph.
 
 	References
 	---------------------

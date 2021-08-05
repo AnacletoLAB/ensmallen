@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoculleusBourgensisMs2.
+This file offers the methods to automatically retrieve the graph Methanoculleus bourgensis MS2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoculleusBourgensisMs2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoculleusBourgensisMs2 graph.
+    """Return new instance of the Methanoculleus bourgensis MS2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanoculleusBourgensisMs2(
 
     Returns
     -----------------------
-    Instace of MethanoculleusBourgensisMs2 graph.
+    Instace of Methanoculleus bourgensis MS2 graph.
 
 	References
 	---------------------

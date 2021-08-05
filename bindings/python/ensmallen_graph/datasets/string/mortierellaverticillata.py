@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MortierellaVerticillata.
+This file offers the methods to automatically retrieve the graph Mortierella verticillata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MortierellaVerticillata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MortierellaVerticillata graph.
+    """Return new instance of the Mortierella verticillata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MortierellaVerticillata(
 
     Returns
     -----------------------
-    Instace of MortierellaVerticillata graph.
+    Instace of Mortierella verticillata graph.
 
 	References
 	---------------------

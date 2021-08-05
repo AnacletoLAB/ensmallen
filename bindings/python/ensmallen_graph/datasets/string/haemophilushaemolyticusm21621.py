@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusHaemolyticusM21621.
+This file offers the methods to automatically retrieve the graph Haemophilus haemolyticus M21621.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusHaemolyticusM21621(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusHaemolyticusM21621 graph.
+    """Return new instance of the Haemophilus haemolyticus M21621 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaemophilusHaemolyticusM21621(
 
     Returns
     -----------------------
-    Instace of HaemophilusHaemolyticusM21621 graph.
+    Instace of Haemophilus haemolyticus M21621 graph.
 
 	References
 	---------------------

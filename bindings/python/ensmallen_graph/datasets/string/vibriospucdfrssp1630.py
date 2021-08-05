@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpUcdFrssp1630.
+This file offers the methods to automatically retrieve the graph Vibrio sp. UCD-FRSSP16_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpUcdFrssp1630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpUcdFrssp1630 graph.
+    """Return new instance of the Vibrio sp. UCD-FRSSP16_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioSpUcdFrssp1630(
 
     Returns
     -----------------------
-    Instace of VibrioSpUcdFrssp1630 graph.
+    Instace of Vibrio sp. UCD-FRSSP16_30 graph.
 
 	References
 	---------------------

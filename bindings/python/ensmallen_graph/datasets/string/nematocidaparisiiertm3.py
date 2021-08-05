@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NematocidaParisiiErtm3.
+This file offers the methods to automatically retrieve the graph Nematocida parisii ERTm3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NematocidaParisiiErtm3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NematocidaParisiiErtm3 graph.
+    """Return new instance of the Nematocida parisii ERTm3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NematocidaParisiiErtm3(
 
     Returns
     -----------------------
-    Instace of NematocidaParisiiErtm3 graph.
+    Instace of Nematocida parisii ERTm3 graph.
 
 	References
 	---------------------

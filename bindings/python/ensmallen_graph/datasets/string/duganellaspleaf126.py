@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpLeaf126.
+This file offers the methods to automatically retrieve the graph Duganella sp. Leaf126.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpLeaf126(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpLeaf126 graph.
+    """Return new instance of the Duganella sp. Leaf126 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpLeaf126(
 
     Returns
     -----------------------
-    Instace of DuganellaSpLeaf126 graph.
+    Instace of Duganella sp. Leaf126 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterAcetiAtcc23746.
+This file offers the methods to automatically retrieve the graph Acetobacter aceti ATCC23746.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterAcetiAtcc23746(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterAcetiAtcc23746 graph.
+    """Return new instance of the Acetobacter aceti ATCC23746 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacterAcetiAtcc23746(
 
     Returns
     -----------------------
-    Instace of AcetobacterAcetiAtcc23746 graph.
+    Instace of Acetobacter aceti ATCC23746 graph.
 
 	References
 	---------------------

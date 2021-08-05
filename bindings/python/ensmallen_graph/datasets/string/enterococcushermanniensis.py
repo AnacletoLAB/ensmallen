@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusHermanniensis.
+This file offers the methods to automatically retrieve the graph Enterococcus hermanniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusHermanniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusHermanniensis graph.
+    """Return new instance of the Enterococcus hermanniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusHermanniensis(
 
     Returns
     -----------------------
-    Instace of EnterococcusHermanniensis graph.
+    Instace of Enterococcus hermanniensis graph.
 
 	References
 	---------------------

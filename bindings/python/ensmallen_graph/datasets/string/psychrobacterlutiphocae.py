@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterLutiphocae.
+This file offers the methods to automatically retrieve the graph Psychrobacter lutiphocae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterLutiphocae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterLutiphocae graph.
+    """Return new instance of the Psychrobacter lutiphocae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterLutiphocae(
 
     Returns
     -----------------------
-    Instace of PsychrobacterLutiphocae graph.
+    Instace of Psychrobacter lutiphocae graph.
 
 	References
 	---------------------

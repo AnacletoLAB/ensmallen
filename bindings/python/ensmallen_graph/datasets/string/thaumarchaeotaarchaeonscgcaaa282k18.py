@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaumarchaeotaArchaeonScgcAaa282K18.
+This file offers the methods to automatically retrieve the graph Thaumarchaeota archaeon SCGC AAA282-K18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaumarchaeotaArchaeonScgcAaa282K18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaumarchaeotaArchaeonScgcAaa282K18 graph.
+    """Return new instance of the Thaumarchaeota archaeon SCGC AAA282-K18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaumarchaeotaArchaeonScgcAaa282K18(
 
     Returns
     -----------------------
-    Instace of ThaumarchaeotaArchaeonScgcAaa282K18 graph.
+    Instace of Thaumarchaeota archaeon SCGC AAA282-K18 graph.
 
 	References
 	---------------------

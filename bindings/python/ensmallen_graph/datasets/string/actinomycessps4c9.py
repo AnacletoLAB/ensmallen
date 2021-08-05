@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSpS4c9.
+This file offers the methods to automatically retrieve the graph Actinomyces sp. S4C9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSpS4c9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSpS4c9 graph.
+    """Return new instance of the Actinomyces sp. S4C9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesSpS4c9(
 
     Returns
     -----------------------
-    Instace of ActinomycesSpS4c9 graph.
+    Instace of Actinomyces sp. S4C9 graph.
 
 	References
 	---------------------

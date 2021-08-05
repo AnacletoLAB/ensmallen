@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LechevalieriaXinjiangensis.
+This file offers the methods to automatically retrieve the graph Lechevalieria xinjiangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LechevalieriaXinjiangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LechevalieriaXinjiangensis graph.
+    """Return new instance of the Lechevalieria xinjiangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LechevalieriaXinjiangensis(
 
     Returns
     -----------------------
-    Instace of LechevalieriaXinjiangensis graph.
+    Instace of Lechevalieria xinjiangensis graph.
 
 	References
 	---------------------

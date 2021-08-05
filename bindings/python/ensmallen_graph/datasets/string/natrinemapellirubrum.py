@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrinemaPellirubrum.
+This file offers the methods to automatically retrieve the graph Natrinema pellirubrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrinemaPellirubrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrinemaPellirubrum graph.
+    """Return new instance of the Natrinema pellirubrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatrinemaPellirubrum(
 
     Returns
     -----------------------
-    Instace of NatrinemaPellirubrum graph.
+    Instace of Natrinema pellirubrum graph.
 
 	References
 	---------------------

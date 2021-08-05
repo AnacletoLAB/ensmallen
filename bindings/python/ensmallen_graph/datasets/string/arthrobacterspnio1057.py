@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpNio1057.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. NIO-1057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpNio1057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpNio1057 graph.
+    """Return new instance of the Arthrobacter sp. NIO-1057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpNio1057(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpNio1057 graph.
+    Instace of Arthrobacter sp. NIO-1057 graph.
 
 	References
 	---------------------

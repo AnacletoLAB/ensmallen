@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAkibai.
+This file offers the methods to automatically retrieve the graph Bacillus akibai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAkibai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAkibai graph.
+    """Return new instance of the Bacillus akibai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAkibai(
 
     Returns
     -----------------------
-    Instace of BacillusAkibai graph.
+    Instace of Bacillus akibai graph.
 
 	References
 	---------------------

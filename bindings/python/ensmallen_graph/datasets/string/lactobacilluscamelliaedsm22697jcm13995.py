@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCamelliaeDsm22697Jcm13995.
+This file offers the methods to automatically retrieve the graph Lactobacillus camelliae DSM 22697 JCM 13995.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCamelliaeDsm22697Jcm13995(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCamelliaeDsm22697Jcm13995 graph.
+    """Return new instance of the Lactobacillus camelliae DSM 22697 JCM 13995 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusCamelliaeDsm22697Jcm13995(
 
     Returns
     -----------------------
-    Instace of LactobacillusCamelliaeDsm22697Jcm13995 graph.
+    Instace of Lactobacillus camelliae DSM 22697 JCM 13995 graph.
 
 	References
 	---------------------

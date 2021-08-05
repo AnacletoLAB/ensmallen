@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoriobacteriaceaeBacteriumGd5.
+This file offers the methods to automatically retrieve the graph Coriobacteriaceae bacterium GD5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoriobacteriaceaeBacteriumGd5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoriobacteriaceaeBacteriumGd5 graph.
+    """Return new instance of the Coriobacteriaceae bacterium GD5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoriobacteriaceaeBacteriumGd5(
 
     Returns
     -----------------------
-    Instace of CoriobacteriaceaeBacteriumGd5 graph.
+    Instace of Coriobacteriaceae bacterium GD5 graph.
 
 	References
 	---------------------

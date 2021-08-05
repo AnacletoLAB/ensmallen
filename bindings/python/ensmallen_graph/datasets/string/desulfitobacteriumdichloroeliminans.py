@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitobacteriumDichloroeliminans.
+This file offers the methods to automatically retrieve the graph Desulfitobacterium dichloroeliminans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitobacteriumDichloroeliminans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitobacteriumDichloroeliminans graph.
+    """Return new instance of the Desulfitobacterium dichloroeliminans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfitobacteriumDichloroeliminans(
 
     Returns
     -----------------------
-    Instace of DesulfitobacteriumDichloroeliminans graph.
+    Instace of Desulfitobacterium dichloroeliminans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasIlicicolaDsm19980.
+This file offers the methods to automatically retrieve the graph Halomonas ilicicola DSM 19980.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasIlicicolaDsm19980(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasIlicicolaDsm19980 graph.
+    """Return new instance of the Halomonas ilicicola DSM 19980 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasIlicicolaDsm19980(
 
     Returns
     -----------------------
-    Instace of HalomonasIlicicolaDsm19980 graph.
+    Instace of Halomonas ilicicola DSM 19980 graph.
 
 	References
 	---------------------

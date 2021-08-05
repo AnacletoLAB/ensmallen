@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaTribocorum.
+This file offers the methods to automatically retrieve the graph Bartonella tribocorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaTribocorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaTribocorum graph.
+    """Return new instance of the Bartonella tribocorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaTribocorum(
 
     Returns
     -----------------------
-    Instace of BartonellaTribocorum graph.
+    Instace of Bartonella tribocorum graph.
 
 	References
 	---------------------

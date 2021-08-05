@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumGwf1657.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium GWF1_65_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumGwf1657(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumGwf1657 graph.
+    """Return new instance of the Rhodobacteraceae bacterium GWF1_65_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteraceaeBacteriumGwf1657(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumGwf1657 graph.
+    Instace of Rhodobacteraceae bacterium GWF1_65_7 graph.
 
 	References
 	---------------------

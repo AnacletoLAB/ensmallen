@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaceaeBacteriumKbs89.
+This file offers the methods to automatically retrieve the graph Acidobacteriaceae bacterium KBS89.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaceaeBacteriumKbs89(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaceaeBacteriumKbs89 graph.
+    """Return new instance of the Acidobacteriaceae bacterium KBS89 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidobacteriaceaeBacteriumKbs89(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaceaeBacteriumKbs89 graph.
+    Instace of Acidobacteriaceae bacterium KBS89 graph.
 
 	References
 	---------------------

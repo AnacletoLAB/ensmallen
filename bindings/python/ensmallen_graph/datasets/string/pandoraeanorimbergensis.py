@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaNorimbergensis.
+This file offers the methods to automatically retrieve the graph Pandoraea norimbergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaNorimbergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaNorimbergensis graph.
+    """Return new instance of the Pandoraea norimbergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaNorimbergensis(
 
     Returns
     -----------------------
-    Instace of PandoraeaNorimbergensis graph.
+    Instace of Pandoraea norimbergensis graph.
 
 	References
 	---------------------

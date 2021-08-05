@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpWh7803.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. WH 7803.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpWh7803(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpWh7803 graph.
+    """Return new instance of the Synechococcus sp. WH 7803 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpWh7803(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpWh7803 graph.
+    Instace of Synechococcus sp. WH 7803 graph.
 
 	References
 	---------------------

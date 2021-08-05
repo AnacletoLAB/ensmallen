@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpLeaf183.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. Leaf183.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpLeaf183(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpLeaf183 graph.
+    """Return new instance of the Curtobacterium sp. Leaf183 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpLeaf183(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpLeaf183 graph.
+    Instace of Curtobacterium sp. Leaf183 graph.
 
 	References
 	---------------------

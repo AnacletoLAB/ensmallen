@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaPyrifoliae.
+This file offers the methods to automatically retrieve the graph Erwinia pyrifoliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaPyrifoliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaPyrifoliae graph.
+    """Return new instance of the Erwinia pyrifoliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErwiniaPyrifoliae(
 
     Returns
     -----------------------
-    Instace of ErwiniaPyrifoliae graph.
+    Instace of Erwinia pyrifoliae graph.
 
 	References
 	---------------------

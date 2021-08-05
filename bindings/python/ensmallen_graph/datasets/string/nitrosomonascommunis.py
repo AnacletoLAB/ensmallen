@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasCommunis.
+This file offers the methods to automatically retrieve the graph Nitrosomonas communis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasCommunis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasCommunis graph.
+    """Return new instance of the Nitrosomonas communis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasCommunis(
 
     Returns
     -----------------------
-    Instace of NitrosomonasCommunis graph.
+    Instace of Nitrosomonas communis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanococcusAtlanticus.
+This file offers the methods to automatically retrieve the graph Oceanococcus atlanticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanococcusAtlanticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanococcusAtlanticus graph.
+    """Return new instance of the Oceanococcus atlanticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanococcusAtlanticus(
 
     Returns
     -----------------------
-    Instace of OceanococcusAtlanticus graph.
+    Instace of Oceanococcus atlanticus graph.
 
 	References
 	---------------------

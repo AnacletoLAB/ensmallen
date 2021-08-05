@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaematobacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Haematobacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaematobacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaematobacterMassiliensis graph.
+    """Return new instance of the Haematobacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaematobacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of HaematobacterMassiliensis graph.
+    Instace of Haematobacter massiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtribacteriaBacteriumScgcAaa252M02.
+This file offers the methods to automatically retrieve the graph Atribacteria bacterium SCGC AAA252-M02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtribacteriaBacteriumScgcAaa252M02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtribacteriaBacteriumScgcAaa252M02 graph.
+    """Return new instance of the Atribacteria bacterium SCGC AAA252-M02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtribacteriaBacteriumScgcAaa252M02(
 
     Returns
     -----------------------
-    Instace of AtribacteriaBacteriumScgcAaa252M02 graph.
+    Instace of Atribacteria bacterium SCGC AAA252-M02 graph.
 
 	References
 	---------------------

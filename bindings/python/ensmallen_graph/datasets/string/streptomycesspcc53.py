@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCc53.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CC53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCc53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCc53 graph.
+    """Return new instance of the Streptomyces sp. CC53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpCc53(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCc53 graph.
+    Instace of Streptomyces sp. CC53 graph.
 
 	References
 	---------------------

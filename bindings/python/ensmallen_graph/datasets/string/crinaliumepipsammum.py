@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrinaliumEpipsammum.
+This file offers the methods to automatically retrieve the graph Crinalium epipsammum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrinaliumEpipsammum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrinaliumEpipsammum graph.
+    """Return new instance of the Crinalium epipsammum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CrinaliumEpipsammum(
 
     Returns
     -----------------------
-    Instace of CrinaliumEpipsammum graph.
+    Instace of Crinalium epipsammum graph.
 
 	References
 	---------------------

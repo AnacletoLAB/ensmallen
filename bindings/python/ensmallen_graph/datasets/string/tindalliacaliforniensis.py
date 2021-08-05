@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TindalliaCaliforniensis.
+This file offers the methods to automatically retrieve the graph Tindallia californiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TindalliaCaliforniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TindalliaCaliforniensis graph.
+    """Return new instance of the Tindallia californiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TindalliaCaliforniensis(
 
     Returns
     -----------------------
-    Instace of TindalliaCaliforniensis graph.
+    Instace of Tindallia californiensis graph.
 
 	References
 	---------------------

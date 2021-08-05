@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CallipeplaSquamata.
+This file offers the methods to automatically retrieve the graph Callipepla squamata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CallipeplaSquamata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CallipeplaSquamata graph.
+    """Return new instance of the Callipepla squamata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CallipeplaSquamata(
 
     Returns
     -----------------------
-    Instace of CallipeplaSquamata graph.
+    Instace of Callipepla squamata graph.
 
 	References
 	---------------------

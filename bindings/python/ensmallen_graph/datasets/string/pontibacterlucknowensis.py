@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterLucknowensis.
+This file offers the methods to automatically retrieve the graph Pontibacter lucknowensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterLucknowensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterLucknowensis graph.
+    """Return new instance of the Pontibacter lucknowensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterLucknowensis(
 
     Returns
     -----------------------
-    Instace of PontibacterLucknowensis graph.
+    Instace of Pontibacter lucknowensis graph.
 
 	References
 	---------------------

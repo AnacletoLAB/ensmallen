@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OxobacterPfennigii.
+This file offers the methods to automatically retrieve the graph Oxobacter pfennigii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OxobacterPfennigii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OxobacterPfennigii graph.
+    """Return new instance of the Oxobacter pfennigii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OxobacterPfennigii(
 
     Returns
     -----------------------
-    Instace of OxobacterPfennigii graph.
+    Instace of Oxobacter pfennigii graph.
 
 	References
 	---------------------

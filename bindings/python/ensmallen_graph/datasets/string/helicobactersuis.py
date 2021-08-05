@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterSuis.
+This file offers the methods to automatically retrieve the graph Helicobacter suis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterSuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterSuis graph.
+    """Return new instance of the Helicobacter suis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterSuis(
 
     Returns
     -----------------------
-    Instace of HelicobacterSuis graph.
+    Instace of Helicobacter suis graph.
 
 	References
 	---------------------

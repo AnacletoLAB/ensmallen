@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesOleiciplenus.
+This file offers the methods to automatically retrieve the graph Bacteroides oleiciplenus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesOleiciplenus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesOleiciplenus graph.
+    """Return new instance of the Bacteroides oleiciplenus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesOleiciplenus(
 
     Returns
     -----------------------
-    Instace of BacteroidesOleiciplenus graph.
+    Instace of Bacteroides oleiciplenus graph.
 
 	References
 	---------------------

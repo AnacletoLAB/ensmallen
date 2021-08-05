@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaceaeBacteriumHun156.
+This file offers the methods to automatically retrieve the graph Prevotellaceae bacterium HUN156.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaceaeBacteriumHun156(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaceaeBacteriumHun156 graph.
+    """Return new instance of the Prevotellaceae bacterium HUN156 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaceaeBacteriumHun156(
 
     Returns
     -----------------------
-    Instace of PrevotellaceaeBacteriumHun156 graph.
+    Instace of Prevotellaceae bacterium HUN156 graph.
 
 	References
 	---------------------

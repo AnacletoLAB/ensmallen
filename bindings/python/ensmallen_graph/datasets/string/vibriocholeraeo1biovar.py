@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioCholeraeO1Biovar.
+This file offers the methods to automatically retrieve the graph Vibrio cholerae O1 biovar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioCholeraeO1Biovar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioCholeraeO1Biovar graph.
+    """Return new instance of the Vibrio cholerae O1 biovar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioCholeraeO1Biovar(
 
     Returns
     -----------------------
-    Instace of VibrioCholeraeO1Biovar graph.
+    Instace of Vibrio cholerae O1 biovar graph.
 
 	References
 	---------------------

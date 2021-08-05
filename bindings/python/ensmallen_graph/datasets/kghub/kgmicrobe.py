@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KGMicrobe.
+This file offers the methods to automatically retrieve the graph kg-microbe.
 
 The graph is automatically retrieved from the KGHub repository. 
 
@@ -21,7 +21,7 @@ def KGMicrobe(
     version: str = "current",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KGMicrobe graph.
+    """Return new instance of the kg-microbe graph.
 
     The graph is automatically retrieved from the KGHub repository.	
 
@@ -57,7 +57,7 @@ def KGMicrobe(
 
     Returns
     -----------------------
-    Instace of KGMicrobe graph.
+    Instace of kg-microbe graph.
 
 	
     """

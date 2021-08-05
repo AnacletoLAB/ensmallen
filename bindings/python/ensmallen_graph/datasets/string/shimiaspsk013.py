@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimiaSpSk013.
+This file offers the methods to automatically retrieve the graph Shimia sp. SK013.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimiaSpSk013(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimiaSpSk013 graph.
+    """Return new instance of the Shimia sp. SK013 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShimiaSpSk013(
 
     Returns
     -----------------------
-    Instace of ShimiaSpSk013 graph.
+    Instace of Shimia sp. SK013 graph.
 
 	References
 	---------------------

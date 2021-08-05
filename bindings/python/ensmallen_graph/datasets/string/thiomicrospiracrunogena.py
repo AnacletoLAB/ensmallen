@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraCrunogena.
+This file offers the methods to automatically retrieve the graph Thiomicrospira crunogena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraCrunogena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraCrunogena graph.
+    """Return new instance of the Thiomicrospira crunogena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomicrospiraCrunogena(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraCrunogena graph.
+    Instace of Thiomicrospira crunogena graph.
 
 	References
 	---------------------

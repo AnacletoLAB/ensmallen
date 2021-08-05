@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumColicanisDsm13634.
+This file offers the methods to automatically retrieve the graph Clostridium colicanis DSM 13634.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumColicanisDsm13634(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumColicanisDsm13634 graph.
+    """Return new instance of the Clostridium colicanis DSM 13634 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumColicanisDsm13634(
 
     Returns
     -----------------------
-    Instace of ClostridiumColicanisDsm13634 graph.
+    Instace of Clostridium colicanis DSM 13634 graph.
 
 	References
 	---------------------

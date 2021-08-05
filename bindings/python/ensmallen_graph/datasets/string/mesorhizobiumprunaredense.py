@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumPrunaredense.
+This file offers the methods to automatically retrieve the graph Mesorhizobium prunaredense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumPrunaredense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumPrunaredense graph.
+    """Return new instance of the Mesorhizobium prunaredense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumPrunaredense(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumPrunaredense graph.
+    Instace of Mesorhizobium prunaredense graph.
 
 	References
 	---------------------

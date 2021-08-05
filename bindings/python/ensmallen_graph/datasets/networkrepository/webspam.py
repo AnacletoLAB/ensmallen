@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebSpam.
+This file offers the methods to automatically retrieve the graph web-spam.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def WebSpam(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebSpam graph.
+    """Return new instance of the web-spam graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def WebSpam(
 
     Returns
     -----------------------
-    Instace of WebSpam graph.
+    Instace of web-spam graph.
 
 	References
 	---------------------

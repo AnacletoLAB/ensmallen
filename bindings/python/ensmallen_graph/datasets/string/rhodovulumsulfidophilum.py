@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodovulumSulfidophilum.
+This file offers the methods to automatically retrieve the graph Rhodovulum sulfidophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodovulumSulfidophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodovulumSulfidophilum graph.
+    """Return new instance of the Rhodovulum sulfidophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodovulumSulfidophilum(
 
     Returns
     -----------------------
-    Instace of RhodovulumSulfidophilum graph.
+    Instace of Rhodovulum sulfidophilum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpChd6a.
+This file offers the methods to automatically retrieve the graph Bacillus sp. CHD6a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpChd6a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpChd6a graph.
+    """Return new instance of the Bacillus sp. CHD6a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpChd6a(
 
     Returns
     -----------------------
-    Instace of BacillusSpChd6a graph.
+    Instace of Bacillus sp. CHD6a graph.
 
 	References
 	---------------------

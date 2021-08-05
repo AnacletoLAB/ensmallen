@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusJorgensenbacteriaBacteriumGwa15412.
+This file offers the methods to automatically retrieve the graph Candidatus Jorgensenbacteria bacterium GWA1_54_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusJorgensenbacteriaBacteriumGwa15412(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusJorgensenbacteriaBacteriumGwa15412 graph.
+    """Return new instance of the Candidatus Jorgensenbacteria bacterium GWA1_54_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusJorgensenbacteriaBacteriumGwa15412(
 
     Returns
     -----------------------
-    Instace of CandidatusJorgensenbacteriaBacteriumGwa15412 graph.
+    Instace of Candidatus Jorgensenbacteria bacterium GWA1_54_12 graph.
 
 	References
 	---------------------

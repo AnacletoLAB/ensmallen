@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JiangellaAlkaliphila.
+This file offers the methods to automatically retrieve the graph Jiangella alkaliphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JiangellaAlkaliphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JiangellaAlkaliphila graph.
+    """Return new instance of the Jiangella alkaliphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JiangellaAlkaliphila(
 
     Returns
     -----------------------
-    Instace of JiangellaAlkaliphila graph.
+    Instace of Jiangella alkaliphila graph.
 
 	References
 	---------------------

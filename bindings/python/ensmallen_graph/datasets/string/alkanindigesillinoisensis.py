@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkanindigesIllinoisensis.
+This file offers the methods to automatically retrieve the graph Alkanindiges illinoisensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkanindigesIllinoisensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkanindigesIllinoisensis graph.
+    """Return new instance of the Alkanindiges illinoisensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkanindigesIllinoisensis(
 
     Returns
     -----------------------
-    Instace of AlkanindigesIllinoisensis graph.
+    Instace of Alkanindiges illinoisensis graph.
 
 	References
 	---------------------

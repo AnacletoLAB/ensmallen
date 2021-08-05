@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophomonasWolfei.
+This file offers the methods to automatically retrieve the graph Syntrophomonas wolfei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophomonasWolfei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophomonasWolfei graph.
+    """Return new instance of the Syntrophomonas wolfei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SyntrophomonasWolfei(
 
     Returns
     -----------------------
-    Instace of SyntrophomonasWolfei graph.
+    Instace of Syntrophomonas wolfei graph.
 
 	References
 	---------------------

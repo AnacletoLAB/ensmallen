@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpCf136.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. CF136.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpCf136(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpCf136 graph.
+    """Return new instance of the Flavobacterium sp. CF136 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSpCf136(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpCf136 graph.
+    Instace of Flavobacterium sp. CF136 graph.
 
 	References
 	---------------------

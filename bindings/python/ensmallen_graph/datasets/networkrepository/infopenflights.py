@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfOpenflights.
+This file offers the methods to automatically retrieve the graph inf-openflights.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -39,7 +39,7 @@ def InfOpenflights(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfOpenflights graph.
+    """Return new instance of the inf-openflights graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -66,7 +66,7 @@ def InfOpenflights(
 
     Returns
     -----------------------
-    Instace of InfOpenflights graph.
+    Instace of inf-openflights graph.
 
 	References
 	---------------------

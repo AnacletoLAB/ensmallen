@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MolaMola.
+This file offers the methods to automatically retrieve the graph Mola mola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MolaMola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MolaMola graph.
+    """Return new instance of the Mola mola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MolaMola(
 
     Returns
     -----------------------
-    Instace of MolaMola graph.
+    Instace of Mola mola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhialosimplexSpHf37.
+This file offers the methods to automatically retrieve the graph Phialosimplex sp. HF37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhialosimplexSpHf37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhialosimplexSpHf37 graph.
+    """Return new instance of the Phialosimplex sp. HF37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhialosimplexSpHf37(
 
     Returns
     -----------------------
-    Instace of PhialosimplexSpHf37 graph.
+    Instace of Phialosimplex sp. HF37 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWolfebacteriaBacteriumRifoxyd12Full4821.
+This file offers the methods to automatically retrieve the graph Candidatus Wolfebacteria bacterium RIFOXYD12_FULL_48_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWolfebacteriaBacteriumRifoxyd12Full4821(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWolfebacteriaBacteriumRifoxyd12Full4821 graph.
+    """Return new instance of the Candidatus Wolfebacteria bacterium RIFOXYD12_FULL_48_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWolfebacteriaBacteriumRifoxyd12Full4821(
 
     Returns
     -----------------------
-    Instace of CandidatusWolfebacteriaBacteriumRifoxyd12Full4821 graph.
+    Instace of Candidatus Wolfebacteria bacterium RIFOXYD12_FULL_48_21 graph.
 
 	References
 	---------------------

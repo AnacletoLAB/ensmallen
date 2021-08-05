@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaDioxanivorans.
+This file offers the methods to automatically retrieve the graph Pseudonocardia dioxanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaDioxanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaDioxanivorans graph.
+    """Return new instance of the Pseudonocardia dioxanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudonocardiaDioxanivorans(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaDioxanivorans graph.
+    Instace of Pseudonocardia dioxanivorans graph.
 
 	References
 	---------------------

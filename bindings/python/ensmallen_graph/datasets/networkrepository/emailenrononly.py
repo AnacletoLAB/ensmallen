@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailEnronOnly.
+This file offers the methods to automatically retrieve the graph email-enron-only.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailEnronOnly(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailEnronOnly graph.
+    """Return new instance of the email-enron-only graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailEnronOnly(
 
     Returns
     -----------------------
-    Instace of EmailEnronOnly graph.
+    Instace of email-enron-only graph.
 
 	References
 	---------------------

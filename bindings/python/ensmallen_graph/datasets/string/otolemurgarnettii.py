@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OtolemurGarnettii.
+This file offers the methods to automatically retrieve the graph Otolemur garnettii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OtolemurGarnettii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OtolemurGarnettii graph.
+    """Return new instance of the Otolemur garnettii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OtolemurGarnettii(
 
     Returns
     -----------------------
-    Instace of OtolemurGarnettii graph.
+    Instace of Otolemur garnettii graph.
 
 	References
 	---------------------

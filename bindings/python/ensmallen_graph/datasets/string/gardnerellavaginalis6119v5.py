@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GardnerellaVaginalis6119v5.
+This file offers the methods to automatically retrieve the graph Gardnerella vaginalis 6119V5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GardnerellaVaginalis6119v5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GardnerellaVaginalis6119v5 graph.
+    """Return new instance of the Gardnerella vaginalis 6119V5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GardnerellaVaginalis6119v5(
 
     Returns
     -----------------------
-    Instace of GardnerellaVaginalis6119v5 graph.
+    Instace of Gardnerella vaginalis 6119V5 graph.
 
 	References
 	---------------------

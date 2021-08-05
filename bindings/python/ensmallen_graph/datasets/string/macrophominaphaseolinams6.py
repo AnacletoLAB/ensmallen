@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacrophominaPhaseolinaMs6.
+This file offers the methods to automatically retrieve the graph Macrophomina phaseolina MS6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacrophominaPhaseolinaMs6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacrophominaPhaseolinaMs6 graph.
+    """Return new instance of the Macrophomina phaseolina MS6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacrophominaPhaseolinaMs6(
 
     Returns
     -----------------------
-    Instace of MacrophominaPhaseolinaMs6 graph.
+    Instace of Macrophomina phaseolina MS6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumHochsteniumAtcc700873.
+This file offers the methods to automatically retrieve the graph Halorubrum hochstenium ATCC 700873.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumHochsteniumAtcc700873(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumHochsteniumAtcc700873 graph.
+    """Return new instance of the Halorubrum hochstenium ATCC 700873 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumHochsteniumAtcc700873(
 
     Returns
     -----------------------
-    Instace of HalorubrumHochsteniumAtcc700873 graph.
+    Instace of Halorubrum hochstenium ATCC 700873 graph.
 
 	References
 	---------------------

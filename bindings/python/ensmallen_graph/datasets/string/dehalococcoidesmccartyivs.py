@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalococcoidesMccartyiVs.
+This file offers the methods to automatically retrieve the graph Dehalococcoides mccartyi VS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalococcoidesMccartyiVs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalococcoidesMccartyiVs graph.
+    """Return new instance of the Dehalococcoides mccartyi VS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalococcoidesMccartyiVs(
 
     Returns
     -----------------------
-    Instace of DehalococcoidesMccartyiVs graph.
+    Instace of Dehalococcoides mccartyi VS graph.
 
 	References
 	---------------------

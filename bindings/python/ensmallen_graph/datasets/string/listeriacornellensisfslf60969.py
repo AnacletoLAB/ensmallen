@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaCornellensisFslF60969.
+This file offers the methods to automatically retrieve the graph Listeria cornellensis FSL F6-0969.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaCornellensisFslF60969(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaCornellensisFslF60969 graph.
+    """Return new instance of the Listeria cornellensis FSL F6-0969 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaCornellensisFslF60969(
 
     Returns
     -----------------------
-    Instace of ListeriaCornellensisFslF60969 graph.
+    Instace of Listeria cornellensis FSL F6-0969 graph.
 
 	References
 	---------------------

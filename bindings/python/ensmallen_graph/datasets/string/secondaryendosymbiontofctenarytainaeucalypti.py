@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SecondaryEndosymbiontOfCtenarytainaEucalypti.
+This file offers the methods to automatically retrieve the graph secondary endosymbiont of Ctenarytaina eucalypti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SecondaryEndosymbiontOfCtenarytainaEucalypti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SecondaryEndosymbiontOfCtenarytainaEucalypti graph.
+    """Return new instance of the secondary endosymbiont of Ctenarytaina eucalypti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SecondaryEndosymbiontOfCtenarytainaEucalypti(
 
     Returns
     -----------------------
-    Instace of SecondaryEndosymbiontOfCtenarytainaEucalypti graph.
+    Instace of secondary endosymbiont of Ctenarytaina eucalypti graph.
 
 	References
 	---------------------

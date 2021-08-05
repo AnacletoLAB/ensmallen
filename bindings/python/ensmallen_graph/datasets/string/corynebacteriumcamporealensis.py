@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCamporealensis.
+This file offers the methods to automatically retrieve the graph Corynebacterium camporealensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCamporealensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCamporealensis graph.
+    """Return new instance of the Corynebacterium camporealensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumCamporealensis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCamporealensis graph.
+    Instace of Corynebacterium camporealensis graph.
 
 	References
 	---------------------

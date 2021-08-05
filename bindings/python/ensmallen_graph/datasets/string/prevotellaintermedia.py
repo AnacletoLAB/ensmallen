@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaIntermedia.
+This file offers the methods to automatically retrieve the graph Prevotella intermedia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaIntermedia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaIntermedia graph.
+    """Return new instance of the Prevotella intermedia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaIntermedia(
 
     Returns
     -----------------------
-    Instace of PrevotellaIntermedia graph.
+    Instace of Prevotella intermedia graph.
 
 	References
 	---------------------

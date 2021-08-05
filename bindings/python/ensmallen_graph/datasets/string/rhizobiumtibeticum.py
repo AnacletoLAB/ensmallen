@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumTibeticum.
+This file offers the methods to automatically retrieve the graph Rhizobium tibeticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumTibeticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumTibeticum graph.
+    """Return new instance of the Rhizobium tibeticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumTibeticum(
 
     Returns
     -----------------------
-    Instace of RhizobiumTibeticum graph.
+    Instace of Rhizobium tibeticum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesTurgidiscabies.
+This file offers the methods to automatically retrieve the graph Streptomyces turgidiscabies.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesTurgidiscabies(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesTurgidiscabies graph.
+    """Return new instance of the Streptomyces turgidiscabies graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesTurgidiscabies(
 
     Returns
     -----------------------
-    Instace of StreptomycesTurgidiscabies graph.
+    Instace of Streptomyces turgidiscabies graph.
 
 	References
 	---------------------

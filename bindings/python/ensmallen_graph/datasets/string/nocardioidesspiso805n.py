@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpIso805n.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. Iso805N.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpIso805n(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpIso805n graph.
+    """Return new instance of the Nocardioides sp. Iso805N graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardioidesSpIso805n(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpIso805n graph.
+    Instace of Nocardioides sp. Iso805N graph.
 
 	References
 	---------------------

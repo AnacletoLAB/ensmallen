@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgreiaPratensis.
+This file offers the methods to automatically retrieve the graph Agreia pratensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgreiaPratensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgreiaPratensis graph.
+    """Return new instance of the Agreia pratensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgreiaPratensis(
 
     Returns
     -----------------------
-    Instace of AgreiaPratensis graph.
+    Instace of Agreia pratensis graph.
 
 	References
 	---------------------

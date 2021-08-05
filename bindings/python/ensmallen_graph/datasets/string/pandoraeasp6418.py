@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaSp6418.
+This file offers the methods to automatically retrieve the graph Pandoraea sp. 64-18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaSp6418(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaSp6418 graph.
+    """Return new instance of the Pandoraea sp. 64-18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaSp6418(
 
     Returns
     -----------------------
-    Instace of PandoraeaSp6418 graph.
+    Instace of Pandoraea sp. 64-18 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBereziniae.
+This file offers the methods to automatically retrieve the graph Acinetobacter bereziniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBereziniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBereziniae graph.
+    """Return new instance of the Acinetobacter bereziniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterBereziniae(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBereziniae graph.
+    Instace of Acinetobacter bereziniae graph.
 
 	References
 	---------------------

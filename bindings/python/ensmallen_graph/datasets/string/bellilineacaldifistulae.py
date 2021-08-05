@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BellilineaCaldifistulae.
+This file offers the methods to automatically retrieve the graph Bellilinea caldifistulae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BellilineaCaldifistulae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BellilineaCaldifistulae graph.
+    """Return new instance of the Bellilinea caldifistulae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BellilineaCaldifistulae(
 
     Returns
     -----------------------
-    Instace of BellilineaCaldifistulae graph.
+    Instace of Bellilinea caldifistulae graph.
 
 	References
 	---------------------

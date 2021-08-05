@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RenibacteriumSalmoninarum.
+This file offers the methods to automatically retrieve the graph Renibacterium salmoninarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RenibacteriumSalmoninarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RenibacteriumSalmoninarum graph.
+    """Return new instance of the Renibacterium salmoninarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RenibacteriumSalmoninarum(
 
     Returns
     -----------------------
-    Instace of RenibacteriumSalmoninarum graph.
+    Instace of Renibacterium salmoninarum graph.
 
 	References
 	---------------------

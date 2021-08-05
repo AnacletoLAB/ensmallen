@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosospiraSp5618.
+This file offers the methods to automatically retrieve the graph Nitrosospira sp. 56-18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosospiraSp5618(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosospiraSp5618 graph.
+    """Return new instance of the Nitrosospira sp. 56-18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosospiraSp5618(
 
     Returns
     -----------------------
-    Instace of NitrosospiraSp5618 graph.
+    Instace of Nitrosospira sp. 56-18 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophomonasWolfeiSubspMethylbutyratica.
+This file offers the methods to automatically retrieve the graph Syntrophomonas wolfei subsp. methylbutyratica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophomonasWolfeiSubspMethylbutyratica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophomonasWolfeiSubspMethylbutyratica graph.
+    """Return new instance of the Syntrophomonas wolfei subsp. methylbutyratica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophomonasWolfeiSubspMethylbutyratica(
 
     Returns
     -----------------------
-    Instace of SyntrophomonasWolfeiSubspMethylbutyratica graph.
+    Instace of Syntrophomonas wolfei subsp. methylbutyratica graph.
 
 	References
 	---------------------

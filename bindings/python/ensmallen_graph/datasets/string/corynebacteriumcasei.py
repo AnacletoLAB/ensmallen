@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCasei.
+This file offers the methods to automatically retrieve the graph Corynebacterium casei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCasei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCasei graph.
+    """Return new instance of the Corynebacterium casei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumCasei(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCasei graph.
+    Instace of Corynebacterium casei graph.
 
 	References
 	---------------------

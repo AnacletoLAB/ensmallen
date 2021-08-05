@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumGilvum.
+This file offers the methods to automatically retrieve the graph Mycobacterium gilvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumGilvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumGilvum graph.
+    """Return new instance of the Mycobacterium gilvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumGilvum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumGilvum graph.
+    Instace of Mycobacterium gilvum graph.
 
 	References
 	---------------------

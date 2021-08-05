@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaPetrii.
+This file offers the methods to automatically retrieve the graph Bordetella petrii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaPetrii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaPetrii graph.
+    """Return new instance of the Bordetella petrii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaPetrii(
 
     Returns
     -----------------------
-    Instace of BordetellaPetrii graph.
+    Instace of Bordetella petrii graph.
 
 	References
 	---------------------

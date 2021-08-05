@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaMytili.
+This file offers the methods to automatically retrieve the graph Colwellia mytili.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaMytili(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaMytili graph.
+    """Return new instance of the Colwellia mytili graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaMytili(
 
     Returns
     -----------------------
-    Instace of ColwelliaMytili graph.
+    Instace of Colwellia mytili graph.
 
 	References
 	---------------------

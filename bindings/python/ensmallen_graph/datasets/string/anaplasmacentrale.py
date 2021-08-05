@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaCentrale.
+This file offers the methods to automatically retrieve the graph Anaplasma centrale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaplasmaCentrale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaCentrale graph.
+    """Return new instance of the Anaplasma centrale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaplasmaCentrale(
 
     Returns
     -----------------------
-    Instace of AnaplasmaCentrale graph.
+    Instace of Anaplasma centrale graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSpR4.
+This file offers the methods to automatically retrieve the graph Bartonella sp. R4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSpR4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSpR4 graph.
+    """Return new instance of the Bartonella sp. R4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaSpR4(
 
     Returns
     -----------------------
-    Instace of BartonellaSpR4 graph.
+    Instace of Bartonella sp. R4 graph.
 
 	References
 	---------------------

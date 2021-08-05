@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusPrevotiiAcs065vcol13.
+This file offers the methods to automatically retrieve the graph Anaerococcus prevotii ACS065VCol13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusPrevotiiAcs065vcol13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusPrevotiiAcs065vcol13 graph.
+    """Return new instance of the Anaerococcus prevotii ACS065VCol13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusPrevotiiAcs065vcol13(
 
     Returns
     -----------------------
-    Instace of AnaerococcusPrevotiiAcs065vcol13 graph.
+    Instace of Anaerococcus prevotii ACS065VCol13 graph.
 
 	References
 	---------------------

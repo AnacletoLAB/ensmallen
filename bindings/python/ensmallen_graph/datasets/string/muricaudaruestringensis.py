@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuricaudaRuestringensis.
+This file offers the methods to automatically retrieve the graph Muricauda ruestringensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuricaudaRuestringensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuricaudaRuestringensis graph.
+    """Return new instance of the Muricauda ruestringensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MuricaudaRuestringensis(
 
     Returns
     -----------------------
-    Instace of MuricaudaRuestringensis graph.
+    Instace of Muricauda ruestringensis graph.
 
 	References
 	---------------------

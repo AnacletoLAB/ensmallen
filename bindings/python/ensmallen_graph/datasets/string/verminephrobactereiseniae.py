@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerminephrobacterEiseniae.
+This file offers the methods to automatically retrieve the graph Verminephrobacter eiseniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerminephrobacterEiseniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerminephrobacterEiseniae graph.
+    """Return new instance of the Verminephrobacter eiseniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerminephrobacterEiseniae(
 
     Returns
     -----------------------
-    Instace of VerminephrobacterEiseniae graph.
+    Instace of Verminephrobacter eiseniae graph.
 
 	References
 	---------------------

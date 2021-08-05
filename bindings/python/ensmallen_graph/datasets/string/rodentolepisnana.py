@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentolepisNana.
+This file offers the methods to automatically retrieve the graph Rodentolepis nana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentolepisNana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentolepisNana graph.
+    """Return new instance of the Rodentolepis nana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentolepisNana(
 
     Returns
     -----------------------
-    Instace of RodentolepisNana graph.
+    Instace of Rodentolepis nana graph.
 
 	References
 	---------------------

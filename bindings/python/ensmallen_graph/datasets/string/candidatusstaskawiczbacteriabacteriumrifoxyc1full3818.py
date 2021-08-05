@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusStaskawiczbacteriaBacteriumRifoxyc1Full3818.
+This file offers the methods to automatically retrieve the graph Candidatus Staskawiczbacteria bacterium RIFOXYC1_FULL_38_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusStaskawiczbacteriaBacteriumRifoxyc1Full3818(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusStaskawiczbacteriaBacteriumRifoxyc1Full3818 graph.
+    """Return new instance of the Candidatus Staskawiczbacteria bacterium RIFOXYC1_FULL_38_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusStaskawiczbacteriaBacteriumRifoxyc1Full3818(
 
     Returns
     -----------------------
-    Instace of CandidatusStaskawiczbacteriaBacteriumRifoxyc1Full3818 graph.
+    Instace of Candidatus Staskawiczbacteria bacterium RIFOXYC1_FULL_38_18 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanktomarinaTemperata.
+This file offers the methods to automatically retrieve the graph Planktomarina temperata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanktomarinaTemperata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanktomarinaTemperata graph.
+    """Return new instance of the Planktomarina temperata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanktomarinaTemperata(
 
     Returns
     -----------------------
-    Instace of PlanktomarinaTemperata graph.
+    Instace of Planktomarina temperata graph.
 
 	References
 	---------------------

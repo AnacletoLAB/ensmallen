@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IpTrace.
+This file offers the methods to automatically retrieve the graph ip-trace.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def IpTrace(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IpTrace graph.
+    """Return new instance of the ip-trace graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def IpTrace(
 
     Returns
     -----------------------
-    Instace of IpTrace graph.
+    Instace of ip-trace graph.
 
 	References
 	---------------------

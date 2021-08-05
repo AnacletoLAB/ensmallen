@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcusMaripaludisC7.
+This file offers the methods to automatically retrieve the graph Methanococcus maripaludis C7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcusMaripaludisC7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcusMaripaludisC7 graph.
+    """Return new instance of the Methanococcus maripaludis C7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanococcusMaripaludisC7(
 
     Returns
     -----------------------
-    Instace of MethanococcusMaripaludisC7 graph.
+    Instace of Methanococcus maripaludis C7 graph.
 
 	References
 	---------------------

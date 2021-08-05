@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesColuzzii.
+This file offers the methods to automatically retrieve the graph Anopheles coluzzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesColuzzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesColuzzii graph.
+    """Return new instance of the Anopheles coluzzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesColuzzii(
 
     Returns
     -----------------------
-    Instace of AnophelesColuzzii graph.
+    Instace of Anopheles coluzzii graph.
 
 	References
 	---------------------

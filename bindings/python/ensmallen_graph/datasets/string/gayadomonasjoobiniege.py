@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GayadomonasJoobiniege.
+This file offers the methods to automatically retrieve the graph Gayadomonas joobiniege.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GayadomonasJoobiniege(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GayadomonasJoobiniege graph.
+    """Return new instance of the Gayadomonas joobiniege graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GayadomonasJoobiniege(
 
     Returns
     -----------------------
-    Instace of GayadomonasJoobiniege graph.
+    Instace of Gayadomonas joobiniege graph.
 
 	References
 	---------------------

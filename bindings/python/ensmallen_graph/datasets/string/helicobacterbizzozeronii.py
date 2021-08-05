@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterBizzozeronii.
+This file offers the methods to automatically retrieve the graph Helicobacter bizzozeronii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterBizzozeronii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterBizzozeronii graph.
+    """Return new instance of the Helicobacter bizzozeronii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterBizzozeronii(
 
     Returns
     -----------------------
-    Instace of HelicobacterBizzozeronii graph.
+    Instace of Helicobacter bizzozeronii graph.
 
 	References
 	---------------------

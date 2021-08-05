@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterColi76339.
+This file offers the methods to automatically retrieve the graph Campylobacter coli 76339.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterColi76339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterColi76339 graph.
+    """Return new instance of the Campylobacter coli 76339 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterColi76339(
 
     Returns
     -----------------------
-    Instace of CampylobacterColi76339 graph.
+    Instace of Campylobacter coli 76339 graph.
 
 	References
 	---------------------

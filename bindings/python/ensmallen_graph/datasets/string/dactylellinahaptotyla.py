@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DactylellinaHaptotyla.
+This file offers the methods to automatically retrieve the graph Dactylellina haptotyla.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DactylellinaHaptotyla(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DactylellinaHaptotyla graph.
+    """Return new instance of the Dactylellina haptotyla graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DactylellinaHaptotyla(
 
     Returns
     -----------------------
-    Instace of DactylellinaHaptotyla graph.
+    Instace of Dactylellina haptotyla graph.
 
 	References
 	---------------------

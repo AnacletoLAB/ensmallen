@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraArctica.
+This file offers the methods to automatically retrieve the graph Thiomicrospira arctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraArctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraArctica graph.
+    """Return new instance of the Thiomicrospira arctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomicrospiraArctica(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraArctica graph.
+    Instace of Thiomicrospira arctica graph.
 
 	References
 	---------------------

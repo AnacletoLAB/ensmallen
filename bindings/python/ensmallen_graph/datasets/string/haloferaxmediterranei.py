@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferaxMediterranei.
+This file offers the methods to automatically retrieve the graph Haloferax mediterranei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferaxMediterranei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferaxMediterranei graph.
+    """Return new instance of the Haloferax mediterranei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloferaxMediterranei(
 
     Returns
     -----------------------
-    Instace of HaloferaxMediterranei graph.
+    Instace of Haloferax mediterranei graph.
 
 	References
 	---------------------

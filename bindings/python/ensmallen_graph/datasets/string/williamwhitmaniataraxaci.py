@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WilliamwhitmaniaTaraxaci.
+This file offers the methods to automatically retrieve the graph Williamwhitmania taraxaci.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WilliamwhitmaniaTaraxaci(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WilliamwhitmaniaTaraxaci graph.
+    """Return new instance of the Williamwhitmania taraxaci graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WilliamwhitmaniaTaraxaci(
 
     Returns
     -----------------------
-    Instace of WilliamwhitmaniaTaraxaci graph.
+    Instace of Williamwhitmania taraxaci graph.
 
 	References
 	---------------------

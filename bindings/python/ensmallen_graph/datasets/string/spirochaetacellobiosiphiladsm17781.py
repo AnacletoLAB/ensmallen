@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaCellobiosiphilaDsm17781.
+This file offers the methods to automatically retrieve the graph Spirochaeta cellobiosiphila DSM 17781.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaCellobiosiphilaDsm17781(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaCellobiosiphilaDsm17781 graph.
+    """Return new instance of the Spirochaeta cellobiosiphila DSM 17781 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetaCellobiosiphilaDsm17781(
 
     Returns
     -----------------------
-    Instace of SpirochaetaCellobiosiphilaDsm17781 graph.
+    Instace of Spirochaeta cellobiosiphila DSM 17781 graph.
 
 	References
 	---------------------

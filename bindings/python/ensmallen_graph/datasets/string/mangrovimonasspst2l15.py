@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MangrovimonasSpSt2l15.
+This file offers the methods to automatically retrieve the graph Mangrovimonas sp. ST2L15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MangrovimonasSpSt2l15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MangrovimonasSpSt2l15 graph.
+    """Return new instance of the Mangrovimonas sp. ST2L15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MangrovimonasSpSt2l15(
 
     Returns
     -----------------------
-    Instace of MangrovimonasSpSt2l15 graph.
+    Instace of Mangrovimonas sp. ST2L15 graph.
 
 	References
 	---------------------

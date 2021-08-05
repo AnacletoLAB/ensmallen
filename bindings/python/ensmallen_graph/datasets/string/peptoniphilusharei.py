@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusHarei.
+This file offers the methods to automatically retrieve the graph Peptoniphilus harei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusHarei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusHarei graph.
+    """Return new instance of the Peptoniphilus harei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusHarei(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusHarei graph.
+    Instace of Peptoniphilus harei graph.
 
 	References
 	---------------------

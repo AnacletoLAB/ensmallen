@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParamicrosporidiumSaccamoebae.
+This file offers the methods to automatically retrieve the graph Paramicrosporidium saccamoebae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParamicrosporidiumSaccamoebae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParamicrosporidiumSaccamoebae graph.
+    """Return new instance of the Paramicrosporidium saccamoebae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParamicrosporidiumSaccamoebae(
 
     Returns
     -----------------------
-    Instace of ParamicrosporidiumSaccamoebae graph.
+    Instace of Paramicrosporidium saccamoebae graph.
 
 	References
 	---------------------

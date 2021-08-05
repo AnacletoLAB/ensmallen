@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FacklamiaLanguida.
+This file offers the methods to automatically retrieve the graph Facklamia languida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FacklamiaLanguida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FacklamiaLanguida graph.
+    """Return new instance of the Facklamia languida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FacklamiaLanguida(
 
     Returns
     -----------------------
-    Instace of FacklamiaLanguida graph.
+    Instace of Facklamia languida graph.
 
 	References
 	---------------------

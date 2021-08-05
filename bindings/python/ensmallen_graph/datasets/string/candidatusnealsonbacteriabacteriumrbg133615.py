@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNealsonbacteriaBacteriumRbg133615.
+This file offers the methods to automatically retrieve the graph Candidatus Nealsonbacteria bacterium RBG_13_36_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNealsonbacteriaBacteriumRbg133615(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNealsonbacteriaBacteriumRbg133615 graph.
+    """Return new instance of the Candidatus Nealsonbacteria bacterium RBG_13_36_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNealsonbacteriaBacteriumRbg133615(
 
     Returns
     -----------------------
-    Instace of CandidatusNealsonbacteriaBacteriumRbg133615 graph.
+    Instace of Candidatus Nealsonbacteria bacterium RBG_13_36_15 graph.
 
 	References
 	---------------------

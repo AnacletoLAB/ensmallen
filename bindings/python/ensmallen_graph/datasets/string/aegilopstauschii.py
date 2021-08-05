@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AegilopsTauschii.
+This file offers the methods to automatically retrieve the graph Aegilops tauschii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AegilopsTauschii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AegilopsTauschii graph.
+    """Return new instance of the Aegilops tauschii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AegilopsTauschii(
 
     Returns
     -----------------------
-    Instace of AegilopsTauschii graph.
+    Instace of Aegilops tauschii graph.
 
 	References
 	---------------------

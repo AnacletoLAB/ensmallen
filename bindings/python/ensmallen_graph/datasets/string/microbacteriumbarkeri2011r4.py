@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumBarkeri2011R4.
+This file offers the methods to automatically retrieve the graph Microbacterium barkeri 2011-R4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumBarkeri2011R4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumBarkeri2011R4 graph.
+    """Return new instance of the Microbacterium barkeri 2011-R4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumBarkeri2011R4(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumBarkeri2011R4 graph.
+    Instace of Microbacterium barkeri 2011-R4 graph.
 
 	References
 	---------------------

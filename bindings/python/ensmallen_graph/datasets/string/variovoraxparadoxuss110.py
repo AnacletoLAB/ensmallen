@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxParadoxusS110.
+This file offers the methods to automatically retrieve the graph Variovorax paradoxus S110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxParadoxusS110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxParadoxusS110 graph.
+    """Return new instance of the Variovorax paradoxus S110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VariovoraxParadoxusS110(
 
     Returns
     -----------------------
-    Instace of VariovoraxParadoxusS110 graph.
+    Instace of Variovorax paradoxus S110 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaphaeosphaeriaSporulosa.
+This file offers the methods to automatically retrieve the graph Paraphaeosphaeria sporulosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaphaeosphaeriaSporulosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaphaeosphaeriaSporulosa graph.
+    """Return new instance of the Paraphaeosphaeria sporulosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaphaeosphaeriaSporulosa(
 
     Returns
     -----------------------
-    Instace of ParaphaeosphaeriaSporulosa graph.
+    Instace of Paraphaeosphaeria sporulosa graph.
 
 	References
 	---------------------

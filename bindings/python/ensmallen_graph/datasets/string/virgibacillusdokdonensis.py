@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusDokdonensis.
+This file offers the methods to automatically retrieve the graph Virgibacillus dokdonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusDokdonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusDokdonensis graph.
+    """Return new instance of the Virgibacillus dokdonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusDokdonensis(
 
     Returns
     -----------------------
-    Instace of VirgibacillusDokdonensis graph.
+    Instace of Virgibacillus dokdonensis graph.
 
 	References
 	---------------------

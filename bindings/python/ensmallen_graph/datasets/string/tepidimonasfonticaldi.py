@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidimonasFonticaldi.
+This file offers the methods to automatically retrieve the graph Tepidimonas fonticaldi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidimonasFonticaldi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidimonasFonticaldi graph.
+    """Return new instance of the Tepidimonas fonticaldi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TepidimonasFonticaldi(
 
     Returns
     -----------------------
-    Instace of TepidimonasFonticaldi graph.
+    Instace of Tepidimonas fonticaldi graph.
 
 	References
 	---------------------

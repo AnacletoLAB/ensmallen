@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlantibacterSpLeaf314.
+This file offers the methods to automatically retrieve the graph Plantibacter sp. Leaf314.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlantibacterSpLeaf314(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlantibacterSpLeaf314 graph.
+    """Return new instance of the Plantibacter sp. Leaf314 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlantibacterSpLeaf314(
 
     Returns
     -----------------------
-    Instace of PlantibacterSpLeaf314 graph.
+    Instace of Plantibacter sp. Leaf314 graph.
 
 	References
 	---------------------

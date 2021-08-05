@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremococcusColeocolaDsm15696.
+This file offers the methods to automatically retrieve the graph Eremococcus coleocola DSM15696.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremococcusColeocolaDsm15696(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremococcusColeocolaDsm15696 graph.
+    """Return new instance of the Eremococcus coleocola DSM15696 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EremococcusColeocolaDsm15696(
 
     Returns
     -----------------------
-    Instace of EremococcusColeocolaDsm15696 graph.
+    Instace of Eremococcus coleocola DSM15696 graph.
 
 	References
 	---------------------

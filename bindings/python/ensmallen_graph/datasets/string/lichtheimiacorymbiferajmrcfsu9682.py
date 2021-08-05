@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LichtheimiaCorymbiferaJmrcFsu9682.
+This file offers the methods to automatically retrieve the graph Lichtheimia corymbifera JMRC:FSU:9682.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LichtheimiaCorymbiferaJmrcFsu9682(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LichtheimiaCorymbiferaJmrcFsu9682 graph.
+    """Return new instance of the Lichtheimia corymbifera JMRC:FSU:9682 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LichtheimiaCorymbiferaJmrcFsu9682(
 
     Returns
     -----------------------
-    Instace of LichtheimiaCorymbiferaJmrcFsu9682 graph.
+    Instace of Lichtheimia corymbifera JMRC:FSU:9682 graph.
 
 	References
 	---------------------

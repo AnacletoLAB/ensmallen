@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobusSpJdfr22.
+This file offers the methods to automatically retrieve the graph Archaeoglobus sp. JdFR-22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobusSpJdfr22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobusSpJdfr22 graph.
+    """Return new instance of the Archaeoglobus sp. JdFR-22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArchaeoglobusSpJdfr22(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobusSpJdfr22 graph.
+    Instace of Archaeoglobus sp. JdFR-22 graph.
 
 	References
 	---------------------

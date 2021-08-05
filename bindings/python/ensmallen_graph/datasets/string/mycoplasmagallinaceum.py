@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaGallinaceum.
+This file offers the methods to automatically retrieve the graph Mycoplasma gallinaceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaGallinaceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaGallinaceum graph.
+    """Return new instance of the Mycoplasma gallinaceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaGallinaceum(
 
     Returns
     -----------------------
-    Instace of MycoplasmaGallinaceum graph.
+    Instace of Mycoplasma gallinaceum graph.
 
 	References
 	---------------------

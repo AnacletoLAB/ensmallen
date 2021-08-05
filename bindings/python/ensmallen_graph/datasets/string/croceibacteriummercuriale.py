@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CroceibacteriumMercuriale.
+This file offers the methods to automatically retrieve the graph Croceibacterium mercuriale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CroceibacteriumMercuriale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CroceibacteriumMercuriale graph.
+    """Return new instance of the Croceibacterium mercuriale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CroceibacteriumMercuriale(
 
     Returns
     -----------------------
-    Instace of CroceibacteriumMercuriale graph.
+    Instace of Croceibacterium mercuriale graph.
 
 	References
 	---------------------

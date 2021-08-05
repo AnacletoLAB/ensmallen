@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioRumoiensis.
+This file offers the methods to automatically retrieve the graph Vibrio rumoiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioRumoiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioRumoiensis graph.
+    """Return new instance of the Vibrio rumoiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioRumoiensis(
 
     Returns
     -----------------------
-    Instace of VibrioRumoiensis graph.
+    Instace of Vibrio rumoiensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusAlvei.
+This file offers the methods to automatically retrieve the graph Paenibacillus alvei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusAlvei(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusAlvei graph.
+    """Return new instance of the Paenibacillus alvei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusAlvei(
 
     Returns
     -----------------------
-    Instace of PaenibacillusAlvei graph.
+    Instace of Paenibacillus alvei graph.
 
 	References
 	---------------------

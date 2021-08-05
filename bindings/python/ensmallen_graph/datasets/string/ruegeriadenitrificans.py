@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaDenitrificans.
+This file offers the methods to automatically retrieve the graph Ruegeria denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaDenitrificans graph.
+    """Return new instance of the Ruegeria denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaDenitrificans(
 
     Returns
     -----------------------
-    Instace of RuegeriaDenitrificans graph.
+    Instace of Ruegeria denitrificans graph.
 
 	References
 	---------------------

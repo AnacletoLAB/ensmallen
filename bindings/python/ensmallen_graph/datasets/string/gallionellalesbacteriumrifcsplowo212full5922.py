@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallionellalesBacteriumRifcsplowo212Full5922.
+This file offers the methods to automatically retrieve the graph Gallionellales bacterium RIFCSPLOWO2_12_FULL_59_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallionellalesBacteriumRifcsplowo212Full5922(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallionellalesBacteriumRifcsplowo212Full5922 graph.
+    """Return new instance of the Gallionellales bacterium RIFCSPLOWO2_12_FULL_59_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GallionellalesBacteriumRifcsplowo212Full5922(
 
     Returns
     -----------------------
-    Instace of GallionellalesBacteriumRifcsplowo212Full5922 graph.
+    Instace of Gallionellales bacterium RIFCSPLOWO2_12_FULL_59_22 graph.
 
 	References
 	---------------------

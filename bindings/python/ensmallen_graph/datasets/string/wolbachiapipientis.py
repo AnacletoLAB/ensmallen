@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaPipientis.
+This file offers the methods to automatically retrieve the graph Wolbachia pipientis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaPipientis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaPipientis graph.
+    """Return new instance of the Wolbachia pipientis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaPipientis(
 
     Returns
     -----------------------
-    Instace of WolbachiaPipientis graph.
+    Instace of Wolbachia pipientis graph.
 
 	References
 	---------------------

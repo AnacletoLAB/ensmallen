@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorNaganoensisNa10.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor naganoensis NA10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorNaganoensisNa10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorNaganoensisNa10 graph.
+    """Return new instance of the Caldicellulosiruptor naganoensis NA10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldicellulosiruptorNaganoensisNa10(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorNaganoensisNa10 graph.
+    Instace of Caldicellulosiruptor naganoensis NA10 graph.
 
 	References
 	---------------------

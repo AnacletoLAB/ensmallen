@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KinetoplastibacteriumCrithidii.
+This file offers the methods to automatically retrieve the graph Kinetoplastibacterium crithidii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KinetoplastibacteriumCrithidii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KinetoplastibacteriumCrithidii graph.
+    """Return new instance of the Kinetoplastibacterium crithidii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KinetoplastibacteriumCrithidii(
 
     Returns
     -----------------------
-    Instace of KinetoplastibacteriumCrithidii graph.
+    Instace of Kinetoplastibacterium crithidii graph.
 
 	References
 	---------------------

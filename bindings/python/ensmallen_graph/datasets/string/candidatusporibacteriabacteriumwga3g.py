@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPoribacteriaBacteriumWga3g.
+This file offers the methods to automatically retrieve the graph Candidatus Poribacteria bacterium WGA-3G.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPoribacteriaBacteriumWga3g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPoribacteriaBacteriumWga3g graph.
+    """Return new instance of the Candidatus Poribacteria bacterium WGA-3G graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPoribacteriaBacteriumWga3g(
 
     Returns
     -----------------------
-    Instace of CandidatusPoribacteriaBacteriumWga3g graph.
+    Instace of Candidatus Poribacteria bacterium WGA-3G graph.
 
 	References
 	---------------------

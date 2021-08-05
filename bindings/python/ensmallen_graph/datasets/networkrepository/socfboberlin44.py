@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbOberlin44.
+This file offers the methods to automatically retrieve the graph socfb-Oberlin44.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbOberlin44(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbOberlin44 graph.
+    """Return new instance of the socfb-Oberlin44 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbOberlin44(
 
     Returns
     -----------------------
-    Instace of SocfbOberlin44 graph.
+    Instace of socfb-Oberlin44 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaFlava.
+This file offers the methods to automatically retrieve the graph Demequina flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaFlava graph.
+    """Return new instance of the Demequina flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaFlava(
 
     Returns
     -----------------------
-    Instace of DemequinaFlava graph.
+    Instace of Demequina flava graph.
 
 	References
 	---------------------

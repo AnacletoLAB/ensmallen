@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaHaemolyticaBovine.
+This file offers the methods to automatically retrieve the graph Mannheimia haemolytica BOVINE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaHaemolyticaBovine(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaHaemolyticaBovine graph.
+    """Return new instance of the Mannheimia haemolytica BOVINE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MannheimiaHaemolyticaBovine(
 
     Returns
     -----------------------
-    Instace of MannheimiaHaemolyticaBovine graph.
+    Instace of Mannheimia haemolytica BOVINE graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RouxiellaChamberiensis.
+This file offers the methods to automatically retrieve the graph Rouxiella chamberiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RouxiellaChamberiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RouxiellaChamberiensis graph.
+    """Return new instance of the Rouxiella chamberiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RouxiellaChamberiensis(
 
     Returns
     -----------------------
-    Instace of RouxiellaChamberiensis graph.
+    Instace of Rouxiella chamberiensis graph.
 
 	References
 	---------------------

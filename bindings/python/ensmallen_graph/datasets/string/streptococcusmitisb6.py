@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMitisB6.
+This file offers the methods to automatically retrieve the graph Streptococcus mitis B6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMitisB6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMitisB6 graph.
+    """Return new instance of the Streptococcus mitis B6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMitisB6(
 
     Returns
     -----------------------
-    Instace of StreptococcusMitisB6 graph.
+    Instace of Streptococcus mitis B6 graph.
 
 	References
 	---------------------

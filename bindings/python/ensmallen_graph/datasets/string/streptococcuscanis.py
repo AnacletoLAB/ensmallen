@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusCanis.
+This file offers the methods to automatically retrieve the graph Streptococcus canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusCanis graph.
+    """Return new instance of the Streptococcus canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusCanis(
 
     Returns
     -----------------------
-    Instace of StreptococcusCanis graph.
+    Instace of Streptococcus canis graph.
 
 	References
 	---------------------

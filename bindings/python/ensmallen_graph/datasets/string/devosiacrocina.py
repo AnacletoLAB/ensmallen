@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaCrocina.
+This file offers the methods to automatically retrieve the graph Devosia crocina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaCrocina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaCrocina graph.
+    """Return new instance of the Devosia crocina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaCrocina(
 
     Returns
     -----------------------
-    Instace of DevosiaCrocina graph.
+    Instace of Devosia crocina graph.
 
 	References
 	---------------------

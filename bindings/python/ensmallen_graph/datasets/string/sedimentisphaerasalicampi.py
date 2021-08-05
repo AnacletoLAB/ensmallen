@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SedimentisphaeraSalicampi.
+This file offers the methods to automatically retrieve the graph Sedimentisphaera salicampi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SedimentisphaeraSalicampi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SedimentisphaeraSalicampi graph.
+    """Return new instance of the Sedimentisphaera salicampi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SedimentisphaeraSalicampi(
 
     Returns
     -----------------------
-    Instace of SedimentisphaeraSalicampi graph.
+    Instace of Sedimentisphaera salicampi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratiruptorSpSb1552.
+This file offers the methods to automatically retrieve the graph Nitratiruptor sp. SB1552.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratiruptorSpSb1552(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratiruptorSpSb1552 graph.
+    """Return new instance of the Nitratiruptor sp. SB1552 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitratiruptorSpSb1552(
 
     Returns
     -----------------------
-    Instace of NitratiruptorSpSb1552 graph.
+    Instace of Nitratiruptor sp. SB1552 graph.
 
 	References
 	---------------------

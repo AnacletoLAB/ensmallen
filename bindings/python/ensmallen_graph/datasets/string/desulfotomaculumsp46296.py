@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumSp46296.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum sp. 46_296.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumSp46296(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumSp46296 graph.
+    """Return new instance of the Desulfotomaculum sp. 46_296 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfotomaculumSp46296(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumSp46296 graph.
+    Instace of Desulfotomaculum sp. 46_296 graph.
 
 	References
 	---------------------

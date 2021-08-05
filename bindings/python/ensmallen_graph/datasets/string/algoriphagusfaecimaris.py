@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusFaecimaris.
+This file offers the methods to automatically retrieve the graph Algoriphagus faecimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusFaecimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusFaecimaris graph.
+    """Return new instance of the Algoriphagus faecimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusFaecimaris(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusFaecimaris graph.
+    Instace of Algoriphagus faecimaris graph.
 
 	References
 	---------------------

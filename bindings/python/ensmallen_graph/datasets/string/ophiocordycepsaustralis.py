@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OphiocordycepsAustralis.
+This file offers the methods to automatically retrieve the graph Ophiocordyceps australis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OphiocordycepsAustralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OphiocordycepsAustralis graph.
+    """Return new instance of the Ophiocordyceps australis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OphiocordycepsAustralis(
 
     Returns
     -----------------------
-    Instace of OphiocordycepsAustralis graph.
+    Instace of Ophiocordyceps australis graph.
 
 	References
 	---------------------

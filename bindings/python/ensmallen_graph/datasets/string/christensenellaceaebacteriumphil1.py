@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChristensenellaceaeBacteriumPhil1.
+This file offers the methods to automatically retrieve the graph Christensenellaceae bacterium Phil1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChristensenellaceaeBacteriumPhil1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChristensenellaceaeBacteriumPhil1 graph.
+    """Return new instance of the Christensenellaceae bacterium Phil1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChristensenellaceaeBacteriumPhil1(
 
     Returns
     -----------------------
-    Instace of ChristensenellaceaeBacteriumPhil1 graph.
+    Instace of Christensenellaceae bacterium Phil1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WilliamsiaSpLeaf354.
+This file offers the methods to automatically retrieve the graph Williamsia sp. Leaf354.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WilliamsiaSpLeaf354(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WilliamsiaSpLeaf354 graph.
+    """Return new instance of the Williamsia sp. Leaf354 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WilliamsiaSpLeaf354(
 
     Returns
     -----------------------
-    Instace of WilliamsiaSpLeaf354 graph.
+    Instace of Williamsia sp. Leaf354 graph.
 
 	References
 	---------------------

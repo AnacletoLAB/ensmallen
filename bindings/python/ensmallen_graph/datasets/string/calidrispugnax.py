@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalidrisPugnax.
+This file offers the methods to automatically retrieve the graph Calidris pugnax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalidrisPugnax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalidrisPugnax graph.
+    """Return new instance of the Calidris pugnax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CalidrisPugnax(
 
     Returns
     -----------------------
-    Instace of CalidrisPugnax graph.
+    Instace of Calidris pugnax graph.
 
 	References
 	---------------------

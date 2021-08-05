@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterConcisus13826.
+This file offers the methods to automatically retrieve the graph Campylobacter concisus 13826.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterConcisus13826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterConcisus13826 graph.
+    """Return new instance of the Campylobacter concisus 13826 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterConcisus13826(
 
     Returns
     -----------------------
-    Instace of CampylobacterConcisus13826 graph.
+    Instace of Campylobacter concisus 13826 graph.
 
 	References
 	---------------------

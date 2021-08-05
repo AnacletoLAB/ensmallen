@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaGroupBacteriumRifcsplowo212Full4010.
+This file offers the methods to automatically retrieve the graph Parcubacteria group bacterium RIFCSPLOWO2_12_FULL_40_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaGroupBacteriumRifcsplowo212Full4010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaGroupBacteriumRifcsplowo212Full4010 graph.
+    """Return new instance of the Parcubacteria group bacterium RIFCSPLOWO2_12_FULL_40_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaGroupBacteriumRifcsplowo212Full4010(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaGroupBacteriumRifcsplowo212Full4010 graph.
+    Instace of Parcubacteria group bacterium RIFCSPLOWO2_12_FULL_40_10 graph.
 
 	References
 	---------------------

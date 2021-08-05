@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FriedmanniellaSagamiharensis.
+This file offers the methods to automatically retrieve the graph Friedmanniella sagamiharensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FriedmanniellaSagamiharensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FriedmanniellaSagamiharensis graph.
+    """Return new instance of the Friedmanniella sagamiharensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FriedmanniellaSagamiharensis(
 
     Returns
     -----------------------
-    Instace of FriedmanniellaSagamiharensis graph.
+    Instace of Friedmanniella sagamiharensis graph.
 
 	References
 	---------------------

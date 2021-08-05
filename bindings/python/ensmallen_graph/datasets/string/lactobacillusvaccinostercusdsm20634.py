@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusVaccinostercusDsm20634.
+This file offers the methods to automatically retrieve the graph Lactobacillus vaccinostercus DSM 20634.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusVaccinostercusDsm20634(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusVaccinostercusDsm20634 graph.
+    """Return new instance of the Lactobacillus vaccinostercus DSM 20634 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusVaccinostercusDsm20634(
 
     Returns
     -----------------------
-    Instace of LactobacillusVaccinostercusDsm20634 graph.
+    Instace of Lactobacillus vaccinostercus DSM 20634 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaCibaria.
+This file offers the methods to automatically retrieve the graph Weissella cibaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaCibaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaCibaria graph.
+    """Return new instance of the Weissella cibaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaCibaria(
 
     Returns
     -----------------------
-    Instace of WeissellaCibaria graph.
+    Instace of Weissella cibaria graph.
 
 	References
 	---------------------

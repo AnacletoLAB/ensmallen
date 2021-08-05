@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChoanephoraCucurbitarum.
+This file offers the methods to automatically retrieve the graph Choanephora cucurbitarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChoanephoraCucurbitarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChoanephoraCucurbitarum graph.
+    """Return new instance of the Choanephora cucurbitarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChoanephoraCucurbitarum(
 
     Returns
     -----------------------
-    Instace of ChoanephoraCucurbitarum graph.
+    Instace of Choanephora cucurbitarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenovibrioSpMa26.
+This file offers the methods to automatically retrieve the graph Hydrogenovibrio sp. MA2-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenovibrioSpMa26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenovibrioSpMa26 graph.
+    """Return new instance of the Hydrogenovibrio sp. MA2-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenovibrioSpMa26(
 
     Returns
     -----------------------
-    Instace of HydrogenovibrioSpMa26 graph.
+    Instace of Hydrogenovibrio sp. MA2-6 graph.
 
 	References
 	---------------------

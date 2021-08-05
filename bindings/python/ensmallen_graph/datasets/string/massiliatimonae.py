@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaTimonae.
+This file offers the methods to automatically retrieve the graph Massilia timonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaTimonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaTimonae graph.
+    """Return new instance of the Massilia timonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MassiliaTimonae(
 
     Returns
     -----------------------
-    Instace of MassiliaTimonae graph.
+    Instace of Massilia timonae graph.
 
 	References
 	---------------------

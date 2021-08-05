@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioCyclitrophicus.
+This file offers the methods to automatically retrieve the graph Vibrio cyclitrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioCyclitrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioCyclitrophicus graph.
+    """Return new instance of the Vibrio cyclitrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioCyclitrophicus(
 
     Returns
     -----------------------
-    Instace of VibrioCyclitrophicus graph.
+    Instace of Vibrio cyclitrophicus graph.
 
 	References
 	---------------------

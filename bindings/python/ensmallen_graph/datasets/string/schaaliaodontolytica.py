@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchaaliaOdontolytica.
+This file offers the methods to automatically retrieve the graph Schaalia odontolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchaaliaOdontolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchaaliaOdontolytica graph.
+    """Return new instance of the Schaalia odontolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchaaliaOdontolytica(
 
     Returns
     -----------------------
-    Instace of SchaaliaOdontolytica graph.
+    Instace of Schaalia odontolytica graph.
 
 	References
 	---------------------

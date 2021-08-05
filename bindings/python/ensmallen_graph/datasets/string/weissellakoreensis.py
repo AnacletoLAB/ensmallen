@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaKoreensis.
+This file offers the methods to automatically retrieve the graph Weissella koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaKoreensis graph.
+    """Return new instance of the Weissella koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaKoreensis(
 
     Returns
     -----------------------
-    Instace of WeissellaKoreensis graph.
+    Instace of Weissella koreensis graph.
 
 	References
 	---------------------

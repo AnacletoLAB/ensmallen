@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinarimonasRosea.
+This file offers the methods to automatically retrieve the graph Salinarimonas rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinarimonasRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinarimonasRosea graph.
+    """Return new instance of the Salinarimonas rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinarimonasRosea(
 
     Returns
     -----------------------
-    Instace of SalinarimonasRosea graph.
+    Instace of Salinarimonas rosea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSpLpb0142.
+This file offers the methods to automatically retrieve the graph Rhodobacter sp. LPB0142.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSpLpb0142(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSpLpb0142 graph.
+    """Return new instance of the Rhodobacter sp. LPB0142 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacterSpLpb0142(
 
     Returns
     -----------------------
-    Instace of RhodobacterSpLpb0142 graph.
+    Instace of Rhodobacter sp. LPB0142 graph.
 
 	References
 	---------------------

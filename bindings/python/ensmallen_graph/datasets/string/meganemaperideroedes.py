@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeganemaPerideroedes.
+This file offers the methods to automatically retrieve the graph Meganema perideroedes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeganemaPerideroedes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeganemaPerideroedes graph.
+    """Return new instance of the Meganema perideroedes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeganemaPerideroedes(
 
     Returns
     -----------------------
-    Instace of MeganemaPerideroedes graph.
+    Instace of Meganema perideroedes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAdlerbacteriaBacteriumRifcsphigho202Full5217.
+This file offers the methods to automatically retrieve the graph Candidatus Adlerbacteria bacterium RIFCSPHIGHO2_02_FULL_52_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAdlerbacteriaBacteriumRifcsphigho202Full5217(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAdlerbacteriaBacteriumRifcsphigho202Full5217 graph.
+    """Return new instance of the Candidatus Adlerbacteria bacterium RIFCSPHIGHO2_02_FULL_52_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAdlerbacteriaBacteriumRifcsphigho202Full5217(
 
     Returns
     -----------------------
-    Instace of CandidatusAdlerbacteriaBacteriumRifcsphigho202Full5217 graph.
+    Instace of Candidatus Adlerbacteria bacterium RIFCSPHIGHO2_02_FULL_52_17 graph.
 
 	References
 	---------------------

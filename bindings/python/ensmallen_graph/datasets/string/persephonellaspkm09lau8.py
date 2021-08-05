@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PersephonellaSpKm09lau8.
+This file offers the methods to automatically retrieve the graph Persephonella sp. KM09Lau8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PersephonellaSpKm09lau8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PersephonellaSpKm09lau8 graph.
+    """Return new instance of the Persephonella sp. KM09Lau8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PersephonellaSpKm09lau8(
 
     Returns
     -----------------------
-    Instace of PersephonellaSpKm09lau8 graph.
+    Instace of Persephonella sp. KM09Lau8 graph.
 
 	References
 	---------------------

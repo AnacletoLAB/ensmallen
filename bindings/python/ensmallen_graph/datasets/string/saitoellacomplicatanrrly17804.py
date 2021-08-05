@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaitoellaComplicataNrrlY17804.
+This file offers the methods to automatically retrieve the graph Saitoella complicata NRRL Y-17804.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaitoellaComplicataNrrlY17804(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaitoellaComplicataNrrlY17804 graph.
+    """Return new instance of the Saitoella complicata NRRL Y-17804 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaitoellaComplicataNrrlY17804(
 
     Returns
     -----------------------
-    Instace of SaitoellaComplicataNrrlY17804 graph.
+    Instace of Saitoella complicata NRRL Y-17804 graph.
 
 	References
 	---------------------

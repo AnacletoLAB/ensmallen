@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroserpensBurtonensis.
+This file offers the methods to automatically retrieve the graph Psychroserpens burtonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroserpensBurtonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroserpensBurtonensis graph.
+    """Return new instance of the Psychroserpens burtonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychroserpensBurtonensis(
 
     Returns
     -----------------------
-    Instace of PsychroserpensBurtonensis graph.
+    Instace of Psychroserpens burtonensis graph.
 
 	References
 	---------------------

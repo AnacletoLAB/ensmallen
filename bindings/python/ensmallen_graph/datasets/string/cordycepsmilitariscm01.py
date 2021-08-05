@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CordycepsMilitarisCm01.
+This file offers the methods to automatically retrieve the graph Cordyceps militaris CM01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CordycepsMilitarisCm01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CordycepsMilitarisCm01 graph.
+    """Return new instance of the Cordyceps militaris CM01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CordycepsMilitarisCm01(
 
     Returns
     -----------------------
-    Instace of CordycepsMilitarisCm01 graph.
+    Instace of Cordyceps militaris CM01 graph.
 
 	References
 	---------------------

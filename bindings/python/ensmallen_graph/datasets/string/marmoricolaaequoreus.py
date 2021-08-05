@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarmoricolaAequoreus.
+This file offers the methods to automatically retrieve the graph Marmoricola aequoreus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarmoricolaAequoreus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarmoricolaAequoreus graph.
+    """Return new instance of the Marmoricola aequoreus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarmoricolaAequoreus(
 
     Returns
     -----------------------
-    Instace of MarmoricolaAequoreus graph.
+    Instace of Marmoricola aequoreus graph.
 
 	References
 	---------------------

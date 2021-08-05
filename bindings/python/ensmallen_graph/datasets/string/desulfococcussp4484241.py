@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfococcusSp4484241.
+This file offers the methods to automatically retrieve the graph Desulfococcus sp. 4484_241.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfococcusSp4484241(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfococcusSp4484241 graph.
+    """Return new instance of the Desulfococcus sp. 4484_241 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfococcusSp4484241(
 
     Returns
     -----------------------
-    Instace of DesulfococcusSp4484241 graph.
+    Instace of Desulfococcus sp. 4484_241 graph.
 
 	References
 	---------------------

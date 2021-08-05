@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaSpW121067.
+This file offers the methods to automatically retrieve the graph Francisella sp. W121067.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaSpW121067(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaSpW121067 graph.
+    """Return new instance of the Francisella sp. W121067 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaSpW121067(
 
     Returns
     -----------------------
-    Instace of FrancisellaSpW121067 graph.
+    Instace of Francisella sp. W121067 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesVirginiae.
+This file offers the methods to automatically retrieve the graph Streptomyces virginiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesVirginiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesVirginiae graph.
+    """Return new instance of the Streptomyces virginiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesVirginiae(
 
     Returns
     -----------------------
-    Instace of StreptomycesVirginiae graph.
+    Instace of Streptomyces virginiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodoferaxSaidenbachensis.
+This file offers the methods to automatically retrieve the graph Rhodoferax saidenbachensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodoferaxSaidenbachensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodoferaxSaidenbachensis graph.
+    """Return new instance of the Rhodoferax saidenbachensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodoferaxSaidenbachensis(
 
     Returns
     -----------------------
-    Instace of RhodoferaxSaidenbachensis graph.
+    Instace of Rhodoferax saidenbachensis graph.
 
 	References
 	---------------------

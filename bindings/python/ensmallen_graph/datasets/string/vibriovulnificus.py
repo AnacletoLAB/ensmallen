@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioVulnificus.
+This file offers the methods to automatically retrieve the graph Vibrio vulnificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioVulnificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioVulnificus graph.
+    """Return new instance of the Vibrio vulnificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioVulnificus(
 
     Returns
     -----------------------
-    Instace of VibrioVulnificus graph.
+    Instace of Vibrio vulnificus graph.
 
 	References
 	---------------------

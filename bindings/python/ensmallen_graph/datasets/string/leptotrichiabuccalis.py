@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaBuccalis.
+This file offers the methods to automatically retrieve the graph Leptotrichia buccalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaBuccalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaBuccalis graph.
+    """Return new instance of the Leptotrichia buccalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaBuccalis(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaBuccalis graph.
+    Instace of Leptotrichia buccalis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptunomonasJaponica.
+This file offers the methods to automatically retrieve the graph Neptunomonas japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptunomonasJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptunomonasJaponica graph.
+    """Return new instance of the Neptunomonas japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeptunomonasJaponica(
 
     Returns
     -----------------------
-    Instace of NeptunomonasJaponica graph.
+    Instace of Neptunomonas japonica graph.
 
 	References
 	---------------------

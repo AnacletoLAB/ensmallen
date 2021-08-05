@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMarisflavi.
+This file offers the methods to automatically retrieve the graph Bacillus marisflavi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMarisflavi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMarisflavi graph.
+    """Return new instance of the Bacillus marisflavi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMarisflavi(
 
     Returns
     -----------------------
-    Instace of BacillusMarisflavi graph.
+    Instace of Bacillus marisflavi graph.
 
 	References
 	---------------------

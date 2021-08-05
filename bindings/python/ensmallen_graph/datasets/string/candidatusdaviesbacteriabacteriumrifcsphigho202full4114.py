@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDaviesbacteriaBacteriumRifcsphigho202Full4114.
+This file offers the methods to automatically retrieve the graph Candidatus Daviesbacteria bacterium RIFCSPHIGHO2_02_FULL_41_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDaviesbacteriaBacteriumRifcsphigho202Full4114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDaviesbacteriaBacteriumRifcsphigho202Full4114 graph.
+    """Return new instance of the Candidatus Daviesbacteria bacterium RIFCSPHIGHO2_02_FULL_41_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDaviesbacteriaBacteriumRifcsphigho202Full4114(
 
     Returns
     -----------------------
-    Instace of CandidatusDaviesbacteriaBacteriumRifcsphigho202Full4114 graph.
+    Instace of Candidatus Daviesbacteria bacterium RIFCSPHIGHO2_02_FULL_41_14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesBouchesdurhonensis.
+This file offers the methods to automatically retrieve the graph Actinomyces bouchesdurhonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesBouchesdurhonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesBouchesdurhonensis graph.
+    """Return new instance of the Actinomyces bouchesdurhonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesBouchesdurhonensis(
 
     Returns
     -----------------------
-    Instace of ActinomycesBouchesdurhonensis graph.
+    Instace of Actinomyces bouchesdurhonensis graph.
 
 	References
 	---------------------

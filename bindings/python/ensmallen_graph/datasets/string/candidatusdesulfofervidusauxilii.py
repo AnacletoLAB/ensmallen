@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDesulfofervidusAuxilii.
+This file offers the methods to automatically retrieve the graph Candidatus Desulfofervidus auxilii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDesulfofervidusAuxilii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDesulfofervidusAuxilii graph.
+    """Return new instance of the Candidatus Desulfofervidus auxilii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDesulfofervidusAuxilii(
 
     Returns
     -----------------------
-    Instace of CandidatusDesulfofervidusAuxilii graph.
+    Instace of Candidatus Desulfofervidus auxilii graph.
 
 	References
 	---------------------

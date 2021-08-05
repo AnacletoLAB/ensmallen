@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumLitorale.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium litorale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumLitorale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumLitorale graph.
+    """Return new instance of the Mycolicibacterium litorale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumLitorale(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumLitorale graph.
+    Instace of Mycolicibacterium litorale graph.
 
 	References
 	---------------------

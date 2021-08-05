@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusFastidiosusNbrc101226.
+This file offers the methods to automatically retrieve the graph Bacillus fastidiosus NBRC 101226.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusFastidiosusNbrc101226(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusFastidiosusNbrc101226 graph.
+    """Return new instance of the Bacillus fastidiosus NBRC 101226 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusFastidiosusNbrc101226(
 
     Returns
     -----------------------
-    Instace of BacillusFastidiosusNbrc101226 graph.
+    Instace of Bacillus fastidiosus NBRC 101226 graph.
 
 	References
 	---------------------

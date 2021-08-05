@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisOryzaeAtcc44560.
+This file offers the methods to automatically retrieve the graph Bipolaris oryzae ATCC 44560.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisOryzaeAtcc44560(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisOryzaeAtcc44560 graph.
+    """Return new instance of the Bipolaris oryzae ATCC 44560 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BipolarisOryzaeAtcc44560(
 
     Returns
     -----------------------
-    Instace of BipolarisOryzaeAtcc44560 graph.
+    Instace of Bipolaris oryzae ATCC 44560 graph.
 
 	References
 	---------------------

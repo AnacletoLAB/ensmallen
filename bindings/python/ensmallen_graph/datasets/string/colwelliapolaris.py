@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaPolaris.
+This file offers the methods to automatically retrieve the graph Colwellia polaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaPolaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaPolaris graph.
+    """Return new instance of the Colwellia polaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaPolaris(
 
     Returns
     -----------------------
-    Instace of ColwelliaPolaris graph.
+    Instace of Colwellia polaris graph.
 
 	References
 	---------------------

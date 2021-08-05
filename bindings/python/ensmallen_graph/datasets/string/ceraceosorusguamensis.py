@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeraceosorusGuamensis.
+This file offers the methods to automatically retrieve the graph Ceraceosorus guamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeraceosorusGuamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeraceosorusGuamensis graph.
+    """Return new instance of the Ceraceosorus guamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeraceosorusGuamensis(
 
     Returns
     -----------------------
-    Instace of CeraceosorusGuamensis graph.
+    Instace of Ceraceosorus guamensis graph.
 
 	References
 	---------------------

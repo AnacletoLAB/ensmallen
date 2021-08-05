@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAurantiacusDsm18675.
+This file offers the methods to automatically retrieve the graph Bacillus aurantiacus DSM 18675.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAurantiacusDsm18675(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAurantiacusDsm18675 graph.
+    """Return new instance of the Bacillus aurantiacus DSM 18675 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAurantiacusDsm18675(
 
     Returns
     -----------------------
-    Instace of BacillusAurantiacusDsm18675 graph.
+    Instace of Bacillus aurantiacus DSM 18675 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioFibrisolvensDsm3071.
+This file offers the methods to automatically retrieve the graph Butyrivibrio fibrisolvens DSM 3071.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioFibrisolvensDsm3071(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioFibrisolvensDsm3071 graph.
+    """Return new instance of the Butyrivibrio fibrisolvens DSM 3071 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioFibrisolvensDsm3071(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioFibrisolvensDsm3071 graph.
+    Instace of Butyrivibrio fibrisolvens DSM 3071 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymobacterPalmaeDsm10491.
+This file offers the methods to automatically retrieve the graph Zymobacter palmae DSM 10491.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymobacterPalmaeDsm10491(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymobacterPalmaeDsm10491 graph.
+    """Return new instance of the Zymobacter palmae DSM 10491 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZymobacterPalmaeDsm10491(
 
     Returns
     -----------------------
-    Instace of ZymobacterPalmaeDsm10491 graph.
+    Instace of Zymobacter palmae DSM 10491 graph.
 
 	References
 	---------------------

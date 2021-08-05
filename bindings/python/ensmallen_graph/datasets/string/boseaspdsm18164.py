@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpDsm18164.
+This file offers the methods to automatically retrieve the graph Bosea sp. DSM 18164.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpDsm18164(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpDsm18164 graph.
+    """Return new instance of the Bosea sp. DSM 18164 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpDsm18164(
 
     Returns
     -----------------------
-    Instace of BoseaSpDsm18164 graph.
+    Instace of Bosea sp. DSM 18164 graph.
 
 	References
 	---------------------

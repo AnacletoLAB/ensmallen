@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpTnd4ek4.
+This file offers the methods to automatically retrieve the graph Bosea sp. TND4EK4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpTnd4ek4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpTnd4ek4 graph.
+    """Return new instance of the Bosea sp. TND4EK4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpTnd4ek4(
 
     Returns
     -----------------------
-    Instace of BoseaSpTnd4ek4 graph.
+    Instace of Bosea sp. TND4EK4 graph.
 
 	References
 	---------------------

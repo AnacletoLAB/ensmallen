@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcusVoltae.
+This file offers the methods to automatically retrieve the graph Methanococcus voltae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcusVoltae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcusVoltae graph.
+    """Return new instance of the Methanococcus voltae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanococcusVoltae(
 
     Returns
     -----------------------
-    Instace of MethanococcusVoltae graph.
+    Instace of Methanococcus voltae graph.
 
 	References
 	---------------------

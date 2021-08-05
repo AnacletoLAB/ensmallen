@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusElongatusPcc6301.
+This file offers the methods to automatically retrieve the graph Synechococcus elongatus PCC6301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusElongatusPcc6301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusElongatusPcc6301 graph.
+    """Return new instance of the Synechococcus elongatus PCC6301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusElongatusPcc6301(
 
     Returns
     -----------------------
-    Instace of SynechococcusElongatusPcc6301 graph.
+    Instace of Synechococcus elongatus PCC6301 graph.
 
 	References
 	---------------------

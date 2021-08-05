@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLehensis.
+This file offers the methods to automatically retrieve the graph Bacillus lehensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLehensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLehensis graph.
+    """Return new instance of the Bacillus lehensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusLehensis(
 
     Returns
     -----------------------
-    Instace of BacillusLehensis graph.
+    Instace of Bacillus lehensis graph.
 
 	References
 	---------------------

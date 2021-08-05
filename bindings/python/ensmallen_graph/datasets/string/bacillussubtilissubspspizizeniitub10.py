@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSubtilisSubspSpizizeniiTuB10.
+This file offers the methods to automatically retrieve the graph Bacillus subtilis subsp. spizizenii TU-B-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSubtilisSubspSpizizeniiTuB10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSubtilisSubspSpizizeniiTuB10 graph.
+    """Return new instance of the Bacillus subtilis subsp. spizizenii TU-B-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSubtilisSubspSpizizeniiTuB10(
 
     Returns
     -----------------------
-    Instace of BacillusSubtilisSubspSpizizeniiTuB10 graph.
+    Instace of Bacillus subtilis subsp. spizizenii TU-B-10 graph.
 
 	References
 	---------------------

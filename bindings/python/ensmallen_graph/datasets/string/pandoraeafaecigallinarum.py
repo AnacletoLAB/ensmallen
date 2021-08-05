@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaFaecigallinarum.
+This file offers the methods to automatically retrieve the graph Pandoraea faecigallinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaFaecigallinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaFaecigallinarum graph.
+    """Return new instance of the Pandoraea faecigallinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaFaecigallinarum(
 
     Returns
     -----------------------
-    Instace of PandoraeaFaecigallinarum graph.
+    Instace of Pandoraea faecigallinarum graph.
 
 	References
 	---------------------

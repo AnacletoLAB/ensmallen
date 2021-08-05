@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumYsb2008.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium YSB2008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumYsb2008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumYsb2008 graph.
+    """Return new instance of the Lachnospiraceae bacterium YSB2008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumYsb2008(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumYsb2008 graph.
+    Instace of Lachnospiraceae bacterium YSB2008 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumTumefaciensCcnwgs0286.
+This file offers the methods to automatically retrieve the graph Agrobacterium tumefaciens CCNWGS0286.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumTumefaciensCcnwgs0286(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumTumefaciensCcnwgs0286 graph.
+    """Return new instance of the Agrobacterium tumefaciens CCNWGS0286 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumTumefaciensCcnwgs0286(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumTumefaciensCcnwgs0286 graph.
+    Instace of Agrobacterium tumefaciens CCNWGS0286 graph.
 
 	References
 	---------------------

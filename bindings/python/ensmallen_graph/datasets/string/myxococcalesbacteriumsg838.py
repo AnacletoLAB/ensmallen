@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyxococcalesBacteriumSg838.
+This file offers the methods to automatically retrieve the graph Myxococcales bacterium SG8_38.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyxococcalesBacteriumSg838(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyxococcalesBacteriumSg838 graph.
+    """Return new instance of the Myxococcales bacterium SG8_38 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MyxococcalesBacteriumSg838(
 
     Returns
     -----------------------
-    Instace of MyxococcalesBacteriumSg838 graph.
+    Instace of Myxococcales bacterium SG8_38 graph.
 
 	References
 	---------------------

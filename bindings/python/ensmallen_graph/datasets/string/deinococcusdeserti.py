@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusDeserti.
+This file offers the methods to automatically retrieve the graph Deinococcus deserti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusDeserti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusDeserti graph.
+    """Return new instance of the Deinococcus deserti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusDeserti(
 
     Returns
     -----------------------
-    Instace of DeinococcusDeserti graph.
+    Instace of Deinococcus deserti graph.
 
 	References
 	---------------------

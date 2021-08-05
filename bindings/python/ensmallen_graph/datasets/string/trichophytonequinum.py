@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichophytonEquinum.
+This file offers the methods to automatically retrieve the graph Trichophyton equinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichophytonEquinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichophytonEquinum graph.
+    """Return new instance of the Trichophyton equinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichophytonEquinum(
 
     Returns
     -----------------------
-    Instace of TrichophytonEquinum graph.
+    Instace of Trichophyton equinum graph.
 
 	References
 	---------------------

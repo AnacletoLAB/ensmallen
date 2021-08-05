@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParastagonosporaNodorum.
+This file offers the methods to automatically retrieve the graph Parastagonospora nodorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParastagonosporaNodorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParastagonosporaNodorum graph.
+    """Return new instance of the Parastagonospora nodorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParastagonosporaNodorum(
 
     Returns
     -----------------------
-    Instace of ParastagonosporaNodorum graph.
+    Instace of Parastagonospora nodorum graph.
 
 	References
 	---------------------

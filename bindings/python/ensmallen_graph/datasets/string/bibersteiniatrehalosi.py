@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BibersteiniaTrehalosi.
+This file offers the methods to automatically retrieve the graph Bibersteinia trehalosi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BibersteiniaTrehalosi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BibersteiniaTrehalosi graph.
+    """Return new instance of the Bibersteinia trehalosi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BibersteiniaTrehalosi(
 
     Returns
     -----------------------
-    Instace of BibersteiniaTrehalosi graph.
+    Instace of Bibersteinia trehalosi graph.
 
 	References
 	---------------------

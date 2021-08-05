@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynergistesJonesii.
+This file offers the methods to automatically retrieve the graph Synergistes jonesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynergistesJonesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynergistesJonesii graph.
+    """Return new instance of the Synergistes jonesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynergistesJonesii(
 
     Returns
     -----------------------
-    Instace of SynergistesJonesii graph.
+    Instace of Synergistes jonesii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolysporaErythraea.
+This file offers the methods to automatically retrieve the graph Actinopolyspora erythraea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolysporaErythraea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolysporaErythraea graph.
+    """Return new instance of the Actinopolyspora erythraea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinopolysporaErythraea(
 
     Returns
     -----------------------
-    Instace of ActinopolysporaErythraea graph.
+    Instace of Actinopolyspora erythraea graph.
 
 	References
 	---------------------

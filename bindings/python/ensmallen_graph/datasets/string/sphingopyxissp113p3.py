@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSp113p3.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. 113P3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSp113p3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSp113p3 graph.
+    """Return new instance of the Sphingopyxis sp. 113P3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSp113p3(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSp113p3 graph.
+    Instace of Sphingopyxis sp. 113P3 graph.
 
 	References
 	---------------------

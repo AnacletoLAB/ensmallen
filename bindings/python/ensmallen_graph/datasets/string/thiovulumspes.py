@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiovulumSpEs.
+This file offers the methods to automatically retrieve the graph Thiovulum sp. ES.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiovulumSpEs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiovulumSpEs graph.
+    """Return new instance of the Thiovulum sp. ES graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiovulumSpEs(
 
     Returns
     -----------------------
-    Instace of ThiovulumSpEs graph.
+    Instace of Thiovulum sp. ES graph.
 
 	References
 	---------------------

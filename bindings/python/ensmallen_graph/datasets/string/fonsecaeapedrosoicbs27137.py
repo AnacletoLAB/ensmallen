@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FonsecaeaPedrosoiCbs27137.
+This file offers the methods to automatically retrieve the graph Fonsecaea pedrosoi CBS 271.37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FonsecaeaPedrosoiCbs27137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FonsecaeaPedrosoiCbs27137 graph.
+    """Return new instance of the Fonsecaea pedrosoi CBS 271.37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FonsecaeaPedrosoiCbs27137(
 
     Returns
     -----------------------
-    Instace of FonsecaeaPedrosoiCbs27137 graph.
+    Instace of Fonsecaea pedrosoi CBS 271.37 graph.
 
 	References
 	---------------------

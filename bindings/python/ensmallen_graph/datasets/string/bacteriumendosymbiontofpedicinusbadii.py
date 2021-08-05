@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumEndosymbiontOfPedicinusBadii.
+This file offers the methods to automatically retrieve the graph bacterium endosymbiont of Pedicinus badii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumEndosymbiontOfPedicinusBadii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumEndosymbiontOfPedicinusBadii graph.
+    """Return new instance of the bacterium endosymbiont of Pedicinus badii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumEndosymbiontOfPedicinusBadii(
 
     Returns
     -----------------------
-    Instace of BacteriumEndosymbiontOfPedicinusBadii graph.
+    Instace of bacterium endosymbiont of Pedicinus badii graph.
 
 	References
 	---------------------

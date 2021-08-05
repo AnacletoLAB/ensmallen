@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusNaphthalenovorans.
+This file offers the methods to automatically retrieve the graph Paenibacillus naphthalenovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusNaphthalenovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusNaphthalenovorans graph.
+    """Return new instance of the Paenibacillus naphthalenovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusNaphthalenovorans(
 
     Returns
     -----------------------
-    Instace of PaenibacillusNaphthalenovorans graph.
+    Instace of Paenibacillus naphthalenovorans graph.
 
 	References
 	---------------------

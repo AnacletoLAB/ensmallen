@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumOxidoreducens.
+This file offers the methods to automatically retrieve the graph Eubacterium oxidoreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumOxidoreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumOxidoreducens graph.
+    """Return new instance of the Eubacterium oxidoreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumOxidoreducens(
 
     Returns
     -----------------------
-    Instace of EubacteriumOxidoreducens graph.
+    Instace of Eubacterium oxidoreducens graph.
 
 	References
 	---------------------

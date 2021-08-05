@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosospiraMultiformis.
+This file offers the methods to automatically retrieve the graph Nitrosospira multiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosospiraMultiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosospiraMultiformis graph.
+    """Return new instance of the Nitrosospira multiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosospiraMultiformis(
 
     Returns
     -----------------------
-    Instace of NitrosospiraMultiformis graph.
+    Instace of Nitrosospira multiformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpK31.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. K31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSpK31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpK31 graph.
+    """Return new instance of the Caulobacter sp. K31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterSpK31(
 
     Returns
     -----------------------
-    Instace of CaulobacterSpK31 graph.
+    Instace of Caulobacter sp. K31 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraMultiparaLb2003.
+This file offers the methods to automatically retrieve the graph Lachnospira multipara LB2003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraMultiparaLb2003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraMultiparaLb2003 graph.
+    """Return new instance of the Lachnospira multipara LB2003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraMultiparaLb2003(
 
     Returns
     -----------------------
-    Instace of LachnospiraMultiparaLb2003 graph.
+    Instace of Lachnospira multipara LB2003 graph.
 
 	References
 	---------------------

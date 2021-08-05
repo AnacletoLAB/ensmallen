@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplodiaCorticola.
+This file offers the methods to automatically retrieve the graph Diplodia corticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiplodiaCorticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplodiaCorticola graph.
+    """Return new instance of the Diplodia corticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiplodiaCorticola(
 
     Returns
     -----------------------
-    Instace of DiplodiaCorticola graph.
+    Instace of Diplodia corticola graph.
 
 	References
 	---------------------

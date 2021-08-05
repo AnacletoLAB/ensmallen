@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesAtroparvus.
+This file offers the methods to automatically retrieve the graph Anopheles atroparvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesAtroparvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesAtroparvus graph.
+    """Return new instance of the Anopheles atroparvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesAtroparvus(
 
     Returns
     -----------------------
-    Instace of AnophelesAtroparvus graph.
+    Instace of Anopheles atroparvus graph.
 
 	References
 	---------------------

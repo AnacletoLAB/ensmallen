@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasCupida.
+This file offers the methods to automatically retrieve the graph Halomonas cupida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasCupida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasCupida graph.
+    """Return new instance of the Halomonas cupida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasCupida(
 
     Returns
     -----------------------
-    Instace of HalomonasCupida graph.
+    Instace of Halomonas cupida graph.
 
 	References
 	---------------------

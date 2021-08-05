@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NasoniaVitripennis.
+This file offers the methods to automatically retrieve the graph Nasonia vitripennis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NasoniaVitripennis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NasoniaVitripennis graph.
+    """Return new instance of the Nasonia vitripennis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NasoniaVitripennis(
 
     Returns
     -----------------------
-    Instace of NasoniaVitripennis graph.
+    Instace of Nasonia vitripennis graph.
 
 	References
 	---------------------

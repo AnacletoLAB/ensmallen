@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusHitonicola.
+This file offers the methods to automatically retrieve the graph Algoriphagus hitonicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusHitonicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusHitonicola graph.
+    """Return new instance of the Algoriphagus hitonicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusHitonicola(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusHitonicola graph.
+    Instace of Algoriphagus hitonicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumAbikonenseNbrc16140.
+This file offers the methods to automatically retrieve the graph Sphingobium abikonense NBRC 16140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumAbikonenseNbrc16140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumAbikonenseNbrc16140 graph.
+    """Return new instance of the Sphingobium abikonense NBRC 16140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumAbikonenseNbrc16140(
 
     Returns
     -----------------------
-    Instace of SphingobiumAbikonenseNbrc16140 graph.
+    Instace of Sphingobium abikonense NBRC 16140 graph.
 
 	References
 	---------------------

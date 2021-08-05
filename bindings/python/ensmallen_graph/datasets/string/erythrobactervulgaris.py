@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterVulgaris.
+This file offers the methods to automatically retrieve the graph Erythrobacter vulgaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterVulgaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterVulgaris graph.
+    """Return new instance of the Erythrobacter vulgaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErythrobacterVulgaris(
 
     Returns
     -----------------------
-    Instace of ErythrobacterVulgaris graph.
+    Instace of Erythrobacter vulgaris graph.
 
 	References
 	---------------------

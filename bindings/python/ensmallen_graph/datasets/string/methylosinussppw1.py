@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylosinusSpPw1.
+This file offers the methods to automatically retrieve the graph Methylosinus sp. PW1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylosinusSpPw1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylosinusSpPw1 graph.
+    """Return new instance of the Methylosinus sp. PW1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylosinusSpPw1(
 
     Returns
     -----------------------
-    Instace of MethylosinusSpPw1 graph.
+    Instace of Methylosinus sp. PW1 graph.
 
 	References
 	---------------------

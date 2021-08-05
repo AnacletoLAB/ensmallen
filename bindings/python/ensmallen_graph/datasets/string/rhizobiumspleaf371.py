@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpLeaf371.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. Leaf371.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpLeaf371(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpLeaf371 graph.
+    """Return new instance of the Rhizobium sp. Leaf371 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpLeaf371(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpLeaf371 graph.
+    Instace of Rhizobium sp. Leaf371 graph.
 
 	References
 	---------------------

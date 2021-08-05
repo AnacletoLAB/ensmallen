@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfovibrioAggregans.
+This file offers the methods to automatically retrieve the graph Thermodesulfovibrio aggregans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfovibrioAggregans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfovibrioAggregans graph.
+    """Return new instance of the Thermodesulfovibrio aggregans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermodesulfovibrioAggregans(
 
     Returns
     -----------------------
-    Instace of ThermodesulfovibrioAggregans graph.
+    Instace of Thermodesulfovibrio aggregans graph.
 
 	References
 	---------------------

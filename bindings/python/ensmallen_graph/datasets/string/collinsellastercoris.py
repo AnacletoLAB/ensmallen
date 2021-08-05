@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaStercoris.
+This file offers the methods to automatically retrieve the graph Collinsella stercoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaStercoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaStercoris graph.
+    """Return new instance of the Collinsella stercoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CollinsellaStercoris(
 
     Returns
     -----------------------
-    Instace of CollinsellaStercoris graph.
+    Instace of Collinsella stercoris graph.
 
 	References
 	---------------------

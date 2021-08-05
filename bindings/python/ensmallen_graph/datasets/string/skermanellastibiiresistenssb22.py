@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SkermanellaStibiiresistensSb22.
+This file offers the methods to automatically retrieve the graph Skermanella stibiiresistens SB22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SkermanellaStibiiresistensSb22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SkermanellaStibiiresistensSb22 graph.
+    """Return new instance of the Skermanella stibiiresistens SB22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SkermanellaStibiiresistensSb22(
 
     Returns
     -----------------------
-    Instace of SkermanellaStibiiresistensSb22 graph.
+    Instace of Skermanella stibiiresistens SB22 graph.
 
 	References
 	---------------------

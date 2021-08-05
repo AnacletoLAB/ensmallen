@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Coater2.
+This file offers the methods to automatically retrieve the graph coater2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Coater2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Coater2 graph.
+    """Return new instance of the coater2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Coater2(
 
     Returns
     -----------------------
-    Instace of Coater2 graph.
+    Instace of coater2 graph.
 
 	References
 	---------------------

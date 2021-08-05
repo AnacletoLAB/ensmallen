@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporomusaAcidovorans.
+This file offers the methods to automatically retrieve the graph Sporomusa acidovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporomusaAcidovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporomusaAcidovorans graph.
+    """Return new instance of the Sporomusa acidovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporomusaAcidovorans(
 
     Returns
     -----------------------
-    Instace of SporomusaAcidovorans graph.
+    Instace of Sporomusa acidovorans graph.
 
 	References
 	---------------------

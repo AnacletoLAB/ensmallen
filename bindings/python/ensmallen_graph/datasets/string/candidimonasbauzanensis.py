@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidimonasBauzanensis.
+This file offers the methods to automatically retrieve the graph Candidimonas bauzanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidimonasBauzanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidimonasBauzanensis graph.
+    """Return new instance of the Candidimonas bauzanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidimonasBauzanensis(
 
     Returns
     -----------------------
-    Instace of CandidimonasBauzanensis graph.
+    Instace of Candidimonas bauzanensis graph.
 
 	References
 	---------------------

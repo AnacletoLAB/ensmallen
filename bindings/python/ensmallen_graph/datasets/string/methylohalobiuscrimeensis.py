@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylohalobiusCrimeensis.
+This file offers the methods to automatically retrieve the graph Methylohalobius crimeensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylohalobiusCrimeensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylohalobiusCrimeensis graph.
+    """Return new instance of the Methylohalobius crimeensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylohalobiusCrimeensis(
 
     Returns
     -----------------------
-    Instace of MethylohalobiusCrimeensis graph.
+    Instace of Methylohalobius crimeensis graph.
 
 	References
 	---------------------

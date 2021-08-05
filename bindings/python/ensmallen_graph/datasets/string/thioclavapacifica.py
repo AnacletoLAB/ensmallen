@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioclavaPacifica.
+This file offers the methods to automatically retrieve the graph Thioclava pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioclavaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioclavaPacifica graph.
+    """Return new instance of the Thioclava pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioclavaPacifica(
 
     Returns
     -----------------------
-    Instace of ThioclavaPacifica graph.
+    Instace of Thioclava pacifica graph.
 
 	References
 	---------------------

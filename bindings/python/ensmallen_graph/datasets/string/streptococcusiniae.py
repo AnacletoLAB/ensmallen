@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusIniae.
+This file offers the methods to automatically retrieve the graph Streptococcus iniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusIniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusIniae graph.
+    """Return new instance of the Streptococcus iniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusIniae(
 
     Returns
     -----------------------
-    Instace of StreptococcusIniae graph.
+    Instace of Streptococcus iniae graph.
 
 	References
 	---------------------

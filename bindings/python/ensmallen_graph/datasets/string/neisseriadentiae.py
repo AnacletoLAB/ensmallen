@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaDentiae.
+This file offers the methods to automatically retrieve the graph Neisseria dentiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaDentiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaDentiae graph.
+    """Return new instance of the Neisseria dentiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaDentiae(
 
     Returns
     -----------------------
-    Instace of NeisseriaDentiae graph.
+    Instace of Neisseria dentiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerriglobusSaanensis.
+This file offers the methods to automatically retrieve the graph Terriglobus saanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerriglobusSaanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerriglobusSaanensis graph.
+    """Return new instance of the Terriglobus saanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TerriglobusSaanensis(
 
     Returns
     -----------------------
-    Instace of TerriglobusSaanensis graph.
+    Instace of Terriglobus saanensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythruraGouldiae.
+This file offers the methods to automatically retrieve the graph Erythrura gouldiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythruraGouldiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythruraGouldiae graph.
+    """Return new instance of the Erythrura gouldiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythruraGouldiae(
 
     Returns
     -----------------------
-    Instace of ErythruraGouldiae graph.
+    Instace of Erythrura gouldiae graph.
 
 	References
 	---------------------

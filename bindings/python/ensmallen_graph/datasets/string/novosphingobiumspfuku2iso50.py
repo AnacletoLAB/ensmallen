@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSpFuku2Iso50.
+This file offers the methods to automatically retrieve the graph Novosphingobium sp. Fuku2-ISO-50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSpFuku2Iso50(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSpFuku2Iso50 graph.
+    """Return new instance of the Novosphingobium sp. Fuku2-ISO-50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSpFuku2Iso50(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSpFuku2Iso50 graph.
+    Instace of Novosphingobium sp. Fuku2-ISO-50 graph.
 
 	References
 	---------------------

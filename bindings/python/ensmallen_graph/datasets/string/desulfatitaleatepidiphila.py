@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatitaleaTepidiphila.
+This file offers the methods to automatically retrieve the graph Desulfatitalea tepidiphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatitaleaTepidiphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatitaleaTepidiphila graph.
+    """Return new instance of the Desulfatitalea tepidiphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfatitaleaTepidiphila(
 
     Returns
     -----------------------
-    Instace of DesulfatitaleaTepidiphila graph.
+    Instace of Desulfatitalea tepidiphila graph.
 
 	References
 	---------------------

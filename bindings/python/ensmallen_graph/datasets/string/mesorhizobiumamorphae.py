@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumAmorphae.
+This file offers the methods to automatically retrieve the graph Mesorhizobium amorphae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumAmorphae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumAmorphae graph.
+    """Return new instance of the Mesorhizobium amorphae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumAmorphae(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumAmorphae graph.
+    Instace of Mesorhizobium amorphae graph.
 
 	References
 	---------------------

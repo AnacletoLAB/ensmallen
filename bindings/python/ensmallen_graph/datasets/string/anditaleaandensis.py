@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnditaleaAndensis.
+This file offers the methods to automatically retrieve the graph Anditalea andensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnditaleaAndensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnditaleaAndensis graph.
+    """Return new instance of the Anditalea andensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnditaleaAndensis(
 
     Returns
     -----------------------
-    Instace of AnditaleaAndensis graph.
+    Instace of Anditalea andensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HumibacterAlbus.
+This file offers the methods to automatically retrieve the graph Humibacter albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HumibacterAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HumibacterAlbus graph.
+    """Return new instance of the Humibacter albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HumibacterAlbus(
 
     Returns
     -----------------------
-    Instace of HumibacterAlbus graph.
+    Instace of Humibacter albus graph.
 
 	References
 	---------------------

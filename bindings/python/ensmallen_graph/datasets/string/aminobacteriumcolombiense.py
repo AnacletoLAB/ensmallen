@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AminobacteriumColombiense.
+This file offers the methods to automatically retrieve the graph Aminobacterium colombiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AminobacteriumColombiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AminobacteriumColombiense graph.
+    """Return new instance of the Aminobacterium colombiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AminobacteriumColombiense(
 
     Returns
     -----------------------
-    Instace of AminobacteriumColombiense graph.
+    Instace of Aminobacterium colombiense graph.
 
 	References
 	---------------------

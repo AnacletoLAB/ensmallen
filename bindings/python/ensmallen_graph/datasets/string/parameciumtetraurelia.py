@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParameciumTetraurelia.
+This file offers the methods to automatically retrieve the graph Paramecium tetraurelia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParameciumTetraurelia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParameciumTetraurelia graph.
+    """Return new instance of the Paramecium tetraurelia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParameciumTetraurelia(
 
     Returns
     -----------------------
-    Instace of ParameciumTetraurelia graph.
+    Instace of Paramecium tetraurelia graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioHydrothermalis.
+This file offers the methods to automatically retrieve the graph Desulfovibrio hydrothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioHydrothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioHydrothermalis graph.
+    """Return new instance of the Desulfovibrio hydrothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioHydrothermalis(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioHydrothermalis graph.
+    Instace of Desulfovibrio hydrothermalis graph.
 
 	References
 	---------------------

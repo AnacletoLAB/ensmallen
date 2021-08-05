@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpRd62.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. RD6.2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpRd62(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpRd62 graph.
+    """Return new instance of the Rhodococcus sp. RD6.2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusSpRd62(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpRd62 graph.
+    Instace of Rhodococcus sp. RD6.2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YoutubeGroupmemberships.
+This file offers the methods to automatically retrieve the graph youtube-groupmemberships.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def YoutubeGroupmemberships(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YoutubeGroupmemberships graph.
+    """Return new instance of the youtube-groupmemberships graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def YoutubeGroupmemberships(
 
     Returns
     -----------------------
-    Instace of YoutubeGroupmemberships graph.
+    Instace of youtube-groupmemberships graph.
 
 	References
 	---------------------

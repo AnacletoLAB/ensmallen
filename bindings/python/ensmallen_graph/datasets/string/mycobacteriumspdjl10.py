@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpDjl10.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. djl-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpDjl10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpDjl10 graph.
+    """Return new instance of the Mycobacterium sp. djl-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpDjl10(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpDjl10 graph.
+    Instace of Mycobacterium sp. djl-10 graph.
 
 	References
 	---------------------

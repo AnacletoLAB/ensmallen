@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumGanghwense.
+This file offers the methods to automatically retrieve the graph Photobacterium ganghwense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumGanghwense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumGanghwense graph.
+    """Return new instance of the Photobacterium ganghwense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumGanghwense(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumGanghwense graph.
+    Instace of Photobacterium ganghwense graph.
 
 	References
 	---------------------

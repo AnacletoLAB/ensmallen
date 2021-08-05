@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrapisisporaBlattaeCbs6284.
+This file offers the methods to automatically retrieve the graph Tetrapisispora blattae CBS 6284.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrapisisporaBlattaeCbs6284(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrapisisporaBlattaeCbs6284 graph.
+    """Return new instance of the Tetrapisispora blattae CBS 6284 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrapisisporaBlattaeCbs6284(
 
     Returns
     -----------------------
-    Instace of TetrapisisporaBlattaeCbs6284 graph.
+    Instace of Tetrapisispora blattae CBS 6284 graph.
 
 	References
 	---------------------

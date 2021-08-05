@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusBarophilus.
+This file offers the methods to automatically retrieve the graph Thermococcus barophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusBarophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusBarophilus graph.
+    """Return new instance of the Thermococcus barophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusBarophilus(
 
     Returns
     -----------------------
-    Instace of ThermococcusBarophilus graph.
+    Instace of Thermococcus barophilus graph.
 
 	References
 	---------------------

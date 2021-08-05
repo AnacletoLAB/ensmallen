@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterCryaerophilus.
+This file offers the methods to automatically retrieve the graph Arcobacter cryaerophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterCryaerophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterCryaerophilus graph.
+    """Return new instance of the Arcobacter cryaerophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcobacterCryaerophilus(
 
     Returns
     -----------------------
-    Instace of ArcobacterCryaerophilus graph.
+    Instace of Arcobacter cryaerophilus graph.
 
 	References
 	---------------------

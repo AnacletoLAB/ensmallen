@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGeothermarchaeotaArchaeonJdfr13.
+This file offers the methods to automatically retrieve the graph Candidatus Geothermarchaeota archaeon JdFR-13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGeothermarchaeotaArchaeonJdfr13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGeothermarchaeotaArchaeonJdfr13 graph.
+    """Return new instance of the Candidatus Geothermarchaeota archaeon JdFR-13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGeothermarchaeotaArchaeonJdfr13(
 
     Returns
     -----------------------
-    Instace of CandidatusGeothermarchaeotaArchaeonJdfr13 graph.
+    Instace of Candidatus Geothermarchaeota archaeon JdFR-13 graph.
 
 	References
 	---------------------

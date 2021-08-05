@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusHalodurans.
+This file offers the methods to automatically retrieve the graph Salinicoccus halodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusHalodurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusHalodurans graph.
+    """Return new instance of the Salinicoccus halodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusHalodurans(
 
     Returns
     -----------------------
-    Instace of SalinicoccusHalodurans graph.
+    Instace of Salinicoccus halodurans graph.
 
 	References
 	---------------------

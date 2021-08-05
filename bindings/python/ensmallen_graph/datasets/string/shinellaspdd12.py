@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShinellaSpDd12.
+This file offers the methods to automatically retrieve the graph Shinella sp. DD12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShinellaSpDd12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShinellaSpDd12 graph.
+    """Return new instance of the Shinella sp. DD12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShinellaSpDd12(
 
     Returns
     -----------------------
-    Instace of ShinellaSpDd12 graph.
+    Instace of Shinella sp. DD12 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpFf12.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. FF12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpFf12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpFf12 graph.
+    """Return new instance of the Chryseobacterium sp. FF12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpFf12(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpFf12 graph.
+    Instace of Chryseobacterium sp. FF12 graph.
 
 	References
 	---------------------

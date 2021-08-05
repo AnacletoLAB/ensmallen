@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KushneriaSpYcwa18.
+This file offers the methods to automatically retrieve the graph Kushneria sp. YCWA18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KushneriaSpYcwa18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KushneriaSpYcwa18 graph.
+    """Return new instance of the Kushneria sp. YCWA18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KushneriaSpYcwa18(
 
     Returns
     -----------------------
-    Instace of KushneriaSpYcwa18 graph.
+    Instace of Kushneria sp. YCWA18 graph.
 
 	References
 	---------------------

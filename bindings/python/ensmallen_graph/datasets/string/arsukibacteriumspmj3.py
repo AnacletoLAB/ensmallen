@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArsukibacteriumSpMj3.
+This file offers the methods to automatically retrieve the graph Arsukibacterium sp. MJ3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArsukibacteriumSpMj3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArsukibacteriumSpMj3 graph.
+    """Return new instance of the Arsukibacterium sp. MJ3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArsukibacteriumSpMj3(
 
     Returns
     -----------------------
-    Instace of ArsukibacteriumSpMj3 graph.
+    Instace of Arsukibacterium sp. MJ3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesFragilisYch46.
+This file offers the methods to automatically retrieve the graph Bacteroides fragilis YCH46.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesFragilisYch46(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesFragilisYch46 graph.
+    """Return new instance of the Bacteroides fragilis YCH46 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesFragilisYch46(
 
     Returns
     -----------------------
-    Instace of BacteroidesFragilisYch46 graph.
+    Instace of Bacteroides fragilis YCH46 graph.
 
 	References
 	---------------------

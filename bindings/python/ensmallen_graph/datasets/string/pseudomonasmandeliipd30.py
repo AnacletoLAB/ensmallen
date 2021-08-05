@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMandeliiPd30.
+This file offers the methods to automatically retrieve the graph Pseudomonas mandelii PD30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMandeliiPd30(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMandeliiPd30 graph.
+    """Return new instance of the Pseudomonas mandelii PD30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasMandeliiPd30(
 
     Returns
     -----------------------
-    Instace of PseudomonasMandeliiPd30 graph.
+    Instace of Pseudomonas mandelii PD30 graph.
 
 	References
 	---------------------

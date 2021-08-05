@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesExfoliatus.
+This file offers the methods to automatically retrieve the graph Streptomyces exfoliatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesExfoliatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesExfoliatus graph.
+    """Return new instance of the Streptomyces exfoliatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesExfoliatus(
 
     Returns
     -----------------------
-    Instace of StreptomycesExfoliatus graph.
+    Instace of Streptomyces exfoliatus graph.
 
 	References
 	---------------------

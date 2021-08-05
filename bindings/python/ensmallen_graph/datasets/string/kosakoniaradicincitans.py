@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KosakoniaRadicincitans.
+This file offers the methods to automatically retrieve the graph Kosakonia radicincitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KosakoniaRadicincitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KosakoniaRadicincitans graph.
+    """Return new instance of the Kosakonia radicincitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KosakoniaRadicincitans(
 
     Returns
     -----------------------
-    Instace of KosakoniaRadicincitans graph.
+    Instace of Kosakonia radicincitans graph.
 
 	References
 	---------------------

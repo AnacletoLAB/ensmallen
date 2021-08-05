@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusTibetensis.
+This file offers the methods to automatically retrieve the graph Paracoccus tibetensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusTibetensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusTibetensis graph.
+    """Return new instance of the Paracoccus tibetensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusTibetensis(
 
     Returns
     -----------------------
-    Instace of ParacoccusTibetensis graph.
+    Instace of Paracoccus tibetensis graph.
 
 	References
 	---------------------

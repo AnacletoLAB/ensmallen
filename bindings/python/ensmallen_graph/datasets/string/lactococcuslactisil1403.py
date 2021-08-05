@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusLactisIl1403.
+This file offers the methods to automatically retrieve the graph Lactococcus lactis Il1403.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusLactisIl1403(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusLactisIl1403 graph.
+    """Return new instance of the Lactococcus lactis Il1403 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactococcusLactisIl1403(
 
     Returns
     -----------------------
-    Instace of LactococcusLactisIl1403 graph.
+    Instace of Lactococcus lactis Il1403 graph.
 
 	References
 	---------------------

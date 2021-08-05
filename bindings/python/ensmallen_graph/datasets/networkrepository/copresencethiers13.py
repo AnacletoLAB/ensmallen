@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceThiers13.
+This file offers the methods to automatically retrieve the graph copresence-Thiers13.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceThiers13(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceThiers13 graph.
+    """Return new instance of the copresence-Thiers13 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceThiers13(
 
     Returns
     -----------------------
-    Instace of CopresenceThiers13 graph.
+    Instace of copresence-Thiers13 graph.
 
 	References
 	---------------------

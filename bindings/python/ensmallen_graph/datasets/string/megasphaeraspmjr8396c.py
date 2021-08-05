@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraSpMjr8396c.
+This file offers the methods to automatically retrieve the graph Megasphaera sp. MJR8396C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraSpMjr8396c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraSpMjr8396c graph.
+    """Return new instance of the Megasphaera sp. MJR8396C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MegasphaeraSpMjr8396c(
 
     Returns
     -----------------------
-    Instace of MegasphaeraSpMjr8396c graph.
+    Instace of Megasphaera sp. MJR8396C graph.
 
 	References
 	---------------------

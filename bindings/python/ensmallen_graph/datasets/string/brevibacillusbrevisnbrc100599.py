@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusBrevisNbrc100599.
+This file offers the methods to automatically retrieve the graph Brevibacillus brevis NBRC100599.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusBrevisNbrc100599(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusBrevisNbrc100599 graph.
+    """Return new instance of the Brevibacillus brevis NBRC100599 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacillusBrevisNbrc100599(
 
     Returns
     -----------------------
-    Instace of BrevibacillusBrevisNbrc100599 graph.
+    Instace of Brevibacillus brevis NBRC100599 graph.
 
 	References
 	---------------------

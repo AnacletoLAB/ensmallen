@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrycteropusAfer.
+This file offers the methods to automatically retrieve the graph Orycteropus afer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrycteropusAfer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrycteropusAfer graph.
+    """Return new instance of the Orycteropus afer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OrycteropusAfer(
 
     Returns
     -----------------------
-    Instace of OrycteropusAfer graph.
+    Instace of Orycteropus afer graph.
 
 	References
 	---------------------

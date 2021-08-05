@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacteraceaeBacteriumCg1023614.
+This file offers the methods to automatically retrieve the graph Helicobacteraceae bacterium CG1_02_36_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacteraceaeBacteriumCg1023614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacteraceaeBacteriumCg1023614 graph.
+    """Return new instance of the Helicobacteraceae bacterium CG1_02_36_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacteraceaeBacteriumCg1023614(
 
     Returns
     -----------------------
-    Instace of HelicobacteraceaeBacteriumCg1023614 graph.
+    Instace of Helicobacteraceae bacterium CG1_02_36_14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechP2p.
+This file offers the methods to automatically retrieve the graph tech-p2p.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def TechP2p(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechP2p graph.
+    """Return new instance of the tech-p2p graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def TechP2p(
 
     Returns
     -----------------------
-    Instace of TechP2p graph.
+    Instace of tech-p2p graph.
 
 	References
 	---------------------

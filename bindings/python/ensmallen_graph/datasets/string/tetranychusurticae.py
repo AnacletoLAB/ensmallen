@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetranychusUrticae.
+This file offers the methods to automatically retrieve the graph Tetranychus urticae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetranychusUrticae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetranychusUrticae graph.
+    """Return new instance of the Tetranychus urticae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TetranychusUrticae(
 
     Returns
     -----------------------
-    Instace of TetranychusUrticae graph.
+    Instace of Tetranychus urticae graph.
 
 	References
 	---------------------

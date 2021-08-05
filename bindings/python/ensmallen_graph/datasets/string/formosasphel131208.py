@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormosaSpHel131208.
+This file offers the methods to automatically retrieve the graph Formosa sp. Hel1_31_208.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormosaSpHel131208(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormosaSpHel131208 graph.
+    """Return new instance of the Formosa sp. Hel1_31_208 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FormosaSpHel131208(
 
     Returns
     -----------------------
-    Instace of FormosaSpHel131208 graph.
+    Instace of Formosa sp. Hel1_31_208 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaOxytoca.
+This file offers the methods to automatically retrieve the graph Klebsiella oxytoca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaOxytoca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaOxytoca graph.
+    """Return new instance of the Klebsiella oxytoca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KlebsiellaOxytoca(
 
     Returns
     -----------------------
-    Instace of KlebsiellaOxytoca graph.
+    Instace of Klebsiella oxytoca graph.
 
 	References
 	---------------------

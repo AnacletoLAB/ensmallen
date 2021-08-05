@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaHalophytica.
+This file offers the methods to automatically retrieve the graph Micromonospora halophytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaHalophytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaHalophytica graph.
+    """Return new instance of the Micromonospora halophytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaHalophytica(
 
     Returns
     -----------------------
-    Instace of MicromonosporaHalophytica graph.
+    Instace of Micromonospora halophytica graph.
 
 	References
 	---------------------

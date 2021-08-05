@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusLacustrisStrTous.
+This file offers the methods to automatically retrieve the graph Synechococcus lacustris str. Tous.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusLacustrisStrTous(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusLacustrisStrTous graph.
+    """Return new instance of the Synechococcus lacustris str. Tous graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynechococcusLacustrisStrTous(
 
     Returns
     -----------------------
-    Instace of SynechococcusLacustrisStrTous graph.
+    Instace of Synechococcus lacustris str. Tous graph.
 
 	References
 	---------------------

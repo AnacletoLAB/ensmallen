@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EsoxLucius.
+This file offers the methods to automatically retrieve the graph Esox lucius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EsoxLucius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EsoxLucius graph.
+    """Return new instance of the Esox lucius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EsoxLucius(
 
     Returns
     -----------------------
-    Instace of EsoxLucius graph.
+    Instace of Esox lucius graph.
 
 	References
 	---------------------

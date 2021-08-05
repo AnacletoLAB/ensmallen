@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioCaribbeanicus.
+This file offers the methods to automatically retrieve the graph Vibrio caribbeanicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioCaribbeanicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioCaribbeanicus graph.
+    """Return new instance of the Vibrio caribbeanicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioCaribbeanicus(
 
     Returns
     -----------------------
-    Instace of VibrioCaribbeanicus graph.
+    Instace of Vibrio caribbeanicus graph.
 
 	References
 	---------------------

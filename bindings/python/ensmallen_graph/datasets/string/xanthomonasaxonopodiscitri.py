@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasAxonopodisCitri.
+This file offers the methods to automatically retrieve the graph Xanthomonas axonopodis citri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasAxonopodisCitri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasAxonopodisCitri graph.
+    """Return new instance of the Xanthomonas axonopodis citri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasAxonopodisCitri(
 
     Returns
     -----------------------
-    Instace of XanthomonasAxonopodisCitri graph.
+    Instace of Xanthomonas axonopodis citri graph.
 
 	References
 	---------------------

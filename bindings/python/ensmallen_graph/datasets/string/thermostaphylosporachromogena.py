@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermostaphylosporaChromogena.
+This file offers the methods to automatically retrieve the graph Thermostaphylospora chromogena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermostaphylosporaChromogena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermostaphylosporaChromogena graph.
+    """Return new instance of the Thermostaphylospora chromogena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermostaphylosporaChromogena(
 
     Returns
     -----------------------
-    Instace of ThermostaphylosporaChromogena graph.
+    Instace of Thermostaphylospora chromogena graph.
 
 	References
 	---------------------

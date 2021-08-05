@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaSprentiaeWsm5005.
+This file offers the methods to automatically retrieve the graph Paraburkholderia sprentiae WSM5005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaSprentiaeWsm5005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaSprentiaeWsm5005 graph.
+    """Return new instance of the Paraburkholderia sprentiae WSM5005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaSprentiaeWsm5005(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaSprentiaeWsm5005 graph.
+    Instace of Paraburkholderia sprentiae WSM5005 graph.
 
 	References
 	---------------------

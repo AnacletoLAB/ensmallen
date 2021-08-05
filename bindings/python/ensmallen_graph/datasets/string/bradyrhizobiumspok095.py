@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpOk095.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. OK095.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpOk095(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpOk095 graph.
+    """Return new instance of the Bradyrhizobium sp. OK095 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumSpOk095(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpOk095 graph.
+    Instace of Bradyrhizobium sp. OK095 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcanobacteriumUrinimassiliense.
+This file offers the methods to automatically retrieve the graph Arcanobacterium urinimassiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcanobacteriumUrinimassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcanobacteriumUrinimassiliense graph.
+    """Return new instance of the Arcanobacterium urinimassiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcanobacteriumUrinimassiliense(
 
     Returns
     -----------------------
-    Instace of ArcanobacteriumUrinimassiliense graph.
+    Instace of Arcanobacterium urinimassiliense graph.
 
 	References
 	---------------------

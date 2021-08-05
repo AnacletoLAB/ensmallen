@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterDuraquae.
+This file offers the methods to automatically retrieve the graph Polynucleobacter duraquae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterDuraquae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterDuraquae graph.
+    """Return new instance of the Polynucleobacter duraquae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterDuraquae(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterDuraquae graph.
+    Instace of Polynucleobacter duraquae graph.
 
 	References
 	---------------------

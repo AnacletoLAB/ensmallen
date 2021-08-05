@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerfeziaBoudieriAtccMya4762.
+This file offers the methods to automatically retrieve the graph Terfezia boudieri ATCC MYA-4762.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerfeziaBoudieriAtccMya4762(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerfeziaBoudieriAtccMya4762 graph.
+    """Return new instance of the Terfezia boudieri ATCC MYA-4762 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerfeziaBoudieriAtccMya4762(
 
     Returns
     -----------------------
-    Instace of TerfeziaBoudieriAtccMya4762 graph.
+    Instace of Terfezia boudieri ATCC MYA-4762 graph.
 
 	References
 	---------------------

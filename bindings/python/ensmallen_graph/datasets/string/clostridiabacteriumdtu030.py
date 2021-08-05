@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaBacteriumDtu030.
+This file offers the methods to automatically retrieve the graph Clostridia bacterium DTU030.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaBacteriumDtu030(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaBacteriumDtu030 graph.
+    """Return new instance of the Clostridia bacterium DTU030 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiaBacteriumDtu030(
 
     Returns
     -----------------------
-    Instace of ClostridiaBacteriumDtu030 graph.
+    Instace of Clostridia bacterium DTU030 graph.
 
 	References
 	---------------------

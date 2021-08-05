@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSharpeaeJcm1186Dsm20505.
+This file offers the methods to automatically retrieve the graph Lactobacillus sharpeae JCM 1186 DSM 20505.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSharpeaeJcm1186Dsm20505(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSharpeaeJcm1186Dsm20505 graph.
+    """Return new instance of the Lactobacillus sharpeae JCM 1186 DSM 20505 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSharpeaeJcm1186Dsm20505(
 
     Returns
     -----------------------
-    Instace of LactobacillusSharpeaeJcm1186Dsm20505 graph.
+    Instace of Lactobacillus sharpeae JCM 1186 DSM 20505 graph.
 
 	References
 	---------------------

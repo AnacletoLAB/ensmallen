@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MorchellaConicaCcbas932.
+This file offers the methods to automatically retrieve the graph Morchella conica CCBAS932.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MorchellaConicaCcbas932(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MorchellaConicaCcbas932 graph.
+    """Return new instance of the Morchella conica CCBAS932 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MorchellaConicaCcbas932(
 
     Returns
     -----------------------
-    Instace of MorchellaConicaCcbas932 graph.
+    Instace of Morchella conica CCBAS932 graph.
 
 	References
 	---------------------

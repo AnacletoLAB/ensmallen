@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpNbimcp2c3.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. NBIMCP2C3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpNbimcp2c3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpNbimcp2c3 graph.
+    """Return new instance of the Mesorhizobium sp. NBIMCP2C3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumSpNbimcp2c3(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpNbimcp2c3 graph.
+    Instace of Mesorhizobium sp. NBIMCP2C3 graph.
 
 	References
 	---------------------

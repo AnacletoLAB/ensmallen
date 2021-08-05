@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasDenitrificansDsm6059.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas denitrificans DSM 6059.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasDenitrificansDsm6059(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasDenitrificansDsm6059 graph.
+    """Return new instance of the Pseudoalteromonas denitrificans DSM 6059 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasDenitrificansDsm6059(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasDenitrificansDsm6059 graph.
+    Instace of Pseudoalteromonas denitrificans DSM 6059 graph.
 
 	References
 	---------------------

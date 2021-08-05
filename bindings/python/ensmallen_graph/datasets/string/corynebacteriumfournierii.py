@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumFournierii.
+This file offers the methods to automatically retrieve the graph Corynebacterium fournierii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumFournierii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumFournierii graph.
+    """Return new instance of the Corynebacterium fournierii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumFournierii(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumFournierii graph.
+    Instace of Corynebacterium fournierii graph.
 
 	References
 	---------------------

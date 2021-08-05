@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaGranulosus.
+This file offers the methods to automatically retrieve the graph Oceanicola granulosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaGranulosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaGranulosus graph.
+    """Return new instance of the Oceanicola granulosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicolaGranulosus(
 
     Returns
     -----------------------
-    Instace of OceanicolaGranulosus graph.
+    Instace of Oceanicola granulosus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusMarinusCcmp1375.
+This file offers the methods to automatically retrieve the graph Prochlorococcus marinus CCMP1375.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusMarinusCcmp1375(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusMarinusCcmp1375 graph.
+    """Return new instance of the Prochlorococcus marinus CCMP1375 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProchlorococcusMarinusCcmp1375(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusMarinusCcmp1375 graph.
+    Instace of Prochlorococcus marinus CCMP1375 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumLp2a.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium LP2A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumLp2a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumLp2a graph.
+    """Return new instance of the Verrucomicrobia bacterium LP2A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerrucomicrobiaBacteriumLp2a(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumLp2a graph.
+    Instace of Verrucomicrobia bacterium LP2A graph.
 
 	References
 	---------------------

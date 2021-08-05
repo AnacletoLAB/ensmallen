@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSpCag472.
+This file offers the methods to automatically retrieve the graph Mycoplasma sp. CAG:472.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSpCag472(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSpCag472 graph.
+    """Return new instance of the Mycoplasma sp. CAG:472 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaSpCag472(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSpCag472 graph.
+    Instace of Mycoplasma sp. CAG:472 graph.
 
 	References
 	---------------------

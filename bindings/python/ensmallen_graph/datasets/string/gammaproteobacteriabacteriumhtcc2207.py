@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumHtcc2207.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium HTCC2207.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumHtcc2207(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumHtcc2207 graph.
+    """Return new instance of the Gammaproteobacteria bacterium HTCC2207 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumHtcc2207(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumHtcc2207 graph.
+    Instace of Gammaproteobacteria bacterium HTCC2207 graph.
 
 	References
 	---------------------

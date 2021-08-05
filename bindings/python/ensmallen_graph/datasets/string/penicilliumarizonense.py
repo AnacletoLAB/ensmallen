@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumArizonense.
+This file offers the methods to automatically retrieve the graph Penicillium arizonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumArizonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumArizonense graph.
+    """Return new instance of the Penicillium arizonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumArizonense(
 
     Returns
     -----------------------
-    Instace of PenicilliumArizonense graph.
+    Instace of Penicillium arizonense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusCarnosus.
+This file offers the methods to automatically retrieve the graph Staphylococcus carnosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusCarnosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusCarnosus graph.
+    """Return new instance of the Staphylococcus carnosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusCarnosus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusCarnosus graph.
+    Instace of Staphylococcus carnosus graph.
 
 	References
 	---------------------

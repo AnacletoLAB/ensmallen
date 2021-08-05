@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulicoccusPhenolivorans.
+This file offers the methods to automatically retrieve the graph Granulicoccus phenolivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulicoccusPhenolivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulicoccusPhenolivorans graph.
+    """Return new instance of the Granulicoccus phenolivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GranulicoccusPhenolivorans(
 
     Returns
     -----------------------
-    Instace of GranulicoccusPhenolivorans graph.
+    Instace of Granulicoccus phenolivorans graph.
 
 	References
 	---------------------

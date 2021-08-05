@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharothrixSpAli22I.
+This file offers the methods to automatically retrieve the graph Saccharothrix sp. ALI-22-I.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharothrixSpAli22I(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharothrixSpAli22I graph.
+    """Return new instance of the Saccharothrix sp. ALI-22-I graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharothrixSpAli22I(
 
     Returns
     -----------------------
-    Instace of SaccharothrixSpAli22I graph.
+    Instace of Saccharothrix sp. ALI-22-I graph.
 
 	References
 	---------------------

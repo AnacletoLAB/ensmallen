@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBrocadiaCaroliniensis.
+This file offers the methods to automatically retrieve the graph Candidatus Brocadia caroliniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBrocadiaCaroliniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBrocadiaCaroliniensis graph.
+    """Return new instance of the Candidatus Brocadia caroliniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBrocadiaCaroliniensis(
 
     Returns
     -----------------------
-    Instace of CandidatusBrocadiaCaroliniensis graph.
+    Instace of Candidatus Brocadia caroliniensis graph.
 
 	References
 	---------------------

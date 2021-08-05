@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasFloridensis.
+This file offers the methods to automatically retrieve the graph Xanthomonas floridensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasFloridensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasFloridensis graph.
+    """Return new instance of the Xanthomonas floridensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasFloridensis(
 
     Returns
     -----------------------
-    Instace of XanthomonasFloridensis graph.
+    Instace of Xanthomonas floridensis graph.
 
 	References
 	---------------------

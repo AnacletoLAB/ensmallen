@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusJannaschii.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus jannaschii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusJannaschii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusJannaschii graph.
+    """Return new instance of the Methanocaldococcus jannaschii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocaldococcusJannaschii(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusJannaschii graph.
+    Instace of Methanocaldococcus jannaschii graph.
 
 	References
 	---------------------

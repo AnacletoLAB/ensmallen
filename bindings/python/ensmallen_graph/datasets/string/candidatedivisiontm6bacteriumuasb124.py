@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionTm6BacteriumUasb124.
+This file offers the methods to automatically retrieve the graph candidate division TM6 bacterium UASB124.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionTm6BacteriumUasb124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionTm6BacteriumUasb124 graph.
+    """Return new instance of the candidate division TM6 bacterium UASB124 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionTm6BacteriumUasb124(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionTm6BacteriumUasb124 graph.
+    Instace of candidate division TM6 bacterium UASB124 graph.
 
 	References
 	---------------------

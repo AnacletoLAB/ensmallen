@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumHalorespiransDsm13726.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum halorespirans DSM 13726.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumHalorespiransDsm13726(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumHalorespiransDsm13726 graph.
+    """Return new instance of the Sulfurospirillum halorespirans DSM 13726 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurospirillumHalorespiransDsm13726(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumHalorespiransDsm13726 graph.
+    Instace of Sulfurospirillum halorespirans DSM 13726 graph.
 
 	References
 	---------------------

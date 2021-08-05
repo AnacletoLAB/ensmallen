@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JiangellaGansuensisDsm44835.
+This file offers the methods to automatically retrieve the graph Jiangella gansuensis DSM 44835.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JiangellaGansuensisDsm44835(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JiangellaGansuensisDsm44835 graph.
+    """Return new instance of the Jiangella gansuensis DSM 44835 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JiangellaGansuensisDsm44835(
 
     Returns
     -----------------------
-    Instace of JiangellaGansuensisDsm44835 graph.
+    Instace of Jiangella gansuensis DSM 44835 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlobicatellaSulfidifaciensDsm15739.
+This file offers the methods to automatically retrieve the graph Globicatella sulfidifaciens DSM 15739.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlobicatellaSulfidifaciensDsm15739(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlobicatellaSulfidifaciensDsm15739 graph.
+    """Return new instance of the Globicatella sulfidifaciens DSM 15739 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlobicatellaSulfidifaciensDsm15739(
 
     Returns
     -----------------------
-    Instace of GlobicatellaSulfidifaciensDsm15739 graph.
+    Instace of Globicatella sulfidifaciens DSM 15739 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BryobacterAggregatus.
+This file offers the methods to automatically retrieve the graph Bryobacter aggregatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BryobacterAggregatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BryobacterAggregatus graph.
+    """Return new instance of the Bryobacter aggregatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BryobacterAggregatus(
 
     Returns
     -----------------------
-    Instace of BryobacterAggregatus graph.
+    Instace of Bryobacter aggregatus graph.
 
 	References
 	---------------------

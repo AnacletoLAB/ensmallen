@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumCanariense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium canariense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumCanariense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumCanariense graph.
+    """Return new instance of the Bradyrhizobium canariense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumCanariense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumCanariense graph.
+    Instace of Bradyrhizobium canariense graph.
 
 	References
 	---------------------

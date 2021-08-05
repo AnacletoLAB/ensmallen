@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumArsenophilumNbrc109478.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum arsenophilum NBRC 109478.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumArsenophilumNbrc109478(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumArsenophilumNbrc109478 graph.
+    """Return new instance of the Sulfurospirillum arsenophilum NBRC 109478 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurospirillumArsenophilumNbrc109478(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumArsenophilumNbrc109478 graph.
+    Instace of Sulfurospirillum arsenophilum NBRC 109478 graph.
 
 	References
 	---------------------

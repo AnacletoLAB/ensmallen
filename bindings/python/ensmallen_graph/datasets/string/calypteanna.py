@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalypteAnna.
+This file offers the methods to automatically retrieve the graph Calypte anna.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalypteAnna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalypteAnna graph.
+    """Return new instance of the Calypte anna graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CalypteAnna(
 
     Returns
     -----------------------
-    Instace of CalypteAnna graph.
+    Instace of Calypte anna graph.
 
 	References
 	---------------------

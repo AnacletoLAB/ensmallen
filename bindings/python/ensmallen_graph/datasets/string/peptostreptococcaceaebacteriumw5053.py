@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptostreptococcaceaeBacteriumW5053.
+This file offers the methods to automatically retrieve the graph Peptostreptococcaceae bacterium W5053.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptostreptococcaceaeBacteriumW5053(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptostreptococcaceaeBacteriumW5053 graph.
+    """Return new instance of the Peptostreptococcaceae bacterium W5053 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptostreptococcaceaeBacteriumW5053(
 
     Returns
     -----------------------
-    Instace of PeptostreptococcaceaeBacteriumW5053 graph.
+    Instace of Peptostreptococcaceae bacterium W5053 graph.
 
 	References
 	---------------------

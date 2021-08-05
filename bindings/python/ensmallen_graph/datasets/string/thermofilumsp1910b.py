@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermofilumSp1910b.
+This file offers the methods to automatically retrieve the graph Thermofilum sp. 1910b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermofilumSp1910b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermofilumSp1910b graph.
+    """Return new instance of the Thermofilum sp. 1910b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermofilumSp1910b(
 
     Returns
     -----------------------
-    Instace of ThermofilumSp1910b graph.
+    Instace of Thermofilum sp. 1910b graph.
 
 	References
 	---------------------

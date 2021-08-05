@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerosalibacterSpMarseilleP3206.
+This file offers the methods to automatically retrieve the graph Anaerosalibacter sp. Marseille-P3206.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerosalibacterSpMarseilleP3206(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerosalibacterSpMarseilleP3206 graph.
+    """Return new instance of the Anaerosalibacter sp. Marseille-P3206 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerosalibacterSpMarseilleP3206(
 
     Returns
     -----------------------
-    Instace of AnaerosalibacterSpMarseilleP3206 graph.
+    Instace of Anaerosalibacter sp. Marseille-P3206 graph.
 
 	References
 	---------------------

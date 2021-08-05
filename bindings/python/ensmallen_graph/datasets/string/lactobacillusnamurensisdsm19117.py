@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusNamurensisDsm19117.
+This file offers the methods to automatically retrieve the graph Lactobacillus namurensis DSM 19117.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusNamurensisDsm19117(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusNamurensisDsm19117 graph.
+    """Return new instance of the Lactobacillus namurensis DSM 19117 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusNamurensisDsm19117(
 
     Returns
     -----------------------
-    Instace of LactobacillusNamurensisDsm19117 graph.
+    Instace of Lactobacillus namurensis DSM 19117 graph.
 
 	References
 	---------------------

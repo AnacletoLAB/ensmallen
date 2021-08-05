@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumL41a.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium L41A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumL41a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumL41a graph.
+    """Return new instance of the alpha proteobacterium L41A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumL41a(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumL41a graph.
+    Instace of alpha proteobacterium L41A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimicrobiumAcidiphilum.
+This file offers the methods to automatically retrieve the graph Ferrimicrobium acidiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimicrobiumAcidiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimicrobiumAcidiphilum graph.
+    """Return new instance of the Ferrimicrobium acidiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FerrimicrobiumAcidiphilum(
 
     Returns
     -----------------------
-    Instace of FerrimicrobiumAcidiphilum graph.
+    Instace of Ferrimicrobium acidiphilum graph.
 
 	References
 	---------------------

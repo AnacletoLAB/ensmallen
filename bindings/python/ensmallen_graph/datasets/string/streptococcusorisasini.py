@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusOrisasini.
+This file offers the methods to automatically retrieve the graph Streptococcus orisasini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusOrisasini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusOrisasini graph.
+    """Return new instance of the Streptococcus orisasini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusOrisasini(
 
     Returns
     -----------------------
-    Instace of StreptococcusOrisasini graph.
+    Instace of Streptococcus orisasini graph.
 
 	References
 	---------------------

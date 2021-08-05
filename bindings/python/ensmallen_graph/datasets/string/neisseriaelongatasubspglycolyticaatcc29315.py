@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaElongataSubspGlycolyticaAtcc29315.
+This file offers the methods to automatically retrieve the graph Neisseria elongata subsp. glycolytica ATCC 29315.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaElongataSubspGlycolyticaAtcc29315(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaElongataSubspGlycolyticaAtcc29315 graph.
+    """Return new instance of the Neisseria elongata subsp. glycolytica ATCC 29315 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaElongataSubspGlycolyticaAtcc29315(
 
     Returns
     -----------------------
-    Instace of NeisseriaElongataSubspGlycolyticaAtcc29315 graph.
+    Instace of Neisseria elongata subsp. glycolytica ATCC 29315 graph.
 
 	References
 	---------------------

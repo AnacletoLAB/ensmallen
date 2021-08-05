@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MollicutesBacteriumHr2.
+This file offers the methods to automatically retrieve the graph Mollicutes bacterium HR2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MollicutesBacteriumHr2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MollicutesBacteriumHr2 graph.
+    """Return new instance of the Mollicutes bacterium HR2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MollicutesBacteriumHr2(
 
     Returns
     -----------------------
-    Instace of MollicutesBacteriumHr2 graph.
+    Instace of Mollicutes bacterium HR2 graph.
 
 	References
 	---------------------

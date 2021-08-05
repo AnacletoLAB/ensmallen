@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumSpIcm42b.
+This file offers the methods to automatically retrieve the graph Atopobium sp. ICM42b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumSpIcm42b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumSpIcm42b graph.
+    """Return new instance of the Atopobium sp. ICM42b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtopobiumSpIcm42b(
 
     Returns
     -----------------------
-    Instace of AtopobiumSpIcm42b graph.
+    Instace of Atopobium sp. ICM42b graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAcidominimus.
+This file offers the methods to automatically retrieve the graph Streptococcus acidominimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAcidominimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAcidominimus graph.
+    """Return new instance of the Streptococcus acidominimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusAcidominimus(
 
     Returns
     -----------------------
-    Instace of StreptococcusAcidominimus graph.
+    Instace of Streptococcus acidominimus graph.
 
 	References
 	---------------------

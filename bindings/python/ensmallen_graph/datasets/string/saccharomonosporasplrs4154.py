@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaSpLrs4154.
+This file offers the methods to automatically retrieve the graph Saccharomonospora sp. LRS4.154.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaSpLrs4154(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaSpLrs4154 graph.
+    """Return new instance of the Saccharomonospora sp. LRS4.154 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharomonosporaSpLrs4154(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaSpLrs4154 graph.
+    Instace of Saccharomonospora sp. LRS4.154 graph.
 
 	References
 	---------------------

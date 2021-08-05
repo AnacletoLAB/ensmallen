@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumKuznetsovii.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum kuznetsovii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumKuznetsovii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumKuznetsovii graph.
+    """Return new instance of the Desulfotomaculum kuznetsovii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumKuznetsovii(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumKuznetsovii graph.
+    Instace of Desulfotomaculum kuznetsovii graph.
 
 	References
 	---------------------

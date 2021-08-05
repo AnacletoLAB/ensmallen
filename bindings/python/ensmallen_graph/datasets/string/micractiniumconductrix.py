@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicractiniumConductrix.
+This file offers the methods to automatically retrieve the graph Micractinium conductrix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicractiniumConductrix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicractiniumConductrix graph.
+    """Return new instance of the Micractinium conductrix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicractiniumConductrix(
 
     Returns
     -----------------------
-    Instace of MicractiniumConductrix graph.
+    Instace of Micractinium conductrix graph.
 
 	References
 	---------------------

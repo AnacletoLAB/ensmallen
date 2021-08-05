@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterCetorumMit995656.
+This file offers the methods to automatically retrieve the graph Helicobacter cetorum MIT995656.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterCetorumMit995656(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterCetorumMit995656 graph.
+    """Return new instance of the Helicobacter cetorum MIT995656 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterCetorumMit995656(
 
     Returns
     -----------------------
-    Instace of HelicobacterCetorumMit995656 graph.
+    Instace of Helicobacter cetorum MIT995656 graph.
 
 	References
 	---------------------

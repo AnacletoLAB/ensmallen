@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpScgcAaa160P02.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. SCGC AAA160-P02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpScgcAaa160P02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpScgcAaa160P02 graph.
+    """Return new instance of the Flavobacterium sp. SCGC AAA160-P02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpScgcAaa160P02(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpScgcAaa160P02 graph.
+    Instace of Flavobacterium sp. SCGC AAA160-P02 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterIshigakiensis.
+This file offers the methods to automatically retrieve the graph Altererythrobacter ishigakiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterIshigakiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterIshigakiensis graph.
+    """Return new instance of the Altererythrobacter ishigakiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterIshigakiensis(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterIshigakiensis graph.
+    Instace of Altererythrobacter ishigakiensis graph.
 
 	References
 	---------------------

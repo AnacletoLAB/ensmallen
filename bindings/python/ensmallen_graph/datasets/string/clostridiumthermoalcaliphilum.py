@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumThermoalcaliphilum.
+This file offers the methods to automatically retrieve the graph [Clostridium] thermoalcaliphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumThermoalcaliphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumThermoalcaliphilum graph.
+    """Return new instance of the [Clostridium] thermoalcaliphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumThermoalcaliphilum(
 
     Returns
     -----------------------
-    Instace of ClostridiumThermoalcaliphilum graph.
+    Instace of [Clostridium] thermoalcaliphilum graph.
 
 	References
 	---------------------

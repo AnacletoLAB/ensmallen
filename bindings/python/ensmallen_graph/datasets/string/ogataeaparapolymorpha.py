@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OgataeaParapolymorpha.
+This file offers the methods to automatically retrieve the graph Ogataea parapolymorpha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OgataeaParapolymorpha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OgataeaParapolymorpha graph.
+    """Return new instance of the Ogataea parapolymorpha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OgataeaParapolymorpha(
 
     Returns
     -----------------------
-    Instace of OgataeaParapolymorpha graph.
+    Instace of Ogataea parapolymorpha graph.
 
 	References
 	---------------------

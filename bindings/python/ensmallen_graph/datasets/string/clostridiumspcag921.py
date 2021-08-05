@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpCag921.
+This file offers the methods to automatically retrieve the graph Clostridium sp. CAG:921.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpCag921(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpCag921 graph.
+    """Return new instance of the Clostridium sp. CAG:921 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpCag921(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpCag921 graph.
+    Instace of Clostridium sp. CAG:921 graph.
 
 	References
 	---------------------

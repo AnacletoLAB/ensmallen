@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacterium6920.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium 69-20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacterium6920(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacterium6920 graph.
+    """Return new instance of the Actinobacteria bacterium 69-20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacterium6920(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacterium6920 graph.
+    Instace of Actinobacteria bacterium 69-20 graph.
 
 	References
 	---------------------

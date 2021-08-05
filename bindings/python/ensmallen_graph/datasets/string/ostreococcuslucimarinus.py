@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OstreococcusLucimarinus.
+This file offers the methods to automatically retrieve the graph Ostreococcus lucimarinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OstreococcusLucimarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OstreococcusLucimarinus graph.
+    """Return new instance of the Ostreococcus lucimarinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OstreococcusLucimarinus(
 
     Returns
     -----------------------
-    Instace of OstreococcusLucimarinus graph.
+    Instace of Ostreococcus lucimarinus graph.
 
 	References
 	---------------------

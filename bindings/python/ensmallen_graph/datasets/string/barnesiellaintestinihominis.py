@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BarnesiellaIntestinihominis.
+This file offers the methods to automatically retrieve the graph Barnesiella intestinihominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BarnesiellaIntestinihominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BarnesiellaIntestinihominis graph.
+    """Return new instance of the Barnesiella intestinihominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BarnesiellaIntestinihominis(
 
     Returns
     -----------------------
-    Instace of BarnesiellaIntestinihominis graph.
+    Instace of Barnesiella intestinihominis graph.
 
 	References
 	---------------------

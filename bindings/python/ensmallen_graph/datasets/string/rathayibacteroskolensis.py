@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RathayibacterOskolensis.
+This file offers the methods to automatically retrieve the graph Rathayibacter oskolensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RathayibacterOskolensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RathayibacterOskolensis graph.
+    """Return new instance of the Rathayibacter oskolensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RathayibacterOskolensis(
 
     Returns
     -----------------------
-    Instace of RathayibacterOskolensis graph.
+    Instace of Rathayibacter oskolensis graph.
 
 	References
 	---------------------

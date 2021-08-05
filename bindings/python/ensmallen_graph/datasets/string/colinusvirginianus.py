@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColinusVirginianus.
+This file offers the methods to automatically retrieve the graph Colinus virginianus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColinusVirginianus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColinusVirginianus graph.
+    """Return new instance of the Colinus virginianus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColinusVirginianus(
 
     Returns
     -----------------------
-    Instace of ColinusVirginianus graph.
+    Instace of Colinus virginianus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumEzzemoulense.
+This file offers the methods to automatically retrieve the graph Halorubrum ezzemoulense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumEzzemoulense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumEzzemoulense graph.
+    """Return new instance of the Halorubrum ezzemoulense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalorubrumEzzemoulense(
 
     Returns
     -----------------------
-    Instace of HalorubrumEzzemoulense graph.
+    Instace of Halorubrum ezzemoulense graph.
 
 	References
 	---------------------

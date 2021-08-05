@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFlickrUnd.
+This file offers the methods to automatically retrieve the graph soc-flickr-und.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocFlickrUnd(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFlickrUnd graph.
+    """Return new instance of the soc-flickr-und graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocFlickrUnd(
 
     Returns
     -----------------------
-    Instace of SocFlickrUnd graph.
+    Instace of soc-flickr-und graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaBongoriN26808.
+This file offers the methods to automatically retrieve the graph Salmonella bongori N26808.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaBongoriN26808(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaBongoriN26808 graph.
+    """Return new instance of the Salmonella bongori N26808 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalmonellaBongoriN26808(
 
     Returns
     -----------------------
-    Instace of SalmonellaBongoriN26808 graph.
+    Instace of Salmonella bongori N26808 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarculaJaponica.
+This file offers the methods to automatically retrieve the graph Haloarcula japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarculaJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarculaJaponica graph.
+    """Return new instance of the Haloarcula japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloarculaJaponica(
 
     Returns
     -----------------------
-    Instace of HaloarculaJaponica graph.
+    Instace of Haloarcula japonica graph.
 
 	References
 	---------------------

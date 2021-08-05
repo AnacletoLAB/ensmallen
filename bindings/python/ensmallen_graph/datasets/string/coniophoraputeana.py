@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConiophoraPuteana.
+This file offers the methods to automatically retrieve the graph Coniophora puteana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConiophoraPuteana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConiophoraPuteana graph.
+    """Return new instance of the Coniophora puteana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ConiophoraPuteana(
 
     Returns
     -----------------------
-    Instace of ConiophoraPuteana graph.
+    Instace of Coniophora puteana graph.
 
 	References
 	---------------------

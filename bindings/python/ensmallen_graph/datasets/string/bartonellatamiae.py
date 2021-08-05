@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaTamiae.
+This file offers the methods to automatically retrieve the graph Bartonella tamiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaTamiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaTamiae graph.
+    """Return new instance of the Bartonella tamiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaTamiae(
 
     Returns
     -----------------------
-    Instace of BartonellaTamiae graph.
+    Instace of Bartonella tamiae graph.
 
 	References
 	---------------------

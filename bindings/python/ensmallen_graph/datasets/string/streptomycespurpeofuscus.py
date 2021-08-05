@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPurpeofuscus.
+This file offers the methods to automatically retrieve the graph Streptomyces purpeofuscus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPurpeofuscus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPurpeofuscus graph.
+    """Return new instance of the Streptomyces purpeofuscus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesPurpeofuscus(
 
     Returns
     -----------------------
-    Instace of StreptomycesPurpeofuscus graph.
+    Instace of Streptomyces purpeofuscus graph.
 
 	References
 	---------------------

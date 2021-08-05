@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaprevotellaClara.
+This file offers the methods to automatically retrieve the graph Paraprevotella clara.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaprevotellaClara(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaprevotellaClara graph.
+    """Return new instance of the Paraprevotella clara graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParaprevotellaClara(
 
     Returns
     -----------------------
-    Instace of ParaprevotellaClara graph.
+    Instace of Paraprevotella clara graph.
 
 	References
 	---------------------

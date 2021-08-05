@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptunomonasQingdaonensis.
+This file offers the methods to automatically retrieve the graph Neptunomonas qingdaonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptunomonasQingdaonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptunomonasQingdaonensis graph.
+    """Return new instance of the Neptunomonas qingdaonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptunomonasQingdaonensis(
 
     Returns
     -----------------------
-    Instace of NeptunomonasQingdaonensis graph.
+    Instace of Neptunomonas qingdaonensis graph.
 
 	References
 	---------------------

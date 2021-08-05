@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaPluranimalium.
+This file offers the methods to automatically retrieve the graph Moraxella pluranimalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaPluranimalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaPluranimalium graph.
+    """Return new instance of the Moraxella pluranimalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaPluranimalium(
 
     Returns
     -----------------------
-    Instace of MoraxellaPluranimalium graph.
+    Instace of Moraxella pluranimalium graph.
 
 	References
 	---------------------

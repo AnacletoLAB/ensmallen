@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSpAc3.
+This file offers the methods to automatically retrieve the graph Lysinibacillus sp. AC-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSpAc3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSpAc3 graph.
+    """Return new instance of the Lysinibacillus sp. AC-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusSpAc3(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSpAc3 graph.
+    Instace of Lysinibacillus sp. AC-3 graph.
 
 	References
 	---------------------

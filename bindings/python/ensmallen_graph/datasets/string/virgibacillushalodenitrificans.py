@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusHalodenitrificans.
+This file offers the methods to automatically retrieve the graph Virgibacillus halodenitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusHalodenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusHalodenitrificans graph.
+    """Return new instance of the Virgibacillus halodenitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VirgibacillusHalodenitrificans(
 
     Returns
     -----------------------
-    Instace of VirgibacillusHalodenitrificans graph.
+    Instace of Virgibacillus halodenitrificans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSabulitectumSilens.
+This file offers the methods to automatically retrieve the graph Candidatus Sabulitectum silens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSabulitectumSilens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSabulitectumSilens graph.
+    """Return new instance of the Candidatus Sabulitectum silens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSabulitectumSilens(
 
     Returns
     -----------------------
-    Instace of CandidatusSabulitectumSilens graph.
+    Instace of Candidatus Sabulitectum silens graph.
 
 	References
 	---------------------

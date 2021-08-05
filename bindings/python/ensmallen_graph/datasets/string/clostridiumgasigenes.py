@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumGasigenes.
+This file offers the methods to automatically retrieve the graph Clostridium gasigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumGasigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumGasigenes graph.
+    """Return new instance of the Clostridium gasigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumGasigenes(
 
     Returns
     -----------------------
-    Instace of ClostridiumGasigenes graph.
+    Instace of Clostridium gasigenes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CytophagaceaeBacteriumScn5212.
+This file offers the methods to automatically retrieve the graph Cytophagaceae bacterium SCN 52-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CytophagaceaeBacteriumScn5212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CytophagaceaeBacteriumScn5212 graph.
+    """Return new instance of the Cytophagaceae bacterium SCN 52-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CytophagaceaeBacteriumScn5212(
 
     Returns
     -----------------------
-    Instace of CytophagaceaeBacteriumScn5212 graph.
+    Instace of Cytophagaceae bacterium SCN 52-12 graph.
 
 	References
 	---------------------

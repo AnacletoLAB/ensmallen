@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusIslandicus.
+This file offers the methods to automatically retrieve the graph Sulfolobus islandicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusIslandicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusIslandicus graph.
+    """Return new instance of the Sulfolobus islandicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfolobusIslandicus(
 
     Returns
     -----------------------
-    Instace of SulfolobusIslandicus graph.
+    Instace of Sulfolobus islandicus graph.
 
 	References
 	---------------------

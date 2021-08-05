@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpOk665.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. OK665.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpOk665(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpOk665 graph.
+    """Return new instance of the Rhizobium sp. OK665 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpOk665(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpOk665 graph.
+    Instace of Rhizobium sp. OK665 graph.
 
 	References
 	---------------------

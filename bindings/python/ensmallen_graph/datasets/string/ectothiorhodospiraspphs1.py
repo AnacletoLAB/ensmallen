@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EctothiorhodospiraSpPhs1.
+This file offers the methods to automatically retrieve the graph Ectothiorhodospira sp. PHS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EctothiorhodospiraSpPhs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EctothiorhodospiraSpPhs1 graph.
+    """Return new instance of the Ectothiorhodospira sp. PHS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EctothiorhodospiraSpPhs1(
 
     Returns
     -----------------------
-    Instace of EctothiorhodospiraSpPhs1 graph.
+    Instace of Ectothiorhodospira sp. PHS1 graph.
 
 	References
 	---------------------

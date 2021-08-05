@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumUj101.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium UJ101.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumUj101(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumUj101 graph.
+    """Return new instance of the Flavobacteriaceae bacterium UJ101 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumUj101(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumUj101 graph.
+    Instace of Flavobacteriaceae bacterium UJ101 graph.
 
 	References
 	---------------------

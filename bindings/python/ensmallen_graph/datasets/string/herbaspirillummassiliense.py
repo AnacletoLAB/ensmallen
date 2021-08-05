@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumMassiliense.
+This file offers the methods to automatically retrieve the graph Herbaspirillum massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumMassiliense graph.
+    """Return new instance of the Herbaspirillum massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerbaspirillumMassiliense(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumMassiliense graph.
+    Instace of Herbaspirillum massiliense graph.
 
 	References
 	---------------------

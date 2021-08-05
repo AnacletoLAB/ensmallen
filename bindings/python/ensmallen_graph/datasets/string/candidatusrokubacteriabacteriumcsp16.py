@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRokubacteriaBacteriumCsp16.
+This file offers the methods to automatically retrieve the graph Candidatus Rokubacteria bacterium CSP1-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRokubacteriaBacteriumCsp16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRokubacteriaBacteriumCsp16 graph.
+    """Return new instance of the Candidatus Rokubacteria bacterium CSP1-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRokubacteriaBacteriumCsp16(
 
     Returns
     -----------------------
-    Instace of CandidatusRokubacteriaBacteriumCsp16 graph.
+    Instace of Candidatus Rokubacteria bacterium CSP1-6 graph.
 
 	References
 	---------------------

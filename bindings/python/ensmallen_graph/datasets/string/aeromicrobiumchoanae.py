@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromicrobiumChoanae.
+This file offers the methods to automatically retrieve the graph Aeromicrobium choanae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromicrobiumChoanae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromicrobiumChoanae graph.
+    """Return new instance of the Aeromicrobium choanae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromicrobiumChoanae(
 
     Returns
     -----------------------
-    Instace of AeromicrobiumChoanae graph.
+    Instace of Aeromicrobium choanae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBeijerinckii.
+This file offers the methods to automatically retrieve the graph Acinetobacter beijerinckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBeijerinckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBeijerinckii graph.
+    """Return new instance of the Acinetobacter beijerinckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterBeijerinckii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBeijerinckii graph.
+    Instace of Acinetobacter beijerinckii graph.
 
 	References
 	---------------------

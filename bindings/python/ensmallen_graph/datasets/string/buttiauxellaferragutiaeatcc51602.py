@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButtiauxellaFerragutiaeAtcc51602.
+This file offers the methods to automatically retrieve the graph Buttiauxella ferragutiae ATCC 51602.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButtiauxellaFerragutiaeAtcc51602(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButtiauxellaFerragutiaeAtcc51602 graph.
+    """Return new instance of the Buttiauxella ferragutiae ATCC 51602 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButtiauxellaFerragutiaeAtcc51602(
 
     Returns
     -----------------------
-    Instace of ButtiauxellaFerragutiaeAtcc51602 graph.
+    Instace of Buttiauxella ferragutiae ATCC 51602 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSpJc4.
+This file offers the methods to automatically retrieve the graph Treponema sp. JC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSpJc4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSpJc4 graph.
+    """Return new instance of the Treponema sp. JC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSpJc4(
 
     Returns
     -----------------------
-    Instace of TreponemaSpJc4 graph.
+    Instace of Treponema sp. JC4 graph.
 
 	References
 	---------------------

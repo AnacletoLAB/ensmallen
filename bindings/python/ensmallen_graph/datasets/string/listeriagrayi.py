@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaGrayi.
+This file offers the methods to automatically retrieve the graph Listeria grayi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaGrayi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaGrayi graph.
+    """Return new instance of the Listeria grayi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaGrayi(
 
     Returns
     -----------------------
-    Instace of ListeriaGrayi graph.
+    Instace of Listeria grayi graph.
 
 	References
 	---------------------

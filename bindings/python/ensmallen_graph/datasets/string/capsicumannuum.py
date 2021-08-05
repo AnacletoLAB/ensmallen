@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsicumAnnuum.
+This file offers the methods to automatically retrieve the graph Capsicum annuum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsicumAnnuum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsicumAnnuum graph.
+    """Return new instance of the Capsicum annuum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CapsicumAnnuum(
 
     Returns
     -----------------------
-    Instace of CapsicumAnnuum graph.
+    Instace of Capsicum annuum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpisthorchisViverrini.
+This file offers the methods to automatically retrieve the graph Opisthorchis viverrini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpisthorchisViverrini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpisthorchisViverrini graph.
+    """Return new instance of the Opisthorchis viverrini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OpisthorchisViverrini(
 
     Returns
     -----------------------
-    Instace of OpisthorchisViverrini graph.
+    Instace of Opisthorchis viverrini graph.
 
 	References
 	---------------------

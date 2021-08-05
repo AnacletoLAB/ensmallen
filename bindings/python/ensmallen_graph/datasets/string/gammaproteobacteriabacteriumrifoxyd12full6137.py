@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumRifoxyd12Full6137.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium RIFOXYD12_FULL_61_37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumRifoxyd12Full6137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumRifoxyd12Full6137 graph.
+    """Return new instance of the Gammaproteobacteria bacterium RIFOXYD12_FULL_61_37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumRifoxyd12Full6137(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumRifoxyd12Full6137 graph.
+    Instace of Gammaproteobacteria bacterium RIFOXYD12_FULL_61_37 graph.
 
 	References
 	---------------------

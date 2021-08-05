@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusZhangzhouensis.
+This file offers the methods to automatically retrieve the graph Algoriphagus zhangzhouensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusZhangzhouensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusZhangzhouensis graph.
+    """Return new instance of the Algoriphagus zhangzhouensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusZhangzhouensis(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusZhangzhouensis graph.
+    Instace of Algoriphagus zhangzhouensis graph.
 
 	References
 	---------------------

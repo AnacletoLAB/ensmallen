@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfacinumHydrothermaleDsm13146.
+This file offers the methods to automatically retrieve the graph Desulfacinum hydrothermale DSM 13146.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfacinumHydrothermaleDsm13146(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfacinumHydrothermaleDsm13146 graph.
+    """Return new instance of the Desulfacinum hydrothermale DSM 13146 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfacinumHydrothermaleDsm13146(
 
     Returns
     -----------------------
-    Instace of DesulfacinumHydrothermaleDsm13146 graph.
+    Instace of Desulfacinum hydrothermale DSM 13146 graph.
 
 	References
 	---------------------

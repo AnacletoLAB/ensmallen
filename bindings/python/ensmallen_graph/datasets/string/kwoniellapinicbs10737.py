@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KwoniellaPiniCbs10737.
+This file offers the methods to automatically retrieve the graph Kwoniella pini CBS 10737.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KwoniellaPiniCbs10737(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KwoniellaPiniCbs10737 graph.
+    """Return new instance of the Kwoniella pini CBS 10737 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KwoniellaPiniCbs10737(
 
     Returns
     -----------------------
-    Instace of KwoniellaPiniCbs10737 graph.
+    Instace of Kwoniella pini CBS 10737 graph.
 
 	References
 	---------------------

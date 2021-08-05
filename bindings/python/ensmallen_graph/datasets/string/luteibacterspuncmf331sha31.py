@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteibacterSpUncmf331sha31.
+This file offers the methods to automatically retrieve the graph Luteibacter sp. UNCMF331Sha3.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteibacterSpUncmf331sha31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteibacterSpUncmf331sha31 graph.
+    """Return new instance of the Luteibacter sp. UNCMF331Sha3.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteibacterSpUncmf331sha31(
 
     Returns
     -----------------------
-    Instace of LuteibacterSpUncmf331sha31 graph.
+    Instace of Luteibacter sp. UNCMF331Sha3.1 graph.
 
 	References
 	---------------------

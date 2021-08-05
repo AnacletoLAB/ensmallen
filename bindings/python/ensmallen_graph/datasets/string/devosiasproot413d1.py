@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSpRoot413d1.
+This file offers the methods to automatically retrieve the graph Devosia sp. Root413D1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSpRoot413d1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSpRoot413d1 graph.
+    """Return new instance of the Devosia sp. Root413D1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSpRoot413d1(
 
     Returns
     -----------------------
-    Instace of DevosiaSpRoot413d1 graph.
+    Instace of Devosia sp. Root413D1 graph.
 
 	References
 	---------------------

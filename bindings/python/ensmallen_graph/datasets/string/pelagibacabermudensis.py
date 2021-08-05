@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacaBermudensis.
+This file offers the methods to automatically retrieve the graph Pelagibaca bermudensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacaBermudensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacaBermudensis graph.
+    """Return new instance of the Pelagibaca bermudensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacaBermudensis(
 
     Returns
     -----------------------
-    Instace of PelagibacaBermudensis graph.
+    Instace of Pelagibaca bermudensis graph.
 
 	References
 	---------------------

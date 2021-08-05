@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBauzanensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas bauzanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBauzanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBauzanensis graph.
+    """Return new instance of the Pseudomonas bauzanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBauzanensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasBauzanensis graph.
+    Instace of Pseudomonas bauzanensis graph.
 
 	References
 	---------------------

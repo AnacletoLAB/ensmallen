@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BranchiostomaFloridae.
+This file offers the methods to automatically retrieve the graph Branchiostoma floridae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BranchiostomaFloridae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BranchiostomaFloridae graph.
+    """Return new instance of the Branchiostoma floridae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BranchiostomaFloridae(
 
     Returns
     -----------------------
-    Instace of BranchiostomaFloridae graph.
+    Instace of Branchiostoma floridae graph.
 
 	References
 	---------------------

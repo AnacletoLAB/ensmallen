@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpDabAl43b.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. DAB_AL43B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpDabAl43b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpDabAl43b graph.
+    """Return new instance of the Psychrobacter sp. DAB_AL43B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterSpDabAl43b(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpDabAl43b graph.
+    Instace of Psychrobacter sp. DAB_AL43B graph.
 
 	References
 	---------------------

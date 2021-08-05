@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetragenococcusMuriaticus.
+This file offers the methods to automatically retrieve the graph Tetragenococcus muriaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetragenococcusMuriaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetragenococcusMuriaticus graph.
+    """Return new instance of the Tetragenococcus muriaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TetragenococcusMuriaticus(
 
     Returns
     -----------------------
-    Instace of TetragenococcusMuriaticus graph.
+    Instace of Tetragenococcus muriaticus graph.
 
 	References
 	---------------------

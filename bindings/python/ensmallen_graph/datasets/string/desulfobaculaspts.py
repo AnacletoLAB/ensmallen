@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobaculaSpTs.
+This file offers the methods to automatically retrieve the graph Desulfobacula sp. TS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobaculaSpTs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobaculaSpTs graph.
+    """Return new instance of the Desulfobacula sp. TS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfobaculaSpTs(
 
     Returns
     -----------------------
-    Instace of DesulfobaculaSpTs graph.
+    Instace of Desulfobacula sp. TS graph.
 
 	References
 	---------------------

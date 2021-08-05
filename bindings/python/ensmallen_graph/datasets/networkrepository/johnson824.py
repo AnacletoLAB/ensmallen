@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Johnson824.
+This file offers the methods to automatically retrieve the graph johnson8-2-4.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Johnson824(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Johnson824 graph.
+    """Return new instance of the johnson8-2-4 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Johnson824(
 
     Returns
     -----------------------
-    Instace of Johnson824 graph.
+    Instace of johnson8-2-4 graph.
 
 	References
 	---------------------

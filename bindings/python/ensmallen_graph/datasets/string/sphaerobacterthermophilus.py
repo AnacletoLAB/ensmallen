@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerobacterThermophilus.
+This file offers the methods to automatically retrieve the graph Sphaerobacter thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerobacterThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerobacterThermophilus graph.
+    """Return new instance of the Sphaerobacter thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaerobacterThermophilus(
 
     Returns
     -----------------------
-    Instace of SphaerobacterThermophilus graph.
+    Instace of Sphaerobacter thermophilus graph.
 
 	References
 	---------------------

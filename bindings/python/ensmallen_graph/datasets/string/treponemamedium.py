@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaMedium.
+This file offers the methods to automatically retrieve the graph Treponema medium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaMedium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaMedium graph.
+    """Return new instance of the Treponema medium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaMedium(
 
     Returns
     -----------------------
-    Instace of TreponemaMedium graph.
+    Instace of Treponema medium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrosporumGypseum.
+This file offers the methods to automatically retrieve the graph Microsporum gypseum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrosporumGypseum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrosporumGypseum graph.
+    """Return new instance of the Microsporum gypseum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrosporumGypseum(
 
     Returns
     -----------------------
-    Instace of MicrosporumGypseum graph.
+    Instace of Microsporum gypseum graph.
 
 	References
 	---------------------

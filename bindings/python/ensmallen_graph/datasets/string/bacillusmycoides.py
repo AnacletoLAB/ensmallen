@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMycoides.
+This file offers the methods to automatically retrieve the graph Bacillus mycoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMycoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMycoides graph.
+    """Return new instance of the Bacillus mycoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusMycoides(
 
     Returns
     -----------------------
-    Instace of BacillusMycoides graph.
+    Instace of Bacillus mycoides graph.
 
 	References
 	---------------------

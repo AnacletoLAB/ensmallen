@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusLindneri.
+This file offers the methods to automatically retrieve the graph Lactobacillus lindneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusLindneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusLindneri graph.
+    """Return new instance of the Lactobacillus lindneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusLindneri(
 
     Returns
     -----------------------
-    Instace of LactobacillusLindneri graph.
+    Instace of Lactobacillus lindneri graph.
 
 	References
 	---------------------

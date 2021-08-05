@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpCf080.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. CF080.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpCf080(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpCf080 graph.
+    """Return new instance of the Rhizobium sp. CF080 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpCf080(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpCf080 graph.
+    Instace of Rhizobium sp. CF080 graph.
 
 	References
 	---------------------

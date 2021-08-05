@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaGraminisFSpTriticiCrl75367003.
+This file offers the methods to automatically retrieve the graph Puccinia graminis f. sp. tritici CRL 75-36-700-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaGraminisFSpTriticiCrl75367003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaGraminisFSpTriticiCrl75367003 graph.
+    """Return new instance of the Puccinia graminis f. sp. tritici CRL 75-36-700-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PucciniaGraminisFSpTriticiCrl75367003(
 
     Returns
     -----------------------
-    Instace of PucciniaGraminisFSpTriticiCrl75367003 graph.
+    Instace of Puccinia graminis f. sp. tritici CRL 75-36-700-3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaBrassicae.
+This file offers the methods to automatically retrieve the graph Acholeplasma brassicae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaBrassicae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaBrassicae graph.
+    """Return new instance of the Acholeplasma brassicae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcholeplasmaBrassicae(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaBrassicae graph.
+    Instace of Acholeplasma brassicae graph.
 
 	References
 	---------------------

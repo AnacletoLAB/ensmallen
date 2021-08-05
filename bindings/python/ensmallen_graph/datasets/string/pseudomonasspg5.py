@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpG5.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. G5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpG5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpG5 graph.
+    """Return new instance of the Pseudomonas sp. G5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpG5(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpG5 graph.
+    Instace of Pseudomonas sp. G5 graph.
 
 	References
 	---------------------

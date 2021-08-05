@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinophytocolaXanthii.
+This file offers the methods to automatically retrieve the graph Actinophytocola xanthii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinophytocolaXanthii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinophytocolaXanthii graph.
+    """Return new instance of the Actinophytocola xanthii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinophytocolaXanthii(
 
     Returns
     -----------------------
-    Instace of ActinophytocolaXanthii graph.
+    Instace of Actinophytocola xanthii graph.
 
 	References
 	---------------------

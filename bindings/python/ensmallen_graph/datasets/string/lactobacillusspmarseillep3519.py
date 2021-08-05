@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSpMarseilleP3519.
+This file offers the methods to automatically retrieve the graph Lactobacillus sp. Marseille-P3519.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSpMarseilleP3519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSpMarseilleP3519 graph.
+    """Return new instance of the Lactobacillus sp. Marseille-P3519 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSpMarseilleP3519(
 
     Returns
     -----------------------
-    Instace of LactobacillusSpMarseilleP3519 graph.
+    Instace of Lactobacillus sp. Marseille-P3519 graph.
 
 	References
 	---------------------

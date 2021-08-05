@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusCaprae.
+This file offers the methods to automatically retrieve the graph Staphylococcus caprae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusCaprae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusCaprae graph.
+    """Return new instance of the Staphylococcus caprae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusCaprae(
 
     Returns
     -----------------------
-    Instace of StaphylococcusCaprae graph.
+    Instace of Staphylococcus caprae graph.
 
 	References
 	---------------------

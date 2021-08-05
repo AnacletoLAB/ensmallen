@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFarciminis.
+This file offers the methods to automatically retrieve the graph Lactobacillus farciminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFarciminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFarciminis graph.
+    """Return new instance of the Lactobacillus farciminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusFarciminis(
 
     Returns
     -----------------------
-    Instace of LactobacillusFarciminis graph.
+    Instace of Lactobacillus farciminis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaTestacea.
+This file offers the methods to automatically retrieve the graph Nocardia testacea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaTestacea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaTestacea graph.
+    """Return new instance of the Nocardia testacea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaTestacea(
 
     Returns
     -----------------------
-    Instace of NocardiaTestacea graph.
+    Instace of Nocardia testacea graph.
 
 	References
 	---------------------

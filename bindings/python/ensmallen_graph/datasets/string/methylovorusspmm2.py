@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylovorusSpMm2.
+This file offers the methods to automatically retrieve the graph Methylovorus sp. MM2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylovorusSpMm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylovorusSpMm2 graph.
+    """Return new instance of the Methylovorus sp. MM2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylovorusSpMm2(
 
     Returns
     -----------------------
-    Instace of MethylovorusSpMm2 graph.
+    Instace of Methylovorus sp. MM2 graph.
 
 	References
 	---------------------

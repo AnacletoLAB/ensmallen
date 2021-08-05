@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyellaGinsengisoli.
+This file offers the methods to automatically retrieve the graph Dyella ginsengisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyellaGinsengisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyellaGinsengisoli graph.
+    """Return new instance of the Dyella ginsengisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DyellaGinsengisoli(
 
     Returns
     -----------------------
-    Instace of DyellaGinsengisoli graph.
+    Instace of Dyella ginsengisoli graph.
 
 	References
 	---------------------

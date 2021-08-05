@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaAsaccharolytica.
+This file offers the methods to automatically retrieve the graph Pseudonocardia asaccharolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaAsaccharolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaAsaccharolytica graph.
+    """Return new instance of the Pseudonocardia asaccharolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudonocardiaAsaccharolytica(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaAsaccharolytica graph.
+    Instace of Pseudonocardia asaccharolytica graph.
 
 	References
 	---------------------

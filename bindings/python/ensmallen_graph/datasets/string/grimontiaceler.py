@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrimontiaCeler.
+This file offers the methods to automatically retrieve the graph Grimontia celer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrimontiaCeler(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrimontiaCeler graph.
+    """Return new instance of the Grimontia celer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GrimontiaCeler(
 
     Returns
     -----------------------
-    Instace of GrimontiaCeler graph.
+    Instace of Grimontia celer graph.
 
 	References
 	---------------------

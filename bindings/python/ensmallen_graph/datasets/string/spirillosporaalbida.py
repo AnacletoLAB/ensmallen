@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirillosporaAlbida.
+This file offers the methods to automatically retrieve the graph Spirillospora albida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirillosporaAlbida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirillosporaAlbida graph.
+    """Return new instance of the Spirillospora albida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirillosporaAlbida(
 
     Returns
     -----------------------
-    Instace of SpirillosporaAlbida graph.
+    Instace of Spirillospora albida graph.
 
 	References
 	---------------------

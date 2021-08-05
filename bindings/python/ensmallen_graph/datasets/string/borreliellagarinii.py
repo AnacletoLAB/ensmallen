@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliellaGarinii.
+This file offers the methods to automatically retrieve the graph Borreliella garinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliellaGarinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliellaGarinii graph.
+    """Return new instance of the Borreliella garinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BorreliellaGarinii(
 
     Returns
     -----------------------
-    Instace of BorreliellaGarinii graph.
+    Instace of Borreliella garinii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaSpMc24.
+This file offers the methods to automatically retrieve the graph Thermotoga sp. Mc24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaSpMc24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaSpMc24 graph.
+    """Return new instance of the Thermotoga sp. Mc24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaSpMc24(
 
     Returns
     -----------------------
-    Instace of ThermotogaSpMc24 graph.
+    Instace of Thermotoga sp. Mc24 graph.
 
 	References
 	---------------------

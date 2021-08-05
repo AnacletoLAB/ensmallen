@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaPorciDsm25326.
+This file offers the methods to automatically retrieve the graph Moraxella porci DSM 25326.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaPorciDsm25326(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaPorciDsm25326 graph.
+    """Return new instance of the Moraxella porci DSM 25326 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaPorciDsm25326(
 
     Returns
     -----------------------
-    Instace of MoraxellaPorciDsm25326 graph.
+    Instace of Moraxella porci DSM 25326 graph.
 
 	References
 	---------------------

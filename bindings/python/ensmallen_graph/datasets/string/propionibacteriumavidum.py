@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumAvidum.
+This file offers the methods to automatically retrieve the graph Propionibacterium avidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumAvidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumAvidum graph.
+    """Return new instance of the Propionibacterium avidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionibacteriumAvidum(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumAvidum graph.
+    Instace of Propionibacterium avidum graph.
 
 	References
 	---------------------

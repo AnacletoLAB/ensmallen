@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Odlis.
+This file offers the methods to automatically retrieve the graph ODLIS.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Odlis(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Odlis graph.
+    """Return new instance of the ODLIS graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Odlis(
 
     Returns
     -----------------------
-    Instace of Odlis graph.
+    Instace of ODLIS graph.
 
 	References
 	---------------------

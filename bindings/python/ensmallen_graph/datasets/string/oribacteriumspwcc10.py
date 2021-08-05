@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSpWcc10.
+This file offers the methods to automatically retrieve the graph Oribacterium sp. WCC10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSpWcc10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSpWcc10 graph.
+    """Return new instance of the Oribacterium sp. WCC10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OribacteriumSpWcc10(
 
     Returns
     -----------------------
-    Instace of OribacteriumSpWcc10 graph.
+    Instace of Oribacterium sp. WCC10 graph.
 
 	References
 	---------------------

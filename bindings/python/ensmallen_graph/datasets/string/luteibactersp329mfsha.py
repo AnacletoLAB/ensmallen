@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteibacterSp329mfsha.
+This file offers the methods to automatically retrieve the graph Luteibacter sp. 329MFSha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteibacterSp329mfsha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteibacterSp329mfsha graph.
+    """Return new instance of the Luteibacter sp. 329MFSha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteibacterSp329mfsha(
 
     Returns
     -----------------------
-    Instace of LuteibacterSp329mfsha graph.
+    Instace of Luteibacter sp. 329MFSha graph.
 
 	References
 	---------------------

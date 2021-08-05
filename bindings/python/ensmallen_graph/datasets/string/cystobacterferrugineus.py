@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CystobacterFerrugineus.
+This file offers the methods to automatically retrieve the graph Cystobacter ferrugineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CystobacterFerrugineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CystobacterFerrugineus graph.
+    """Return new instance of the Cystobacter ferrugineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CystobacterFerrugineus(
 
     Returns
     -----------------------
-    Instace of CystobacterFerrugineus graph.
+    Instace of Cystobacter ferrugineus graph.
 
 	References
 	---------------------

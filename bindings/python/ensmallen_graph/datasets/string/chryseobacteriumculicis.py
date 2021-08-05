@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumCulicis.
+This file offers the methods to automatically retrieve the graph Chryseobacterium culicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumCulicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumCulicis graph.
+    """Return new instance of the Chryseobacterium culicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumCulicis(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumCulicis graph.
+    Instace of Chryseobacterium culicis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaXishanensisNbrc101358.
+This file offers the methods to automatically retrieve the graph Nocardia xishanensis NBRC 101358.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaXishanensisNbrc101358(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaXishanensisNbrc101358 graph.
+    """Return new instance of the Nocardia xishanensis NBRC 101358 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaXishanensisNbrc101358(
 
     Returns
     -----------------------
-    Instace of NocardiaXishanensisNbrc101358 graph.
+    Instace of Nocardia xishanensis NBRC 101358 graph.
 
 	References
 	---------------------

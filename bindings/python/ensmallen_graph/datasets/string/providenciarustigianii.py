@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaRustigianii.
+This file offers the methods to automatically retrieve the graph Providencia rustigianii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaRustigianii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaRustigianii graph.
+    """Return new instance of the Providencia rustigianii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProvidenciaRustigianii(
 
     Returns
     -----------------------
-    Instace of ProvidenciaRustigianii graph.
+    Instace of Providencia rustigianii graph.
 
 	References
 	---------------------

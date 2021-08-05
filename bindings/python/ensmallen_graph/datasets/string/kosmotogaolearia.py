@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KosmotogaOlearia.
+This file offers the methods to automatically retrieve the graph Kosmotoga olearia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KosmotogaOlearia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KosmotogaOlearia graph.
+    """Return new instance of the Kosmotoga olearia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KosmotogaOlearia(
 
     Returns
     -----------------------
-    Instace of KosmotogaOlearia graph.
+    Instace of Kosmotoga olearia graph.
 
 	References
 	---------------------

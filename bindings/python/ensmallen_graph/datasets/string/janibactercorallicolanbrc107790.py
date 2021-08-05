@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterCorallicolaNbrc107790.
+This file offers the methods to automatically retrieve the graph Janibacter corallicola NBRC 107790.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterCorallicolaNbrc107790(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterCorallicolaNbrc107790 graph.
+    """Return new instance of the Janibacter corallicola NBRC 107790 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanibacterCorallicolaNbrc107790(
 
     Returns
     -----------------------
-    Instace of JanibacterCorallicolaNbrc107790 graph.
+    Instace of Janibacter corallicola NBRC 107790 graph.
 
 	References
 	---------------------

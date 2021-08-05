@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CucumisMelo.
+This file offers the methods to automatically retrieve the graph Cucumis melo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CucumisMelo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CucumisMelo graph.
+    """Return new instance of the Cucumis melo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CucumisMelo(
 
     Returns
     -----------------------
-    Instace of CucumisMelo graph.
+    Instace of Cucumis melo graph.
 
 	References
 	---------------------

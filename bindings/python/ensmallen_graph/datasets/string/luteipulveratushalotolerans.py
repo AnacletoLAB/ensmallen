@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteipulveratusHalotolerans.
+This file offers the methods to automatically retrieve the graph Luteipulveratus halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteipulveratusHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteipulveratusHalotolerans graph.
+    """Return new instance of the Luteipulveratus halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteipulveratusHalotolerans(
 
     Returns
     -----------------------
-    Instace of LuteipulveratusHalotolerans graph.
+    Instace of Luteipulveratus halotolerans graph.
 
 	References
 	---------------------

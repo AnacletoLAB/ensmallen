@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrobaculumSp1860.
+This file offers the methods to automatically retrieve the graph Pyrobaculum sp. 1860.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrobaculumSp1860(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrobaculumSp1860 graph.
+    """Return new instance of the Pyrobaculum sp. 1860 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrobaculumSp1860(
 
     Returns
     -----------------------
-    Instace of PyrobaculumSp1860 graph.
+    Instace of Pyrobaculum sp. 1860 graph.
 
 	References
 	---------------------

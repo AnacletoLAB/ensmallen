@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusLacusDsm15449.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus lacus DSM 15449.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusLacusDsm15449(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusLacusDsm15449 graph.
+    """Return new instance of the Desulfosporosinus lacus DSM 15449 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfosporosinusLacusDsm15449(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusLacusDsm15449 graph.
+    Instace of Desulfosporosinus lacus DSM 15449 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusAgarilyticus.
+This file offers the methods to automatically retrieve the graph Halococcus agarilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusAgarilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusAgarilyticus graph.
+    """Return new instance of the Halococcus agarilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalococcusAgarilyticus(
 
     Returns
     -----------------------
-    Instace of HalococcusAgarilyticus graph.
+    Instace of Halococcus agarilyticus graph.
 
 	References
 	---------------------

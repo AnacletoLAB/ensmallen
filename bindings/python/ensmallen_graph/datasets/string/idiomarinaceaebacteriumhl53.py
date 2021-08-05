@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaceaeBacteriumHl53.
+This file offers the methods to automatically retrieve the graph Idiomarinaceae bacterium HL-53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaceaeBacteriumHl53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaceaeBacteriumHl53 graph.
+    """Return new instance of the Idiomarinaceae bacterium HL-53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaceaeBacteriumHl53(
 
     Returns
     -----------------------
-    Instace of IdiomarinaceaeBacteriumHl53 graph.
+    Instace of Idiomarinaceae bacterium HL-53 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasGudaonensis.
+This file offers the methods to automatically retrieve the graph Halomonas gudaonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasGudaonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasGudaonensis graph.
+    """Return new instance of the Halomonas gudaonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasGudaonensis(
 
     Returns
     -----------------------
-    Instace of HalomonasGudaonensis graph.
+    Instace of Halomonas gudaonensis graph.
 
 	References
 	---------------------

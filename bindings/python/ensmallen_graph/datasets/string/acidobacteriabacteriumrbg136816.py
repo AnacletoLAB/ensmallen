@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacteriumRbg136816.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium RBG_13_68_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacteriumRbg136816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacteriumRbg136816 graph.
+    """Return new instance of the Acidobacteria bacterium RBG_13_68_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacteriumRbg136816(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacteriumRbg136816 graph.
+    Instace of Acidobacteria bacterium RBG_13_68_16 graph.
 
 	References
 	---------------------

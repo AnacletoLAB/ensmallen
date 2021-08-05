@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraSpMz1t.
+This file offers the methods to automatically retrieve the graph Thauera sp. MZ1T.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraSpMz1t(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraSpMz1t graph.
+    """Return new instance of the Thauera sp. MZ1T graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThaueraSpMz1t(
 
     Returns
     -----------------------
-    Instace of ThaueraSpMz1t graph.
+    Instace of Thauera sp. MZ1T graph.
 
 	References
 	---------------------

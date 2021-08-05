@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterTowneri.
+This file offers the methods to automatically retrieve the graph Acinetobacter towneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterTowneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterTowneri graph.
+    """Return new instance of the Acinetobacter towneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterTowneri(
 
     Returns
     -----------------------
-    Instace of AcinetobacterTowneri graph.
+    Instace of Acinetobacter towneri graph.
 
 	References
 	---------------------

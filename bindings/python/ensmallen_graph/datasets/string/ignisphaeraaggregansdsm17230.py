@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnisphaeraAggregansDsm17230.
+This file offers the methods to automatically retrieve the graph Ignisphaera aggregans DSM 17230.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnisphaeraAggregansDsm17230(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnisphaeraAggregansDsm17230 graph.
+    """Return new instance of the Ignisphaera aggregans DSM 17230 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnisphaeraAggregansDsm17230(
 
     Returns
     -----------------------
-    Instace of IgnisphaeraAggregansDsm17230 graph.
+    Instace of Ignisphaera aggregans DSM 17230 graph.
 
 	References
 	---------------------

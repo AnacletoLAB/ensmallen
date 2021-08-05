@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenopusLaevis.
+This file offers the methods to automatically retrieve the graph Xenopus laevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenopusLaevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenopusLaevis graph.
+    """Return new instance of the Xenopus laevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenopusLaevis(
 
     Returns
     -----------------------
-    Instace of XenopusLaevis graph.
+    Instace of Xenopus laevis graph.
 
 	References
 	---------------------

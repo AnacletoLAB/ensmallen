@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriumAcmicro4.
+This file offers the methods to automatically retrieve the graph actinobacterium acMicro-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriumAcmicro4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriumAcmicro4 graph.
+    """Return new instance of the actinobacterium acMicro-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriumAcmicro4(
 
     Returns
     -----------------------
-    Instace of ActinobacteriumAcmicro4 graph.
+    Instace of actinobacterium acMicro-4 graph.
 
 	References
 	---------------------

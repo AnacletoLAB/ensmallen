@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumA2Kyoto.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum A2 Kyoto.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumA2Kyoto(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumA2Kyoto graph.
+    """Return new instance of the Clostridium botulinum A2 Kyoto graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumA2Kyoto(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumA2Kyoto graph.
+    Instace of Clostridium botulinum A2 Kyoto graph.
 
 	References
 	---------------------

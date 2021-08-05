@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusEndophyticus.
+This file offers the methods to automatically retrieve the graph Bacillus endophyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusEndophyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusEndophyticus graph.
+    """Return new instance of the Bacillus endophyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusEndophyticus(
 
     Returns
     -----------------------
-    Instace of BacillusEndophyticus graph.
+    Instace of Bacillus endophyticus graph.
 
 	References
 	---------------------

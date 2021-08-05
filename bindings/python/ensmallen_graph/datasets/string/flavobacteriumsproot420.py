@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpRoot420.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. Root420.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpRoot420(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpRoot420 graph.
+    """Return new instance of the Flavobacterium sp. Root420 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpRoot420(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpRoot420 graph.
+    Instace of Flavobacterium sp. Root420 graph.
 
 	References
 	---------------------

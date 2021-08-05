@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumMercantei.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium mercantei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumMercantei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumMercantei graph.
+    """Return new instance of the Bradyrhizobium mercantei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumMercantei(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumMercantei graph.
+    Instace of Bradyrhizobium mercantei graph.
 
 	References
 	---------------------

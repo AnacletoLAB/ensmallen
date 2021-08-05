@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAcetotolerans.
+This file offers the methods to automatically retrieve the graph Lactobacillus acetotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAcetotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAcetotolerans graph.
+    """Return new instance of the Lactobacillus acetotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAcetotolerans(
 
     Returns
     -----------------------
-    Instace of LactobacillusAcetotolerans graph.
+    Instace of Lactobacillus acetotolerans graph.
 
 	References
 	---------------------

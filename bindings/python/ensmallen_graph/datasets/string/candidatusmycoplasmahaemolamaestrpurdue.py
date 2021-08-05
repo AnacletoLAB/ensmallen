@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMycoplasmaHaemolamaeStrPurdue.
+This file offers the methods to automatically retrieve the graph Candidatus Mycoplasma haemolamae str. Purdue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMycoplasmaHaemolamaeStrPurdue(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMycoplasmaHaemolamaeStrPurdue graph.
+    """Return new instance of the Candidatus Mycoplasma haemolamae str. Purdue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMycoplasmaHaemolamaeStrPurdue(
 
     Returns
     -----------------------
-    Instace of CandidatusMycoplasmaHaemolamaeStrPurdue graph.
+    Instace of Candidatus Mycoplasma haemolamae str. Purdue graph.
 
 	References
 	---------------------

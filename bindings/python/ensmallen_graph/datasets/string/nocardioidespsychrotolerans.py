@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Nocardioides psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesPsychrotolerans graph.
+    """Return new instance of the Nocardioides psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of NocardioidesPsychrotolerans graph.
+    Instace of Nocardioides psychrotolerans graph.
 
 	References
 	---------------------

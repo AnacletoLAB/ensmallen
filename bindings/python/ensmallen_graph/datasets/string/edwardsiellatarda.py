@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EdwardsiellaTarda.
+This file offers the methods to automatically retrieve the graph Edwardsiella tarda.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EdwardsiellaTarda(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EdwardsiellaTarda graph.
+    """Return new instance of the Edwardsiella tarda graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EdwardsiellaTarda(
 
     Returns
     -----------------------
-    Instace of EdwardsiellaTarda graph.
+    Instace of Edwardsiella tarda graph.
 
 	References
 	---------------------

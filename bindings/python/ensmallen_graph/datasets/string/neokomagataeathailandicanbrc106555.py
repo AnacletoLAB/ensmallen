@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeokomagataeaThailandicaNbrc106555.
+This file offers the methods to automatically retrieve the graph Neokomagataea thailandica NBRC 106555.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeokomagataeaThailandicaNbrc106555(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeokomagataeaThailandicaNbrc106555 graph.
+    """Return new instance of the Neokomagataea thailandica NBRC 106555 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeokomagataeaThailandicaNbrc106555(
 
     Returns
     -----------------------
-    Instace of NeokomagataeaThailandicaNbrc106555 graph.
+    Instace of Neokomagataea thailandica NBRC 106555 graph.
 
 	References
 	---------------------

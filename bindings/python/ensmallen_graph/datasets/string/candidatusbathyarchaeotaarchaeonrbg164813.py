@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBathyarchaeotaArchaeonRbg164813.
+This file offers the methods to automatically retrieve the graph Candidatus Bathyarchaeota archaeon RBG_16_48_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBathyarchaeotaArchaeonRbg164813(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBathyarchaeotaArchaeonRbg164813 graph.
+    """Return new instance of the Candidatus Bathyarchaeota archaeon RBG_16_48_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBathyarchaeotaArchaeonRbg164813(
 
     Returns
     -----------------------
-    Instace of CandidatusBathyarchaeotaArchaeonRbg164813 graph.
+    Instace of Candidatus Bathyarchaeota archaeon RBG_16_48_13 graph.
 
 	References
 	---------------------

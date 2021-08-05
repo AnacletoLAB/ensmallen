@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrolunatusPhosphovorus.
+This file offers the methods to automatically retrieve the graph Microlunatus phosphovorus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrolunatusPhosphovorus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrolunatusPhosphovorus graph.
+    """Return new instance of the Microlunatus phosphovorus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrolunatusPhosphovorus(
 
     Returns
     -----------------------
-    Instace of MicrolunatusPhosphovorus graph.
+    Instace of Microlunatus phosphovorus graph.
 
 	References
 	---------------------

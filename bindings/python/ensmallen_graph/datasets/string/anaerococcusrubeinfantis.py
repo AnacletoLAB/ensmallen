@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusRubeinfantis.
+This file offers the methods to automatically retrieve the graph Anaerococcus rubeinfantis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusRubeinfantis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusRubeinfantis graph.
+    """Return new instance of the Anaerococcus rubeinfantis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerococcusRubeinfantis(
 
     Returns
     -----------------------
-    Instace of AnaerococcusRubeinfantis graph.
+    Instace of Anaerococcus rubeinfantis graph.
 
 	References
 	---------------------

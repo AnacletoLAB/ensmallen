@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusCaeni.
+This file offers the methods to automatically retrieve the graph Oceanobacillus caeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusCaeni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusCaeni graph.
+    """Return new instance of the Oceanobacillus caeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusCaeni(
 
     Returns
     -----------------------
-    Instace of OceanobacillusCaeni graph.
+    Instace of Oceanobacillus caeni graph.
 
 	References
 	---------------------

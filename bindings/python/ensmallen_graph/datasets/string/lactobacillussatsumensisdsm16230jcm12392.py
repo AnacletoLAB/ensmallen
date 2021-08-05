@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSatsumensisDsm16230Jcm12392.
+This file offers the methods to automatically retrieve the graph Lactobacillus satsumensis DSM 16230 JCM 12392.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSatsumensisDsm16230Jcm12392(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSatsumensisDsm16230Jcm12392 graph.
+    """Return new instance of the Lactobacillus satsumensis DSM 16230 JCM 12392 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSatsumensisDsm16230Jcm12392(
 
     Returns
     -----------------------
-    Instace of LactobacillusSatsumensisDsm16230Jcm12392 graph.
+    Instace of Lactobacillus satsumensis DSM 16230 JCM 12392 graph.
 
 	References
 	---------------------

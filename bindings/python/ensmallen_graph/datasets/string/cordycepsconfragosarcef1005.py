@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CordycepsConfragosaRcef1005.
+This file offers the methods to automatically retrieve the graph Cordyceps confragosa RCEF 1005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CordycepsConfragosaRcef1005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CordycepsConfragosaRcef1005 graph.
+    """Return new instance of the Cordyceps confragosa RCEF 1005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CordycepsConfragosaRcef1005(
 
     Returns
     -----------------------
-    Instace of CordycepsConfragosaRcef1005 graph.
+    Instace of Cordyceps confragosa RCEF 1005 graph.
 
 	References
 	---------------------

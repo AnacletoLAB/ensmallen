@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StappiaSp22iiS9Z10.
+This file offers the methods to automatically retrieve the graph Stappia sp. 22II-S9-Z10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StappiaSp22iiS9Z10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StappiaSp22iiS9Z10 graph.
+    """Return new instance of the Stappia sp. 22II-S9-Z10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StappiaSp22iiS9Z10(
 
     Returns
     -----------------------
-    Instace of StappiaSp22iiS9Z10 graph.
+    Instace of Stappia sp. 22II-S9-Z10 graph.
 
 	References
 	---------------------

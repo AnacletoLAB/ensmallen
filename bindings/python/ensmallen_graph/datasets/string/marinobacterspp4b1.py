@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpP4b1.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. P4B1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpP4b1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpP4b1 graph.
+    """Return new instance of the Marinobacter sp. P4B1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSpP4b1(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpP4b1 graph.
+    Instace of Marinobacter sp. P4B1 graph.
 
 	References
 	---------------------

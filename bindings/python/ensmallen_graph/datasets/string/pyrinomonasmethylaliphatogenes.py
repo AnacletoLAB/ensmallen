@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrinomonasMethylaliphatogenes.
+This file offers the methods to automatically retrieve the graph Pyrinomonas methylaliphatogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrinomonasMethylaliphatogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrinomonasMethylaliphatogenes graph.
+    """Return new instance of the Pyrinomonas methylaliphatogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrinomonasMethylaliphatogenes(
 
     Returns
     -----------------------
-    Instace of PyrinomonasMethylaliphatogenes graph.
+    Instace of Pyrinomonas methylaliphatogenes graph.
 
 	References
 	---------------------

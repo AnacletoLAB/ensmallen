@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaTurkmenica.
+This file offers the methods to automatically retrieve the graph Haloterrigena turkmenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaTurkmenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaTurkmenica graph.
+    """Return new instance of the Haloterrigena turkmenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloterrigenaTurkmenica(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaTurkmenica graph.
+    Instace of Haloterrigena turkmenica graph.
 
 	References
 	---------------------

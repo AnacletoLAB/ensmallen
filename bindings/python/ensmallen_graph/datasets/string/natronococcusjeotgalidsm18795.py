@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronococcusJeotgaliDsm18795.
+This file offers the methods to automatically retrieve the graph Natronococcus jeotgali DSM 18795.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronococcusJeotgaliDsm18795(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronococcusJeotgaliDsm18795 graph.
+    """Return new instance of the Natronococcus jeotgali DSM 18795 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronococcusJeotgaliDsm18795(
 
     Returns
     -----------------------
-    Instace of NatronococcusJeotgaliDsm18795 graph.
+    Instace of Natronococcus jeotgali DSM 18795 graph.
 
 	References
 	---------------------

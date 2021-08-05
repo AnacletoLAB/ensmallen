@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DromaiusNovaehollandiae.
+This file offers the methods to automatically retrieve the graph Dromaius novaehollandiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DromaiusNovaehollandiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DromaiusNovaehollandiae graph.
+    """Return new instance of the Dromaius novaehollandiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DromaiusNovaehollandiae(
 
     Returns
     -----------------------
-    Instace of DromaiusNovaehollandiae graph.
+    Instace of Dromaius novaehollandiae graph.
 
 	References
 	---------------------

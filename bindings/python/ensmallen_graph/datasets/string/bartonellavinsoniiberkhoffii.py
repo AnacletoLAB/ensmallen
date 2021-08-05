@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaVinsoniiBerkhoffii.
+This file offers the methods to automatically retrieve the graph Bartonella vinsonii berkhoffii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaVinsoniiBerkhoffii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaVinsoniiBerkhoffii graph.
+    """Return new instance of the Bartonella vinsonii berkhoffii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaVinsoniiBerkhoffii(
 
     Returns
     -----------------------
-    Instace of BartonellaVinsoniiBerkhoffii graph.
+    Instace of Bartonella vinsonii berkhoffii graph.
 
 	References
 	---------------------

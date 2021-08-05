@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeniophoraSpCont.
+This file offers the methods to automatically retrieve the graph Peniophora sp. CONT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeniophoraSpCont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeniophoraSpCont graph.
+    """Return new instance of the Peniophora sp. CONT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeniophoraSpCont(
 
     Returns
     -----------------------
-    Instace of PeniophoraSpCont graph.
+    Instace of Peniophora sp. CONT graph.
 
 	References
 	---------------------

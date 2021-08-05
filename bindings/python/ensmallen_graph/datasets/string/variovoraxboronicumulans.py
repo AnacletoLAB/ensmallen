@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxBoronicumulans.
+This file offers the methods to automatically retrieve the graph Variovorax boronicumulans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxBoronicumulans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxBoronicumulans graph.
+    """Return new instance of the Variovorax boronicumulans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxBoronicumulans(
 
     Returns
     -----------------------
-    Instace of VariovoraxBoronicumulans graph.
+    Instace of Variovorax boronicumulans graph.
 
 	References
 	---------------------

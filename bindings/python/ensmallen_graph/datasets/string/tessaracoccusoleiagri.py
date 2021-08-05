@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusOleiagri.
+This file offers the methods to automatically retrieve the graph Tessaracoccus oleiagri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusOleiagri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusOleiagri graph.
+    """Return new instance of the Tessaracoccus oleiagri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusOleiagri(
 
     Returns
     -----------------------
-    Instace of TessaracoccusOleiagri graph.
+    Instace of Tessaracoccus oleiagri graph.
 
 	References
 	---------------------

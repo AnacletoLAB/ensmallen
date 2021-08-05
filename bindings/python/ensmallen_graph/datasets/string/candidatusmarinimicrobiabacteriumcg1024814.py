@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMarinimicrobiaBacteriumCg1024814.
+This file offers the methods to automatically retrieve the graph Candidatus Marinimicrobia bacterium CG1_02_48_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMarinimicrobiaBacteriumCg1024814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMarinimicrobiaBacteriumCg1024814 graph.
+    """Return new instance of the Candidatus Marinimicrobia bacterium CG1_02_48_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMarinimicrobiaBacteriumCg1024814(
 
     Returns
     -----------------------
-    Instace of CandidatusMarinimicrobiaBacteriumCg1024814 graph.
+    Instace of Candidatus Marinimicrobia bacterium CG1_02_48_14 graph.
 
 	References
 	---------------------

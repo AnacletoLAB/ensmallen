@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrametesCoccineaBrfm310.
+This file offers the methods to automatically retrieve the graph Trametes coccinea BRFM310.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrametesCoccineaBrfm310(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrametesCoccineaBrfm310 graph.
+    """Return new instance of the Trametes coccinea BRFM310 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrametesCoccineaBrfm310(
 
     Returns
     -----------------------
-    Instace of TrametesCoccineaBrfm310 graph.
+    Instace of Trametes coccinea BRFM310 graph.
 
 	References
 	---------------------

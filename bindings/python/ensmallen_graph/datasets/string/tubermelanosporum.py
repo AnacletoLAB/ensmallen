@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuberMelanosporum.
+This file offers the methods to automatically retrieve the graph Tuber melanosporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TuberMelanosporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuberMelanosporum graph.
+    """Return new instance of the Tuber melanosporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TuberMelanosporum(
 
     Returns
     -----------------------
-    Instace of TuberMelanosporum graph.
+    Instace of Tuber melanosporum graph.
 
 	References
 	---------------------

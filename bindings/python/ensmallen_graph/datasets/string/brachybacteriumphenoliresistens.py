@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumPhenoliresistens.
+This file offers the methods to automatically retrieve the graph Brachybacterium phenoliresistens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumPhenoliresistens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumPhenoliresistens graph.
+    """Return new instance of the Brachybacterium phenoliresistens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachybacteriumPhenoliresistens(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumPhenoliresistens graph.
+    Instace of Brachybacterium phenoliresistens graph.
 
 	References
 	---------------------

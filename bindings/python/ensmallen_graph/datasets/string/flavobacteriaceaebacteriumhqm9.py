@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumHqm9.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium HQM9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumHqm9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumHqm9 graph.
+    """Return new instance of the Flavobacteriaceae bacterium HQM9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriaceaeBacteriumHqm9(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumHqm9 graph.
+    Instace of Flavobacteriaceae bacterium HQM9 graph.
 
 	References
 	---------------------

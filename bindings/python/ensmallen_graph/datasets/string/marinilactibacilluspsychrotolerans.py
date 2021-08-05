@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinilactibacillusPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Marinilactibacillus psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinilactibacillusPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinilactibacillusPsychrotolerans graph.
+    """Return new instance of the Marinilactibacillus psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinilactibacillusPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of MarinilactibacillusPsychrotolerans graph.
+    Instace of Marinilactibacillus psychrotolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TardiphagaSpOk245.
+This file offers the methods to automatically retrieve the graph Tardiphaga sp. OK245.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TardiphagaSpOk245(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TardiphagaSpOk245 graph.
+    """Return new instance of the Tardiphaga sp. OK245 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TardiphagaSpOk245(
 
     Returns
     -----------------------
-    Instace of TardiphagaSpOk245 graph.
+    Instace of Tardiphaga sp. OK245 graph.
 
 	References
 	---------------------

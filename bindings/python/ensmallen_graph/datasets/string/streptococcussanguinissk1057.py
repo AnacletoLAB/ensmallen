@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSanguinisSk1057.
+This file offers the methods to automatically retrieve the graph Streptococcus sanguinis SK1057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSanguinisSk1057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSanguinisSk1057 graph.
+    """Return new instance of the Streptococcus sanguinis SK1057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSanguinisSk1057(
 
     Returns
     -----------------------
-    Instace of StreptococcusSanguinisSk1057 graph.
+    Instace of Streptococcus sanguinis SK1057 graph.
 
 	References
 	---------------------

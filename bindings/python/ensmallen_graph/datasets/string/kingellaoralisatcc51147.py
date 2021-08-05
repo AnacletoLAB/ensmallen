@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KingellaOralisAtcc51147.
+This file offers the methods to automatically retrieve the graph Kingella oralis ATCC 51147.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KingellaOralisAtcc51147(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KingellaOralisAtcc51147 graph.
+    """Return new instance of the Kingella oralis ATCC 51147 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KingellaOralisAtcc51147(
 
     Returns
     -----------------------
-    Instace of KingellaOralisAtcc51147 graph.
+    Instace of Kingella oralis ATCC 51147 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndocarponPusillum.
+This file offers the methods to automatically retrieve the graph Endocarpon pusillum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndocarponPusillum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndocarponPusillum graph.
+    """Return new instance of the Endocarpon pusillum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndocarponPusillum(
 
     Returns
     -----------------------
-    Instace of EndocarponPusillum graph.
+    Instace of Endocarpon pusillum graph.
 
 	References
 	---------------------

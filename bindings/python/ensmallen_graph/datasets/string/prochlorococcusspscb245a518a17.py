@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusSpScb245a518a17.
+This file offers the methods to automatically retrieve the graph Prochlorococcus sp. scB245a_518A17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusSpScb245a518a17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusSpScb245a518a17 graph.
+    """Return new instance of the Prochlorococcus sp. scB245a_518A17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProchlorococcusSpScb245a518a17(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusSpScb245a518a17 graph.
+    Instace of Prochlorococcus sp. scB245a_518A17 graph.
 
 	References
 	---------------------

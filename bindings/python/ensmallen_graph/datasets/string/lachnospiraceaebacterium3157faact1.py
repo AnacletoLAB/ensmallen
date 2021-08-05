@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacterium3157faact1.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium 3157FAACT1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacterium3157faact1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacterium3157faact1 graph.
+    """Return new instance of the Lachnospiraceae bacterium 3157FAACT1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacterium3157faact1(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacterium3157faact1 graph.
+    Instace of Lachnospiraceae bacterium 3157FAACT1 graph.
 
 	References
 	---------------------

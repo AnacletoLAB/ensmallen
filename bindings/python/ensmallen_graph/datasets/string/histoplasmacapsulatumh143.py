@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HistoplasmaCapsulatumH143.
+This file offers the methods to automatically retrieve the graph Histoplasma capsulatum H143.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HistoplasmaCapsulatumH143(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HistoplasmaCapsulatumH143 graph.
+    """Return new instance of the Histoplasma capsulatum H143 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HistoplasmaCapsulatumH143(
 
     Returns
     -----------------------
-    Instace of HistoplasmaCapsulatumH143 graph.
+    Instace of Histoplasma capsulatum H143 graph.
 
 	References
 	---------------------

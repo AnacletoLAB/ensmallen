@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusNiacini.
+This file offers the methods to automatically retrieve the graph Bacillus niacini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusNiacini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusNiacini graph.
+    """Return new instance of the Bacillus niacini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusNiacini(
 
     Returns
     -----------------------
-    Instace of BacillusNiacini graph.
+    Instace of Bacillus niacini graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EremotheciumSinecaudum.
+This file offers the methods to automatically retrieve the graph Eremothecium sinecaudum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EremotheciumSinecaudum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EremotheciumSinecaudum graph.
+    """Return new instance of the Eremothecium sinecaudum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EremotheciumSinecaudum(
 
     Returns
     -----------------------
-    Instace of EremotheciumSinecaudum graph.
+    Instace of Eremothecium sinecaudum graph.
 
 	References
 	---------------------

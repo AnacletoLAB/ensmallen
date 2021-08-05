@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptococcusNeoformansVarNeoformansJec21.
+This file offers the methods to automatically retrieve the graph Cryptococcus neoformans var. neoformans JEC21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptococcusNeoformansVarNeoformansJec21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptococcusNeoformansVarNeoformansJec21 graph.
+    """Return new instance of the Cryptococcus neoformans var. neoformans JEC21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptococcusNeoformansVarNeoformansJec21(
 
     Returns
     -----------------------
-    Instace of CryptococcusNeoformansVarNeoformansJec21 graph.
+    Instace of Cryptococcus neoformans var. neoformans JEC21 graph.
 
 	References
 	---------------------

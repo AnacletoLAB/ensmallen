@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrabulsiellaGuamensis.
+This file offers the methods to automatically retrieve the graph Trabulsiella guamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrabulsiellaGuamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrabulsiellaGuamensis graph.
+    """Return new instance of the Trabulsiella guamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrabulsiellaGuamensis(
 
     Returns
     -----------------------
-    Instace of TrabulsiellaGuamensis graph.
+    Instace of Trabulsiella guamensis graph.
 
 	References
 	---------------------

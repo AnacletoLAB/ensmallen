@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionimicrobiumLymphophilumAcs093VSch5.
+This file offers the methods to automatically retrieve the graph Propionimicrobium lymphophilum ACS-093-V-SCH5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionimicrobiumLymphophilumAcs093VSch5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionimicrobiumLymphophilumAcs093VSch5 graph.
+    """Return new instance of the Propionimicrobium lymphophilum ACS-093-V-SCH5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionimicrobiumLymphophilumAcs093VSch5(
 
     Returns
     -----------------------
-    Instace of PropionimicrobiumLymphophilumAcs093VSch5 graph.
+    Instace of Propionimicrobium lymphophilum ACS-093-V-SCH5 graph.
 
 	References
 	---------------------

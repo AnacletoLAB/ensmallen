@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FulvivirgaImtechensis.
+This file offers the methods to automatically retrieve the graph Fulvivirga imtechensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FulvivirgaImtechensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FulvivirgaImtechensis graph.
+    """Return new instance of the Fulvivirga imtechensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FulvivirgaImtechensis(
 
     Returns
     -----------------------
-    Instace of FulvivirgaImtechensis graph.
+    Instace of Fulvivirga imtechensis graph.
 
 	References
 	---------------------

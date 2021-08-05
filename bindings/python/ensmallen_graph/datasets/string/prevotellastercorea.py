@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaStercorea.
+This file offers the methods to automatically retrieve the graph Prevotella stercorea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaStercorea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaStercorea graph.
+    """Return new instance of the Prevotella stercorea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaStercorea(
 
     Returns
     -----------------------
-    Instace of PrevotellaStercorea graph.
+    Instace of Prevotella stercorea graph.
 
 	References
 	---------------------

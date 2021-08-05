@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorientalisSpIm1011.
+This file offers the methods to automatically retrieve the graph Halorientalis sp. IM1011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorientalisSpIm1011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorientalisSpIm1011 graph.
+    """Return new instance of the Halorientalis sp. IM1011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorientalisSpIm1011(
 
     Returns
     -----------------------
-    Instace of HalorientalisSpIm1011 graph.
+    Instace of Halorientalis sp. IM1011 graph.
 
 	References
 	---------------------

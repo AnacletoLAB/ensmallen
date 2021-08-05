@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAmoebophilusSp3638.
+This file offers the methods to automatically retrieve the graph Candidatus Amoebophilus sp. 36-38.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAmoebophilusSp3638(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAmoebophilusSp3638 graph.
+    """Return new instance of the Candidatus Amoebophilus sp. 36-38 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAmoebophilusSp3638(
 
     Returns
     -----------------------
-    Instace of CandidatusAmoebophilusSp3638 graph.
+    Instace of Candidatus Amoebophilus sp. 36-38 graph.
 
 	References
 	---------------------

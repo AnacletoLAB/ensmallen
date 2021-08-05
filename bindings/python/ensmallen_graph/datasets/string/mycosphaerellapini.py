@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycosphaerellaPini.
+This file offers the methods to automatically retrieve the graph Mycosphaerella pini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycosphaerellaPini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycosphaerellaPini graph.
+    """Return new instance of the Mycosphaerella pini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycosphaerellaPini(
 
     Returns
     -----------------------
-    Instace of MycosphaerellaPini graph.
+    Instace of Mycosphaerella pini graph.
 
 	References
 	---------------------

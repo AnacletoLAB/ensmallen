@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolirubrobacteralesBacterium6714.
+This file offers the methods to automatically retrieve the graph Solirubrobacterales bacterium 67-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolirubrobacteralesBacterium6714(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolirubrobacteralesBacterium6714 graph.
+    """Return new instance of the Solirubrobacterales bacterium 67-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolirubrobacteralesBacterium6714(
 
     Returns
     -----------------------
-    Instace of SolirubrobacteralesBacterium6714 graph.
+    Instace of Solirubrobacterales bacterium 67-14 graph.
 
 	References
 	---------------------

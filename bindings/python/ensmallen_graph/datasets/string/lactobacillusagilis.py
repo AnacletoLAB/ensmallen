@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAgilis.
+This file offers the methods to automatically retrieve the graph Lactobacillus agilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAgilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAgilis graph.
+    """Return new instance of the Lactobacillus agilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAgilis(
 
     Returns
     -----------------------
-    Instace of LactobacillusAgilis graph.
+    Instace of Lactobacillus agilis graph.
 
 	References
 	---------------------

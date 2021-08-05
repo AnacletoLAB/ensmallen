@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumSalicis.
+This file offers the methods to automatically retrieve the graph Colletotrichum salicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumSalicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumSalicis graph.
+    """Return new instance of the Colletotrichum salicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumSalicis(
 
     Returns
     -----------------------
-    Instace of ColletotrichumSalicis graph.
+    Instace of Colletotrichum salicis graph.
 
 	References
 	---------------------

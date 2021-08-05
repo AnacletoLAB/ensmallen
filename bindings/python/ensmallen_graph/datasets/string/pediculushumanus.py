@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediculusHumanus.
+This file offers the methods to automatically retrieve the graph Pediculus humanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediculusHumanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediculusHumanus graph.
+    """Return new instance of the Pediculus humanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PediculusHumanus(
 
     Returns
     -----------------------
-    Instace of PediculusHumanus graph.
+    Instace of Pediculus humanus graph.
 
 	References
 	---------------------

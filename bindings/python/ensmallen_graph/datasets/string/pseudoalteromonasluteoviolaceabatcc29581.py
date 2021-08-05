@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasLuteoviolaceaBAtcc29581.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas luteoviolacea B  ATCC 29581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasLuteoviolaceaBAtcc29581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasLuteoviolaceaBAtcc29581 graph.
+    """Return new instance of the Pseudoalteromonas luteoviolacea B  ATCC 29581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasLuteoviolaceaBAtcc29581(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasLuteoviolaceaBAtcc29581 graph.
+    Instace of Pseudoalteromonas luteoviolacea B  ATCC 29581 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph T03314l.
+This file offers the methods to automatically retrieve the graph t0331-4l.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def T03314l(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the T03314l graph.
+    """Return new instance of the t0331-4l graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def T03314l(
 
     Returns
     -----------------------
-    Instace of T03314l graph.
+    Instace of t0331-4l graph.
 
 	References
 	---------------------

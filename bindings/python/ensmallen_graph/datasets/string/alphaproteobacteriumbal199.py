@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumBal199.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium BAL199.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumBal199(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumBal199 graph.
+    """Return new instance of the alpha proteobacterium BAL199 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumBal199(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumBal199 graph.
+    Instace of alpha proteobacterium BAL199 graph.
 
 	References
 	---------------------

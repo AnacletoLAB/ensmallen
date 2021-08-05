@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechCaidarouterlevel.
+This file offers the methods to automatically retrieve the graph tech-caidaRouterLevel.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def TechCaidarouterlevel(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechCaidarouterlevel graph.
+    """Return new instance of the tech-caidaRouterLevel graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def TechCaidarouterlevel(
 
     Returns
     -----------------------
-    Instace of TechCaidarouterlevel graph.
+    Instace of tech-caidaRouterLevel graph.
 
 	References
 	---------------------

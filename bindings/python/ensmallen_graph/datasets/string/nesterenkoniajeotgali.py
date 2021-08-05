@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesterenkoniaJeotgali.
+This file offers the methods to automatically retrieve the graph Nesterenkonia jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesterenkoniaJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesterenkoniaJeotgali graph.
+    """Return new instance of the Nesterenkonia jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NesterenkoniaJeotgali(
 
     Returns
     -----------------------
-    Instace of NesterenkoniaJeotgali graph.
+    Instace of Nesterenkonia jeotgali graph.
 
 	References
 	---------------------

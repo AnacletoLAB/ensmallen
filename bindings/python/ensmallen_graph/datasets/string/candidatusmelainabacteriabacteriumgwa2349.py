@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMelainabacteriaBacteriumGwa2349.
+This file offers the methods to automatically retrieve the graph Candidatus Melainabacteria bacterium GWA2_34_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMelainabacteriaBacteriumGwa2349(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMelainabacteriaBacteriumGwa2349 graph.
+    """Return new instance of the Candidatus Melainabacteria bacterium GWA2_34_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMelainabacteriaBacteriumGwa2349(
 
     Returns
     -----------------------
-    Instace of CandidatusMelainabacteriaBacteriumGwa2349 graph.
+    Instace of Candidatus Melainabacteria bacterium GWA2_34_9 graph.
 
 	References
 	---------------------

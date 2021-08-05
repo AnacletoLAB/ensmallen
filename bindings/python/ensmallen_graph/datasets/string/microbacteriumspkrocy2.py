@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpKrocy2.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. KROCY2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpKrocy2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpKrocy2 graph.
+    """Return new instance of the Microbacterium sp. KROCY2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumSpKrocy2(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpKrocy2 graph.
+    Instace of Microbacterium sp. KROCY2 graph.
 
 	References
 	---------------------

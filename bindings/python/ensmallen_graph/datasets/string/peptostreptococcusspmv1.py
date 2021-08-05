@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptostreptococcusSpMv1.
+This file offers the methods to automatically retrieve the graph Peptostreptococcus sp. MV1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptostreptococcusSpMv1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptostreptococcusSpMv1 graph.
+    """Return new instance of the Peptostreptococcus sp. MV1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptostreptococcusSpMv1(
 
     Returns
     -----------------------
-    Instace of PeptostreptococcusSpMv1 graph.
+    Instace of Peptostreptococcus sp. MV1 graph.
 
 	References
 	---------------------

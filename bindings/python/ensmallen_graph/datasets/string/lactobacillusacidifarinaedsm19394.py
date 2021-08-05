@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAcidifarinaeDsm19394.
+This file offers the methods to automatically retrieve the graph Lactobacillus acidifarinae DSM 19394.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAcidifarinaeDsm19394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAcidifarinaeDsm19394 graph.
+    """Return new instance of the Lactobacillus acidifarinae DSM 19394 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAcidifarinaeDsm19394(
 
     Returns
     -----------------------
-    Instace of LactobacillusAcidifarinaeDsm19394 graph.
+    Instace of Lactobacillus acidifarinae DSM 19394 graph.
 
 	References
 	---------------------

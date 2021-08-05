@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaSpGas231.
+This file offers the methods to automatically retrieve the graph Afipia sp. GAS231.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaSpGas231(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaSpGas231 graph.
+    """Return new instance of the Afipia sp. GAS231 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AfipiaSpGas231(
 
     Returns
     -----------------------
-    Instace of AfipiaSpGas231 graph.
+    Instace of Afipia sp. GAS231 graph.
 
 	References
 	---------------------

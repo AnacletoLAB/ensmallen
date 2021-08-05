@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TilletiariaAnomalaUbc951.
+This file offers the methods to automatically retrieve the graph Tilletiaria anomala UBC 951.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TilletiariaAnomalaUbc951(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TilletiariaAnomalaUbc951 graph.
+    """Return new instance of the Tilletiaria anomala UBC 951 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TilletiariaAnomalaUbc951(
 
     Returns
     -----------------------
-    Instace of TilletiariaAnomalaUbc951 graph.
+    Instace of Tilletiaria anomala UBC 951 graph.
 
 	References
 	---------------------

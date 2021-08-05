@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusEpidermidisAtcc12228.
+This file offers the methods to automatically retrieve the graph Staphylococcus epidermidis ATCC12228.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusEpidermidisAtcc12228(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusEpidermidisAtcc12228 graph.
+    """Return new instance of the Staphylococcus epidermidis ATCC12228 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusEpidermidisAtcc12228(
 
     Returns
     -----------------------
-    Instace of StaphylococcusEpidermidisAtcc12228 graph.
+    Instace of Staphylococcus epidermidis ATCC12228 graph.
 
 	References
 	---------------------

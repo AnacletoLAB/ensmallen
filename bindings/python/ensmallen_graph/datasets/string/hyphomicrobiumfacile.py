@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumFacile.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium facile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumFacile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumFacile graph.
+    """Return new instance of the Hyphomicrobium facile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomicrobiumFacile(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumFacile graph.
+    Instace of Hyphomicrobium facile graph.
 
 	References
 	---------------------

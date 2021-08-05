@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavigranumRuoffiae.
+This file offers the methods to automatically retrieve the graph Ignavigranum ruoffiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavigranumRuoffiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavigranumRuoffiae graph.
+    """Return new instance of the Ignavigranum ruoffiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavigranumRuoffiae(
 
     Returns
     -----------------------
-    Instace of IgnavigranumRuoffiae graph.
+    Instace of Ignavigranum ruoffiae graph.
 
 	References
 	---------------------

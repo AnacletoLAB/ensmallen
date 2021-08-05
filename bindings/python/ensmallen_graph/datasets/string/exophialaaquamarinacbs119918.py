@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaAquamarinaCbs119918.
+This file offers the methods to automatically retrieve the graph Exophiala aquamarina CBS 119918.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaAquamarinaCbs119918(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaAquamarinaCbs119918 graph.
+    """Return new instance of the Exophiala aquamarina CBS 119918 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaAquamarinaCbs119918(
 
     Returns
     -----------------------
-    Instace of ExophialaAquamarinaCbs119918 graph.
+    Instace of Exophiala aquamarina CBS 119918 graph.
 
 	References
 	---------------------

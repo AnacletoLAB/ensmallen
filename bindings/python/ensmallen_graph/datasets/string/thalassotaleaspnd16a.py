@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassotaleaSpNd16a.
+This file offers the methods to automatically retrieve the graph Thalassotalea sp. ND16A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassotaleaSpNd16a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassotaleaSpNd16a graph.
+    """Return new instance of the Thalassotalea sp. ND16A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassotaleaSpNd16a(
 
     Returns
     -----------------------
-    Instace of ThalassotaleaSpNd16a graph.
+    Instace of Thalassotalea sp. ND16A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScophthalmusMaximus.
+This file offers the methods to automatically retrieve the graph Scophthalmus maximus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScophthalmusMaximus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScophthalmusMaximus graph.
+    """Return new instance of the Scophthalmus maximus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScophthalmusMaximus(
 
     Returns
     -----------------------
-    Instace of ScophthalmusMaximus graph.
+    Instace of Scophthalmus maximus graph.
 
 	References
 	---------------------

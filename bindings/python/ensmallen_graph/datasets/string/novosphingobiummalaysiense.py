@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumMalaysiense.
+This file offers the methods to automatically retrieve the graph Novosphingobium malaysiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumMalaysiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumMalaysiense graph.
+    """Return new instance of the Novosphingobium malaysiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumMalaysiense(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumMalaysiense graph.
+    Instace of Novosphingobium malaysiense graph.
 
 	References
 	---------------------

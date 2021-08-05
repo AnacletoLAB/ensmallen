@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CharadriusVociferus.
+This file offers the methods to automatically retrieve the graph Charadrius vociferus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CharadriusVociferus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CharadriusVociferus graph.
+    """Return new instance of the Charadrius vociferus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CharadriusVociferus(
 
     Returns
     -----------------------
-    Instace of CharadriusVociferus graph.
+    Instace of Charadrius vociferus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesEpiroticus.
+This file offers the methods to automatically retrieve the graph Anopheles epiroticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesEpiroticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesEpiroticus graph.
+    """Return new instance of the Anopheles epiroticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesEpiroticus(
 
     Returns
     -----------------------
-    Instace of AnophelesEpiroticus graph.
+    Instace of Anopheles epiroticus graph.
 
 	References
 	---------------------

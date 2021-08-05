@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioAlcoholivorans.
+This file offers the methods to automatically retrieve the graph Desulfovibrio alcoholivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioAlcoholivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioAlcoholivorans graph.
+    """Return new instance of the Desulfovibrio alcoholivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioAlcoholivorans(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioAlcoholivorans graph.
+    Instace of Desulfovibrio alcoholivorans graph.
 
 	References
 	---------------------

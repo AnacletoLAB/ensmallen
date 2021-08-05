@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquabacteriumSpNj1.
+This file offers the methods to automatically retrieve the graph Aquabacterium sp. NJ1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquabacteriumSpNj1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquabacteriumSpNj1 graph.
+    """Return new instance of the Aquabacterium sp. NJ1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquabacteriumSpNj1(
 
     Returns
     -----------------------
-    Instace of AquabacteriumSpNj1 graph.
+    Instace of Aquabacterium sp. NJ1 graph.
 
 	References
 	---------------------

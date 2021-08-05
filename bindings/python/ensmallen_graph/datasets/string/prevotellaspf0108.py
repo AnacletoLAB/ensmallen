@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpF0108.
+This file offers the methods to automatically retrieve the graph Prevotella sp. F0108.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpF0108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpF0108 graph.
+    """Return new instance of the Prevotella sp. F0108 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaSpF0108(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpF0108 graph.
+    Instace of Prevotella sp. F0108 graph.
 
 	References
 	---------------------

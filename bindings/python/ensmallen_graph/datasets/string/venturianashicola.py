@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VenturiaNashicola.
+This file offers the methods to automatically retrieve the graph Venturia nashicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VenturiaNashicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VenturiaNashicola graph.
+    """Return new instance of the Venturia nashicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VenturiaNashicola(
 
     Returns
     -----------------------
-    Instace of VenturiaNashicola graph.
+    Instace of Venturia nashicola graph.
 
 	References
 	---------------------

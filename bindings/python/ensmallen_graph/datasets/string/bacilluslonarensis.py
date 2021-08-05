@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLonarensis.
+This file offers the methods to automatically retrieve the graph Bacillus lonarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLonarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLonarensis graph.
+    """Return new instance of the Bacillus lonarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusLonarensis(
 
     Returns
     -----------------------
-    Instace of BacillusLonarensis graph.
+    Instace of Bacillus lonarensis graph.
 
 	References
 	---------------------

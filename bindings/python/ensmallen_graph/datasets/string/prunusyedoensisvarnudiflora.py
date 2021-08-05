@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrunusYedoensisVarNudiflora.
+This file offers the methods to automatically retrieve the graph Prunus yedoensis var. nudiflora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrunusYedoensisVarNudiflora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrunusYedoensisVarNudiflora graph.
+    """Return new instance of the Prunus yedoensis var. nudiflora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrunusYedoensisVarNudiflora(
 
     Returns
     -----------------------
-    Instace of PrunusYedoensisVarNudiflora graph.
+    Instace of Prunus yedoensis var. nudiflora graph.
 
 	References
 	---------------------

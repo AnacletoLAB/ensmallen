@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioCincinnatiensisDsm19608.
+This file offers the methods to automatically retrieve the graph Vibrio cincinnatiensis DSM 19608.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioCincinnatiensisDsm19608(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioCincinnatiensisDsm19608 graph.
+    """Return new instance of the Vibrio cincinnatiensis DSM 19608 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioCincinnatiensisDsm19608(
 
     Returns
     -----------------------
-    Instace of VibrioCincinnatiensisDsm19608 graph.
+    Instace of Vibrio cincinnatiensis DSM 19608 graph.
 
 	References
 	---------------------

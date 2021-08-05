@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusThermodenitrificans.
+This file offers the methods to automatically retrieve the graph Geobacillus thermodenitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusThermodenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusThermodenitrificans graph.
+    """Return new instance of the Geobacillus thermodenitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusThermodenitrificans(
 
     Returns
     -----------------------
-    Instace of GeobacillusThermodenitrificans graph.
+    Instace of Geobacillus thermodenitrificans graph.
 
 	References
 	---------------------

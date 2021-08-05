@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterSedentarius.
+This file offers the methods to automatically retrieve the graph Hymenobacter sedentarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterSedentarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterSedentarius graph.
+    """Return new instance of the Hymenobacter sedentarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterSedentarius(
 
     Returns
     -----------------------
-    Instace of HymenobacterSedentarius graph.
+    Instace of Hymenobacter sedentarius graph.
 
 	References
 	---------------------

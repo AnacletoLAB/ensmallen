@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterGinsenosidimutans.
+This file offers the methods to automatically retrieve the graph Pedobacter ginsenosidimutans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterGinsenosidimutans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterGinsenosidimutans graph.
+    """Return new instance of the Pedobacter ginsenosidimutans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterGinsenosidimutans(
 
     Returns
     -----------------------
-    Instace of PedobacterGinsenosidimutans graph.
+    Instace of Pedobacter ginsenosidimutans graph.
 
 	References
 	---------------------

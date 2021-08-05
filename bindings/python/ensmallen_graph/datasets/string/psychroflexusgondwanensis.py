@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusGondwanensis.
+This file offers the methods to automatically retrieve the graph Psychroflexus gondwanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusGondwanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusGondwanensis graph.
+    """Return new instance of the Psychroflexus gondwanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychroflexusGondwanensis(
 
     Returns
     -----------------------
-    Instace of PsychroflexusGondwanensis graph.
+    Instace of Psychroflexus gondwanensis graph.
 
 	References
 	---------------------

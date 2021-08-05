@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MariniphagaAnaerophila.
+This file offers the methods to automatically retrieve the graph Mariniphaga anaerophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MariniphagaAnaerophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MariniphagaAnaerophila graph.
+    """Return new instance of the Mariniphaga anaerophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MariniphagaAnaerophila(
 
     Returns
     -----------------------
-    Instace of MariniphagaAnaerophila graph.
+    Instace of Mariniphaga anaerophila graph.
 
 	References
 	---------------------

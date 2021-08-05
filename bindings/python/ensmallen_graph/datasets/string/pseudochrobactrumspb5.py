@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudochrobactrumSpB5.
+This file offers the methods to automatically retrieve the graph Pseudochrobactrum sp. B5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudochrobactrumSpB5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudochrobactrumSpB5 graph.
+    """Return new instance of the Pseudochrobactrum sp. B5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudochrobactrumSpB5(
 
     Returns
     -----------------------
-    Instace of PseudochrobactrumSpB5 graph.
+    Instace of Pseudochrobactrum sp. B5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalolaminaSpCba1230.
+This file offers the methods to automatically retrieve the graph Halolamina sp. CBA1230.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalolaminaSpCba1230(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalolaminaSpCba1230 graph.
+    """Return new instance of the Halolamina sp. CBA1230 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalolaminaSpCba1230(
 
     Returns
     -----------------------
-    Instace of HalolaminaSpCba1230 graph.
+    Instace of Halolamina sp. CBA1230 graph.
 
 	References
 	---------------------

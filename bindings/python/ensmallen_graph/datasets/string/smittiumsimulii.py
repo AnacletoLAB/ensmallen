@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmittiumSimulii.
+This file offers the methods to automatically retrieve the graph Smittium simulii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmittiumSimulii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmittiumSimulii graph.
+    """Return new instance of the Smittium simulii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmittiumSimulii(
 
     Returns
     -----------------------
-    Instace of SmittiumSimulii graph.
+    Instace of Smittium simulii graph.
 
 	References
 	---------------------

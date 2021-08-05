@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusTerrigenaDsm22685.
+This file offers the methods to automatically retrieve the graph Algoriphagus terrigena DSM 22685.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusTerrigenaDsm22685(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusTerrigenaDsm22685 graph.
+    """Return new instance of the Algoriphagus terrigena DSM 22685 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusTerrigenaDsm22685(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusTerrigenaDsm22685 graph.
+    Instace of Algoriphagus terrigena DSM 22685 graph.
 
 	References
 	---------------------

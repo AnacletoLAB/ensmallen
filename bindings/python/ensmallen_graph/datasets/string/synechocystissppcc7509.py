@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechocystisSpPcc7509.
+This file offers the methods to automatically retrieve the graph Synechocystis sp. PCC7509.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechocystisSpPcc7509(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechocystisSpPcc7509 graph.
+    """Return new instance of the Synechocystis sp. PCC7509 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechocystisSpPcc7509(
 
     Returns
     -----------------------
-    Instace of SynechocystisSpPcc7509 graph.
+    Instace of Synechocystis sp. PCC7509 graph.
 
 	References
 	---------------------

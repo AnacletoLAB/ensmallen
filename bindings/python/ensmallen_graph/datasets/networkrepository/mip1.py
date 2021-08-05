@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Mip1.
+This file offers the methods to automatically retrieve the graph mip1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Mip1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Mip1 graph.
+    """Return new instance of the mip1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Mip1(
 
     Returns
     -----------------------
-    Instace of Mip1 graph.
+    Instace of mip1 graph.
 
 	References
 	---------------------

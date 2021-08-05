@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomycesKudriavzeviiIfo1802.
+This file offers the methods to automatically retrieve the graph Saccharomyces kudriavzevii IFO 1802.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomycesKudriavzeviiIfo1802(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomycesKudriavzeviiIfo1802 graph.
+    """Return new instance of the Saccharomyces kudriavzevii IFO 1802 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharomycesKudriavzeviiIfo1802(
 
     Returns
     -----------------------
-    Instace of SaccharomycesKudriavzeviiIfo1802 graph.
+    Instace of Saccharomyces kudriavzevii IFO 1802 graph.
 
 	References
 	---------------------

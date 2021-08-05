@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlligatorMississippiensis.
+This file offers the methods to automatically retrieve the graph Alligator mississippiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlligatorMississippiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlligatorMississippiensis graph.
+    """Return new instance of the Alligator mississippiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlligatorMississippiensis(
 
     Returns
     -----------------------
-    Instace of AlligatorMississippiensis graph.
+    Instace of Alligator mississippiensis graph.
 
 	References
 	---------------------

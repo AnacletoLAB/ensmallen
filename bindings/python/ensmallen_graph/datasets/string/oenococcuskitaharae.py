@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OenococcusKitaharae.
+This file offers the methods to automatically retrieve the graph Oenococcus kitaharae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OenococcusKitaharae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OenococcusKitaharae graph.
+    """Return new instance of the Oenococcus kitaharae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OenococcusKitaharae(
 
     Returns
     -----------------------
-    Instace of OenococcusKitaharae graph.
+    Instace of Oenococcus kitaharae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpLc145.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. LC145.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpLc145(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpLc145 graph.
+    """Return new instance of the Rhizobium sp. LC145 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpLc145(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpLc145 graph.
+    Instace of Rhizobium sp. LC145 graph.
 
 	References
 	---------------------

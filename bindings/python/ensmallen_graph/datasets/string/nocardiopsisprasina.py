@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisPrasina.
+This file offers the methods to automatically retrieve the graph Nocardiopsis prasina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisPrasina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisPrasina graph.
+    """Return new instance of the Nocardiopsis prasina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisPrasina(
 
     Returns
     -----------------------
-    Instace of NocardiopsisPrasina graph.
+    Instace of Nocardiopsis prasina graph.
 
 	References
 	---------------------

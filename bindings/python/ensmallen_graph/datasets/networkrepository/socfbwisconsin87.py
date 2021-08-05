@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWisconsin87.
+This file offers the methods to automatically retrieve the graph socfb-Wisconsin87.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWisconsin87(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWisconsin87 graph.
+    """Return new instance of the socfb-Wisconsin87 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWisconsin87(
 
     Returns
     -----------------------
-    Instace of SocfbWisconsin87 graph.
+    Instace of socfb-Wisconsin87 graph.
 
 	References
 	---------------------

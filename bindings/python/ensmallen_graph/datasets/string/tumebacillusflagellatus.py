@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TumebacillusFlagellatus.
+This file offers the methods to automatically retrieve the graph Tumebacillus flagellatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TumebacillusFlagellatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TumebacillusFlagellatus graph.
+    """Return new instance of the Tumebacillus flagellatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TumebacillusFlagellatus(
 
     Returns
     -----------------------
-    Instace of TumebacillusFlagellatus graph.
+    Instace of Tumebacillus flagellatus graph.
 
 	References
 	---------------------

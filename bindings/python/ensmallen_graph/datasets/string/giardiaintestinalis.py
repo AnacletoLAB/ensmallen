@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GiardiaIntestinalis.
+This file offers the methods to automatically retrieve the graph Giardia intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GiardiaIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GiardiaIntestinalis graph.
+    """Return new instance of the Giardia intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GiardiaIntestinalis(
 
     Returns
     -----------------------
-    Instace of GiardiaIntestinalis graph.
+    Instace of Giardia intestinalis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsathyrellaAberdarensis.
+This file offers the methods to automatically retrieve the graph Psathyrella aberdarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsathyrellaAberdarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsathyrellaAberdarensis graph.
+    """Return new instance of the Psathyrella aberdarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsathyrellaAberdarensis(
 
     Returns
     -----------------------
-    Instace of PsathyrellaAberdarensis graph.
+    Instace of Psathyrella aberdarensis graph.
 
 	References
 	---------------------

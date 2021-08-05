@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaSartisoli.
+This file offers the methods to automatically retrieve the graph Paraburkholderia sartisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaSartisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaSartisoli graph.
+    """Return new instance of the Paraburkholderia sartisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaSartisoli(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaSartisoli graph.
+    Instace of Paraburkholderia sartisoli graph.
 
 	References
 	---------------------

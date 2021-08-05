@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaCinaraConfinis.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola (Cinara confinis).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaCinaraConfinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaCinaraConfinis graph.
+    """Return new instance of the Buchnera aphidicola (Cinara confinis) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaCinaraConfinis(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaCinaraConfinis graph.
+    Instace of Buchnera aphidicola (Cinara confinis) graph.
 
 	References
 	---------------------

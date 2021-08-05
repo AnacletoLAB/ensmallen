@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarivivensSpJlt3646.
+This file offers the methods to automatically retrieve the graph Marivivens sp. JLT3646.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarivivensSpJlt3646(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarivivensSpJlt3646 graph.
+    """Return new instance of the Marivivens sp. JLT3646 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarivivensSpJlt3646(
 
     Returns
     -----------------------
-    Instace of MarivivensSpJlt3646 graph.
+    Instace of Marivivens sp. JLT3646 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacterium4146.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium 41-46.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacterium4146(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacterium4146 graph.
+    """Return new instance of the Bacteroidetes bacterium 41-46 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacterium4146(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacterium4146 graph.
+    Instace of Bacteroidetes bacterium 41-46 graph.
 
 	References
 	---------------------

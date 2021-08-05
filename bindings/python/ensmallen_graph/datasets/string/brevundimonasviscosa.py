@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasViscosa.
+This file offers the methods to automatically retrieve the graph Brevundimonas viscosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasViscosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasViscosa graph.
+    """Return new instance of the Brevundimonas viscosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasViscosa(
 
     Returns
     -----------------------
-    Instace of BrevundimonasViscosa graph.
+    Instace of Brevundimonas viscosa graph.
 
 	References
 	---------------------

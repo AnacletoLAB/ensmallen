@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CronobacterSakazakii.
+This file offers the methods to automatically retrieve the graph Cronobacter sakazakii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CronobacterSakazakii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CronobacterSakazakii graph.
+    """Return new instance of the Cronobacter sakazakii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CronobacterSakazakii(
 
     Returns
     -----------------------
-    Instace of CronobacterSakazakii graph.
+    Instace of Cronobacter sakazakii graph.
 
 	References
 	---------------------

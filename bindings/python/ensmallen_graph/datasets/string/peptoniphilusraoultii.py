@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusRaoultii.
+This file offers the methods to automatically retrieve the graph Peptoniphilus raoultii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusRaoultii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusRaoultii graph.
+    """Return new instance of the Peptoniphilus raoultii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusRaoultii(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusRaoultii graph.
+    Instace of Peptoniphilus raoultii graph.
 
 	References
 	---------------------

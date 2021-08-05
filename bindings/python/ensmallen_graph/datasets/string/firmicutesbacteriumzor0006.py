@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FirmicutesBacteriumZor0006.
+This file offers the methods to automatically retrieve the graph Firmicutes bacterium ZOR0006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FirmicutesBacteriumZor0006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FirmicutesBacteriumZor0006 graph.
+    """Return new instance of the Firmicutes bacterium ZOR0006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FirmicutesBacteriumZor0006(
 
     Returns
     -----------------------
-    Instace of FirmicutesBacteriumZor0006 graph.
+    Instace of Firmicutes bacterium ZOR0006 graph.
 
 	References
 	---------------------

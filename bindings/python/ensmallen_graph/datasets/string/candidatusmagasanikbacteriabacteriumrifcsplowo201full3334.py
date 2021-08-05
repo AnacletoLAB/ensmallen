@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMagasanikbacteriaBacteriumRifcsplowo201Full3334.
+This file offers the methods to automatically retrieve the graph Candidatus Magasanikbacteria bacterium RIFCSPLOWO2_01_FULL_33_34.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMagasanikbacteriaBacteriumRifcsplowo201Full3334(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMagasanikbacteriaBacteriumRifcsplowo201Full3334 graph.
+    """Return new instance of the Candidatus Magasanikbacteria bacterium RIFCSPLOWO2_01_FULL_33_34 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMagasanikbacteriaBacteriumRifcsplowo201Full3334(
 
     Returns
     -----------------------
-    Instace of CandidatusMagasanikbacteriaBacteriumRifcsplowo201Full3334 graph.
+    Instace of Candidatus Magasanikbacteria bacterium RIFCSPLOWO2_01_FULL_33_34 graph.
 
 	References
 	---------------------

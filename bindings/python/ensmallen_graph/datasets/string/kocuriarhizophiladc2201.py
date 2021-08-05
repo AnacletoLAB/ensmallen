@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaRhizophilaDc2201.
+This file offers the methods to automatically retrieve the graph Kocuria rhizophila DC2201.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaRhizophilaDc2201(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaRhizophilaDc2201 graph.
+    """Return new instance of the Kocuria rhizophila DC2201 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KocuriaRhizophilaDc2201(
 
     Returns
     -----------------------
-    Instace of KocuriaRhizophilaDc2201 graph.
+    Instace of Kocuria rhizophila DC2201 graph.
 
 	References
 	---------------------

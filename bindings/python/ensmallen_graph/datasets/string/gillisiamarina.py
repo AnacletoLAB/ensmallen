@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GillisiaMarina.
+This file offers the methods to automatically retrieve the graph Gillisia marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GillisiaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GillisiaMarina graph.
+    """Return new instance of the Gillisia marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GillisiaMarina(
 
     Returns
     -----------------------
-    Instace of GillisiaMarina graph.
+    Instace of Gillisia marina graph.
 
 	References
 	---------------------

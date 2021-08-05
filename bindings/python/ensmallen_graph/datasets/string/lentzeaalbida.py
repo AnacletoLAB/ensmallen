@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentzeaAlbida.
+This file offers the methods to automatically retrieve the graph Lentzea albida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentzeaAlbida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentzeaAlbida graph.
+    """Return new instance of the Lentzea albida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentzeaAlbida(
 
     Returns
     -----------------------
-    Instace of LentzeaAlbida graph.
+    Instace of Lentzea albida graph.
 
 	References
 	---------------------

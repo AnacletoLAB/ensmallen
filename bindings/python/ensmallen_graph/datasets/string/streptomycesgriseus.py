@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesGriseus.
+This file offers the methods to automatically retrieve the graph Streptomyces griseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesGriseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesGriseus graph.
+    """Return new instance of the Streptomyces griseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesGriseus(
 
     Returns
     -----------------------
-    Instace of StreptomycesGriseus graph.
+    Instace of Streptomyces griseus graph.
 
 	References
 	---------------------

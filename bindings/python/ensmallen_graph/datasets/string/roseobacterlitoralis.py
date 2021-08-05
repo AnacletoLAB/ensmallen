@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterLitoralis.
+This file offers the methods to automatically retrieve the graph Roseobacter litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterLitoralis graph.
+    """Return new instance of the Roseobacter litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterLitoralis(
 
     Returns
     -----------------------
-    Instace of RoseobacterLitoralis graph.
+    Instace of Roseobacter litoralis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpJs42.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. JS42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpJs42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpJs42 graph.
+    """Return new instance of the Acidovorax sp. JS42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidovoraxSpJs42(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpJs42 graph.
+    Instace of Acidovorax sp. JS42 graph.
 
 	References
 	---------------------

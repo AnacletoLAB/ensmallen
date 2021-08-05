@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpNies3755.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. NIES-3755.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpNies3755(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpNies3755 graph.
+    """Return new instance of the Leptolyngbya sp. NIES-3755 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptolyngbyaSpNies3755(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpNies3755 graph.
+    Instace of Leptolyngbya sp. NIES-3755 graph.
 
 	References
 	---------------------

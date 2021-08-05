@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumFreii.
+This file offers the methods to automatically retrieve the graph Penicillium freii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumFreii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumFreii graph.
+    """Return new instance of the Penicillium freii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumFreii(
 
     Returns
     -----------------------
-    Instace of PenicilliumFreii graph.
+    Instace of Penicillium freii graph.
 
 	References
 	---------------------

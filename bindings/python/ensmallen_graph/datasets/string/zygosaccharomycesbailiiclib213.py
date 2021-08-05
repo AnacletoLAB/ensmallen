@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZygosaccharomycesBailiiClib213.
+This file offers the methods to automatically retrieve the graph Zygosaccharomyces bailii CLIB 213.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZygosaccharomycesBailiiClib213(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZygosaccharomycesBailiiClib213 graph.
+    """Return new instance of the Zygosaccharomyces bailii CLIB 213 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZygosaccharomycesBailiiClib213(
 
     Returns
     -----------------------
-    Instace of ZygosaccharomycesBailiiClib213 graph.
+    Instace of Zygosaccharomyces bailii CLIB 213 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylibiumPetroleiphilum.
+This file offers the methods to automatically retrieve the graph Methylibium petroleiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylibiumPetroleiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylibiumPetroleiphilum graph.
+    """Return new instance of the Methylibium petroleiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylibiumPetroleiphilum(
 
     Returns
     -----------------------
-    Instace of MethylibiumPetroleiphilum graph.
+    Instace of Methylibium petroleiphilum graph.
 
 	References
 	---------------------

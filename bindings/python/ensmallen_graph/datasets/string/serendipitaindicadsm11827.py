@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerendipitaIndicaDsm11827.
+This file offers the methods to automatically retrieve the graph Serendipita indica DSM 11827.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerendipitaIndicaDsm11827(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerendipitaIndicaDsm11827 graph.
+    """Return new instance of the Serendipita indica DSM 11827 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerendipitaIndicaDsm11827(
 
     Returns
     -----------------------
-    Instace of SerendipitaIndicaDsm11827 graph.
+    Instace of Serendipita indica DSM 11827 graph.
 
 	References
 	---------------------

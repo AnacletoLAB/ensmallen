@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocAnybeat.
+This file offers the methods to automatically retrieve the graph soc-anybeat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocAnybeat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocAnybeat graph.
+    """Return new instance of the soc-anybeat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocAnybeat(
 
     Returns
     -----------------------
-    Instace of SocAnybeat graph.
+    Instace of soc-anybeat graph.
 
 	References
 	---------------------

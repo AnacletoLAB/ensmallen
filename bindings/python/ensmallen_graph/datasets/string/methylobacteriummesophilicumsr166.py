@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumMesophilicumSr166.
+This file offers the methods to automatically retrieve the graph Methylobacterium mesophilicum SR1.6/6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumMesophilicumSr166(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumMesophilicumSr166 graph.
+    """Return new instance of the Methylobacterium mesophilicum SR1.6/6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumMesophilicumSr166(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumMesophilicumSr166 graph.
+    Instace of Methylobacterium mesophilicum SR1.6/6 graph.
 
 	References
 	---------------------

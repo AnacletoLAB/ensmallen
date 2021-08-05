@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicoprobacterOshimai.
+This file offers the methods to automatically retrieve the graph Caldicoprobacter oshimai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicoprobacterOshimai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicoprobacterOshimai graph.
+    """Return new instance of the Caldicoprobacter oshimai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldicoprobacterOshimai(
 
     Returns
     -----------------------
-    Instace of CaldicoprobacterOshimai graph.
+    Instace of Caldicoprobacter oshimai graph.
 
 	References
 	---------------------

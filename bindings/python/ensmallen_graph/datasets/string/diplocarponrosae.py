@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplocarponRosae.
+This file offers the methods to automatically retrieve the graph Diplocarpon rosae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiplocarponRosae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplocarponRosae graph.
+    """Return new instance of the Diplocarpon rosae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiplocarponRosae(
 
     Returns
     -----------------------
-    Instace of DiplocarponRosae graph.
+    Instace of Diplocarpon rosae graph.
 
 	References
 	---------------------

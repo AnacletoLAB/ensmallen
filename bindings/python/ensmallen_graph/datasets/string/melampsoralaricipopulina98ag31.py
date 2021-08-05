@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MelampsoraLariciPopulina98ag31.
+This file offers the methods to automatically retrieve the graph Melampsora larici-populina 98AG31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MelampsoraLariciPopulina98ag31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MelampsoraLariciPopulina98ag31 graph.
+    """Return new instance of the Melampsora larici-populina 98AG31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MelampsoraLariciPopulina98ag31(
 
     Returns
     -----------------------
-    Instace of MelampsoraLariciPopulina98ag31 graph.
+    Instace of Melampsora larici-populina 98AG31 graph.
 
 	References
 	---------------------

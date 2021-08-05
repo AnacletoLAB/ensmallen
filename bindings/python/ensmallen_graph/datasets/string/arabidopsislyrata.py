@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArabidopsisLyrata.
+This file offers the methods to automatically retrieve the graph Arabidopsis lyrata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArabidopsisLyrata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArabidopsisLyrata graph.
+    """Return new instance of the Arabidopsis lyrata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArabidopsisLyrata(
 
     Returns
     -----------------------
-    Instace of ArabidopsisLyrata graph.
+    Instace of Arabidopsis lyrata graph.
 
 	References
 	---------------------

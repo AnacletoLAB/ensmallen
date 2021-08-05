@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpDsm4029.
+This file offers the methods to automatically retrieve the graph Clostridium sp. DSM 4029.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpDsm4029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpDsm4029 graph.
+    """Return new instance of the Clostridium sp. DSM 4029 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpDsm4029(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpDsm4029 graph.
+    Instace of Clostridium sp. DSM 4029 graph.
 
 	References
 	---------------------

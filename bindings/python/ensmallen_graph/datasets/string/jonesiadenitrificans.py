@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JonesiaDenitrificans.
+This file offers the methods to automatically retrieve the graph Jonesia denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JonesiaDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JonesiaDenitrificans graph.
+    """Return new instance of the Jonesia denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JonesiaDenitrificans(
 
     Returns
     -----------------------
-    Instace of JonesiaDenitrificans graph.
+    Instace of Jonesia denitrificans graph.
 
 	References
 	---------------------

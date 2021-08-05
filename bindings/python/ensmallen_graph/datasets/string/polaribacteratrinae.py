@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterAtrinae.
+This file offers the methods to automatically retrieve the graph Polaribacter atrinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterAtrinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterAtrinae graph.
+    """Return new instance of the Polaribacter atrinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterAtrinae(
 
     Returns
     -----------------------
-    Instace of PolaribacterAtrinae graph.
+    Instace of Polaribacter atrinae graph.
 
 	References
 	---------------------

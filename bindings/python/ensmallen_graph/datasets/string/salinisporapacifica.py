@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisporaPacifica.
+This file offers the methods to automatically retrieve the graph Salinispora pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisporaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisporaPacifica graph.
+    """Return new instance of the Salinispora pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinisporaPacifica(
 
     Returns
     -----------------------
-    Instace of SalinisporaPacifica graph.
+    Instace of Salinispora pacifica graph.
 
 	References
 	---------------------

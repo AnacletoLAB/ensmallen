@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchlyaHypogyna.
+This file offers the methods to automatically retrieve the graph Achlya hypogyna.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchlyaHypogyna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchlyaHypogyna graph.
+    """Return new instance of the Achlya hypogyna graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AchlyaHypogyna(
 
     Returns
     -----------------------
-    Instace of AchlyaHypogyna graph.
+    Instace of Achlya hypogyna graph.
 
 	References
 	---------------------

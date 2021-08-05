@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioVulgarisHildenborough.
+This file offers the methods to automatically retrieve the graph Desulfovibrio vulgaris Hildenborough.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioVulgarisHildenborough(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioVulgarisHildenborough graph.
+    """Return new instance of the Desulfovibrio vulgaris Hildenborough graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioVulgarisHildenborough(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioVulgarisHildenborough graph.
+    Instace of Desulfovibrio vulgaris Hildenborough graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterFetus8240.
+This file offers the methods to automatically retrieve the graph Campylobacter fetus 8240.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterFetus8240(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterFetus8240 graph.
+    """Return new instance of the Campylobacter fetus 8240 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterFetus8240(
 
     Returns
     -----------------------
-    Instace of CampylobacterFetus8240 graph.
+    Instace of Campylobacter fetus 8240 graph.
 
 	References
 	---------------------

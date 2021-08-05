@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GillisiaSpHeli29.
+This file offers the methods to automatically retrieve the graph Gillisia sp. HelI29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GillisiaSpHeli29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GillisiaSpHeli29 graph.
+    """Return new instance of the Gillisia sp. HelI29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GillisiaSpHeli29(
 
     Returns
     -----------------------
-    Instace of GillisiaSpHeli29 graph.
+    Instace of Gillisia sp. HelI29 graph.
 
 	References
 	---------------------

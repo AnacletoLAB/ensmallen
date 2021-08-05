@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusDamuensis.
+This file offers the methods to automatically retrieve the graph Oceanobacillus damuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusDamuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusDamuensis graph.
+    """Return new instance of the Oceanobacillus damuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusDamuensis(
 
     Returns
     -----------------------
-    Instace of OceanobacillusDamuensis graph.
+    Instace of Oceanobacillus damuensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PerlucidibacaPiscinae.
+This file offers the methods to automatically retrieve the graph Perlucidibaca piscinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PerlucidibacaPiscinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PerlucidibacaPiscinae graph.
+    """Return new instance of the Perlucidibaca piscinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PerlucidibacaPiscinae(
 
     Returns
     -----------------------
-    Instace of PerlucidibacaPiscinae graph.
+    Instace of Perlucidibaca piscinae graph.
 
 	References
 	---------------------

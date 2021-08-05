@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpTb15.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. TB15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpTb15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpTb15 graph.
+    """Return new instance of the Psychrobacter sp. TB15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterSpTb15(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpTb15 graph.
+    Instace of Psychrobacter sp. TB15 graph.
 
 	References
 	---------------------

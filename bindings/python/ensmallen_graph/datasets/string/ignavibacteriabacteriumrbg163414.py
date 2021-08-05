@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriaBacteriumRbg163414.
+This file offers the methods to automatically retrieve the graph Ignavibacteria bacterium RBG_16_34_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriaBacteriumRbg163414(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriaBacteriumRbg163414 graph.
+    """Return new instance of the Ignavibacteria bacterium RBG_16_34_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacteriaBacteriumRbg163414(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriaBacteriumRbg163414 graph.
+    Instace of Ignavibacteria bacterium RBG_16_34_14 graph.
 
 	References
 	---------------------

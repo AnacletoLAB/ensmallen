@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycetaceaeBacteriumBa112.
+This file offers the methods to automatically retrieve the graph Actinomycetaceae bacterium BA112.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycetaceaeBacteriumBa112(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycetaceaeBacteriumBa112 graph.
+    """Return new instance of the Actinomycetaceae bacterium BA112 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycetaceaeBacteriumBa112(
 
     Returns
     -----------------------
-    Instace of ActinomycetaceaeBacteriumBa112 graph.
+    Instace of Actinomycetaceae bacterium BA112 graph.
 
 	References
 	---------------------

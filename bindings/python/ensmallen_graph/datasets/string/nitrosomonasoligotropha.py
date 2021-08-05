@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasOligotropha.
+This file offers the methods to automatically retrieve the graph Nitrosomonas oligotropha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasOligotropha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasOligotropha graph.
+    """Return new instance of the Nitrosomonas oligotropha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasOligotropha(
 
     Returns
     -----------------------
-    Instace of NitrosomonasOligotropha graph.
+    Instace of Nitrosomonas oligotropha graph.
 
 	References
 	---------------------

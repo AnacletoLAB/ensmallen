@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterAscendens.
+This file offers the methods to automatically retrieve the graph Acetobacter ascendens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterAscendens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterAscendens graph.
+    """Return new instance of the Acetobacter ascendens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterAscendens(
 
     Returns
     -----------------------
-    Instace of AcetobacterAscendens graph.
+    Instace of Acetobacter ascendens graph.
 
 	References
 	---------------------

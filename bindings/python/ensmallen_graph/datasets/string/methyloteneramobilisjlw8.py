@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraMobilisJlw8.
+This file offers the methods to automatically retrieve the graph Methylotenera mobilis JLW8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraMobilisJlw8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraMobilisJlw8 graph.
+    """Return new instance of the Methylotenera mobilis JLW8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethyloteneraMobilisJlw8(
 
     Returns
     -----------------------
-    Instace of MethyloteneraMobilisJlw8 graph.
+    Instace of Methylotenera mobilis JLW8 graph.
 
 	References
 	---------------------

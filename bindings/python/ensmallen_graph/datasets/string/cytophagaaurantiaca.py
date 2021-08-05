@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CytophagaAurantiaca.
+This file offers the methods to automatically retrieve the graph Cytophaga aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CytophagaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CytophagaAurantiaca graph.
+    """Return new instance of the Cytophaga aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CytophagaAurantiaca(
 
     Returns
     -----------------------
-    Instace of CytophagaAurantiaca graph.
+    Instace of Cytophaga aurantiaca graph.
 
 	References
 	---------------------

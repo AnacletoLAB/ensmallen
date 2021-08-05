@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptunomonasAntarctica.
+This file offers the methods to automatically retrieve the graph Neptunomonas antarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptunomonasAntarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptunomonasAntarctica graph.
+    """Return new instance of the Neptunomonas antarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptunomonasAntarctica(
 
     Returns
     -----------------------
-    Instace of NeptunomonasAntarctica graph.
+    Instace of Neptunomonas antarctica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RamlibacterTataouinensis.
+This file offers the methods to automatically retrieve the graph Ramlibacter tataouinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RamlibacterTataouinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RamlibacterTataouinensis graph.
+    """Return new instance of the Ramlibacter tataouinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RamlibacterTataouinensis(
 
     Returns
     -----------------------
-    Instace of RamlibacterTataouinensis graph.
+    Instace of Ramlibacter tataouinensis graph.
 
 	References
 	---------------------

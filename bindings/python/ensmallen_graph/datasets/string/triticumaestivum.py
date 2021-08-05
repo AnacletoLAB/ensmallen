@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TriticumAestivum.
+This file offers the methods to automatically retrieve the graph Triticum aestivum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TriticumAestivum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TriticumAestivum graph.
+    """Return new instance of the Triticum aestivum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TriticumAestivum(
 
     Returns
     -----------------------
-    Instace of TriticumAestivum graph.
+    Instace of Triticum aestivum graph.
 
 	References
 	---------------------

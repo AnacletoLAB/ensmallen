@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusSzentirmaiiDsm16338.
+This file offers the methods to automatically retrieve the graph Xenorhabdus szentirmaii DSM 16338.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusSzentirmaiiDsm16338(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusSzentirmaiiDsm16338 graph.
+    """Return new instance of the Xenorhabdus szentirmaii DSM 16338 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusSzentirmaiiDsm16338(
 
     Returns
     -----------------------
-    Instace of XenorhabdusSzentirmaiiDsm16338 graph.
+    Instace of Xenorhabdus szentirmaii DSM 16338 graph.
 
 	References
 	---------------------

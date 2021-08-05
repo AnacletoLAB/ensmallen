@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisBrenneri.
+This file offers the methods to automatically retrieve the graph Caenorhabditis brenneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisBrenneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisBrenneri graph.
+    """Return new instance of the Caenorhabditis brenneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaenorhabditisBrenneri(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisBrenneri graph.
+    Instace of Caenorhabditis brenneri graph.
 
 	References
 	---------------------

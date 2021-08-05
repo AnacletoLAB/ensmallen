@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaLuteum.
+This file offers the methods to automatically retrieve the graph Spirosoma luteum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaLuteum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaLuteum graph.
+    """Return new instance of the Spirosoma luteum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirosomaLuteum(
 
     Returns
     -----------------------
-    Instace of SpirosomaLuteum graph.
+    Instace of Spirosoma luteum graph.
 
 	References
 	---------------------

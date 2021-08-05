@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaSpinosisporaDsm44797.
+This file offers the methods to automatically retrieve the graph Pseudonocardia spinosispora DSM 44797.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaSpinosisporaDsm44797(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaSpinosisporaDsm44797 graph.
+    """Return new instance of the Pseudonocardia spinosispora DSM 44797 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaSpinosisporaDsm44797(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaSpinosisporaDsm44797 graph.
+    Instace of Pseudonocardia spinosispora DSM 44797 graph.
 
 	References
 	---------------------

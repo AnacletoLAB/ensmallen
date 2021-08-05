@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolymorphaAlba.
+This file offers the methods to automatically retrieve the graph Actinopolymorpha alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolymorphaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolymorphaAlba graph.
+    """Return new instance of the Actinopolymorpha alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinopolymorphaAlba(
 
     Returns
     -----------------------
-    Instace of ActinopolymorphaAlba graph.
+    Instace of Actinopolymorpha alba graph.
 
 	References
 	---------------------

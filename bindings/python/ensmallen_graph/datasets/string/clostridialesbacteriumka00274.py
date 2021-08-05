@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumKa00274.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium KA00274.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumKa00274(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumKa00274 graph.
+    """Return new instance of the Clostridiales bacterium KA00274 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumKa00274(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumKa00274 graph.
+    Instace of Clostridiales bacterium KA00274 graph.
 
 	References
 	---------------------

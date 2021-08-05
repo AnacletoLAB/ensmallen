@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasUreae.
+This file offers the methods to automatically retrieve the graph Nitrosomonas ureae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasUreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasUreae graph.
+    """Return new instance of the Nitrosomonas ureae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasUreae(
 
     Returns
     -----------------------
-    Instace of NitrosomonasUreae graph.
+    Instace of Nitrosomonas ureae graph.
 
 	References
 	---------------------

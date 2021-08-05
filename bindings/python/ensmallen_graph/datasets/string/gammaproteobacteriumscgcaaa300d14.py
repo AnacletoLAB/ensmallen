@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumScgcAaa300D14.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium SCGC AAA300-D14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumScgcAaa300D14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumScgcAaa300D14 graph.
+    """Return new instance of the gamma proteobacterium SCGC AAA300-D14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumScgcAaa300D14(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumScgcAaa300D14 graph.
+    Instace of gamma proteobacterium SCGC AAA300-D14 graph.
 
 	References
 	---------------------

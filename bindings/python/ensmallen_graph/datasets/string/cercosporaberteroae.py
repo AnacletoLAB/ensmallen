@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CercosporaBerteroae.
+This file offers the methods to automatically retrieve the graph Cercospora berteroae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CercosporaBerteroae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CercosporaBerteroae graph.
+    """Return new instance of the Cercospora berteroae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CercosporaBerteroae(
 
     Returns
     -----------------------
-    Instace of CercosporaBerteroae graph.
+    Instace of Cercospora berteroae graph.
 
 	References
 	---------------------

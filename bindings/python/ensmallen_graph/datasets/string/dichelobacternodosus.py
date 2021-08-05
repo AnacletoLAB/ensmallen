@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DichelobacterNodosus.
+This file offers the methods to automatically retrieve the graph Dichelobacter nodosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DichelobacterNodosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DichelobacterNodosus graph.
+    """Return new instance of the Dichelobacter nodosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DichelobacterNodosus(
 
     Returns
     -----------------------
-    Instace of DichelobacterNodosus graph.
+    Instace of Dichelobacter nodosus graph.
 
 	References
 	---------------------

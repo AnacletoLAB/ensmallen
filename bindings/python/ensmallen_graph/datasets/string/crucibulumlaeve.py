@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrucibulumLaeve.
+This file offers the methods to automatically retrieve the graph Crucibulum laeve.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrucibulumLaeve(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrucibulumLaeve graph.
+    """Return new instance of the Crucibulum laeve graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CrucibulumLaeve(
 
     Returns
     -----------------------
-    Instace of CrucibulumLaeve graph.
+    Instace of Crucibulum laeve graph.
 
 	References
 	---------------------

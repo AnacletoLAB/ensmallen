@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymomonasMobilisZm4.
+This file offers the methods to automatically retrieve the graph Zymomonas mobilis ZM4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymomonasMobilisZm4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymomonasMobilisZm4 graph.
+    """Return new instance of the Zymomonas mobilis ZM4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZymomonasMobilisZm4(
 
     Returns
     -----------------------
-    Instace of ZymomonasMobilisZm4 graph.
+    Instace of Zymomonas mobilis ZM4 graph.
 
 	References
 	---------------------

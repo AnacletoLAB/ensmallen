@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaliscomenobacterHydrossis.
+This file offers the methods to automatically retrieve the graph Haliscomenobacter hydrossis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaliscomenobacterHydrossis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaliscomenobacterHydrossis graph.
+    """Return new instance of the Haliscomenobacter hydrossis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaliscomenobacterHydrossis(
 
     Returns
     -----------------------
-    Instace of HaliscomenobacterHydrossis graph.
+    Instace of Haliscomenobacter hydrossis graph.
 
 	References
 	---------------------

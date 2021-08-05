@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZunongwangiaProfunda.
+This file offers the methods to automatically retrieve the graph Zunongwangia profunda.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZunongwangiaProfunda(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZunongwangiaProfunda graph.
+    """Return new instance of the Zunongwangia profunda graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZunongwangiaProfunda(
 
     Returns
     -----------------------
-    Instace of ZunongwangiaProfunda graph.
+    Instace of Zunongwangia profunda graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCuatrocienegasensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas cuatrocienegasensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCuatrocienegasensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCuatrocienegasensis graph.
+    """Return new instance of the Pseudomonas cuatrocienegasensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasCuatrocienegasensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasCuatrocienegasensis graph.
+    Instace of Pseudomonas cuatrocienegasensis graph.
 
 	References
 	---------------------

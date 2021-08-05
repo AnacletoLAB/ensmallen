@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LonsdaleaQuercina.
+This file offers the methods to automatically retrieve the graph Lonsdalea quercina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LonsdaleaQuercina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LonsdaleaQuercina graph.
+    """Return new instance of the Lonsdalea quercina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LonsdaleaQuercina(
 
     Returns
     -----------------------
-    Instace of LonsdaleaQuercina graph.
+    Instace of Lonsdalea quercina graph.
 
 	References
 	---------------------

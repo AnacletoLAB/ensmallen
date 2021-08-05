@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrodermaBenhamiae.
+This file offers the methods to automatically retrieve the graph Arthroderma benhamiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrodermaBenhamiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrodermaBenhamiae graph.
+    """Return new instance of the Arthroderma benhamiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrodermaBenhamiae(
 
     Returns
     -----------------------
-    Instace of ArthrodermaBenhamiae graph.
+    Instace of Arthroderma benhamiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasTranslucens.
+This file offers the methods to automatically retrieve the graph Xanthomonas translucens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasTranslucens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasTranslucens graph.
+    """Return new instance of the Xanthomonas translucens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasTranslucens(
 
     Returns
     -----------------------
-    Instace of XanthomonasTranslucens graph.
+    Instace of Xanthomonas translucens graph.
 
 	References
 	---------------------

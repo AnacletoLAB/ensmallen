@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaPseudobrasiliensisNbrc108224.
+This file offers the methods to automatically retrieve the graph Nocardia pseudobrasiliensis NBRC 108224.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaPseudobrasiliensisNbrc108224(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaPseudobrasiliensisNbrc108224 graph.
+    """Return new instance of the Nocardia pseudobrasiliensis NBRC 108224 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaPseudobrasiliensisNbrc108224(
 
     Returns
     -----------------------
-    Instace of NocardiaPseudobrasiliensisNbrc108224 graph.
+    Instace of Nocardia pseudobrasiliensis NBRC 108224 graph.
 
 	References
 	---------------------

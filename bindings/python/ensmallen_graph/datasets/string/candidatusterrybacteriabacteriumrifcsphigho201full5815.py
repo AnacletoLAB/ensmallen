@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTerrybacteriaBacteriumRifcsphigho201Full5815.
+This file offers the methods to automatically retrieve the graph Candidatus Terrybacteria bacterium RIFCSPHIGHO2_01_FULL_58_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTerrybacteriaBacteriumRifcsphigho201Full5815(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTerrybacteriaBacteriumRifcsphigho201Full5815 graph.
+    """Return new instance of the Candidatus Terrybacteria bacterium RIFCSPHIGHO2_01_FULL_58_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTerrybacteriaBacteriumRifcsphigho201Full5815(
 
     Returns
     -----------------------
-    Instace of CandidatusTerrybacteriaBacteriumRifcsphigho201Full5815 graph.
+    Instace of Candidatus Terrybacteria bacterium RIFCSPHIGHO2_01_FULL_58_15 graph.
 
 	References
 	---------------------

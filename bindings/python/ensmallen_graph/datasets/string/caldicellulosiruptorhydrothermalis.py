@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorHydrothermalis.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor hydrothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorHydrothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorHydrothermalis graph.
+    """Return new instance of the Caldicellulosiruptor hydrothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldicellulosiruptorHydrothermalis(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorHydrothermalis graph.
+    Instace of Caldicellulosiruptor hydrothermalis graph.
 
 	References
 	---------------------

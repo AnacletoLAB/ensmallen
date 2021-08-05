@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylariaHypoxylon.
+This file offers the methods to automatically retrieve the graph Xylaria hypoxylon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylariaHypoxylon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylariaHypoxylon graph.
+    """Return new instance of the Xylaria hypoxylon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XylariaHypoxylon(
 
     Returns
     -----------------------
-    Instace of XylariaHypoxylon graph.
+    Instace of Xylaria hypoxylon graph.
 
 	References
 	---------------------

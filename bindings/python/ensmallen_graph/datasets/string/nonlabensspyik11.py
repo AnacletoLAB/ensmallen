@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonlabensSpYik11.
+This file offers the methods to automatically retrieve the graph Nonlabens sp. YIK11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonlabensSpYik11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonlabensSpYik11 graph.
+    """Return new instance of the Nonlabens sp. YIK11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonlabensSpYik11(
 
     Returns
     -----------------------
-    Instace of NonlabensSpYik11 graph.
+    Instace of Nonlabens sp. YIK11 graph.
 
 	References
 	---------------------

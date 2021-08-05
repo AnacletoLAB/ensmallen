@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpRoot1257.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. Root1257.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpRoot1257(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpRoot1257 graph.
+    """Return new instance of the Nocardioides sp. Root1257 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpRoot1257(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpRoot1257 graph.
+    Instace of Nocardioides sp. Root1257 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumHydrocarbonoxydans.
+This file offers the methods to automatically retrieve the graph Microbacterium hydrocarbonoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumHydrocarbonoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumHydrocarbonoxydans graph.
+    """Return new instance of the Microbacterium hydrocarbonoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumHydrocarbonoxydans(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumHydrocarbonoxydans graph.
+    Instace of Microbacterium hydrocarbonoxydans graph.
 
 	References
 	---------------------

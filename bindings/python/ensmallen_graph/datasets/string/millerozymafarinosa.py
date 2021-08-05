@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MillerozymaFarinosa.
+This file offers the methods to automatically retrieve the graph Millerozyma farinosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MillerozymaFarinosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MillerozymaFarinosa graph.
+    """Return new instance of the Millerozyma farinosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MillerozymaFarinosa(
 
     Returns
     -----------------------
-    Instace of MillerozymaFarinosa graph.
+    Instace of Millerozyma farinosa graph.
 
 	References
 	---------------------

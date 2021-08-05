@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RothiaSpNd6we1a.
+This file offers the methods to automatically retrieve the graph Rothia sp. ND6WE1A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RothiaSpNd6we1a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RothiaSpNd6we1a graph.
+    """Return new instance of the Rothia sp. ND6WE1A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RothiaSpNd6we1a(
 
     Returns
     -----------------------
-    Instace of RothiaSpNd6we1a graph.
+    Instace of Rothia sp. ND6WE1A graph.
 
 	References
 	---------------------

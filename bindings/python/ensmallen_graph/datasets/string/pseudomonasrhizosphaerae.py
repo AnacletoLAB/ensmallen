@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Pseudomonas rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasRhizosphaerae graph.
+    """Return new instance of the Pseudomonas rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of PseudomonasRhizosphaerae graph.
+    Instace of Pseudomonas rhizosphaerae graph.
 
 	References
 	---------------------

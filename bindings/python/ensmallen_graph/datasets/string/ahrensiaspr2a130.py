@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AhrensiaSpR2a130.
+This file offers the methods to automatically retrieve the graph Ahrensia sp. R2A130.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AhrensiaSpR2a130(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AhrensiaSpR2a130 graph.
+    """Return new instance of the Ahrensia sp. R2A130 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AhrensiaSpR2a130(
 
     Returns
     -----------------------
-    Instace of AhrensiaSpR2a130 graph.
+    Instace of Ahrensia sp. R2A130 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomicrobialesBacteriumKi4.
+This file offers the methods to automatically retrieve the graph Thermomicrobiales bacterium KI4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomicrobialesBacteriumKi4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomicrobialesBacteriumKi4 graph.
+    """Return new instance of the Thermomicrobiales bacterium KI4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermomicrobialesBacteriumKi4(
 
     Returns
     -----------------------
-    Instace of ThermomicrobialesBacteriumKi4 graph.
+    Instace of Thermomicrobiales bacterium KI4 graph.
 
 	References
 	---------------------

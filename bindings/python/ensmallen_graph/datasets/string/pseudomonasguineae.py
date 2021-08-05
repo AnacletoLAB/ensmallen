@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasGuineae.
+This file offers the methods to automatically retrieve the graph Pseudomonas guineae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasGuineae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasGuineae graph.
+    """Return new instance of the Pseudomonas guineae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasGuineae(
 
     Returns
     -----------------------
-    Instace of PseudomonasGuineae graph.
+    Instace of Pseudomonas guineae graph.
 
 	References
 	---------------------

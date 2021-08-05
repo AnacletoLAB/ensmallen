@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisSinuspersici.
+This file offers the methods to automatically retrieve the graph Nocardiopsis sinuspersici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisSinuspersici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisSinuspersici graph.
+    """Return new instance of the Nocardiopsis sinuspersici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisSinuspersici(
 
     Returns
     -----------------------
-    Instace of NocardiopsisSinuspersici graph.
+    Instace of Nocardiopsis sinuspersici graph.
 
 	References
 	---------------------

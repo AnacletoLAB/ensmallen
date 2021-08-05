@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAbscessus.
+This file offers the methods to automatically retrieve the graph Mycobacterium abscessus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAbscessus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAbscessus graph.
+    """Return new instance of the Mycobacterium abscessus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumAbscessus(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAbscessus graph.
+    Instace of Mycobacterium abscessus graph.
 
 	References
 	---------------------

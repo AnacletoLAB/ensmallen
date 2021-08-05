@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumGallicum.
+This file offers the methods to automatically retrieve the graph Rhizobium gallicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumGallicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumGallicum graph.
+    """Return new instance of the Rhizobium gallicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumGallicum(
 
     Returns
     -----------------------
-    Instace of RhizobiumGallicum graph.
+    Instace of Rhizobium gallicum graph.
 
 	References
 	---------------------

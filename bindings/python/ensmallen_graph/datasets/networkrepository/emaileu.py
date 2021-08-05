@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailEu.
+This file offers the methods to automatically retrieve the graph email-EU.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailEu(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailEu graph.
+    """Return new instance of the email-EU graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailEu(
 
     Returns
     -----------------------
-    Instace of EmailEu graph.
+    Instace of email-EU graph.
 
 	References
 	---------------------

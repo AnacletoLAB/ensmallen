@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusAquatilis.
+This file offers the methods to automatically retrieve the graph Deinococcus aquatilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusAquatilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusAquatilis graph.
+    """Return new instance of the Deinococcus aquatilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusAquatilis(
 
     Returns
     -----------------------
-    Instace of DeinococcusAquatilis graph.
+    Instace of Deinococcus aquatilis graph.
 
 	References
 	---------------------

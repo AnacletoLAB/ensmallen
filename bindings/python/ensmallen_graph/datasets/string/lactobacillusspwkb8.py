@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSpWkb8.
+This file offers the methods to automatically retrieve the graph Lactobacillus sp. wkB8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSpWkb8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSpWkb8 graph.
+    """Return new instance of the Lactobacillus sp. wkB8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusSpWkb8(
 
     Returns
     -----------------------
-    Instace of LactobacillusSpWkb8 graph.
+    Instace of Lactobacillus sp. wkB8 graph.
 
 	References
 	---------------------

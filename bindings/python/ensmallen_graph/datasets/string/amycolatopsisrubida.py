@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisRubida.
+This file offers the methods to automatically retrieve the graph Amycolatopsis rubida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisRubida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisRubida graph.
+    """Return new instance of the Amycolatopsis rubida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisRubida(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisRubida graph.
+    Instace of Amycolatopsis rubida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSonorensis.
+This file offers the methods to automatically retrieve the graph Bacillus sonorensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSonorensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSonorensis graph.
+    """Return new instance of the Bacillus sonorensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSonorensis(
 
     Returns
     -----------------------
-    Instace of BacillusSonorensis graph.
+    Instace of Bacillus sonorensis graph.
 
 	References
 	---------------------

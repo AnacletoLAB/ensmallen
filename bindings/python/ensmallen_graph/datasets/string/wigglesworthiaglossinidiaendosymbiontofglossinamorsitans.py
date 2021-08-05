@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans.
+This file offers the methods to automatically retrieve the graph Wigglesworthia glossinidia endosymbiont of Glossina morsitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans graph.
+    """Return new instance of the Wigglesworthia glossinidia endosymbiont of Glossina morsitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans(
 
     Returns
     -----------------------
-    Instace of WigglesworthiaGlossinidiaEndosymbiontOfGlossinaMorsitans graph.
+    Instace of Wigglesworthia glossinidia endosymbiont of Glossina morsitans graph.
 
 	References
 	---------------------

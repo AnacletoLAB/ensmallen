@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesTuricensis.
+This file offers the methods to automatically retrieve the graph Actinomyces turicensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesTuricensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesTuricensis graph.
+    """Return new instance of the Actinomyces turicensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesTuricensis(
 
     Returns
     -----------------------
-    Instace of ActinomycesTuricensis graph.
+    Instace of Actinomyces turicensis graph.
 
 	References
 	---------------------

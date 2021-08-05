@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TindalliaMagadiensis.
+This file offers the methods to automatically retrieve the graph Tindallia magadiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TindalliaMagadiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TindalliaMagadiensis graph.
+    """Return new instance of the Tindallia magadiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TindalliaMagadiensis(
 
     Returns
     -----------------------
-    Instace of TindalliaMagadiensis graph.
+    Instace of Tindallia magadiensis graph.
 
 	References
 	---------------------

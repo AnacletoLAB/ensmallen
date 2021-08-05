@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaoerskoviaMarina.
+This file offers the methods to automatically retrieve the graph Paraoerskovia marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaoerskoviaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaoerskoviaMarina graph.
+    """Return new instance of the Paraoerskovia marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParaoerskoviaMarina(
 
     Returns
     -----------------------
-    Instace of ParaoerskoviaMarina graph.
+    Instace of Paraoerskovia marina graph.
 
 	References
 	---------------------

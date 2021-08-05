@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusKhoisanae.
+This file offers the methods to automatically retrieve the graph Xenorhabdus khoisanae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusKhoisanae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusKhoisanae graph.
+    """Return new instance of the Xenorhabdus khoisanae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusKhoisanae(
 
     Returns
     -----------------------
-    Instace of XenorhabdusKhoisanae graph.
+    Instace of Xenorhabdus khoisanae graph.
 
 	References
 	---------------------

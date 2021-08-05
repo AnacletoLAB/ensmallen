@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarmoricolaSpUrhb0036.
+This file offers the methods to automatically retrieve the graph Marmoricola sp. URHB0036.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarmoricolaSpUrhb0036(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarmoricolaSpUrhb0036 graph.
+    """Return new instance of the Marmoricola sp. URHB0036 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarmoricolaSpUrhb0036(
 
     Returns
     -----------------------
-    Instace of MarmoricolaSpUrhb0036 graph.
+    Instace of Marmoricola sp. URHB0036 graph.
 
 	References
 	---------------------

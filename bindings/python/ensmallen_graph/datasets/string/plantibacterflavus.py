@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlantibacterFlavus.
+This file offers the methods to automatically retrieve the graph Plantibacter flavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlantibacterFlavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlantibacterFlavus graph.
+    """Return new instance of the Plantibacter flavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlantibacterFlavus(
 
     Returns
     -----------------------
-    Instace of PlantibacterFlavus graph.
+    Instace of Plantibacter flavus graph.
 
 	References
 	---------------------

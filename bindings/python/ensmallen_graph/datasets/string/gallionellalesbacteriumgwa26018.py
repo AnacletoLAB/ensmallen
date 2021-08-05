@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallionellalesBacteriumGwa26018.
+This file offers the methods to automatically retrieve the graph Gallionellales bacterium GWA2_60_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallionellalesBacteriumGwa26018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallionellalesBacteriumGwa26018 graph.
+    """Return new instance of the Gallionellales bacterium GWA2_60_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GallionellalesBacteriumGwa26018(
 
     Returns
     -----------------------
-    Instace of GallionellalesBacteriumGwa26018 graph.
+    Instace of Gallionellales bacterium GWA2_60_18 graph.
 
 	References
 	---------------------

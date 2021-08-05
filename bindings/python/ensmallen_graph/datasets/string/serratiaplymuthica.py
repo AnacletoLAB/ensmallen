@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaPlymuthica.
+This file offers the methods to automatically retrieve the graph Serratia plymuthica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaPlymuthica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaPlymuthica graph.
+    """Return new instance of the Serratia plymuthica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaPlymuthica(
 
     Returns
     -----------------------
-    Instace of SerratiaPlymuthica graph.
+    Instace of Serratia plymuthica graph.
 
 	References
 	---------------------

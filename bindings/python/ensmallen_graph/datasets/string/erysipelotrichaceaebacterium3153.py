@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelotrichaceaeBacterium3153.
+This file offers the methods to automatically retrieve the graph Erysipelotrichaceae bacterium 3153.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelotrichaceaeBacterium3153(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelotrichaceaeBacterium3153 graph.
+    """Return new instance of the Erysipelotrichaceae bacterium 3153 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErysipelotrichaceaeBacterium3153(
 
     Returns
     -----------------------
-    Instace of ErysipelotrichaceaeBacterium3153 graph.
+    Instace of Erysipelotrichaceae bacterium 3153 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsormidiumNitens.
+This file offers the methods to automatically retrieve the graph Klebsormidium nitens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsormidiumNitens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsormidiumNitens graph.
+    """Return new instance of the Klebsormidium nitens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsormidiumNitens(
 
     Returns
     -----------------------
-    Instace of KlebsormidiumNitens graph.
+    Instace of Klebsormidium nitens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosiphoSp1063.
+This file offers the methods to automatically retrieve the graph Thermosipho sp. 1063.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosiphoSp1063(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosiphoSp1063 graph.
+    """Return new instance of the Thermosipho sp. 1063 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermosiphoSp1063(
 
     Returns
     -----------------------
-    Instace of ThermosiphoSp1063 graph.
+    Instace of Thermosipho sp. 1063 graph.
 
 	References
 	---------------------

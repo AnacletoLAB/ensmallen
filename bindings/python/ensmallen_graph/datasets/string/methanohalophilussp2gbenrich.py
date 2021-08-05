@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanohalophilusSp2Gbenrich.
+This file offers the methods to automatically retrieve the graph Methanohalophilus sp. 2-GBenrich.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanohalophilusSp2Gbenrich(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanohalophilusSp2Gbenrich graph.
+    """Return new instance of the Methanohalophilus sp. 2-GBenrich graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanohalophilusSp2Gbenrich(
 
     Returns
     -----------------------
-    Instace of MethanohalophilusSp2Gbenrich graph.
+    Instace of Methanohalophilus sp. 2-GBenrich graph.
 
 	References
 	---------------------

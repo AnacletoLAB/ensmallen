@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PericoniaMacrospinosa.
+This file offers the methods to automatically retrieve the graph Periconia macrospinosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PericoniaMacrospinosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PericoniaMacrospinosa graph.
+    """Return new instance of the Periconia macrospinosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PericoniaMacrospinosa(
 
     Returns
     -----------------------
-    Instace of PericoniaMacrospinosa graph.
+    Instace of Periconia macrospinosa graph.
 
 	References
 	---------------------

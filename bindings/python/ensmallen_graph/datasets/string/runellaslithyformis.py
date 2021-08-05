@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RunellaSlithyformis.
+This file offers the methods to automatically retrieve the graph Runella slithyformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RunellaSlithyformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RunellaSlithyformis graph.
+    """Return new instance of the Runella slithyformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RunellaSlithyformis(
 
     Returns
     -----------------------
-    Instace of RunellaSlithyformis graph.
+    Instace of Runella slithyformis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeroglobusGeminatus.
+This file offers the methods to automatically retrieve the graph Anaeroglobus geminatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeroglobusGeminatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeroglobusGeminatus graph.
+    """Return new instance of the Anaeroglobus geminatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaeroglobusGeminatus(
 
     Returns
     -----------------------
-    Instace of AnaeroglobusGeminatus graph.
+    Instace of Anaeroglobus geminatus graph.
 
 	References
 	---------------------

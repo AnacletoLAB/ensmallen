@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KushneriaAvicenniae.
+This file offers the methods to automatically retrieve the graph Kushneria avicenniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KushneriaAvicenniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KushneriaAvicenniae graph.
+    """Return new instance of the Kushneria avicenniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KushneriaAvicenniae(
 
     Returns
     -----------------------
-    Instace of KushneriaAvicenniae graph.
+    Instace of Kushneria avicenniae graph.
 
 	References
 	---------------------

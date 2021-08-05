@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminicolaSpYik13.
+This file offers the methods to automatically retrieve the graph Sediminicola sp. YIK13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminicolaSpYik13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminicolaSpYik13 graph.
+    """Return new instance of the Sediminicola sp. YIK13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SediminicolaSpYik13(
 
     Returns
     -----------------------
-    Instace of SediminicolaSpYik13 graph.
+    Instace of Sediminicola sp. YIK13 graph.
 
 	References
 	---------------------

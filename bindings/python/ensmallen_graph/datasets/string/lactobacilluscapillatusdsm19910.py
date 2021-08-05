@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCapillatusDsm19910.
+This file offers the methods to automatically retrieve the graph Lactobacillus capillatus DSM 19910.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCapillatusDsm19910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCapillatusDsm19910 graph.
+    """Return new instance of the Lactobacillus capillatus DSM 19910 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusCapillatusDsm19910(
 
     Returns
     -----------------------
-    Instace of LactobacillusCapillatusDsm19910 graph.
+    Instace of Lactobacillus capillatus DSM 19910 graph.
 
 	References
 	---------------------

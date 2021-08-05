@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusBasilensis.
+This file offers the methods to automatically retrieve the graph Cupriavidus basilensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusBasilensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusBasilensis graph.
+    """Return new instance of the Cupriavidus basilensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusBasilensis(
 
     Returns
     -----------------------
-    Instace of CupriavidusBasilensis graph.
+    Instace of Cupriavidus basilensis graph.
 
 	References
 	---------------------

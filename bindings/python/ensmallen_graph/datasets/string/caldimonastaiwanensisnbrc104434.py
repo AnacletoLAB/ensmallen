@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldimonasTaiwanensisNbrc104434.
+This file offers the methods to automatically retrieve the graph Caldimonas taiwanensis NBRC 104434.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldimonasTaiwanensisNbrc104434(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldimonasTaiwanensisNbrc104434 graph.
+    """Return new instance of the Caldimonas taiwanensis NBRC 104434 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldimonasTaiwanensisNbrc104434(
 
     Returns
     -----------------------
-    Instace of CaldimonasTaiwanensisNbrc104434 graph.
+    Instace of Caldimonas taiwanensis NBRC 104434 graph.
 
 	References
 	---------------------

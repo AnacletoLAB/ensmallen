@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriovoraxSpBal6x.
+This file offers the methods to automatically retrieve the graph Bacteriovorax sp. BAL6X.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriovoraxSpBal6x(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriovoraxSpBal6x graph.
+    """Return new instance of the Bacteriovorax sp. BAL6X graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteriovoraxSpBal6x(
 
     Returns
     -----------------------
-    Instace of BacteriovoraxSpBal6x graph.
+    Instace of Bacteriovorax sp. BAL6X graph.
 
 	References
 	---------------------

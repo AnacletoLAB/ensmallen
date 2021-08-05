@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocystisBryophila.
+This file offers the methods to automatically retrieve the graph Methylocystis bryophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocystisBryophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocystisBryophila graph.
+    """Return new instance of the Methylocystis bryophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylocystisBryophila(
 
     Returns
     -----------------------
-    Instace of MethylocystisBryophila graph.
+    Instace of Methylocystis bryophila graph.
 
 	References
 	---------------------

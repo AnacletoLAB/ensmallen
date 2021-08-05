@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPyruviciproducens.
+This file offers the methods to automatically retrieve the graph Corynebacterium pyruviciproducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPyruviciproducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPyruviciproducens graph.
+    """Return new instance of the Corynebacterium pyruviciproducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumPyruviciproducens(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPyruviciproducens graph.
+    Instace of Corynebacterium pyruviciproducens graph.
 
 	References
 	---------------------

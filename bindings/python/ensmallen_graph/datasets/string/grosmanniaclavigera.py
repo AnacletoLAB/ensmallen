@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrosmanniaClavigera.
+This file offers the methods to automatically retrieve the graph Grosmannia clavigera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrosmanniaClavigera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrosmanniaClavigera graph.
+    """Return new instance of the Grosmannia clavigera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GrosmanniaClavigera(
 
     Returns
     -----------------------
-    Instace of GrosmanniaClavigera graph.
+    Instace of Grosmannia clavigera graph.
 
 	References
 	---------------------

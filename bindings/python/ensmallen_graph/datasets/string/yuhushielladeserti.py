@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YuhushiellaDeserti.
+This file offers the methods to automatically retrieve the graph Yuhushiella deserti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YuhushiellaDeserti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YuhushiellaDeserti graph.
+    """Return new instance of the Yuhushiella deserti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YuhushiellaDeserti(
 
     Returns
     -----------------------
-    Instace of YuhushiellaDeserti graph.
+    Instace of Yuhushiella deserti graph.
 
 	References
 	---------------------

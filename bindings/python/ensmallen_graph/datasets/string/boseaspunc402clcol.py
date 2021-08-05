@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpUnc402clcol.
+This file offers the methods to automatically retrieve the graph Bosea sp. UNC402CLCol.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpUnc402clcol(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpUnc402clcol graph.
+    """Return new instance of the Bosea sp. UNC402CLCol graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BoseaSpUnc402clcol(
 
     Returns
     -----------------------
-    Instace of BoseaSpUnc402clcol graph.
+    Instace of Bosea sp. UNC402CLCol graph.
 
 	References
 	---------------------

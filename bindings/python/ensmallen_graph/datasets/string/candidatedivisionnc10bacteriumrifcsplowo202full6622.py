@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionNc10BacteriumRifcsplowo202Full6622.
+This file offers the methods to automatically retrieve the graph candidate division NC10 bacterium RIFCSPLOWO2_02_FULL_66_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionNc10BacteriumRifcsplowo202Full6622(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionNc10BacteriumRifcsplowo202Full6622 graph.
+    """Return new instance of the candidate division NC10 bacterium RIFCSPLOWO2_02_FULL_66_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionNc10BacteriumRifcsplowo202Full6622(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionNc10BacteriumRifcsplowo202Full6622 graph.
+    Instace of candidate division NC10 bacterium RIFCSPLOWO2_02_FULL_66_22 graph.
 
 	References
 	---------------------

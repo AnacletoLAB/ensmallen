@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumBarkeri.
+This file offers the methods to automatically retrieve the graph Eubacterium barkeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumBarkeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumBarkeri graph.
+    """Return new instance of the Eubacterium barkeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumBarkeri(
 
     Returns
     -----------------------
-    Instace of EubacteriumBarkeri graph.
+    Instace of Eubacterium barkeri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitromicrobiumBathyomarinum.
+This file offers the methods to automatically retrieve the graph Citromicrobium bathyomarinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitromicrobiumBathyomarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitromicrobiumBathyomarinum graph.
+    """Return new instance of the Citromicrobium bathyomarinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitromicrobiumBathyomarinum(
 
     Returns
     -----------------------
-    Instace of CitromicrobiumBathyomarinum graph.
+    Instace of Citromicrobium bathyomarinum graph.
 
 	References
 	---------------------

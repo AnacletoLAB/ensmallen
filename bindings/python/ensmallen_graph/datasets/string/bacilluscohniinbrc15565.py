@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCohniiNbrc15565.
+This file offers the methods to automatically retrieve the graph Bacillus cohnii NBRC 15565.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCohniiNbrc15565(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCohniiNbrc15565 graph.
+    """Return new instance of the Bacillus cohnii NBRC 15565 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusCohniiNbrc15565(
 
     Returns
     -----------------------
-    Instace of BacillusCohniiNbrc15565 graph.
+    Instace of Bacillus cohnii NBRC 15565 graph.
 
 	References
 	---------------------

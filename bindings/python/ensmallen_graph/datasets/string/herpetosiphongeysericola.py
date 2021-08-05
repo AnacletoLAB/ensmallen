@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerpetosiphonGeysericola.
+This file offers the methods to automatically retrieve the graph Herpetosiphon geysericola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerpetosiphonGeysericola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerpetosiphonGeysericola graph.
+    """Return new instance of the Herpetosiphon geysericola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerpetosiphonGeysericola(
 
     Returns
     -----------------------
-    Instace of HerpetosiphonGeysericola graph.
+    Instace of Herpetosiphon geysericola graph.
 
 	References
 	---------------------

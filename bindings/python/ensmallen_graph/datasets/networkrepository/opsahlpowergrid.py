@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpsahlPowergrid.
+This file offers the methods to automatically retrieve the graph opsahl-powergrid.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OpsahlPowergrid(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpsahlPowergrid graph.
+    """Return new instance of the opsahl-powergrid graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OpsahlPowergrid(
 
     Returns
     -----------------------
-    Instace of OpsahlPowergrid graph.
+    Instace of opsahl-powergrid graph.
 
 	References
 	---------------------

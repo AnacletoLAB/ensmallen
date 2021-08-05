@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaWheatBlue.
+This file offers the methods to automatically retrieve the graph Phytoplasma wheat blue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaWheatBlue(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaWheatBlue graph.
+    """Return new instance of the Phytoplasma wheat blue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytoplasmaWheatBlue(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaWheatBlue graph.
+    Instace of Phytoplasma wheat blue graph.
 
 	References
 	---------------------

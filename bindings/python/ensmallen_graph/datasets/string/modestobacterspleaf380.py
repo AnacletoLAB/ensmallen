@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ModestobacterSpLeaf380.
+This file offers the methods to automatically retrieve the graph Modestobacter sp. Leaf380.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ModestobacterSpLeaf380(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ModestobacterSpLeaf380 graph.
+    """Return new instance of the Modestobacter sp. Leaf380 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ModestobacterSpLeaf380(
 
     Returns
     -----------------------
-    Instace of ModestobacterSpLeaf380 graph.
+    Instace of Modestobacter sp. Leaf380 graph.
 
 	References
 	---------------------

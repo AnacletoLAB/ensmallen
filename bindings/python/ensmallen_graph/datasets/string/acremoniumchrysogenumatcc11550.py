@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcremoniumChrysogenumAtcc11550.
+This file offers the methods to automatically retrieve the graph Acremonium chrysogenum ATCC 11550.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcremoniumChrysogenumAtcc11550(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcremoniumChrysogenumAtcc11550 graph.
+    """Return new instance of the Acremonium chrysogenum ATCC 11550 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcremoniumChrysogenumAtcc11550(
 
     Returns
     -----------------------
-    Instace of AcremoniumChrysogenumAtcc11550 graph.
+    Instace of Acremonium chrysogenum ATCC 11550 graph.
 
 	References
 	---------------------

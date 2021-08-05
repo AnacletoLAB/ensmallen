@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidiumSpOscr.
+This file offers the methods to automatically retrieve the graph Phormidium sp. OSCR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhormidiumSpOscr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidiumSpOscr graph.
+    """Return new instance of the Phormidium sp. OSCR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhormidiumSpOscr(
 
     Returns
     -----------------------
-    Instace of PhormidiumSpOscr graph.
+    Instace of Phormidium sp. OSCR graph.
 
 	References
 	---------------------

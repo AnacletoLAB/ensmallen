@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaOchraceaDsm7271.
+This file offers the methods to automatically retrieve the graph Capnocytophaga ochracea DSM7271.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaOchraceaDsm7271(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaOchraceaDsm7271 graph.
+    """Return new instance of the Capnocytophaga ochracea DSM7271 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaOchraceaDsm7271(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaOchraceaDsm7271 graph.
+    Instace of Capnocytophaga ochracea DSM7271 graph.
 
 	References
 	---------------------

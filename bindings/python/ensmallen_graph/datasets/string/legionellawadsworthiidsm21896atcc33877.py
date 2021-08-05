@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaWadsworthiiDsm21896Atcc33877.
+This file offers the methods to automatically retrieve the graph Legionella wadsworthii DSM 21896 ATCC 33877.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaWadsworthiiDsm21896Atcc33877(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaWadsworthiiDsm21896Atcc33877 graph.
+    """Return new instance of the Legionella wadsworthii DSM 21896 ATCC 33877 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaWadsworthiiDsm21896Atcc33877(
 
     Returns
     -----------------------
-    Instace of LegionellaWadsworthiiDsm21896Atcc33877 graph.
+    Instace of Legionella wadsworthii DSM 21896 ATCC 33877 graph.
 
 	References
 	---------------------

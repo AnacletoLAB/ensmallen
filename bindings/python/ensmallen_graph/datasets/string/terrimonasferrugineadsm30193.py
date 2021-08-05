@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerrimonasFerrugineaDsm30193.
+This file offers the methods to automatically retrieve the graph Terrimonas ferruginea DSM 30193.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerrimonasFerrugineaDsm30193(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerrimonasFerrugineaDsm30193 graph.
+    """Return new instance of the Terrimonas ferruginea DSM 30193 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerrimonasFerrugineaDsm30193(
 
     Returns
     -----------------------
-    Instace of TerrimonasFerrugineaDsm30193 graph.
+    Instace of Terrimonas ferruginea DSM 30193 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFloridensis.
+This file offers the methods to automatically retrieve the graph Pseudomonas floridensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFloridensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFloridensis graph.
+    """Return new instance of the Pseudomonas floridensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasFloridensis(
 
     Returns
     -----------------------
-    Instace of PseudomonasFloridensis graph.
+    Instace of Pseudomonas floridensis graph.
 
 	References
 	---------------------

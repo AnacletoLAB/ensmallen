@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcaricomesPhytoseiuli.
+This file offers the methods to automatically retrieve the graph Acaricomes phytoseiuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcaricomesPhytoseiuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcaricomesPhytoseiuli graph.
+    """Return new instance of the Acaricomes phytoseiuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcaricomesPhytoseiuli(
 
     Returns
     -----------------------
-    Instace of AcaricomesPhytoseiuli graph.
+    Instace of Acaricomes phytoseiuli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobacterPhocae.
+This file offers the methods to automatically retrieve the graph Atopobacter phocae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobacterPhocae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobacterPhocae graph.
+    """Return new instance of the Atopobacter phocae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AtopobacterPhocae(
 
     Returns
     -----------------------
-    Instace of AtopobacterPhocae graph.
+    Instace of Atopobacter phocae graph.
 
 	References
 	---------------------

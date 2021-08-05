@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodoferaxFermentans.
+This file offers the methods to automatically retrieve the graph Rhodoferax fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodoferaxFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodoferaxFermentans graph.
+    """Return new instance of the Rhodoferax fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodoferaxFermentans(
 
     Returns
     -----------------------
-    Instace of RhodoferaxFermentans graph.
+    Instace of Rhodoferax fermentans graph.
 
 	References
 	---------------------

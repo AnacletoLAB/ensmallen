@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPhaeomarinobacterEctocarpi.
+This file offers the methods to automatically retrieve the graph Candidatus Phaeomarinobacter ectocarpi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPhaeomarinobacterEctocarpi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPhaeomarinobacterEctocarpi graph.
+    """Return new instance of the Candidatus Phaeomarinobacter ectocarpi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPhaeomarinobacterEctocarpi(
 
     Returns
     -----------------------
-    Instace of CandidatusPhaeomarinobacterEctocarpi graph.
+    Instace of Candidatus Phaeomarinobacter ectocarpi graph.
 
 	References
 	---------------------

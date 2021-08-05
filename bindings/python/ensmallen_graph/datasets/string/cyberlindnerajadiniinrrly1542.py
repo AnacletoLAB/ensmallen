@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyberlindneraJadiniiNrrlY1542.
+This file offers the methods to automatically retrieve the graph Cyberlindnera jadinii NRRL Y-1542.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyberlindneraJadiniiNrrlY1542(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyberlindneraJadiniiNrrlY1542 graph.
+    """Return new instance of the Cyberlindnera jadinii NRRL Y-1542 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyberlindneraJadiniiNrrlY1542(
 
     Returns
     -----------------------
-    Instace of CyberlindneraJadiniiNrrlY1542 graph.
+    Instace of Cyberlindnera jadinii NRRL Y-1542 graph.
 
 	References
 	---------------------

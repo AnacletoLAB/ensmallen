@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterUrsingii.
+This file offers the methods to automatically retrieve the graph Acinetobacter ursingii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterUrsingii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterUrsingii graph.
+    """Return new instance of the Acinetobacter ursingii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterUrsingii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterUrsingii graph.
+    Instace of Acinetobacter ursingii graph.
 
 	References
 	---------------------

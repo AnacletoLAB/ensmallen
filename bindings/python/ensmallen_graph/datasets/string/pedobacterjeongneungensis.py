@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterJeongneungensis.
+This file offers the methods to automatically retrieve the graph Pedobacter jeongneungensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterJeongneungensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterJeongneungensis graph.
+    """Return new instance of the Pedobacter jeongneungensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterJeongneungensis(
 
     Returns
     -----------------------
-    Instace of PedobacterJeongneungensis graph.
+    Instace of Pedobacter jeongneungensis graph.
 
 	References
 	---------------------

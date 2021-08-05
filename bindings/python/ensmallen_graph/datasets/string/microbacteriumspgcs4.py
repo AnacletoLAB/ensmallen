@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpGcs4.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. GCS4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpGcs4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpGcs4 graph.
+    """Return new instance of the Microbacterium sp. GCS4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpGcs4(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpGcs4 graph.
+    Instace of Microbacterium sp. GCS4 graph.
 
 	References
 	---------------------

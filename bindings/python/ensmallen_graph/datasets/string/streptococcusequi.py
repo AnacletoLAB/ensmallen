@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusEqui.
+This file offers the methods to automatically retrieve the graph Streptococcus equi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusEqui(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusEqui graph.
+    """Return new instance of the Streptococcus equi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusEqui(
 
     Returns
     -----------------------
-    Instace of StreptococcusEqui graph.
+    Instace of Streptococcus equi graph.
 
 	References
 	---------------------

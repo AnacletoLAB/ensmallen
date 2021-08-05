@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GabonibacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Gabonibacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GabonibacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GabonibacterMassiliensis graph.
+    """Return new instance of the Gabonibacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GabonibacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of GabonibacterMassiliensis graph.
+    Instace of Gabonibacter massiliensis graph.
 
 	References
 	---------------------

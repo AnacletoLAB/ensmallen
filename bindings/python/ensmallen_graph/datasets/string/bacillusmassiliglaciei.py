@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMassiliglaciei.
+This file offers the methods to automatically retrieve the graph Bacillus massiliglaciei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMassiliglaciei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMassiliglaciei graph.
+    """Return new instance of the Bacillus massiliglaciei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMassiliglaciei(
 
     Returns
     -----------------------
-    Instace of BacillusMassiliglaciei graph.
+    Instace of Bacillus massiliglaciei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaSpErvv1.
+This file offers the methods to automatically retrieve the graph Erwinia sp. ErVv1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaSpErvv1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaSpErvv1 graph.
+    """Return new instance of the Erwinia sp. ErVv1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaSpErvv1(
 
     Returns
     -----------------------
-    Instace of ErwiniaSpErvv1 graph.
+    Instace of Erwinia sp. ErVv1 graph.
 
 	References
 	---------------------

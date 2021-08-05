@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioHalioticoli.
+This file offers the methods to automatically retrieve the graph Vibrio halioticoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioHalioticoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioHalioticoli graph.
+    """Return new instance of the Vibrio halioticoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioHalioticoli(
 
     Returns
     -----------------------
-    Instace of VibrioHalioticoli graph.
+    Instace of Vibrio halioticoli graph.
 
 	References
 	---------------------

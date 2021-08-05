@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaLaidlawii.
+This file offers the methods to automatically retrieve the graph Acholeplasma laidlawii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaLaidlawii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaLaidlawii graph.
+    """Return new instance of the Acholeplasma laidlawii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaLaidlawii(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaLaidlawii graph.
+    Instace of Acholeplasma laidlawii graph.
 
 	References
 	---------------------

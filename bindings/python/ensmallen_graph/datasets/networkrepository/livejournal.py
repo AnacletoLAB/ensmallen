@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Livejournal.
+This file offers the methods to automatically retrieve the graph livejournal.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Livejournal(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Livejournal graph.
+    """Return new instance of the livejournal graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Livejournal(
 
     Returns
     -----------------------
-    Instace of Livejournal graph.
+    Instace of livejournal graph.
 
 	References
 	---------------------

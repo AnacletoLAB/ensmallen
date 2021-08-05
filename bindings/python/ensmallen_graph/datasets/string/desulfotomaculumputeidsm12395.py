@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumPuteiDsm12395.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum putei DSM 12395.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumPuteiDsm12395(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumPuteiDsm12395 graph.
+    """Return new instance of the Desulfotomaculum putei DSM 12395 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfotomaculumPuteiDsm12395(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumPuteiDsm12395 graph.
+    Instace of Desulfotomaculum putei DSM 12395 graph.
 
 	References
 	---------------------

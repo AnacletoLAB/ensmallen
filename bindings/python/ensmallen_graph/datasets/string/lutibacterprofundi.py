@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutibacterProfundi.
+This file offers the methods to automatically retrieve the graph Lutibacter profundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutibacterProfundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutibacterProfundi graph.
+    """Return new instance of the Lutibacter profundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutibacterProfundi(
 
     Returns
     -----------------------
-    Instace of LutibacterProfundi graph.
+    Instace of Lutibacter profundi graph.
 
 	References
 	---------------------

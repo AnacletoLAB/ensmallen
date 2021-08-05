@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechAsCaida.
+This file offers the methods to automatically retrieve the graph tech-as-caida.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechAsCaida(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechAsCaida graph.
+    """Return new instance of the tech-as-caida graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechAsCaida(
 
     Returns
     -----------------------
-    Instace of TechAsCaida graph.
+    Instace of tech-as-caida graph.
 
 	References
 	---------------------

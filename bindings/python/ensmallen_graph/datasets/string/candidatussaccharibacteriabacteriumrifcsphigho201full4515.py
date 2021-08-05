@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaBacteriumRifcsphigho201Full4515.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria bacterium RIFCSPHIGHO2_01_FULL_45_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaBacteriumRifcsphigho201Full4515(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaBacteriumRifcsphigho201Full4515 graph.
+    """Return new instance of the Candidatus Saccharibacteria bacterium RIFCSPHIGHO2_01_FULL_45_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaBacteriumRifcsphigho201Full4515(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaBacteriumRifcsphigho201Full4515 graph.
+    Instace of Candidatus Saccharibacteria bacterium RIFCSPHIGHO2_01_FULL_45_15 graph.
 
 	References
 	---------------------

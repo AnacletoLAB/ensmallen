@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisTropicalis.
+This file offers the methods to automatically retrieve the graph Caenorhabditis tropicalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisTropicalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisTropicalis graph.
+    """Return new instance of the Caenorhabditis tropicalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaenorhabditisTropicalis(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisTropicalis graph.
+    Instace of Caenorhabditis tropicalis graph.
 
 	References
 	---------------------

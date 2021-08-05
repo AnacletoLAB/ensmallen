@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpFukuswis1.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. FUKUSWIS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpFukuswis1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpFukuswis1 graph.
+    """Return new instance of the Sphingomonas sp. FUKUSWIS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasSpFukuswis1(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpFukuswis1 graph.
+    Instace of Sphingomonas sp. FUKUSWIS1 graph.
 
 	References
 	---------------------

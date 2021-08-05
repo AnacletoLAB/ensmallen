@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioPacificus.
+This file offers the methods to automatically retrieve the graph Enterovibrio pacificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioPacificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioPacificus graph.
+    """Return new instance of the Enterovibrio pacificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterovibrioPacificus(
 
     Returns
     -----------------------
-    Instace of EnterovibrioPacificus graph.
+    Instace of Enterovibrio pacificus graph.
 
 	References
 	---------------------

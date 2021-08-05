@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasMaliNbrc15500.
+This file offers the methods to automatically retrieve the graph Sphingomonas mali NBRC 15500.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasMaliNbrc15500(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasMaliNbrc15500 graph.
+    """Return new instance of the Sphingomonas mali NBRC 15500 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasMaliNbrc15500(
 
     Returns
     -----------------------
-    Instace of SphingomonasMaliNbrc15500 graph.
+    Instace of Sphingomonas mali NBRC 15500 graph.
 
 	References
 	---------------------

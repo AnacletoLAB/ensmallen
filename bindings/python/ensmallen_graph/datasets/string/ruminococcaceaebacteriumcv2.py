@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumCv2.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium cv2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumCv2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumCv2 graph.
+    """Return new instance of the Ruminococcaceae bacterium cv2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumCv2(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumCv2 graph.
+    Instace of Ruminococcaceae bacterium cv2 graph.
 
 	References
 	---------------------

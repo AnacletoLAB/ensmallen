@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesGhanaensis.
+This file offers the methods to automatically retrieve the graph Streptomyces ghanaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesGhanaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesGhanaensis graph.
+    """Return new instance of the Streptomyces ghanaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesGhanaensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesGhanaensis graph.
+    Instace of Streptomyces ghanaensis graph.
 
 	References
 	---------------------

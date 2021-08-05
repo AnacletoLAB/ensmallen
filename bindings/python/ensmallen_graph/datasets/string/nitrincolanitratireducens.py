@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrincolaNitratireducens.
+This file offers the methods to automatically retrieve the graph Nitrincola nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrincolaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrincolaNitratireducens graph.
+    """Return new instance of the Nitrincola nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrincolaNitratireducens(
 
     Returns
     -----------------------
-    Instace of NitrincolaNitratireducens graph.
+    Instace of Nitrincola nitratireducens graph.
 
 	References
 	---------------------

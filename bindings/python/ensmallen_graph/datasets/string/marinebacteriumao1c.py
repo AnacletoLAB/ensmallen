@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineBacteriumAo1C.
+This file offers the methods to automatically retrieve the graph marine bacterium AO1-C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineBacteriumAo1C(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineBacteriumAo1C graph.
+    """Return new instance of the marine bacterium AO1-C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineBacteriumAo1C(
 
     Returns
     -----------------------
-    Instace of MarineBacteriumAo1C graph.
+    Instace of marine bacterium AO1-C graph.
 
 	References
 	---------------------

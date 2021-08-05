@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacteriumCaspActino2.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium casp-actino2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacteriumCaspActino2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacteriumCaspActino2 graph.
+    """Return new instance of the Actinobacteria bacterium casp-actino2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacteriumCaspActino2(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacteriumCaspActino2 graph.
+    Instace of Actinobacteria bacterium casp-actino2 graph.
 
 	References
 	---------------------

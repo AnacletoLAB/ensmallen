@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacillusSpMm3.
+This file offers the methods to automatically retrieve the graph Methylobacillus sp. MM3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacillusSpMm3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacillusSpMm3 graph.
+    """Return new instance of the Methylobacillus sp. MM3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacillusSpMm3(
 
     Returns
     -----------------------
-    Instace of MethylobacillusSpMm3 graph.
+    Instace of Methylobacillus sp. MM3 graph.
 
 	References
 	---------------------

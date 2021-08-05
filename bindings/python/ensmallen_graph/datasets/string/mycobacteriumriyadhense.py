@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumRiyadhense.
+This file offers the methods to automatically retrieve the graph Mycobacterium riyadhense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumRiyadhense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumRiyadhense graph.
+    """Return new instance of the Mycobacterium riyadhense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumRiyadhense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumRiyadhense graph.
+    Instace of Mycobacterium riyadhense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DechloromonasAromatica.
+This file offers the methods to automatically retrieve the graph Dechloromonas aromatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DechloromonasAromatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DechloromonasAromatica graph.
+    """Return new instance of the Dechloromonas aromatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DechloromonasAromatica(
 
     Returns
     -----------------------
-    Instace of DechloromonasAromatica graph.
+    Instace of Dechloromonas aromatica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaPiezophila.
+This file offers the methods to automatically retrieve the graph Colwellia piezophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaPiezophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaPiezophila graph.
+    """Return new instance of the Colwellia piezophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ColwelliaPiezophila(
 
     Returns
     -----------------------
-    Instace of ColwelliaPiezophila graph.
+    Instace of Colwellia piezophila graph.
 
 	References
 	---------------------

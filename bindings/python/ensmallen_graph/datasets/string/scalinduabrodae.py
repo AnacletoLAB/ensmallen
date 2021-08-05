@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScalinduaBrodae.
+This file offers the methods to automatically retrieve the graph Scalindua brodae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScalinduaBrodae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScalinduaBrodae graph.
+    """Return new instance of the Scalindua brodae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ScalinduaBrodae(
 
     Returns
     -----------------------
-    Instace of ScalinduaBrodae graph.
+    Instace of Scalindua brodae graph.
 
 	References
 	---------------------

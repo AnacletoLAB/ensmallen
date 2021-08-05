@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YooniaLitorea.
+This file offers the methods to automatically retrieve the graph Yoonia litorea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YooniaLitorea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YooniaLitorea graph.
+    """Return new instance of the Yoonia litorea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YooniaLitorea(
 
     Returns
     -----------------------
-    Instace of YooniaLitorea graph.
+    Instace of Yoonia litorea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusRotai.
+This file offers the methods to automatically retrieve the graph Enterococcus rotai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusRotai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusRotai graph.
+    """Return new instance of the Enterococcus rotai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusRotai(
 
     Returns
     -----------------------
-    Instace of EnterococcusRotai graph.
+    Instace of Enterococcus rotai graph.
 
 	References
 	---------------------

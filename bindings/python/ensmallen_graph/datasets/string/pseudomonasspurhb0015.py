@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpUrhb0015.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. URHB0015.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpUrhb0015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpUrhb0015 graph.
+    """Return new instance of the Pseudomonas sp. URHB0015 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpUrhb0015(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpUrhb0015 graph.
+    Instace of Pseudomonas sp. URHB0015 graph.
 
 	References
 	---------------------

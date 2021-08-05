@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetschnikowiaSpJcm33374.
+This file offers the methods to automatically retrieve the graph Metschnikowia sp. JCM 33374.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetschnikowiaSpJcm33374(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetschnikowiaSpJcm33374 graph.
+    """Return new instance of the Metschnikowia sp. JCM 33374 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetschnikowiaSpJcm33374(
 
     Returns
     -----------------------
-    Instace of MetschnikowiaSpJcm33374 graph.
+    Instace of Metschnikowia sp. JCM 33374 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpL2c084a000.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. L2C084A000.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpL2c084a000(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpL2c084a000 graph.
+    """Return new instance of the Mesorhizobium sp. L2C084A000 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumSpL2c084a000(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpL2c084a000 graph.
+    Instace of Mesorhizobium sp. L2C084A000 graph.
 
 	References
 	---------------------

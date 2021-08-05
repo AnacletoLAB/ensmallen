@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSubterraneus.
+This file offers the methods to automatically retrieve the graph Bacillus subterraneus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSubterraneus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSubterraneus graph.
+    """Return new instance of the Bacillus subterraneus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSubterraneus(
 
     Returns
     -----------------------
-    Instace of BacillusSubterraneus graph.
+    Instace of Bacillus subterraneus graph.
 
 	References
 	---------------------

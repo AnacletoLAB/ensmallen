@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacleayaCordata.
+This file offers the methods to automatically retrieve the graph Macleaya cordata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacleayaCordata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacleayaCordata graph.
+    """Return new instance of the Macleaya cordata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacleayaCordata(
 
     Returns
     -----------------------
-    Instace of MacleayaCordata graph.
+    Instace of Macleaya cordata graph.
 
 	References
 	---------------------

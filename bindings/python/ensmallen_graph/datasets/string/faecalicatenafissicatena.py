@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FaecalicatenaFissicatena.
+This file offers the methods to automatically retrieve the graph Faecalicatena fissicatena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FaecalicatenaFissicatena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FaecalicatenaFissicatena graph.
+    """Return new instance of the Faecalicatena fissicatena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FaecalicatenaFissicatena(
 
     Returns
     -----------------------
-    Instace of FaecalicatenaFissicatena graph.
+    Instace of Faecalicatena fissicatena graph.
 
 	References
 	---------------------

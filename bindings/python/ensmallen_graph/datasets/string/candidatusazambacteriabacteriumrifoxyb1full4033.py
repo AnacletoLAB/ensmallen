@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAzambacteriaBacteriumRifoxyb1Full4033.
+This file offers the methods to automatically retrieve the graph Candidatus Azambacteria bacterium RIFOXYB1_FULL_40_33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAzambacteriaBacteriumRifoxyb1Full4033(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAzambacteriaBacteriumRifoxyb1Full4033 graph.
+    """Return new instance of the Candidatus Azambacteria bacterium RIFOXYB1_FULL_40_33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAzambacteriaBacteriumRifoxyb1Full4033(
 
     Returns
     -----------------------
-    Instace of CandidatusAzambacteriaBacteriumRifoxyb1Full4033 graph.
+    Instace of Candidatus Azambacteria bacterium RIFOXYB1_FULL_40_33 graph.
 
 	References
 	---------------------

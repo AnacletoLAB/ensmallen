@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzotobacterVinelandii.
+This file offers the methods to automatically retrieve the graph Azotobacter vinelandii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzotobacterVinelandii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzotobacterVinelandii graph.
+    """Return new instance of the Azotobacter vinelandii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzotobacterVinelandii(
 
     Returns
     -----------------------
-    Instace of AzotobacterVinelandii graph.
+    Instace of Azotobacter vinelandii graph.
 
 	References
 	---------------------

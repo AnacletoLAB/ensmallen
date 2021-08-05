@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusBendigoensisDsm12906.
+This file offers the methods to automatically retrieve the graph Tessaracoccus bendigoensis DSM 12906.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusBendigoensisDsm12906(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusBendigoensisDsm12906 graph.
+    """Return new instance of the Tessaracoccus bendigoensis DSM 12906 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusBendigoensisDsm12906(
 
     Returns
     -----------------------
-    Instace of TessaracoccusBendigoensisDsm12906 graph.
+    Instace of Tessaracoccus bendigoensis DSM 12906 graph.
 
 	References
 	---------------------

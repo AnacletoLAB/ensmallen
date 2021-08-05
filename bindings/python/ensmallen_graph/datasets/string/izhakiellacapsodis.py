@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IzhakiellaCapsodis.
+This file offers the methods to automatically retrieve the graph Izhakiella capsodis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IzhakiellaCapsodis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IzhakiellaCapsodis graph.
+    """Return new instance of the Izhakiella capsodis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IzhakiellaCapsodis(
 
     Returns
     -----------------------
-    Instace of IzhakiellaCapsodis graph.
+    Instace of Izhakiella capsodis graph.
 
 	References
 	---------------------

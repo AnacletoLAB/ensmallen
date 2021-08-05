@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterCibarius.
+This file offers the methods to automatically retrieve the graph Arcobacter cibarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterCibarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterCibarius graph.
+    """Return new instance of the Arcobacter cibarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterCibarius(
 
     Returns
     -----------------------
-    Instace of ArcobacterCibarius graph.
+    Instace of Arcobacter cibarius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaBacteriumGwf1327.
+This file offers the methods to automatically retrieve the graph Flavobacteria bacterium GWF1_32_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaBacteriumGwf1327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaBacteriumGwf1327 graph.
+    """Return new instance of the Flavobacteria bacterium GWF1_32_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaBacteriumGwf1327(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaBacteriumGwf1327 graph.
+    Instace of Flavobacteria bacterium GWF1_32_7 graph.
 
 	References
 	---------------------

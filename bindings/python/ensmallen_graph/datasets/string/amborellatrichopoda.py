@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmborellaTrichopoda.
+This file offers the methods to automatically retrieve the graph Amborella trichopoda.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmborellaTrichopoda(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmborellaTrichopoda graph.
+    """Return new instance of the Amborella trichopoda graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmborellaTrichopoda(
 
     Returns
     -----------------------
-    Instace of AmborellaTrichopoda graph.
+    Instace of Amborella trichopoda graph.
 
 	References
 	---------------------

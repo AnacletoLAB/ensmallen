@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychromonasOssibalaenae.
+This file offers the methods to automatically retrieve the graph Psychromonas ossibalaenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychromonasOssibalaenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychromonasOssibalaenae graph.
+    """Return new instance of the Psychromonas ossibalaenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychromonasOssibalaenae(
 
     Returns
     -----------------------
-    Instace of PsychromonasOssibalaenae graph.
+    Instace of Psychromonas ossibalaenae graph.
 
 	References
 	---------------------

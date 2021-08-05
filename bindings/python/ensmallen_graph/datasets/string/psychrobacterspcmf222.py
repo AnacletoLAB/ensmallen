@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpCmf222.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. Cmf 22.2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpCmf222(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpCmf222 graph.
+    """Return new instance of the Psychrobacter sp. Cmf 22.2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterSpCmf222(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpCmf222 graph.
+    Instace of Psychrobacter sp. Cmf 22.2 graph.
 
 	References
 	---------------------

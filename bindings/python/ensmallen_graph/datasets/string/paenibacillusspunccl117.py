@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpUnccl117.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. UNCCL117.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpUnccl117(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpUnccl117 graph.
+    """Return new instance of the Paenibacillus sp. UNCCL117 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpUnccl117(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpUnccl117 graph.
+    Instace of Paenibacillus sp. UNCCL117 graph.
 
 	References
 	---------------------

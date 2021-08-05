@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSoliNbrc102451.
+This file offers the methods to automatically retrieve the graph Bacillus soli NBRC 102451.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSoliNbrc102451(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSoliNbrc102451 graph.
+    """Return new instance of the Bacillus soli NBRC 102451 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSoliNbrc102451(
 
     Returns
     -----------------------
-    Instace of BacillusSoliNbrc102451 graph.
+    Instace of Bacillus soli NBRC 102451 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpR2019.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. R2019.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpR2019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpR2019 graph.
+    """Return new instance of the Pedobacter sp. R2019 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterSpR2019(
 
     Returns
     -----------------------
-    Instace of PedobacterSpR2019 graph.
+    Instace of Pedobacter sp. R2019 graph.
 
 	References
 	---------------------

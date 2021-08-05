@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusGinsengihumi.
+This file offers the methods to automatically retrieve the graph Paenibacillus ginsengihumi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusGinsengihumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusGinsengihumi graph.
+    """Return new instance of the Paenibacillus ginsengihumi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusGinsengihumi(
 
     Returns
     -----------------------
-    Instace of PaenibacillusGinsengihumi graph.
+    Instace of Paenibacillus ginsengihumi graph.
 
 	References
 	---------------------

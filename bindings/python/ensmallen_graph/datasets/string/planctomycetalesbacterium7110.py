@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycetalesBacterium7110.
+This file offers the methods to automatically retrieve the graph Planctomycetales bacterium 71-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycetalesBacterium7110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycetalesBacterium7110 graph.
+    """Return new instance of the Planctomycetales bacterium 71-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctomycetalesBacterium7110(
 
     Returns
     -----------------------
-    Instace of PlanctomycetalesBacterium7110 graph.
+    Instace of Planctomycetales bacterium 71-10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumIndoltheticum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium indoltheticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumIndoltheticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumIndoltheticum graph.
+    """Return new instance of the Chryseobacterium indoltheticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumIndoltheticum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumIndoltheticum graph.
+    Instace of Chryseobacterium indoltheticum graph.
 
 	References
 	---------------------

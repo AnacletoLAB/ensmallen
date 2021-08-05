@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterCupressi.
+This file offers the methods to automatically retrieve the graph Arthrobacter cupressi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterCupressi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterCupressi graph.
+    """Return new instance of the Arthrobacter cupressi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterCupressi(
 
     Returns
     -----------------------
-    Instace of ArthrobacterCupressi graph.
+    Instace of Arthrobacter cupressi graph.
 
 	References
 	---------------------

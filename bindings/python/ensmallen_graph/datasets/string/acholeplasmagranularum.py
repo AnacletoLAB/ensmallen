@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaGranularum.
+This file offers the methods to automatically retrieve the graph Acholeplasma granularum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaGranularum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaGranularum graph.
+    """Return new instance of the Acholeplasma granularum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaGranularum(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaGranularum graph.
+    Instace of Acholeplasma granularum graph.
 
 	References
 	---------------------

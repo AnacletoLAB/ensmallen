@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCampbellbacteriaBacteriumRifoxyc2Full3525.
+This file offers the methods to automatically retrieve the graph Candidatus Campbellbacteria bacterium RIFOXYC2_FULL_35_25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCampbellbacteriaBacteriumRifoxyc2Full3525(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCampbellbacteriaBacteriumRifoxyc2Full3525 graph.
+    """Return new instance of the Candidatus Campbellbacteria bacterium RIFOXYC2_FULL_35_25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCampbellbacteriaBacteriumRifoxyc2Full3525(
 
     Returns
     -----------------------
-    Instace of CandidatusCampbellbacteriaBacteriumRifoxyc2Full3525 graph.
+    Instace of Candidatus Campbellbacteria bacterium RIFOXYC2_FULL_35_25 graph.
 
 	References
 	---------------------

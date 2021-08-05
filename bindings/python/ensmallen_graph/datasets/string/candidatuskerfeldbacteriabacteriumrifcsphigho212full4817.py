@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKerfeldbacteriaBacteriumRifcsphigho212Full4817.
+This file offers the methods to automatically retrieve the graph Candidatus Kerfeldbacteria bacterium RIFCSPHIGHO2_12_FULL_48_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKerfeldbacteriaBacteriumRifcsphigho212Full4817(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKerfeldbacteriaBacteriumRifcsphigho212Full4817 graph.
+    """Return new instance of the Candidatus Kerfeldbacteria bacterium RIFCSPHIGHO2_12_FULL_48_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKerfeldbacteriaBacteriumRifcsphigho212Full4817(
 
     Returns
     -----------------------
-    Instace of CandidatusKerfeldbacteriaBacteriumRifcsphigho212Full4817 graph.
+    Instace of Candidatus Kerfeldbacteria bacterium RIFCSPHIGHO2_12_FULL_48_17 graph.
 
 	References
 	---------------------

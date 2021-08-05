@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FabibacterMisakiensis.
+This file offers the methods to automatically retrieve the graph Fabibacter misakiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FabibacterMisakiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FabibacterMisakiensis graph.
+    """Return new instance of the Fabibacter misakiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FabibacterMisakiensis(
 
     Returns
     -----------------------
-    Instace of FabibacterMisakiensis graph.
+    Instace of Fabibacter misakiensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PirellulaSpShSr6a.
+This file offers the methods to automatically retrieve the graph Pirellula sp. SH-Sr6A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PirellulaSpShSr6a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PirellulaSpShSr6a graph.
+    """Return new instance of the Pirellula sp. SH-Sr6A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PirellulaSpShSr6a(
 
     Returns
     -----------------------
-    Instace of PirellulaSpShSr6a graph.
+    Instace of Pirellula sp. SH-Sr6A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAnginosusSk52.
+This file offers the methods to automatically retrieve the graph Streptococcus anginosus SK52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAnginosusSk52(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAnginosusSk52 graph.
+    """Return new instance of the Streptococcus anginosus SK52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAnginosusSk52(
 
     Returns
     -----------------------
-    Instace of StreptococcusAnginosusSk52 graph.
+    Instace of Streptococcus anginosus SK52 graph.
 
 	References
 	---------------------

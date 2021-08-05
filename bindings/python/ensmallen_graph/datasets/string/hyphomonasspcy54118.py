@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpCy54118.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. CY54118.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpCy54118(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpCy54118 graph.
+    """Return new instance of the Hyphomonas sp. CY54118 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasSpCy54118(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpCy54118 graph.
+    Instace of Hyphomonas sp. CY54118 graph.
 
 	References
 	---------------------

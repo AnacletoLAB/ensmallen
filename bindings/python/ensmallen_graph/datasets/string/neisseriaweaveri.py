@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaWeaveri.
+This file offers the methods to automatically retrieve the graph Neisseria weaveri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaWeaveri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaWeaveri graph.
+    """Return new instance of the Neisseria weaveri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaWeaveri(
 
     Returns
     -----------------------
-    Instace of NeisseriaWeaveri graph.
+    Instace of Neisseria weaveri graph.
 
 	References
 	---------------------

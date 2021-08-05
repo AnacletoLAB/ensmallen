@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaSputigena.
+This file offers the methods to automatically retrieve the graph Capnocytophaga sputigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaSputigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaSputigena graph.
+    """Return new instance of the Capnocytophaga sputigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaSputigena(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaSputigena graph.
+    Instace of Capnocytophaga sputigena graph.
 
 	References
 	---------------------

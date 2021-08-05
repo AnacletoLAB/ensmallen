@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumU91i.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium U9-1i.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumU91i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumU91i graph.
+    """Return new instance of the alpha proteobacterium U9-1i graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumU91i(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumU91i graph.
+    Instace of alpha proteobacterium U9-1i graph.
 
 	References
 	---------------------

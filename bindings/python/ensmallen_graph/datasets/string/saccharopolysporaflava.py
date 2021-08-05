@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaFlava.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaFlava graph.
+    """Return new instance of the Saccharopolyspora flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharopolysporaFlava(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaFlava graph.
+    Instace of Saccharopolyspora flava graph.
 
 	References
 	---------------------

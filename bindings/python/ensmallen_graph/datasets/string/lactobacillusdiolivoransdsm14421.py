@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusDiolivoransDsm14421.
+This file offers the methods to automatically retrieve the graph Lactobacillus diolivorans DSM 14421.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusDiolivoransDsm14421(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusDiolivoransDsm14421 graph.
+    """Return new instance of the Lactobacillus diolivorans DSM 14421 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusDiolivoransDsm14421(
 
     Returns
     -----------------------
-    Instace of LactobacillusDiolivoransDsm14421 graph.
+    Instace of Lactobacillus diolivorans DSM 14421 graph.
 
 	References
 	---------------------

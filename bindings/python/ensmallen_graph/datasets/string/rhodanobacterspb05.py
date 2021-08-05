@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpB05.
+This file offers the methods to automatically retrieve the graph Rhodanobacter sp. B05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpB05(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpB05 graph.
+    """Return new instance of the Rhodanobacter sp. B05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodanobacterSpB05(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpB05 graph.
+    Instace of Rhodanobacter sp. B05 graph.
 
 	References
 	---------------------

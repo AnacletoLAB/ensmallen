@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormosaSpHel3A148.
+This file offers the methods to automatically retrieve the graph Formosa sp. Hel3_A1_48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormosaSpHel3A148(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormosaSpHel3A148 graph.
+    """Return new instance of the Formosa sp. Hel3_A1_48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FormosaSpHel3A148(
 
     Returns
     -----------------------
-    Instace of FormosaSpHel3A148 graph.
+    Instace of Formosa sp. Hel3_A1_48 graph.
 
 	References
 	---------------------

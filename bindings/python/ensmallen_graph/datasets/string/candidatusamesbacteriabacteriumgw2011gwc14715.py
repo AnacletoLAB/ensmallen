@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAmesbacteriaBacteriumGw2011Gwc14715.
+This file offers the methods to automatically retrieve the graph Candidatus Amesbacteria bacterium GW2011_GWC1_47_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAmesbacteriaBacteriumGw2011Gwc14715(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAmesbacteriaBacteriumGw2011Gwc14715 graph.
+    """Return new instance of the Candidatus Amesbacteria bacterium GW2011_GWC1_47_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAmesbacteriaBacteriumGw2011Gwc14715(
 
     Returns
     -----------------------
-    Instace of CandidatusAmesbacteriaBacteriumGw2011Gwc14715 graph.
+    Instace of Candidatus Amesbacteria bacterium GW2011_GWC1_47_15 graph.
 
 	References
 	---------------------

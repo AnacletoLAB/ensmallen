@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobaculumLimnaeum.
+This file offers the methods to automatically retrieve the graph Chlorobaculum limnaeum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobaculumLimnaeum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobaculumLimnaeum graph.
+    """Return new instance of the Chlorobaculum limnaeum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlorobaculumLimnaeum(
 
     Returns
     -----------------------
-    Instace of ChlorobaculumLimnaeum graph.
+    Instace of Chlorobaculum limnaeum graph.
 
 	References
 	---------------------

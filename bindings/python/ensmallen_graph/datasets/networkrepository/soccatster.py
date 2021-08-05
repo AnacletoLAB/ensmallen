@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocCatster.
+This file offers the methods to automatically retrieve the graph soc-catster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -39,7 +39,7 @@ def SocCatster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocCatster graph.
+    """Return new instance of the soc-catster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -66,7 +66,7 @@ def SocCatster(
 
     Returns
     -----------------------
-    Instace of SocCatster graph.
+    Instace of soc-catster graph.
 
 	References
 	---------------------

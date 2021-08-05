@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirulinaSubsalsa.
+This file offers the methods to automatically retrieve the graph Spirulina subsalsa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirulinaSubsalsa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirulinaSubsalsa graph.
+    """Return new instance of the Spirulina subsalsa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirulinaSubsalsa(
 
     Returns
     -----------------------
-    Instace of SpirulinaSubsalsa graph.
+    Instace of Spirulina subsalsa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CopresenceLyonschool.
+This file offers the methods to automatically retrieve the graph copresence-LyonSchool.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def CopresenceLyonschool(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CopresenceLyonschool graph.
+    """Return new instance of the copresence-LyonSchool graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def CopresenceLyonschool(
 
     Returns
     -----------------------
-    Instace of CopresenceLyonschool graph.
+    Instace of copresence-LyonSchool graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSp9120.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. 9120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSp9120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSp9120 graph.
+    """Return new instance of the Burkholderia sp. 9120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaSp9120(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSp9120 graph.
+    Instace of Burkholderia sp. 9120 graph.
 
 	References
 	---------------------

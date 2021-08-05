@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YarrowiaLipolyticaClib122.
+This file offers the methods to automatically retrieve the graph Yarrowia lipolytica CLIB122.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YarrowiaLipolyticaClib122(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YarrowiaLipolyticaClib122 graph.
+    """Return new instance of the Yarrowia lipolytica CLIB122 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YarrowiaLipolyticaClib122(
 
     Returns
     -----------------------
-    Instace of YarrowiaLipolyticaClib122 graph.
+    Instace of Yarrowia lipolytica CLIB122 graph.
 
 	References
 	---------------------

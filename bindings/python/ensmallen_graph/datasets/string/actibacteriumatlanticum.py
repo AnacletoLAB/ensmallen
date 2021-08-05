@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActibacteriumAtlanticum.
+This file offers the methods to automatically retrieve the graph Actibacterium atlanticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActibacteriumAtlanticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActibacteriumAtlanticum graph.
+    """Return new instance of the Actibacterium atlanticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActibacteriumAtlanticum(
 
     Returns
     -----------------------
-    Instace of ActibacteriumAtlanticum graph.
+    Instace of Actibacterium atlanticum graph.
 
 	References
 	---------------------

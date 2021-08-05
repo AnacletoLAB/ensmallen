@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumKhcpx20.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium KHCPX20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumKhcpx20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumKhcpx20 graph.
+    """Return new instance of the Lachnospiraceae bacterium KHCPX20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnospiraceaeBacteriumKhcpx20(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumKhcpx20 graph.
+    Instace of Lachnospiraceae bacterium KHCPX20 graph.
 
 	References
 	---------------------

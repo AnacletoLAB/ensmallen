@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaSpEur3222.
+This file offers the methods to automatically retrieve the graph Sporosarcina sp. EUR3222.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaSpEur3222(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaSpEur3222 graph.
+    """Return new instance of the Sporosarcina sp. EUR3222 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporosarcinaSpEur3222(
 
     Returns
     -----------------------
-    Instace of SporosarcinaSpEur3222 graph.
+    Instace of Sporosarcina sp. EUR3222 graph.
 
 	References
 	---------------------

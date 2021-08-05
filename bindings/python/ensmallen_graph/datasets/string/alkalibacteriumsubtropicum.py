@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalibacteriumSubtropicum.
+This file offers the methods to automatically retrieve the graph Alkalibacterium subtropicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalibacteriumSubtropicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalibacteriumSubtropicum graph.
+    """Return new instance of the Alkalibacterium subtropicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalibacteriumSubtropicum(
 
     Returns
     -----------------------
-    Instace of AlkalibacteriumSubtropicum graph.
+    Instace of Alkalibacterium subtropicum graph.
 
 	References
 	---------------------

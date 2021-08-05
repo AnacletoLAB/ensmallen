@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomicrobiumMukohataei.
+This file offers the methods to automatically retrieve the graph Halomicrobium mukohataei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomicrobiumMukohataei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomicrobiumMukohataei graph.
+    """Return new instance of the Halomicrobium mukohataei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomicrobiumMukohataei(
 
     Returns
     -----------------------
-    Instace of HalomicrobiumMukohataei graph.
+    Instace of Halomicrobium mukohataei graph.
 
 	References
 	---------------------

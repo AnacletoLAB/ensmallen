@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusChampanellensis18p13Jcm17042.
+This file offers the methods to automatically retrieve the graph Ruminococcus champanellensis 18P13 JCM 17042.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusChampanellensis18p13Jcm17042(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusChampanellensis18p13Jcm17042 graph.
+    """Return new instance of the Ruminococcus champanellensis 18P13 JCM 17042 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusChampanellensis18p13Jcm17042(
 
     Returns
     -----------------------
-    Instace of RuminococcusChampanellensis18p13Jcm17042 graph.
+    Instace of Ruminococcus champanellensis 18P13 JCM 17042 graph.
 
 	References
 	---------------------

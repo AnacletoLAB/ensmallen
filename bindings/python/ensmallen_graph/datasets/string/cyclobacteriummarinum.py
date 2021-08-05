@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyclobacteriumMarinum.
+This file offers the methods to automatically retrieve the graph Cyclobacterium marinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyclobacteriumMarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyclobacteriumMarinum graph.
+    """Return new instance of the Cyclobacterium marinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyclobacteriumMarinum(
 
     Returns
     -----------------------
-    Instace of CyclobacteriumMarinum graph.
+    Instace of Cyclobacterium marinum graph.
 
 	References
 	---------------------

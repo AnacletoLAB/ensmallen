@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cora.
+This file offers the methods to automatically retrieve the graph cora.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cora(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cora graph.
+    """Return new instance of the cora graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cora(
 
     Returns
     -----------------------
-    Instace of Cora graph.
+    Instace of cora graph.
 
 	References
 	---------------------

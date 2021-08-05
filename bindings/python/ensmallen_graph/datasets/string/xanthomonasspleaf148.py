@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasSpLeaf148.
+This file offers the methods to automatically retrieve the graph Xanthomonas sp. Leaf148.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasSpLeaf148(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasSpLeaf148 graph.
+    """Return new instance of the Xanthomonas sp. Leaf148 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasSpLeaf148(
 
     Returns
     -----------------------
-    Instace of XanthomonasSpLeaf148 graph.
+    Instace of Xanthomonas sp. Leaf148 graph.
 
 	References
 	---------------------

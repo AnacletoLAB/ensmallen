@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferSpQ7.
+This file offers the methods to automatically retrieve the graph Microbulbifer sp. Q7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferSpQ7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferSpQ7 graph.
+    """Return new instance of the Microbulbifer sp. Q7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferSpQ7(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferSpQ7 graph.
+    Instace of Microbulbifer sp. Q7 graph.
 
 	References
 	---------------------

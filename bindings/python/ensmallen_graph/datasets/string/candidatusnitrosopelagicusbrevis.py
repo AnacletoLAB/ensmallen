@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosopelagicusBrevis.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosopelagicus brevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosopelagicusBrevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosopelagicusBrevis graph.
+    """Return new instance of the Candidatus Nitrosopelagicus brevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosopelagicusBrevis(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosopelagicusBrevis graph.
+    Instace of Candidatus Nitrosopelagicus brevis graph.
 
 	References
 	---------------------

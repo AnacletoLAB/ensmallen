@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaDermatitidisNihUt8656.
+This file offers the methods to automatically retrieve the graph Exophiala dermatitidis NIH/UT8656.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaDermatitidisNihUt8656(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaDermatitidisNihUt8656 graph.
+    """Return new instance of the Exophiala dermatitidis NIH/UT8656 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaDermatitidisNihUt8656(
 
     Returns
     -----------------------
-    Instace of ExophialaDermatitidisNihUt8656 graph.
+    Instace of Exophiala dermatitidis NIH/UT8656 graph.
 
 	References
 	---------------------

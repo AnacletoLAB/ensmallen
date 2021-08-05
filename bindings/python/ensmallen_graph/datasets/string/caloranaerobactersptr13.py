@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloranaerobacterSpTr13.
+This file offers the methods to automatically retrieve the graph Caloranaerobacter sp. TR13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloranaerobacterSpTr13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloranaerobacterSpTr13 graph.
+    """Return new instance of the Caloranaerobacter sp. TR13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaloranaerobacterSpTr13(
 
     Returns
     -----------------------
-    Instace of CaloranaerobacterSpTr13 graph.
+    Instace of Caloranaerobacter sp. TR13 graph.
 
 	References
 	---------------------

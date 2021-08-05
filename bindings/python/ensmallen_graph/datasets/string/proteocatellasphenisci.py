@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteocatellaSphenisci.
+This file offers the methods to automatically retrieve the graph Proteocatella sphenisci.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteocatellaSphenisci(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteocatellaSphenisci graph.
+    """Return new instance of the Proteocatella sphenisci graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProteocatellaSphenisci(
 
     Returns
     -----------------------
-    Instace of ProteocatellaSphenisci graph.
+    Instace of Proteocatella sphenisci graph.
 
 	References
 	---------------------

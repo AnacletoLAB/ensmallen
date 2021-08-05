@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterPinnipediorumSubspPinnipediorum.
+This file offers the methods to automatically retrieve the graph Campylobacter pinnipediorum subsp. pinnipediorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterPinnipediorumSubspPinnipediorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterPinnipediorumSubspPinnipediorum graph.
+    """Return new instance of the Campylobacter pinnipediorum subsp. pinnipediorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterPinnipediorumSubspPinnipediorum(
 
     Returns
     -----------------------
-    Instace of CampylobacterPinnipediorumSubspPinnipediorum graph.
+    Instace of Campylobacter pinnipediorum subsp. pinnipediorum graph.
 
 	References
 	---------------------

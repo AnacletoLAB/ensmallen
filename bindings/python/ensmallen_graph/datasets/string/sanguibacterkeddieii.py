@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SanguibacterKeddieii.
+This file offers the methods to automatically retrieve the graph Sanguibacter keddieii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SanguibacterKeddieii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SanguibacterKeddieii graph.
+    """Return new instance of the Sanguibacter keddieii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SanguibacterKeddieii(
 
     Returns
     -----------------------
-    Instace of SanguibacterKeddieii graph.
+    Instace of Sanguibacter keddieii graph.
 
 	References
 	---------------------

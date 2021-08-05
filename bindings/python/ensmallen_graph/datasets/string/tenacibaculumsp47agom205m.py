@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumSp47agom205m.
+This file offers the methods to automatically retrieve the graph Tenacibaculum sp. 47AGOM205m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumSp47agom205m(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumSp47agom205m graph.
+    """Return new instance of the Tenacibaculum sp. 47AGOM205m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TenacibaculumSp47agom205m(
 
     Returns
     -----------------------
-    Instace of TenacibaculumSp47agom205m graph.
+    Instace of Tenacibaculum sp. 47AGOM205m graph.
 
 	References
 	---------------------

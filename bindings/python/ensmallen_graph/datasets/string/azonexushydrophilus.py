@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzonexusHydrophilus.
+This file offers the methods to automatically retrieve the graph Azonexus hydrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzonexusHydrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzonexusHydrophilus graph.
+    """Return new instance of the Azonexus hydrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzonexusHydrophilus(
 
     Returns
     -----------------------
-    Instace of AzonexusHydrophilus graph.
+    Instace of Azonexus hydrophilus graph.
 
 	References
 	---------------------

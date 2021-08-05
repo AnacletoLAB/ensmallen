@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesRuminicola.
+This file offers the methods to automatically retrieve the graph Actinomyces ruminicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesRuminicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesRuminicola graph.
+    """Return new instance of the Actinomyces ruminicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesRuminicola(
 
     Returns
     -----------------------
-    Instace of ActinomycesRuminicola graph.
+    Instace of Actinomyces ruminicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThecamonasTrahens.
+This file offers the methods to automatically retrieve the graph Thecamonas trahens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThecamonasTrahens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThecamonasTrahens graph.
+    """Return new instance of the Thecamonas trahens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThecamonasTrahens(
 
     Returns
     -----------------------
-    Instace of ThecamonasTrahens graph.
+    Instace of Thecamonas trahens graph.
 
 	References
 	---------------------

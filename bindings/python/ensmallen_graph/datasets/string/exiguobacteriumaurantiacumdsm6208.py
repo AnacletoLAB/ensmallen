@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumAurantiacumDsm6208.
+This file offers the methods to automatically retrieve the graph Exiguobacterium aurantiacum DSM 6208.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumAurantiacumDsm6208(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumAurantiacumDsm6208 graph.
+    """Return new instance of the Exiguobacterium aurantiacum DSM 6208 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExiguobacteriumAurantiacumDsm6208(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumAurantiacumDsm6208 graph.
+    Instace of Exiguobacterium aurantiacum DSM 6208 graph.
 
 	References
 	---------------------

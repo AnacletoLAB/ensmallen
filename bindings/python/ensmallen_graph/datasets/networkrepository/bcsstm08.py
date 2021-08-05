@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstm08.
+This file offers the methods to automatically retrieve the graph bcsstm08.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstm08(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstm08 graph.
+    """Return new instance of the bcsstm08 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstm08(
 
     Returns
     -----------------------
-    Instace of Bcsstm08 graph.
+    Instace of bcsstm08 graph.
 
 	References
 	---------------------

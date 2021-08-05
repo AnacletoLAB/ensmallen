@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaSpCnq490.
+This file offers the methods to automatically retrieve the graph Saccharomonospora sp. CNQ490.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaSpCnq490(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaSpCnq490 graph.
+    """Return new instance of the Saccharomonospora sp. CNQ490 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomonosporaSpCnq490(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaSpCnq490 graph.
+    Instace of Saccharomonospora sp. CNQ490 graph.
 
 	References
 	---------------------

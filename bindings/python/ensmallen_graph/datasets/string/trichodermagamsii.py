@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaGamsii.
+This file offers the methods to automatically retrieve the graph Trichoderma gamsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichodermaGamsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaGamsii graph.
+    """Return new instance of the Trichoderma gamsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichodermaGamsii(
 
     Returns
     -----------------------
-    Instace of TrichodermaGamsii graph.
+    Instace of Trichoderma gamsii graph.
 
 	References
 	---------------------

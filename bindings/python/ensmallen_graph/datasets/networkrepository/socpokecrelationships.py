@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocPokecRelationships.
+This file offers the methods to automatically retrieve the graph soc-pokec-relationships.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocPokecRelationships(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocPokecRelationships graph.
+    """Return new instance of the soc-pokec-relationships graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocPokecRelationships(
 
     Returns
     -----------------------
-    Instace of SocPokecRelationships graph.
+    Instace of soc-pokec-relationships graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumLipolyticumDsm21995.
+This file offers the methods to automatically retrieve the graph Halorubrum lipolyticum DSM 21995.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumLipolyticumDsm21995(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumLipolyticumDsm21995 graph.
+    """Return new instance of the Halorubrum lipolyticum DSM 21995 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumLipolyticumDsm21995(
 
     Returns
     -----------------------
-    Instace of HalorubrumLipolyticumDsm21995 graph.
+    Instace of Halorubrum lipolyticum DSM 21995 graph.
 
 	References
 	---------------------

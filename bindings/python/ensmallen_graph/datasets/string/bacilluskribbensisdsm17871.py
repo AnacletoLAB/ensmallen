@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusKribbensisDsm17871.
+This file offers the methods to automatically retrieve the graph Bacillus kribbensis DSM 17871.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusKribbensisDsm17871(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusKribbensisDsm17871 graph.
+    """Return new instance of the Bacillus kribbensis DSM 17871 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusKribbensisDsm17871(
 
     Returns
     -----------------------
-    Instace of BacillusKribbensisDsm17871 graph.
+    Instace of Bacillus kribbensis DSM 17871 graph.
 
 	References
 	---------------------

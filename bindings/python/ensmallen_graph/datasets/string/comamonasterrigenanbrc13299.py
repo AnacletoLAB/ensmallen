@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasTerrigenaNbrc13299.
+This file offers the methods to automatically retrieve the graph Comamonas terrigena NBRC 13299.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasTerrigenaNbrc13299(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasTerrigenaNbrc13299 graph.
+    """Return new instance of the Comamonas terrigena NBRC 13299 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasTerrigenaNbrc13299(
 
     Returns
     -----------------------
-    Instace of ComamonasTerrigenaNbrc13299 graph.
+    Instace of Comamonas terrigena NBRC 13299 graph.
 
 	References
 	---------------------

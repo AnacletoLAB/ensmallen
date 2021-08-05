@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasVasicola.
+This file offers the methods to automatically retrieve the graph Xanthomonas vasicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasVasicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasVasicola graph.
+    """Return new instance of the Xanthomonas vasicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasVasicola(
 
     Returns
     -----------------------
-    Instace of XanthomonasVasicola graph.
+    Instace of Xanthomonas vasicola graph.
 
 	References
 	---------------------

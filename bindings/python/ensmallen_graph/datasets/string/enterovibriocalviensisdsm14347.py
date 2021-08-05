@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioCalviensisDsm14347.
+This file offers the methods to automatically retrieve the graph Enterovibrio calviensis DSM 14347.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioCalviensisDsm14347(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioCalviensisDsm14347 graph.
+    """Return new instance of the Enterovibrio calviensis DSM 14347 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterovibrioCalviensisDsm14347(
 
     Returns
     -----------------------
-    Instace of EnterovibrioCalviensisDsm14347 graph.
+    Instace of Enterovibrio calviensis DSM 14347 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumSpSd626r.
+This file offers the methods to automatically retrieve the graph Halorubrum sp. SD626R.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumSpSd626r(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumSpSd626r graph.
+    """Return new instance of the Halorubrum sp. SD626R graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumSpSd626r(
 
     Returns
     -----------------------
-    Instace of HalorubrumSpSd626r graph.
+    Instace of Halorubrum sp. SD626R graph.
 
 	References
 	---------------------

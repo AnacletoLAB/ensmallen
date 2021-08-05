@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrypanosomaBruceiBruceiTreu927.
+This file offers the methods to automatically retrieve the graph Trypanosoma brucei brucei TREU927.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrypanosomaBruceiBruceiTreu927(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrypanosomaBruceiBruceiTreu927 graph.
+    """Return new instance of the Trypanosoma brucei brucei TREU927 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrypanosomaBruceiBruceiTreu927(
 
     Returns
     -----------------------
-    Instace of TrypanosomaBruceiBruceiTreu927 graph.
+    Instace of Trypanosoma brucei brucei TREU927 graph.
 
 	References
 	---------------------

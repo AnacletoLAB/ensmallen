@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993.
+This file offers the methods to automatically retrieve the graph Metschnikowia bicuspidata var. bicuspidata NRRL YB-4993.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993 graph.
+    """Return new instance of the Metschnikowia bicuspidata var. bicuspidata NRRL YB-4993 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993(
 
     Returns
     -----------------------
-    Instace of MetschnikowiaBicuspidataVarBicuspidataNrrlYb4993 graph.
+    Instace of Metschnikowia bicuspidata var. bicuspidata NRRL YB-4993 graph.
 
 	References
 	---------------------

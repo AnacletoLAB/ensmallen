@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EumetaJaponica.
+This file offers the methods to automatically retrieve the graph Eumeta japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EumetaJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EumetaJaponica graph.
+    """Return new instance of the Eumeta japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EumetaJaponica(
 
     Returns
     -----------------------
-    Instace of EumetaJaponica graph.
+    Instace of Eumeta japonica graph.
 
 	References
 	---------------------

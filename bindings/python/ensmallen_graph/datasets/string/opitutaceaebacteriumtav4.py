@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpitutaceaeBacteriumTav4.
+This file offers the methods to automatically retrieve the graph Opitutaceae bacterium TAV4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpitutaceaeBacteriumTav4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpitutaceaeBacteriumTav4 graph.
+    """Return new instance of the Opitutaceae bacterium TAV4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OpitutaceaeBacteriumTav4(
 
     Returns
     -----------------------
-    Instace of OpitutaceaeBacteriumTav4 graph.
+    Instace of Opitutaceae bacterium TAV4 graph.
 
 	References
 	---------------------

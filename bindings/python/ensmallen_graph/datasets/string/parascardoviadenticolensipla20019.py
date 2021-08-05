@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParascardoviaDenticolensIpla20019.
+This file offers the methods to automatically retrieve the graph Parascardovia denticolens IPLA20019.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParascardoviaDenticolensIpla20019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParascardoviaDenticolensIpla20019 graph.
+    """Return new instance of the Parascardovia denticolens IPLA20019 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParascardoviaDenticolensIpla20019(
 
     Returns
     -----------------------
-    Instace of ParascardoviaDenticolensIpla20019 graph.
+    Instace of Parascardovia denticolens IPLA20019 graph.
 
 	References
 	---------------------

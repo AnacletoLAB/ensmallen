@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusWarneriL37603.
+This file offers the methods to automatically retrieve the graph Staphylococcus warneri L37603.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusWarneriL37603(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusWarneriL37603 graph.
+    """Return new instance of the Staphylococcus warneri L37603 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusWarneriL37603(
 
     Returns
     -----------------------
-    Instace of StaphylococcusWarneriL37603 graph.
+    Instace of Staphylococcus warneri L37603 graph.
 
 	References
 	---------------------

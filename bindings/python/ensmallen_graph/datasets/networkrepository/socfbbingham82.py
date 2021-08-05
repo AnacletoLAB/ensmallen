@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBingham82.
+This file offers the methods to automatically retrieve the graph socfb-Bingham82.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBingham82(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBingham82 graph.
+    """Return new instance of the socfb-Bingham82 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBingham82(
 
     Returns
     -----------------------
-    Instace of SocfbBingham82 graph.
+    Instace of socfb-Bingham82 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumGastri.
+This file offers the methods to automatically retrieve the graph Mycobacterium gastri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumGastri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumGastri graph.
+    """Return new instance of the Mycobacterium gastri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumGastri(
 
     Returns
     -----------------------
-    Instace of MycobacteriumGastri graph.
+    Instace of Mycobacterium gastri graph.
 
 	References
 	---------------------

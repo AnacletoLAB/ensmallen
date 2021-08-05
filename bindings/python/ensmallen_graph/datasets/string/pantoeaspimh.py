@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSpImh.
+This file offers the methods to automatically retrieve the graph Pantoea sp. IMH.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSpImh(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSpImh graph.
+    """Return new instance of the Pantoea sp. IMH graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaSpImh(
 
     Returns
     -----------------------
-    Instace of PantoeaSpImh graph.
+    Instace of Pantoea sp. IMH graph.
 
 	References
 	---------------------

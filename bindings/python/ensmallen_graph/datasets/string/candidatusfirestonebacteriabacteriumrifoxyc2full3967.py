@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFirestonebacteriaBacteriumRifoxyc2Full3967.
+This file offers the methods to automatically retrieve the graph Candidatus Firestonebacteria bacterium RIFOXYC2_FULL_39_67.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFirestonebacteriaBacteriumRifoxyc2Full3967(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFirestonebacteriaBacteriumRifoxyc2Full3967 graph.
+    """Return new instance of the Candidatus Firestonebacteria bacterium RIFOXYC2_FULL_39_67 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFirestonebacteriaBacteriumRifoxyc2Full3967(
 
     Returns
     -----------------------
-    Instace of CandidatusFirestonebacteriaBacteriumRifoxyc2Full3967 graph.
+    Instace of Candidatus Firestonebacteria bacterium RIFOXYC2_FULL_39_67 graph.
 
 	References
 	---------------------

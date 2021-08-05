@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiphiliumAngustum.
+This file offers the methods to automatically retrieve the graph Acidiphilium angustum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidiphiliumAngustum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiphiliumAngustum graph.
+    """Return new instance of the Acidiphilium angustum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidiphiliumAngustum(
 
     Returns
     -----------------------
-    Instace of AcidiphiliumAngustum graph.
+    Instace of Acidiphilium angustum graph.
 
 	References
 	---------------------

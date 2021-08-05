@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpPamc28711.
+This file offers the methods to automatically retrieve the graph Variovorax sp. PAMC 28711.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpPamc28711(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpPamc28711 graph.
+    """Return new instance of the Variovorax sp. PAMC 28711 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpPamc28711(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpPamc28711 graph.
+    Instace of Variovorax sp. PAMC 28711 graph.
 
 	References
 	---------------------

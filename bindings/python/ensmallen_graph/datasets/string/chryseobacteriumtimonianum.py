@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumTimonianum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium timonianum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumTimonianum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumTimonianum graph.
+    """Return new instance of the Chryseobacterium timonianum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumTimonianum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumTimonianum graph.
+    Instace of Chryseobacterium timonianum graph.
 
 	References
 	---------------------

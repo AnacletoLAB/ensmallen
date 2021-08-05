@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ford1.
+This file offers the methods to automatically retrieve the graph ford1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ford1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ford1 graph.
+    """Return new instance of the ford1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ford1(
 
     Returns
     -----------------------
-    Instace of Ford1 graph.
+    Instace of ford1 graph.
 
 	References
 	---------------------

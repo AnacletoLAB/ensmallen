@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolemyaVelum.
+This file offers the methods to automatically retrieve the graph Solemya velum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolemyaVelum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolemyaVelum graph.
+    """Return new instance of the Solemya velum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolemyaVelum(
 
     Returns
     -----------------------
-    Instace of SolemyaVelum graph.
+    Instace of Solemya velum graph.
 
 	References
 	---------------------

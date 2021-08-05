@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSpMku1.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. MKU1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSpMku1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSpMku1 graph.
+    """Return new instance of the Paracoccus sp. MKU1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusSpMku1(
 
     Returns
     -----------------------
-    Instace of ParacoccusSpMku1 graph.
+    Instace of Paracoccus sp. MKU1 graph.
 
 	References
 	---------------------

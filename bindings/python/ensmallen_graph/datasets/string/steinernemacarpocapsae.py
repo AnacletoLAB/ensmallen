@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SteinernemaCarpocapsae.
+This file offers the methods to automatically retrieve the graph Steinernema carpocapsae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SteinernemaCarpocapsae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SteinernemaCarpocapsae graph.
+    """Return new instance of the Steinernema carpocapsae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SteinernemaCarpocapsae(
 
     Returns
     -----------------------
-    Instace of SteinernemaCarpocapsae graph.
+    Instace of Steinernema carpocapsae graph.
 
 	References
 	---------------------

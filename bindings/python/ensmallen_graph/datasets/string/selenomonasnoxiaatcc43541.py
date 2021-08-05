@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasNoxiaAtcc43541.
+This file offers the methods to automatically retrieve the graph Selenomonas noxia ATCC43541.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasNoxiaAtcc43541(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasNoxiaAtcc43541 graph.
+    """Return new instance of the Selenomonas noxia ATCC43541 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasNoxiaAtcc43541(
 
     Returns
     -----------------------
-    Instace of SelenomonasNoxiaAtcc43541 graph.
+    Instace of Selenomonas noxia ATCC43541 graph.
 
 	References
 	---------------------

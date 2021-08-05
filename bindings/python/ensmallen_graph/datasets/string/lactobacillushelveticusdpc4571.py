@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHelveticusDpc4571.
+This file offers the methods to automatically retrieve the graph Lactobacillus helveticus DPC4571.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHelveticusDpc4571(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHelveticusDpc4571 graph.
+    """Return new instance of the Lactobacillus helveticus DPC4571 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusHelveticusDpc4571(
 
     Returns
     -----------------------
-    Instace of LactobacillusHelveticusDpc4571 graph.
+    Instace of Lactobacillus helveticus DPC4571 graph.
 
 	References
 	---------------------

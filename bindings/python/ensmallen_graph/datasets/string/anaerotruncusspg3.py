@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerotruncusSpG3.
+This file offers the methods to automatically retrieve the graph Anaerotruncus sp. G3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerotruncusSpG3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerotruncusSpG3 graph.
+    """Return new instance of the Anaerotruncus sp. G3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerotruncusSpG3(
 
     Returns
     -----------------------
-    Instace of AnaerotruncusSpG3 graph.
+    Instace of Anaerotruncus sp. G3 graph.
 
 	References
 	---------------------

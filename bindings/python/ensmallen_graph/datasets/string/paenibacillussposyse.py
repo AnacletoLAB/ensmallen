@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpOsyse.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. OSYSE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpOsyse(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpOsyse graph.
+    """Return new instance of the Paenibacillus sp. OSYSE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpOsyse(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpOsyse graph.
+    Instace of Paenibacillus sp. OSYSE graph.
 
 	References
 	---------------------

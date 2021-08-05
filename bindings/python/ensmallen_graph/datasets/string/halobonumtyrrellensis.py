@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobonumTyrrellensis.
+This file offers the methods to automatically retrieve the graph Halobonum tyrrellensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobonumTyrrellensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobonumTyrrellensis graph.
+    """Return new instance of the Halobonum tyrrellensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobonumTyrrellensis(
 
     Returns
     -----------------------
-    Instace of HalobonumTyrrellensis graph.
+    Instace of Halobonum tyrrellensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumClostridioformeAgr2157.
+This file offers the methods to automatically retrieve the graph [Clostridium] clostridioforme AGR2157.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumClostridioformeAgr2157(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumClostridioformeAgr2157 graph.
+    """Return new instance of the [Clostridium] clostridioforme AGR2157 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumClostridioformeAgr2157(
 
     Returns
     -----------------------
-    Instace of ClostridiumClostridioformeAgr2157 graph.
+    Instace of [Clostridium] clostridioforme AGR2157 graph.
 
 	References
 	---------------------

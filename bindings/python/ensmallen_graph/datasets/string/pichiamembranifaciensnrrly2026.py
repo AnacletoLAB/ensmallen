@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PichiaMembranifaciensNrrlY2026.
+This file offers the methods to automatically retrieve the graph Pichia membranifaciens NRRL Y-2026.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PichiaMembranifaciensNrrlY2026(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PichiaMembranifaciensNrrlY2026 graph.
+    """Return new instance of the Pichia membranifaciens NRRL Y-2026 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PichiaMembranifaciensNrrlY2026(
 
     Returns
     -----------------------
-    Instace of PichiaMembranifaciensNrrlY2026 graph.
+    Instace of Pichia membranifaciens NRRL Y-2026 graph.
 
 	References
 	---------------------

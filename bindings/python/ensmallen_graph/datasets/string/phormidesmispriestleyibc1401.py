@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidesmisPriestleyiBc1401.
+This file offers the methods to automatically retrieve the graph Phormidesmis priestleyi BC1401.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhormidesmisPriestleyiBc1401(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidesmisPriestleyiBc1401 graph.
+    """Return new instance of the Phormidesmis priestleyi BC1401 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhormidesmisPriestleyiBc1401(
 
     Returns
     -----------------------
-    Instace of PhormidesmisPriestleyiBc1401 graph.
+    Instace of Phormidesmis priestleyi BC1401 graph.
 
 	References
 	---------------------

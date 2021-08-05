@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusMulundensis.
+This file offers the methods to automatically retrieve the graph Aspergillus mulundensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusMulundensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusMulundensis graph.
+    """Return new instance of the Aspergillus mulundensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusMulundensis(
 
     Returns
     -----------------------
-    Instace of AspergillusMulundensis graph.
+    Instace of Aspergillus mulundensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusThermophilusHb8.
+This file offers the methods to automatically retrieve the graph Thermus thermophilus HB8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusThermophilusHb8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusThermophilusHb8 graph.
+    """Return new instance of the Thermus thermophilus HB8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusThermophilusHb8(
 
     Returns
     -----------------------
-    Instace of ThermusThermophilusHb8 graph.
+    Instace of Thermus thermophilus HB8 graph.
 
 	References
 	---------------------

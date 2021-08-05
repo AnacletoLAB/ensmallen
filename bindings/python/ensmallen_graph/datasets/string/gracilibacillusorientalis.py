@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusOrientalis.
+This file offers the methods to automatically retrieve the graph Gracilibacillus orientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusOrientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusOrientalis graph.
+    """Return new instance of the Gracilibacillus orientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilibacillusOrientalis(
 
     Returns
     -----------------------
-    Instace of GracilibacillusOrientalis graph.
+    Instace of Gracilibacillus orientalis graph.
 
 	References
 	---------------------

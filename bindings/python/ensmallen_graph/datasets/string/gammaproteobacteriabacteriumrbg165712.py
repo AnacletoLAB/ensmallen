@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumRbg165712.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium RBG_16_57_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumRbg165712(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumRbg165712 graph.
+    """Return new instance of the Gammaproteobacteria bacterium RBG_16_57_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumRbg165712(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumRbg165712 graph.
+    Instace of Gammaproteobacteria bacterium RBG_16_57_12 graph.
 
 	References
 	---------------------

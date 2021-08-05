@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusCrassostreae.
+This file offers the methods to automatically retrieve the graph Paenibacillus crassostreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusCrassostreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusCrassostreae graph.
+    """Return new instance of the Paenibacillus crassostreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusCrassostreae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusCrassostreae graph.
+    Instace of Paenibacillus crassostreae graph.
 
 	References
 	---------------------

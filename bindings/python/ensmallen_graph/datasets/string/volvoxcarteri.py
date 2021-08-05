@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VolvoxCarteri.
+This file offers the methods to automatically retrieve the graph Volvox carteri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VolvoxCarteri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VolvoxCarteri graph.
+    """Return new instance of the Volvox carteri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VolvoxCarteri(
 
     Returns
     -----------------------
-    Instace of VolvoxCarteri graph.
+    Instace of Volvox carteri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeleribacterHalophilus.
+This file offers the methods to automatically retrieve the graph Celeribacter halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeleribacterHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeleribacterHalophilus graph.
+    """Return new instance of the Celeribacter halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeleribacterHalophilus(
 
     Returns
     -----------------------
-    Instace of CeleribacterHalophilus graph.
+    Instace of Celeribacter halophilus graph.
 
 	References
 	---------------------

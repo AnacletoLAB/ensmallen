@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AvesSparrowSocial.
+This file offers the methods to automatically retrieve the graph aves-sparrow-social.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AvesSparrowSocial(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AvesSparrowSocial graph.
+    """Return new instance of the aves-sparrow-social graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AvesSparrowSocial(
 
     Returns
     -----------------------
-    Instace of AvesSparrowSocial graph.
+    Instace of aves-sparrow-social graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrugiaMalayi.
+This file offers the methods to automatically retrieve the graph Brugia malayi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrugiaMalayi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrugiaMalayi graph.
+    """Return new instance of the Brugia malayi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrugiaMalayi(
 
     Returns
     -----------------------
-    Instace of BrugiaMalayi graph.
+    Instace of Brugia malayi graph.
 
 	References
 	---------------------

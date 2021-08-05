@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermogladiusCellulolyticus.
+This file offers the methods to automatically retrieve the graph Thermogladius cellulolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermogladiusCellulolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermogladiusCellulolyticus graph.
+    """Return new instance of the Thermogladius cellulolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermogladiusCellulolyticus(
 
     Returns
     -----------------------
-    Instace of ThermogladiusCellulolyticus graph.
+    Instace of Thermogladius cellulolyticus graph.
 
 	References
 	---------------------

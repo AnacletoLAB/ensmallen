@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaSpRitPiD.
+This file offers the methods to automatically retrieve the graph Klebsiella sp. RIT-PI-d.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaSpRitPiD(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaSpRitPiD graph.
+    """Return new instance of the Klebsiella sp. RIT-PI-d graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsiellaSpRitPiD(
 
     Returns
     -----------------------
-    Instace of KlebsiellaSpRitPiD graph.
+    Instace of Klebsiella sp. RIT-PI-d graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LewinellaCohaerens.
+This file offers the methods to automatically retrieve the graph Lewinella cohaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LewinellaCohaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LewinellaCohaerens graph.
+    """Return new instance of the Lewinella cohaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LewinellaCohaerens(
 
     Returns
     -----------------------
-    Instace of LewinellaCohaerens graph.
+    Instace of Lewinella cohaerens graph.
 
 	References
 	---------------------

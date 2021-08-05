@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsellaGrandiflora.
+This file offers the methods to automatically retrieve the graph Capsella grandiflora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsellaGrandiflora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsellaGrandiflora graph.
+    """Return new instance of the Capsella grandiflora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapsellaGrandiflora(
 
     Returns
     -----------------------
-    Instace of CapsellaGrandiflora graph.
+    Instace of Capsella grandiflora graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibularhizoctoniaSpCbs109695.
+This file offers the methods to automatically retrieve the graph Fibularhizoctonia sp. CBS 109695.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibularhizoctoniaSpCbs109695(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibularhizoctoniaSpCbs109695 graph.
+    """Return new instance of the Fibularhizoctonia sp. CBS 109695 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibularhizoctoniaSpCbs109695(
 
     Returns
     -----------------------
-    Instace of FibularhizoctoniaSpCbs109695 graph.
+    Instace of Fibularhizoctonia sp. CBS 109695 graph.
 
 	References
 	---------------------

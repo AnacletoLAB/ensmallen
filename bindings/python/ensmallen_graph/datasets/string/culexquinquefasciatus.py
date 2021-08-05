@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CulexQuinquefasciatus.
+This file offers the methods to automatically retrieve the graph Culex quinquefasciatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CulexQuinquefasciatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CulexQuinquefasciatus graph.
+    """Return new instance of the Culex quinquefasciatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CulexQuinquefasciatus(
 
     Returns
     -----------------------
-    Instace of CulexQuinquefasciatus graph.
+    Instace of Culex quinquefasciatus graph.
 
 	References
 	---------------------

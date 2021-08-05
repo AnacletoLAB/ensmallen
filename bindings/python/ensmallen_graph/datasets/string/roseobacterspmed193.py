@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterSpMed193.
+This file offers the methods to automatically retrieve the graph Roseobacter sp. MED193.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterSpMed193(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterSpMed193 graph.
+    """Return new instance of the Roseobacter sp. MED193 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterSpMed193(
 
     Returns
     -----------------------
-    Instace of RoseobacterSpMed193 graph.
+    Instace of Roseobacter sp. MED193 graph.
 
 	References
 	---------------------

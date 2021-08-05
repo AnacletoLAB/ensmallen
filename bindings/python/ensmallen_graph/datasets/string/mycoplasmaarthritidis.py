@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaArthritidis.
+This file offers the methods to automatically retrieve the graph Mycoplasma arthritidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaArthritidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaArthritidis graph.
+    """Return new instance of the Mycoplasma arthritidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaArthritidis(
 
     Returns
     -----------------------
-    Instace of MycoplasmaArthritidis graph.
+    Instace of Mycoplasma arthritidis graph.
 
 	References
 	---------------------

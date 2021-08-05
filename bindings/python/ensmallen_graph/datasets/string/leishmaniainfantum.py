@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeishmaniaInfantum.
+This file offers the methods to automatically retrieve the graph Leishmania infantum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeishmaniaInfantum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeishmaniaInfantum graph.
+    """Return new instance of the Leishmania infantum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeishmaniaInfantum(
 
     Returns
     -----------------------
-    Instace of LeishmaniaInfantum graph.
+    Instace of Leishmania infantum graph.
 
 	References
 	---------------------

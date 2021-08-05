@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpDmhc10.
+This file offers the methods to automatically retrieve the graph Clostridium sp. DMHC 10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpDmhc10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpDmhc10 graph.
+    """Return new instance of the Clostridium sp. DMHC 10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpDmhc10(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpDmhc10 graph.
+    Instace of Clostridium sp. DMHC 10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LiberibacterAsiaticusPsy62.
+This file offers the methods to automatically retrieve the graph Liberibacter asiaticus psy62.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LiberibacterAsiaticusPsy62(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LiberibacterAsiaticusPsy62 graph.
+    """Return new instance of the Liberibacter asiaticus psy62 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LiberibacterAsiaticusPsy62(
 
     Returns
     -----------------------
-    Instace of LiberibacterAsiaticusPsy62 graph.
+    Instace of Liberibacter asiaticus psy62 graph.
 
 	References
 	---------------------

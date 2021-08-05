@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalusBaccata.
+This file offers the methods to automatically retrieve the graph Malus baccata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalusBaccata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalusBaccata graph.
+    """Return new instance of the Malus baccata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalusBaccata(
 
     Returns
     -----------------------
-    Instace of MalusBaccata graph.
+    Instace of Malus baccata graph.
 
 	References
 	---------------------

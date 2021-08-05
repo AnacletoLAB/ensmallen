@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaeBacteriumDg1235.
+This file offers the methods to automatically retrieve the graph Verrucomicrobiae bacterium DG1235.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaeBacteriumDg1235(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaeBacteriumDg1235 graph.
+    """Return new instance of the Verrucomicrobiae bacterium DG1235 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerrucomicrobiaeBacteriumDg1235(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaeBacteriumDg1235 graph.
+    Instace of Verrucomicrobiae bacterium DG1235 graph.
 
 	References
 	---------------------

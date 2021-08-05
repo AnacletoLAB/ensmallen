@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexiBacteriumOlb13.
+This file offers the methods to automatically retrieve the graph Chloroflexi bacterium OLB13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexiBacteriumOlb13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexiBacteriumOlb13 graph.
+    """Return new instance of the Chloroflexi bacterium OLB13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloroflexiBacteriumOlb13(
 
     Returns
     -----------------------
-    Instace of ChloroflexiBacteriumOlb13 graph.
+    Instace of Chloroflexi bacterium OLB13 graph.
 
 	References
 	---------------------

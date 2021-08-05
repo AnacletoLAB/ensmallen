@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CricetulusGriseus.
+This file offers the methods to automatically retrieve the graph Cricetulus griseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CricetulusGriseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CricetulusGriseus graph.
+    """Return new instance of the Cricetulus griseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CricetulusGriseus(
 
     Returns
     -----------------------
-    Instace of CricetulusGriseus graph.
+    Instace of Cricetulus griseus graph.
 
 	References
 	---------------------

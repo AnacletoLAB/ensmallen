@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterLipolyticusBf04cf4.
+This file offers the methods to automatically retrieve the graph Marinobacter lipolyticus BF04CF4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterLipolyticusBf04cf4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterLipolyticusBf04cf4 graph.
+    """Return new instance of the Marinobacter lipolyticus BF04CF4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterLipolyticusBf04cf4(
 
     Returns
     -----------------------
-    Instace of MarinobacterLipolyticusBf04cf4 graph.
+    Instace of Marinobacter lipolyticus BF04CF4 graph.
 
 	References
 	---------------------

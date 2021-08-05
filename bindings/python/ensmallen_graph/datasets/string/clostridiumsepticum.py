@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSepticum.
+This file offers the methods to automatically retrieve the graph Clostridium septicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSepticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSepticum graph.
+    """Return new instance of the Clostridium septicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSepticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumSepticum graph.
+    Instace of Clostridium septicum graph.
 
 	References
 	---------------------

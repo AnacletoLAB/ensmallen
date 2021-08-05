@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpLeaf58.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. Leaf58.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpLeaf58(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpLeaf58 graph.
+    """Return new instance of the Pseudomonas sp. Leaf58 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpLeaf58(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpLeaf58 graph.
+    Instace of Pseudomonas sp. Leaf58 graph.
 
 	References
 	---------------------

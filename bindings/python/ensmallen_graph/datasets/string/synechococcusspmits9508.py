@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpMitS9508.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. MIT S9508.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpMitS9508(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpMitS9508 graph.
+    """Return new instance of the Synechococcus sp. MIT S9508 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynechococcusSpMitS9508(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpMitS9508 graph.
+    Instace of Synechococcus sp. MIT S9508 graph.
 
 	References
 	---------------------

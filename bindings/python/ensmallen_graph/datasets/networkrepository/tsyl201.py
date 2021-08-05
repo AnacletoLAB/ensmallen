@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tsyl201.
+This file offers the methods to automatically retrieve the graph tsyl201.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tsyl201(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tsyl201 graph.
+    """Return new instance of the tsyl201 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tsyl201(
 
     Returns
     -----------------------
-    Instace of Tsyl201 graph.
+    Instace of tsyl201 graph.
 
 	References
 	---------------------

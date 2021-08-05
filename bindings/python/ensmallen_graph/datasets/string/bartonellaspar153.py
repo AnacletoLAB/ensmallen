@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSpAr153.
+This file offers the methods to automatically retrieve the graph Bartonella sp. AR 15-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSpAr153(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSpAr153 graph.
+    """Return new instance of the Bartonella sp. AR 15-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaSpAr153(
 
     Returns
     -----------------------
-    Instace of BartonellaSpAr153 graph.
+    Instace of Bartonella sp. AR 15-3 graph.
 
 	References
 	---------------------

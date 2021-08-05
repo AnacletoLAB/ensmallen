@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeratitisCapitata.
+This file offers the methods to automatically retrieve the graph Ceratitis capitata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeratitisCapitata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeratitisCapitata graph.
+    """Return new instance of the Ceratitis capitata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CeratitisCapitata(
 
     Returns
     -----------------------
-    Instace of CeratitisCapitata graph.
+    Instace of Ceratitis capitata graph.
 
 	References
 	---------------------

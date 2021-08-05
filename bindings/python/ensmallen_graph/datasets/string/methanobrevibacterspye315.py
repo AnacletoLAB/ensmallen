@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterSpYe315.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter sp. YE315.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterSpYe315(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterSpYe315 graph.
+    """Return new instance of the Methanobrevibacter sp. YE315 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterSpYe315(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterSpYe315 graph.
+    Instace of Methanobrevibacter sp. YE315 graph.
 
 	References
 	---------------------

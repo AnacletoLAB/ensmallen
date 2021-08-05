@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumAStrAtcc3502.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum A str. ATCC 3502.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumAStrAtcc3502(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumAStrAtcc3502 graph.
+    """Return new instance of the Clostridium botulinum A str. ATCC 3502 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumBotulinumAStrAtcc3502(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumAStrAtcc3502 graph.
+    Instace of Clostridium botulinum A str. ATCC 3502 graph.
 
 	References
 	---------------------

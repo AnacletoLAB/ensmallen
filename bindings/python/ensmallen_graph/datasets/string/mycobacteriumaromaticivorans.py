@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAromaticivorans.
+This file offers the methods to automatically retrieve the graph Mycobacterium aromaticivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAromaticivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAromaticivorans graph.
+    """Return new instance of the Mycobacterium aromaticivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumAromaticivorans(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAromaticivorans graph.
+    Instace of Mycobacterium aromaticivorans graph.
 
 	References
 	---------------------

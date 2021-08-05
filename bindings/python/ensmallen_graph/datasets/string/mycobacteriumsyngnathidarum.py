@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSyngnathidarum.
+This file offers the methods to automatically retrieve the graph Mycobacterium syngnathidarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSyngnathidarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSyngnathidarum graph.
+    """Return new instance of the Mycobacterium syngnathidarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSyngnathidarum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSyngnathidarum graph.
+    Instace of Mycobacterium syngnathidarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodothermusMarinus.
+This file offers the methods to automatically retrieve the graph Rhodothermus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodothermusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodothermusMarinus graph.
+    """Return new instance of the Rhodothermus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodothermusMarinus(
 
     Returns
     -----------------------
-    Instace of RhodothermusMarinus graph.
+    Instace of Rhodothermus marinus graph.
 
 	References
 	---------------------

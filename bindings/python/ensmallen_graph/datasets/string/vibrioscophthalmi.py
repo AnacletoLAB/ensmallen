@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioScophthalmi.
+This file offers the methods to automatically retrieve the graph Vibrio scophthalmi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioScophthalmi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioScophthalmi graph.
+    """Return new instance of the Vibrio scophthalmi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioScophthalmi(
 
     Returns
     -----------------------
-    Instace of VibrioScophthalmi graph.
+    Instace of Vibrio scophthalmi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprococcusEutactus.
+This file offers the methods to automatically retrieve the graph Coprococcus eutactus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprococcusEutactus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprococcusEutactus graph.
+    """Return new instance of the Coprococcus eutactus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoprococcusEutactus(
 
     Returns
     -----------------------
-    Instace of CoprococcusEutactus graph.
+    Instace of Coprococcus eutactus graph.
 
 	References
 	---------------------

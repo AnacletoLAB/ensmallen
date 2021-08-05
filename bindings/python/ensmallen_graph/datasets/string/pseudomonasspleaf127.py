@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpLeaf127.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. Leaf127.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpLeaf127(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpLeaf127 graph.
+    """Return new instance of the Pseudomonas sp. Leaf127 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpLeaf127(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpLeaf127 graph.
+    Instace of Pseudomonas sp. Leaf127 graph.
 
 	References
 	---------------------

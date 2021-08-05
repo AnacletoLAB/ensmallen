@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSpRoot112d2.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. Root112D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaSpRoot112d2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSpRoot112d2 graph.
+    """Return new instance of the Leifsonia sp. Root112D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeifsoniaSpRoot112d2(
 
     Returns
     -----------------------
-    Instace of LeifsoniaSpRoot112d2 graph.
+    Instace of Leifsonia sp. Root112D2 graph.
 
 	References
 	---------------------

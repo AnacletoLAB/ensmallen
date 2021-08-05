@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterLapidarius.
+This file offers the methods to automatically retrieve the graph Hymenobacter lapidarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterLapidarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterLapidarius graph.
+    """Return new instance of the Hymenobacter lapidarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterLapidarius(
 
     Returns
     -----------------------
-    Instace of HymenobacterLapidarius graph.
+    Instace of Hymenobacter lapidarius graph.
 
 	References
 	---------------------

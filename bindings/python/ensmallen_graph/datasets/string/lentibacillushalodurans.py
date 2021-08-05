@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentibacillusHalodurans.
+This file offers the methods to automatically retrieve the graph Lentibacillus halodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentibacillusHalodurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentibacillusHalodurans graph.
+    """Return new instance of the Lentibacillus halodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentibacillusHalodurans(
 
     Returns
     -----------------------
-    Instace of LentibacillusHalodurans graph.
+    Instace of Lentibacillus halodurans graph.
 
 	References
 	---------------------

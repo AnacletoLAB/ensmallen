@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaedibacterSp38128.
+This file offers the methods to automatically retrieve the graph Caedibacter sp. 38-128.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaedibacterSp38128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaedibacterSp38128 graph.
+    """Return new instance of the Caedibacter sp. 38-128 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaedibacterSp38128(
 
     Returns
     -----------------------
-    Instace of CaedibacterSp38128 graph.
+    Instace of Caedibacter sp. 38-128 graph.
 
 	References
 	---------------------

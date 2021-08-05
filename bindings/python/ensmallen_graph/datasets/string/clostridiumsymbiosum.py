@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSymbiosum.
+This file offers the methods to automatically retrieve the graph [Clostridium] symbiosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSymbiosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSymbiosum graph.
+    """Return new instance of the [Clostridium] symbiosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSymbiosum(
 
     Returns
     -----------------------
-    Instace of ClostridiumSymbiosum graph.
+    Instace of [Clostridium] symbiosum graph.
 
 	References
 	---------------------

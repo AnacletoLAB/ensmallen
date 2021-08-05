@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterSpLa11.
+This file offers the methods to automatically retrieve the graph Arcobacter sp. LA11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterSpLa11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterSpLa11 graph.
+    """Return new instance of the Arcobacter sp. LA11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcobacterSpLa11(
 
     Returns
     -----------------------
-    Instace of ArcobacterSpLa11 graph.
+    Instace of Arcobacter sp. LA11 graph.
 
 	References
 	---------------------

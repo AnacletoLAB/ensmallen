@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedRoseburiaSp.
+This file offers the methods to automatically retrieve the graph uncultured Roseburia sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedRoseburiaSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedRoseburiaSp graph.
+    """Return new instance of the uncultured Roseburia sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedRoseburiaSp(
 
     Returns
     -----------------------
-    Instace of UnculturedRoseburiaSp graph.
+    Instace of uncultured Roseburia sp. graph.
 
 	References
 	---------------------

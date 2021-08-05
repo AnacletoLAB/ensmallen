@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumHerbicidovorans.
+This file offers the methods to automatically retrieve the graph Sphingobium herbicidovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumHerbicidovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumHerbicidovorans graph.
+    """Return new instance of the Sphingobium herbicidovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumHerbicidovorans(
 
     Returns
     -----------------------
-    Instace of SphingobiumHerbicidovorans graph.
+    Instace of Sphingobium herbicidovorans graph.
 
 	References
 	---------------------

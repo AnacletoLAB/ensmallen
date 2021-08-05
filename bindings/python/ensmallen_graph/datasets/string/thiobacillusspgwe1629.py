@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusSpGwe1629.
+This file offers the methods to automatically retrieve the graph Thiobacillus sp. GWE1_62_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusSpGwe1629(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusSpGwe1629 graph.
+    """Return new instance of the Thiobacillus sp. GWE1_62_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiobacillusSpGwe1629(
 
     Returns
     -----------------------
-    Instace of ThiobacillusSpGwe1629 graph.
+    Instace of Thiobacillus sp. GWE1_62_9 graph.
 
 	References
 	---------------------

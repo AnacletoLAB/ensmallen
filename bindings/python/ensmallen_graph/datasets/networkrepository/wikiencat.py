@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WikiEnCat.
+This file offers the methods to automatically retrieve the graph wiki-en-cat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WikiEnCat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WikiEnCat graph.
+    """Return new instance of the wiki-en-cat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WikiEnCat(
 
     Returns
     -----------------------
-    Instace of WikiEnCat graph.
+    Instace of wiki-en-cat graph.
 
 	References
 	---------------------

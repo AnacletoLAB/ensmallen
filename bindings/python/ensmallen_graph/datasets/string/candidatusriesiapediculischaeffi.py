@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRiesiaPediculischaeffi.
+This file offers the methods to automatically retrieve the graph Candidatus Riesia pediculischaeffi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRiesiaPediculischaeffi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRiesiaPediculischaeffi graph.
+    """Return new instance of the Candidatus Riesia pediculischaeffi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRiesiaPediculischaeffi(
 
     Returns
     -----------------------
-    Instace of CandidatusRiesiaPediculischaeffi graph.
+    Instace of Candidatus Riesia pediculischaeffi graph.
 
 	References
 	---------------------

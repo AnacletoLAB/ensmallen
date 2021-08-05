@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinimonasChungwhensis.
+This file offers the methods to automatically retrieve the graph Salinimonas chungwhensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinimonasChungwhensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinimonasChungwhensis graph.
+    """Return new instance of the Salinimonas chungwhensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinimonasChungwhensis(
 
     Returns
     -----------------------
-    Instace of SalinimonasChungwhensis graph.
+    Instace of Salinimonas chungwhensis graph.
 
 	References
 	---------------------

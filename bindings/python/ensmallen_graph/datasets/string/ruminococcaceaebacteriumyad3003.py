@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumYad3003.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium YAD3003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumYad3003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumYad3003 graph.
+    """Return new instance of the Ruminococcaceae bacterium YAD3003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumYad3003(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumYad3003 graph.
+    Instace of Ruminococcaceae bacterium YAD3003 graph.
 
 	References
 	---------------------

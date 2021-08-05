@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaMobile.
+This file offers the methods to automatically retrieve the graph Mycoplasma mobile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaMobile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaMobile graph.
+    """Return new instance of the Mycoplasma mobile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaMobile(
 
     Returns
     -----------------------
-    Instace of MycoplasmaMobile graph.
+    Instace of Mycoplasma mobile graph.
 
 	References
 	---------------------

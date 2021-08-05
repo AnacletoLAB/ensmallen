@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DichantheliumOligosanthes.
+This file offers the methods to automatically retrieve the graph Dichanthelium oligosanthes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DichantheliumOligosanthes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DichantheliumOligosanthes graph.
+    """Return new instance of the Dichanthelium oligosanthes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DichantheliumOligosanthes(
 
     Returns
     -----------------------
-    Instace of DichantheliumOligosanthes graph.
+    Instace of Dichanthelium oligosanthes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntrasporangiumCalvum.
+This file offers the methods to automatically retrieve the graph Intrasporangium calvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IntrasporangiumCalvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntrasporangiumCalvum graph.
+    """Return new instance of the Intrasporangium calvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IntrasporangiumCalvum(
 
     Returns
     -----------------------
-    Instace of IntrasporangiumCalvum graph.
+    Instace of Intrasporangium calvum graph.
 
 	References
 	---------------------

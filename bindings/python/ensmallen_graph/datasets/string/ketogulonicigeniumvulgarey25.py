@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KetogulonicigeniumVulgareY25.
+This file offers the methods to automatically retrieve the graph Ketogulonicigenium vulgare Y25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KetogulonicigeniumVulgareY25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KetogulonicigeniumVulgareY25 graph.
+    """Return new instance of the Ketogulonicigenium vulgare Y25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KetogulonicigeniumVulgareY25(
 
     Returns
     -----------------------
-    Instace of KetogulonicigeniumVulgareY25 graph.
+    Instace of Ketogulonicigenium vulgare Y25 graph.
 
 	References
 	---------------------

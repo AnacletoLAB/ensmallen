@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusVarians.
+This file offers the methods to automatically retrieve the graph Lysinibacillus varians.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusVarians(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusVarians graph.
+    """Return new instance of the Lysinibacillus varians graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusVarians(
 
     Returns
     -----------------------
-    Instace of LysinibacillusVarians graph.
+    Instace of Lysinibacillus varians graph.
 
 	References
 	---------------------

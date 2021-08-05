@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLiptonbacteriaBacteriumRifoxyd1Full3611.
+This file offers the methods to automatically retrieve the graph Candidatus Liptonbacteria bacterium RIFOXYD1_FULL_36_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLiptonbacteriaBacteriumRifoxyd1Full3611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLiptonbacteriaBacteriumRifoxyd1Full3611 graph.
+    """Return new instance of the Candidatus Liptonbacteria bacterium RIFOXYD1_FULL_36_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLiptonbacteriaBacteriumRifoxyd1Full3611(
 
     Returns
     -----------------------
-    Instace of CandidatusLiptonbacteriaBacteriumRifoxyd1Full3611 graph.
+    Instace of Candidatus Liptonbacteria bacterium RIFOXYD1_FULL_36_11 graph.
 
 	References
 	---------------------

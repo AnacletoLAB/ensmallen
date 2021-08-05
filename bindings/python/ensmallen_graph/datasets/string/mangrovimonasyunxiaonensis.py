@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MangrovimonasYunxiaonensis.
+This file offers the methods to automatically retrieve the graph Mangrovimonas yunxiaonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MangrovimonasYunxiaonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MangrovimonasYunxiaonensis graph.
+    """Return new instance of the Mangrovimonas yunxiaonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MangrovimonasYunxiaonensis(
 
     Returns
     -----------------------
-    Instace of MangrovimonasYunxiaonensis graph.
+    Instace of Mangrovimonas yunxiaonensis graph.
 
 	References
 	---------------------

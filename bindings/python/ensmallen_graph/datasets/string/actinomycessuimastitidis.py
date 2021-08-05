@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSuimastitidis.
+This file offers the methods to automatically retrieve the graph Actinomyces suimastitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSuimastitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSuimastitidis graph.
+    """Return new instance of the Actinomyces suimastitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesSuimastitidis(
 
     Returns
     -----------------------
-    Instace of ActinomycesSuimastitidis graph.
+    Instace of Actinomyces suimastitidis graph.
 
 	References
 	---------------------

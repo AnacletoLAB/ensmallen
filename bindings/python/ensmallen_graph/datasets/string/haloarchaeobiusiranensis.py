@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarchaeobiusIranensis.
+This file offers the methods to automatically retrieve the graph Haloarchaeobius iranensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarchaeobiusIranensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarchaeobiusIranensis graph.
+    """Return new instance of the Haloarchaeobius iranensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloarchaeobiusIranensis(
 
     Returns
     -----------------------
-    Instace of HaloarchaeobiusIranensis graph.
+    Instace of Haloarchaeobius iranensis graph.
 
 	References
 	---------------------

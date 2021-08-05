@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisMarina.
+This file offers the methods to automatically retrieve the graph Amycolatopsis marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisMarina graph.
+    """Return new instance of the Amycolatopsis marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisMarina(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisMarina graph.
+    Instace of Amycolatopsis marina graph.
 
 	References
 	---------------------

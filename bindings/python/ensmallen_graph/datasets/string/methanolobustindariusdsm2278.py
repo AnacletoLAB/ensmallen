@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolobusTindariusDsm2278.
+This file offers the methods to automatically retrieve the graph Methanolobus tindarius DSM 2278.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolobusTindariusDsm2278(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolobusTindariusDsm2278 graph.
+    """Return new instance of the Methanolobus tindarius DSM 2278 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanolobusTindariusDsm2278(
 
     Returns
     -----------------------
-    Instace of MethanolobusTindariusDsm2278 graph.
+    Instace of Methanolobus tindarius DSM 2278 graph.
 
 	References
 	---------------------

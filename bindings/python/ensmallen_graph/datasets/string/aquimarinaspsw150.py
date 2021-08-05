@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaSpSw150.
+This file offers the methods to automatically retrieve the graph Aquimarina sp. SW150.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaSpSw150(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaSpSw150 graph.
+    """Return new instance of the Aquimarina sp. SW150 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquimarinaSpSw150(
 
     Returns
     -----------------------
-    Instace of AquimarinaSpSw150 graph.
+    Instace of Aquimarina sp. SW150 graph.
 
 	References
 	---------------------

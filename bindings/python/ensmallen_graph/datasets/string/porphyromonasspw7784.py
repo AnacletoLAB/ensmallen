@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpW7784.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. W7784.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasSpW7784(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpW7784 graph.
+    """Return new instance of the Porphyromonas sp. W7784 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasSpW7784(
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpW7784 graph.
+    Instace of Porphyromonas sp. W7784 graph.
 
 	References
 	---------------------

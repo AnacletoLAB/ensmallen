@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusItalicus.
+This file offers the methods to automatically retrieve the graph Enterococcus italicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusItalicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusItalicus graph.
+    """Return new instance of the Enterococcus italicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusItalicus(
 
     Returns
     -----------------------
-    Instace of EnterococcusItalicus graph.
+    Instace of Enterococcus italicus graph.
 
 	References
 	---------------------

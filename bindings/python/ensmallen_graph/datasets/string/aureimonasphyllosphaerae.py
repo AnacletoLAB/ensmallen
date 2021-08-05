@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasPhyllosphaerae.
+This file offers the methods to automatically retrieve the graph Aureimonas phyllosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasPhyllosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasPhyllosphaerae graph.
+    """Return new instance of the Aureimonas phyllosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureimonasPhyllosphaerae(
 
     Returns
     -----------------------
-    Instace of AureimonasPhyllosphaerae graph.
+    Instace of Aureimonas phyllosphaerae graph.
 
 	References
 	---------------------

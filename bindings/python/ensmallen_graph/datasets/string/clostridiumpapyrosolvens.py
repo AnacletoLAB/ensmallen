@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPapyrosolvens.
+This file offers the methods to automatically retrieve the graph Clostridium papyrosolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPapyrosolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPapyrosolvens graph.
+    """Return new instance of the Clostridium papyrosolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumPapyrosolvens(
 
     Returns
     -----------------------
-    Instace of ClostridiumPapyrosolvens graph.
+    Instace of Clostridium papyrosolvens graph.
 
 	References
 	---------------------

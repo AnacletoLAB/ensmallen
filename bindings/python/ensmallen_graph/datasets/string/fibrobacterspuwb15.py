@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrobacterSpUwb15.
+This file offers the methods to automatically retrieve the graph Fibrobacter sp. UWB15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrobacterSpUwb15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrobacterSpUwb15 graph.
+    """Return new instance of the Fibrobacter sp. UWB15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibrobacterSpUwb15(
 
     Returns
     -----------------------
-    Instace of FibrobacterSpUwb15 graph.
+    Instace of Fibrobacter sp. UWB15 graph.
 
 	References
 	---------------------

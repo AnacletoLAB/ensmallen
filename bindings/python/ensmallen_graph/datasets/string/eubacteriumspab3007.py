@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSpAb3007.
+This file offers the methods to automatically retrieve the graph Eubacterium sp. AB3007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSpAb3007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSpAb3007 graph.
+    """Return new instance of the Eubacterium sp. AB3007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumSpAb3007(
 
     Returns
     -----------------------
-    Instace of EubacteriumSpAb3007 graph.
+    Instace of Eubacterium sp. AB3007 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SeriolaDumerili.
+This file offers the methods to automatically retrieve the graph Seriola dumerili.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SeriolaDumerili(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SeriolaDumerili graph.
+    """Return new instance of the Seriola dumerili graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SeriolaDumerili(
 
     Returns
     -----------------------
-    Instace of SeriolaDumerili graph.
+    Instace of Seriola dumerili graph.
 
 	References
 	---------------------

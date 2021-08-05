@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpBlattaOrientalisStrTarazona.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. (Blatta orientalis) str. Tarazona.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpBlattaOrientalisStrTarazona(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpBlattaOrientalisStrTarazona graph.
+    """Return new instance of the Blattabacterium sp. (Blatta orientalis) str. Tarazona graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlattabacteriumSpBlattaOrientalisStrTarazona(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpBlattaOrientalisStrTarazona graph.
+    Instace of Blattabacterium sp. (Blatta orientalis) str. Tarazona graph.
 
 	References
 	---------------------

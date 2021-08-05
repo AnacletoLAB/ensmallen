@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusGlaucusCbs51665.
+This file offers the methods to automatically retrieve the graph Aspergillus glaucus CBS 516.65.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusGlaucusCbs51665(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusGlaucusCbs51665 graph.
+    """Return new instance of the Aspergillus glaucus CBS 516.65 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusGlaucusCbs51665(
 
     Returns
     -----------------------
-    Instace of AspergillusGlaucusCbs51665 graph.
+    Instace of Aspergillus glaucus CBS 516.65 graph.
 
 	References
 	---------------------

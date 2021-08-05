@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthobacterSp126.
+This file offers the methods to automatically retrieve the graph Xanthobacter sp. 126.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthobacterSp126(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthobacterSp126 graph.
+    """Return new instance of the Xanthobacter sp. 126 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthobacterSp126(
 
     Returns
     -----------------------
-    Instace of XanthobacterSp126 graph.
+    Instace of Xanthobacter sp. 126 graph.
 
 	References
 	---------------------

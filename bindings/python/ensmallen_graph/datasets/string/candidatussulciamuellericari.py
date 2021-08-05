@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSulciaMuelleriCari.
+This file offers the methods to automatically retrieve the graph Candidatus Sulcia muelleri CARI.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSulciaMuelleriCari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSulciaMuelleriCari graph.
+    """Return new instance of the Candidatus Sulcia muelleri CARI graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSulciaMuelleriCari(
 
     Returns
     -----------------------
-    Instace of CandidatusSulciaMuelleriCari graph.
+    Instace of Candidatus Sulcia muelleri CARI graph.
 
 	References
 	---------------------

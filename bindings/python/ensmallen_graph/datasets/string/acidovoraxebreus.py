@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxEbreus.
+This file offers the methods to automatically retrieve the graph Acidovorax ebreus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxEbreus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxEbreus graph.
+    """Return new instance of the Acidovorax ebreus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidovoraxEbreus(
 
     Returns
     -----------------------
-    Instace of AcidovoraxEbreus graph.
+    Instace of Acidovorax ebreus graph.
 
 	References
 	---------------------

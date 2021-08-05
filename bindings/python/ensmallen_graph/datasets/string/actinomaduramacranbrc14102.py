@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraMacraNbrc14102.
+This file offers the methods to automatically retrieve the graph Actinomadura macra NBRC 14102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraMacraNbrc14102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraMacraNbrc14102 graph.
+    """Return new instance of the Actinomadura macra NBRC 14102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraMacraNbrc14102(
 
     Returns
     -----------------------
-    Instace of ActinomaduraMacraNbrc14102 graph.
+    Instace of Actinomadura macra NBRC 14102 graph.
 
 	References
 	---------------------

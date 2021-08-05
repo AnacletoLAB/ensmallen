@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusDispar.
+This file offers the methods to automatically retrieve the graph Enterococcus dispar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusDispar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusDispar graph.
+    """Return new instance of the Enterococcus dispar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusDispar(
 
     Returns
     -----------------------
-    Instace of EnterococcusDispar graph.
+    Instace of Enterococcus dispar graph.
 
 	References
 	---------------------

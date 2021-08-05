@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaPiriflorinigransCfbp5888.
+This file offers the methods to automatically retrieve the graph Erwinia piriflorinigrans CFBP 5888.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaPiriflorinigransCfbp5888(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaPiriflorinigransCfbp5888 graph.
+    """Return new instance of the Erwinia piriflorinigrans CFBP 5888 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaPiriflorinigransCfbp5888(
 
     Returns
     -----------------------
-    Instace of ErwiniaPiriflorinigransCfbp5888 graph.
+    Instace of Erwinia piriflorinigrans CFBP 5888 graph.
 
 	References
 	---------------------

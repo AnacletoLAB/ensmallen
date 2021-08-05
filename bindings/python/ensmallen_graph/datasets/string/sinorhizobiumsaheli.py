@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumSaheli.
+This file offers the methods to automatically retrieve the graph Sinorhizobium saheli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumSaheli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumSaheli graph.
+    """Return new instance of the Sinorhizobium saheli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinorhizobiumSaheli(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumSaheli graph.
+    Instace of Sinorhizobium saheli graph.
 
 	References
 	---------------------

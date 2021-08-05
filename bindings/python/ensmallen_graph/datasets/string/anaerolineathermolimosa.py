@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerolineaThermolimosa.
+This file offers the methods to automatically retrieve the graph Anaerolinea thermolimosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerolineaThermolimosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerolineaThermolimosa graph.
+    """Return new instance of the Anaerolinea thermolimosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerolineaThermolimosa(
 
     Returns
     -----------------------
-    Instace of AnaerolineaThermolimosa graph.
+    Instace of Anaerolinea thermolimosa graph.
 
 	References
 	---------------------

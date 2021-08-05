@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumNodatum.
+This file offers the methods to automatically retrieve the graph Eubacterium nodatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumNodatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumNodatum graph.
+    """Return new instance of the Eubacterium nodatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumNodatum(
 
     Returns
     -----------------------
-    Instace of EubacteriumNodatum graph.
+    Instace of Eubacterium nodatum graph.
 
 	References
 	---------------------

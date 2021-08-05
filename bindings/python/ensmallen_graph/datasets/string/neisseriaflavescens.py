@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaFlavescens.
+This file offers the methods to automatically retrieve the graph Neisseria flavescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaFlavescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaFlavescens graph.
+    """Return new instance of the Neisseria flavescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaFlavescens(
 
     Returns
     -----------------------
-    Instace of NeisseriaFlavescens graph.
+    Instace of Neisseria flavescens graph.
 
 	References
 	---------------------

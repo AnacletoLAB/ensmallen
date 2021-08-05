@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumArgentoratense.
+This file offers the methods to automatically retrieve the graph Corynebacterium argentoratense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumArgentoratense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumArgentoratense graph.
+    """Return new instance of the Corynebacterium argentoratense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumArgentoratense(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumArgentoratense graph.
+    Instace of Corynebacterium argentoratense graph.
 
 	References
 	---------------------

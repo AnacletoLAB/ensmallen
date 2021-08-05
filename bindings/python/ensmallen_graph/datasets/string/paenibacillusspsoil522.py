@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpSoil522.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. Soil522.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpSoil522(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpSoil522 graph.
+    """Return new instance of the Paenibacillus sp. Soil522 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpSoil522(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpSoil522 graph.
+    Instace of Paenibacillus sp. Soil522 graph.
 
 	References
 	---------------------

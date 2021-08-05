@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpFc2018.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. FC2018.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpFc2018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpFc2018 graph.
+    """Return new instance of the Ruminococcus sp. FC2018 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusSpFc2018(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpFc2018 graph.
+    Instace of Ruminococcus sp. FC2018 graph.
 
 	References
 	---------------------

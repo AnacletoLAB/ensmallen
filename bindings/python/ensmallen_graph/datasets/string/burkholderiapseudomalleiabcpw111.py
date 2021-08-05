@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaPseudomalleiAbcpw111.
+This file offers the methods to automatically retrieve the graph Burkholderia pseudomallei ABCPW111.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaPseudomalleiAbcpw111(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaPseudomalleiAbcpw111 graph.
+    """Return new instance of the Burkholderia pseudomallei ABCPW111 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaPseudomalleiAbcpw111(
 
     Returns
     -----------------------
-    Instace of BurkholderiaPseudomalleiAbcpw111 graph.
+    Instace of Burkholderia pseudomallei ABCPW111 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpDnf00663.
+This file offers the methods to automatically retrieve the graph Prevotella sp. DNF00663.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpDnf00663(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpDnf00663 graph.
+    """Return new instance of the Prevotella sp. DNF00663 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpDnf00663(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpDnf00663 graph.
+    Instace of Prevotella sp. DNF00663 graph.
 
 	References
 	---------------------

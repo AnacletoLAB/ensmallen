@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumXanthum.
+This file offers the methods to automatically retrieve the graph Flavobacterium xanthum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumXanthum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumXanthum graph.
+    """Return new instance of the Flavobacterium xanthum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumXanthum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumXanthum graph.
+    Instace of Flavobacterium xanthum graph.
 
 	References
 	---------------------

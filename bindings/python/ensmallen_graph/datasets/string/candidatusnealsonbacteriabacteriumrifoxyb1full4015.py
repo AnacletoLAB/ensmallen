@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNealsonbacteriaBacteriumRifoxyb1Full4015.
+This file offers the methods to automatically retrieve the graph Candidatus Nealsonbacteria bacterium RIFOXYB1_FULL_40_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNealsonbacteriaBacteriumRifoxyb1Full4015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNealsonbacteriaBacteriumRifoxyb1Full4015 graph.
+    """Return new instance of the Candidatus Nealsonbacteria bacterium RIFOXYB1_FULL_40_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNealsonbacteriaBacteriumRifoxyb1Full4015(
 
     Returns
     -----------------------
-    Instace of CandidatusNealsonbacteriaBacteriumRifoxyb1Full4015 graph.
+    Instace of Candidatus Nealsonbacteria bacterium RIFOXYB1_FULL_40_15 graph.
 
 	References
 	---------------------

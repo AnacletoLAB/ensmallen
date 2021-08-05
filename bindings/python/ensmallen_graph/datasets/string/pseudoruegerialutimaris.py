@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoruegeriaLutimaris.
+This file offers the methods to automatically retrieve the graph Pseudoruegeria lutimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoruegeriaLutimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoruegeriaLutimaris graph.
+    """Return new instance of the Pseudoruegeria lutimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoruegeriaLutimaris(
 
     Returns
     -----------------------
-    Instace of PseudoruegeriaLutimaris graph.
+    Instace of Pseudoruegeria lutimaris graph.
 
 	References
 	---------------------

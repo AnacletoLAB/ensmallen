@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tomographic1.
+This file offers the methods to automatically retrieve the graph tomographic1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tomographic1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tomographic1 graph.
+    """Return new instance of the tomographic1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tomographic1(
 
     Returns
     -----------------------
-    Instace of Tomographic1 graph.
+    Instace of tomographic1 graph.
 
 	References
 	---------------------

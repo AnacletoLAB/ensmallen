@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyricimonasSpMarseilleP2440.
+This file offers the methods to automatically retrieve the graph Butyricimonas sp. Marseille-P2440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyricimonasSpMarseilleP2440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyricimonasSpMarseilleP2440 graph.
+    """Return new instance of the Butyricimonas sp. Marseille-P2440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyricimonasSpMarseilleP2440(
 
     Returns
     -----------------------
-    Instace of ButyricimonasSpMarseilleP2440 graph.
+    Instace of Butyricimonas sp. Marseille-P2440 graph.
 
 	References
 	---------------------

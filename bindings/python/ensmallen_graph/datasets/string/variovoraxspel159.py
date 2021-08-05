@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpEl159.
+This file offers the methods to automatically retrieve the graph Variovorax sp. EL159.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpEl159(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpEl159 graph.
+    """Return new instance of the Variovorax sp. EL159 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpEl159(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpEl159 graph.
+    Instace of Variovorax sp. EL159 graph.
 
 	References
 	---------------------

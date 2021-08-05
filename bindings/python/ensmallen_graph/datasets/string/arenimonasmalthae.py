@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasMalthae.
+This file offers the methods to automatically retrieve the graph Arenimonas malthae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasMalthae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasMalthae graph.
+    """Return new instance of the Arenimonas malthae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenimonasMalthae(
 
     Returns
     -----------------------
-    Instace of ArenimonasMalthae graph.
+    Instace of Arenimonas malthae graph.
 
 	References
 	---------------------

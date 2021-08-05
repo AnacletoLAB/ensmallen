@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MitsuokellaJalaludinii.
+This file offers the methods to automatically retrieve the graph Mitsuokella jalaludinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MitsuokellaJalaludinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MitsuokellaJalaludinii graph.
+    """Return new instance of the Mitsuokella jalaludinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MitsuokellaJalaludinii(
 
     Returns
     -----------------------
-    Instace of MitsuokellaJalaludinii graph.
+    Instace of Mitsuokella jalaludinii graph.
 
 	References
 	---------------------

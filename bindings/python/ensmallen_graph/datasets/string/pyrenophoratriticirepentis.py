@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrenophoraTriticirepentis.
+This file offers the methods to automatically retrieve the graph Pyrenophora triticirepentis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrenophoraTriticirepentis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrenophoraTriticirepentis graph.
+    """Return new instance of the Pyrenophora triticirepentis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrenophoraTriticirepentis(
 
     Returns
     -----------------------
-    Instace of PyrenophoraTriticirepentis graph.
+    Instace of Pyrenophora triticirepentis graph.
 
 	References
 	---------------------

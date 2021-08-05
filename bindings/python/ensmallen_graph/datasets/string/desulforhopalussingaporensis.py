@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulforhopalusSingaporensis.
+This file offers the methods to automatically retrieve the graph Desulforhopalus singaporensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulforhopalusSingaporensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulforhopalusSingaporensis graph.
+    """Return new instance of the Desulforhopalus singaporensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulforhopalusSingaporensis(
 
     Returns
     -----------------------
-    Instace of DesulforhopalusSingaporensis graph.
+    Instace of Desulforhopalus singaporensis graph.
 
 	References
 	---------------------

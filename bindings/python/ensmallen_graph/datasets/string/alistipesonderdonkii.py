@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesOnderdonkii.
+This file offers the methods to automatically retrieve the graph Alistipes onderdonkii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesOnderdonkii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesOnderdonkii graph.
+    """Return new instance of the Alistipes onderdonkii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesOnderdonkii(
 
     Returns
     -----------------------
-    Instace of AlistipesOnderdonkii graph.
+    Instace of Alistipes onderdonkii graph.
 
 	References
 	---------------------

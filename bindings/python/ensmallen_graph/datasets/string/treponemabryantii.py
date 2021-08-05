@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaBryantii.
+This file offers the methods to automatically retrieve the graph Treponema bryantii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaBryantii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaBryantii graph.
+    """Return new instance of the Treponema bryantii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaBryantii(
 
     Returns
     -----------------------
-    Instace of TreponemaBryantii graph.
+    Instace of Treponema bryantii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterSp302.
+This file offers the methods to automatically retrieve the graph Citrobacter sp. 302.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterSp302(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterSp302 graph.
+    """Return new instance of the Citrobacter sp. 302 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrobacterSp302(
 
     Returns
     -----------------------
-    Instace of CitrobacterSp302 graph.
+    Instace of Citrobacter sp. 302 graph.
 
 	References
 	---------------------

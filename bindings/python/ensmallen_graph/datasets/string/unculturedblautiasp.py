@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedBlautiaSp.
+This file offers the methods to automatically retrieve the graph uncultured Blautia sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedBlautiaSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedBlautiaSp graph.
+    """Return new instance of the uncultured Blautia sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedBlautiaSp(
 
     Returns
     -----------------------
-    Instace of UnculturedBlautiaSp graph.
+    Instace of uncultured Blautia sp. graph.
 
 	References
 	---------------------

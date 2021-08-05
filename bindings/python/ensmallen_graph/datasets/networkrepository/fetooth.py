@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FeTooth.
+This file offers the methods to automatically retrieve the graph fe-tooth.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def FeTooth(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FeTooth graph.
+    """Return new instance of the fe-tooth graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def FeTooth(
 
     Returns
     -----------------------
-    Instace of FeTooth graph.
+    Instace of fe-tooth graph.
 
 	References
 	---------------------

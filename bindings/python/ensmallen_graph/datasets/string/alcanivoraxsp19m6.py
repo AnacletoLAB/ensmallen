@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxSp19m6.
+This file offers the methods to automatically retrieve the graph Alcanivorax sp. 19m6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxSp19m6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxSp19m6 graph.
+    """Return new instance of the Alcanivorax sp. 19m6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxSp19m6(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxSp19m6 graph.
+    Instace of Alcanivorax sp. 19m6 graph.
 
 	References
 	---------------------

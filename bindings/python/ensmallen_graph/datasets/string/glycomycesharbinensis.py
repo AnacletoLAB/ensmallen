@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycomycesHarbinensis.
+This file offers the methods to automatically retrieve the graph Glycomyces harbinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycomycesHarbinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycomycesHarbinensis graph.
+    """Return new instance of the Glycomyces harbinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlycomycesHarbinensis(
 
     Returns
     -----------------------
-    Instace of GlycomycesHarbinensis graph.
+    Instace of Glycomyces harbinensis graph.
 
 	References
 	---------------------

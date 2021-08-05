@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesSpAsf519.
+This file offers the methods to automatically retrieve the graph Parabacteroides sp. ASF519.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesSpAsf519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesSpAsf519 graph.
+    """Return new instance of the Parabacteroides sp. ASF519 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParabacteroidesSpAsf519(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesSpAsf519 graph.
+    Instace of Parabacteroides sp. ASF519 graph.
 
 	References
 	---------------------

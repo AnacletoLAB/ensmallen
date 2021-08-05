@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmmonsiaSpCac2015a.
+This file offers the methods to automatically retrieve the graph Emmonsia sp. CAC-2015a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmmonsiaSpCac2015a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmmonsiaSpCac2015a graph.
+    """Return new instance of the Emmonsia sp. CAC-2015a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EmmonsiaSpCac2015a(
 
     Returns
     -----------------------
-    Instace of EmmonsiaSpCac2015a graph.
+    Instace of Emmonsia sp. CAC-2015a graph.
 
 	References
 	---------------------

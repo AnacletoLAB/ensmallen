@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PuniceibacteriumSpImcc21224.
+This file offers the methods to automatically retrieve the graph Puniceibacterium sp. IMCC21224.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PuniceibacteriumSpImcc21224(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PuniceibacteriumSpImcc21224 graph.
+    """Return new instance of the Puniceibacterium sp. IMCC21224 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PuniceibacteriumSpImcc21224(
 
     Returns
     -----------------------
-    Instace of PuniceibacteriumSpImcc21224 graph.
+    Instace of Puniceibacterium sp. IMCC21224 graph.
 
 	References
 	---------------------

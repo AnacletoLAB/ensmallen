@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentibacillusJuripiscariusJcm12147.
+This file offers the methods to automatically retrieve the graph Lentibacillus juripiscarius JCM 12147.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentibacillusJuripiscariusJcm12147(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentibacillusJuripiscariusJcm12147 graph.
+    """Return new instance of the Lentibacillus juripiscarius JCM 12147 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentibacillusJuripiscariusJcm12147(
 
     Returns
     -----------------------
-    Instace of LentibacillusJuripiscariusJcm12147 graph.
+    Instace of Lentibacillus juripiscarius JCM 12147 graph.
 
 	References
 	---------------------

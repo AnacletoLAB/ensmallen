@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeribacterRiflensis.
+This file offers the methods to automatically retrieve the graph Candidatus Peribacter riflensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeribacterRiflensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeribacterRiflensis graph.
+    """Return new instance of the Candidatus Peribacter riflensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeribacterRiflensis(
 
     Returns
     -----------------------
-    Instace of CandidatusPeribacterRiflensis graph.
+    Instace of Candidatus Peribacter riflensis graph.
 
 	References
 	---------------------

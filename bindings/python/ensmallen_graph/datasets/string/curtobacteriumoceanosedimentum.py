@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumOceanosedimentum.
+This file offers the methods to automatically retrieve the graph Curtobacterium oceanosedimentum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumOceanosedimentum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumOceanosedimentum graph.
+    """Return new instance of the Curtobacterium oceanosedimentum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumOceanosedimentum(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumOceanosedimentum graph.
+    Instace of Curtobacterium oceanosedimentum graph.
 
 	References
 	---------------------

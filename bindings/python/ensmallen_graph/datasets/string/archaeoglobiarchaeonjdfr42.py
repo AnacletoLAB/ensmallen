@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobiArchaeonJdfr42.
+This file offers the methods to automatically retrieve the graph Archaeoglobi archaeon JdFR-42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobiArchaeonJdfr42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobiArchaeonJdfr42 graph.
+    """Return new instance of the Archaeoglobi archaeon JdFR-42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArchaeoglobiArchaeonJdfr42(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobiArchaeonJdfr42 graph.
+    Instace of Archaeoglobi archaeon JdFR-42 graph.
 
 	References
 	---------------------

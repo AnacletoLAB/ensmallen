@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeomicrobiumSpJcm19038.
+This file offers the methods to automatically retrieve the graph Geomicrobium sp. JCM19038.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeomicrobiumSpJcm19038(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeomicrobiumSpJcm19038 graph.
+    """Return new instance of the Geomicrobium sp. JCM19038 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeomicrobiumSpJcm19038(
 
     Returns
     -----------------------
-    Instace of GeomicrobiumSpJcm19038 graph.
+    Instace of Geomicrobium sp. JCM19038 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenibacillusSchlegelii.
+This file offers the methods to automatically retrieve the graph Hydrogenibacillus schlegelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenibacillusSchlegelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenibacillusSchlegelii graph.
+    """Return new instance of the Hydrogenibacillus schlegelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenibacillusSchlegelii(
 
     Returns
     -----------------------
-    Instace of HydrogenibacillusSchlegelii graph.
+    Instace of Hydrogenibacillus schlegelii graph.
 
 	References
 	---------------------

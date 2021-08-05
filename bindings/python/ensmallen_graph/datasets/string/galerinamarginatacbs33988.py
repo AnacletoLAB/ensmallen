@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GalerinaMarginataCbs33988.
+This file offers the methods to automatically retrieve the graph Galerina marginata CBS 339.88.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GalerinaMarginataCbs33988(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GalerinaMarginataCbs33988 graph.
+    """Return new instance of the Galerina marginata CBS 339.88 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GalerinaMarginataCbs33988(
 
     Returns
     -----------------------
-    Instace of GalerinaMarginataCbs33988 graph.
+    Instace of Galerina marginata CBS 339.88 graph.
 
 	References
 	---------------------

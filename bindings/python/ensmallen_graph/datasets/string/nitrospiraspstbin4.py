@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraSpStBin4.
+This file offers the methods to automatically retrieve the graph Nitrospira sp. ST-bin4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraSpStBin4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraSpStBin4 graph.
+    """Return new instance of the Nitrospira sp. ST-bin4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraSpStBin4(
 
     Returns
     -----------------------
-    Instace of NitrospiraSpStBin4 graph.
+    Instace of Nitrospira sp. ST-bin4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAccumulibacterSpBa92.
+This file offers the methods to automatically retrieve the graph Candidatus Accumulibacter sp. BA-92.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAccumulibacterSpBa92(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAccumulibacterSpBa92 graph.
+    """Return new instance of the Candidatus Accumulibacter sp. BA-92 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAccumulibacterSpBa92(
 
     Returns
     -----------------------
-    Instace of CandidatusAccumulibacterSpBa92 graph.
+    Instace of Candidatus Accumulibacter sp. BA-92 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasNitroreducensHbp1.
+This file offers the methods to automatically retrieve the graph Pseudomonas nitroreducens HBP1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasNitroreducensHbp1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasNitroreducensHbp1 graph.
+    """Return new instance of the Pseudomonas nitroreducens HBP1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasNitroreducensHbp1(
 
     Returns
     -----------------------
-    Instace of PseudomonasNitroreducensHbp1 graph.
+    Instace of Pseudomonas nitroreducens HBP1 graph.
 
 	References
 	---------------------

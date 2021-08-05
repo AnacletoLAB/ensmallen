@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumMongoliense.
+This file offers the methods to automatically retrieve the graph Bifidobacterium mongoliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumMongoliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumMongoliense graph.
+    """Return new instance of the Bifidobacterium mongoliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumMongoliense(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumMongoliense graph.
+    Instace of Bifidobacterium mongoliense graph.
 
 	References
 	---------------------

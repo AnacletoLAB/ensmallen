@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiK12SubstrW3110.
+This file offers the methods to automatically retrieve the graph Escherichia coli K12 substr. W3110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiK12SubstrW3110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiK12SubstrW3110 graph.
+    """Return new instance of the Escherichia coli K12 substr. W3110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EscherichiaColiK12SubstrW3110(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiK12SubstrW3110 graph.
+    Instace of Escherichia coli K12 substr. W3110 graph.
 
 	References
 	---------------------

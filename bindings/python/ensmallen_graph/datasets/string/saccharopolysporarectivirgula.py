@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaRectivirgula.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora rectivirgula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaRectivirgula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaRectivirgula graph.
+    """Return new instance of the Saccharopolyspora rectivirgula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharopolysporaRectivirgula(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaRectivirgula graph.
+    Instace of Saccharopolyspora rectivirgula graph.
 
 	References
 	---------------------

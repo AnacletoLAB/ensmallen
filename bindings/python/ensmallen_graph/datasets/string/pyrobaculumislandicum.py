@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrobaculumIslandicum.
+This file offers the methods to automatically retrieve the graph Pyrobaculum islandicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrobaculumIslandicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrobaculumIslandicum graph.
+    """Return new instance of the Pyrobaculum islandicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrobaculumIslandicum(
 
     Returns
     -----------------------
-    Instace of PyrobaculumIslandicum graph.
+    Instace of Pyrobaculum islandicum graph.
 
 	References
 	---------------------

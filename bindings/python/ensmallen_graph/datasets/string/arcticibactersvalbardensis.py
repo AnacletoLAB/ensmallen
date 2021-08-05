@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcticibacterSvalbardensis.
+This file offers the methods to automatically retrieve the graph Arcticibacter svalbardensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcticibacterSvalbardensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcticibacterSvalbardensis graph.
+    """Return new instance of the Arcticibacter svalbardensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcticibacterSvalbardensis(
 
     Returns
     -----------------------
-    Instace of ArcticibacterSvalbardensis graph.
+    Instace of Arcticibacter svalbardensis graph.
 
 	References
 	---------------------

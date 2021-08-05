@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RomboutsiaTimonensis.
+This file offers the methods to automatically retrieve the graph Romboutsia timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RomboutsiaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RomboutsiaTimonensis graph.
+    """Return new instance of the Romboutsia timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RomboutsiaTimonensis(
 
     Returns
     -----------------------
-    Instace of RomboutsiaTimonensis graph.
+    Instace of Romboutsia timonensis graph.
 
 	References
 	---------------------

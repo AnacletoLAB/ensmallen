@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanohalophilusMahiiDsm5219.
+This file offers the methods to automatically retrieve the graph Methanohalophilus mahii DSM 5219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanohalophilusMahiiDsm5219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanohalophilusMahiiDsm5219 graph.
+    """Return new instance of the Methanohalophilus mahii DSM 5219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanohalophilusMahiiDsm5219(
 
     Returns
     -----------------------
-    Instace of MethanohalophilusMahiiDsm5219 graph.
+    Instace of Methanohalophilus mahii DSM 5219 graph.
 
 	References
 	---------------------

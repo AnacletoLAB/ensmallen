@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaBuccaeAtcc33574.
+This file offers the methods to automatically retrieve the graph Prevotella buccae ATCC33574.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaBuccaeAtcc33574(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaBuccaeAtcc33574 graph.
+    """Return new instance of the Prevotella buccae ATCC33574 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaBuccaeAtcc33574(
 
     Returns
     -----------------------
-    Instace of PrevotellaBuccaeAtcc33574 graph.
+    Instace of Prevotella buccae ATCC33574 graph.
 
 	References
 	---------------------

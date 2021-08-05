@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BiomphalariaGlabrata.
+This file offers the methods to automatically retrieve the graph Biomphalaria glabrata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BiomphalariaGlabrata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BiomphalariaGlabrata graph.
+    """Return new instance of the Biomphalaria glabrata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BiomphalariaGlabrata(
 
     Returns
     -----------------------
-    Instace of BiomphalariaGlabrata graph.
+    Instace of Biomphalaria glabrata graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisGanjiahuensis.
+This file offers the methods to automatically retrieve the graph Nocardiopsis ganjiahuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisGanjiahuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisGanjiahuensis graph.
+    """Return new instance of the Nocardiopsis ganjiahuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisGanjiahuensis(
 
     Returns
     -----------------------
-    Instace of NocardiopsisGanjiahuensis graph.
+    Instace of Nocardiopsis ganjiahuensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaesserellaParasuisSh0165.
+This file offers the methods to automatically retrieve the graph Glaesserella parasuis SH0165.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaesserellaParasuisSh0165(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaesserellaParasuisSh0165 graph.
+    """Return new instance of the Glaesserella parasuis SH0165 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlaesserellaParasuisSh0165(
 
     Returns
     -----------------------
-    Instace of GlaesserellaParasuisSh0165 graph.
+    Instace of Glaesserella parasuis SH0165 graph.
 
 	References
 	---------------------

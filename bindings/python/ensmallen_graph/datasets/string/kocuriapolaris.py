@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaPolaris.
+This file offers the methods to automatically retrieve the graph Kocuria polaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaPolaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaPolaris graph.
+    """Return new instance of the Kocuria polaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KocuriaPolaris(
 
     Returns
     -----------------------
-    Instace of KocuriaPolaris graph.
+    Instace of Kocuria polaris graph.
 
 	References
 	---------------------

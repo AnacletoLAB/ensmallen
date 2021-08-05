@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGasseri.
+This file offers the methods to automatically retrieve the graph Lactobacillus gasseri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGasseri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGasseri graph.
+    """Return new instance of the Lactobacillus gasseri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusGasseri(
 
     Returns
     -----------------------
-    Instace of LactobacillusGasseri graph.
+    Instace of Lactobacillus gasseri graph.
 
 	References
 	---------------------

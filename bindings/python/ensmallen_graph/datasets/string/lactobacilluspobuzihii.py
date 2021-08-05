@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPobuzihii.
+This file offers the methods to automatically retrieve the graph Lactobacillus pobuzihii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPobuzihii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPobuzihii graph.
+    """Return new instance of the Lactobacillus pobuzihii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPobuzihii(
 
     Returns
     -----------------------
-    Instace of LactobacillusPobuzihii graph.
+    Instace of Lactobacillus pobuzihii graph.
 
 	References
 	---------------------

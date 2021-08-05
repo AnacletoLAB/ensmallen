@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCcmMd2014.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CCM_MD2014.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCcmMd2014(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCcmMd2014 graph.
+    """Return new instance of the Streptomyces sp. CCM_MD2014 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpCcmMd2014(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCcmMd2014 graph.
+    Instace of Streptomyces sp. CCM_MD2014 graph.
 
 	References
 	---------------------

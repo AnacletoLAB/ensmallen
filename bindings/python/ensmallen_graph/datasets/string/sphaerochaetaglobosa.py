@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerochaetaGlobosa.
+This file offers the methods to automatically retrieve the graph Sphaerochaeta globosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerochaetaGlobosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerochaetaGlobosa graph.
+    """Return new instance of the Sphaerochaeta globosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaerochaetaGlobosa(
 
     Returns
     -----------------------
-    Instace of SphaerochaetaGlobosa graph.
+    Instace of Sphaerochaeta globosa graph.
 
 	References
 	---------------------

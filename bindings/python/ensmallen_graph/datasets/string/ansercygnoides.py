@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnserCygnoides.
+This file offers the methods to automatically retrieve the graph Anser cygnoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnserCygnoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnserCygnoides graph.
+    """Return new instance of the Anser cygnoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnserCygnoides(
 
     Returns
     -----------------------
-    Instace of AnserCygnoides graph.
+    Instace of Anser cygnoides graph.
 
 	References
 	---------------------

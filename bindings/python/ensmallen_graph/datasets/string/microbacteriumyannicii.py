@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumYannicii.
+This file offers the methods to automatically retrieve the graph Microbacterium yannicii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumYannicii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumYannicii graph.
+    """Return new instance of the Microbacterium yannicii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumYannicii(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumYannicii graph.
+    Instace of Microbacterium yannicii graph.
 
 	References
 	---------------------

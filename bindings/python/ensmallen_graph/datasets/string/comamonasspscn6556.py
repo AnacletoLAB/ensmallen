@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasSpScn6556.
+This file offers the methods to automatically retrieve the graph Comamonas sp. SCN 65-56.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasSpScn6556(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasSpScn6556 graph.
+    """Return new instance of the Comamonas sp. SCN 65-56 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasSpScn6556(
 
     Returns
     -----------------------
-    Instace of ComamonasSpScn6556 graph.
+    Instace of Comamonas sp. SCN 65-56 graph.
 
 	References
 	---------------------

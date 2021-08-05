@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KGCOVID19.
+This file offers the methods to automatically retrieve the graph kg-covid-19.
 
 The graph is automatically retrieved from the KGHub repository. 
 
@@ -36,7 +36,7 @@ def KGCOVID19(
     version: str = "current",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KGCOVID19 graph.
+    """Return new instance of the kg-covid-19 graph.
 
     The graph is automatically retrieved from the KGHub repository.	
 
@@ -81,7 +81,7 @@ def KGCOVID19(
 
     Returns
     -----------------------
-    Instace of KGCOVID19 graph.
+    Instace of kg-covid-19 graph.
 
 	References
 	---------------------

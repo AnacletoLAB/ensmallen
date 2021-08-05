@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaConcava.
+This file offers the methods to automatically retrieve the graph Nocardia concava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaConcava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaConcava graph.
+    """Return new instance of the Nocardia concava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaConcava(
 
     Returns
     -----------------------
-    Instace of NocardiaConcava graph.
+    Instace of Nocardia concava graph.
 
 	References
 	---------------------

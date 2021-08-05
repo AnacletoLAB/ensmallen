@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SlackiaHeliotrinireducens.
+This file offers the methods to automatically retrieve the graph Slackia heliotrinireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SlackiaHeliotrinireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SlackiaHeliotrinireducens graph.
+    """Return new instance of the Slackia heliotrinireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SlackiaHeliotrinireducens(
 
     Returns
     -----------------------
-    Instace of SlackiaHeliotrinireducens graph.
+    Instace of Slackia heliotrinireducens graph.
 
 	References
 	---------------------

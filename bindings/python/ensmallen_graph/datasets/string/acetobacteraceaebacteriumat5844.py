@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacteraceaeBacteriumAt5844.
+This file offers the methods to automatically retrieve the graph Acetobacteraceae bacterium AT5844.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacteraceaeBacteriumAt5844(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacteraceaeBacteriumAt5844 graph.
+    """Return new instance of the Acetobacteraceae bacterium AT5844 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacteraceaeBacteriumAt5844(
 
     Returns
     -----------------------
-    Instace of AcetobacteraceaeBacteriumAt5844 graph.
+    Instace of Acetobacteraceae bacterium AT5844 graph.
 
 	References
 	---------------------

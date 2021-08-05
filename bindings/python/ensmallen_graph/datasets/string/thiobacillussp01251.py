@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusSp01251.
+This file offers the methods to automatically retrieve the graph Thiobacillus sp. 0-1251.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusSp01251(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusSp01251 graph.
+    """Return new instance of the Thiobacillus sp. 0-1251 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiobacillusSp01251(
 
     Returns
     -----------------------
-    Instace of ThiobacillusSp01251 graph.
+    Instace of Thiobacillus sp. 0-1251 graph.
 
 	References
 	---------------------

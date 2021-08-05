@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterSpAf1028.
+This file offers the methods to automatically retrieve the graph Arcobacter sp. AF1028.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterSpAf1028(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterSpAf1028 graph.
+    """Return new instance of the Arcobacter sp. AF1028 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterSpAf1028(
 
     Returns
     -----------------------
-    Instace of ArcobacterSpAf1028 graph.
+    Instace of Arcobacter sp. AF1028 graph.
 
 	References
 	---------------------

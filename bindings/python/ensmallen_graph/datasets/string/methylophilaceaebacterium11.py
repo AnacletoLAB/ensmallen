@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilaceaeBacterium11.
+This file offers the methods to automatically retrieve the graph Methylophilaceae bacterium 11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilaceaeBacterium11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilaceaeBacterium11 graph.
+    """Return new instance of the Methylophilaceae bacterium 11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophilaceaeBacterium11(
 
     Returns
     -----------------------
-    Instace of MethylophilaceaeBacterium11 graph.
+    Instace of Methylophilaceae bacterium 11 graph.
 
 	References
 	---------------------

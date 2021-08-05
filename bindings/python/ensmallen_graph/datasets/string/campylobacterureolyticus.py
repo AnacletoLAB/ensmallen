@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterUreolyticus.
+This file offers the methods to automatically retrieve the graph Campylobacter ureolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterUreolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterUreolyticus graph.
+    """Return new instance of the Campylobacter ureolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterUreolyticus(
 
     Returns
     -----------------------
-    Instace of CampylobacterUreolyticus graph.
+    Instace of Campylobacter ureolyticus graph.
 
 	References
 	---------------------

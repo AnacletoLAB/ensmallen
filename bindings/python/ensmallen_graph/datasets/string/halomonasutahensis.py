@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasUtahensis.
+This file offers the methods to automatically retrieve the graph Halomonas utahensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasUtahensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasUtahensis graph.
+    """Return new instance of the Halomonas utahensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasUtahensis(
 
     Returns
     -----------------------
-    Instace of HalomonasUtahensis graph.
+    Instace of Halomonas utahensis graph.
 
 	References
 	---------------------

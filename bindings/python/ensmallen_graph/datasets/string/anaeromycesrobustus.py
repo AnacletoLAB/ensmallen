@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeromycesRobustus.
+This file offers the methods to automatically retrieve the graph Anaeromyces robustus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeromycesRobustus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeromycesRobustus graph.
+    """Return new instance of the Anaeromyces robustus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaeromycesRobustus(
 
     Returns
     -----------------------
-    Instace of AnaeromycesRobustus graph.
+    Instace of Anaeromyces robustus graph.
 
 	References
 	---------------------

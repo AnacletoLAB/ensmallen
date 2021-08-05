@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacteriumRifcsplowo212Full5410.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium RIFCSPLOWO2_12_FULL_54_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacteriumRifcsplowo212Full5410(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacteriumRifcsplowo212Full5410 graph.
+    """Return new instance of the Acidobacteria bacterium RIFCSPLOWO2_12_FULL_54_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacteriumRifcsplowo212Full5410(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacteriumRifcsplowo212Full5410 graph.
+    Instace of Acidobacteria bacterium RIFCSPLOWO2_12_FULL_54_10 graph.
 
 	References
 	---------------------

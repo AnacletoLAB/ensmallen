@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusFonticola.
+This file offers the methods to automatically retrieve the graph Paenibacillus fonticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusFonticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusFonticola graph.
+    """Return new instance of the Paenibacillus fonticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusFonticola(
 
     Returns
     -----------------------
-    Instace of PaenibacillusFonticola graph.
+    Instace of Paenibacillus fonticola graph.
 
 	References
 	---------------------

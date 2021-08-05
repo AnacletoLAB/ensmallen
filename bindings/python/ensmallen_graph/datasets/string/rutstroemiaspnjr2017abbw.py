@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RutstroemiaSpNjr2017aBbw.
+This file offers the methods to automatically retrieve the graph Rutstroemia sp. NJR-2017a BBW.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RutstroemiaSpNjr2017aBbw(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RutstroemiaSpNjr2017aBbw graph.
+    """Return new instance of the Rutstroemia sp. NJR-2017a BBW graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RutstroemiaSpNjr2017aBbw(
 
     Returns
     -----------------------
-    Instace of RutstroemiaSpNjr2017aBbw graph.
+    Instace of Rutstroemia sp. NJR-2017a BBW graph.
 
 	References
 	---------------------

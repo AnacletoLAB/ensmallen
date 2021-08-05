@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomycesCerevisiae.
+This file offers the methods to automatically retrieve the graph Saccharomyces cerevisiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomycesCerevisiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomycesCerevisiae graph.
+    """Return new instance of the Saccharomyces cerevisiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharomycesCerevisiae(
 
     Returns
     -----------------------
-    Instace of SaccharomycesCerevisiae graph.
+    Instace of Saccharomyces cerevisiae graph.
 
 	References
 	---------------------

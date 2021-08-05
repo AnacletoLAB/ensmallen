@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaAgglomerans.
+This file offers the methods to automatically retrieve the graph Pantoea agglomerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaAgglomerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaAgglomerans graph.
+    """Return new instance of the Pantoea agglomerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaAgglomerans(
 
     Returns
     -----------------------
-    Instace of PantoeaAgglomerans graph.
+    Instace of Pantoea agglomerans graph.
 
 	References
 	---------------------

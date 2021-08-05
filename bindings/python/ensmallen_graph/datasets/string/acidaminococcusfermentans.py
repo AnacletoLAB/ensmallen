@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminococcusFermentans.
+This file offers the methods to automatically retrieve the graph Acidaminococcus fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminococcusFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminococcusFermentans graph.
+    """Return new instance of the Acidaminococcus fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidaminococcusFermentans(
 
     Returns
     -----------------------
-    Instace of AcidaminococcusFermentans graph.
+    Instace of Acidaminococcus fermentans graph.
 
 	References
 	---------------------

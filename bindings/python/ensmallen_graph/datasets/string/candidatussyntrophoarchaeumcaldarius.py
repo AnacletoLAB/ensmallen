@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSyntrophoarchaeumCaldarius.
+This file offers the methods to automatically retrieve the graph Candidatus Syntrophoarchaeum caldarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSyntrophoarchaeumCaldarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSyntrophoarchaeumCaldarius graph.
+    """Return new instance of the Candidatus Syntrophoarchaeum caldarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSyntrophoarchaeumCaldarius(
 
     Returns
     -----------------------
-    Instace of CandidatusSyntrophoarchaeumCaldarius graph.
+    Instace of Candidatus Syntrophoarchaeum caldarius graph.
 
 	References
 	---------------------

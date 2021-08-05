@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KorarchaeumCryptofilum.
+This file offers the methods to automatically retrieve the graph Korarchaeum cryptofilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KorarchaeumCryptofilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KorarchaeumCryptofilum graph.
+    """Return new instance of the Korarchaeum cryptofilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KorarchaeumCryptofilum(
 
     Returns
     -----------------------
-    Instace of KorarchaeumCryptofilum graph.
+    Instace of Korarchaeum cryptofilum graph.
 
 	References
 	---------------------

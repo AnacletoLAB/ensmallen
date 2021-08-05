@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaCarbonacea.
+This file offers the methods to automatically retrieve the graph Micromonospora carbonacea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaCarbonacea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaCarbonacea graph.
+    """Return new instance of the Micromonospora carbonacea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaCarbonacea(
 
     Returns
     -----------------------
-    Instace of MicromonosporaCarbonacea graph.
+    Instace of Micromonospora carbonacea graph.
 
 	References
 	---------------------

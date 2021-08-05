@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFutsaiiJcm17355.
+This file offers the methods to automatically retrieve the graph Lactobacillus futsaii JCM 17355.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFutsaiiJcm17355(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFutsaiiJcm17355 graph.
+    """Return new instance of the Lactobacillus futsaii JCM 17355 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusFutsaiiJcm17355(
 
     Returns
     -----------------------
-    Instace of LactobacillusFutsaiiJcm17355 graph.
+    Instace of Lactobacillus futsaii JCM 17355 graph.
 
 	References
 	---------------------

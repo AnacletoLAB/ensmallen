@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WinogradskyellaSpRha55.
+This file offers the methods to automatically retrieve the graph Winogradskyella sp. RHA_55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WinogradskyellaSpRha55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WinogradskyellaSpRha55 graph.
+    """Return new instance of the Winogradskyella sp. RHA_55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WinogradskyellaSpRha55(
 
     Returns
     -----------------------
-    Instace of WinogradskyellaSpRha55 graph.
+    Instace of Winogradskyella sp. RHA_55 graph.
 
 	References
 	---------------------

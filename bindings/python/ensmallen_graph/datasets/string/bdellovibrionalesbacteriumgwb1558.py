@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrionalesBacteriumGwb1558.
+This file offers the methods to automatically retrieve the graph Bdellovibrionales bacterium GWB1_55_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrionalesBacteriumGwb1558(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrionalesBacteriumGwb1558 graph.
+    """Return new instance of the Bdellovibrionales bacterium GWB1_55_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrionalesBacteriumGwb1558(
 
     Returns
     -----------------------
-    Instace of BdellovibrionalesBacteriumGwb1558 graph.
+    Instace of Bdellovibrionales bacterium GWB1_55_8 graph.
 
 	References
 	---------------------

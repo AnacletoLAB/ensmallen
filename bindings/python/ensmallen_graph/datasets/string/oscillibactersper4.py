@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSpEr4.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. ER4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterSpEr4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSpEr4 graph.
+    """Return new instance of the Oscillibacter sp. ER4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillibacterSpEr4(
 
     Returns
     -----------------------
-    Instace of OscillibacterSpEr4 graph.
+    Instace of Oscillibacter sp. ER4 graph.
 
 	References
 	---------------------

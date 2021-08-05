@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VisualizeUs.
+This file offers the methods to automatically retrieve the graph visualize-us.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def VisualizeUs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VisualizeUs graph.
+    """Return new instance of the visualize-us graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def VisualizeUs(
 
     Returns
     -----------------------
-    Instace of VisualizeUs graph.
+    Instace of visualize-us graph.
 
 	References
 	---------------------

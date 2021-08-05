@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumCentrolobii.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium centrolobii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumCentrolobii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumCentrolobii graph.
+    """Return new instance of the Bradyrhizobium centrolobii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumCentrolobii(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumCentrolobii graph.
+    Instace of Bradyrhizobium centrolobii graph.
 
 	References
 	---------------------

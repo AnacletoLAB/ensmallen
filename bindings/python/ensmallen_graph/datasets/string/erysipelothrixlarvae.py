@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelothrixLarvae.
+This file offers the methods to automatically retrieve the graph Erysipelothrix larvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelothrixLarvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelothrixLarvae graph.
+    """Return new instance of the Erysipelothrix larvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErysipelothrixLarvae(
 
     Returns
     -----------------------
-    Instace of ErysipelothrixLarvae graph.
+    Instace of Erysipelothrix larvae graph.
 
 	References
 	---------------------

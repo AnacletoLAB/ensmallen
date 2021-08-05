@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridMouse.
+This file offers the methods to automatically retrieve the graph bio-grid-mouse.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridMouse(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridMouse graph.
+    """Return new instance of the bio-grid-mouse graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridMouse(
 
     Returns
     -----------------------
-    Instace of BioGridMouse graph.
+    Instace of bio-grid-mouse graph.
 
 	References
 	---------------------

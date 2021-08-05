@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterIndicus.
+This file offers the methods to automatically retrieve the graph Pontibacter indicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterIndicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterIndicus graph.
+    """Return new instance of the Pontibacter indicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterIndicus(
 
     Returns
     -----------------------
-    Instace of PontibacterIndicus graph.
+    Instace of Pontibacter indicus graph.
 
 	References
 	---------------------

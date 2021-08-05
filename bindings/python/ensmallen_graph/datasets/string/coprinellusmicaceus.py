@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprinellusMicaceus.
+This file offers the methods to automatically retrieve the graph Coprinellus micaceus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprinellusMicaceus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprinellusMicaceus graph.
+    """Return new instance of the Coprinellus micaceus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprinellusMicaceus(
 
     Returns
     -----------------------
-    Instace of CoprinellusMicaceus graph.
+    Instace of Coprinellus micaceus graph.
 
 	References
 	---------------------

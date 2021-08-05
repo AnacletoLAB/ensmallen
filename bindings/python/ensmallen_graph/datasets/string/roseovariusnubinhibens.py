@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusNubinhibens.
+This file offers the methods to automatically retrieve the graph Roseovarius nubinhibens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusNubinhibens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusNubinhibens graph.
+    """Return new instance of the Roseovarius nubinhibens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseovariusNubinhibens(
 
     Returns
     -----------------------
-    Instace of RoseovariusNubinhibens graph.
+    Instace of Roseovarius nubinhibens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudaestuariivitaAtlantica.
+This file offers the methods to automatically retrieve the graph Pseudaestuariivita atlantica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudaestuariivitaAtlantica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudaestuariivitaAtlantica graph.
+    """Return new instance of the Pseudaestuariivita atlantica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudaestuariivitaAtlantica(
 
     Returns
     -----------------------
-    Instace of PseudaestuariivitaAtlantica graph.
+    Instace of Pseudaestuariivita atlantica graph.
 
 	References
 	---------------------

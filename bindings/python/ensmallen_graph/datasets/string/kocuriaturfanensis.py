@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaTurfanensis.
+This file offers the methods to automatically retrieve the graph Kocuria turfanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaTurfanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaTurfanensis graph.
+    """Return new instance of the Kocuria turfanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KocuriaTurfanensis(
 
     Returns
     -----------------------
-    Instace of KocuriaTurfanensis graph.
+    Instace of Kocuria turfanensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumFioriniaePj7.
+This file offers the methods to automatically retrieve the graph Colletotrichum fioriniae PJ7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumFioriniaePj7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumFioriniaePj7 graph.
+    """Return new instance of the Colletotrichum fioriniae PJ7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumFioriniaePj7(
 
     Returns
     -----------------------
-    Instace of ColletotrichumFioriniaePj7 graph.
+    Instace of Colletotrichum fioriniae PJ7 graph.
 
 	References
 	---------------------

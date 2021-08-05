@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpJa23ba.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. JA23Ba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpJa23ba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpJa23ba graph.
+    """Return new instance of the Synechococcus sp. JA23Ba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpJa23ba(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpJa23ba graph.
+    Instace of Synechococcus sp. JA23Ba graph.
 
 	References
 	---------------------

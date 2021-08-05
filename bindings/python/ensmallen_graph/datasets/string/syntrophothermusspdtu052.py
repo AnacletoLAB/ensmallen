@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophothermusSpDtu052.
+This file offers the methods to automatically retrieve the graph Syntrophothermus sp. DTU052.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophothermusSpDtu052(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophothermusSpDtu052 graph.
+    """Return new instance of the Syntrophothermus sp. DTU052 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophothermusSpDtu052(
 
     Returns
     -----------------------
-    Instace of SyntrophothermusSpDtu052 graph.
+    Instace of Syntrophothermus sp. DTU052 graph.
 
 	References
 	---------------------

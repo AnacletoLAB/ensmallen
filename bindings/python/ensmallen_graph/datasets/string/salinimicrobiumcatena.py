@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinimicrobiumCatena.
+This file offers the methods to automatically retrieve the graph Salinimicrobium catena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinimicrobiumCatena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinimicrobiumCatena graph.
+    """Return new instance of the Salinimicrobium catena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinimicrobiumCatena(
 
     Returns
     -----------------------
-    Instace of SalinimicrobiumCatena graph.
+    Instace of Salinimicrobium catena graph.
 
 	References
 	---------------------

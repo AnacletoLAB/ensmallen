@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedAcidilobusSpMg.
+This file offers the methods to automatically retrieve the graph uncultured Acidilobus sp. MG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedAcidilobusSpMg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedAcidilobusSpMg graph.
+    """Return new instance of the uncultured Acidilobus sp. MG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedAcidilobusSpMg(
 
     Returns
     -----------------------
-    Instace of UnculturedAcidilobusSpMg graph.
+    Instace of uncultured Acidilobus sp. MG graph.
 
 	References
 	---------------------

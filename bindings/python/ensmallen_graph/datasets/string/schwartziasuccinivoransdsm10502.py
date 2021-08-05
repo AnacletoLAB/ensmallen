@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchwartziaSuccinivoransDsm10502.
+This file offers the methods to automatically retrieve the graph Schwartzia succinivorans DSM 10502.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchwartziaSuccinivoransDsm10502(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchwartziaSuccinivoransDsm10502 graph.
+    """Return new instance of the Schwartzia succinivorans DSM 10502 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchwartziaSuccinivoransDsm10502(
 
     Returns
     -----------------------
-    Instace of SchwartziaSuccinivoransDsm10502 graph.
+    Instace of Schwartzia succinivorans DSM 10502 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterMelonis.
+This file offers the methods to automatically retrieve the graph Janibacter melonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterMelonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterMelonis graph.
+    """Return new instance of the Janibacter melonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanibacterMelonis(
 
     Returns
     -----------------------
-    Instace of JanibacterMelonis graph.
+    Instace of Janibacter melonis graph.
 
 	References
 	---------------------

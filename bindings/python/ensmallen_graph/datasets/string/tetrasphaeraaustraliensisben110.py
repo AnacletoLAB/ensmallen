@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrasphaeraAustraliensisBen110.
+This file offers the methods to automatically retrieve the graph Tetrasphaera australiensis Ben110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrasphaeraAustraliensisBen110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrasphaeraAustraliensisBen110 graph.
+    """Return new instance of the Tetrasphaera australiensis Ben110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrasphaeraAustraliensisBen110(
 
     Returns
     -----------------------
-    Instace of TetrasphaeraAustraliensisBen110 graph.
+    Instace of Tetrasphaera australiensis Ben110 graph.
 
 	References
 	---------------------

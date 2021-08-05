@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusSpIdo.
+This file offers the methods to automatically retrieve the graph Cupriavidus sp. IDO.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusSpIdo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusSpIdo graph.
+    """Return new instance of the Cupriavidus sp. IDO graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusSpIdo(
 
     Returns
     -----------------------
-    Instace of CupriavidusSpIdo graph.
+    Instace of Cupriavidus sp. IDO graph.
 
 	References
 	---------------------

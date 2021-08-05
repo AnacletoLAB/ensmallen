@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpH115.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. H115.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpH115(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpH115 graph.
+    """Return new instance of the Sphingopyxis sp. H115 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisSpH115(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpH115 graph.
+    Instace of Sphingopyxis sp. H115 graph.
 
 	References
 	---------------------

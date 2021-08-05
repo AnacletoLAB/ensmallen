@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraKmetyiSerovarMalaysiaStrBejoIso9.
+This file offers the methods to automatically retrieve the graph Leptospira kmetyi serovar Malaysia str. Bejo-Iso9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraKmetyiSerovarMalaysiaStrBejoIso9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraKmetyiSerovarMalaysiaStrBejoIso9 graph.
+    """Return new instance of the Leptospira kmetyi serovar Malaysia str. Bejo-Iso9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraKmetyiSerovarMalaysiaStrBejoIso9(
 
     Returns
     -----------------------
-    Instace of LeptospiraKmetyiSerovarMalaysiaStrBejoIso9 graph.
+    Instace of Leptospira kmetyi serovar Malaysia str. Bejo-Iso9 graph.
 
 	References
 	---------------------

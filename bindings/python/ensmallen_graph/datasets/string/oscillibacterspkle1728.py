@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSpKle1728.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. KLE1728.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterSpKle1728(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSpKle1728 graph.
+    """Return new instance of the Oscillibacter sp. KLE1728 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillibacterSpKle1728(
 
     Returns
     -----------------------
-    Instace of OscillibacterSpKle1728 graph.
+    Instace of Oscillibacter sp. KLE1728 graph.
 
 	References
 	---------------------

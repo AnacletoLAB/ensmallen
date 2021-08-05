@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusSpBis7.
+This file offers the methods to automatically retrieve the graph Cupriavidus sp. BIS7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusSpBis7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusSpBis7 graph.
+    """Return new instance of the Cupriavidus sp. BIS7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CupriavidusSpBis7(
 
     Returns
     -----------------------
-    Instace of CupriavidusSpBis7 graph.
+    Instace of Cupriavidus sp. BIS7 graph.
 
 	References
 	---------------------

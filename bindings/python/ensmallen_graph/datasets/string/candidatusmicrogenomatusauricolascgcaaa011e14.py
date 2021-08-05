@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMicrogenomatusAuricolaScgcAaa011E14.
+This file offers the methods to automatically retrieve the graph Candidatus Microgenomatus auricola SCGC AAA011-E14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMicrogenomatusAuricolaScgcAaa011E14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMicrogenomatusAuricolaScgcAaa011E14 graph.
+    """Return new instance of the Candidatus Microgenomatus auricola SCGC AAA011-E14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMicrogenomatusAuricolaScgcAaa011E14(
 
     Returns
     -----------------------
-    Instace of CandidatusMicrogenomatusAuricolaScgcAaa011E14 graph.
+    Instace of Candidatus Microgenomatus auricola SCGC AAA011-E14 graph.
 
 	References
 	---------------------

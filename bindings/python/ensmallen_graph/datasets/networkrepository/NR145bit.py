@@ -77,7 +77,7 @@ def NR145bit(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="145bit",
+        graph_name="NR145bit",
         dataset="networkrepository",
         version=version,
         directed=directed,

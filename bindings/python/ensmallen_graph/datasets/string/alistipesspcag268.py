@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSpCag268.
+This file offers the methods to automatically retrieve the graph Alistipes sp. CAG:268.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSpCag268(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSpCag268 graph.
+    """Return new instance of the Alistipes sp. CAG:268 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesSpCag268(
 
     Returns
     -----------------------
-    Instace of AlistipesSpCag268 graph.
+    Instace of Alistipes sp. CAG:268 graph.
 
 	References
 	---------------------

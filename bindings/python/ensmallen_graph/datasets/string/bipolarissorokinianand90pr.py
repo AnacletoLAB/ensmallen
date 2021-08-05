@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisSorokinianaNd90pr.
+This file offers the methods to automatically retrieve the graph Bipolaris sorokiniana ND90Pr.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisSorokinianaNd90pr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisSorokinianaNd90pr graph.
+    """Return new instance of the Bipolaris sorokiniana ND90Pr graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BipolarisSorokinianaNd90pr(
 
     Returns
     -----------------------
-    Instace of BipolarisSorokinianaNd90pr graph.
+    Instace of Bipolaris sorokiniana ND90Pr graph.
 
 	References
 	---------------------

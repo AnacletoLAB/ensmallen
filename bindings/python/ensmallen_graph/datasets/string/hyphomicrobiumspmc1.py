@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumSpMc1.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium sp. MC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumSpMc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumSpMc1 graph.
+    """Return new instance of the Hyphomicrobium sp. MC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomicrobiumSpMc1(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumSpMc1 graph.
+    Instace of Hyphomicrobium sp. MC1 graph.
 
 	References
 	---------------------

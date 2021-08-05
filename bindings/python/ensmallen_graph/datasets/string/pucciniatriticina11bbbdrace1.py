@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaTriticina11BbbdRace1.
+This file offers the methods to automatically retrieve the graph Puccinia triticina 1-1 BBBD Race 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaTriticina11BbbdRace1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaTriticina11BbbdRace1 graph.
+    """Return new instance of the Puccinia triticina 1-1 BBBD Race 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PucciniaTriticina11BbbdRace1(
 
     Returns
     -----------------------
-    Instace of PucciniaTriticina11BbbdRace1 graph.
+    Instace of Puccinia triticina 1-1 BBBD Race 1 graph.
 
 	References
 	---------------------

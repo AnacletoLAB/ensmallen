@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaWeihenstephanensis.
+This file offers the methods to automatically retrieve the graph Listeria weihenstephanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaWeihenstephanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaWeihenstephanensis graph.
+    """Return new instance of the Listeria weihenstephanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaWeihenstephanensis(
 
     Returns
     -----------------------
-    Instace of ListeriaWeihenstephanensis graph.
+    Instace of Listeria weihenstephanensis graph.
 
 	References
 	---------------------

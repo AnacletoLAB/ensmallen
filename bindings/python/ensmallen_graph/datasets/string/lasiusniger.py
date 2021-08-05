@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LasiusNiger.
+This file offers the methods to automatically retrieve the graph Lasius niger.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LasiusNiger(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LasiusNiger graph.
+    """Return new instance of the Lasius niger graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LasiusNiger(
 
     Returns
     -----------------------
-    Instace of LasiusNiger graph.
+    Instace of Lasius niger graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacterium9143bfaa.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium 9143BFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacterium9143bfaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacterium9143bfaa graph.
+    """Return new instance of the Lachnospiraceae bacterium 9143BFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacterium9143bfaa(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacterium9143bfaa graph.
+    Instace of Lachnospiraceae bacterium 9143BFAA graph.
 
 	References
 	---------------------

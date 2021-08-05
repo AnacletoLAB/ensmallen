@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriovoraxSpBsw11iv.
+This file offers the methods to automatically retrieve the graph Bacteriovorax sp. BSW11IV.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriovoraxSpBsw11iv(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriovoraxSpBsw11iv graph.
+    """Return new instance of the Bacteriovorax sp. BSW11IV graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteriovoraxSpBsw11iv(
 
     Returns
     -----------------------
-    Instace of BacteriovoraxSpBsw11iv graph.
+    Instace of Bacteriovorax sp. BSW11IV graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylariaFlabelliformis.
+This file offers the methods to automatically retrieve the graph Xylaria flabelliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylariaFlabelliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylariaFlabelliformis graph.
+    """Return new instance of the Xylaria flabelliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XylariaFlabelliformis(
 
     Returns
     -----------------------
-    Instace of XylariaFlabelliformis graph.
+    Instace of Xylaria flabelliformis graph.
 
 	References
 	---------------------

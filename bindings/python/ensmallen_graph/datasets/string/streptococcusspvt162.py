@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpVt162.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. VT 162.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpVt162(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpVt162 graph.
+    """Return new instance of the Streptococcus sp. VT 162 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpVt162(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpVt162 graph.
+    Instace of Streptococcus sp. VT 162 graph.
 
 	References
 	---------------------

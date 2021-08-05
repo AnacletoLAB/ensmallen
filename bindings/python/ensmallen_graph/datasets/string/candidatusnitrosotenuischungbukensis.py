@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosotenuisChungbukensis.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosotenuis chungbukensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosotenuisChungbukensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosotenuisChungbukensis graph.
+    """Return new instance of the Candidatus Nitrosotenuis chungbukensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosotenuisChungbukensis(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosotenuisChungbukensis graph.
+    Instace of Candidatus Nitrosotenuis chungbukensis graph.
 
 	References
 	---------------------

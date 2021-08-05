@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NevskiaSoli.
+This file offers the methods to automatically retrieve the graph Nevskia soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NevskiaSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NevskiaSoli graph.
+    """Return new instance of the Nevskia soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NevskiaSoli(
 
     Returns
     -----------------------
-    Instace of NevskiaSoli graph.
+    Instace of Nevskia soli graph.
 
 	References
 	---------------------

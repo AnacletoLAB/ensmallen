@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionisporaSp2237.
+This file offers the methods to automatically retrieve the graph Propionispora sp. 2/2-37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionisporaSp2237(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionisporaSp2237 graph.
+    """Return new instance of the Propionispora sp. 2/2-37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionisporaSp2237(
 
     Returns
     -----------------------
-    Instace of PropionisporaSp2237 graph.
+    Instace of Propionispora sp. 2/2-37 graph.
 
 	References
 	---------------------

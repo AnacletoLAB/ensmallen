@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumSpMar2009124.
+This file offers the methods to automatically retrieve the graph Tenacibaculum sp. MAR_2009_124.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumSpMar2009124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumSpMar2009124 graph.
+    """Return new instance of the Tenacibaculum sp. MAR_2009_124 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumSpMar2009124(
 
     Returns
     -----------------------
-    Instace of TenacibaculumSpMar2009124 graph.
+    Instace of Tenacibaculum sp. MAR_2009_124 graph.
 
 	References
 	---------------------

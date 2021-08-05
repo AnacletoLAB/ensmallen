@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOrisPb013t23.
+This file offers the methods to automatically retrieve the graph Lactobacillus oris PB013T23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusOrisPb013t23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOrisPb013t23 graph.
+    """Return new instance of the Lactobacillus oris PB013T23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusOrisPb013t23(
 
     Returns
     -----------------------
-    Instace of LactobacillusOrisPb013t23 graph.
+    Instace of Lactobacillus oris PB013T23 graph.
 
 	References
 	---------------------

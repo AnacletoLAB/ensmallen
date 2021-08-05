@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiumSpBvorr106.
+This file offers the methods to automatically retrieve the graph Verrucomicrobium sp. BvORR106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiumSpBvorr106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiumSpBvorr106 graph.
+    """Return new instance of the Verrucomicrobium sp. BvORR106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerrucomicrobiumSpBvorr106(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiumSpBvorr106 graph.
+    Instace of Verrucomicrobium sp. BvORR106 graph.
 
 	References
 	---------------------

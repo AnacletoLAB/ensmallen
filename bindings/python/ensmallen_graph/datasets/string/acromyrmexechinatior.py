@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcromyrmexEchinatior.
+This file offers the methods to automatically retrieve the graph Acromyrmex echinatior.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcromyrmexEchinatior(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcromyrmexEchinatior graph.
+    """Return new instance of the Acromyrmex echinatior graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcromyrmexEchinatior(
 
     Returns
     -----------------------
-    Instace of AcromyrmexEchinatior graph.
+    Instace of Acromyrmex echinatior graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArabidopsisThaliana.
+This file offers the methods to automatically retrieve the graph Arabidopsis thaliana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArabidopsisThaliana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArabidopsisThaliana graph.
+    """Return new instance of the Arabidopsis thaliana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArabidopsisThaliana(
 
     Returns
     -----------------------
-    Instace of ArabidopsisThaliana graph.
+    Instace of Arabidopsis thaliana graph.
 
 	References
 	---------------------

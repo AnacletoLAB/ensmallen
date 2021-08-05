@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasSpBiir7.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas sp. BIIR7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasSpBiir7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasSpBiir7 graph.
+    """Return new instance of the Stenotrophomonas sp. BIIR7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasSpBiir7(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasSpBiir7 graph.
+    Instace of Stenotrophomonas sp. BIIR7 graph.
 
 	References
 	---------------------

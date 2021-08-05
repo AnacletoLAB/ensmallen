@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAltiarchaealesArchaeonImc4.
+This file offers the methods to automatically retrieve the graph Candidatus Altiarchaeales archaeon IMC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAltiarchaealesArchaeonImc4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAltiarchaealesArchaeonImc4 graph.
+    """Return new instance of the Candidatus Altiarchaeales archaeon IMC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAltiarchaealesArchaeonImc4(
 
     Returns
     -----------------------
-    Instace of CandidatusAltiarchaealesArchaeonImc4 graph.
+    Instace of Candidatus Altiarchaeales archaeon IMC4 graph.
 
 	References
 	---------------------

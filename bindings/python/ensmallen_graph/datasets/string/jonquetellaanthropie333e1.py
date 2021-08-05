@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JonquetellaAnthropiE333e1.
+This file offers the methods to automatically retrieve the graph Jonquetella anthropi E333E1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JonquetellaAnthropiE333e1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JonquetellaAnthropiE333e1 graph.
+    """Return new instance of the Jonquetella anthropi E333E1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JonquetellaAnthropiE333e1(
 
     Returns
     -----------------------
-    Instace of JonquetellaAnthropiE333e1 graph.
+    Instace of Jonquetella anthropi E333E1 graph.
 
 	References
 	---------------------

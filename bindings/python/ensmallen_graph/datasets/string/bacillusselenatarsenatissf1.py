@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSelenatarsenatisSf1.
+This file offers the methods to automatically retrieve the graph Bacillus selenatarsenatis SF-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSelenatarsenatisSf1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSelenatarsenatisSf1 graph.
+    """Return new instance of the Bacillus selenatarsenatis SF-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSelenatarsenatisSf1(
 
     Returns
     -----------------------
-    Instace of BacillusSelenatarsenatisSf1 graph.
+    Instace of Bacillus selenatarsenatis SF-1 graph.
 
 	References
 	---------------------

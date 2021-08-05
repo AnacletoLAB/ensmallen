@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomonasKoyamae.
+This file offers the methods to automatically retrieve the graph Methylomonas koyamae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomonasKoyamae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomonasKoyamae graph.
+    """Return new instance of the Methylomonas koyamae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomonasKoyamae(
 
     Returns
     -----------------------
-    Instace of MethylomonasKoyamae graph.
+    Instace of Methylomonas koyamae graph.
 
 	References
 	---------------------

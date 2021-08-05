@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimiaMarina.
+This file offers the methods to automatically retrieve the graph Shimia marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimiaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimiaMarina graph.
+    """Return new instance of the Shimia marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShimiaMarina(
 
     Returns
     -----------------------
-    Instace of ShimiaMarina graph.
+    Instace of Shimia marina graph.
 
 	References
 	---------------------

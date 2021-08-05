@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomonasArsenitoxydans.
+This file offers the methods to automatically retrieve the graph Thiomonas arsenitoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomonasArsenitoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomonasArsenitoxydans graph.
+    """Return new instance of the Thiomonas arsenitoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomonasArsenitoxydans(
 
     Returns
     -----------------------
-    Instace of ThiomonasArsenitoxydans graph.
+    Instace of Thiomonas arsenitoxydans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaimiriBoliviensis.
+This file offers the methods to automatically retrieve the graph Saimiri boliviensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaimiriBoliviensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaimiriBoliviensis graph.
+    """Return new instance of the Saimiri boliviensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaimiriBoliviensis(
 
     Returns
     -----------------------
-    Instace of SaimiriBoliviensis graph.
+    Instace of Saimiri boliviensis graph.
 
 	References
 	---------------------

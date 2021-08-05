@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BelnapiaMoabensis.
+This file offers the methods to automatically retrieve the graph Belnapia moabensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BelnapiaMoabensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BelnapiaMoabensis graph.
+    """Return new instance of the Belnapia moabensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BelnapiaMoabensis(
 
     Returns
     -----------------------
-    Instace of BelnapiaMoabensis graph.
+    Instace of Belnapia moabensis graph.
 
 	References
 	---------------------

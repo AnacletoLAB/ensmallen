@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteiniphilumSaccharofermentans.
+This file offers the methods to automatically retrieve the graph Proteiniphilum saccharofermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteiniphilumSaccharofermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteiniphilumSaccharofermentans graph.
+    """Return new instance of the Proteiniphilum saccharofermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteiniphilumSaccharofermentans(
 
     Returns
     -----------------------
-    Instace of ProteiniphilumSaccharofermentans graph.
+    Instace of Proteiniphilum saccharofermentans graph.
 
 	References
 	---------------------

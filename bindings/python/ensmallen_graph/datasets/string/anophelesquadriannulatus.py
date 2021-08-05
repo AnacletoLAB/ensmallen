@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesQuadriannulatus.
+This file offers the methods to automatically retrieve the graph Anopheles quadriannulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesQuadriannulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesQuadriannulatus graph.
+    """Return new instance of the Anopheles quadriannulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesQuadriannulatus(
 
     Returns
     -----------------------
-    Instace of AnophelesQuadriannulatus graph.
+    Instace of Anopheles quadriannulatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusGordonii.
+This file offers the methods to automatically retrieve the graph Streptococcus gordonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusGordonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusGordonii graph.
+    """Return new instance of the Streptococcus gordonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusGordonii(
 
     Returns
     -----------------------
-    Instace of StreptococcusGordonii graph.
+    Instace of Streptococcus gordonii graph.
 
 	References
 	---------------------

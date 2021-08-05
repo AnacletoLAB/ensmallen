@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KwoniellaHeveanensisBcc8398.
+This file offers the methods to automatically retrieve the graph Kwoniella heveanensis BCC8398.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KwoniellaHeveanensisBcc8398(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KwoniellaHeveanensisBcc8398 graph.
+    """Return new instance of the Kwoniella heveanensis BCC8398 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KwoniellaHeveanensisBcc8398(
 
     Returns
     -----------------------
-    Instace of KwoniellaHeveanensisBcc8398 graph.
+    Instace of Kwoniella heveanensis BCC8398 graph.
 
 	References
 	---------------------

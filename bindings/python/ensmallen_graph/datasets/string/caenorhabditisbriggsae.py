@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisBriggsae.
+This file offers the methods to automatically retrieve the graph Caenorhabditis briggsae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisBriggsae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisBriggsae graph.
+    """Return new instance of the Caenorhabditis briggsae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaenorhabditisBriggsae(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisBriggsae graph.
+    Instace of Caenorhabditis briggsae graph.
 
 	References
 	---------------------

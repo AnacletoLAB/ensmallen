@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfatatorAtlanticus.
+This file offers the methods to automatically retrieve the graph Thermodesulfatator atlanticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfatatorAtlanticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfatatorAtlanticus graph.
+    """Return new instance of the Thermodesulfatator atlanticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermodesulfatatorAtlanticus(
 
     Returns
     -----------------------
-    Instace of ThermodesulfatatorAtlanticus graph.
+    Instace of Thermodesulfatator atlanticus graph.
 
 	References
 	---------------------

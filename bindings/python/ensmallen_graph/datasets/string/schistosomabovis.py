@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaBovis.
+This file offers the methods to automatically retrieve the graph Schistosoma bovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaBovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaBovis graph.
+    """Return new instance of the Schistosoma bovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaBovis(
 
     Returns
     -----------------------
-    Instace of SchistosomaBovis graph.
+    Instace of Schistosoma bovis graph.
 
 	References
 	---------------------

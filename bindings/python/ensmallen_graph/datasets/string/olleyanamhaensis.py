@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlleyaNamhaensis.
+This file offers the methods to automatically retrieve the graph Olleya namhaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlleyaNamhaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlleyaNamhaensis graph.
+    """Return new instance of the Olleya namhaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlleyaNamhaensis(
 
     Returns
     -----------------------
-    Instace of OlleyaNamhaensis graph.
+    Instace of Olleya namhaensis graph.
 
 	References
 	---------------------

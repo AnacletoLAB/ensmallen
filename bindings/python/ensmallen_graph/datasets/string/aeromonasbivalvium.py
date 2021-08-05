@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasBivalvium.
+This file offers the methods to automatically retrieve the graph Aeromonas bivalvium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasBivalvium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasBivalvium graph.
+    """Return new instance of the Aeromonas bivalvium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasBivalvium(
 
     Returns
     -----------------------
-    Instace of AeromonasBivalvium graph.
+    Instace of Aeromonas bivalvium graph.
 
 	References
 	---------------------

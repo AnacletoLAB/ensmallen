@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbVirginia63.
+This file offers the methods to automatically retrieve the graph socfb-Virginia63.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbVirginia63(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbVirginia63 graph.
+    """Return new instance of the socfb-Virginia63 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbVirginia63(
 
     Returns
     -----------------------
-    Instace of SocfbVirginia63 graph.
+    Instace of socfb-Virginia63 graph.
 
 	References
 	---------------------

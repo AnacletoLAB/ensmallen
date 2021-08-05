@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSp117.
+This file offers the methods to automatically retrieve the graph Bosea sp. 117.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSp117(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSp117 graph.
+    """Return new instance of the Bosea sp. 117 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BoseaSp117(
 
     Returns
     -----------------------
-    Instace of BoseaSp117 graph.
+    Instace of Bosea sp. 117 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrchesellaCincta.
+This file offers the methods to automatically retrieve the graph Orchesella cincta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrchesellaCincta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrchesellaCincta graph.
+    """Return new instance of the Orchesella cincta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrchesellaCincta(
 
     Returns
     -----------------------
-    Instace of OrchesellaCincta graph.
+    Instace of Orchesella cincta graph.
 
 	References
 	---------------------

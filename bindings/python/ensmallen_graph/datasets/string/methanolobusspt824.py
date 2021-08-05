@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolobusSpT824.
+This file offers the methods to automatically retrieve the graph Methanolobus sp. T82-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolobusSpT824(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolobusSpT824 graph.
+    """Return new instance of the Methanolobus sp. T82-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanolobusSpT824(
 
     Returns
     -----------------------
-    Instace of MethanolobusSpT824 graph.
+    Instace of Methanolobus sp. T82-4 graph.
 
 	References
 	---------------------

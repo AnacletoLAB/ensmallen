@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgarivoransAlbusMkt106.
+This file offers the methods to automatically retrieve the graph Agarivorans albus MKT 106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgarivoransAlbusMkt106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgarivoransAlbusMkt106 graph.
+    """Return new instance of the Agarivorans albus MKT 106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgarivoransAlbusMkt106(
 
     Returns
     -----------------------
-    Instace of AgarivoransAlbusMkt106 graph.
+    Instace of Agarivorans albus MKT 106 graph.
 
 	References
 	---------------------

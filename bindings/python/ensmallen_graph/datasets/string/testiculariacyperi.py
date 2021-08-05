@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TesticulariaCyperi.
+This file offers the methods to automatically retrieve the graph Testicularia cyperi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TesticulariaCyperi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TesticulariaCyperi graph.
+    """Return new instance of the Testicularia cyperi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TesticulariaCyperi(
 
     Returns
     -----------------------
-    Instace of TesticulariaCyperi graph.
+    Instace of Testicularia cyperi graph.
 
 	References
 	---------------------

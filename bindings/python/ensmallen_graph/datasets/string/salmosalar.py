@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmoSalar.
+This file offers the methods to automatically retrieve the graph Salmo salar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmoSalar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmoSalar graph.
+    """Return new instance of the Salmo salar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmoSalar(
 
     Returns
     -----------------------
-    Instace of SalmoSalar graph.
+    Instace of Salmo salar graph.
 
 	References
 	---------------------

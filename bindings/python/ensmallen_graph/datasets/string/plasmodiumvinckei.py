@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumVinckei.
+This file offers the methods to automatically retrieve the graph Plasmodium vinckei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumVinckei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumVinckei graph.
+    """Return new instance of the Plasmodium vinckei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumVinckei(
 
     Returns
     -----------------------
-    Instace of PlasmodiumVinckei graph.
+    Instace of Plasmodium vinckei graph.
 
 	References
 	---------------------

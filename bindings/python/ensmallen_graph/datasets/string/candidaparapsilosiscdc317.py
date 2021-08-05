@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaParapsilosisCdc317.
+This file offers the methods to automatically retrieve the graph Candida parapsilosis CDC317.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaParapsilosisCdc317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaParapsilosisCdc317 graph.
+    """Return new instance of the Candida parapsilosis CDC317 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaParapsilosisCdc317(
 
     Returns
     -----------------------
-    Instace of CandidaParapsilosisCdc317 graph.
+    Instace of Candida parapsilosis CDC317 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpRoot485.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. Root485.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpRoot485(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpRoot485 graph.
+    """Return new instance of the Cellulomonas sp. Root485 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasSpRoot485(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpRoot485 graph.
+    Instace of Cellulomonas sp. Root485 graph.
 
 	References
 	---------------------

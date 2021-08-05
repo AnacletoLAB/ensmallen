@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacteriumSpDl1.
+This file offers the methods to automatically retrieve the graph Halobacterium sp. DL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacteriumSpDl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacteriumSpDl1 graph.
+    """Return new instance of the Halobacterium sp. DL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobacteriumSpDl1(
 
     Returns
     -----------------------
-    Instace of HalobacteriumSpDl1 graph.
+    Instace of Halobacterium sp. DL1 graph.
 
 	References
 	---------------------

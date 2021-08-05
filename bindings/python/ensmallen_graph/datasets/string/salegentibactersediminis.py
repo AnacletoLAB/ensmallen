@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterSediminis.
+This file offers the methods to automatically retrieve the graph Salegentibacter sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterSediminis graph.
+    """Return new instance of the Salegentibacter sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterSediminis(
 
     Returns
     -----------------------
-    Instace of SalegentibacterSediminis graph.
+    Instace of Salegentibacter sediminis graph.
 
 	References
 	---------------------

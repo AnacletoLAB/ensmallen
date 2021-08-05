@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusAmylophilusDsm20533Jcm1125.
+This file offers the methods to automatically retrieve the graph Lactobacillus amylophilus DSM 20533 JCM 1125.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusAmylophilusDsm20533Jcm1125(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusAmylophilusDsm20533Jcm1125 graph.
+    """Return new instance of the Lactobacillus amylophilus DSM 20533 JCM 1125 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusAmylophilusDsm20533Jcm1125(
 
     Returns
     -----------------------
-    Instace of LactobacillusAmylophilusDsm20533Jcm1125 graph.
+    Instace of Lactobacillus amylophilus DSM 20533 JCM 1125 graph.
 
 	References
 	---------------------

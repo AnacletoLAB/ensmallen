@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopococcusTabaci.
+This file offers the methods to automatically retrieve the graph Atopococcus tabaci.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopococcusTabaci(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopococcusTabaci graph.
+    """Return new instance of the Atopococcus tabaci graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AtopococcusTabaci(
 
     Returns
     -----------------------
-    Instace of AtopococcusTabaci graph.
+    Instace of Atopococcus tabaci graph.
 
 	References
 	---------------------

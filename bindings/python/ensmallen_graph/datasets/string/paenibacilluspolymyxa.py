@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusPolymyxa.
+This file offers the methods to automatically retrieve the graph Paenibacillus polymyxa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusPolymyxa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusPolymyxa graph.
+    """Return new instance of the Paenibacillus polymyxa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusPolymyxa(
 
     Returns
     -----------------------
-    Instace of PaenibacillusPolymyxa graph.
+    Instace of Paenibacillus polymyxa graph.
 
 	References
 	---------------------

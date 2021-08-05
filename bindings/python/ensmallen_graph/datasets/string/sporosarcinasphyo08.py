@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaSpHyo08.
+This file offers the methods to automatically retrieve the graph Sporosarcina sp. HYO08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaSpHyo08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaSpHyo08 graph.
+    """Return new instance of the Sporosarcina sp. HYO08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaSpHyo08(
 
     Returns
     -----------------------
-    Instace of SporosarcinaSpHyo08 graph.
+    Instace of Sporosarcina sp. HYO08 graph.
 
 	References
 	---------------------

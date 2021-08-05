@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumSpSponge.
+This file offers the methods to automatically retrieve the graph Brachybacterium sp. sponge.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumSpSponge(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumSpSponge graph.
+    """Return new instance of the Brachybacterium sp. sponge graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachybacteriumSpSponge(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumSpSponge graph.
+    Instace of Brachybacterium sp. sponge graph.
 
 	References
 	---------------------

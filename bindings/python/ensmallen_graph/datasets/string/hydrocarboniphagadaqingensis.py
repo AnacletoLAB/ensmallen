@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrocarboniphagaDaqingensis.
+This file offers the methods to automatically retrieve the graph Hydrocarboniphaga daqingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrocarboniphagaDaqingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrocarboniphagaDaqingensis graph.
+    """Return new instance of the Hydrocarboniphaga daqingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrocarboniphagaDaqingensis(
 
     Returns
     -----------------------
-    Instace of HydrocarboniphagaDaqingensis graph.
+    Instace of Hydrocarboniphaga daqingensis graph.
 
 	References
 	---------------------

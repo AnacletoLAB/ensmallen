@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpWg21.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. WG21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpWg21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpWg21 graph.
+    """Return new instance of the Flavobacterium sp. WG21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSpWg21(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpWg21 graph.
+    Instace of Flavobacterium sp. WG21 graph.
 
 	References
 	---------------------

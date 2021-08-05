@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FurculomycesBoomerangus.
+This file offers the methods to automatically retrieve the graph Furculomyces boomerangus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FurculomycesBoomerangus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FurculomycesBoomerangus graph.
+    """Return new instance of the Furculomyces boomerangus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FurculomycesBoomerangus(
 
     Returns
     -----------------------
-    Instace of FurculomycesBoomerangus graph.
+    Instace of Furculomyces boomerangus graph.
 
 	References
 	---------------------

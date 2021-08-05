@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumNeoaurum.
+This file offers the methods to automatically retrieve the graph Mycobacterium neoaurum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumNeoaurum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumNeoaurum graph.
+    """Return new instance of the Mycobacterium neoaurum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumNeoaurum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumNeoaurum graph.
+    Instace of Mycobacterium neoaurum graph.
 
 	References
 	---------------------

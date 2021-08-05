@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumRubi.
+This file offers the methods to automatically retrieve the graph Agrobacterium rubi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumRubi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumRubi graph.
+    """Return new instance of the Agrobacterium rubi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumRubi(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumRubi graph.
+    Instace of Agrobacterium rubi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasEncheleia.
+This file offers the methods to automatically retrieve the graph Aeromonas encheleia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasEncheleia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasEncheleia graph.
+    """Return new instance of the Aeromonas encheleia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasEncheleia(
 
     Returns
     -----------------------
-    Instace of AeromonasEncheleia graph.
+    Instace of Aeromonas encheleia graph.
 
 	References
 	---------------------

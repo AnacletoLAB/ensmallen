@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSilageiJcm19001.
+This file offers the methods to automatically retrieve the graph Lactobacillus silagei JCM 19001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSilageiJcm19001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSilageiJcm19001 graph.
+    """Return new instance of the Lactobacillus silagei JCM 19001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSilageiJcm19001(
 
     Returns
     -----------------------
-    Instace of LactobacillusSilageiJcm19001 graph.
+    Instace of Lactobacillus silagei JCM 19001 graph.
 
 	References
 	---------------------

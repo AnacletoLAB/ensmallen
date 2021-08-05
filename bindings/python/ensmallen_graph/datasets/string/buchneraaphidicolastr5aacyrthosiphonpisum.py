@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaStr5aAcyrthosiphonPisum.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola str. 5A (Acyrthosiphon pisum).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaStr5aAcyrthosiphonPisum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaStr5aAcyrthosiphonPisum graph.
+    """Return new instance of the Buchnera aphidicola str. 5A (Acyrthosiphon pisum) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BuchneraAphidicolaStr5aAcyrthosiphonPisum(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaStr5aAcyrthosiphonPisum graph.
+    Instace of Buchnera aphidicola str. 5A (Acyrthosiphon pisum) graph.
 
 	References
 	---------------------

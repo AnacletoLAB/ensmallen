@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurvibacterSpPaeUm.
+This file offers the methods to automatically retrieve the graph Curvibacter sp. PAE-UM.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurvibacterSpPaeUm(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurvibacterSpPaeUm graph.
+    """Return new instance of the Curvibacter sp. PAE-UM graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurvibacterSpPaeUm(
 
     Returns
     -----------------------
-    Instace of CurvibacterSpPaeUm graph.
+    Instace of Curvibacter sp. PAE-UM graph.
 
 	References
 	---------------------

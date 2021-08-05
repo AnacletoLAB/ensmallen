@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OnionYellows.
+This file offers the methods to automatically retrieve the graph Onion yellows.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OnionYellows(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OnionYellows graph.
+    """Return new instance of the Onion yellows graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OnionYellows(
 
     Returns
     -----------------------
-    Instace of OnionYellows graph.
+    Instace of Onion yellows graph.
 
 	References
 	---------------------

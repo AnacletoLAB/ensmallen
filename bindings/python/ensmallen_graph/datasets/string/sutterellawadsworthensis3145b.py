@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaWadsworthensis3145b.
+This file offers the methods to automatically retrieve the graph Sutterella wadsworthensis 3145B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SutterellaWadsworthensis3145b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaWadsworthensis3145b graph.
+    """Return new instance of the Sutterella wadsworthensis 3145B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SutterellaWadsworthensis3145b(
 
     Returns
     -----------------------
-    Instace of SutterellaWadsworthensis3145b graph.
+    Instace of Sutterella wadsworthensis 3145B graph.
 
 	References
 	---------------------

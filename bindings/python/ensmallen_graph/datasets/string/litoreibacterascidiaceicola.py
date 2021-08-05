@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LitoreibacterAscidiaceicola.
+This file offers the methods to automatically retrieve the graph Litoreibacter ascidiaceicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LitoreibacterAscidiaceicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LitoreibacterAscidiaceicola graph.
+    """Return new instance of the Litoreibacter ascidiaceicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LitoreibacterAscidiaceicola(
 
     Returns
     -----------------------
-    Instace of LitoreibacterAscidiaceicola graph.
+    Instace of Litoreibacter ascidiaceicola graph.
 
 	References
 	---------------------

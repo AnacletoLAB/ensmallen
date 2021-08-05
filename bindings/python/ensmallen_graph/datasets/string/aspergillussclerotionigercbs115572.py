@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSclerotionigerCbs115572.
+This file offers the methods to automatically retrieve the graph Aspergillus sclerotioniger CBS 115572.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSclerotionigerCbs115572(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSclerotionigerCbs115572 graph.
+    """Return new instance of the Aspergillus sclerotioniger CBS 115572 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSclerotionigerCbs115572(
 
     Returns
     -----------------------
-    Instace of AspergillusSclerotionigerCbs115572 graph.
+    Instace of Aspergillus sclerotioniger CBS 115572 graph.
 
 	References
 	---------------------

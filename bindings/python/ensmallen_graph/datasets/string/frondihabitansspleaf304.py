@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrondihabitansSpLeaf304.
+This file offers the methods to automatically retrieve the graph Frondihabitans sp. Leaf304.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrondihabitansSpLeaf304(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrondihabitansSpLeaf304 graph.
+    """Return new instance of the Frondihabitans sp. Leaf304 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrondihabitansSpLeaf304(
 
     Returns
     -----------------------
-    Instace of FrondihabitansSpLeaf304 graph.
+    Instace of Frondihabitans sp. Leaf304 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraSpOlb3.
+This file offers the methods to automatically retrieve the graph Nitrospira sp. OLB3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraSpOlb3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraSpOlb3 graph.
+    """Return new instance of the Nitrospira sp. OLB3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraSpOlb3(
 
     Returns
     -----------------------
-    Instace of NitrospiraSpOlb3 graph.
+    Instace of Nitrospira sp. OLB3 graph.
 
 	References
 	---------------------

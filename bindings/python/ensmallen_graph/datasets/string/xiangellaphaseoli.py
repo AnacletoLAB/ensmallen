@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XiangellaPhaseoli.
+This file offers the methods to automatically retrieve the graph Xiangella phaseoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XiangellaPhaseoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XiangellaPhaseoli graph.
+    """Return new instance of the Xiangella phaseoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XiangellaPhaseoli(
 
     Returns
     -----------------------
-    Instace of XiangellaPhaseoli graph.
+    Instace of Xiangella phaseoli graph.
 
 	References
 	---------------------

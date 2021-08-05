@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronorubrumTexcoconense.
+This file offers the methods to automatically retrieve the graph Natronorubrum texcoconense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronorubrumTexcoconense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronorubrumTexcoconense graph.
+    """Return new instance of the Natronorubrum texcoconense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronorubrumTexcoconense(
 
     Returns
     -----------------------
-    Instace of NatronorubrumTexcoconense graph.
+    Instace of Natronorubrum texcoconense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaMiyunensisNbrc108239.
+This file offers the methods to automatically retrieve the graph Nocardia miyunensis NBRC 108239.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaMiyunensisNbrc108239(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaMiyunensisNbrc108239 graph.
+    """Return new instance of the Nocardia miyunensis NBRC 108239 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaMiyunensisNbrc108239(
 
     Returns
     -----------------------
-    Instace of NocardiaMiyunensisNbrc108239 graph.
+    Instace of Nocardia miyunensis NBRC 108239 graph.
 
 	References
 	---------------------

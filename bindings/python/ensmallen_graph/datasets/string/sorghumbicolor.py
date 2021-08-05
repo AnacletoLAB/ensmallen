@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SorghumBicolor.
+This file offers the methods to automatically retrieve the graph Sorghum bicolor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SorghumBicolor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SorghumBicolor graph.
+    """Return new instance of the Sorghum bicolor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SorghumBicolor(
 
     Returns
     -----------------------
-    Instace of SorghumBicolor graph.
+    Instace of Sorghum bicolor graph.
 
 	References
 	---------------------

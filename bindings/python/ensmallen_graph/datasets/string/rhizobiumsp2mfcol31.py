@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSp2mfcol31.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. 2MFCol31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSp2mfcol31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSp2mfcol31 graph.
+    """Return new instance of the Rhizobium sp. 2MFCol31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSp2mfcol31(
 
     Returns
     -----------------------
-    Instace of RhizobiumSp2mfcol31 graph.
+    Instace of Rhizobium sp. 2MFCol31 graph.
 
 	References
 	---------------------

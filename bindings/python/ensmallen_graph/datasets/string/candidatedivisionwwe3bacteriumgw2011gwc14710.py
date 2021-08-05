@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWwe3BacteriumGw2011Gwc14710.
+This file offers the methods to automatically retrieve the graph candidate division WWE3 bacterium GW2011_GWC1_47_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWwe3BacteriumGw2011Gwc14710(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWwe3BacteriumGw2011Gwc14710 graph.
+    """Return new instance of the candidate division WWE3 bacterium GW2011_GWC1_47_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWwe3BacteriumGw2011Gwc14710(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWwe3BacteriumGw2011Gwc14710 graph.
+    Instace of candidate division WWE3 bacterium GW2011_GWC1_47_10 graph.
 
 	References
 	---------------------

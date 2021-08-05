@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalophilicArchaeonJ07hx64.
+This file offers the methods to automatically retrieve the graph halophilic archaeon J07HX64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalophilicArchaeonJ07hx64(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalophilicArchaeonJ07hx64 graph.
+    """Return new instance of the halophilic archaeon J07HX64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalophilicArchaeonJ07hx64(
 
     Returns
     -----------------------
-    Instace of HalophilicArchaeonJ07hx64 graph.
+    Instace of halophilic archaeon J07HX64 graph.
 
 	References
 	---------------------

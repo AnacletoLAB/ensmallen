@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EikenellaSpHmsc073a11.
+This file offers the methods to automatically retrieve the graph Eikenella sp. HMSC073A11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EikenellaSpHmsc073a11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EikenellaSpHmsc073a11 graph.
+    """Return new instance of the Eikenella sp. HMSC073A11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EikenellaSpHmsc073a11(
 
     Returns
     -----------------------
-    Instace of EikenellaSpHmsc073a11 graph.
+    Instace of Eikenella sp. HMSC073A11 graph.
 
 	References
 	---------------------

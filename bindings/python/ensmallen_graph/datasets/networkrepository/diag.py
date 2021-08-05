@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Diag.
+This file offers the methods to automatically retrieve the graph diag.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Diag(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Diag graph.
+    """Return new instance of the diag graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Diag(
 
     Returns
     -----------------------
-    Instace of Diag graph.
+    Instace of diag graph.
 
 	References
 	---------------------

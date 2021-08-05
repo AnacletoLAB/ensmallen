@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumHaemophilumDsm44634.
+This file offers the methods to automatically retrieve the graph Mycobacterium haemophilum DSM 44634.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumHaemophilumDsm44634(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumHaemophilumDsm44634 graph.
+    """Return new instance of the Mycobacterium haemophilum DSM 44634 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumHaemophilumDsm44634(
 
     Returns
     -----------------------
-    Instace of MycobacteriumHaemophilumDsm44634 graph.
+    Instace of Mycobacterium haemophilum DSM 44634 graph.
 
 	References
 	---------------------

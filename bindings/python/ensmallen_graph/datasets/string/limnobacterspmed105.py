@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnobacterSpMed105.
+This file offers the methods to automatically retrieve the graph Limnobacter sp. MED105.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnobacterSpMed105(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnobacterSpMed105 graph.
+    """Return new instance of the Limnobacter sp. MED105 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnobacterSpMed105(
 
     Returns
     -----------------------
-    Instace of LimnobacterSpMed105 graph.
+    Instace of Limnobacter sp. MED105 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusArsenophonusLipoptenae.
+This file offers the methods to automatically retrieve the graph Candidatus Arsenophonus lipoptenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusArsenophonusLipoptenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusArsenophonusLipoptenae graph.
+    """Return new instance of the Candidatus Arsenophonus lipoptenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusArsenophonusLipoptenae(
 
     Returns
     -----------------------
-    Instace of CandidatusArsenophonusLipoptenae graph.
+    Instace of Candidatus Arsenophonus lipoptenae graph.
 
 	References
 	---------------------

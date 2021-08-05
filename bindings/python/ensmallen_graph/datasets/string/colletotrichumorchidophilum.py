@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumOrchidophilum.
+This file offers the methods to automatically retrieve the graph Colletotrichum orchidophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumOrchidophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumOrchidophilum graph.
+    """Return new instance of the Colletotrichum orchidophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumOrchidophilum(
 
     Returns
     -----------------------
-    Instace of ColletotrichumOrchidophilum graph.
+    Instace of Colletotrichum orchidophilum graph.
 
 	References
 	---------------------

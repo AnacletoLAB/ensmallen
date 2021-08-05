@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NautiliaProfundicola.
+This file offers the methods to automatically retrieve the graph Nautilia profundicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NautiliaProfundicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NautiliaProfundicola graph.
+    """Return new instance of the Nautilia profundicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NautiliaProfundicola(
 
     Returns
     -----------------------
-    Instace of NautiliaProfundicola graph.
+    Instace of Nautilia profundicola graph.
 
 	References
 	---------------------

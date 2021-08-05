@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusStaskawiczbacteriaBacteriumRifcsplowo201Full4317b.
+This file offers the methods to automatically retrieve the graph Candidatus Staskawiczbacteria bacterium RIFCSPLOWO2_01_FULL_43_17b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusStaskawiczbacteriaBacteriumRifcsplowo201Full4317b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusStaskawiczbacteriaBacteriumRifcsplowo201Full4317b graph.
+    """Return new instance of the Candidatus Staskawiczbacteria bacterium RIFCSPLOWO2_01_FULL_43_17b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusStaskawiczbacteriaBacteriumRifcsplowo201Full4317b(
 
     Returns
     -----------------------
-    Instace of CandidatusStaskawiczbacteriaBacteriumRifcsplowo201Full4317b graph.
+    Instace of Candidatus Staskawiczbacteria bacterium RIFCSPLOWO2_01_FULL_43_17b graph.
 
 	References
 	---------------------

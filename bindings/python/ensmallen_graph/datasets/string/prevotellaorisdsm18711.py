@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOrisDsm18711.
+This file offers the methods to automatically retrieve the graph Prevotella oris DSM18711.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOrisDsm18711(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOrisDsm18711 graph.
+    """Return new instance of the Prevotella oris DSM18711 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaOrisDsm18711(
 
     Returns
     -----------------------
-    Instace of PrevotellaOrisDsm18711 graph.
+    Instace of Prevotella oris DSM18711 graph.
 
 	References
 	---------------------

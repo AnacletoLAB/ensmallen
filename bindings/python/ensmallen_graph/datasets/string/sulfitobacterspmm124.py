@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpMm124.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. MM124.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSpMm124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpMm124 graph.
+    """Return new instance of the Sulfitobacter sp. MM124 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterSpMm124(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpMm124 graph.
+    Instace of Sulfitobacter sp. MM124 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumTumefaciensCherry.
+This file offers the methods to automatically retrieve the graph Agrobacterium tumefaciens Cherry.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumTumefaciensCherry(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumTumefaciensCherry graph.
+    """Return new instance of the Agrobacterium tumefaciens Cherry graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumTumefaciensCherry(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumTumefaciensCherry graph.
+    Instace of Agrobacterium tumefaciens Cherry graph.
 
 	References
 	---------------------

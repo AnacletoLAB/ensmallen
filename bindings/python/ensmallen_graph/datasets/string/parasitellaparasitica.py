@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasitellaParasitica.
+This file offers the methods to automatically retrieve the graph Parasitella parasitica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParasitellaParasitica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasitellaParasitica graph.
+    """Return new instance of the Parasitella parasitica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParasitellaParasitica(
 
     Returns
     -----------------------
-    Instace of ParasitellaParasitica graph.
+    Instace of Parasitella parasitica graph.
 
 	References
 	---------------------

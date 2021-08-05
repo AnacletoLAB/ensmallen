@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClunioMarinus.
+This file offers the methods to automatically retrieve the graph Clunio marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClunioMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClunioMarinus graph.
+    """Return new instance of the Clunio marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClunioMarinus(
 
     Returns
     -----------------------
-    Instace of ClunioMarinus graph.
+    Instace of Clunio marinus graph.
 
 	References
 	---------------------

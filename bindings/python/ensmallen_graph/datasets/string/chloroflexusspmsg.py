@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexusSpMsg.
+This file offers the methods to automatically retrieve the graph Chloroflexus sp. MSG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexusSpMsg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexusSpMsg graph.
+    """Return new instance of the Chloroflexus sp. MSG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChloroflexusSpMsg(
 
     Returns
     -----------------------
-    Instace of ChloroflexusSpMsg graph.
+    Instace of Chloroflexus sp. MSG graph.
 
 	References
 	---------------------

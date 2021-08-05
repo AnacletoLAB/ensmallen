@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaSchinkiiDsm10518.
+This file offers the methods to automatically retrieve the graph Blautia schinkii DSM 10518.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaSchinkiiDsm10518(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaSchinkiiDsm10518 graph.
+    """Return new instance of the Blautia schinkii DSM 10518 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaSchinkiiDsm10518(
 
     Returns
     -----------------------
-    Instace of BlautiaSchinkiiDsm10518 graph.
+    Instace of Blautia schinkii DSM 10518 graph.
 
 	References
 	---------------------

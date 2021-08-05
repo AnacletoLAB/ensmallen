@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasAveniformis.
+This file offers the methods to automatically retrieve the graph Brevundimonas aveniformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasAveniformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasAveniformis graph.
+    """Return new instance of the Brevundimonas aveniformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevundimonasAveniformis(
 
     Returns
     -----------------------
-    Instace of BrevundimonasAveniformis graph.
+    Instace of Brevundimonas aveniformis graph.
 
 	References
 	---------------------

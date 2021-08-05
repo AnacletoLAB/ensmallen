@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSpU5l.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. U5L.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSpU5l(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSpU5l graph.
+    """Return new instance of the Desulfovibrio sp. U5L graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSpU5l(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSpU5l graph.
+    Instace of Desulfovibrio sp. U5L graph.
 
 	References
 	---------------------

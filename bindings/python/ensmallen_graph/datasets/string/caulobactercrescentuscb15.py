@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterCrescentusCb15.
+This file offers the methods to automatically retrieve the graph Caulobacter crescentus CB15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterCrescentusCb15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterCrescentusCb15 graph.
+    """Return new instance of the Caulobacter crescentus CB15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterCrescentusCb15(
 
     Returns
     -----------------------
-    Instace of CaulobacterCrescentusCb15 graph.
+    Instace of Caulobacter crescentus CB15 graph.
 
 	References
 	---------------------

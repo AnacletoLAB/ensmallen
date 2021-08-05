@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesFarauti.
+This file offers the methods to automatically retrieve the graph Anopheles farauti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesFarauti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesFarauti graph.
+    """Return new instance of the Anopheles farauti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesFarauti(
 
     Returns
     -----------------------
-    Instace of AnophelesFarauti graph.
+    Instace of Anopheles farauti graph.
 
 	References
 	---------------------

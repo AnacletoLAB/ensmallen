@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MongoliimonasTerrestris.
+This file offers the methods to automatically retrieve the graph Mongoliimonas terrestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MongoliimonasTerrestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MongoliimonasTerrestris graph.
+    """Return new instance of the Mongoliimonas terrestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MongoliimonasTerrestris(
 
     Returns
     -----------------------
-    Instace of MongoliimonasTerrestris graph.
+    Instace of Mongoliimonas terrestris graph.
 
 	References
 	---------------------

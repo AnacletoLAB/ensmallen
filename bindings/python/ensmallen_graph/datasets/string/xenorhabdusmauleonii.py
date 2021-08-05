@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusMauleonii.
+This file offers the methods to automatically retrieve the graph Xenorhabdus mauleonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusMauleonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusMauleonii graph.
+    """Return new instance of the Xenorhabdus mauleonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusMauleonii(
 
     Returns
     -----------------------
-    Instace of XenorhabdusMauleonii graph.
+    Instace of Xenorhabdus mauleonii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeisingeraMethylohalidivoransDsm14336.
+This file offers the methods to automatically retrieve the graph Leisingera methylohalidivorans DSM 14336.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeisingeraMethylohalidivoransDsm14336(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeisingeraMethylohalidivoransDsm14336 graph.
+    """Return new instance of the Leisingera methylohalidivorans DSM 14336 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeisingeraMethylohalidivoransDsm14336(
 
     Returns
     -----------------------
-    Instace of LeisingeraMethylohalidivoransDsm14336 graph.
+    Instace of Leisingera methylohalidivorans DSM 14336 graph.
 
 	References
 	---------------------

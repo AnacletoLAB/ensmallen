@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterAfricanus.
+This file offers the methods to automatically retrieve the graph Pedobacter africanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterAfricanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterAfricanus graph.
+    """Return new instance of the Pedobacter africanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterAfricanus(
 
     Returns
     -----------------------
-    Instace of PedobacterAfricanus graph.
+    Instace of Pedobacter africanus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusPushchinoensis.
+This file offers the methods to automatically retrieve the graph Anoxybacillus pushchinoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusPushchinoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusPushchinoensis graph.
+    """Return new instance of the Anoxybacillus pushchinoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnoxybacillusPushchinoensis(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusPushchinoensis graph.
+    Instace of Anoxybacillus pushchinoensis graph.
 
 	References
 	---------------------

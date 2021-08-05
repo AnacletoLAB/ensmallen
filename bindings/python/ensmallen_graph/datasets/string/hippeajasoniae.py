@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HippeaJasoniae.
+This file offers the methods to automatically retrieve the graph Hippea jasoniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HippeaJasoniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HippeaJasoniae graph.
+    """Return new instance of the Hippea jasoniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HippeaJasoniae(
 
     Returns
     -----------------------
-    Instace of HippeaJasoniae graph.
+    Instace of Hippea jasoniae graph.
 
 	References
 	---------------------

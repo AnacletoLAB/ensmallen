@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumMinutum.
+This file offers the methods to automatically retrieve the graph Atopobium minutum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumMinutum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumMinutum graph.
+    """Return new instance of the Atopobium minutum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtopobiumMinutum(
 
     Returns
     -----------------------
-    Instace of AtopobiumMinutum graph.
+    Instace of Atopobium minutum graph.
 
 	References
 	---------------------

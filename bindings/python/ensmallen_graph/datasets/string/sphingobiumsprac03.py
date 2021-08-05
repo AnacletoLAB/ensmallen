@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpRac03.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. RAC03.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpRac03(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpRac03 graph.
+    """Return new instance of the Sphingobium sp. RAC03 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpRac03(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpRac03 graph.
+    Instace of Sphingobium sp. RAC03 graph.
 
 	References
 	---------------------

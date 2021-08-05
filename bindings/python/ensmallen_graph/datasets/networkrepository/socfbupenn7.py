@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUpenn7.
+This file offers the methods to automatically retrieve the graph socfb-UPenn7.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUpenn7(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUpenn7 graph.
+    """Return new instance of the socfb-UPenn7 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUpenn7(
 
     Returns
     -----------------------
-    Instace of SocfbUpenn7 graph.
+    Instace of socfb-UPenn7 graph.
 
 	References
 	---------------------

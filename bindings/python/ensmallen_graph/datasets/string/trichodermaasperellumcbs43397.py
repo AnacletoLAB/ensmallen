@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaAsperellumCbs43397.
+This file offers the methods to automatically retrieve the graph Trichoderma asperellum CBS 433.97.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichodermaAsperellumCbs43397(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaAsperellumCbs43397 graph.
+    """Return new instance of the Trichoderma asperellum CBS 433.97 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichodermaAsperellumCbs43397(
 
     Returns
     -----------------------
-    Instace of TrichodermaAsperellumCbs43397 graph.
+    Instace of Trichoderma asperellum CBS 433.97 graph.
 
 	References
 	---------------------

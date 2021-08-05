@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotaleaPsychrophila.
+This file offers the methods to automatically retrieve the graph Desulfotalea psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotaleaPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotaleaPsychrophila graph.
+    """Return new instance of the Desulfotalea psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotaleaPsychrophila(
 
     Returns
     -----------------------
-    Instace of DesulfotaleaPsychrophila graph.
+    Instace of Desulfotalea psychrophila graph.
 
 	References
 	---------------------

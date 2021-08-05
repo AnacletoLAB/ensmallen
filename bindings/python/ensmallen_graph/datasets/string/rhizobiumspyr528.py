@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpYr528.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. YR528.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpYr528(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpYr528 graph.
+    """Return new instance of the Rhizobium sp. YR528 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpYr528(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpYr528 graph.
+    Instace of Rhizobium sp. YR528 graph.
 
 	References
 	---------------------

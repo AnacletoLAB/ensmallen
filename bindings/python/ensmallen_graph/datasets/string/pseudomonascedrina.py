@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCedrina.
+This file offers the methods to automatically retrieve the graph Pseudomonas cedrina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCedrina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCedrina graph.
+    """Return new instance of the Pseudomonas cedrina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasCedrina(
 
     Returns
     -----------------------
-    Instace of PseudomonasCedrina graph.
+    Instace of Pseudomonas cedrina graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlammeovirgaceaeBacteriumBbd199112.
+This file offers the methods to automatically retrieve the graph Flammeovirgaceae bacterium BBD 1991-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlammeovirgaceaeBacteriumBbd199112(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlammeovirgaceaeBacteriumBbd199112 graph.
+    """Return new instance of the Flammeovirgaceae bacterium BBD 1991-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlammeovirgaceaeBacteriumBbd199112(
 
     Returns
     -----------------------
-    Instace of FlammeovirgaceaeBacteriumBbd199112 graph.
+    Instace of Flammeovirgaceae bacterium BBD 1991-12 graph.
 
 	References
 	---------------------

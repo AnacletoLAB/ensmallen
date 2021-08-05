@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesmosporaSp8437.
+This file offers the methods to automatically retrieve the graph Desmospora sp. 8437.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesmosporaSp8437(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesmosporaSp8437 graph.
+    """Return new instance of the Desmospora sp. 8437 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesmosporaSp8437(
 
     Returns
     -----------------------
-    Instace of DesmosporaSp8437 graph.
+    Instace of Desmospora sp. 8437 graph.
 
 	References
 	---------------------

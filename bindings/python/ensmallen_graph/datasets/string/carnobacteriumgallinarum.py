@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumGallinarum.
+This file offers the methods to automatically retrieve the graph Carnobacterium gallinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumGallinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumGallinarum graph.
+    """Return new instance of the Carnobacterium gallinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumGallinarum(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumGallinarum graph.
+    Instace of Carnobacterium gallinarum graph.
 
 	References
 	---------------------

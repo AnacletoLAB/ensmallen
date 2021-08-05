@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaSpTu14.
+This file offers the methods to automatically retrieve the graph Spiroplasma sp. TU-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaSpTu14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaSpTu14 graph.
+    """Return new instance of the Spiroplasma sp. TU-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaSpTu14(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaSpTu14 graph.
+    Instace of Spiroplasma sp. TU-14 graph.
 
 	References
 	---------------------

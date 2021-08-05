@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumMultihospitium.
+This file offers the methods to automatically retrieve the graph Rhizobium multihospitium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumMultihospitium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumMultihospitium graph.
+    """Return new instance of the Rhizobium multihospitium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumMultihospitium(
 
     Returns
     -----------------------
-    Instace of RhizobiumMultihospitium graph.
+    Instace of Rhizobium multihospitium graph.
 
 	References
 	---------------------

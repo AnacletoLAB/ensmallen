@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoorellaSp6041.
+This file offers the methods to automatically retrieve the graph Moorella sp. 60_41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoorellaSp6041(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoorellaSp6041 graph.
+    """Return new instance of the Moorella sp. 60_41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoorellaSp6041(
 
     Returns
     -----------------------
-    Instace of MoorellaSp6041 graph.
+    Instace of Moorella sp. 60_41 graph.
 
 	References
 	---------------------

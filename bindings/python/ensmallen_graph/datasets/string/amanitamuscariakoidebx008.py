@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmanitaMuscariaKoideBx008.
+This file offers the methods to automatically retrieve the graph Amanita muscaria Koide BX008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmanitaMuscariaKoideBx008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmanitaMuscariaKoideBx008 graph.
+    """Return new instance of the Amanita muscaria Koide BX008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmanitaMuscariaKoideBx008(
 
     Returns
     -----------------------
-    Instace of AmanitaMuscariaKoideBx008 graph.
+    Instace of Amanita muscaria Koide BX008 graph.
 
 	References
 	---------------------

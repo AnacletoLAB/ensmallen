@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusSp2009.
+This file offers the methods to automatically retrieve the graph Deinococcus sp. 2009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusSp2009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusSp2009 graph.
+    """Return new instance of the Deinococcus sp. 2009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusSp2009(
 
     Returns
     -----------------------
-    Instace of DeinococcusSp2009 graph.
+    Instace of Deinococcus sp. 2009 graph.
 
 	References
 	---------------------

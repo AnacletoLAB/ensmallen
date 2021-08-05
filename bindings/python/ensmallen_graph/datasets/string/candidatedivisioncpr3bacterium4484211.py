@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionCpr3Bacterium4484211.
+This file offers the methods to automatically retrieve the graph candidate division CPR3 bacterium 4484_211.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionCpr3Bacterium4484211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionCpr3Bacterium4484211 graph.
+    """Return new instance of the candidate division CPR3 bacterium 4484_211 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionCpr3Bacterium4484211(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionCpr3Bacterium4484211 graph.
+    Instace of candidate division CPR3 bacterium 4484_211 graph.
 
 	References
 	---------------------

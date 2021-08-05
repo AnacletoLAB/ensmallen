@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitobacteriumChlororespiransDsm11544.
+This file offers the methods to automatically retrieve the graph Desulfitobacterium chlororespirans DSM 11544.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitobacteriumChlororespiransDsm11544(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitobacteriumChlororespiransDsm11544 graph.
+    """Return new instance of the Desulfitobacterium chlororespirans DSM 11544 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfitobacteriumChlororespiransDsm11544(
 
     Returns
     -----------------------
-    Instace of DesulfitobacteriumChlororespiransDsm11544 graph.
+    Instace of Desulfitobacterium chlororespirans DSM 11544 graph.
 
 	References
 	---------------------

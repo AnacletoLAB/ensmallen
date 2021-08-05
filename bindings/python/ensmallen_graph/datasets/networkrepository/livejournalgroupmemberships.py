@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LivejournalGroupmemberships.
+This file offers the methods to automatically retrieve the graph livejournal-groupmemberships.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def LivejournalGroupmemberships(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LivejournalGroupmemberships graph.
+    """Return new instance of the livejournal-groupmemberships graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def LivejournalGroupmemberships(
 
     Returns
     -----------------------
-    Instace of LivejournalGroupmemberships graph.
+    Instace of livejournal-groupmemberships graph.
 
 	References
 	---------------------

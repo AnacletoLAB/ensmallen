@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPantholopis.
+This file offers the methods to automatically retrieve the graph Streptococcus pantholopis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPantholopis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPantholopis graph.
+    """Return new instance of the Streptococcus pantholopis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusPantholopis(
 
     Returns
     -----------------------
-    Instace of StreptococcusPantholopis graph.
+    Instace of Streptococcus pantholopis graph.
 
 	References
 	---------------------

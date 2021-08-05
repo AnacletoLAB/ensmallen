@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCynos.
+This file offers the methods to automatically retrieve the graph Mycoplasma cynos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCynos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCynos graph.
+    """Return new instance of the Mycoplasma cynos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaCynos(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCynos graph.
+    Instace of Mycoplasma cynos graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPeroris.
+This file offers the methods to automatically retrieve the graph Streptococcus peroris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPeroris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPeroris graph.
+    """Return new instance of the Streptococcus peroris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPeroris(
 
     Returns
     -----------------------
-    Instace of StreptococcusPeroris graph.
+    Instace of Streptococcus peroris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpHph0090.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. HPH0090.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpHph0090(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpHph0090 graph.
+    """Return new instance of the Streptococcus sp. HPH0090 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpHph0090(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpHph0090 graph.
+    Instace of Streptococcus sp. HPH0090 graph.
 
 	References
 	---------------------

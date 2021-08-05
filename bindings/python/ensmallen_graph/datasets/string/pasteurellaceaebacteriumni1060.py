@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaceaeBacteriumNi1060.
+This file offers the methods to automatically retrieve the graph Pasteurellaceae bacterium NI1060.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaceaeBacteriumNi1060(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaceaeBacteriumNi1060 graph.
+    """Return new instance of the Pasteurellaceae bacterium NI1060 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PasteurellaceaeBacteriumNi1060(
 
     Returns
     -----------------------
-    Instace of PasteurellaceaeBacteriumNi1060 graph.
+    Instace of Pasteurellaceae bacterium NI1060 graph.
 
 	References
 	---------------------

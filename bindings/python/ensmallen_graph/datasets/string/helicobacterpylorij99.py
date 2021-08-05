@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPyloriJ99.
+This file offers the methods to automatically retrieve the graph Helicobacter pylori J99.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPyloriJ99(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPyloriJ99 graph.
+    """Return new instance of the Helicobacter pylori J99 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPyloriJ99(
 
     Returns
     -----------------------
-    Instace of HelicobacterPyloriJ99 graph.
+    Instace of Helicobacter pylori J99 graph.
 
 	References
 	---------------------

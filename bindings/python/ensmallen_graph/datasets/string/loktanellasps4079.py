@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaSpS4079.
+This file offers the methods to automatically retrieve the graph Loktanella sp. S4079.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaSpS4079(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaSpS4079 graph.
+    """Return new instance of the Loktanella sp. S4079 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LoktanellaSpS4079(
 
     Returns
     -----------------------
-    Instace of LoktanellaSpS4079 graph.
+    Instace of Loktanella sp. S4079 graph.
 
 	References
 	---------------------

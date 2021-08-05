@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaSpF0422.
+This file offers the methods to automatically retrieve the graph Veillonella sp. F0422.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaSpF0422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaSpF0422 graph.
+    """Return new instance of the Veillonella sp. F0422 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaSpF0422(
 
     Returns
     -----------------------
-    Instace of VeillonellaSpF0422 graph.
+    Instace of Veillonella sp. F0422 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSpHmsc075b08.
+This file offers the methods to automatically retrieve the graph Peptoniphilus sp. HMSC075B08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSpHmsc075b08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSpHmsc075b08 graph.
+    """Return new instance of the Peptoniphilus sp. HMSC075B08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusSpHmsc075b08(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSpHmsc075b08 graph.
+    Instace of Peptoniphilus sp. HMSC075B08 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FirmicutesBacteriumAsf500.
+This file offers the methods to automatically retrieve the graph Firmicutes bacterium ASF500.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FirmicutesBacteriumAsf500(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FirmicutesBacteriumAsf500 graph.
+    """Return new instance of the Firmicutes bacterium ASF500 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FirmicutesBacteriumAsf500(
 
     Returns
     -----------------------
-    Instace of FirmicutesBacteriumAsf500 graph.
+    Instace of Firmicutes bacterium ASF500 graph.
 
 	References
 	---------------------

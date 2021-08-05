@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrilusPlanipennis.
+This file offers the methods to automatically retrieve the graph Agrilus planipennis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrilusPlanipennis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrilusPlanipennis graph.
+    """Return new instance of the Agrilus planipennis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrilusPlanipennis(
 
     Returns
     -----------------------
-    Instace of AgrilusPlanipennis graph.
+    Instace of Agrilus planipennis graph.
 
 	References
 	---------------------

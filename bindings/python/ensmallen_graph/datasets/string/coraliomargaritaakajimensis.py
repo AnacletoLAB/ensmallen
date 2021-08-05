@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoraliomargaritaAkajimensis.
+This file offers the methods to automatically retrieve the graph Coraliomargarita akajimensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoraliomargaritaAkajimensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoraliomargaritaAkajimensis graph.
+    """Return new instance of the Coraliomargarita akajimensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoraliomargaritaAkajimensis(
 
     Returns
     -----------------------
-    Instace of CoraliomargaritaAkajimensis graph.
+    Instace of Coraliomargarita akajimensis graph.
 
 	References
 	---------------------

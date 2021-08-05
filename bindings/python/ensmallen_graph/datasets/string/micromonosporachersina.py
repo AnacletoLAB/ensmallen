@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaChersina.
+This file offers the methods to automatically retrieve the graph Micromonospora chersina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaChersina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaChersina graph.
+    """Return new instance of the Micromonospora chersina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaChersina(
 
     Returns
     -----------------------
-    Instace of MicromonosporaChersina graph.
+    Instace of Micromonospora chersina graph.
 
 	References
 	---------------------

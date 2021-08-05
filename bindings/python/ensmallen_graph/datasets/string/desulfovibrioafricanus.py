@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioAfricanus.
+This file offers the methods to automatically retrieve the graph Desulfovibrio africanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioAfricanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioAfricanus graph.
+    """Return new instance of the Desulfovibrio africanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioAfricanus(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioAfricanus graph.
+    Instace of Desulfovibrio africanus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeclerciaAdecarboxylata.
+This file offers the methods to automatically retrieve the graph Leclercia adecarboxylata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeclerciaAdecarboxylata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeclerciaAdecarboxylata graph.
+    """Return new instance of the Leclercia adecarboxylata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeclerciaAdecarboxylata(
 
     Returns
     -----------------------
-    Instace of LeclerciaAdecarboxylata graph.
+    Instace of Leclercia adecarboxylata graph.
 
 	References
 	---------------------

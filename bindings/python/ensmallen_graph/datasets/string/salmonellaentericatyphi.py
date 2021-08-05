@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaTyphi.
+This file offers the methods to automatically retrieve the graph Salmonella enterica Typhi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaTyphi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaTyphi graph.
+    """Return new instance of the Salmonella enterica Typhi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaTyphi(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaTyphi graph.
+    Instace of Salmonella enterica Typhi graph.
 
 	References
 	---------------------

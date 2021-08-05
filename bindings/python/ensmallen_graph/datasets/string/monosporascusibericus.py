@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonosporascusIbericus.
+This file offers the methods to automatically retrieve the graph Monosporascus ibericus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonosporascusIbericus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonosporascusIbericus graph.
+    """Return new instance of the Monosporascus ibericus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonosporascusIbericus(
 
     Returns
     -----------------------
-    Instace of MonosporascusIbericus graph.
+    Instace of Monosporascus ibericus graph.
 
 	References
 	---------------------

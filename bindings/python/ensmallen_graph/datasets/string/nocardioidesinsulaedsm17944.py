@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesInsulaeDsm17944.
+This file offers the methods to automatically retrieve the graph Nocardioides insulae DSM 17944.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesInsulaeDsm17944(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesInsulaeDsm17944 graph.
+    """Return new instance of the Nocardioides insulae DSM 17944 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesInsulaeDsm17944(
 
     Returns
     -----------------------
-    Instace of NocardioidesInsulaeDsm17944 graph.
+    Instace of Nocardioides insulae DSM 17944 graph.
 
 	References
 	---------------------

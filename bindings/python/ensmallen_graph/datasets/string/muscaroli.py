@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MusCaroli.
+This file offers the methods to automatically retrieve the graph Mus caroli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MusCaroli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MusCaroli graph.
+    """Return new instance of the Mus caroli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MusCaroli(
 
     Returns
     -----------------------
-    Instace of MusCaroli graph.
+    Instace of Mus caroli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasFimi.
+This file offers the methods to automatically retrieve the graph Cellulomonas fimi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasFimi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasFimi graph.
+    """Return new instance of the Cellulomonas fimi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasFimi(
 
     Returns
     -----------------------
-    Instace of CellulomonasFimi graph.
+    Instace of Cellulomonas fimi graph.
 
 	References
 	---------------------

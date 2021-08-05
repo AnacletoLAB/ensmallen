@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollimonasArenae.
+This file offers the methods to automatically retrieve the graph Collimonas arenae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollimonasArenae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollimonasArenae graph.
+    """Return new instance of the Collimonas arenae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollimonasArenae(
 
     Returns
     -----------------------
-    Instace of CollimonasArenae graph.
+    Instace of Collimonas arenae graph.
 
 	References
 	---------------------

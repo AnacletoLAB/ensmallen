@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSuebicus.
+This file offers the methods to automatically retrieve the graph Lactobacillus suebicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSuebicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSuebicus graph.
+    """Return new instance of the Lactobacillus suebicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusSuebicus(
 
     Returns
     -----------------------
-    Instace of LactobacillusSuebicus graph.
+    Instace of Lactobacillus suebicus graph.
 
 	References
 	---------------------

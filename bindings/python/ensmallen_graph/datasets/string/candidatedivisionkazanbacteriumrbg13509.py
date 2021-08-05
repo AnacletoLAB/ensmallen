@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionKazanBacteriumRbg13509.
+This file offers the methods to automatically retrieve the graph candidate division Kazan bacterium RBG_13_50_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionKazanBacteriumRbg13509(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionKazanBacteriumRbg13509 graph.
+    """Return new instance of the candidate division Kazan bacterium RBG_13_50_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionKazanBacteriumRbg13509(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionKazanBacteriumRbg13509 graph.
+    Instace of candidate division Kazan bacterium RBG_13_50_9 graph.
 
 	References
 	---------------------

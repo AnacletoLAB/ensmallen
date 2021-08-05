@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumFimetarium.
+This file offers the methods to automatically retrieve the graph [Clostridium] fimetarium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumFimetarium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumFimetarium graph.
+    """Return new instance of the [Clostridium] fimetarium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumFimetarium(
 
     Returns
     -----------------------
-    Instace of ClostridiumFimetarium graph.
+    Instace of [Clostridium] fimetarium graph.
 
 	References
 	---------------------

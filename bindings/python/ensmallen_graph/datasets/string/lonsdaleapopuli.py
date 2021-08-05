@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LonsdaleaPopuli.
+This file offers the methods to automatically retrieve the graph Lonsdalea populi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LonsdaleaPopuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LonsdaleaPopuli graph.
+    """Return new instance of the Lonsdalea populi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LonsdaleaPopuli(
 
     Returns
     -----------------------
-    Instace of LonsdaleaPopuli graph.
+    Instace of Lonsdalea populi graph.
 
 	References
 	---------------------

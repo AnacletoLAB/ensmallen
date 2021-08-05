@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SiansivirgaZeaxanthinifaciensCcSamt1.
+This file offers the methods to automatically retrieve the graph Siansivirga zeaxanthinifaciens CC-SAMT-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SiansivirgaZeaxanthinifaciensCcSamt1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SiansivirgaZeaxanthinifaciensCcSamt1 graph.
+    """Return new instance of the Siansivirga zeaxanthinifaciens CC-SAMT-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SiansivirgaZeaxanthinifaciensCcSamt1(
 
     Returns
     -----------------------
-    Instace of SiansivirgaZeaxanthinifaciensCcSamt1 graph.
+    Instace of Siansivirga zeaxanthinifaciens CC-SAMT-1 graph.
 
 	References
 	---------------------

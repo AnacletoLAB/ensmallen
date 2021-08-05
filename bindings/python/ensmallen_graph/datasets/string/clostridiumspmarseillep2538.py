@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpMarseilleP2538.
+This file offers the methods to automatically retrieve the graph Clostridium sp. Marseille-P2538.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpMarseilleP2538(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpMarseilleP2538 graph.
+    """Return new instance of the Clostridium sp. Marseille-P2538 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpMarseilleP2538(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpMarseilleP2538 graph.
+    Instace of Clostridium sp. Marseille-P2538 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NannospalaxGalili.
+This file offers the methods to automatically retrieve the graph Nannospalax galili.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NannospalaxGalili(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NannospalaxGalili graph.
+    """Return new instance of the Nannospalax galili graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NannospalaxGalili(
 
     Returns
     -----------------------
-    Instace of NannospalaxGalili graph.
+    Instace of Nannospalax galili graph.
 
 	References
 	---------------------

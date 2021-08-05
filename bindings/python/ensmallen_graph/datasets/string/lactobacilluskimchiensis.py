@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKimchiensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus kimchiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKimchiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKimchiensis graph.
+    """Return new instance of the Lactobacillus kimchiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKimchiensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusKimchiensis graph.
+    Instace of Lactobacillus kimchiensis graph.
 
 	References
 	---------------------

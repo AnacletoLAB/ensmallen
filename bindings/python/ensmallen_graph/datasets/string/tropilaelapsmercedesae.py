@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TropilaelapsMercedesae.
+This file offers the methods to automatically retrieve the graph Tropilaelaps mercedesae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TropilaelapsMercedesae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TropilaelapsMercedesae graph.
+    """Return new instance of the Tropilaelaps mercedesae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TropilaelapsMercedesae(
 
     Returns
     -----------------------
-    Instace of TropilaelapsMercedesae graph.
+    Instace of Tropilaelaps mercedesae graph.
 
 	References
 	---------------------

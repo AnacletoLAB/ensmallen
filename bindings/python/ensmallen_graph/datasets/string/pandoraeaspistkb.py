@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaSpIstkb.
+This file offers the methods to automatically retrieve the graph Pandoraea sp. ISTKB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaSpIstkb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaSpIstkb graph.
+    """Return new instance of the Pandoraea sp. ISTKB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaSpIstkb(
 
     Returns
     -----------------------
-    Instace of PandoraeaSpIstkb graph.
+    Instace of Pandoraea sp. ISTKB graph.
 
 	References
 	---------------------

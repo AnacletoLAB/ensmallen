@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasBoliviensisLc1.
+This file offers the methods to automatically retrieve the graph Halomonas boliviensis LC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasBoliviensisLc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasBoliviensisLc1 graph.
+    """Return new instance of the Halomonas boliviensis LC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasBoliviensisLc1(
 
     Returns
     -----------------------
-    Instace of HalomonasBoliviensisLc1 graph.
+    Instace of Halomonas boliviensis LC1 graph.
 
 	References
 	---------------------

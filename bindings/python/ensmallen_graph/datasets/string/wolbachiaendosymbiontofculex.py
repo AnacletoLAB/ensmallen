@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfCulex.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Culex.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfCulex(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfCulex graph.
+    """Return new instance of the Wolbachia endosymbiont of Culex graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfCulex(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfCulex graph.
+    Instace of Wolbachia endosymbiont of Culex graph.
 
 	References
 	---------------------

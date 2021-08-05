@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaAnserinaEs.
+This file offers the methods to automatically retrieve the graph Borrelia anserina Es.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaAnserinaEs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaAnserinaEs graph.
+    """Return new instance of the Borrelia anserina Es graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BorreliaAnserinaEs(
 
     Returns
     -----------------------
-    Instace of BorreliaAnserinaEs graph.
+    Instace of Borrelia anserina Es graph.
 
 	References
 	---------------------

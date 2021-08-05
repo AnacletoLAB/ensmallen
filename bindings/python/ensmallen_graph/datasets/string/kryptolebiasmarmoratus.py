@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KryptolebiasMarmoratus.
+This file offers the methods to automatically retrieve the graph Kryptolebias marmoratus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KryptolebiasMarmoratus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KryptolebiasMarmoratus graph.
+    """Return new instance of the Kryptolebias marmoratus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KryptolebiasMarmoratus(
 
     Returns
     -----------------------
-    Instace of KryptolebiasMarmoratus graph.
+    Instace of Kryptolebias marmoratus graph.
 
 	References
 	---------------------

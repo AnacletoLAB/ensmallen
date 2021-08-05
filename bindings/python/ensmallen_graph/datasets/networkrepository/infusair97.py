@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfUsair97.
+This file offers the methods to automatically retrieve the graph inf-USAir97.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def InfUsair97(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfUsair97 graph.
+    """Return new instance of the inf-USAir97 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def InfUsair97(
 
     Returns
     -----------------------
-    Instace of InfUsair97 graph.
+    Instace of inf-USAir97 graph.
 
 	References
 	---------------------

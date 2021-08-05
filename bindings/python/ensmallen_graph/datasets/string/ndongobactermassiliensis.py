@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NdongobacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Ndongobacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NdongobacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NdongobacterMassiliensis graph.
+    """Return new instance of the Ndongobacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NdongobacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of NdongobacterMassiliensis graph.
+    Instace of Ndongobacter massiliensis graph.
 
 	References
 	---------------------

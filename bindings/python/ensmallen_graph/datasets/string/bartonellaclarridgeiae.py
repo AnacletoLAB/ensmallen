@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaClarridgeiae.
+This file offers the methods to automatically retrieve the graph Bartonella clarridgeiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaClarridgeiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaClarridgeiae graph.
+    """Return new instance of the Bartonella clarridgeiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaClarridgeiae(
 
     Returns
     -----------------------
-    Instace of BartonellaClarridgeiae graph.
+    Instace of Bartonella clarridgeiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaHispanicaCri.
+This file offers the methods to automatically retrieve the graph Borrelia hispanica CRI.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaHispanicaCri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaHispanicaCri graph.
+    """Return new instance of the Borrelia hispanica CRI graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BorreliaHispanicaCri(
 
     Returns
     -----------------------
-    Instace of BorreliaHispanicaCri graph.
+    Instace of Borrelia hispanica CRI graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PapilioXuthus.
+This file offers the methods to automatically retrieve the graph Papilio xuthus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PapilioXuthus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PapilioXuthus graph.
+    """Return new instance of the Papilio xuthus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PapilioXuthus(
 
     Returns
     -----------------------
-    Instace of PapilioXuthus graph.
+    Instace of Papilio xuthus graph.
 
 	References
 	---------------------

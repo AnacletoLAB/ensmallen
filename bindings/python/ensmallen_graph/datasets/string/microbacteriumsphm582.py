@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpHm582.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. HM58-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpHm582(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpHm582 graph.
+    """Return new instance of the Microbacterium sp. HM58-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpHm582(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpHm582 graph.
+    Instace of Microbacterium sp. HM58-2 graph.
 
 	References
 	---------------------

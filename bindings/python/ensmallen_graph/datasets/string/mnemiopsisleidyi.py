@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MnemiopsisLeidyi.
+This file offers the methods to automatically retrieve the graph Mnemiopsis leidyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MnemiopsisLeidyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MnemiopsisLeidyi graph.
+    """Return new instance of the Mnemiopsis leidyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MnemiopsisLeidyi(
 
     Returns
     -----------------------
-    Instace of MnemiopsisLeidyi graph.
+    Instace of Mnemiopsis leidyi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalicoccusPsychrophilus.
+This file offers the methods to automatically retrieve the graph Jeotgalicoccus psychrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalicoccusPsychrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalicoccusPsychrophilus graph.
+    """Return new instance of the Jeotgalicoccus psychrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JeotgalicoccusPsychrophilus(
 
     Returns
     -----------------------
-    Instace of JeotgalicoccusPsychrophilus graph.
+    Instace of Jeotgalicoccus psychrophilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusTolerans.
+This file offers the methods to automatically retrieve the graph Roseovarius tolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusTolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusTolerans graph.
+    """Return new instance of the Roseovarius tolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseovariusTolerans(
 
     Returns
     -----------------------
-    Instace of RoseovariusTolerans graph.
+    Instace of Roseovarius tolerans graph.
 
 	References
 	---------------------

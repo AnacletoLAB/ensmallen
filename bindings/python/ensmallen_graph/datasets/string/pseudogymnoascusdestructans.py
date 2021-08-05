@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogymnoascusDestructans.
+This file offers the methods to automatically retrieve the graph Pseudogymnoascus destructans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogymnoascusDestructans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogymnoascusDestructans graph.
+    """Return new instance of the Pseudogymnoascus destructans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudogymnoascusDestructans(
 
     Returns
     -----------------------
-    Instace of PseudogymnoascusDestructans graph.
+    Instace of Pseudogymnoascus destructans graph.
 
 	References
 	---------------------

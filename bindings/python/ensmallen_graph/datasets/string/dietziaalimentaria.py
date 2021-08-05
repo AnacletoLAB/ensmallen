@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DietziaAlimentaria.
+This file offers the methods to automatically retrieve the graph Dietzia alimentaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DietziaAlimentaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DietziaAlimentaria graph.
+    """Return new instance of the Dietzia alimentaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DietziaAlimentaria(
 
     Returns
     -----------------------
-    Instace of DietziaAlimentaria graph.
+    Instace of Dietzia alimentaria graph.
 
 	References
 	---------------------

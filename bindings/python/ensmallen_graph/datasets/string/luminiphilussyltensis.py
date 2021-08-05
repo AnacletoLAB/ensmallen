@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuminiphilusSyltensis.
+This file offers the methods to automatically retrieve the graph Luminiphilus syltensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuminiphilusSyltensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuminiphilusSyltensis graph.
+    """Return new instance of the Luminiphilus syltensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LuminiphilusSyltensis(
 
     Returns
     -----------------------
-    Instace of LuminiphilusSyltensis graph.
+    Instace of Luminiphilus syltensis graph.
 
 	References
 	---------------------

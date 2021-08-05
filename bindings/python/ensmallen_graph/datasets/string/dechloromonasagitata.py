@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DechloromonasAgitata.
+This file offers the methods to automatically retrieve the graph Dechloromonas agitata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DechloromonasAgitata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DechloromonasAgitata graph.
+    """Return new instance of the Dechloromonas agitata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DechloromonasAgitata(
 
     Returns
     -----------------------
-    Instace of DechloromonasAgitata graph.
+    Instace of Dechloromonas agitata graph.
 
 	References
 	---------------------

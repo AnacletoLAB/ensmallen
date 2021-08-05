@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteimonasSpJ29.
+This file offers the methods to automatically retrieve the graph Luteimonas sp. J29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteimonasSpJ29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteimonasSpJ29 graph.
+    """Return new instance of the Luteimonas sp. J29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LuteimonasSpJ29(
 
     Returns
     -----------------------
-    Instace of LuteimonasSpJ29 graph.
+    Instace of Luteimonas sp. J29 graph.
 
 	References
 	---------------------

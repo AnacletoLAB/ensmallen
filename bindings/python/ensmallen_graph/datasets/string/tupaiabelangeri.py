@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TupaiaBelangeri.
+This file offers the methods to automatically retrieve the graph Tupaia belangeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TupaiaBelangeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TupaiaBelangeri graph.
+    """Return new instance of the Tupaia belangeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TupaiaBelangeri(
 
     Returns
     -----------------------
-    Instace of TupaiaBelangeri graph.
+    Instace of Tupaia belangeri graph.
 
 	References
 	---------------------

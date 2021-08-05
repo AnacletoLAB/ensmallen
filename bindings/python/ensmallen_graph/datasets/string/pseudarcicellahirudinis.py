@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudarcicellaHirudinis.
+This file offers the methods to automatically retrieve the graph Pseudarcicella hirudinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudarcicellaHirudinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudarcicellaHirudinis graph.
+    """Return new instance of the Pseudarcicella hirudinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudarcicellaHirudinis(
 
     Returns
     -----------------------
-    Instace of PseudarcicellaHirudinis graph.
+    Instace of Pseudarcicella hirudinis graph.
 
 	References
 	---------------------

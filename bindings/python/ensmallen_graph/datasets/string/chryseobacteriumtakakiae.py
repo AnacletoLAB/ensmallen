@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumTakakiae.
+This file offers the methods to automatically retrieve the graph Chryseobacterium takakiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumTakakiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumTakakiae graph.
+    """Return new instance of the Chryseobacterium takakiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumTakakiae(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumTakakiae graph.
+    Instace of Chryseobacterium takakiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivirgaEchinicomitans.
+This file offers the methods to automatically retrieve the graph Roseivirga echinicomitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivirgaEchinicomitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivirgaEchinicomitans graph.
+    """Return new instance of the Roseivirga echinicomitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseivirgaEchinicomitans(
 
     Returns
     -----------------------
-    Instace of RoseivirgaEchinicomitans graph.
+    Instace of Roseivirga echinicomitans graph.
 
 	References
 	---------------------

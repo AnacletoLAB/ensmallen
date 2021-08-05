@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpSrsW22016.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. SRS-W-2-2016.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpSrsW22016(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpSrsW22016 graph.
+    """Return new instance of the Burkholderia sp. SRS-W-2-2016 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpSrsW22016(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpSrsW22016 graph.
+    Instace of Burkholderia sp. SRS-W-2-2016 graph.
 
 	References
 	---------------------

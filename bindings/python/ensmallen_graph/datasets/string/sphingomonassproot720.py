@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpRoot720.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Root720.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpRoot720(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpRoot720 graph.
+    """Return new instance of the Sphingomonas sp. Root720 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpRoot720(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpRoot720 graph.
+    Instace of Sphingomonas sp. Root720 graph.
 
 	References
 	---------------------

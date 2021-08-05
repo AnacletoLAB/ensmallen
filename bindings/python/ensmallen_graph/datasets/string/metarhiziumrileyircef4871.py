@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetarhiziumRileyiRcef4871.
+This file offers the methods to automatically retrieve the graph Metarhizium rileyi RCEF 4871.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetarhiziumRileyiRcef4871(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetarhiziumRileyiRcef4871 graph.
+    """Return new instance of the Metarhizium rileyi RCEF 4871 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetarhiziumRileyiRcef4871(
 
     Returns
     -----------------------
-    Instace of MetarhiziumRileyiRcef4871 graph.
+    Instace of Metarhizium rileyi RCEF 4871 graph.
 
 	References
 	---------------------

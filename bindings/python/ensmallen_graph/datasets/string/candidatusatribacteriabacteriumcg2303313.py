@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAtribacteriaBacteriumCg2303313.
+This file offers the methods to automatically retrieve the graph Candidatus Atribacteria bacterium CG2_30_33_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAtribacteriaBacteriumCg2303313(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAtribacteriaBacteriumCg2303313 graph.
+    """Return new instance of the Candidatus Atribacteria bacterium CG2_30_33_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAtribacteriaBacteriumCg2303313(
 
     Returns
     -----------------------
-    Instace of CandidatusAtribacteriaBacteriumCg2303313 graph.
+    Instace of Candidatus Atribacteria bacterium CG2_30_33_13 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusEllipticusCbs70779.
+This file offers the methods to automatically retrieve the graph Aspergillus ellipticus CBS 707.79.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusEllipticusCbs70779(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusEllipticusCbs70779 graph.
+    """Return new instance of the Aspergillus ellipticus CBS 707.79 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusEllipticusCbs70779(
 
     Returns
     -----------------------
-    Instace of AspergillusEllipticusCbs70779 graph.
+    Instace of Aspergillus ellipticus CBS 707.79 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WickerhamiellaSorbophila.
+This file offers the methods to automatically retrieve the graph Wickerhamiella sorbophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WickerhamiellaSorbophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WickerhamiellaSorbophila graph.
+    """Return new instance of the Wickerhamiella sorbophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WickerhamiellaSorbophila(
 
     Returns
     -----------------------
-    Instace of WickerhamiellaSorbophila graph.
+    Instace of Wickerhamiella sorbophila graph.
 
 	References
 	---------------------

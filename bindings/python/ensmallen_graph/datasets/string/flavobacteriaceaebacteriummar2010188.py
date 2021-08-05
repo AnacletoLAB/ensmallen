@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumMar2010188.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium MAR_2010_188.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumMar2010188(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumMar2010188 graph.
+    """Return new instance of the Flavobacteriaceae bacterium MAR_2010_188 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumMar2010188(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumMar2010188 graph.
+    Instace of Flavobacteriaceae bacterium MAR_2010_188 graph.
 
 	References
 	---------------------

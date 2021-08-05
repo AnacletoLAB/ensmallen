@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacteraceaeBacteriumGwc25520.
+This file offers the methods to automatically retrieve the graph Geobacteraceae bacterium GWC2_55_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacteraceaeBacteriumGwc25520(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacteraceaeBacteriumGwc25520 graph.
+    """Return new instance of the Geobacteraceae bacterium GWC2_55_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacteraceaeBacteriumGwc25520(
 
     Returns
     -----------------------
-    Instace of GeobacteraceaeBacteriumGwc25520 graph.
+    Instace of Geobacteraceae bacterium GWC2_55_20 graph.
 
 	References
 	---------------------

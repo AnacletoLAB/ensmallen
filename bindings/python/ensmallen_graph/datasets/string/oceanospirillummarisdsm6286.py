@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanospirillumMarisDsm6286.
+This file offers the methods to automatically retrieve the graph Oceanospirillum maris DSM 6286.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanospirillumMarisDsm6286(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanospirillumMarisDsm6286 graph.
+    """Return new instance of the Oceanospirillum maris DSM 6286 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanospirillumMarisDsm6286(
 
     Returns
     -----------------------
-    Instace of OceanospirillumMarisDsm6286 graph.
+    Instace of Oceanospirillum maris DSM 6286 graph.
 
 	References
 	---------------------

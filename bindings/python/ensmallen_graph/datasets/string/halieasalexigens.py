@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalieaSalexigens.
+This file offers the methods to automatically retrieve the graph Haliea salexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalieaSalexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalieaSalexigens graph.
+    """Return new instance of the Haliea salexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalieaSalexigens(
 
     Returns
     -----------------------
-    Instace of HalieaSalexigens graph.
+    Instace of Haliea salexigens graph.
 
 	References
 	---------------------

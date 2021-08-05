@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusFasciansLmg3625.
+This file offers the methods to automatically retrieve the graph Rhodococcus fascians LMG 3625.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusFasciansLmg3625(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusFasciansLmg3625 graph.
+    """Return new instance of the Rhodococcus fascians LMG 3625 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusFasciansLmg3625(
 
     Returns
     -----------------------
-    Instace of RhodococcusFasciansLmg3625 graph.
+    Instace of Rhodococcus fascians LMG 3625 graph.
 
 	References
 	---------------------

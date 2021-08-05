@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumSpJ15.
+This file offers the methods to automatically retrieve the graph Photobacterium sp. J15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumSpJ15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumSpJ15 graph.
+    """Return new instance of the Photobacterium sp. J15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumSpJ15(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumSpJ15 graph.
+    Instace of Photobacterium sp. J15 graph.
 
 	References
 	---------------------

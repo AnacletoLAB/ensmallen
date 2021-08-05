@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusMoraviensis.
+This file offers the methods to automatically retrieve the graph Enterococcus moraviensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusMoraviensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusMoraviensis graph.
+    """Return new instance of the Enterococcus moraviensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusMoraviensis(
 
     Returns
     -----------------------
-    Instace of EnterococcusMoraviensis graph.
+    Instace of Enterococcus moraviensis graph.
 
 	References
 	---------------------

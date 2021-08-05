@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzohydromonasAustralicaDsm1124.
+This file offers the methods to automatically retrieve the graph Azohydromonas australica DSM 1124.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzohydromonasAustralicaDsm1124(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzohydromonasAustralicaDsm1124 graph.
+    """Return new instance of the Azohydromonas australica DSM 1124 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzohydromonasAustralicaDsm1124(
 
     Returns
     -----------------------
-    Instace of AzohydromonasAustralicaDsm1124 graph.
+    Instace of Azohydromonas australica DSM 1124 graph.
 
 	References
 	---------------------

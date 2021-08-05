@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumDenitrificansDsm15936.
+This file offers the methods to automatically retrieve the graph Flavobacterium denitrificans DSM 15936.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumDenitrificansDsm15936(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumDenitrificansDsm15936 graph.
+    """Return new instance of the Flavobacterium denitrificans DSM 15936 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumDenitrificansDsm15936(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumDenitrificansDsm15936 graph.
+    Instace of Flavobacterium denitrificans DSM 15936 graph.
 
 	References
 	---------------------

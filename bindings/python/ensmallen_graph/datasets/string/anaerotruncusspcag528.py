@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerotruncusSpCag528.
+This file offers the methods to automatically retrieve the graph Anaerotruncus sp. CAG:528.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerotruncusSpCag528(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerotruncusSpCag528 graph.
+    """Return new instance of the Anaerotruncus sp. CAG:528 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerotruncusSpCag528(
 
     Returns
     -----------------------
-    Instace of AnaerotruncusSpCag528 graph.
+    Instace of Anaerotruncus sp. CAG:528 graph.
 
 	References
 	---------------------

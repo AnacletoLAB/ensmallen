@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaSpAl04100510.
+This file offers the methods to automatically retrieve the graph Pseudonocardia sp. AL041005-10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaSpAl04100510(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaSpAl04100510 graph.
+    """Return new instance of the Pseudonocardia sp. AL041005-10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaSpAl04100510(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaSpAl04100510 graph.
+    Instace of Pseudonocardia sp. AL041005-10 graph.
 
 	References
 	---------------------

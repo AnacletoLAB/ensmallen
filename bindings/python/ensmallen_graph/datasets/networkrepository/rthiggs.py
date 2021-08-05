@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RtHiggs.
+This file offers the methods to automatically retrieve the graph rt-higgs.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def RtHiggs(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RtHiggs graph.
+    """Return new instance of the rt-higgs graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def RtHiggs(
 
     Returns
     -----------------------
-    Instace of RtHiggs graph.
+    Instace of rt-higgs graph.
 
 	References
 	---------------------

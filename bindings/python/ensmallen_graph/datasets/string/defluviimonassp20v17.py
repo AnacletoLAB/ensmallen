@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DefluviimonasSp20v17.
+This file offers the methods to automatically retrieve the graph Defluviimonas sp. 20V17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DefluviimonasSp20v17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DefluviimonasSp20v17 graph.
+    """Return new instance of the Defluviimonas sp. 20V17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DefluviimonasSp20v17(
 
     Returns
     -----------------------
-    Instace of DefluviimonasSp20v17 graph.
+    Instace of Defluviimonas sp. 20V17 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSpCag115.
+This file offers the methods to automatically retrieve the graph Eubacterium sp. CAG:115.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSpCag115(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSpCag115 graph.
+    """Return new instance of the Eubacterium sp. CAG:115 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumSpCag115(
 
     Returns
     -----------------------
-    Instace of EubacteriumSpCag115 graph.
+    Instace of Eubacterium sp. CAG:115 graph.
 
 	References
 	---------------------

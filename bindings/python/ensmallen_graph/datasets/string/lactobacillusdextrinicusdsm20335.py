@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusDextrinicusDsm20335.
+This file offers the methods to automatically retrieve the graph Lactobacillus dextrinicus DSM 20335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusDextrinicusDsm20335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusDextrinicusDsm20335 graph.
+    """Return new instance of the Lactobacillus dextrinicus DSM 20335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusDextrinicusDsm20335(
 
     Returns
     -----------------------
-    Instace of LactobacillusDextrinicusDsm20335 graph.
+    Instace of Lactobacillus dextrinicus DSM 20335 graph.
 
 	References
 	---------------------

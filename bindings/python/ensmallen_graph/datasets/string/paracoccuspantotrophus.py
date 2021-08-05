@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusPantotrophus.
+This file offers the methods to automatically retrieve the graph Paracoccus pantotrophus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusPantotrophus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusPantotrophus graph.
+    """Return new instance of the Paracoccus pantotrophus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusPantotrophus(
 
     Returns
     -----------------------
-    Instace of ParacoccusPantotrophus graph.
+    Instace of Paracoccus pantotrophus graph.
 
 	References
 	---------------------

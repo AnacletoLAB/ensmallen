@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpNc2002.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. NC2002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpNc2002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpNc2002 graph.
+    """Return new instance of the Butyrivibrio sp. NC2002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioSpNc2002(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpNc2002 graph.
+    Instace of Butyrivibrio sp. NC2002 graph.
 
 	References
 	---------------------

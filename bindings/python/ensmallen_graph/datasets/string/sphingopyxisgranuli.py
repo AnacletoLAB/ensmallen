@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisGranuli.
+This file offers the methods to automatically retrieve the graph Sphingopyxis granuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisGranuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisGranuli graph.
+    """Return new instance of the Sphingopyxis granuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisGranuli(
 
     Returns
     -----------------------
-    Instace of SphingopyxisGranuli graph.
+    Instace of Sphingopyxis granuli graph.
 
 	References
 	---------------------

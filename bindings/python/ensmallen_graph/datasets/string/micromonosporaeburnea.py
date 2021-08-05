@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaEburnea.
+This file offers the methods to automatically retrieve the graph Micromonospora eburnea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaEburnea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaEburnea graph.
+    """Return new instance of the Micromonospora eburnea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaEburnea(
 
     Returns
     -----------------------
-    Instace of MicromonosporaEburnea graph.
+    Instace of Micromonospora eburnea graph.
 
 	References
 	---------------------

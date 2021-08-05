@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhinolophusFerrumequinum.
+This file offers the methods to automatically retrieve the graph Rhinolophus ferrumequinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhinolophusFerrumequinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhinolophusFerrumequinum graph.
+    """Return new instance of the Rhinolophus ferrumequinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhinolophusFerrumequinum(
 
     Returns
     -----------------------
-    Instace of RhinolophusFerrumequinum graph.
+    Instace of Rhinolophus ferrumequinum graph.
 
 	References
 	---------------------

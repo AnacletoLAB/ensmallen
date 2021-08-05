@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LautropiaSpScn6989.
+This file offers the methods to automatically retrieve the graph Lautropia sp. SCN 69-89.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LautropiaSpScn6989(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LautropiaSpScn6989 graph.
+    """Return new instance of the Lautropia sp. SCN 69-89 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LautropiaSpScn6989(
 
     Returns
     -----------------------
-    Instace of LautropiaSpScn6989 graph.
+    Instace of Lautropia sp. SCN 69-89 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaliobacillusSpPm2.
+This file offers the methods to automatically retrieve the graph Paraliobacillus sp. PM-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaliobacillusSpPm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaliobacillusSpPm2 graph.
+    """Return new instance of the Paraliobacillus sp. PM-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaliobacillusSpPm2(
 
     Returns
     -----------------------
-    Instace of ParaliobacillusSpPm2 graph.
+    Instace of Paraliobacillus sp. PM-2 graph.
 
 	References
 	---------------------

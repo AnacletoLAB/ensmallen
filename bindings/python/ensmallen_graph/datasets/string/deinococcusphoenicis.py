@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusPhoenicis.
+This file offers the methods to automatically retrieve the graph Deinococcus phoenicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusPhoenicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusPhoenicis graph.
+    """Return new instance of the Deinococcus phoenicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusPhoenicis(
 
     Returns
     -----------------------
-    Instace of DeinococcusPhoenicis graph.
+    Instace of Deinococcus phoenicis graph.
 
 	References
 	---------------------

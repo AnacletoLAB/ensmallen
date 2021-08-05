@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhascolarctosCinereus.
+This file offers the methods to automatically retrieve the graph Phascolarctos cinereus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhascolarctosCinereus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhascolarctosCinereus graph.
+    """Return new instance of the Phascolarctos cinereus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhascolarctosCinereus(
 
     Returns
     -----------------------
-    Instace of PhascolarctosCinereus graph.
+    Instace of Phascolarctos cinereus graph.
 
 	References
 	---------------------

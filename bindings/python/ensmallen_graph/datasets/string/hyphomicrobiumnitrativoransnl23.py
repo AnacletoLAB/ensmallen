@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumNitrativoransNl23.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium nitrativorans NL23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumNitrativoransNl23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumNitrativoransNl23 graph.
+    """Return new instance of the Hyphomicrobium nitrativorans NL23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomicrobiumNitrativoransNl23(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumNitrativoransNl23 graph.
+    Instace of Hyphomicrobium nitrativorans NL23 graph.
 
 	References
 	---------------------

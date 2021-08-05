@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrinickiaSymbiotica.
+This file offers the methods to automatically retrieve the graph Trinickia symbiotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrinickiaSymbiotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrinickiaSymbiotica graph.
+    """Return new instance of the Trinickia symbiotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrinickiaSymbiotica(
 
     Returns
     -----------------------
-    Instace of TrinickiaSymbiotica graph.
+    Instace of Trinickia symbiotica graph.
 
 	References
 	---------------------

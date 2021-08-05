@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumTerrae.
+This file offers the methods to automatically retrieve the graph Flavobacterium terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumTerrae graph.
+    """Return new instance of the Flavobacterium terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumTerrae(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumTerrae graph.
+    Instace of Flavobacterium terrae graph.
 
 	References
 	---------------------

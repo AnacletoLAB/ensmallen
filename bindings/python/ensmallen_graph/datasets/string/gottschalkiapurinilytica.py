@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GottschalkiaPurinilytica.
+This file offers the methods to automatically retrieve the graph Gottschalkia purinilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GottschalkiaPurinilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GottschalkiaPurinilytica graph.
+    """Return new instance of the Gottschalkia purinilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GottschalkiaPurinilytica(
 
     Returns
     -----------------------
-    Instace of GottschalkiaPurinilytica graph.
+    Instace of Gottschalkia purinilytica graph.
 
 	References
 	---------------------

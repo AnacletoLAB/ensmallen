@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizoporaParadoxa.
+This file offers the methods to automatically retrieve the graph Schizopora paradoxa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizoporaParadoxa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizoporaParadoxa graph.
+    """Return new instance of the Schizopora paradoxa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchizoporaParadoxa(
 
     Returns
     -----------------------
-    Instace of SchizoporaParadoxa graph.
+    Instace of Schizopora paradoxa graph.
 
 	References
 	---------------------

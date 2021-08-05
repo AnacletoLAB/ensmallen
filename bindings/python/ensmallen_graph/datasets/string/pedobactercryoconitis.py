@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterCryoconitis.
+This file offers the methods to automatically retrieve the graph Pedobacter cryoconitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterCryoconitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterCryoconitis graph.
+    """Return new instance of the Pedobacter cryoconitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterCryoconitis(
 
     Returns
     -----------------------
-    Instace of PedobacterCryoconitis graph.
+    Instace of Pedobacter cryoconitis graph.
 
 	References
 	---------------------

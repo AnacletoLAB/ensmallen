@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpLeaf339.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Leaf339.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpLeaf339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpLeaf339 graph.
+    """Return new instance of the Sphingomonas sp. Leaf339 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpLeaf339(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpLeaf339 graph.
+    Instace of Sphingomonas sp. Leaf339 graph.
 
 	References
 	---------------------

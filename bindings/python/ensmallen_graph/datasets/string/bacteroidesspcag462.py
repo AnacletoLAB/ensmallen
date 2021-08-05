@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesSpCag462.
+This file offers the methods to automatically retrieve the graph Bacteroides sp. CAG:462.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesSpCag462(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesSpCag462 graph.
+    """Return new instance of the Bacteroides sp. CAG:462 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesSpCag462(
 
     Returns
     -----------------------
-    Instace of BacteroidesSpCag462 graph.
+    Instace of Bacteroides sp. CAG:462 graph.
 
 	References
 	---------------------

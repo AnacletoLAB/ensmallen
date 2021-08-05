@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaNorrlandica.
+This file offers the methods to automatically retrieve the graph Legionella norrlandica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaNorrlandica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaNorrlandica graph.
+    """Return new instance of the Legionella norrlandica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaNorrlandica(
 
     Returns
     -----------------------
-    Instace of LegionellaNorrlandica graph.
+    Instace of Legionella norrlandica graph.
 
 	References
 	---------------------

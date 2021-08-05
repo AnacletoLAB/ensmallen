@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusAculeatusAtcc16872.
+This file offers the methods to automatically retrieve the graph Aspergillus aculeatus ATCC 16872.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusAculeatusAtcc16872(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusAculeatusAtcc16872 graph.
+    """Return new instance of the Aspergillus aculeatus ATCC 16872 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusAculeatusAtcc16872(
 
     Returns
     -----------------------
-    Instace of AspergillusAculeatusAtcc16872 graph.
+    Instace of Aspergillus aculeatus ATCC 16872 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumUrealyticum.
+This file offers the methods to automatically retrieve the graph Corynebacterium urealyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumUrealyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumUrealyticum graph.
+    """Return new instance of the Corynebacterium urealyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumUrealyticum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumUrealyticum graph.
+    Instace of Corynebacterium urealyticum graph.
 
 	References
 	---------------------

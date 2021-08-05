@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaWoodyi.
+This file offers the methods to automatically retrieve the graph Shewanella woodyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaWoodyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaWoodyi graph.
+    """Return new instance of the Shewanella woodyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaWoodyi(
 
     Returns
     -----------------------
-    Instace of ShewanellaWoodyi graph.
+    Instace of Shewanella woodyi graph.
 
 	References
 	---------------------

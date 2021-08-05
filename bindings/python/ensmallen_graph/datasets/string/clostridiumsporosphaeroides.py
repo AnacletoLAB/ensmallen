@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSporosphaeroides.
+This file offers the methods to automatically retrieve the graph Clostridium sporosphaeroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSporosphaeroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSporosphaeroides graph.
+    """Return new instance of the Clostridium sporosphaeroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSporosphaeroides(
 
     Returns
     -----------------------
-    Instace of ClostridiumSporosphaeroides graph.
+    Instace of Clostridium sporosphaeroides graph.
 
 	References
 	---------------------

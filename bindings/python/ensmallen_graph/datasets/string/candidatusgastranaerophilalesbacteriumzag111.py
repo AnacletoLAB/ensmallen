@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGastranaerophilalesBacteriumZag111.
+This file offers the methods to automatically retrieve the graph Candidatus Gastranaerophilales bacterium Zag_111.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGastranaerophilalesBacteriumZag111(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGastranaerophilalesBacteriumZag111 graph.
+    """Return new instance of the Candidatus Gastranaerophilales bacterium Zag_111 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGastranaerophilalesBacteriumZag111(
 
     Returns
     -----------------------
-    Instace of CandidatusGastranaerophilalesBacteriumZag111 graph.
+    Instace of Candidatus Gastranaerophilales bacterium Zag_111 graph.
 
 	References
 	---------------------

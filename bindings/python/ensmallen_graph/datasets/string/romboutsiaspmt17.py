@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RomboutsiaSpMt17.
+This file offers the methods to automatically retrieve the graph Romboutsia sp. MT17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RomboutsiaSpMt17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RomboutsiaSpMt17 graph.
+    """Return new instance of the Romboutsia sp. MT17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RomboutsiaSpMt17(
 
     Returns
     -----------------------
-    Instace of RomboutsiaSpMt17 graph.
+    Instace of Romboutsia sp. MT17 graph.
 
 	References
 	---------------------

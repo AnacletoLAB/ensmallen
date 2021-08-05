@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaAtlantae.
+This file offers the methods to automatically retrieve the graph Moraxella atlantae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaAtlantae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaAtlantae graph.
+    """Return new instance of the Moraxella atlantae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaAtlantae(
 
     Returns
     -----------------------
-    Instace of MoraxellaAtlantae graph.
+    Instace of Moraxella atlantae graph.
 
 	References
 	---------------------

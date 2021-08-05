@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CastorCanadensis.
+This file offers the methods to automatically retrieve the graph Castor canadensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CastorCanadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CastorCanadensis graph.
+    """Return new instance of the Castor canadensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CastorCanadensis(
 
     Returns
     -----------------------
-    Instace of CastorCanadensis graph.
+    Instace of Castor canadensis graph.
 
 	References
 	---------------------

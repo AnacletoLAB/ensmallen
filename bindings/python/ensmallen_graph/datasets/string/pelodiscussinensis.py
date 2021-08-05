@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelodiscusSinensis.
+This file offers the methods to automatically retrieve the graph Pelodiscus sinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelodiscusSinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelodiscusSinensis graph.
+    """Return new instance of the Pelodiscus sinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelodiscusSinensis(
 
     Returns
     -----------------------
-    Instace of PelodiscusSinensis graph.
+    Instace of Pelodiscus sinensis graph.
 
 	References
 	---------------------

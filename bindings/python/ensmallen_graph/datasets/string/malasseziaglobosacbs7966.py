@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalasseziaGlobosaCbs7966.
+This file offers the methods to automatically retrieve the graph Malassezia globosa CBS 7966.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalasseziaGlobosaCbs7966(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalasseziaGlobosaCbs7966 graph.
+    """Return new instance of the Malassezia globosa CBS 7966 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalasseziaGlobosaCbs7966(
 
     Returns
     -----------------------
-    Instace of MalasseziaGlobosaCbs7966 graph.
+    Instace of Malassezia globosa CBS 7966 graph.
 
 	References
 	---------------------

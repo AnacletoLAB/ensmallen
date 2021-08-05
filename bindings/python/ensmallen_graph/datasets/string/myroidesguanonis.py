@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyroidesGuanonis.
+This file offers the methods to automatically retrieve the graph Myroides guanonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyroidesGuanonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyroidesGuanonis graph.
+    """Return new instance of the Myroides guanonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MyroidesGuanonis(
 
     Returns
     -----------------------
-    Instace of MyroidesGuanonis graph.
+    Instace of Myroides guanonis graph.
 
 	References
 	---------------------

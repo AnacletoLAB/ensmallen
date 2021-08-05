@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaProteamaculans.
+This file offers the methods to automatically retrieve the graph Serratia proteamaculans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaProteamaculans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaProteamaculans graph.
+    """Return new instance of the Serratia proteamaculans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaProteamaculans(
 
     Returns
     -----------------------
-    Instace of SerratiaProteamaculans graph.
+    Instace of Serratia proteamaculans graph.
 
 	References
 	---------------------

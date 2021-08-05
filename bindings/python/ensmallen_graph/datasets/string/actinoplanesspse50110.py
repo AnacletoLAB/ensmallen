@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesSpSe50110.
+This file offers the methods to automatically retrieve the graph Actinoplanes sp. SE50110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesSpSe50110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesSpSe50110 graph.
+    """Return new instance of the Actinoplanes sp. SE50110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesSpSe50110(
 
     Returns
     -----------------------
-    Instace of ActinoplanesSpSe50110 graph.
+    Instace of Actinoplanes sp. SE50110 graph.
 
 	References
 	---------------------

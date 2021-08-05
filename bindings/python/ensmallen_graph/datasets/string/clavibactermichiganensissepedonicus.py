@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClavibacterMichiganensisSepedonicus.
+This file offers the methods to automatically retrieve the graph Clavibacter michiganensis sepedonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClavibacterMichiganensisSepedonicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClavibacterMichiganensisSepedonicus graph.
+    """Return new instance of the Clavibacter michiganensis sepedonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClavibacterMichiganensisSepedonicus(
 
     Returns
     -----------------------
-    Instace of ClavibacterMichiganensisSepedonicus graph.
+    Instace of Clavibacter michiganensis sepedonicus graph.
 
 	References
 	---------------------

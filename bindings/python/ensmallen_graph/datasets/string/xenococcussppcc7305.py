@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenococcusSpPcc7305.
+This file offers the methods to automatically retrieve the graph Xenococcus sp. PCC7305.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenococcusSpPcc7305(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenococcusSpPcc7305 graph.
+    """Return new instance of the Xenococcus sp. PCC7305 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XenococcusSpPcc7305(
 
     Returns
     -----------------------
-    Instace of XenococcusSpPcc7305 graph.
+    Instace of Xenococcus sp. PCC7305 graph.
 
 	References
 	---------------------

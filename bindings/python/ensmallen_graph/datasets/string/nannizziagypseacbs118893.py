@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NannizziaGypseaCbs118893.
+This file offers the methods to automatically retrieve the graph Nannizzia gypsea CBS 118893.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NannizziaGypseaCbs118893(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NannizziaGypseaCbs118893 graph.
+    """Return new instance of the Nannizzia gypsea CBS 118893 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NannizziaGypseaCbs118893(
 
     Returns
     -----------------------
-    Instace of NannizziaGypseaCbs118893 graph.
+    Instace of Nannizzia gypsea CBS 118893 graph.
 
 	References
 	---------------------

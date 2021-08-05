@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpBcu110501.
+This file offers the methods to automatically retrieve the graph Frankia sp. BCU110501.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpBcu110501(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpBcu110501 graph.
+    """Return new instance of the Frankia sp. BCU110501 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpBcu110501(
 
     Returns
     -----------------------
-    Instace of FrankiaSpBcu110501 graph.
+    Instace of Frankia sp. BCU110501 graph.
 
 	References
 	---------------------

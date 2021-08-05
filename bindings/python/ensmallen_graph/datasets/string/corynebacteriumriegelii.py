@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumRiegelii.
+This file offers the methods to automatically retrieve the graph Corynebacterium riegelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumRiegelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumRiegelii graph.
+    """Return new instance of the Corynebacterium riegelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumRiegelii(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumRiegelii graph.
+    Instace of Corynebacterium riegelii graph.
 
 	References
 	---------------------

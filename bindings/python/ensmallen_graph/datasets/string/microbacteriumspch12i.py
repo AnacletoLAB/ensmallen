@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCh12i.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. CH12i.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpCh12i(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCh12i graph.
+    """Return new instance of the Microbacterium sp. CH12i graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpCh12i(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCh12i graph.
+    Instace of Microbacterium sp. CH12i graph.
 
 	References
 	---------------------

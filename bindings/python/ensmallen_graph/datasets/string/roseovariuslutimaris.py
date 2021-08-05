@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusLutimaris.
+This file offers the methods to automatically retrieve the graph Roseovarius lutimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusLutimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusLutimaris graph.
+    """Return new instance of the Roseovarius lutimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseovariusLutimaris(
 
     Returns
     -----------------------
-    Instace of RoseovariusLutimaris graph.
+    Instace of Roseovarius lutimaris graph.
 
 	References
 	---------------------

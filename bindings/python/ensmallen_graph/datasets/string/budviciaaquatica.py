@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BudviciaAquatica.
+This file offers the methods to automatically retrieve the graph Budvicia aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BudviciaAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BudviciaAquatica graph.
+    """Return new instance of the Budvicia aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BudviciaAquatica(
 
     Returns
     -----------------------
-    Instace of BudviciaAquatica graph.
+    Instace of Budvicia aquatica graph.
 
 	References
 	---------------------

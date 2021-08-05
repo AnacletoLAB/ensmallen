@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DermabacterSpHfh0086.
+This file offers the methods to automatically retrieve the graph Dermabacter sp. HFH0086.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DermabacterSpHfh0086(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DermabacterSpHfh0086 graph.
+    """Return new instance of the Dermabacter sp. HFH0086 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DermabacterSpHfh0086(
 
     Returns
     -----------------------
-    Instace of DermabacterSpHfh0086 graph.
+    Instace of Dermabacter sp. HFH0086 graph.
 
 	References
 	---------------------

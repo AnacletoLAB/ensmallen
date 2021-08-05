@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisOrientalis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis orientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisOrientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisOrientalis graph.
+    """Return new instance of the Amycolatopsis orientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisOrientalis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisOrientalis graph.
+    Instace of Amycolatopsis orientalis graph.
 
 	References
 	---------------------

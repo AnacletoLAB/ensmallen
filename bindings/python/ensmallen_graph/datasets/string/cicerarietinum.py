@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CicerArietinum.
+This file offers the methods to automatically retrieve the graph Cicer arietinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CicerArietinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CicerArietinum graph.
+    """Return new instance of the Cicer arietinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CicerArietinum(
 
     Returns
     -----------------------
-    Instace of CicerArietinum graph.
+    Instace of Cicer arietinum graph.
 
 	References
 	---------------------

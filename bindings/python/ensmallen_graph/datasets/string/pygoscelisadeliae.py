@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PygoscelisAdeliae.
+This file offers the methods to automatically retrieve the graph Pygoscelis adeliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PygoscelisAdeliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PygoscelisAdeliae graph.
+    """Return new instance of the Pygoscelis adeliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PygoscelisAdeliae(
 
     Returns
     -----------------------
-    Instace of PygoscelisAdeliae graph.
+    Instace of Pygoscelis adeliae graph.
 
 	References
 	---------------------

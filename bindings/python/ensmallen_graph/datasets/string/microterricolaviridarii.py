@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicroterricolaViridarii.
+This file offers the methods to automatically retrieve the graph Microterricola viridarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicroterricolaViridarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicroterricolaViridarii graph.
+    """Return new instance of the Microterricola viridarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicroterricolaViridarii(
 
     Returns
     -----------------------
-    Instace of MicroterricolaViridarii graph.
+    Instace of Microterricola viridarii graph.
 
 	References
 	---------------------

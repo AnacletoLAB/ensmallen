@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusOncorhynchi.
+This file offers the methods to automatically retrieve the graph Oceanobacillus oncorhynchi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusOncorhynchi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusOncorhynchi graph.
+    """Return new instance of the Oceanobacillus oncorhynchi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusOncorhynchi(
 
     Returns
     -----------------------
-    Instace of OceanobacillusOncorhynchi graph.
+    Instace of Oceanobacillus oncorhynchi graph.
 
 	References
 	---------------------

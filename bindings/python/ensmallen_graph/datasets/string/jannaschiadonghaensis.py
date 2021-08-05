@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaDonghaensis.
+This file offers the methods to automatically retrieve the graph Jannaschia donghaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaDonghaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaDonghaensis graph.
+    """Return new instance of the Jannaschia donghaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaDonghaensis(
 
     Returns
     -----------------------
-    Instace of JannaschiaDonghaensis graph.
+    Instace of Jannaschia donghaensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasPhyllosphaeraeFa2.
+This file offers the methods to automatically retrieve the graph Sphingomonas phyllosphaerae FA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasPhyllosphaeraeFa2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasPhyllosphaeraeFa2 graph.
+    """Return new instance of the Sphingomonas phyllosphaerae FA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasPhyllosphaeraeFa2(
 
     Returns
     -----------------------
-    Instace of SphingomonasPhyllosphaeraeFa2 graph.
+    Instace of Sphingomonas phyllosphaerae FA2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisphaeraHydrothermalis.
+This file offers the methods to automatically retrieve the graph Salinisphaera hydrothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisphaeraHydrothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisphaeraHydrothermalis graph.
+    """Return new instance of the Salinisphaera hydrothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinisphaeraHydrothermalis(
 
     Returns
     -----------------------
-    Instace of SalinisphaeraHydrothermalis graph.
+    Instace of Salinisphaera hydrothermalis graph.
 
 	References
 	---------------------

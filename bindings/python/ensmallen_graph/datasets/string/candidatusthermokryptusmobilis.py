@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusThermokryptusMobilis.
+This file offers the methods to automatically retrieve the graph Candidatus Thermokryptus mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusThermokryptusMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusThermokryptusMobilis graph.
+    """Return new instance of the Candidatus Thermokryptus mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusThermokryptusMobilis(
 
     Returns
     -----------------------
-    Instace of CandidatusThermokryptusMobilis graph.
+    Instace of Candidatus Thermokryptus mobilis graph.
 
 	References
 	---------------------

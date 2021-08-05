@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHarrisonbacteriaBacteriumRifcsplowo202Full4510c.
+This file offers the methods to automatically retrieve the graph Candidatus Harrisonbacteria bacterium RIFCSPLOWO2_02_FULL_45_10c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHarrisonbacteriaBacteriumRifcsplowo202Full4510c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHarrisonbacteriaBacteriumRifcsplowo202Full4510c graph.
+    """Return new instance of the Candidatus Harrisonbacteria bacterium RIFCSPLOWO2_02_FULL_45_10c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHarrisonbacteriaBacteriumRifcsplowo202Full4510c(
 
     Returns
     -----------------------
-    Instace of CandidatusHarrisonbacteriaBacteriumRifcsplowo202Full4510c graph.
+    Instace of Candidatus Harrisonbacteria bacterium RIFCSPLOWO2_02_FULL_45_10c graph.
 
 	References
 	---------------------

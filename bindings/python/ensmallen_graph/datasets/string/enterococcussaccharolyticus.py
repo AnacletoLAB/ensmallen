@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSaccharolyticus.
+This file offers the methods to automatically retrieve the graph Enterococcus saccharolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusSaccharolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSaccharolyticus graph.
+    """Return new instance of the Enterococcus saccharolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusSaccharolyticus(
 
     Returns
     -----------------------
-    Instace of EnterococcusSaccharolyticus graph.
+    Instace of Enterococcus saccharolyticus graph.
 
 	References
 	---------------------

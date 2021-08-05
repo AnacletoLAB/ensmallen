@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarivitaCryptomonadis.
+This file offers the methods to automatically retrieve the graph Marivita cryptomonadis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarivitaCryptomonadis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarivitaCryptomonadis graph.
+    """Return new instance of the Marivita cryptomonadis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarivitaCryptomonadis(
 
     Returns
     -----------------------
-    Instace of MarivitaCryptomonadis graph.
+    Instace of Marivita cryptomonadis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaSpongiae.
+This file offers the methods to automatically retrieve the graph Aquimarina spongiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaSpongiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaSpongiae graph.
+    """Return new instance of the Aquimarina spongiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquimarinaSpongiae(
 
     Returns
     -----------------------
-    Instace of AquimarinaSpongiae graph.
+    Instace of Aquimarina spongiae graph.
 
 	References
 	---------------------

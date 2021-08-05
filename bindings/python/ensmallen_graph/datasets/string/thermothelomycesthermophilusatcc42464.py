@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermothelomycesThermophilusAtcc42464.
+This file offers the methods to automatically retrieve the graph Thermothelomyces thermophilus ATCC 42464.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermothelomycesThermophilusAtcc42464(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermothelomycesThermophilusAtcc42464 graph.
+    """Return new instance of the Thermothelomyces thermophilus ATCC 42464 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermothelomycesThermophilusAtcc42464(
 
     Returns
     -----------------------
-    Instace of ThermothelomycesThermophilusAtcc42464 graph.
+    Instace of Thermothelomyces thermophilus ATCC 42464 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterBemidjiensis.
+This file offers the methods to automatically retrieve the graph Geobacter bemidjiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterBemidjiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterBemidjiensis graph.
+    """Return new instance of the Geobacter bemidjiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacterBemidjiensis(
 
     Returns
     -----------------------
-    Instace of GeobacterBemidjiensis graph.
+    Instace of Geobacter bemidjiensis graph.
 
 	References
 	---------------------

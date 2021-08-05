@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccidioidesBrasiliensisPb18.
+This file offers the methods to automatically retrieve the graph Paracoccidioides brasiliensis Pb18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccidioidesBrasiliensisPb18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccidioidesBrasiliensisPb18 graph.
+    """Return new instance of the Paracoccidioides brasiliensis Pb18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccidioidesBrasiliensisPb18(
 
     Returns
     -----------------------
-    Instace of ParacoccidioidesBrasiliensisPb18 graph.
+    Instace of Paracoccidioides brasiliensis Pb18 graph.
 
 	References
 	---------------------

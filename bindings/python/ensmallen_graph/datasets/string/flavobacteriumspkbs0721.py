@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpKbs0721.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. KBS0721.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpKbs0721(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpKbs0721 graph.
+    """Return new instance of the Flavobacterium sp. KBS0721 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpKbs0721(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpKbs0721 graph.
+    Instace of Flavobacterium sp. KBS0721 graph.
 
 	References
 	---------------------

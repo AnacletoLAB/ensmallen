@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusLacrimalisDsm7455.
+This file offers the methods to automatically retrieve the graph Peptoniphilus lacrimalis DSM 7455.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusLacrimalisDsm7455(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusLacrimalisDsm7455 graph.
+    """Return new instance of the Peptoniphilus lacrimalis DSM 7455 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusLacrimalisDsm7455(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusLacrimalisDsm7455 graph.
+    Instace of Peptoniphilus lacrimalis DSM 7455 graph.
 
 	References
 	---------------------

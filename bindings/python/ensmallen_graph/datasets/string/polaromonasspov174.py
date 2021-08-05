@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasSpOv174.
+This file offers the methods to automatically retrieve the graph Polaromonas sp. OV174.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasSpOv174(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasSpOv174 graph.
+    """Return new instance of the Polaromonas sp. OV174 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaromonasSpOv174(
 
     Returns
     -----------------------
-    Instace of PolaromonasSpOv174 graph.
+    Instace of Polaromonas sp. OV174 graph.
 
 	References
 	---------------------

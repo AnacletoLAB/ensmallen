@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaGuanche.
+This file offers the methods to automatically retrieve the graph Drosophila guanche.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaGuanche(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaGuanche graph.
+    """Return new instance of the Drosophila guanche graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaGuanche(
 
     Returns
     -----------------------
-    Instace of DrosophilaGuanche graph.
+    Instace of Drosophila guanche graph.
 
 	References
 	---------------------

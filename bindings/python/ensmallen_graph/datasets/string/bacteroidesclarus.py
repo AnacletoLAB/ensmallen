@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesClarus.
+This file offers the methods to automatically retrieve the graph Bacteroides clarus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesClarus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesClarus graph.
+    """Return new instance of the Bacteroides clarus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesClarus(
 
     Returns
     -----------------------
-    Instace of BacteroidesClarus graph.
+    Instace of Bacteroides clarus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinimonasKoreensisDsm17726.
+This file offers the methods to automatically retrieve the graph Chitinimonas koreensis DSM 17726.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinimonasKoreensisDsm17726(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinimonasKoreensisDsm17726 graph.
+    """Return new instance of the Chitinimonas koreensis DSM 17726 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinimonasKoreensisDsm17726(
 
     Returns
     -----------------------
-    Instace of ChitinimonasKoreensisDsm17726 graph.
+    Instace of Chitinimonas koreensis DSM 17726 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProsthecochlorisSpHl130Gsb.
+This file offers the methods to automatically retrieve the graph Prosthecochloris sp. HL-130-GSB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProsthecochlorisSpHl130Gsb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProsthecochlorisSpHl130Gsb graph.
+    """Return new instance of the Prosthecochloris sp. HL-130-GSB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProsthecochlorisSpHl130Gsb(
 
     Returns
     -----------------------
-    Instace of ProsthecochlorisSpHl130Gsb graph.
+    Instace of Prosthecochloris sp. HL-130-GSB graph.
 
 	References
 	---------------------

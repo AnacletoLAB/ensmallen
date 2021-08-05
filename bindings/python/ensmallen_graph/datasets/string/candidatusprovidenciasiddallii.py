@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusProvidenciaSiddallii.
+This file offers the methods to automatically retrieve the graph Candidatus Providencia siddallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusProvidenciaSiddallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusProvidenciaSiddallii graph.
+    """Return new instance of the Candidatus Providencia siddallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusProvidenciaSiddallii(
 
     Returns
     -----------------------
-    Instace of CandidatusProvidenciaSiddallii graph.
+    Instace of Candidatus Providencia siddallii graph.
 
 	References
 	---------------------

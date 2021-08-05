@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaCountry.
+This file offers the methods to automatically retrieve the graph dbpedia-country.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaCountry(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaCountry graph.
+    """Return new instance of the dbpedia-country graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaCountry(
 
     Returns
     -----------------------
-    Instace of DbpediaCountry graph.
+    Instace of dbpedia-country graph.
 
 	References
 	---------------------

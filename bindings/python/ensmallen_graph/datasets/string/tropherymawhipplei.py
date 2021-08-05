@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TropherymaWhipplei.
+This file offers the methods to automatically retrieve the graph Tropheryma whipplei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TropherymaWhipplei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TropherymaWhipplei graph.
+    """Return new instance of the Tropheryma whipplei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TropherymaWhipplei(
 
     Returns
     -----------------------
-    Instace of TropherymaWhipplei graph.
+    Instace of Tropheryma whipplei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolinellaSuccinogenes.
+This file offers the methods to automatically retrieve the graph Wolinella succinogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolinellaSuccinogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolinellaSuccinogenes graph.
+    """Return new instance of the Wolinella succinogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WolinellaSuccinogenes(
 
     Returns
     -----------------------
-    Instace of WolinellaSuccinogenes graph.
+    Instace of Wolinella succinogenes graph.
 
 	References
 	---------------------

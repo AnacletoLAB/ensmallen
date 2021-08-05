@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnothrixSpP13c2.
+This file offers the methods to automatically retrieve the graph Limnothrix sp. P13C2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnothrixSpP13c2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnothrixSpP13c2 graph.
+    """Return new instance of the Limnothrix sp. P13C2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnothrixSpP13c2(
 
     Returns
     -----------------------
-    Instace of LimnothrixSpP13c2 graph.
+    Instace of Limnothrix sp. P13C2 graph.
 
 	References
 	---------------------

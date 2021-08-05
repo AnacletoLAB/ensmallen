@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaMediterranea.
+This file offers the methods to automatically retrieve the graph Olsenella mediterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaMediterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaMediterranea graph.
+    """Return new instance of the Olsenella mediterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaMediterranea(
 
     Returns
     -----------------------
-    Instace of OlsenellaMediterranea graph.
+    Instace of Olsenella mediterranea graph.
 
 	References
 	---------------------

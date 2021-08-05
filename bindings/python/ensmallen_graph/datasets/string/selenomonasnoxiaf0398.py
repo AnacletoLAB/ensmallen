@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasNoxiaF0398.
+This file offers the methods to automatically retrieve the graph Selenomonas noxia F0398.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasNoxiaF0398(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasNoxiaF0398 graph.
+    """Return new instance of the Selenomonas noxia F0398 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasNoxiaF0398(
 
     Returns
     -----------------------
-    Instace of SelenomonasNoxiaF0398 graph.
+    Instace of Selenomonas noxia F0398 graph.
 
 	References
 	---------------------

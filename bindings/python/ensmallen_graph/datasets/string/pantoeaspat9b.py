@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSpAt9b.
+This file offers the methods to automatically retrieve the graph Pantoea sp. At9b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSpAt9b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSpAt9b graph.
+    """Return new instance of the Pantoea sp. At9b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PantoeaSpAt9b(
 
     Returns
     -----------------------
-    Instace of PantoeaSpAt9b graph.
+    Instace of Pantoea sp. At9b graph.
 
 	References
 	---------------------

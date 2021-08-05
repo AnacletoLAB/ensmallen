@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rw5151.
+This file offers the methods to automatically retrieve the graph rw5151.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rw5151(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rw5151 graph.
+    """Return new instance of the rw5151 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rw5151(
 
     Returns
     -----------------------
-    Instace of Rw5151 graph.
+    Instace of rw5151 graph.
 
 	References
 	---------------------

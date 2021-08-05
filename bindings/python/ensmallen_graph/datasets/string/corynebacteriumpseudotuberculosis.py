@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPseudotuberculosis.
+This file offers the methods to automatically retrieve the graph Corynebacterium pseudotuberculosis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPseudotuberculosis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPseudotuberculosis graph.
+    """Return new instance of the Corynebacterium pseudotuberculosis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumPseudotuberculosis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPseudotuberculosis graph.
+    Instace of Corynebacterium pseudotuberculosis graph.
 
 	References
 	---------------------

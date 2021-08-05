@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973.
+This file offers the methods to automatically retrieve the graph Salmonella enterica subsp. salamae serovar 56:z10:e,n,x str. 1369-73.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973 graph.
+    """Return new instance of the Salmonella enterica subsp. salamae serovar 56:z10:e,n,x str. 1369-73 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaSubspSalamaeSerovar56Z10ENXStr136973 graph.
+    Instace of Salmonella enterica subsp. salamae serovar 56:z10:e,n,x str. 1369-73 graph.
 
 	References
 	---------------------

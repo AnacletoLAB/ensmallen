@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumVignae.
+This file offers the methods to automatically retrieve the graph Rhizobium vignae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumVignae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumVignae graph.
+    """Return new instance of the Rhizobium vignae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumVignae(
 
     Returns
     -----------------------
-    Instace of RhizobiumVignae graph.
+    Instace of Rhizobium vignae graph.
 
 	References
 	---------------------

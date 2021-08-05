@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferaxMucosum.
+This file offers the methods to automatically retrieve the graph Haloferax mucosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferaxMucosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferaxMucosum graph.
+    """Return new instance of the Haloferax mucosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloferaxMucosum(
 
     Returns
     -----------------------
-    Instace of HaloferaxMucosum graph.
+    Instace of Haloferax mucosum graph.
 
 	References
 	---------------------

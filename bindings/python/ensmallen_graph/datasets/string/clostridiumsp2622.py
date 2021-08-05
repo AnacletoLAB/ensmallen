@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSp2622.
+This file offers the methods to automatically retrieve the graph Clostridium sp. 26_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSp2622(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSp2622 graph.
+    """Return new instance of the Clostridium sp. 26_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSp2622(
 
     Returns
     -----------------------
-    Instace of ClostridiumSp2622 graph.
+    Instace of Clostridium sp. 26_22 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSp9140.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. 9140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSp9140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSp9140 graph.
+    """Return new instance of the Rhizobium sp. 9140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSp9140(
 
     Returns
     -----------------------
-    Instace of RhizobiumSp9140 graph.
+    Instace of Rhizobium sp. 9140 graph.
 
 	References
 	---------------------

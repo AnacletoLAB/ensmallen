@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitPatent.
+This file offers the methods to automatically retrieve the graph cit-patent.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CitPatent(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitPatent graph.
+    """Return new instance of the cit-patent graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CitPatent(
 
     Returns
     -----------------------
-    Instace of CitPatent graph.
+    Instace of cit-patent graph.
 
 	References
 	---------------------

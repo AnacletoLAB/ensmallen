@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ByssochlamysSpectabilis.
+This file offers the methods to automatically retrieve the graph Byssochlamys spectabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ByssochlamysSpectabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ByssochlamysSpectabilis graph.
+    """Return new instance of the Byssochlamys spectabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ByssochlamysSpectabilis(
 
     Returns
     -----------------------
-    Instace of ByssochlamysSpectabilis graph.
+    Instace of Byssochlamys spectabilis graph.
 
 	References
 	---------------------

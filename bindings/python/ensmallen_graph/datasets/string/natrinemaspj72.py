@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrinemaSpJ72.
+This file offers the methods to automatically retrieve the graph Natrinema sp. J72.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrinemaSpJ72(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrinemaSpJ72 graph.
+    """Return new instance of the Natrinema sp. J72 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatrinemaSpJ72(
 
     Returns
     -----------------------
-    Instace of NatrinemaSpJ72 graph.
+    Instace of Natrinema sp. J72 graph.
 
 	References
 	---------------------

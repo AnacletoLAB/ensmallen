@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EntomoplasmaLucivoraxAtcc49196.
+This file offers the methods to automatically retrieve the graph Entomoplasma lucivorax ATCC 49196.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EntomoplasmaLucivoraxAtcc49196(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EntomoplasmaLucivoraxAtcc49196 graph.
+    """Return new instance of the Entomoplasma lucivorax ATCC 49196 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EntomoplasmaLucivoraxAtcc49196(
 
     Returns
     -----------------------
-    Instace of EntomoplasmaLucivoraxAtcc49196 graph.
+    Instace of Entomoplasma lucivorax ATCC 49196 graph.
 
 	References
 	---------------------

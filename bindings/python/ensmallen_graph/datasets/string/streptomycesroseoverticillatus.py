@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesRoseoverticillatus.
+This file offers the methods to automatically retrieve the graph Streptomyces roseoverticillatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesRoseoverticillatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesRoseoverticillatus graph.
+    """Return new instance of the Streptomyces roseoverticillatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesRoseoverticillatus(
 
     Returns
     -----------------------
-    Instace of StreptomycesRoseoverticillatus graph.
+    Instace of Streptomyces roseoverticillatus graph.
 
 	References
 	---------------------

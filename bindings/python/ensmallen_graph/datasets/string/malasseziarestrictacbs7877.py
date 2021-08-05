@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalasseziaRestrictaCbs7877.
+This file offers the methods to automatically retrieve the graph Malassezia restricta CBS 7877.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalasseziaRestrictaCbs7877(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalasseziaRestrictaCbs7877 graph.
+    """Return new instance of the Malassezia restricta CBS 7877 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalasseziaRestrictaCbs7877(
 
     Returns
     -----------------------
-    Instace of MalasseziaRestrictaCbs7877 graph.
+    Instace of Malassezia restricta CBS 7877 graph.
 
 	References
 	---------------------

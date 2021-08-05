@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusRuber.
+This file offers the methods to automatically retrieve the graph Geodermatophilus ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusRuber graph.
+    """Return new instance of the Geodermatophilus ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusRuber(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusRuber graph.
+    Instace of Geodermatophilus ruber graph.
 
 	References
 	---------------------

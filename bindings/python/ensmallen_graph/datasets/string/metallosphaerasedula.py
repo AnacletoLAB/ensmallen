@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetallosphaeraSedula.
+This file offers the methods to automatically retrieve the graph Metallosphaera sedula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetallosphaeraSedula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetallosphaeraSedula graph.
+    """Return new instance of the Metallosphaera sedula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MetallosphaeraSedula(
 
     Returns
     -----------------------
-    Instace of MetallosphaeraSedula graph.
+    Instace of Metallosphaera sedula graph.
 
 	References
 	---------------------

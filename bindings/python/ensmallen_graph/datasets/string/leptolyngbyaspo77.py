@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpO77.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. O-77.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpO77(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpO77 graph.
+    """Return new instance of the Leptolyngbya sp. O-77 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptolyngbyaSpO77(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpO77 graph.
+    Instace of Leptolyngbya sp. O-77 graph.
 
 	References
 	---------------------

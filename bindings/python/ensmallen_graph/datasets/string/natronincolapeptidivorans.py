@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronincolaPeptidivorans.
+This file offers the methods to automatically retrieve the graph Natronincola peptidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronincolaPeptidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronincolaPeptidivorans graph.
+    """Return new instance of the Natronincola peptidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronincolaPeptidivorans(
 
     Returns
     -----------------------
-    Instace of NatronincolaPeptidivorans graph.
+    Instace of Natronincola peptidivorans graph.
 
 	References
 	---------------------

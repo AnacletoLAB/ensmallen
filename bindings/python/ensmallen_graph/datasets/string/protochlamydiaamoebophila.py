@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProtochlamydiaAmoebophila.
+This file offers the methods to automatically retrieve the graph Protochlamydia amoebophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProtochlamydiaAmoebophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProtochlamydiaAmoebophila graph.
+    """Return new instance of the Protochlamydia amoebophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProtochlamydiaAmoebophila(
 
     Returns
     -----------------------
-    Instace of ProtochlamydiaAmoebophila graph.
+    Instace of Protochlamydia amoebophila graph.
 
 	References
 	---------------------

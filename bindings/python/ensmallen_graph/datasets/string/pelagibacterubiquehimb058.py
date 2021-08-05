@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacterUbiqueHimb058.
+This file offers the methods to automatically retrieve the graph Pelagibacter ubique HIMB058.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacterUbiqueHimb058(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacterUbiqueHimb058 graph.
+    """Return new instance of the Pelagibacter ubique HIMB058 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacterUbiqueHimb058(
 
     Returns
     -----------------------
-    Instace of PelagibacterUbiqueHimb058 graph.
+    Instace of Pelagibacter ubique HIMB058 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SanguibacterSuareziiNbrc16159.
+This file offers the methods to automatically retrieve the graph Sanguibacter suarezii NBRC 16159.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SanguibacterSuareziiNbrc16159(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SanguibacterSuareziiNbrc16159 graph.
+    """Return new instance of the Sanguibacter suarezii NBRC 16159 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SanguibacterSuareziiNbrc16159(
 
     Returns
     -----------------------
-    Instace of SanguibacterSuareziiNbrc16159 graph.
+    Instace of Sanguibacter suarezii NBRC 16159 graph.
 
 	References
 	---------------------

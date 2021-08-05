@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Kleemin.
+This file offers the methods to automatically retrieve the graph kleemin.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Kleemin(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Kleemin graph.
+    """Return new instance of the kleemin graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Kleemin(
 
     Returns
     -----------------------
-    Instace of Kleemin graph.
+    Instace of kleemin graph.
 
 	References
 	---------------------

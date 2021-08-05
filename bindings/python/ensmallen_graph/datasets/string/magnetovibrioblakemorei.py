@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetovibrioBlakemorei.
+This file offers the methods to automatically retrieve the graph Magnetovibrio blakemorei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetovibrioBlakemorei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetovibrioBlakemorei graph.
+    """Return new instance of the Magnetovibrio blakemorei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnetovibrioBlakemorei(
 
     Returns
     -----------------------
-    Instace of MagnetovibrioBlakemorei graph.
+    Instace of Magnetovibrio blakemorei graph.
 
 	References
 	---------------------

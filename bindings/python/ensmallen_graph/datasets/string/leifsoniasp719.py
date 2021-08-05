@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSp719.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. 71-9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaSp719(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSp719 graph.
+    """Return new instance of the Leifsonia sp. 71-9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeifsoniaSp719(
 
     Returns
     -----------------------
-    Instace of LeifsoniaSp719 graph.
+    Instace of Leifsonia sp. 71-9 graph.
 
 	References
 	---------------------

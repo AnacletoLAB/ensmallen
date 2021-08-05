@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaOneidensis.
+This file offers the methods to automatically retrieve the graph Shewanella oneidensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaOneidensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaOneidensis graph.
+    """Return new instance of the Shewanella oneidensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaOneidensis(
 
     Returns
     -----------------------
-    Instace of ShewanellaOneidensis graph.
+    Instace of Shewanella oneidensis graph.
 
 	References
 	---------------------

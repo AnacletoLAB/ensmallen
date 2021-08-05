@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BhargavaeaGinsengi.
+This file offers the methods to automatically retrieve the graph Bhargavaea ginsengi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BhargavaeaGinsengi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BhargavaeaGinsengi graph.
+    """Return new instance of the Bhargavaea ginsengi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BhargavaeaGinsengi(
 
     Returns
     -----------------------
-    Instace of BhargavaeaGinsengi graph.
+    Instace of Bhargavaea ginsengi graph.
 
 	References
 	---------------------

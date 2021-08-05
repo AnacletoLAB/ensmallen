@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSalmonicidaSubspAchromogenesAs03.
+This file offers the methods to automatically retrieve the graph Aeromonas salmonicida subsp. achromogenes AS03.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSalmonicidaSubspAchromogenesAs03(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSalmonicidaSubspAchromogenesAs03 graph.
+    """Return new instance of the Aeromonas salmonicida subsp. achromogenes AS03 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSalmonicidaSubspAchromogenesAs03(
 
     Returns
     -----------------------
-    Instace of AeromonasSalmonicidaSubspAchromogenesAs03 graph.
+    Instace of Aeromonas salmonicida subsp. achromogenes AS03 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumCag3125820.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium CAG:312_58_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumCag3125820(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumCag3125820 graph.
+    """Return new instance of the Verrucomicrobia bacterium CAG:312_58_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiaBacteriumCag3125820(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumCag3125820 graph.
+    Instace of Verrucomicrobia bacterium CAG:312_58_20 graph.
 
 	References
 	---------------------

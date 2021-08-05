@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudacidovoraxIntermedius.
+This file offers the methods to automatically retrieve the graph Pseudacidovorax intermedius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudacidovoraxIntermedius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudacidovoraxIntermedius graph.
+    """Return new instance of the Pseudacidovorax intermedius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudacidovoraxIntermedius(
 
     Returns
     -----------------------
-    Instace of PseudacidovoraxIntermedius graph.
+    Instace of Pseudacidovorax intermedius graph.
 
 	References
 	---------------------

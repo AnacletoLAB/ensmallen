@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GaeumannomycesTriticiR3111a1.
+This file offers the methods to automatically retrieve the graph Gaeumannomyces tritici R3-111a-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GaeumannomycesTriticiR3111a1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GaeumannomycesTriticiR3111a1 graph.
+    """Return new instance of the Gaeumannomyces tritici R3-111a-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GaeumannomycesTriticiR3111a1(
 
     Returns
     -----------------------
-    Instace of GaeumannomycesTriticiR3111a1 graph.
+    Instace of Gaeumannomyces tritici R3-111a-1 graph.
 
 	References
 	---------------------

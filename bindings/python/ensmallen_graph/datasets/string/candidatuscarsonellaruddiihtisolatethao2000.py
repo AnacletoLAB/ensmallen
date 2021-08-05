@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCarsonellaRuddiiHtIsolateThao2000.
+This file offers the methods to automatically retrieve the graph Candidatus Carsonella ruddii HT isolate Thao2000.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCarsonellaRuddiiHtIsolateThao2000(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCarsonellaRuddiiHtIsolateThao2000 graph.
+    """Return new instance of the Candidatus Carsonella ruddii HT isolate Thao2000 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCarsonellaRuddiiHtIsolateThao2000(
 
     Returns
     -----------------------
-    Instace of CandidatusCarsonellaRuddiiHtIsolateThao2000 graph.
+    Instace of Candidatus Carsonella ruddii HT isolate Thao2000 graph.
 
 	References
 	---------------------

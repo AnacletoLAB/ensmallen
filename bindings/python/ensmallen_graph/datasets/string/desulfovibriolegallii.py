@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioLegallii.
+This file offers the methods to automatically retrieve the graph Desulfovibrio legallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioLegallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioLegallii graph.
+    """Return new instance of the Desulfovibrio legallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioLegallii(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioLegallii graph.
+    Instace of Desulfovibrio legallii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronomonasSpCba1134.
+This file offers the methods to automatically retrieve the graph Natronomonas sp. CBA1134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronomonasSpCba1134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronomonasSpCba1134 graph.
+    """Return new instance of the Natronomonas sp. CBA1134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatronomonasSpCba1134(
 
     Returns
     -----------------------
-    Instace of NatronomonasSpCba1134 graph.
+    Instace of Natronomonas sp. CBA1134 graph.
 
 	References
 	---------------------

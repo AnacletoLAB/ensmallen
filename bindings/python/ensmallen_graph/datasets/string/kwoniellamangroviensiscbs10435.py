@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KwoniellaMangroviensisCbs10435.
+This file offers the methods to automatically retrieve the graph Kwoniella mangroviensis CBS 10435.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KwoniellaMangroviensisCbs10435(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KwoniellaMangroviensisCbs10435 graph.
+    """Return new instance of the Kwoniella mangroviensis CBS 10435 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KwoniellaMangroviensisCbs10435(
 
     Returns
     -----------------------
-    Instace of KwoniellaMangroviensisCbs10435 graph.
+    Instace of Kwoniella mangroviensis CBS 10435 graph.
 
 	References
 	---------------------

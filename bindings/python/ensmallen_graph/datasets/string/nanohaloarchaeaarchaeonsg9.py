@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NanohaloarchaeaArchaeonSg9.
+This file offers the methods to automatically retrieve the graph Nanohaloarchaea archaeon SG9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NanohaloarchaeaArchaeonSg9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NanohaloarchaeaArchaeonSg9 graph.
+    """Return new instance of the Nanohaloarchaea archaeon SG9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NanohaloarchaeaArchaeonSg9(
 
     Returns
     -----------------------
-    Instace of NanohaloarchaeaArchaeonSg9 graph.
+    Instace of Nanohaloarchaea archaeon SG9 graph.
 
 	References
 	---------------------

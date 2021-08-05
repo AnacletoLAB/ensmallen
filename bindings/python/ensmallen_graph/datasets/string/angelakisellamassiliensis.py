@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AngelakisellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Angelakisella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AngelakisellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AngelakisellaMassiliensis graph.
+    """Return new instance of the Angelakisella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AngelakisellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of AngelakisellaMassiliensis graph.
+    Instace of Angelakisella massiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpTpA0875.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. TP-A0875.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpTpA0875(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpTpA0875 graph.
+    """Return new instance of the Streptomyces sp. TP-A0875 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpTpA0875(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpTpA0875 graph.
+    Instace of Streptomyces sp. TP-A0875 graph.
 
 	References
 	---------------------

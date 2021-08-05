@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPlatensis.
+This file offers the methods to automatically retrieve the graph Streptomyces platensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPlatensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPlatensis graph.
+    """Return new instance of the Streptomyces platensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesPlatensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesPlatensis graph.
+    Instace of Streptomyces platensis graph.
 
 	References
 	---------------------

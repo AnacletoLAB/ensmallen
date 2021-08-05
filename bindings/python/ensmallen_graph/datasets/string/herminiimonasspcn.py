@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerminiimonasSpCn.
+This file offers the methods to automatically retrieve the graph Herminiimonas sp. CN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerminiimonasSpCn(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerminiimonasSpCn graph.
+    """Return new instance of the Herminiimonas sp. CN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerminiimonasSpCn(
 
     Returns
     -----------------------
-    Instace of HerminiimonasSpCn graph.
+    Instace of Herminiimonas sp. CN graph.
 
 	References
 	---------------------

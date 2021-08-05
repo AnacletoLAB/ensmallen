@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGigeriorumDsm23908Crbip2485.
+This file offers the methods to automatically retrieve the graph Lactobacillus gigeriorum DSM 23908 CRBIP 24.85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGigeriorumDsm23908Crbip2485(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGigeriorumDsm23908Crbip2485 graph.
+    """Return new instance of the Lactobacillus gigeriorum DSM 23908 CRBIP 24.85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusGigeriorumDsm23908Crbip2485(
 
     Returns
     -----------------------
-    Instace of LactobacillusGigeriorumDsm23908Crbip2485 graph.
+    Instace of Lactobacillus gigeriorum DSM 23908 CRBIP 24.85 graph.
 
 	References
 	---------------------

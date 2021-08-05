@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterAerophilusDsm13606.
+This file offers the methods to automatically retrieve the graph Hymenobacter aerophilus DSM 13606.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterAerophilusDsm13606(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterAerophilusDsm13606 graph.
+    """Return new instance of the Hymenobacter aerophilus DSM 13606 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterAerophilusDsm13606(
 
     Returns
     -----------------------
-    Instace of HymenobacterAerophilusDsm13606 graph.
+    Instace of Hymenobacter aerophilus DSM 13606 graph.
 
 	References
 	---------------------

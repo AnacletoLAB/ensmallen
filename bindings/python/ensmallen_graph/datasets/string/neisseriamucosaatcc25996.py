@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaMucosaAtcc25996.
+This file offers the methods to automatically retrieve the graph Neisseria mucosa ATCC25996.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaMucosaAtcc25996(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaMucosaAtcc25996 graph.
+    """Return new instance of the Neisseria mucosa ATCC25996 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaMucosaAtcc25996(
 
     Returns
     -----------------------
-    Instace of NeisseriaMucosaAtcc25996 graph.
+    Instace of Neisseria mucosa ATCC25996 graph.
 
 	References
 	---------------------

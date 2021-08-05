@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyalangiumMinutum.
+This file offers the methods to automatically retrieve the graph Hyalangium minutum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyalangiumMinutum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyalangiumMinutum graph.
+    """Return new instance of the Hyalangium minutum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyalangiumMinutum(
 
     Returns
     -----------------------
-    Instace of HyalangiumMinutum graph.
+    Instace of Hyalangium minutum graph.
 
 	References
 	---------------------

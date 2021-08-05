@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GaboniaMassiliensis.
+This file offers the methods to automatically retrieve the graph Gabonia massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GaboniaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GaboniaMassiliensis graph.
+    """Return new instance of the Gabonia massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GaboniaMassiliensis(
 
     Returns
     -----------------------
-    Instace of GaboniaMassiliensis graph.
+    Instace of Gabonia massiliensis graph.
 
 	References
 	---------------------

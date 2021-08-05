@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterDefluvii.
+This file offers the methods to automatically retrieve the graph Lysobacter defluvii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterDefluvii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterDefluvii graph.
+    """Return new instance of the Lysobacter defluvii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysobacterDefluvii(
 
     Returns
     -----------------------
-    Instace of LysobacterDefluvii graph.
+    Instace of Lysobacter defluvii graph.
 
 	References
 	---------------------

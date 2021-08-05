@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkaliphilusTransvaalensis.
+This file offers the methods to automatically retrieve the graph Alkaliphilus transvaalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkaliphilusTransvaalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkaliphilusTransvaalensis graph.
+    """Return new instance of the Alkaliphilus transvaalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkaliphilusTransvaalensis(
 
     Returns
     -----------------------
-    Instace of AlkaliphilusTransvaalensis graph.
+    Instace of Alkaliphilus transvaalensis graph.
 
 	References
 	---------------------

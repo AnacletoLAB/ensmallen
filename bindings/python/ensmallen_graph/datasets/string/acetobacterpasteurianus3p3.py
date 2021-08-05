@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterPasteurianus3p3.
+This file offers the methods to automatically retrieve the graph Acetobacter pasteurianus 3P3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterPasteurianus3p3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterPasteurianus3p3 graph.
+    """Return new instance of the Acetobacter pasteurianus 3P3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacterPasteurianus3p3(
 
     Returns
     -----------------------
-    Instace of AcetobacterPasteurianus3p3 graph.
+    Instace of Acetobacter pasteurianus 3P3 graph.
 
 	References
 	---------------------

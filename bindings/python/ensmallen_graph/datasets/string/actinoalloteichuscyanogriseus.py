@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoalloteichusCyanogriseus.
+This file offers the methods to automatically retrieve the graph Actinoalloteichus cyanogriseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoalloteichusCyanogriseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoalloteichusCyanogriseus graph.
+    """Return new instance of the Actinoalloteichus cyanogriseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoalloteichusCyanogriseus(
 
     Returns
     -----------------------
-    Instace of ActinoalloteichusCyanogriseus graph.
+    Instace of Actinoalloteichus cyanogriseus graph.
 
 	References
 	---------------------

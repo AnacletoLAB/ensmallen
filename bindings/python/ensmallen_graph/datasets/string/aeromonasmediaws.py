@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasMediaWs.
+This file offers the methods to automatically retrieve the graph Aeromonas media WS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasMediaWs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasMediaWs graph.
+    """Return new instance of the Aeromonas media WS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasMediaWs(
 
     Returns
     -----------------------
-    Instace of AeromonasMediaWs graph.
+    Instace of Aeromonas media WS graph.
 
 	References
 	---------------------

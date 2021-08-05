@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PalaeococcusFerrophilusDsm13482.
+This file offers the methods to automatically retrieve the graph Palaeococcus ferrophilus DSM 13482.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PalaeococcusFerrophilusDsm13482(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PalaeococcusFerrophilusDsm13482 graph.
+    """Return new instance of the Palaeococcus ferrophilus DSM 13482 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PalaeococcusFerrophilusDsm13482(
 
     Returns
     -----------------------
-    Instace of PalaeococcusFerrophilusDsm13482 graph.
+    Instace of Palaeococcus ferrophilus DSM 13482 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGottheilii.
+This file offers the methods to automatically retrieve the graph Bacillus gottheilii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusGottheilii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGottheilii graph.
+    """Return new instance of the Bacillus gottheilii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusGottheilii(
 
     Returns
     -----------------------
-    Instace of BacillusGottheilii graph.
+    Instace of Bacillus gottheilii graph.
 
 	References
 	---------------------

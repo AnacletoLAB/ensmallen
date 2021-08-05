@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaEnoeca.
+This file offers the methods to automatically retrieve the graph Prevotella enoeca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaEnoeca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaEnoeca graph.
+    """Return new instance of the Prevotella enoeca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaEnoeca(
 
     Returns
     -----------------------
-    Instace of PrevotellaEnoeca graph.
+    Instace of Prevotella enoeca graph.
 
 	References
 	---------------------

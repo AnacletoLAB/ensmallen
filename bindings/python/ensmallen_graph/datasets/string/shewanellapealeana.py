@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaPealeana.
+This file offers the methods to automatically retrieve the graph Shewanella pealeana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaPealeana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaPealeana graph.
+    """Return new instance of the Shewanella pealeana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaPealeana(
 
     Returns
     -----------------------
-    Instace of ShewanellaPealeana graph.
+    Instace of Shewanella pealeana graph.
 
 	References
 	---------------------

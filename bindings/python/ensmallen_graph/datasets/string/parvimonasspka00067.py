@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvimonasSpKa00067.
+This file offers the methods to automatically retrieve the graph Parvimonas sp. KA00067.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvimonasSpKa00067(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvimonasSpKa00067 graph.
+    """Return new instance of the Parvimonas sp. KA00067 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParvimonasSpKa00067(
 
     Returns
     -----------------------
-    Instace of ParvimonasSpKa00067 graph.
+    Instace of Parvimonas sp. KA00067 graph.
 
 	References
 	---------------------

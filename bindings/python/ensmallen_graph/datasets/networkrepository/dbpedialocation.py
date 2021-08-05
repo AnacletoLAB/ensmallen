@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaLocation.
+This file offers the methods to automatically retrieve the graph dbpedia-location.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaLocation(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaLocation graph.
+    """Return new instance of the dbpedia-location graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaLocation(
 
     Returns
     -----------------------
-    Instace of DbpediaLocation graph.
+    Instace of dbpedia-location graph.
 
 	References
 	---------------------

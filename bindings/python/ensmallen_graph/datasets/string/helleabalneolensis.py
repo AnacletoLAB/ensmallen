@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelleaBalneolensis.
+This file offers the methods to automatically retrieve the graph Hellea balneolensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelleaBalneolensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelleaBalneolensis graph.
+    """Return new instance of the Hellea balneolensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelleaBalneolensis(
 
     Returns
     -----------------------
-    Instace of HelleaBalneolensis graph.
+    Instace of Hellea balneolensis graph.
 
 	References
 	---------------------

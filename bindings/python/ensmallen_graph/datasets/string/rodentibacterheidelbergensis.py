@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentibacterHeidelbergensis.
+This file offers the methods to automatically retrieve the graph Rodentibacter heidelbergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentibacterHeidelbergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentibacterHeidelbergensis graph.
+    """Return new instance of the Rodentibacter heidelbergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentibacterHeidelbergensis(
 
     Returns
     -----------------------
-    Instace of RodentibacterHeidelbergensis graph.
+    Instace of Rodentibacter heidelbergensis graph.
 
 	References
 	---------------------

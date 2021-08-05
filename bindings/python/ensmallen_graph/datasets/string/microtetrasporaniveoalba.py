@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrotetrasporaNiveoalba.
+This file offers the methods to automatically retrieve the graph Microtetraspora niveoalba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrotetrasporaNiveoalba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrotetrasporaNiveoalba graph.
+    """Return new instance of the Microtetraspora niveoalba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrotetrasporaNiveoalba(
 
     Returns
     -----------------------
-    Instace of MicrotetrasporaNiveoalba graph.
+    Instace of Microtetraspora niveoalba graph.
 
 	References
 	---------------------

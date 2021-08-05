@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusSpUsmaa24.
+This file offers the methods to automatically retrieve the graph Cupriavidus sp. USMAA2-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusSpUsmaa24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusSpUsmaa24 graph.
+    """Return new instance of the Cupriavidus sp. USMAA2-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CupriavidusSpUsmaa24(
 
     Returns
     -----------------------
-    Instace of CupriavidusSpUsmaa24 graph.
+    Instace of Cupriavidus sp. USMAA2-4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumSpOralTaxon193.
+This file offers the methods to automatically retrieve the graph Propionibacterium sp. oral taxon 193.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumSpOralTaxon193(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumSpOralTaxon193 graph.
+    """Return new instance of the Propionibacterium sp. oral taxon 193 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionibacteriumSpOralTaxon193(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumSpOralTaxon193 graph.
+    Instace of Propionibacterium sp. oral taxon 193 graph.
 
 	References
 	---------------------

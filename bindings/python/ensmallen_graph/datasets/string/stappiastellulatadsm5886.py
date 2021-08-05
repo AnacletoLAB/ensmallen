@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StappiaStellulataDsm5886.
+This file offers the methods to automatically retrieve the graph Stappia stellulata DSM 5886.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StappiaStellulataDsm5886(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StappiaStellulataDsm5886 graph.
+    """Return new instance of the Stappia stellulata DSM 5886 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StappiaStellulataDsm5886(
 
     Returns
     -----------------------
-    Instace of StappiaStellulataDsm5886 graph.
+    Instace of Stappia stellulata DSM 5886 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumNebraskense.
+This file offers the methods to automatically retrieve the graph Mycobacterium nebraskense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumNebraskense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumNebraskense graph.
+    """Return new instance of the Mycobacterium nebraskense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumNebraskense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumNebraskense graph.
+    Instace of Mycobacterium nebraskense graph.
 
 	References
 	---------------------

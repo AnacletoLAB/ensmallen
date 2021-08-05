@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PilodermaCroceumF1598.
+This file offers the methods to automatically retrieve the graph Piloderma croceum F 1598.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PilodermaCroceumF1598(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PilodermaCroceumF1598 graph.
+    """Return new instance of the Piloderma croceum F 1598 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PilodermaCroceumF1598(
 
     Returns
     -----------------------
-    Instace of PilodermaCroceumF1598 graph.
+    Instace of Piloderma croceum F 1598 graph.
 
 	References
 	---------------------

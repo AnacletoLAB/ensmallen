@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasOryzaePvOryzaeKacc10331.
+This file offers the methods to automatically retrieve the graph Xanthomonas oryzae pv. oryzae KACC 10331.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasOryzaePvOryzaeKacc10331(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasOryzaePvOryzaeKacc10331 graph.
+    """Return new instance of the Xanthomonas oryzae pv. oryzae KACC 10331 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasOryzaePvOryzaeKacc10331(
 
     Returns
     -----------------------
-    Instace of XanthomonasOryzaePvOryzaeKacc10331 graph.
+    Instace of Xanthomonas oryzae pv. oryzae KACC 10331 graph.
 
 	References
 	---------------------

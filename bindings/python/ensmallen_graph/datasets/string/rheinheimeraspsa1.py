@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraSpSa1.
+This file offers the methods to automatically retrieve the graph Rheinheimera sp. SA_1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraSpSa1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraSpSa1 graph.
+    """Return new instance of the Rheinheimera sp. SA_1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RheinheimeraSpSa1(
 
     Returns
     -----------------------
-    Instace of RheinheimeraSpSa1 graph.
+    Instace of Rheinheimera sp. SA_1 graph.
 
 	References
 	---------------------

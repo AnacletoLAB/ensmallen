@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpK4410Mgs306.
+This file offers the methods to automatically retrieve the graph Clostridium sp. K4410.MGS-306.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpK4410Mgs306(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpK4410Mgs306 graph.
+    """Return new instance of the Clostridium sp. K4410.MGS-306 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpK4410Mgs306(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpK4410Mgs306 graph.
+    Instace of Clostridium sp. K4410.MGS-306 graph.
 
 	References
 	---------------------

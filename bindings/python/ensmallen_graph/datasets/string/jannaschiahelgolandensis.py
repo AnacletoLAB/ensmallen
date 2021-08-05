@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaHelgolandensis.
+This file offers the methods to automatically retrieve the graph Jannaschia helgolandensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaHelgolandensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaHelgolandensis graph.
+    """Return new instance of the Jannaschia helgolandensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaHelgolandensis(
 
     Returns
     -----------------------
-    Instace of JannaschiaHelgolandensis graph.
+    Instace of Jannaschia helgolandensis graph.
 
 	References
 	---------------------

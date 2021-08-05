@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquamicrobiumAerolatumDsm21857.
+This file offers the methods to automatically retrieve the graph Aquamicrobium aerolatum DSM 21857.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquamicrobiumAerolatumDsm21857(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquamicrobiumAerolatumDsm21857 graph.
+    """Return new instance of the Aquamicrobium aerolatum DSM 21857 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquamicrobiumAerolatumDsm21857(
 
     Returns
     -----------------------
-    Instace of AquamicrobiumAerolatumDsm21857 graph.
+    Instace of Aquamicrobium aerolatum DSM 21857 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterSpHtcc2649.
+This file offers the methods to automatically retrieve the graph Janibacter sp. HTCC2649.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterSpHtcc2649(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterSpHtcc2649 graph.
+    """Return new instance of the Janibacter sp. HTCC2649 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanibacterSpHtcc2649(
 
     Returns
     -----------------------
-    Instace of JanibacterSpHtcc2649 graph.
+    Instace of Janibacter sp. HTCC2649 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacterMarinusA45.
+This file offers the methods to automatically retrieve the graph Methylobacter marinus A45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacterMarinusA45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacterMarinusA45 graph.
+    """Return new instance of the Methylobacter marinus A45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacterMarinusA45(
 
     Returns
     -----------------------
-    Instace of MethylobacterMarinusA45 graph.
+    Instace of Methylobacter marinus A45 graph.
 
 	References
 	---------------------

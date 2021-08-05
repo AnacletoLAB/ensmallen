@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumAe2021.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium AE2021.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumAe2021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumAe2021 graph.
+    """Return new instance of the Ruminococcaceae bacterium AE2021 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcaceaeBacteriumAe2021(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumAe2021 graph.
+    Instace of Ruminococcaceae bacterium AE2021 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaPalmaeJ233.
+This file offers the methods to automatically retrieve the graph Acholeplasma palmae J233.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaPalmaeJ233(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaPalmaeJ233 graph.
+    """Return new instance of the Acholeplasma palmae J233 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcholeplasmaPalmaeJ233(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaPalmaeJ233 graph.
+    Instace of Acholeplasma palmae J233 graph.
 
 	References
 	---------------------

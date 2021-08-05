@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusRaffinolactis.
+This file offers the methods to automatically retrieve the graph Lactococcus raffinolactis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusRaffinolactis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusRaffinolactis graph.
+    """Return new instance of the Lactococcus raffinolactis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactococcusRaffinolactis(
 
     Returns
     -----------------------
-    Instace of LactococcusRaffinolactis graph.
+    Instace of Lactococcus raffinolactis graph.
 
 	References
 	---------------------

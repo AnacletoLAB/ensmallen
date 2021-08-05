@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpSod10.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. SOD10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpSod10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpSod10 graph.
+    """Return new instance of the Mesorhizobium sp. SOD10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumSpSod10(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpSod10 graph.
+    Instace of Mesorhizobium sp. SOD10 graph.
 
 	References
 	---------------------

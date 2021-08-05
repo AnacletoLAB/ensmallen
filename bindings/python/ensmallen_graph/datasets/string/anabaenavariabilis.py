@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabaenaVariabilis.
+This file offers the methods to automatically retrieve the graph Anabaena variabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabaenaVariabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabaenaVariabilis graph.
+    """Return new instance of the Anabaena variabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnabaenaVariabilis(
 
     Returns
     -----------------------
-    Instace of AnabaenaVariabilis graph.
+    Instace of Anabaena variabilis graph.
 
 	References
 	---------------------

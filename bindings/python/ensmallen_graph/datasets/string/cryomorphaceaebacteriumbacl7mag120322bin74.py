@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryomorphaceaeBacteriumBacl7Mag120322Bin74.
+This file offers the methods to automatically retrieve the graph Cryomorphaceae bacterium BACL7 MAG-120322-bin74.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryomorphaceaeBacteriumBacl7Mag120322Bin74(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryomorphaceaeBacteriumBacl7Mag120322Bin74 graph.
+    """Return new instance of the Cryomorphaceae bacterium BACL7 MAG-120322-bin74 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryomorphaceaeBacteriumBacl7Mag120322Bin74(
 
     Returns
     -----------------------
-    Instace of CryomorphaceaeBacteriumBacl7Mag120322Bin74 graph.
+    Instace of Cryomorphaceae bacterium BACL7 MAG-120322-bin74 graph.
 
 	References
 	---------------------

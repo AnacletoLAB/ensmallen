@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShigellaBoydiiCdc308394.
+This file offers the methods to automatically retrieve the graph Shigella boydii CDC 3083-94.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShigellaBoydiiCdc308394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShigellaBoydiiCdc308394 graph.
+    """Return new instance of the Shigella boydii CDC 3083-94 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShigellaBoydiiCdc308394(
 
     Returns
     -----------------------
-    Instace of ShigellaBoydiiCdc308394 graph.
+    Instace of Shigella boydii CDC 3083-94 graph.
 
 	References
 	---------------------

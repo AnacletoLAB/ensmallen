@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaTamurae.
+This file offers the methods to automatically retrieve the graph Rickettsia tamurae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaTamurae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaTamurae graph.
+    """Return new instance of the Rickettsia tamurae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaTamurae(
 
     Returns
     -----------------------
-    Instace of RickettsiaTamurae graph.
+    Instace of Rickettsia tamurae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaCinerea.
+This file offers the methods to automatically retrieve the graph Neisseria cinerea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaCinerea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaCinerea graph.
+    """Return new instance of the Neisseria cinerea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaCinerea(
 
     Returns
     -----------------------
-    Instace of NeisseriaCinerea graph.
+    Instace of Neisseria cinerea graph.
 
 	References
 	---------------------

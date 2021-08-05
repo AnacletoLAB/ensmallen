@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenibacterLatericius.
+This file offers the methods to automatically retrieve the graph Arenibacter latericius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenibacterLatericius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenibacterLatericius graph.
+    """Return new instance of the Arenibacter latericius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenibacterLatericius(
 
     Returns
     -----------------------
-    Instace of ArenibacterLatericius graph.
+    Instace of Arenibacter latericius graph.
 
 	References
 	---------------------

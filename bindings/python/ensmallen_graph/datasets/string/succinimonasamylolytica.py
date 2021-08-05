@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuccinimonasAmylolytica.
+This file offers the methods to automatically retrieve the graph Succinimonas amylolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuccinimonasAmylolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuccinimonasAmylolytica graph.
+    """Return new instance of the Succinimonas amylolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SuccinimonasAmylolytica(
 
     Returns
     -----------------------
-    Instace of SuccinimonasAmylolytica graph.
+    Instace of Succinimonas amylolytica graph.
 
 	References
 	---------------------

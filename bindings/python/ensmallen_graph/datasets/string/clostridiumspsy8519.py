@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpSy8519.
+This file offers the methods to automatically retrieve the graph Clostridium sp. SY8519.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpSy8519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpSy8519 graph.
+    """Return new instance of the Clostridium sp. SY8519 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpSy8519(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpSy8519 graph.
+    Instace of Clostridium sp. SY8519 graph.
 
 	References
 	---------------------

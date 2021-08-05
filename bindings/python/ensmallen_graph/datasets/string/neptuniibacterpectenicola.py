@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptuniibacterPectenicola.
+This file offers the methods to automatically retrieve the graph Neptuniibacter pectenicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptuniibacterPectenicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptuniibacterPectenicola graph.
+    """Return new instance of the Neptuniibacter pectenicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptuniibacterPectenicola(
 
     Returns
     -----------------------
-    Instace of NeptuniibacterPectenicola graph.
+    Instace of Neptuniibacter pectenicola graph.
 
 	References
 	---------------------

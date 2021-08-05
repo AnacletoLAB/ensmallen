@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaHaemolyticaM42548.
+This file offers the methods to automatically retrieve the graph Mannheimia haemolytica M42548.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaHaemolyticaM42548(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaHaemolyticaM42548 graph.
+    """Return new instance of the Mannheimia haemolytica M42548 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MannheimiaHaemolyticaM42548(
 
     Returns
     -----------------------
-    Instace of MannheimiaHaemolyticaM42548 graph.
+    Instace of Mannheimia haemolytica M42548 graph.
 
 	References
 	---------------------

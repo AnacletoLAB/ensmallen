@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesterenkoniaAlba.
+This file offers the methods to automatically retrieve the graph Nesterenkonia alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesterenkoniaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesterenkoniaAlba graph.
+    """Return new instance of the Nesterenkonia alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NesterenkoniaAlba(
 
     Returns
     -----------------------
-    Instace of NesterenkoniaAlba graph.
+    Instace of Nesterenkonia alba graph.
 
 	References
 	---------------------

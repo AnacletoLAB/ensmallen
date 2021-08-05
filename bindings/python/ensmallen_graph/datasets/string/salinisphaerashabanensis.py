@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinisphaeraShabanensis.
+This file offers the methods to automatically retrieve the graph Salinisphaera shabanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinisphaeraShabanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinisphaeraShabanensis graph.
+    """Return new instance of the Salinisphaera shabanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinisphaeraShabanensis(
 
     Returns
     -----------------------
-    Instace of SalinisphaeraShabanensis graph.
+    Instace of Salinisphaera shabanensis graph.
 
 	References
 	---------------------

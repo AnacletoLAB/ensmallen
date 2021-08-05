@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteimonasHuabeiensis.
+This file offers the methods to automatically retrieve the graph Luteimonas huabeiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteimonasHuabeiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteimonasHuabeiensis graph.
+    """Return new instance of the Luteimonas huabeiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LuteimonasHuabeiensis(
 
     Returns
     -----------------------
-    Instace of LuteimonasHuabeiensis graph.
+    Instace of Luteimonas huabeiensis graph.
 
 	References
 	---------------------

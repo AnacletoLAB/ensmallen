@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSojae.
+This file offers the methods to automatically retrieve the graph Ensifer sojae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSojae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSojae graph.
+    """Return new instance of the Ensifer sojae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnsiferSojae(
 
     Returns
     -----------------------
-    Instace of EnsiferSojae graph.
+    Instace of Ensifer sojae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpHw567.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. HW567.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpHw567(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpHw567 graph.
+    """Return new instance of the Paenibacillus sp. HW567 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpHw567(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpHw567 graph.
+    Instace of Paenibacillus sp. HW567 graph.
 
 	References
 	---------------------

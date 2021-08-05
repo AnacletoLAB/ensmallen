@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynergistesSp31syn1.
+This file offers the methods to automatically retrieve the graph Synergistes sp. 31syn1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynergistesSp31syn1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynergistesSp31syn1 graph.
+    """Return new instance of the Synergistes sp. 31syn1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynergistesSp31syn1(
 
     Returns
     -----------------------
-    Instace of SynergistesSp31syn1 graph.
+    Instace of Synergistes sp. 31syn1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolimonasSoli.
+This file offers the methods to automatically retrieve the graph Solimonas soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolimonasSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolimonasSoli graph.
+    """Return new instance of the Solimonas soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolimonasSoli(
 
     Returns
     -----------------------
-    Instace of SolimonasSoli graph.
+    Instace of Solimonas soli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumLactosutens.
+This file offers the methods to automatically retrieve the graph Sphingobium lactosutens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumLactosutens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumLactosutens graph.
+    """Return new instance of the Sphingobium lactosutens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumLactosutens(
 
     Returns
     -----------------------
-    Instace of SphingobiumLactosutens graph.
+    Instace of Sphingobium lactosutens graph.
 
 	References
 	---------------------

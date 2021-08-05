@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumZucineum.
+This file offers the methods to automatically retrieve the graph Phenylobacterium zucineum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumZucineum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumZucineum graph.
+    """Return new instance of the Phenylobacterium zucineum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhenylobacteriumZucineum(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumZucineum graph.
+    Instace of Phenylobacterium zucineum graph.
 
 	References
 	---------------------

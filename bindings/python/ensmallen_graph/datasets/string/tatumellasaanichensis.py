@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatumellaSaanichensis.
+This file offers the methods to automatically retrieve the graph Tatumella saanichensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatumellaSaanichensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatumellaSaanichensis graph.
+    """Return new instance of the Tatumella saanichensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TatumellaSaanichensis(
 
     Returns
     -----------------------
-    Instace of TatumellaSaanichensis graph.
+    Instace of Tatumella saanichensis graph.
 
 	References
 	---------------------

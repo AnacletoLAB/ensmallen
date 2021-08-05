@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StereumHirsutum.
+This file offers the methods to automatically retrieve the graph Stereum hirsutum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StereumHirsutum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StereumHirsutum graph.
+    """Return new instance of the Stereum hirsutum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StereumHirsutum(
 
     Returns
     -----------------------
-    Instace of StereumHirsutum graph.
+    Instace of Stereum hirsutum graph.
 
 	References
 	---------------------

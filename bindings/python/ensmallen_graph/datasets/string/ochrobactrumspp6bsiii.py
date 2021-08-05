@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OchrobactrumSpP6bsIii.
+This file offers the methods to automatically retrieve the graph Ochrobactrum sp. P6BS-III.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OchrobactrumSpP6bsIii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OchrobactrumSpP6bsIii graph.
+    """Return new instance of the Ochrobactrum sp. P6BS-III graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OchrobactrumSpP6bsIii(
 
     Returns
     -----------------------
-    Instace of OchrobactrumSpP6bsIii graph.
+    Instace of Ochrobactrum sp. P6BS-III graph.
 
 	References
 	---------------------

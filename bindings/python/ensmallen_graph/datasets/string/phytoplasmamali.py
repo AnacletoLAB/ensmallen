@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaMali.
+This file offers the methods to automatically retrieve the graph Phytoplasma mali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaMali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaMali graph.
+    """Return new instance of the Phytoplasma mali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytoplasmaMali(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaMali graph.
+    Instace of Phytoplasma mali graph.
 
 	References
 	---------------------

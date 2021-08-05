@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWake73.
+This file offers the methods to automatically retrieve the graph socfb-Wake73.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWake73(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWake73 graph.
+    """Return new instance of the socfb-Wake73 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWake73(
 
     Returns
     -----------------------
-    Instace of SocfbWake73 graph.
+    Instace of socfb-Wake73 graph.
 
 	References
 	---------------------

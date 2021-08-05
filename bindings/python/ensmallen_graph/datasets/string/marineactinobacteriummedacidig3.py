@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineActinobacteriumMedacidiG3.
+This file offers the methods to automatically retrieve the graph marine actinobacterium MedAcidi-G3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineActinobacteriumMedacidiG3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineActinobacteriumMedacidiG3 graph.
+    """Return new instance of the marine actinobacterium MedAcidi-G3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineActinobacteriumMedacidiG3(
 
     Returns
     -----------------------
-    Instace of MarineActinobacteriumMedacidiG3 graph.
+    Instace of marine actinobacterium MedAcidi-G3 graph.
 
 	References
 	---------------------

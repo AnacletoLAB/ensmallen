@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CetobacteriumSomerae.
+This file offers the methods to automatically retrieve the graph Cetobacterium somerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CetobacteriumSomerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CetobacteriumSomerae graph.
+    """Return new instance of the Cetobacterium somerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CetobacteriumSomerae(
 
     Returns
     -----------------------
-    Instace of CetobacteriumSomerae graph.
+    Instace of Cetobacterium somerae graph.
 
 	References
 	---------------------

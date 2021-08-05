@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusPeoriae.
+This file offers the methods to automatically retrieve the graph Paenibacillus peoriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusPeoriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusPeoriae graph.
+    """Return new instance of the Paenibacillus peoriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusPeoriae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusPeoriae graph.
+    Instace of Paenibacillus peoriae graph.
 
 	References
 	---------------------

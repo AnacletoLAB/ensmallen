@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumMangrovi.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium mangrovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumMangrovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumMangrovi graph.
+    """Return new instance of the Lysinimicrobium mangrovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinimicrobiumMangrovi(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumMangrovi graph.
+    Instace of Lysinimicrobium mangrovi graph.
 
 	References
 	---------------------

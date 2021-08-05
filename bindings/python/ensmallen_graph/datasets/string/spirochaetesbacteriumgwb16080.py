@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetesBacteriumGwb16080.
+This file offers the methods to automatically retrieve the graph Spirochaetes bacterium GWB1_60_80.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetesBacteriumGwb16080(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetesBacteriumGwb16080 graph.
+    """Return new instance of the Spirochaetes bacterium GWB1_60_80 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetesBacteriumGwb16080(
 
     Returns
     -----------------------
-    Instace of SpirochaetesBacteriumGwb16080 graph.
+    Instace of Spirochaetes bacterium GWB1_60_80 graph.
 
 	References
 	---------------------

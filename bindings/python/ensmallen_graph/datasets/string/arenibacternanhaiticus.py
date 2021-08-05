@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenibacterNanhaiticus.
+This file offers the methods to automatically retrieve the graph Arenibacter nanhaiticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenibacterNanhaiticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenibacterNanhaiticus graph.
+    """Return new instance of the Arenibacter nanhaiticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArenibacterNanhaiticus(
 
     Returns
     -----------------------
-    Instace of ArenibacterNanhaiticus graph.
+    Instace of Arenibacter nanhaiticus graph.
 
 	References
 	---------------------

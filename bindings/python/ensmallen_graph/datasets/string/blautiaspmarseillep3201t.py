@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaSpMarseilleP3201t.
+This file offers the methods to automatically retrieve the graph Blautia sp. Marseille-P3201T.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaSpMarseilleP3201t(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaSpMarseilleP3201t graph.
+    """Return new instance of the Blautia sp. Marseille-P3201T graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaSpMarseilleP3201t(
 
     Returns
     -----------------------
-    Instace of BlautiaSpMarseilleP3201t graph.
+    Instace of Blautia sp. Marseille-P3201T graph.
 
 	References
 	---------------------

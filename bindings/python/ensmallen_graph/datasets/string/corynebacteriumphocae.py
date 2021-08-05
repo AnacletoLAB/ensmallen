@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPhocae.
+This file offers the methods to automatically retrieve the graph Corynebacterium phocae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPhocae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPhocae graph.
+    """Return new instance of the Corynebacterium phocae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumPhocae(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPhocae graph.
+    Instace of Corynebacterium phocae graph.
 
 	References
 	---------------------

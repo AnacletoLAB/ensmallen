@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusBombicola.
+This file offers the methods to automatically retrieve the graph Lactobacillus bombicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusBombicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusBombicola graph.
+    """Return new instance of the Lactobacillus bombicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusBombicola(
 
     Returns
     -----------------------
-    Instace of LactobacillusBombicola graph.
+    Instace of Lactobacillus bombicola graph.
 
 	References
 	---------------------

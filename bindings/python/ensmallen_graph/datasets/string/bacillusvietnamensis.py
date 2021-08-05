@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusVietnamensis.
+This file offers the methods to automatically retrieve the graph Bacillus vietnamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusVietnamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusVietnamensis graph.
+    """Return new instance of the Bacillus vietnamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusVietnamensis(
 
     Returns
     -----------------------
-    Instace of BacillusVietnamensis graph.
+    Instace of Bacillus vietnamensis graph.
 
 	References
 	---------------------

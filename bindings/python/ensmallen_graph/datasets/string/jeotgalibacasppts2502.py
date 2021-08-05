@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalibacaSpPts2502.
+This file offers the methods to automatically retrieve the graph Jeotgalibaca sp. PTS2502.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalibacaSpPts2502(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalibacaSpPts2502 graph.
+    """Return new instance of the Jeotgalibaca sp. PTS2502 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeotgalibacaSpPts2502(
 
     Returns
     -----------------------
-    Instace of JeotgalibacaSpPts2502 graph.
+    Instace of Jeotgalibaca sp. PTS2502 graph.
 
 	References
 	---------------------

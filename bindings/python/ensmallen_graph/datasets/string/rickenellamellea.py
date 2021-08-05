@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickenellaMellea.
+This file offers the methods to automatically retrieve the graph Rickenella mellea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickenellaMellea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickenellaMellea graph.
+    """Return new instance of the Rickenella mellea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RickenellaMellea(
 
     Returns
     -----------------------
-    Instace of RickenellaMellea graph.
+    Instace of Rickenella mellea graph.
 
 	References
 	---------------------

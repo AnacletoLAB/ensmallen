@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterWoliniiSh.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter wolinii SH.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterWoliniiSh(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterWoliniiSh graph.
+    """Return new instance of the Methanobrevibacter wolinii SH graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterWoliniiSh(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterWoliniiSh graph.
+    Instace of Methanobrevibacter wolinii SH graph.
 
 	References
 	---------------------

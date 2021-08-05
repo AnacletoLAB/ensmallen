@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCapitovis.
+This file offers the methods to automatically retrieve the graph Corynebacterium capitovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCapitovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCapitovis graph.
+    """Return new instance of the Corynebacterium capitovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumCapitovis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCapitovis graph.
+    Instace of Corynebacterium capitovis graph.
 
 	References
 	---------------------

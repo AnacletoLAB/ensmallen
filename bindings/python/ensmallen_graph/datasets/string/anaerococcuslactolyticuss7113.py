@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusLactolyticusS7113.
+This file offers the methods to automatically retrieve the graph Anaerococcus lactolyticus S7113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusLactolyticusS7113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusLactolyticusS7113 graph.
+    """Return new instance of the Anaerococcus lactolyticus S7113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusLactolyticusS7113(
 
     Returns
     -----------------------
-    Instace of AnaerococcusLactolyticusS7113 graph.
+    Instace of Anaerococcus lactolyticus S7113 graph.
 
 	References
 	---------------------

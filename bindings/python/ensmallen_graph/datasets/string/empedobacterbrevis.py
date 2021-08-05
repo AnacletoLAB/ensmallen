@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmpedobacterBrevis.
+This file offers the methods to automatically retrieve the graph Empedobacter brevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmpedobacterBrevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmpedobacterBrevis graph.
+    """Return new instance of the Empedobacter brevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EmpedobacterBrevis(
 
     Returns
     -----------------------
-    Instace of EmpedobacterBrevis graph.
+    Instace of Empedobacter brevis graph.
 
 	References
 	---------------------

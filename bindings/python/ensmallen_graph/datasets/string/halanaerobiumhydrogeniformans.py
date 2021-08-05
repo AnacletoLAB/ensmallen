@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumHydrogeniformans.
+This file offers the methods to automatically retrieve the graph Halanaerobium hydrogeniformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumHydrogeniformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumHydrogeniformans graph.
+    """Return new instance of the Halanaerobium hydrogeniformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalanaerobiumHydrogeniformans(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumHydrogeniformans graph.
+    Instace of Halanaerobium hydrogeniformans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSelenitireducens.
+This file offers the methods to automatically retrieve the graph Rhizobium selenitireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSelenitireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSelenitireducens graph.
+    """Return new instance of the Rhizobium selenitireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSelenitireducens(
 
     Returns
     -----------------------
-    Instace of RhizobiumSelenitireducens graph.
+    Instace of Rhizobium selenitireducens graph.
 
 	References
 	---------------------

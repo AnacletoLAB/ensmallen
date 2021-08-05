@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidaceaeBacteriumMs4.
+This file offers the methods to automatically retrieve the graph Bacteroidaceae bacterium MS4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidaceaeBacteriumMs4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidaceaeBacteriumMs4 graph.
+    """Return new instance of the Bacteroidaceae bacterium MS4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidaceaeBacteriumMs4(
 
     Returns
     -----------------------
-    Instace of BacteroidaceaeBacteriumMs4 graph.
+    Instace of Bacteroidaceae bacterium MS4 graph.
 
 	References
 	---------------------

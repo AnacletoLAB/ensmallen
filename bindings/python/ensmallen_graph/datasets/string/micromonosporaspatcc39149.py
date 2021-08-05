@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSpAtcc39149.
+This file offers the methods to automatically retrieve the graph Micromonospora sp. ATCC39149.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSpAtcc39149(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSpAtcc39149 graph.
+    """Return new instance of the Micromonospora sp. ATCC39149 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicromonosporaSpAtcc39149(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSpAtcc39149 graph.
+    Instace of Micromonospora sp. ATCC39149 graph.
 
 	References
 	---------------------

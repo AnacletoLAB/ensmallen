@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSpWd121.
+This file offers the methods to automatically retrieve the graph Bartonella sp. WD12.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSpWd121(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSpWd121 graph.
+    """Return new instance of the Bartonella sp. WD12.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaSpWd121(
 
     Returns
     -----------------------
-    Instace of BartonellaSpWd121 graph.
+    Instace of Bartonella sp. WD12.1 graph.
 
 	References
 	---------------------

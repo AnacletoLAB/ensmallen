@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatrialbaTaiwanensisDsm12281.
+This file offers the methods to automatically retrieve the graph Natrialba taiwanensis DSM 12281.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatrialbaTaiwanensisDsm12281(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatrialbaTaiwanensisDsm12281 graph.
+    """Return new instance of the Natrialba taiwanensis DSM 12281 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NatrialbaTaiwanensisDsm12281(
 
     Returns
     -----------------------
-    Instace of NatrialbaTaiwanensisDsm12281 graph.
+    Instace of Natrialba taiwanensis DSM 12281 graph.
 
 	References
 	---------------------

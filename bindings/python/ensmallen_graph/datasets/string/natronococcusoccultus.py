@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronococcusOccultus.
+This file offers the methods to automatically retrieve the graph Natronococcus occultus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronococcusOccultus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronococcusOccultus graph.
+    """Return new instance of the Natronococcus occultus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatronococcusOccultus(
 
     Returns
     -----------------------
-    Instace of NatronococcusOccultus graph.
+    Instace of Natronococcus occultus graph.
 
 	References
 	---------------------

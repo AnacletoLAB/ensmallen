@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusDaviesbacteriaBacteriumGw2011Gwa14161.
+This file offers the methods to automatically retrieve the graph Candidatus Daviesbacteria bacterium GW2011_GWA1_41_61.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusDaviesbacteriaBacteriumGw2011Gwa14161(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusDaviesbacteriaBacteriumGw2011Gwa14161 graph.
+    """Return new instance of the Candidatus Daviesbacteria bacterium GW2011_GWA1_41_61 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusDaviesbacteriaBacteriumGw2011Gwa14161(
 
     Returns
     -----------------------
-    Instace of CandidatusDaviesbacteriaBacteriumGw2011Gwa14161 graph.
+    Instace of Candidatus Daviesbacteria bacterium GW2011_GWA1_41_61 graph.
 
 	References
 	---------------------

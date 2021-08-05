@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpMusc93.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. MUSC 93.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpMusc93(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpMusc93 graph.
+    """Return new instance of the Streptomyces sp. MUSC 93 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpMusc93(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpMusc93 graph.
+    Instace of Streptomyces sp. MUSC 93 graph.
 
 	References
 	---------------------

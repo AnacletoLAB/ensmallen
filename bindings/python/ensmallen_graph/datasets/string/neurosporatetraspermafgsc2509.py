@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeurosporaTetraspermaFgsc2509.
+This file offers the methods to automatically retrieve the graph Neurospora tetrasperma FGSC 2509.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeurosporaTetraspermaFgsc2509(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeurosporaTetraspermaFgsc2509 graph.
+    """Return new instance of the Neurospora tetrasperma FGSC 2509 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeurosporaTetraspermaFgsc2509(
 
     Returns
     -----------------------
-    Instace of NeurosporaTetraspermaFgsc2509 graph.
+    Instace of Neurospora tetrasperma FGSC 2509 graph.
 
 	References
 	---------------------

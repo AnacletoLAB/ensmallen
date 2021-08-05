@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasCapnocytophagoidesDsm22835.
+This file offers the methods to automatically retrieve the graph Dysgonomonas capnocytophagoides DSM 22835.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasCapnocytophagoidesDsm22835(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasCapnocytophagoidesDsm22835 graph.
+    """Return new instance of the Dysgonomonas capnocytophagoides DSM 22835 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DysgonomonasCapnocytophagoidesDsm22835(
 
     Returns
     -----------------------
-    Instace of DysgonomonasCapnocytophagoidesDsm22835 graph.
+    Instace of Dysgonomonas capnocytophagoides DSM 22835 graph.
 
 	References
 	---------------------

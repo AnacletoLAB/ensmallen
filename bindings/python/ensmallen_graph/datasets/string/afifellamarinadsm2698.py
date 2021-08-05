@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfifellaMarinaDsm2698.
+This file offers the methods to automatically retrieve the graph Afifella marina DSM 2698.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfifellaMarinaDsm2698(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfifellaMarinaDsm2698 graph.
+    """Return new instance of the Afifella marina DSM 2698 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AfifellaMarinaDsm2698(
 
     Returns
     -----------------------
-    Instace of AfifellaMarinaDsm2698 graph.
+    Instace of Afifella marina DSM 2698 graph.
 
 	References
 	---------------------

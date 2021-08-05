@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JejuiaPallidilutea.
+This file offers the methods to automatically retrieve the graph Jejuia pallidilutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JejuiaPallidilutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JejuiaPallidilutea graph.
+    """Return new instance of the Jejuia pallidilutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JejuiaPallidilutea(
 
     Returns
     -----------------------
-    Instace of JejuiaPallidilutea graph.
+    Instace of Jejuia pallidilutea graph.
 
 	References
 	---------------------

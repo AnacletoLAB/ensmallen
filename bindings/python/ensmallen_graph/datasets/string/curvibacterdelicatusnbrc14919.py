@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurvibacterDelicatusNbrc14919.
+This file offers the methods to automatically retrieve the graph Curvibacter delicatus NBRC 14919.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurvibacterDelicatusNbrc14919(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurvibacterDelicatusNbrc14919 graph.
+    """Return new instance of the Curvibacter delicatus NBRC 14919 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurvibacterDelicatusNbrc14919(
 
     Returns
     -----------------------
-    Instace of CurvibacterDelicatusNbrc14919 graph.
+    Instace of Curvibacter delicatus NBRC 14919 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinocyclocheilusRhinocerous.
+This file offers the methods to automatically retrieve the graph Sinocyclocheilus rhinocerous.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinocyclocheilusRhinocerous(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinocyclocheilusRhinocerous graph.
+    """Return new instance of the Sinocyclocheilus rhinocerous graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinocyclocheilusRhinocerous(
 
     Returns
     -----------------------
-    Instace of SinocyclocheilusRhinocerous graph.
+    Instace of Sinocyclocheilus rhinocerous graph.
 
 	References
 	---------------------

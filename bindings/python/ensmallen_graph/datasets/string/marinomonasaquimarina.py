@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasAquimarina.
+This file offers the methods to automatically retrieve the graph Marinomonas aquimarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasAquimarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasAquimarina graph.
+    """Return new instance of the Marinomonas aquimarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinomonasAquimarina(
 
     Returns
     -----------------------
-    Instace of MarinomonasAquimarina graph.
+    Instace of Marinomonas aquimarina graph.
 
 	References
 	---------------------

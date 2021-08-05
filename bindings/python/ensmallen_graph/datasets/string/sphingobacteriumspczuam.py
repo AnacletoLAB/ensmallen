@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpCzUam.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. CZ-UAM.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpCzUam(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpCzUam graph.
+    """Return new instance of the Sphingobacterium sp. CZ-UAM graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriumSpCzUam(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpCzUam graph.
+    Instace of Sphingobacterium sp. CZ-UAM graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpLeaf363.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. Leaf363.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpLeaf363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpLeaf363 graph.
+    """Return new instance of the Brevundimonas sp. Leaf363 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpLeaf363(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpLeaf363 graph.
+    Instace of Brevundimonas sp. Leaf363 graph.
 
 	References
 	---------------------

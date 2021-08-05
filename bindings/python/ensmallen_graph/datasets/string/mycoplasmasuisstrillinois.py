@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSuisStrIllinois.
+This file offers the methods to automatically retrieve the graph Mycoplasma suis str. Illinois.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSuisStrIllinois(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSuisStrIllinois graph.
+    """Return new instance of the Mycoplasma suis str. Illinois graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaSuisStrIllinois(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSuisStrIllinois graph.
+    Instace of Mycoplasma suis str. Illinois graph.
 
 	References
 	---------------------

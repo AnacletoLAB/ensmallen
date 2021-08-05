@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraSpG11.
+This file offers the methods to automatically retrieve the graph Methylotenera sp. G11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraSpG11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraSpG11 graph.
+    """Return new instance of the Methylotenera sp. G11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloteneraSpG11(
 
     Returns
     -----------------------
-    Instace of MethyloteneraSpG11 graph.
+    Instace of Methylotenera sp. G11 graph.
 
 	References
 	---------------------

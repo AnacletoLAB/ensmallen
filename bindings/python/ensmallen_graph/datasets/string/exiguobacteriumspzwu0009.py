@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumSpZwu0009.
+This file offers the methods to automatically retrieve the graph Exiguobacterium sp. ZWU0009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumSpZwu0009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumSpZwu0009 graph.
+    """Return new instance of the Exiguobacterium sp. ZWU0009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExiguobacteriumSpZwu0009(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumSpZwu0009 graph.
+    Instace of Exiguobacterium sp. ZWU0009 graph.
 
 	References
 	---------------------

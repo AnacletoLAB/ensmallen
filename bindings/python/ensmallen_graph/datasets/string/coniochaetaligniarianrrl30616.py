@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConiochaetaLigniariaNrrl30616.
+This file offers the methods to automatically retrieve the graph Coniochaeta ligniaria NRRL 30616.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConiochaetaLigniariaNrrl30616(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConiochaetaLigniariaNrrl30616 graph.
+    """Return new instance of the Coniochaeta ligniaria NRRL 30616 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConiochaetaLigniariaNrrl30616(
 
     Returns
     -----------------------
-    Instace of ConiochaetaLigniariaNrrl30616 graph.
+    Instace of Coniochaeta ligniaria NRRL 30616 graph.
 
 	References
 	---------------------

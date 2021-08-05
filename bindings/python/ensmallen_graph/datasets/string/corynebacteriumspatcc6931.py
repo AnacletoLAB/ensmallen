@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpAtcc6931.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. ATCC6931.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpAtcc6931(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpAtcc6931 graph.
+    """Return new instance of the Corynebacterium sp. ATCC6931 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumSpAtcc6931(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpAtcc6931 graph.
+    Instace of Corynebacterium sp. ATCC6931 graph.
 
 	References
 	---------------------

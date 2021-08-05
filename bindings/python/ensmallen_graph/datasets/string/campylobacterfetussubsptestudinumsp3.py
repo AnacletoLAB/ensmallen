@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterFetusSubspTestudinumSp3.
+This file offers the methods to automatically retrieve the graph Campylobacter fetus subsp. testudinum Sp3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterFetusSubspTestudinumSp3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterFetusSubspTestudinumSp3 graph.
+    """Return new instance of the Campylobacter fetus subsp. testudinum Sp3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterFetusSubspTestudinumSp3(
 
     Returns
     -----------------------
-    Instace of CampylobacterFetusSubspTestudinumSp3 graph.
+    Instace of Campylobacter fetus subsp. testudinum Sp3 graph.
 
 	References
 	---------------------

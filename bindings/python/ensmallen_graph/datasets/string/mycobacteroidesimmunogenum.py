@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteroidesImmunogenum.
+This file offers the methods to automatically retrieve the graph Mycobacteroides immunogenum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteroidesImmunogenum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteroidesImmunogenum graph.
+    """Return new instance of the Mycobacteroides immunogenum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteroidesImmunogenum(
 
     Returns
     -----------------------
-    Instace of MycobacteroidesImmunogenum graph.
+    Instace of Mycobacteroides immunogenum graph.
 
 	References
 	---------------------

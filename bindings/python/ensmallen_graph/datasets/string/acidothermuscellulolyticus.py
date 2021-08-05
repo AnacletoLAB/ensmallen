@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidothermusCellulolyticus.
+This file offers the methods to automatically retrieve the graph Acidothermus cellulolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidothermusCellulolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidothermusCellulolyticus graph.
+    """Return new instance of the Acidothermus cellulolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidothermusCellulolyticus(
 
     Returns
     -----------------------
-    Instace of AcidothermusCellulolyticus graph.
+    Instace of Acidothermus cellulolyticus graph.
 
 	References
 	---------------------

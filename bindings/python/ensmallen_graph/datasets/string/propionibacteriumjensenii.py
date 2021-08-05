@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumJensenii.
+This file offers the methods to automatically retrieve the graph Propionibacterium jensenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumJensenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumJensenii graph.
+    """Return new instance of the Propionibacterium jensenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionibacteriumJensenii(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumJensenii graph.
+    Instace of Propionibacterium jensenii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrococcusLuteusStrModasa.
+This file offers the methods to automatically retrieve the graph Micrococcus luteus str. modasa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrococcusLuteusStrModasa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrococcusLuteusStrModasa graph.
+    """Return new instance of the Micrococcus luteus str. modasa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrococcusLuteusStrModasa(
 
     Returns
     -----------------------
-    Instace of MicrococcusLuteusStrModasa graph.
+    Instace of Micrococcus luteus str. modasa graph.
 
 	References
 	---------------------

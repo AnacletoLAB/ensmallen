@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioFurnissiiNctc11218.
+This file offers the methods to automatically retrieve the graph Vibrio furnissii NCTC 11218.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioFurnissiiNctc11218(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioFurnissiiNctc11218 graph.
+    """Return new instance of the Vibrio furnissii NCTC 11218 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioFurnissiiNctc11218(
 
     Returns
     -----------------------
-    Instace of VibrioFurnissiiNctc11218 graph.
+    Instace of Vibrio furnissii NCTC 11218 graph.
 
 	References
 	---------------------

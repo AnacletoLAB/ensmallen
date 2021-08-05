@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PogonaVitticeps.
+This file offers the methods to automatically retrieve the graph Pogona vitticeps.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PogonaVitticeps(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PogonaVitticeps graph.
+    """Return new instance of the Pogona vitticeps graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PogonaVitticeps(
 
     Returns
     -----------------------
-    Instace of PogonaVitticeps graph.
+    Instace of Pogona vitticeps graph.
 
 	References
 	---------------------

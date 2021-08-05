@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarboxydothermusIslandicus.
+This file offers the methods to automatically retrieve the graph Carboxydothermus islandicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarboxydothermusIslandicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarboxydothermusIslandicus graph.
+    """Return new instance of the Carboxydothermus islandicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarboxydothermusIslandicus(
 
     Returns
     -----------------------
-    Instace of CarboxydothermusIslandicus graph.
+    Instace of Carboxydothermus islandicus graph.
 
 	References
 	---------------------

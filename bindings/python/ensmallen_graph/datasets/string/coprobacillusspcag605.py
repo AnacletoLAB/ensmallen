@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprobacillusSpCag605.
+This file offers the methods to automatically retrieve the graph Coprobacillus sp. CAG:605.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprobacillusSpCag605(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprobacillusSpCag605 graph.
+    """Return new instance of the Coprobacillus sp. CAG:605 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprobacillusSpCag605(
 
     Returns
     -----------------------
-    Instace of CoprobacillusSpCag605 graph.
+    Instace of Coprobacillus sp. CAG:605 graph.
 
 	References
 	---------------------

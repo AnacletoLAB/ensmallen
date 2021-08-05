@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusCoxii.
+This file offers the methods to automatically retrieve the graph Peptoniphilus coxii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusCoxii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusCoxii graph.
+    """Return new instance of the Peptoniphilus coxii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusCoxii(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusCoxii graph.
+    Instace of Peptoniphilus coxii graph.
 
 	References
 	---------------------

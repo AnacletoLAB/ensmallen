@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobialesBacteriumClorobi01.
+This file offers the methods to automatically retrieve the graph Chlorobiales bacterium Clorobi_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobialesBacteriumClorobi01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobialesBacteriumClorobi01 graph.
+    """Return new instance of the Chlorobiales bacterium Clorobi_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlorobialesBacteriumClorobi01(
 
     Returns
     -----------------------
-    Instace of ChlorobialesBacteriumClorobi01 graph.
+    Instace of Chlorobiales bacterium Clorobi_01 graph.
 
 	References
 	---------------------

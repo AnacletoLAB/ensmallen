@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioMouseGene.
+This file offers the methods to automatically retrieve the graph bio-mouse-gene.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def BioMouseGene(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioMouseGene graph.
+    """Return new instance of the bio-mouse-gene graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def BioMouseGene(
 
     Returns
     -----------------------
-    Instace of BioMouseGene graph.
+    Instace of bio-mouse-gene graph.
 
 	References
 	---------------------

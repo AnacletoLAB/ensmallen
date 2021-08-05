@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DictyoglomusTurgidum.
+This file offers the methods to automatically retrieve the graph Dictyoglomus turgidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DictyoglomusTurgidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DictyoglomusTurgidum graph.
+    """Return new instance of the Dictyoglomus turgidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DictyoglomusTurgidum(
 
     Returns
     -----------------------
-    Instace of DictyoglomusTurgidum graph.
+    Instace of Dictyoglomus turgidum graph.
 
 	References
 	---------------------

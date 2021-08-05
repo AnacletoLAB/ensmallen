@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpBma.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. BMA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpBma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpBma graph.
+    """Return new instance of the Pedobacter sp. BMA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSpBma(
 
     Returns
     -----------------------
-    Instace of PedobacterSpBma graph.
+    Instace of Pedobacter sp. BMA graph.
 
 	References
 	---------------------

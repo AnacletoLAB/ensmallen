@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteobacteriaBacteriumSgBin4.
+This file offers the methods to automatically retrieve the graph Proteobacteria bacterium SG_bin4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteobacteriaBacteriumSgBin4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteobacteriaBacteriumSgBin4 graph.
+    """Return new instance of the Proteobacteria bacterium SG_bin4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteobacteriaBacteriumSgBin4(
 
     Returns
     -----------------------
-    Instace of ProteobacteriaBacteriumSgBin4 graph.
+    Instace of Proteobacteria bacterium SG_bin4 graph.
 
 	References
 	---------------------

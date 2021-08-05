@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMarithrixSpCanyon246.
+This file offers the methods to automatically retrieve the graph Candidatus Marithrix sp. Canyon 246.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMarithrixSpCanyon246(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMarithrixSpCanyon246 graph.
+    """Return new instance of the Candidatus Marithrix sp. Canyon 246 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMarithrixSpCanyon246(
 
     Returns
     -----------------------
-    Instace of CandidatusMarithrixSpCanyon246 graph.
+    Instace of Candidatus Marithrix sp. Canyon 246 graph.
 
 	References
 	---------------------

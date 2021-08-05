@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusOrnithinivorans.
+This file offers the methods to automatically retrieve the graph Algoriphagus ornithinivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusOrnithinivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusOrnithinivorans graph.
+    """Return new instance of the Algoriphagus ornithinivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusOrnithinivorans(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusOrnithinivorans graph.
+    Instace of Algoriphagus ornithinivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaBuccalisDnf00985.
+This file offers the methods to automatically retrieve the graph Prevotella buccalis DNF00985.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaBuccalisDnf00985(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaBuccalisDnf00985 graph.
+    """Return new instance of the Prevotella buccalis DNF00985 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaBuccalisDnf00985(
 
     Returns
     -----------------------
-    Instace of PrevotellaBuccalisDnf00985 graph.
+    Instace of Prevotella buccalis DNF00985 graph.
 
 	References
 	---------------------

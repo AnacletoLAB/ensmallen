@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumUkl132.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium UKL13-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumUkl132(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumUkl132 graph.
+    """Return new instance of the Betaproteobacteria bacterium UKL13-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumUkl132(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumUkl132 graph.
+    Instace of Betaproteobacteria bacterium UKL13-2 graph.
 
 	References
 	---------------------

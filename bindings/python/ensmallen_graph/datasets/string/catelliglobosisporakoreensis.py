@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatelliglobosisporaKoreensis.
+This file offers the methods to automatically retrieve the graph Catelliglobosispora koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatelliglobosisporaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatelliglobosisporaKoreensis graph.
+    """Return new instance of the Catelliglobosispora koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CatelliglobosisporaKoreensis(
 
     Returns
     -----------------------
-    Instace of CatelliglobosisporaKoreensis graph.
+    Instace of Catelliglobosispora koreensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClavibacterMichiganensisSubspCapsici.
+This file offers the methods to automatically retrieve the graph Clavibacter michiganensis subsp. capsici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClavibacterMichiganensisSubspCapsici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClavibacterMichiganensisSubspCapsici graph.
+    """Return new instance of the Clavibacter michiganensis subsp. capsici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClavibacterMichiganensisSubspCapsici(
 
     Returns
     -----------------------
-    Instace of ClavibacterMichiganensisSubspCapsici graph.
+    Instace of Clavibacter michiganensis subsp. capsici graph.
 
 	References
 	---------------------

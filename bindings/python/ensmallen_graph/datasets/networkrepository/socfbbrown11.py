@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBrown11.
+This file offers the methods to automatically retrieve the graph socfb-Brown11.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBrown11(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBrown11 graph.
+    """Return new instance of the socfb-Brown11 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBrown11(
 
     Returns
     -----------------------
-    Instace of SocfbBrown11 graph.
+    Instace of socfb-Brown11 graph.
 
 	References
 	---------------------

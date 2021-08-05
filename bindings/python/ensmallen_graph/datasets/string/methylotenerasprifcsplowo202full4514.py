@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloteneraSpRifcsplowo202Full4514.
+This file offers the methods to automatically retrieve the graph Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloteneraSpRifcsplowo202Full4514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloteneraSpRifcsplowo202Full4514 graph.
+    """Return new instance of the Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloteneraSpRifcsplowo202Full4514(
 
     Returns
     -----------------------
-    Instace of MethyloteneraSpRifcsplowo202Full4514 graph.
+    Instace of Methylotenera sp. RIFCSPLOWO2_02_FULL_45_14 graph.
 
 	References
 	---------------------

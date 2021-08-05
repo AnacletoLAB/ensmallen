@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaHalotolerans.
+This file offers the methods to automatically retrieve the graph Weissella halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaHalotolerans graph.
+    """Return new instance of the Weissella halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaHalotolerans(
 
     Returns
     -----------------------
-    Instace of WeissellaHalotolerans graph.
+    Instace of Weissella halotolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeiothermusChliarophilus.
+This file offers the methods to automatically retrieve the graph Meiothermus chliarophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeiothermusChliarophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeiothermusChliarophilus graph.
+    """Return new instance of the Meiothermus chliarophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeiothermusChliarophilus(
 
     Returns
     -----------------------
-    Instace of MeiothermusChliarophilus graph.
+    Instace of Meiothermus chliarophilus graph.
 
 	References
 	---------------------

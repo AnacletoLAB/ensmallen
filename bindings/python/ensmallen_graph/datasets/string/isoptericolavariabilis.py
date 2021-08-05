@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IsoptericolaVariabilis.
+This file offers the methods to automatically retrieve the graph Isoptericola variabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IsoptericolaVariabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IsoptericolaVariabilis graph.
+    """Return new instance of the Isoptericola variabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IsoptericolaVariabilis(
 
     Returns
     -----------------------
-    Instace of IsoptericolaVariabilis graph.
+    Instace of Isoptericola variabilis graph.
 
 	References
 	---------------------

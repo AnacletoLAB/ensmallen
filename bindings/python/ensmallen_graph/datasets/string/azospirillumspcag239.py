@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumSpCag239.
+This file offers the methods to automatically retrieve the graph Azospirillum sp. CAG:239.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumSpCag239(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumSpCag239 graph.
+    """Return new instance of the Azospirillum sp. CAG:239 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumSpCag239(
 
     Returns
     -----------------------
-    Instace of AzospirillumSpCag239 graph.
+    Instace of Azospirillum sp. CAG:239 graph.
 
 	References
 	---------------------

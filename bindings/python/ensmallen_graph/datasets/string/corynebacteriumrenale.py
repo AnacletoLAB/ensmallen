@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumRenale.
+This file offers the methods to automatically retrieve the graph Corynebacterium renale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumRenale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumRenale graph.
+    """Return new instance of the Corynebacterium renale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumRenale(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumRenale graph.
+    Instace of Corynebacterium renale graph.
 
 	References
 	---------------------

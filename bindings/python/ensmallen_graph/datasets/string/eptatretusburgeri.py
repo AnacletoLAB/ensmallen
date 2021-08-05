@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EptatretusBurgeri.
+This file offers the methods to automatically retrieve the graph Eptatretus burgeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EptatretusBurgeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EptatretusBurgeri graph.
+    """Return new instance of the Eptatretus burgeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EptatretusBurgeri(
 
     Returns
     -----------------------
-    Instace of EptatretusBurgeri graph.
+    Instace of Eptatretus burgeri graph.
 
 	References
 	---------------------

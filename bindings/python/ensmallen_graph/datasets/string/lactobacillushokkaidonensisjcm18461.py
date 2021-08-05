@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHokkaidonensisJcm18461.
+This file offers the methods to automatically retrieve the graph Lactobacillus hokkaidonensis JCM 18461.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHokkaidonensisJcm18461(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHokkaidonensisJcm18461 graph.
+    """Return new instance of the Lactobacillus hokkaidonensis JCM 18461 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusHokkaidonensisJcm18461(
 
     Returns
     -----------------------
-    Instace of LactobacillusHokkaidonensisJcm18461 graph.
+    Instace of Lactobacillus hokkaidonensis JCM 18461 graph.
 
 	References
 	---------------------

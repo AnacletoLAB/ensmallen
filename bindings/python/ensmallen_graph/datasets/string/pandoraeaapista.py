@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaApista.
+This file offers the methods to automatically retrieve the graph Pandoraea apista.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaApista(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaApista graph.
+    """Return new instance of the Pandoraea apista graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaApista(
 
     Returns
     -----------------------
-    Instace of PandoraeaApista graph.
+    Instace of Pandoraea apista graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzotobacterChroococcumNcimb8003.
+This file offers the methods to automatically retrieve the graph Azotobacter chroococcum NCIMB 8003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzotobacterChroococcumNcimb8003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzotobacterChroococcumNcimb8003 graph.
+    """Return new instance of the Azotobacter chroococcum NCIMB 8003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzotobacterChroococcumNcimb8003(
 
     Returns
     -----------------------
-    Instace of AzotobacterChroococcumNcimb8003 graph.
+    Instace of Azotobacter chroococcum NCIMB 8003 graph.
 
 	References
 	---------------------

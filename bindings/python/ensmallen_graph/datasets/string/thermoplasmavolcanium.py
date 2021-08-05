@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoplasmaVolcanium.
+This file offers the methods to automatically retrieve the graph Thermoplasma volcanium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoplasmaVolcanium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoplasmaVolcanium graph.
+    """Return new instance of the Thermoplasma volcanium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoplasmaVolcanium(
 
     Returns
     -----------------------
-    Instace of ThermoplasmaVolcanium graph.
+    Instace of Thermoplasma volcanium graph.
 
 	References
 	---------------------

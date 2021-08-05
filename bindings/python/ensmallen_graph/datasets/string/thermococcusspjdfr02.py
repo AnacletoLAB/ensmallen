@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusSpJdfr02.
+This file offers the methods to automatically retrieve the graph Thermococcus sp. JdFR-02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusSpJdfr02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusSpJdfr02 graph.
+    """Return new instance of the Thermococcus sp. JdFR-02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusSpJdfr02(
 
     Returns
     -----------------------
-    Instace of ThermococcusSpJdfr02 graph.
+    Instace of Thermococcus sp. JdFR-02 graph.
 
 	References
 	---------------------

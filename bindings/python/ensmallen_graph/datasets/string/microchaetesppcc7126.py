@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrochaeteSpPcc7126.
+This file offers the methods to automatically retrieve the graph Microchaete sp. PCC7126.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrochaeteSpPcc7126(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrochaeteSpPcc7126 graph.
+    """Return new instance of the Microchaete sp. PCC7126 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrochaeteSpPcc7126(
 
     Returns
     -----------------------
-    Instace of MicrochaeteSpPcc7126 graph.
+    Instace of Microchaete sp. PCC7126 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaFortuita.
+This file offers the methods to automatically retrieve the graph Caballeronia fortuita.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaFortuita(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaFortuita graph.
+    """Return new instance of the Caballeronia fortuita graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaFortuita(
 
     Returns
     -----------------------
-    Instace of CaballeroniaFortuita graph.
+    Instace of Caballeronia fortuita graph.
 
 	References
 	---------------------

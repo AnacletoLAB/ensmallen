@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeliobacteriumModesticaldum.
+This file offers the methods to automatically retrieve the graph Heliobacterium modesticaldum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeliobacteriumModesticaldum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeliobacteriumModesticaldum graph.
+    """Return new instance of the Heliobacterium modesticaldum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HeliobacteriumModesticaldum(
 
     Returns
     -----------------------
-    Instace of HeliobacteriumModesticaldum graph.
+    Instace of Heliobacterium modesticaldum graph.
 
 	References
 	---------------------

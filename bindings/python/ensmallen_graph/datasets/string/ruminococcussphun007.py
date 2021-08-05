@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpHun007.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. HUN007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpHun007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpHun007 graph.
+    """Return new instance of the Ruminococcus sp. HUN007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusSpHun007(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpHun007 graph.
+    Instace of Ruminococcus sp. HUN007 graph.
 
 	References
 	---------------------

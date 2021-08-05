@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StruthioCamelusAustralis.
+This file offers the methods to automatically retrieve the graph Struthio camelus australis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StruthioCamelusAustralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StruthioCamelusAustralis graph.
+    """Return new instance of the Struthio camelus australis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StruthioCamelusAustralis(
 
     Returns
     -----------------------
-    Instace of StruthioCamelusAustralis graph.
+    Instace of Struthio camelus australis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SiccibacterColletis.
+This file offers the methods to automatically retrieve the graph Siccibacter colletis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SiccibacterColletis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SiccibacterColletis graph.
+    """Return new instance of the Siccibacter colletis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SiccibacterColletis(
 
     Returns
     -----------------------
-    Instace of SiccibacterColletis graph.
+    Instace of Siccibacter colletis graph.
 
 	References
 	---------------------

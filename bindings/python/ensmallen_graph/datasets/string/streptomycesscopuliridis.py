@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesScopuliridis.
+This file offers the methods to automatically retrieve the graph Streptomyces scopuliridis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesScopuliridis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesScopuliridis graph.
+    """Return new instance of the Streptomyces scopuliridis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesScopuliridis(
 
     Returns
     -----------------------
-    Instace of StreptomycesScopuliridis graph.
+    Instace of Streptomyces scopuliridis graph.
 
 	References
 	---------------------

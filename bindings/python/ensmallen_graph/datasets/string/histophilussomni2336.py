@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HistophilusSomni2336.
+This file offers the methods to automatically retrieve the graph Histophilus somni 2336.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HistophilusSomni2336(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HistophilusSomni2336 graph.
+    """Return new instance of the Histophilus somni 2336 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HistophilusSomni2336(
 
     Returns
     -----------------------
-    Instace of HistophilusSomni2336 graph.
+    Instace of Histophilus somni 2336 graph.
 
 	References
 	---------------------

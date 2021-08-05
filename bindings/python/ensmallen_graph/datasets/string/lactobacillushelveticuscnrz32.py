@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHelveticusCnrz32.
+This file offers the methods to automatically retrieve the graph Lactobacillus helveticus CNRZ32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHelveticusCnrz32(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHelveticusCnrz32 graph.
+    """Return new instance of the Lactobacillus helveticus CNRZ32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusHelveticusCnrz32(
 
     Returns
     -----------------------
-    Instace of LactobacillusHelveticusCnrz32 graph.
+    Instace of Lactobacillus helveticus CNRZ32 graph.
 
 	References
 	---------------------

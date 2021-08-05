@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusPlantarumNbrc100936.
+This file offers the methods to automatically retrieve the graph Lactococcus plantarum NBRC 100936.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusPlantarumNbrc100936(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusPlantarumNbrc100936 graph.
+    """Return new instance of the Lactococcus plantarum NBRC 100936 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactococcusPlantarumNbrc100936(
 
     Returns
     -----------------------
-    Instace of LactococcusPlantarumNbrc100936 graph.
+    Instace of Lactococcus plantarum NBRC 100936 graph.
 
 	References
 	---------------------

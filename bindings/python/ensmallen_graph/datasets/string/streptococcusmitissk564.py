@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMitisSk564.
+This file offers the methods to automatically retrieve the graph Streptococcus mitis SK564.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMitisSk564(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMitisSk564 graph.
+    """Return new instance of the Streptococcus mitis SK564 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMitisSk564(
 
     Returns
     -----------------------
-    Instace of StreptococcusMitisSk564 graph.
+    Instace of Streptococcus mitis SK564 graph.
 
 	References
 	---------------------

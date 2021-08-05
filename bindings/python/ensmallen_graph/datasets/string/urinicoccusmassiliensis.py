@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UrinicoccusMassiliensis.
+This file offers the methods to automatically retrieve the graph Urinicoccus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UrinicoccusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UrinicoccusMassiliensis graph.
+    """Return new instance of the Urinicoccus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UrinicoccusMassiliensis(
 
     Returns
     -----------------------
-    Instace of UrinicoccusMassiliensis graph.
+    Instace of Urinicoccus massiliensis graph.
 
 	References
 	---------------------

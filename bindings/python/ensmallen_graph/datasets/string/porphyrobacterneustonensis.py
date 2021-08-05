@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyrobacterNeustonensis.
+This file offers the methods to automatically retrieve the graph Porphyrobacter neustonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyrobacterNeustonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyrobacterNeustonensis graph.
+    """Return new instance of the Porphyrobacter neustonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyrobacterNeustonensis(
 
     Returns
     -----------------------
-    Instace of PorphyrobacterNeustonensis graph.
+    Instace of Porphyrobacter neustonensis graph.
 
 	References
 	---------------------

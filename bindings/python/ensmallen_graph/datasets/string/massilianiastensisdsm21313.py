@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaNiastensisDsm21313.
+This file offers the methods to automatically retrieve the graph Massilia niastensis DSM 21313.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaNiastensisDsm21313(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaNiastensisDsm21313 graph.
+    """Return new instance of the Massilia niastensis DSM 21313 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaNiastensisDsm21313(
 
     Returns
     -----------------------
-    Instace of MassiliaNiastensisDsm21313 graph.
+    Instace of Massilia niastensis DSM 21313 graph.
 
 	References
 	---------------------

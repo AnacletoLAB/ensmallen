@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMycoplasmaHaemominutumBirmingham1.
+This file offers the methods to automatically retrieve the graph Candidatus Mycoplasma haemominutum Birmingham 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMycoplasmaHaemominutumBirmingham1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMycoplasmaHaemominutumBirmingham1 graph.
+    """Return new instance of the Candidatus Mycoplasma haemominutum Birmingham 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMycoplasmaHaemominutumBirmingham1(
 
     Returns
     -----------------------
-    Instace of CandidatusMycoplasmaHaemominutumBirmingham1 graph.
+    Instace of Candidatus Mycoplasma haemominutum Birmingham 1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FacklamiaIgnava.
+This file offers the methods to automatically retrieve the graph Facklamia ignava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FacklamiaIgnava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FacklamiaIgnava graph.
+    """Return new instance of the Facklamia ignava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FacklamiaIgnava(
 
     Returns
     -----------------------
-    Instace of FacklamiaIgnava graph.
+    Instace of Facklamia ignava graph.
 
 	References
 	---------------------

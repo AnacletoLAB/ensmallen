@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalpingoecaRosetta.
+This file offers the methods to automatically retrieve the graph Salpingoeca rosetta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalpingoecaRosetta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalpingoecaRosetta graph.
+    """Return new instance of the Salpingoeca rosetta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalpingoecaRosetta(
 
     Returns
     -----------------------
-    Instace of SalpingoecaRosetta graph.
+    Instace of Salpingoeca rosetta graph.
 
 	References
 	---------------------

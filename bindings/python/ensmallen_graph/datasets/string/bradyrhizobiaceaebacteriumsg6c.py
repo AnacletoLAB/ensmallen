@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiaceaeBacteriumSg6c.
+This file offers the methods to automatically retrieve the graph Bradyrhizobiaceae bacterium SG6C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiaceaeBacteriumSg6c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiaceaeBacteriumSg6c graph.
+    """Return new instance of the Bradyrhizobiaceae bacterium SG6C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiaceaeBacteriumSg6c(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiaceaeBacteriumSg6c graph.
+    Instace of Bradyrhizobiaceae bacterium SG6C graph.
 
 	References
 	---------------------

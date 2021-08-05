@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonadetesBacteriumKbs708.
+This file offers the methods to automatically retrieve the graph Gemmatimonadetes bacterium KBS708.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonadetesBacteriumKbs708(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonadetesBacteriumKbs708 graph.
+    """Return new instance of the Gemmatimonadetes bacterium KBS708 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemmatimonadetesBacteriumKbs708(
 
     Returns
     -----------------------
-    Instace of GemmatimonadetesBacteriumKbs708 graph.
+    Instace of Gemmatimonadetes bacterium KBS708 graph.
 
 	References
 	---------------------

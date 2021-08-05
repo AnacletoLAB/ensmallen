@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprobacillusCateniformis.
+This file offers the methods to automatically retrieve the graph Coprobacillus cateniformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprobacillusCateniformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprobacillusCateniformis graph.
+    """Return new instance of the Coprobacillus cateniformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprobacillusCateniformis(
 
     Returns
     -----------------------
-    Instace of CoprobacillusCateniformis graph.
+    Instace of Coprobacillus cateniformis graph.
 
 	References
 	---------------------

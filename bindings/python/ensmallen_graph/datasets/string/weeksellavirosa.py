@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeeksellaVirosa.
+This file offers the methods to automatically retrieve the graph Weeksella virosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeeksellaVirosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeeksellaVirosa graph.
+    """Return new instance of the Weeksella virosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeeksellaVirosa(
 
     Returns
     -----------------------
-    Instace of WeeksellaVirosa graph.
+    Instace of Weeksella virosa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumA52c2.
+This file offers the methods to automatically retrieve the graph bacterium A52C2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumA52c2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumA52c2 graph.
+    """Return new instance of the bacterium A52C2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumA52c2(
 
     Returns
     -----------------------
-    Instace of BacteriumA52c2 graph.
+    Instace of bacterium A52C2 graph.
 
 	References
 	---------------------

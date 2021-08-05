@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpAnt303.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. Ant303.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpAnt303(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpAnt303 graph.
+    """Return new instance of the Pseudomonas sp. Ant303 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpAnt303(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpAnt303 graph.
+    Instace of Pseudomonas sp. Ant303 graph.
 
 	References
 	---------------------

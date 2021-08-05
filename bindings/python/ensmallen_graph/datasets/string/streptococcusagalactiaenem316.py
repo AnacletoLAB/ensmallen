@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAgalactiaeNem316.
+This file offers the methods to automatically retrieve the graph Streptococcus agalactiae NEM316.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAgalactiaeNem316(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAgalactiaeNem316 graph.
+    """Return new instance of the Streptococcus agalactiae NEM316 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAgalactiaeNem316(
 
     Returns
     -----------------------
-    Instace of StreptococcusAgalactiaeNem316 graph.
+    Instace of Streptococcus agalactiae NEM316 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaSpKh3b4.
+This file offers the methods to automatically retrieve the graph Olsenella sp. KH3B4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaSpKh3b4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaSpKh3b4 graph.
+    """Return new instance of the Olsenella sp. KH3B4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaSpKh3b4(
 
     Returns
     -----------------------
-    Instace of OlsenellaSpKh3b4 graph.
+    Instace of Olsenella sp. KH3B4 graph.
 
 	References
 	---------------------

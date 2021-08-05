@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumSoleae.
+This file offers the methods to automatically retrieve the graph Tenacibaculum soleae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumSoleae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumSoleae graph.
+    """Return new instance of the Tenacibaculum soleae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenacibaculumSoleae(
 
     Returns
     -----------------------
-    Instace of TenacibaculumSoleae graph.
+    Instace of Tenacibaculum soleae graph.
 
 	References
 	---------------------

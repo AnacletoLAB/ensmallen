@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumMinimum.
+This file offers the methods to automatically retrieve the graph Bifidobacterium minimum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumMinimum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumMinimum graph.
+    """Return new instance of the Bifidobacterium minimum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumMinimum(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumMinimum graph.
+    Instace of Bifidobacterium minimum graph.
 
 	References
 	---------------------

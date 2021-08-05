@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoculleusSpSdb.
+This file offers the methods to automatically retrieve the graph Methanoculleus sp. SDB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoculleusSpSdb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoculleusSpSdb graph.
+    """Return new instance of the Methanoculleus sp. SDB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanoculleusSpSdb(
 
     Returns
     -----------------------
-    Instace of MethanoculleusSpSdb graph.
+    Instace of Methanoculleus sp. SDB graph.
 
 	References
 	---------------------

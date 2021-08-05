@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusSpT2530.
+This file offers the methods to automatically retrieve the graph Tessaracoccus sp. T2.5-30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusSpT2530(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusSpT2530 graph.
+    """Return new instance of the Tessaracoccus sp. T2.5-30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusSpT2530(
 
     Returns
     -----------------------
-    Instace of TessaracoccusSpT2530 graph.
+    Instace of Tessaracoccus sp. T2.5-30 graph.
 
 	References
 	---------------------

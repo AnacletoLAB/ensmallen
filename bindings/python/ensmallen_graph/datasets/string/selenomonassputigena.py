@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSputigena.
+This file offers the methods to automatically retrieve the graph Selenomonas sputigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSputigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSputigena graph.
+    """Return new instance of the Selenomonas sputigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSputigena(
 
     Returns
     -----------------------
-    Instace of SelenomonasSputigena graph.
+    Instace of Selenomonas sputigena graph.
 
 	References
 	---------------------

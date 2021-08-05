@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MusPahari.
+This file offers the methods to automatically retrieve the graph Mus pahari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MusPahari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MusPahari graph.
+    """Return new instance of the Mus pahari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MusPahari(
 
     Returns
     -----------------------
-    Instace of MusPahari graph.
+    Instace of Mus pahari graph.
 
 	References
 	---------------------

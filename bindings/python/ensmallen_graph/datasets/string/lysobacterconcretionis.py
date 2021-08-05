@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterConcretionis.
+This file offers the methods to automatically retrieve the graph Lysobacter concretionis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterConcretionis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterConcretionis graph.
+    """Return new instance of the Lysobacter concretionis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysobacterConcretionis(
 
     Returns
     -----------------------
-    Instace of LysobacterConcretionis graph.
+    Instace of Lysobacter concretionis graph.
 
 	References
 	---------------------

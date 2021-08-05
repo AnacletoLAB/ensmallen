@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnatilineaApprima.
+This file offers the methods to automatically retrieve the graph Ornatilinea apprima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnatilineaApprima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnatilineaApprima graph.
+    """Return new instance of the Ornatilinea apprima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrnatilineaApprima(
 
     Returns
     -----------------------
-    Instace of OrnatilineaApprima graph.
+    Instace of Ornatilinea apprima graph.
 
 	References
 	---------------------

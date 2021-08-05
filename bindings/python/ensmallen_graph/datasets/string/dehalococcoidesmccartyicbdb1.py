@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalococcoidesMccartyiCbdb1.
+This file offers the methods to automatically retrieve the graph Dehalococcoides mccartyi CBDB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalococcoidesMccartyiCbdb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalococcoidesMccartyiCbdb1 graph.
+    """Return new instance of the Dehalococcoides mccartyi CBDB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalococcoidesMccartyiCbdb1(
 
     Returns
     -----------------------
-    Instace of DehalococcoidesMccartyiCbdb1 graph.
+    Instace of Dehalococcoides mccartyi CBDB1 graph.
 
 	References
 	---------------------

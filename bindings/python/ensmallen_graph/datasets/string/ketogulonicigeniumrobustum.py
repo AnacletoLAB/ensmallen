@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KetogulonicigeniumRobustum.
+This file offers the methods to automatically retrieve the graph Ketogulonicigenium robustum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KetogulonicigeniumRobustum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KetogulonicigeniumRobustum graph.
+    """Return new instance of the Ketogulonicigenium robustum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KetogulonicigeniumRobustum(
 
     Returns
     -----------------------
-    Instace of KetogulonicigeniumRobustum graph.
+    Instace of Ketogulonicigenium robustum graph.
 
 	References
 	---------------------

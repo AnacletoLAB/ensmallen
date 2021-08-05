@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusMundtii.
+This file offers the methods to automatically retrieve the graph Enterococcus mundtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusMundtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusMundtii graph.
+    """Return new instance of the Enterococcus mundtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusMundtii(
 
     Returns
     -----------------------
-    Instace of EnterococcusMundtii graph.
+    Instace of Enterococcus mundtii graph.
 
 	References
 	---------------------

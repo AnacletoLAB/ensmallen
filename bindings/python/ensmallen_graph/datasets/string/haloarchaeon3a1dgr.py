@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Haloarchaeon3a1dgr.
+This file offers the methods to automatically retrieve the graph haloarchaeon 3A1DGR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Haloarchaeon3a1dgr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Haloarchaeon3a1dgr graph.
+    """Return new instance of the haloarchaeon 3A1DGR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def Haloarchaeon3a1dgr(
 
     Returns
     -----------------------
-    Instace of Haloarchaeon3a1dgr graph.
+    Instace of haloarchaeon 3A1DGR graph.
 
 	References
 	---------------------

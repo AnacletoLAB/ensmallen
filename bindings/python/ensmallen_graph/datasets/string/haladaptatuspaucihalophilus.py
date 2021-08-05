@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaladaptatusPaucihalophilus.
+This file offers the methods to automatically retrieve the graph Haladaptatus paucihalophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaladaptatusPaucihalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaladaptatusPaucihalophilus graph.
+    """Return new instance of the Haladaptatus paucihalophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaladaptatusPaucihalophilus(
 
     Returns
     -----------------------
-    Instace of HaladaptatusPaucihalophilus graph.
+    Instace of Haladaptatus paucihalophilus graph.
 
 	References
 	---------------------

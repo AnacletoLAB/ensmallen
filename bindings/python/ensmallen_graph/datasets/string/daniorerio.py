@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DanioRerio.
+This file offers the methods to automatically retrieve the graph Danio rerio.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DanioRerio(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DanioRerio graph.
+    """Return new instance of the Danio rerio graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DanioRerio(
 
     Returns
     -----------------------
-    Instace of DanioRerio graph.
+    Instace of Danio rerio graph.
 
 	References
 	---------------------

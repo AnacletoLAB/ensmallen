@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasNaejangsanensis.
+This file offers the methods to automatically retrieve the graph Brevundimonas naejangsanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasNaejangsanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasNaejangsanensis graph.
+    """Return new instance of the Brevundimonas naejangsanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevundimonasNaejangsanensis(
 
     Returns
     -----------------------
-    Instace of BrevundimonasNaejangsanensis graph.
+    Instace of Brevundimonas naejangsanensis graph.
 
 	References
 	---------------------

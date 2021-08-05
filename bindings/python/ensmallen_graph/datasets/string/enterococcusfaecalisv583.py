@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusFaecalisV583.
+This file offers the methods to automatically retrieve the graph Enterococcus faecalis V583.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusFaecalisV583(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusFaecalisV583 graph.
+    """Return new instance of the Enterococcus faecalis V583 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusFaecalisV583(
 
     Returns
     -----------------------
-    Instace of EnterococcusFaecalisV583 graph.
+    Instace of Enterococcus faecalis V583 graph.
 
 	References
 	---------------------

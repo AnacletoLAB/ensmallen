@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MartelellaSpAd3.
+This file offers the methods to automatically retrieve the graph Martelella sp. AD-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MartelellaSpAd3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MartelellaSpAd3 graph.
+    """Return new instance of the Martelella sp. AD-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MartelellaSpAd3(
 
     Returns
     -----------------------
-    Instace of MartelellaSpAd3 graph.
+    Instace of Martelella sp. AD-3 graph.
 
 	References
 	---------------------

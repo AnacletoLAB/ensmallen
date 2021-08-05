@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgiphilusAromaticivorans.
+This file offers the methods to automatically retrieve the graph Algiphilus aromaticivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgiphilusAromaticivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgiphilusAromaticivorans graph.
+    """Return new instance of the Algiphilus aromaticivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgiphilusAromaticivorans(
 
     Returns
     -----------------------
-    Instace of AlgiphilusAromaticivorans graph.
+    Instace of Algiphilus aromaticivorans graph.
 
 	References
 	---------------------

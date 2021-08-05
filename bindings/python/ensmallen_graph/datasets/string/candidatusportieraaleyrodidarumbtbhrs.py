@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortieraAleyrodidarumBtBHrs.
+This file offers the methods to automatically retrieve the graph Candidatus Portiera aleyrodidarum BT-B-HRs.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPortieraAleyrodidarumBtBHrs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortieraAleyrodidarumBtBHrs graph.
+    """Return new instance of the Candidatus Portiera aleyrodidarum BT-B-HRs graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPortieraAleyrodidarumBtBHrs(
 
     Returns
     -----------------------
-    Instace of CandidatusPortieraAleyrodidarumBtBHrs graph.
+    Instace of Candidatus Portiera aleyrodidarum BT-B-HRs graph.
 
 	References
 	---------------------

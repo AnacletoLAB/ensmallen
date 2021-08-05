@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulosimicrobiumSpTh20.
+This file offers the methods to automatically retrieve the graph Cellulosimicrobium sp. TH-20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulosimicrobiumSpTh20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulosimicrobiumSpTh20 graph.
+    """Return new instance of the Cellulosimicrobium sp. TH-20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulosimicrobiumSpTh20(
 
     Returns
     -----------------------
-    Instace of CellulosimicrobiumSpTh20 graph.
+    Instace of Cellulosimicrobium sp. TH-20 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpP838.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. P838.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpP838(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpP838 graph.
+    """Return new instance of the Acinetobacter sp. P838 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterSpP838(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpP838 graph.
+    Instace of Acinetobacter sp. P838 graph.
 
 	References
 	---------------------

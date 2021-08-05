@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloceanibacterSuperfactus.
+This file offers the methods to automatically retrieve the graph Methyloceanibacter superfactus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloceanibacterSuperfactus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloceanibacterSuperfactus graph.
+    """Return new instance of the Methyloceanibacter superfactus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloceanibacterSuperfactus(
 
     Returns
     -----------------------
-    Instace of MethyloceanibacterSuperfactus graph.
+    Instace of Methyloceanibacter superfactus graph.
 
 	References
 	---------------------

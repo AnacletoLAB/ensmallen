@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaMontpellierensis.
+This file offers the methods to automatically retrieve the graph Veillonella montpellierensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaMontpellierensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaMontpellierensis graph.
+    """Return new instance of the Veillonella montpellierensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaMontpellierensis(
 
     Returns
     -----------------------
-    Instace of VeillonellaMontpellierensis graph.
+    Instace of Veillonella montpellierensis graph.
 
 	References
 	---------------------

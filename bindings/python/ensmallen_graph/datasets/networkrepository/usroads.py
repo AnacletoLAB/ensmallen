@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Usroads.
+This file offers the methods to automatically retrieve the graph usroads.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Usroads(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Usroads graph.
+    """Return new instance of the usroads graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Usroads(
 
     Returns
     -----------------------
-    Instace of Usroads graph.
+    Instace of usroads graph.
 
 	References
 	---------------------

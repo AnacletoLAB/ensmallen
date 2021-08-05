@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpNkbg15041c.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. NKBG15041c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpNkbg15041c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpNkbg15041c graph.
+    """Return new instance of the Synechococcus sp. NKBG15041c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpNkbg15041c(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpNkbg15041c graph.
+    Instace of Synechococcus sp. NKBG15041c graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusChromogenes.
+This file offers the methods to automatically retrieve the graph Staphylococcus chromogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusChromogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusChromogenes graph.
+    """Return new instance of the Staphylococcus chromogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusChromogenes(
 
     Returns
     -----------------------
-    Instace of StaphylococcusChromogenes graph.
+    Instace of Staphylococcus chromogenes graph.
 
 	References
 	---------------------

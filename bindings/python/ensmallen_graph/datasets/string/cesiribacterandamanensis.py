@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CesiribacterAndamanensis.
+This file offers the methods to automatically retrieve the graph Cesiribacter andamanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CesiribacterAndamanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CesiribacterAndamanensis graph.
+    """Return new instance of the Cesiribacter andamanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CesiribacterAndamanensis(
 
     Returns
     -----------------------
-    Instace of CesiribacterAndamanensis graph.
+    Instace of Cesiribacter andamanensis graph.
 
 	References
 	---------------------

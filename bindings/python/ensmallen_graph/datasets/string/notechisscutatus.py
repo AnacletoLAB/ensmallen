@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NotechisScutatus.
+This file offers the methods to automatically retrieve the graph Notechis scutatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NotechisScutatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NotechisScutatus graph.
+    """Return new instance of the Notechis scutatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NotechisScutatus(
 
     Returns
     -----------------------
-    Instace of NotechisScutatus graph.
+    Instace of Notechis scutatus graph.
 
 	References
 	---------------------

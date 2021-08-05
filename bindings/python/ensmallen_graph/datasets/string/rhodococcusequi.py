@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusEqui.
+This file offers the methods to automatically retrieve the graph Rhodococcus equi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusEqui(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusEqui graph.
+    """Return new instance of the Rhodococcus equi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusEqui(
 
     Returns
     -----------------------
-    Instace of RhodococcusEqui graph.
+    Instace of Rhodococcus equi graph.
 
 	References
 	---------------------

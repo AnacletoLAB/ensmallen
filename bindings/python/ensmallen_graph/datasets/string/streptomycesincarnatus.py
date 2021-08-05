@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesIncarnatus.
+This file offers the methods to automatically retrieve the graph Streptomyces incarnatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesIncarnatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesIncarnatus graph.
+    """Return new instance of the Streptomyces incarnatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesIncarnatus(
 
     Returns
     -----------------------
-    Instace of StreptomycesIncarnatus graph.
+    Instace of Streptomyces incarnatus graph.
 
 	References
 	---------------------

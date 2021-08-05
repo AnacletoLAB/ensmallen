@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaAmazonensis.
+This file offers the methods to automatically retrieve the graph Shewanella amazonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaAmazonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaAmazonensis graph.
+    """Return new instance of the Shewanella amazonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaAmazonensis(
 
     Returns
     -----------------------
-    Instace of ShewanellaAmazonensis graph.
+    Instace of Shewanella amazonensis graph.
 
 	References
 	---------------------

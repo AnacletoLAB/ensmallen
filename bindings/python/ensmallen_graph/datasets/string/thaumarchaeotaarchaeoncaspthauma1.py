@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaumarchaeotaArchaeonCaspThauma1.
+This file offers the methods to automatically retrieve the graph Thaumarchaeota archaeon casp-thauma1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaumarchaeotaArchaeonCaspThauma1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaumarchaeotaArchaeonCaspThauma1 graph.
+    """Return new instance of the Thaumarchaeota archaeon casp-thauma1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaumarchaeotaArchaeonCaspThauma1(
 
     Returns
     -----------------------
-    Instace of ThaumarchaeotaArchaeonCaspThauma1 graph.
+    Instace of Thaumarchaeota archaeon casp-thauma1 graph.
 
 	References
 	---------------------

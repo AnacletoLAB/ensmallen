@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumRimae.
+This file offers the methods to automatically retrieve the graph Atopobium rimae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumRimae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumRimae graph.
+    """Return new instance of the Atopobium rimae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AtopobiumRimae(
 
     Returns
     -----------------------
-    Instace of AtopobiumRimae graph.
+    Instace of Atopobium rimae graph.
 
 	References
 	---------------------

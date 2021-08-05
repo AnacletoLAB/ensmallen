@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Brack2.
+This file offers the methods to automatically retrieve the graph brack2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Brack2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Brack2 graph.
+    """Return new instance of the brack2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Brack2(
 
     Returns
     -----------------------
-    Instace of Brack2 graph.
+    Instace of brack2 graph.
 
 	References
 	---------------------

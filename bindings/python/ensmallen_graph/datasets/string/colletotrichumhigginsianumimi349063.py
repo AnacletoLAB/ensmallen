@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumHigginsianumImi349063.
+This file offers the methods to automatically retrieve the graph Colletotrichum higginsianum IMI 349063.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumHigginsianumImi349063(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumHigginsianumImi349063 graph.
+    """Return new instance of the Colletotrichum higginsianum IMI 349063 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumHigginsianumImi349063(
 
     Returns
     -----------------------
-    Instace of ColletotrichumHigginsianumImi349063 graph.
+    Instace of Colletotrichum higginsianum IMI 349063 graph.
 
 	References
 	---------------------

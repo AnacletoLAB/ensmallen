@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscReuters911.
+This file offers the methods to automatically retrieve the graph misc-Reuters911.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def MiscReuters911(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscReuters911 graph.
+    """Return new instance of the misc-Reuters911 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def MiscReuters911(
 
     Returns
     -----------------------
-    Instace of MiscReuters911 graph.
+    Instace of misc-Reuters911 graph.
 
 	References
 	---------------------

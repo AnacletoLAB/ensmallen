@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BaudoiniaPanamericanaUamh10762.
+This file offers the methods to automatically retrieve the graph Baudoinia panamericana UAMH 10762.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BaudoiniaPanamericanaUamh10762(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BaudoiniaPanamericanaUamh10762 graph.
+    """Return new instance of the Baudoinia panamericana UAMH 10762 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BaudoiniaPanamericanaUamh10762(
 
     Returns
     -----------------------
-    Instace of BaudoiniaPanamericanaUamh10762 graph.
+    Instace of Baudoinia panamericana UAMH 10762 graph.
 
 	References
 	---------------------

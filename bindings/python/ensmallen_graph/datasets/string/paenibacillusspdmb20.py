@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpDmb20.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. DMB20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpDmb20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpDmb20 graph.
+    """Return new instance of the Paenibacillus sp. DMB20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpDmb20(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpDmb20 graph.
+    Instace of Paenibacillus sp. DMB20 graph.
 
 	References
 	---------------------

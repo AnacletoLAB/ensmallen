@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizopusMicrosporusAtcc52813.
+This file offers the methods to automatically retrieve the graph Rhizopus microsporus ATCC 52813.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizopusMicrosporusAtcc52813(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizopusMicrosporusAtcc52813 graph.
+    """Return new instance of the Rhizopus microsporus ATCC 52813 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizopusMicrosporusAtcc52813(
 
     Returns
     -----------------------
-    Instace of RhizopusMicrosporusAtcc52813 graph.
+    Instace of Rhizopus microsporus ATCC 52813 graph.
 
 	References
 	---------------------

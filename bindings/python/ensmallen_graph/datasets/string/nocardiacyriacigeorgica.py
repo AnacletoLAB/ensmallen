@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaCyriacigeorgica.
+This file offers the methods to automatically retrieve the graph Nocardia cyriacigeorgica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaCyriacigeorgica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaCyriacigeorgica graph.
+    """Return new instance of the Nocardia cyriacigeorgica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaCyriacigeorgica(
 
     Returns
     -----------------------
-    Instace of NocardiaCyriacigeorgica graph.
+    Instace of Nocardia cyriacigeorgica graph.
 
 	References
 	---------------------

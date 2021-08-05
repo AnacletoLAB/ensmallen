@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpScn6822.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. SCN 68-22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpScn6822(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpScn6822 graph.
+    """Return new instance of the Acidovorax sp. SCN 68-22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSpScn6822(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpScn6822 graph.
+    Instace of Acidovorax sp. SCN 68-22 graph.
 
 	References
 	---------------------

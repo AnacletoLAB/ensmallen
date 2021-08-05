@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpMl3w.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. ML3W.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpMl3w(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpMl3w graph.
+    """Return new instance of the Sphingobacterium sp. ML3W graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriumSpMl3w(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpMl3w graph.
+    Instace of Sphingobacterium sp. ML3W graph.
 
 	References
 	---------------------

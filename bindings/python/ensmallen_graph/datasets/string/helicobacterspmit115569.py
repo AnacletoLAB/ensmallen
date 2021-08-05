@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterSpMit115569.
+This file offers the methods to automatically retrieve the graph Helicobacter sp. MIT115569.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterSpMit115569(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterSpMit115569 graph.
+    """Return new instance of the Helicobacter sp. MIT115569 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterSpMit115569(
 
     Returns
     -----------------------
-    Instace of HelicobacterSpMit115569 graph.
+    Instace of Helicobacter sp. MIT115569 graph.
 
 	References
 	---------------------

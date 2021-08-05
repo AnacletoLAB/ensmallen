@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Flickr.
+This file offers the methods to automatically retrieve the graph flickr.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Flickr(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Flickr graph.
+    """Return new instance of the flickr graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Flickr(
 
     Returns
     -----------------------
-    Instace of Flickr graph.
+    Instace of flickr graph.
 
 	References
 	---------------------

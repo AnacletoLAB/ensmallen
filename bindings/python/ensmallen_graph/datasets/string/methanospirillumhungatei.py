@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanospirillumHungatei.
+This file offers the methods to automatically retrieve the graph Methanospirillum hungatei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanospirillumHungatei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanospirillumHungatei graph.
+    """Return new instance of the Methanospirillum hungatei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanospirillumHungatei(
 
     Returns
     -----------------------
-    Instace of MethanospirillumHungatei graph.
+    Instace of Methanospirillum hungatei graph.
 
 	References
 	---------------------

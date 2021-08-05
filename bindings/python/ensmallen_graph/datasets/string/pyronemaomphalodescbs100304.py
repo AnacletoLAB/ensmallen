@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyronemaOmphalodesCbs100304.
+This file offers the methods to automatically retrieve the graph Pyronema omphalodes CBS 100304.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyronemaOmphalodesCbs100304(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyronemaOmphalodesCbs100304 graph.
+    """Return new instance of the Pyronema omphalodes CBS 100304 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyronemaOmphalodesCbs100304(
 
     Returns
     -----------------------
-    Instace of PyronemaOmphalodesCbs100304 graph.
+    Instace of Pyronema omphalodes CBS 100304 graph.
 
 	References
 	---------------------

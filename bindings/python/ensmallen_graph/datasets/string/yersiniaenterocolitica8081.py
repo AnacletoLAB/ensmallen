@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaEnterocolitica8081.
+This file offers the methods to automatically retrieve the graph Yersinia enterocolitica 8081.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaEnterocolitica8081(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaEnterocolitica8081 graph.
+    """Return new instance of the Yersinia enterocolitica 8081 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaEnterocolitica8081(
 
     Returns
     -----------------------
-    Instace of YersiniaEnterocolitica8081 graph.
+    Instace of Yersinia enterocolitica 8081 graph.
 
 	References
 	---------------------

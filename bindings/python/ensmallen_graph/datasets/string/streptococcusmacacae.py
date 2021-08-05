@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusMacacae.
+This file offers the methods to automatically retrieve the graph Streptococcus macacae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusMacacae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusMacacae graph.
+    """Return new instance of the Streptococcus macacae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusMacacae(
 
     Returns
     -----------------------
-    Instace of StreptococcusMacacae graph.
+    Instace of Streptococcus macacae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScytonemaTolypothrichoidesVb61278.
+This file offers the methods to automatically retrieve the graph Scytonema tolypothrichoides VB-61278.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScytonemaTolypothrichoidesVb61278(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScytonemaTolypothrichoidesVb61278 graph.
+    """Return new instance of the Scytonema tolypothrichoides VB-61278 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScytonemaTolypothrichoidesVb61278(
 
     Returns
     -----------------------
-    Instace of ScytonemaTolypothrichoidesVb61278 graph.
+    Instace of Scytonema tolypothrichoides VB-61278 graph.
 
 	References
 	---------------------

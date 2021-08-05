@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterLutaoensis.
+This file offers the methods to automatically retrieve the graph Marinobacter lutaoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterLutaoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterLutaoensis graph.
+    """Return new instance of the Marinobacter lutaoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterLutaoensis(
 
     Returns
     -----------------------
-    Instace of MarinobacterLutaoensis graph.
+    Instace of Marinobacter lutaoensis graph.
 
 	References
 	---------------------

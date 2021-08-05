@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomarinumVadi.
+This file offers the methods to automatically retrieve the graph Methylomarinum vadi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomarinumVadi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomarinumVadi graph.
+    """Return new instance of the Methylomarinum vadi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomarinumVadi(
 
     Returns
     -----------------------
-    Instace of MethylomarinumVadi graph.
+    Instace of Methylomarinum vadi graph.
 
 	References
 	---------------------

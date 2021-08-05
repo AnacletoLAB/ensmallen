@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParamaledivibacterCaminithermalisDsm15212.
+This file offers the methods to automatically retrieve the graph Paramaledivibacter caminithermalis DSM 15212.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParamaledivibacterCaminithermalisDsm15212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParamaledivibacterCaminithermalisDsm15212 graph.
+    """Return new instance of the Paramaledivibacter caminithermalis DSM 15212 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParamaledivibacterCaminithermalisDsm15212(
 
     Returns
     -----------------------
-    Instace of ParamaledivibacterCaminithermalisDsm15212 graph.
+    Instace of Paramaledivibacter caminithermalis DSM 15212 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfobacteriumThermophilum.
+This file offers the methods to automatically retrieve the graph Thermodesulfobacterium thermophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfobacteriumThermophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfobacteriumThermophilum graph.
+    """Return new instance of the Thermodesulfobacterium thermophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermodesulfobacteriumThermophilum(
 
     Returns
     -----------------------
-    Instace of ThermodesulfobacteriumThermophilum graph.
+    Instace of Thermodesulfobacterium thermophilum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacteriumRbg19ftCombo7019.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium RBG_19FT_COMBO_70_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacteriumRbg19ftCombo7019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacteriumRbg19ftCombo7019 graph.
+    """Return new instance of the Actinobacteria bacterium RBG_19FT_COMBO_70_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacteriumRbg19ftCombo7019(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacteriumRbg19ftCombo7019 graph.
+    Instace of Actinobacteria bacterium RBG_19FT_COMBO_70_19 graph.
 
 	References
 	---------------------

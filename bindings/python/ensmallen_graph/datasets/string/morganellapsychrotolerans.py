@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MorganellaPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Morganella psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MorganellaPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MorganellaPsychrotolerans graph.
+    """Return new instance of the Morganella psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MorganellaPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of MorganellaPsychrotolerans graph.
+    Instace of Morganella psychrotolerans graph.
 
 	References
 	---------------------

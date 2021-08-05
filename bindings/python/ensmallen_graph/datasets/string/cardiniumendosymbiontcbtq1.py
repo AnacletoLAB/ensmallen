@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CardiniumEndosymbiontCbtq1.
+This file offers the methods to automatically retrieve the graph Cardinium endosymbiont cBtQ1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CardiniumEndosymbiontCbtq1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CardiniumEndosymbiontCbtq1 graph.
+    """Return new instance of the Cardinium endosymbiont cBtQ1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CardiniumEndosymbiontCbtq1(
 
     Returns
     -----------------------
-    Instace of CardiniumEndosymbiontCbtq1 graph.
+    Instace of Cardinium endosymbiont cBtQ1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevrieseaAgamarum.
+This file offers the methods to automatically retrieve the graph Devriesea agamarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevrieseaAgamarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevrieseaAgamarum graph.
+    """Return new instance of the Devriesea agamarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevrieseaAgamarum(
 
     Returns
     -----------------------
-    Instace of DevrieseaAgamarum graph.
+    Instace of Devriesea agamarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RathayibacterToxicus.
+This file offers the methods to automatically retrieve the graph Rathayibacter toxicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RathayibacterToxicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RathayibacterToxicus graph.
+    """Return new instance of the Rathayibacter toxicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RathayibacterToxicus(
 
     Returns
     -----------------------
-    Instace of RathayibacterToxicus graph.
+    Instace of Rathayibacter toxicus graph.
 
 	References
 	---------------------

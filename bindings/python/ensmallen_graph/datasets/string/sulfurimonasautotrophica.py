@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasAutotrophica.
+This file offers the methods to automatically retrieve the graph Sulfurimonas autotrophica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasAutotrophica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasAutotrophica graph.
+    """Return new instance of the Sulfurimonas autotrophica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurimonasAutotrophica(
 
     Returns
     -----------------------
-    Instace of SulfurimonasAutotrophica graph.
+    Instace of Sulfurimonas autotrophica graph.
 
 	References
 	---------------------

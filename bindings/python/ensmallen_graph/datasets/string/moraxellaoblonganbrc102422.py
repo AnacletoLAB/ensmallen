@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaOblongaNbrc102422.
+This file offers the methods to automatically retrieve the graph Moraxella oblonga NBRC 102422.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaOblongaNbrc102422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaOblongaNbrc102422 graph.
+    """Return new instance of the Moraxella oblonga NBRC 102422 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaOblongaNbrc102422(
 
     Returns
     -----------------------
-    Instace of MoraxellaOblongaNbrc102422 graph.
+    Instace of Moraxella oblonga NBRC 102422 graph.
 
 	References
 	---------------------

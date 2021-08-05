@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaExalbida.
+This file offers the methods to automatically retrieve the graph Nocardia exalbida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaExalbida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaExalbida graph.
+    """Return new instance of the Nocardia exalbida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaExalbida(
 
     Returns
     -----------------------
-    Instace of NocardiaExalbida graph.
+    Instace of Nocardia exalbida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumFormicaceticum.
+This file offers the methods to automatically retrieve the graph Clostridium formicaceticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumFormicaceticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumFormicaceticum graph.
+    """Return new instance of the Clostridium formicaceticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumFormicaceticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumFormicaceticum graph.
+    Instace of Clostridium formicaceticum graph.
 
 	References
 	---------------------

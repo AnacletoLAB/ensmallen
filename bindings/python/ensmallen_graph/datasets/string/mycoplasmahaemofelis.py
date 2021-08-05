@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHaemofelis.
+This file offers the methods to automatically retrieve the graph Mycoplasma haemofelis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHaemofelis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHaemofelis graph.
+    """Return new instance of the Mycoplasma haemofelis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaHaemofelis(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHaemofelis graph.
+    Instace of Mycoplasma haemofelis graph.
 
 	References
 	---------------------

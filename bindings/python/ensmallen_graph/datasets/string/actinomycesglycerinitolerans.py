@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesGlycerinitolerans.
+This file offers the methods to automatically retrieve the graph Actinomyces glycerinitolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesGlycerinitolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesGlycerinitolerans graph.
+    """Return new instance of the Actinomyces glycerinitolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesGlycerinitolerans(
 
     Returns
     -----------------------
-    Instace of ActinomycesGlycerinitolerans graph.
+    Instace of Actinomyces glycerinitolerans graph.
 
 	References
 	---------------------

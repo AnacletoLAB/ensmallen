@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasEutropha.
+This file offers the methods to automatically retrieve the graph Nitrosomonas eutropha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasEutropha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasEutropha graph.
+    """Return new instance of the Nitrosomonas eutropha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosomonasEutropha(
 
     Returns
     -----------------------
-    Instace of NitrosomonasEutropha graph.
+    Instace of Nitrosomonas eutropha graph.
 
 	References
 	---------------------

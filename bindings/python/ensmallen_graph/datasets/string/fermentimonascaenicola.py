@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FermentimonasCaenicola.
+This file offers the methods to automatically retrieve the graph Fermentimonas caenicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FermentimonasCaenicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FermentimonasCaenicola graph.
+    """Return new instance of the Fermentimonas caenicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FermentimonasCaenicola(
 
     Returns
     -----------------------
-    Instace of FermentimonasCaenicola graph.
+    Instace of Fermentimonas caenicola graph.
 
 	References
 	---------------------

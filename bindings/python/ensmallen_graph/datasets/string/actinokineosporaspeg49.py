@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinokineosporaSpEg49.
+This file offers the methods to automatically retrieve the graph Actinokineospora sp. EG49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinokineosporaSpEg49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinokineosporaSpEg49 graph.
+    """Return new instance of the Actinokineospora sp. EG49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinokineosporaSpEg49(
 
     Returns
     -----------------------
-    Instace of ActinokineosporaSpEg49 graph.
+    Instace of Actinokineospora sp. EG49 graph.
 
 	References
 	---------------------

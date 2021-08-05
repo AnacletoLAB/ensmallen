@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaBurhodogranariea.
+This file offers the methods to automatically retrieve the graph Providencia burhodogranariea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaBurhodogranariea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaBurhodogranariea graph.
+    """Return new instance of the Providencia burhodogranariea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProvidenciaBurhodogranariea(
 
     Returns
     -----------------------
-    Instace of ProvidenciaBurhodogranariea graph.
+    Instace of Providencia burhodogranariea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatibacillumAlkenivorans.
+This file offers the methods to automatically retrieve the graph Desulfatibacillum alkenivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatibacillumAlkenivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatibacillumAlkenivorans graph.
+    """Return new instance of the Desulfatibacillum alkenivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfatibacillumAlkenivorans(
 
     Returns
     -----------------------
-    Instace of DesulfatibacillumAlkenivorans graph.
+    Instace of Desulfatibacillum alkenivorans graph.
 
 	References
 	---------------------

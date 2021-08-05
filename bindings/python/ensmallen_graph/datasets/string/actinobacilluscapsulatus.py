@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusCapsulatus.
+This file offers the methods to automatically retrieve the graph Actinobacillus capsulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusCapsulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusCapsulatus graph.
+    """Return new instance of the Actinobacillus capsulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusCapsulatus(
 
     Returns
     -----------------------
-    Instace of ActinobacillusCapsulatus graph.
+    Instace of Actinobacillus capsulatus graph.
 
 	References
 	---------------------

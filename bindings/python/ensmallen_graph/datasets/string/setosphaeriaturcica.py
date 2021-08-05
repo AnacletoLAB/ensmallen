@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SetosphaeriaTurcica.
+This file offers the methods to automatically retrieve the graph Setosphaeria turcica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SetosphaeriaTurcica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SetosphaeriaTurcica graph.
+    """Return new instance of the Setosphaeria turcica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SetosphaeriaTurcica(
 
     Returns
     -----------------------
-    Instace of SetosphaeriaTurcica graph.
+    Instace of Setosphaeria turcica graph.
 
 	References
 	---------------------

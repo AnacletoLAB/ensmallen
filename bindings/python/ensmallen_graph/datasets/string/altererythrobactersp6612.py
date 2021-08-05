@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterSp6612.
+This file offers the methods to automatically retrieve the graph Altererythrobacter sp. 66-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterSp6612(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterSp6612 graph.
+    """Return new instance of the Altererythrobacter sp. 66-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterSp6612(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterSp6612 graph.
+    Instace of Altererythrobacter sp. 66-12 graph.
 
 	References
 	---------------------

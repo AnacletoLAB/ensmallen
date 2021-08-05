@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpMrMd2014.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. MR_MD2014.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpMrMd2014(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpMrMd2014 graph.
+    """Return new instance of the Curtobacterium sp. MR_MD2014 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpMrMd2014(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpMrMd2014 graph.
+    Instace of Curtobacterium sp. MR_MD2014 graph.
 
 	References
 	---------------------

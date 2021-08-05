@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanogenicArchaeonMixedCultureIso4G1.
+This file offers the methods to automatically retrieve the graph methanogenic archaeon mixed culture ISO4-G1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanogenicArchaeonMixedCultureIso4G1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanogenicArchaeonMixedCultureIso4G1 graph.
+    """Return new instance of the methanogenic archaeon mixed culture ISO4-G1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanogenicArchaeonMixedCultureIso4G1(
 
     Returns
     -----------------------
-    Instace of MethanogenicArchaeonMixedCultureIso4G1 graph.
+    Instace of methanogenic archaeon mixed culture ISO4-G1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusFarraginis.
+This file offers the methods to automatically retrieve the graph Bacillus farraginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusFarraginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusFarraginis graph.
+    """Return new instance of the Bacillus farraginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusFarraginis(
 
     Returns
     -----------------------
-    Instace of BacillusFarraginis graph.
+    Instace of Bacillus farraginis graph.
 
 	References
 	---------------------

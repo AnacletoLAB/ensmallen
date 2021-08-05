@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSpRitPiF.
+This file offers the methods to automatically retrieve the graph Enterococcus sp. RIT-PI-f.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusSpRitPiF(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSpRitPiF graph.
+    """Return new instance of the Enterococcus sp. RIT-PI-f graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusSpRitPiF(
 
     Returns
     -----------------------
-    Instace of EnterococcusSpRitPiF graph.
+    Instace of Enterococcus sp. RIT-PI-f graph.
 
 	References
 	---------------------

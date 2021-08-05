@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelagibacterSpHtcc7211.
+This file offers the methods to automatically retrieve the graph Pelagibacter sp. HTCC7211.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelagibacterSpHtcc7211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelagibacterSpHtcc7211 graph.
+    """Return new instance of the Pelagibacter sp. HTCC7211 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelagibacterSpHtcc7211(
 
     Returns
     -----------------------
-    Instace of PelagibacterSpHtcc7211 graph.
+    Instace of Pelagibacter sp. HTCC7211 graph.
 
 	References
 	---------------------

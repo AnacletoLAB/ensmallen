@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpErmr104.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. ERMR1:04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpErmr104(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpErmr104 graph.
+    """Return new instance of the Chryseobacterium sp. ERMR1:04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpErmr104(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpErmr104 graph.
+    Instace of Chryseobacterium sp. ERMR1:04 graph.
 
 	References
 	---------------------

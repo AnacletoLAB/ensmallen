@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroserpensMesophilus.
+This file offers the methods to automatically retrieve the graph Psychroserpens mesophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroserpensMesophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroserpensMesophilus graph.
+    """Return new instance of the Psychroserpens mesophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychroserpensMesophilus(
 
     Returns
     -----------------------
-    Instace of PsychroserpensMesophilus graph.
+    Instace of Psychroserpens mesophilus graph.
 
 	References
 	---------------------

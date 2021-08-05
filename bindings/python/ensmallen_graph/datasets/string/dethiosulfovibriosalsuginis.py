@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DethiosulfovibrioSalsuginis.
+This file offers the methods to automatically retrieve the graph Dethiosulfovibrio salsuginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DethiosulfovibrioSalsuginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DethiosulfovibrioSalsuginis graph.
+    """Return new instance of the Dethiosulfovibrio salsuginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DethiosulfovibrioSalsuginis(
 
     Returns
     -----------------------
-    Instace of DethiosulfovibrioSalsuginis graph.
+    Instace of Dethiosulfovibrio salsuginis graph.
 
 	References
 	---------------------

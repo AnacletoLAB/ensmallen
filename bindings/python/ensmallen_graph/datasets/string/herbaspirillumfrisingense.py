@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumFrisingense.
+This file offers the methods to automatically retrieve the graph Herbaspirillum frisingense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumFrisingense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumFrisingense graph.
+    """Return new instance of the Herbaspirillum frisingense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerbaspirillumFrisingense(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumFrisingense graph.
+    Instace of Herbaspirillum frisingense graph.
 
 	References
 	---------------------

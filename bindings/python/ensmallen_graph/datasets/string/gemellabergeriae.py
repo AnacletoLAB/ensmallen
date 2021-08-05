@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaBergeriae.
+This file offers the methods to automatically retrieve the graph Gemella bergeriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaBergeriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaBergeriae graph.
+    """Return new instance of the Gemella bergeriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemellaBergeriae(
 
     Returns
     -----------------------
-    Instace of GemellaBergeriae graph.
+    Instace of Gemella bergeriae graph.
 
 	References
 	---------------------

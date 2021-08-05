@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaDadantii3937.
+This file offers the methods to automatically retrieve the graph Dickeya dadantii 3937.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaDadantii3937(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaDadantii3937 graph.
+    """Return new instance of the Dickeya dadantii 3937 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaDadantii3937(
 
     Returns
     -----------------------
-    Instace of DickeyaDadantii3937 graph.
+    Instace of Dickeya dadantii 3937 graph.
 
 	References
 	---------------------

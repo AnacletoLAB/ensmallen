@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumShimoidei.
+This file offers the methods to automatically retrieve the graph Mycobacterium shimoidei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumShimoidei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumShimoidei graph.
+    """Return new instance of the Mycobacterium shimoidei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumShimoidei(
 
     Returns
     -----------------------
-    Instace of MycobacteriumShimoidei graph.
+    Instace of Mycobacterium shimoidei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WohlfahrtiimonasChitiniclastica.
+This file offers the methods to automatically retrieve the graph Wohlfahrtiimonas chitiniclastica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WohlfahrtiimonasChitiniclastica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WohlfahrtiimonasChitiniclastica graph.
+    """Return new instance of the Wohlfahrtiimonas chitiniclastica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WohlfahrtiimonasChitiniclastica(
 
     Returns
     -----------------------
-    Instace of WohlfahrtiimonasChitiniclastica graph.
+    Instace of Wohlfahrtiimonas chitiniclastica graph.
 
 	References
 	---------------------

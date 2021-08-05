@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraDefluvii.
+This file offers the methods to automatically retrieve the graph Nitrospira defluvii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraDefluvii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraDefluvii graph.
+    """Return new instance of the Nitrospira defluvii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrospiraDefluvii(
 
     Returns
     -----------------------
-    Instace of NitrospiraDefluvii graph.
+    Instace of Nitrospira defluvii graph.
 
 	References
 	---------------------

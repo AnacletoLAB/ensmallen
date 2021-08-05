@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioProteoclasticusB316.
+This file offers the methods to automatically retrieve the graph Butyrivibrio proteoclasticus B316.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioProteoclasticusB316(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioProteoclasticusB316 graph.
+    """Return new instance of the Butyrivibrio proteoclasticus B316 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioProteoclasticusB316(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioProteoclasticusB316 graph.
+    Instace of Butyrivibrio proteoclasticus B316 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeroarcusBurkinensis.
+This file offers the methods to automatically retrieve the graph Anaeroarcus burkinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeroarcusBurkinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeroarcusBurkinensis graph.
+    """Return new instance of the Anaeroarcus burkinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaeroarcusBurkinensis(
 
     Returns
     -----------------------
-    Instace of AnaeroarcusBurkinensis graph.
+    Instace of Anaeroarcus burkinensis graph.
 
 	References
 	---------------------

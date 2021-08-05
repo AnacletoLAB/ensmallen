@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuricibacterSanguinis.
+This file offers the methods to automatically retrieve the graph Turicibacter sanguinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TuricibacterSanguinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuricibacterSanguinis graph.
+    """Return new instance of the Turicibacter sanguinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TuricibacterSanguinis(
 
     Returns
     -----------------------
-    Instace of TuricibacterSanguinis graph.
+    Instace of Turicibacter sanguinis graph.
 
 	References
 	---------------------

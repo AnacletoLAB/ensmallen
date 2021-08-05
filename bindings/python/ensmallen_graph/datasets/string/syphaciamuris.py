@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyphaciaMuris.
+This file offers the methods to automatically retrieve the graph Syphacia muris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyphaciaMuris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyphaciaMuris graph.
+    """Return new instance of the Syphacia muris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyphaciaMuris(
 
     Returns
     -----------------------
-    Instace of SyphaciaMuris graph.
+    Instace of Syphacia muris graph.
 
 	References
 	---------------------

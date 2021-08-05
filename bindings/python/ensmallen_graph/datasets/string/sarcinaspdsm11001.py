@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SarcinaSpDsm11001.
+This file offers the methods to automatically retrieve the graph Sarcina sp. DSM 11001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SarcinaSpDsm11001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SarcinaSpDsm11001 graph.
+    """Return new instance of the Sarcina sp. DSM 11001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SarcinaSpDsm11001(
 
     Returns
     -----------------------
-    Instace of SarcinaSpDsm11001 graph.
+    Instace of Sarcina sp. DSM 11001 graph.
 
 	References
 	---------------------

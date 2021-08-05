@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelcococcusKunzii.
+This file offers the methods to automatically retrieve the graph Helcococcus kunzii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelcococcusKunzii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelcococcusKunzii graph.
+    """Return new instance of the Helcococcus kunzii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelcococcusKunzii(
 
     Returns
     -----------------------
-    Instace of HelcococcusKunzii graph.
+    Instace of Helcococcus kunzii graph.
 
 	References
 	---------------------

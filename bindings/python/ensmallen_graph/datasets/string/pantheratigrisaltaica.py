@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantheraTigrisAltaica.
+This file offers the methods to automatically retrieve the graph Panthera tigris altaica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantheraTigrisAltaica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantheraTigrisAltaica graph.
+    """Return new instance of the Panthera tigris altaica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantheraTigrisAltaica(
 
     Returns
     -----------------------
-    Instace of PantheraTigrisAltaica graph.
+    Instace of Panthera tigris altaica graph.
 
 	References
 	---------------------

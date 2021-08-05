@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacrococcusCanis.
+This file offers the methods to automatically retrieve the graph Macrococcus canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacrococcusCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacrococcusCanis graph.
+    """Return new instance of the Macrococcus canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacrococcusCanis(
 
     Returns
     -----------------------
-    Instace of MacrococcusCanis graph.
+    Instace of Macrococcus canis graph.
 
 	References
 	---------------------

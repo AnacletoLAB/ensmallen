@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulcanisaetaThermophila.
+This file offers the methods to automatically retrieve the graph Vulcanisaeta thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulcanisaetaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulcanisaetaThermophila graph.
+    """Return new instance of the Vulcanisaeta thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VulcanisaetaThermophila(
 
     Returns
     -----------------------
-    Instace of VulcanisaetaThermophila graph.
+    Instace of Vulcanisaeta thermophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmaragdicoccusNiigatensis.
+This file offers the methods to automatically retrieve the graph Smaragdicoccus niigatensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmaragdicoccusNiigatensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmaragdicoccusNiigatensis graph.
+    """Return new instance of the Smaragdicoccus niigatensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SmaragdicoccusNiigatensis(
 
     Returns
     -----------------------
-    Instace of SmaragdicoccusNiigatensis graph.
+    Instace of Smaragdicoccus niigatensis graph.
 
 	References
 	---------------------

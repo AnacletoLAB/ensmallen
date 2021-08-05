@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChaetomiumGlobosum.
+This file offers the methods to automatically retrieve the graph Chaetomium globosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChaetomiumGlobosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChaetomiumGlobosum graph.
+    """Return new instance of the Chaetomium globosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChaetomiumGlobosum(
 
     Returns
     -----------------------
-    Instace of ChaetomiumGlobosum graph.
+    Instace of Chaetomium globosum graph.
 
 	References
 	---------------------

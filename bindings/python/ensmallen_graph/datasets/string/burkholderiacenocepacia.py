@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaCenocepacia.
+This file offers the methods to automatically retrieve the graph Burkholderia cenocepacia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaCenocepacia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaCenocepacia graph.
+    """Return new instance of the Burkholderia cenocepacia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaCenocepacia(
 
     Returns
     -----------------------
-    Instace of BurkholderiaCenocepacia graph.
+    Instace of Burkholderia cenocepacia graph.
 
 	References
 	---------------------

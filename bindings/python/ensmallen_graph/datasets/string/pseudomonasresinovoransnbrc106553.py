@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasResinovoransNbrc106553.
+This file offers the methods to automatically retrieve the graph Pseudomonas resinovorans NBRC106553.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasResinovoransNbrc106553(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasResinovoransNbrc106553 graph.
+    """Return new instance of the Pseudomonas resinovorans NBRC106553 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasResinovoransNbrc106553(
 
     Returns
     -----------------------
-    Instace of PseudomonasResinovoransNbrc106553 graph.
+    Instace of Pseudomonas resinovorans NBRC106553 graph.
 
 	References
 	---------------------

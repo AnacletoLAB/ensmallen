@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaCoauthorsDblp.
+This file offers the methods to automatically retrieve the graph ca-coauthors-dblp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def CaCoauthorsDblp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaCoauthorsDblp graph.
+    """Return new instance of the ca-coauthors-dblp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def CaCoauthorsDblp(
 
     Returns
     -----------------------
-    Instace of CaCoauthorsDblp graph.
+    Instace of ca-coauthors-dblp graph.
 
 	References
 	---------------------

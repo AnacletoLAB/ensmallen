@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumTuberculosisH37ra.
+This file offers the methods to automatically retrieve the graph Mycobacterium tuberculosis H37Ra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumTuberculosisH37ra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumTuberculosisH37ra graph.
+    """Return new instance of the Mycobacterium tuberculosis H37Ra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumTuberculosisH37ra(
 
     Returns
     -----------------------
-    Instace of MycobacteriumTuberculosisH37ra graph.
+    Instace of Mycobacterium tuberculosis H37Ra graph.
 
 	References
 	---------------------

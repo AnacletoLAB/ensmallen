@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffGithubUser2project.
+This file offers the methods to automatically retrieve the graph aff-github-user2project.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def AffGithubUser2project(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffGithubUser2project graph.
+    """Return new instance of the aff-github-user2project graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def AffGithubUser2project(
 
     Returns
     -----------------------
-    Instace of AffGithubUser2project graph.
+    Instace of aff-github-user2project graph.
 
 	References
 	---------------------

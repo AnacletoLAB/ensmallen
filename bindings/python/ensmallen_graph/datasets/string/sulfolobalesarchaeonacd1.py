@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobalesArchaeonAcd1.
+This file offers the methods to automatically retrieve the graph Sulfolobales archaeon Acd1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobalesArchaeonAcd1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobalesArchaeonAcd1 graph.
+    """Return new instance of the Sulfolobales archaeon Acd1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfolobalesArchaeonAcd1(
 
     Returns
     -----------------------
-    Instace of SulfolobalesArchaeonAcd1 graph.
+    Instace of Sulfolobales archaeon Acd1 graph.
 
 	References
 	---------------------

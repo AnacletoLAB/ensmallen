@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasEntomophila.
+This file offers the methods to automatically retrieve the graph Pseudomonas entomophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasEntomophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasEntomophila graph.
+    """Return new instance of the Pseudomonas entomophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasEntomophila(
 
     Returns
     -----------------------
-    Instace of PseudomonasEntomophila graph.
+    Instace of Pseudomonas entomophila graph.
 
 	References
 	---------------------

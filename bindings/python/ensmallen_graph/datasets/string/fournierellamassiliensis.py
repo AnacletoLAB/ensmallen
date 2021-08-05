@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FournierellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Fournierella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FournierellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FournierellaMassiliensis graph.
+    """Return new instance of the Fournierella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FournierellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of FournierellaMassiliensis graph.
+    Instace of Fournierella massiliensis graph.
 
 	References
 	---------------------

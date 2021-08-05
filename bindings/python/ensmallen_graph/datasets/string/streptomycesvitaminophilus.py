@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesVitaminophilus.
+This file offers the methods to automatically retrieve the graph Streptomyces vitaminophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesVitaminophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesVitaminophilus graph.
+    """Return new instance of the Streptomyces vitaminophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesVitaminophilus(
 
     Returns
     -----------------------
-    Instace of StreptomycesVitaminophilus graph.
+    Instace of Streptomyces vitaminophilus graph.
 
 	References
 	---------------------

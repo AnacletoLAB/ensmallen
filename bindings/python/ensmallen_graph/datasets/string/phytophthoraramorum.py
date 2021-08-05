@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraRamorum.
+This file offers the methods to automatically retrieve the graph Phytophthora ramorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraRamorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraRamorum graph.
+    """Return new instance of the Phytophthora ramorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytophthoraRamorum(
 
     Returns
     -----------------------
-    Instace of PhytophthoraRamorum graph.
+    Instace of Phytophthora ramorum graph.
 
 	References
 	---------------------

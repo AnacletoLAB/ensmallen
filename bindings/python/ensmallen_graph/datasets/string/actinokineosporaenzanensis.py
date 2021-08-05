@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinokineosporaEnzanensis.
+This file offers the methods to automatically retrieve the graph Actinokineospora enzanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinokineosporaEnzanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinokineosporaEnzanensis graph.
+    """Return new instance of the Actinokineospora enzanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinokineosporaEnzanensis(
 
     Returns
     -----------------------
-    Instace of ActinokineosporaEnzanensis graph.
+    Instace of Actinokineospora enzanensis graph.
 
 	References
 	---------------------

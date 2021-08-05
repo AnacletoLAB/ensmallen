@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenovibrioMarinus.
+This file offers the methods to automatically retrieve the graph Hydrogenovibrio marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenovibrioMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenovibrioMarinus graph.
+    """Return new instance of the Hydrogenovibrio marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenovibrioMarinus(
 
     Returns
     -----------------------
-    Instace of HydrogenovibrioMarinus graph.
+    Instace of Hydrogenovibrio marinus graph.
 
 	References
 	---------------------

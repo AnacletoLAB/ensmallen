@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromohalobacterSalexigens.
+This file offers the methods to automatically retrieve the graph Chromohalobacter salexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromohalobacterSalexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromohalobacterSalexigens graph.
+    """Return new instance of the Chromohalobacter salexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChromohalobacterSalexigens(
 
     Returns
     -----------------------
-    Instace of ChromohalobacterSalexigens graph.
+    Instace of Chromohalobacter salexigens graph.
 
 	References
 	---------------------

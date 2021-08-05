@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusAsaccharolyticusDsm20463.
+This file offers the methods to automatically retrieve the graph Peptoniphilus asaccharolyticus DSM 20463.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusAsaccharolyticusDsm20463(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusAsaccharolyticusDsm20463 graph.
+    """Return new instance of the Peptoniphilus asaccharolyticus DSM 20463 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusAsaccharolyticusDsm20463(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusAsaccharolyticusDsm20463 graph.
+    Instace of Peptoniphilus asaccharolyticus DSM 20463 graph.
 
 	References
 	---------------------

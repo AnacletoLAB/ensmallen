@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrientiaTsutsugamushi.
+This file offers the methods to automatically retrieve the graph Orientia tsutsugamushi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrientiaTsutsugamushi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrientiaTsutsugamushi graph.
+    """Return new instance of the Orientia tsutsugamushi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OrientiaTsutsugamushi(
 
     Returns
     -----------------------
-    Instace of OrientiaTsutsugamushi graph.
+    Instace of Orientia tsutsugamushi graph.
 
 	References
 	---------------------

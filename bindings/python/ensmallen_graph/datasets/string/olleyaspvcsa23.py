@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlleyaSpVcsa23.
+This file offers the methods to automatically retrieve the graph Olleya sp. VCSA23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlleyaSpVcsa23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlleyaSpVcsa23 graph.
+    """Return new instance of the Olleya sp. VCSA23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlleyaSpVcsa23(
 
     Returns
     -----------------------
-    Instace of OlleyaSpVcsa23 graph.
+    Instace of Olleya sp. VCSA23 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquamicrobiumDefluvii.
+This file offers the methods to automatically retrieve the graph Aquamicrobium defluvii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquamicrobiumDefluvii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquamicrobiumDefluvii graph.
+    """Return new instance of the Aquamicrobium defluvii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquamicrobiumDefluvii(
 
     Returns
     -----------------------
-    Instace of AquamicrobiumDefluvii graph.
+    Instace of Aquamicrobium defluvii graph.
 
 	References
 	---------------------

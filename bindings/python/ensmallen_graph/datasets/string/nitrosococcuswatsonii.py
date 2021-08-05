@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosococcusWatsonii.
+This file offers the methods to automatically retrieve the graph Nitrosococcus watsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosococcusWatsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosococcusWatsonii graph.
+    """Return new instance of the Nitrosococcus watsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosococcusWatsonii(
 
     Returns
     -----------------------
-    Instace of NitrosococcusWatsonii graph.
+    Instace of Nitrosococcus watsonii graph.
 
 	References
 	---------------------

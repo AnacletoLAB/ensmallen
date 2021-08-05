@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumJdfr88.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium JdFR-88.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumJdfr88(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumJdfr88 graph.
+    """Return new instance of the Nitrospirae bacterium JdFR-88 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumJdfr88(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumJdfr88 graph.
+    Instace of Nitrospirae bacterium JdFR-88 graph.
 
 	References
 	---------------------

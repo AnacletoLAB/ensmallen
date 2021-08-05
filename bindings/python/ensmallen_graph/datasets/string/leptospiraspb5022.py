@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraSpB5022.
+This file offers the methods to automatically retrieve the graph Leptospira sp. B5-022.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraSpB5022(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraSpB5022 graph.
+    """Return new instance of the Leptospira sp. B5-022 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraSpB5022(
 
     Returns
     -----------------------
-    Instace of LeptospiraSpB5022 graph.
+    Instace of Leptospira sp. B5-022 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminococcusIntestini.
+This file offers the methods to automatically retrieve the graph Acidaminococcus intestini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminococcusIntestini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminococcusIntestini graph.
+    """Return new instance of the Acidaminococcus intestini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidaminococcusIntestini(
 
     Returns
     -----------------------
-    Instace of AcidaminococcusIntestini graph.
+    Instace of Acidaminococcus intestini graph.
 
 	References
 	---------------------

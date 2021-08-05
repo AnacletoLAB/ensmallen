@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaproniaEpimycesCbs60696.
+This file offers the methods to automatically retrieve the graph Capronia epimyces CBS 606.96.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaproniaEpimycesCbs60696(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaproniaEpimycesCbs60696 graph.
+    """Return new instance of the Capronia epimyces CBS 606.96 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaproniaEpimycesCbs60696(
 
     Returns
     -----------------------
-    Instace of CaproniaEpimycesCbs60696 graph.
+    Instace of Capronia epimyces CBS 606.96 graph.
 
 	References
 	---------------------

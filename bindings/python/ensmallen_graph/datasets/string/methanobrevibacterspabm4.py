@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterSpAbm4.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter sp. AbM4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterSpAbm4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterSpAbm4 graph.
+    """Return new instance of the Methanobrevibacter sp. AbM4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobrevibacterSpAbm4(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterSpAbm4 graph.
+    Instace of Methanobrevibacter sp. AbM4 graph.
 
 	References
 	---------------------

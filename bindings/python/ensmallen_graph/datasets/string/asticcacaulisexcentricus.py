@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisExcentricus.
+This file offers the methods to automatically retrieve the graph Asticcacaulis excentricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisExcentricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisExcentricus graph.
+    """Return new instance of the Asticcacaulis excentricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AsticcacaulisExcentricus(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisExcentricus graph.
+    Instace of Asticcacaulis excentricus graph.
 
 	References
 	---------------------

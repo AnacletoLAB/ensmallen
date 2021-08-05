@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesSenegalensis.
+This file offers the methods to automatically retrieve the graph Alistipes senegalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesSenegalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesSenegalensis graph.
+    """Return new instance of the Alistipes senegalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesSenegalensis(
 
     Returns
     -----------------------
-    Instace of AlistipesSenegalensis graph.
+    Instace of Alistipes senegalensis graph.
 
 	References
 	---------------------

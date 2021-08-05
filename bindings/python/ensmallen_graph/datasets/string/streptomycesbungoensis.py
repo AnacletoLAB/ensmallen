@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesBungoensis.
+This file offers the methods to automatically retrieve the graph Streptomyces bungoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesBungoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesBungoensis graph.
+    """Return new instance of the Streptomyces bungoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesBungoensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesBungoensis graph.
+    Instace of Streptomyces bungoensis graph.
 
 	References
 	---------------------

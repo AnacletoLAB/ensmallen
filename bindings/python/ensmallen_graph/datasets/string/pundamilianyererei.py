@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PundamiliaNyererei.
+This file offers the methods to automatically retrieve the graph Pundamilia nyererei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PundamiliaNyererei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PundamiliaNyererei graph.
+    """Return new instance of the Pundamilia nyererei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PundamiliaNyererei(
 
     Returns
     -----------------------
-    Instace of PundamiliaNyererei graph.
+    Instace of Pundamilia nyererei graph.
 
 	References
 	---------------------

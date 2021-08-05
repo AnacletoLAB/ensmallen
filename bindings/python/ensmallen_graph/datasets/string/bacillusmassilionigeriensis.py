@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMassilionigeriensis.
+This file offers the methods to automatically retrieve the graph Bacillus massilionigeriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMassilionigeriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMassilionigeriensis graph.
+    """Return new instance of the Bacillus massilionigeriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMassilionigeriensis(
 
     Returns
     -----------------------
-    Instace of BacillusMassilionigeriensis graph.
+    Instace of Bacillus massilionigeriensis graph.
 
 	References
 	---------------------

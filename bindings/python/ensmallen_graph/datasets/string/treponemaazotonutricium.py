@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaAzotonutricium.
+This file offers the methods to automatically retrieve the graph Treponema azotonutricium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaAzotonutricium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaAzotonutricium graph.
+    """Return new instance of the Treponema azotonutricium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaAzotonutricium(
 
     Returns
     -----------------------
-    Instace of TreponemaAzotonutricium graph.
+    Instace of Treponema azotonutricium graph.
 
 	References
 	---------------------

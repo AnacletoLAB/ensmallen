@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodomicrobiumUdaipurenseJa643.
+This file offers the methods to automatically retrieve the graph Rhodomicrobium udaipurense JA643.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodomicrobiumUdaipurenseJa643(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodomicrobiumUdaipurenseJa643 graph.
+    """Return new instance of the Rhodomicrobium udaipurense JA643 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodomicrobiumUdaipurenseJa643(
 
     Returns
     -----------------------
-    Instace of RhodomicrobiumUdaipurenseJa643 graph.
+    Instace of Rhodomicrobium udaipurense JA643 graph.
 
 	References
 	---------------------

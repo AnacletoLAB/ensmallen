@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodotorulaDiobovata.
+This file offers the methods to automatically retrieve the graph Rhodotorula diobovata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodotorulaDiobovata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodotorulaDiobovata graph.
+    """Return new instance of the Rhodotorula diobovata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodotorulaDiobovata(
 
     Returns
     -----------------------
-    Instace of RhodotorulaDiobovata graph.
+    Instace of Rhodotorula diobovata graph.
 
 	References
 	---------------------

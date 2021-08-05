@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaWashoeensis0850475.
+This file offers the methods to automatically retrieve the graph Bartonella washoeensis 085-0475.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaWashoeensis0850475(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaWashoeensis0850475 graph.
+    """Return new instance of the Bartonella washoeensis 085-0475 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaWashoeensis0850475(
 
     Returns
     -----------------------
-    Instace of BartonellaWashoeensis0850475 graph.
+    Instace of Bartonella washoeensis 085-0475 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenoanaerobacteriumSaccharovorans.
+This file offers the methods to automatically retrieve the graph Hydrogenoanaerobacterium saccharovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenoanaerobacteriumSaccharovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenoanaerobacteriumSaccharovorans graph.
+    """Return new instance of the Hydrogenoanaerobacterium saccharovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenoanaerobacteriumSaccharovorans(
 
     Returns
     -----------------------
-    Instace of HydrogenoanaerobacteriumSaccharovorans graph.
+    Instace of Hydrogenoanaerobacterium saccharovorans graph.
 
 	References
 	---------------------

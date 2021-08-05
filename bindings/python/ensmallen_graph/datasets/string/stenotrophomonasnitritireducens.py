@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasNitritireducens.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas nitritireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasNitritireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasNitritireducens graph.
+    """Return new instance of the Stenotrophomonas nitritireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasNitritireducens(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasNitritireducens graph.
+    Instace of Stenotrophomonas nitritireducens graph.
 
 	References
 	---------------------

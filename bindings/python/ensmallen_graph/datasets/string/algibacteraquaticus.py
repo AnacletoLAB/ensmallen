@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgibacterAquaticus.
+This file offers the methods to automatically retrieve the graph Algibacter aquaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgibacterAquaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgibacterAquaticus graph.
+    """Return new instance of the Algibacter aquaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgibacterAquaticus(
 
     Returns
     -----------------------
-    Instace of AlgibacterAquaticus graph.
+    Instace of Algibacter aquaticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumEnclense.
+This file offers the methods to automatically retrieve the graph Microbacterium enclense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumEnclense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumEnclense graph.
+    """Return new instance of the Microbacterium enclense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumEnclense(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumEnclense graph.
+    Instace of Microbacterium enclense graph.
 
 	References
 	---------------------

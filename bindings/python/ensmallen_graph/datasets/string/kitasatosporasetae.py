@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaSetae.
+This file offers the methods to automatically retrieve the graph Kitasatospora setae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaSetae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaSetae graph.
+    """Return new instance of the Kitasatospora setae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KitasatosporaSetae(
 
     Returns
     -----------------------
-    Instace of KitasatosporaSetae graph.
+    Instace of Kitasatospora setae graph.
 
 	References
 	---------------------

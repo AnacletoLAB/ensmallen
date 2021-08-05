@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteobacteriaBacteriumCg10264396.
+This file offers the methods to automatically retrieve the graph Proteobacteria bacterium CG1_02_64_396.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteobacteriaBacteriumCg10264396(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteobacteriaBacteriumCg10264396 graph.
+    """Return new instance of the Proteobacteria bacterium CG1_02_64_396 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteobacteriaBacteriumCg10264396(
 
     Returns
     -----------------------
-    Instace of ProteobacteriaBacteriumCg10264396 graph.
+    Instace of Proteobacteria bacterium CG1_02_64_396 graph.
 
 	References
 	---------------------

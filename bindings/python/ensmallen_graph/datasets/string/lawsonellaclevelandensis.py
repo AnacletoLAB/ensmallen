@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LawsonellaClevelandensis.
+This file offers the methods to automatically retrieve the graph Lawsonella clevelandensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LawsonellaClevelandensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LawsonellaClevelandensis graph.
+    """Return new instance of the Lawsonella clevelandensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LawsonellaClevelandensis(
 
     Returns
     -----------------------
-    Instace of LawsonellaClevelandensis graph.
+    Instace of Lawsonella clevelandensis graph.
 
 	References
 	---------------------

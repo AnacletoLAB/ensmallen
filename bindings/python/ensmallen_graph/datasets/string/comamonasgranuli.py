@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasGranuli.
+This file offers the methods to automatically retrieve the graph Comamonas granuli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasGranuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasGranuli graph.
+    """Return new instance of the Comamonas granuli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ComamonasGranuli(
 
     Returns
     -----------------------
-    Instace of ComamonasGranuli graph.
+    Instace of Comamonas granuli graph.
 
 	References
 	---------------------

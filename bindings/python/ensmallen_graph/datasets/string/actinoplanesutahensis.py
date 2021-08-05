@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinoplanesUtahensis.
+This file offers the methods to automatically retrieve the graph Actinoplanes utahensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinoplanesUtahensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinoplanesUtahensis graph.
+    """Return new instance of the Actinoplanes utahensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinoplanesUtahensis(
 
     Returns
     -----------------------
-    Instace of ActinoplanesUtahensis graph.
+    Instace of Actinoplanes utahensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaPoulsonii.
+This file offers the methods to automatically retrieve the graph Spiroplasma poulsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaPoulsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaPoulsonii graph.
+    """Return new instance of the Spiroplasma poulsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaPoulsonii(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaPoulsonii graph.
+    Instace of Spiroplasma poulsonii graph.
 
 	References
 	---------------------

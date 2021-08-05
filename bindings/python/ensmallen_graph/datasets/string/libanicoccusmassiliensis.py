@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LibanicoccusMassiliensis.
+This file offers the methods to automatically retrieve the graph Libanicoccus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LibanicoccusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LibanicoccusMassiliensis graph.
+    """Return new instance of the Libanicoccus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LibanicoccusMassiliensis(
 
     Returns
     -----------------------
-    Instace of LibanicoccusMassiliensis graph.
+    Instace of Libanicoccus massiliensis graph.
 
 	References
 	---------------------

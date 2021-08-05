@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroflexusTropicus.
+This file offers the methods to automatically retrieve the graph Psychroflexus tropicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroflexusTropicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroflexusTropicus graph.
+    """Return new instance of the Psychroflexus tropicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychroflexusTropicus(
 
     Returns
     -----------------------
-    Instace of PsychroflexusTropicus graph.
+    Instace of Psychroflexus tropicus graph.
 
 	References
 	---------------------

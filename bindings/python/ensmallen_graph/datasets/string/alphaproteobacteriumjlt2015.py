@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumJlt2015.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium JLT2015.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumJlt2015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumJlt2015 graph.
+    """Return new instance of the alpha proteobacterium JLT2015 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlphaProteobacteriumJlt2015(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumJlt2015 graph.
+    Instace of alpha proteobacterium JLT2015 graph.
 
 	References
 	---------------------

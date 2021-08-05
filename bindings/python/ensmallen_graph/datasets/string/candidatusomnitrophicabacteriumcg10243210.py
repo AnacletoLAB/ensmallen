@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusOmnitrophicaBacteriumCg10243210.
+This file offers the methods to automatically retrieve the graph Candidatus Omnitrophica bacterium CG1_02_43_210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusOmnitrophicaBacteriumCg10243210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusOmnitrophicaBacteriumCg10243210 graph.
+    """Return new instance of the Candidatus Omnitrophica bacterium CG1_02_43_210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusOmnitrophicaBacteriumCg10243210(
 
     Returns
     -----------------------
-    Instace of CandidatusOmnitrophicaBacteriumCg10243210 graph.
+    Instace of Candidatus Omnitrophica bacterium CG1_02_43_210 graph.
 
 	References
 	---------------------

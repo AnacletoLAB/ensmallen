@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpLeaf176.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. Leaf176.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpLeaf176(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpLeaf176 graph.
+    """Return new instance of the Pedobacter sp. Leaf176 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSpLeaf176(
 
     Returns
     -----------------------
-    Instace of PedobacterSpLeaf176 graph.
+    Instace of Pedobacter sp. Leaf176 graph.
 
 	References
 	---------------------

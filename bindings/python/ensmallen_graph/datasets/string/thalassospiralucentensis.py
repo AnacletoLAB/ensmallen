@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraLucentensis.
+This file offers the methods to automatically retrieve the graph Thalassospira lucentensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraLucentensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraLucentensis graph.
+    """Return new instance of the Thalassospira lucentensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassospiraLucentensis(
 
     Returns
     -----------------------
-    Instace of ThalassospiraLucentensis graph.
+    Instace of Thalassospira lucentensis graph.
 
 	References
 	---------------------

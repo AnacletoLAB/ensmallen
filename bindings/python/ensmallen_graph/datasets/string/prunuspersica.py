@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrunusPersica.
+This file offers the methods to automatically retrieve the graph Prunus persica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrunusPersica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrunusPersica graph.
+    """Return new instance of the Prunus persica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrunusPersica(
 
     Returns
     -----------------------
-    Instace of PrunusPersica graph.
+    Instace of Prunus persica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaedibacterAcanthamoebae.
+This file offers the methods to automatically retrieve the graph Caedibacter acanthamoebae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaedibacterAcanthamoebae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaedibacterAcanthamoebae graph.
+    """Return new instance of the Caedibacter acanthamoebae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaedibacterAcanthamoebae(
 
     Returns
     -----------------------
-    Instace of CaedibacterAcanthamoebae graph.
+    Instace of Caedibacter acanthamoebae graph.
 
 	References
 	---------------------

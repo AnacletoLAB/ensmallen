@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFischerbacteriaBacteriumRbg13378.
+This file offers the methods to automatically retrieve the graph Candidatus Fischerbacteria bacterium RBG_13_37_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFischerbacteriaBacteriumRbg13378(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFischerbacteriaBacteriumRbg13378 graph.
+    """Return new instance of the Candidatus Fischerbacteria bacterium RBG_13_37_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFischerbacteriaBacteriumRbg13378(
 
     Returns
     -----------------------
-    Instace of CandidatusFischerbacteriaBacteriumRbg13378 graph.
+    Instace of Candidatus Fischerbacteria bacterium RBG_13_37_8 graph.
 
 	References
 	---------------------

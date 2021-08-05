@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarispirochaetaAestuarii.
+This file offers the methods to automatically retrieve the graph Marispirochaeta aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarispirochaetaAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarispirochaetaAestuarii graph.
+    """Return new instance of the Marispirochaeta aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarispirochaetaAestuarii(
 
     Returns
     -----------------------
-    Instace of MarispirochaetaAestuarii graph.
+    Instace of Marispirochaeta aestuarii graph.
 
 	References
 	---------------------

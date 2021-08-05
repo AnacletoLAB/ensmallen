@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelobacterCarbinolicus.
+This file offers the methods to automatically retrieve the graph Pelobacter carbinolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelobacterCarbinolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelobacterCarbinolicus graph.
+    """Return new instance of the Pelobacter carbinolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PelobacterCarbinolicus(
 
     Returns
     -----------------------
-    Instace of PelobacterCarbinolicus graph.
+    Instace of Pelobacter carbinolicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Net25.
+This file offers the methods to automatically retrieve the graph net25.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Net25(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Net25 graph.
+    """Return new instance of the net25 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Net25(
 
     Returns
     -----------------------
-    Instace of Net25 graph.
+    Instace of net25 graph.
 
 	References
 	---------------------

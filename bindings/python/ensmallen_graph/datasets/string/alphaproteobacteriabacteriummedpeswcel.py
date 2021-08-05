@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumMedpeSwcel.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium MedPE-SWcel.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumMedpeSwcel(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumMedpeSwcel graph.
+    """Return new instance of the Alphaproteobacteria bacterium MedPE-SWcel graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumMedpeSwcel(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumMedpeSwcel graph.
+    Instace of Alphaproteobacteria bacterium MedPE-SWcel graph.
 
 	References
 	---------------------

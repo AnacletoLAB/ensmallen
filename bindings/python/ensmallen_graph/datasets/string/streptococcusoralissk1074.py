@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusOralisSk1074.
+This file offers the methods to automatically retrieve the graph Streptococcus oralis SK1074.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusOralisSk1074(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusOralisSk1074 graph.
+    """Return new instance of the Streptococcus oralis SK1074 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusOralisSk1074(
 
     Returns
     -----------------------
-    Instace of StreptococcusOralisSk1074 graph.
+    Instace of Streptococcus oralis SK1074 graph.
 
 	References
 	---------------------

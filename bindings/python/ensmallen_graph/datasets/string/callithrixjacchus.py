@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CallithrixJacchus.
+This file offers the methods to automatically retrieve the graph Callithrix jacchus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CallithrixJacchus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CallithrixJacchus graph.
+    """Return new instance of the Callithrix jacchus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CallithrixJacchus(
 
     Returns
     -----------------------
-    Instace of CallithrixJacchus graph.
+    Instace of Callithrix jacchus graph.
 
 	References
 	---------------------

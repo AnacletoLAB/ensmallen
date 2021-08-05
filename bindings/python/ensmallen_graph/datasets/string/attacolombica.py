@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AttaColombica.
+This file offers the methods to automatically retrieve the graph Atta colombica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AttaColombica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AttaColombica graph.
+    """Return new instance of the Atta colombica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AttaColombica(
 
     Returns
     -----------------------
-    Instace of AttaColombica graph.
+    Instace of Atta colombica graph.
 
 	References
 	---------------------

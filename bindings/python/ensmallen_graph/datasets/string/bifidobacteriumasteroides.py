@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAsteroides.
+This file offers the methods to automatically retrieve the graph Bifidobacterium asteroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumAsteroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAsteroides graph.
+    """Return new instance of the Bifidobacterium asteroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumAsteroides(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAsteroides graph.
+    Instace of Bifidobacterium asteroides graph.
 
 	References
 	---------------------

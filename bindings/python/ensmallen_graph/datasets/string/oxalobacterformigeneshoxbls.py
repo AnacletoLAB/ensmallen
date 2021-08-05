@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OxalobacterFormigenesHoxbls.
+This file offers the methods to automatically retrieve the graph Oxalobacter formigenes HOxBLS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OxalobacterFormigenesHoxbls(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OxalobacterFormigenesHoxbls graph.
+    """Return new instance of the Oxalobacter formigenes HOxBLS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OxalobacterFormigenesHoxbls(
 
     Returns
     -----------------------
-    Instace of OxalobacterFormigenesHoxbls graph.
+    Instace of Oxalobacter formigenes HOxBLS graph.
 
 	References
 	---------------------

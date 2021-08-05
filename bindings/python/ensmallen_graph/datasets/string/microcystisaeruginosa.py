@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrocystisAeruginosa.
+This file offers the methods to automatically retrieve the graph Microcystis aeruginosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrocystisAeruginosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrocystisAeruginosa graph.
+    """Return new instance of the Microcystis aeruginosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrocystisAeruginosa(
 
     Returns
     -----------------------
-    Instace of MicrocystisAeruginosa graph.
+    Instace of Microcystis aeruginosa graph.
 
 	References
 	---------------------

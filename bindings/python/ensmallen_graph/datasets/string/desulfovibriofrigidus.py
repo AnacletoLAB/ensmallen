@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioFrigidus.
+This file offers the methods to automatically retrieve the graph Desulfovibrio frigidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioFrigidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioFrigidus graph.
+    """Return new instance of the Desulfovibrio frigidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioFrigidus(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioFrigidus graph.
+    Instace of Desulfovibrio frigidus graph.
 
 	References
 	---------------------

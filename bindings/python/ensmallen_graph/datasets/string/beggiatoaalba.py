@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BeggiatoaAlba.
+This file offers the methods to automatically retrieve the graph Beggiatoa alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BeggiatoaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BeggiatoaAlba graph.
+    """Return new instance of the Beggiatoa alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BeggiatoaAlba(
 
     Returns
     -----------------------
-    Instace of BeggiatoaAlba graph.
+    Instace of Beggiatoa alba graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpLcm4573.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. LCM 4573.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpLcm4573(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpLcm4573 graph.
+    """Return new instance of the Rhizobium sp. LCM 4573 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpLcm4573(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpLcm4573 graph.
+    Instace of Rhizobium sp. LCM 4573 graph.
 
 	References
 	---------------------

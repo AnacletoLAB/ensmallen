@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaProducta.
+This file offers the methods to automatically retrieve the graph Blautia producta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaProducta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaProducta graph.
+    """Return new instance of the Blautia producta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlautiaProducta(
 
     Returns
     -----------------------
-    Instace of BlautiaProducta graph.
+    Instace of Blautia producta graph.
 
 	References
 	---------------------

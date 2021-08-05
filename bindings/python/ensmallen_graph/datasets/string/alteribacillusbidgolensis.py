@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteribacillusBidgolensis.
+This file offers the methods to automatically retrieve the graph Alteribacillus bidgolensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteribacillusBidgolensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteribacillusBidgolensis graph.
+    """Return new instance of the Alteribacillus bidgolensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteribacillusBidgolensis(
 
     Returns
     -----------------------
-    Instace of AlteribacillusBidgolensis graph.
+    Instace of Alteribacillus bidgolensis graph.
 
 	References
 	---------------------

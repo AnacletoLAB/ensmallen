@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpSg611l.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. SG61-1L.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpSg611l(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpSg611l graph.
+    """Return new instance of the Erythrobacter sp. SG61-1L graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpSg611l(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpSg611l graph.
+    Instace of Erythrobacter sp. SG61-1L graph.
 
 	References
 	---------------------

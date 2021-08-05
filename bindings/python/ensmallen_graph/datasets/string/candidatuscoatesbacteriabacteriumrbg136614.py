@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCoatesbacteriaBacteriumRbg136614.
+This file offers the methods to automatically retrieve the graph Candidatus Coatesbacteria bacterium RBG_13_66_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCoatesbacteriaBacteriumRbg136614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCoatesbacteriaBacteriumRbg136614 graph.
+    """Return new instance of the Candidatus Coatesbacteria bacterium RBG_13_66_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCoatesbacteriaBacteriumRbg136614(
 
     Returns
     -----------------------
-    Instace of CandidatusCoatesbacteriaBacteriumRbg136614 graph.
+    Instace of Candidatus Coatesbacteria bacterium RBG_13_66_14 graph.
 
 	References
 	---------------------

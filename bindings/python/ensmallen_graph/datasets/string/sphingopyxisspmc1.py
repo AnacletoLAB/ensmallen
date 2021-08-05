@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisSpMc1.
+This file offers the methods to automatically retrieve the graph Sphingopyxis sp. MC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisSpMc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisSpMc1 graph.
+    """Return new instance of the Sphingopyxis sp. MC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingopyxisSpMc1(
 
     Returns
     -----------------------
-    Instace of SphingopyxisSpMc1 graph.
+    Instace of Sphingopyxis sp. MC1 graph.
 
 	References
 	---------------------

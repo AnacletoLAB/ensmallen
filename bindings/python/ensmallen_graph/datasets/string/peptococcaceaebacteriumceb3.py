@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumCeb3.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium CEB3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumCeb3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumCeb3 graph.
+    """Return new instance of the Peptococcaceae bacterium CEB3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumCeb3(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumCeb3 graph.
+    Instace of Peptococcaceae bacterium CEB3 graph.
 
 	References
 	---------------------

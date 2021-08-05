@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusCellicola.
+This file offers the methods to automatically retrieve the graph Pediococcus cellicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusCellicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusCellicola graph.
+    """Return new instance of the Pediococcus cellicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PediococcusCellicola(
 
     Returns
     -----------------------
-    Instace of PediococcusCellicola graph.
+    Instace of Pediococcus cellicola graph.
 
 	References
 	---------------------

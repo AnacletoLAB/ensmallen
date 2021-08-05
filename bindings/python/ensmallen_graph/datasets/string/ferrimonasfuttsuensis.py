@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimonasFuttsuensis.
+This file offers the methods to automatically retrieve the graph Ferrimonas futtsuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimonasFuttsuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimonasFuttsuensis graph.
+    """Return new instance of the Ferrimonas futtsuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FerrimonasFuttsuensis(
 
     Returns
     -----------------------
-    Instace of FerrimonasFuttsuensis graph.
+    Instace of Ferrimonas futtsuensis graph.
 
 	References
 	---------------------

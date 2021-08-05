@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioFerrireducens.
+This file offers the methods to automatically retrieve the graph Desulfovibrio ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioFerrireducens graph.
+    """Return new instance of the Desulfovibrio ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioFerrireducens(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioFerrireducens graph.
+    Instace of Desulfovibrio ferrireducens graph.
 
 	References
 	---------------------

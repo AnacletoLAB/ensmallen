@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaHigoensis.
+This file offers the methods to automatically retrieve the graph Nocardia higoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaHigoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaHigoensis graph.
+    """Return new instance of the Nocardia higoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaHigoensis(
 
     Returns
     -----------------------
-    Instace of NocardiaHigoensis graph.
+    Instace of Nocardia higoensis graph.
 
 	References
 	---------------------

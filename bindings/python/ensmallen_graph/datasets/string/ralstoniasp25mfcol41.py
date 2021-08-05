@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaSp25mfcol41.
+This file offers the methods to automatically retrieve the graph Ralstonia sp. 25mfcol4.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaSp25mfcol41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaSp25mfcol41 graph.
+    """Return new instance of the Ralstonia sp. 25mfcol4.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RalstoniaSp25mfcol41(
 
     Returns
     -----------------------
-    Instace of RalstoniaSp25mfcol41 graph.
+    Instace of Ralstonia sp. 25mfcol4.1 graph.
 
 	References
 	---------------------

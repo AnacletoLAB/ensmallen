@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasTerrae.
+This file offers the methods to automatically retrieve the graph Comamonas terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasTerrae graph.
+    """Return new instance of the Comamonas terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasTerrae(
 
     Returns
     -----------------------
-    Instace of ComamonasTerrae graph.
+    Instace of Comamonas terrae graph.
 
 	References
 	---------------------

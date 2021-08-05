@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrococcusJejuensis.
+This file offers the methods to automatically retrieve the graph Agrococcus jejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrococcusJejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrococcusJejuensis graph.
+    """Return new instance of the Agrococcus jejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrococcusJejuensis(
 
     Returns
     -----------------------
-    Instace of AgrococcusJejuensis graph.
+    Instace of Agrococcus jejuensis graph.
 
 	References
 	---------------------

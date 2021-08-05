@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumNoviomagense.
+This file offers the methods to automatically retrieve the graph Mycobacterium noviomagense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumNoviomagense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumNoviomagense graph.
+    """Return new instance of the Mycobacterium noviomagense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumNoviomagense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumNoviomagense graph.
+    Instace of Mycobacterium noviomagense graph.
 
 	References
 	---------------------

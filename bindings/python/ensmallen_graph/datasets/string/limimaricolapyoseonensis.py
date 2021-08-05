@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimimaricolaPyoseonensis.
+This file offers the methods to automatically retrieve the graph Limimaricola pyoseonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimimaricolaPyoseonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimimaricolaPyoseonensis graph.
+    """Return new instance of the Limimaricola pyoseonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimimaricolaPyoseonensis(
 
     Returns
     -----------------------
-    Instace of LimimaricolaPyoseonensis graph.
+    Instace of Limimaricola pyoseonensis graph.
 
 	References
 	---------------------

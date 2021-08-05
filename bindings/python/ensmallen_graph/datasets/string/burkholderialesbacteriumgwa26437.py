@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderialesBacteriumGwa26437.
+This file offers the methods to automatically retrieve the graph Burkholderiales bacterium GWA2_64_37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderialesBacteriumGwa26437(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderialesBacteriumGwa26437 graph.
+    """Return new instance of the Burkholderiales bacterium GWA2_64_37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderialesBacteriumGwa26437(
 
     Returns
     -----------------------
-    Instace of BurkholderialesBacteriumGwa26437 graph.
+    Instace of Burkholderiales bacterium GWA2_64_37 graph.
 
 	References
 	---------------------

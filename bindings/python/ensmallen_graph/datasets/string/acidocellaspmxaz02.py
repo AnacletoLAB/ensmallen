@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidocellaSpMxAz02.
+This file offers the methods to automatically retrieve the graph Acidocella sp. MX-AZ02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidocellaSpMxAz02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidocellaSpMxAz02 graph.
+    """Return new instance of the Acidocella sp. MX-AZ02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidocellaSpMxAz02(
 
     Returns
     -----------------------
-    Instace of AcidocellaSpMxAz02 graph.
+    Instace of Acidocella sp. MX-AZ02 graph.
 
 	References
 	---------------------

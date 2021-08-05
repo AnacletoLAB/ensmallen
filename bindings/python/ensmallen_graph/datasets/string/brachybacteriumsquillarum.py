@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumSquillarum.
+This file offers the methods to automatically retrieve the graph Brachybacterium squillarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumSquillarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumSquillarum graph.
+    """Return new instance of the Brachybacterium squillarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachybacteriumSquillarum(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumSquillarum graph.
+    Instace of Brachybacterium squillarum graph.
 
 	References
 	---------------------

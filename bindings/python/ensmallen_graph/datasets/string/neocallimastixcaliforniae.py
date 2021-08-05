@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeocallimastixCaliforniae.
+This file offers the methods to automatically retrieve the graph Neocallimastix californiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeocallimastixCaliforniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeocallimastixCaliforniae graph.
+    """Return new instance of the Neocallimastix californiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeocallimastixCaliforniae(
 
     Returns
     -----------------------
-    Instace of NeocallimastixCaliforniae graph.
+    Instace of Neocallimastix californiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudodesulfovibrioIndicus.
+This file offers the methods to automatically retrieve the graph Pseudodesulfovibrio indicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudodesulfovibrioIndicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudodesulfovibrioIndicus graph.
+    """Return new instance of the Pseudodesulfovibrio indicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudodesulfovibrioIndicus(
 
     Returns
     -----------------------
-    Instace of PseudodesulfovibrioIndicus graph.
+    Instace of Pseudodesulfovibrio indicus graph.
 
 	References
 	---------------------

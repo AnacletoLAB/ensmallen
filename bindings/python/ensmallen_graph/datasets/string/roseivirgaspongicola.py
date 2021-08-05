@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivirgaSpongicola.
+This file offers the methods to automatically retrieve the graph Roseivirga spongicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivirgaSpongicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivirgaSpongicola graph.
+    """Return new instance of the Roseivirga spongicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseivirgaSpongicola(
 
     Returns
     -----------------------
-    Instace of RoseivirgaSpongicola graph.
+    Instace of Roseivirga spongicola graph.
 
 	References
 	---------------------

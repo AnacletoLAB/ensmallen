@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumVenenatum.
+This file offers the methods to automatically retrieve the graph Fusarium venenatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumVenenatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumVenenatum graph.
+    """Return new instance of the Fusarium venenatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumVenenatum(
 
     Returns
     -----------------------
-    Instace of FusariumVenenatum graph.
+    Instace of Fusarium venenatum graph.
 
 	References
 	---------------------

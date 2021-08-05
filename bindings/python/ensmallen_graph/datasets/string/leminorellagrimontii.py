@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeminorellaGrimontii.
+This file offers the methods to automatically retrieve the graph Leminorella grimontii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeminorellaGrimontii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeminorellaGrimontii graph.
+    """Return new instance of the Leminorella grimontii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeminorellaGrimontii(
 
     Returns
     -----------------------
-    Instace of LeminorellaGrimontii graph.
+    Instace of Leminorella grimontii graph.
 
 	References
 	---------------------

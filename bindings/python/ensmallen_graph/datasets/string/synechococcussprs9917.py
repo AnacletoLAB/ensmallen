@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynechococcusSpRs9917.
+This file offers the methods to automatically retrieve the graph Synechococcus sp. RS9917.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynechococcusSpRs9917(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynechococcusSpRs9917 graph.
+    """Return new instance of the Synechococcus sp. RS9917 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SynechococcusSpRs9917(
 
     Returns
     -----------------------
-    Instace of SynechococcusSpRs9917 graph.
+    Instace of Synechococcus sp. RS9917 graph.
 
 	References
 	---------------------

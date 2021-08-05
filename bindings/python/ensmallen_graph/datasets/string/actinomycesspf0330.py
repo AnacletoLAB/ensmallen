@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSpF0330.
+This file offers the methods to automatically retrieve the graph Actinomyces sp. F0330.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSpF0330(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSpF0330 graph.
+    """Return new instance of the Actinomyces sp. F0330 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesSpF0330(
 
     Returns
     -----------------------
-    Instace of ActinomycesSpF0330 graph.
+    Instace of Actinomyces sp. F0330 graph.
 
 	References
 	---------------------

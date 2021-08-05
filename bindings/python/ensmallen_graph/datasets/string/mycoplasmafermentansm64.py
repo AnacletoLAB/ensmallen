@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaFermentansM64.
+This file offers the methods to automatically retrieve the graph Mycoplasma fermentans M64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaFermentansM64(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaFermentansM64 graph.
+    """Return new instance of the Mycoplasma fermentans M64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaFermentansM64(
 
     Returns
     -----------------------
-    Instace of MycoplasmaFermentansM64 graph.
+    Instace of Mycoplasma fermentans M64 graph.
 
 	References
 	---------------------

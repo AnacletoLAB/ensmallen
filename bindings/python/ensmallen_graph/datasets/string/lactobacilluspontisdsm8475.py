@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPontisDsm8475.
+This file offers the methods to automatically retrieve the graph Lactobacillus pontis DSM 8475.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPontisDsm8475(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPontisDsm8475 graph.
+    """Return new instance of the Lactobacillus pontis DSM 8475 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPontisDsm8475(
 
     Returns
     -----------------------
-    Instace of LactobacillusPontisDsm8475 graph.
+    Instace of Lactobacillus pontis DSM 8475 graph.
 
 	References
 	---------------------

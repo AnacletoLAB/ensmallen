@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraRubrobruneaNbrc15275.
+This file offers the methods to automatically retrieve the graph Actinomadura rubrobrunea NBRC 15275.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraRubrobruneaNbrc15275(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraRubrobruneaNbrc15275 graph.
+    """Return new instance of the Actinomadura rubrobrunea NBRC 15275 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraRubrobruneaNbrc15275(
 
     Returns
     -----------------------
-    Instace of ActinomaduraRubrobruneaNbrc15275 graph.
+    Instace of Actinomadura rubrobrunea NBRC 15275 graph.
 
 	References
 	---------------------

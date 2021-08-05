@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumPopuli.
+This file offers the methods to automatically retrieve the graph Methylobacterium populi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumPopuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumPopuli graph.
+    """Return new instance of the Methylobacterium populi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumPopuli(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumPopuli graph.
+    Instace of Methylobacterium populi graph.
 
 	References
 	---------------------

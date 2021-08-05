@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaGoodfellowii.
+This file offers the methods to automatically retrieve the graph Leptotrichia goodfellowii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaGoodfellowii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaGoodfellowii graph.
+    """Return new instance of the Leptotrichia goodfellowii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaGoodfellowii(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaGoodfellowii graph.
+    Instace of Leptotrichia goodfellowii graph.
 
 	References
 	---------------------

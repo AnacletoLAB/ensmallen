@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasRubra.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas rubra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasRubra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasRubra graph.
+    """Return new instance of the Pseudoalteromonas rubra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasRubra(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasRubra graph.
+    Instace of Pseudoalteromonas rubra graph.
 
 	References
 	---------------------

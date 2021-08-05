@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaMeridionalis.
+This file offers the methods to automatically retrieve the graph Oryza meridionalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaMeridionalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaMeridionalis graph.
+    """Return new instance of the Oryza meridionalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryzaMeridionalis(
 
     Returns
     -----------------------
-    Instace of OryzaMeridionalis graph.
+    Instace of Oryza meridionalis graph.
 
 	References
 	---------------------

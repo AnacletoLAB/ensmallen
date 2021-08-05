@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabilithrixLuteola.
+This file offers the methods to automatically retrieve the graph Labilithrix luteola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabilithrixLuteola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabilithrixLuteola graph.
+    """Return new instance of the Labilithrix luteola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabilithrixLuteola(
 
     Returns
     -----------------------
-    Instace of LabilithrixLuteola graph.
+    Instace of Labilithrix luteola graph.
 
 	References
 	---------------------

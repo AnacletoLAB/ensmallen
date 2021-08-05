@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitreimonasSalinaria.
+This file offers the methods to automatically retrieve the graph Citreimonas salinaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitreimonasSalinaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitreimonasSalinaria graph.
+    """Return new instance of the Citreimonas salinaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CitreimonasSalinaria(
 
     Returns
     -----------------------
-    Instace of CitreimonasSalinaria graph.
+    Instace of Citreimonas salinaria graph.
 
 	References
 	---------------------

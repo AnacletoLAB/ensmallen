@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaceaeBacteriumPmp191f.
+This file offers the methods to automatically retrieve the graph Chitinophagaceae bacterium PMP191F.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaceaeBacteriumPmp191f(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaceaeBacteriumPmp191f graph.
+    """Return new instance of the Chitinophagaceae bacterium PMP191F graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaceaeBacteriumPmp191f(
 
     Returns
     -----------------------
-    Instace of ChitinophagaceaeBacteriumPmp191f graph.
+    Instace of Chitinophagaceae bacterium PMP191F graph.
 
 	References
 	---------------------

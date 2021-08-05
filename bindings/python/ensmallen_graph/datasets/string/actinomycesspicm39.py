@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesSpIcm39.
+This file offers the methods to automatically retrieve the graph Actinomyces sp. ICM39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesSpIcm39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesSpIcm39 graph.
+    """Return new instance of the Actinomyces sp. ICM39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesSpIcm39(
 
     Returns
     -----------------------
-    Instace of ActinomycesSpIcm39 graph.
+    Instace of Actinomyces sp. ICM39 graph.
 
 	References
 	---------------------

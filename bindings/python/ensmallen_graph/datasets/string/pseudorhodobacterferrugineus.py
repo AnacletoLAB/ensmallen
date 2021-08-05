@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudorhodobacterFerrugineus.
+This file offers the methods to automatically retrieve the graph Pseudorhodobacter ferrugineus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudorhodobacterFerrugineus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudorhodobacterFerrugineus graph.
+    """Return new instance of the Pseudorhodobacter ferrugineus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudorhodobacterFerrugineus(
 
     Returns
     -----------------------
-    Instace of PseudorhodobacterFerrugineus graph.
+    Instace of Pseudorhodobacter ferrugineus graph.
 
 	References
 	---------------------

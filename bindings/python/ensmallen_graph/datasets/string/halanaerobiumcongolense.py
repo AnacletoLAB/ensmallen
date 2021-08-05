@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumCongolense.
+This file offers the methods to automatically retrieve the graph Halanaerobium congolense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumCongolense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumCongolense graph.
+    """Return new instance of the Halanaerobium congolense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalanaerobiumCongolense(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumCongolense graph.
+    Instace of Halanaerobium congolense graph.
 
 	References
 	---------------------

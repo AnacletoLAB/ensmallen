@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClavisporaLusitaniaeAtcc42720.
+This file offers the methods to automatically retrieve the graph Clavispora lusitaniae ATCC 42720.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClavisporaLusitaniaeAtcc42720(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClavisporaLusitaniaeAtcc42720 graph.
+    """Return new instance of the Clavispora lusitaniae ATCC 42720 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClavisporaLusitaniaeAtcc42720(
 
     Returns
     -----------------------
-    Instace of ClavisporaLusitaniaeAtcc42720 graph.
+    Instace of Clavispora lusitaniae ATCC 42720 graph.
 
 	References
 	---------------------

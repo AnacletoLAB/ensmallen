@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterQingfengensis.
+This file offers the methods to automatically retrieve the graph Acinetobacter qingfengensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterQingfengensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterQingfengensis graph.
+    """Return new instance of the Acinetobacter qingfengensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterQingfengensis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterQingfengensis graph.
+    Instace of Acinetobacter qingfengensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesCoprosuis.
+This file offers the methods to automatically retrieve the graph Bacteroides coprosuis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesCoprosuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesCoprosuis graph.
+    """Return new instance of the Bacteroides coprosuis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesCoprosuis(
 
     Returns
     -----------------------
-    Instace of BacteroidesCoprosuis graph.
+    Instace of Bacteroides coprosuis graph.
 
 	References
 	---------------------

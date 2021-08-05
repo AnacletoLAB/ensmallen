@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterPiechaudii.
+This file offers the methods to automatically retrieve the graph Psychrobacter piechaudii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterPiechaudii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterPiechaudii graph.
+    """Return new instance of the Psychrobacter piechaudii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterPiechaudii(
 
     Returns
     -----------------------
-    Instace of PsychrobacterPiechaudii graph.
+    Instace of Psychrobacter piechaudii graph.
 
 	References
 	---------------------

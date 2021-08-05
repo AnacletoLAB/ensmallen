@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusSpOt.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus sp. OT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusSpOt(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusSpOt graph.
+    """Return new instance of the Desulfosporosinus sp. OT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfosporosinusSpOt(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusSpOt graph.
+    Instace of Desulfosporosinus sp. OT graph.
 
 	References
 	---------------------

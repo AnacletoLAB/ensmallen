@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StackebrandtiaNassauensis.
+This file offers the methods to automatically retrieve the graph Stackebrandtia nassauensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StackebrandtiaNassauensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StackebrandtiaNassauensis graph.
+    """Return new instance of the Stackebrandtia nassauensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StackebrandtiaNassauensis(
 
     Returns
     -----------------------
-    Instace of StackebrandtiaNassauensis graph.
+    Instace of Stackebrandtia nassauensis graph.
 
 	References
 	---------------------

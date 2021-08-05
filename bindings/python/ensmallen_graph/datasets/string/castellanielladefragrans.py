@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CastellaniellaDefragrans.
+This file offers the methods to automatically retrieve the graph Castellaniella defragrans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CastellaniellaDefragrans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CastellaniellaDefragrans graph.
+    """Return new instance of the Castellaniella defragrans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CastellaniellaDefragrans(
 
     Returns
     -----------------------
-    Instace of CastellaniellaDefragrans graph.
+    Instace of Castellaniella defragrans graph.
 
 	References
 	---------------------

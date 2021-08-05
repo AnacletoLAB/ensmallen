@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterGossypiicola.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter gossypiicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterGossypiicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterGossypiicola graph.
+    """Return new instance of the Mucilaginibacter gossypiicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterGossypiicola(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterGossypiicola graph.
+    Instace of Mucilaginibacter gossypiicola graph.
 
 	References
 	---------------------

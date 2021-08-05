@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptosporangiumAmethystogenes.
+This file offers the methods to automatically retrieve the graph Streptosporangium amethystogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptosporangiumAmethystogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptosporangiumAmethystogenes graph.
+    """Return new instance of the Streptosporangium amethystogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptosporangiumAmethystogenes(
 
     Returns
     -----------------------
-    Instace of StreptosporangiumAmethystogenes graph.
+    Instace of Streptosporangium amethystogenes graph.
 
 	References
 	---------------------

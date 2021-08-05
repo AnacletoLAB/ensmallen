@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HypoxylonSpCi4a.
+This file offers the methods to automatically retrieve the graph Hypoxylon sp. CI-4A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HypoxylonSpCi4a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HypoxylonSpCi4a graph.
+    """Return new instance of the Hypoxylon sp. CI-4A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HypoxylonSpCi4a(
 
     Returns
     -----------------------
-    Instace of HypoxylonSpCi4a graph.
+    Instace of Hypoxylon sp. CI-4A graph.
 
 	References
 	---------------------

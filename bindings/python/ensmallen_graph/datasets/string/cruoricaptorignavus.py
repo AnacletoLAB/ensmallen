@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CruoricaptorIgnavus.
+This file offers the methods to automatically retrieve the graph Cruoricaptor ignavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CruoricaptorIgnavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CruoricaptorIgnavus graph.
+    """Return new instance of the Cruoricaptor ignavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CruoricaptorIgnavus(
 
     Returns
     -----------------------
-    Instace of CruoricaptorIgnavus graph.
+    Instace of Cruoricaptor ignavus graph.
 
 	References
 	---------------------

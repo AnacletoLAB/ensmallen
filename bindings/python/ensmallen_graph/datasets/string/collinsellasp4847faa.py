@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaSp4847faa.
+This file offers the methods to automatically retrieve the graph Collinsella sp. 4847FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaSp4847faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaSp4847faa graph.
+    """Return new instance of the Collinsella sp. 4847FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CollinsellaSp4847faa(
 
     Returns
     -----------------------
-    Instace of CollinsellaSp4847faa graph.
+    Instace of Collinsella sp. 4847FAA graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaMorhuae.
+This file offers the methods to automatically retrieve the graph Shewanella morhuae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaMorhuae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaMorhuae graph.
+    """Return new instance of the Shewanella morhuae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaMorhuae(
 
     Returns
     -----------------------
-    Instace of ShewanellaMorhuae graph.
+    Instace of Shewanella morhuae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanomicrobiumMobile.
+This file offers the methods to automatically retrieve the graph Methanomicrobium mobile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanomicrobiumMobile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanomicrobiumMobile graph.
+    """Return new instance of the Methanomicrobium mobile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanomicrobiumMobile(
 
     Returns
     -----------------------
-    Instace of MethanomicrobiumMobile graph.
+    Instace of Methanomicrobium mobile graph.
 
 	References
 	---------------------

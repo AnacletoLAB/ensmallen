@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaFungorum.
+This file offers the methods to automatically retrieve the graph Paraburkholderia fungorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaFungorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaFungorum graph.
+    """Return new instance of the Paraburkholderia fungorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaFungorum(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaFungorum graph.
+    Instace of Paraburkholderia fungorum graph.
 
 	References
 	---------------------

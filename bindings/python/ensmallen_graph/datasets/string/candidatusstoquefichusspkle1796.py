@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusStoquefichusSpKle1796.
+This file offers the methods to automatically retrieve the graph Candidatus Stoquefichus sp. KLE1796.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusStoquefichusSpKle1796(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusStoquefichusSpKle1796 graph.
+    """Return new instance of the Candidatus Stoquefichus sp. KLE1796 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusStoquefichusSpKle1796(
 
     Returns
     -----------------------
-    Instace of CandidatusStoquefichusSpKle1796 graph.
+    Instace of Candidatus Stoquefichus sp. KLE1796 graph.
 
 	References
 	---------------------

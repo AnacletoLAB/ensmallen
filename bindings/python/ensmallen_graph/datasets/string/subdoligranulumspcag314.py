@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SubdoligranulumSpCag314.
+This file offers the methods to automatically retrieve the graph Subdoligranulum sp. CAG:314.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SubdoligranulumSpCag314(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SubdoligranulumSpCag314 graph.
+    """Return new instance of the Subdoligranulum sp. CAG:314 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SubdoligranulumSpCag314(
 
     Returns
     -----------------------
-    Instace of SubdoligranulumSpCag314 graph.
+    Instace of Subdoligranulum sp. CAG:314 graph.
 
 	References
 	---------------------

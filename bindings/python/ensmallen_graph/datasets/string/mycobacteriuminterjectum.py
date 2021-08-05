@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumInterjectum.
+This file offers the methods to automatically retrieve the graph Mycobacterium interjectum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumInterjectum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumInterjectum graph.
+    """Return new instance of the Mycobacterium interjectum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumInterjectum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumInterjectum graph.
+    Instace of Mycobacterium interjectum graph.
 
 	References
 	---------------------

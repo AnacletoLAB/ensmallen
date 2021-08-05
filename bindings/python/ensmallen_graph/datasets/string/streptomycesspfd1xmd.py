@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpFd1Xmd.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. fd1-xmd.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpFd1Xmd(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpFd1Xmd graph.
+    """Return new instance of the Streptomyces sp. fd1-xmd graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpFd1Xmd(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpFd1Xmd graph.
+    Instace of Streptomyces sp. fd1-xmd graph.
 
 	References
 	---------------------

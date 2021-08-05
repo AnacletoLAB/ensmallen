@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GigasporaRosea.
+This file offers the methods to automatically retrieve the graph Gigaspora rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GigasporaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GigasporaRosea graph.
+    """Return new instance of the Gigaspora rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GigasporaRosea(
 
     Returns
     -----------------------
-    Instace of GigasporaRosea graph.
+    Instace of Gigaspora rosea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloterrigenaHispanica.
+This file offers the methods to automatically retrieve the graph Haloterrigena hispanica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloterrigenaHispanica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloterrigenaHispanica graph.
+    """Return new instance of the Haloterrigena hispanica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloterrigenaHispanica(
 
     Returns
     -----------------------
-    Instace of HaloterrigenaHispanica graph.
+    Instace of Haloterrigena hispanica graph.
 
 	References
 	---------------------

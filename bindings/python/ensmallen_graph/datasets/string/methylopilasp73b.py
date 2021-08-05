@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylopilaSp73b.
+This file offers the methods to automatically retrieve the graph Methylopila sp. 73B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylopilaSp73b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylopilaSp73b graph.
+    """Return new instance of the Methylopila sp. 73B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylopilaSp73b(
 
     Returns
     -----------------------
-    Instace of MethylopilaSp73b graph.
+    Instace of Methylopila sp. 73B graph.
 
 	References
 	---------------------

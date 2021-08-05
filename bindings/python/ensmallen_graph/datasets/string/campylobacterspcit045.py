@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpCit045.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. CIT045.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpCit045(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpCit045 graph.
+    """Return new instance of the Campylobacter sp. CIT045 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterSpCit045(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpCit045 graph.
+    Instace of Campylobacter sp. CIT045 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataeibacterMedellinensis.
+This file offers the methods to automatically retrieve the graph Komagataeibacter medellinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataeibacterMedellinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataeibacterMedellinensis graph.
+    """Return new instance of the Komagataeibacter medellinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KomagataeibacterMedellinensis(
 
     Returns
     -----------------------
-    Instace of KomagataeibacterMedellinensis graph.
+    Instace of Komagataeibacter medellinensis graph.
 
 	References
 	---------------------

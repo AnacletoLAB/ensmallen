@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoraliomargaritaSpCag312.
+This file offers the methods to automatically retrieve the graph Coraliomargarita sp. CAG:312.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoraliomargaritaSpCag312(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoraliomargaritaSpCag312 graph.
+    """Return new instance of the Coraliomargarita sp. CAG:312 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoraliomargaritaSpCag312(
 
     Returns
     -----------------------
-    Instace of CoraliomargaritaSpCag312 graph.
+    Instace of Coraliomargarita sp. CAG:312 graph.
 
 	References
 	---------------------

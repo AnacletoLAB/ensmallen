@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumOlb12.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium OLB12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumOlb12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumOlb12 graph.
+    """Return new instance of the Bacteroidetes bacterium OLB12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumOlb12(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumOlb12 graph.
+    Instace of Bacteroidetes bacterium OLB12 graph.
 
 	References
 	---------------------

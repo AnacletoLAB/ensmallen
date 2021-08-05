@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOulorumF0390.
+This file offers the methods to automatically retrieve the graph Prevotella oulorum F0390.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOulorumF0390(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOulorumF0390 graph.
+    """Return new instance of the Prevotella oulorum F0390 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaOulorumF0390(
 
     Returns
     -----------------------
-    Instace of PrevotellaOulorumF0390 graph.
+    Instace of Prevotella oulorum F0390 graph.
 
 	References
 	---------------------

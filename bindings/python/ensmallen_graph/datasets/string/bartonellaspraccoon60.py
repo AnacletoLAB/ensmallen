@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaSpRaccoon60.
+This file offers the methods to automatically retrieve the graph Bartonella sp. Raccoon60.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaSpRaccoon60(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaSpRaccoon60 graph.
+    """Return new instance of the Bartonella sp. Raccoon60 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaSpRaccoon60(
 
     Returns
     -----------------------
-    Instace of BartonellaSpRaccoon60 graph.
+    Instace of Bartonella sp. Raccoon60 graph.
 
 	References
 	---------------------

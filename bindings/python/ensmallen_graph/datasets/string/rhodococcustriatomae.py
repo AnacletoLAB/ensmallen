@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusTriatomae.
+This file offers the methods to automatically retrieve the graph Rhodococcus triatomae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusTriatomae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusTriatomae graph.
+    """Return new instance of the Rhodococcus triatomae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusTriatomae(
 
     Returns
     -----------------------
-    Instace of RhodococcusTriatomae graph.
+    Instace of Rhodococcus triatomae graph.
 
 	References
 	---------------------

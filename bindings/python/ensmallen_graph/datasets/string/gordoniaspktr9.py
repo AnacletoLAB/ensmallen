@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSpKtr9.
+This file offers the methods to automatically retrieve the graph Gordonia sp. KTR9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSpKtr9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSpKtr9 graph.
+    """Return new instance of the Gordonia sp. KTR9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaSpKtr9(
 
     Returns
     -----------------------
-    Instace of GordoniaSpKtr9 graph.
+    Instace of Gordonia sp. KTR9 graph.
 
 	References
 	---------------------

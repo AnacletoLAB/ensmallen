@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusOpacusB4.
+This file offers the methods to automatically retrieve the graph Rhodococcus opacus B4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusOpacusB4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusOpacusB4 graph.
+    """Return new instance of the Rhodococcus opacus B4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusOpacusB4(
 
     Returns
     -----------------------
-    Instace of RhodococcusOpacusB4 graph.
+    Instace of Rhodococcus opacus B4 graph.
 
 	References
 	---------------------

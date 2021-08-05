@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaThermarum.
+This file offers the methods to automatically retrieve the graph Thermotoga thermarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaThermarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaThermarum graph.
+    """Return new instance of the Thermotoga thermarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermotogaThermarum(
 
     Returns
     -----------------------
-    Instace of ThermotogaThermarum graph.
+    Instace of Thermotoga thermarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanohalophilusHalophilus.
+This file offers the methods to automatically retrieve the graph Methanohalophilus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanohalophilusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanohalophilusHalophilus graph.
+    """Return new instance of the Methanohalophilus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanohalophilusHalophilus(
 
     Returns
     -----------------------
-    Instace of MethanohalophilusHalophilus graph.
+    Instace of Methanohalophilus halophilus graph.
 
 	References
 	---------------------

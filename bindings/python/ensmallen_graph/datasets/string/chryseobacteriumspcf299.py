@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpCf299.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. CF299.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpCf299(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpCf299 graph.
+    """Return new instance of the Chryseobacterium sp. CF299 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpCf299(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpCf299 graph.
+    Instace of Chryseobacterium sp. CF299 graph.
 
 	References
 	---------------------

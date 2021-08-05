@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaPaurometabolicaYim90007.
+This file offers the methods to automatically retrieve the graph Saccharomonospora paurometabolica YIM 90007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaPaurometabolicaYim90007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaPaurometabolicaYim90007 graph.
+    """Return new instance of the Saccharomonospora paurometabolica YIM 90007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharomonosporaPaurometabolicaYim90007(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaPaurometabolicaYim90007 graph.
+    Instace of Saccharomonospora paurometabolica YIM 90007 graph.
 
 	References
 	---------------------

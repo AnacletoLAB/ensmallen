@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaumarchaeotaArchaeon13140cm3386.
+This file offers the methods to automatically retrieve the graph Thaumarchaeota archaeon 13_1_40CM_3_38_6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaumarchaeotaArchaeon13140cm3386(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaumarchaeotaArchaeon13140cm3386 graph.
+    """Return new instance of the Thaumarchaeota archaeon 13_1_40CM_3_38_6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaumarchaeotaArchaeon13140cm3386(
 
     Returns
     -----------------------
-    Instace of ThaumarchaeotaArchaeon13140cm3386 graph.
+    Instace of Thaumarchaeota archaeon 13_1_40CM_3_38_6 graph.
 
 	References
 	---------------------

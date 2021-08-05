@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaSp5ratimar09.
+This file offers the methods to automatically retrieve the graph Loktanella sp. 5RATIMAR09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaSp5ratimar09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaSp5ratimar09 graph.
+    """Return new instance of the Loktanella sp. 5RATIMAR09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LoktanellaSp5ratimar09(
 
     Returns
     -----------------------
-    Instace of LoktanellaSp5ratimar09 graph.
+    Instace of Loktanella sp. 5RATIMAR09 graph.
 
 	References
 	---------------------

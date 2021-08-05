@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPyloriSa213a.
+This file offers the methods to automatically retrieve the graph Helicobacter pylori SA213A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPyloriSa213a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPyloriSa213a graph.
+    """Return new instance of the Helicobacter pylori SA213A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPyloriSa213a(
 
     Returns
     -----------------------
-    Instace of HelicobacterPyloriSa213a graph.
+    Instace of Helicobacter pylori SA213A graph.
 
 	References
 	---------------------

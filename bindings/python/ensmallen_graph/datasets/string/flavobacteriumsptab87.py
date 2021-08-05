@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpTab87.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. TAB 87.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpTab87(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpTab87 graph.
+    """Return new instance of the Flavobacterium sp. TAB 87 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpTab87(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpTab87 graph.
+    Instace of Flavobacterium sp. TAB 87 graph.
 
 	References
 	---------------------

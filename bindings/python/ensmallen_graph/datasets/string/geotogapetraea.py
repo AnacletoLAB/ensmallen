@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeotogaPetraea.
+This file offers the methods to automatically retrieve the graph Geotoga petraea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeotogaPetraea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeotogaPetraea graph.
+    """Return new instance of the Geotoga petraea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeotogaPetraea(
 
     Returns
     -----------------------
-    Instace of GeotogaPetraea graph.
+    Instace of Geotoga petraea graph.
 
 	References
 	---------------------

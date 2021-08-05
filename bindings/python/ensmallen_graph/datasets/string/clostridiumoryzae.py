@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumOryzae.
+This file offers the methods to automatically retrieve the graph Clostridium oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumOryzae graph.
+    """Return new instance of the Clostridium oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumOryzae(
 
     Returns
     -----------------------
-    Instace of ClostridiumOryzae graph.
+    Instace of Clostridium oryzae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumParascrofulaceum.
+This file offers the methods to automatically retrieve the graph Mycobacterium parascrofulaceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumParascrofulaceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumParascrofulaceum graph.
+    """Return new instance of the Mycobacterium parascrofulaceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumParascrofulaceum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumParascrofulaceum graph.
+    Instace of Mycobacterium parascrofulaceum graph.
 
 	References
 	---------------------

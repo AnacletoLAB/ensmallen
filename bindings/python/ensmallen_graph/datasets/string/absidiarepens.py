@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AbsidiaRepens.
+This file offers the methods to automatically retrieve the graph Absidia repens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AbsidiaRepens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AbsidiaRepens graph.
+    """Return new instance of the Absidia repens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AbsidiaRepens(
 
     Returns
     -----------------------
-    Instace of AbsidiaRepens graph.
+    Instace of Absidia repens graph.
 
 	References
 	---------------------

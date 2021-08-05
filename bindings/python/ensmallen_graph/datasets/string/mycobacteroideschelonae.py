@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteroidesChelonae.
+This file offers the methods to automatically retrieve the graph Mycobacteroides chelonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteroidesChelonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteroidesChelonae graph.
+    """Return new instance of the Mycobacteroides chelonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteroidesChelonae(
 
     Returns
     -----------------------
-    Instace of MycobacteroidesChelonae graph.
+    Instace of Mycobacteroides chelonae graph.
 
 	References
 	---------------------

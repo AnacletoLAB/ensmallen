@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterCinaediPagu611.
+This file offers the methods to automatically retrieve the graph Helicobacter cinaedi PAGU611.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterCinaediPagu611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterCinaediPagu611 graph.
+    """Return new instance of the Helicobacter cinaedi PAGU611 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterCinaediPagu611(
 
     Returns
     -----------------------
-    Instace of HelicobacterCinaediPagu611 graph.
+    Instace of Helicobacter cinaedi PAGU611 graph.
 
 	References
 	---------------------

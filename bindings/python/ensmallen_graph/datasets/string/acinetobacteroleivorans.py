@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterOleivorans.
+This file offers the methods to automatically retrieve the graph Acinetobacter oleivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterOleivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterOleivorans graph.
+    """Return new instance of the Acinetobacter oleivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterOleivorans(
 
     Returns
     -----------------------
-    Instace of AcinetobacterOleivorans graph.
+    Instace of Acinetobacter oleivorans graph.
 
 	References
 	---------------------

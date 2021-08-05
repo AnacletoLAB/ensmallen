@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterThiooxydans.
+This file offers the methods to automatically retrieve the graph Rhodanobacter thiooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterThiooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterThiooxydans graph.
+    """Return new instance of the Rhodanobacter thiooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodanobacterThiooxydans(
 
     Returns
     -----------------------
-    Instace of RhodanobacterThiooxydans graph.
+    Instace of Rhodanobacter thiooxydans graph.
 
 	References
 	---------------------

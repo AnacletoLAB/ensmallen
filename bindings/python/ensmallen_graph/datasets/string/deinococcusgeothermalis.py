@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusGeothermalis.
+This file offers the methods to automatically retrieve the graph Deinococcus geothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusGeothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusGeothermalis graph.
+    """Return new instance of the Deinococcus geothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusGeothermalis(
 
     Returns
     -----------------------
-    Instace of DeinococcusGeothermalis graph.
+    Instace of Deinococcus geothermalis graph.
 
 	References
 	---------------------

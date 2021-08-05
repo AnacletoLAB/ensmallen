@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUcla.
+This file offers the methods to automatically retrieve the graph socfb-UCLA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUcla(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUcla graph.
+    """Return new instance of the socfb-UCLA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUcla(
 
     Returns
     -----------------------
-    Instace of SocfbUcla graph.
+    Instace of socfb-UCLA graph.
 
 	References
 	---------------------

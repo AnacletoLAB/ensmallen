@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurihydrogenibiumSubterraneum.
+This file offers the methods to automatically retrieve the graph Sulfurihydrogenibium subterraneum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurihydrogenibiumSubterraneum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurihydrogenibiumSubterraneum graph.
+    """Return new instance of the Sulfurihydrogenibium subterraneum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurihydrogenibiumSubterraneum(
 
     Returns
     -----------------------
-    Instace of SulfurihydrogenibiumSubterraneum graph.
+    Instace of Sulfurihydrogenibium subterraneum graph.
 
 	References
 	---------------------

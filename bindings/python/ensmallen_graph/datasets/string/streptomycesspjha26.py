@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpJha26.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. JHA26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpJha26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpJha26 graph.
+    """Return new instance of the Streptomyces sp. JHA26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpJha26(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpJha26 graph.
+    Instace of Streptomyces sp. JHA26 graph.
 
 	References
 	---------------------

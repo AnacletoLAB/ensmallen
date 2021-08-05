@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesXylophagus.
+This file offers the methods to automatically retrieve the graph Streptomyces xylophagus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesXylophagus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesXylophagus graph.
+    """Return new instance of the Streptomyces xylophagus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesXylophagus(
 
     Returns
     -----------------------
-    Instace of StreptomycesXylophagus graph.
+    Instace of Streptomyces xylophagus graph.
 
 	References
 	---------------------

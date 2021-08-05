@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocapsaAurea.
+This file offers the methods to automatically retrieve the graph Methylocapsa aurea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocapsaAurea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocapsaAurea graph.
+    """Return new instance of the Methylocapsa aurea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylocapsaAurea(
 
     Returns
     -----------------------
-    Instace of MethylocapsaAurea graph.
+    Instace of Methylocapsa aurea graph.
 
 	References
 	---------------------

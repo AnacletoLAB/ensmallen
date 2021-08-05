@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpRc586.
+This file offers the methods to automatically retrieve the graph Vibrio sp. RC586.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpRc586(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpRc586 graph.
+    """Return new instance of the Vibrio sp. RC586 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioSpRc586(
 
     Returns
     -----------------------
-    Instace of VibrioSpRc586 graph.
+    Instace of Vibrio sp. RC586 graph.
 
 	References
 	---------------------

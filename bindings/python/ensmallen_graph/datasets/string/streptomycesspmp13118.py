@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpMp13118.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. MP131-18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpMp13118(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpMp13118 graph.
+    """Return new instance of the Streptomyces sp. MP131-18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpMp13118(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpMp13118 graph.
+    Instace of Streptomyces sp. MP131-18 graph.
 
 	References
 	---------------------

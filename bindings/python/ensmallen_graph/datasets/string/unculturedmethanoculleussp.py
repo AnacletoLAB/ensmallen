@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedMethanoculleusSp.
+This file offers the methods to automatically retrieve the graph uncultured Methanoculleus sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedMethanoculleusSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedMethanoculleusSp graph.
+    """Return new instance of the uncultured Methanoculleus sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedMethanoculleusSp(
 
     Returns
     -----------------------
-    Instace of UnculturedMethanoculleusSp graph.
+    Instace of uncultured Methanoculleus sp. graph.
 
 	References
 	---------------------

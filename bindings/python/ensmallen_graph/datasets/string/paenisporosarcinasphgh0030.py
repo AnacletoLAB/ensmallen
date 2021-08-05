@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenisporosarcinaSpHgh0030.
+This file offers the methods to automatically retrieve the graph Paenisporosarcina sp. HGH0030.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenisporosarcinaSpHgh0030(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenisporosarcinaSpHgh0030 graph.
+    """Return new instance of the Paenisporosarcina sp. HGH0030 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenisporosarcinaSpHgh0030(
 
     Returns
     -----------------------
-    Instace of PaenisporosarcinaSpHgh0030 graph.
+    Instace of Paenisporosarcina sp. HGH0030 graph.
 
 	References
 	---------------------

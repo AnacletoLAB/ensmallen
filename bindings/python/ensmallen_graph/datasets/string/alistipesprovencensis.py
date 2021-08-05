@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesProvencensis.
+This file offers the methods to automatically retrieve the graph Alistipes provencensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesProvencensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesProvencensis graph.
+    """Return new instance of the Alistipes provencensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesProvencensis(
 
     Returns
     -----------------------
-    Instace of AlistipesProvencensis graph.
+    Instace of Alistipes provencensis graph.
 
 	References
 	---------------------

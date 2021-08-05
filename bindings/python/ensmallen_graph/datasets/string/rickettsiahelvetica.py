@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaHelvetica.
+This file offers the methods to automatically retrieve the graph Rickettsia helvetica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaHelvetica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaHelvetica graph.
+    """Return new instance of the Rickettsia helvetica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaHelvetica(
 
     Returns
     -----------------------
-    Instace of RickettsiaHelvetica graph.
+    Instace of Rickettsia helvetica graph.
 
 	References
 	---------------------

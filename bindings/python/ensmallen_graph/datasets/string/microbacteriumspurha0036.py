@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpUrha0036.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. URHA0036.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpUrha0036(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpUrha0036 graph.
+    """Return new instance of the Microbacterium sp. URHA0036 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumSpUrha0036(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpUrha0036 graph.
+    Instace of Microbacterium sp. URHA0036 graph.
 
 	References
 	---------------------

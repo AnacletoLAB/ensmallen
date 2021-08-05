@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillaceaeBacteriumG5.
+This file offers the methods to automatically retrieve the graph Paenibacillaceae bacterium G5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillaceaeBacteriumG5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillaceaeBacteriumG5 graph.
+    """Return new instance of the Paenibacillaceae bacterium G5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillaceaeBacteriumG5(
 
     Returns
     -----------------------
-    Instace of PaenibacillaceaeBacteriumG5 graph.
+    Instace of Paenibacillaceae bacterium G5 graph.
 
 	References
 	---------------------

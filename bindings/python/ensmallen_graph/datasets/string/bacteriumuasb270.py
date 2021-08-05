@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumUasb270.
+This file offers the methods to automatically retrieve the graph Bacterium UASB270.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumUasb270(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumUasb270 graph.
+    """Return new instance of the Bacterium UASB270 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteriumUasb270(
 
     Returns
     -----------------------
-    Instace of BacteriumUasb270 graph.
+    Instace of Bacterium UASB270 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulcanisaetaSpJchs4.
+This file offers the methods to automatically retrieve the graph Vulcanisaeta sp. JCHS_4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulcanisaetaSpJchs4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulcanisaetaSpJchs4 graph.
+    """Return new instance of the Vulcanisaeta sp. JCHS_4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VulcanisaetaSpJchs4(
 
     Returns
     -----------------------
-    Instace of VulcanisaetaSpJchs4 graph.
+    Instace of Vulcanisaeta sp. JCHS_4 graph.
 
 	References
 	---------------------

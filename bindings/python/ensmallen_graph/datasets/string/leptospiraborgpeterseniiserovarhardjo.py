@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraBorgpeterseniiSerovarHardjo.
+This file offers the methods to automatically retrieve the graph Leptospira borgpetersenii serovar Hardjo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraBorgpeterseniiSerovarHardjo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraBorgpeterseniiSerovarHardjo graph.
+    """Return new instance of the Leptospira borgpetersenii serovar Hardjo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraBorgpeterseniiSerovarHardjo(
 
     Returns
     -----------------------
-    Instace of LeptospiraBorgpeterseniiSerovarHardjo graph.
+    Instace of Leptospira borgpetersenii serovar Hardjo graph.
 
 	References
 	---------------------

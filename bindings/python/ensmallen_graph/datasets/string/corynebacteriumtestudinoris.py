@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumTestudinoris.
+This file offers the methods to automatically retrieve the graph Corynebacterium testudinoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumTestudinoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumTestudinoris graph.
+    """Return new instance of the Corynebacterium testudinoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumTestudinoris(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumTestudinoris graph.
+    Instace of Corynebacterium testudinoris graph.
 
 	References
 	---------------------

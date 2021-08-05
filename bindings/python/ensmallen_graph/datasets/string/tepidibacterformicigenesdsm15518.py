@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidibacterFormicigenesDsm15518.
+This file offers the methods to automatically retrieve the graph Tepidibacter formicigenes DSM 15518.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidibacterFormicigenesDsm15518(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidibacterFormicigenesDsm15518 graph.
+    """Return new instance of the Tepidibacter formicigenes DSM 15518 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TepidibacterFormicigenesDsm15518(
 
     Returns
     -----------------------
-    Instace of TepidibacterFormicigenesDsm15518 graph.
+    Instace of Tepidibacter formicigenes DSM 15518 graph.
 
 	References
 	---------------------

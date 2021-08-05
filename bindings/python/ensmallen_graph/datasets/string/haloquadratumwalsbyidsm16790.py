@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloquadratumWalsbyiDsm16790.
+This file offers the methods to automatically retrieve the graph Haloquadratum walsbyi DSM16790.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloquadratumWalsbyiDsm16790(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloquadratumWalsbyiDsm16790 graph.
+    """Return new instance of the Haloquadratum walsbyi DSM16790 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloquadratumWalsbyiDsm16790(
 
     Returns
     -----------------------
-    Instace of HaloquadratumWalsbyiDsm16790 graph.
+    Instace of Haloquadratum walsbyi DSM16790 graph.
 
 	References
 	---------------------

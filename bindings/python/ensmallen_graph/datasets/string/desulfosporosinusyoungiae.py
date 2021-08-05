@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusYoungiae.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus youngiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusYoungiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusYoungiae graph.
+    """Return new instance of the Desulfosporosinus youngiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfosporosinusYoungiae(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusYoungiae graph.
+    Instace of Desulfosporosinus youngiae graph.
 
 	References
 	---------------------

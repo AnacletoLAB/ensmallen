@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RomboutsiaLituseburensisDsm797.
+This file offers the methods to automatically retrieve the graph Romboutsia lituseburensis DSM 797.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RomboutsiaLituseburensisDsm797(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RomboutsiaLituseburensisDsm797 graph.
+    """Return new instance of the Romboutsia lituseburensis DSM 797 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RomboutsiaLituseburensisDsm797(
 
     Returns
     -----------------------
-    Instace of RomboutsiaLituseburensisDsm797 graph.
+    Instace of Romboutsia lituseburensis DSM 797 graph.
 
 	References
 	---------------------

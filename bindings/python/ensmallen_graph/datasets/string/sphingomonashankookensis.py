@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasHankookensis.
+This file offers the methods to automatically retrieve the graph Sphingomonas hankookensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasHankookensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasHankookensis graph.
+    """Return new instance of the Sphingomonas hankookensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasHankookensis(
 
     Returns
     -----------------------
-    Instace of SphingomonasHankookensis graph.
+    Instace of Sphingomonas hankookensis graph.
 
 	References
 	---------------------

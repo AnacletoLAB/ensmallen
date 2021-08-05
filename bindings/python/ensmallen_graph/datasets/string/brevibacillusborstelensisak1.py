@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusBorstelensisAk1.
+This file offers the methods to automatically retrieve the graph Brevibacillus borstelensis AK1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusBorstelensisAk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusBorstelensisAk1 graph.
+    """Return new instance of the Brevibacillus borstelensis AK1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacillusBorstelensisAk1(
 
     Returns
     -----------------------
-    Instace of BrevibacillusBorstelensisAk1 graph.
+    Instace of Brevibacillus borstelensis AK1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPelagia.
+This file offers the methods to automatically retrieve the graph Pseudomonas pelagia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPelagia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPelagia graph.
+    """Return new instance of the Pseudomonas pelagia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPelagia(
 
     Returns
     -----------------------
-    Instace of PseudomonasPelagia graph.
+    Instace of Pseudomonas pelagia graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesSpRoot81.
+This file offers the methods to automatically retrieve the graph Agromyces sp. Root81.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesSpRoot81(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesSpRoot81 graph.
+    """Return new instance of the Agromyces sp. Root81 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgromycesSpRoot81(
 
     Returns
     -----------------------
-    Instace of AgromycesSpRoot81 graph.
+    Instace of Agromyces sp. Root81 graph.
 
 	References
 	---------------------

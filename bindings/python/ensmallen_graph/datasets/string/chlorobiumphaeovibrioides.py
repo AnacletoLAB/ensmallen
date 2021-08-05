@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumPhaeovibrioides.
+This file offers the methods to automatically retrieve the graph Chlorobium phaeovibrioides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumPhaeovibrioides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumPhaeovibrioides graph.
+    """Return new instance of the Chlorobium phaeovibrioides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumPhaeovibrioides(
 
     Returns
     -----------------------
-    Instace of ChlorobiumPhaeovibrioides graph.
+    Instace of Chlorobium phaeovibrioides graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TsukamurellaPulmonis.
+This file offers the methods to automatically retrieve the graph Tsukamurella pulmonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TsukamurellaPulmonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TsukamurellaPulmonis graph.
+    """Return new instance of the Tsukamurella pulmonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TsukamurellaPulmonis(
 
     Returns
     -----------------------
-    Instace of TsukamurellaPulmonis graph.
+    Instace of Tsukamurella pulmonis graph.
 
 	References
 	---------------------

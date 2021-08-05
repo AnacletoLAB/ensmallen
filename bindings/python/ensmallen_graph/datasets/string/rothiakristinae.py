@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RothiaKristinae.
+This file offers the methods to automatically retrieve the graph Rothia kristinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RothiaKristinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RothiaKristinae graph.
+    """Return new instance of the Rothia kristinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RothiaKristinae(
 
     Returns
     -----------------------
-    Instace of RothiaKristinae graph.
+    Instace of Rothia kristinae graph.
 
 	References
 	---------------------

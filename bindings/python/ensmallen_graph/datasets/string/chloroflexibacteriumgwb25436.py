@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexiBacteriumGwb25436.
+This file offers the methods to automatically retrieve the graph Chloroflexi bacterium GWB2_54_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexiBacteriumGwb25436(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexiBacteriumGwb25436 graph.
+    """Return new instance of the Chloroflexi bacterium GWB2_54_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloroflexiBacteriumGwb25436(
 
     Returns
     -----------------------
-    Instace of ChloroflexiBacteriumGwb25436 graph.
+    Instace of Chloroflexi bacterium GWB2_54_36 graph.
 
 	References
 	---------------------

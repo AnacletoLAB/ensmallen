@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaNigrescens.
+This file offers the methods to automatically retrieve the graph Prevotella nigrescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaNigrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaNigrescens graph.
+    """Return new instance of the Prevotella nigrescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaNigrescens(
 
     Returns
     -----------------------
-    Instace of PrevotellaNigrescens graph.
+    Instace of Prevotella nigrescens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSubterraneum.
+This file offers the methods to automatically retrieve the graph Novosphingobium subterraneum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSubterraneum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSubterraneum graph.
+    """Return new instance of the Novosphingobium subterraneum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSubterraneum(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSubterraneum graph.
+    Instace of Novosphingobium subterraneum graph.
 
 	References
 	---------------------

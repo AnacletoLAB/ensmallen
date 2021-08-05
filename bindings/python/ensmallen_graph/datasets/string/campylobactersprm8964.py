@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpRm8964.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. RM8964.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpRm8964(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpRm8964 graph.
+    """Return new instance of the Campylobacter sp. RM8964 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterSpRm8964(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpRm8964 graph.
+    Instace of Campylobacter sp. RM8964 graph.
 
 	References
 	---------------------

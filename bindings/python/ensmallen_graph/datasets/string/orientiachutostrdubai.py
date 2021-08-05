@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrientiaChutoStrDubai.
+This file offers the methods to automatically retrieve the graph Orientia chuto str. Dubai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrientiaChutoStrDubai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrientiaChutoStrDubai graph.
+    """Return new instance of the Orientia chuto str. Dubai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrientiaChutoStrDubai(
 
     Returns
     -----------------------
-    Instace of OrientiaChutoStrDubai graph.
+    Instace of Orientia chuto str. Dubai graph.
 
 	References
 	---------------------

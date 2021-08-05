@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicaulisAlexandrii.
+This file offers the methods to automatically retrieve the graph Oceanicaulis alexandrii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicaulisAlexandrii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicaulisAlexandrii graph.
+    """Return new instance of the Oceanicaulis alexandrii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicaulisAlexandrii(
 
     Returns
     -----------------------
-    Instace of OceanicaulisAlexandrii graph.
+    Instace of Oceanicaulis alexandrii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenisporosarcinaIndica.
+This file offers the methods to automatically retrieve the graph Paenisporosarcina indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenisporosarcinaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenisporosarcinaIndica graph.
+    """Return new instance of the Paenisporosarcina indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenisporosarcinaIndica(
 
     Returns
     -----------------------
-    Instace of PaenisporosarcinaIndica graph.
+    Instace of Paenisporosarcina indica graph.
 
 	References
 	---------------------

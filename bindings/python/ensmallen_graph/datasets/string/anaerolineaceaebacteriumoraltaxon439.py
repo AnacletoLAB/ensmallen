@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerolineaceaeBacteriumOralTaxon439.
+This file offers the methods to automatically retrieve the graph Anaerolineaceae bacterium oral taxon 439.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerolineaceaeBacteriumOralTaxon439(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerolineaceaeBacteriumOralTaxon439 graph.
+    """Return new instance of the Anaerolineaceae bacterium oral taxon 439 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerolineaceaeBacteriumOralTaxon439(
 
     Returns
     -----------------------
-    Instace of AnaerolineaceaeBacteriumOralTaxon439 graph.
+    Instace of Anaerolineaceae bacterium oral taxon 439 graph.
 
 	References
 	---------------------

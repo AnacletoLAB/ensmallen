@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusFleurettii.
+This file offers the methods to automatically retrieve the graph Staphylococcus fleurettii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusFleurettii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusFleurettii graph.
+    """Return new instance of the Staphylococcus fleurettii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusFleurettii(
 
     Returns
     -----------------------
-    Instace of StaphylococcusFleurettii graph.
+    Instace of Staphylococcus fleurettii graph.
 
 	References
 	---------------------

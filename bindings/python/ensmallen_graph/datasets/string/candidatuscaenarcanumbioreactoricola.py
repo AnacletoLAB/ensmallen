@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCaenarcanumBioreactoricola.
+This file offers the methods to automatically retrieve the graph Candidatus Caenarcanum bioreactoricola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCaenarcanumBioreactoricola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCaenarcanumBioreactoricola graph.
+    """Return new instance of the Candidatus Caenarcanum bioreactoricola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCaenarcanumBioreactoricola(
 
     Returns
     -----------------------
-    Instace of CandidatusCaenarcanumBioreactoricola graph.
+    Instace of Candidatus Caenarcanum bioreactoricola graph.
 
 	References
 	---------------------

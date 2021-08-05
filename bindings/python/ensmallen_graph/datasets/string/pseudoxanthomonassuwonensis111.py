@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSuwonensis111.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas suwonensis 111.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSuwonensis111(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSuwonensis111 graph.
+    """Return new instance of the Pseudoxanthomonas suwonensis 111 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoxanthomonasSuwonensis111(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSuwonensis111 graph.
+    Instace of Pseudoxanthomonas suwonensis 111 graph.
 
 	References
 	---------------------

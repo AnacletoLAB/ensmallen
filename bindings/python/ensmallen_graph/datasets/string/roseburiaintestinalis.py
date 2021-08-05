@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaIntestinalis.
+This file offers the methods to automatically retrieve the graph Roseburia intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaIntestinalis graph.
+    """Return new instance of the Roseburia intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseburiaIntestinalis(
 
     Returns
     -----------------------
-    Instace of RoseburiaIntestinalis graph.
+    Instace of Roseburia intestinalis graph.
 
 	References
 	---------------------

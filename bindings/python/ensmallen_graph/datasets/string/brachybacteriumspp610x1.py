@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumSpP610X1.
+This file offers the methods to automatically retrieve the graph Brachybacterium sp. P6-10-X1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumSpP610X1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumSpP610X1 graph.
+    """Return new instance of the Brachybacterium sp. P6-10-X1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachybacteriumSpP610X1(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumSpP610X1 graph.
+    Instace of Brachybacterium sp. P6-10-X1 graph.
 
 	References
 	---------------------

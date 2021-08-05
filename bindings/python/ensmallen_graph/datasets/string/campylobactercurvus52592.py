@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterCurvus52592.
+This file offers the methods to automatically retrieve the graph Campylobacter curvus 525.92.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterCurvus52592(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterCurvus52592 graph.
+    """Return new instance of the Campylobacter curvus 525.92 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterCurvus52592(
 
     Returns
     -----------------------
-    Instace of CampylobacterCurvus52592 graph.
+    Instace of Campylobacter curvus 525.92 graph.
 
 	References
 	---------------------

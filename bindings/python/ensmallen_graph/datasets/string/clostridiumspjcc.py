@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpJcc.
+This file offers the methods to automatically retrieve the graph Clostridium sp. JCC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpJcc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpJcc graph.
+    """Return new instance of the Clostridium sp. JCC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpJcc(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpJcc graph.
+    Instace of Clostridium sp. JCC graph.
 
 	References
 	---------------------

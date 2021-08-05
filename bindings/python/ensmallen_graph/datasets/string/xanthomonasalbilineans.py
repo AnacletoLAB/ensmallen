@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasAlbilineans.
+This file offers the methods to automatically retrieve the graph Xanthomonas albilineans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasAlbilineans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasAlbilineans graph.
+    """Return new instance of the Xanthomonas albilineans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasAlbilineans(
 
     Returns
     -----------------------
-    Instace of XanthomonasAlbilineans graph.
+    Instace of Xanthomonas albilineans graph.
 
 	References
 	---------------------

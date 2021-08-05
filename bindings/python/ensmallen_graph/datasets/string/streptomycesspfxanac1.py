@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpFxanac1.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. FxanaC1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpFxanac1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpFxanac1 graph.
+    """Return new instance of the Streptomyces sp. FxanaC1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpFxanac1(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpFxanac1 graph.
+    Instace of Streptomyces sp. FxanaC1 graph.
 
 	References
 	---------------------

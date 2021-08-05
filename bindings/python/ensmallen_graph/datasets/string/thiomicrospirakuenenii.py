@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraKuenenii.
+This file offers the methods to automatically retrieve the graph Thiomicrospira kuenenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraKuenenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraKuenenii graph.
+    """Return new instance of the Thiomicrospira kuenenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomicrospiraKuenenii(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraKuenenii graph.
+    Instace of Thiomicrospira kuenenii graph.
 
 	References
 	---------------------

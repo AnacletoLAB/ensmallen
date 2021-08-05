@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaludibacterJiangxiensis.
+This file offers the methods to automatically retrieve the graph Paludibacter jiangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaludibacterJiangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaludibacterJiangxiensis graph.
+    """Return new instance of the Paludibacter jiangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaludibacterJiangxiensis(
 
     Returns
     -----------------------
-    Instace of PaludibacterJiangxiensis graph.
+    Instace of Paludibacter jiangxiensis graph.
 
 	References
 	---------------------

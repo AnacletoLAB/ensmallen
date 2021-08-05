@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RasamsoniaEmersoniiCbs39364.
+This file offers the methods to automatically retrieve the graph Rasamsonia emersonii CBS 393.64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RasamsoniaEmersoniiCbs39364(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RasamsoniaEmersoniiCbs39364 graph.
+    """Return new instance of the Rasamsonia emersonii CBS 393.64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RasamsoniaEmersoniiCbs39364(
 
     Returns
     -----------------------
-    Instace of RasamsoniaEmersoniiCbs39364 graph.
+    Instace of Rasamsonia emersonii CBS 393.64 graph.
 
 	References
 	---------------------

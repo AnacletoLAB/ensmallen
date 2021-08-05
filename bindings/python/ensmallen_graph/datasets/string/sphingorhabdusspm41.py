@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingorhabdusSpM41.
+This file offers the methods to automatically retrieve the graph Sphingorhabdus sp. M41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingorhabdusSpM41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingorhabdusSpM41 graph.
+    """Return new instance of the Sphingorhabdus sp. M41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingorhabdusSpM41(
 
     Returns
     -----------------------
-    Instace of SphingorhabdusSpM41 graph.
+    Instace of Sphingorhabdus sp. M41 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobacteriumPcc7702.
+This file offers the methods to automatically retrieve the graph cyanobacterium PCC7702.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobacteriumPcc7702(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobacteriumPcc7702 graph.
+    """Return new instance of the cyanobacterium PCC7702 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyanobacteriumPcc7702(
 
     Returns
     -----------------------
-    Instace of CyanobacteriumPcc7702 graph.
+    Instace of cyanobacterium PCC7702 graph.
 
 	References
 	---------------------

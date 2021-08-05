@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaPurisNbrc108233.
+This file offers the methods to automatically retrieve the graph Nocardia puris NBRC 108233.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaPurisNbrc108233(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaPurisNbrc108233 graph.
+    """Return new instance of the Nocardia puris NBRC 108233 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaPurisNbrc108233(
 
     Returns
     -----------------------
-    Instace of NocardiaPurisNbrc108233 graph.
+    Instace of Nocardia puris NBRC 108233 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShuttleworthiaSatelles.
+This file offers the methods to automatically retrieve the graph Shuttleworthia satelles.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShuttleworthiaSatelles(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShuttleworthiaSatelles graph.
+    """Return new instance of the Shuttleworthia satelles graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShuttleworthiaSatelles(
 
     Returns
     -----------------------
-    Instace of ShuttleworthiaSatelles graph.
+    Instace of Shuttleworthia satelles graph.
 
 	References
 	---------------------

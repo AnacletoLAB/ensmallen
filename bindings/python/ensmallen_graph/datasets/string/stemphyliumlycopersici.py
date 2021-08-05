@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StemphyliumLycopersici.
+This file offers the methods to automatically retrieve the graph Stemphylium lycopersici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StemphyliumLycopersici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StemphyliumLycopersici graph.
+    """Return new instance of the Stemphylium lycopersici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StemphyliumLycopersici(
 
     Returns
     -----------------------
-    Instace of StemphyliumLycopersici graph.
+    Instace of Stemphylium lycopersici graph.
 
 	References
 	---------------------

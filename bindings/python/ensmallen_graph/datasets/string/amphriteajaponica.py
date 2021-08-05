@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphriteaJaponica.
+This file offers the methods to automatically retrieve the graph Amphritea japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmphriteaJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphriteaJaponica graph.
+    """Return new instance of the Amphritea japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmphriteaJaponica(
 
     Returns
     -----------------------
-    Instace of AmphriteaJaponica graph.
+    Instace of Amphritea japonica graph.
 
 	References
 	---------------------

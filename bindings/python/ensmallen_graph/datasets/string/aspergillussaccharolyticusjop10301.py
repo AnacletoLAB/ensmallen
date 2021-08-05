@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSaccharolyticusJop10301.
+This file offers the methods to automatically retrieve the graph Aspergillus saccharolyticus JOP 1030-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSaccharolyticusJop10301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSaccharolyticusJop10301 graph.
+    """Return new instance of the Aspergillus saccharolyticus JOP 1030-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSaccharolyticusJop10301(
 
     Returns
     -----------------------
-    Instace of AspergillusSaccharolyticusJop10301 graph.
+    Instace of Aspergillus saccharolyticus JOP 1030-1 graph.
 
 	References
 	---------------------

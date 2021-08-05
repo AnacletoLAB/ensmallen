@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusJorgensenbacteriaBacteriumGw2011Gwb15010.
+This file offers the methods to automatically retrieve the graph Candidatus Jorgensenbacteria bacterium GW2011_GWB1_50_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusJorgensenbacteriaBacteriumGw2011Gwb15010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusJorgensenbacteriaBacteriumGw2011Gwb15010 graph.
+    """Return new instance of the Candidatus Jorgensenbacteria bacterium GW2011_GWB1_50_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusJorgensenbacteriaBacteriumGw2011Gwb15010(
 
     Returns
     -----------------------
-    Instace of CandidatusJorgensenbacteriaBacteriumGw2011Gwb15010 graph.
+    Instace of Candidatus Jorgensenbacteria bacterium GW2011_GWB1_50_10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraSpUpii135e.
+This file offers the methods to automatically retrieve the graph Megasphaera sp. UPII135E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraSpUpii135e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraSpUpii135e graph.
+    """Return new instance of the Megasphaera sp. UPII135E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegasphaeraSpUpii135e(
 
     Returns
     -----------------------
-    Instace of MegasphaeraSpUpii135e graph.
+    Instace of Megasphaera sp. UPII135E graph.
 
 	References
 	---------------------

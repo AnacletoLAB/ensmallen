@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpermophilusDauricus.
+This file offers the methods to automatically retrieve the graph Spermophilus dauricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpermophilusDauricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpermophilusDauricus graph.
+    """Return new instance of the Spermophilus dauricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpermophilusDauricus(
 
     Returns
     -----------------------
-    Instace of SpermophilusDauricus graph.
+    Instace of Spermophilus dauricus graph.
 
 	References
 	---------------------

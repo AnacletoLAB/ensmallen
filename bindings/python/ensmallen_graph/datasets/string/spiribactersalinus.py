@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiribacterSalinus.
+This file offers the methods to automatically retrieve the graph Spiribacter salinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiribacterSalinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiribacterSalinus graph.
+    """Return new instance of the Spiribacter salinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiribacterSalinus(
 
     Returns
     -----------------------
-    Instace of SpiribacterSalinus graph.
+    Instace of Spiribacter salinus graph.
 
 	References
 	---------------------

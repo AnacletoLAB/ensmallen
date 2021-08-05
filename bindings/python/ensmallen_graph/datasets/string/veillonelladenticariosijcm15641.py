@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaDenticariosiJcm15641.
+This file offers the methods to automatically retrieve the graph Veillonella denticariosi JCM 15641.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaDenticariosiJcm15641(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaDenticariosiJcm15641 graph.
+    """Return new instance of the Veillonella denticariosi JCM 15641 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaDenticariosiJcm15641(
 
     Returns
     -----------------------
-    Instace of VeillonellaDenticariosiJcm15641 graph.
+    Instace of Veillonella denticariosi JCM 15641 graph.
 
 	References
 	---------------------

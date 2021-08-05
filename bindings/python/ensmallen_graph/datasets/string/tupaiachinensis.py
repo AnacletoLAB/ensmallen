@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TupaiaChinensis.
+This file offers the methods to automatically retrieve the graph Tupaia chinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TupaiaChinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TupaiaChinensis graph.
+    """Return new instance of the Tupaia chinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TupaiaChinensis(
 
     Returns
     -----------------------
-    Instace of TupaiaChinensis graph.
+    Instace of Tupaia chinensis graph.
 
 	References
 	---------------------

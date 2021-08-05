@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacterLuteusImvB3098.
+This file offers the methods to automatically retrieve the graph Methylobacter luteus IMV-B-3098.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacterLuteusImvB3098(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacterLuteusImvB3098 graph.
+    """Return new instance of the Methylobacter luteus IMV-B-3098 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacterLuteusImvB3098(
 
     Returns
     -----------------------
-    Instace of MethylobacterLuteusImvB3098 graph.
+    Instace of Methylobacter luteus IMV-B-3098 graph.
 
 	References
 	---------------------

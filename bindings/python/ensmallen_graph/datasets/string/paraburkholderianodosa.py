@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaNodosa.
+This file offers the methods to automatically retrieve the graph Paraburkholderia nodosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaNodosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaNodosa graph.
+    """Return new instance of the Paraburkholderia nodosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaNodosa(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaNodosa graph.
+    Instace of Paraburkholderia nodosa graph.
 
 	References
 	---------------------

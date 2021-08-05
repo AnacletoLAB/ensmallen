@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumBrhC4b.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium BRH_c4b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumBrhC4b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumBrhC4b graph.
+    """Return new instance of the Peptococcaceae bacterium BRH_c4b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumBrhC4b(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumBrhC4b graph.
+    Instace of Peptococcaceae bacterium BRH_c4b graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSp88a.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. 88A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSp88a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSp88a graph.
+    """Return new instance of the Methylobacterium sp. 88A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumSp88a(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSp88a graph.
+    Instace of Methylobacterium sp. 88A graph.
 
 	References
 	---------------------

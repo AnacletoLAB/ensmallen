@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudooceanicolaFlagellatus.
+This file offers the methods to automatically retrieve the graph Pseudooceanicola flagellatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudooceanicolaFlagellatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudooceanicolaFlagellatus graph.
+    """Return new instance of the Pseudooceanicola flagellatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudooceanicolaFlagellatus(
 
     Returns
     -----------------------
-    Instace of PseudooceanicolaFlagellatus graph.
+    Instace of Pseudooceanicola flagellatus graph.
 
 	References
 	---------------------

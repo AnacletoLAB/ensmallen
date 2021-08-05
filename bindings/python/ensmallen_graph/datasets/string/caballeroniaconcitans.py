@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaConcitans.
+This file offers the methods to automatically retrieve the graph Caballeronia concitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaConcitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaConcitans graph.
+    """Return new instance of the Caballeronia concitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaConcitans(
 
     Returns
     -----------------------
-    Instace of CaballeroniaConcitans graph.
+    Instace of Caballeronia concitans graph.
 
 	References
 	---------------------

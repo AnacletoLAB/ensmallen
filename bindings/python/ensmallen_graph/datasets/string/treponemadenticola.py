@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaDenticola.
+This file offers the methods to automatically retrieve the graph Treponema denticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaDenticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaDenticola graph.
+    """Return new instance of the Treponema denticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaDenticola(
 
     Returns
     -----------------------
-    Instace of TreponemaDenticola graph.
+    Instace of Treponema denticola graph.
 
 	References
 	---------------------

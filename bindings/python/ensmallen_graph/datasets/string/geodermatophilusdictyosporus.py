@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusDictyosporus.
+This file offers the methods to automatically retrieve the graph Geodermatophilus dictyosporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusDictyosporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusDictyosporus graph.
+    """Return new instance of the Geodermatophilus dictyosporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusDictyosporus(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusDictyosporus graph.
+    Instace of Geodermatophilus dictyosporus graph.
 
 	References
 	---------------------

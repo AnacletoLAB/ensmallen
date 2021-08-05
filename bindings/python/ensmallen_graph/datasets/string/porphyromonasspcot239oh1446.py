@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpCot239oh1446.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. COT239OH1446.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasSpCot239oh1446(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpCot239oh1446 graph.
+    """Return new instance of the Porphyromonas sp. COT239OH1446 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasSpCot239oh1446(
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpCot239oh1446 graph.
+    Instace of Porphyromonas sp. COT239OH1446 graph.
 
 	References
 	---------------------

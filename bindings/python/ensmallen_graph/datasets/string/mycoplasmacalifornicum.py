@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCalifornicum.
+This file offers the methods to automatically retrieve the graph Mycoplasma californicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCalifornicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCalifornicum graph.
+    """Return new instance of the Mycoplasma californicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaCalifornicum(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCalifornicum graph.
+    Instace of Mycoplasma californicum graph.
 
 	References
 	---------------------

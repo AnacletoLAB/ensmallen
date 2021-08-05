@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NanoarchaeumEquitansKin4M.
+This file offers the methods to automatically retrieve the graph Nanoarchaeum equitans Kin4-M.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NanoarchaeumEquitansKin4M(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NanoarchaeumEquitansKin4M graph.
+    """Return new instance of the Nanoarchaeum equitans Kin4-M graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NanoarchaeumEquitansKin4M(
 
     Returns
     -----------------------
-    Instace of NanoarchaeumEquitansKin4M graph.
+    Instace of Nanoarchaeum equitans Kin4-M graph.
 
 	References
 	---------------------

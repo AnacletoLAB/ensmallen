@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcanobacteriumHaemolyticum.
+This file offers the methods to automatically retrieve the graph Arcanobacterium haemolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcanobacteriumHaemolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcanobacteriumHaemolyticum graph.
+    """Return new instance of the Arcanobacterium haemolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcanobacteriumHaemolyticum(
 
     Returns
     -----------------------
-    Instace of ArcanobacteriumHaemolyticum graph.
+    Instace of Arcanobacterium haemolyticum graph.
 
 	References
 	---------------------

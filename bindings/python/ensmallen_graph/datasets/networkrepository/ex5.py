@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ex5.
+This file offers the methods to automatically retrieve the graph EX5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ex5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ex5 graph.
+    """Return new instance of the EX5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ex5(
 
     Returns
     -----------------------
-    Instace of Ex5 graph.
+    Instace of EX5 graph.
 
 	References
 	---------------------

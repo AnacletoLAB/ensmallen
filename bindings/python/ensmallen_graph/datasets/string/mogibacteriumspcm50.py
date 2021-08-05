@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MogibacteriumSpCm50.
+This file offers the methods to automatically retrieve the graph Mogibacterium sp. CM50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MogibacteriumSpCm50(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MogibacteriumSpCm50 graph.
+    """Return new instance of the Mogibacterium sp. CM50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MogibacteriumSpCm50(
 
     Returns
     -----------------------
-    Instace of MogibacteriumSpCm50 graph.
+    Instace of Mogibacterium sp. CM50 graph.
 
 	References
 	---------------------

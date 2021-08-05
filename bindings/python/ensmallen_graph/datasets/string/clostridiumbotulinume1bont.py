@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumE1Bont.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum E1 BoNT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumE1Bont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumE1Bont graph.
+    """Return new instance of the Clostridium botulinum E1 BoNT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumE1Bont(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumE1Bont graph.
+    Instace of Clostridium botulinum E1 BoNT graph.
 
 	References
 	---------------------

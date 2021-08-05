@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LarimichthysCrocea.
+This file offers the methods to automatically retrieve the graph Larimichthys crocea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LarimichthysCrocea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LarimichthysCrocea graph.
+    """Return new instance of the Larimichthys crocea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LarimichthysCrocea(
 
     Returns
     -----------------------
-    Instace of LarimichthysCrocea graph.
+    Instace of Larimichthys crocea graph.
 
 	References
 	---------------------

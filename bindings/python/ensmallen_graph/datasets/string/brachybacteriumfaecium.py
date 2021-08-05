@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachybacteriumFaecium.
+This file offers the methods to automatically retrieve the graph Brachybacterium faecium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachybacteriumFaecium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachybacteriumFaecium graph.
+    """Return new instance of the Brachybacterium faecium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachybacteriumFaecium(
 
     Returns
     -----------------------
-    Instace of BrachybacteriumFaecium graph.
+    Instace of Brachybacterium faecium graph.
 
 	References
 	---------------------

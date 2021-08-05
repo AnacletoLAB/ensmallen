@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaBovigenitalium.
+This file offers the methods to automatically retrieve the graph Mycoplasma bovigenitalium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaBovigenitalium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaBovigenitalium graph.
+    """Return new instance of the Mycoplasma bovigenitalium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaBovigenitalium(
 
     Returns
     -----------------------
-    Instace of MycoplasmaBovigenitalium graph.
+    Instace of Mycoplasma bovigenitalium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalipaludibacillusAgaradhaerens.
+This file offers the methods to automatically retrieve the graph Salipaludibacillus agaradhaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalipaludibacillusAgaradhaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalipaludibacillusAgaradhaerens graph.
+    """Return new instance of the Salipaludibacillus agaradhaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalipaludibacillusAgaradhaerens(
 
     Returns
     -----------------------
-    Instace of SalipaludibacillusAgaradhaerens graph.
+    Instace of Salipaludibacillus agaradhaerens graph.
 
 	References
 	---------------------

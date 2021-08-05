@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonadaceaeBacteriumGwc25813.
+This file offers the methods to automatically retrieve the graph Desulfuromonadaceae bacterium GWC2_58_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonadaceaeBacteriumGwc25813(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonadaceaeBacteriumGwc25813 graph.
+    """Return new instance of the Desulfuromonadaceae bacterium GWC2_58_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfuromonadaceaeBacteriumGwc25813(
 
     Returns
     -----------------------
-    Instace of DesulfuromonadaceaeBacteriumGwc25813 graph.
+    Instace of Desulfuromonadaceae bacterium GWC2_58_13 graph.
 
 	References
 	---------------------

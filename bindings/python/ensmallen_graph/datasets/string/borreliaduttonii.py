@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaDuttonii.
+This file offers the methods to automatically retrieve the graph Borrelia duttonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaDuttonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaDuttonii graph.
+    """Return new instance of the Borrelia duttonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaDuttonii(
 
     Returns
     -----------------------
-    Instace of BorreliaDuttonii graph.
+    Instace of Borrelia duttonii graph.
 
 	References
 	---------------------

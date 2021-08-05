@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HepTh.
+This file offers the methods to automatically retrieve the graph hep-th.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def HepTh(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HepTh graph.
+    """Return new instance of the hep-th graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def HepTh(
 
     Returns
     -----------------------
-    Instace of HepTh graph.
+    Instace of hep-th graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesBacteriumOlb23.
+This file offers the methods to automatically retrieve the graph Microgenomates bacterium OLB23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesBacteriumOlb23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesBacteriumOlb23 graph.
+    """Return new instance of the Microgenomates bacterium OLB23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesBacteriumOlb23(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesBacteriumOlb23 graph.
+    Instace of Microgenomates bacterium OLB23 graph.
 
 	References
 	---------------------

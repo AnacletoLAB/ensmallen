@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesHygroscopicus.
+This file offers the methods to automatically retrieve the graph Streptomyces hygroscopicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesHygroscopicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesHygroscopicus graph.
+    """Return new instance of the Streptomyces hygroscopicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesHygroscopicus(
 
     Returns
     -----------------------
-    Instace of StreptomycesHygroscopicus graph.
+    Instace of Streptomyces hygroscopicus graph.
 
 	References
 	---------------------

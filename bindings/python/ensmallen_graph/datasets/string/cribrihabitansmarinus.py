@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CribrihabitansMarinus.
+This file offers the methods to automatically retrieve the graph Cribrihabitans marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CribrihabitansMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CribrihabitansMarinus graph.
+    """Return new instance of the Cribrihabitans marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CribrihabitansMarinus(
 
     Returns
     -----------------------
-    Instace of CribrihabitansMarinus graph.
+    Instace of Cribrihabitans marinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumMageritense.
+This file offers the methods to automatically retrieve the graph Mycobacterium mageritense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumMageritense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumMageritense graph.
+    """Return new instance of the Mycobacterium mageritense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumMageritense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumMageritense graph.
+    Instace of Mycobacterium mageritense graph.
 
 	References
 	---------------------

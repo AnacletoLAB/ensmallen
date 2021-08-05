@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalovivaxRuber.
+This file offers the methods to automatically retrieve the graph Halovivax ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalovivaxRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalovivaxRuber graph.
+    """Return new instance of the Halovivax ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalovivaxRuber(
 
     Returns
     -----------------------
-    Instace of HalovivaxRuber graph.
+    Instace of Halovivax ruber graph.
 
 	References
 	---------------------

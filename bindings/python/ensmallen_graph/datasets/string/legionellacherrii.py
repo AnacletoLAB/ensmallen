@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaCherrii.
+This file offers the methods to automatically retrieve the graph Legionella cherrii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaCherrii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaCherrii graph.
+    """Return new instance of the Legionella cherrii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaCherrii(
 
     Returns
     -----------------------
-    Instace of LegionellaCherrii graph.
+    Instace of Legionella cherrii graph.
 
 	References
 	---------------------

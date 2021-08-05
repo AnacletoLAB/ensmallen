@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WikisignedK2.
+This file offers the methods to automatically retrieve the graph wikisigned-k2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WikisignedK2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WikisignedK2 graph.
+    """Return new instance of the wikisigned-k2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WikisignedK2(
 
     Returns
     -----------------------
-    Instace of WikisignedK2 graph.
+    Instace of wikisigned-k2 graph.
 
 	References
 	---------------------

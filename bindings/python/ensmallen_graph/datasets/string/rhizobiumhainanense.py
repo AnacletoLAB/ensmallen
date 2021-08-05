@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumHainanense.
+This file offers the methods to automatically retrieve the graph Rhizobium hainanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumHainanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumHainanense graph.
+    """Return new instance of the Rhizobium hainanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumHainanense(
 
     Returns
     -----------------------
-    Instace of RhizobiumHainanense graph.
+    Instace of Rhizobium hainanense graph.
 
 	References
 	---------------------

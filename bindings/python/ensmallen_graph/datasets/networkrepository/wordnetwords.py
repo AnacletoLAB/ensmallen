@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WordnetWords.
+This file offers the methods to automatically retrieve the graph wordnet-words.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WordnetWords(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WordnetWords graph.
+    """Return new instance of the wordnet-words graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WordnetWords(
 
     Returns
     -----------------------
-    Instace of WordnetWords graph.
+    Instace of wordnet-words graph.
 
 	References
 	---------------------

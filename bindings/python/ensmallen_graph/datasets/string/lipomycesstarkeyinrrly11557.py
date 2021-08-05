@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LipomycesStarkeyiNrrlY11557.
+This file offers the methods to automatically retrieve the graph Lipomyces starkeyi NRRL Y-11557.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LipomycesStarkeyiNrrlY11557(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LipomycesStarkeyiNrrlY11557 graph.
+    """Return new instance of the Lipomyces starkeyi NRRL Y-11557 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LipomycesStarkeyiNrrlY11557(
 
     Returns
     -----------------------
-    Instace of LipomycesStarkeyiNrrlY11557 graph.
+    Instace of Lipomyces starkeyi NRRL Y-11557 graph.
 
 	References
 	---------------------

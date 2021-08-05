@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaSp83e34.
+This file offers the methods to automatically retrieve the graph Neisseria sp. 83E34.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaSp83e34(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaSp83e34 graph.
+    """Return new instance of the Neisseria sp. 83E34 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaSp83e34(
 
     Returns
     -----------------------
-    Instace of NeisseriaSp83e34 graph.
+    Instace of Neisseria sp. 83E34 graph.
 
 	References
 	---------------------

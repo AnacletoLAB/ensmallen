@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FervidicolaFerrireducens.
+This file offers the methods to automatically retrieve the graph Fervidicola ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FervidicolaFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FervidicolaFerrireducens graph.
+    """Return new instance of the Fervidicola ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FervidicolaFerrireducens(
 
     Returns
     -----------------------
-    Instace of FervidicolaFerrireducens graph.
+    Instace of Fervidicola ferrireducens graph.
 
 	References
 	---------------------

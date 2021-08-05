@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MiscImdbBi.
+This file offers the methods to automatically retrieve the graph misc-IMDB-bi.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def MiscImdbBi(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MiscImdbBi graph.
+    """Return new instance of the misc-IMDB-bi graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def MiscImdbBi(
 
     Returns
     -----------------------
-    Instace of MiscImdbBi graph.
+    Instace of misc-IMDB-bi graph.
 
 	References
 	---------------------

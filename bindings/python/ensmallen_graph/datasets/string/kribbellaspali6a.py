@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KribbellaSpAli6A.
+This file offers the methods to automatically retrieve the graph Kribbella sp. ALI-6-A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KribbellaSpAli6A(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KribbellaSpAli6A graph.
+    """Return new instance of the Kribbella sp. ALI-6-A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KribbellaSpAli6A(
 
     Returns
     -----------------------
-    Instace of KribbellaSpAli6A graph.
+    Instace of Kribbella sp. ALI-6-A graph.
 
 	References
 	---------------------

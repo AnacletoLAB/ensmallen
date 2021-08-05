@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAntibioticus.
+This file offers the methods to automatically retrieve the graph Streptomyces antibioticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAntibioticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAntibioticus graph.
+    """Return new instance of the Streptomyces antibioticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesAntibioticus(
 
     Returns
     -----------------------
-    Instace of StreptomycesAntibioticus graph.
+    Instace of Streptomyces antibioticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMethanomethylicusOleusabulum.
+This file offers the methods to automatically retrieve the graph Candidatus Methanomethylicus oleusabulum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMethanomethylicusOleusabulum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMethanomethylicusOleusabulum graph.
+    """Return new instance of the Candidatus Methanomethylicus oleusabulum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMethanomethylicusOleusabulum(
 
     Returns
     -----------------------
-    Instace of CandidatusMethanomethylicusOleusabulum graph.
+    Instace of Candidatus Methanomethylicus oleusabulum graph.
 
 	References
 	---------------------

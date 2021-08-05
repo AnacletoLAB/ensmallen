@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaHaemolysans.
+This file offers the methods to automatically retrieve the graph Gemella haemolysans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaHaemolysans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaHaemolysans graph.
+    """Return new instance of the Gemella haemolysans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemellaHaemolysans(
 
     Returns
     -----------------------
-    Instace of GemellaHaemolysans graph.
+    Instace of Gemella haemolysans graph.
 
 	References
 	---------------------

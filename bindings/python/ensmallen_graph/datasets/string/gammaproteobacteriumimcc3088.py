@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumImcc3088.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium IMCC3088.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumImcc3088(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumImcc3088 graph.
+    """Return new instance of the gamma proteobacterium IMCC3088 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumImcc3088(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumImcc3088 graph.
+    Instace of gamma proteobacterium IMCC3088 graph.
 
 	References
 	---------------------

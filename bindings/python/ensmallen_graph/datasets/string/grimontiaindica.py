@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrimontiaIndica.
+This file offers the methods to automatically retrieve the graph Grimontia indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrimontiaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrimontiaIndica graph.
+    """Return new instance of the Grimontia indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GrimontiaIndica(
 
     Returns
     -----------------------
-    Instace of GrimontiaIndica graph.
+    Instace of Grimontia indica graph.
 
 	References
 	---------------------

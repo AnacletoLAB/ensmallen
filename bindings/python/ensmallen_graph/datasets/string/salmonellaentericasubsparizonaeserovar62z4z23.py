@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaSubspArizonaeSerovar62Z4Z23.
+This file offers the methods to automatically retrieve the graph Salmonella enterica subsp. arizonae serovar 62:z4,z23:-.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaSubspArizonaeSerovar62Z4Z23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaSubspArizonaeSerovar62Z4Z23 graph.
+    """Return new instance of the Salmonella enterica subsp. arizonae serovar 62:z4,z23:- graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaSubspArizonaeSerovar62Z4Z23(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaSubspArizonaeSerovar62Z4Z23 graph.
+    Instace of Salmonella enterica subsp. arizonae serovar 62:z4,z23:- graph.
 
 	References
 	---------------------

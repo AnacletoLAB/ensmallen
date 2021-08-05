@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetarhiziumRobertsii.
+This file offers the methods to automatically retrieve the graph Metarhizium robertsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetarhiziumRobertsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetarhiziumRobertsii graph.
+    """Return new instance of the Metarhizium robertsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MetarhiziumRobertsii(
 
     Returns
     -----------------------
-    Instace of MetarhiziumRobertsii graph.
+    Instace of Metarhizium robertsii graph.
 
 	References
 	---------------------

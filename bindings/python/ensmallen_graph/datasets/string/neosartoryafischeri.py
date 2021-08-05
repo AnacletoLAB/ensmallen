@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeosartoryaFischeri.
+This file offers the methods to automatically retrieve the graph Neosartorya fischeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeosartoryaFischeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeosartoryaFischeri graph.
+    """Return new instance of the Neosartorya fischeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeosartoryaFischeri(
 
     Returns
     -----------------------
-    Instace of NeosartoryaFischeri graph.
+    Instace of Neosartorya fischeri graph.
 
 	References
 	---------------------

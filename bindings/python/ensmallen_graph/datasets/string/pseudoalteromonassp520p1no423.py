@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSp520p1No423.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. 520P1 No. 423.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSp520p1No423(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSp520p1No423 graph.
+    """Return new instance of the Pseudoalteromonas sp. 520P1 No. 423 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasSp520p1No423(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSp520p1No423 graph.
+    Instace of Pseudoalteromonas sp. 520P1 No. 423 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaSp2742308.
+This file offers the methods to automatically retrieve the graph Chlamydia sp. 2742-308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaSp2742308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaSp2742308 graph.
+    """Return new instance of the Chlamydia sp. 2742-308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaSp2742308(
 
     Returns
     -----------------------
-    Instace of ChlamydiaSp2742308 graph.
+    Instace of Chlamydia sp. 2742-308 graph.
 
 	References
 	---------------------

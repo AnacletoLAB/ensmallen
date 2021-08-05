@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineGroupIThaumarchaeoteScgcAb629i23.
+This file offers the methods to automatically retrieve the graph Marine Group I thaumarchaeote SCGC AB629I23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineGroupIThaumarchaeoteScgcAb629i23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineGroupIThaumarchaeoteScgcAb629i23 graph.
+    """Return new instance of the Marine Group I thaumarchaeote SCGC AB629I23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineGroupIThaumarchaeoteScgcAb629i23(
 
     Returns
     -----------------------
-    Instace of MarineGroupIThaumarchaeoteScgcAb629i23 graph.
+    Instace of Marine Group I thaumarchaeote SCGC AB629I23 graph.
 
 	References
 	---------------------

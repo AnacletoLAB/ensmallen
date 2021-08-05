@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisTerraeSubspTerraeNbrc15098.
+This file offers the methods to automatically retrieve the graph Sphingopyxis terrae subsp. terrae NBRC 15098.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisTerraeSubspTerraeNbrc15098 graph.
+    """Return new instance of the Sphingopyxis terrae subsp. terrae NBRC 15098 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisTerraeSubspTerraeNbrc15098(
 
     Returns
     -----------------------
-    Instace of SphingopyxisTerraeSubspTerraeNbrc15098 graph.
+    Instace of Sphingopyxis terrae subsp. terrae NBRC 15098 graph.
 
 	References
 	---------------------

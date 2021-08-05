@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacteriumXylanolyticum.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacterium xylanolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacteriumXylanolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacteriumXylanolyticum graph.
+    """Return new instance of the Thermoanaerobacterium xylanolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoanaerobacteriumXylanolyticum(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacteriumXylanolyticum graph.
+    Instace of Thermoanaerobacterium xylanolyticum graph.
 
 	References
 	---------------------

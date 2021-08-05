@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaAtrinaeC38.
+This file offers the methods to automatically retrieve the graph Kocuria atrinae C3-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaAtrinaeC38(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaAtrinaeC38 graph.
+    """Return new instance of the Kocuria atrinae C3-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KocuriaAtrinaeC38(
 
     Returns
     -----------------------
-    Instace of KocuriaAtrinaeC38 graph.
+    Instace of Kocuria atrinae C3-8 graph.
 
 	References
 	---------------------

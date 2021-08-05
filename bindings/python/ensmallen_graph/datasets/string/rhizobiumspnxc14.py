@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpNxc14.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. NXC14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpNxc14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpNxc14 graph.
+    """Return new instance of the Rhizobium sp. NXC14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpNxc14(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpNxc14 graph.
+    Instace of Rhizobium sp. NXC14 graph.
 
 	References
 	---------------------

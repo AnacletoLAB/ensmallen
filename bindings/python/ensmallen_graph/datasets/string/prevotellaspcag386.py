@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpCag386.
+This file offers the methods to automatically retrieve the graph Prevotella sp. CAG:386.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpCag386(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpCag386 graph.
+    """Return new instance of the Prevotella sp. CAG:386 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpCag386(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpCag386 graph.
+    Instace of Prevotella sp. CAG:386 graph.
 
 	References
 	---------------------

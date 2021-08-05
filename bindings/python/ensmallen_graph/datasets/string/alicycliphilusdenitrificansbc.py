@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicycliphilusDenitrificansBc.
+This file offers the methods to automatically retrieve the graph Alicycliphilus denitrificans BC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicycliphilusDenitrificansBc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicycliphilusDenitrificansBc graph.
+    """Return new instance of the Alicycliphilus denitrificans BC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicycliphilusDenitrificansBc(
 
     Returns
     -----------------------
-    Instace of AlicycliphilusDenitrificansBc graph.
+    Instace of Alicycliphilus denitrificans BC graph.
 
 	References
 	---------------------

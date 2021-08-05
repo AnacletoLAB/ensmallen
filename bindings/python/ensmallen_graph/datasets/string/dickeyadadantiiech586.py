@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaDadantiiEch586.
+This file offers the methods to automatically retrieve the graph Dickeya dadantii Ech586.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaDadantiiEch586(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaDadantiiEch586 graph.
+    """Return new instance of the Dickeya dadantii Ech586 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaDadantiiEch586(
 
     Returns
     -----------------------
-    Instace of DickeyaDadantiiEch586 graph.
+    Instace of Dickeya dadantii Ech586 graph.
 
 	References
 	---------------------

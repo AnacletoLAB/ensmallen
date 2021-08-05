@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSp2136faa.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. 2136FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSp2136faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSp2136faa graph.
+    """Return new instance of the Streptococcus sp. 2136FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSp2136faa(
 
     Returns
     -----------------------
-    Instace of StreptococcusSp2136faa graph.
+    Instace of Streptococcus sp. 2136FAA graph.
 
 	References
 	---------------------

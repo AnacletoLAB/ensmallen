@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumFunditum.
+This file offers the methods to automatically retrieve the graph Carnobacterium funditum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumFunditum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumFunditum graph.
+    """Return new instance of the Carnobacterium funditum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumFunditum(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumFunditum graph.
+    Instace of Carnobacterium funditum graph.
 
 	References
 	---------------------

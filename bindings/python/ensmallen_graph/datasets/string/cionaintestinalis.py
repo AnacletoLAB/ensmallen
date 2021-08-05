@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CionaIntestinalis.
+This file offers the methods to automatically retrieve the graph Ciona intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CionaIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CionaIntestinalis graph.
+    """Return new instance of the Ciona intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CionaIntestinalis(
 
     Returns
     -----------------------
-    Instace of CionaIntestinalis graph.
+    Instace of Ciona intestinalis graph.
 
 	References
 	---------------------

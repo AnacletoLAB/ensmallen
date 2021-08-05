@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndozoicomonasNumazuensis.
+This file offers the methods to automatically retrieve the graph Endozoicomonas numazuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndozoicomonasNumazuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndozoicomonasNumazuensis graph.
+    """Return new instance of the Endozoicomonas numazuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndozoicomonasNumazuensis(
 
     Returns
     -----------------------
-    Instace of EndozoicomonasNumazuensis graph.
+    Instace of Endozoicomonas numazuensis graph.
 
 	References
 	---------------------

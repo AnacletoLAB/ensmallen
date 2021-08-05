@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbVillanova62.
+This file offers the methods to automatically retrieve the graph socfb-Villanova62.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbVillanova62(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbVillanova62 graph.
+    """Return new instance of the socfb-Villanova62 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbVillanova62(
 
     Returns
     -----------------------
-    Instace of SocfbVillanova62 graph.
+    Instace of socfb-Villanova62 graph.
 
 	References
 	---------------------

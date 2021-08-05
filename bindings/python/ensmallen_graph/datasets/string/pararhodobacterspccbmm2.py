@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PararhodobacterSpCcbMm2.
+This file offers the methods to automatically retrieve the graph Pararhodobacter sp. CCB-MM2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PararhodobacterSpCcbMm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PararhodobacterSpCcbMm2 graph.
+    """Return new instance of the Pararhodobacter sp. CCB-MM2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PararhodobacterSpCcbMm2(
 
     Returns
     -----------------------
-    Instace of PararhodobacterSpCcbMm2 graph.
+    Instace of Pararhodobacter sp. CCB-MM2 graph.
 
 	References
 	---------------------

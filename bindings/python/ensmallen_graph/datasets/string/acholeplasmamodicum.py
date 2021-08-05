@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaModicum.
+This file offers the methods to automatically retrieve the graph Acholeplasma modicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaModicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaModicum graph.
+    """Return new instance of the Acholeplasma modicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcholeplasmaModicum(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaModicum graph.
+    Instace of Acholeplasma modicum graph.
 
 	References
 	---------------------

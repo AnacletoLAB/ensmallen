@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopirellulaSpSwk7.
+This file offers the methods to automatically retrieve the graph Rhodopirellula sp. SWK7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopirellulaSpSwk7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopirellulaSpSwk7 graph.
+    """Return new instance of the Rhodopirellula sp. SWK7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodopirellulaSpSwk7(
 
     Returns
     -----------------------
-    Instace of RhodopirellulaSpSwk7 graph.
+    Instace of Rhodopirellula sp. SWK7 graph.
 
 	References
 	---------------------

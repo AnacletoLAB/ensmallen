@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasAxonopodisVasculorum.
+This file offers the methods to automatically retrieve the graph Xanthomonas axonopodis vasculorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasAxonopodisVasculorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasAxonopodisVasculorum graph.
+    """Return new instance of the Xanthomonas axonopodis vasculorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasAxonopodisVasculorum(
 
     Returns
     -----------------------
-    Instace of XanthomonasAxonopodisVasculorum graph.
+    Instace of Xanthomonas axonopodis vasculorum graph.
 
 	References
 	---------------------

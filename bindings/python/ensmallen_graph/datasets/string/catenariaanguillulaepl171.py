@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatenariaAnguillulaePl171.
+This file offers the methods to automatically retrieve the graph Catenaria anguillulae PL171.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatenariaAnguillulaePl171(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatenariaAnguillulaePl171 graph.
+    """Return new instance of the Catenaria anguillulae PL171 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CatenariaAnguillulaePl171(
 
     Returns
     -----------------------
-    Instace of CatenariaAnguillulaePl171 graph.
+    Instace of Catenaria anguillulae PL171 graph.
 
 	References
 	---------------------

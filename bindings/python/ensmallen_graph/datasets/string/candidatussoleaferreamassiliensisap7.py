@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSoleaferreaMassiliensisAp7.
+This file offers the methods to automatically retrieve the graph Candidatus Soleaferrea massiliensis AP7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSoleaferreaMassiliensisAp7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSoleaferreaMassiliensisAp7 graph.
+    """Return new instance of the Candidatus Soleaferrea massiliensis AP7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSoleaferreaMassiliensisAp7(
 
     Returns
     -----------------------
-    Instace of CandidatusSoleaferreaMassiliensisAp7 graph.
+    Instace of Candidatus Soleaferrea massiliensis AP7 graph.
 
 	References
 	---------------------

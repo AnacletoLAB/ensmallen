@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PersephonellaMarina.
+This file offers the methods to automatically retrieve the graph Persephonella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PersephonellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PersephonellaMarina graph.
+    """Return new instance of the Persephonella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PersephonellaMarina(
 
     Returns
     -----------------------
-    Instace of PersephonellaMarina graph.
+    Instace of Persephonella marina graph.
 
 	References
 	---------------------

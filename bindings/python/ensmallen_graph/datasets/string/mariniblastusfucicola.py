@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MariniblastusFucicola.
+This file offers the methods to automatically retrieve the graph Mariniblastus fucicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MariniblastusFucicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MariniblastusFucicola graph.
+    """Return new instance of the Mariniblastus fucicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MariniblastusFucicola(
 
     Returns
     -----------------------
-    Instace of MariniblastusFucicola graph.
+    Instace of Mariniblastus fucicola graph.
 
 	References
 	---------------------

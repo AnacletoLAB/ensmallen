@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheionarchaeaArchaeonDg701.
+This file offers the methods to automatically retrieve the graph Theionarchaea archaeon DG-70-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheionarchaeaArchaeonDg701(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheionarchaeaArchaeonDg701 graph.
+    """Return new instance of the Theionarchaea archaeon DG-70-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TheionarchaeaArchaeonDg701(
 
     Returns
     -----------------------
-    Instace of TheionarchaeaArchaeonDg701 graph.
+    Instace of Theionarchaea archaeon DG-70-1 graph.
 
 	References
 	---------------------

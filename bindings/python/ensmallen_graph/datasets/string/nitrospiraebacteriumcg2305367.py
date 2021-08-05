@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumCg2305367.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium CG2_30_53_67.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumCg2305367(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumCg2305367 graph.
+    """Return new instance of the Nitrospirae bacterium CG2_30_53_67 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumCg2305367(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumCg2305367 graph.
+    Instace of Nitrospirae bacterium CG2_30_53_67 graph.
 
 	References
 	---------------------

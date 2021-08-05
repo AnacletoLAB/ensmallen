@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSulfureus.
+This file offers the methods to automatically retrieve the graph Enterococcus sulfureus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusSulfureus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSulfureus graph.
+    """Return new instance of the Enterococcus sulfureus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusSulfureus(
 
     Returns
     -----------------------
-    Instace of EnterococcusSulfureus graph.
+    Instace of Enterococcus sulfureus graph.
 
 	References
 	---------------------

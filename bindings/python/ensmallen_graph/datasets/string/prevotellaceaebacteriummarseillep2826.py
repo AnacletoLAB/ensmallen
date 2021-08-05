@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaceaeBacteriumMarseilleP2826.
+This file offers the methods to automatically retrieve the graph Prevotellaceae bacterium Marseille-P2826.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaceaeBacteriumMarseilleP2826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaceaeBacteriumMarseilleP2826 graph.
+    """Return new instance of the Prevotellaceae bacterium Marseille-P2826 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaceaeBacteriumMarseilleP2826(
 
     Returns
     -----------------------
-    Instace of PrevotellaceaeBacteriumMarseilleP2826 graph.
+    Instace of Prevotellaceae bacterium Marseille-P2826 graph.
 
 	References
 	---------------------

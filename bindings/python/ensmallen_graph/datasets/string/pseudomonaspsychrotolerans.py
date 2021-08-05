@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Pseudomonas psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPsychrotolerans graph.
+    """Return new instance of the Pseudomonas psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of PseudomonasPsychrotolerans graph.
+    Instace of Pseudomonas psychrotolerans graph.
 
 	References
 	---------------------

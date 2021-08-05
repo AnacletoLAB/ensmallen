@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesTimonensis.
+This file offers the methods to automatically retrieve the graph Parabacteroides timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesTimonensis graph.
+    """Return new instance of the Parabacteroides timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParabacteroidesTimonensis(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesTimonensis graph.
+    Instace of Parabacteroides timonensis graph.
 
 	References
 	---------------------

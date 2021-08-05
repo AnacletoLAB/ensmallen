@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLevybacteriaBacteriumCg2303729.
+This file offers the methods to automatically retrieve the graph Candidatus Levybacteria bacterium CG2_30_37_29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLevybacteriaBacteriumCg2303729(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLevybacteriaBacteriumCg2303729 graph.
+    """Return new instance of the Candidatus Levybacteria bacterium CG2_30_37_29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLevybacteriaBacteriumCg2303729(
 
     Returns
     -----------------------
-    Instace of CandidatusLevybacteriaBacteriumCg2303729 graph.
+    Instace of Candidatus Levybacteria bacterium CG2_30_37_29 graph.
 
 	References
 	---------------------

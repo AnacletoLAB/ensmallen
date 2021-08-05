@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudophaeobacterLeonis.
+This file offers the methods to automatically retrieve the graph Pseudophaeobacter leonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudophaeobacterLeonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudophaeobacterLeonis graph.
+    """Return new instance of the Pseudophaeobacter leonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudophaeobacterLeonis(
 
     Returns
     -----------------------
-    Instace of PseudophaeobacterLeonis graph.
+    Instace of Pseudophaeobacter leonis graph.
 
 	References
 	---------------------

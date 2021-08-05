@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonadetesBacterium13120cm46611.
+This file offers the methods to automatically retrieve the graph Gemmatimonadetes bacterium 13_1_20CM_4_66_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonadetesBacterium13120cm46611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonadetesBacterium13120cm46611 graph.
+    """Return new instance of the Gemmatimonadetes bacterium 13_1_20CM_4_66_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemmatimonadetesBacterium13120cm46611(
 
     Returns
     -----------------------
-    Instace of GemmatimonadetesBacterium13120cm46611 graph.
+    Instace of Gemmatimonadetes bacterium 13_1_20CM_4_66_11 graph.
 
 	References
 	---------------------

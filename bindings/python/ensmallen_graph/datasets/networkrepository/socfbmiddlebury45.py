@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbMiddlebury45.
+This file offers the methods to automatically retrieve the graph socfb-Middlebury45.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbMiddlebury45(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbMiddlebury45 graph.
+    """Return new instance of the socfb-Middlebury45 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbMiddlebury45(
 
     Returns
     -----------------------
-    Instace of SocfbMiddlebury45 graph.
+    Instace of socfb-Middlebury45 graph.
 
 	References
 	---------------------

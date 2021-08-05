@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraSpWb1.
+This file offers the methods to automatically retrieve the graph Thiomicrospira sp. WB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraSpWb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraSpWb1 graph.
+    """Return new instance of the Thiomicrospira sp. WB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiomicrospiraSpWb1(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraSpWb1 graph.
+    Instace of Thiomicrospira sp. WB1 graph.
 
 	References
 	---------------------

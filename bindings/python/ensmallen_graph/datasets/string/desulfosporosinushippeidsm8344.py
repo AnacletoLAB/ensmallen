@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusHippeiDsm8344.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus hippei DSM 8344.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusHippeiDsm8344(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusHippeiDsm8344 graph.
+    """Return new instance of the Desulfosporosinus hippei DSM 8344 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfosporosinusHippeiDsm8344(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusHippeiDsm8344 graph.
+    Instace of Desulfosporosinus hippei DSM 8344 graph.
 
 	References
 	---------------------

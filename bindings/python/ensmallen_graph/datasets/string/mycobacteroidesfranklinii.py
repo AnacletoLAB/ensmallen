@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteroidesFranklinii.
+This file offers the methods to automatically retrieve the graph Mycobacteroides franklinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteroidesFranklinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteroidesFranklinii graph.
+    """Return new instance of the Mycobacteroides franklinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteroidesFranklinii(
 
     Returns
     -----------------------
-    Instace of MycobacteroidesFranklinii graph.
+    Instace of Mycobacteroides franklinii graph.
 
 	References
 	---------------------

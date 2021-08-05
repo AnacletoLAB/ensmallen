@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusAlbus7.
+This file offers the methods to automatically retrieve the graph Ruminococcus albus 7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusAlbus7(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusAlbus7 graph.
+    """Return new instance of the Ruminococcus albus 7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusAlbus7(
 
     Returns
     -----------------------
-    Instace of RuminococcusAlbus7 graph.
+    Instace of Ruminococcus albus 7 graph.
 
 	References
 	---------------------

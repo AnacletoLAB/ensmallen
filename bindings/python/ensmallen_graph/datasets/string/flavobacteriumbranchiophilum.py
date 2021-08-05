@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumBranchiophilum.
+This file offers the methods to automatically retrieve the graph Flavobacterium branchiophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumBranchiophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumBranchiophilum graph.
+    """Return new instance of the Flavobacterium branchiophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumBranchiophilum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumBranchiophilum graph.
+    Instace of Flavobacterium branchiophilum graph.
 
 	References
 	---------------------

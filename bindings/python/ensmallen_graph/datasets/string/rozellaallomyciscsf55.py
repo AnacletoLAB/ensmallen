@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RozellaAllomycisCsf55.
+This file offers the methods to automatically retrieve the graph Rozella allomycis CSF55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RozellaAllomycisCsf55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RozellaAllomycisCsf55 graph.
+    """Return new instance of the Rozella allomycis CSF55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RozellaAllomycisCsf55(
 
     Returns
     -----------------------
-    Instace of RozellaAllomycisCsf55 graph.
+    Instace of Rozella allomycis CSF55 graph.
 
 	References
 	---------------------

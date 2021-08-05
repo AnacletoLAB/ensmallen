@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasCrevioricanis.
+This file offers the methods to automatically retrieve the graph Porphyromonas crevioricanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasCrevioricanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasCrevioricanis graph.
+    """Return new instance of the Porphyromonas crevioricanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasCrevioricanis(
 
     Returns
     -----------------------
-    Instace of PorphyromonasCrevioricanis graph.
+    Instace of Porphyromonas crevioricanis graph.
 
 	References
 	---------------------

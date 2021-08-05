@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DefluviitogaTunisiensis.
+This file offers the methods to automatically retrieve the graph Defluviitoga tunisiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DefluviitogaTunisiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DefluviitogaTunisiensis graph.
+    """Return new instance of the Defluviitoga tunisiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DefluviitogaTunisiensis(
 
     Returns
     -----------------------
-    Instace of DefluviitogaTunisiensis graph.
+    Instace of Defluviitoga tunisiensis graph.
 
 	References
 	---------------------

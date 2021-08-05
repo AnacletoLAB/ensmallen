@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpRm6137.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. RM6137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpRm6137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpRm6137 graph.
+    """Return new instance of the Campylobacter sp. RM6137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterSpRm6137(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpRm6137 graph.
+    Instace of Campylobacter sp. RM6137 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NippostrongylusBrasiliensis.
+This file offers the methods to automatically retrieve the graph Nippostrongylus brasiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NippostrongylusBrasiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NippostrongylusBrasiliensis graph.
+    """Return new instance of the Nippostrongylus brasiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NippostrongylusBrasiliensis(
 
     Returns
     -----------------------
-    Instace of NippostrongylusBrasiliensis graph.
+    Instace of Nippostrongylus brasiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterLarvae.
+This file offers the methods to automatically retrieve the graph Acinetobacter larvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterLarvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterLarvae graph.
+    """Return new instance of the Acinetobacter larvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterLarvae(
 
     Returns
     -----------------------
-    Instace of AcinetobacterLarvae graph.
+    Instace of Acinetobacter larvae graph.
 
 	References
 	---------------------

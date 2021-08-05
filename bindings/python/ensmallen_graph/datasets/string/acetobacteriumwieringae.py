@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacteriumWieringae.
+This file offers the methods to automatically retrieve the graph Acetobacterium wieringae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacteriumWieringae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacteriumWieringae graph.
+    """Return new instance of the Acetobacterium wieringae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacteriumWieringae(
 
     Returns
     -----------------------
-    Instace of AcetobacteriumWieringae graph.
+    Instace of Acetobacterium wieringae graph.
 
 	References
 	---------------------

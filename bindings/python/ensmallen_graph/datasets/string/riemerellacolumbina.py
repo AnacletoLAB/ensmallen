@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RiemerellaColumbina.
+This file offers the methods to automatically retrieve the graph Riemerella columbina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RiemerellaColumbina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RiemerellaColumbina graph.
+    """Return new instance of the Riemerella columbina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RiemerellaColumbina(
 
     Returns
     -----------------------
-    Instace of RiemerellaColumbina graph.
+    Instace of Riemerella columbina graph.
 
 	References
 	---------------------

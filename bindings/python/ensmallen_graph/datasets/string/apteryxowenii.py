@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApteryxOwenii.
+This file offers the methods to automatically retrieve the graph Apteryx owenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApteryxOwenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApteryxOwenii graph.
+    """Return new instance of the Apteryx owenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApteryxOwenii(
 
     Returns
     -----------------------
-    Instace of ApteryxOwenii graph.
+    Instace of Apteryx owenii graph.
 
 	References
 	---------------------

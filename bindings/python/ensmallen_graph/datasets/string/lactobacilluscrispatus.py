@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCrispatus.
+This file offers the methods to automatically retrieve the graph Lactobacillus crispatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCrispatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCrispatus graph.
+    """Return new instance of the Lactobacillus crispatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCrispatus(
 
     Returns
     -----------------------
-    Instace of LactobacillusCrispatus graph.
+    Instace of Lactobacillus crispatus graph.
 
 	References
 	---------------------

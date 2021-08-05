@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomonasSpAap53.
+This file offers the methods to automatically retrieve the graph Blastomonas sp. AAP53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomonasSpAap53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomonasSpAap53 graph.
+    """Return new instance of the Blastomonas sp. AAP53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlastomonasSpAap53(
 
     Returns
     -----------------------
-    Instace of BlastomonasSpAap53 graph.
+    Instace of Blastomonas sp. AAP53 graph.
 
 	References
 	---------------------

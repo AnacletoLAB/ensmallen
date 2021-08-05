@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YaniellaHalotolerans.
+This file offers the methods to automatically retrieve the graph Yaniella halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YaniellaHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YaniellaHalotolerans graph.
+    """Return new instance of the Yaniella halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YaniellaHalotolerans(
 
     Returns
     -----------------------
-    Instace of YaniellaHalotolerans graph.
+    Instace of Yaniella halotolerans graph.
 
 	References
 	---------------------

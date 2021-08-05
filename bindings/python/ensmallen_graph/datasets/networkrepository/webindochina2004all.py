@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebIndochina2004All.
+This file offers the methods to automatically retrieve the graph web-indochina-2004-all.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -50,7 +50,7 @@ def WebIndochina2004All(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebIndochina2004All graph.
+    """Return new instance of the web-indochina-2004-all graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -77,7 +77,7 @@ def WebIndochina2004All(
 
     Returns
     -----------------------
-    Instace of WebIndochina2004All graph.
+    Instace of web-indochina-2004-all graph.
 
 	References
 	---------------------

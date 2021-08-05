@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalogeometricumBorinquense.
+This file offers the methods to automatically retrieve the graph Halogeometricum borinquense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalogeometricumBorinquense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalogeometricumBorinquense graph.
+    """Return new instance of the Halogeometricum borinquense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalogeometricumBorinquense(
 
     Returns
     -----------------------
-    Instace of HalogeometricumBorinquense graph.
+    Instace of Halogeometricum borinquense graph.
 
 	References
 	---------------------

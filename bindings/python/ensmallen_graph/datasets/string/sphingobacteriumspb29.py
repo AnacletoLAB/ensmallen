@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpB29.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. B29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpB29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpB29 graph.
+    """Return new instance of the Sphingobacterium sp. B29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriumSpB29(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpB29 graph.
+    Instace of Sphingobacterium sp. B29 graph.
 
 	References
 	---------------------

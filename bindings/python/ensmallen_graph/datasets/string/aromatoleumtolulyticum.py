@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AromatoleumTolulyticum.
+This file offers the methods to automatically retrieve the graph Aromatoleum tolulyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AromatoleumTolulyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AromatoleumTolulyticum graph.
+    """Return new instance of the Aromatoleum tolulyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AromatoleumTolulyticum(
 
     Returns
     -----------------------
-    Instace of AromatoleumTolulyticum graph.
+    Instace of Aromatoleum tolulyticum graph.
 
 	References
 	---------------------

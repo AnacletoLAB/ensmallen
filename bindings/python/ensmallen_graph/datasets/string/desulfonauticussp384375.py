@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonauticusSp384375.
+This file offers the methods to automatically retrieve the graph Desulfonauticus sp. 38_4375.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonauticusSp384375(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonauticusSp384375 graph.
+    """Return new instance of the Desulfonauticus sp. 38_4375 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonauticusSp384375(
 
     Returns
     -----------------------
-    Instace of DesulfonauticusSp384375 graph.
+    Instace of Desulfonauticus sp. 38_4375 graph.
 
 	References
 	---------------------

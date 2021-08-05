@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpRoot487d2y.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. Root487D2Y.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSpRoot487d2y(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpRoot487d2y graph.
+    """Return new instance of the Caulobacter sp. Root487D2Y graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacterSpRoot487d2y(
 
     Returns
     -----------------------
-    Instace of CaulobacterSpRoot487d2y graph.
+    Instace of Caulobacter sp. Root487D2Y graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaSideris.
+This file offers the methods to automatically retrieve the graph Exophiala sideris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaSideris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaSideris graph.
+    """Return new instance of the Exophiala sideris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaSideris(
 
     Returns
     -----------------------
-    Instace of ExophialaSideris graph.
+    Instace of Exophiala sideris graph.
 
 	References
 	---------------------

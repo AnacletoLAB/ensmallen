@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumHlucca01.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium HLUCCA01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumHlucca01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumHlucca01 graph.
+    """Return new instance of the Bacteroidetes bacterium HLUCCA01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumHlucca01(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumHlucca01 graph.
+    Instace of Bacteroidetes bacterium HLUCCA01 graph.
 
 	References
 	---------------------

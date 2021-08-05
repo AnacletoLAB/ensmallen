@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenacibaculumMaritimum.
+This file offers the methods to automatically retrieve the graph Tenacibaculum maritimum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenacibaculumMaritimum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenacibaculumMaritimum graph.
+    """Return new instance of the Tenacibaculum maritimum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TenacibaculumMaritimum(
 
     Returns
     -----------------------
-    Instace of TenacibaculumMaritimum graph.
+    Instace of Tenacibaculum maritimum graph.
 
 	References
 	---------------------

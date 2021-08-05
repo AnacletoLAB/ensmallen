@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasCanoris.
+This file offers the methods to automatically retrieve the graph Porphyromonas canoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasCanoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasCanoris graph.
+    """Return new instance of the Porphyromonas canoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasCanoris(
 
     Returns
     -----------------------
-    Instace of PorphyromonasCanoris graph.
+    Instace of Porphyromonas canoris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaBillingiae.
+This file offers the methods to automatically retrieve the graph Erwinia billingiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaBillingiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaBillingiae graph.
+    """Return new instance of the Erwinia billingiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErwiniaBillingiae(
 
     Returns
     -----------------------
-    Instace of ErwiniaBillingiae graph.
+    Instace of Erwinia billingiae graph.
 
 	References
 	---------------------

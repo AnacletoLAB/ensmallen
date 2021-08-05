@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSonorensis.
+This file offers the methods to automatically retrieve the graph Vibrio sonorensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSonorensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSonorensis graph.
+    """Return new instance of the Vibrio sonorensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioSonorensis(
 
     Returns
     -----------------------
-    Instace of VibrioSonorensis graph.
+    Instace of Vibrio sonorensis graph.
 
 	References
 	---------------------

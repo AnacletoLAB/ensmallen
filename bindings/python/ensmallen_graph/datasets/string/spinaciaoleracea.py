@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpinaciaOleracea.
+This file offers the methods to automatically retrieve the graph Spinacia oleracea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpinaciaOleracea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpinaciaOleracea graph.
+    """Return new instance of the Spinacia oleracea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpinaciaOleracea(
 
     Returns
     -----------------------
-    Instace of SpinaciaOleracea graph.
+    Instace of Spinacia oleracea graph.
 
 	References
 	---------------------

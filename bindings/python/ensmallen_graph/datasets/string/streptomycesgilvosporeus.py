@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesGilvosporeus.
+This file offers the methods to automatically retrieve the graph Streptomyces gilvosporeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesGilvosporeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesGilvosporeus graph.
+    """Return new instance of the Streptomyces gilvosporeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesGilvosporeus(
 
     Returns
     -----------------------
-    Instace of StreptomycesGilvosporeus graph.
+    Instace of Streptomyces gilvosporeus graph.
 
 	References
 	---------------------

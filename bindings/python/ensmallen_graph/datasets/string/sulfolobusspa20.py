@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusSpA20.
+This file offers the methods to automatically retrieve the graph Sulfolobus sp. A20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusSpA20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusSpA20 graph.
+    """Return new instance of the Sulfolobus sp. A20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfolobusSpA20(
 
     Returns
     -----------------------
-    Instace of SulfolobusSpA20 graph.
+    Instace of Sulfolobus sp. A20 graph.
 
 	References
 	---------------------

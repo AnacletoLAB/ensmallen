@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeitlerinemaSpPcc7407.
+This file offers the methods to automatically retrieve the graph Geitlerinema sp. PCC7407.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeitlerinemaSpPcc7407(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeitlerinemaSpPcc7407 graph.
+    """Return new instance of the Geitlerinema sp. PCC7407 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeitlerinemaSpPcc7407(
 
     Returns
     -----------------------
-    Instace of GeitlerinemaSpPcc7407 graph.
+    Instace of Geitlerinema sp. PCC7407 graph.
 
 	References
 	---------------------

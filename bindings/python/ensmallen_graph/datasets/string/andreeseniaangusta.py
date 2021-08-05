@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AndreeseniaAngusta.
+This file offers the methods to automatically retrieve the graph Andreesenia angusta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AndreeseniaAngusta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AndreeseniaAngusta graph.
+    """Return new instance of the Andreesenia angusta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AndreeseniaAngusta(
 
     Returns
     -----------------------
-    Instace of AndreeseniaAngusta graph.
+    Instace of Andreesenia angusta graph.
 
 	References
 	---------------------

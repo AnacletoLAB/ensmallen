@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasCampestrisCampestris.
+This file offers the methods to automatically retrieve the graph Xanthomonas campestris campestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasCampestrisCampestris(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasCampestrisCampestris graph.
+    """Return new instance of the Xanthomonas campestris campestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasCampestrisCampestris(
 
     Returns
     -----------------------
-    Instace of XanthomonasCampestrisCampestris graph.
+    Instace of Xanthomonas campestris campestris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeyerozymaSpJa9.
+This file offers the methods to automatically retrieve the graph Meyerozyma sp. JA9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeyerozymaSpJa9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeyerozymaSpJa9 graph.
+    """Return new instance of the Meyerozyma sp. JA9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MeyerozymaSpJa9(
 
     Returns
     -----------------------
-    Instace of MeyerozymaSpJa9 graph.
+    Instace of Meyerozyma sp. JA9 graph.
 
 	References
 	---------------------

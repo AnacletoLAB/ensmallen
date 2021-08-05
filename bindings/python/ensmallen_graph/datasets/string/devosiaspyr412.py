@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSpYr412.
+This file offers the methods to automatically retrieve the graph Devosia sp. YR412.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSpYr412(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSpYr412 graph.
+    """Return new instance of the Devosia sp. YR412 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSpYr412(
 
     Returns
     -----------------------
-    Instace of DevosiaSpYr412 graph.
+    Instace of Devosia sp. YR412 graph.
 
 	References
 	---------------------

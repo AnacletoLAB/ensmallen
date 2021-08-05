@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpGd11.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. GD11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpGd11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpGd11 graph.
+    """Return new instance of the Paenibacillus sp. GD11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpGd11(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpGd11 graph.
+    Instace of Paenibacillus sp. GD11 graph.
 
 	References
 	---------------------

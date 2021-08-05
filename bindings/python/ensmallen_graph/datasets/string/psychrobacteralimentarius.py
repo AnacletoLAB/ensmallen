@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterAlimentarius.
+This file offers the methods to automatically retrieve the graph Psychrobacter alimentarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterAlimentarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterAlimentarius graph.
+    """Return new instance of the Psychrobacter alimentarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterAlimentarius(
 
     Returns
     -----------------------
-    Instace of PsychrobacterAlimentarius graph.
+    Instace of Psychrobacter alimentarius graph.
 
 	References
 	---------------------

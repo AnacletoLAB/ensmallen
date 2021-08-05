@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaGrimshawi.
+This file offers the methods to automatically retrieve the graph Drosophila grimshawi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaGrimshawi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaGrimshawi graph.
+    """Return new instance of the Drosophila grimshawi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaGrimshawi(
 
     Returns
     -----------------------
-    Instace of DrosophilaGrimshawi graph.
+    Instace of Drosophila grimshawi graph.
 
 	References
 	---------------------

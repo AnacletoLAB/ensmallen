@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpWg5.
+This file offers the methods to automatically retrieve the graph Massilia sp. WG5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpWg5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpWg5 graph.
+    """Return new instance of the Massilia sp. WG5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpWg5(
 
     Returns
     -----------------------
-    Instace of MassiliaSpWg5 graph.
+    Instace of Massilia sp. WG5 graph.
 
 	References
 	---------------------

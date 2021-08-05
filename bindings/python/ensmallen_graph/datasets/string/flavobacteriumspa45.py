@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpA45.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. A45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpA45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpA45 graph.
+    """Return new instance of the Flavobacterium sp. A45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpA45(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpA45 graph.
+    Instace of Flavobacterium sp. A45 graph.
 
 	References
 	---------------------

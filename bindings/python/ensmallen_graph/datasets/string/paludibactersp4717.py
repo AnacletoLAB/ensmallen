@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaludibacterSp4717.
+This file offers the methods to automatically retrieve the graph Paludibacter sp. 47-17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaludibacterSp4717(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaludibacterSp4717 graph.
+    """Return new instance of the Paludibacter sp. 47-17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaludibacterSp4717(
 
     Returns
     -----------------------
-    Instace of PaludibacterSp4717 graph.
+    Instace of Paludibacter sp. 47-17 graph.
 
 	References
 	---------------------

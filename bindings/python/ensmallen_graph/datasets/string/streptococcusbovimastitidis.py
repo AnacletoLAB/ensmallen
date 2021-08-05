@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusBovimastitidis.
+This file offers the methods to automatically retrieve the graph Streptococcus bovimastitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusBovimastitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusBovimastitidis graph.
+    """Return new instance of the Streptococcus bovimastitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusBovimastitidis(
 
     Returns
     -----------------------
-    Instace of StreptococcusBovimastitidis graph.
+    Instace of Streptococcus bovimastitidis graph.
 
 	References
 	---------------------

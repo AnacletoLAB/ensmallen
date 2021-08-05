@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RivulariaSpPcc7116.
+This file offers the methods to automatically retrieve the graph Rivularia sp. PCC7116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RivulariaSpPcc7116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RivulariaSpPcc7116 graph.
+    """Return new instance of the Rivularia sp. PCC7116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RivulariaSpPcc7116(
 
     Returns
     -----------------------
-    Instace of RivulariaSpPcc7116 graph.
+    Instace of Rivularia sp. PCC7116 graph.
 
 	References
 	---------------------

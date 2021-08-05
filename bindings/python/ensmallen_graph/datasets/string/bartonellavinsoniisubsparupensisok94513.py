@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaVinsoniiSubspArupensisOk94513.
+This file offers the methods to automatically retrieve the graph Bartonella vinsonii subsp. arupensis OK-94-513.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaVinsoniiSubspArupensisOk94513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaVinsoniiSubspArupensisOk94513 graph.
+    """Return new instance of the Bartonella vinsonii subsp. arupensis OK-94-513 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaVinsoniiSubspArupensisOk94513(
 
     Returns
     -----------------------
-    Instace of BartonellaVinsoniiSubspArupensisOk94513 graph.
+    Instace of Bartonella vinsonii subsp. arupensis OK-94-513 graph.
 
 	References
 	---------------------

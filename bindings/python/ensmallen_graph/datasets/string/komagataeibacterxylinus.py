@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataeibacterXylinus.
+This file offers the methods to automatically retrieve the graph Komagataeibacter xylinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataeibacterXylinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataeibacterXylinus graph.
+    """Return new instance of the Komagataeibacter xylinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KomagataeibacterXylinus(
 
     Returns
     -----------------------
-    Instace of KomagataeibacterXylinus graph.
+    Instace of Komagataeibacter xylinus graph.
 
 	References
 	---------------------

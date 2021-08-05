@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacteraceaeBacteriumGwc25311.
+This file offers the methods to automatically retrieve the graph Geobacteraceae bacterium GWC2_53_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacteraceaeBacteriumGwc25311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacteraceaeBacteriumGwc25311 graph.
+    """Return new instance of the Geobacteraceae bacterium GWC2_53_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacteraceaeBacteriumGwc25311(
 
     Returns
     -----------------------
-    Instace of GeobacteraceaeBacteriumGwc25311 graph.
+    Instace of Geobacteraceae bacterium GWC2_53_11 graph.
 
 	References
 	---------------------

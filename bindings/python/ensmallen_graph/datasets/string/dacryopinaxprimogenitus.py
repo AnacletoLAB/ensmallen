@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DacryopinaxPrimogenitus.
+This file offers the methods to automatically retrieve the graph Dacryopinax primogenitus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DacryopinaxPrimogenitus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DacryopinaxPrimogenitus graph.
+    """Return new instance of the Dacryopinax primogenitus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DacryopinaxPrimogenitus(
 
     Returns
     -----------------------
-    Instace of DacryopinaxPrimogenitus graph.
+    Instace of Dacryopinax primogenitus graph.
 
 	References
 	---------------------

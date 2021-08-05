@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusFerrooxydans.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus ferrooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusFerrooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusFerrooxydans graph.
+    """Return new instance of the Alicyclobacillus ferrooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlicyclobacillusFerrooxydans(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusFerrooxydans graph.
+    Instace of Alicyclobacillus ferrooxydans graph.
 
 	References
 	---------------------

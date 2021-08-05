@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PucciniaSorghi.
+This file offers the methods to automatically retrieve the graph Puccinia sorghi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PucciniaSorghi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PucciniaSorghi graph.
+    """Return new instance of the Puccinia sorghi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PucciniaSorghi(
 
     Returns
     -----------------------
-    Instace of PucciniaSorghi graph.
+    Instace of Puccinia sorghi graph.
 
 	References
 	---------------------

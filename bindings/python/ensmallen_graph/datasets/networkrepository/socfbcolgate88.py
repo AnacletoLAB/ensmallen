@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbColgate88.
+This file offers the methods to automatically retrieve the graph socfb-Colgate88.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbColgate88(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbColgate88 graph.
+    """Return new instance of the socfb-Colgate88 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbColgate88(
 
     Returns
     -----------------------
-    Instace of SocfbColgate88 graph.
+    Instace of socfb-Colgate88 graph.
 
 	References
 	---------------------

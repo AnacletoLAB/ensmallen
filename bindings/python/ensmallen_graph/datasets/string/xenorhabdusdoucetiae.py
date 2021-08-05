@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusDoucetiae.
+This file offers the methods to automatically retrieve the graph Xenorhabdus doucetiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusDoucetiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusDoucetiae graph.
+    """Return new instance of the Xenorhabdus doucetiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusDoucetiae(
 
     Returns
     -----------------------
-    Instace of XenorhabdusDoucetiae graph.
+    Instace of Xenorhabdus doucetiae graph.
 
 	References
 	---------------------

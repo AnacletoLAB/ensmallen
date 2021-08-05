@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaSputorum.
+This file offers the methods to automatically retrieve the graph Pandoraea sputorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaSputorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaSputorum graph.
+    """Return new instance of the Pandoraea sputorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaSputorum(
 
     Returns
     -----------------------
-    Instace of PandoraeaSputorum graph.
+    Instace of Pandoraea sputorum graph.
 
 	References
 	---------------------

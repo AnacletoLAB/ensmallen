@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonosporascusSpGib2.
+This file offers the methods to automatically retrieve the graph Monosporascus sp. GIB2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonosporascusSpGib2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonosporascusSpGib2 graph.
+    """Return new instance of the Monosporascus sp. GIB2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonosporascusSpGib2(
 
     Returns
     -----------------------
-    Instace of MonosporascusSpGib2 graph.
+    Instace of Monosporascus sp. GIB2 graph.
 
 	References
 	---------------------

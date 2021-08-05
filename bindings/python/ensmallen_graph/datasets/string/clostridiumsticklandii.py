@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSticklandii.
+This file offers the methods to automatically retrieve the graph Clostridium sticklandii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSticklandii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSticklandii graph.
+    """Return new instance of the Clostridium sticklandii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSticklandii(
 
     Returns
     -----------------------
-    Instace of ClostridiumSticklandii graph.
+    Instace of Clostridium sticklandii graph.
 
 	References
 	---------------------

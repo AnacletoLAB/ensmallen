@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedCoprococcusSp.
+This file offers the methods to automatically retrieve the graph uncultured Coprococcus sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedCoprococcusSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedCoprococcusSp graph.
+    """Return new instance of the uncultured Coprococcus sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedCoprococcusSp(
 
     Returns
     -----------------------
-    Instace of UnculturedCoprococcusSp graph.
+    Instace of uncultured Coprococcus sp. graph.
 
 	References
 	---------------------

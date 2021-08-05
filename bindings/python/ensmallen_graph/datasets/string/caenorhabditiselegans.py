@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisElegans.
+This file offers the methods to automatically retrieve the graph Caenorhabditis elegans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisElegans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisElegans graph.
+    """Return new instance of the Caenorhabditis elegans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaenorhabditisElegans(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisElegans graph.
+    Instace of Caenorhabditis elegans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaDonostiensis.
+This file offers the methods to automatically retrieve the graph Nocardia donostiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaDonostiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaDonostiensis graph.
+    """Return new instance of the Nocardia donostiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaDonostiensis(
 
     Returns
     -----------------------
-    Instace of NocardiaDonostiensis graph.
+    Instace of Nocardia donostiensis graph.
 
 	References
 	---------------------

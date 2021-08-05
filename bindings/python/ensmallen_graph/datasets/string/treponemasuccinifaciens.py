@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSuccinifaciens.
+This file offers the methods to automatically retrieve the graph Treponema succinifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSuccinifaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSuccinifaciens graph.
+    """Return new instance of the Treponema succinifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSuccinifaciens(
 
     Returns
     -----------------------
-    Instace of TreponemaSuccinifaciens graph.
+    Instace of Treponema succinifaciens graph.
 
 	References
 	---------------------

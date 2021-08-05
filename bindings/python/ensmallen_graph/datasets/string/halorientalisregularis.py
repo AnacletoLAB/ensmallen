@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorientalisRegularis.
+This file offers the methods to automatically retrieve the graph Halorientalis regularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorientalisRegularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorientalisRegularis graph.
+    """Return new instance of the Halorientalis regularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorientalisRegularis(
 
     Returns
     -----------------------
-    Instace of HalorientalisRegularis graph.
+    Instace of Halorientalis regularis graph.
 
 	References
 	---------------------

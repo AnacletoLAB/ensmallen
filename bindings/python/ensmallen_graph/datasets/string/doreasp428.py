@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaSp428.
+This file offers the methods to automatically retrieve the graph Dorea sp. 42_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaSp428(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaSp428 graph.
+    """Return new instance of the Dorea sp. 42_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DoreaSp428(
 
     Returns
     -----------------------
-    Instace of DoreaSp428 graph.
+    Instace of Dorea sp. 42_8 graph.
 
 	References
 	---------------------

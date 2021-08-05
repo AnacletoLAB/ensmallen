@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrancourtellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Drancourtella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrancourtellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrancourtellaMassiliensis graph.
+    """Return new instance of the Drancourtella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrancourtellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of DrancourtellaMassiliensis graph.
+    Instace of Drancourtella massiliensis graph.
 
 	References
 	---------------------

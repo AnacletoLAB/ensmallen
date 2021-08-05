@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusGobiensis.
+This file offers the methods to automatically retrieve the graph Deinococcus gobiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusGobiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusGobiensis graph.
+    """Return new instance of the Deinococcus gobiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusGobiensis(
 
     Returns
     -----------------------
-    Instace of DeinococcusGobiensis graph.
+    Instace of Deinococcus gobiensis graph.
 
 	References
 	---------------------

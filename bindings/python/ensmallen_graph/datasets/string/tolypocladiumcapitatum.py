@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TolypocladiumCapitatum.
+This file offers the methods to automatically retrieve the graph Tolypocladium capitatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TolypocladiumCapitatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TolypocladiumCapitatum graph.
+    """Return new instance of the Tolypocladium capitatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TolypocladiumCapitatum(
 
     Returns
     -----------------------
-    Instace of TolypocladiumCapitatum graph.
+    Instace of Tolypocladium capitatum graph.
 
 	References
 	---------------------

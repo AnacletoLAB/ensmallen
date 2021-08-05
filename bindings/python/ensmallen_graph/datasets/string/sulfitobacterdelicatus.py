@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterDelicatus.
+This file offers the methods to automatically retrieve the graph Sulfitobacter delicatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterDelicatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterDelicatus graph.
+    """Return new instance of the Sulfitobacter delicatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterDelicatus(
 
     Returns
     -----------------------
-    Instace of SulfitobacterDelicatus graph.
+    Instace of Sulfitobacter delicatus graph.
 
 	References
 	---------------------

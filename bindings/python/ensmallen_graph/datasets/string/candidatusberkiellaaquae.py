@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBerkiellaAquae.
+This file offers the methods to automatically retrieve the graph Candidatus Berkiella aquae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBerkiellaAquae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBerkiellaAquae graph.
+    """Return new instance of the Candidatus Berkiella aquae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBerkiellaAquae(
 
     Returns
     -----------------------
-    Instace of CandidatusBerkiellaAquae graph.
+    Instace of Candidatus Berkiella aquae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpTsri0281.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. TSRI0281.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpTsri0281(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpTsri0281 graph.
+    """Return new instance of the Streptomyces sp. TSRI0281 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpTsri0281(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpTsri0281 graph.
+    Instace of Streptomyces sp. TSRI0281 graph.
 
 	References
 	---------------------

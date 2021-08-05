@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaOrthopsilosis.
+This file offers the methods to automatically retrieve the graph Candida orthopsilosis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaOrthopsilosis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaOrthopsilosis graph.
+    """Return new instance of the Candida orthopsilosis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaOrthopsilosis(
 
     Returns
     -----------------------
-    Instace of CandidaOrthopsilosis graph.
+    Instace of Candida orthopsilosis graph.
 
 	References
 	---------------------

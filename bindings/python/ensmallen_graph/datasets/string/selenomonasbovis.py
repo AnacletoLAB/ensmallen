@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasBovis.
+This file offers the methods to automatically retrieve the graph Selenomonas bovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasBovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasBovis graph.
+    """Return new instance of the Selenomonas bovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasBovis(
 
     Returns
     -----------------------
-    Instace of SelenomonasBovis graph.
+    Instace of Selenomonas bovis graph.
 
 	References
 	---------------------

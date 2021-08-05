@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrimonasBalearica.
+This file offers the methods to automatically retrieve the graph Ferrimonas balearica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrimonasBalearica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrimonasBalearica graph.
+    """Return new instance of the Ferrimonas balearica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FerrimonasBalearica(
 
     Returns
     -----------------------
-    Instace of FerrimonasBalearica graph.
+    Instace of Ferrimonas balearica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaPneumotropica.
+This file offers the methods to automatically retrieve the graph Pasteurella pneumotropica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaPneumotropica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaPneumotropica graph.
+    """Return new instance of the Pasteurella pneumotropica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PasteurellaPneumotropica(
 
     Returns
     -----------------------
-    Instace of PasteurellaPneumotropica graph.
+    Instace of Pasteurella pneumotropica graph.
 
 	References
 	---------------------

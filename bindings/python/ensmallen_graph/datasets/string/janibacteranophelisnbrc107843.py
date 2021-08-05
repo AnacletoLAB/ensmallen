@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterAnophelisNbrc107843.
+This file offers the methods to automatically retrieve the graph Janibacter anophelis NBRC 107843.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterAnophelisNbrc107843(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterAnophelisNbrc107843 graph.
+    """Return new instance of the Janibacter anophelis NBRC 107843 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanibacterAnophelisNbrc107843(
 
     Returns
     -----------------------
-    Instace of JanibacterAnophelisNbrc107843 graph.
+    Instace of Janibacter anophelis NBRC 107843 graph.
 
 	References
 	---------------------

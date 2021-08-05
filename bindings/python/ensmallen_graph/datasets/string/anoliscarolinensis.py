@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnolisCarolinensis.
+This file offers the methods to automatically retrieve the graph Anolis carolinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnolisCarolinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnolisCarolinensis graph.
+    """Return new instance of the Anolis carolinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnolisCarolinensis(
 
     Returns
     -----------------------
-    Instace of AnolisCarolinensis graph.
+    Instace of Anolis carolinensis graph.
 
 	References
 	---------------------

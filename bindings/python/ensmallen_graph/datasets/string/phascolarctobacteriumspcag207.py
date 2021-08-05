@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhascolarctobacteriumSpCag207.
+This file offers the methods to automatically retrieve the graph Phascolarctobacterium sp. CAG207.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhascolarctobacteriumSpCag207(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhascolarctobacteriumSpCag207 graph.
+    """Return new instance of the Phascolarctobacterium sp. CAG207 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhascolarctobacteriumSpCag207(
 
     Returns
     -----------------------
-    Instace of PhascolarctobacteriumSpCag207 graph.
+    Instace of Phascolarctobacterium sp. CAG207 graph.
 
 	References
 	---------------------

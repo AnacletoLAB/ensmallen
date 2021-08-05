@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasPolarisDsm16579.
+This file offers the methods to automatically retrieve the graph Marinomonas polaris DSM 16579.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasPolarisDsm16579(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasPolarisDsm16579 graph.
+    """Return new instance of the Marinomonas polaris DSM 16579 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinomonasPolarisDsm16579(
 
     Returns
     -----------------------
-    Instace of MarinomonasPolarisDsm16579 graph.
+    Instace of Marinomonas polaris DSM 16579 graph.
 
 	References
 	---------------------

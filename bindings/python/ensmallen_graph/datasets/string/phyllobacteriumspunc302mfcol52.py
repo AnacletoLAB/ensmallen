@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhyllobacteriumSpUnc302mfcol52.
+This file offers the methods to automatically retrieve the graph Phyllobacterium sp. UNC302MFCol52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhyllobacteriumSpUnc302mfcol52(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhyllobacteriumSpUnc302mfcol52 graph.
+    """Return new instance of the Phyllobacterium sp. UNC302MFCol52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhyllobacteriumSpUnc302mfcol52(
 
     Returns
     -----------------------
-    Instace of PhyllobacteriumSpUnc302mfcol52 graph.
+    Instace of Phyllobacterium sp. UNC302MFCol52 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulosimicrobiumFunkei.
+This file offers the methods to automatically retrieve the graph Cellulosimicrobium funkei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulosimicrobiumFunkei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulosimicrobiumFunkei graph.
+    """Return new instance of the Cellulosimicrobium funkei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulosimicrobiumFunkei(
 
     Returns
     -----------------------
-    Instace of CellulosimicrobiumFunkei graph.
+    Instace of Cellulosimicrobium funkei graph.
 
 	References
 	---------------------

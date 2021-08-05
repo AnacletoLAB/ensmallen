@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSp7243faa.
+This file offers the methods to automatically retrieve the graph Clostridium sp. 7243FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSp7243faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSp7243faa graph.
+    """Return new instance of the Clostridium sp. 7243FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSp7243faa(
 
     Returns
     -----------------------
-    Instace of ClostridiumSp7243faa graph.
+    Instace of Clostridium sp. 7243FAA graph.
 
 	References
 	---------------------

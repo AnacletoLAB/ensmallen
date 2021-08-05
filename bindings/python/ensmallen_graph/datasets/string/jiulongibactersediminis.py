@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JiulongibacterSediminis.
+This file offers the methods to automatically retrieve the graph Jiulongibacter sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JiulongibacterSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JiulongibacterSediminis graph.
+    """Return new instance of the Jiulongibacter sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JiulongibacterSediminis(
 
     Returns
     -----------------------
-    Instace of JiulongibacterSediminis graph.
+    Instace of Jiulongibacter sediminis graph.
 
 	References
 	---------------------

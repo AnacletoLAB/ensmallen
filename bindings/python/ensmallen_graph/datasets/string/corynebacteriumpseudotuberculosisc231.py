@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPseudotuberculosisC231.
+This file offers the methods to automatically retrieve the graph Corynebacterium pseudotuberculosis C231.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPseudotuberculosisC231(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPseudotuberculosisC231 graph.
+    """Return new instance of the Corynebacterium pseudotuberculosis C231 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumPseudotuberculosisC231(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPseudotuberculosisC231 graph.
+    Instace of Corynebacterium pseudotuberculosis C231 graph.
 
 	References
 	---------------------

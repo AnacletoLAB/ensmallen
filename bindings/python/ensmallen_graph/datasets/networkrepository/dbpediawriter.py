@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaWriter.
+This file offers the methods to automatically retrieve the graph dbpedia-writer.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaWriter(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaWriter graph.
+    """Return new instance of the dbpedia-writer graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaWriter(
 
     Returns
     -----------------------
-    Instace of DbpediaWriter graph.
+    Instace of dbpedia-writer graph.
 
 	References
 	---------------------

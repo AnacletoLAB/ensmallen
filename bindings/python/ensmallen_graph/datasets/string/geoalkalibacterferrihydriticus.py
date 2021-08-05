@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeoalkalibacterFerrihydriticus.
+This file offers the methods to automatically retrieve the graph Geoalkalibacter ferrihydriticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeoalkalibacterFerrihydriticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeoalkalibacterFerrihydriticus graph.
+    """Return new instance of the Geoalkalibacter ferrihydriticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeoalkalibacterFerrihydriticus(
 
     Returns
     -----------------------
-    Instace of GeoalkalibacterFerrihydriticus graph.
+    Instace of Geoalkalibacter ferrihydriticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaMarginaleSt.
+This file offers the methods to automatically retrieve the graph Anaplasma marginale St..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaplasmaMarginaleSt(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaMarginaleSt graph.
+    """Return new instance of the Anaplasma marginale St. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaplasmaMarginaleSt(
 
     Returns
     -----------------------
-    Instace of AnaplasmaMarginaleSt graph.
+    Instace of Anaplasma marginale St. graph.
 
 	References
 	---------------------

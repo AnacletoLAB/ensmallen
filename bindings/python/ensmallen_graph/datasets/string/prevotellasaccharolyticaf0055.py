@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSaccharolyticaF0055.
+This file offers the methods to automatically retrieve the graph Prevotella saccharolytica F0055.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSaccharolyticaF0055(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSaccharolyticaF0055 graph.
+    """Return new instance of the Prevotella saccharolytica F0055 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSaccharolyticaF0055(
 
     Returns
     -----------------------
-    Instace of PrevotellaSaccharolyticaF0055 graph.
+    Instace of Prevotella saccharolytica F0055 graph.
 
 	References
 	---------------------

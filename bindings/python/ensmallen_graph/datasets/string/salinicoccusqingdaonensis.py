@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusQingdaonensis.
+This file offers the methods to automatically retrieve the graph Salinicoccus qingdaonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusQingdaonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusQingdaonensis graph.
+    """Return new instance of the Salinicoccus qingdaonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusQingdaonensis(
 
     Returns
     -----------------------
-    Instace of SalinicoccusQingdaonensis graph.
+    Instace of Salinicoccus qingdaonensis graph.
 
 	References
 	---------------------

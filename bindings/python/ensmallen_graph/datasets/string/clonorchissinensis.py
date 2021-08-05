@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClonorchisSinensis.
+This file offers the methods to automatically retrieve the graph Clonorchis sinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClonorchisSinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClonorchisSinensis graph.
+    """Return new instance of the Clonorchis sinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClonorchisSinensis(
 
     Returns
     -----------------------
-    Instace of ClonorchisSinensis graph.
+    Instace of Clonorchis sinensis graph.
 
 	References
 	---------------------

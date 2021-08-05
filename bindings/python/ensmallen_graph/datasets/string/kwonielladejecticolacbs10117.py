@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KwoniellaDejecticolaCbs10117.
+This file offers the methods to automatically retrieve the graph Kwoniella dejecticola CBS 10117.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KwoniellaDejecticolaCbs10117(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KwoniellaDejecticolaCbs10117 graph.
+    """Return new instance of the Kwoniella dejecticola CBS 10117 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KwoniellaDejecticolaCbs10117(
 
     Returns
     -----------------------
-    Instace of KwoniellaDejecticolaCbs10117 graph.
+    Instace of Kwoniella dejecticola CBS 10117 graph.
 
 	References
 	---------------------

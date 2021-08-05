@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyripristisMurdjan.
+This file offers the methods to automatically retrieve the graph Myripristis murdjan.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyripristisMurdjan(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyripristisMurdjan graph.
+    """Return new instance of the Myripristis murdjan graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MyripristisMurdjan(
 
     Returns
     -----------------------
-    Instace of MyripristisMurdjan graph.
+    Instace of Myripristis murdjan graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IchthyophthiriusMultifiliis.
+This file offers the methods to automatically retrieve the graph Ichthyophthirius multifiliis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IchthyophthiriusMultifiliis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IchthyophthiriusMultifiliis graph.
+    """Return new instance of the Ichthyophthirius multifiliis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IchthyophthiriusMultifiliis(
 
     Returns
     -----------------------
-    Instace of IchthyophthiriusMultifiliis graph.
+    Instace of Ichthyophthirius multifiliis graph.
 
 	References
 	---------------------

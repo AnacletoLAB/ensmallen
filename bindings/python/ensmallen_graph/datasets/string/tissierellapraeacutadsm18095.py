@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TissierellaPraeacutaDsm18095.
+This file offers the methods to automatically retrieve the graph Tissierella praeacuta DSM 18095.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TissierellaPraeacutaDsm18095(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TissierellaPraeacutaDsm18095 graph.
+    """Return new instance of the Tissierella praeacuta DSM 18095 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TissierellaPraeacutaDsm18095(
 
     Returns
     -----------------------
-    Instace of TissierellaPraeacutaDsm18095 graph.
+    Instace of Tissierella praeacuta DSM 18095 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TomitellaBiformata.
+This file offers the methods to automatically retrieve the graph Tomitella biformata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TomitellaBiformata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TomitellaBiformata graph.
+    """Return new instance of the Tomitella biformata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TomitellaBiformata(
 
     Returns
     -----------------------
-    Instace of TomitellaBiformata graph.
+    Instace of Tomitella biformata graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKoreensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKoreensis graph.
+    """Return new instance of the Lactobacillus koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKoreensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusKoreensis graph.
+    Instace of Lactobacillus koreensis graph.
 
 	References
 	---------------------

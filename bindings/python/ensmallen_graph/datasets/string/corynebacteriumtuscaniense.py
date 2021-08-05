@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumTuscaniense.
+This file offers the methods to automatically retrieve the graph Corynebacterium tuscaniense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumTuscaniense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumTuscaniense graph.
+    """Return new instance of the Corynebacterium tuscaniense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumTuscaniense(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumTuscaniense graph.
+    Instace of Corynebacterium tuscaniense graph.
 
 	References
 	---------------------

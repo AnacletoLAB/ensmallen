@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OnchocercaFlexuosa.
+This file offers the methods to automatically retrieve the graph Onchocerca flexuosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OnchocercaFlexuosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OnchocercaFlexuosa graph.
+    """Return new instance of the Onchocerca flexuosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OnchocercaFlexuosa(
 
     Returns
     -----------------------
-    Instace of OnchocercaFlexuosa graph.
+    Instace of Onchocerca flexuosa graph.
 
 	References
 	---------------------

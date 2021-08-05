@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseicitreumAntarcticum.
+This file offers the methods to automatically retrieve the graph Roseicitreum antarcticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseicitreumAntarcticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseicitreumAntarcticum graph.
+    """Return new instance of the Roseicitreum antarcticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseicitreumAntarcticum(
 
     Returns
     -----------------------
-    Instace of RoseicitreumAntarcticum graph.
+    Instace of Roseicitreum antarcticum graph.
 
 	References
 	---------------------

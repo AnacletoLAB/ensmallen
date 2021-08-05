@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioGenomosp.
+This file offers the methods to automatically retrieve the graph Vibrio genomosp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioGenomosp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioGenomosp graph.
+    """Return new instance of the Vibrio genomosp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioGenomosp(
 
     Returns
     -----------------------
-    Instace of VibrioGenomosp graph.
+    Instace of Vibrio genomosp. graph.
 
 	References
 	---------------------

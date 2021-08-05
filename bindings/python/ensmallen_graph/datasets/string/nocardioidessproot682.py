@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpRoot682.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. Root682.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpRoot682(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpRoot682 graph.
+    """Return new instance of the Nocardioides sp. Root682 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpRoot682(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpRoot682 graph.
+    Instace of Nocardioides sp. Root682 graph.
 
 	References
 	---------------------

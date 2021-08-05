@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilusMethylotrophus.
+This file offers the methods to automatically retrieve the graph Methylophilus methylotrophus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilusMethylotrophus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilusMethylotrophus graph.
+    """Return new instance of the Methylophilus methylotrophus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophilusMethylotrophus(
 
     Returns
     -----------------------
-    Instace of MethylophilusMethylotrophus graph.
+    Instace of Methylophilus methylotrophus graph.
 
 	References
 	---------------------

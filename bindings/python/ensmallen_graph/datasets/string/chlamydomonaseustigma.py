@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydomonasEustigma.
+This file offers the methods to automatically retrieve the graph Chlamydomonas eustigma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydomonasEustigma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydomonasEustigma graph.
+    """Return new instance of the Chlamydomonas eustigma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydomonasEustigma(
 
     Returns
     -----------------------
-    Instace of ChlamydomonasEustigma graph.
+    Instace of Chlamydomonas eustigma graph.
 
 	References
 	---------------------

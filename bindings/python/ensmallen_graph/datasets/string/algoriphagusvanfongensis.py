@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusVanfongensis.
+This file offers the methods to automatically retrieve the graph Algoriphagus vanfongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusVanfongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusVanfongensis graph.
+    """Return new instance of the Algoriphagus vanfongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgoriphagusVanfongensis(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusVanfongensis graph.
+    Instace of Algoriphagus vanfongensis graph.
 
 	References
 	---------------------

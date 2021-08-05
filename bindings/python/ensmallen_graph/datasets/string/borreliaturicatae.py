@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaTuricatae.
+This file offers the methods to automatically retrieve the graph Borrelia turicatae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaTuricatae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaTuricatae graph.
+    """Return new instance of the Borrelia turicatae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaTuricatae(
 
     Returns
     -----------------------
-    Instace of BorreliaTuricatae graph.
+    Instace of Borrelia turicatae graph.
 
 	References
 	---------------------

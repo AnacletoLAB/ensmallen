@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoruegeriaMarinistellae.
+This file offers the methods to automatically retrieve the graph Pseudoruegeria marinistellae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoruegeriaMarinistellae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoruegeriaMarinistellae graph.
+    """Return new instance of the Pseudoruegeria marinistellae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoruegeriaMarinistellae(
 
     Returns
     -----------------------
-    Instace of PseudoruegeriaMarinistellae graph.
+    Instace of Pseudoruegeria marinistellae graph.
 
 	References
 	---------------------

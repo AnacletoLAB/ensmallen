@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterChinhatensis.
+This file offers the methods to automatically retrieve the graph Pontibacter chinhatensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterChinhatensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterChinhatensis graph.
+    """Return new instance of the Pontibacter chinhatensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterChinhatensis(
 
     Returns
     -----------------------
-    Instace of PontibacterChinhatensis graph.
+    Instace of Pontibacter chinhatensis graph.
 
 	References
 	---------------------

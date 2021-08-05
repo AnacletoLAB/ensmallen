@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolyngbyaSpHensonii.
+This file offers the methods to automatically retrieve the graph Leptolyngbya sp. hensonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolyngbyaSpHensonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolyngbyaSpHensonii graph.
+    """Return new instance of the Leptolyngbya sp. hensonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptolyngbyaSpHensonii(
 
     Returns
     -----------------------
-    Instace of LeptolyngbyaSpHensonii graph.
+    Instace of Leptolyngbya sp. hensonii graph.
 
 	References
 	---------------------

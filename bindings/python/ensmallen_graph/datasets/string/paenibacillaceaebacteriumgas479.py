@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillaceaeBacteriumGas479.
+This file offers the methods to automatically retrieve the graph Paenibacillaceae bacterium GAS479.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillaceaeBacteriumGas479(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillaceaeBacteriumGas479 graph.
+    """Return new instance of the Paenibacillaceae bacterium GAS479 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillaceaeBacteriumGas479(
 
     Returns
     -----------------------
-    Instace of PaenibacillaceaeBacteriumGas479 graph.
+    Instace of Paenibacillaceae bacterium GAS479 graph.
 
 	References
 	---------------------

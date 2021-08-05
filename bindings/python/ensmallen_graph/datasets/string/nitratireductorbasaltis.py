@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratireductorBasaltis.
+This file offers the methods to automatically retrieve the graph Nitratireductor basaltis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratireductorBasaltis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratireductorBasaltis graph.
+    """Return new instance of the Nitratireductor basaltis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitratireductorBasaltis(
 
     Returns
     -----------------------
-    Instace of NitratireductorBasaltis graph.
+    Instace of Nitratireductor basaltis graph.
 
 	References
 	---------------------

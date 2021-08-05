@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumLentumNbrc107847.
+This file offers the methods to automatically retrieve the graph Novosphingobium lentum NBRC 107847.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumLentumNbrc107847(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumLentumNbrc107847 graph.
+    """Return new instance of the Novosphingobium lentum NBRC 107847 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumLentumNbrc107847(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumLentumNbrc107847 graph.
+    Instace of Novosphingobium lentum NBRC 107847 graph.
 
 	References
 	---------------------

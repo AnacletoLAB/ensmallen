@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LitorimicrobiumTaeanense.
+This file offers the methods to automatically retrieve the graph Litorimicrobium taeanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LitorimicrobiumTaeanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LitorimicrobiumTaeanense graph.
+    """Return new instance of the Litorimicrobium taeanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LitorimicrobiumTaeanense(
 
     Returns
     -----------------------
-    Instace of LitorimicrobiumTaeanense graph.
+    Instace of Litorimicrobium taeanense graph.
 
 	References
 	---------------------

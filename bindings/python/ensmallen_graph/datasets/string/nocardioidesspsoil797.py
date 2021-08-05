@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpSoil797.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. Soil797.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpSoil797(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpSoil797 graph.
+    """Return new instance of the Nocardioides sp. Soil797 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpSoil797(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpSoil797 graph.
+    Instace of Nocardioides sp. Soil797 graph.
 
 	References
 	---------------------

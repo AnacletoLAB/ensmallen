@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusNidulansFgscA4.
+This file offers the methods to automatically retrieve the graph Aspergillus nidulans FGSC A4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusNidulansFgscA4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusNidulansFgscA4 graph.
+    """Return new instance of the Aspergillus nidulans FGSC A4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusNidulansFgscA4(
 
     Returns
     -----------------------
-    Instace of AspergillusNidulansFgscA4 graph.
+    Instace of Aspergillus nidulans FGSC A4 graph.
 
 	References
 	---------------------

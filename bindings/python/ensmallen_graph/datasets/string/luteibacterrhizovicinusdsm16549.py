@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteibacterRhizovicinusDsm16549.
+This file offers the methods to automatically retrieve the graph Luteibacter rhizovicinus DSM 16549.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteibacterRhizovicinusDsm16549(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteibacterRhizovicinusDsm16549 graph.
+    """Return new instance of the Luteibacter rhizovicinus DSM 16549 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteibacterRhizovicinusDsm16549(
 
     Returns
     -----------------------
-    Instace of LuteibacterRhizovicinusDsm16549 graph.
+    Instace of Luteibacter rhizovicinus DSM 16549 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HanseniasporaUvarum.
+This file offers the methods to automatically retrieve the graph Hanseniaspora uvarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HanseniasporaUvarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HanseniasporaUvarum graph.
+    """Return new instance of the Hanseniaspora uvarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HanseniasporaUvarum(
 
     Returns
     -----------------------
-    Instace of HanseniasporaUvarum graph.
+    Instace of Hanseniaspora uvarum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpPhil15.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. Phil15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpPhil15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpPhil15 graph.
+    """Return new instance of the Ruminococcus sp. Phil15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusSpPhil15(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpPhil15 graph.
+    Instace of Ruminococcus sp. Phil15 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlenkiaSoli.
+This file offers the methods to automatically retrieve the graph Klenkia soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlenkiaSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlenkiaSoli graph.
+    """Return new instance of the Klenkia soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlenkiaSoli(
 
     Returns
     -----------------------
-    Instace of KlenkiaSoli graph.
+    Instace of Klenkia soli graph.
 
 	References
 	---------------------

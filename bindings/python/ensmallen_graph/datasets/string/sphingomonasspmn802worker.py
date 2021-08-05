@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpMn802worker.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Mn802worker.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpMn802worker(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpMn802worker graph.
+    """Return new instance of the Sphingomonas sp. Mn802worker graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasSpMn802worker(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpMn802worker graph.
+    Instace of Sphingomonas sp. Mn802worker graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidibacillusDecaturensis.
+This file offers the methods to automatically retrieve the graph Tepidibacillus decaturensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidibacillusDecaturensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidibacillusDecaturensis graph.
+    """Return new instance of the Tepidibacillus decaturensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TepidibacillusDecaturensis(
 
     Returns
     -----------------------
-    Instace of TepidibacillusDecaturensis graph.
+    Instace of Tepidibacillus decaturensis graph.
 
 	References
 	---------------------

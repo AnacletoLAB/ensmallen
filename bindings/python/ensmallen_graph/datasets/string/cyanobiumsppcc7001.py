@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobiumSpPcc7001.
+This file offers the methods to automatically retrieve the graph Cyanobium sp. PCC7001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobiumSpPcc7001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobiumSpPcc7001 graph.
+    """Return new instance of the Cyanobium sp. PCC7001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyanobiumSpPcc7001(
 
     Returns
     -----------------------
-    Instace of CyanobiumSpPcc7001 graph.
+    Instace of Cyanobium sp. PCC7001 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusHerbarius.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus herbarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusHerbarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusHerbarius graph.
+    """Return new instance of the Alicyclobacillus herbarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicyclobacillusHerbarius(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusHerbarius graph.
+    Instace of Alicyclobacillus herbarius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DasaniaMarina.
+This file offers the methods to automatically retrieve the graph Dasania marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DasaniaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DasaniaMarina graph.
+    """Return new instance of the Dasania marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DasaniaMarina(
 
     Returns
     -----------------------
-    Instace of DasaniaMarina graph.
+    Instace of Dasania marina graph.
 
 	References
 	---------------------

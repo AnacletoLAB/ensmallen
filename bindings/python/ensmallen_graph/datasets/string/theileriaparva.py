@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheileriaParva.
+This file offers the methods to automatically retrieve the graph Theileria parva.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheileriaParva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheileriaParva graph.
+    """Return new instance of the Theileria parva graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TheileriaParva(
 
     Returns
     -----------------------
-    Instace of TheileriaParva graph.
+    Instace of Theileria parva graph.
 
 	References
 	---------------------

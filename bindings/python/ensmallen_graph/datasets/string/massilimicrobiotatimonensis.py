@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassilimicrobiotaTimonensis.
+This file offers the methods to automatically retrieve the graph Massilimicrobiota timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassilimicrobiotaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassilimicrobiotaTimonensis graph.
+    """Return new instance of the Massilimicrobiota timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassilimicrobiotaTimonensis(
 
     Returns
     -----------------------
-    Instace of MassilimicrobiotaTimonensis graph.
+    Instace of Massilimicrobiota timonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterSpA7a.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter sp. A7A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterSpA7a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterSpA7a graph.
+    """Return new instance of the Thermoanaerobacter sp. A7A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerobacterSpA7a(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterSpA7a graph.
+    Instace of Thermoanaerobacter sp. A7A graph.
 
 	References
 	---------------------

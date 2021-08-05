@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RudanellaLutea.
+This file offers the methods to automatically retrieve the graph Rudanella lutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RudanellaLutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RudanellaLutea graph.
+    """Return new instance of the Rudanella lutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RudanellaLutea(
 
     Returns
     -----------------------
-    Instace of RudanellaLutea graph.
+    Instace of Rudanella lutea graph.
 
 	References
 	---------------------

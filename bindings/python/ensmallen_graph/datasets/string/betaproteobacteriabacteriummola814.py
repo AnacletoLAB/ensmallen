@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumMola814.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium MOLA814.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumMola814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumMola814 graph.
+    """Return new instance of the Betaproteobacteria bacterium MOLA814 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BetaproteobacteriaBacteriumMola814(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumMola814 graph.
+    Instace of Betaproteobacteria bacterium MOLA814 graph.
 
 	References
 	---------------------

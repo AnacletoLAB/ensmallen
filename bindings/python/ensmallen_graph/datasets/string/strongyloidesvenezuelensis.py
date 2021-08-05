@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StrongyloidesVenezuelensis.
+This file offers the methods to automatically retrieve the graph Strongyloides venezuelensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StrongyloidesVenezuelensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StrongyloidesVenezuelensis graph.
+    """Return new instance of the Strongyloides venezuelensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StrongyloidesVenezuelensis(
 
     Returns
     -----------------------
-    Instace of StrongyloidesVenezuelensis graph.
+    Instace of Strongyloides venezuelensis graph.
 
 	References
 	---------------------

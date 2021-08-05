@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SclerotiniaSclerotiorum.
+This file offers the methods to automatically retrieve the graph Sclerotinia sclerotiorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SclerotiniaSclerotiorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SclerotiniaSclerotiorum graph.
+    """Return new instance of the Sclerotinia sclerotiorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SclerotiniaSclerotiorum(
 
     Returns
     -----------------------
-    Instace of SclerotiniaSclerotiorum graph.
+    Instace of Sclerotinia sclerotiorum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IlyobacterPolytropus.
+This file offers the methods to automatically retrieve the graph Ilyobacter polytropus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IlyobacterPolytropus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IlyobacterPolytropus graph.
+    """Return new instance of the Ilyobacter polytropus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IlyobacterPolytropus(
 
     Returns
     -----------------------
-    Instace of IlyobacterPolytropus graph.
+    Instace of Ilyobacter polytropus graph.
 
 	References
 	---------------------

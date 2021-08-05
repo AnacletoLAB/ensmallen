@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpAcn1ag.
+This file offers the methods to automatically retrieve the graph Frankia sp. ACN1ag.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpAcn1ag(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpAcn1ag graph.
+    """Return new instance of the Frankia sp. ACN1ag graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrankiaSpAcn1ag(
 
     Returns
     -----------------------
-    Instace of FrankiaSpAcn1ag graph.
+    Instace of Frankia sp. ACN1ag graph.
 
 	References
 	---------------------

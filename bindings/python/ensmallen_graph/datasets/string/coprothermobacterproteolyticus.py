@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprothermobacterProteolyticus.
+This file offers the methods to automatically retrieve the graph Coprothermobacter proteolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprothermobacterProteolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprothermobacterProteolyticus graph.
+    """Return new instance of the Coprothermobacter proteolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoprothermobacterProteolyticus(
 
     Returns
     -----------------------
-    Instace of CoprothermobacterProteolyticus graph.
+    Instace of Coprothermobacter proteolyticus graph.
 
 	References
 	---------------------

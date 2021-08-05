@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaTropica.
+This file offers the methods to automatically retrieve the graph Paraburkholderia tropica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaTropica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaTropica graph.
+    """Return new instance of the Paraburkholderia tropica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaTropica(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaTropica graph.
+    Instace of Paraburkholderia tropica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumAquae.
+This file offers the methods to automatically retrieve the graph Photobacterium aquae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumAquae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumAquae graph.
+    """Return new instance of the Photobacterium aquae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumAquae(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumAquae graph.
+    Instace of Photobacterium aquae graph.
 
 	References
 	---------------------

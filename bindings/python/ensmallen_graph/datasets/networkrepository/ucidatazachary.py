@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UcidataZachary.
+This file offers the methods to automatically retrieve the graph ucidata-zachary.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def UcidataZachary(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UcidataZachary graph.
+    """Return new instance of the ucidata-zachary graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def UcidataZachary(
 
     Returns
     -----------------------
-    Instace of UcidataZachary graph.
+    Instace of ucidata-zachary graph.
 
 	References
 	---------------------

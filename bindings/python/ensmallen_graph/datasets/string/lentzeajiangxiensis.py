@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentzeaJiangxiensis.
+This file offers the methods to automatically retrieve the graph Lentzea jiangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentzeaJiangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentzeaJiangxiensis graph.
+    """Return new instance of the Lentzea jiangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentzeaJiangxiensis(
 
     Returns
     -----------------------
-    Instace of LentzeaJiangxiensis graph.
+    Instace of Lentzea jiangxiensis graph.
 
 	References
 	---------------------

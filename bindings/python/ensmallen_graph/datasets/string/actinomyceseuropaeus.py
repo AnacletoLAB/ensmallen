@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesEuropaeus.
+This file offers the methods to automatically retrieve the graph Actinomyces europaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesEuropaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesEuropaeus graph.
+    """Return new instance of the Actinomyces europaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesEuropaeus(
 
     Returns
     -----------------------
-    Instace of ActinomycesEuropaeus graph.
+    Instace of Actinomyces europaeus graph.
 
 	References
 	---------------------

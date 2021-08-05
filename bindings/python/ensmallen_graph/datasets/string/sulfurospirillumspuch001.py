@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumSpUch001.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum sp. UCH001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumSpUch001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumSpUch001 graph.
+    """Return new instance of the Sulfurospirillum sp. UCH001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurospirillumSpUch001(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumSpUch001 graph.
+    Instace of Sulfurospirillum sp. UCH001 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSpC6a8.
+This file offers the methods to automatically retrieve the graph Treponema sp. C6A8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSpC6a8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSpC6a8 graph.
+    """Return new instance of the Treponema sp. C6A8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaSpC6a8(
 
     Returns
     -----------------------
-    Instace of TreponemaSpC6a8 graph.
+    Instace of Treponema sp. C6A8 graph.
 
 	References
 	---------------------

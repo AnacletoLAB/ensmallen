@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerticilliumLongisporum.
+This file offers the methods to automatically retrieve the graph Verticillium longisporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerticilliumLongisporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerticilliumLongisporum graph.
+    """Return new instance of the Verticillium longisporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerticilliumLongisporum(
 
     Returns
     -----------------------
-    Instace of VerticilliumLongisporum graph.
+    Instace of Verticillium longisporum graph.
 
 	References
 	---------------------

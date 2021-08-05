@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TilletiaWalkeri.
+This file offers the methods to automatically retrieve the graph Tilletia walkeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TilletiaWalkeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TilletiaWalkeri graph.
+    """Return new instance of the Tilletia walkeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TilletiaWalkeri(
 
     Returns
     -----------------------
-    Instace of TilletiaWalkeri graph.
+    Instace of Tilletia walkeri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaprolegniaParasiticaCbs22365.
+This file offers the methods to automatically retrieve the graph Saprolegnia parasitica CBS 223.65.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaprolegniaParasiticaCbs22365(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaprolegniaParasiticaCbs22365 graph.
+    """Return new instance of the Saprolegnia parasitica CBS 223.65 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaprolegniaParasiticaCbs22365(
 
     Returns
     -----------------------
-    Instace of SaprolegniaParasiticaCbs22365 graph.
+    Instace of Saprolegnia parasitica CBS 223.65 graph.
 
 	References
 	---------------------

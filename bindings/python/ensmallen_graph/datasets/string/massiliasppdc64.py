@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpPdc64.
+This file offers the methods to automatically retrieve the graph Massilia sp. PDC64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpPdc64(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpPdc64 graph.
+    """Return new instance of the Massilia sp. PDC64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpPdc64(
 
     Returns
     -----------------------
-    Instace of MassiliaSpPdc64 graph.
+    Instace of Massilia sp. PDC64 graph.
 
 	References
 	---------------------

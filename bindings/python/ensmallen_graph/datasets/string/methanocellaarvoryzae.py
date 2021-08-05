@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocellaArvoryzae.
+This file offers the methods to automatically retrieve the graph Methanocella arvoryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocellaArvoryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocellaArvoryzae graph.
+    """Return new instance of the Methanocella arvoryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocellaArvoryzae(
 
     Returns
     -----------------------
-    Instace of MethanocellaArvoryzae graph.
+    Instace of Methanocella arvoryzae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpFxj1172.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. FXJ1.172.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpFxj1172(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpFxj1172 graph.
+    """Return new instance of the Streptomyces sp. FXJ1.172 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpFxj1172(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpFxj1172 graph.
+    Instace of Streptomyces sp. FXJ1.172 graph.
 
 	References
 	---------------------

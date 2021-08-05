@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Libimseti.
+This file offers the methods to automatically retrieve the graph libimseti.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Libimseti(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Libimseti graph.
+    """Return new instance of the libimseti graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Libimseti(
 
     Returns
     -----------------------
-    Instace of Libimseti graph.
+    Instace of libimseti graph.
 
 	References
 	---------------------

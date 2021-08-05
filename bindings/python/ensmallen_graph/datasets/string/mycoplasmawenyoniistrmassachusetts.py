@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaWenyoniiStrMassachusetts.
+This file offers the methods to automatically retrieve the graph Mycoplasma wenyonii str. Massachusetts.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaWenyoniiStrMassachusetts(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaWenyoniiStrMassachusetts graph.
+    """Return new instance of the Mycoplasma wenyonii str. Massachusetts graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaWenyoniiStrMassachusetts(
 
     Returns
     -----------------------
-    Instace of MycoplasmaWenyoniiStrMassachusetts graph.
+    Instace of Mycoplasma wenyonii str. Massachusetts graph.
 
 	References
 	---------------------

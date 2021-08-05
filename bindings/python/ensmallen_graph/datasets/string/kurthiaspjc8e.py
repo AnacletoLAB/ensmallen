@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KurthiaSpJc8e.
+This file offers the methods to automatically retrieve the graph Kurthia sp. JC8E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KurthiaSpJc8e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KurthiaSpJc8e graph.
+    """Return new instance of the Kurthia sp. JC8E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KurthiaSpJc8e(
 
     Returns
     -----------------------
-    Instace of KurthiaSpJc8e graph.
+    Instace of Kurthia sp. JC8E graph.
 
 	References
 	---------------------

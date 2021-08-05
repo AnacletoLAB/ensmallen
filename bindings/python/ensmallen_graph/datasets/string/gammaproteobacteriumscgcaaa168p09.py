@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumScgcAaa168P09.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium SCGC AAA168-P09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumScgcAaa168P09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumScgcAaa168P09 graph.
+    """Return new instance of the gamma proteobacterium SCGC AAA168-P09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumScgcAaa168P09(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumScgcAaa168P09 graph.
+    Instace of gamma proteobacterium SCGC AAA168-P09 graph.
 
 	References
 	---------------------

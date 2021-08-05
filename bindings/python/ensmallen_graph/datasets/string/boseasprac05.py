@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpRac05.
+This file offers the methods to automatically retrieve the graph Bosea sp. RAC05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpRac05(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpRac05 graph.
+    """Return new instance of the Bosea sp. RAC05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpRac05(
 
     Returns
     -----------------------
-    Instace of BoseaSpRac05 graph.
+    Instace of Bosea sp. RAC05 graph.
 
 	References
 	---------------------

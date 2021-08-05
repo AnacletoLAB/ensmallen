@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TriboliumCastaneum.
+This file offers the methods to automatically retrieve the graph Tribolium castaneum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TriboliumCastaneum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TriboliumCastaneum graph.
+    """Return new instance of the Tribolium castaneum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TriboliumCastaneum(
 
     Returns
     -----------------------
-    Instace of TriboliumCastaneum graph.
+    Instace of Tribolium castaneum graph.
 
 	References
 	---------------------

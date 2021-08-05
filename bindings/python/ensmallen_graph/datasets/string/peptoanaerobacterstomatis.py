@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoanaerobacterStomatis.
+This file offers the methods to automatically retrieve the graph Peptoanaerobacter stomatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoanaerobacterStomatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoanaerobacterStomatis graph.
+    """Return new instance of the Peptoanaerobacter stomatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoanaerobacterStomatis(
 
     Returns
     -----------------------
-    Instace of PeptoanaerobacterStomatis graph.
+    Instace of Peptoanaerobacter stomatis graph.
 
 	References
 	---------------------

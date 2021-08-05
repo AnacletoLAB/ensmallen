@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusIctaluri.
+This file offers the methods to automatically retrieve the graph Streptococcus ictaluri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusIctaluri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusIctaluri graph.
+    """Return new instance of the Streptococcus ictaluri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusIctaluri(
 
     Returns
     -----------------------
-    Instace of StreptococcusIctaluri graph.
+    Instace of Streptococcus ictaluri graph.
 
 	References
 	---------------------

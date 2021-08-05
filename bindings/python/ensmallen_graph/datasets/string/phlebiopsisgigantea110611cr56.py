@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhlebiopsisGigantea110611Cr56.
+This file offers the methods to automatically retrieve the graph Phlebiopsis gigantea 11061_1 CR5-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhlebiopsisGigantea110611Cr56(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhlebiopsisGigantea110611Cr56 graph.
+    """Return new instance of the Phlebiopsis gigantea 11061_1 CR5-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhlebiopsisGigantea110611Cr56(
 
     Returns
     -----------------------
-    Instace of PhlebiopsisGigantea110611Cr56 graph.
+    Instace of Phlebiopsis gigantea 11061_1 CR5-6 graph.
 
 	References
 	---------------------

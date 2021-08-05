@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLoiseleuriae.
+This file offers the methods to automatically retrieve the graph Bacillus loiseleuriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLoiseleuriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLoiseleuriae graph.
+    """Return new instance of the Bacillus loiseleuriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusLoiseleuriae(
 
     Returns
     -----------------------
-    Instace of BacillusLoiseleuriae graph.
+    Instace of Bacillus loiseleuriae graph.
 
 	References
 	---------------------

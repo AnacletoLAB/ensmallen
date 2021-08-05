@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FacklamiaSourekii.
+This file offers the methods to automatically retrieve the graph Facklamia sourekii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FacklamiaSourekii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FacklamiaSourekii graph.
+    """Return new instance of the Facklamia sourekii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FacklamiaSourekii(
 
     Returns
     -----------------------
-    Instace of FacklamiaSourekii graph.
+    Instace of Facklamia sourekii graph.
 
 	References
 	---------------------

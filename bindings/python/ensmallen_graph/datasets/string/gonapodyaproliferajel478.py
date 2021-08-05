@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GonapodyaProliferaJel478.
+This file offers the methods to automatically retrieve the graph Gonapodya prolifera JEL478.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GonapodyaProliferaJel478(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GonapodyaProliferaJel478 graph.
+    """Return new instance of the Gonapodya prolifera JEL478 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GonapodyaProliferaJel478(
 
     Returns
     -----------------------
-    Instace of GonapodyaProliferaJel478 graph.
+    Instace of Gonapodya prolifera JEL478 graph.
 
 	References
 	---------------------

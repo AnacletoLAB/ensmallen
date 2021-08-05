@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactonifactorLongoviformisDsm17459.
+This file offers the methods to automatically retrieve the graph Lactonifactor longoviformis DSM 17459.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactonifactorLongoviformisDsm17459(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactonifactorLongoviformisDsm17459 graph.
+    """Return new instance of the Lactonifactor longoviformis DSM 17459 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactonifactorLongoviformisDsm17459(
 
     Returns
     -----------------------
-    Instace of LactonifactorLongoviformisDsm17459 graph.
+    Instace of Lactonifactor longoviformis DSM 17459 graph.
 
 	References
 	---------------------

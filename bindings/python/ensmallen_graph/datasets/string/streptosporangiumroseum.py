@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptosporangiumRoseum.
+This file offers the methods to automatically retrieve the graph Streptosporangium roseum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptosporangiumRoseum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptosporangiumRoseum graph.
+    """Return new instance of the Streptosporangium roseum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptosporangiumRoseum(
 
     Returns
     -----------------------
-    Instace of StreptosporangiumRoseum graph.
+    Instace of Streptosporangium roseum graph.
 
 	References
 	---------------------

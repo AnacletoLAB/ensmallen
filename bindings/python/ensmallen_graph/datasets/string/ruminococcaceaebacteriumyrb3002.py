@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumYrb3002.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium YRB3002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumYrb3002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumYrb3002 graph.
+    """Return new instance of the Ruminococcaceae bacterium YRB3002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumYrb3002(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumYrb3002 graph.
+    Instace of Ruminococcaceae bacterium YRB3002 graph.
 
 	References
 	---------------------

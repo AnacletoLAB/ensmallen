@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKullabergensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus kullabergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKullabergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKullabergensis graph.
+    """Return new instance of the Lactobacillus kullabergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKullabergensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusKullabergensis graph.
+    Instace of Lactobacillus kullabergensis graph.
 
 	References
 	---------------------

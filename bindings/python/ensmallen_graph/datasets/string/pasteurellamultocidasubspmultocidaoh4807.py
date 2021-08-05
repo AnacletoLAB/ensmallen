@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaMultocidaSubspMultocidaOh4807.
+This file offers the methods to automatically retrieve the graph Pasteurella multocida subsp. multocida OH4807.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaMultocidaSubspMultocidaOh4807(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaMultocidaSubspMultocidaOh4807 graph.
+    """Return new instance of the Pasteurella multocida subsp. multocida OH4807 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PasteurellaMultocidaSubspMultocidaOh4807(
 
     Returns
     -----------------------
-    Instace of PasteurellaMultocidaSubspMultocidaOh4807 graph.
+    Instace of Pasteurella multocida subsp. multocida OH4807 graph.
 
 	References
 	---------------------

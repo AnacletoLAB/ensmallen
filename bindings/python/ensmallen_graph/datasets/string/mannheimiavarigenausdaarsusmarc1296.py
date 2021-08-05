@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaVarigenaUsdaarsusmarc1296.
+This file offers the methods to automatically retrieve the graph Mannheimia varigena USDAARSUSMARC1296.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaVarigenaUsdaarsusmarc1296(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaVarigenaUsdaarsusmarc1296 graph.
+    """Return new instance of the Mannheimia varigena USDAARSUSMARC1296 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MannheimiaVarigenaUsdaarsusmarc1296(
 
     Returns
     -----------------------
-    Instace of MannheimiaVarigenaUsdaarsusmarc1296 graph.
+    Instace of Mannheimia varigena USDAARSUSMARC1296 graph.
 
 	References
 	---------------------

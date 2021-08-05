@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaTransvalensis.
+This file offers the methods to automatically retrieve the graph Nocardia transvalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaTransvalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaTransvalensis graph.
+    """Return new instance of the Nocardia transvalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaTransvalensis(
 
     Returns
     -----------------------
-    Instace of NocardiaTransvalensis graph.
+    Instace of Nocardia transvalensis graph.
 
 	References
 	---------------------

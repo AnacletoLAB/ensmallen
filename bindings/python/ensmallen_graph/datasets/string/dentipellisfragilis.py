@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DentipellisFragilis.
+This file offers the methods to automatically retrieve the graph Dentipellis fragilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DentipellisFragilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DentipellisFragilis graph.
+    """Return new instance of the Dentipellis fragilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DentipellisFragilis(
 
     Returns
     -----------------------
-    Instace of DentipellisFragilis graph.
+    Instace of Dentipellis fragilis graph.
 
 	References
 	---------------------

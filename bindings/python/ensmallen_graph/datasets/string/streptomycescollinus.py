@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCollinus.
+This file offers the methods to automatically retrieve the graph Streptomyces collinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCollinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCollinus graph.
+    """Return new instance of the Streptomyces collinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCollinus(
 
     Returns
     -----------------------
-    Instace of StreptomycesCollinus graph.
+    Instace of Streptomyces collinus graph.
 
 	References
 	---------------------

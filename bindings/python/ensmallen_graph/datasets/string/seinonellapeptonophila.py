@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SeinonellaPeptonophila.
+This file offers the methods to automatically retrieve the graph Seinonella peptonophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SeinonellaPeptonophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SeinonellaPeptonophila graph.
+    """Return new instance of the Seinonella peptonophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SeinonellaPeptonophila(
 
     Returns
     -----------------------
-    Instace of SeinonellaPeptonophila graph.
+    Instace of Seinonella peptonophila graph.
 
 	References
 	---------------------

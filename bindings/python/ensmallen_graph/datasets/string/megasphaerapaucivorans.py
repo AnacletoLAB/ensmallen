@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraPaucivorans.
+This file offers the methods to automatically retrieve the graph Megasphaera paucivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraPaucivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraPaucivorans graph.
+    """Return new instance of the Megasphaera paucivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MegasphaeraPaucivorans(
 
     Returns
     -----------------------
-    Instace of MegasphaeraPaucivorans graph.
+    Instace of Megasphaera paucivorans graph.
 
 	References
 	---------------------

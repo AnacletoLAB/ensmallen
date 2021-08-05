@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminobacterHydrogenoformansDsm2784.
+This file offers the methods to automatically retrieve the graph Acidaminobacter hydrogenoformans DSM 2784.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminobacterHydrogenoformansDsm2784(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminobacterHydrogenoformansDsm2784 graph.
+    """Return new instance of the Acidaminobacter hydrogenoformans DSM 2784 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidaminobacterHydrogenoformansDsm2784(
 
     Returns
     -----------------------
-    Instace of AcidaminobacterHydrogenoformansDsm2784 graph.
+    Instace of Acidaminobacter hydrogenoformans DSM 2784 graph.
 
 	References
 	---------------------

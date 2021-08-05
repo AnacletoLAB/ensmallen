@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWallbacteriaBacteriumGwc24935.
+This file offers the methods to automatically retrieve the graph Candidatus Wallbacteria bacterium GWC2_49_35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWallbacteriaBacteriumGwc24935(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWallbacteriaBacteriumGwc24935 graph.
+    """Return new instance of the Candidatus Wallbacteria bacterium GWC2_49_35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWallbacteriaBacteriumGwc24935(
 
     Returns
     -----------------------
-    Instace of CandidatusWallbacteriaBacteriumGwc24935 graph.
+    Instace of Candidatus Wallbacteria bacterium GWC2_49_35 graph.
 
 	References
 	---------------------

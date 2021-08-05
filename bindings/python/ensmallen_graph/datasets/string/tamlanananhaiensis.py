@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TamlanaNanhaiensis.
+This file offers the methods to automatically retrieve the graph Tamlana nanhaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TamlanaNanhaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TamlanaNanhaiensis graph.
+    """Return new instance of the Tamlana nanhaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TamlanaNanhaiensis(
 
     Returns
     -----------------------
-    Instace of TamlanaNanhaiensis graph.
+    Instace of Tamlana nanhaiensis graph.
 
 	References
 	---------------------

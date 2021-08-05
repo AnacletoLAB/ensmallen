@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HugenholtziaRoseolaDsm9546.
+This file offers the methods to automatically retrieve the graph Hugenholtzia roseola DSM 9546.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HugenholtziaRoseolaDsm9546(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HugenholtziaRoseolaDsm9546 graph.
+    """Return new instance of the Hugenholtzia roseola DSM 9546 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HugenholtziaRoseolaDsm9546(
 
     Returns
     -----------------------
-    Instace of HugenholtziaRoseolaDsm9546 graph.
+    Instace of Hugenholtzia roseola DSM 9546 graph.
 
 	References
 	---------------------

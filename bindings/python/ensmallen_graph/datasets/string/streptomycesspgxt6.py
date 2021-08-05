@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpGxt6.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. GXT6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpGxt6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpGxt6 graph.
+    """Return new instance of the Streptomyces sp. GXT6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpGxt6(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpGxt6 graph.
+    Instace of Streptomyces sp. GXT6 graph.
 
 	References
 	---------------------

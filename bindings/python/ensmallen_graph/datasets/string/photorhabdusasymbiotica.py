@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotorhabdusAsymbiotica.
+This file offers the methods to automatically retrieve the graph Photorhabdus asymbiotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotorhabdusAsymbiotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotorhabdusAsymbiotica graph.
+    """Return new instance of the Photorhabdus asymbiotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotorhabdusAsymbiotica(
 
     Returns
     -----------------------
-    Instace of PhotorhabdusAsymbiotica graph.
+    Instace of Photorhabdus asymbiotica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusSpPamc21323.
+This file offers the methods to automatically retrieve the graph Planococcus sp. PAMC21323.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusSpPamc21323(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusSpPamc21323 graph.
+    """Return new instance of the Planococcus sp. PAMC21323 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanococcusSpPamc21323(
 
     Returns
     -----------------------
-    Instace of PlanococcusSpPamc21323 graph.
+    Instace of Planococcus sp. PAMC21323 graph.
 
 	References
 	---------------------

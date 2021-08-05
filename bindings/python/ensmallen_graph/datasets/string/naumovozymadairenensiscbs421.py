@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NaumovozymaDairenensisCbs421.
+This file offers the methods to automatically retrieve the graph Naumovozyma dairenensis CBS 421.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NaumovozymaDairenensisCbs421(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NaumovozymaDairenensisCbs421 graph.
+    """Return new instance of the Naumovozyma dairenensis CBS 421 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NaumovozymaDairenensisCbs421(
 
     Returns
     -----------------------
-    Instace of NaumovozymaDairenensisCbs421 graph.
+    Instace of Naumovozyma dairenensis CBS 421 graph.
 
 	References
 	---------------------

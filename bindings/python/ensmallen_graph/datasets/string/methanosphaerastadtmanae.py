@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosphaeraStadtmanae.
+This file offers the methods to automatically retrieve the graph Methanosphaera stadtmanae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosphaeraStadtmanae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosphaeraStadtmanae graph.
+    """Return new instance of the Methanosphaera stadtmanae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanosphaeraStadtmanae(
 
     Returns
     -----------------------
-    Instace of MethanosphaeraStadtmanae graph.
+    Instace of Methanosphaera stadtmanae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacaedibacterSymbiosus.
+This file offers the methods to automatically retrieve the graph Paracaedibacter symbiosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacaedibacterSymbiosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacaedibacterSymbiosus graph.
+    """Return new instance of the Paracaedibacter symbiosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacaedibacterSymbiosus(
 
     Returns
     -----------------------
-    Instace of ParacaedibacterSymbiosus graph.
+    Instace of Paracaedibacter symbiosus graph.
 
 	References
 	---------------------

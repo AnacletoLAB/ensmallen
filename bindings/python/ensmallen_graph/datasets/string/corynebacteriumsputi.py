@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSputi.
+This file offers the methods to automatically retrieve the graph Corynebacterium sputi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSputi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSputi graph.
+    """Return new instance of the Corynebacterium sputi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumSputi(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSputi graph.
+    Instace of Corynebacterium sputi graph.
 
 	References
 	---------------------

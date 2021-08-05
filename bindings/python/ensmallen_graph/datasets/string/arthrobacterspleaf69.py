@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpLeaf69.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. Leaf69.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpLeaf69(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpLeaf69 graph.
+    """Return new instance of the Arthrobacter sp. Leaf69 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpLeaf69(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpLeaf69 graph.
+    Instace of Arthrobacter sp. Leaf69 graph.
 
 	References
 	---------------------

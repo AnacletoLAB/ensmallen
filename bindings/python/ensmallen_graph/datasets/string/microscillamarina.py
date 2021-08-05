@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicroscillaMarina.
+This file offers the methods to automatically retrieve the graph Microscilla marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicroscillaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicroscillaMarina graph.
+    """Return new instance of the Microscilla marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicroscillaMarina(
 
     Returns
     -----------------------
-    Instace of MicroscillaMarina graph.
+    Instace of Microscilla marina graph.
 
 	References
 	---------------------

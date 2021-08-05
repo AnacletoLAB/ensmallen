@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasJatrophae.
+This file offers the methods to automatically retrieve the graph Sphingomonas jatrophae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasJatrophae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasJatrophae graph.
+    """Return new instance of the Sphingomonas jatrophae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasJatrophae(
 
     Returns
     -----------------------
-    Instace of SphingomonasJatrophae graph.
+    Instace of Sphingomonas jatrophae graph.
 
 	References
 	---------------------

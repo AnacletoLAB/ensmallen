@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporolituusThermophilusDsm23256.
+This file offers the methods to automatically retrieve the graph Sporolituus thermophilus DSM 23256.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporolituusThermophilusDsm23256(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporolituusThermophilusDsm23256 graph.
+    """Return new instance of the Sporolituus thermophilus DSM 23256 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporolituusThermophilusDsm23256(
 
     Returns
     -----------------------
-    Instace of SporolituusThermophilusDsm23256 graph.
+    Instace of Sporolituus thermophilus DSM 23256 graph.
 
 	References
 	---------------------

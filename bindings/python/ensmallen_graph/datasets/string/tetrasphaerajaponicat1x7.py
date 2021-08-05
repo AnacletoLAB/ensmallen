@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrasphaeraJaponicaT1X7.
+This file offers the methods to automatically retrieve the graph Tetrasphaera japonica T1-X7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrasphaeraJaponicaT1X7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrasphaeraJaponicaT1X7 graph.
+    """Return new instance of the Tetrasphaera japonica T1-X7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrasphaeraJaponicaT1X7(
 
     Returns
     -----------------------
-    Instace of TetrasphaeraJaponicaT1X7 graph.
+    Instace of Tetrasphaera japonica T1-X7 graph.
 
 	References
 	---------------------

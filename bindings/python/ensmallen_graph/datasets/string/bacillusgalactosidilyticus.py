@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGalactosidilyticus.
+This file offers the methods to automatically retrieve the graph Bacillus galactosidilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusGalactosidilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGalactosidilyticus graph.
+    """Return new instance of the Bacillus galactosidilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusGalactosidilyticus(
 
     Returns
     -----------------------
-    Instace of BacillusGalactosidilyticus graph.
+    Instace of Bacillus galactosidilyticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioProteolyticus.
+This file offers the methods to automatically retrieve the graph Salinivibrio proteolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinivibrioProteolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioProteolyticus graph.
+    """Return new instance of the Salinivibrio proteolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinivibrioProteolyticus(
 
     Returns
     -----------------------
-    Instace of SalinivibrioProteolyticus graph.
+    Instace of Salinivibrio proteolyticus graph.
 
 	References
 	---------------------

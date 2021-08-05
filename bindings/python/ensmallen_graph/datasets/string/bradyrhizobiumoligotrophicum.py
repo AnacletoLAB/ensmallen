@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumOligotrophicum.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium oligotrophicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumOligotrophicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumOligotrophicum graph.
+    """Return new instance of the Bradyrhizobium oligotrophicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumOligotrophicum(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumOligotrophicum graph.
+    Instace of Bradyrhizobium oligotrophicum graph.
 
 	References
 	---------------------

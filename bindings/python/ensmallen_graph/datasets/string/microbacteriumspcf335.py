@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCf335.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. CF335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpCf335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCf335 graph.
+    """Return new instance of the Microbacterium sp. CF335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpCf335(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCf335 graph.
+    Instace of Microbacterium sp. CF335 graph.
 
 	References
 	---------------------

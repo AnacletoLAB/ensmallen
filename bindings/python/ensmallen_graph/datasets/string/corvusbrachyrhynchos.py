@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorvusBrachyrhynchos.
+This file offers the methods to automatically retrieve the graph Corvus brachyrhynchos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorvusBrachyrhynchos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorvusBrachyrhynchos graph.
+    """Return new instance of the Corvus brachyrhynchos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorvusBrachyrhynchos(
 
     Returns
     -----------------------
-    Instace of CorvusBrachyrhynchos graph.
+    Instace of Corvus brachyrhynchos graph.
 
 	References
 	---------------------

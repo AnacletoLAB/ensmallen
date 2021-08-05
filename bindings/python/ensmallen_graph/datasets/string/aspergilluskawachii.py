@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusKawachii.
+This file offers the methods to automatically retrieve the graph Aspergillus kawachii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusKawachii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusKawachii graph.
+    """Return new instance of the Aspergillus kawachii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusKawachii(
 
     Returns
     -----------------------
-    Instace of AspergillusKawachii graph.
+    Instace of Aspergillus kawachii graph.
 
 	References
 	---------------------

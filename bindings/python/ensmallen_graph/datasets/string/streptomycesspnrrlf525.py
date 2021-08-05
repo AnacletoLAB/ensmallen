@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpNrrlf525.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. NRRLF525.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpNrrlf525(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpNrrlf525 graph.
+    """Return new instance of the Streptomyces sp. NRRLF525 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpNrrlf525(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpNrrlf525 graph.
+    Instace of Streptomyces sp. NRRLF525 graph.
 
 	References
 	---------------------

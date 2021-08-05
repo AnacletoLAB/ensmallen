@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaErythraea.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora erythraea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaErythraea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaErythraea graph.
+    """Return new instance of the Saccharopolyspora erythraea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharopolysporaErythraea(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaErythraea graph.
+    Instace of Saccharopolyspora erythraea graph.
 
 	References
 	---------------------

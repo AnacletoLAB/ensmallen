@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterChromiiresistens.
+This file offers the methods to automatically retrieve the graph Leucobacter chromiiresistens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterChromiiresistens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterChromiiresistens graph.
+    """Return new instance of the Leucobacter chromiiresistens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeucobacterChromiiresistens(
 
     Returns
     -----------------------
-    Instace of LeucobacterChromiiresistens graph.
+    Instace of Leucobacter chromiiresistens graph.
 
 	References
 	---------------------

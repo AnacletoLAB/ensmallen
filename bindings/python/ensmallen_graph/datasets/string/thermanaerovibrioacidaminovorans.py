@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermanaerovibrioAcidaminovorans.
+This file offers the methods to automatically retrieve the graph Thermanaerovibrio acidaminovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermanaerovibrioAcidaminovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermanaerovibrioAcidaminovorans graph.
+    """Return new instance of the Thermanaerovibrio acidaminovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermanaerovibrioAcidaminovorans(
 
     Returns
     -----------------------
-    Instace of ThermanaerovibrioAcidaminovorans graph.
+    Instace of Thermanaerovibrio acidaminovorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetospiraSpQh2.
+This file offers the methods to automatically retrieve the graph Magnetospira sp. QH-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetospiraSpQh2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetospiraSpQh2 graph.
+    """Return new instance of the Magnetospira sp. QH-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnetospiraSpQh2(
 
     Returns
     -----------------------
-    Instace of MagnetospiraSpQh2 graph.
+    Instace of Magnetospira sp. QH-2 graph.
 
 	References
 	---------------------

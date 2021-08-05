@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrapisisporaPhaffiiCbs4417.
+This file offers the methods to automatically retrieve the graph Tetrapisispora phaffii CBS 4417.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrapisisporaPhaffiiCbs4417(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrapisisporaPhaffiiCbs4417 graph.
+    """Return new instance of the Tetrapisispora phaffii CBS 4417 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrapisisporaPhaffiiCbs4417(
 
     Returns
     -----------------------
-    Instace of TetrapisisporaPhaffiiCbs4417 graph.
+    Instace of Tetrapisispora phaffii CBS 4417 graph.
 
 	References
 	---------------------

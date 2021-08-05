@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParachlamydiaceaeBacteriumHsT3.
+This file offers the methods to automatically retrieve the graph Parachlamydiaceae bacterium HS-T3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParachlamydiaceaeBacteriumHsT3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParachlamydiaceaeBacteriumHsT3 graph.
+    """Return new instance of the Parachlamydiaceae bacterium HS-T3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParachlamydiaceaeBacteriumHsT3(
 
     Returns
     -----------------------
-    Instace of ParachlamydiaceaeBacteriumHsT3 graph.
+    Instace of Parachlamydiaceae bacterium HS-T3 graph.
 
 	References
 	---------------------

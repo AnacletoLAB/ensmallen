@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrachymyrmexCornetzi.
+This file offers the methods to automatically retrieve the graph Trachymyrmex cornetzi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrachymyrmexCornetzi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrachymyrmexCornetzi graph.
+    """Return new instance of the Trachymyrmex cornetzi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrachymyrmexCornetzi(
 
     Returns
     -----------------------
-    Instace of TrachymyrmexCornetzi graph.
+    Instace of Trachymyrmex cornetzi graph.
 
 	References
 	---------------------

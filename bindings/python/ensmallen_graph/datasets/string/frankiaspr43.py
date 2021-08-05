@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpR43.
+This file offers the methods to automatically retrieve the graph Frankia sp. R43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpR43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpR43 graph.
+    """Return new instance of the Frankia sp. R43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrankiaSpR43(
 
     Returns
     -----------------------
-    Instace of FrankiaSpR43 graph.
+    Instace of Frankia sp. R43 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumSpNcppb925.
+This file offers the methods to automatically retrieve the graph Agrobacterium sp. NCPPB 925.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumSpNcppb925(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumSpNcppb925 graph.
+    """Return new instance of the Agrobacterium sp. NCPPB 925 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumSpNcppb925(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumSpNcppb925 graph.
+    Instace of Agrobacterium sp. NCPPB 925 graph.
 
 	References
 	---------------------

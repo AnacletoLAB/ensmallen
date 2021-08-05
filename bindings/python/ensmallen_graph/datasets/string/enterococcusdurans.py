@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusDurans.
+This file offers the methods to automatically retrieve the graph Enterococcus durans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusDurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusDurans graph.
+    """Return new instance of the Enterococcus durans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusDurans(
 
     Returns
     -----------------------
-    Instace of EnterococcusDurans graph.
+    Instace of Enterococcus durans graph.
 
 	References
 	---------------------

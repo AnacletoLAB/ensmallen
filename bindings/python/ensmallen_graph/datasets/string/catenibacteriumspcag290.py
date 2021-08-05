@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatenibacteriumSpCag290.
+This file offers the methods to automatically retrieve the graph Catenibacterium sp. CAG:290.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatenibacteriumSpCag290(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatenibacteriumSpCag290 graph.
+    """Return new instance of the Catenibacterium sp. CAG:290 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CatenibacteriumSpCag290(
 
     Returns
     -----------------------
-    Instace of CatenibacteriumSpCag290 graph.
+    Instace of Catenibacterium sp. CAG:290 graph.
 
 	References
 	---------------------

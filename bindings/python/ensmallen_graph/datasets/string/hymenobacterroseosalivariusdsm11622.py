@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterRoseosalivariusDsm11622.
+This file offers the methods to automatically retrieve the graph Hymenobacter roseosalivarius DSM 11622.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterRoseosalivariusDsm11622(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterRoseosalivariusDsm11622 graph.
+    """Return new instance of the Hymenobacter roseosalivarius DSM 11622 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterRoseosalivariusDsm11622(
 
     Returns
     -----------------------
-    Instace of HymenobacterRoseosalivariusDsm11622 graph.
+    Instace of Hymenobacter roseosalivarius DSM 11622 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaNativa.
+This file offers the methods to automatically retrieve the graph Trichinella nativa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaNativa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaNativa graph.
+    """Return new instance of the Trichinella nativa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaNativa(
 
     Returns
     -----------------------
-    Instace of TrichinellaNativa graph.
+    Instace of Trichinella nativa graph.
 
 	References
 	---------------------

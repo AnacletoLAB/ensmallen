@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TamlanaSedimentorum.
+This file offers the methods to automatically retrieve the graph Tamlana sedimentorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TamlanaSedimentorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TamlanaSedimentorum graph.
+    """Return new instance of the Tamlana sedimentorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TamlanaSedimentorum(
 
     Returns
     -----------------------
-    Instace of TamlanaSedimentorum graph.
+    Instace of Tamlana sedimentorum graph.
 
 	References
 	---------------------

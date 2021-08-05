@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MartelellaMediterranea.
+This file offers the methods to automatically retrieve the graph Martelella mediterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MartelellaMediterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MartelellaMediterranea graph.
+    """Return new instance of the Martelella mediterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MartelellaMediterranea(
 
     Returns
     -----------------------
-    Instace of MartelellaMediterranea graph.
+    Instace of Martelella mediterranea graph.
 
 	References
 	---------------------

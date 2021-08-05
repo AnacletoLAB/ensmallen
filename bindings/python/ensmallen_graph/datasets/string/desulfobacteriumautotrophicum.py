@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteriumAutotrophicum.
+This file offers the methods to automatically retrieve the graph Desulfobacterium autotrophicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteriumAutotrophicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteriumAutotrophicum graph.
+    """Return new instance of the Desulfobacterium autotrophicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfobacteriumAutotrophicum(
 
     Returns
     -----------------------
-    Instace of DesulfobacteriumAutotrophicum graph.
+    Instace of Desulfobacterium autotrophicum graph.
 
 	References
 	---------------------

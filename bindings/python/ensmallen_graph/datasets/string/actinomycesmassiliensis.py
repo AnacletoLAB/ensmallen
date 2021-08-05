@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesMassiliensis.
+This file offers the methods to automatically retrieve the graph Actinomyces massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesMassiliensis graph.
+    """Return new instance of the Actinomyces massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomycesMassiliensis(
 
     Returns
     -----------------------
-    Instace of ActinomycesMassiliensis graph.
+    Instace of Actinomyces massiliensis graph.
 
 	References
 	---------------------

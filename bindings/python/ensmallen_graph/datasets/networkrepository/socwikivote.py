@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocWikiVote.
+This file offers the methods to automatically retrieve the graph soc-wiki-Vote.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocWikiVote(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocWikiVote graph.
+    """Return new instance of the soc-wiki-Vote graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocWikiVote(
 
     Returns
     -----------------------
-    Instace of SocWikiVote graph.
+    Instace of soc-wiki-Vote graph.
 
 	References
 	---------------------

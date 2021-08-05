@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DialisterMicraerophilus.
+This file offers the methods to automatically retrieve the graph Dialister micraerophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DialisterMicraerophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DialisterMicraerophilus graph.
+    """Return new instance of the Dialister micraerophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DialisterMicraerophilus(
 
     Returns
     -----------------------
-    Instace of DialisterMicraerophilus graph.
+    Instace of Dialister micraerophilus graph.
 
 	References
 	---------------------

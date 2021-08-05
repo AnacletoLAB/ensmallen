@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusBrasiliensisCbs101740.
+This file offers the methods to automatically retrieve the graph Aspergillus brasiliensis CBS 101740.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusBrasiliensisCbs101740(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusBrasiliensisCbs101740 graph.
+    """Return new instance of the Aspergillus brasiliensis CBS 101740 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusBrasiliensisCbs101740(
 
     Returns
     -----------------------
-    Instace of AspergillusBrasiliensisCbs101740 graph.
+    Instace of Aspergillus brasiliensis CBS 101740 graph.
 
 	References
 	---------------------

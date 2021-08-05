@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumGonidiaformans.
+This file offers the methods to automatically retrieve the graph Fusobacterium gonidiaformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumGonidiaformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumGonidiaformans graph.
+    """Return new instance of the Fusobacterium gonidiaformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumGonidiaformans(
 
     Returns
     -----------------------
-    Instace of FusobacteriumGonidiaformans graph.
+    Instace of Fusobacterium gonidiaformans graph.
 
 	References
 	---------------------

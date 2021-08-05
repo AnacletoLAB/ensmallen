@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaHaematobium.
+This file offers the methods to automatically retrieve the graph Schistosoma haematobium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaHaematobium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaHaematobium graph.
+    """Return new instance of the Schistosoma haematobium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaHaematobium(
 
     Returns
     -----------------------
-    Instace of SchistosomaHaematobium graph.
+    Instace of Schistosoma haematobium graph.
 
 	References
 	---------------------

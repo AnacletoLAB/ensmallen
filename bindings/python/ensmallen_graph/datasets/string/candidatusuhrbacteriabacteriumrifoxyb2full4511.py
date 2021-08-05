@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusUhrbacteriaBacteriumRifoxyb2Full4511.
+This file offers the methods to automatically retrieve the graph Candidatus Uhrbacteria bacterium RIFOXYB2_FULL_45_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusUhrbacteriaBacteriumRifoxyb2Full4511(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusUhrbacteriaBacteriumRifoxyb2Full4511 graph.
+    """Return new instance of the Candidatus Uhrbacteria bacterium RIFOXYB2_FULL_45_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusUhrbacteriaBacteriumRifoxyb2Full4511(
 
     Returns
     -----------------------
-    Instace of CandidatusUhrbacteriaBacteriumRifoxyb2Full4511 graph.
+    Instace of Candidatus Uhrbacteria bacterium RIFOXYB2_FULL_45_11 graph.
 
 	References
 	---------------------

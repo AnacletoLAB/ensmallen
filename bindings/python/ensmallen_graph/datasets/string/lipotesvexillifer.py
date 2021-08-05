@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LipotesVexillifer.
+This file offers the methods to automatically retrieve the graph Lipotes vexillifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LipotesVexillifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LipotesVexillifer graph.
+    """Return new instance of the Lipotes vexillifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LipotesVexillifer(
 
     Returns
     -----------------------
-    Instace of LipotesVexillifer graph.
+    Instace of Lipotes vexillifer graph.
 
 	References
 	---------------------

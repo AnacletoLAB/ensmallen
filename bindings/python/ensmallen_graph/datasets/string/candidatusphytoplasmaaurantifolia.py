@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPhytoplasmaAurantifolia.
+This file offers the methods to automatically retrieve the graph Candidatus Phytoplasma aurantifolia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPhytoplasmaAurantifolia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPhytoplasmaAurantifolia graph.
+    """Return new instance of the Candidatus Phytoplasma aurantifolia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPhytoplasmaAurantifolia(
 
     Returns
     -----------------------
-    Instace of CandidatusPhytoplasmaAurantifolia graph.
+    Instace of Candidatus Phytoplasma aurantifolia graph.
 
 	References
 	---------------------

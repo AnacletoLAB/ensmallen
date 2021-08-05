@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalonomonasRubraDsm5091.
+This file offers the methods to automatically retrieve the graph Malonomonas rubra DSM 5091.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalonomonasRubraDsm5091(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalonomonasRubraDsm5091 graph.
+    """Return new instance of the Malonomonas rubra DSM 5091 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalonomonasRubraDsm5091(
 
     Returns
     -----------------------
-    Instace of MalonomonasRubraDsm5091 graph.
+    Instace of Malonomonas rubra DSM 5091 graph.
 
 	References
 	---------------------

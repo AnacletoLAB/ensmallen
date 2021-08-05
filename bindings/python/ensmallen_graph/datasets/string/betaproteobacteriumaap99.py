@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaProteobacteriumAap99.
+This file offers the methods to automatically retrieve the graph beta proteobacterium AAP99.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaProteobacteriumAap99(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaProteobacteriumAap99 graph.
+    """Return new instance of the beta proteobacterium AAP99 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaProteobacteriumAap99(
 
     Returns
     -----------------------
-    Instace of BetaProteobacteriumAap99 graph.
+    Instace of beta proteobacterium AAP99 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CetobacteriumSpZor0034.
+This file offers the methods to automatically retrieve the graph Cetobacterium sp. ZOR0034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CetobacteriumSpZor0034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CetobacteriumSpZor0034 graph.
+    """Return new instance of the Cetobacterium sp. ZOR0034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CetobacteriumSpZor0034(
 
     Returns
     -----------------------
-    Instace of CetobacteriumSpZor0034 graph.
+    Instace of Cetobacterium sp. ZOR0034 graph.
 
 	References
 	---------------------

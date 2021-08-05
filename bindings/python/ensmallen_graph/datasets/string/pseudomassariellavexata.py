@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomassariellaVexata.
+This file offers the methods to automatically retrieve the graph Pseudomassariella vexata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomassariellaVexata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomassariellaVexata graph.
+    """Return new instance of the Pseudomassariella vexata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomassariellaVexata(
 
     Returns
     -----------------------
-    Instace of PseudomassariellaVexata graph.
+    Instace of Pseudomassariella vexata graph.
 
 	References
 	---------------------

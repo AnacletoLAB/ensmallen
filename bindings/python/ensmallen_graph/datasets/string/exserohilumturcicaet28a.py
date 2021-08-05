@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExserohilumTurcicaEt28a.
+This file offers the methods to automatically retrieve the graph Exserohilum turcica Et28A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExserohilumTurcicaEt28a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExserohilumTurcicaEt28a graph.
+    """Return new instance of the Exserohilum turcica Et28A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExserohilumTurcicaEt28a(
 
     Returns
     -----------------------
-    Instace of ExserohilumTurcicaEt28a graph.
+    Instace of Exserohilum turcica Et28A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaSpUcdKl20.
+This file offers the methods to automatically retrieve the graph Colwellia sp. UCD-KL20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaSpUcdKl20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaSpUcdKl20 graph.
+    """Return new instance of the Colwellia sp. UCD-KL20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaSpUcdKl20(
 
     Returns
     -----------------------
-    Instace of ColwelliaSpUcdKl20 graph.
+    Instace of Colwellia sp. UCD-KL20 graph.
 
 	References
 	---------------------

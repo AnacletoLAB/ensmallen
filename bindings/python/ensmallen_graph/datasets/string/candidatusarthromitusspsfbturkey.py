@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusArthromitusSpSfbTurkey.
+This file offers the methods to automatically retrieve the graph Candidatus Arthromitus sp. SFB-turkey.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusArthromitusSpSfbTurkey(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusArthromitusSpSfbTurkey graph.
+    """Return new instance of the Candidatus Arthromitus sp. SFB-turkey graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusArthromitusSpSfbTurkey(
 
     Returns
     -----------------------
-    Instace of CandidatusArthromitusSpSfbTurkey graph.
+    Instace of Candidatus Arthromitus sp. SFB-turkey graph.
 
 	References
 	---------------------

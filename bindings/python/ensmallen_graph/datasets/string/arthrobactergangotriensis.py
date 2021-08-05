@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterGangotriensis.
+This file offers the methods to automatically retrieve the graph Arthrobacter gangotriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterGangotriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterGangotriensis graph.
+    """Return new instance of the Arthrobacter gangotriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterGangotriensis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterGangotriensis graph.
+    Instace of Arthrobacter gangotriensis graph.
 
 	References
 	---------------------

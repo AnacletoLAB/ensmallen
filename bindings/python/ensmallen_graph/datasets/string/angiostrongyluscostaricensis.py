@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AngiostrongylusCostaricensis.
+This file offers the methods to automatically retrieve the graph Angiostrongylus costaricensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AngiostrongylusCostaricensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AngiostrongylusCostaricensis graph.
+    """Return new instance of the Angiostrongylus costaricensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AngiostrongylusCostaricensis(
 
     Returns
     -----------------------
-    Instace of AngiostrongylusCostaricensis graph.
+    Instace of Angiostrongylus costaricensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaPeanutWitchesbroom.
+This file offers the methods to automatically retrieve the graph Phytoplasma peanut witchesbroom.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaPeanutWitchesbroom(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaPeanutWitchesbroom graph.
+    """Return new instance of the Phytoplasma peanut witchesbroom graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytoplasmaPeanutWitchesbroom(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaPeanutWitchesbroom graph.
+    Instace of Phytoplasma peanut witchesbroom graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaCanadensis.
+This file offers the methods to automatically retrieve the graph Rickettsia canadensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaCanadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaCanadensis graph.
+    """Return new instance of the Rickettsia canadensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RickettsiaCanadensis(
 
     Returns
     -----------------------
-    Instace of RickettsiaCanadensis graph.
+    Instace of Rickettsia canadensis graph.
 
 	References
 	---------------------

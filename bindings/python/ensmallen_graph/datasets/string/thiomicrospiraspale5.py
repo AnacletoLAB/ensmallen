@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraSpAle5.
+This file offers the methods to automatically retrieve the graph Thiomicrospira sp. ALE5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraSpAle5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraSpAle5 graph.
+    """Return new instance of the Thiomicrospira sp. ALE5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiomicrospiraSpAle5(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraSpAle5 graph.
+    Instace of Thiomicrospira sp. ALE5 graph.
 
 	References
 	---------------------

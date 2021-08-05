@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumRectaleAtcc33656.
+This file offers the methods to automatically retrieve the graph [Eubacterium] rectale ATCC 33656.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumRectaleAtcc33656(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumRectaleAtcc33656 graph.
+    """Return new instance of the [Eubacterium] rectale ATCC 33656 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumRectaleAtcc33656(
 
     Returns
     -----------------------
-    Instace of EubacteriumRectaleAtcc33656 graph.
+    Instace of [Eubacterium] rectale ATCC 33656 graph.
 
 	References
 	---------------------

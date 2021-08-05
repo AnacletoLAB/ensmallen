@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillatoriaNigroviridis.
+This file offers the methods to automatically retrieve the graph Oscillatoria nigroviridis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillatoriaNigroviridis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillatoriaNigroviridis graph.
+    """Return new instance of the Oscillatoria nigroviridis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillatoriaNigroviridis(
 
     Returns
     -----------------------
-    Instace of OscillatoriaNigroviridis graph.
+    Instace of Oscillatoria nigroviridis graph.
 
 	References
 	---------------------

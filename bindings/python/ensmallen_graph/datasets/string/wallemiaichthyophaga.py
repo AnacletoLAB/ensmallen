@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WallemiaIchthyophaga.
+This file offers the methods to automatically retrieve the graph Wallemia ichthyophaga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WallemiaIchthyophaga(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WallemiaIchthyophaga graph.
+    """Return new instance of the Wallemia ichthyophaga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WallemiaIchthyophaga(
 
     Returns
     -----------------------
-    Instace of WallemiaIchthyophaga graph.
+    Instace of Wallemia ichthyophaga graph.
 
 	References
 	---------------------

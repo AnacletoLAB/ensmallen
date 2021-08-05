@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubidibacterLacunae.
+This file offers the methods to automatically retrieve the graph Rubidibacter lacunae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubidibacterLacunae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubidibacterLacunae graph.
+    """Return new instance of the Rubidibacter lacunae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RubidibacterLacunae(
 
     Returns
     -----------------------
-    Instace of RubidibacterLacunae graph.
+    Instace of Rubidibacter lacunae graph.
 
 	References
 	---------------------

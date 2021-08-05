@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusMicroti.
+This file offers the methods to automatically retrieve the graph Staphylococcus microti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusMicroti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusMicroti graph.
+    """Return new instance of the Staphylococcus microti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusMicroti(
 
     Returns
     -----------------------
-    Instace of StaphylococcusMicroti graph.
+    Instace of Staphylococcus microti graph.
 
 	References
 	---------------------

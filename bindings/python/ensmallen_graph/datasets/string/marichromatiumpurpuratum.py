@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarichromatiumPurpuratum.
+This file offers the methods to automatically retrieve the graph Marichromatium purpuratum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarichromatiumPurpuratum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarichromatiumPurpuratum graph.
+    """Return new instance of the Marichromatium purpuratum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarichromatiumPurpuratum(
 
     Returns
     -----------------------
-    Instace of MarichromatiumPurpuratum graph.
+    Instace of Marichromatium purpuratum graph.
 
 	References
 	---------------------

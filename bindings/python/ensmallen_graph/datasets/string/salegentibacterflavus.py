@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalegentibacterFlavus.
+This file offers the methods to automatically retrieve the graph Salegentibacter flavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalegentibacterFlavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalegentibacterFlavus graph.
+    """Return new instance of the Salegentibacter flavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalegentibacterFlavus(
 
     Returns
     -----------------------
-    Instace of SalegentibacterFlavus graph.
+    Instace of Salegentibacter flavus graph.
 
 	References
 	---------------------

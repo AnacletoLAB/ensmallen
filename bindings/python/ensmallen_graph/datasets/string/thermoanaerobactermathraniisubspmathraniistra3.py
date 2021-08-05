@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterMathraniiSubspMathraniiStrA3.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter mathranii subsp. mathranii str. A3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterMathraniiSubspMathraniiStrA3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterMathraniiSubspMathraniiStrA3 graph.
+    """Return new instance of the Thermoanaerobacter mathranii subsp. mathranii str. A3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoanaerobacterMathraniiSubspMathraniiStrA3(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterMathraniiSubspMathraniiStrA3 graph.
+    Instace of Thermoanaerobacter mathranii subsp. mathranii str. A3 graph.
 
 	References
 	---------------------

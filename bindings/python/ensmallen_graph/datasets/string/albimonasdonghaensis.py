@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlbimonasDonghaensis.
+This file offers the methods to automatically retrieve the graph Albimonas donghaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlbimonasDonghaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlbimonasDonghaensis graph.
+    """Return new instance of the Albimonas donghaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlbimonasDonghaensis(
 
     Returns
     -----------------------
-    Instace of AlbimonasDonghaensis graph.
+    Instace of Albimonas donghaensis graph.
 
 	References
 	---------------------

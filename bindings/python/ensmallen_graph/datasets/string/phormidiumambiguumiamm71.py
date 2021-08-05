@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidiumAmbiguumIamM71.
+This file offers the methods to automatically retrieve the graph Phormidium ambiguum IAM M-71.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhormidiumAmbiguumIamM71(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidiumAmbiguumIamM71 graph.
+    """Return new instance of the Phormidium ambiguum IAM M-71 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhormidiumAmbiguumIamM71(
 
     Returns
     -----------------------
-    Instace of PhormidiumAmbiguumIamM71 graph.
+    Instace of Phormidium ambiguum IAM M-71 graph.
 
 	References
 	---------------------

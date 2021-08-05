@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumGenosp.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium genosp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumGenosp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumGenosp graph.
+    """Return new instance of the Bradyrhizobium genosp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumGenosp(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumGenosp graph.
+    Instace of Bradyrhizobium genosp. graph.
 
 	References
 	---------------------

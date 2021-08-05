@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusLitoralisDsm5473.
+This file offers the methods to automatically retrieve the graph Thermococcus litoralis DSM 5473.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusLitoralisDsm5473(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusLitoralisDsm5473 graph.
+    """Return new instance of the Thermococcus litoralis DSM 5473 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusLitoralisDsm5473(
 
     Returns
     -----------------------
-    Instace of ThermococcusLitoralisDsm5473 graph.
+    Instace of Thermococcus litoralis DSM 5473 graph.
 
 	References
 	---------------------

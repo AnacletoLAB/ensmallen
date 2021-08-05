@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSacchari.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sacchari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSacchari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSacchari graph.
+    """Return new instance of the Bradyrhizobium sacchari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumSacchari(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSacchari graph.
+    Instace of Bradyrhizobium sacchari graph.
 
 	References
 	---------------------

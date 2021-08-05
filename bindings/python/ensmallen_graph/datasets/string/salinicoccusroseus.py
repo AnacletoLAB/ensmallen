@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusRoseus.
+This file offers the methods to automatically retrieve the graph Salinicoccus roseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusRoseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusRoseus graph.
+    """Return new instance of the Salinicoccus roseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusRoseus(
 
     Returns
     -----------------------
-    Instace of SalinicoccusRoseus graph.
+    Instace of Salinicoccus roseus graph.
 
 	References
 	---------------------

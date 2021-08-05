@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusCohnii.
+This file offers the methods to automatically retrieve the graph Staphylococcus cohnii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusCohnii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusCohnii graph.
+    """Return new instance of the Staphylococcus cohnii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusCohnii(
 
     Returns
     -----------------------
-    Instace of StaphylococcusCohnii graph.
+    Instace of Staphylococcus cohnii graph.
 
 	References
 	---------------------

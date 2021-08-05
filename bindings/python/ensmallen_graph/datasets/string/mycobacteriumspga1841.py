@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpGa1841.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. GA-1841.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpGa1841(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpGa1841 graph.
+    """Return new instance of the Mycobacterium sp. GA-1841 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpGa1841(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpGa1841 graph.
+    Instace of Mycobacterium sp. GA-1841 graph.
 
 	References
 	---------------------

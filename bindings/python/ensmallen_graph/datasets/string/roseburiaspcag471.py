@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaSpCag471.
+This file offers the methods to automatically retrieve the graph Roseburia sp. CAG:471.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaSpCag471(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaSpCag471 graph.
+    """Return new instance of the Roseburia sp. CAG:471 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseburiaSpCag471(
 
     Returns
     -----------------------
-    Instace of RoseburiaSpCag471 graph.
+    Instace of Roseburia sp. CAG:471 graph.
 
 	References
 	---------------------

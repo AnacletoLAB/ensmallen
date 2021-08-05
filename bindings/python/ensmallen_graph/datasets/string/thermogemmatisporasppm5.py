@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermogemmatisporaSpPm5.
+This file offers the methods to automatically retrieve the graph Thermogemmatispora sp. PM5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermogemmatisporaSpPm5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermogemmatisporaSpPm5 graph.
+    """Return new instance of the Thermogemmatispora sp. PM5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermogemmatisporaSpPm5(
 
     Returns
     -----------------------
-    Instace of ThermogemmatisporaSpPm5 graph.
+    Instace of Thermogemmatispora sp. PM5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumSm2331.
+This file offers the methods to automatically retrieve the graph bacterium SM23_31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumSm2331(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumSm2331 graph.
+    """Return new instance of the bacterium SM23_31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumSm2331(
 
     Returns
     -----------------------
-    Instace of BacteriumSm2331 graph.
+    Instace of bacterium SM23_31 graph.
 
 	References
 	---------------------

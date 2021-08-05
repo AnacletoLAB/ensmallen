@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraOligosporaAtcc43269.
+This file offers the methods to automatically retrieve the graph Actinomadura oligospora ATCC 43269.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraOligosporaAtcc43269(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraOligosporaAtcc43269 graph.
+    """Return new instance of the Actinomadura oligospora ATCC 43269 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraOligosporaAtcc43269(
 
     Returns
     -----------------------
-    Instace of ActinomaduraOligosporaAtcc43269 graph.
+    Instace of Actinomadura oligospora ATCC 43269 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumGiardinii.
+This file offers the methods to automatically retrieve the graph Rhizobium giardinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumGiardinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumGiardinii graph.
+    """Return new instance of the Rhizobium giardinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumGiardinii(
 
     Returns
     -----------------------
-    Instace of RhizobiumGiardinii graph.
+    Instace of Rhizobium giardinii graph.
 
 	References
 	---------------------

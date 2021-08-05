@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumDenitrificans1nes1.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium denitrificans 1NES1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumDenitrificans1nes1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumDenitrificans1nes1 graph.
+    """Return new instance of the Hyphomicrobium denitrificans 1NES1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomicrobiumDenitrificans1nes1(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumDenitrificans1nes1 graph.
+    Instace of Hyphomicrobium denitrificans 1NES1 graph.
 
 	References
 	---------------------

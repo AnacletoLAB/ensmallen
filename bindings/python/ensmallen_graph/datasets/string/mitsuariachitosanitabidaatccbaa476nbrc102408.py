@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MitsuariaChitosanitabidaAtccBaa476Nbrc102408.
+This file offers the methods to automatically retrieve the graph Mitsuaria chitosanitabida ATCC BAA-476 NBRC 102408.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MitsuariaChitosanitabidaAtccBaa476Nbrc102408(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MitsuariaChitosanitabidaAtccBaa476Nbrc102408 graph.
+    """Return new instance of the Mitsuaria chitosanitabida ATCC BAA-476 NBRC 102408 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MitsuariaChitosanitabidaAtccBaa476Nbrc102408(
 
     Returns
     -----------------------
-    Instace of MitsuariaChitosanitabidaAtccBaa476Nbrc102408 graph.
+    Instace of Mitsuaria chitosanitabida ATCC BAA-476 NBRC 102408 graph.
 
 	References
 	---------------------

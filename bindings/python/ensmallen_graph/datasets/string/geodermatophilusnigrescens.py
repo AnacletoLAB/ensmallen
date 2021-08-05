@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusNigrescens.
+This file offers the methods to automatically retrieve the graph Geodermatophilus nigrescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusNigrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusNigrescens graph.
+    """Return new instance of the Geodermatophilus nigrescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusNigrescens(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusNigrescens graph.
+    Instace of Geodermatophilus nigrescens graph.
 
 	References
 	---------------------

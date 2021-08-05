@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaMorsitansMorsitans.
+This file offers the methods to automatically retrieve the graph Glossina morsitans morsitans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaMorsitansMorsitans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaMorsitansMorsitans graph.
+    """Return new instance of the Glossina morsitans morsitans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaMorsitansMorsitans(
 
     Returns
     -----------------------
-    Instace of GlossinaMorsitansMorsitans graph.
+    Instace of Glossina morsitans morsitans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisNigoni.
+This file offers the methods to automatically retrieve the graph Caenorhabditis nigoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisNigoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisNigoni graph.
+    """Return new instance of the Caenorhabditis nigoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaenorhabditisNigoni(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisNigoni graph.
+    Instace of Caenorhabditis nigoni graph.
 
 	References
 	---------------------

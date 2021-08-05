@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cl1000002d1Trial3.
+This file offers the methods to automatically retrieve the graph CL-100000-2d1-trial3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cl1000002d1Trial3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cl1000002d1Trial3 graph.
+    """Return new instance of the CL-100000-2d1-trial3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cl1000002d1Trial3(
 
     Returns
     -----------------------
-    Instace of Cl1000002d1Trial3 graph.
+    Instace of CL-100000-2d1-trial3 graph.
 
 	References
 	---------------------

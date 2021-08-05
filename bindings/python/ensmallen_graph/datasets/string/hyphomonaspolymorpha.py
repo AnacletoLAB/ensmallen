@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasPolymorpha.
+This file offers the methods to automatically retrieve the graph Hyphomonas polymorpha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasPolymorpha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasPolymorpha graph.
+    """Return new instance of the Hyphomonas polymorpha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasPolymorpha(
 
     Returns
     -----------------------
-    Instace of HyphomonasPolymorpha graph.
+    Instace of Hyphomonas polymorpha graph.
 
 	References
 	---------------------

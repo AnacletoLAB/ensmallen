@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalohastaLitchfieldiae.
+This file offers the methods to automatically retrieve the graph Halohasta litchfieldiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalohastaLitchfieldiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalohastaLitchfieldiae graph.
+    """Return new instance of the Halohasta litchfieldiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalohastaLitchfieldiae(
 
     Returns
     -----------------------
-    Instace of HalohastaLitchfieldiae graph.
+    Instace of Halohasta litchfieldiae graph.
 
 	References
 	---------------------

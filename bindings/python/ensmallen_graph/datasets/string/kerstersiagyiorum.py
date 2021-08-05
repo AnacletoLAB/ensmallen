@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KerstersiaGyiorum.
+This file offers the methods to automatically retrieve the graph Kerstersia gyiorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KerstersiaGyiorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KerstersiaGyiorum graph.
+    """Return new instance of the Kerstersia gyiorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KerstersiaGyiorum(
 
     Returns
     -----------------------
-    Instace of KerstersiaGyiorum graph.
+    Instace of Kerstersia gyiorum graph.
 
 	References
 	---------------------

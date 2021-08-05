@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryobacteriumLevicorallinum.
+This file offers the methods to automatically retrieve the graph Cryobacterium levicorallinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryobacteriumLevicorallinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryobacteriumLevicorallinum graph.
+    """Return new instance of the Cryobacterium levicorallinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryobacteriumLevicorallinum(
 
     Returns
     -----------------------
-    Instace of CryobacteriumLevicorallinum graph.
+    Instace of Cryobacterium levicorallinum graph.
 
 	References
 	---------------------

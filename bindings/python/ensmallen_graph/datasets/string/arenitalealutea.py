@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenitaleaLutea.
+This file offers the methods to automatically retrieve the graph Arenitalea lutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenitaleaLutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenitaleaLutea graph.
+    """Return new instance of the Arenitalea lutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenitaleaLutea(
 
     Returns
     -----------------------
-    Instace of ArenitaleaLutea graph.
+    Instace of Arenitalea lutea graph.
 
 	References
 	---------------------

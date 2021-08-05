@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizophyllumCommune.
+This file offers the methods to automatically retrieve the graph Schizophyllum commune.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizophyllumCommune(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizophyllumCommune graph.
+    """Return new instance of the Schizophyllum commune graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchizophyllumCommune(
 
     Returns
     -----------------------
-    Instace of SchizophyllumCommune graph.
+    Instace of Schizophyllum commune graph.
 
 	References
 	---------------------

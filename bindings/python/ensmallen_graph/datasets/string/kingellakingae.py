@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KingellaKingae.
+This file offers the methods to automatically retrieve the graph Kingella kingae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KingellaKingae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KingellaKingae graph.
+    """Return new instance of the Kingella kingae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KingellaKingae(
 
     Returns
     -----------------------
-    Instace of KingellaKingae graph.
+    Instace of Kingella kingae graph.
 
 	References
 	---------------------

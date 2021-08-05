@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpWp9.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. WP9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpWp9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpWp9 graph.
+    """Return new instance of the Burkholderia sp. WP9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpWp9(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpWp9 graph.
+    Instace of Burkholderia sp. WP9 graph.
 
 	References
 	---------------------

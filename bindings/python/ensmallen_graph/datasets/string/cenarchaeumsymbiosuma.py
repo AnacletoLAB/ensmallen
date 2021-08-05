@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CenarchaeumSymbiosumA.
+This file offers the methods to automatically retrieve the graph Cenarchaeum symbiosum A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CenarchaeumSymbiosumA(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CenarchaeumSymbiosumA graph.
+    """Return new instance of the Cenarchaeum symbiosum A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CenarchaeumSymbiosumA(
 
     Returns
     -----------------------
-    Instace of CenarchaeumSymbiosumA graph.
+    Instace of Cenarchaeum symbiosum A graph.
 
 	References
 	---------------------

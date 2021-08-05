@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSpYr558.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas sp. YR558.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSpYr558(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSpYr558 graph.
+    """Return new instance of the Pseudoxanthomonas sp. YR558 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasSpYr558(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSpYr558 graph.
+    Instace of Pseudoxanthomonas sp. YR558 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EuryarchaeotaArchaeonRbg19ftCombo6917.
+This file offers the methods to automatically retrieve the graph Euryarchaeota archaeon RBG_19FT_COMBO_69_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EuryarchaeotaArchaeonRbg19ftCombo6917(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EuryarchaeotaArchaeonRbg19ftCombo6917 graph.
+    """Return new instance of the Euryarchaeota archaeon RBG_19FT_COMBO_69_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EuryarchaeotaArchaeonRbg19ftCombo6917(
 
     Returns
     -----------------------
-    Instace of EuryarchaeotaArchaeonRbg19ftCombo6917 graph.
+    Instace of Euryarchaeota archaeon RBG_19FT_COMBO_69_17 graph.
 
 	References
 	---------------------

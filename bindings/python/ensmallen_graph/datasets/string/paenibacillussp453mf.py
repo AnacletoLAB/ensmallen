@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSp453mf.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. 453mf.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSp453mf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSp453mf graph.
+    """Return new instance of the Paenibacillus sp. 453mf graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSp453mf(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSp453mf graph.
+    Instace of Paenibacillus sp. 453mf graph.
 
 	References
 	---------------------

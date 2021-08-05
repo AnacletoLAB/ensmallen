@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FilamentousCyanobacterium.
+This file offers the methods to automatically retrieve the graph filamentous cyanobacterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FilamentousCyanobacterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FilamentousCyanobacterium graph.
+    """Return new instance of the filamentous cyanobacterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FilamentousCyanobacterium(
 
     Returns
     -----------------------
-    Instace of FilamentousCyanobacterium graph.
+    Instace of filamentous cyanobacterium graph.
 
 	References
 	---------------------

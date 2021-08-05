@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasNitroreducens.
+This file offers the methods to automatically retrieve the graph Pseudomonas nitroreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasNitroreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasNitroreducens graph.
+    """Return new instance of the Pseudomonas nitroreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasNitroreducens(
 
     Returns
     -----------------------
-    Instace of PseudomonasNitroreducens graph.
+    Instace of Pseudomonas nitroreducens graph.
 
 	References
 	---------------------

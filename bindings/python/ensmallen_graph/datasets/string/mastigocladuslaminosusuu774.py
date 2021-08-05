@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MastigocladusLaminosusUu774.
+This file offers the methods to automatically retrieve the graph Mastigocladus laminosus UU774.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MastigocladusLaminosusUu774(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MastigocladusLaminosusUu774 graph.
+    """Return new instance of the Mastigocladus laminosus UU774 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MastigocladusLaminosusUu774(
 
     Returns
     -----------------------
-    Instace of MastigocladusLaminosusUu774 graph.
+    Instace of Mastigocladus laminosus UU774 graph.
 
 	References
 	---------------------

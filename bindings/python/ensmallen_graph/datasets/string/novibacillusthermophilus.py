@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovibacillusThermophilus.
+This file offers the methods to automatically retrieve the graph Novibacillus thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovibacillusThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovibacillusThermophilus graph.
+    """Return new instance of the Novibacillus thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovibacillusThermophilus(
 
     Returns
     -----------------------
-    Instace of NovibacillusThermophilus graph.
+    Instace of Novibacillus thermophilus graph.
 
 	References
 	---------------------

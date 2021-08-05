@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusOryzaeRib40.
+This file offers the methods to automatically retrieve the graph Aspergillus oryzae RIB40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusOryzaeRib40(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusOryzaeRib40 graph.
+    """Return new instance of the Aspergillus oryzae RIB40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusOryzaeRib40(
 
     Returns
     -----------------------
-    Instace of AspergillusOryzaeRib40 graph.
+    Instace of Aspergillus oryzae RIB40 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSpC9.
+This file offers the methods to automatically retrieve the graph Oribacterium sp. C9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSpC9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSpC9 graph.
+    """Return new instance of the Oribacterium sp. C9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OribacteriumSpC9(
 
     Returns
     -----------------------
-    Instace of OribacteriumSpC9 graph.
+    Instace of Oribacterium sp. C9 graph.
 
 	References
 	---------------------

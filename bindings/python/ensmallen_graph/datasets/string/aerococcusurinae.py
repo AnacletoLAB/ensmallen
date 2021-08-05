@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AerococcusUrinae.
+This file offers the methods to automatically retrieve the graph Aerococcus urinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AerococcusUrinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AerococcusUrinae graph.
+    """Return new instance of the Aerococcus urinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AerococcusUrinae(
 
     Returns
     -----------------------
-    Instace of AerococcusUrinae graph.
+    Instace of Aerococcus urinae graph.
 
 	References
 	---------------------

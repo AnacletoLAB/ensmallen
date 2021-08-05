@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumChabaudi.
+This file offers the methods to automatically retrieve the graph Plasmodium chabaudi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumChabaudi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumChabaudi graph.
+    """Return new instance of the Plasmodium chabaudi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumChabaudi(
 
     Returns
     -----------------------
-    Instace of PlasmodiumChabaudi graph.
+    Instace of Plasmodium chabaudi graph.
 
 	References
 	---------------------

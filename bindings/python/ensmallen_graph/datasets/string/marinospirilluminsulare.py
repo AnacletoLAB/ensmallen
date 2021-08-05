@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinospirillumInsulare.
+This file offers the methods to automatically retrieve the graph Marinospirillum insulare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinospirillumInsulare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinospirillumInsulare graph.
+    """Return new instance of the Marinospirillum insulare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinospirillumInsulare(
 
     Returns
     -----------------------
-    Instace of MarinospirillumInsulare graph.
+    Instace of Marinospirillum insulare graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalimicrobiumCyclicum.
+This file offers the methods to automatically retrieve the graph Thioalkalimicrobium cyclicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalimicrobiumCyclicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalimicrobiumCyclicum graph.
+    """Return new instance of the Thioalkalimicrobium cyclicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalimicrobiumCyclicum(
 
     Returns
     -----------------------
-    Instace of ThioalkalimicrobiumCyclicum graph.
+    Instace of Thioalkalimicrobium cyclicum graph.
 
 	References
 	---------------------

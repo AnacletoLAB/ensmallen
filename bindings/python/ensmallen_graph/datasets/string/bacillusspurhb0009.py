@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpUrhb0009.
+This file offers the methods to automatically retrieve the graph Bacillus sp. URHB0009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpUrhb0009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpUrhb0009 graph.
+    """Return new instance of the Bacillus sp. URHB0009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpUrhb0009(
 
     Returns
     -----------------------
-    Instace of BacillusSpUrhb0009 graph.
+    Instace of Bacillus sp. URHB0009 graph.
 
 	References
 	---------------------

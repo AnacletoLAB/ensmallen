@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumContaminans.
+This file offers the methods to automatically retrieve the graph Chryseobacterium contaminans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumContaminans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumContaminans graph.
+    """Return new instance of the Chryseobacterium contaminans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumContaminans(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumContaminans graph.
+    Instace of Chryseobacterium contaminans graph.
 
 	References
 	---------------------

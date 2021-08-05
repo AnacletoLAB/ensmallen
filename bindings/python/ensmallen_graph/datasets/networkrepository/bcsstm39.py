@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstm39.
+This file offers the methods to automatically retrieve the graph bcsstm39.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstm39(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstm39 graph.
+    """Return new instance of the bcsstm39 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstm39(
 
     Returns
     -----------------------
-    Instace of Bcsstm39 graph.
+    Instace of bcsstm39 graph.
 
 	References
 	---------------------

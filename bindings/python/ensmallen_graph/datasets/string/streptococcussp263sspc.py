@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSp263Sspc.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. 263_SSPC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSp263Sspc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSp263Sspc graph.
+    """Return new instance of the Streptococcus sp. 263_SSPC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSp263Sspc(
 
     Returns
     -----------------------
-    Instace of StreptococcusSp263Sspc graph.
+    Instace of Streptococcus sp. 263_SSPC graph.
 
 	References
 	---------------------

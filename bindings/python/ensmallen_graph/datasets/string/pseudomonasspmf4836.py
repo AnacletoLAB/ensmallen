@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpMf4836.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. MF4836.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpMf4836(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpMf4836 graph.
+    """Return new instance of the Pseudomonas sp. MF4836 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpMf4836(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpMf4836 graph.
+    Instace of Pseudomonas sp. MF4836 graph.
 
 	References
 	---------------------

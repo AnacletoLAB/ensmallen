@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaSpCag878.
+This file offers the methods to automatically retrieve the graph Acholeplasma sp. CAG:878.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaSpCag878(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaSpCag878 graph.
+    """Return new instance of the Acholeplasma sp. CAG:878 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcholeplasmaSpCag878(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaSpCag878 graph.
+    Instace of Acholeplasma sp. CAG:878 graph.
 
 	References
 	---------------------

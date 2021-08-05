@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhoceaMassiliensis.
+This file offers the methods to automatically retrieve the graph Phocea massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhoceaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhoceaMassiliensis graph.
+    """Return new instance of the Phocea massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhoceaMassiliensis(
 
     Returns
     -----------------------
-    Instace of PhoceaMassiliensis graph.
+    Instace of Phocea massiliensis graph.
 
 	References
 	---------------------

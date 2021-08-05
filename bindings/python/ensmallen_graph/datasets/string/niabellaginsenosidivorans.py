@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiabellaGinsenosidivorans.
+This file offers the methods to automatically retrieve the graph Niabella ginsenosidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiabellaGinsenosidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiabellaGinsenosidivorans graph.
+    """Return new instance of the Niabella ginsenosidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NiabellaGinsenosidivorans(
 
     Returns
     -----------------------
-    Instace of NiabellaGinsenosidivorans graph.
+    Instace of Niabella ginsenosidivorans graph.
 
 	References
 	---------------------

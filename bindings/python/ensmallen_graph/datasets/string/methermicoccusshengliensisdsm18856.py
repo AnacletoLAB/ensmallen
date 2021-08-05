@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethermicoccusShengliensisDsm18856.
+This file offers the methods to automatically retrieve the graph Methermicoccus shengliensis DSM 18856.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethermicoccusShengliensisDsm18856(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethermicoccusShengliensisDsm18856 graph.
+    """Return new instance of the Methermicoccus shengliensis DSM 18856 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethermicoccusShengliensisDsm18856(
 
     Returns
     -----------------------
-    Instace of MethermicoccusShengliensisDsm18856 graph.
+    Instace of Methermicoccus shengliensis DSM 18856 graph.
 
 	References
 	---------------------

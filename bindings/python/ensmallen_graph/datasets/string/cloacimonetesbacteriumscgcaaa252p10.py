@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CloacimonetesBacteriumScgcAaa252P10.
+This file offers the methods to automatically retrieve the graph Cloacimonetes bacterium SCGC AAA252-P10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CloacimonetesBacteriumScgcAaa252P10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CloacimonetesBacteriumScgcAaa252P10 graph.
+    """Return new instance of the Cloacimonetes bacterium SCGC AAA252-P10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CloacimonetesBacteriumScgcAaa252P10(
 
     Returns
     -----------------------
-    Instace of CloacimonetesBacteriumScgcAaa252P10 graph.
+    Instace of Cloacimonetes bacterium SCGC AAA252-P10 graph.
 
 	References
 	---------------------

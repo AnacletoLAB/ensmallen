@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaJogaejeotgali.
+This file offers the methods to automatically retrieve the graph Weissella jogaejeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaJogaejeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaJogaejeotgali graph.
+    """Return new instance of the Weissella jogaejeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WeissellaJogaejeotgali(
 
     Returns
     -----------------------
-    Instace of WeissellaJogaejeotgali graph.
+    Instace of Weissella jogaejeotgali graph.
 
 	References
 	---------------------

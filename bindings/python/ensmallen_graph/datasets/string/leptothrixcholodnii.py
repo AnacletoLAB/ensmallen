@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptothrixCholodnii.
+This file offers the methods to automatically retrieve the graph Leptothrix cholodnii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptothrixCholodnii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptothrixCholodnii graph.
+    """Return new instance of the Leptothrix cholodnii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptothrixCholodnii(
 
     Returns
     -----------------------
-    Instace of LeptothrixCholodnii graph.
+    Instace of Leptothrix cholodnii graph.
 
 	References
 	---------------------

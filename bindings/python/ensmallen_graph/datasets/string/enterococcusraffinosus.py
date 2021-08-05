@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusRaffinosus.
+This file offers the methods to automatically retrieve the graph Enterococcus raffinosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusRaffinosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusRaffinosus graph.
+    """Return new instance of the Enterococcus raffinosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusRaffinosus(
 
     Returns
     -----------------------
-    Instace of EnterococcusRaffinosus graph.
+    Instace of Enterococcus raffinosus graph.
 
 	References
 	---------------------

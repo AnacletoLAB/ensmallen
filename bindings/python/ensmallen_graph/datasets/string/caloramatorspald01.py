@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloramatorSpAld01.
+This file offers the methods to automatically retrieve the graph Caloramator sp. ALD01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloramatorSpAld01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloramatorSpAld01 graph.
+    """Return new instance of the Caloramator sp. ALD01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaloramatorSpAld01(
 
     Returns
     -----------------------
-    Instace of CaloramatorSpAld01 graph.
+    Instace of Caloramator sp. ALD01 graph.
 
 	References
 	---------------------

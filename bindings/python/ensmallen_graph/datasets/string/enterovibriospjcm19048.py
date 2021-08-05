@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioSpJcm19048.
+This file offers the methods to automatically retrieve the graph Enterovibrio sp. JCM 19048.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioSpJcm19048(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioSpJcm19048 graph.
+    """Return new instance of the Enterovibrio sp. JCM 19048 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterovibrioSpJcm19048(
 
     Returns
     -----------------------
-    Instace of EnterovibrioSpJcm19048 graph.
+    Instace of Enterovibrio sp. JCM 19048 graph.
 
 	References
 	---------------------

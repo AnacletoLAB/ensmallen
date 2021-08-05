@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CylindrospermumStagnale.
+This file offers the methods to automatically retrieve the graph Cylindrospermum stagnale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CylindrospermumStagnale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CylindrospermumStagnale graph.
+    """Return new instance of the Cylindrospermum stagnale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CylindrospermumStagnale(
 
     Returns
     -----------------------
-    Instace of CylindrospermumStagnale graph.
+    Instace of Cylindrospermum stagnale graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaMarcescensFgi94.
+This file offers the methods to automatically retrieve the graph Serratia marcescens FGI94.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaMarcescensFgi94(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaMarcescensFgi94 graph.
+    """Return new instance of the Serratia marcescens FGI94 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaMarcescensFgi94(
 
     Returns
     -----------------------
-    Instace of SerratiaMarcescensFgi94 graph.
+    Instace of Serratia marcescens FGI94 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasSpAl212.
+This file offers the methods to automatically retrieve the graph Nitrosomonas sp. AL212.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasSpAl212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasSpAl212 graph.
+    """Return new instance of the Nitrosomonas sp. AL212 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosomonasSpAl212(
 
     Returns
     -----------------------
-    Instace of NitrosomonasSpAl212 graph.
+    Instace of Nitrosomonas sp. AL212 graph.
 
 	References
 	---------------------

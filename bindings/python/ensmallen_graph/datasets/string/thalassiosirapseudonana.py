@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassiosiraPseudonana.
+This file offers the methods to automatically retrieve the graph Thalassiosira pseudonana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassiosiraPseudonana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassiosiraPseudonana graph.
+    """Return new instance of the Thalassiosira pseudonana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassiosiraPseudonana(
 
     Returns
     -----------------------
-    Instace of ThalassiosiraPseudonana graph.
+    Instace of Thalassiosira pseudonana graph.
 
 	References
 	---------------------

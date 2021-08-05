@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AptenodytesForsteri.
+This file offers the methods to automatically retrieve the graph Aptenodytes forsteri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AptenodytesForsteri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AptenodytesForsteri graph.
+    """Return new instance of the Aptenodytes forsteri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AptenodytesForsteri(
 
     Returns
     -----------------------
-    Instace of AptenodytesForsteri graph.
+    Instace of Aptenodytes forsteri graph.
 
 	References
 	---------------------

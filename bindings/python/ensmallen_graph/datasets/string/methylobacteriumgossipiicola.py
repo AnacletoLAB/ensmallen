@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumGossipiicola.
+This file offers the methods to automatically retrieve the graph Methylobacterium gossipiicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumGossipiicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumGossipiicola graph.
+    """Return new instance of the Methylobacterium gossipiicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumGossipiicola(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumGossipiicola graph.
+    Instace of Methylobacterium gossipiicola graph.
 
 	References
 	---------------------

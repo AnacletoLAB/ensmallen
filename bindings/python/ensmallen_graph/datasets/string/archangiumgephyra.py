@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchangiumGephyra.
+This file offers the methods to automatically retrieve the graph Archangium gephyra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchangiumGephyra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchangiumGephyra graph.
+    """Return new instance of the Archangium gephyra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArchangiumGephyra(
 
     Returns
     -----------------------
-    Instace of ArchangiumGephyra graph.
+    Instace of Archangium gephyra graph.
 
 	References
 	---------------------

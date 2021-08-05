@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Fcondp2.
+This file offers the methods to automatically retrieve the graph fcondp2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Fcondp2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Fcondp2 graph.
+    """Return new instance of the fcondp2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Fcondp2(
 
     Returns
     -----------------------
-    Instace of Fcondp2 graph.
+    Instace of fcondp2 graph.
 
 	References
 	---------------------

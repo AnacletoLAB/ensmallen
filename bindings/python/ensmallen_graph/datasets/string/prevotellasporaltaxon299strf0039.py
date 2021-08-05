@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpOralTaxon299StrF0039.
+This file offers the methods to automatically retrieve the graph Prevotella sp. oral taxon 299 str. F0039.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpOralTaxon299StrF0039(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpOralTaxon299StrF0039 graph.
+    """Return new instance of the Prevotella sp. oral taxon 299 str. F0039 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpOralTaxon299StrF0039(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpOralTaxon299StrF0039 graph.
+    Instace of Prevotella sp. oral taxon 299 str. F0039 graph.
 
 	References
 	---------------------

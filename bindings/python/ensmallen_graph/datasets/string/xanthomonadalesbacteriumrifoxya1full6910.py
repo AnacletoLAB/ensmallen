@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonadalesBacteriumRifoxya1Full6910.
+This file offers the methods to automatically retrieve the graph Xanthomonadales bacterium RIFOXYA1_FULL_69_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonadalesBacteriumRifoxya1Full6910(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonadalesBacteriumRifoxya1Full6910 graph.
+    """Return new instance of the Xanthomonadales bacterium RIFOXYA1_FULL_69_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonadalesBacteriumRifoxya1Full6910(
 
     Returns
     -----------------------
-    Instace of XanthomonadalesBacteriumRifoxya1Full6910 graph.
+    Instace of Xanthomonadales bacterium RIFOXYA1_FULL_69_10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumCynomolgi.
+This file offers the methods to automatically retrieve the graph Plasmodium cynomolgi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumCynomolgi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumCynomolgi graph.
+    """Return new instance of the Plasmodium cynomolgi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumCynomolgi(
 
     Returns
     -----------------------
-    Instace of PlasmodiumCynomolgi graph.
+    Instace of Plasmodium cynomolgi graph.
 
 	References
 	---------------------

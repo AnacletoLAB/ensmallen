@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpRu33a.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. RU33A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpRu33a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpRu33a graph.
+    """Return new instance of the Rhizobium sp. RU33A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpRu33a(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpRu33a graph.
+    Instace of Rhizobium sp. RU33A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpCag318.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. CAG:318.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpCag318(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpCag318 graph.
+    """Return new instance of the Butyrivibrio sp. CAG:318 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioSpCag318(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpCag318 graph.
+    Instace of Butyrivibrio sp. CAG:318 graph.
 
 	References
 	---------------------

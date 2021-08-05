@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaCulicicola.
+This file offers the methods to automatically retrieve the graph Spiroplasma culicicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaCulicicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaCulicicola graph.
+    """Return new instance of the Spiroplasma culicicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaCulicicola(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaCulicicola graph.
+    Instace of Spiroplasma culicicola graph.
 
 	References
 	---------------------

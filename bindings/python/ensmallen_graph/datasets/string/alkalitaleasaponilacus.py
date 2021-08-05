@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalitaleaSaponilacus.
+This file offers the methods to automatically retrieve the graph Alkalitalea saponilacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalitaleaSaponilacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalitaleaSaponilacus graph.
+    """Return new instance of the Alkalitalea saponilacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalitaleaSaponilacus(
 
     Returns
     -----------------------
-    Instace of AlkalitaleaSaponilacus graph.
+    Instace of Alkalitalea saponilacus graph.
 
 	References
 	---------------------

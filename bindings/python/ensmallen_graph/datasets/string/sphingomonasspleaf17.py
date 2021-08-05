@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpLeaf17.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. Leaf17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpLeaf17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpLeaf17 graph.
+    """Return new instance of the Sphingomonas sp. Leaf17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpLeaf17(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpLeaf17 graph.
+    Instace of Sphingomonas sp. Leaf17 graph.
 
 	References
 	---------------------

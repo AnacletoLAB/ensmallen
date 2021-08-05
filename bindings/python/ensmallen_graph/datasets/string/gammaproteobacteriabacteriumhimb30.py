@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumHimb30.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium HIMB30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumHimb30(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumHimb30 graph.
+    """Return new instance of the Gammaproteobacteria bacterium HIMB30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumHimb30(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumHimb30 graph.
+    Instace of Gammaproteobacteria bacterium HIMB30 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaIhuae.
+This file offers the methods to automatically retrieve the graph Collinsella ihuae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaIhuae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaIhuae graph.
+    """Return new instance of the Collinsella ihuae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollinsellaIhuae(
 
     Returns
     -----------------------
-    Instace of CollinsellaIhuae graph.
+    Instace of Collinsella ihuae graph.
 
 	References
 	---------------------

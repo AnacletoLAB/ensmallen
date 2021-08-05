@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaPedisStrTA4.
+This file offers the methods to automatically retrieve the graph Treponema pedis str. T A4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaPedisStrTA4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaPedisStrTA4 graph.
+    """Return new instance of the Treponema pedis str. T A4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaPedisStrTA4(
 
     Returns
     -----------------------
-    Instace of TreponemaPedisStrTA4 graph.
+    Instace of Treponema pedis str. T A4 graph.
 
 	References
 	---------------------

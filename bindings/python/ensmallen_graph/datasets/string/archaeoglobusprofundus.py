@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobusProfundus.
+This file offers the methods to automatically retrieve the graph Archaeoglobus profundus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobusProfundus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobusProfundus graph.
+    """Return new instance of the Archaeoglobus profundus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArchaeoglobusProfundus(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobusProfundus graph.
+    Instace of Archaeoglobus profundus graph.
 
 	References
 	---------------------

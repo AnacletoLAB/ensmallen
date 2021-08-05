@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PersicobacterSpJzb09.
+This file offers the methods to automatically retrieve the graph Persicobacter sp. JZB09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PersicobacterSpJzb09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PersicobacterSpJzb09 graph.
+    """Return new instance of the Persicobacter sp. JZB09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PersicobacterSpJzb09(
 
     Returns
     -----------------------
-    Instace of PersicobacterSpJzb09 graph.
+    Instace of Persicobacter sp. JZB09 graph.
 
 	References
 	---------------------

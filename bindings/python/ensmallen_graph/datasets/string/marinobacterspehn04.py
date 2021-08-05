@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpEhn04.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. EhN04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpEhn04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpEhn04 graph.
+    """Return new instance of the Marinobacter sp. EhN04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSpEhn04(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpEhn04 graph.
+    Instace of Marinobacter sp. EhN04 graph.
 
 	References
 	---------------------

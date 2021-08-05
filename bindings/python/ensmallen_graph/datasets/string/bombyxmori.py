@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BombyxMori.
+This file offers the methods to automatically retrieve the graph Bombyx mori.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BombyxMori(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BombyxMori graph.
+    """Return new instance of the Bombyx mori graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BombyxMori(
 
     Returns
     -----------------------
-    Instace of BombyxMori graph.
+    Instace of Bombyx mori graph.
 
 	References
 	---------------------

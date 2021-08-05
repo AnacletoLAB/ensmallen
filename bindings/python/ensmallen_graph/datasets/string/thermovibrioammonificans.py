@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermovibrioAmmonificans.
+This file offers the methods to automatically retrieve the graph Thermovibrio ammonificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermovibrioAmmonificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermovibrioAmmonificans graph.
+    """Return new instance of the Thermovibrio ammonificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermovibrioAmmonificans(
 
     Returns
     -----------------------
-    Instace of ThermovibrioAmmonificans graph.
+    Instace of Thermovibrio ammonificans graph.
 
 	References
 	---------------------

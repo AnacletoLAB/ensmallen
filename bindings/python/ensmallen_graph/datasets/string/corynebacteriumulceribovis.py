@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumUlceribovis.
+This file offers the methods to automatically retrieve the graph Corynebacterium ulceribovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumUlceribovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumUlceribovis graph.
+    """Return new instance of the Corynebacterium ulceribovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumUlceribovis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumUlceribovis graph.
+    Instace of Corynebacterium ulceribovis graph.
 
 	References
 	---------------------

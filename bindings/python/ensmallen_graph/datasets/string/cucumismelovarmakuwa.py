@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CucumisMeloVarMakuwa.
+This file offers the methods to automatically retrieve the graph Cucumis melo var. makuwa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CucumisMeloVarMakuwa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CucumisMeloVarMakuwa graph.
+    """Return new instance of the Cucumis melo var. makuwa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CucumisMeloVarMakuwa(
 
     Returns
     -----------------------
-    Instace of CucumisMeloVarMakuwa graph.
+    Instace of Cucumis melo var. makuwa graph.
 
 	References
 	---------------------

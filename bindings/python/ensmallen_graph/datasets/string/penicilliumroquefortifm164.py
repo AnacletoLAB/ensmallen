@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumRoquefortiFm164.
+This file offers the methods to automatically retrieve the graph Penicillium roqueforti FM164.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumRoquefortiFm164(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumRoquefortiFm164 graph.
+    """Return new instance of the Penicillium roqueforti FM164 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumRoquefortiFm164(
 
     Returns
     -----------------------
-    Instace of PenicilliumRoquefortiFm164 graph.
+    Instace of Penicillium roqueforti FM164 graph.
 
 	References
 	---------------------

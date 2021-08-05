@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerriphaselusAmnicola.
+This file offers the methods to automatically retrieve the graph Ferriphaselus amnicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerriphaselusAmnicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerriphaselusAmnicola graph.
+    """Return new instance of the Ferriphaselus amnicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerriphaselusAmnicola(
 
     Returns
     -----------------------
-    Instace of FerriphaselusAmnicola graph.
+    Instace of Ferriphaselus amnicola graph.
 
 	References
 	---------------------

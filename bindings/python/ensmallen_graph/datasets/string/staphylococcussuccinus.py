@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSuccinus.
+This file offers the methods to automatically retrieve the graph Staphylococcus succinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSuccinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSuccinus graph.
+    """Return new instance of the Staphylococcus succinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusSuccinus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSuccinus graph.
+    Instace of Staphylococcus succinus graph.
 
 	References
 	---------------------

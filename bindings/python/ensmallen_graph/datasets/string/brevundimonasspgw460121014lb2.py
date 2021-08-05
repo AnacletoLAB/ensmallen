@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpGw460121014Lb2.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. GW460-12-10-14-LB2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpGw460121014Lb2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpGw460121014Lb2 graph.
+    """Return new instance of the Brevundimonas sp. GW460-12-10-14-LB2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpGw460121014Lb2(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpGw460121014Lb2 graph.
+    Instace of Brevundimonas sp. GW460-12-10-14-LB2 graph.
 
 	References
 	---------------------

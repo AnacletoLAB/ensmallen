@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraLicerasiaeStrMmd4847.
+This file offers the methods to automatically retrieve the graph Leptospira licerasiae str. MMD4847.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraLicerasiaeStrMmd4847(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraLicerasiaeStrMmd4847 graph.
+    """Return new instance of the Leptospira licerasiae str. MMD4847 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraLicerasiaeStrMmd4847(
 
     Returns
     -----------------------
-    Instace of LeptospiraLicerasiaeStrMmd4847 graph.
+    Instace of Leptospira licerasiae str. MMD4847 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodotorulaSpCcfee5036.
+This file offers the methods to automatically retrieve the graph Rhodotorula sp. CCFEE 5036.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodotorulaSpCcfee5036(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodotorulaSpCcfee5036 graph.
+    """Return new instance of the Rhodotorula sp. CCFEE 5036 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodotorulaSpCcfee5036(
 
     Returns
     -----------------------
-    Instace of RhodotorulaSpCcfee5036 graph.
+    Instace of Rhodotorula sp. CCFEE 5036 graph.
 
 	References
 	---------------------

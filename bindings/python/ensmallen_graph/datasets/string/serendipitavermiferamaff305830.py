@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerendipitaVermiferaMaff305830.
+This file offers the methods to automatically retrieve the graph Serendipita vermifera MAFF 305830.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerendipitaVermiferaMaff305830(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerendipitaVermiferaMaff305830 graph.
+    """Return new instance of the Serendipita vermifera MAFF 305830 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerendipitaVermiferaMaff305830(
 
     Returns
     -----------------------
-    Instace of SerendipitaVermiferaMaff305830 graph.
+    Instace of Serendipita vermifera MAFF 305830 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheileriaOrientalisStrainShintoku.
+This file offers the methods to automatically retrieve the graph Theileria orientalis strain Shintoku.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheileriaOrientalisStrainShintoku(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheileriaOrientalisStrainShintoku graph.
+    """Return new instance of the Theileria orientalis strain Shintoku graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TheileriaOrientalisStrainShintoku(
 
     Returns
     -----------------------
-    Instace of TheileriaOrientalisStrainShintoku graph.
+    Instace of Theileria orientalis strain Shintoku graph.
 
 	References
 	---------------------

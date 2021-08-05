@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalotheceSpPcc7418.
+This file offers the methods to automatically retrieve the graph Halothece sp. PCC7418.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalotheceSpPcc7418(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalotheceSpPcc7418 graph.
+    """Return new instance of the Halothece sp. PCC7418 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalotheceSpPcc7418(
 
     Returns
     -----------------------
-    Instace of HalotheceSpPcc7418 graph.
+    Instace of Halothece sp. PCC7418 graph.
 
 	References
 	---------------------

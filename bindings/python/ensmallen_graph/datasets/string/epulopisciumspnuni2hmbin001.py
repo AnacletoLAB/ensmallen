@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpNuni2hMbin001.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. Nuni2H_MBin001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpNuni2hMbin001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpNuni2hMbin001 graph.
+    """Return new instance of the Epulopiscium sp. Nuni2H_MBin001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpNuni2hMbin001(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpNuni2hMbin001 graph.
+    Instace of Epulopiscium sp. Nuni2H_MBin001 graph.
 
 	References
 	---------------------

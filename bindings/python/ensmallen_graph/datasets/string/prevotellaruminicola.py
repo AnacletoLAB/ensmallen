@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaRuminicola.
+This file offers the methods to automatically retrieve the graph Prevotella ruminicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaRuminicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaRuminicola graph.
+    """Return new instance of the Prevotella ruminicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaRuminicola(
 
     Returns
     -----------------------
-    Instace of PrevotellaRuminicola graph.
+    Instace of Prevotella ruminicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OerskoviaTurbata.
+This file offers the methods to automatically retrieve the graph Oerskovia turbata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OerskoviaTurbata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OerskoviaTurbata graph.
+    """Return new instance of the Oerskovia turbata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OerskoviaTurbata(
 
     Returns
     -----------------------
-    Instace of OerskoviaTurbata graph.
+    Instace of Oerskovia turbata graph.
 
 	References
 	---------------------

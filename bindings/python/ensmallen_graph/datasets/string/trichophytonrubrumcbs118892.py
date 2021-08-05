@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichophytonRubrumCbs118892.
+This file offers the methods to automatically retrieve the graph Trichophyton rubrum CBS 118892.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichophytonRubrumCbs118892(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichophytonRubrumCbs118892 graph.
+    """Return new instance of the Trichophyton rubrum CBS 118892 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichophytonRubrumCbs118892(
 
     Returns
     -----------------------
-    Instace of TrichophytonRubrumCbs118892 graph.
+    Instace of Trichophyton rubrum CBS 118892 graph.
 
 	References
 	---------------------

@@ -13,7 +13,8 @@
                 "edge_list_edge_types_column": "predicate",
                 "nodes_column": "id",
                 "node_list_node_types_column": "category",
-                "node_types_separator": "|"
+                "node_types_separator": "|",
+                "name": "Monarch"
             }
         },
         "202012": {
@@ -29,7 +30,8 @@
                 "edge_list_edge_types_column": "predicate",
                 "nodes_column": "id",
                 "node_list_node_types_column": "category",
-                "node_types_separator": "|"
+                "node_types_separator": "|",
+                "name": "Monarch"
             }
         }
     }

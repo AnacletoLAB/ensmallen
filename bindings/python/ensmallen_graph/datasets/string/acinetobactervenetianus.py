@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterVenetianus.
+This file offers the methods to automatically retrieve the graph Acinetobacter venetianus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterVenetianus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterVenetianus graph.
+    """Return new instance of the Acinetobacter venetianus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterVenetianus(
 
     Returns
     -----------------------
-    Instace of AcinetobacterVenetianus graph.
+    Instace of Acinetobacter venetianus graph.
 
 	References
 	---------------------

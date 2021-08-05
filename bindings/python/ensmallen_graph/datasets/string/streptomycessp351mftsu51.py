@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSp351mftsu51.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. 351MFTsu51.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSp351mftsu51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSp351mftsu51 graph.
+    """Return new instance of the Streptomyces sp. 351MFTsu51 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSp351mftsu51(
 
     Returns
     -----------------------
-    Instace of StreptomycesSp351mftsu51 graph.
+    Instace of Streptomyces sp. 351MFTsu51 graph.
 
 	References
 	---------------------

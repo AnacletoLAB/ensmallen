@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumSpWn1359.
+This file offers the methods to automatically retrieve the graph Carnobacterium sp. WN1359.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumSpWn1359(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumSpWn1359 graph.
+    """Return new instance of the Carnobacterium sp. WN1359 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumSpWn1359(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumSpWn1359 graph.
+    Instace of Carnobacterium sp. WN1359 graph.
 
 	References
 	---------------------

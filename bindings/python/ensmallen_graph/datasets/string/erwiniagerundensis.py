@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaGerundensis.
+This file offers the methods to automatically retrieve the graph Erwinia gerundensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaGerundensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaGerundensis graph.
+    """Return new instance of the Erwinia gerundensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErwiniaGerundensis(
 
     Returns
     -----------------------
-    Instace of ErwiniaGerundensis graph.
+    Instace of Erwinia gerundensis graph.
 
 	References
 	---------------------

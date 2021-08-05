@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerriphaselusSpR1.
+This file offers the methods to automatically retrieve the graph Ferriphaselus sp. R1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerriphaselusSpR1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerriphaselusSpR1 graph.
+    """Return new instance of the Ferriphaselus sp. R1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FerriphaselusSpR1(
 
     Returns
     -----------------------
-    Instace of FerriphaselusSpR1 graph.
+    Instace of Ferriphaselus sp. R1 graph.
 
 	References
 	---------------------

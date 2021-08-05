@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaNautarum.
+This file offers the methods to automatically retrieve the graph Legionella nautarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaNautarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaNautarum graph.
+    """Return new instance of the Legionella nautarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaNautarum(
 
     Returns
     -----------------------
-    Instace of LegionellaNautarum graph.
+    Instace of Legionella nautarum graph.
 
 	References
 	---------------------

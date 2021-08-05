@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCrassostreae.
+This file offers the methods to automatically retrieve the graph Flavobacterium crassostreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumCrassostreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCrassostreae graph.
+    """Return new instance of the Flavobacterium crassostreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumCrassostreae(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCrassostreae graph.
+    Instace of Flavobacterium crassostreae graph.
 
 	References
 	---------------------

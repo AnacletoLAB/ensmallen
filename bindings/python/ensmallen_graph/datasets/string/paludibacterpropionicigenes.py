@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaludibacterPropionicigenes.
+This file offers the methods to automatically retrieve the graph Paludibacter propionicigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaludibacterPropionicigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaludibacterPropionicigenes graph.
+    """Return new instance of the Paludibacter propionicigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaludibacterPropionicigenes(
 
     Returns
     -----------------------
-    Instace of PaludibacterPropionicigenes graph.
+    Instace of Paludibacter propionicigenes graph.
 
 	References
 	---------------------

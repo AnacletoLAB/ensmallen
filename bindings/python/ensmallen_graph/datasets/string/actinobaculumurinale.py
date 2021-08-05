@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobaculumUrinale.
+This file offers the methods to automatically retrieve the graph Actinobaculum urinale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobaculumUrinale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobaculumUrinale graph.
+    """Return new instance of the Actinobaculum urinale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobaculumUrinale(
 
     Returns
     -----------------------
-    Instace of ActinobaculumUrinale graph.
+    Instace of Actinobaculum urinale graph.
 
 	References
 	---------------------

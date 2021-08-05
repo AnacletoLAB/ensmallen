@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrobacterFarmeri.
+This file offers the methods to automatically retrieve the graph Citrobacter farmeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrobacterFarmeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrobacterFarmeri graph.
+    """Return new instance of the Citrobacter farmeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitrobacterFarmeri(
 
     Returns
     -----------------------
-    Instace of CitrobacterFarmeri graph.
+    Instace of Citrobacter farmeri graph.
 
 	References
 	---------------------

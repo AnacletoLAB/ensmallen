@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSacchari.
+This file offers the methods to automatically retrieve the graph Duganella sacchari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSacchari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSacchari graph.
+    """Return new instance of the Duganella sacchari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSacchari(
 
     Returns
     -----------------------
-    Instace of DuganellaSacchari graph.
+    Instace of Duganella sacchari graph.
 
 	References
 	---------------------

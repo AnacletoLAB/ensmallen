@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxXenomutans.
+This file offers the methods to automatically retrieve the graph Alcanivorax xenomutans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxXenomutans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxXenomutans graph.
+    """Return new instance of the Alcanivorax xenomutans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlcanivoraxXenomutans(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxXenomutans graph.
+    Instace of Alcanivorax xenomutans graph.
 
 	References
 	---------------------

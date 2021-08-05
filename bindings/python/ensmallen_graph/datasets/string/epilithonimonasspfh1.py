@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpilithonimonasSpFh1.
+This file offers the methods to automatically retrieve the graph Epilithonimonas sp. FH1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpilithonimonasSpFh1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpilithonimonasSpFh1 graph.
+    """Return new instance of the Epilithonimonas sp. FH1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EpilithonimonasSpFh1(
 
     Returns
     -----------------------
-    Instace of EpilithonimonasSpFh1 graph.
+    Instace of Epilithonimonas sp. FH1 graph.
 
 	References
 	---------------------

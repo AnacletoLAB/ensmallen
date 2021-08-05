@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusChagannorensis.
+This file offers the methods to automatically retrieve the graph Bacillus chagannorensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusChagannorensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusChagannorensis graph.
+    """Return new instance of the Bacillus chagannorensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusChagannorensis(
 
     Returns
     -----------------------
-    Instace of BacillusChagannorensis graph.
+    Instace of Bacillus chagannorensis graph.
 
 	References
 	---------------------

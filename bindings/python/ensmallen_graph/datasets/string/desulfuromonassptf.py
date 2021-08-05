@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfuromonasSpTf.
+This file offers the methods to automatically retrieve the graph Desulfuromonas sp. TF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfuromonasSpTf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfuromonasSpTf graph.
+    """Return new instance of the Desulfuromonas sp. TF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfuromonasSpTf(
 
     Returns
     -----------------------
-    Instace of DesulfuromonasSpTf graph.
+    Instace of Desulfuromonas sp. TF graph.
 
 	References
 	---------------------

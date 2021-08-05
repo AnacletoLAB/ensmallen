@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArachidicoccusRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Arachidicoccus rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArachidicoccusRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArachidicoccusRhizosphaerae graph.
+    """Return new instance of the Arachidicoccus rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArachidicoccusRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of ArachidicoccusRhizosphaerae graph.
+    Instace of Arachidicoccus rhizosphaerae graph.
 
 	References
 	---------------------

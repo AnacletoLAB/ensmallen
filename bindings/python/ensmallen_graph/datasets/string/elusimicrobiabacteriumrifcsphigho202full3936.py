@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElusimicrobiaBacteriumRifcsphigho202Full3936.
+This file offers the methods to automatically retrieve the graph Elusimicrobia bacterium RIFCSPHIGHO2_02_FULL_39_36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElusimicrobiaBacteriumRifcsphigho202Full3936(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElusimicrobiaBacteriumRifcsphigho202Full3936 graph.
+    """Return new instance of the Elusimicrobia bacterium RIFCSPHIGHO2_02_FULL_39_36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElusimicrobiaBacteriumRifcsphigho202Full3936(
 
     Returns
     -----------------------
-    Instace of ElusimicrobiaBacteriumRifcsphigho202Full3936 graph.
+    Instace of Elusimicrobia bacterium RIFCSPHIGHO2_02_FULL_39_36 graph.
 
 	References
 	---------------------

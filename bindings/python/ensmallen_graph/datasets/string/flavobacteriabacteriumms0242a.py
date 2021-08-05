@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaBacteriumMs0242a.
+This file offers the methods to automatically retrieve the graph Flavobacteria bacterium MS0242A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaBacteriumMs0242a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaBacteriumMs0242a graph.
+    """Return new instance of the Flavobacteria bacterium MS0242A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriaBacteriumMs0242a(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaBacteriumMs0242a graph.
+    Instace of Flavobacteria bacterium MS0242A graph.
 
 	References
 	---------------------

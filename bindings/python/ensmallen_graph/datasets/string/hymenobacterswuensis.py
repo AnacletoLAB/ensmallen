@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterSwuensis.
+This file offers the methods to automatically retrieve the graph Hymenobacter swuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterSwuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterSwuensis graph.
+    """Return new instance of the Hymenobacter swuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HymenobacterSwuensis(
 
     Returns
     -----------------------
-    Instace of HymenobacterSwuensis graph.
+    Instace of Hymenobacter swuensis graph.
 
 	References
 	---------------------

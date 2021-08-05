@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychromonasAquimarinaAtccBaa1526.
+This file offers the methods to automatically retrieve the graph Psychromonas aquimarina ATCC BAA-1526.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychromonasAquimarinaAtccBaa1526(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychromonasAquimarinaAtccBaa1526 graph.
+    """Return new instance of the Psychromonas aquimarina ATCC BAA-1526 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychromonasAquimarinaAtccBaa1526(
 
     Returns
     -----------------------
-    Instace of PsychromonasAquimarinaAtccBaa1526 graph.
+    Instace of Psychromonas aquimarina ATCC BAA-1526 graph.
 
 	References
 	---------------------

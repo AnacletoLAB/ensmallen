@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAcidiscabies.
+This file offers the methods to automatically retrieve the graph Streptomyces acidiscabies.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAcidiscabies(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAcidiscabies graph.
+    """Return new instance of the Streptomyces acidiscabies graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesAcidiscabies(
 
     Returns
     -----------------------
-    Instace of StreptomycesAcidiscabies graph.
+    Instace of Streptomyces acidiscabies graph.
 
 	References
 	---------------------

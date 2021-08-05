@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyotisDavidii.
+This file offers the methods to automatically retrieve the graph Myotis davidii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyotisDavidii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyotisDavidii graph.
+    """Return new instance of the Myotis davidii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyotisDavidii(
 
     Returns
     -----------------------
-    Instace of MyotisDavidii graph.
+    Instace of Myotis davidii graph.
 
 	References
 	---------------------

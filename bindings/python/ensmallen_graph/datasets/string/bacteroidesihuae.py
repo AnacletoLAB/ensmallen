@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesIhuae.
+This file offers the methods to automatically retrieve the graph Bacteroides ihuae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesIhuae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesIhuae graph.
+    """Return new instance of the Bacteroides ihuae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesIhuae(
 
     Returns
     -----------------------
-    Instace of BacteroidesIhuae graph.
+    Instace of Bacteroides ihuae graph.
 
 	References
 	---------------------

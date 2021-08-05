@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcsstk29.
+This file offers the methods to automatically retrieve the graph bcsstk29.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcsstk29(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcsstk29 graph.
+    """Return new instance of the bcsstk29 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcsstk29(
 
     Returns
     -----------------------
-    Instace of Bcsstk29 graph.
+    Instace of bcsstk29 graph.
 
 	References
 	---------------------

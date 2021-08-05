@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiothrixCaldifontis.
+This file offers the methods to automatically retrieve the graph Thiothrix caldifontis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiothrixCaldifontis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiothrixCaldifontis graph.
+    """Return new instance of the Thiothrix caldifontis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiothrixCaldifontis(
 
     Returns
     -----------------------
-    Instace of ThiothrixCaldifontis graph.
+    Instace of Thiothrix caldifontis graph.
 
 	References
 	---------------------

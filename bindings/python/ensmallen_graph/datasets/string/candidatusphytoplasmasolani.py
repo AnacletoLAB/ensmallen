@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPhytoplasmaSolani.
+This file offers the methods to automatically retrieve the graph Candidatus Phytoplasma solani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPhytoplasmaSolani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPhytoplasmaSolani graph.
+    """Return new instance of the Candidatus Phytoplasma solani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPhytoplasmaSolani(
 
     Returns
     -----------------------
-    Instace of CandidatusPhytoplasmaSolani graph.
+    Instace of Candidatus Phytoplasma solani graph.
 
 	References
 	---------------------

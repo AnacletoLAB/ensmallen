@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBrassicacearum.
+This file offers the methods to automatically retrieve the graph Pseudomonas brassicacearum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBrassicacearum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBrassicacearum graph.
+    """Return new instance of the Pseudomonas brassicacearum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasBrassicacearum(
 
     Returns
     -----------------------
-    Instace of PseudomonasBrassicacearum graph.
+    Instace of Pseudomonas brassicacearum graph.
 
 	References
 	---------------------

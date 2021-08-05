@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WuchereriaBancrofti.
+This file offers the methods to automatically retrieve the graph Wuchereria bancrofti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WuchereriaBancrofti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WuchereriaBancrofti graph.
+    """Return new instance of the Wuchereria bancrofti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WuchereriaBancrofti(
 
     Returns
     -----------------------
-    Instace of WuchereriaBancrofti graph.
+    Instace of Wuchereria bancrofti graph.
 
 	References
 	---------------------

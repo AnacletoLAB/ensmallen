@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseobacterSpSk20926.
+This file offers the methods to automatically retrieve the graph Roseobacter sp. SK20926.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseobacterSpSk20926(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseobacterSpSk20926 graph.
+    """Return new instance of the Roseobacter sp. SK20926 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseobacterSpSk20926(
 
     Returns
     -----------------------
-    Instace of RoseobacterSpSk20926 graph.
+    Instace of Roseobacter sp. SK20926 graph.
 
 	References
 	---------------------

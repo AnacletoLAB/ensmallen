@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumGoodii.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium goodii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumGoodii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumGoodii graph.
+    """Return new instance of the Mycolicibacterium goodii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumGoodii(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumGoodii graph.
+    Instace of Mycolicibacterium goodii graph.
 
 	References
 	---------------------

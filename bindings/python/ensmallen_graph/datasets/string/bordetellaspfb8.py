@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaSpFb8.
+This file offers the methods to automatically retrieve the graph Bordetella sp. FB8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaSpFb8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaSpFb8 graph.
+    """Return new instance of the Bordetella sp. FB8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaSpFb8(
 
     Returns
     -----------------------
-    Instace of BordetellaSpFb8 graph.
+    Instace of Bordetella sp. FB8 graph.
 
 	References
 	---------------------

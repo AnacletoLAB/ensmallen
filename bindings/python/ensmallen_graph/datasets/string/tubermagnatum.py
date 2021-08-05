@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuberMagnatum.
+This file offers the methods to automatically retrieve the graph Tuber magnatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TuberMagnatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuberMagnatum graph.
+    """Return new instance of the Tuber magnatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TuberMagnatum(
 
     Returns
     -----------------------
-    Instace of TuberMagnatum graph.
+    Instace of Tuber magnatum graph.
 
 	References
 	---------------------

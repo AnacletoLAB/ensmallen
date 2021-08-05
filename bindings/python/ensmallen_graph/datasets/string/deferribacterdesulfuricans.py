@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeferribacterDesulfuricans.
+This file offers the methods to automatically retrieve the graph Deferribacter desulfuricans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeferribacterDesulfuricans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeferribacterDesulfuricans graph.
+    """Return new instance of the Deferribacter desulfuricans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeferribacterDesulfuricans(
 
     Returns
     -----------------------
-    Instace of DeferribacterDesulfuricans graph.
+    Instace of Deferribacter desulfuricans graph.
 
 	References
 	---------------------

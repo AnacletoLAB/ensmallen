@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtribacteriaBacterium34128.
+This file offers the methods to automatically retrieve the graph Atribacteria bacterium 34_128.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtribacteriaBacterium34128(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtribacteriaBacterium34128 graph.
+    """Return new instance of the Atribacteria bacterium 34_128 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtribacteriaBacterium34128(
 
     Returns
     -----------------------
-    Instace of AtribacteriaBacterium34128 graph.
+    Instace of Atribacteria bacterium 34_128 graph.
 
 	References
 	---------------------

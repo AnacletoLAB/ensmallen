@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoecheraStricta.
+This file offers the methods to automatically retrieve the graph Boechera stricta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoecheraStricta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoecheraStricta graph.
+    """Return new instance of the Boechera stricta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BoecheraStricta(
 
     Returns
     -----------------------
-    Instace of BoecheraStricta graph.
+    Instace of Boechera stricta graph.
 
 	References
 	---------------------

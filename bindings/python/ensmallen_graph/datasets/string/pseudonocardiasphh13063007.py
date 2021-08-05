@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaSpHh13063007.
+This file offers the methods to automatically retrieve the graph Pseudonocardia sp. HH130630-07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaSpHh13063007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaSpHh13063007 graph.
+    """Return new instance of the Pseudonocardia sp. HH130630-07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaSpHh13063007(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaSpHh13063007 graph.
+    Instace of Pseudonocardia sp. HH130630-07 graph.
 
 	References
 	---------------------

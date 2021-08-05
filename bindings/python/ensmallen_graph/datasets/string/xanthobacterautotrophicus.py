@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthobacterAutotrophicus.
+This file offers the methods to automatically retrieve the graph Xanthobacter autotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthobacterAutotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthobacterAutotrophicus graph.
+    """Return new instance of the Xanthobacter autotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthobacterAutotrophicus(
 
     Returns
     -----------------------
-    Instace of XanthobacterAutotrophicus graph.
+    Instace of Xanthobacter autotrophicus graph.
 
 	References
 	---------------------

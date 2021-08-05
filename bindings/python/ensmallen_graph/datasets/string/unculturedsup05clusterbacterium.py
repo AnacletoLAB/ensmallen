@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedSup05ClusterBacterium.
+This file offers the methods to automatically retrieve the graph uncultured SUP05 cluster bacterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedSup05ClusterBacterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedSup05ClusterBacterium graph.
+    """Return new instance of the uncultured SUP05 cluster bacterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedSup05ClusterBacterium(
 
     Returns
     -----------------------
-    Instace of UnculturedSup05ClusterBacterium graph.
+    Instace of uncultured SUP05 cluster bacterium graph.
 
 	References
 	---------------------

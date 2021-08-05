@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSpAe122.
+This file offers the methods to automatically retrieve the graph Aeromonas sp. AE122.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSpAe122(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSpAe122 graph.
+    """Return new instance of the Aeromonas sp. AE122 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeromonasSpAe122(
 
     Returns
     -----------------------
-    Instace of AeromonasSpAe122 graph.
+    Instace of Aeromonas sp. AE122 graph.
 
 	References
 	---------------------

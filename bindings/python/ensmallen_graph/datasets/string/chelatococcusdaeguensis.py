@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelatococcusDaeguensis.
+This file offers the methods to automatically retrieve the graph Chelatococcus daeguensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelatococcusDaeguensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelatococcusDaeguensis graph.
+    """Return new instance of the Chelatococcus daeguensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChelatococcusDaeguensis(
 
     Returns
     -----------------------
-    Instace of ChelatococcusDaeguensis graph.
+    Instace of Chelatococcus daeguensis graph.
 
 	References
 	---------------------

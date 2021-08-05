@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumNucleatumVincentii4113.
+This file offers the methods to automatically retrieve the graph Fusobacterium nucleatum vincentii 4113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumNucleatumVincentii4113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumNucleatumVincentii4113 graph.
+    """Return new instance of the Fusobacterium nucleatum vincentii 4113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumNucleatumVincentii4113(
 
     Returns
     -----------------------
-    Instace of FusobacteriumNucleatumVincentii4113 graph.
+    Instace of Fusobacterium nucleatum vincentii 4113 graph.
 
 	References
 	---------------------

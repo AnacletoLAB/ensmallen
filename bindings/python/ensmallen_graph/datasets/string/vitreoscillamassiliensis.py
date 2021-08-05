@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VitreoscillaMassiliensis.
+This file offers the methods to automatically retrieve the graph Vitreoscilla massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VitreoscillaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VitreoscillaMassiliensis graph.
+    """Return new instance of the Vitreoscilla massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VitreoscillaMassiliensis(
 
     Returns
     -----------------------
-    Instace of VitreoscillaMassiliensis graph.
+    Instace of Vitreoscilla massiliensis graph.
 
 	References
 	---------------------

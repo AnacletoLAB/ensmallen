@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenericutesBacteriumGwd23827.
+This file offers the methods to automatically retrieve the graph Tenericutes bacterium GWD2_38_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenericutesBacteriumGwd23827(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenericutesBacteriumGwd23827 graph.
+    """Return new instance of the Tenericutes bacterium GWD2_38_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenericutesBacteriumGwd23827(
 
     Returns
     -----------------------
-    Instace of TenericutesBacteriumGwd23827 graph.
+    Instace of Tenericutes bacterium GWD2_38_27 graph.
 
 	References
 	---------------------

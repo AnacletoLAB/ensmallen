@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaumarchaeotaArchaeonJgiOtu1.
+This file offers the methods to automatically retrieve the graph Thaumarchaeota archaeon JGI OTU-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaumarchaeotaArchaeonJgiOtu1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaumarchaeotaArchaeonJgiOtu1 graph.
+    """Return new instance of the Thaumarchaeota archaeon JGI OTU-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaumarchaeotaArchaeonJgiOtu1(
 
     Returns
     -----------------------
-    Instace of ThaumarchaeotaArchaeonJgiOtu1 graph.
+    Instace of Thaumarchaeota archaeon JGI OTU-1 graph.
 
 	References
 	---------------------

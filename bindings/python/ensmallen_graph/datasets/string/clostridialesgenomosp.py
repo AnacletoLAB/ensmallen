@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesGenomosp.
+This file offers the methods to automatically retrieve the graph Clostridiales genomosp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesGenomosp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesGenomosp graph.
+    """Return new instance of the Clostridiales genomosp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesGenomosp(
 
     Returns
     -----------------------
-    Instace of ClostridialesGenomosp graph.
+    Instace of Clostridiales genomosp. graph.
 
 	References
 	---------------------

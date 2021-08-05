@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumGrantiiDsm8605.
+This file offers the methods to automatically retrieve the graph Clostridium grantii DSM 8605.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumGrantiiDsm8605(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumGrantiiDsm8605 graph.
+    """Return new instance of the Clostridium grantii DSM 8605 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumGrantiiDsm8605(
 
     Returns
     -----------------------
-    Instace of ClostridiumGrantiiDsm8605 graph.
+    Instace of Clostridium grantii DSM 8605 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumVe20221.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium VE20221.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumVe20221(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumVe20221 graph.
+    """Return new instance of the Clostridiales bacterium VE20221 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesBacteriumVe20221(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumVe20221 graph.
+    Instace of Clostridiales bacterium VE20221 graph.
 
 	References
 	---------------------

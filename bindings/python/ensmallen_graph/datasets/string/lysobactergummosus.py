@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterGummosus.
+This file offers the methods to automatically retrieve the graph Lysobacter gummosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterGummosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterGummosus graph.
+    """Return new instance of the Lysobacter gummosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterGummosus(
 
     Returns
     -----------------------
-    Instace of LysobacterGummosus graph.
+    Instace of Lysobacter gummosus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfovibrioSpN1.
+This file offers the methods to automatically retrieve the graph Thermodesulfovibrio sp. N1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfovibrioSpN1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfovibrioSpN1 graph.
+    """Return new instance of the Thermodesulfovibrio sp. N1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermodesulfovibrioSpN1(
 
     Returns
     -----------------------
-    Instace of ThermodesulfovibrioSpN1 graph.
+    Instace of Thermodesulfovibrio sp. N1 graph.
 
 	References
 	---------------------

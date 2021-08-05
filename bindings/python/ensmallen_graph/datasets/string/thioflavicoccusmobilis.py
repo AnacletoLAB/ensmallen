@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioflavicoccusMobilis.
+This file offers the methods to automatically retrieve the graph Thioflavicoccus mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioflavicoccusMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioflavicoccusMobilis graph.
+    """Return new instance of the Thioflavicoccus mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioflavicoccusMobilis(
 
     Returns
     -----------------------
-    Instace of ThioflavicoccusMobilis graph.
+    Instace of Thioflavicoccus mobilis graph.
 
 	References
 	---------------------

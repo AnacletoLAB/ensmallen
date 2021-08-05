@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenobaculumSpY04aas1.
+This file offers the methods to automatically retrieve the graph Hydrogenobaculum sp. Y04AAS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenobaculumSpY04aas1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenobaculumSpY04aas1 graph.
+    """Return new instance of the Hydrogenobaculum sp. Y04AAS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HydrogenobaculumSpY04aas1(
 
     Returns
     -----------------------
-    Instace of HydrogenobaculumSpY04aas1 graph.
+    Instace of Hydrogenobaculum sp. Y04AAS1 graph.
 
 	References
 	---------------------

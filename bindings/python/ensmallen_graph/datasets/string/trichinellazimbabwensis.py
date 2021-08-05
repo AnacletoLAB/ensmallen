@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaZimbabwensis.
+This file offers the methods to automatically retrieve the graph Trichinella zimbabwensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaZimbabwensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaZimbabwensis graph.
+    """Return new instance of the Trichinella zimbabwensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaZimbabwensis(
 
     Returns
     -----------------------
-    Instace of TrichinellaZimbabwensis graph.
+    Instace of Trichinella zimbabwensis graph.
 
 	References
 	---------------------

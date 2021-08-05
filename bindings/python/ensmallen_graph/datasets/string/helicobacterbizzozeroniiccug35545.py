@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterBizzozeroniiCcug35545.
+This file offers the methods to automatically retrieve the graph Helicobacter bizzozeronii CCUG 35545.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterBizzozeroniiCcug35545(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterBizzozeroniiCcug35545 graph.
+    """Return new instance of the Helicobacter bizzozeronii CCUG 35545 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterBizzozeroniiCcug35545(
 
     Returns
     -----------------------
-    Instace of HelicobacterBizzozeroniiCcug35545 graph.
+    Instace of Helicobacter bizzozeronii CCUG 35545 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumBrachy.
+This file offers the methods to automatically retrieve the graph Eubacterium brachy.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumBrachy(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumBrachy graph.
+    """Return new instance of the Eubacterium brachy graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumBrachy(
 
     Returns
     -----------------------
-    Instace of EubacteriumBrachy graph.
+    Instace of Eubacterium brachy graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMohnii.
+This file offers the methods to automatically retrieve the graph Pseudomonas mohnii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMohnii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMohnii graph.
+    """Return new instance of the Pseudomonas mohnii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasMohnii(
 
     Returns
     -----------------------
-    Instace of PseudomonasMohnii graph.
+    Instace of Pseudomonas mohnii graph.
 
 	References
 	---------------------

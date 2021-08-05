@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycetocolaMiduiensis.
+This file offers the methods to automatically retrieve the graph Mycetocola miduiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycetocolaMiduiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycetocolaMiduiensis graph.
+    """Return new instance of the Mycetocola miduiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycetocolaMiduiensis(
 
     Returns
     -----------------------
-    Instace of MycetocolaMiduiensis graph.
+    Instace of Mycetocola miduiensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpBls98.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. BLS98.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpBls98(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpBls98 graph.
+    """Return new instance of the Chryseobacterium sp. BLS98 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpBls98(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpBls98 graph.
+    Instace of Chryseobacterium sp. BLS98 graph.
 
 	References
 	---------------------

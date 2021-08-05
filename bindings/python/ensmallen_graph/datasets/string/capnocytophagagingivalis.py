@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaGingivalis.
+This file offers the methods to automatically retrieve the graph Capnocytophaga gingivalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaGingivalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaGingivalis graph.
+    """Return new instance of the Capnocytophaga gingivalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaGingivalis(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaGingivalis graph.
+    Instace of Capnocytophaga gingivalis graph.
 
 	References
 	---------------------

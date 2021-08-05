@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrechmeriaConiospora.
+This file offers the methods to automatically retrieve the graph Drechmeria coniospora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrechmeriaConiospora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrechmeriaConiospora graph.
+    """Return new instance of the Drechmeria coniospora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrechmeriaConiospora(
 
     Returns
     -----------------------
-    Instace of DrechmeriaConiospora graph.
+    Instace of Drechmeria coniospora graph.
 
 	References
 	---------------------

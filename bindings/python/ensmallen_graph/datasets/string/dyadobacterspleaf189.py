@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterSpLeaf189.
+This file offers the methods to automatically retrieve the graph Dyadobacter sp. Leaf189.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyadobacterSpLeaf189(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterSpLeaf189 graph.
+    """Return new instance of the Dyadobacter sp. Leaf189 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyadobacterSpLeaf189(
 
     Returns
     -----------------------
-    Instace of DyadobacterSpLeaf189 graph.
+    Instace of Dyadobacter sp. Leaf189 graph.
 
 	References
 	---------------------

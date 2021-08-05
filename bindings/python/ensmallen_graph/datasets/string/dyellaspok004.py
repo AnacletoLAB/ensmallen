@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyellaSpOk004.
+This file offers the methods to automatically retrieve the graph Dyella sp. OK004.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyellaSpOk004(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyellaSpOk004 graph.
+    """Return new instance of the Dyella sp. OK004 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyellaSpOk004(
 
     Returns
     -----------------------
-    Instace of DyellaSpOk004 graph.
+    Instace of Dyella sp. OK004 graph.
 
 	References
 	---------------------

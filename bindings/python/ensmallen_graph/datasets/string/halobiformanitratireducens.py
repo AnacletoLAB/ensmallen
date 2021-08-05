@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobiformaNitratireducens.
+This file offers the methods to automatically retrieve the graph Halobiforma nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobiformaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobiformaNitratireducens graph.
+    """Return new instance of the Halobiforma nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobiformaNitratireducens(
 
     Returns
     -----------------------
-    Instace of HalobiformaNitratireducens graph.
+    Instace of Halobiforma nitratireducens graph.
 
 	References
 	---------------------

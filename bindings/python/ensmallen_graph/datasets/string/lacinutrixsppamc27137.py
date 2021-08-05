@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacinutrixSpPamc27137.
+This file offers the methods to automatically retrieve the graph Lacinutrix sp. PAMC27137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacinutrixSpPamc27137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacinutrixSpPamc27137 graph.
+    """Return new instance of the Lacinutrix sp. PAMC27137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LacinutrixSpPamc27137(
 
     Returns
     -----------------------
-    Instace of LacinutrixSpPamc27137 graph.
+    Instace of Lacinutrix sp. PAMC27137 graph.
 
 	References
 	---------------------

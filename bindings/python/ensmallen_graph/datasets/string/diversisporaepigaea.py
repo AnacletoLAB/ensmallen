@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiversisporaEpigaea.
+This file offers the methods to automatically retrieve the graph Diversispora epigaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiversisporaEpigaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiversisporaEpigaea graph.
+    """Return new instance of the Diversispora epigaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiversisporaEpigaea(
 
     Returns
     -----------------------
-    Instace of DiversisporaEpigaea graph.
+    Instace of Diversispora epigaea graph.
 
 	References
 	---------------------

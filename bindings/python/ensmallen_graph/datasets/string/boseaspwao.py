@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpWao.
+This file offers the methods to automatically retrieve the graph Bosea sp. WAO.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpWao(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpWao graph.
+    """Return new instance of the Bosea sp. WAO graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSpWao(
 
     Returns
     -----------------------
-    Instace of BoseaSpWao graph.
+    Instace of Bosea sp. WAO graph.
 
 	References
 	---------------------

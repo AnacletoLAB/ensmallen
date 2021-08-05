@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CronobacterCondimenti.
+This file offers the methods to automatically retrieve the graph Cronobacter condimenti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CronobacterCondimenti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CronobacterCondimenti graph.
+    """Return new instance of the Cronobacter condimenti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CronobacterCondimenti(
 
     Returns
     -----------------------
-    Instace of CronobacterCondimenti graph.
+    Instace of Cronobacter condimenti graph.
 
 	References
 	---------------------

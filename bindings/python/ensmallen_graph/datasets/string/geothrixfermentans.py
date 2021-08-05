@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeothrixFermentans.
+This file offers the methods to automatically retrieve the graph Geothrix fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeothrixFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeothrixFermentans graph.
+    """Return new instance of the Geothrix fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeothrixFermentans(
 
     Returns
     -----------------------
-    Instace of GeothrixFermentans graph.
+    Instace of Geothrix fermentans graph.
 
 	References
 	---------------------

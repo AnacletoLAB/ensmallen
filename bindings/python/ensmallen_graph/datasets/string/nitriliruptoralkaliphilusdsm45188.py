@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitriliruptorAlkaliphilusDsm45188.
+This file offers the methods to automatically retrieve the graph Nitriliruptor alkaliphilus DSM 45188.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitriliruptorAlkaliphilusDsm45188(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitriliruptorAlkaliphilusDsm45188 graph.
+    """Return new instance of the Nitriliruptor alkaliphilus DSM 45188 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitriliruptorAlkaliphilusDsm45188(
 
     Returns
     -----------------------
-    Instace of NitriliruptorAlkaliphilusDsm45188 graph.
+    Instace of Nitriliruptor alkaliphilus DSM 45188 graph.
 
 	References
 	---------------------

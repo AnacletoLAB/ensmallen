@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydophilaPneumoniaeCwl029.
+This file offers the methods to automatically retrieve the graph Chlamydophila pneumoniae CWL029.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydophilaPneumoniaeCwl029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydophilaPneumoniaeCwl029 graph.
+    """Return new instance of the Chlamydophila pneumoniae CWL029 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydophilaPneumoniaeCwl029(
 
     Returns
     -----------------------
-    Instace of ChlamydophilaPneumoniaeCwl029 graph.
+    Instace of Chlamydophila pneumoniae CWL029 graph.
 
 	References
 	---------------------

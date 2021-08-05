@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpFb24.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. FB24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpFb24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpFb24 graph.
+    """Return new instance of the Arthrobacter sp. FB24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSpFb24(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpFb24 graph.
+    Instace of Arthrobacter sp. FB24 graph.
 
 	References
 	---------------------

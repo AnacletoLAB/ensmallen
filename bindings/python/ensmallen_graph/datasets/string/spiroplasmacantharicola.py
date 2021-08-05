@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaCantharicola.
+This file offers the methods to automatically retrieve the graph Spiroplasma cantharicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaCantharicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaCantharicola graph.
+    """Return new instance of the Spiroplasma cantharicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaCantharicola(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaCantharicola graph.
+    Instace of Spiroplasma cantharicola graph.
 
 	References
 	---------------------

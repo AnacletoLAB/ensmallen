@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaAstilbisJcm15831.
+This file offers the methods to automatically retrieve the graph Asaia astilbis JCM 15831.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaiaAstilbisJcm15831(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaAstilbisJcm15831 graph.
+    """Return new instance of the Asaia astilbis JCM 15831 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsaiaAstilbisJcm15831(
 
     Returns
     -----------------------
-    Instace of AsaiaAstilbisJcm15831 graph.
+    Instace of Asaia astilbis JCM 15831 graph.
 
 	References
 	---------------------

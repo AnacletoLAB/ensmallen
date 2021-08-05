@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterRodentium.
+This file offers the methods to automatically retrieve the graph Helicobacter rodentium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterRodentium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterRodentium graph.
+    """Return new instance of the Helicobacter rodentium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterRodentium(
 
     Returns
     -----------------------
-    Instace of HelicobacterRodentium graph.
+    Instace of Helicobacter rodentium graph.
 
 	References
 	---------------------

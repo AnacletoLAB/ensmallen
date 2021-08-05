@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTachikawaeaGelatinosa.
+This file offers the methods to automatically retrieve the graph Candidatus Tachikawaea gelatinosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTachikawaeaGelatinosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTachikawaeaGelatinosa graph.
+    """Return new instance of the Candidatus Tachikawaea gelatinosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTachikawaeaGelatinosa(
 
     Returns
     -----------------------
-    Instace of CandidatusTachikawaeaGelatinosa graph.
+    Instace of Candidatus Tachikawaea gelatinosa graph.
 
 	References
 	---------------------

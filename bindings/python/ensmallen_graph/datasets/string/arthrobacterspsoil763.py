@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpSoil763.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. Soil763.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpSoil763(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpSoil763 graph.
+    """Return new instance of the Arthrobacter sp. Soil763 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpSoil763(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpSoil763 graph.
+    Instace of Arthrobacter sp. Soil763 graph.
 
 	References
 	---------------------

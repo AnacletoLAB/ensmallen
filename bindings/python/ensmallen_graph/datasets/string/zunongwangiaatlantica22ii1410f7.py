@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZunongwangiaAtlantica22ii1410f7.
+This file offers the methods to automatically retrieve the graph Zunongwangia atlantica 22II14-10F7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZunongwangiaAtlantica22ii1410f7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZunongwangiaAtlantica22ii1410f7 graph.
+    """Return new instance of the Zunongwangia atlantica 22II14-10F7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZunongwangiaAtlantica22ii1410f7(
 
     Returns
     -----------------------
-    Instace of ZunongwangiaAtlantica22ii1410f7 graph.
+    Instace of Zunongwangia atlantica 22II14-10F7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KazachstaniaSaulgeensis.
+This file offers the methods to automatically retrieve the graph Kazachstania saulgeensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KazachstaniaSaulgeensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KazachstaniaSaulgeensis graph.
+    """Return new instance of the Kazachstania saulgeensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KazachstaniaSaulgeensis(
 
     Returns
     -----------------------
-    Instace of KazachstaniaSaulgeensis graph.
+    Instace of Kazachstania saulgeensis graph.
 
 	References
 	---------------------

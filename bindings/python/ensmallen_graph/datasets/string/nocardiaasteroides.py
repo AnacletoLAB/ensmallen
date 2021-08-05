@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaAsteroides.
+This file offers the methods to automatically retrieve the graph Nocardia asteroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaAsteroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaAsteroides graph.
+    """Return new instance of the Nocardia asteroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaAsteroides(
 
     Returns
     -----------------------
-    Instace of NocardiaAsteroides graph.
+    Instace of Nocardia asteroides graph.
 
 	References
 	---------------------

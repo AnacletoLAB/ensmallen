@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterLwoffiiNctc5866.
+This file offers the methods to automatically retrieve the graph Acinetobacter lwoffii NCTC 5866.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterLwoffiiNctc5866(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterLwoffiiNctc5866 graph.
+    """Return new instance of the Acinetobacter lwoffii NCTC 5866 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterLwoffiiNctc5866(
 
     Returns
     -----------------------
-    Instace of AcinetobacterLwoffiiNctc5866 graph.
+    Instace of Acinetobacter lwoffii NCTC 5866 graph.
 
 	References
 	---------------------

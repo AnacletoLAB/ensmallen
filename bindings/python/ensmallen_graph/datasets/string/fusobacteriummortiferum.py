@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumMortiferum.
+This file offers the methods to automatically retrieve the graph Fusobacterium mortiferum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumMortiferum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumMortiferum graph.
+    """Return new instance of the Fusobacterium mortiferum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumMortiferum(
 
     Returns
     -----------------------
-    Instace of FusobacteriumMortiferum graph.
+    Instace of Fusobacterium mortiferum graph.
 
 	References
 	---------------------

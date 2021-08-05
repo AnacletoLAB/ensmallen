@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterVinaykumarii.
+This file offers the methods to automatically retrieve the graph Rhodobacter vinaykumarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterVinaykumarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterVinaykumarii graph.
+    """Return new instance of the Rhodobacter vinaykumarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacterVinaykumarii(
 
     Returns
     -----------------------
-    Instace of RhodobacterVinaykumarii graph.
+    Instace of Rhodobacter vinaykumarii graph.
 
 	References
 	---------------------

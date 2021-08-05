@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentzeaWaywayandensis.
+This file offers the methods to automatically retrieve the graph Lentzea waywayandensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentzeaWaywayandensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentzeaWaywayandensis graph.
+    """Return new instance of the Lentzea waywayandensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentzeaWaywayandensis(
 
     Returns
     -----------------------
-    Instace of LentzeaWaywayandensis graph.
+    Instace of Lentzea waywayandensis graph.
 
 	References
 	---------------------

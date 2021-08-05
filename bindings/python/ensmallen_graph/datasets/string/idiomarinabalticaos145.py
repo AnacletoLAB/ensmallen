@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaBalticaOs145.
+This file offers the methods to automatically retrieve the graph Idiomarina baltica OS145.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaBalticaOs145(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaBalticaOs145 graph.
+    """Return new instance of the Idiomarina baltica OS145 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaBalticaOs145(
 
     Returns
     -----------------------
-    Instace of IdiomarinaBalticaOs145 graph.
+    Instace of Idiomarina baltica OS145 graph.
 
 	References
 	---------------------

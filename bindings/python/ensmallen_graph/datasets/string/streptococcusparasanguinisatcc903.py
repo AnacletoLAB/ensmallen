@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusParasanguinisAtcc903.
+This file offers the methods to automatically retrieve the graph Streptococcus parasanguinis ATCC903.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusParasanguinisAtcc903(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusParasanguinisAtcc903 graph.
+    """Return new instance of the Streptococcus parasanguinis ATCC903 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusParasanguinisAtcc903(
 
     Returns
     -----------------------
-    Instace of StreptococcusParasanguinisAtcc903 graph.
+    Instace of Streptococcus parasanguinis ATCC903 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizosaccharomycesPombe.
+This file offers the methods to automatically retrieve the graph Schizosaccharomyces pombe.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizosaccharomycesPombe(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizosaccharomycesPombe graph.
+    """Return new instance of the Schizosaccharomyces pombe graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchizosaccharomycesPombe(
 
     Returns
     -----------------------
-    Instace of SchizosaccharomycesPombe graph.
+    Instace of Schizosaccharomyces pombe graph.
 
 	References
 	---------------------

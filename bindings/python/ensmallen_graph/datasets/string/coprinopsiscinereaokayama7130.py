@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprinopsisCinereaOkayama7130.
+This file offers the methods to automatically retrieve the graph Coprinopsis cinerea okayama7#130.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprinopsisCinereaOkayama7130(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprinopsisCinereaOkayama7130 graph.
+    """Return new instance of the Coprinopsis cinerea okayama7#130 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprinopsisCinereaOkayama7130(
 
     Returns
     -----------------------
-    Instace of CoprinopsisCinereaOkayama7130 graph.
+    Instace of Coprinopsis cinerea okayama7#130 graph.
 
 	References
 	---------------------

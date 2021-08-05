@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolymorphaSingaporensis.
+This file offers the methods to automatically retrieve the graph Actinopolymorpha singaporensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolymorphaSingaporensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolymorphaSingaporensis graph.
+    """Return new instance of the Actinopolymorpha singaporensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinopolymorphaSingaporensis(
 
     Returns
     -----------------------
-    Instace of ActinopolymorphaSingaporensis graph.
+    Instace of Actinopolymorpha singaporensis graph.
 
 	References
 	---------------------

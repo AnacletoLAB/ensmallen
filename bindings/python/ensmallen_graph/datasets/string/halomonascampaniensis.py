@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasCampaniensis.
+This file offers the methods to automatically retrieve the graph Halomonas campaniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasCampaniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasCampaniensis graph.
+    """Return new instance of the Halomonas campaniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasCampaniensis(
 
     Returns
     -----------------------
-    Instace of HalomonasCampaniensis graph.
+    Instace of Halomonas campaniensis graph.
 
 	References
 	---------------------

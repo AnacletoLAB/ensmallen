@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopseudomonasSpAap120.
+This file offers the methods to automatically retrieve the graph Rhodopseudomonas sp. AAP120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopseudomonasSpAap120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopseudomonasSpAap120 graph.
+    """Return new instance of the Rhodopseudomonas sp. AAP120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodopseudomonasSpAap120(
 
     Returns
     -----------------------
-    Instace of RhodopseudomonasSpAap120 graph.
+    Instace of Rhodopseudomonas sp. AAP120 graph.
 
 	References
 	---------------------

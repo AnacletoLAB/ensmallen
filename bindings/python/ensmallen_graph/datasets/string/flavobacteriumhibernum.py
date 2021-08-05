@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumHibernum.
+This file offers the methods to automatically retrieve the graph Flavobacterium hibernum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumHibernum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumHibernum graph.
+    """Return new instance of the Flavobacterium hibernum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumHibernum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumHibernum graph.
+    Instace of Flavobacterium hibernum graph.
 
 	References
 	---------------------

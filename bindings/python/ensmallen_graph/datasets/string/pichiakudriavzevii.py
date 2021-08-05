@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PichiaKudriavzevii.
+This file offers the methods to automatically retrieve the graph Pichia kudriavzevii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PichiaKudriavzevii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PichiaKudriavzevii graph.
+    """Return new instance of the Pichia kudriavzevii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PichiaKudriavzevii(
 
     Returns
     -----------------------
-    Instace of PichiaKudriavzevii graph.
+    Instace of Pichia kudriavzevii graph.
 
 	References
 	---------------------

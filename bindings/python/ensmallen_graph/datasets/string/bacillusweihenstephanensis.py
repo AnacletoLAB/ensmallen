@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusWeihenstephanensis.
+This file offers the methods to automatically retrieve the graph Bacillus weihenstephanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusWeihenstephanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusWeihenstephanensis graph.
+    """Return new instance of the Bacillus weihenstephanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusWeihenstephanensis(
 
     Returns
     -----------------------
-    Instace of BacillusWeihenstephanensis graph.
+    Instace of Bacillus weihenstephanensis graph.
 
 	References
 	---------------------

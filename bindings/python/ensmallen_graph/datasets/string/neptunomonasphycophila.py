@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeptunomonasPhycophila.
+This file offers the methods to automatically retrieve the graph Neptunomonas phycophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeptunomonasPhycophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeptunomonasPhycophila graph.
+    """Return new instance of the Neptunomonas phycophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeptunomonasPhycophila(
 
     Returns
     -----------------------
-    Instace of NeptunomonasPhycophila graph.
+    Instace of Neptunomonas phycophila graph.
 
 	References
 	---------------------

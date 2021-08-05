@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SimiduiaAgarivorans.
+This file offers the methods to automatically retrieve the graph Simiduia agarivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SimiduiaAgarivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SimiduiaAgarivorans graph.
+    """Return new instance of the Simiduia agarivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SimiduiaAgarivorans(
 
     Returns
     -----------------------
-    Instace of SimiduiaAgarivorans graph.
+    Instace of Simiduia agarivorans graph.
 
 	References
 	---------------------

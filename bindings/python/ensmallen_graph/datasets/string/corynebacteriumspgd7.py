@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpGd7.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. GD7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpGd7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpGd7 graph.
+    """Return new instance of the Corynebacterium sp. GD7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumSpGd7(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpGd7 graph.
+    Instace of Corynebacterium sp. GD7 graph.
 
 	References
 	---------------------

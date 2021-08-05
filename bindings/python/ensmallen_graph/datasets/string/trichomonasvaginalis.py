@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichomonasVaginalis.
+This file offers the methods to automatically retrieve the graph Trichomonas vaginalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichomonasVaginalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichomonasVaginalis graph.
+    """Return new instance of the Trichomonas vaginalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichomonasVaginalis(
 
     Returns
     -----------------------
-    Instace of TrichomonasVaginalis graph.
+    Instace of Trichomonas vaginalis graph.
 
 	References
 	---------------------

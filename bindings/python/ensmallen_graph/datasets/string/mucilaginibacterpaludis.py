@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterPaludis.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter paludis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterPaludis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterPaludis graph.
+    """Return new instance of the Mucilaginibacter paludis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MucilaginibacterPaludis(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterPaludis graph.
+    Instace of Mucilaginibacter paludis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpBms12.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. BMS12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpBms12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpBms12 graph.
+    """Return new instance of the Pseudomonas sp. BMS12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpBms12(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpBms12 graph.
+    Instace of Pseudomonas sp. BMS12 graph.
 
 	References
 	---------------------

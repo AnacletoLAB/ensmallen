@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlareaLozoyensisAtcc20868.
+This file offers the methods to automatically retrieve the graph Glarea lozoyensis ATCC 20868.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlareaLozoyensisAtcc20868(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlareaLozoyensisAtcc20868 graph.
+    """Return new instance of the Glarea lozoyensis ATCC 20868 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlareaLozoyensisAtcc20868(
 
     Returns
     -----------------------
-    Instace of GlareaLozoyensisAtcc20868 graph.
+    Instace of Glarea lozoyensis ATCC 20868 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasSpSm9913.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas sp. SM9913.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasSpSm9913(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasSpSm9913 graph.
+    """Return new instance of the Pseudoalteromonas sp. SM9913 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasSpSm9913(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasSpSm9913 graph.
+    Instace of Pseudoalteromonas sp. SM9913 graph.
 
 	References
 	---------------------

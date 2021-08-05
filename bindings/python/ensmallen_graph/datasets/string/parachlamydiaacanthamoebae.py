@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParachlamydiaAcanthamoebae.
+This file offers the methods to automatically retrieve the graph Parachlamydia acanthamoebae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParachlamydiaAcanthamoebae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParachlamydiaAcanthamoebae graph.
+    """Return new instance of the Parachlamydia acanthamoebae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParachlamydiaAcanthamoebae(
 
     Returns
     -----------------------
-    Instace of ParachlamydiaAcanthamoebae graph.
+    Instace of Parachlamydia acanthamoebae graph.
 
 	References
 	---------------------

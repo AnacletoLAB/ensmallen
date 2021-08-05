@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesLincolnensis.
+This file offers the methods to automatically retrieve the graph Streptomyces lincolnensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesLincolnensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesLincolnensis graph.
+    """Return new instance of the Streptomyces lincolnensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesLincolnensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesLincolnensis graph.
+    Instace of Streptomyces lincolnensis graph.
 
 	References
 	---------------------

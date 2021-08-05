@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAmyloliquefaciensDsm7Atcc23350.
+This file offers the methods to automatically retrieve the graph Bacillus amyloliquefaciens DSM 7 ATCC 23350.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAmyloliquefaciensDsm7Atcc23350(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAmyloliquefaciensDsm7Atcc23350 graph.
+    """Return new instance of the Bacillus amyloliquefaciens DSM 7 ATCC 23350 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusAmyloliquefaciensDsm7Atcc23350(
 
     Returns
     -----------------------
-    Instace of BacillusAmyloliquefaciensDsm7Atcc23350 graph.
+    Instace of Bacillus amyloliquefaciens DSM 7 ATCC 23350 graph.
 
 	References
 	---------------------

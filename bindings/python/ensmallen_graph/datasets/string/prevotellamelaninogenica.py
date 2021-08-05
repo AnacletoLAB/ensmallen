@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaMelaninogenica.
+This file offers the methods to automatically retrieve the graph Prevotella melaninogenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaMelaninogenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaMelaninogenica graph.
+    """Return new instance of the Prevotella melaninogenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaMelaninogenica(
 
     Returns
     -----------------------
-    Instace of PrevotellaMelaninogenica graph.
+    Instace of Prevotella melaninogenica graph.
 
 	References
 	---------------------

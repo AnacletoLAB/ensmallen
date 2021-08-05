@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocystisSpSb2.
+This file offers the methods to automatically retrieve the graph Methylocystis sp. SB2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocystisSpSb2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocystisSpSb2 graph.
+    """Return new instance of the Methylocystis sp. SB2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylocystisSpSb2(
 
     Returns
     -----------------------
-    Instace of MethylocystisSpSb2 graph.
+    Instace of Methylocystis sp. SB2 graph.
 
 	References
 	---------------------

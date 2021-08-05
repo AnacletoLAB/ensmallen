@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesocestoidesCorti.
+This file offers the methods to automatically retrieve the graph Mesocestoides corti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesocestoidesCorti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesocestoidesCorti graph.
+    """Return new instance of the Mesocestoides corti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesocestoidesCorti(
 
     Returns
     -----------------------
-    Instace of MesocestoidesCorti graph.
+    Instace of Mesocestoides corti graph.
 
 	References
 	---------------------

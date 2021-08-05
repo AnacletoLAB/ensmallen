@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaTropicalis.
+This file offers the methods to automatically retrieve the graph Candida tropicalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaTropicalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaTropicalis graph.
+    """Return new instance of the Candida tropicalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaTropicalis(
 
     Returns
     -----------------------
-    Instace of CandidaTropicalis graph.
+    Instace of Candida tropicalis graph.
 
 	References
 	---------------------

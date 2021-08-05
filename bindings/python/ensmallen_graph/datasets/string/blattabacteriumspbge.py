@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpBge.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. Bge.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpBge(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpBge graph.
+    """Return new instance of the Blattabacterium sp. Bge graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlattabacteriumSpBge(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpBge graph.
+    Instace of Blattabacterium sp. Bge graph.
 
 	References
 	---------------------

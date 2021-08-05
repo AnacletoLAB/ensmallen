@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiribacterSpUahsp71.
+This file offers the methods to automatically retrieve the graph Spiribacter sp. UAHSP71.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiribacterSpUahsp71(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiribacterSpUahsp71 graph.
+    """Return new instance of the Spiribacter sp. UAHSP71 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiribacterSpUahsp71(
 
     Returns
     -----------------------
-    Instace of SpiribacterSpUahsp71 graph.
+    Instace of Spiribacter sp. UAHSP71 graph.
 
 	References
 	---------------------

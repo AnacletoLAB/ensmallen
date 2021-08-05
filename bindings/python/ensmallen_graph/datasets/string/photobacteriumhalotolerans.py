@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumHalotolerans.
+This file offers the methods to automatically retrieve the graph Photobacterium halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumHalotolerans graph.
+    """Return new instance of the Photobacterium halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumHalotolerans(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumHalotolerans graph.
+    Instace of Photobacterium halotolerans graph.
 
 	References
 	---------------------

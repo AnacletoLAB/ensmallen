@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolyporusArculariusHhb13444.
+This file offers the methods to automatically retrieve the graph Polyporus arcularius HHB13444.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolyporusArculariusHhb13444(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolyporusArculariusHhb13444 graph.
+    """Return new instance of the Polyporus arcularius HHB13444 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolyporusArculariusHhb13444(
 
     Returns
     -----------------------
-    Instace of PolyporusArculariusHhb13444 graph.
+    Instace of Polyporus arcularius HHB13444 graph.
 
 	References
 	---------------------

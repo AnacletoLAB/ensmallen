@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaceaeBacteriumL21thd2.
+This file offers the methods to automatically retrieve the graph Clostridiaceae bacterium L21THD2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaceaeBacteriumL21thd2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaceaeBacteriumL21thd2 graph.
+    """Return new instance of the Clostridiaceae bacterium L21THD2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiaceaeBacteriumL21thd2(
 
     Returns
     -----------------------
-    Instace of ClostridiaceaeBacteriumL21thd2 graph.
+    Instace of Clostridiaceae bacterium L21THD2 graph.
 
 	References
 	---------------------

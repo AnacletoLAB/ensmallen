@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FodinicurvataFenggangensis.
+This file offers the methods to automatically retrieve the graph Fodinicurvata fenggangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FodinicurvataFenggangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FodinicurvataFenggangensis graph.
+    """Return new instance of the Fodinicurvata fenggangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FodinicurvataFenggangensis(
 
     Returns
     -----------------------
-    Instace of FodinicurvataFenggangensis graph.
+    Instace of Fodinicurvata fenggangensis graph.
 
 	References
 	---------------------

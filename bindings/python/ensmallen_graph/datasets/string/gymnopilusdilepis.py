@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GymnopilusDilepis.
+This file offers the methods to automatically retrieve the graph Gymnopilus dilepis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GymnopilusDilepis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GymnopilusDilepis graph.
+    """Return new instance of the Gymnopilus dilepis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GymnopilusDilepis(
 
     Returns
     -----------------------
-    Instace of GymnopilusDilepis graph.
+    Instace of Gymnopilus dilepis graph.
 
 	References
 	---------------------

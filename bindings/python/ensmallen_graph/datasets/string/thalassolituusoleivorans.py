@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassolituusOleivorans.
+This file offers the methods to automatically retrieve the graph Thalassolituus oleivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassolituusOleivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassolituusOleivorans graph.
+    """Return new instance of the Thalassolituus oleivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassolituusOleivorans(
 
     Returns
     -----------------------
-    Instace of ThalassolituusOleivorans graph.
+    Instace of Thalassolituus oleivorans graph.
 
 	References
 	---------------------

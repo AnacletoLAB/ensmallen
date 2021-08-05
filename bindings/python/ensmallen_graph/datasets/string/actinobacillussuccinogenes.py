@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusSuccinogenes.
+This file offers the methods to automatically retrieve the graph Actinobacillus succinogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusSuccinogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusSuccinogenes graph.
+    """Return new instance of the Actinobacillus succinogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusSuccinogenes(
 
     Returns
     -----------------------
-    Instace of ActinobacillusSuccinogenes graph.
+    Instace of Actinobacillus succinogenes graph.
 
 	References
 	---------------------

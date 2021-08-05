@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpL250.
+This file offers the methods to automatically retrieve the graph Clostridium sp. L250.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpL250(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpL250 graph.
+    """Return new instance of the Clostridium sp. L250 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpL250(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpL250 graph.
+    Instace of Clostridium sp. L250 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTerrybacteriaBacteriumRifcsplowo2024220.
+This file offers the methods to automatically retrieve the graph Candidatus Terrybacteria bacterium RIFCSPLOWO2_02_42_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTerrybacteriaBacteriumRifcsplowo2024220(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTerrybacteriaBacteriumRifcsplowo2024220 graph.
+    """Return new instance of the Candidatus Terrybacteria bacterium RIFCSPLOWO2_02_42_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTerrybacteriaBacteriumRifcsplowo2024220(
 
     Returns
     -----------------------
-    Instace of CandidatusTerrybacteriaBacteriumRifcsplowo2024220 graph.
+    Instace of Candidatus Terrybacteria bacterium RIFCSPLOWO2_02_42_20 graph.
 
 	References
 	---------------------

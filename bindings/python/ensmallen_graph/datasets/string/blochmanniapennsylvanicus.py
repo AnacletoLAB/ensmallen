@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlochmanniaPennsylvanicus.
+This file offers the methods to automatically retrieve the graph Blochmannia pennsylvanicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlochmanniaPennsylvanicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlochmanniaPennsylvanicus graph.
+    """Return new instance of the Blochmannia pennsylvanicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlochmanniaPennsylvanicus(
 
     Returns
     -----------------------
-    Instace of BlochmanniaPennsylvanicus graph.
+    Instace of Blochmannia pennsylvanicus graph.
 
 	References
 	---------------------

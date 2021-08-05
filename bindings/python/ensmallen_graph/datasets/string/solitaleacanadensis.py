@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolitaleaCanadensis.
+This file offers the methods to automatically retrieve the graph Solitalea canadensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolitaleaCanadensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolitaleaCanadensis graph.
+    """Return new instance of the Solitalea canadensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolitaleaCanadensis(
 
     Returns
     -----------------------
-    Instace of SolitaleaCanadensis graph.
+    Instace of Solitalea canadensis graph.
 
 	References
 	---------------------

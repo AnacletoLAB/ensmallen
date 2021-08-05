@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurococcusKamchatkensis.
+This file offers the methods to automatically retrieve the graph Desulfurococcus kamchatkensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurococcusKamchatkensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurococcusKamchatkensis graph.
+    """Return new instance of the Desulfurococcus kamchatkensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurococcusKamchatkensis(
 
     Returns
     -----------------------
-    Instace of DesulfurococcusKamchatkensis graph.
+    Instace of Desulfurococcus kamchatkensis graph.
 
 	References
 	---------------------

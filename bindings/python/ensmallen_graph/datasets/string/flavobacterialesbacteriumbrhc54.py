@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacterialesBacteriumBrhC54.
+This file offers the methods to automatically retrieve the graph Flavobacteriales bacterium BRH_c54.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacterialesBacteriumBrhC54(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacterialesBacteriumBrhC54 graph.
+    """Return new instance of the Flavobacteriales bacterium BRH_c54 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacterialesBacteriumBrhC54(
 
     Returns
     -----------------------
-    Instace of FlavobacterialesBacteriumBrhC54 graph.
+    Instace of Flavobacteriales bacterium BRH_c54 graph.
 
 	References
 	---------------------

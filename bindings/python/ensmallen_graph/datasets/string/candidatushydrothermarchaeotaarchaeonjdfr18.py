@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHydrothermarchaeotaArchaeonJdfr18.
+This file offers the methods to automatically retrieve the graph Candidatus Hydrothermarchaeota archaeon JdFR-18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHydrothermarchaeotaArchaeonJdfr18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHydrothermarchaeotaArchaeonJdfr18 graph.
+    """Return new instance of the Candidatus Hydrothermarchaeota archaeon JdFR-18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHydrothermarchaeotaArchaeonJdfr18(
 
     Returns
     -----------------------
-    Instace of CandidatusHydrothermarchaeotaArchaeonJdfr18 graph.
+    Instace of Candidatus Hydrothermarchaeota archaeon JdFR-18 graph.
 
 	References
 	---------------------

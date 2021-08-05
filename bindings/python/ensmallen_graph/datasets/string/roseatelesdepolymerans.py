@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseatelesDepolymerans.
+This file offers the methods to automatically retrieve the graph Roseateles depolymerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseatelesDepolymerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseatelesDepolymerans graph.
+    """Return new instance of the Roseateles depolymerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseatelesDepolymerans(
 
     Returns
     -----------------------
-    Instace of RoseatelesDepolymerans graph.
+    Instace of Roseateles depolymerans graph.
 
 	References
 	---------------------

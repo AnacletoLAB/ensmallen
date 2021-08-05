@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylophilusSpLeaf220.
+This file offers the methods to automatically retrieve the graph Xylophilus sp. Leaf220.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylophilusSpLeaf220(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylophilusSpLeaf220 graph.
+    """Return new instance of the Xylophilus sp. Leaf220 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XylophilusSpLeaf220(
 
     Returns
     -----------------------
-    Instace of XylophilusSpLeaf220 graph.
+    Instace of Xylophilus sp. Leaf220 graph.
 
 	References
 	---------------------

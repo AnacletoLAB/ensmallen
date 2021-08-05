@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNiyogibacteriaBacteriumRifcsplowo202Full4513.
+This file offers the methods to automatically retrieve the graph Candidatus Niyogibacteria bacterium RIFCSPLOWO2_02_FULL_45_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNiyogibacteriaBacteriumRifcsplowo202Full4513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNiyogibacteriaBacteriumRifcsplowo202Full4513 graph.
+    """Return new instance of the Candidatus Niyogibacteria bacterium RIFCSPLOWO2_02_FULL_45_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNiyogibacteriaBacteriumRifcsplowo202Full4513(
 
     Returns
     -----------------------
-    Instace of CandidatusNiyogibacteriaBacteriumRifcsplowo202Full4513 graph.
+    Instace of Candidatus Niyogibacteria bacterium RIFCSPLOWO2_02_FULL_45_13 graph.
 
 	References
 	---------------------

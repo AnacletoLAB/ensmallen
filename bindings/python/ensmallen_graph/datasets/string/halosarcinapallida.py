@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalosarcinaPallida.
+This file offers the methods to automatically retrieve the graph Halosarcina pallida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalosarcinaPallida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalosarcinaPallida graph.
+    """Return new instance of the Halosarcina pallida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalosarcinaPallida(
 
     Returns
     -----------------------
-    Instace of HalosarcinaPallida graph.
+    Instace of Halosarcina pallida graph.
 
 	References
 	---------------------

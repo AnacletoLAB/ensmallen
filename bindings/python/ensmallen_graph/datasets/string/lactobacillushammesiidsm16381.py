@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHammesiiDsm16381.
+This file offers the methods to automatically retrieve the graph Lactobacillus hammesii DSM 16381.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHammesiiDsm16381(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHammesiiDsm16381 graph.
+    """Return new instance of the Lactobacillus hammesii DSM 16381 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusHammesiiDsm16381(
 
     Returns
     -----------------------
-    Instace of LactobacillusHammesiiDsm16381 graph.
+    Instace of Lactobacillus hammesii DSM 16381 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorOwensensis.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor owensensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorOwensensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorOwensensis graph.
+    """Return new instance of the Caldicellulosiruptor owensensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldicellulosiruptorOwensensis(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorOwensensis graph.
+    Instace of Caldicellulosiruptor owensensis graph.
 
 	References
 	---------------------

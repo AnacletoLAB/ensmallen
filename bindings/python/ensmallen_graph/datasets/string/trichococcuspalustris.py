@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichococcusPalustris.
+This file offers the methods to automatically retrieve the graph Trichococcus palustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichococcusPalustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichococcusPalustris graph.
+    """Return new instance of the Trichococcus palustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichococcusPalustris(
 
     Returns
     -----------------------
-    Instace of TrichococcusPalustris graph.
+    Instace of Trichococcus palustris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaSpielmanii.
+This file offers the methods to automatically retrieve the graph Borrelia spielmanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaSpielmanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaSpielmanii graph.
+    """Return new instance of the Borrelia spielmanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaSpielmanii(
 
     Returns
     -----------------------
-    Instace of BorreliaSpielmanii graph.
+    Instace of Borrelia spielmanii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrysSpWjw.
+This file offers the methods to automatically retrieve the graph Labrys sp. WJW.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrysSpWjw(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrysSpWjw graph.
+    """Return new instance of the Labrys sp. WJW graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrysSpWjw(
 
     Returns
     -----------------------
-    Instace of LabrysSpWjw graph.
+    Instace of Labrys sp. WJW graph.
 
 	References
 	---------------------

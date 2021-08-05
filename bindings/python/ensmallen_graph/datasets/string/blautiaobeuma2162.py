@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaObeumA2162.
+This file offers the methods to automatically retrieve the graph Blautia obeum A2-162.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaObeumA2162(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaObeumA2162 graph.
+    """Return new instance of the Blautia obeum A2-162 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlautiaObeumA2162(
 
     Returns
     -----------------------
-    Instace of BlautiaObeumA2162 graph.
+    Instace of Blautia obeum A2-162 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudozymaBrasiliensis.
+This file offers the methods to automatically retrieve the graph Pseudozyma brasiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudozymaBrasiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudozymaBrasiliensis graph.
+    """Return new instance of the Pseudozyma brasiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudozymaBrasiliensis(
 
     Returns
     -----------------------
-    Instace of PseudozymaBrasiliensis graph.
+    Instace of Pseudozyma brasiliensis graph.
 
 	References
 	---------------------

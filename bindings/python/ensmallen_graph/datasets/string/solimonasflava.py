@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolimonasFlava.
+This file offers the methods to automatically retrieve the graph Solimonas flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolimonasFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolimonasFlava graph.
+    """Return new instance of the Solimonas flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolimonasFlava(
 
     Returns
     -----------------------
-    Instace of SolimonasFlava graph.
+    Instace of Solimonas flava graph.
 
 	References
 	---------------------

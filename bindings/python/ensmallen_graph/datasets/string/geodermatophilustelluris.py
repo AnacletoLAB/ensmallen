@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusTelluris.
+This file offers the methods to automatically retrieve the graph Geodermatophilus telluris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusTelluris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusTelluris graph.
+    """Return new instance of the Geodermatophilus telluris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusTelluris(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusTelluris graph.
+    Instace of Geodermatophilus telluris graph.
 
 	References
 	---------------------

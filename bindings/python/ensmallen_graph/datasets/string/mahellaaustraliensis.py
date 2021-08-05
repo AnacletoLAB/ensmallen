@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MahellaAustraliensis.
+This file offers the methods to automatically retrieve the graph Mahella australiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MahellaAustraliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MahellaAustraliensis graph.
+    """Return new instance of the Mahella australiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MahellaAustraliensis(
 
     Returns
     -----------------------
-    Instace of MahellaAustraliensis graph.
+    Instace of Mahella australiensis graph.
 
 	References
 	---------------------

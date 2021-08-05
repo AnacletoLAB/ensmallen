@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerinicoccusMarinus.
+This file offers the methods to automatically retrieve the graph Serinicoccus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerinicoccusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerinicoccusMarinus graph.
+    """Return new instance of the Serinicoccus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerinicoccusMarinus(
 
     Returns
     -----------------------
-    Instace of SerinicoccusMarinus graph.
+    Instace of Serinicoccus marinus graph.
 
 	References
 	---------------------

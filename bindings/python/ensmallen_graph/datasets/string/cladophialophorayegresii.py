@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CladophialophoraYegresii.
+This file offers the methods to automatically retrieve the graph Cladophialophora yegresii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CladophialophoraYegresii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CladophialophoraYegresii graph.
+    """Return new instance of the Cladophialophora yegresii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CladophialophoraYegresii(
 
     Returns
     -----------------------
-    Instace of CladophialophoraYegresii graph.
+    Instace of Cladophialophora yegresii graph.
 
 	References
 	---------------------

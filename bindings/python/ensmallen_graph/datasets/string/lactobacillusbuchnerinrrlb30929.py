@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusBuchneriNrrlb30929.
+This file offers the methods to automatically retrieve the graph Lactobacillus buchneri NRRLB30929.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusBuchneriNrrlb30929(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusBuchneriNrrlb30929 graph.
+    """Return new instance of the Lactobacillus buchneri NRRLB30929 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusBuchneriNrrlb30929(
 
     Returns
     -----------------------
-    Instace of LactobacillusBuchneriNrrlb30929 graph.
+    Instace of Lactobacillus buchneri NRRLB30929 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumSit11.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium SIT11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumSit11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumSit11 graph.
+    """Return new instance of the Clostridiales bacterium SIT11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumSit11(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumSit11 graph.
+    Instace of Clostridiales bacterium SIT11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinarchaeumSpHarchtbsk1.
+This file offers the methods to automatically retrieve the graph Salinarchaeum sp. HarchtBsk1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinarchaeumSpHarchtbsk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinarchaeumSpHarchtbsk1 graph.
+    """Return new instance of the Salinarchaeum sp. HarchtBsk1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinarchaeumSpHarchtbsk1(
 
     Returns
     -----------------------
-    Instace of SalinarchaeumSpHarchtbsk1 graph.
+    Instace of Salinarchaeum sp. HarchtBsk1 graph.
 
 	References
 	---------------------

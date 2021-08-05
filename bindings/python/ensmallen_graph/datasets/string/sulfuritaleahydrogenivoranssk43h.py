@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuritaleaHydrogenivoransSk43h.
+This file offers the methods to automatically retrieve the graph Sulfuritalea hydrogenivorans sk43H.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuritaleaHydrogenivoransSk43h(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuritaleaHydrogenivoransSk43h graph.
+    """Return new instance of the Sulfuritalea hydrogenivorans sk43H graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfuritaleaHydrogenivoransSk43h(
 
     Returns
     -----------------------
-    Instace of SulfuritaleaHydrogenivoransSk43h graph.
+    Instace of Sulfuritalea hydrogenivorans sk43H graph.
 
 	References
 	---------------------

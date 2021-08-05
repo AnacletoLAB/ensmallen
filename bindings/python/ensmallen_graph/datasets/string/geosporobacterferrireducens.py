@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeosporobacterFerrireducens.
+This file offers the methods to automatically retrieve the graph Geosporobacter ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeosporobacterFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeosporobacterFerrireducens graph.
+    """Return new instance of the Geosporobacter ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeosporobacterFerrireducens(
 
     Returns
     -----------------------
-    Instace of GeosporobacterFerrireducens graph.
+    Instace of Geosporobacter ferrireducens graph.
 
 	References
 	---------------------

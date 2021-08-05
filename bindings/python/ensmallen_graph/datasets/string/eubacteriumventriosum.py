@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumVentriosum.
+This file offers the methods to automatically retrieve the graph Eubacterium ventriosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumVentriosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumVentriosum graph.
+    """Return new instance of the Eubacterium ventriosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumVentriosum(
 
     Returns
     -----------------------
-    Instace of EubacteriumVentriosum graph.
+    Instace of Eubacterium ventriosum graph.
 
 	References
 	---------------------

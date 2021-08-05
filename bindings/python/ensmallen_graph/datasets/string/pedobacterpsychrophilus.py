@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterPsychrophilus.
+This file offers the methods to automatically retrieve the graph Pedobacter psychrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterPsychrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterPsychrophilus graph.
+    """Return new instance of the Pedobacter psychrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterPsychrophilus(
 
     Returns
     -----------------------
-    Instace of PedobacterPsychrophilus graph.
+    Instace of Pedobacter psychrophilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SodalisGlossinidius.
+This file offers the methods to automatically retrieve the graph Sodalis glossinidius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SodalisGlossinidius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SodalisGlossinidius graph.
+    """Return new instance of the Sodalis glossinidius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SodalisGlossinidius(
 
     Returns
     -----------------------
-    Instace of SodalisGlossinidius graph.
+    Instace of Sodalis glossinidius graph.
 
 	References
 	---------------------

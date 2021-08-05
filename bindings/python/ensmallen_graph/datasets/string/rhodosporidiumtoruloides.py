@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodosporidiumToruloides.
+This file offers the methods to automatically retrieve the graph Rhodosporidium toruloides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodosporidiumToruloides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodosporidiumToruloides graph.
+    """Return new instance of the Rhodosporidium toruloides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodosporidiumToruloides(
 
     Returns
     -----------------------
-    Instace of RhodosporidiumToruloides graph.
+    Instace of Rhodosporidium toruloides graph.
 
 	References
 	---------------------

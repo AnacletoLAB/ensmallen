@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoculleusHoronobensis.
+This file offers the methods to automatically retrieve the graph Methanoculleus horonobensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoculleusHoronobensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoculleusHoronobensis graph.
+    """Return new instance of the Methanoculleus horonobensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanoculleusHoronobensis(
 
     Returns
     -----------------------
-    Instace of MethanoculleusHoronobensis graph.
+    Instace of Methanoculleus horonobensis graph.
 
 	References
 	---------------------

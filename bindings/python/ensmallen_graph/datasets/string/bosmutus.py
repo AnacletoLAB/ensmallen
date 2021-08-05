@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BosMutus.
+This file offers the methods to automatically retrieve the graph Bos mutus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BosMutus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BosMutus graph.
+    """Return new instance of the Bos mutus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BosMutus(
 
     Returns
     -----------------------
-    Instace of BosMutus graph.
+    Instace of Bos mutus graph.
 
 	References
 	---------------------

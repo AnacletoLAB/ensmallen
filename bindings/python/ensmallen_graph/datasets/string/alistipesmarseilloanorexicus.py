@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesMarseilloanorexicus.
+This file offers the methods to automatically retrieve the graph Alistipes marseilloanorexicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesMarseilloanorexicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesMarseilloanorexicus graph.
+    """Return new instance of the Alistipes marseilloanorexicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesMarseilloanorexicus(
 
     Returns
     -----------------------
-    Instace of AlistipesMarseilloanorexicus graph.
+    Instace of Alistipes marseilloanorexicus graph.
 
 	References
 	---------------------

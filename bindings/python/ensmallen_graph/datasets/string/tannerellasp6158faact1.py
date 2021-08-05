@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TannerellaSp6158faaCt1.
+This file offers the methods to automatically retrieve the graph Tannerella sp. 6_1_58FAA_CT1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TannerellaSp6158faaCt1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TannerellaSp6158faaCt1 graph.
+    """Return new instance of the Tannerella sp. 6_1_58FAA_CT1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TannerellaSp6158faaCt1(
 
     Returns
     -----------------------
-    Instace of TannerellaSp6158faaCt1 graph.
+    Instace of Tannerella sp. 6_1_58FAA_CT1 graph.
 
 	References
 	---------------------

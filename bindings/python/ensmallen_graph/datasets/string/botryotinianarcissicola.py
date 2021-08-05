@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BotryotiniaNarcissicola.
+This file offers the methods to automatically retrieve the graph Botryotinia narcissicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BotryotiniaNarcissicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BotryotiniaNarcissicola graph.
+    """Return new instance of the Botryotinia narcissicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BotryotiniaNarcissicola(
 
     Returns
     -----------------------
-    Instace of BotryotiniaNarcissicola graph.
+    Instace of Botryotinia narcissicola graph.
 
 	References
 	---------------------

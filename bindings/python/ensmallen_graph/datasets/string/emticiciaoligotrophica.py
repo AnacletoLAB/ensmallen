@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmticiciaOligotrophica.
+This file offers the methods to automatically retrieve the graph Emticicia oligotrophica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmticiciaOligotrophica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmticiciaOligotrophica graph.
+    """Return new instance of the Emticicia oligotrophica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EmticiciaOligotrophica(
 
     Returns
     -----------------------
-    Instace of EmticiciaOligotrophica graph.
+    Instace of Emticicia oligotrophica graph.
 
 	References
 	---------------------

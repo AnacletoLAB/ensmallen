@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoclostridiumPhytofermentans.
+This file offers the methods to automatically retrieve the graph Lachnoclostridium phytofermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoclostridiumPhytofermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoclostridiumPhytofermentans graph.
+    """Return new instance of the Lachnoclostridium phytofermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnoclostridiumPhytofermentans(
 
     Returns
     -----------------------
-    Instace of LachnoclostridiumPhytofermentans graph.
+    Instace of Lachnoclostridium phytofermentans graph.
 
 	References
 	---------------------

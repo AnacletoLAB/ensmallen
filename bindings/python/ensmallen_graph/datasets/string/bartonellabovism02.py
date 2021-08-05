@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaBovisM02.
+This file offers the methods to automatically retrieve the graph Bartonella bovis m02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaBovisM02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaBovisM02 graph.
+    """Return new instance of the Bartonella bovis m02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaBovisM02(
 
     Returns
     -----------------------
-    Instace of BartonellaBovisM02 graph.
+    Instace of Bartonella bovis m02 graph.
 
 	References
 	---------------------

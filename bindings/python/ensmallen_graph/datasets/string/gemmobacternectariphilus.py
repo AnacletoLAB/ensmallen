@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmobacterNectariphilus.
+This file offers the methods to automatically retrieve the graph Gemmobacter nectariphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmobacterNectariphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmobacterNectariphilus graph.
+    """Return new instance of the Gemmobacter nectariphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemmobacterNectariphilus(
 
     Returns
     -----------------------
-    Instace of GemmobacterNectariphilus graph.
+    Instace of Gemmobacter nectariphilus graph.
 
 	References
 	---------------------

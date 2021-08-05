@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataellaPastoris.
+This file offers the methods to automatically retrieve the graph Komagataella pastoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataellaPastoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataellaPastoris graph.
+    """Return new instance of the Komagataella pastoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KomagataellaPastoris(
 
     Returns
     -----------------------
-    Instace of KomagataellaPastoris graph.
+    Instace of Komagataella pastoris graph.
 
 	References
 	---------------------

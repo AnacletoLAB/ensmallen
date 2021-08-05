@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaCanis.
+This file offers the methods to automatically retrieve the graph Neisseria canis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaCanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaCanis graph.
+    """Return new instance of the Neisseria canis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaCanis(
 
     Returns
     -----------------------
-    Instace of NeisseriaCanis graph.
+    Instace of Neisseria canis graph.
 
 	References
 	---------------------

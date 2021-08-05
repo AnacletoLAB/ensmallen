@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpCf517.
+This file offers the methods to automatically retrieve the graph Duganella sp. CF517.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpCf517(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpCf517 graph.
+    """Return new instance of the Duganella sp. CF517 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpCf517(
 
     Returns
     -----------------------
-    Instace of DuganellaSpCf517 graph.
+    Instace of Duganella sp. CF517 graph.
 
 	References
 	---------------------

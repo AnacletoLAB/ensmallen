@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PterulaGracilis.
+This file offers the methods to automatically retrieve the graph Pterula gracilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PterulaGracilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PterulaGracilis graph.
+    """Return new instance of the Pterula gracilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PterulaGracilis(
 
     Returns
     -----------------------
-    Instace of PterulaGracilis graph.
+    Instace of Pterula gracilis graph.
 
 	References
 	---------------------

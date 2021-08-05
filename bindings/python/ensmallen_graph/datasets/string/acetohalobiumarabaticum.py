@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetohalobiumArabaticum.
+This file offers the methods to automatically retrieve the graph Acetohalobium arabaticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetohalobiumArabaticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetohalobiumArabaticum graph.
+    """Return new instance of the Acetohalobium arabaticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetohalobiumArabaticum(
 
     Returns
     -----------------------
-    Instace of AcetohalobiumArabaticum graph.
+    Instace of Acetohalobium arabaticum graph.
 
 	References
 	---------------------

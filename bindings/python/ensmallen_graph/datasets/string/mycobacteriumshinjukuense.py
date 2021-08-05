@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumShinjukuense.
+This file offers the methods to automatically retrieve the graph Mycobacterium shinjukuense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumShinjukuense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumShinjukuense graph.
+    """Return new instance of the Mycobacterium shinjukuense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumShinjukuense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumShinjukuense graph.
+    Instace of Mycobacterium shinjukuense graph.
 
 	References
 	---------------------

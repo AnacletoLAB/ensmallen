@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhishiHudongRelatedpages.
+This file offers the methods to automatically retrieve the graph zhishi-hudong-relatedpages.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ZhishiHudongRelatedpages(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhishiHudongRelatedpages graph.
+    """Return new instance of the zhishi-hudong-relatedpages graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ZhishiHudongRelatedpages(
 
     Returns
     -----------------------
-    Instace of ZhishiHudongRelatedpages graph.
+    Instace of zhishi-hudong-relatedpages graph.
 
 	References
 	---------------------

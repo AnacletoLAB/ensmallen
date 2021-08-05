@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SiccibacterTuricensisLmg23730.
+This file offers the methods to automatically retrieve the graph Siccibacter turicensis LMG 23730.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SiccibacterTuricensisLmg23730(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SiccibacterTuricensisLmg23730 graph.
+    """Return new instance of the Siccibacter turicensis LMG 23730 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SiccibacterTuricensisLmg23730(
 
     Returns
     -----------------------
-    Instace of SiccibacterTuricensisLmg23730 graph.
+    Instace of Siccibacter turicensis LMG 23730 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSelangorensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus selangorensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSelangorensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSelangorensis graph.
+    """Return new instance of the Lactobacillus selangorensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSelangorensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusSelangorensis graph.
+    Instace of Lactobacillus selangorensis graph.
 
 	References
 	---------------------

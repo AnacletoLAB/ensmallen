@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermogemmatisporaOnikobensis.
+This file offers the methods to automatically retrieve the graph Thermogemmatispora onikobensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermogemmatisporaOnikobensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermogemmatisporaOnikobensis graph.
+    """Return new instance of the Thermogemmatispora onikobensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermogemmatisporaOnikobensis(
 
     Returns
     -----------------------
-    Instace of ThermogemmatisporaOnikobensis graph.
+    Instace of Thermogemmatispora onikobensis graph.
 
 	References
 	---------------------

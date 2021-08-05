@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlesiomonasShigelloides.
+This file offers the methods to automatically retrieve the graph Plesiomonas shigelloides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlesiomonasShigelloides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlesiomonasShigelloides graph.
+    """Return new instance of the Plesiomonas shigelloides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlesiomonasShigelloides(
 
     Returns
     -----------------------
-    Instace of PlesiomonasShigelloides graph.
+    Instace of Plesiomonas shigelloides graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusPiscium.
+This file offers the methods to automatically retrieve the graph Lactococcus piscium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusPiscium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusPiscium graph.
+    """Return new instance of the Lactococcus piscium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactococcusPiscium(
 
     Returns
     -----------------------
-    Instace of LactococcusPiscium graph.
+    Instace of Lactococcus piscium graph.
 
 	References
 	---------------------

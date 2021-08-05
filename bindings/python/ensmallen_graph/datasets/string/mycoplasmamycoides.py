@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaMycoides.
+This file offers the methods to automatically retrieve the graph Mycoplasma mycoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaMycoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaMycoides graph.
+    """Return new instance of the Mycoplasma mycoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaMycoides(
 
     Returns
     -----------------------
-    Instace of MycoplasmaMycoides graph.
+    Instace of Mycoplasma mycoides graph.
 
 	References
 	---------------------

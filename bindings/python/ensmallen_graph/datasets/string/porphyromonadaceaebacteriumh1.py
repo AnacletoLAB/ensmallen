@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonadaceaeBacteriumH1.
+This file offers the methods to automatically retrieve the graph Porphyromonadaceae bacterium H1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonadaceaeBacteriumH1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonadaceaeBacteriumH1 graph.
+    """Return new instance of the Porphyromonadaceae bacterium H1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonadaceaeBacteriumH1(
 
     Returns
     -----------------------
-    Instace of PorphyromonadaceaeBacteriumH1 graph.
+    Instace of Porphyromonadaceae bacterium H1 graph.
 
 	References
 	---------------------

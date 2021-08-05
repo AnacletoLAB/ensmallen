@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FangiaHongkongensis.
+This file offers the methods to automatically retrieve the graph Fangia hongkongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FangiaHongkongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FangiaHongkongensis graph.
+    """Return new instance of the Fangia hongkongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FangiaHongkongensis(
 
     Returns
     -----------------------
-    Instace of FangiaHongkongensis graph.
+    Instace of Fangia hongkongensis graph.
 
 	References
 	---------------------

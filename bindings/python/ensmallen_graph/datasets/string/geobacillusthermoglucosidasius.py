@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusThermoglucosidasius.
+This file offers the methods to automatically retrieve the graph Geobacillus thermoglucosidasius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusThermoglucosidasius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusThermoglucosidasius graph.
+    """Return new instance of the Geobacillus thermoglucosidasius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusThermoglucosidasius(
 
     Returns
     -----------------------
-    Instace of GeobacillusThermoglucosidasius graph.
+    Instace of Geobacillus thermoglucosidasius graph.
 
 	References
 	---------------------

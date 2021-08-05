@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolymorphaCephalotaxi.
+This file offers the methods to automatically retrieve the graph Actinopolymorpha cephalotaxi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolymorphaCephalotaxi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolymorphaCephalotaxi graph.
+    """Return new instance of the Actinopolymorpha cephalotaxi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinopolymorphaCephalotaxi(
 
     Returns
     -----------------------
-    Instace of ActinopolymorphaCephalotaxi graph.
+    Instace of Actinopolymorpha cephalotaxi graph.
 
 	References
 	---------------------

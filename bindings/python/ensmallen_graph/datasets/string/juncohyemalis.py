@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JuncoHyemalis.
+This file offers the methods to automatically retrieve the graph Junco hyemalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JuncoHyemalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JuncoHyemalis graph.
+    """Return new instance of the Junco hyemalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JuncoHyemalis(
 
     Returns
     -----------------------
-    Instace of JuncoHyemalis graph.
+    Instace of Junco hyemalis graph.
 
 	References
 	---------------------

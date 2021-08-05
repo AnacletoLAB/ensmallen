@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpKrmcy2.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. KRMCY2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpKrmcy2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpKrmcy2 graph.
+    """Return new instance of the Cellulomonas sp. KRMCY2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasSpKrmcy2(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpKrmcy2 graph.
+    Instace of Cellulomonas sp. KRMCY2 graph.
 
 	References
 	---------------------

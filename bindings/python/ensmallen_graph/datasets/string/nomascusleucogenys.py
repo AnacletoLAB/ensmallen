@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NomascusLeucogenys.
+This file offers the methods to automatically retrieve the graph Nomascus leucogenys.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NomascusLeucogenys(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NomascusLeucogenys graph.
+    """Return new instance of the Nomascus leucogenys graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NomascusLeucogenys(
 
     Returns
     -----------------------
-    Instace of NomascusLeucogenys graph.
+    Instace of Nomascus leucogenys graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasBadiaDsm17552.
+This file offers the methods to automatically retrieve the graph Comamonas badia DSM 17552.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasBadiaDsm17552(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasBadiaDsm17552 graph.
+    """Return new instance of the Comamonas badia DSM 17552 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasBadiaDsm17552(
 
     Returns
     -----------------------
-    Instace of ComamonasBadiaDsm17552 graph.
+    Instace of Comamonas badia DSM 17552 graph.
 
 	References
 	---------------------

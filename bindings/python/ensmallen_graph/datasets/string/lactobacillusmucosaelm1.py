@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusMucosaeLm1.
+This file offers the methods to automatically retrieve the graph Lactobacillus mucosae LM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusMucosaeLm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusMucosaeLm1 graph.
+    """Return new instance of the Lactobacillus mucosae LM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusMucosaeLm1(
 
     Returns
     -----------------------
-    Instace of LactobacillusMucosaeLm1 graph.
+    Instace of Lactobacillus mucosae LM1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusSpMit0601.
+This file offers the methods to automatically retrieve the graph Prochlorococcus sp. MIT0601.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusSpMit0601(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusSpMit0601 graph.
+    """Return new instance of the Prochlorococcus sp. MIT0601 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProchlorococcusSpMit0601(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusSpMit0601 graph.
+    Instace of Prochlorococcus sp. MIT0601 graph.
 
 	References
 	---------------------

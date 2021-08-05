@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LongilineaArvoryzae.
+This file offers the methods to automatically retrieve the graph Longilinea arvoryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LongilineaArvoryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LongilineaArvoryzae graph.
+    """Return new instance of the Longilinea arvoryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LongilineaArvoryzae(
 
     Returns
     -----------------------
-    Instace of LongilineaArvoryzae graph.
+    Instace of Longilinea arvoryzae graph.
 
 	References
 	---------------------

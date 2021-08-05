@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidithiobacillusFerrooxidansAtcc53993.
+This file offers the methods to automatically retrieve the graph Acidithiobacillus ferrooxidans ATCC53993.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidithiobacillusFerrooxidansAtcc53993(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidithiobacillusFerrooxidansAtcc53993 graph.
+    """Return new instance of the Acidithiobacillus ferrooxidans ATCC53993 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidithiobacillusFerrooxidansAtcc53993(
 
     Returns
     -----------------------
-    Instace of AcidithiobacillusFerrooxidansAtcc53993 graph.
+    Instace of Acidithiobacillus ferrooxidans ATCC53993 graph.
 
 	References
 	---------------------

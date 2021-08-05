@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKunkeei.
+This file offers the methods to automatically retrieve the graph Lactobacillus kunkeei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKunkeei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKunkeei graph.
+    """Return new instance of the Lactobacillus kunkeei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusKunkeei(
 
     Returns
     -----------------------
-    Instace of LactobacillusKunkeei graph.
+    Instace of Lactobacillus kunkeei graph.
 
 	References
 	---------------------

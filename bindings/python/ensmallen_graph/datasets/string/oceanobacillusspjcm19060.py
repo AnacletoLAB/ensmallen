@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusSpJcm19060.
+This file offers the methods to automatically retrieve the graph Oceanobacillus sp. JCM 19060.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusSpJcm19060(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusSpJcm19060 graph.
+    """Return new instance of the Oceanobacillus sp. JCM 19060 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusSpJcm19060(
 
     Returns
     -----------------------
-    Instace of OceanobacillusSpJcm19060 graph.
+    Instace of Oceanobacillus sp. JCM 19060 graph.
 
 	References
 	---------------------

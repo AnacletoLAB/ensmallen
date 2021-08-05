@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucosporidiumCreatinivorum.
+This file offers the methods to automatically retrieve the graph Leucosporidium creatinivorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucosporidiumCreatinivorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucosporidiumCreatinivorum graph.
+    """Return new instance of the Leucosporidium creatinivorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucosporidiumCreatinivorum(
 
     Returns
     -----------------------
-    Instace of LeucosporidiumCreatinivorum graph.
+    Instace of Leucosporidium creatinivorum graph.
 
 	References
 	---------------------

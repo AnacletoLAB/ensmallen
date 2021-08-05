@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LiberibacterCrescens.
+This file offers the methods to automatically retrieve the graph Liberibacter crescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LiberibacterCrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LiberibacterCrescens graph.
+    """Return new instance of the Liberibacter crescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LiberibacterCrescens(
 
     Returns
     -----------------------
-    Instace of LiberibacterCrescens graph.
+    Instace of Liberibacter crescens graph.
 
 	References
 	---------------------

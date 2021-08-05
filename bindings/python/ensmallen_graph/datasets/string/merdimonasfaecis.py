@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MerdimonasFaecis.
+This file offers the methods to automatically retrieve the graph Merdimonas faecis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MerdimonasFaecis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MerdimonasFaecis graph.
+    """Return new instance of the Merdimonas faecis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MerdimonasFaecis(
 
     Returns
     -----------------------
-    Instace of MerdimonasFaecis graph.
+    Instace of Merdimonas faecis graph.
 
 	References
 	---------------------

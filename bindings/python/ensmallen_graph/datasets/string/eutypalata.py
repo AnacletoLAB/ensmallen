@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EutypaLata.
+This file offers the methods to automatically retrieve the graph Eutypa lata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EutypaLata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EutypaLata graph.
+    """Return new instance of the Eutypa lata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EutypaLata(
 
     Returns
     -----------------------
-    Instace of EutypaLata graph.
+    Instace of Eutypa lata graph.
 
 	References
 	---------------------

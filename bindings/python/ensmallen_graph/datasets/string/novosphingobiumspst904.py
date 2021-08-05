@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSpSt904.
+This file offers the methods to automatically retrieve the graph Novosphingobium sp. ST904.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSpSt904(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSpSt904 graph.
+    """Return new instance of the Novosphingobium sp. ST904 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSpSt904(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSpSt904 graph.
+    Instace of Novosphingobium sp. ST904 graph.
 
 	References
 	---------------------

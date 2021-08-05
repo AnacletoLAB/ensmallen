@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrucellaAbortus2308.
+This file offers the methods to automatically retrieve the graph Brucella abortus 2308.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrucellaAbortus2308(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrucellaAbortus2308 graph.
+    """Return new instance of the Brucella abortus 2308 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrucellaAbortus2308(
 
     Returns
     -----------------------
-    Instace of BrucellaAbortus2308 graph.
+    Instace of Brucella abortus 2308 graph.
 
 	References
 	---------------------

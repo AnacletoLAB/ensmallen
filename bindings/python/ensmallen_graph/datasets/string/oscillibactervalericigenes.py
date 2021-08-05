@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterValericigenes.
+This file offers the methods to automatically retrieve the graph Oscillibacter valericigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterValericigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterValericigenes graph.
+    """Return new instance of the Oscillibacter valericigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillibacterValericigenes(
 
     Returns
     -----------------------
-    Instace of OscillibacterValericigenes graph.
+    Instace of Oscillibacter valericigenes graph.
 
 	References
 	---------------------

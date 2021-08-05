@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSoliNbrc106424.
+This file offers the methods to automatically retrieve the graph Variovorax soli NBRC 106424.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSoliNbrc106424(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSoliNbrc106424 graph.
+    """Return new instance of the Variovorax soli NBRC 106424 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSoliNbrc106424(
 
     Returns
     -----------------------
-    Instace of VariovoraxSoliNbrc106424 graph.
+    Instace of Variovorax soli NBRC 106424 graph.
 
 	References
 	---------------------

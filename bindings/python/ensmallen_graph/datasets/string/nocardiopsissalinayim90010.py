@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisSalinaYim90010.
+This file offers the methods to automatically retrieve the graph Nocardiopsis salina YIM 90010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisSalinaYim90010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisSalinaYim90010 graph.
+    """Return new instance of the Nocardiopsis salina YIM 90010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisSalinaYim90010(
 
     Returns
     -----------------------
-    Instace of NocardiopsisSalinaYim90010 graph.
+    Instace of Nocardiopsis salina YIM 90010 graph.
 
 	References
 	---------------------

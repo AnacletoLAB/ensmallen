@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumPsychroaquaticum.
+This file offers the methods to automatically retrieve the graph Sphingobacterium psychroaquaticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumPsychroaquaticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumPsychroaquaticum graph.
+    """Return new instance of the Sphingobacterium psychroaquaticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobacteriumPsychroaquaticum(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumPsychroaquaticum graph.
+    Instace of Sphingobacterium psychroaquaticum graph.
 
 	References
 	---------------------

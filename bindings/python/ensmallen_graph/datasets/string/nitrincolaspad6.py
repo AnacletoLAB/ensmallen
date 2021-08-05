@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrincolaSpAD6.
+This file offers the methods to automatically retrieve the graph Nitrincola sp. A-D6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrincolaSpAD6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrincolaSpAD6 graph.
+    """Return new instance of the Nitrincola sp. A-D6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrincolaSpAD6(
 
     Returns
     -----------------------
-    Instace of NitrincolaSpAD6 graph.
+    Instace of Nitrincola sp. A-D6 graph.
 
 	References
 	---------------------

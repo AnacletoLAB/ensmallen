@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DokdoniaSpMed134.
+This file offers the methods to automatically retrieve the graph Dokdonia sp. MED134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DokdoniaSpMed134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DokdoniaSpMed134 graph.
+    """Return new instance of the Dokdonia sp. MED134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DokdoniaSpMed134(
 
     Returns
     -----------------------
-    Instace of DokdoniaSpMed134 graph.
+    Instace of Dokdonia sp. MED134 graph.
 
 	References
 	---------------------

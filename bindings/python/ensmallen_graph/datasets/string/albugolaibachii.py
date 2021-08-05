@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlbugoLaibachii.
+This file offers the methods to automatically retrieve the graph Albugo laibachii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlbugoLaibachii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlbugoLaibachii graph.
+    """Return new instance of the Albugo laibachii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlbugoLaibachii(
 
     Returns
     -----------------------
-    Instace of AlbugoLaibachii graph.
+    Instace of Albugo laibachii graph.
 
 	References
 	---------------------

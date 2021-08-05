@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAquaticum.
+This file offers the methods to automatically retrieve the graph Mycobacterium aquaticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAquaticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAquaticum graph.
+    """Return new instance of the Mycobacterium aquaticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumAquaticum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAquaticum graph.
+    Instace of Mycobacterium aquaticum graph.
 
 	References
 	---------------------

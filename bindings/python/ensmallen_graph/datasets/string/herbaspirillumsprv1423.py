@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumSpRv1423.
+This file offers the methods to automatically retrieve the graph Herbaspirillum sp. RV1423.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumSpRv1423(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumSpRv1423 graph.
+    """Return new instance of the Herbaspirillum sp. RV1423 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbaspirillumSpRv1423(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumSpRv1423 graph.
+    Instace of Herbaspirillum sp. RV1423 graph.
 
 	References
 	---------------------

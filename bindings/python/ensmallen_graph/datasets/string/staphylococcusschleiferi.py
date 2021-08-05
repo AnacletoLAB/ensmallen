@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSchleiferi.
+This file offers the methods to automatically retrieve the graph Staphylococcus schleiferi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSchleiferi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSchleiferi graph.
+    """Return new instance of the Staphylococcus schleiferi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusSchleiferi(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSchleiferi graph.
+    Instace of Staphylococcus schleiferi graph.
 
 	References
 	---------------------

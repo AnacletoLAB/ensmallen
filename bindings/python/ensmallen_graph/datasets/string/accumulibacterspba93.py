@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AccumulibacterSpBa93.
+This file offers the methods to automatically retrieve the graph Accumulibacter sp. BA93.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AccumulibacterSpBa93(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AccumulibacterSpBa93 graph.
+    """Return new instance of the Accumulibacter sp. BA93 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AccumulibacterSpBa93(
 
     Returns
     -----------------------
-    Instace of AccumulibacterSpBa93 graph.
+    Instace of Accumulibacter sp. BA93 graph.
 
 	References
 	---------------------

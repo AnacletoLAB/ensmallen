@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterLuteus.
+This file offers the methods to automatically retrieve the graph Pedobacter luteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterLuteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterLuteus graph.
+    """Return new instance of the Pedobacter luteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterLuteus(
 
     Returns
     -----------------------
-    Instace of PedobacterLuteus graph.
+    Instace of Pedobacter luteus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoproteusTenax.
+This file offers the methods to automatically retrieve the graph Thermoproteus tenax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoproteusTenax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoproteusTenax graph.
+    """Return new instance of the Thermoproteus tenax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoproteusTenax(
 
     Returns
     -----------------------
-    Instace of ThermoproteusTenax graph.
+    Instace of Thermoproteus tenax graph.
 
 	References
 	---------------------

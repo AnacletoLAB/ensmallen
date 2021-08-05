@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolfiporiaCocosMd104Ss10.
+This file offers the methods to automatically retrieve the graph Wolfiporia cocos MD-104 SS10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolfiporiaCocosMd104Ss10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolfiporiaCocosMd104Ss10 graph.
+    """Return new instance of the Wolfiporia cocos MD-104 SS10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolfiporiaCocosMd104Ss10(
 
     Returns
     -----------------------
-    Instace of WolfiporiaCocosMd104Ss10 graph.
+    Instace of Wolfiporia cocos MD-104 SS10 graph.
 
 	References
 	---------------------

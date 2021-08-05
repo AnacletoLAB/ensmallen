@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCaseiBl23.
+This file offers the methods to automatically retrieve the graph Lactobacillus casei BL23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCaseiBl23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCaseiBl23 graph.
+    """Return new instance of the Lactobacillus casei BL23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCaseiBl23(
 
     Returns
     -----------------------
-    Instace of LactobacillusCaseiBl23 graph.
+    Instace of Lactobacillus casei BL23 graph.
 
 	References
 	---------------------

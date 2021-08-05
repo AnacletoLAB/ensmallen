@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OleiagrimonasSoli.
+This file offers the methods to automatically retrieve the graph Oleiagrimonas soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OleiagrimonasSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OleiagrimonasSoli graph.
+    """Return new instance of the Oleiagrimonas soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OleiagrimonasSoli(
 
     Returns
     -----------------------
-    Instace of OleiagrimonasSoli graph.
+    Instace of Oleiagrimonas soli graph.
 
 	References
 	---------------------

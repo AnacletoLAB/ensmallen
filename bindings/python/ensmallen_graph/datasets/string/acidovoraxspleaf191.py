@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpLeaf191.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. Leaf191.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpLeaf191(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpLeaf191 graph.
+    """Return new instance of the Acidovorax sp. Leaf191 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxSpLeaf191(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpLeaf191 graph.
+    Instace of Acidovorax sp. Leaf191 graph.
 
 	References
 	---------------------

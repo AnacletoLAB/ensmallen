@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParapedobacterLuteus.
+This file offers the methods to automatically retrieve the graph Parapedobacter luteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParapedobacterLuteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParapedobacterLuteus graph.
+    """Return new instance of the Parapedobacter luteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParapedobacterLuteus(
 
     Returns
     -----------------------
-    Instace of ParapedobacterLuteus graph.
+    Instace of Parapedobacter luteus graph.
 
 	References
 	---------------------

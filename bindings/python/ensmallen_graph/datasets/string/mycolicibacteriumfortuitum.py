@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumFortuitum.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium fortuitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumFortuitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumFortuitum graph.
+    """Return new instance of the Mycolicibacterium fortuitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumFortuitum(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumFortuitum graph.
+    Instace of Mycolicibacterium fortuitum graph.
 
 	References
 	---------------------

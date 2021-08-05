@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpCf149.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. CF149.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpCf149(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpCf149 graph.
+    """Return new instance of the Pseudomonas sp. CF149 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpCf149(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpCf149 graph.
+    Instace of Pseudomonas sp. CF149 graph.
 
 	References
 	---------------------

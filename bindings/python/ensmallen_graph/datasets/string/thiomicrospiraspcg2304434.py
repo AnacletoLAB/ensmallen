@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraSpCg2304434.
+This file offers the methods to automatically retrieve the graph Thiomicrospira sp. CG2_30_44_34.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraSpCg2304434(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraSpCg2304434 graph.
+    """Return new instance of the Thiomicrospira sp. CG2_30_44_34 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiomicrospiraSpCg2304434(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraSpCg2304434 graph.
+    Instace of Thiomicrospira sp. CG2_30_44_34 graph.
 
 	References
 	---------------------

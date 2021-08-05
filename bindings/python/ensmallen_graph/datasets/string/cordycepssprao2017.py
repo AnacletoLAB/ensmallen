@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CordycepsSpRao2017.
+This file offers the methods to automatically retrieve the graph Cordyceps sp. RAO-2017.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CordycepsSpRao2017(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CordycepsSpRao2017 graph.
+    """Return new instance of the Cordyceps sp. RAO-2017 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CordycepsSpRao2017(
 
     Returns
     -----------------------
-    Instace of CordycepsSpRao2017 graph.
+    Instace of Cordyceps sp. RAO-2017 graph.
 
 	References
 	---------------------

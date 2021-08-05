@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminococcusTimonensis.
+This file offers the methods to automatically retrieve the graph Acidaminococcus timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminococcusTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminococcusTimonensis graph.
+    """Return new instance of the Acidaminococcus timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidaminococcusTimonensis(
 
     Returns
     -----------------------
-    Instace of AcidaminococcusTimonensis graph.
+    Instace of Acidaminococcus timonensis graph.
 
 	References
 	---------------------

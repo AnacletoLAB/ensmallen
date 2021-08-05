@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizophyllumCommuneH48.
+This file offers the methods to automatically retrieve the graph Schizophyllum commune H4-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizophyllumCommuneH48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizophyllumCommuneH48 graph.
+    """Return new instance of the Schizophyllum commune H4-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchizophyllumCommuneH48(
 
     Returns
     -----------------------
-    Instace of SchizophyllumCommuneH48 graph.
+    Instace of Schizophyllum commune H4-8 graph.
 
 	References
 	---------------------

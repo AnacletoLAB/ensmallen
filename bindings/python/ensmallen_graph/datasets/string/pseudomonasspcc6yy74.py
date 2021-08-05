@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpCc6Yy74.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. CC6-YY-74.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpCc6Yy74(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpCc6Yy74 graph.
+    """Return new instance of the Pseudomonas sp. CC6-YY-74 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpCc6Yy74(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpCc6Yy74 graph.
+    Instace of Pseudomonas sp. CC6-YY-74 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrincolaLacisaponensis.
+This file offers the methods to automatically retrieve the graph Nitrincola lacisaponensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrincolaLacisaponensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrincolaLacisaponensis graph.
+    """Return new instance of the Nitrincola lacisaponensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrincolaLacisaponensis(
 
     Returns
     -----------------------
-    Instace of NitrincolaLacisaponensis graph.
+    Instace of Nitrincola lacisaponensis graph.
 
 	References
 	---------------------

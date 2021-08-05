@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaVulneris.
+This file offers the methods to automatically retrieve the graph Escherichia vulneris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaVulneris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaVulneris graph.
+    """Return new instance of the Escherichia vulneris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaVulneris(
 
     Returns
     -----------------------
-    Instace of EscherichiaVulneris graph.
+    Instace of Escherichia vulneris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaribaculumCambrienseDora20.
+This file offers the methods to automatically retrieve the graph Varibaculum cambriense DORA20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaribaculumCambrienseDora20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaribaculumCambrienseDora20 graph.
+    """Return new instance of the Varibaculum cambriense DORA20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VaribaculumCambrienseDora20(
 
     Returns
     -----------------------
-    Instace of VaribaculumCambrienseDora20 graph.
+    Instace of Varibaculum cambriense DORA20 graph.
 
 	References
 	---------------------

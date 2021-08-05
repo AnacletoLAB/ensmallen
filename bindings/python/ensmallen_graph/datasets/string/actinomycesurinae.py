@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesUrinae.
+This file offers the methods to automatically retrieve the graph Actinomyces urinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesUrinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesUrinae graph.
+    """Return new instance of the Actinomyces urinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesUrinae(
 
     Returns
     -----------------------
-    Instace of ActinomycesUrinae graph.
+    Instace of Actinomyces urinae graph.
 
 	References
 	---------------------

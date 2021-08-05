@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmithellaSpM82.
+This file offers the methods to automatically retrieve the graph Smithella sp. M82.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmithellaSpM82(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmithellaSpM82 graph.
+    """Return new instance of the Smithella sp. M82 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmithellaSpM82(
 
     Returns
     -----------------------
-    Instace of SmithellaSpM82 graph.
+    Instace of Smithella sp. M82 graph.
 
 	References
 	---------------------

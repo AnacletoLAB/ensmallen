@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaRobiniae.
+This file offers the methods to automatically retrieve the graph Bosea robiniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaRobiniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaRobiniae graph.
+    """Return new instance of the Bosea robiniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaRobiniae(
 
     Returns
     -----------------------
-    Instace of BoseaRobiniae graph.
+    Instace of Bosea robiniae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacinutrixHimadriensis.
+This file offers the methods to automatically retrieve the graph Lacinutrix himadriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacinutrixHimadriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacinutrixHimadriensis graph.
+    """Return new instance of the Lacinutrix himadriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LacinutrixHimadriensis(
 
     Returns
     -----------------------
-    Instace of LacinutrixHimadriensis graph.
+    Instace of Lacinutrix himadriensis graph.
 
 	References
 	---------------------

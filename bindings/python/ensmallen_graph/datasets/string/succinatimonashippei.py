@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuccinatimonasHippei.
+This file offers the methods to automatically retrieve the graph Succinatimonas hippei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuccinatimonasHippei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuccinatimonasHippei graph.
+    """Return new instance of the Succinatimonas hippei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SuccinatimonasHippei(
 
     Returns
     -----------------------
-    Instace of SuccinatimonasHippei graph.
+    Instace of Succinatimonas hippei graph.
 
 	References
 	---------------------

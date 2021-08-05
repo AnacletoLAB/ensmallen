@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHyopneumoniae168.
+This file offers the methods to automatically retrieve the graph Mycoplasma hyopneumoniae 168.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHyopneumoniae168(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHyopneumoniae168 graph.
+    """Return new instance of the Mycoplasma hyopneumoniae 168 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaHyopneumoniae168(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHyopneumoniae168 graph.
+    Instace of Mycoplasma hyopneumoniae 168 graph.
 
 	References
 	---------------------

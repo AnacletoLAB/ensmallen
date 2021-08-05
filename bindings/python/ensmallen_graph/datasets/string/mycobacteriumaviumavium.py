@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAviumAvium.
+This file offers the methods to automatically retrieve the graph Mycobacterium avium avium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAviumAvium(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAviumAvium graph.
+    """Return new instance of the Mycobacterium avium avium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumAviumAvium(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAviumAvium graph.
+    Instace of Mycobacterium avium avium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumKluyveri.
+This file offers the methods to automatically retrieve the graph Clostridium kluyveri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumKluyveri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumKluyveri graph.
+    """Return new instance of the Clostridium kluyveri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumKluyveri(
 
     Returns
     -----------------------
-    Instace of ClostridiumKluyveri graph.
+    Instace of Clostridium kluyveri graph.
 
 	References
 	---------------------

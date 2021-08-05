@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraBroomiiSerovarHurstbridgeStr5399.
+This file offers the methods to automatically retrieve the graph Leptospira broomii serovar Hurstbridge str. 5399.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraBroomiiSerovarHurstbridgeStr5399(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraBroomiiSerovarHurstbridgeStr5399 graph.
+    """Return new instance of the Leptospira broomii serovar Hurstbridge str. 5399 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraBroomiiSerovarHurstbridgeStr5399(
 
     Returns
     -----------------------
-    Instace of LeptospiraBroomiiSerovarHurstbridgeStr5399 graph.
+    Instace of Leptospira broomii serovar Hurstbridge str. 5399 graph.
 
 	References
 	---------------------

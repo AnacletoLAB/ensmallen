@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinococcusLuteus.
+This file offers the methods to automatically retrieve the graph Marinococcus luteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinococcusLuteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinococcusLuteus graph.
+    """Return new instance of the Marinococcus luteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinococcusLuteus(
 
     Returns
     -----------------------
-    Instace of MarinococcusLuteus graph.
+    Instace of Marinococcus luteus graph.
 
 	References
 	---------------------

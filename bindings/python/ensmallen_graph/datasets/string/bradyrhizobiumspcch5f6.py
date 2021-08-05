@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpCch5F6.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. CCH5-F6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpCch5F6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpCch5F6 graph.
+    """Return new instance of the Bradyrhizobium sp. CCH5-F6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumSpCch5F6(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpCch5F6 graph.
+    Instace of Bradyrhizobium sp. CCH5-F6 graph.
 
 	References
 	---------------------

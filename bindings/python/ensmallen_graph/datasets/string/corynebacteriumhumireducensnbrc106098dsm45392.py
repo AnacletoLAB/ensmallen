@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumHumireducensNbrc106098Dsm45392.
+This file offers the methods to automatically retrieve the graph Corynebacterium humireducens NBRC 106098 DSM 45392.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumHumireducensNbrc106098Dsm45392(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumHumireducensNbrc106098Dsm45392 graph.
+    """Return new instance of the Corynebacterium humireducens NBRC 106098 DSM 45392 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumHumireducensNbrc106098Dsm45392(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumHumireducensNbrc106098Dsm45392 graph.
+    Instace of Corynebacterium humireducens NBRC 106098 DSM 45392 graph.
 
 	References
 	---------------------

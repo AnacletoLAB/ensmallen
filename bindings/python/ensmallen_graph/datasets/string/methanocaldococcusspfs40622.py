@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusSpFs40622.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus sp. FS40622.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusSpFs40622(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusSpFs40622 graph.
+    """Return new instance of the Methanocaldococcus sp. FS40622 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocaldococcusSpFs40622(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusSpFs40622 graph.
+    Instace of Methanocaldococcus sp. FS40622 graph.
 
 	References
 	---------------------

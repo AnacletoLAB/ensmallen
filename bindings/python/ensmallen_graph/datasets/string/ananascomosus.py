@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnanasComosus.
+This file offers the methods to automatically retrieve the graph Ananas comosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnanasComosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnanasComosus graph.
+    """Return new instance of the Ananas comosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnanasComosus(
 
     Returns
     -----------------------
-    Instace of AnanasComosus graph.
+    Instace of Ananas comosus graph.
 
 	References
 	---------------------

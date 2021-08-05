@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinivibrioAlkaliphilus.
+This file offers the methods to automatically retrieve the graph Chitinivibrio alkaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinivibrioAlkaliphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinivibrioAlkaliphilus graph.
+    """Return new instance of the Chitinivibrio alkaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChitinivibrioAlkaliphilus(
 
     Returns
     -----------------------
-    Instace of ChitinivibrioAlkaliphilus graph.
+    Instace of Chitinivibrio alkaliphilus graph.
 
 	References
 	---------------------

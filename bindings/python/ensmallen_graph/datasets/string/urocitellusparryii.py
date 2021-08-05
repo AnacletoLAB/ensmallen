@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UrocitellusParryii.
+This file offers the methods to automatically retrieve the graph Urocitellus parryii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UrocitellusParryii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UrocitellusParryii graph.
+    """Return new instance of the Urocitellus parryii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UrocitellusParryii(
 
     Returns
     -----------------------
-    Instace of UrocitellusParryii graph.
+    Instace of Urocitellus parryii graph.
 
 	References
 	---------------------

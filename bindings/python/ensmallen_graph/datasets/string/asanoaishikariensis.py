@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsanoaIshikariensis.
+This file offers the methods to automatically retrieve the graph Asanoa ishikariensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsanoaIshikariensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsanoaIshikariensis graph.
+    """Return new instance of the Asanoa ishikariensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsanoaIshikariensis(
 
     Returns
     -----------------------
-    Instace of AsanoaIshikariensis graph.
+    Instace of Asanoa ishikariensis graph.
 
 	References
 	---------------------

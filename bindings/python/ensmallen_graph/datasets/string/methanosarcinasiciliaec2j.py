@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaSiciliaeC2j.
+This file offers the methods to automatically retrieve the graph Methanosarcina siciliae C2J.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaSiciliaeC2j(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaSiciliaeC2j graph.
+    """Return new instance of the Methanosarcina siciliae C2J graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaSiciliaeC2j(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaSiciliaeC2j graph.
+    Instace of Methanosarcina siciliae C2J graph.
 
 	References
 	---------------------

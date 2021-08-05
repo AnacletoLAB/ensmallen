@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpLeaf7.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. Leaf7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpLeaf7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpLeaf7 graph.
+    """Return new instance of the Rhodococcus sp. Leaf7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusSpLeaf7(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpLeaf7 graph.
+    Instace of Rhodococcus sp. Leaf7 graph.
 
 	References
 	---------------------

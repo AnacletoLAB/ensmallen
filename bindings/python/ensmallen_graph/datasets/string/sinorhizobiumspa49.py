@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumSpA49.
+This file offers the methods to automatically retrieve the graph Sinorhizobium sp. A49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumSpA49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumSpA49 graph.
+    """Return new instance of the Sinorhizobium sp. A49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinorhizobiumSpA49(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumSpA49 graph.
+    Instace of Sinorhizobium sp. A49 graph.
 
 	References
 	---------------------

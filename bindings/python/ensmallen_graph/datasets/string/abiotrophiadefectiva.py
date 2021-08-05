@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AbiotrophiaDefectiva.
+This file offers the methods to automatically retrieve the graph Abiotrophia defectiva.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AbiotrophiaDefectiva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AbiotrophiaDefectiva graph.
+    """Return new instance of the Abiotrophia defectiva graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AbiotrophiaDefectiva(
 
     Returns
     -----------------------
-    Instace of AbiotrophiaDefectiva graph.
+    Instace of Abiotrophia defectiva graph.
 
 	References
 	---------------------

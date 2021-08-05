@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodocyclaceaeBacteriumPaddy1.
+This file offers the methods to automatically retrieve the graph Rhodocyclaceae bacterium Paddy-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodocyclaceaeBacteriumPaddy1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodocyclaceaeBacteriumPaddy1 graph.
+    """Return new instance of the Rhodocyclaceae bacterium Paddy-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodocyclaceaeBacteriumPaddy1(
 
     Returns
     -----------------------
-    Instace of RhodocyclaceaeBacteriumPaddy1 graph.
+    Instace of Rhodocyclaceae bacterium Paddy-1 graph.
 
 	References
 	---------------------

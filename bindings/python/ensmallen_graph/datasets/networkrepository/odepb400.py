@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Odepb400.
+This file offers the methods to automatically retrieve the graph odepb400.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Odepb400(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Odepb400 graph.
+    """Return new instance of the odepb400 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Odepb400(
 
     Returns
     -----------------------
-    Instace of Odepb400 graph.
+    Instace of odepb400 graph.
 
 	References
 	---------------------

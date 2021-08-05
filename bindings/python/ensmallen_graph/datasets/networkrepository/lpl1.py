@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lpl1.
+This file offers the methods to automatically retrieve the graph lpl1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lpl1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lpl1 graph.
+    """Return new instance of the lpl1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lpl1(
 
     Returns
     -----------------------
-    Instace of Lpl1 graph.
+    Instace of lpl1 graph.
 
 	References
 	---------------------

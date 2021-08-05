@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PonticaulisKoreensis.
+This file offers the methods to automatically retrieve the graph Ponticaulis koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PonticaulisKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PonticaulisKoreensis graph.
+    """Return new instance of the Ponticaulis koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PonticaulisKoreensis(
 
     Returns
     -----------------------
-    Instace of PonticaulisKoreensis graph.
+    Instace of Ponticaulis koreensis graph.
 
 	References
 	---------------------

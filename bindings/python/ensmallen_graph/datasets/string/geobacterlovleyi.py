@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterLovleyi.
+This file offers the methods to automatically retrieve the graph Geobacter lovleyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterLovleyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterLovleyi graph.
+    """Return new instance of the Geobacter lovleyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacterLovleyi(
 
     Returns
     -----------------------
-    Instace of GeobacterLovleyi graph.
+    Instace of Geobacter lovleyi graph.
 
 	References
 	---------------------

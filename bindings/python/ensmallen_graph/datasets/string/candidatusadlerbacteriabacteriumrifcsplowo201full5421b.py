@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAdlerbacteriaBacteriumRifcsplowo201Full5421b.
+This file offers the methods to automatically retrieve the graph Candidatus Adlerbacteria bacterium RIFCSPLOWO2_01_FULL_54_21b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAdlerbacteriaBacteriumRifcsplowo201Full5421b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAdlerbacteriaBacteriumRifcsplowo201Full5421b graph.
+    """Return new instance of the Candidatus Adlerbacteria bacterium RIFCSPLOWO2_01_FULL_54_21b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAdlerbacteriaBacteriumRifcsplowo201Full5421b(
 
     Returns
     -----------------------
-    Instace of CandidatusAdlerbacteriaBacteriumRifcsplowo201Full5421b graph.
+    Instace of Candidatus Adlerbacteria bacterium RIFCSPLOWO2_01_FULL_54_21b graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AggregatibacterAphrophilus.
+This file offers the methods to automatically retrieve the graph Aggregatibacter aphrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AggregatibacterAphrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AggregatibacterAphrophilus graph.
+    """Return new instance of the Aggregatibacter aphrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AggregatibacterAphrophilus(
 
     Returns
     -----------------------
-    Instace of AggregatibacterAphrophilus graph.
+    Instace of Aggregatibacter aphrophilus graph.
 
 	References
 	---------------------

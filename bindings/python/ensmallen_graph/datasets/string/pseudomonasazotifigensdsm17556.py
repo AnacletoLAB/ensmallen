@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAzotifigensDsm17556.
+This file offers the methods to automatically retrieve the graph Pseudomonas azotifigens DSM 17556.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAzotifigensDsm17556(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAzotifigensDsm17556 graph.
+    """Return new instance of the Pseudomonas azotifigens DSM 17556 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAzotifigensDsm17556(
 
     Returns
     -----------------------
-    Instace of PseudomonasAzotifigensDsm17556 graph.
+    Instace of Pseudomonas azotifigens DSM 17556 graph.
 
 	References
 	---------------------

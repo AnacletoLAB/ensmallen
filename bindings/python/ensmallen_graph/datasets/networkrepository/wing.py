@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Wing.
+This file offers the methods to automatically retrieve the graph wing.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def Wing(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Wing graph.
+    """Return new instance of the wing graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def Wing(
 
     Returns
     -----------------------
-    Instace of Wing graph.
+    Instace of wing graph.
 
 	References
 	---------------------

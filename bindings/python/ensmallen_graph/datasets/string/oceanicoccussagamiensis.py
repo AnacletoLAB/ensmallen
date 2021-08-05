@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicoccusSagamiensis.
+This file offers the methods to automatically retrieve the graph Oceanicoccus sagamiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicoccusSagamiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicoccusSagamiensis graph.
+    """Return new instance of the Oceanicoccus sagamiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanicoccusSagamiensis(
 
     Returns
     -----------------------
-    Instace of OceanicoccusSagamiensis graph.
+    Instace of Oceanicoccus sagamiensis graph.
 
 	References
 	---------------------

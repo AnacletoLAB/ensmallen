@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerosalibacterSpNd1.
+This file offers the methods to automatically retrieve the graph Anaerosalibacter sp. ND1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerosalibacterSpNd1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerosalibacterSpNd1 graph.
+    """Return new instance of the Anaerosalibacter sp. ND1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerosalibacterSpNd1(
 
     Returns
     -----------------------
-    Instace of AnaerosalibacterSpNd1 graph.
+    Instace of Anaerosalibacter sp. ND1 graph.
 
 	References
 	---------------------

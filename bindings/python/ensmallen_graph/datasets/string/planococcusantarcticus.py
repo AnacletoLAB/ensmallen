@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusAntarcticus.
+This file offers the methods to automatically retrieve the graph Planococcus antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusAntarcticus graph.
+    """Return new instance of the Planococcus antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanococcusAntarcticus(
 
     Returns
     -----------------------
-    Instace of PlanococcusAntarcticus graph.
+    Instace of Planococcus antarcticus graph.
 
 	References
 	---------------------

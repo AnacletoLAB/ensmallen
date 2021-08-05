@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaFarcinica.
+This file offers the methods to automatically retrieve the graph Nocardia farcinica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaFarcinica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaFarcinica graph.
+    """Return new instance of the Nocardia farcinica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiaFarcinica(
 
     Returns
     -----------------------
-    Instace of NocardiaFarcinica graph.
+    Instace of Nocardia farcinica graph.
 
 	References
 	---------------------

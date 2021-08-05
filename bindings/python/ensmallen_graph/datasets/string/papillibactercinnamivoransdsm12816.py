@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PapillibacterCinnamivoransDsm12816.
+This file offers the methods to automatically retrieve the graph Papillibacter cinnamivorans DSM 12816.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PapillibacterCinnamivoransDsm12816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PapillibacterCinnamivoransDsm12816 graph.
+    """Return new instance of the Papillibacter cinnamivorans DSM 12816 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PapillibacterCinnamivoransDsm12816(
 
     Returns
     -----------------------
-    Instace of PapillibacterCinnamivoransDsm12816 graph.
+    Instace of Papillibacter cinnamivorans DSM 12816 graph.
 
 	References
 	---------------------

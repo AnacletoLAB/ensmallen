@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanolineaTardaNobi1.
+This file offers the methods to automatically retrieve the graph Methanolinea tarda NOBI-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanolineaTardaNobi1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanolineaTardaNobi1 graph.
+    """Return new instance of the Methanolinea tarda NOBI-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanolineaTardaNobi1(
 
     Returns
     -----------------------
-    Instace of MethanolineaTardaNobi1 graph.
+    Instace of Methanolinea tarda NOBI-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumLipoferum4b.
+This file offers the methods to automatically retrieve the graph Azospirillum lipoferum 4B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumLipoferum4b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumLipoferum4b graph.
+    """Return new instance of the Azospirillum lipoferum 4B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumLipoferum4b(
 
     Returns
     -----------------------
-    Instace of AzospirillumLipoferum4b graph.
+    Instace of Azospirillum lipoferum 4B graph.
 
 	References
 	---------------------

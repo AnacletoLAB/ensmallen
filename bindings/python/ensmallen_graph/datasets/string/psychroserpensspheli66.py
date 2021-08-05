@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroserpensSpHelI66.
+This file offers the methods to automatically retrieve the graph Psychroserpens sp. Hel_I_66.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroserpensSpHelI66(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroserpensSpHelI66 graph.
+    """Return new instance of the Psychroserpens sp. Hel_I_66 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychroserpensSpHelI66(
 
     Returns
     -----------------------
-    Instace of PsychroserpensSpHelI66 graph.
+    Instace of Psychroserpens sp. Hel_I_66 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasXianhensis.
+This file offers the methods to automatically retrieve the graph Halomonas xianhensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasXianhensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasXianhensis graph.
+    """Return new instance of the Halomonas xianhensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasXianhensis(
 
     Returns
     -----------------------
-    Instace of HalomonasXianhensis graph.
+    Instace of Halomonas xianhensis graph.
 
 	References
 	---------------------

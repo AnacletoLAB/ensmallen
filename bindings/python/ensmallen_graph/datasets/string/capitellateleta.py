@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapitellaTeleta.
+This file offers the methods to automatically retrieve the graph Capitella teleta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapitellaTeleta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapitellaTeleta graph.
+    """Return new instance of the Capitella teleta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CapitellaTeleta(
 
     Returns
     -----------------------
-    Instace of CapitellaTeleta graph.
+    Instace of Capitella teleta graph.
 
 	References
 	---------------------

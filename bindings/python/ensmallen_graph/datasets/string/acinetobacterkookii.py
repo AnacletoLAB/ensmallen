@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterKookii.
+This file offers the methods to automatically retrieve the graph Acinetobacter kookii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterKookii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterKookii graph.
+    """Return new instance of the Acinetobacter kookii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterKookii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterKookii graph.
+    Instace of Acinetobacter kookii graph.
 
 	References
 	---------------------

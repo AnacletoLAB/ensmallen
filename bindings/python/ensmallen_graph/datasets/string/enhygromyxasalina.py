@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnhygromyxaSalina.
+This file offers the methods to automatically retrieve the graph Enhygromyxa salina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnhygromyxaSalina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnhygromyxaSalina graph.
+    """Return new instance of the Enhygromyxa salina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnhygromyxaSalina(
 
     Returns
     -----------------------
-    Instace of EnhygromyxaSalina graph.
+    Instace of Enhygromyxa salina graph.
 
 	References
 	---------------------

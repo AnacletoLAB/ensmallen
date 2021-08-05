@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivivaxHalotolerans.
+This file offers the methods to automatically retrieve the graph Roseivivax halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivivaxHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivivaxHalotolerans graph.
+    """Return new instance of the Roseivivax halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseivivaxHalotolerans(
 
     Returns
     -----------------------
-    Instace of RoseivivaxHalotolerans graph.
+    Instace of Roseivivax halotolerans graph.
 
 	References
 	---------------------

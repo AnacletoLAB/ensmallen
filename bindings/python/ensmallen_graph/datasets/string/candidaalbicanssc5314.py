@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaAlbicansSc5314.
+This file offers the methods to automatically retrieve the graph Candida albicans SC5314.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaAlbicansSc5314(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaAlbicansSc5314 graph.
+    """Return new instance of the Candida albicans SC5314 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaAlbicansSc5314(
 
     Returns
     -----------------------
-    Instace of CandidaAlbicansSc5314 graph.
+    Instace of Candida albicans SC5314 graph.
 
 	References
 	---------------------

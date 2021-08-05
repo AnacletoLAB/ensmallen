@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraAlstonii.
+This file offers the methods to automatically retrieve the graph Leptospira alstonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraAlstonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraAlstonii graph.
+    """Return new instance of the Leptospira alstonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraAlstonii(
 
     Returns
     -----------------------
-    Instace of LeptospiraAlstonii graph.
+    Instace of Leptospira alstonii graph.
 
 	References
 	---------------------

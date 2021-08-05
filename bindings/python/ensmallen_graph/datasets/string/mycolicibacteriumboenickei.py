@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumBoenickei.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium boenickei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumBoenickei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumBoenickei graph.
+    """Return new instance of the Mycolicibacterium boenickei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumBoenickei(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumBoenickei graph.
+    Instace of Mycolicibacterium boenickei graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaPalpalisGambiensis.
+This file offers the methods to automatically retrieve the graph Glossina palpalis gambiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaPalpalisGambiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaPalpalisGambiensis graph.
+    """Return new instance of the Glossina palpalis gambiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaPalpalisGambiensis(
 
     Returns
     -----------------------
-    Instace of GlossinaPalpalisGambiensis graph.
+    Instace of Glossina palpalis gambiensis graph.
 
 	References
 	---------------------

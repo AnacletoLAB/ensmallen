@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpBpaa.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. BPAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpBpaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpBpaa graph.
+    """Return new instance of the Blattabacterium sp. BPAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlattabacteriumSpBpaa(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpBpaa graph.
+    Instace of Blattabacterium sp. BPAA graph.
 
 	References
 	---------------------

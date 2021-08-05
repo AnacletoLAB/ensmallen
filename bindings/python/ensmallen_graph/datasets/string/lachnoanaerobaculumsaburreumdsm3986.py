@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoanaerobaculumSaburreumDsm3986.
+This file offers the methods to automatically retrieve the graph Lachnoanaerobaculum saburreum DSM3986.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoanaerobaculumSaburreumDsm3986(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoanaerobaculumSaburreumDsm3986 graph.
+    """Return new instance of the Lachnoanaerobaculum saburreum DSM3986 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnoanaerobaculumSaburreumDsm3986(
 
     Returns
     -----------------------
-    Instace of LachnoanaerobaculumSaburreumDsm3986 graph.
+    Instace of Lachnoanaerobaculum saburreum DSM3986 graph.
 
 	References
 	---------------------

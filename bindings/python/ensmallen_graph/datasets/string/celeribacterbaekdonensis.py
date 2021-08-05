@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeleribacterBaekdonensis.
+This file offers the methods to automatically retrieve the graph Celeribacter baekdonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeleribacterBaekdonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeleribacterBaekdonensis graph.
+    """Return new instance of the Celeribacter baekdonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CeleribacterBaekdonensis(
 
     Returns
     -----------------------
-    Instace of CeleribacterBaekdonensis graph.
+    Instace of Celeribacter baekdonensis graph.
 
 	References
 	---------------------

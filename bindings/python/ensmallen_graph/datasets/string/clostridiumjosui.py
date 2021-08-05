@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumJosui.
+This file offers the methods to automatically retrieve the graph Clostridium josui.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumJosui(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumJosui graph.
+    """Return new instance of the Clostridium josui graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumJosui(
 
     Returns
     -----------------------
-    Instace of ClostridiumJosui graph.
+    Instace of Clostridium josui graph.
 
 	References
 	---------------------

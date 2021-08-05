@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaPallidum.
+This file offers the methods to automatically retrieve the graph Treponema pallidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaPallidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaPallidum graph.
+    """Return new instance of the Treponema pallidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaPallidum(
 
     Returns
     -----------------------
-    Instace of TreponemaPallidum graph.
+    Instace of Treponema pallidum graph.
 
 	References
 	---------------------

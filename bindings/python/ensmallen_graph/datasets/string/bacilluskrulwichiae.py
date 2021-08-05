@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusKrulwichiae.
+This file offers the methods to automatically retrieve the graph Bacillus krulwichiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusKrulwichiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusKrulwichiae graph.
+    """Return new instance of the Bacillus krulwichiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusKrulwichiae(
 
     Returns
     -----------------------
-    Instace of BacillusKrulwichiae graph.
+    Instace of Bacillus krulwichiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterNecessariusStir1.
+This file offers the methods to automatically retrieve the graph Polynucleobacter necessarius STIR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterNecessariusStir1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterNecessariusStir1 graph.
+    """Return new instance of the Polynucleobacter necessarius STIR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolynucleobacterNecessariusStir1(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterNecessariusStir1 graph.
+    Instace of Polynucleobacter necessarius STIR1 graph.
 
 	References
 	---------------------

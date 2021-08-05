@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaitozymaPodzolica.
+This file offers the methods to automatically retrieve the graph Saitozyma podzolica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaitozymaPodzolica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaitozymaPodzolica graph.
+    """Return new instance of the Saitozyma podzolica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaitozymaPodzolica(
 
     Returns
     -----------------------
-    Instace of SaitozymaPodzolica graph.
+    Instace of Saitozyma podzolica graph.
 
 	References
 	---------------------

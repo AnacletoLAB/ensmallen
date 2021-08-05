@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaGlobispora.
+This file offers the methods to automatically retrieve the graph Sporosarcina globispora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaGlobispora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaGlobispora graph.
+    """Return new instance of the Sporosarcina globispora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaGlobispora(
 
     Returns
     -----------------------
-    Instace of SporosarcinaGlobispora graph.
+    Instace of Sporosarcina globispora graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumLarrymooreiAf310Atcc51759.
+This file offers the methods to automatically retrieve the graph Agrobacterium larrymoorei AF3.10 ATCC 51759.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumLarrymooreiAf310Atcc51759(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumLarrymooreiAf310Atcc51759 graph.
+    """Return new instance of the Agrobacterium larrymoorei AF3.10 ATCC 51759 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumLarrymooreiAf310Atcc51759(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumLarrymooreiAf310Atcc51759 graph.
+    Instace of Agrobacterium larrymoorei AF3.10 ATCC 51759 graph.
 
 	References
 	---------------------

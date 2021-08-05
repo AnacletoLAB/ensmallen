@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AdlercreutziaEquolifaciens.
+This file offers the methods to automatically retrieve the graph Adlercreutzia equolifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AdlercreutziaEquolifaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AdlercreutziaEquolifaciens graph.
+    """Return new instance of the Adlercreutzia equolifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AdlercreutziaEquolifaciens(
 
     Returns
     -----------------------
-    Instace of AdlercreutziaEquolifaciens graph.
+    Instace of Adlercreutzia equolifaciens graph.
 
 	References
 	---------------------

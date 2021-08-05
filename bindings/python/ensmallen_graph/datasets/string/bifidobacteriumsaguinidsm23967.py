@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumSaguiniDsm23967.
+This file offers the methods to automatically retrieve the graph Bifidobacterium saguini DSM 23967.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumSaguiniDsm23967(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumSaguiniDsm23967 graph.
+    """Return new instance of the Bifidobacterium saguini DSM 23967 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumSaguiniDsm23967(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumSaguiniDsm23967 graph.
+    Instace of Bifidobacterium saguini DSM 23967 graph.
 
 	References
 	---------------------

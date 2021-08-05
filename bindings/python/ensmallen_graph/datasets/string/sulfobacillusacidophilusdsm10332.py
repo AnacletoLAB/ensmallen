@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfobacillusAcidophilusDsm10332.
+This file offers the methods to automatically retrieve the graph Sulfobacillus acidophilus DSM 10332.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfobacillusAcidophilusDsm10332(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfobacillusAcidophilusDsm10332 graph.
+    """Return new instance of the Sulfobacillus acidophilus DSM 10332 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfobacillusAcidophilusDsm10332(
 
     Returns
     -----------------------
-    Instace of SulfobacillusAcidophilusDsm10332 graph.
+    Instace of Sulfobacillus acidophilus DSM 10332 graph.
 
 	References
 	---------------------

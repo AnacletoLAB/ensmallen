@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusFlexus.
+This file offers the methods to automatically retrieve the graph Bacillus flexus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusFlexus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusFlexus graph.
+    """Return new instance of the Bacillus flexus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusFlexus(
 
     Returns
     -----------------------
-    Instace of BacillusFlexus graph.
+    Instace of Bacillus flexus graph.
 
 	References
 	---------------------

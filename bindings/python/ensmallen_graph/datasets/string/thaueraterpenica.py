@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraTerpenica.
+This file offers the methods to automatically retrieve the graph Thauera terpenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraTerpenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraTerpenica graph.
+    """Return new instance of the Thauera terpenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThaueraTerpenica(
 
     Returns
     -----------------------
-    Instace of ThaueraTerpenica graph.
+    Instace of Thauera terpenica graph.
 
 	References
 	---------------------

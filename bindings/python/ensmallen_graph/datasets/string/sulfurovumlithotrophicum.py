@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurovumLithotrophicum.
+This file offers the methods to automatically retrieve the graph Sulfurovum lithotrophicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurovumLithotrophicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurovumLithotrophicum graph.
+    """Return new instance of the Sulfurovum lithotrophicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurovumLithotrophicum(
 
     Returns
     -----------------------
-    Instace of SulfurovumLithotrophicum graph.
+    Instace of Sulfurovum lithotrophicum graph.
 
 	References
 	---------------------

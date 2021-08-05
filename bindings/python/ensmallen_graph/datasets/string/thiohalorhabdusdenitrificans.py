@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiohalorhabdusDenitrificans.
+This file offers the methods to automatically retrieve the graph Thiohalorhabdus denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiohalorhabdusDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiohalorhabdusDenitrificans graph.
+    """Return new instance of the Thiohalorhabdus denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiohalorhabdusDenitrificans(
 
     Returns
     -----------------------
-    Instace of ThiohalorhabdusDenitrificans graph.
+    Instace of Thiohalorhabdus denitrificans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyrobacterSpAap82.
+This file offers the methods to automatically retrieve the graph Porphyrobacter sp. AAP82.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyrobacterSpAap82(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyrobacterSpAap82 graph.
+    """Return new instance of the Porphyrobacter sp. AAP82 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyrobacterSpAap82(
 
     Returns
     -----------------------
-    Instace of PorphyrobacterSpAap82 graph.
+    Instace of Porphyrobacter sp. AAP82 graph.
 
 	References
 	---------------------

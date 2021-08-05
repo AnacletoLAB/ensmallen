@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizoclosmatiumGlobosum.
+This file offers the methods to automatically retrieve the graph Rhizoclosmatium globosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizoclosmatiumGlobosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizoclosmatiumGlobosum graph.
+    """Return new instance of the Rhizoclosmatium globosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizoclosmatiumGlobosum(
 
     Returns
     -----------------------
-    Instace of RhizoclosmatiumGlobosum graph.
+    Instace of Rhizoclosmatium globosum graph.
 
 	References
 	---------------------

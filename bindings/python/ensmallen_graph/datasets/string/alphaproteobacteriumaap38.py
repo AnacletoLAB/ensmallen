@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumAap38.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium AAP38.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumAap38(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumAap38 graph.
+    """Return new instance of the alpha proteobacterium AAP38 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumAap38(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumAap38 graph.
+    Instace of alpha proteobacterium AAP38 graph.
 
 	References
 	---------------------

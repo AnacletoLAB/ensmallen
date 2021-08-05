@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StoquefichusMassiliensis.
+This file offers the methods to automatically retrieve the graph Stoquefichus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StoquefichusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StoquefichusMassiliensis graph.
+    """Return new instance of the Stoquefichus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StoquefichusMassiliensis(
 
     Returns
     -----------------------
-    Instace of StoquefichusMassiliensis graph.
+    Instace of Stoquefichus massiliensis graph.
 
 	References
 	---------------------

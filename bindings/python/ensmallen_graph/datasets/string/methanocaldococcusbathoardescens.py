@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusBathoardescens.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus bathoardescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusBathoardescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusBathoardescens graph.
+    """Return new instance of the Methanocaldococcus bathoardescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanocaldococcusBathoardescens(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusBathoardescens graph.
+    Instace of Methanocaldococcus bathoardescens graph.
 
 	References
 	---------------------

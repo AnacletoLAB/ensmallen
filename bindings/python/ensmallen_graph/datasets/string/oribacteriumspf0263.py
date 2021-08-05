@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumSpF0263.
+This file offers the methods to automatically retrieve the graph Oribacterium sp. F0263.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumSpF0263(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumSpF0263 graph.
+    """Return new instance of the Oribacterium sp. F0263 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OribacteriumSpF0263(
 
     Returns
     -----------------------
-    Instace of OribacteriumSpF0263 graph.
+    Instace of Oribacterium sp. F0263 graph.
 
 	References
 	---------------------

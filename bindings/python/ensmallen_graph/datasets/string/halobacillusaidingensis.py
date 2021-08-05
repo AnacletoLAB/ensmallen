@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobacillusAidingensis.
+This file offers the methods to automatically retrieve the graph Halobacillus aidingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobacillusAidingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobacillusAidingensis graph.
+    """Return new instance of the Halobacillus aidingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobacillusAidingensis(
 
     Returns
     -----------------------
-    Instace of HalobacillusAidingensis graph.
+    Instace of Halobacillus aidingensis graph.
 
 	References
 	---------------------

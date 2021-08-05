@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortnoybacteriaBacteriumRbg13408.
+This file offers the methods to automatically retrieve the graph Candidatus Portnoybacteria bacterium RBG_13_40_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPortnoybacteriaBacteriumRbg13408(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortnoybacteriaBacteriumRbg13408 graph.
+    """Return new instance of the Candidatus Portnoybacteria bacterium RBG_13_40_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPortnoybacteriaBacteriumRbg13408(
 
     Returns
     -----------------------
-    Instace of CandidatusPortnoybacteriaBacteriumRbg13408 graph.
+    Instace of Candidatus Portnoybacteria bacterium RBG_13_40_8 graph.
 
 	References
 	---------------------

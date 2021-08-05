@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumBohemicum.
+This file offers the methods to automatically retrieve the graph Mycobacterium bohemicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumBohemicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumBohemicum graph.
+    """Return new instance of the Mycobacterium bohemicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumBohemicum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumBohemicum graph.
+    Instace of Mycobacterium bohemicum graph.
 
 	References
 	---------------------

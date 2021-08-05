@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporisoriumReilianum.
+This file offers the methods to automatically retrieve the graph Sporisorium reilianum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporisoriumReilianum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporisoriumReilianum graph.
+    """Return new instance of the Sporisorium reilianum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporisoriumReilianum(
 
     Returns
     -----------------------
-    Instace of SporisoriumReilianum graph.
+    Instace of Sporisorium reilianum graph.
 
 	References
 	---------------------

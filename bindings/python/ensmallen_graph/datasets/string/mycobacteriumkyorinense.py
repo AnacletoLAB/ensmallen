@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumKyorinense.
+This file offers the methods to automatically retrieve the graph Mycobacterium kyorinense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumKyorinense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumKyorinense graph.
+    """Return new instance of the Mycobacterium kyorinense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumKyorinense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumKyorinense graph.
+    Instace of Mycobacterium kyorinense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmatimonadetesBacteriumOlb18.
+This file offers the methods to automatically retrieve the graph Armatimonadetes bacterium OLB18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmatimonadetesBacteriumOlb18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmatimonadetesBacteriumOlb18 graph.
+    """Return new instance of the Armatimonadetes bacterium OLB18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmatimonadetesBacteriumOlb18(
 
     Returns
     -----------------------
-    Instace of ArmatimonadetesBacteriumOlb18 graph.
+    Instace of Armatimonadetes bacterium OLB18 graph.
 
 	References
 	---------------------

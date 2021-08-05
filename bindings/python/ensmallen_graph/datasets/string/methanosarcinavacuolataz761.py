@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaVacuolataZ761.
+This file offers the methods to automatically retrieve the graph Methanosarcina vacuolata Z-761.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaVacuolataZ761(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaVacuolataZ761 graph.
+    """Return new instance of the Methanosarcina vacuolata Z-761 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaVacuolataZ761(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaVacuolataZ761 graph.
+    Instace of Methanosarcina vacuolata Z-761 graph.
 
 	References
 	---------------------

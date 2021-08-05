@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KordiimonasLacus.
+This file offers the methods to automatically retrieve the graph Kordiimonas lacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KordiimonasLacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KordiimonasLacus graph.
+    """Return new instance of the Kordiimonas lacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KordiimonasLacus(
 
     Returns
     -----------------------
-    Instace of KordiimonasLacus graph.
+    Instace of Kordiimonas lacus graph.
 
 	References
 	---------------------

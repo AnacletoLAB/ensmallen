@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaSp22iis11z7.
+This file offers the methods to automatically retrieve the graph Aquimarina sp. 22IIS11z7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaSp22iis11z7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaSp22iis11z7 graph.
+    """Return new instance of the Aquimarina sp. 22IIS11z7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquimarinaSp22iis11z7(
 
     Returns
     -----------------------
-    Instace of AquimarinaSp22iis11z7 graph.
+    Instace of Aquimarina sp. 22IIS11z7 graph.
 
 	References
 	---------------------

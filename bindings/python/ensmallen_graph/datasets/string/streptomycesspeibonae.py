@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpeibonae.
+This file offers the methods to automatically retrieve the graph Streptomyces speibonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpeibonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpeibonae graph.
+    """Return new instance of the Streptomyces speibonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpeibonae(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpeibonae graph.
+    Instace of Streptomyces speibonae graph.
 
 	References
 	---------------------

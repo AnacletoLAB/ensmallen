@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpAc2796.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. AC27/96.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpAc2796(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpAc2796 graph.
+    """Return new instance of the Rhizobium sp. AC27/96 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpAc2796(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpAc2796 graph.
+    Instace of Rhizobium sp. AC27/96 graph.
 
 	References
 	---------------------

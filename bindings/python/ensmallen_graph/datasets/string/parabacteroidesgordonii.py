@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesGordonii.
+This file offers the methods to automatically retrieve the graph Parabacteroides gordonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesGordonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesGordonii graph.
+    """Return new instance of the Parabacteroides gordonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParabacteroidesGordonii(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesGordonii graph.
+    Instace of Parabacteroides gordonii graph.
 
 	References
 	---------------------

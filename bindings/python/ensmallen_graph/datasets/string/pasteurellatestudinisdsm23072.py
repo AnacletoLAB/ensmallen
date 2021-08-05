@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaTestudinisDsm23072.
+This file offers the methods to automatically retrieve the graph Pasteurella testudinis DSM 23072.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaTestudinisDsm23072(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaTestudinisDsm23072 graph.
+    """Return new instance of the Pasteurella testudinis DSM 23072 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PasteurellaTestudinisDsm23072(
 
     Returns
     -----------------------
-    Instace of PasteurellaTestudinisDsm23072 graph.
+    Instace of Pasteurella testudinis DSM 23072 graph.
 
 	References
 	---------------------

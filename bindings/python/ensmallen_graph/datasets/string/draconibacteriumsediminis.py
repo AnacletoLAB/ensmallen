@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DraconibacteriumSediminis.
+This file offers the methods to automatically retrieve the graph Draconibacterium sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DraconibacteriumSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DraconibacteriumSediminis graph.
+    """Return new instance of the Draconibacterium sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DraconibacteriumSediminis(
 
     Returns
     -----------------------
-    Instace of DraconibacteriumSediminis graph.
+    Instace of Draconibacterium sediminis graph.
 
 	References
 	---------------------

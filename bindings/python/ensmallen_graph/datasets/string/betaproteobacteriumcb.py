@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaProteobacteriumCb.
+This file offers the methods to automatically retrieve the graph beta proteobacterium CB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaProteobacteriumCb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaProteobacteriumCb graph.
+    """Return new instance of the beta proteobacterium CB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BetaProteobacteriumCb(
 
     Returns
     -----------------------
-    Instace of BetaProteobacteriumCb graph.
+    Instace of beta proteobacterium CB graph.
 
 	References
 	---------------------

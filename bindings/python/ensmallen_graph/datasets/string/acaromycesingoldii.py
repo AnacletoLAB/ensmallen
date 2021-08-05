@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcaromycesIngoldii.
+This file offers the methods to automatically retrieve the graph Acaromyces ingoldii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcaromycesIngoldii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcaromycesIngoldii graph.
+    """Return new instance of the Acaromyces ingoldii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcaromycesIngoldii(
 
     Returns
     -----------------------
-    Instace of AcaromycesIngoldii graph.
+    Instace of Acaromyces ingoldii graph.
 
 	References
 	---------------------

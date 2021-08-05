@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RachicladosporiumSpCcfee5018.
+This file offers the methods to automatically retrieve the graph Rachicladosporium sp. CCFEE 5018.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RachicladosporiumSpCcfee5018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RachicladosporiumSpCcfee5018 graph.
+    """Return new instance of the Rachicladosporium sp. CCFEE 5018 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RachicladosporiumSpCcfee5018(
 
     Returns
     -----------------------
-    Instace of RachicladosporiumSpCcfee5018 graph.
+    Instace of Rachicladosporium sp. CCFEE 5018 graph.
 
 	References
 	---------------------

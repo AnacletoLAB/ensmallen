@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PocilloporaDamicornis.
+This file offers the methods to automatically retrieve the graph Pocillopora damicornis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PocilloporaDamicornis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PocilloporaDamicornis graph.
+    """Return new instance of the Pocillopora damicornis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PocilloporaDamicornis(
 
     Returns
     -----------------------
-    Instace of PocilloporaDamicornis graph.
+    Instace of Pocillopora damicornis graph.
 
 	References
 	---------------------

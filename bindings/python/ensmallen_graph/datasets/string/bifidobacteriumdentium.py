@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumDentium.
+This file offers the methods to automatically retrieve the graph Bifidobacterium dentium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumDentium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumDentium graph.
+    """Return new instance of the Bifidobacterium dentium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumDentium(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumDentium graph.
+    Instace of Bifidobacterium dentium graph.
 
 	References
 	---------------------

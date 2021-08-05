@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSp161mfsha21.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. 161MFSha21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSp161mfsha21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSp161mfsha21 graph.
+    """Return new instance of the Arthrobacter sp. 161MFSha21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSp161mfsha21(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSp161mfsha21 graph.
+    Instace of Arthrobacter sp. 161MFSha21 graph.
 
 	References
 	---------------------

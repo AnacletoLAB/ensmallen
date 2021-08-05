@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPsychrophila.
+This file offers the methods to automatically retrieve the graph Pseudomonas psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPsychrophila graph.
+    """Return new instance of the Pseudomonas psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPsychrophila(
 
     Returns
     -----------------------
-    Instace of PseudomonasPsychrophila graph.
+    Instace of Pseudomonas psychrophila graph.
 
 	References
 	---------------------

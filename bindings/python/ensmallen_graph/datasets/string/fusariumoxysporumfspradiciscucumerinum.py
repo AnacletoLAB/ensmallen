@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumOxysporumFSpRadicisCucumerinum.
+This file offers the methods to automatically retrieve the graph Fusarium oxysporum f. sp. radicis-cucumerinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumOxysporumFSpRadicisCucumerinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumOxysporumFSpRadicisCucumerinum graph.
+    """Return new instance of the Fusarium oxysporum f. sp. radicis-cucumerinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumOxysporumFSpRadicisCucumerinum(
 
     Returns
     -----------------------
-    Instace of FusariumOxysporumFSpRadicisCucumerinum graph.
+    Instace of Fusarium oxysporum f. sp. radicis-cucumerinum graph.
 
 	References
 	---------------------

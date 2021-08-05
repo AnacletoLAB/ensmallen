@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaSpTm1040.
+This file offers the methods to automatically retrieve the graph Ruegeria sp. TM1040.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaSpTm1040(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaSpTm1040 graph.
+    """Return new instance of the Ruegeria sp. TM1040 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuegeriaSpTm1040(
 
     Returns
     -----------------------
-    Instace of RuegeriaSpTm1040 graph.
+    Instace of Ruegeria sp. TM1040 graph.
 
 	References
 	---------------------

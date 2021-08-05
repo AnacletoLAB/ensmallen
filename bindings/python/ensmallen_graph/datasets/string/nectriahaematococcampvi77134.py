@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NectriaHaematococcaMpvi77134.
+This file offers the methods to automatically retrieve the graph [Nectria] haematococca mpVI 77-13-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NectriaHaematococcaMpvi77134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NectriaHaematococcaMpvi77134 graph.
+    """Return new instance of the [Nectria] haematococca mpVI 77-13-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NectriaHaematococcaMpvi77134(
 
     Returns
     -----------------------
-    Instace of NectriaHaematococcaMpvi77134 graph.
+    Instace of [Nectria] haematococca mpVI 77-13-4 graph.
 
 	References
 	---------------------

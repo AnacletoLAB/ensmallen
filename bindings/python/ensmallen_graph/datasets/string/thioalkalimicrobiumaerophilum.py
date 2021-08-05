@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalimicrobiumAerophilum.
+This file offers the methods to automatically retrieve the graph Thioalkalimicrobium aerophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalimicrobiumAerophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalimicrobiumAerophilum graph.
+    """Return new instance of the Thioalkalimicrobium aerophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalimicrobiumAerophilum(
 
     Returns
     -----------------------
-    Instace of ThioalkalimicrobiumAerophilum graph.
+    Instace of Thioalkalimicrobium aerophilum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaRhizosphera.
+This file offers the methods to automatically retrieve the graph Gordonia rhizosphera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaRhizosphera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaRhizosphera graph.
+    """Return new instance of the Gordonia rhizosphera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaRhizosphera(
 
     Returns
     -----------------------
-    Instace of GordoniaRhizosphera graph.
+    Instace of Gordonia rhizosphera graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumFrankenforstenseDsm45800.
+This file offers the methods to automatically retrieve the graph Corynebacterium frankenforstense DSM 45800.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumFrankenforstenseDsm45800(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumFrankenforstenseDsm45800 graph.
+    """Return new instance of the Corynebacterium frankenforstense DSM 45800 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumFrankenforstenseDsm45800(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumFrankenforstenseDsm45800 graph.
+    Instace of Corynebacterium frankenforstense DSM 45800 graph.
 
 	References
 	---------------------

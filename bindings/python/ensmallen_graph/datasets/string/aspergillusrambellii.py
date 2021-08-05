@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusRambellii.
+This file offers the methods to automatically retrieve the graph Aspergillus rambellii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusRambellii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusRambellii graph.
+    """Return new instance of the Aspergillus rambellii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusRambellii(
 
     Returns
     -----------------------
-    Instace of AspergillusRambellii graph.
+    Instace of Aspergillus rambellii graph.
 
 	References
 	---------------------

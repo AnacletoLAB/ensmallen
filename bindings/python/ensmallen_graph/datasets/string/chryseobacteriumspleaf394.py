@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpLeaf394.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. Leaf394.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpLeaf394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpLeaf394 graph.
+    """Return new instance of the Chryseobacterium sp. Leaf394 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpLeaf394(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpLeaf394 graph.
+    Instace of Chryseobacterium sp. Leaf394 graph.
 
 	References
 	---------------------

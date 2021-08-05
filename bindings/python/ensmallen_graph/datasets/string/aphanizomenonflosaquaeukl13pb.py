@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AphanizomenonFlosAquaeUkl13Pb.
+This file offers the methods to automatically retrieve the graph Aphanizomenon flos-aquae UKL13-PB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AphanizomenonFlosAquaeUkl13Pb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AphanizomenonFlosAquaeUkl13Pb graph.
+    """Return new instance of the Aphanizomenon flos-aquae UKL13-PB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AphanizomenonFlosAquaeUkl13Pb(
 
     Returns
     -----------------------
-    Instace of AphanizomenonFlosAquaeUkl13Pb graph.
+    Instace of Aphanizomenon flos-aquae UKL13-PB graph.
 
 	References
 	---------------------

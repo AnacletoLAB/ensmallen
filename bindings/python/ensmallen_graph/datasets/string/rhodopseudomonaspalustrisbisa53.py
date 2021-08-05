@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopseudomonasPalustrisBisa53.
+This file offers the methods to automatically retrieve the graph Rhodopseudomonas palustris BisA53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopseudomonasPalustrisBisa53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopseudomonasPalustrisBisa53 graph.
+    """Return new instance of the Rhodopseudomonas palustris BisA53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodopseudomonasPalustrisBisa53(
 
     Returns
     -----------------------
-    Instace of RhodopseudomonasPalustrisBisa53 graph.
+    Instace of Rhodopseudomonas palustris BisA53 graph.
 
 	References
 	---------------------

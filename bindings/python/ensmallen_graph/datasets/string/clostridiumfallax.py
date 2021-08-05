@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumFallax.
+This file offers the methods to automatically retrieve the graph Clostridium fallax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumFallax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumFallax graph.
+    """Return new instance of the Clostridium fallax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumFallax(
 
     Returns
     -----------------------
-    Instace of ClostridiumFallax graph.
+    Instace of Clostridium fallax graph.
 
 	References
 	---------------------

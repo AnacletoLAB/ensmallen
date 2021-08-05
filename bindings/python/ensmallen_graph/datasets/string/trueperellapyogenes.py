@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrueperellaPyogenes.
+This file offers the methods to automatically retrieve the graph Trueperella pyogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrueperellaPyogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrueperellaPyogenes graph.
+    """Return new instance of the Trueperella pyogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrueperellaPyogenes(
 
     Returns
     -----------------------
-    Instace of TrueperellaPyogenes graph.
+    Instace of Trueperella pyogenes graph.
 
 	References
 	---------------------

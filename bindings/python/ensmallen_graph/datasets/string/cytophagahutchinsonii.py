@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CytophagaHutchinsonii.
+This file offers the methods to automatically retrieve the graph Cytophaga hutchinsonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CytophagaHutchinsonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CytophagaHutchinsonii graph.
+    """Return new instance of the Cytophaga hutchinsonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CytophagaHutchinsonii(
 
     Returns
     -----------------------
-    Instace of CytophagaHutchinsonii graph.
+    Instace of Cytophaga hutchinsonii graph.
 
 	References
 	---------------------

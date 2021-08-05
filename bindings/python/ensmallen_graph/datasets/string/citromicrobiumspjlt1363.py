@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitromicrobiumSpJlt1363.
+This file offers the methods to automatically retrieve the graph Citromicrobium sp. JLT1363.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitromicrobiumSpJlt1363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitromicrobiumSpJlt1363 graph.
+    """Return new instance of the Citromicrobium sp. JLT1363 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitromicrobiumSpJlt1363(
 
     Returns
     -----------------------
-    Instace of CitromicrobiumSpJlt1363 graph.
+    Instace of Citromicrobium sp. JLT1363 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumSpHh01.
+This file offers the methods to automatically retrieve the graph Janthinobacterium sp. HH01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumSpHh01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumSpHh01 graph.
+    """Return new instance of the Janthinobacterium sp. HH01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanthinobacteriumSpHh01(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumSpHh01 graph.
+    Instace of Janthinobacterium sp. HH01 graph.
 
 	References
 	---------------------

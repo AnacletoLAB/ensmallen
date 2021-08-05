@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetospirillumMarisnigri.
+This file offers the methods to automatically retrieve the graph Magnetospirillum marisnigri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetospirillumMarisnigri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetospirillumMarisnigri graph.
+    """Return new instance of the Magnetospirillum marisnigri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnetospirillumMarisnigri(
 
     Returns
     -----------------------
-    Instace of MagnetospirillumMarisnigri graph.
+    Instace of Magnetospirillum marisnigri graph.
 
 	References
 	---------------------

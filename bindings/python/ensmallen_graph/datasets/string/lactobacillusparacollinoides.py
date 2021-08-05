@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusParacollinoides.
+This file offers the methods to automatically retrieve the graph Lactobacillus paracollinoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusParacollinoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusParacollinoides graph.
+    """Return new instance of the Lactobacillus paracollinoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusParacollinoides(
 
     Returns
     -----------------------
-    Instace of LactobacillusParacollinoides graph.
+    Instace of Lactobacillus paracollinoides graph.
 
 	References
 	---------------------

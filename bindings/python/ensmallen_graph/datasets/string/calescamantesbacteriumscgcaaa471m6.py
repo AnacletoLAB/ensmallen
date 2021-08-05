@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalescamantesBacteriumScgcAaa471M6.
+This file offers the methods to automatically retrieve the graph Calescamantes bacterium SCGC AAA471-M6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalescamantesBacteriumScgcAaa471M6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalescamantesBacteriumScgcAaa471M6 graph.
+    """Return new instance of the Calescamantes bacterium SCGC AAA471-M6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CalescamantesBacteriumScgcAaa471M6(
 
     Returns
     -----------------------
-    Instace of CalescamantesBacteriumScgcAaa471M6 graph.
+    Instace of Calescamantes bacterium SCGC AAA471-M6 graph.
 
 	References
 	---------------------

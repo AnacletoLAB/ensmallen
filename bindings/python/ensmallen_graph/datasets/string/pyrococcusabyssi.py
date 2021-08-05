@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusAbyssi.
+This file offers the methods to automatically retrieve the graph Pyrococcus abyssi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusAbyssi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusAbyssi graph.
+    """Return new instance of the Pyrococcus abyssi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusAbyssi(
 
     Returns
     -----------------------
-    Instace of PyrococcusAbyssi graph.
+    Instace of Pyrococcus abyssi graph.
 
 	References
 	---------------------

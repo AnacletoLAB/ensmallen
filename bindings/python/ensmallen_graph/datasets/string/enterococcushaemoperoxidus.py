@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusHaemoperoxidus.
+This file offers the methods to automatically retrieve the graph Enterococcus haemoperoxidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusHaemoperoxidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusHaemoperoxidus graph.
+    """Return new instance of the Enterococcus haemoperoxidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusHaemoperoxidus(
 
     Returns
     -----------------------
-    Instace of EnterococcusHaemoperoxidus graph.
+    Instace of Enterococcus haemoperoxidus graph.
 
 	References
 	---------------------

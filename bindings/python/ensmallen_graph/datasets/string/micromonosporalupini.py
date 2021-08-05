@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaLupini.
+This file offers the methods to automatically retrieve the graph Micromonospora lupini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaLupini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaLupini graph.
+    """Return new instance of the Micromonospora lupini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicromonosporaLupini(
 
     Returns
     -----------------------
-    Instace of MicromonosporaLupini graph.
+    Instace of Micromonospora lupini graph.
 
 	References
 	---------------------

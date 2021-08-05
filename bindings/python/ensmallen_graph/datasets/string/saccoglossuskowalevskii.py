@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccoglossusKowalevskii.
+This file offers the methods to automatically retrieve the graph Saccoglossus kowalevskii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccoglossusKowalevskii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccoglossusKowalevskii graph.
+    """Return new instance of the Saccoglossus kowalevskii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccoglossusKowalevskii(
 
     Returns
     -----------------------
-    Instace of SaccoglossusKowalevskii graph.
+    Instace of Saccoglossus kowalevskii graph.
 
 	References
 	---------------------

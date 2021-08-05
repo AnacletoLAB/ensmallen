@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacillusLitoralis.
+This file offers the methods to automatically retrieve the graph Pontibacillus litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacillusLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacillusLitoralis graph.
+    """Return new instance of the Pontibacillus litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PontibacillusLitoralis(
 
     Returns
     -----------------------
-    Instace of PontibacillusLitoralis graph.
+    Instace of Pontibacillus litoralis graph.
 
 	References
 	---------------------

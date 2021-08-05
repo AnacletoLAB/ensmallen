@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesIslandicus.
+This file offers the methods to automatically retrieve the graph Talaromyces islandicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesIslandicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesIslandicus graph.
+    """Return new instance of the Talaromyces islandicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TalaromycesIslandicus(
 
     Returns
     -----------------------
-    Instace of TalaromycesIslandicus graph.
+    Instace of Talaromyces islandicus graph.
 
 	References
 	---------------------

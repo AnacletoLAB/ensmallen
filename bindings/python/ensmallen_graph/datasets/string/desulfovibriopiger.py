@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioPiger.
+This file offers the methods to automatically retrieve the graph Desulfovibrio piger.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioPiger(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioPiger graph.
+    """Return new instance of the Desulfovibrio piger graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioPiger(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioPiger graph.
+    Instace of Desulfovibrio piger graph.
 
 	References
 	---------------------

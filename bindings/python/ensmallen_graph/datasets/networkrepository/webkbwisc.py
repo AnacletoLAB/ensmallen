@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebkbWisc.
+This file offers the methods to automatically retrieve the graph webkb-wisc.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def WebkbWisc(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebkbWisc graph.
+    """Return new instance of the webkb-wisc graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def WebkbWisc(
 
     Returns
     -----------------------
-    Instace of WebkbWisc graph.
+    Instace of webkb-wisc graph.
 
 	References
 	---------------------

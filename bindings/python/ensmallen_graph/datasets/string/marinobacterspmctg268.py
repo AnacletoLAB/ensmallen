@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpMctg268.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. MCTG268.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpMctg268(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpMctg268 graph.
+    """Return new instance of the Marinobacter sp. MCTG268 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterSpMctg268(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpMctg268 graph.
+    Instace of Marinobacter sp. MCTG268 graph.
 
 	References
 	---------------------

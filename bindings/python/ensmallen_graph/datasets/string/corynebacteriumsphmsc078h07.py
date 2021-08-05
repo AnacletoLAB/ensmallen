@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpHmsc078h07.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. HMSC078H07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpHmsc078h07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpHmsc078h07 graph.
+    """Return new instance of the Corynebacterium sp. HMSC078H07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSpHmsc078h07(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpHmsc078h07 graph.
+    Instace of Corynebacterium sp. HMSC078H07 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraChlorobenzoica.
+This file offers the methods to automatically retrieve the graph Thauera chlorobenzoica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraChlorobenzoica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraChlorobenzoica graph.
+    """Return new instance of the Thauera chlorobenzoica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaueraChlorobenzoica(
 
     Returns
     -----------------------
-    Instace of ThaueraChlorobenzoica graph.
+    Instace of Thauera chlorobenzoica graph.
 
 	References
 	---------------------

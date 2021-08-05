@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusAssamensisDsm18201.
+This file offers the methods to automatically retrieve the graph Paenibacillus assamensis DSM 18201.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusAssamensisDsm18201(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusAssamensisDsm18201 graph.
+    """Return new instance of the Paenibacillus assamensis DSM 18201 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusAssamensisDsm18201(
 
     Returns
     -----------------------
-    Instace of PaenibacillusAssamensisDsm18201 graph.
+    Instace of Paenibacillus assamensis DSM 18201 graph.
 
 	References
 	---------------------

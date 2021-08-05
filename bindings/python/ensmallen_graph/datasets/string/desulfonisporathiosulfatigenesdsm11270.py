@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonisporaThiosulfatigenesDsm11270.
+This file offers the methods to automatically retrieve the graph Desulfonispora thiosulfatigenes DSM 11270.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonisporaThiosulfatigenesDsm11270(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonisporaThiosulfatigenesDsm11270 graph.
+    """Return new instance of the Desulfonispora thiosulfatigenes DSM 11270 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonisporaThiosulfatigenesDsm11270(
 
     Returns
     -----------------------
-    Instace of DesulfonisporaThiosulfatigenesDsm11270 graph.
+    Instace of Desulfonispora thiosulfatigenes DSM 11270 graph.
 
 	References
 	---------------------

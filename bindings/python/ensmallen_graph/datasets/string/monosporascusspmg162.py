@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonosporascusSpMg162.
+This file offers the methods to automatically retrieve the graph Monosporascus sp. mg162.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonosporascusSpMg162(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonosporascusSpMg162 graph.
+    """Return new instance of the Monosporascus sp. mg162 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonosporascusSpMg162(
 
     Returns
     -----------------------
-    Instace of MonosporascusSpMg162 graph.
+    Instace of Monosporascus sp. mg162 graph.
 
 	References
 	---------------------

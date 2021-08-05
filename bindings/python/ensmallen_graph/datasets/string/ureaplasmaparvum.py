@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UreaplasmaParvum.
+This file offers the methods to automatically retrieve the graph Ureaplasma parvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UreaplasmaParvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UreaplasmaParvum graph.
+    """Return new instance of the Ureaplasma parvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UreaplasmaParvum(
 
     Returns
     -----------------------
-    Instace of UreaplasmaParvum graph.
+    Instace of Ureaplasma parvum graph.
 
 	References
 	---------------------

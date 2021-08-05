@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinosporangiumAlbum.
+This file offers the methods to automatically retrieve the graph Sinosporangium album.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinosporangiumAlbum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinosporangiumAlbum graph.
+    """Return new instance of the Sinosporangium album graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinosporangiumAlbum(
 
     Returns
     -----------------------
-    Instace of SinosporangiumAlbum graph.
+    Instace of Sinosporangium album graph.
 
 	References
 	---------------------

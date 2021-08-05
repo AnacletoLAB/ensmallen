@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSpBal39.
+This file offers the methods to automatically retrieve the graph Pedobacter sp. BAL39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSpBal39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSpBal39 graph.
+    """Return new instance of the Pedobacter sp. BAL39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterSpBal39(
 
     Returns
     -----------------------
-    Instace of PedobacterSpBal39 graph.
+    Instace of Pedobacter sp. BAL39 graph.
 
 	References
 	---------------------

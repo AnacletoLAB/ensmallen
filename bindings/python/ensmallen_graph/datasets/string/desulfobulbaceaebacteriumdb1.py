@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbaceaeBacteriumDb1.
+This file offers the methods to automatically retrieve the graph Desulfobulbaceae bacterium DB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbaceaeBacteriumDb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbaceaeBacteriumDb1 graph.
+    """Return new instance of the Desulfobulbaceae bacterium DB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobulbaceaeBacteriumDb1(
 
     Returns
     -----------------------
-    Instace of DesulfobulbaceaeBacteriumDb1 graph.
+    Instace of Desulfobulbaceae bacterium DB1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomonasHydrothermalis.
+This file offers the methods to automatically retrieve the graph Thermomonas hydrothermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomonasHydrothermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomonasHydrothermalis graph.
+    """Return new instance of the Thermomonas hydrothermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermomonasHydrothermalis(
 
     Returns
     -----------------------
-    Instace of ThermomonasHydrothermalis graph.
+    Instace of Thermomonas hydrothermalis graph.
 
 	References
 	---------------------

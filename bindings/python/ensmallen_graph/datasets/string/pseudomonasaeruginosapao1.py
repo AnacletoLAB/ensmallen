@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAeruginosaPao1.
+This file offers the methods to automatically retrieve the graph Pseudomonas aeruginosa PAO1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAeruginosaPao1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAeruginosaPao1 graph.
+    """Return new instance of the Pseudomonas aeruginosa PAO1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAeruginosaPao1(
 
     Returns
     -----------------------
-    Instace of PseudomonasAeruginosaPao1 graph.
+    Instace of Pseudomonas aeruginosa PAO1 graph.
 
 	References
 	---------------------

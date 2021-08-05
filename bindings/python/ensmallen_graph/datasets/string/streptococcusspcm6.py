@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpCm6.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. CM6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpCm6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpCm6 graph.
+    """Return new instance of the Streptococcus sp. CM6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpCm6(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpCm6 graph.
+    Instace of Streptococcus sp. CM6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarboxydothermusHydrogenoformans.
+This file offers the methods to automatically retrieve the graph Carboxydothermus hydrogenoformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarboxydothermusHydrogenoformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarboxydothermusHydrogenoformans graph.
+    """Return new instance of the Carboxydothermus hydrogenoformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarboxydothermusHydrogenoformans(
 
     Returns
     -----------------------
-    Instace of CarboxydothermusHydrogenoformans graph.
+    Instace of Carboxydothermus hydrogenoformans graph.
 
 	References
 	---------------------

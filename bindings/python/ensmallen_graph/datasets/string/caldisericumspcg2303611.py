@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldisericumSpCg2303611.
+This file offers the methods to automatically retrieve the graph Caldisericum sp. CG2_30_36_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldisericumSpCg2303611(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldisericumSpCg2303611 graph.
+    """Return new instance of the Caldisericum sp. CG2_30_36_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldisericumSpCg2303611(
 
     Returns
     -----------------------
-    Instace of CaldisericumSpCg2303611 graph.
+    Instace of Caldisericum sp. CG2_30_36_11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FervidicellaMetallireducensAeb.
+This file offers the methods to automatically retrieve the graph Fervidicella metallireducens AeB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FervidicellaMetallireducensAeb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FervidicellaMetallireducensAeb graph.
+    """Return new instance of the Fervidicella metallireducens AeB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FervidicellaMetallireducensAeb(
 
     Returns
     -----------------------
-    Instace of FervidicellaMetallireducensAeb graph.
+    Instace of Fervidicella metallireducens AeB graph.
 
 	References
 	---------------------

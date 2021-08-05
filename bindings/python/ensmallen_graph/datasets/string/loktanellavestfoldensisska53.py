@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaVestfoldensisSka53.
+This file offers the methods to automatically retrieve the graph Loktanella vestfoldensis SKA53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaVestfoldensisSka53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaVestfoldensisSka53 graph.
+    """Return new instance of the Loktanella vestfoldensis SKA53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LoktanellaVestfoldensisSka53(
 
     Returns
     -----------------------
-    Instace of LoktanellaVestfoldensisSka53 graph.
+    Instace of Loktanella vestfoldensis SKA53 graph.
 
 	References
 	---------------------

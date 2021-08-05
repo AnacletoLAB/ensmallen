@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ViridibacillusArvi.
+This file offers the methods to automatically retrieve the graph Viridibacillus arvi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ViridibacillusArvi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ViridibacillusArvi graph.
+    """Return new instance of the Viridibacillus arvi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ViridibacillusArvi(
 
     Returns
     -----------------------
-    Instace of ViridibacillusArvi graph.
+    Instace of Viridibacillus arvi graph.
 
 	References
 	---------------------

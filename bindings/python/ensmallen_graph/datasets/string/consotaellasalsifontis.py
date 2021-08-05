@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConsotaellaSalsifontis.
+This file offers the methods to automatically retrieve the graph Consotaella salsifontis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConsotaellaSalsifontis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConsotaellaSalsifontis graph.
+    """Return new instance of the Consotaella salsifontis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConsotaellaSalsifontis(
 
     Returns
     -----------------------
-    Instace of ConsotaellaSalsifontis graph.
+    Instace of Consotaella salsifontis graph.
 
 	References
 	---------------------

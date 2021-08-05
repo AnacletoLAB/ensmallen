@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RothiaNasimurium.
+This file offers the methods to automatically retrieve the graph Rothia nasimurium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RothiaNasimurium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RothiaNasimurium graph.
+    """Return new instance of the Rothia nasimurium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RothiaNasimurium(
 
     Returns
     -----------------------
-    Instace of RothiaNasimurium graph.
+    Instace of Rothia nasimurium graph.
 
 	References
 	---------------------

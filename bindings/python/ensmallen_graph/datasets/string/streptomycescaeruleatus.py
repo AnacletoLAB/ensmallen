@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCaeruleatus.
+This file offers the methods to automatically retrieve the graph Streptomyces caeruleatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCaeruleatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCaeruleatus graph.
+    """Return new instance of the Streptomyces caeruleatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesCaeruleatus(
 
     Returns
     -----------------------
-    Instace of StreptomycesCaeruleatus graph.
+    Instace of Streptomyces caeruleatus graph.
 
 	References
 	---------------------

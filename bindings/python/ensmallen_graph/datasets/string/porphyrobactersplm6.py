@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyrobacterSpLm6.
+This file offers the methods to automatically retrieve the graph Porphyrobacter sp. LM 6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyrobacterSpLm6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyrobacterSpLm6 graph.
+    """Return new instance of the Porphyrobacter sp. LM 6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyrobacterSpLm6(
 
     Returns
     -----------------------
-    Instace of PorphyrobacterSpLm6 graph.
+    Instace of Porphyrobacter sp. LM 6 graph.
 
 	References
 	---------------------

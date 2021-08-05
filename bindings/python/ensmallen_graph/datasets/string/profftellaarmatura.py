@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProfftellaArmatura.
+This file offers the methods to automatically retrieve the graph Profftella armatura.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProfftellaArmatura(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProfftellaArmatura graph.
+    """Return new instance of the Profftella armatura graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProfftellaArmatura(
 
     Returns
     -----------------------
-    Instace of ProfftellaArmatura graph.
+    Instace of Profftella armatura graph.
 
 	References
 	---------------------

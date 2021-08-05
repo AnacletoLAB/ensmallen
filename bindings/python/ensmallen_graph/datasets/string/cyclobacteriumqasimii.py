@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyclobacteriumQasimii.
+This file offers the methods to automatically retrieve the graph Cyclobacterium qasimii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyclobacteriumQasimii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyclobacteriumQasimii graph.
+    """Return new instance of the Cyclobacterium qasimii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyclobacteriumQasimii(
 
     Returns
     -----------------------
-    Instace of CyclobacteriumQasimii graph.
+    Instace of Cyclobacterium qasimii graph.
 
 	References
 	---------------------

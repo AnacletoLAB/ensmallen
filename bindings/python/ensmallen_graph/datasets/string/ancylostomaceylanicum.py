@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AncylostomaCeylanicum.
+This file offers the methods to automatically retrieve the graph Ancylostoma ceylanicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AncylostomaCeylanicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AncylostomaCeylanicum graph.
+    """Return new instance of the Ancylostoma ceylanicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AncylostomaCeylanicum(
 
     Returns
     -----------------------
-    Instace of AncylostomaCeylanicum graph.
+    Instace of Ancylostoma ceylanicum graph.
 
 	References
 	---------------------

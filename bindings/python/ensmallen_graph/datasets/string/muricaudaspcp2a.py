@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuricaudaSpCp2a.
+This file offers the methods to automatically retrieve the graph Muricauda sp. CP2A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuricaudaSpCp2a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuricaudaSpCp2a graph.
+    """Return new instance of the Muricauda sp. CP2A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MuricaudaSpCp2a(
 
     Returns
     -----------------------
-    Instace of MuricaudaSpCp2a graph.
+    Instace of Muricauda sp. CP2A graph.
 
 	References
 	---------------------

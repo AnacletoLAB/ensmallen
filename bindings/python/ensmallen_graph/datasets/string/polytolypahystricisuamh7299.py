@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolytolypaHystricisUamh7299.
+This file offers the methods to automatically retrieve the graph Polytolypa hystricis UAMH7299.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolytolypaHystricisUamh7299(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolytolypaHystricisUamh7299 graph.
+    """Return new instance of the Polytolypa hystricis UAMH7299 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolytolypaHystricisUamh7299(
 
     Returns
     -----------------------
-    Instace of PolytolypaHystricisUamh7299 graph.
+    Instace of Polytolypa hystricis UAMH7299 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeosynechococcusSphagnicolaSy1.
+This file offers the methods to automatically retrieve the graph Neosynechococcus sphagnicola sy1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeosynechococcusSphagnicolaSy1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeosynechococcusSphagnicolaSy1 graph.
+    """Return new instance of the Neosynechococcus sphagnicola sy1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeosynechococcusSphagnicolaSy1(
 
     Returns
     -----------------------
-    Instace of NeosynechococcusSphagnicolaSy1 graph.
+    Instace of Neosynechococcus sphagnicola sy1 graph.
 
 	References
 	---------------------

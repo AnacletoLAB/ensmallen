@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanithermusProfundus.
+This file offers the methods to automatically retrieve the graph Oceanithermus profundus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanithermusProfundus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanithermusProfundus graph.
+    """Return new instance of the Oceanithermus profundus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanithermusProfundus(
 
     Returns
     -----------------------
-    Instace of OceanithermusProfundus graph.
+    Instace of Oceanithermus profundus graph.
 
 	References
 	---------------------

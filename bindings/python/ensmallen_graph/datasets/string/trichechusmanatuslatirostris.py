@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichechusManatusLatirostris.
+This file offers the methods to automatically retrieve the graph Trichechus manatus latirostris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichechusManatusLatirostris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichechusManatusLatirostris graph.
+    """Return new instance of the Trichechus manatus latirostris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichechusManatusLatirostris(
 
     Returns
     -----------------------
-    Instace of TrichechusManatusLatirostris graph.
+    Instace of Trichechus manatus latirostris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaSpMs5.
+This file offers the methods to automatically retrieve the graph Collinsella sp. MS5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaSpMs5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaSpMs5 graph.
+    """Return new instance of the Collinsella sp. MS5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollinsellaSpMs5(
 
     Returns
     -----------------------
-    Instace of CollinsellaSpMs5 graph.
+    Instace of Collinsella sp. MS5 graph.
 
 	References
 	---------------------

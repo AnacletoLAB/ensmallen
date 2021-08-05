@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NevskiaRamosa.
+This file offers the methods to automatically retrieve the graph Nevskia ramosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NevskiaRamosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NevskiaRamosa graph.
+    """Return new instance of the Nevskia ramosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NevskiaRamosa(
 
     Returns
     -----------------------
-    Instace of NevskiaRamosa graph.
+    Instace of Nevskia ramosa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerrisporobacterOthiniensis.
+This file offers the methods to automatically retrieve the graph Terrisporobacter othiniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerrisporobacterOthiniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerrisporobacterOthiniensis graph.
+    """Return new instance of the Terrisporobacter othiniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerrisporobacterOthiniensis(
 
     Returns
     -----------------------
-    Instace of TerrisporobacterOthiniensis graph.
+    Instace of Terrisporobacter othiniensis graph.
 
 	References
 	---------------------

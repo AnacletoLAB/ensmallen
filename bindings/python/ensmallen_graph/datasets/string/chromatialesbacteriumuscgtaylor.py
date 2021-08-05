@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromatialesBacteriumUscgTaylor.
+This file offers the methods to automatically retrieve the graph Chromatiales bacterium USCg_Taylor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromatialesBacteriumUscgTaylor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromatialesBacteriumUscgTaylor graph.
+    """Return new instance of the Chromatiales bacterium USCg_Taylor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromatialesBacteriumUscgTaylor(
 
     Returns
     -----------------------
-    Instace of ChromatialesBacteriumUscgTaylor graph.
+    Instace of Chromatiales bacterium USCg_Taylor graph.
 
 	References
 	---------------------

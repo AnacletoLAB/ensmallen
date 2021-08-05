@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusOryzae.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusOryzae graph.
+    """Return new instance of the Streptacidiphilus oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptacidiphilusOryzae(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusOryzae graph.
+    Instace of Streptacidiphilus oryzae graph.
 
 	References
 	---------------------

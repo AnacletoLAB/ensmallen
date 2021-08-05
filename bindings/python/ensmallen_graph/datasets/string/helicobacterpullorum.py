@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPullorum.
+This file offers the methods to automatically retrieve the graph Helicobacter pullorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPullorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPullorum graph.
+    """Return new instance of the Helicobacter pullorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPullorum(
 
     Returns
     -----------------------
-    Instace of HelicobacterPullorum graph.
+    Instace of Helicobacter pullorum graph.
 
 	References
 	---------------------

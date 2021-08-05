@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaviaAperea.
+This file offers the methods to automatically retrieve the graph Cavia aperea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaviaAperea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaviaAperea graph.
+    """Return new instance of the Cavia aperea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaviaAperea(
 
     Returns
     -----------------------
-    Instace of CaviaAperea graph.
+    Instace of Cavia aperea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioYeast.
+This file offers the methods to automatically retrieve the graph bio-yeast.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def BioYeast(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioYeast graph.
+    """Return new instance of the bio-yeast graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def BioYeast(
 
     Returns
     -----------------------
-    Instace of BioYeast graph.
+    Instace of bio-yeast graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumPectinovorum.
+This file offers the methods to automatically retrieve the graph Flavobacterium pectinovorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumPectinovorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumPectinovorum graph.
+    """Return new instance of the Flavobacterium pectinovorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumPectinovorum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumPectinovorum graph.
+    Instace of Flavobacterium pectinovorum graph.
 
 	References
 	---------------------

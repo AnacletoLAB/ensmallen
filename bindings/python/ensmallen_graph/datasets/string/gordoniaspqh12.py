@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSpQh12.
+This file offers the methods to automatically retrieve the graph Gordonia sp. QH-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSpQh12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSpQh12 graph.
+    """Return new instance of the Gordonia sp. QH-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaSpQh12(
 
     Returns
     -----------------------
-    Instace of GordoniaSpQh12 graph.
+    Instace of Gordonia sp. QH-12 graph.
 
 	References
 	---------------------

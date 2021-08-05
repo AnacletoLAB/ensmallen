@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloracidobacteriumThermophilumB.
+This file offers the methods to automatically retrieve the graph Chloracidobacterium thermophilum B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloracidobacteriumThermophilumB(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloracidobacteriumThermophilumB graph.
+    """Return new instance of the Chloracidobacterium thermophilum B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloracidobacteriumThermophilumB(
 
     Returns
     -----------------------
-    Instace of ChloracidobacteriumThermophilumB graph.
+    Instace of Chloracidobacterium thermophilum B graph.
 
 	References
 	---------------------

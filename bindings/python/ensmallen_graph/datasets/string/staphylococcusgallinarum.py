@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusGallinarum.
+This file offers the methods to automatically retrieve the graph Staphylococcus gallinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusGallinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusGallinarum graph.
+    """Return new instance of the Staphylococcus gallinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusGallinarum(
 
     Returns
     -----------------------
-    Instace of StaphylococcusGallinarum graph.
+    Instace of Staphylococcus gallinarum graph.
 
 	References
 	---------------------

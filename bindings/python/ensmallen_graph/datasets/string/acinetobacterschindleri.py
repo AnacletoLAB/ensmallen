@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSchindleri.
+This file offers the methods to automatically retrieve the graph Acinetobacter schindleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSchindleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSchindleri graph.
+    """Return new instance of the Acinetobacter schindleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSchindleri(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSchindleri graph.
+    Instace of Acinetobacter schindleri graph.
 
 	References
 	---------------------

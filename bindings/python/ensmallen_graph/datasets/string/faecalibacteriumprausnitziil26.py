@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FaecalibacteriumPrausnitziiL26.
+This file offers the methods to automatically retrieve the graph Faecalibacterium prausnitzii L26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FaecalibacteriumPrausnitziiL26(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FaecalibacteriumPrausnitziiL26 graph.
+    """Return new instance of the Faecalibacterium prausnitzii L26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FaecalibacteriumPrausnitziiL26(
 
     Returns
     -----------------------
-    Instace of FaecalibacteriumPrausnitziiL26 graph.
+    Instace of Faecalibacterium prausnitzii L26 graph.
 
 	References
 	---------------------

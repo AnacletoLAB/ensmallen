@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumPhosphoreum.
+This file offers the methods to automatically retrieve the graph Photobacterium phosphoreum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumPhosphoreum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumPhosphoreum graph.
+    """Return new instance of the Photobacterium phosphoreum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotobacteriumPhosphoreum(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumPhosphoreum graph.
+    Instace of Photobacterium phosphoreum graph.
 
 	References
 	---------------------

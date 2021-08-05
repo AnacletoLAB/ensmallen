@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumAngustum.
+This file offers the methods to automatically retrieve the graph Photobacterium angustum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumAngustum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumAngustum graph.
+    """Return new instance of the Photobacterium angustum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotobacteriumAngustum(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumAngustum graph.
+    Instace of Photobacterium angustum graph.
 
 	References
 	---------------------

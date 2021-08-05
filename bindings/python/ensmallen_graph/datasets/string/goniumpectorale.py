@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GoniumPectorale.
+This file offers the methods to automatically retrieve the graph Gonium pectorale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GoniumPectorale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GoniumPectorale graph.
+    """Return new instance of the Gonium pectorale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GoniumPectorale(
 
     Returns
     -----------------------
-    Instace of GoniumPectorale graph.
+    Instace of Gonium pectorale graph.
 
 	References
 	---------------------

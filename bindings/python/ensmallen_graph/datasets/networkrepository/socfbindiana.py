@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbIndiana.
+This file offers the methods to automatically retrieve the graph socfb-Indiana.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbIndiana(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbIndiana graph.
+    """Return new instance of the socfb-Indiana graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbIndiana(
 
     Returns
     -----------------------
-    Instace of SocfbIndiana graph.
+    Instace of socfb-Indiana graph.
 
 	References
 	---------------------

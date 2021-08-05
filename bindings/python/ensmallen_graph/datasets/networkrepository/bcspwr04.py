@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Bcspwr04.
+This file offers the methods to automatically retrieve the graph bcspwr04.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Bcspwr04(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Bcspwr04 graph.
+    """Return new instance of the bcspwr04 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Bcspwr04(
 
     Returns
     -----------------------
-    Instace of Bcspwr04 graph.
+    Instace of bcspwr04 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusZambryskibacteriaBacteriumRifcsphigho201Full4327.
+This file offers the methods to automatically retrieve the graph Candidatus Zambryskibacteria bacterium RIFCSPHIGHO2_01_FULL_43_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusZambryskibacteriaBacteriumRifcsphigho201Full4327(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusZambryskibacteriaBacteriumRifcsphigho201Full4327 graph.
+    """Return new instance of the Candidatus Zambryskibacteria bacterium RIFCSPHIGHO2_01_FULL_43_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusZambryskibacteriaBacteriumRifcsphigho201Full4327(
 
     Returns
     -----------------------
-    Instace of CandidatusZambryskibacteriaBacteriumRifcsphigho201Full4327 graph.
+    Instace of Candidatus Zambryskibacteria bacterium RIFCSPHIGHO2_01_FULL_43_27 graph.
 
 	References
 	---------------------

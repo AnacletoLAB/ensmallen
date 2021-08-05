@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusTukisamuensis.
+This file offers the methods to automatically retrieve the graph Rhodococcus tukisamuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusTukisamuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusTukisamuensis graph.
+    """Return new instance of the Rhodococcus tukisamuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusTukisamuensis(
 
     Returns
     -----------------------
-    Instace of RhodococcusTukisamuensis graph.
+    Instace of Rhodococcus tukisamuensis graph.
 
 	References
 	---------------------

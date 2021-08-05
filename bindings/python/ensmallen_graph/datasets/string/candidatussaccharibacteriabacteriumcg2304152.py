@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaBacteriumCg2304152.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria bacterium CG2_30_41_52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaBacteriumCg2304152(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaBacteriumCg2304152 graph.
+    """Return new instance of the Candidatus Saccharibacteria bacterium CG2_30_41_52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaBacteriumCg2304152(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaBacteriumCg2304152 graph.
+    Instace of Candidatus Saccharibacteria bacterium CG2_30_41_52 graph.
 
 	References
 	---------------------

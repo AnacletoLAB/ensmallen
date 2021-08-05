@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloramatorAustralicus.
+This file offers the methods to automatically retrieve the graph Caloramator australicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloramatorAustralicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloramatorAustralicus graph.
+    """Return new instance of the Caloramator australicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaloramatorAustralicus(
 
     Returns
     -----------------------
-    Instace of CaloramatorAustralicus graph.
+    Instace of Caloramator australicus graph.
 
 	References
 	---------------------

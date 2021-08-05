@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydomonasReinhardtii.
+This file offers the methods to automatically retrieve the graph Chlamydomonas reinhardtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydomonasReinhardtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydomonasReinhardtii graph.
+    """Return new instance of the Chlamydomonas reinhardtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydomonasReinhardtii(
 
     Returns
     -----------------------
-    Instace of ChlamydomonasReinhardtii graph.
+    Instace of Chlamydomonas reinhardtii graph.
 
 	References
 	---------------------

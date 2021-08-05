@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TolumonasAuensis.
+This file offers the methods to automatically retrieve the graph Tolumonas auensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TolumonasAuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TolumonasAuensis graph.
+    """Return new instance of the Tolumonas auensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TolumonasAuensis(
 
     Returns
     -----------------------
-    Instace of TolumonasAuensis graph.
+    Instace of Tolumonas auensis graph.
 
 	References
 	---------------------

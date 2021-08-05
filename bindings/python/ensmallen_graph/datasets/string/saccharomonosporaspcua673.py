@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharomonosporaSpCua673.
+This file offers the methods to automatically retrieve the graph Saccharomonospora sp. CUA-673.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharomonosporaSpCua673(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharomonosporaSpCua673 graph.
+    """Return new instance of the Saccharomonospora sp. CUA-673 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharomonosporaSpCua673(
 
     Returns
     -----------------------
-    Instace of SaccharomonosporaSpCua673 graph.
+    Instace of Saccharomonospora sp. CUA-673 graph.
 
 	References
 	---------------------

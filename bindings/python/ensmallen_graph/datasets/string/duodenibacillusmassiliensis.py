@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuodenibacillusMassiliensis.
+This file offers the methods to automatically retrieve the graph Duodenibacillus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuodenibacillusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuodenibacillusMassiliensis graph.
+    """Return new instance of the Duodenibacillus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuodenibacillusMassiliensis(
 
     Returns
     -----------------------
-    Instace of DuodenibacillusMassiliensis graph.
+    Instace of Duodenibacillus massiliensis graph.
 
 	References
 	---------------------

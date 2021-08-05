@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PatagioenasFasciataMonilis.
+This file offers the methods to automatically retrieve the graph Patagioenas fasciata monilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PatagioenasFasciataMonilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PatagioenasFasciataMonilis graph.
+    """Return new instance of the Patagioenas fasciata monilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PatagioenasFasciataMonilis(
 
     Returns
     -----------------------
-    Instace of PatagioenasFasciataMonilis graph.
+    Instace of Patagioenas fasciata monilis graph.
 
 	References
 	---------------------

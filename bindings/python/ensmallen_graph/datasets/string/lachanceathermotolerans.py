@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachanceaThermotolerans.
+This file offers the methods to automatically retrieve the graph Lachancea thermotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachanceaThermotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachanceaThermotolerans graph.
+    """Return new instance of the Lachancea thermotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachanceaThermotolerans(
 
     Returns
     -----------------------
-    Instace of LachanceaThermotolerans graph.
+    Instace of Lachancea thermotolerans graph.
 
 	References
 	---------------------

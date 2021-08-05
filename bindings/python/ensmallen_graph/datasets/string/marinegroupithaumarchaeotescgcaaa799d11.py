@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineGroupIThaumarchaeoteScgcAaa799D11.
+This file offers the methods to automatically retrieve the graph Marine Group I thaumarchaeote SCGC AAA799-D11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineGroupIThaumarchaeoteScgcAaa799D11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineGroupIThaumarchaeoteScgcAaa799D11 graph.
+    """Return new instance of the Marine Group I thaumarchaeote SCGC AAA799-D11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineGroupIThaumarchaeoteScgcAaa799D11(
 
     Returns
     -----------------------
-    Instace of MarineGroupIThaumarchaeoteScgcAaa799D11 graph.
+    Instace of Marine Group I thaumarchaeote SCGC AAA799-D11 graph.
 
 	References
 	---------------------

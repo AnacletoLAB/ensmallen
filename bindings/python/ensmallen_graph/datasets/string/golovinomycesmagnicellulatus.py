@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GolovinomycesMagnicellulatus.
+This file offers the methods to automatically retrieve the graph Golovinomyces magnicellulatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GolovinomycesMagnicellulatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GolovinomycesMagnicellulatus graph.
+    """Return new instance of the Golovinomyces magnicellulatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GolovinomycesMagnicellulatus(
 
     Returns
     -----------------------
-    Instace of GolovinomycesMagnicellulatus graph.
+    Instace of Golovinomyces magnicellulatus graph.
 
 	References
 	---------------------

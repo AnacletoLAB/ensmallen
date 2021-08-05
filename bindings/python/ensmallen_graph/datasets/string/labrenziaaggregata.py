@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaAggregata.
+This file offers the methods to automatically retrieve the graph Labrenzia aggregata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaAggregata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaAggregata graph.
+    """Return new instance of the Labrenzia aggregata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LabrenziaAggregata(
 
     Returns
     -----------------------
-    Instace of LabrenziaAggregata graph.
+    Instace of Labrenzia aggregata graph.
 
 	References
 	---------------------

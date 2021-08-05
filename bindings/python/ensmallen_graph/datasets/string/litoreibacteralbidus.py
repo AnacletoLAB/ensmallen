@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LitoreibacterAlbidus.
+This file offers the methods to automatically retrieve the graph Litoreibacter albidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LitoreibacterAlbidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LitoreibacterAlbidus graph.
+    """Return new instance of the Litoreibacter albidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LitoreibacterAlbidus(
 
     Returns
     -----------------------
-    Instace of LitoreibacterAlbidus graph.
+    Instace of Litoreibacter albidus graph.
 
 	References
 	---------------------

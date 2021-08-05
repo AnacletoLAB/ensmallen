@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulophagaSpHelI12.
+This file offers the methods to automatically retrieve the graph Cellulophaga sp. Hel_I_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulophagaSpHelI12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulophagaSpHelI12 graph.
+    """Return new instance of the Cellulophaga sp. Hel_I_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulophagaSpHelI12(
 
     Returns
     -----------------------
-    Instace of CellulophagaSpHelI12 graph.
+    Instace of Cellulophaga sp. Hel_I_12 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloplanusVescus.
+This file offers the methods to automatically retrieve the graph Haloplanus vescus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloplanusVescus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloplanusVescus graph.
+    """Return new instance of the Haloplanus vescus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloplanusVescus(
 
     Returns
     -----------------------
-    Instace of HaloplanusVescus graph.
+    Instace of Haloplanus vescus graph.
 
 	References
 	---------------------

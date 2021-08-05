@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBrennerbacteriaBacteriumRifoxyd1Full4116.
+This file offers the methods to automatically retrieve the graph Candidatus Brennerbacteria bacterium RIFOXYD1_FULL_41_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBrennerbacteriaBacteriumRifoxyd1Full4116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBrennerbacteriaBacteriumRifoxyd1Full4116 graph.
+    """Return new instance of the Candidatus Brennerbacteria bacterium RIFOXYD1_FULL_41_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBrennerbacteriaBacteriumRifoxyd1Full4116(
 
     Returns
     -----------------------
-    Instace of CandidatusBrennerbacteriaBacteriumRifoxyd1Full4116 graph.
+    Instace of Candidatus Brennerbacteria bacterium RIFOXYD1_FULL_41_16 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrospiraSpKp2.
+This file offers the methods to automatically retrieve the graph Thiomicrospira sp. Kp2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrospiraSpKp2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrospiraSpKp2 graph.
+    """Return new instance of the Thiomicrospira sp. Kp2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiomicrospiraSpKp2(
 
     Returns
     -----------------------
-    Instace of ThiomicrospiraSpKp2 graph.
+    Instace of Thiomicrospira sp. Kp2 graph.
 
 	References
 	---------------------

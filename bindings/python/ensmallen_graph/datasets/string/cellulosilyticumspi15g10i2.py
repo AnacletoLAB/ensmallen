@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulosilyticumSpI15g10i2.
+This file offers the methods to automatically retrieve the graph Cellulosilyticum sp. I15G10I2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulosilyticumSpI15g10i2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulosilyticumSpI15g10i2 graph.
+    """Return new instance of the Cellulosilyticum sp. I15G10I2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulosilyticumSpI15g10i2(
 
     Returns
     -----------------------
-    Instace of CellulosilyticumSpI15g10i2 graph.
+    Instace of Cellulosilyticum sp. I15G10I2 graph.
 
 	References
 	---------------------

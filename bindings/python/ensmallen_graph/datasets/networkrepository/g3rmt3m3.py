@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph G3rmt3m3.
+This file offers the methods to automatically retrieve the graph g3rmt3m3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def G3rmt3m3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the G3rmt3m3 graph.
+    """Return new instance of the g3rmt3m3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def G3rmt3m3(
 
     Returns
     -----------------------
-    Instace of G3rmt3m3 graph.
+    Instace of g3rmt3m3 graph.
 
 	References
 	---------------------

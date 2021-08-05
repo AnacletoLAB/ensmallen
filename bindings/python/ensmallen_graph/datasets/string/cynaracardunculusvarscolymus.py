@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CynaraCardunculusVarScolymus.
+This file offers the methods to automatically retrieve the graph Cynara cardunculus var. scolymus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CynaraCardunculusVarScolymus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CynaraCardunculusVarScolymus graph.
+    """Return new instance of the Cynara cardunculus var. scolymus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CynaraCardunculusVarScolymus(
 
     Returns
     -----------------------
-    Instace of CynaraCardunculusVarScolymus graph.
+    Instace of Cynara cardunculus var. scolymus graph.
 
 	References
 	---------------------

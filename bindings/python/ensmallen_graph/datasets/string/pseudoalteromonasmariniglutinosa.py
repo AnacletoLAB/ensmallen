@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasMariniglutinosa.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas mariniglutinosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasMariniglutinosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasMariniglutinosa graph.
+    """Return new instance of the Pseudoalteromonas mariniglutinosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasMariniglutinosa(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasMariniglutinosa graph.
+    Instace of Pseudoalteromonas mariniglutinosa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseibiumSpTrichskd4.
+This file offers the methods to automatically retrieve the graph Roseibium sp. TrichSKD4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseibiumSpTrichskd4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseibiumSpTrichskd4 graph.
+    """Return new instance of the Roseibium sp. TrichSKD4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseibiumSpTrichskd4(
 
     Returns
     -----------------------
-    Instace of RoseibiumSpTrichskd4 graph.
+    Instace of Roseibium sp. TrichSKD4 graph.
 
 	References
 	---------------------

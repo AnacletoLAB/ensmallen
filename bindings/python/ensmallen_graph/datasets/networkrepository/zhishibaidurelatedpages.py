@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZhishiBaiduRelatedpages.
+This file offers the methods to automatically retrieve the graph zhishi-baidu-relatedpages.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ZhishiBaiduRelatedpages(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZhishiBaiduRelatedpages graph.
+    """Return new instance of the zhishi-baidu-relatedpages graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ZhishiBaiduRelatedpages(
 
     Returns
     -----------------------
-    Instace of ZhishiBaiduRelatedpages graph.
+    Instace of zhishi-baidu-relatedpages graph.
 
 	References
 	---------------------

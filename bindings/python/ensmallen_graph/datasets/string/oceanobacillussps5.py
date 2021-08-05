@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusSpS5.
+This file offers the methods to automatically retrieve the graph Oceanobacillus sp. S5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusSpS5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusSpS5 graph.
+    """Return new instance of the Oceanobacillus sp. S5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanobacillusSpS5(
 
     Returns
     -----------------------
-    Instace of OceanobacillusSpS5 graph.
+    Instace of Oceanobacillus sp. S5 graph.
 
 	References
 	---------------------

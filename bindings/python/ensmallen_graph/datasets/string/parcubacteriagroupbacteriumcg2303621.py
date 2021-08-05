@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaGroupBacteriumCg2303621.
+This file offers the methods to automatically retrieve the graph Parcubacteria group bacterium CG2_30_36_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaGroupBacteriumCg2303621(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaGroupBacteriumCg2303621 graph.
+    """Return new instance of the Parcubacteria group bacterium CG2_30_36_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaGroupBacteriumCg2303621(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaGroupBacteriumCg2303621 graph.
+    Instace of Parcubacteria group bacterium CG2_30_36_21 graph.
 
 	References
 	---------------------

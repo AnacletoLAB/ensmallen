@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSabinae.
+This file offers the methods to automatically retrieve the graph Paenibacillus sabinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSabinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSabinae graph.
+    """Return new instance of the Paenibacillus sabinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSabinae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSabinae graph.
+    Instace of Paenibacillus sabinae graph.
 
 	References
 	---------------------

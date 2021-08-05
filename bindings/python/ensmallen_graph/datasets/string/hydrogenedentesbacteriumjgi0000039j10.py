@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenedentesBacteriumJgi0000039J10.
+This file offers the methods to automatically retrieve the graph Hydrogenedentes bacterium JGI 0000039-J10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenedentesBacteriumJgi0000039J10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenedentesBacteriumJgi0000039J10 graph.
+    """Return new instance of the Hydrogenedentes bacterium JGI 0000039-J10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenedentesBacteriumJgi0000039J10(
 
     Returns
     -----------------------
-    Instace of HydrogenedentesBacteriumJgi0000039J10 graph.
+    Instace of Hydrogenedentes bacterium JGI 0000039-J10 graph.
 
 	References
 	---------------------

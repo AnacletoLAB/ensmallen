@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrassicaRapa.
+This file offers the methods to automatically retrieve the graph Brassica rapa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrassicaRapa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrassicaRapa graph.
+    """Return new instance of the Brassica rapa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrassicaRapa(
 
     Returns
     -----------------------
-    Instace of BrassicaRapa graph.
+    Instace of Brassica rapa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpN54Mgs139.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. N54.MGS-139.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpN54Mgs139(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpN54Mgs139 graph.
+    """Return new instance of the Acinetobacter sp. N54.MGS-139 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpN54Mgs139(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpN54Mgs139 graph.
+    Instace of Acinetobacter sp. N54.MGS-139 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaPaucivoransNbrc100373.
+This file offers the methods to automatically retrieve the graph Nocardia paucivorans NBRC 100373.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaPaucivoransNbrc100373(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaPaucivoransNbrc100373 graph.
+    """Return new instance of the Nocardia paucivorans NBRC 100373 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaPaucivoransNbrc100373(
 
     Returns
     -----------------------
-    Instace of NocardiaPaucivoransNbrc100373 graph.
+    Instace of Nocardia paucivorans NBRC 100373 graph.
 
 	References
 	---------------------

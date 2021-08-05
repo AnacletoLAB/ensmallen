@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MelghirimycesThermohalophilus.
+This file offers the methods to automatically retrieve the graph Melghirimyces thermohalophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MelghirimycesThermohalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MelghirimycesThermohalophilus graph.
+    """Return new instance of the Melghirimyces thermohalophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MelghirimycesThermohalophilus(
 
     Returns
     -----------------------
-    Instace of MelghirimycesThermohalophilus graph.
+    Instace of Melghirimyces thermohalophilus graph.
 
 	References
 	---------------------

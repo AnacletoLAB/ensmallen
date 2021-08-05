@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusNakamurai.
+This file offers the methods to automatically retrieve the graph Bacillus nakamurai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusNakamurai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusNakamurai graph.
+    """Return new instance of the Bacillus nakamurai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusNakamurai(
 
     Returns
     -----------------------
-    Instace of BacillusNakamurai graph.
+    Instace of Bacillus nakamurai graph.
 
 	References
 	---------------------

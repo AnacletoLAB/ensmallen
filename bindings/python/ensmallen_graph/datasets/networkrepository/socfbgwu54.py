@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbGwu54.
+This file offers the methods to automatically retrieve the graph socfb-GWU54.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbGwu54(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbGwu54 graph.
+    """Return new instance of the socfb-GWU54 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbGwu54(
 
     Returns
     -----------------------
-    Instace of SocfbGwu54 graph.
+    Instace of socfb-GWU54 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoPapersDblp.
+This file offers the methods to automatically retrieve the graph co-papers-dblp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def CoPapersDblp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoPapersDblp graph.
+    """Return new instance of the co-papers-dblp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def CoPapersDblp(
 
     Returns
     -----------------------
-    Instace of CoPapersDblp graph.
+    Instace of co-papers-dblp graph.
 
 	References
 	---------------------

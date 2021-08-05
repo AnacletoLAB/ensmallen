@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaMuridarum.
+This file offers the methods to automatically retrieve the graph Chlamydia muridarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaMuridarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaMuridarum graph.
+    """Return new instance of the Chlamydia muridarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaMuridarum(
 
     Returns
     -----------------------
-    Instace of ChlamydiaMuridarum graph.
+    Instace of Chlamydia muridarum graph.
 
 	References
 	---------------------

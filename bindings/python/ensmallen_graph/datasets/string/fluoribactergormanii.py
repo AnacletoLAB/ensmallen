@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FluoribacterGormanii.
+This file offers the methods to automatically retrieve the graph Fluoribacter gormanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FluoribacterGormanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FluoribacterGormanii graph.
+    """Return new instance of the Fluoribacter gormanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FluoribacterGormanii(
 
     Returns
     -----------------------
-    Instace of FluoribacterGormanii graph.
+    Instace of Fluoribacter gormanii graph.
 
 	References
 	---------------------

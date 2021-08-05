@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrueperellaBernardiae.
+This file offers the methods to automatically retrieve the graph Trueperella bernardiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrueperellaBernardiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrueperellaBernardiae graph.
+    """Return new instance of the Trueperella bernardiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrueperellaBernardiae(
 
     Returns
     -----------------------
-    Instace of TrueperellaBernardiae graph.
+    Instace of Trueperella bernardiae graph.
 
 	References
 	---------------------

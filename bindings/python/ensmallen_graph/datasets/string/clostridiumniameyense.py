@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumNiameyense.
+This file offers the methods to automatically retrieve the graph Clostridium niameyense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumNiameyense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumNiameyense graph.
+    """Return new instance of the Clostridium niameyense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumNiameyense(
 
     Returns
     -----------------------
-    Instace of ClostridiumNiameyense graph.
+    Instace of Clostridium niameyense graph.
 
 	References
 	---------------------

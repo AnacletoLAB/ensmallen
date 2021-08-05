@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacacaNemestrina.
+This file offers the methods to automatically retrieve the graph Macaca nemestrina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacacaNemestrina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacacaNemestrina graph.
+    """Return new instance of the Macaca nemestrina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacacaNemestrina(
 
     Returns
     -----------------------
-    Instace of MacacaNemestrina graph.
+    Instace of Macaca nemestrina graph.
 
 	References
 	---------------------

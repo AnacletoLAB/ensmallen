@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospinaSpScgcAaa288L16.
+This file offers the methods to automatically retrieve the graph Nitrospina sp. SCGC AAA288-L16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospinaSpScgcAaa288L16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospinaSpScgcAaa288L16 graph.
+    """Return new instance of the Nitrospina sp. SCGC AAA288-L16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospinaSpScgcAaa288L16(
 
     Returns
     -----------------------
-    Instace of NitrospinaSpScgcAaa288L16 graph.
+    Instace of Nitrospina sp. SCGC AAA288-L16 graph.
 
 	References
 	---------------------

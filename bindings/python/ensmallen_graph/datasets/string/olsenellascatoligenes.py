@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaScatoligenes.
+This file offers the methods to automatically retrieve the graph Olsenella scatoligenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaScatoligenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaScatoligenes graph.
+    """Return new instance of the Olsenella scatoligenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaScatoligenes(
 
     Returns
     -----------------------
-    Instace of OlsenellaScatoligenes graph.
+    Instace of Olsenella scatoligenes graph.
 
 	References
 	---------------------

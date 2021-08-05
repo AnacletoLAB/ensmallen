@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSomaliensis.
+This file offers the methods to automatically retrieve the graph Streptomyces somaliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSomaliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSomaliensis graph.
+    """Return new instance of the Streptomyces somaliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSomaliensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesSomaliensis graph.
+    Instace of Streptomyces somaliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiastellaKoreensis.
+This file offers the methods to automatically retrieve the graph Niastella koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiastellaKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiastellaKoreensis graph.
+    """Return new instance of the Niastella koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NiastellaKoreensis(
 
     Returns
     -----------------------
-    Instace of NiastellaKoreensis graph.
+    Instace of Niastella koreensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSp131216.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. 13-12-16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSp131216(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSp131216 graph.
+    """Return new instance of the Streptomyces sp. 13-12-16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSp131216(
 
     Returns
     -----------------------
-    Instace of StreptomycesSp131216 graph.
+    Instace of Streptomyces sp. 13-12-16 graph.
 
 	References
 	---------------------

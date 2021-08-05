@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelaginellaMoellendorffii.
+This file offers the methods to automatically retrieve the graph Selaginella moellendorffii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelaginellaMoellendorffii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelaginellaMoellendorffii graph.
+    """Return new instance of the Selaginella moellendorffii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelaginellaMoellendorffii(
 
     Returns
     -----------------------
-    Instace of SelaginellaMoellendorffii graph.
+    Instace of Selaginella moellendorffii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasHaloplanktisAtcc14393.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas haloplanktis ATCC14393.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasHaloplanktisAtcc14393(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasHaloplanktisAtcc14393 graph.
+    """Return new instance of the Pseudoalteromonas haloplanktis ATCC14393 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasHaloplanktisAtcc14393(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasHaloplanktisAtcc14393 graph.
+    Instace of Pseudoalteromonas haloplanktis ATCC14393 graph.
 
 	References
 	---------------------

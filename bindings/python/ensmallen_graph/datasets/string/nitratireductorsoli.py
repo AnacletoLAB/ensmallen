@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratireductorSoli.
+This file offers the methods to automatically retrieve the graph Nitratireductor soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratireductorSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratireductorSoli graph.
+    """Return new instance of the Nitratireductor soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitratireductorSoli(
 
     Returns
     -----------------------
-    Instace of NitratireductorSoli graph.
+    Instace of Nitratireductor soli graph.
 
 	References
 	---------------------

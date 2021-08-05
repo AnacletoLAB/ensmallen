@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaProfusa.
+This file offers the methods to automatically retrieve the graph Olsenella profusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaProfusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaProfusa graph.
+    """Return new instance of the Olsenella profusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OlsenellaProfusa(
 
     Returns
     -----------------------
-    Instace of OlsenellaProfusa graph.
+    Instace of Olsenella profusa graph.
 
 	References
 	---------------------

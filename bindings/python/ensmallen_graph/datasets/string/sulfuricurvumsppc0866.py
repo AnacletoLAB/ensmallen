@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricurvumSpPc0866.
+This file offers the methods to automatically retrieve the graph Sulfuricurvum sp. PC08-66.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricurvumSpPc0866(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricurvumSpPc0866 graph.
+    """Return new instance of the Sulfuricurvum sp. PC08-66 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfuricurvumSpPc0866(
 
     Returns
     -----------------------
-    Instace of SulfuricurvumSpPc0866 graph.
+    Instace of Sulfuricurvum sp. PC08-66 graph.
 
 	References
 	---------------------

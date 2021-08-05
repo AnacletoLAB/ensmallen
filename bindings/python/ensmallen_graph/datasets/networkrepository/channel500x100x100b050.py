@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Channel500x100x100B050.
+This file offers the methods to automatically retrieve the graph channel-500x100x100-b050.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Channel500x100x100B050(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Channel500x100x100B050 graph.
+    """Return new instance of the channel-500x100x100-b050 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Channel500x100x100B050(
 
     Returns
     -----------------------
-    Instace of Channel500x100x100B050 graph.
+    Instace of channel-500x100x100-b050 graph.
 
 	References
 	---------------------

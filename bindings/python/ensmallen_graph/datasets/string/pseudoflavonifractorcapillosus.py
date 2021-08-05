@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoflavonifractorCapillosus.
+This file offers the methods to automatically retrieve the graph Pseudoflavonifractor capillosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoflavonifractorCapillosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoflavonifractorCapillosus graph.
+    """Return new instance of the Pseudoflavonifractor capillosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoflavonifractorCapillosus(
 
     Returns
     -----------------------
-    Instace of PseudoflavonifractorCapillosus graph.
+    Instace of Pseudoflavonifractor capillosus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSordidicola.
+This file offers the methods to automatically retrieve the graph Burkholderia sordidicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSordidicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSordidicola graph.
+    """Return new instance of the Burkholderia sordidicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaSordidicola(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSordidicola graph.
+    Instace of Burkholderia sordidicola graph.
 
 	References
 	---------------------

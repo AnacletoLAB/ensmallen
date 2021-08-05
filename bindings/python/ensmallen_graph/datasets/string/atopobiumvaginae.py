@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AtopobiumVaginae.
+This file offers the methods to automatically retrieve the graph Atopobium vaginae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AtopobiumVaginae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AtopobiumVaginae graph.
+    """Return new instance of the Atopobium vaginae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AtopobiumVaginae(
 
     Returns
     -----------------------
-    Instace of AtopobiumVaginae graph.
+    Instace of Atopobium vaginae graph.
 
 	References
 	---------------------

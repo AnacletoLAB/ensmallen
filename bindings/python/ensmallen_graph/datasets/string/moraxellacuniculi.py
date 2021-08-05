@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaCuniculi.
+This file offers the methods to automatically retrieve the graph Moraxella cuniculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaCuniculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaCuniculi graph.
+    """Return new instance of the Moraxella cuniculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaCuniculi(
 
     Returns
     -----------------------
-    Instace of MoraxellaCuniculi graph.
+    Instace of Moraxella cuniculi graph.
 
 	References
 	---------------------

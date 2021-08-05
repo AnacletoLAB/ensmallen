@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaBeijingensisNbrc16342.
+This file offers the methods to automatically retrieve the graph Nocardia beijingensis NBRC 16342.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaBeijingensisNbrc16342(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaBeijingensisNbrc16342 graph.
+    """Return new instance of the Nocardia beijingensis NBRC 16342 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaBeijingensisNbrc16342(
 
     Returns
     -----------------------
-    Instace of NocardiaBeijingensisNbrc16342 graph.
+    Instace of Nocardia beijingensis NBRC 16342 graph.
 
 	References
 	---------------------

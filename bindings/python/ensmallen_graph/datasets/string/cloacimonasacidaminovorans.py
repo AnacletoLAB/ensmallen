@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CloacimonasAcidaminovorans.
+This file offers the methods to automatically retrieve the graph Cloacimonas acidaminovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CloacimonasAcidaminovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CloacimonasAcidaminovorans graph.
+    """Return new instance of the Cloacimonas acidaminovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CloacimonasAcidaminovorans(
 
     Returns
     -----------------------
-    Instace of CloacimonasAcidaminovorans graph.
+    Instace of Cloacimonas acidaminovorans graph.
 
 	References
 	---------------------

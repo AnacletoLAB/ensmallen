@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrrhodermaNoxium.
+This file offers the methods to automatically retrieve the graph Pyrrhoderma noxium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrrhodermaNoxium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrrhodermaNoxium graph.
+    """Return new instance of the Pyrrhoderma noxium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrrhodermaNoxium(
 
     Returns
     -----------------------
-    Instace of PyrrhodermaNoxium graph.
+    Instace of Pyrrhoderma noxium graph.
 
 	References
 	---------------------

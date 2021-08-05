@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumAccolens.
+This file offers the methods to automatically retrieve the graph Corynebacterium accolens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumAccolens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumAccolens graph.
+    """Return new instance of the Corynebacterium accolens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumAccolens(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumAccolens graph.
+    Instace of Corynebacterium accolens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaYuzhufengensis.
+This file offers the methods to automatically retrieve the graph Massilia yuzhufengensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaYuzhufengensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaYuzhufengensis graph.
+    """Return new instance of the Massilia yuzhufengensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaYuzhufengensis(
 
     Returns
     -----------------------
-    Instace of MassiliaYuzhufengensis graph.
+    Instace of Massilia yuzhufengensis graph.
 
 	References
 	---------------------

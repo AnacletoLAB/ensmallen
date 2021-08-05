@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerrapeneCarolinaTriunguis.
+This file offers the methods to automatically retrieve the graph Terrapene carolina triunguis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerrapeneCarolinaTriunguis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerrapeneCarolinaTriunguis graph.
+    """Return new instance of the Terrapene carolina triunguis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerrapeneCarolinaTriunguis(
 
     Returns
     -----------------------
-    Instace of TerrapeneCarolinaTriunguis graph.
+    Instace of Terrapene carolina triunguis graph.
 
 	References
 	---------------------

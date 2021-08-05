@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusZopfiiNbrc100606Jcm9919.
+This file offers the methods to automatically retrieve the graph Rhodococcus zopfii NBRC 100606 JCM 9919.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusZopfiiNbrc100606Jcm9919(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusZopfiiNbrc100606Jcm9919 graph.
+    """Return new instance of the Rhodococcus zopfii NBRC 100606 JCM 9919 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusZopfiiNbrc100606Jcm9919(
 
     Returns
     -----------------------
-    Instace of RhodococcusZopfiiNbrc100606Jcm9919 graph.
+    Instace of Rhodococcus zopfii NBRC 100606 JCM 9919 graph.
 
 	References
 	---------------------

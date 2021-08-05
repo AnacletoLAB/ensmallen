@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SneathiaSanguinegens.
+This file offers the methods to automatically retrieve the graph Sneathia sanguinegens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SneathiaSanguinegens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SneathiaSanguinegens graph.
+    """Return new instance of the Sneathia sanguinegens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SneathiaSanguinegens(
 
     Returns
     -----------------------
-    Instace of SneathiaSanguinegens graph.
+    Instace of Sneathia sanguinegens graph.
 
 	References
 	---------------------

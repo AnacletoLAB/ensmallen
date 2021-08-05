@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSuis22083.
+This file offers the methods to automatically retrieve the graph Streptococcus suis 22083.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSuis22083(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSuis22083 graph.
+    """Return new instance of the Streptococcus suis 22083 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSuis22083(
 
     Returns
     -----------------------
-    Instace of StreptococcusSuis22083 graph.
+    Instace of Streptococcus suis 22083 graph.
 
 	References
 	---------------------

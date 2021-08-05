@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasIndica.
+This file offers the methods to automatically retrieve the graph Pseudomonas indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasIndica graph.
+    """Return new instance of the Pseudomonas indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasIndica(
 
     Returns
     -----------------------
-    Instace of PseudomonasIndica graph.
+    Instace of Pseudomonas indica graph.
 
 	References
 	---------------------

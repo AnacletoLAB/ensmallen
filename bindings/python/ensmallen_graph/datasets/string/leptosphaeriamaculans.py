@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptosphaeriaMaculans.
+This file offers the methods to automatically retrieve the graph Leptosphaeria maculans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptosphaeriaMaculans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptosphaeriaMaculans graph.
+    """Return new instance of the Leptosphaeria maculans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptosphaeriaMaculans(
 
     Returns
     -----------------------
-    Instace of LeptosphaeriaMaculans graph.
+    Instace of Leptosphaeria maculans graph.
 
 	References
 	---------------------

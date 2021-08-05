@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanobisporaRosea.
+This file offers the methods to automatically retrieve the graph Planobispora rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanobisporaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanobisporaRosea graph.
+    """Return new instance of the Planobispora rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanobisporaRosea(
 
     Returns
     -----------------------
-    Instace of PlanobisporaRosea graph.
+    Instace of Planobispora rosea graph.
 
 	References
 	---------------------

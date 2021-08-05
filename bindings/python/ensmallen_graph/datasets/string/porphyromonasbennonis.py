@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasBennonis.
+This file offers the methods to automatically retrieve the graph Porphyromonas bennonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasBennonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasBennonis graph.
+    """Return new instance of the Porphyromonas bennonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasBennonis(
 
     Returns
     -----------------------
-    Instace of PorphyromonasBennonis graph.
+    Instace of Porphyromonas bennonis graph.
 
 	References
 	---------------------

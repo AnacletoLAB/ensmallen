@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAtelocyanobacteriumThalassaIsolateAloha.
+This file offers the methods to automatically retrieve the graph Candidatus Atelocyanobacterium thalassa isolate ALOHA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAtelocyanobacteriumThalassaIsolateAloha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAtelocyanobacteriumThalassaIsolateAloha graph.
+    """Return new instance of the Candidatus Atelocyanobacterium thalassa isolate ALOHA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAtelocyanobacteriumThalassaIsolateAloha(
 
     Returns
     -----------------------
-    Instace of CandidatusAtelocyanobacteriumThalassaIsolateAloha graph.
+    Instace of Candidatus Atelocyanobacterium thalassa isolate ALOHA graph.
 
 	References
 	---------------------

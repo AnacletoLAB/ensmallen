@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacterialesBacteriumUtchb2.
+This file offers the methods to automatically retrieve the graph Ignavibacteriales bacterium UTCHB2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacterialesBacteriumUtchb2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacterialesBacteriumUtchb2 graph.
+    """Return new instance of the Ignavibacteriales bacterium UTCHB2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacterialesBacteriumUtchb2(
 
     Returns
     -----------------------
-    Instace of IgnavibacterialesBacteriumUtchb2 graph.
+    Instace of Ignavibacteriales bacterium UTCHB2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpM334.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. M334.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpM334(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpM334 graph.
+    """Return new instance of the Streptococcus sp. M334 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpM334(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpM334 graph.
+    Instace of Streptococcus sp. M334 graph.
 
 	References
 	---------------------

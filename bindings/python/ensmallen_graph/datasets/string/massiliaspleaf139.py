@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpLeaf139.
+This file offers the methods to automatically retrieve the graph Massilia sp. Leaf139.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpLeaf139(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpLeaf139 graph.
+    """Return new instance of the Massilia sp. Leaf139 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpLeaf139(
 
     Returns
     -----------------------
-    Instace of MassiliaSpLeaf139 graph.
+    Instace of Massilia sp. Leaf139 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpIs836.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. IS-836.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpIs836(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpIs836 graph.
+    """Return new instance of the Mycobacterium sp. IS-836 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpIs836(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpIs836 graph.
+    Instace of Mycobacterium sp. IS-836 graph.
 
 	References
 	---------------------

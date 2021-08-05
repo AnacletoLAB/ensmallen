@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MurdochiellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Murdochiella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MurdochiellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MurdochiellaMassiliensis graph.
+    """Return new instance of the Murdochiella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MurdochiellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of MurdochiellaMassiliensis graph.
+    Instace of Murdochiella massiliensis graph.
 
 	References
 	---------------------

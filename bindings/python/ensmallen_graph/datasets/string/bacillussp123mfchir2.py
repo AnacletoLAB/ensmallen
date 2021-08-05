@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSp123mfchir2.
+This file offers the methods to automatically retrieve the graph Bacillus sp. 123MFChir2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSp123mfchir2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSp123mfchir2 graph.
+    """Return new instance of the Bacillus sp. 123MFChir2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSp123mfchir2(
 
     Returns
     -----------------------
-    Instace of BacillusSp123mfchir2 graph.
+    Instace of Bacillus sp. 123MFChir2 graph.
 
 	References
 	---------------------

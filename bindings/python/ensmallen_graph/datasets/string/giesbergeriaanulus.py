@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GiesbergeriaAnulus.
+This file offers the methods to automatically retrieve the graph Giesbergeria anulus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GiesbergeriaAnulus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GiesbergeriaAnulus graph.
+    """Return new instance of the Giesbergeria anulus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GiesbergeriaAnulus(
 
     Returns
     -----------------------
-    Instace of GiesbergeriaAnulus graph.
+    Instace of Giesbergeria anulus graph.
 
 	References
 	---------------------

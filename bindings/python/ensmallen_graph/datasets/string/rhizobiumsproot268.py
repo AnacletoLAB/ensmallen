@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpRoot268.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. Root268.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpRoot268(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpRoot268 graph.
+    """Return new instance of the Rhizobium sp. Root268 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpRoot268(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpRoot268 graph.
+    Instace of Rhizobium sp. Root268 graph.
 
 	References
 	---------------------

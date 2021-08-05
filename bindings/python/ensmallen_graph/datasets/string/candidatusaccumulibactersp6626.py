@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAccumulibacterSp6626.
+This file offers the methods to automatically retrieve the graph Candidatus Accumulibacter sp. 66-26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAccumulibacterSp6626(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAccumulibacterSp6626 graph.
+    """Return new instance of the Candidatus Accumulibacter sp. 66-26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAccumulibacterSp6626(
 
     Returns
     -----------------------
-    Instace of CandidatusAccumulibacterSp6626 graph.
+    Instace of Candidatus Accumulibacter sp. 66-26 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldanaerovirgaAcetigignens.
+This file offers the methods to automatically retrieve the graph Caldanaerovirga acetigignens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldanaerovirgaAcetigignens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldanaerovirgaAcetigignens graph.
+    """Return new instance of the Caldanaerovirga acetigignens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldanaerovirgaAcetigignens(
 
     Returns
     -----------------------
-    Instace of CaldanaerovirgaAcetigignens graph.
+    Instace of Caldanaerovirga acetigignens graph.
 
 	References
 	---------------------

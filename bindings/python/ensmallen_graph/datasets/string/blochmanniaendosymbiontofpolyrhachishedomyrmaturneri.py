@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri.
+This file offers the methods to automatically retrieve the graph Blochmannia endosymbiont of Polyrhachis (Hedomyrma) turneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri graph.
+    """Return new instance of the Blochmannia endosymbiont of Polyrhachis (Hedomyrma) turneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri(
 
     Returns
     -----------------------
-    Instace of BlochmanniaEndosymbiontOfPolyrhachisHedomyrmaTurneri graph.
+    Instace of Blochmannia endosymbiont of Polyrhachis (Hedomyrma) turneri graph.
 
 	References
 	---------------------

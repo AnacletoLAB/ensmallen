@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DethiosulfovibrioPeptidovorans.
+This file offers the methods to automatically retrieve the graph Dethiosulfovibrio peptidovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DethiosulfovibrioPeptidovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DethiosulfovibrioPeptidovorans graph.
+    """Return new instance of the Dethiosulfovibrio peptidovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DethiosulfovibrioPeptidovorans(
 
     Returns
     -----------------------
-    Instace of DethiosulfovibrioPeptidovorans graph.
+    Instace of Dethiosulfovibrio peptidovorans graph.
 
 	References
 	---------------------

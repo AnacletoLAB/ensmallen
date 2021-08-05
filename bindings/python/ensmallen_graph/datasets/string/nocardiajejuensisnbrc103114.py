@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaJejuensisNbrc103114.
+This file offers the methods to automatically retrieve the graph Nocardia jejuensis NBRC 103114.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaJejuensisNbrc103114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaJejuensisNbrc103114 graph.
+    """Return new instance of the Nocardia jejuensis NBRC 103114 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaJejuensisNbrc103114(
 
     Returns
     -----------------------
-    Instace of NocardiaJejuensisNbrc103114 graph.
+    Instace of Nocardia jejuensis NBRC 103114 graph.
 
 	References
 	---------------------

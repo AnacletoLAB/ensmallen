@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaFlava.
+This file offers the methods to automatically retrieve the graph Kocuria flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaFlava graph.
+    """Return new instance of the Kocuria flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KocuriaFlava(
 
     Returns
     -----------------------
-    Instace of KocuriaFlava graph.
+    Instace of Kocuria flava graph.
 
 	References
 	---------------------

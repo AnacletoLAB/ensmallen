@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SneathiaAmnii.
+This file offers the methods to automatically retrieve the graph Sneathia amnii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SneathiaAmnii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SneathiaAmnii graph.
+    """Return new instance of the Sneathia amnii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SneathiaAmnii(
 
     Returns
     -----------------------
-    Instace of SneathiaAmnii graph.
+    Instace of Sneathia amnii graph.
 
 	References
 	---------------------

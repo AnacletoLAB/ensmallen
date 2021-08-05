@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CutaneotrichosporonOleaginosum.
+This file offers the methods to automatically retrieve the graph Cutaneotrichosporon oleaginosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CutaneotrichosporonOleaginosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CutaneotrichosporonOleaginosum graph.
+    """Return new instance of the Cutaneotrichosporon oleaginosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CutaneotrichosporonOleaginosum(
 
     Returns
     -----------------------
-    Instace of CutaneotrichosporonOleaginosum graph.
+    Instace of Cutaneotrichosporon oleaginosum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMatruchotii.
+This file offers the methods to automatically retrieve the graph Corynebacterium matruchotii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMatruchotii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMatruchotii graph.
+    """Return new instance of the Corynebacterium matruchotii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumMatruchotii(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMatruchotii graph.
+    Instace of Corynebacterium matruchotii graph.
 
 	References
 	---------------------

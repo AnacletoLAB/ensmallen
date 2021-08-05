@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcanthochromisPolyacanthus.
+This file offers the methods to automatically retrieve the graph Acanthochromis polyacanthus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcanthochromisPolyacanthus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcanthochromisPolyacanthus graph.
+    """Return new instance of the Acanthochromis polyacanthus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcanthochromisPolyacanthus(
 
     Returns
     -----------------------
-    Instace of AcanthochromisPolyacanthus graph.
+    Instace of Acanthochromis polyacanthus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpCot290Oh3588.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. COT-290 OH3588.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasSpCot290Oh3588(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpCot290Oh3588 graph.
+    """Return new instance of the Porphyromonas sp. COT-290 OH3588 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonasSpCot290Oh3588(
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpCot290Oh3588 graph.
+    Instace of Porphyromonas sp. COT-290 OH3588 graph.
 
 	References
 	---------------------

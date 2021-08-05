@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalococcoidiaBacteriumSm23282.
+This file offers the methods to automatically retrieve the graph Dehalococcoidia bacterium SM23_28_2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalococcoidiaBacteriumSm23282(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalococcoidiaBacteriumSm23282 graph.
+    """Return new instance of the Dehalococcoidia bacterium SM23_28_2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DehalococcoidiaBacteriumSm23282(
 
     Returns
     -----------------------
-    Instace of DehalococcoidiaBacteriumSm23282 graph.
+    Instace of Dehalococcoidia bacterium SM23_28_2 graph.
 
 	References
 	---------------------

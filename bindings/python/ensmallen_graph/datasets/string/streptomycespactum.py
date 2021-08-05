@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPactum.
+This file offers the methods to automatically retrieve the graph Streptomyces pactum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPactum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPactum graph.
+    """Return new instance of the Streptomyces pactum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesPactum(
 
     Returns
     -----------------------
-    Instace of StreptomycesPactum graph.
+    Instace of Streptomyces pactum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosynechococcusElongatus.
+This file offers the methods to automatically retrieve the graph Thermosynechococcus elongatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosynechococcusElongatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosynechococcusElongatus graph.
+    """Return new instance of the Thermosynechococcus elongatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermosynechococcusElongatus(
 
     Returns
     -----------------------
-    Instace of ThermosynechococcusElongatus graph.
+    Instace of Thermosynechococcus elongatus graph.
 
 	References
 	---------------------

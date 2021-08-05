@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapsicumChinense.
+This file offers the methods to automatically retrieve the graph Capsicum chinense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapsicumChinense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapsicumChinense graph.
+    """Return new instance of the Capsicum chinense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CapsicumChinense(
 
     Returns
     -----------------------
-    Instace of CapsicumChinense graph.
+    Instace of Capsicum chinense graph.
 
 	References
 	---------------------

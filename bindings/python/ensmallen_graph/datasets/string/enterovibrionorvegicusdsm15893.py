@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioNorvegicusDsm15893.
+This file offers the methods to automatically retrieve the graph Enterovibrio norvegicus DSM 15893.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioNorvegicusDsm15893(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioNorvegicusDsm15893 graph.
+    """Return new instance of the Enterovibrio norvegicus DSM 15893 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterovibrioNorvegicusDsm15893(
 
     Returns
     -----------------------
-    Instace of EnterovibrioNorvegicusDsm15893 graph.
+    Instace of Enterovibrio norvegicus DSM 15893 graph.
 
 	References
 	---------------------

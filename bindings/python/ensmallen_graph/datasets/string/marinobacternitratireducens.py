@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterNitratireducens.
+This file offers the methods to automatically retrieve the graph Marinobacter nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterNitratireducens graph.
+    """Return new instance of the Marinobacter nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterNitratireducens(
 
     Returns
     -----------------------
-    Instace of MarinobacterNitratireducens graph.
+    Instace of Marinobacter nitratireducens graph.
 
 	References
 	---------------------

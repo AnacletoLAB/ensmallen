@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusHyovaginalisDsm12219.
+This file offers the methods to automatically retrieve the graph Streptococcus hyovaginalis DSM 12219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusHyovaginalisDsm12219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusHyovaginalisDsm12219 graph.
+    """Return new instance of the Streptococcus hyovaginalis DSM 12219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusHyovaginalisDsm12219(
 
     Returns
     -----------------------
-    Instace of StreptococcusHyovaginalisDsm12219 graph.
+    Instace of Streptococcus hyovaginalis DSM 12219 graph.
 
 	References
 	---------------------

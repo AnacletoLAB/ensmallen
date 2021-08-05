@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpT16b2.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. T16B2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpT16b2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpT16b2 graph.
+    """Return new instance of the Hyphomonas sp. T16B2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasSpT16b2(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpT16b2 graph.
+    Instace of Hyphomonas sp. T16B2 graph.
 
 	References
 	---------------------

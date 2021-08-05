@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptonemaIllini.
+This file offers the methods to automatically retrieve the graph Leptonema illini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptonemaIllini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptonemaIllini graph.
+    """Return new instance of the Leptonema illini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptonemaIllini(
 
     Returns
     -----------------------
-    Instace of LeptonemaIllini graph.
+    Instace of Leptonema illini graph.
 
 	References
 	---------------------

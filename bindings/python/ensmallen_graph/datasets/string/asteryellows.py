@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsterYellows.
+This file offers the methods to automatically retrieve the graph Aster yellows.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsterYellows(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsterYellows graph.
+    """Return new instance of the Aster yellows graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsterYellows(
 
     Returns
     -----------------------
-    Instace of AsterYellows graph.
+    Instace of Aster yellows graph.
 
 	References
 	---------------------

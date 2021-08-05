@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PochoniaChlamydosporia123.
+This file offers the methods to automatically retrieve the graph Pochonia chlamydosporia 123.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PochoniaChlamydosporia123(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PochoniaChlamydosporia123 graph.
+    """Return new instance of the Pochonia chlamydosporia 123 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PochoniaChlamydosporia123(
 
     Returns
     -----------------------
-    Instace of PochoniaChlamydosporia123 graph.
+    Instace of Pochonia chlamydosporia 123 graph.
 
 	References
 	---------------------

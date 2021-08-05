@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAngulatum.
+This file offers the methods to automatically retrieve the graph Bifidobacterium angulatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumAngulatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAngulatum graph.
+    """Return new instance of the Bifidobacterium angulatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumAngulatum(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAngulatum graph.
+    Instace of Bifidobacterium angulatum graph.
 
 	References
 	---------------------

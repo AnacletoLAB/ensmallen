@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PanicumHalliiVarHallii.
+This file offers the methods to automatically retrieve the graph Panicum hallii var. hallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PanicumHalliiVarHallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PanicumHalliiVarHallii graph.
+    """Return new instance of the Panicum hallii var. hallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PanicumHalliiVarHallii(
 
     Returns
     -----------------------
-    Instace of PanicumHalliiVarHallii graph.
+    Instace of Panicum hallii var. hallii graph.
 
 	References
 	---------------------

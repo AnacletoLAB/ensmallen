@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XylanimonasCellulosilytica.
+This file offers the methods to automatically retrieve the graph Xylanimonas cellulosilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XylanimonasCellulosilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XylanimonasCellulosilytica graph.
+    """Return new instance of the Xylanimonas cellulosilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XylanimonasCellulosilytica(
 
     Returns
     -----------------------
-    Instace of XylanimonasCellulosilytica graph.
+    Instace of Xylanimonas cellulosilytica graph.
 
 	References
 	---------------------

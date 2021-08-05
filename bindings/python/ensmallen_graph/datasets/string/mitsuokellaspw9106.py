@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MitsuokellaSpW9106.
+This file offers the methods to automatically retrieve the graph Mitsuokella sp. W9106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MitsuokellaSpW9106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MitsuokellaSpW9106 graph.
+    """Return new instance of the Mitsuokella sp. W9106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MitsuokellaSpW9106(
 
     Returns
     -----------------------
-    Instace of MitsuokellaSpW9106 graph.
+    Instace of Mitsuokella sp. W9106 graph.
 
 	References
 	---------------------

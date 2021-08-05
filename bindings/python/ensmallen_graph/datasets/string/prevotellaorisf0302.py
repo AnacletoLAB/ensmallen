@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOrisF0302.
+This file offers the methods to automatically retrieve the graph Prevotella oris F0302.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOrisF0302(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOrisF0302 graph.
+    """Return new instance of the Prevotella oris F0302 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaOrisF0302(
 
     Returns
     -----------------------
-    Instace of PrevotellaOrisF0302 graph.
+    Instace of Prevotella oris F0302 graph.
 
 	References
 	---------------------

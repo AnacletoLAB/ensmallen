@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoculleusMarisnigri.
+This file offers the methods to automatically retrieve the graph Methanoculleus marisnigri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoculleusMarisnigri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoculleusMarisnigri graph.
+    """Return new instance of the Methanoculleus marisnigri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanoculleusMarisnigri(
 
     Returns
     -----------------------
-    Instace of MethanoculleusMarisnigri graph.
+    Instace of Methanoculleus marisnigri graph.
 
 	References
 	---------------------

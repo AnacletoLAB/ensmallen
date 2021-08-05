@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaSeptica.
+This file offers the methods to automatically retrieve the graph Pantoea septica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaSeptica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaSeptica graph.
+    """Return new instance of the Pantoea septica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaSeptica(
 
     Returns
     -----------------------
-    Instace of PantoeaSeptica graph.
+    Instace of Pantoea septica graph.
 
 	References
 	---------------------

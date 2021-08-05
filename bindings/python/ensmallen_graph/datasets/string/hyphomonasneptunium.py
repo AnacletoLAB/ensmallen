@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasNeptunium.
+This file offers the methods to automatically retrieve the graph Hyphomonas neptunium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasNeptunium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasNeptunium graph.
+    """Return new instance of the Hyphomonas neptunium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasNeptunium(
 
     Returns
     -----------------------
-    Instace of HyphomonasNeptunium graph.
+    Instace of Hyphomonas neptunium graph.
 
 	References
 	---------------------

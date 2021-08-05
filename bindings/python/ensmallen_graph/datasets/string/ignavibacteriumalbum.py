@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriumAlbum.
+This file offers the methods to automatically retrieve the graph Ignavibacterium album.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriumAlbum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriumAlbum graph.
+    """Return new instance of the Ignavibacterium album graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IgnavibacteriumAlbum(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriumAlbum graph.
+    Instace of Ignavibacterium album graph.
 
 	References
 	---------------------

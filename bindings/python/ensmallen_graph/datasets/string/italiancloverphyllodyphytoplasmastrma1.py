@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ItalianCloverPhyllodyPhytoplasmaStrMa1.
+This file offers the methods to automatically retrieve the graph Italian clover phyllody phytoplasma str. MA1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ItalianCloverPhyllodyPhytoplasmaStrMa1 graph.
+    """Return new instance of the Italian clover phyllody phytoplasma str. MA1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ItalianCloverPhyllodyPhytoplasmaStrMa1(
 
     Returns
     -----------------------
-    Instace of ItalianCloverPhyllodyPhytoplasmaStrMa1 graph.
+    Instace of Italian clover phyllody phytoplasma str. MA1 graph.
 
 	References
 	---------------------

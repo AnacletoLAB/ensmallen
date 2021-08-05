@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumDri13.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium DRI13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumDri13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumDri13 graph.
+    """Return new instance of the Clostridiales bacterium DRI13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridialesBacteriumDri13(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumDri13 graph.
+    Instace of Clostridiales bacterium DRI13 graph.
 
 	References
 	---------------------

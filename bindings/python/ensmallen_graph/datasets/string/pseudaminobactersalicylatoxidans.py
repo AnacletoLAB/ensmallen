@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudaminobacterSalicylatoxidans.
+This file offers the methods to automatically retrieve the graph Pseudaminobacter salicylatoxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudaminobacterSalicylatoxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudaminobacterSalicylatoxidans graph.
+    """Return new instance of the Pseudaminobacter salicylatoxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudaminobacterSalicylatoxidans(
 
     Returns
     -----------------------
-    Instace of PseudaminobacterSalicylatoxidans graph.
+    Instace of Pseudaminobacter salicylatoxidans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VitellibacterAquimaris.
+This file offers the methods to automatically retrieve the graph Vitellibacter aquimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VitellibacterAquimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VitellibacterAquimaris graph.
+    """Return new instance of the Vitellibacter aquimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VitellibacterAquimaris(
 
     Returns
     -----------------------
-    Instace of VitellibacterAquimaris graph.
+    Instace of Vitellibacter aquimaris graph.
 
 	References
 	---------------------

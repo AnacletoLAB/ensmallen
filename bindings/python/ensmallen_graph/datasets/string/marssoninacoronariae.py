@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarssoninaCoronariae.
+This file offers the methods to automatically retrieve the graph Marssonina coronariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarssoninaCoronariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarssoninaCoronariae graph.
+    """Return new instance of the Marssonina coronariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarssoninaCoronariae(
 
     Returns
     -----------------------
-    Instace of MarssoninaCoronariae graph.
+    Instace of Marssonina coronariae graph.
 
 	References
 	---------------------

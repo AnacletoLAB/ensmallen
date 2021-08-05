@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterFetusSubspFetus.
+This file offers the methods to automatically retrieve the graph Campylobacter fetus subsp. fetus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterFetusSubspFetus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterFetusSubspFetus graph.
+    """Return new instance of the Campylobacter fetus subsp. fetus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterFetusSubspFetus(
 
     Returns
     -----------------------
-    Instace of CampylobacterFetusSubspFetus graph.
+    Instace of Campylobacter fetus subsp. fetus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporothrixSchenckii.
+This file offers the methods to automatically retrieve the graph Sporothrix schenckii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporothrixSchenckii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporothrixSchenckii graph.
+    """Return new instance of the Sporothrix schenckii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporothrixSchenckii(
 
     Returns
     -----------------------
-    Instace of SporothrixSchenckii graph.
+    Instace of Sporothrix schenckii graph.
 
 	References
 	---------------------

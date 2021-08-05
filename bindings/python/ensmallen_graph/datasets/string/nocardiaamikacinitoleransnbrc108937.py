@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaAmikacinitoleransNbrc108937.
+This file offers the methods to automatically retrieve the graph Nocardia amikacinitolerans NBRC 108937.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaAmikacinitoleransNbrc108937(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaAmikacinitoleransNbrc108937 graph.
+    """Return new instance of the Nocardia amikacinitolerans NBRC 108937 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaAmikacinitoleransNbrc108937(
 
     Returns
     -----------------------
-    Instace of NocardiaAmikacinitoleransNbrc108937 graph.
+    Instace of Nocardia amikacinitolerans NBRC 108937 graph.
 
 	References
 	---------------------

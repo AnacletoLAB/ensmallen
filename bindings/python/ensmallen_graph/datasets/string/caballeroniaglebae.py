@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaGlebae.
+This file offers the methods to automatically retrieve the graph Caballeronia glebae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaGlebae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaGlebae graph.
+    """Return new instance of the Caballeronia glebae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaGlebae(
 
     Returns
     -----------------------
-    Instace of CaballeroniaGlebae graph.
+    Instace of Caballeronia glebae graph.
 
 	References
 	---------------------

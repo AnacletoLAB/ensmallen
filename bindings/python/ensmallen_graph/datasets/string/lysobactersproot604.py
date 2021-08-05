@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterSpRoot604.
+This file offers the methods to automatically retrieve the graph Lysobacter sp. Root604.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterSpRoot604(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterSpRoot604 graph.
+    """Return new instance of the Lysobacter sp. Root604 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterSpRoot604(
 
     Returns
     -----------------------
-    Instace of LysobacterSpRoot604 graph.
+    Instace of Lysobacter sp. Root604 graph.
 
 	References
 	---------------------

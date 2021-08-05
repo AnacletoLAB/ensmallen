@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerotruncusColihominis.
+This file offers the methods to automatically retrieve the graph Anaerotruncus colihominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerotruncusColihominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerotruncusColihominis graph.
+    """Return new instance of the Anaerotruncus colihominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerotruncusColihominis(
 
     Returns
     -----------------------
-    Instace of AnaerotruncusColihominis graph.
+    Instace of Anaerotruncus colihominis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSpGw2.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas sp. GW2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSpGw2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSpGw2 graph.
+    """Return new instance of the Pseudoxanthomonas sp. GW2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoxanthomonasSpGw2(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSpGw2 graph.
+    Instace of Pseudoxanthomonas sp. GW2 graph.
 
 	References
 	---------------------

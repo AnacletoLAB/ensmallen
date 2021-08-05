@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasTaxi.
+This file offers the methods to automatically retrieve the graph Sphingomonas taxi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasTaxi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasTaxi graph.
+    """Return new instance of the Sphingomonas taxi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingomonasTaxi(
 
     Returns
     -----------------------
-    Instace of SphingomonasTaxi graph.
+    Instace of Sphingomonas taxi graph.
 
 	References
 	---------------------

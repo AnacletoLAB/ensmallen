@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeolamprologusBrichardi.
+This file offers the methods to automatically retrieve the graph Neolamprologus brichardi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeolamprologusBrichardi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeolamprologusBrichardi graph.
+    """Return new instance of the Neolamprologus brichardi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeolamprologusBrichardi(
 
     Returns
     -----------------------
-    Instace of NeolamprologusBrichardi graph.
+    Instace of Neolamprologus brichardi graph.
 
 	References
 	---------------------

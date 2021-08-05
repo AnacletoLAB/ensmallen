@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrionalesBacteriumGa0074137.
+This file offers the methods to automatically retrieve the graph Bdellovibrionales bacterium Ga0074137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrionalesBacteriumGa0074137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrionalesBacteriumGa0074137 graph.
+    """Return new instance of the Bdellovibrionales bacterium Ga0074137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrionalesBacteriumGa0074137(
 
     Returns
     -----------------------
-    Instace of BdellovibrionalesBacteriumGa0074137 graph.
+    Instace of Bdellovibrionales bacterium Ga0074137 graph.
 
 	References
 	---------------------

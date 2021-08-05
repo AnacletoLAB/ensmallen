@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LepisosteusOculatus.
+This file offers the methods to automatically retrieve the graph Lepisosteus oculatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LepisosteusOculatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LepisosteusOculatus graph.
+    """Return new instance of the Lepisosteus oculatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LepisosteusOculatus(
 
     Returns
     -----------------------
-    Instace of LepisosteusOculatus graph.
+    Instace of Lepisosteus oculatus graph.
 
 	References
 	---------------------

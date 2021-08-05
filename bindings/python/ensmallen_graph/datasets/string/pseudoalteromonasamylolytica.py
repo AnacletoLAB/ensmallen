@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasAmylolytica.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas amylolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasAmylolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasAmylolytica graph.
+    """Return new instance of the Pseudoalteromonas amylolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasAmylolytica(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasAmylolytica graph.
+    Instace of Pseudoalteromonas amylolytica graph.
 
 	References
 	---------------------

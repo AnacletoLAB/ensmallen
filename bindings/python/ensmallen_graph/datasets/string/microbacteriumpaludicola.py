@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumPaludicola.
+This file offers the methods to automatically retrieve the graph Microbacterium paludicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumPaludicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumPaludicola graph.
+    """Return new instance of the Microbacterium paludicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumPaludicola(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumPaludicola graph.
+    Instace of Microbacterium paludicola graph.
 
 	References
 	---------------------

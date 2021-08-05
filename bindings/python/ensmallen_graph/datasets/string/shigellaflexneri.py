@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShigellaFlexneri.
+This file offers the methods to automatically retrieve the graph Shigella flexneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShigellaFlexneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShigellaFlexneri graph.
+    """Return new instance of the Shigella flexneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShigellaFlexneri(
 
     Returns
     -----------------------
-    Instace of ShigellaFlexneri graph.
+    Instace of Shigella flexneri graph.
 
 	References
 	---------------------

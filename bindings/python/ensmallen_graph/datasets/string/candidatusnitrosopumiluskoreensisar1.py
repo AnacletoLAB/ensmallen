@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosopumilusKoreensisAr1.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosopumilus koreensis AR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosopumilusKoreensisAr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosopumilusKoreensisAr1 graph.
+    """Return new instance of the Candidatus Nitrosopumilus koreensis AR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosopumilusKoreensisAr1(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosopumilusKoreensisAr1 graph.
+    Instace of Candidatus Nitrosopumilus koreensis AR1 graph.
 
 	References
 	---------------------

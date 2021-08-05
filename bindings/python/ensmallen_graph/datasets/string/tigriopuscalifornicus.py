@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TigriopusCalifornicus.
+This file offers the methods to automatically retrieve the graph Tigriopus californicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TigriopusCalifornicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TigriopusCalifornicus graph.
+    """Return new instance of the Tigriopus californicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TigriopusCalifornicus(
 
     Returns
     -----------------------
-    Instace of TigriopusCalifornicus graph.
+    Instace of Tigriopus californicus graph.
 
 	References
 	---------------------

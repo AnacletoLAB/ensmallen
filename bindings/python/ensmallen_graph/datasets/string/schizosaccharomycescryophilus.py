@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizosaccharomycesCryophilus.
+This file offers the methods to automatically retrieve the graph Schizosaccharomyces cryophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizosaccharomycesCryophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizosaccharomycesCryophilus graph.
+    """Return new instance of the Schizosaccharomyces cryophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchizosaccharomycesCryophilus(
 
     Returns
     -----------------------
-    Instace of SchizosaccharomycesCryophilus graph.
+    Instace of Schizosaccharomyces cryophilus graph.
 
 	References
 	---------------------

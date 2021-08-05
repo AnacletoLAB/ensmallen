@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TorrubiellaHemipterigena.
+This file offers the methods to automatically retrieve the graph Torrubiella hemipterigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TorrubiellaHemipterigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TorrubiellaHemipterigena graph.
+    """Return new instance of the Torrubiella hemipterigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TorrubiellaHemipterigena(
 
     Returns
     -----------------------
-    Instace of TorrubiellaHemipterigena graph.
+    Instace of Torrubiella hemipterigena graph.
 
 	References
 	---------------------

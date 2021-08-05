@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeferrisomaCamini.
+This file offers the methods to automatically retrieve the graph Deferrisoma camini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeferrisomaCamini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeferrisomaCamini graph.
+    """Return new instance of the Deferrisoma camini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeferrisomaCamini(
 
     Returns
     -----------------------
-    Instace of DeferrisomaCamini graph.
+    Instace of Deferrisoma camini graph.
 
 	References
 	---------------------

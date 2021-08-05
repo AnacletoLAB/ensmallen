@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumChoerinum.
+This file offers the methods to automatically retrieve the graph Bifidobacterium choerinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumChoerinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumChoerinum graph.
+    """Return new instance of the Bifidobacterium choerinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumChoerinum(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumChoerinum graph.
+    Instace of Bifidobacterium choerinum graph.
 
 	References
 	---------------------

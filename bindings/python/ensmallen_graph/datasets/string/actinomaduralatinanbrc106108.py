@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraLatinaNbrc106108.
+This file offers the methods to automatically retrieve the graph Actinomadura latina NBRC 106108.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraLatinaNbrc106108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraLatinaNbrc106108 graph.
+    """Return new instance of the Actinomadura latina NBRC 106108 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomaduraLatinaNbrc106108(
 
     Returns
     -----------------------
-    Instace of ActinomaduraLatinaNbrc106108 graph.
+    Instace of Actinomadura latina NBRC 106108 graph.
 
 	References
 	---------------------

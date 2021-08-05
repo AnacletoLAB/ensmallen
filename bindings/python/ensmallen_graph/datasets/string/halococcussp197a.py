@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusSp197a.
+This file offers the methods to automatically retrieve the graph Halococcus sp. 197A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusSp197a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusSp197a graph.
+    """Return new instance of the Halococcus sp. 197A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalococcusSp197a(
 
     Returns
     -----------------------
-    Instace of HalococcusSp197a graph.
+    Instace of Halococcus sp. 197A graph.
 
 	References
 	---------------------

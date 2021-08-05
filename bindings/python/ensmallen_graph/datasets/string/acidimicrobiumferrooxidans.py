@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimicrobiumFerrooxidans.
+This file offers the methods to automatically retrieve the graph Acidimicrobium ferrooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidimicrobiumFerrooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimicrobiumFerrooxidans graph.
+    """Return new instance of the Acidimicrobium ferrooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidimicrobiumFerrooxidans(
 
     Returns
     -----------------------
-    Instace of AcidimicrobiumFerrooxidans graph.
+    Instace of Acidimicrobium ferrooxidans graph.
 
 	References
 	---------------------

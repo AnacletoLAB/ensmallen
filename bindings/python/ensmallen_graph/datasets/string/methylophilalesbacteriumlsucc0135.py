@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilalesBacteriumLsucc0135.
+This file offers the methods to automatically retrieve the graph Methylophilales bacterium LSUCC0135.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilalesBacteriumLsucc0135(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilalesBacteriumLsucc0135 graph.
+    """Return new instance of the Methylophilales bacterium LSUCC0135 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylophilalesBacteriumLsucc0135(
 
     Returns
     -----------------------
-    Instace of MethylophilalesBacteriumLsucc0135 graph.
+    Instace of Methylophilales bacterium LSUCC0135 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioPaciniiDsm19139.
+This file offers the methods to automatically retrieve the graph Vibrio pacinii DSM 19139.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioPaciniiDsm19139(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioPaciniiDsm19139 graph.
+    """Return new instance of the Vibrio pacinii DSM 19139 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioPaciniiDsm19139(
 
     Returns
     -----------------------
-    Instace of VibrioPaciniiDsm19139 graph.
+    Instace of Vibrio pacinii DSM 19139 graph.
 
 	References
 	---------------------

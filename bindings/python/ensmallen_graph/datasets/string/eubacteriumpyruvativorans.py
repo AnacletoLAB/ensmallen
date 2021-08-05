@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumPyruvativorans.
+This file offers the methods to automatically retrieve the graph Eubacterium pyruvativorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumPyruvativorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumPyruvativorans graph.
+    """Return new instance of the Eubacterium pyruvativorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumPyruvativorans(
 
     Returns
     -----------------------
-    Instace of EubacteriumPyruvativorans graph.
+    Instace of Eubacterium pyruvativorans graph.
 
 	References
 	---------------------

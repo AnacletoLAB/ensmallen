@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSpAl1.
+This file offers the methods to automatically retrieve the graph Staphylococcus sp. AL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSpAl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSpAl1 graph.
+    """Return new instance of the Staphylococcus sp. AL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusSpAl1(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSpAl1 graph.
+    Instace of Staphylococcus sp. AL1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusThermophilusLmd9.
+This file offers the methods to automatically retrieve the graph Streptococcus thermophilus LMD9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusThermophilusLmd9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusThermophilusLmd9 graph.
+    """Return new instance of the Streptococcus thermophilus LMD9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusThermophilusLmd9(
 
     Returns
     -----------------------
-    Instace of StreptococcusThermophilusLmd9 graph.
+    Instace of Streptococcus thermophilus LMD9 graph.
 
 	References
 	---------------------

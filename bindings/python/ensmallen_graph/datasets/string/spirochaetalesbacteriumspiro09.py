@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetalesBacteriumSpiro09.
+This file offers the methods to automatically retrieve the graph Spirochaetales bacterium Spiro_09.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetalesBacteriumSpiro09(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetalesBacteriumSpiro09 graph.
+    """Return new instance of the Spirochaetales bacterium Spiro_09 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetalesBacteriumSpiro09(
 
     Returns
     -----------------------
-    Instace of SpirochaetalesBacteriumSpiro09 graph.
+    Instace of Spirochaetales bacterium Spiro_09 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioclavaDalianensis.
+This file offers the methods to automatically retrieve the graph Thioclava dalianensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioclavaDalianensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioclavaDalianensis graph.
+    """Return new instance of the Thioclava dalianensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioclavaDalianensis(
 
     Returns
     -----------------------
-    Instace of ThioclavaDalianensis graph.
+    Instace of Thioclava dalianensis graph.
 
 	References
 	---------------------

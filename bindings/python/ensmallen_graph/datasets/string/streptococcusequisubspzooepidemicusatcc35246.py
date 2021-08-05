@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusEquiSubspZooepidemicusAtcc35246.
+This file offers the methods to automatically retrieve the graph Streptococcus equi subsp. zooepidemicus ATCC 35246.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusEquiSubspZooepidemicusAtcc35246(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusEquiSubspZooepidemicusAtcc35246 graph.
+    """Return new instance of the Streptococcus equi subsp. zooepidemicus ATCC 35246 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusEquiSubspZooepidemicusAtcc35246(
 
     Returns
     -----------------------
-    Instace of StreptococcusEquiSubspZooepidemicusAtcc35246 graph.
+    Instace of Streptococcus equi subsp. zooepidemicus ATCC 35246 graph.
 
 	References
 	---------------------

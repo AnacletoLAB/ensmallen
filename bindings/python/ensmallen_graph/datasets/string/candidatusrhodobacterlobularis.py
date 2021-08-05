@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRhodobacterLobularis.
+This file offers the methods to automatically retrieve the graph Candidatus Rhodobacter lobularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRhodobacterLobularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRhodobacterLobularis graph.
+    """Return new instance of the Candidatus Rhodobacter lobularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRhodobacterLobularis(
 
     Returns
     -----------------------
-    Instace of CandidatusRhodobacterLobularis graph.
+    Instace of Candidatus Rhodobacter lobularis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisMacrogoltabida.
+This file offers the methods to automatically retrieve the graph Sphingopyxis macrogoltabida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisMacrogoltabida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisMacrogoltabida graph.
+    """Return new instance of the Sphingopyxis macrogoltabida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingopyxisMacrogoltabida(
 
     Returns
     -----------------------
-    Instace of SphingopyxisMacrogoltabida graph.
+    Instace of Sphingopyxis macrogoltabida graph.
 
 	References
 	---------------------

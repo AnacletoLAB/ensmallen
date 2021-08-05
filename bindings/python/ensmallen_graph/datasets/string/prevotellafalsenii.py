@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaFalsenii.
+This file offers the methods to automatically retrieve the graph Prevotella falsenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaFalsenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaFalsenii graph.
+    """Return new instance of the Prevotella falsenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaFalsenii(
 
     Returns
     -----------------------
-    Instace of PrevotellaFalsenii graph.
+    Instace of Prevotella falsenii graph.
 
 	References
 	---------------------

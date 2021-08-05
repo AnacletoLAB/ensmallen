@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorhodospiraHalochlorisStrA.
+This file offers the methods to automatically retrieve the graph Halorhodospira halochloris str. A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorhodospiraHalochlorisStrA(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorhodospiraHalochlorisStrA graph.
+    """Return new instance of the Halorhodospira halochloris str. A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorhodospiraHalochlorisStrA(
 
     Returns
     -----------------------
-    Instace of HalorhodospiraHalochlorisStrA graph.
+    Instace of Halorhodospira halochloris str. A graph.
 
 	References
 	---------------------

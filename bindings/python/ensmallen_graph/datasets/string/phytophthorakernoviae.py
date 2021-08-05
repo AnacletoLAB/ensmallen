@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraKernoviae.
+This file offers the methods to automatically retrieve the graph Phytophthora kernoviae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraKernoviae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraKernoviae graph.
+    """Return new instance of the Phytophthora kernoviae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytophthoraKernoviae(
 
     Returns
     -----------------------
-    Instace of PhytophthoraKernoviae graph.
+    Instace of Phytophthora kernoviae graph.
 
 	References
 	---------------------

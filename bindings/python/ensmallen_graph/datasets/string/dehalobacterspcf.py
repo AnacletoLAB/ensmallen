@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalobacterSpCf.
+This file offers the methods to automatically retrieve the graph Dehalobacter sp. CF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalobacterSpCf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalobacterSpCf graph.
+    """Return new instance of the Dehalobacter sp. CF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DehalobacterSpCf(
 
     Returns
     -----------------------
-    Instace of DehalobacterSpCf graph.
+    Instace of Dehalobacter sp. CF graph.
 
 	References
 	---------------------

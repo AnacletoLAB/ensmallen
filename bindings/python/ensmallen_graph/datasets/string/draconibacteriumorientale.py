@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DraconibacteriumOrientale.
+This file offers the methods to automatically retrieve the graph Draconibacterium orientale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DraconibacteriumOrientale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DraconibacteriumOrientale graph.
+    """Return new instance of the Draconibacterium orientale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DraconibacteriumOrientale(
 
     Returns
     -----------------------
-    Instace of DraconibacteriumOrientale graph.
+    Instace of Draconibacterium orientale graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusSolfataricus.
+This file offers the methods to automatically retrieve the graph Sulfolobus solfataricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusSolfataricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusSolfataricus graph.
+    """Return new instance of the Sulfolobus solfataricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfolobusSolfataricus(
 
     Returns
     -----------------------
-    Instace of SulfolobusSolfataricus graph.
+    Instace of Sulfolobus solfataricus graph.
 
 	References
 	---------------------

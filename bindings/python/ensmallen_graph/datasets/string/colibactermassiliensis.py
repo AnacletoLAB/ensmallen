@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColibacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Colibacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColibacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColibacterMassiliensis graph.
+    """Return new instance of the Colibacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColibacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of ColibacterMassiliensis graph.
+    Instace of Colibacter massiliensis graph.
 
 	References
 	---------------------

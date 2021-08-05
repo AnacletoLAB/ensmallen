@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AerococcusSpHmsc06h08.
+This file offers the methods to automatically retrieve the graph Aerococcus sp. HMSC06H08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AerococcusSpHmsc06h08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AerococcusSpHmsc06h08 graph.
+    """Return new instance of the Aerococcus sp. HMSC06H08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AerococcusSpHmsc06h08(
 
     Returns
     -----------------------
-    Instace of AerococcusSpHmsc06h08 graph.
+    Instace of Aerococcus sp. HMSC06H08 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptosporangiumAurantiacum.
+This file offers the methods to automatically retrieve the graph Cryptosporangium aurantiacum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptosporangiumAurantiacum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptosporangiumAurantiacum graph.
+    """Return new instance of the Cryptosporangium aurantiacum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptosporangiumAurantiacum(
 
     Returns
     -----------------------
-    Instace of CryptosporangiumAurantiacum graph.
+    Instace of Cryptosporangium aurantiacum graph.
 
 	References
 	---------------------

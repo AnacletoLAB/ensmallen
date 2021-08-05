@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaSpCcs1.
+This file offers the methods to automatically retrieve the graph Jannaschia sp. CCS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaSpCcs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaSpCcs1 graph.
+    """Return new instance of the Jannaschia sp. CCS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JannaschiaSpCcs1(
 
     Returns
     -----------------------
-    Instace of JannaschiaSpCcs1 graph.
+    Instace of Jannaschia sp. CCS1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrdosporaColligataOc4.
+This file offers the methods to automatically retrieve the graph Ordospora colligata OC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrdosporaColligataOc4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrdosporaColligataOc4 graph.
+    """Return new instance of the Ordospora colligata OC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrdosporaColligataOc4(
 
     Returns
     -----------------------
-    Instace of OrdosporaColligataOc4 graph.
+    Instace of Ordospora colligata OC4 graph.
 
 	References
 	---------------------

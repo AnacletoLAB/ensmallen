@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoplanusPetrolearius.
+This file offers the methods to automatically retrieve the graph Methanoplanus petrolearius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoplanusPetrolearius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoplanusPetrolearius graph.
+    """Return new instance of the Methanoplanus petrolearius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanoplanusPetrolearius(
 
     Returns
     -----------------------
-    Instace of MethanoplanusPetrolearius graph.
+    Instace of Methanoplanus petrolearius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BubalusBubalis.
+This file offers the methods to automatically retrieve the graph Bubalus bubalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BubalusBubalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BubalusBubalis graph.
+    """Return new instance of the Bubalus bubalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BubalusBubalis(
 
     Returns
     -----------------------
-    Instace of BubalusBubalis graph.
+    Instace of Bubalus bubalis graph.
 
 	References
 	---------------------

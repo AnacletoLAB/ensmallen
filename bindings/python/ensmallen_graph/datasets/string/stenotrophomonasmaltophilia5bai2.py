@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasMaltophilia5bai2.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas maltophilia 5BAI2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasMaltophilia5bai2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasMaltophilia5bai2 graph.
+    """Return new instance of the Stenotrophomonas maltophilia 5BAI2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StenotrophomonasMaltophilia5bai2(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasMaltophilia5bai2 graph.
+    Instace of Stenotrophomonas maltophilia 5BAI2 graph.
 
 	References
 	---------------------

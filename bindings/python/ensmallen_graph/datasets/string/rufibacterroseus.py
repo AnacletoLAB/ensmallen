@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RufibacterRoseus.
+This file offers the methods to automatically retrieve the graph Rufibacter roseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RufibacterRoseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RufibacterRoseus graph.
+    """Return new instance of the Rufibacter roseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RufibacterRoseus(
 
     Returns
     -----------------------
-    Instace of RufibacterRoseus graph.
+    Instace of Rufibacter roseus graph.
 
 	References
 	---------------------

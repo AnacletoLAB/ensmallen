@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioCalviensis.
+This file offers the methods to automatically retrieve the graph Enterovibrio calviensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioCalviensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioCalviensis graph.
+    """Return new instance of the Enterovibrio calviensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterovibrioCalviensis(
 
     Returns
     -----------------------
-    Instace of EnterovibrioCalviensis graph.
+    Instace of Enterovibrio calviensis graph.
 
 	References
 	---------------------

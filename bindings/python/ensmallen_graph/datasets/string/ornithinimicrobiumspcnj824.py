@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithinimicrobiumSpCnj824.
+This file offers the methods to automatically retrieve the graph Ornithinimicrobium sp. CNJ-824.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithinimicrobiumSpCnj824(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithinimicrobiumSpCnj824 graph.
+    """Return new instance of the Ornithinimicrobium sp. CNJ-824 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OrnithinimicrobiumSpCnj824(
 
     Returns
     -----------------------
-    Instace of OrnithinimicrobiumSpCnj824 graph.
+    Instace of Ornithinimicrobium sp. CNJ-824 graph.
 
 	References
 	---------------------

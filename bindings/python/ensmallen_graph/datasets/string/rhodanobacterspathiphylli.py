@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpathiphylli.
+This file offers the methods to automatically retrieve the graph Rhodanobacter spathiphylli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpathiphylli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpathiphylli graph.
+    """Return new instance of the Rhodanobacter spathiphylli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodanobacterSpathiphylli(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpathiphylli graph.
+    Instace of Rhodanobacter spathiphylli graph.
 
 	References
 	---------------------

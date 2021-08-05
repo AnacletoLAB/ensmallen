@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpUsba49.
+This file offers the methods to automatically retrieve the graph Clostridium sp. USBA 49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpUsba49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpUsba49 graph.
+    """Return new instance of the Clostridium sp. USBA 49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpUsba49(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpUsba49 graph.
+    Instace of Clostridium sp. USBA 49 graph.
 
 	References
 	---------------------

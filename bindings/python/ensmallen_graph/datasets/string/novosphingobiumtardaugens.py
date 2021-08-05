@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumTardaugens.
+This file offers the methods to automatically retrieve the graph Novosphingobium tardaugens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumTardaugens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumTardaugens graph.
+    """Return new instance of the Novosphingobium tardaugens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NovosphingobiumTardaugens(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumTardaugens graph.
+    Instace of Novosphingobium tardaugens graph.
 
 	References
 	---------------------

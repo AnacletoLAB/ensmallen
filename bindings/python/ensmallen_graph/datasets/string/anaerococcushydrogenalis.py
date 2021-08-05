@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusHydrogenalis.
+This file offers the methods to automatically retrieve the graph Anaerococcus hydrogenalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusHydrogenalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusHydrogenalis graph.
+    """Return new instance of the Anaerococcus hydrogenalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusHydrogenalis(
 
     Returns
     -----------------------
-    Instace of AnaerococcusHydrogenalis graph.
+    Instace of Anaerococcus hydrogenalis graph.
 
 	References
 	---------------------

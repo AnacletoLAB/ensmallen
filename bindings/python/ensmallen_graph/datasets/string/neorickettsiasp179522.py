@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeorickettsiaSp179522.
+This file offers the methods to automatically retrieve the graph Neorickettsia sp. 179522.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeorickettsiaSp179522(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeorickettsiaSp179522 graph.
+    """Return new instance of the Neorickettsia sp. 179522 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeorickettsiaSp179522(
 
     Returns
     -----------------------
-    Instace of NeorickettsiaSp179522 graph.
+    Instace of Neorickettsia sp. 179522 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusPlakortidis.
+This file offers the methods to automatically retrieve the graph Planococcus plakortidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusPlakortidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusPlakortidis graph.
+    """Return new instance of the Planococcus plakortidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusPlakortidis(
 
     Returns
     -----------------------
-    Instace of PlanococcusPlakortidis graph.
+    Instace of Planococcus plakortidis graph.
 
 	References
 	---------------------

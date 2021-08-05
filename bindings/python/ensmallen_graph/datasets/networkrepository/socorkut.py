@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocOrkut.
+This file offers the methods to automatically retrieve the graph soc-orkut.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def SocOrkut(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocOrkut graph.
+    """Return new instance of the soc-orkut graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def SocOrkut(
 
     Returns
     -----------------------
-    Instace of SocOrkut graph.
+    Instace of soc-orkut graph.
 
 	References
 	---------------------

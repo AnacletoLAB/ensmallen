@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentibacterGenomosp1.
+This file offers the methods to automatically retrieve the graph Rodentibacter genomosp. 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentibacterGenomosp1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentibacterGenomosp1 graph.
+    """Return new instance of the Rodentibacter genomosp. 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentibacterGenomosp1(
 
     Returns
     -----------------------
-    Instace of RodentibacterGenomosp1 graph.
+    Instace of Rodentibacter genomosp. 1 graph.
 
 	References
 	---------------------

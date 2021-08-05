@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeonectriaDitissima.
+This file offers the methods to automatically retrieve the graph Neonectria ditissima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeonectriaDitissima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeonectriaDitissima graph.
+    """Return new instance of the Neonectria ditissima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeonectriaDitissima(
 
     Returns
     -----------------------
-    Instace of NeonectriaDitissima graph.
+    Instace of Neonectria ditissima graph.
 
 	References
 	---------------------

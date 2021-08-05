@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoldemaniaSpMarseilleP2844.
+This file offers the methods to automatically retrieve the graph Holdemania sp. Marseille-P2844.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoldemaniaSpMarseilleP2844(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoldemaniaSpMarseilleP2844 graph.
+    """Return new instance of the Holdemania sp. Marseille-P2844 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HoldemaniaSpMarseilleP2844(
 
     Returns
     -----------------------
-    Instace of HoldemaniaSpMarseilleP2844 graph.
+    Instace of Holdemania sp. Marseille-P2844 graph.
 
 	References
 	---------------------

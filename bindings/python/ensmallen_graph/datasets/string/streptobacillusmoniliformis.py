@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptobacillusMoniliformis.
+This file offers the methods to automatically retrieve the graph Streptobacillus moniliformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptobacillusMoniliformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptobacillusMoniliformis graph.
+    """Return new instance of the Streptobacillus moniliformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptobacillusMoniliformis(
 
     Returns
     -----------------------
-    Instace of StreptobacillusMoniliformis graph.
+    Instace of Streptobacillus moniliformis graph.
 
 	References
 	---------------------

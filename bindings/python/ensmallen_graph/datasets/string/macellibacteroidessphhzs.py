@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacellibacteroidesSpHhZs.
+This file offers the methods to automatically retrieve the graph Macellibacteroides sp. HH-ZS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacellibacteroidesSpHhZs(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacellibacteroidesSpHhZs graph.
+    """Return new instance of the Macellibacteroides sp. HH-ZS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MacellibacteroidesSpHhZs(
 
     Returns
     -----------------------
-    Instace of MacellibacteroidesSpHhZs graph.
+    Instace of Macellibacteroides sp. HH-ZS graph.
 
 	References
 	---------------------

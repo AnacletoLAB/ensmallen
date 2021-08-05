@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LitoreibacterJanthinus.
+This file offers the methods to automatically retrieve the graph Litoreibacter janthinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LitoreibacterJanthinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LitoreibacterJanthinus graph.
+    """Return new instance of the Litoreibacter janthinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LitoreibacterJanthinus(
 
     Returns
     -----------------------
-    Instace of LitoreibacterJanthinus graph.
+    Instace of Litoreibacter janthinus graph.
 
 	References
 	---------------------

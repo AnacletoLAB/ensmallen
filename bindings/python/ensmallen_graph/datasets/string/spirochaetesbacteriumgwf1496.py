@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetesBacteriumGwf1496.
+This file offers the methods to automatically retrieve the graph Spirochaetes bacterium GWF1_49_6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetesBacteriumGwf1496(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetesBacteriumGwf1496 graph.
+    """Return new instance of the Spirochaetes bacterium GWF1_49_6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetesBacteriumGwf1496(
 
     Returns
     -----------------------
-    Instace of SpirochaetesBacteriumGwf1496 graph.
+    Instace of Spirochaetes bacterium GWF1_49_6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Adaptive.
+This file offers the methods to automatically retrieve the graph adaptive.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Adaptive(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Adaptive graph.
+    """Return new instance of the adaptive graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Adaptive(
 
     Returns
     -----------------------
-    Instace of Adaptive graph.
+    Instace of adaptive graph.
 
 	References
 	---------------------

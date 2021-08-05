@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiO157H7StrSakai.
+This file offers the methods to automatically retrieve the graph Escherichia coli O157:H7 str. Sakai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiO157H7StrSakai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiO157H7StrSakai graph.
+    """Return new instance of the Escherichia coli O157:H7 str. Sakai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EscherichiaColiO157H7StrSakai(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiO157H7StrSakai graph.
+    Instace of Escherichia coli O157:H7 str. Sakai graph.
 
 	References
 	---------------------

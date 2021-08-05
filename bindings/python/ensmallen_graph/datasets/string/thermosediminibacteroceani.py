@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosediminibacterOceani.
+This file offers the methods to automatically retrieve the graph Thermosediminibacter oceani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosediminibacterOceani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosediminibacterOceani graph.
+    """Return new instance of the Thermosediminibacter oceani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermosediminibacterOceani(
 
     Returns
     -----------------------
-    Instace of ThermosediminibacterOceani graph.
+    Instace of Thermosediminibacter oceani graph.
 
 	References
 	---------------------

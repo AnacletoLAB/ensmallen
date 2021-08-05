@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumFabrum.
+This file offers the methods to automatically retrieve the graph Agrobacterium fabrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumFabrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumFabrum graph.
+    """Return new instance of the Agrobacterium fabrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumFabrum(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumFabrum graph.
+    Instace of Agrobacterium fabrum graph.
 
 	References
 	---------------------

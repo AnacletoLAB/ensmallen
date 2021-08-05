@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumGwe24063.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium GWE2_40_63.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumGwe24063(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumGwe24063 graph.
+    """Return new instance of the Bacteroidetes bacterium GWE2_40_63 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumGwe24063(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumGwe24063 graph.
+    Instace of Bacteroidetes bacterium GWE2_40_63 graph.
 
 	References
 	---------------------

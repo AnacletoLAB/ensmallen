@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAnginosusDora7.
+This file offers the methods to automatically retrieve the graph Streptococcus anginosus DORA7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAnginosusDora7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAnginosusDora7 graph.
+    """Return new instance of the Streptococcus anginosus DORA7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAnginosusDora7(
 
     Returns
     -----------------------
-    Instace of StreptococcusAnginosusDora7 graph.
+    Instace of Streptococcus anginosus DORA7 graph.
 
 	References
 	---------------------

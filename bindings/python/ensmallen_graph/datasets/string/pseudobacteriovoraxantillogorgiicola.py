@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudobacteriovoraxAntillogorgiicola.
+This file offers the methods to automatically retrieve the graph Pseudobacteriovorax antillogorgiicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudobacteriovoraxAntillogorgiicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudobacteriovoraxAntillogorgiicola graph.
+    """Return new instance of the Pseudobacteriovorax antillogorgiicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudobacteriovoraxAntillogorgiicola(
 
     Returns
     -----------------------
-    Instace of PseudobacteriovoraxAntillogorgiicola graph.
+    Instace of Pseudobacteriovorax antillogorgiicola graph.
 
 	References
 	---------------------

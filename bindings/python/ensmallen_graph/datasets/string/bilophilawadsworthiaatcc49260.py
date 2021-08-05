@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BilophilaWadsworthiaAtcc49260.
+This file offers the methods to automatically retrieve the graph Bilophila wadsworthia ATCC49260.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BilophilaWadsworthiaAtcc49260(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BilophilaWadsworthiaAtcc49260 graph.
+    """Return new instance of the Bilophila wadsworthia ATCC49260 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BilophilaWadsworthiaAtcc49260(
 
     Returns
     -----------------------
-    Instace of BilophilaWadsworthiaAtcc49260 graph.
+    Instace of Bilophila wadsworthia ATCC49260 graph.
 
 	References
 	---------------------

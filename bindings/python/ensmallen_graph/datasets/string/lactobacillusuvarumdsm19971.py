@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusUvarumDsm19971.
+This file offers the methods to automatically retrieve the graph Lactobacillus uvarum DSM 19971.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusUvarumDsm19971(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusUvarumDsm19971 graph.
+    """Return new instance of the Lactobacillus uvarum DSM 19971 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusUvarumDsm19971(
 
     Returns
     -----------------------
-    Instace of LactobacillusUvarumDsm19971 graph.
+    Instace of Lactobacillus uvarum DSM 19971 graph.
 
 	References
 	---------------------

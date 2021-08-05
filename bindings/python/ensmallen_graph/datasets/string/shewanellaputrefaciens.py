@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaPutrefaciens.
+This file offers the methods to automatically retrieve the graph Shewanella putrefaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaPutrefaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaPutrefaciens graph.
+    """Return new instance of the Shewanella putrefaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaPutrefaciens(
 
     Returns
     -----------------------
-    Instace of ShewanellaPutrefaciens graph.
+    Instace of Shewanella putrefaciens graph.
 
 	References
 	---------------------

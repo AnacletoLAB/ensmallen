@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasStellipolaris.
+This file offers the methods to automatically retrieve the graph Alteromonas stellipolaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasStellipolaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasStellipolaris graph.
+    """Return new instance of the Alteromonas stellipolaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasStellipolaris(
 
     Returns
     -----------------------
-    Instace of AlteromonasStellipolaris graph.
+    Instace of Alteromonas stellipolaris graph.
 
 	References
 	---------------------

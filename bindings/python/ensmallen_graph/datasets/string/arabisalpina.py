@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArabisAlpina.
+This file offers the methods to automatically retrieve the graph Arabis alpina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArabisAlpina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArabisAlpina graph.
+    """Return new instance of the Arabis alpina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArabisAlpina(
 
     Returns
     -----------------------
-    Instace of ArabisAlpina graph.
+    Instace of Arabis alpina graph.
 
 	References
 	---------------------

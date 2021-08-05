@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterAkesuensis.
+This file offers the methods to automatically retrieve the graph Pontibacter akesuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterAkesuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterAkesuensis graph.
+    """Return new instance of the Pontibacter akesuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterAkesuensis(
 
     Returns
     -----------------------
-    Instace of PontibacterAkesuensis graph.
+    Instace of Pontibacter akesuensis graph.
 
 	References
 	---------------------

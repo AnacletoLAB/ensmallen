@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerocolumnaXylanovoransDsm12503.
+This file offers the methods to automatically retrieve the graph Anaerocolumna xylanovorans DSM 12503.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerocolumnaXylanovoransDsm12503(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerocolumnaXylanovoransDsm12503 graph.
+    """Return new instance of the Anaerocolumna xylanovorans DSM 12503 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerocolumnaXylanovoransDsm12503(
 
     Returns
     -----------------------
-    Instace of AnaerocolumnaXylanovoransDsm12503 graph.
+    Instace of Anaerocolumna xylanovorans DSM 12503 graph.
 
 	References
 	---------------------

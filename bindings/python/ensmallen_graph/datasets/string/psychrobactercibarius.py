@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterCibarius.
+This file offers the methods to automatically retrieve the graph Psychrobacter cibarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterCibarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterCibarius graph.
+    """Return new instance of the Psychrobacter cibarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterCibarius(
 
     Returns
     -----------------------
-    Instace of PsychrobacterCibarius graph.
+    Instace of Psychrobacter cibarius graph.
 
 	References
 	---------------------

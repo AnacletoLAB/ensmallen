@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumAntarcticum.
+This file offers the methods to automatically retrieve the graph Flavobacterium antarcticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumAntarcticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumAntarcticum graph.
+    """Return new instance of the Flavobacterium antarcticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumAntarcticum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumAntarcticum graph.
+    Instace of Flavobacterium antarcticum graph.
 
 	References
 	---------------------

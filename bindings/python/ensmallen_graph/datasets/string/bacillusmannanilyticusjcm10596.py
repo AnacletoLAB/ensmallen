@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMannanilyticusJcm10596.
+This file offers the methods to automatically retrieve the graph Bacillus mannanilyticus JCM 10596.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMannanilyticusJcm10596(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMannanilyticusJcm10596 graph.
+    """Return new instance of the Bacillus mannanilyticus JCM 10596 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusMannanilyticusJcm10596(
 
     Returns
     -----------------------
-    Instace of BacillusMannanilyticusJcm10596 graph.
+    Instace of Bacillus mannanilyticus JCM 10596 graph.
 
 	References
 	---------------------

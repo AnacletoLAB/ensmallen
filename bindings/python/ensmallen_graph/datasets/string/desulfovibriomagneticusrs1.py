@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioMagneticusRs1.
+This file offers the methods to automatically retrieve the graph Desulfovibrio magneticus RS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioMagneticusRs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioMagneticusRs1 graph.
+    """Return new instance of the Desulfovibrio magneticus RS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioMagneticusRs1(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioMagneticusRs1 graph.
+    Instace of Desulfovibrio magneticus RS1 graph.
 
 	References
 	---------------------

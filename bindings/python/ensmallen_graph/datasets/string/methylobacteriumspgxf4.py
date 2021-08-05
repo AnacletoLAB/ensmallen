@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSpGxf4.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. GXF4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSpGxf4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSpGxf4 graph.
+    """Return new instance of the Methylobacterium sp. GXF4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumSpGxf4(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSpGxf4 graph.
+    Instace of Methylobacterium sp. GXF4 graph.
 
 	References
 	---------------------

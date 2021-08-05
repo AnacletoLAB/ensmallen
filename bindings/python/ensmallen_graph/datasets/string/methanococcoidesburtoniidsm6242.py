@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcoidesBurtoniiDsm6242.
+This file offers the methods to automatically retrieve the graph Methanococcoides burtonii DSM 6242.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcoidesBurtoniiDsm6242(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcoidesBurtoniiDsm6242 graph.
+    """Return new instance of the Methanococcoides burtonii DSM 6242 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanococcoidesBurtoniiDsm6242(
 
     Returns
     -----------------------
-    Instace of MethanococcoidesBurtoniiDsm6242 graph.
+    Instace of Methanococcoides burtonii DSM 6242 graph.
 
 	References
 	---------------------

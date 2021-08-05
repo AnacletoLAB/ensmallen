@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpZor0019.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. ZOR0019.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpZor0019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpZor0019 graph.
+    """Return new instance of the Microbacterium sp. ZOR0019 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpZor0019(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpZor0019 graph.
+    Instace of Microbacterium sp. ZOR0019 graph.
 
 	References
 	---------------------

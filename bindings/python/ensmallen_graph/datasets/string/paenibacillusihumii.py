@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusIhumii.
+This file offers the methods to automatically retrieve the graph Paenibacillus ihumii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusIhumii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusIhumii graph.
+    """Return new instance of the Paenibacillus ihumii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusIhumii(
 
     Returns
     -----------------------
-    Instace of PaenibacillusIhumii graph.
+    Instace of Paenibacillus ihumii graph.
 
 	References
 	---------------------

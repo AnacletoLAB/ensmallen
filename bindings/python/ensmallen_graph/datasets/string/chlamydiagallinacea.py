@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaGallinacea.
+This file offers the methods to automatically retrieve the graph Chlamydia gallinacea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaGallinacea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaGallinacea graph.
+    """Return new instance of the Chlamydia gallinacea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaGallinacea(
 
     Returns
     -----------------------
-    Instace of ChlamydiaGallinacea graph.
+    Instace of Chlamydia gallinacea graph.
 
 	References
 	---------------------

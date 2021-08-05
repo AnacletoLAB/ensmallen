@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoritellaDasanensis.
+This file offers the methods to automatically retrieve the graph Moritella dasanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoritellaDasanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoritellaDasanensis graph.
+    """Return new instance of the Moritella dasanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoritellaDasanensis(
 
     Returns
     -----------------------
-    Instace of MoritellaDasanensis graph.
+    Instace of Moritella dasanensis graph.
 
 	References
 	---------------------

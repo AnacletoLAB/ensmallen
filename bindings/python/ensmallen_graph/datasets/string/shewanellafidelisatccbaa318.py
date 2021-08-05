@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaFidelisAtccBaa318.
+This file offers the methods to automatically retrieve the graph Shewanella fidelis ATCC BAA-318.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaFidelisAtccBaa318(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaFidelisAtccBaa318 graph.
+    """Return new instance of the Shewanella fidelis ATCC BAA-318 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaFidelisAtccBaa318(
 
     Returns
     -----------------------
-    Instace of ShewanellaFidelisAtccBaa318 graph.
+    Instace of Shewanella fidelis ATCC BAA-318 graph.
 
 	References
 	---------------------

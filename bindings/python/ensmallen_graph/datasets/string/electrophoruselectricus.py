@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElectrophorusElectricus.
+This file offers the methods to automatically retrieve the graph Electrophorus electricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElectrophorusElectricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElectrophorusElectricus graph.
+    """Return new instance of the Electrophorus electricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElectrophorusElectricus(
 
     Returns
     -----------------------
-    Instace of ElectrophorusElectricus graph.
+    Instace of Electrophorus electricus graph.
 
 	References
 	---------------------

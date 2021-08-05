@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumHungaricum.
+This file offers the methods to automatically retrieve the graph Chryseobacterium hungaricum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumHungaricum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumHungaricum graph.
+    """Return new instance of the Chryseobacterium hungaricum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumHungaricum(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumHungaricum graph.
+    Instace of Chryseobacterium hungaricum graph.
 
 	References
 	---------------------

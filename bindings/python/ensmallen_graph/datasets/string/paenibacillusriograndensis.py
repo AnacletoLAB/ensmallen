@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusRiograndensis.
+This file offers the methods to automatically retrieve the graph Paenibacillus riograndensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusRiograndensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusRiograndensis graph.
+    """Return new instance of the Paenibacillus riograndensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusRiograndensis(
 
     Returns
     -----------------------
-    Instace of PaenibacillusRiograndensis graph.
+    Instace of Paenibacillus riograndensis graph.
 
 	References
 	---------------------

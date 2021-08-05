@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaGlaberrima.
+This file offers the methods to automatically retrieve the graph Oryza glaberrima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaGlaberrima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaGlaberrima graph.
+    """Return new instance of the Oryza glaberrima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryzaGlaberrima(
 
     Returns
     -----------------------
-    Instace of OryzaGlaberrima graph.
+    Instace of Oryza glaberrima graph.
 
 	References
 	---------------------

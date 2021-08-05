@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XiphophorusMaculatus.
+This file offers the methods to automatically retrieve the graph Xiphophorus maculatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XiphophorusMaculatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XiphophorusMaculatus graph.
+    """Return new instance of the Xiphophorus maculatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XiphophorusMaculatus(
 
     Returns
     -----------------------
-    Instace of XiphophorusMaculatus graph.
+    Instace of Xiphophorus maculatus graph.
 
 	References
 	---------------------

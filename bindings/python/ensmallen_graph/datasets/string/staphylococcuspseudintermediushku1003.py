@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusPseudintermediusHku1003.
+This file offers the methods to automatically retrieve the graph Staphylococcus pseudintermedius HKU10-03.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusPseudintermediusHku1003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusPseudintermediusHku1003 graph.
+    """Return new instance of the Staphylococcus pseudintermedius HKU10-03 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusPseudintermediusHku1003(
 
     Returns
     -----------------------
-    Instace of StaphylococcusPseudintermediusHku1003 graph.
+    Instace of Staphylococcus pseudintermedius HKU10-03 graph.
 
 	References
 	---------------------

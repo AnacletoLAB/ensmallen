@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbRutgers89.
+This file offers the methods to automatically retrieve the graph socfb-Rutgers89.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbRutgers89(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbRutgers89 graph.
+    """Return new instance of the socfb-Rutgers89 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbRutgers89(
 
     Returns
     -----------------------
-    Instace of SocfbRutgers89 graph.
+    Instace of socfb-Rutgers89 graph.
 
 	References
 	---------------------

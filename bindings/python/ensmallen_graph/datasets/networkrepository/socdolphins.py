@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocDolphins.
+This file offers the methods to automatically retrieve the graph soc-dolphins.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def SocDolphins(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocDolphins graph.
+    """Return new instance of the soc-dolphins graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def SocDolphins(
 
     Returns
     -----------------------
-    Instace of SocDolphins graph.
+    Instace of soc-dolphins graph.
 
 	References
 	---------------------

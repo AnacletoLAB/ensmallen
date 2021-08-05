@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferacaceaeArchaeonB1Br10E2g22.
+This file offers the methods to automatically retrieve the graph Haloferacaceae archaeon B1-Br10_E2g22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferacaceaeArchaeonB1Br10E2g22 graph.
+    """Return new instance of the Haloferacaceae archaeon B1-Br10_E2g22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaloferacaceaeArchaeonB1Br10E2g22(
 
     Returns
     -----------------------
-    Instace of HaloferacaceaeArchaeonB1Br10E2g22 graph.
+    Instace of Haloferacaceae archaeon B1-Br10_E2g22 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpPao19.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. PAO19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpPao19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpPao19 graph.
+    """Return new instance of the Arthrobacter sp. PAO19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSpPao19(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpPao19 graph.
+    Instace of Arthrobacter sp. PAO19 graph.
 
 	References
 	---------------------

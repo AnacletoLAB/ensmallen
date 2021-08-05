@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrobacteralesBacteriumFibro01.
+This file offers the methods to automatically retrieve the graph Fibrobacterales bacterium Fibro_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrobacteralesBacteriumFibro01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrobacteralesBacteriumFibro01 graph.
+    """Return new instance of the Fibrobacterales bacterium Fibro_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibrobacteralesBacteriumFibro01(
 
     Returns
     -----------------------
-    Instace of FibrobacteralesBacteriumFibro01 graph.
+    Instace of Fibrobacterales bacterium Fibro_01 graph.
 
 	References
 	---------------------

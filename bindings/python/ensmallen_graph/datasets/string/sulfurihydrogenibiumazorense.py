@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurihydrogenibiumAzorense.
+This file offers the methods to automatically retrieve the graph Sulfurihydrogenibium azorense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurihydrogenibiumAzorense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurihydrogenibiumAzorense graph.
+    """Return new instance of the Sulfurihydrogenibium azorense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurihydrogenibiumAzorense(
 
     Returns
     -----------------------
-    Instace of SulfurihydrogenibiumAzorense graph.
+    Instace of Sulfurihydrogenibium azorense graph.
 
 	References
 	---------------------

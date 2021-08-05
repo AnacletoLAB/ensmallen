@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterDaecheongensisDsm21074.
+This file offers the methods to automatically retrieve the graph Hymenobacter daecheongensis DSM 21074.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterDaecheongensisDsm21074(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterDaecheongensisDsm21074 graph.
+    """Return new instance of the Hymenobacter daecheongensis DSM 21074 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterDaecheongensisDsm21074(
 
     Returns
     -----------------------
-    Instace of HymenobacterDaecheongensisDsm21074 graph.
+    Instace of Hymenobacter daecheongensis DSM 21074 graph.
 
 	References
 	---------------------

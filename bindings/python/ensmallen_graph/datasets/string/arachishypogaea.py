@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArachisHypogaea.
+This file offers the methods to automatically retrieve the graph Arachis hypogaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArachisHypogaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArachisHypogaea graph.
+    """Return new instance of the Arachis hypogaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArachisHypogaea(
 
     Returns
     -----------------------
-    Instace of ArachisHypogaea graph.
+    Instace of Arachis hypogaea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Celegansneural.
+This file offers the methods to automatically retrieve the graph celegansneural.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Celegansneural(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Celegansneural graph.
+    """Return new instance of the celegansneural graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Celegansneural(
 
     Returns
     -----------------------
-    Instace of Celegansneural graph.
+    Instace of celegansneural graph.
 
 	References
 	---------------------

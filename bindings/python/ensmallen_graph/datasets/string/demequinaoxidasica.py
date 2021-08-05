@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaOxidasica.
+This file offers the methods to automatically retrieve the graph Demequina oxidasica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaOxidasica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaOxidasica graph.
+    """Return new instance of the Demequina oxidasica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaOxidasica(
 
     Returns
     -----------------------
-    Instace of DemequinaOxidasica graph.
+    Instace of Demequina oxidasica graph.
 
 	References
 	---------------------

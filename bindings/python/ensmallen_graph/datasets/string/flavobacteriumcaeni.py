@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCaeni.
+This file offers the methods to automatically retrieve the graph Flavobacterium caeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumCaeni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCaeni graph.
+    """Return new instance of the Flavobacterium caeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumCaeni(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCaeni graph.
+    Instace of Flavobacterium caeni graph.
 
 	References
 	---------------------

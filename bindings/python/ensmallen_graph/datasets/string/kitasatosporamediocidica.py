@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaMediocidica.
+This file offers the methods to automatically retrieve the graph Kitasatospora mediocidica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaMediocidica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaMediocidica graph.
+    """Return new instance of the Kitasatospora mediocidica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KitasatosporaMediocidica(
 
     Returns
     -----------------------
-    Instace of KitasatosporaMediocidica graph.
+    Instace of Kitasatospora mediocidica graph.
 
 	References
 	---------------------

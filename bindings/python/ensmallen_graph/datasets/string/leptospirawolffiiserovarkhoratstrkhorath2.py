@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraWolffiiSerovarKhoratStrKhoratH2.
+This file offers the methods to automatically retrieve the graph Leptospira wolffii serovar Khorat str. Khorat-H2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraWolffiiSerovarKhoratStrKhoratH2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraWolffiiSerovarKhoratStrKhoratH2 graph.
+    """Return new instance of the Leptospira wolffii serovar Khorat str. Khorat-H2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraWolffiiSerovarKhoratStrKhoratH2(
 
     Returns
     -----------------------
-    Instace of LeptospiraWolffiiSerovarKhoratStrKhoratH2 graph.
+    Instace of Leptospira wolffii serovar Khorat str. Khorat-H2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumIntracellulare.
+This file offers the methods to automatically retrieve the graph Mycobacterium intracellulare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumIntracellulare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumIntracellulare graph.
+    """Return new instance of the Mycobacterium intracellulare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumIntracellulare(
 
     Returns
     -----------------------
-    Instace of MycobacteriumIntracellulare graph.
+    Instace of Mycobacterium intracellulare graph.
 
 	References
 	---------------------

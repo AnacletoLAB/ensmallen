@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterSpDh1f.
+This file offers the methods to automatically retrieve the graph Achromobacter sp. DH1f.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterSpDh1f(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterSpDh1f graph.
+    """Return new instance of the Achromobacter sp. DH1f graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AchromobacterSpDh1f(
 
     Returns
     -----------------------
-    Instace of AchromobacterSpDh1f graph.
+    Instace of Achromobacter sp. DH1f graph.
 
 	References
 	---------------------

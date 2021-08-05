@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpOhsuiii.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. OHSUIII.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpOhsuiii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpOhsuiii graph.
+    """Return new instance of the Bradyrhizobium sp. OHSUIII graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumSpOhsuiii(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpOhsuiii graph.
+    Instace of Bradyrhizobium sp. OHSUIII graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaFrederiksenii.
+This file offers the methods to automatically retrieve the graph Yersinia frederiksenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaFrederiksenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaFrederiksenii graph.
+    """Return new instance of the Yersinia frederiksenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaFrederiksenii(
 
     Returns
     -----------------------
-    Instace of YersiniaFrederiksenii graph.
+    Instace of Yersinia frederiksenii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterKyonggiensis.
+This file offers the methods to automatically retrieve the graph Acinetobacter kyonggiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterKyonggiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterKyonggiensis graph.
+    """Return new instance of the Acinetobacter kyonggiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterKyonggiensis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterKyonggiensis graph.
+    Instace of Acinetobacter kyonggiensis graph.
 
 	References
 	---------------------

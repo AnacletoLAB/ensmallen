@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBaumanniiAtcc17978.
+This file offers the methods to automatically retrieve the graph Acinetobacter baumannii ATCC 17978.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBaumanniiAtcc17978(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBaumanniiAtcc17978 graph.
+    """Return new instance of the Acinetobacter baumannii ATCC 17978 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterBaumanniiAtcc17978(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBaumanniiAtcc17978 graph.
+    Instace of Acinetobacter baumannii ATCC 17978 graph.
 
 	References
 	---------------------

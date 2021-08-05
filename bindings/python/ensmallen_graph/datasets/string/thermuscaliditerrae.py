@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusCaliditerrae.
+This file offers the methods to automatically retrieve the graph Thermus caliditerrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusCaliditerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusCaliditerrae graph.
+    """Return new instance of the Thermus caliditerrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusCaliditerrae(
 
     Returns
     -----------------------
-    Instace of ThermusCaliditerrae graph.
+    Instace of Thermus caliditerrae graph.
 
 	References
 	---------------------

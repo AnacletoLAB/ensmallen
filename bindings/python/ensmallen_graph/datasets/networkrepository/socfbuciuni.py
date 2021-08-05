@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUciUni.
+This file offers the methods to automatically retrieve the graph socfb-uci-uni.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUciUni(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUciUni graph.
+    """Return new instance of the socfb-uci-uni graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUciUni(
 
     Returns
     -----------------------
-    Instace of SocfbUciUni graph.
+    Instace of socfb-uci-uni graph.
 
 	References
 	---------------------

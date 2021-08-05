@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaMollaretii.
+This file offers the methods to automatically retrieve the graph Yersinia mollaretii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaMollaretii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaMollaretii graph.
+    """Return new instance of the Yersinia mollaretii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YersiniaMollaretii(
 
     Returns
     -----------------------
-    Instace of YersiniaMollaretii graph.
+    Instace of Yersinia mollaretii graph.
 
 	References
 	---------------------

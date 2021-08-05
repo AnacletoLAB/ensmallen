@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpAtcc29733.
+This file offers the methods to automatically retrieve the graph Clostridium sp. ATCC29733.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpAtcc29733(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpAtcc29733 graph.
+    """Return new instance of the Clostridium sp. ATCC29733 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpAtcc29733(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpAtcc29733 graph.
+    Instace of Clostridium sp. ATCC29733 graph.
 
 	References
 	---------------------

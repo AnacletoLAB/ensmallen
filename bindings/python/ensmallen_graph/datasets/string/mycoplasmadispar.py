@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaDispar.
+This file offers the methods to automatically retrieve the graph Mycoplasma dispar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaDispar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaDispar graph.
+    """Return new instance of the Mycoplasma dispar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaDispar(
 
     Returns
     -----------------------
-    Instace of MycoplasmaDispar graph.
+    Instace of Mycoplasma dispar graph.
 
 	References
 	---------------------

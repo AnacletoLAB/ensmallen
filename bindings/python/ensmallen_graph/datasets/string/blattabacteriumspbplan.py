@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpBplan.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. BPLAN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpBplan(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpBplan graph.
+    """Return new instance of the Blattabacterium sp. BPLAN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlattabacteriumSpBplan(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpBplan graph.
+    Instace of Blattabacterium sp. BPLAN graph.
 
 	References
 	---------------------

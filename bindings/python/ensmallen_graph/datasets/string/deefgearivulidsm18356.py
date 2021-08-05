@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeefgeaRivuliDsm18356.
+This file offers the methods to automatically retrieve the graph Deefgea rivuli DSM 18356.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeefgeaRivuliDsm18356(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeefgeaRivuliDsm18356 graph.
+    """Return new instance of the Deefgea rivuli DSM 18356 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeefgeaRivuliDsm18356(
 
     Returns
     -----------------------
-    Instace of DeefgeaRivuliDsm18356 graph.
+    Instace of Deefgea rivuli DSM 18356 graph.
 
 	References
 	---------------------

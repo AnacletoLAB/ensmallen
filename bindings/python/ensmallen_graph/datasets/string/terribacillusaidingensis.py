@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerribacillusAidingensis.
+This file offers the methods to automatically retrieve the graph Terribacillus aidingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerribacillusAidingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerribacillusAidingensis graph.
+    """Return new instance of the Terribacillus aidingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TerribacillusAidingensis(
 
     Returns
     -----------------------
-    Instace of TerribacillusAidingensis graph.
+    Instace of Terribacillus aidingensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlebsiellaAerogenes.
+This file offers the methods to automatically retrieve the graph Klebsiella aerogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlebsiellaAerogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlebsiellaAerogenes graph.
+    """Return new instance of the Klebsiella aerogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlebsiellaAerogenes(
 
     Returns
     -----------------------
-    Instace of KlebsiellaAerogenes graph.
+    Instace of Klebsiella aerogenes graph.
 
 	References
 	---------------------

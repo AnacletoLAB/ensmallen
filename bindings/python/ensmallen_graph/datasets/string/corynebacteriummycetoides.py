@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMycetoides.
+This file offers the methods to automatically retrieve the graph Corynebacterium mycetoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMycetoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMycetoides graph.
+    """Return new instance of the Corynebacterium mycetoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumMycetoides(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMycetoides graph.
+    Instace of Corynebacterium mycetoides graph.
 
 	References
 	---------------------

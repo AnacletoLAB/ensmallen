@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumAviumParatuberculosis.
+This file offers the methods to automatically retrieve the graph Mycobacterium avium paratuberculosis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumAviumParatuberculosis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumAviumParatuberculosis graph.
+    """Return new instance of the Mycobacterium avium paratuberculosis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumAviumParatuberculosis(
 
     Returns
     -----------------------
-    Instace of MycobacteriumAviumParatuberculosis graph.
+    Instace of Mycobacterium avium paratuberculosis graph.
 
 	References
 	---------------------

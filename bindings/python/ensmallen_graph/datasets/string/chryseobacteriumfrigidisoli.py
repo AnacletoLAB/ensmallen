@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumFrigidisoli.
+This file offers the methods to automatically retrieve the graph Chryseobacterium frigidisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumFrigidisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumFrigidisoli graph.
+    """Return new instance of the Chryseobacterium frigidisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumFrigidisoli(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumFrigidisoli graph.
+    Instace of Chryseobacterium frigidisoli graph.
 
 	References
 	---------------------

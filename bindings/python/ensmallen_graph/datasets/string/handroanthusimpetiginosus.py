@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HandroanthusImpetiginosus.
+This file offers the methods to automatically retrieve the graph Handroanthus impetiginosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HandroanthusImpetiginosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HandroanthusImpetiginosus graph.
+    """Return new instance of the Handroanthus impetiginosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HandroanthusImpetiginosus(
 
     Returns
     -----------------------
-    Instace of HandroanthusImpetiginosus graph.
+    Instace of Handroanthus impetiginosus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusKwashiorkori.
+This file offers the methods to automatically retrieve the graph Bacillus kwashiorkori.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusKwashiorkori(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusKwashiorkori graph.
+    """Return new instance of the Bacillus kwashiorkori graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusKwashiorkori(
 
     Returns
     -----------------------
-    Instace of BacillusKwashiorkori graph.
+    Instace of Bacillus kwashiorkori graph.
 
 	References
 	---------------------

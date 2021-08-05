@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlammeovirgaPacifica.
+This file offers the methods to automatically retrieve the graph Flammeovirga pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlammeovirgaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlammeovirgaPacifica graph.
+    """Return new instance of the Flammeovirga pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlammeovirgaPacifica(
 
     Returns
     -----------------------
-    Instace of FlammeovirgaPacifica graph.
+    Instace of Flammeovirga pacifica graph.
 
 	References
 	---------------------

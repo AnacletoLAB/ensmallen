@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpAls9.
+This file offers the methods to automatically retrieve the graph Halomonas sp. ALS9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpAls9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpAls9 graph.
+    """Return new instance of the Halomonas sp. ALS9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasSpAls9(
 
     Returns
     -----------------------
-    Instace of HalomonasSpAls9 graph.
+    Instace of Halomonas sp. ALS9 graph.
 
 	References
 	---------------------

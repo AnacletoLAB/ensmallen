@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMethanoplasmaTermitum.
+This file offers the methods to automatically retrieve the graph Candidatus Methanoplasma termitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMethanoplasmaTermitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMethanoplasmaTermitum graph.
+    """Return new instance of the Candidatus Methanoplasma termitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMethanoplasmaTermitum(
 
     Returns
     -----------------------
-    Instace of CandidatusMethanoplasmaTermitum graph.
+    Instace of Candidatus Methanoplasma termitum graph.
 
 	References
 	---------------------

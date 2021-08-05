@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharimonasAalborgensis.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharimonas aalborgensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharimonasAalborgensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharimonasAalborgensis graph.
+    """Return new instance of the Candidatus Saccharimonas aalborgensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharimonasAalborgensis(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharimonasAalborgensis graph.
+    Instace of Candidatus Saccharimonas aalborgensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteralesBacteriumAlpha01.
+This file offers the methods to automatically retrieve the graph Rhodobacterales bacterium Alpha_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteralesBacteriumAlpha01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteralesBacteriumAlpha01 graph.
+    """Return new instance of the Rhodobacterales bacterium Alpha_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteralesBacteriumAlpha01(
 
     Returns
     -----------------------
-    Instace of RhodobacteralesBacteriumAlpha01 graph.
+    Instace of Rhodobacterales bacterium Alpha_01 graph.
 
 	References
 	---------------------

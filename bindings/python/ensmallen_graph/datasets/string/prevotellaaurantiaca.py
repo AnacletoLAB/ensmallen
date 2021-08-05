@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaAurantiaca.
+This file offers the methods to automatically retrieve the graph Prevotella aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaAurantiaca graph.
+    """Return new instance of the Prevotella aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaAurantiaca(
 
     Returns
     -----------------------
-    Instace of PrevotellaAurantiaca graph.
+    Instace of Prevotella aurantiaca graph.
 
 	References
 	---------------------

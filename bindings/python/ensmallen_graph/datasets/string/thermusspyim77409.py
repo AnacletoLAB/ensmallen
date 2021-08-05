@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermusSpYim77409.
+This file offers the methods to automatically retrieve the graph Thermus sp. YIM77409.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermusSpYim77409(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermusSpYim77409 graph.
+    """Return new instance of the Thermus sp. YIM77409 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermusSpYim77409(
 
     Returns
     -----------------------
-    Instace of ThermusSpYim77409 graph.
+    Instace of Thermus sp. YIM77409 graph.
 
 	References
 	---------------------

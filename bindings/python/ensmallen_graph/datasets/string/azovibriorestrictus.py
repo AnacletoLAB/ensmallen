@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzovibrioRestrictus.
+This file offers the methods to automatically retrieve the graph Azovibrio restrictus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzovibrioRestrictus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzovibrioRestrictus graph.
+    """Return new instance of the Azovibrio restrictus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzovibrioRestrictus(
 
     Returns
     -----------------------
-    Instace of AzovibrioRestrictus graph.
+    Instace of Azovibrio restrictus graph.
 
 	References
 	---------------------

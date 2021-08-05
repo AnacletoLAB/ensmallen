@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobrancaCaliforniensisDsm14826.
+This file offers the methods to automatically retrieve the graph Anaerobranca californiensis DSM 14826.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobrancaCaliforniensisDsm14826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobrancaCaliforniensisDsm14826 graph.
+    """Return new instance of the Anaerobranca californiensis DSM 14826 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerobrancaCaliforniensisDsm14826(
 
     Returns
     -----------------------
-    Instace of AnaerobrancaCaliforniensisDsm14826 graph.
+    Instace of Anaerobranca californiensis DSM 14826 graph.
 
 	References
 	---------------------

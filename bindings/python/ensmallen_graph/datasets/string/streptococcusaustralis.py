@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAustralis.
+This file offers the methods to automatically retrieve the graph Streptococcus australis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAustralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAustralis graph.
+    """Return new instance of the Streptococcus australis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAustralis(
 
     Returns
     -----------------------
-    Instace of StreptococcusAustralis graph.
+    Instace of Streptococcus australis graph.
 
 	References
 	---------------------

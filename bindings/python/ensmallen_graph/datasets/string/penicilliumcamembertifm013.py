@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumCamembertiFm013.
+This file offers the methods to automatically retrieve the graph Penicillium camemberti FM 013.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumCamembertiFm013(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumCamembertiFm013 graph.
+    """Return new instance of the Penicillium camemberti FM 013 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumCamembertiFm013(
 
     Returns
     -----------------------
-    Instace of PenicilliumCamembertiFm013 graph.
+    Instace of Penicillium camemberti FM 013 graph.
 
 	References
 	---------------------

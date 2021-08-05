@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UstilagoHordei.
+This file offers the methods to automatically retrieve the graph Ustilago hordei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UstilagoHordei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UstilagoHordei graph.
+    """Return new instance of the Ustilago hordei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UstilagoHordei(
 
     Returns
     -----------------------
-    Instace of UstilagoHordei graph.
+    Instace of Ustilago hordei graph.
 
 	References
 	---------------------

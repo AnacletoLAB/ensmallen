@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumMolle.
+This file offers the methods to automatically retrieve the graph Chryseobacterium molle.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumMolle(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumMolle graph.
+    """Return new instance of the Chryseobacterium molle graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumMolle(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumMolle graph.
+    Instace of Chryseobacterium molle graph.
 
 	References
 	---------------------

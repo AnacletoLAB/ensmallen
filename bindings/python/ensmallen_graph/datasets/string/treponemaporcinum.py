@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaPorcinum.
+This file offers the methods to automatically retrieve the graph Treponema porcinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaPorcinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaPorcinum graph.
+    """Return new instance of the Treponema porcinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaPorcinum(
 
     Returns
     -----------------------
-    Instace of TreponemaPorcinum graph.
+    Instace of Treponema porcinum graph.
 
 	References
 	---------------------

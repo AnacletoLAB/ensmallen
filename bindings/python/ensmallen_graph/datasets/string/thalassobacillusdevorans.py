@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobacillusDevorans.
+This file offers the methods to automatically retrieve the graph Thalassobacillus devorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobacillusDevorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobacillusDevorans graph.
+    """Return new instance of the Thalassobacillus devorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobacillusDevorans(
 
     Returns
     -----------------------
-    Instace of ThalassobacillusDevorans graph.
+    Instace of Thalassobacillus devorans graph.
 
 	References
 	---------------------

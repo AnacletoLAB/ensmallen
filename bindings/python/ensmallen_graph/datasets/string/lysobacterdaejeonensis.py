@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterDaejeonensis.
+This file offers the methods to automatically retrieve the graph Lysobacter daejeonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterDaejeonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterDaejeonensis graph.
+    """Return new instance of the Lysobacter daejeonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysobacterDaejeonensis(
 
     Returns
     -----------------------
-    Instace of LysobacterDaejeonensis graph.
+    Instace of Lysobacter daejeonensis graph.
 
 	References
 	---------------------

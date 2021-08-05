@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumNordicum.
+This file offers the methods to automatically retrieve the graph Penicillium nordicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumNordicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumNordicum graph.
+    """Return new instance of the Penicillium nordicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumNordicum(
 
     Returns
     -----------------------
-    Instace of PenicilliumNordicum graph.
+    Instace of Penicillium nordicum graph.
 
 	References
 	---------------------

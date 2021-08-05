@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VolvoxCarteriFNagariensis.
+This file offers the methods to automatically retrieve the graph Volvox carteri f. nagariensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VolvoxCarteriFNagariensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VolvoxCarteriFNagariensis graph.
+    """Return new instance of the Volvox carteri f. nagariensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VolvoxCarteriFNagariensis(
 
     Returns
     -----------------------
-    Instace of VolvoxCarteriFNagariensis graph.
+    Instace of Volvox carteri f. nagariensis graph.
 
 	References
 	---------------------

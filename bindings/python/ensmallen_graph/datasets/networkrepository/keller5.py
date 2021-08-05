@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Keller5.
+This file offers the methods to automatically retrieve the graph keller5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Keller5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Keller5 graph.
+    """Return new instance of the keller5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Keller5(
 
     Returns
     -----------------------
-    Instace of Keller5 graph.
+    Instace of keller5 graph.
 
 	References
 	---------------------

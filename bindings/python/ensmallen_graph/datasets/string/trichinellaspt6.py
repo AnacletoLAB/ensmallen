@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaSpT6.
+This file offers the methods to automatically retrieve the graph Trichinella sp. T6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaSpT6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaSpT6 graph.
+    """Return new instance of the Trichinella sp. T6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaSpT6(
 
     Returns
     -----------------------
-    Instace of TrichinellaSpT6 graph.
+    Instace of Trichinella sp. T6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacinutrixMariniflava.
+This file offers the methods to automatically retrieve the graph Lacinutrix mariniflava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacinutrixMariniflava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacinutrixMariniflava graph.
+    """Return new instance of the Lacinutrix mariniflava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LacinutrixMariniflava(
 
     Returns
     -----------------------
-    Instace of LacinutrixMariniflava graph.
+    Instace of Lacinutrix mariniflava graph.
 
 	References
 	---------------------

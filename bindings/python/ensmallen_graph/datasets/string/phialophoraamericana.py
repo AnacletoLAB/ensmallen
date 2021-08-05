@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhialophoraAmericana.
+This file offers the methods to automatically retrieve the graph Phialophora americana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhialophoraAmericana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhialophoraAmericana graph.
+    """Return new instance of the Phialophora americana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhialophoraAmericana(
 
     Returns
     -----------------------
-    Instace of PhialophoraAmericana graph.
+    Instace of Phialophora americana graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpLeaf337.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. Leaf337.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpLeaf337(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpLeaf337 graph.
+    """Return new instance of the Arthrobacter sp. Leaf337 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpLeaf337(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpLeaf337 graph.
+    Instace of Arthrobacter sp. Leaf337 graph.
 
 	References
 	---------------------

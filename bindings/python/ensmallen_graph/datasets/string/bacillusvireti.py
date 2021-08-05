@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusVireti.
+This file offers the methods to automatically retrieve the graph Bacillus vireti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusVireti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusVireti graph.
+    """Return new instance of the Bacillus vireti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusVireti(
 
     Returns
     -----------------------
-    Instace of BacillusVireti graph.
+    Instace of Bacillus vireti graph.
 
 	References
 	---------------------

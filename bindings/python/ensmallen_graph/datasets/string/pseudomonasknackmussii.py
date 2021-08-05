@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasKnackmussii.
+This file offers the methods to automatically retrieve the graph Pseudomonas knackmussii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasKnackmussii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasKnackmussii graph.
+    """Return new instance of the Pseudomonas knackmussii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasKnackmussii(
 
     Returns
     -----------------------
-    Instace of PseudomonasKnackmussii graph.
+    Instace of Pseudomonas knackmussii graph.
 
 	References
 	---------------------

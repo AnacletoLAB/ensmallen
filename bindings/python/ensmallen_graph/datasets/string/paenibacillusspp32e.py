@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpP32e.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. P32E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpP32e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpP32e graph.
+    """Return new instance of the Paenibacillus sp. P32E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpP32e(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpP32e graph.
+    Instace of Paenibacillus sp. P32E graph.
 
 	References
 	---------------------

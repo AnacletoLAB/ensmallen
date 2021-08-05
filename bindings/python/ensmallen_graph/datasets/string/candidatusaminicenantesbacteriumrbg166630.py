@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAminicenantesBacteriumRbg166630.
+This file offers the methods to automatically retrieve the graph Candidatus Aminicenantes bacterium RBG_16_66_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAminicenantesBacteriumRbg166630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAminicenantesBacteriumRbg166630 graph.
+    """Return new instance of the Candidatus Aminicenantes bacterium RBG_16_66_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAminicenantesBacteriumRbg166630(
 
     Returns
     -----------------------
-    Instace of CandidatusAminicenantesBacteriumRbg166630 graph.
+    Instace of Candidatus Aminicenantes bacterium RBG_16_66_30 graph.
 
 	References
 	---------------------

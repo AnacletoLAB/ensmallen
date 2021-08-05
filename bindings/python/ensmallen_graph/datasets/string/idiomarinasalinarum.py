@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaSalinarum.
+This file offers the methods to automatically retrieve the graph Idiomarina salinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaSalinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaSalinarum graph.
+    """Return new instance of the Idiomarina salinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IdiomarinaSalinarum(
 
     Returns
     -----------------------
-    Instace of IdiomarinaSalinarum graph.
+    Instace of Idiomarina salinarum graph.
 
 	References
 	---------------------

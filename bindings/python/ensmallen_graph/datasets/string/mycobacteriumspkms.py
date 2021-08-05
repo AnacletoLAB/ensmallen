@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpKms.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. KMS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpKms(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpKms graph.
+    """Return new instance of the Mycobacterium sp. KMS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpKms(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpKms graph.
+    Instace of Mycobacterium sp. KMS graph.
 
 	References
 	---------------------

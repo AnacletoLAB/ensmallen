@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilusSp5.
+This file offers the methods to automatically retrieve the graph Methylophilus sp. 5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilusSp5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilusSp5 graph.
+    """Return new instance of the Methylophilus sp. 5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophilusSp5(
 
     Returns
     -----------------------
-    Instace of MethylophilusSp5 graph.
+    Instace of Methylophilus sp. 5 graph.
 
 	References
 	---------------------

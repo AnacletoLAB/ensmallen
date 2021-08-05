@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnothrixRoseaIamM220.
+This file offers the methods to automatically retrieve the graph Limnothrix rosea IAM M-220.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnothrixRoseaIamM220(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnothrixRoseaIamM220 graph.
+    """Return new instance of the Limnothrix rosea IAM M-220 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnothrixRoseaIamM220(
 
     Returns
     -----------------------
-    Instace of LimnothrixRoseaIamM220 graph.
+    Instace of Limnothrix rosea IAM M-220 graph.
 
 	References
 	---------------------

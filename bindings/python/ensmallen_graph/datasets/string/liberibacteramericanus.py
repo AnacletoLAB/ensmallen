@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LiberibacterAmericanus.
+This file offers the methods to automatically retrieve the graph Liberibacter americanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LiberibacterAmericanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LiberibacterAmericanus graph.
+    """Return new instance of the Liberibacter americanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LiberibacterAmericanus(
 
     Returns
     -----------------------
-    Instace of LiberibacterAmericanus graph.
+    Instace of Liberibacter americanus graph.
 
 	References
 	---------------------

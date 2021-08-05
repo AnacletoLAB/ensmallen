@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArabiaMassiliensis.
+This file offers the methods to automatically retrieve the graph Arabia massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArabiaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArabiaMassiliensis graph.
+    """Return new instance of the Arabia massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArabiaMassiliensis(
 
     Returns
     -----------------------
-    Instace of ArabiaMassiliensis graph.
+    Instace of Arabia massiliensis graph.
 
 	References
 	---------------------

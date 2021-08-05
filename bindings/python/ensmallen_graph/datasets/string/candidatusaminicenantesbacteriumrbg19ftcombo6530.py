@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAminicenantesBacteriumRbg19ftCombo6530.
+This file offers the methods to automatically retrieve the graph Candidatus Aminicenantes bacterium RBG_19FT_COMBO_65_30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAminicenantesBacteriumRbg19ftCombo6530(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAminicenantesBacteriumRbg19ftCombo6530 graph.
+    """Return new instance of the Candidatus Aminicenantes bacterium RBG_19FT_COMBO_65_30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAminicenantesBacteriumRbg19ftCombo6530(
 
     Returns
     -----------------------
-    Instace of CandidatusAminicenantesBacteriumRbg19ftCombo6530 graph.
+    Instace of Candidatus Aminicenantes bacterium RBG_19FT_COMBO_65_30 graph.
 
 	References
 	---------------------

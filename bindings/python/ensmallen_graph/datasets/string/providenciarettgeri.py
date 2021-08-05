@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaRettgeri.
+This file offers the methods to automatically retrieve the graph Providencia rettgeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaRettgeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaRettgeri graph.
+    """Return new instance of the Providencia rettgeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProvidenciaRettgeri(
 
     Returns
     -----------------------
-    Instace of ProvidenciaRettgeri graph.
+    Instace of Providencia rettgeri graph.
 
 	References
 	---------------------

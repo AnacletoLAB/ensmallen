@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RheinheimeraPerlucida.
+This file offers the methods to automatically retrieve the graph Rheinheimera perlucida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RheinheimeraPerlucida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RheinheimeraPerlucida graph.
+    """Return new instance of the Rheinheimera perlucida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RheinheimeraPerlucida(
 
     Returns
     -----------------------
-    Instace of RheinheimeraPerlucida graph.
+    Instace of Rheinheimera perlucida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioOstreicida.
+This file offers the methods to automatically retrieve the graph Vibrio ostreicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioOstreicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioOstreicida graph.
+    """Return new instance of the Vibrio ostreicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioOstreicida(
 
     Returns
     -----------------------
-    Instace of VibrioOstreicida graph.
+    Instace of Vibrio ostreicida graph.
 
 	References
 	---------------------

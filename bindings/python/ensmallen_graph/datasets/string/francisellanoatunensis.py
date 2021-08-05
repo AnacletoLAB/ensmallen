@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaNoatunensis.
+This file offers the methods to automatically retrieve the graph Francisella noatunensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaNoatunensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaNoatunensis graph.
+    """Return new instance of the Francisella noatunensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrancisellaNoatunensis(
 
     Returns
     -----------------------
-    Instace of FrancisellaNoatunensis graph.
+    Instace of Francisella noatunensis graph.
 
 	References
 	---------------------

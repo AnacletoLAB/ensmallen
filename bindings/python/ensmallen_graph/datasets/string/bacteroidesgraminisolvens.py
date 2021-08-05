@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesGraminisolvens.
+This file offers the methods to automatically retrieve the graph Bacteroides graminisolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesGraminisolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesGraminisolvens graph.
+    """Return new instance of the Bacteroides graminisolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesGraminisolvens(
 
     Returns
     -----------------------
-    Instace of BacteroidesGraminisolvens graph.
+    Instace of Bacteroides graminisolvens graph.
 
 	References
 	---------------------

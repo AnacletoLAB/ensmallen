@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumCoprophilum.
+This file offers the methods to automatically retrieve the graph Penicillium coprophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumCoprophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumCoprophilum graph.
+    """Return new instance of the Penicillium coprophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumCoprophilum(
 
     Returns
     -----------------------
-    Instace of PenicilliumCoprophilum graph.
+    Instace of Penicillium coprophilum graph.
 
 	References
 	---------------------

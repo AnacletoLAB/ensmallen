@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaMegapolitana.
+This file offers the methods to automatically retrieve the graph Paraburkholderia megapolitana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaMegapolitana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaMegapolitana graph.
+    """Return new instance of the Paraburkholderia megapolitana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaMegapolitana(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaMegapolitana graph.
+    Instace of Paraburkholderia megapolitana graph.
 
 	References
 	---------------------

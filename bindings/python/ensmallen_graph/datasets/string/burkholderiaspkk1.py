@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpKk1.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. KK1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpKk1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpKk1 graph.
+    """Return new instance of the Burkholderia sp. KK1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpKk1(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpKk1 graph.
+    Instace of Burkholderia sp. KK1 graph.
 
 	References
 	---------------------

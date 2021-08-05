@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasGlacialis.
+This file offers the methods to automatically retrieve the graph Polaromonas glacialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasGlacialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasGlacialis graph.
+    """Return new instance of the Polaromonas glacialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaromonasGlacialis(
 
     Returns
     -----------------------
-    Instace of PolaromonasGlacialis graph.
+    Instace of Polaromonas glacialis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPeli.
+This file offers the methods to automatically retrieve the graph Pseudomonas peli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPeli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPeli graph.
+    """Return new instance of the Pseudomonas peli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasPeli(
 
     Returns
     -----------------------
-    Instace of PseudomonasPeli graph.
+    Instace of Pseudomonas peli graph.
 
 	References
 	---------------------

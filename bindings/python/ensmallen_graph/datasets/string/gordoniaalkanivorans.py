@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaAlkanivorans.
+This file offers the methods to automatically retrieve the graph Gordonia alkanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaAlkanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaAlkanivorans graph.
+    """Return new instance of the Gordonia alkanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaAlkanivorans(
 
     Returns
     -----------------------
-    Instace of GordoniaAlkanivorans graph.
+    Instace of Gordonia alkanivorans graph.
 
 	References
 	---------------------

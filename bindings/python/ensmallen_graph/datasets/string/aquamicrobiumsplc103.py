@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquamicrobiumSpLc103.
+This file offers the methods to automatically retrieve the graph Aquamicrobium sp. LC103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquamicrobiumSpLc103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquamicrobiumSpLc103 graph.
+    """Return new instance of the Aquamicrobium sp. LC103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquamicrobiumSpLc103(
 
     Returns
     -----------------------
-    Instace of AquamicrobiumSpLc103 graph.
+    Instace of Aquamicrobium sp. LC103 graph.
 
 	References
 	---------------------

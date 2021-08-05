@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpY412mc10.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. Y412MC10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpY412mc10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpY412mc10 graph.
+    """Return new instance of the Paenibacillus sp. Y412MC10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpY412mc10(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpY412mc10 graph.
+    Instace of Paenibacillus sp. Y412MC10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LampropediaCohaerens.
+This file offers the methods to automatically retrieve the graph Lampropedia cohaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LampropediaCohaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LampropediaCohaerens graph.
+    """Return new instance of the Lampropedia cohaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LampropediaCohaerens(
 
     Returns
     -----------------------
-    Instace of LampropediaCohaerens graph.
+    Instace of Lampropedia cohaerens graph.
 
 	References
 	---------------------

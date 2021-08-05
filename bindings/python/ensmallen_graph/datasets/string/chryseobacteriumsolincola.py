@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSolincola.
+This file offers the methods to automatically retrieve the graph Chryseobacterium solincola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSolincola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSolincola graph.
+    """Return new instance of the Chryseobacterium solincola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSolincola(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSolincola graph.
+    Instace of Chryseobacterium solincola graph.
 
 	References
 	---------------------

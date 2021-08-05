@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaliobacillusRyukyuensis.
+This file offers the methods to automatically retrieve the graph Paraliobacillus ryukyuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaliobacillusRyukyuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaliobacillusRyukyuensis graph.
+    """Return new instance of the Paraliobacillus ryukyuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaliobacillusRyukyuensis(
 
     Returns
     -----------------------
-    Instace of ParaliobacillusRyukyuensis graph.
+    Instace of Paraliobacillus ryukyuensis graph.
 
 	References
 	---------------------

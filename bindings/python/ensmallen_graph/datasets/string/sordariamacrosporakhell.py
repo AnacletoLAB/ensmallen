@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SordariaMacrosporaKHell.
+This file offers the methods to automatically retrieve the graph Sordaria macrospora k-hell.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SordariaMacrosporaKHell(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SordariaMacrosporaKHell graph.
+    """Return new instance of the Sordaria macrospora k-hell graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SordariaMacrosporaKHell(
 
     Returns
     -----------------------
-    Instace of SordariaMacrosporaKHell graph.
+    Instace of Sordaria macrospora k-hell graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPseudoalcaligenesKf707.
+This file offers the methods to automatically retrieve the graph Pseudomonas pseudoalcaligenes KF707.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPseudoalcaligenesKf707(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPseudoalcaligenesKf707 graph.
+    """Return new instance of the Pseudomonas pseudoalcaligenes KF707 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPseudoalcaligenesKf707(
 
     Returns
     -----------------------
-    Instace of PseudomonasPseudoalcaligenesKf707 graph.
+    Instace of Pseudomonas pseudoalcaligenes KF707 graph.
 
 	References
 	---------------------

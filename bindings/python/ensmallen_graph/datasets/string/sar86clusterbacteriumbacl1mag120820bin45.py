@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar86ClusterBacteriumBacl1Mag120820Bin45.
+This file offers the methods to automatically retrieve the graph SAR86 cluster bacterium BACL1 MAG-120820-bin45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Sar86ClusterBacteriumBacl1Mag120820Bin45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar86ClusterBacteriumBacl1Mag120820Bin45 graph.
+    """Return new instance of the SAR86 cluster bacterium BACL1 MAG-120820-bin45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Sar86ClusterBacteriumBacl1Mag120820Bin45(
 
     Returns
     -----------------------
-    Instace of Sar86ClusterBacteriumBacl1Mag120820Bin45 graph.
+    Instace of SAR86 cluster bacterium BACL1 MAG-120820-bin45 graph.
 
 	References
 	---------------------

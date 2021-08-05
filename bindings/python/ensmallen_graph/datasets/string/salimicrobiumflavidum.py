@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalimicrobiumFlavidum.
+This file offers the methods to automatically retrieve the graph Salimicrobium flavidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalimicrobiumFlavidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalimicrobiumFlavidum graph.
+    """Return new instance of the Salimicrobium flavidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalimicrobiumFlavidum(
 
     Returns
     -----------------------
-    Instace of SalimicrobiumFlavidum graph.
+    Instace of Salimicrobium flavidum graph.
 
 	References
 	---------------------

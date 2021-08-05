@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErysipelothrixRhusiopathiae.
+This file offers the methods to automatically retrieve the graph Erysipelothrix rhusiopathiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErysipelothrixRhusiopathiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErysipelothrixRhusiopathiae graph.
+    """Return new instance of the Erysipelothrix rhusiopathiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErysipelothrixRhusiopathiae(
 
     Returns
     -----------------------
-    Instace of ErysipelothrixRhusiopathiae graph.
+    Instace of Erysipelothrix rhusiopathiae graph.
 
 	References
 	---------------------

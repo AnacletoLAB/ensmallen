@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonadalesBacteriumTw7.
+This file offers the methods to automatically retrieve the graph Alteromonadales bacterium TW7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonadalesBacteriumTw7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonadalesBacteriumTw7 graph.
+    """Return new instance of the Alteromonadales bacterium TW7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlteromonadalesBacteriumTw7(
 
     Returns
     -----------------------
-    Instace of AlteromonadalesBacteriumTw7 graph.
+    Instace of Alteromonadales bacterium TW7 graph.
 
 	References
 	---------------------

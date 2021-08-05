@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SetariaItalica.
+This file offers the methods to automatically retrieve the graph Setaria italica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SetariaItalica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SetariaItalica graph.
+    """Return new instance of the Setaria italica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SetariaItalica(
 
     Returns
     -----------------------
-    Instace of SetariaItalica graph.
+    Instace of Setaria italica graph.
 
 	References
 	---------------------

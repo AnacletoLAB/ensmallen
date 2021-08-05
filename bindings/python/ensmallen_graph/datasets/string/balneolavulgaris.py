@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BalneolaVulgaris.
+This file offers the methods to automatically retrieve the graph Balneola vulgaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BalneolaVulgaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BalneolaVulgaris graph.
+    """Return new instance of the Balneola vulgaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BalneolaVulgaris(
 
     Returns
     -----------------------
-    Instace of BalneolaVulgaris graph.
+    Instace of Balneola vulgaris graph.
 
 	References
 	---------------------

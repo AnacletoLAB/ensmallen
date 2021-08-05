@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaFuscipesFuscipes.
+This file offers the methods to automatically retrieve the graph Glossina fuscipes fuscipes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaFuscipesFuscipes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaFuscipesFuscipes graph.
+    """Return new instance of the Glossina fuscipes fuscipes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaFuscipesFuscipes(
 
     Returns
     -----------------------
-    Instace of GlossinaFuscipesFuscipes graph.
+    Instace of Glossina fuscipes fuscipes graph.
 
 	References
 	---------------------

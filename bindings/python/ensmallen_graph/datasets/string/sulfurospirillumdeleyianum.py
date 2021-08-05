@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurospirillumDeleyianum.
+This file offers the methods to automatically retrieve the graph Sulfurospirillum deleyianum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurospirillumDeleyianum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurospirillumDeleyianum graph.
+    """Return new instance of the Sulfurospirillum deleyianum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfurospirillumDeleyianum(
 
     Returns
     -----------------------
-    Instace of SulfurospirillumDeleyianum graph.
+    Instace of Sulfurospirillum deleyianum graph.
 
 	References
 	---------------------

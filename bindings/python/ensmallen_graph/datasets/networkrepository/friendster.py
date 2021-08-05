@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Friendster.
+This file offers the methods to automatically retrieve the graph friendster.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Friendster(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Friendster graph.
+    """Return new instance of the friendster graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Friendster(
 
     Returns
     -----------------------
-    Instace of Friendster graph.
+    Instace of friendster graph.
 
 	References
 	---------------------

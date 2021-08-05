@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaSp209.
+This file offers the methods to automatically retrieve the graph Spirosoma sp. 209.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaSp209(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaSp209 graph.
+    """Return new instance of the Spirosoma sp. 209 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirosomaSp209(
 
     Returns
     -----------------------
-    Instace of SpirosomaSp209 graph.
+    Instace of Spirosoma sp. 209 graph.
 
 	References
 	---------------------

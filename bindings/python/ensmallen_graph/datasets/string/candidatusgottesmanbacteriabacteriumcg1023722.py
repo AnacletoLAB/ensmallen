@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusGottesmanbacteriaBacteriumCg1023722.
+This file offers the methods to automatically retrieve the graph Candidatus Gottesmanbacteria bacterium CG1_02_37_22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusGottesmanbacteriaBacteriumCg1023722(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusGottesmanbacteriaBacteriumCg1023722 graph.
+    """Return new instance of the Candidatus Gottesmanbacteria bacterium CG1_02_37_22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusGottesmanbacteriaBacteriumCg1023722(
 
     Returns
     -----------------------
-    Instace of CandidatusGottesmanbacteriaBacteriumCg1023722 graph.
+    Instace of Candidatus Gottesmanbacteria bacterium CG1_02_37_22 graph.
 
 	References
 	---------------------

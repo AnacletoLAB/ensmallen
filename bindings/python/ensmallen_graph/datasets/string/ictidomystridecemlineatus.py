@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IctidomysTridecemlineatus.
+This file offers the methods to automatically retrieve the graph Ictidomys tridecemlineatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IctidomysTridecemlineatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IctidomysTridecemlineatus graph.
+    """Return new instance of the Ictidomys tridecemlineatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IctidomysTridecemlineatus(
 
     Returns
     -----------------------
-    Instace of IctidomysTridecemlineatus graph.
+    Instace of Ictidomys tridecemlineatus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterCuniculorum.
+This file offers the methods to automatically retrieve the graph Campylobacter cuniculorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterCuniculorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterCuniculorum graph.
+    """Return new instance of the Campylobacter cuniculorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterCuniculorum(
 
     Returns
     -----------------------
-    Instace of CampylobacterCuniculorum graph.
+    Instace of Campylobacter cuniculorum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumRhizophilumDsm18822.
+This file offers the methods to automatically retrieve the graph Marinobacterium rhizophilum DSM 18822.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumRhizophilumDsm18822(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumRhizophilumDsm18822 graph.
+    """Return new instance of the Marinobacterium rhizophilum DSM 18822 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacteriumRhizophilumDsm18822(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumRhizophilumDsm18822 graph.
+    Instace of Marinobacterium rhizophilum DSM 18822 graph.
 
 	References
 	---------------------

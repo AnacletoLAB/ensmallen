@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeorickettsiaSennetsu.
+This file offers the methods to automatically retrieve the graph Neorickettsia sennetsu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeorickettsiaSennetsu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeorickettsiaSennetsu graph.
+    """Return new instance of the Neorickettsia sennetsu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeorickettsiaSennetsu(
 
     Returns
     -----------------------
-    Instace of NeorickettsiaSennetsu graph.
+    Instace of Neorickettsia sennetsu graph.
 
 	References
 	---------------------

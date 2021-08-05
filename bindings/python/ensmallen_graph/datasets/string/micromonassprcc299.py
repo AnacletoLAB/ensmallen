@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonasSpRcc299.
+This file offers the methods to automatically retrieve the graph Micromonas sp. RCC299.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonasSpRcc299(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonasSpRcc299 graph.
+    """Return new instance of the Micromonas sp. RCC299 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicromonasSpRcc299(
 
     Returns
     -----------------------
-    Instace of MicromonasSpRcc299 graph.
+    Instace of Micromonas sp. RCC299 graph.
 
 	References
 	---------------------

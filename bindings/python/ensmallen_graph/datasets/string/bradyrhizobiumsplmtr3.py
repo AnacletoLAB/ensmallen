@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpLmtr3.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. LMTR 3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpLmtr3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpLmtr3 graph.
+    """Return new instance of the Bradyrhizobium sp. LMTR 3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumSpLmtr3(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpLmtr3 graph.
+    Instace of Bradyrhizobium sp. LMTR 3 graph.
 
 	References
 	---------------------

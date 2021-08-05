@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCfSaccharolyticumK10.
+This file offers the methods to automatically retrieve the graph [Clostridium] cf. saccharolyticum K10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCfSaccharolyticumK10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCfSaccharolyticumK10 graph.
+    """Return new instance of the [Clostridium] cf. saccharolyticum K10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumCfSaccharolyticumK10(
 
     Returns
     -----------------------
-    Instace of ClostridiumCfSaccharolyticumK10 graph.
+    Instace of [Clostridium] cf. saccharolyticum K10 graph.
 
 	References
 	---------------------

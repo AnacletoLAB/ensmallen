@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BalneatrixAlpicaDsm16621.
+This file offers the methods to automatically retrieve the graph Balneatrix alpica DSM 16621.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BalneatrixAlpicaDsm16621(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BalneatrixAlpicaDsm16621 graph.
+    """Return new instance of the Balneatrix alpica DSM 16621 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BalneatrixAlpicaDsm16621(
 
     Returns
     -----------------------
-    Instace of BalneatrixAlpicaDsm16621 graph.
+    Instace of Balneatrix alpica DSM 16621 graph.
 
 	References
 	---------------------

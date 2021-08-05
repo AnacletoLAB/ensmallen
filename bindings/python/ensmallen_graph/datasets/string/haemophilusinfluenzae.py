@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusInfluenzae.
+This file offers the methods to automatically retrieve the graph Haemophilus influenzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusInfluenzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusInfluenzae graph.
+    """Return new instance of the Haemophilus influenzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaemophilusInfluenzae(
 
     Returns
     -----------------------
-    Instace of HaemophilusInfluenzae graph.
+    Instace of Haemophilus influenzae graph.
 
 	References
 	---------------------

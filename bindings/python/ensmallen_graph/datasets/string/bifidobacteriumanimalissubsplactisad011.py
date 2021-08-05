@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumAnimalisSubspLactisAd011.
+This file offers the methods to automatically retrieve the graph Bifidobacterium animalis subsp. lactis AD011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumAnimalisSubspLactisAd011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumAnimalisSubspLactisAd011 graph.
+    """Return new instance of the Bifidobacterium animalis subsp. lactis AD011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumAnimalisSubspLactisAd011(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumAnimalisSubspLactisAd011 graph.
+    Instace of Bifidobacterium animalis subsp. lactis AD011 graph.
 
 	References
 	---------------------

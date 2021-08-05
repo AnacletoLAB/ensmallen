@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpVpap30.
+This file offers the methods to automatically retrieve the graph Vibrio sp. VPAP30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpVpap30(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpVpap30 graph.
+    """Return new instance of the Vibrio sp. VPAP30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioSpVpap30(
 
     Returns
     -----------------------
-    Instace of VibrioSpVpap30 graph.
+    Instace of Vibrio sp. VPAP30 graph.
 
 	References
 	---------------------

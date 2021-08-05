@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpNb68.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. NB68.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSpNb68(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpNb68 graph.
+    """Return new instance of the Sulfitobacter sp. NB68 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterSpNb68(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpNb68 graph.
+    Instace of Sulfitobacter sp. NB68 graph.
 
 	References
 	---------------------

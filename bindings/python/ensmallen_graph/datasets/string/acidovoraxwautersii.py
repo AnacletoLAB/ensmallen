@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxWautersii.
+This file offers the methods to automatically retrieve the graph Acidovorax wautersii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxWautersii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxWautersii graph.
+    """Return new instance of the Acidovorax wautersii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxWautersii(
 
     Returns
     -----------------------
-    Instace of AcidovoraxWautersii graph.
+    Instace of Acidovorax wautersii graph.
 
 	References
 	---------------------

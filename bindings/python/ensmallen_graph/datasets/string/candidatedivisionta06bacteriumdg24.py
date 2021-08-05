@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionTa06BacteriumDg24.
+This file offers the methods to automatically retrieve the graph candidate division TA06 bacterium DG_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionTa06BacteriumDg24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionTa06BacteriumDg24 graph.
+    """Return new instance of the candidate division TA06 bacterium DG_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionTa06BacteriumDg24(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionTa06BacteriumDg24 graph.
+    Instace of candidate division TA06 bacterium DG_24 graph.
 
 	References
 	---------------------

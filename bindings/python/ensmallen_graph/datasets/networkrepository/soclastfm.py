@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocLastfm.
+This file offers the methods to automatically retrieve the graph soc-lastfm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocLastfm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocLastfm graph.
+    """Return new instance of the soc-lastfm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocLastfm(
 
     Returns
     -----------------------
-    Instace of SocLastfm graph.
+    Instace of soc-lastfm graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerruconisGallopava.
+This file offers the methods to automatically retrieve the graph Verruconis gallopava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerruconisGallopava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerruconisGallopava graph.
+    """Return new instance of the Verruconis gallopava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerruconisGallopava(
 
     Returns
     -----------------------
-    Instace of VerruconisGallopava graph.
+    Instace of Verruconis gallopava graph.
 
 	References
 	---------------------

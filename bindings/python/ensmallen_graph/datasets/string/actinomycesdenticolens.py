@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesDenticolens.
+This file offers the methods to automatically retrieve the graph Actinomyces denticolens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesDenticolens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesDenticolens graph.
+    """Return new instance of the Actinomyces denticolens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesDenticolens(
 
     Returns
     -----------------------
-    Instace of ActinomycesDenticolens graph.
+    Instace of Actinomyces denticolens graph.
 
 	References
 	---------------------

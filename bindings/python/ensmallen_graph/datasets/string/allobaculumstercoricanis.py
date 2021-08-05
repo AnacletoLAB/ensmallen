@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllobaculumStercoricanis.
+This file offers the methods to automatically retrieve the graph Allobaculum stercoricanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllobaculumStercoricanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllobaculumStercoricanis graph.
+    """Return new instance of the Allobaculum stercoricanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AllobaculumStercoricanis(
 
     Returns
     -----------------------
-    Instace of AllobaculumStercoricanis graph.
+    Instace of Allobaculum stercoricanis graph.
 
 	References
 	---------------------

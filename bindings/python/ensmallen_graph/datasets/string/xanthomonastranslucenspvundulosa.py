@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasTranslucensPvUndulosa.
+This file offers the methods to automatically retrieve the graph Xanthomonas translucens pv. undulosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasTranslucensPvUndulosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasTranslucensPvUndulosa graph.
+    """Return new instance of the Xanthomonas translucens pv. undulosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasTranslucensPvUndulosa(
 
     Returns
     -----------------------
-    Instace of XanthomonasTranslucensPvUndulosa graph.
+    Instace of Xanthomonas translucens pv. undulosa graph.
 
 	References
 	---------------------

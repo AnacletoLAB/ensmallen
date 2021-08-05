@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocWikiTalkDir.
+This file offers the methods to automatically retrieve the graph soc-wiki-Talk-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocWikiTalkDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocWikiTalkDir graph.
+    """Return new instance of the soc-wiki-Talk-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocWikiTalkDir(
 
     Returns
     -----------------------
-    Instace of SocWikiTalkDir graph.
+    Instace of soc-wiki-Talk-dir graph.
 
 	References
 	---------------------

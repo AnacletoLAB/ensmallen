@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf10.
+This file offers the methods to automatically retrieve the graph TF10.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf10(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf10 graph.
+    """Return new instance of the TF10 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf10(
 
     Returns
     -----------------------
-    Instace of Tf10 graph.
+    Instace of TF10 graph.
 
 	References
 	---------------------

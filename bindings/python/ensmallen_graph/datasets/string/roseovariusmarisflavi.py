@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseovariusMarisflavi.
+This file offers the methods to automatically retrieve the graph Roseovarius marisflavi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseovariusMarisflavi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseovariusMarisflavi graph.
+    """Return new instance of the Roseovarius marisflavi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseovariusMarisflavi(
 
     Returns
     -----------------------
-    Instace of RoseovariusMarisflavi graph.
+    Instace of Roseovarius marisflavi graph.
 
 	References
 	---------------------

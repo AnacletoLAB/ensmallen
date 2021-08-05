@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpAkyn10.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. AKYN10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpAkyn10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpAkyn10 graph.
+    """Return new instance of the Arthrobacter sp. AKYN10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSpAkyn10(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpAkyn10 graph.
+    Instace of Arthrobacter sp. AKYN10 graph.
 
 	References
 	---------------------

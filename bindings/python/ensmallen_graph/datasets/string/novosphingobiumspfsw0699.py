@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSpFsw0699.
+This file offers the methods to automatically retrieve the graph Novosphingobium sp. FSW06-99.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSpFsw0699(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSpFsw0699 graph.
+    """Return new instance of the Novosphingobium sp. FSW06-99 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSpFsw0699(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSpFsw0699 graph.
+    Instace of Novosphingobium sp. FSW06-99 graph.
 
 	References
 	---------------------

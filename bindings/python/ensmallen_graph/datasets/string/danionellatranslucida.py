@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DanionellaTranslucida.
+This file offers the methods to automatically retrieve the graph Danionella translucida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DanionellaTranslucida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DanionellaTranslucida graph.
+    """Return new instance of the Danionella translucida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DanionellaTranslucida(
 
     Returns
     -----------------------
-    Instace of DanionellaTranslucida graph.
+    Instace of Danionella translucida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlaviramulusIchthyoenteri.
+This file offers the methods to automatically retrieve the graph Flaviramulus ichthyoenteri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlaviramulusIchthyoenteri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlaviramulusIchthyoenteri graph.
+    """Return new instance of the Flaviramulus ichthyoenteri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlaviramulusIchthyoenteri(
 
     Returns
     -----------------------
-    Instace of FlaviramulusIchthyoenteri graph.
+    Instace of Flaviramulus ichthyoenteri graph.
 
 	References
 	---------------------

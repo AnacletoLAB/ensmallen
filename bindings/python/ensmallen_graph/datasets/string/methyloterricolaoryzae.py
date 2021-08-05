@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloterricolaOryzae.
+This file offers the methods to automatically retrieve the graph Methyloterricola oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloterricolaOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloterricolaOryzae graph.
+    """Return new instance of the Methyloterricola oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloterricolaOryzae(
 
     Returns
     -----------------------
-    Instace of MethyloterricolaOryzae graph.
+    Instace of Methyloterricola oryzae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyncephalastrumRacemosum.
+This file offers the methods to automatically retrieve the graph Syncephalastrum racemosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyncephalastrumRacemosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyncephalastrumRacemosum graph.
+    """Return new instance of the Syncephalastrum racemosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyncephalastrumRacemosum(
 
     Returns
     -----------------------
-    Instace of SyncephalastrumRacemosum graph.
+    Instace of Syncephalastrum racemosum graph.
 
 	References
 	---------------------

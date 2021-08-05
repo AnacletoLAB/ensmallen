@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSoli.
+This file offers the methods to automatically retrieve the graph Flavobacterium soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSoli graph.
+    """Return new instance of the Flavobacterium soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSoli(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSoli graph.
+    Instace of Flavobacterium soli graph.
 
 	References
 	---------------------

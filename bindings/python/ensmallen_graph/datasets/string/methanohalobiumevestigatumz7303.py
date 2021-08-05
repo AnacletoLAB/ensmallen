@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanohalobiumEvestigatumZ7303.
+This file offers the methods to automatically retrieve the graph Methanohalobium evestigatum Z-7303.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanohalobiumEvestigatumZ7303(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanohalobiumEvestigatumZ7303 graph.
+    """Return new instance of the Methanohalobium evestigatum Z-7303 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanohalobiumEvestigatumZ7303(
 
     Returns
     -----------------------
-    Instace of MethanohalobiumEvestigatumZ7303 graph.
+    Instace of Methanohalobium evestigatum Z-7303 graph.
 
 	References
 	---------------------

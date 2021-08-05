@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaerotilusNatans.
+This file offers the methods to automatically retrieve the graph Sphaerotilus natans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaerotilusNatans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaerotilusNatans graph.
+    """Return new instance of the Sphaerotilus natans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaerotilusNatans(
 
     Returns
     -----------------------
-    Instace of SphaerotilusNatans graph.
+    Instace of Sphaerotilus natans graph.
 
 	References
 	---------------------

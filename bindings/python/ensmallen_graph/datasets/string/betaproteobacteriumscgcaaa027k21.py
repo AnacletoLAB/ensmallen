@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaProteobacteriumScgcAaa027K21.
+This file offers the methods to automatically retrieve the graph beta proteobacterium SCGC AAA027-K21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaProteobacteriumScgcAaa027K21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaProteobacteriumScgcAaa027K21 graph.
+    """Return new instance of the beta proteobacterium SCGC AAA027-K21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaProteobacteriumScgcAaa027K21(
 
     Returns
     -----------------------
-    Instace of BetaProteobacteriumScgcAaa027K21 graph.
+    Instace of beta proteobacterium SCGC AAA027-K21 graph.
 
 	References
 	---------------------

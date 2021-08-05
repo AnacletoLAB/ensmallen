@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacteriumScn6937.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium SCN 69-37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacteriumScn6937(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacteriumScn6937 graph.
+    """Return new instance of the Acidobacteria bacterium SCN 69-37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacteriumScn6937(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacteriumScn6937 graph.
+    Instace of Acidobacteria bacterium SCN 69-37 graph.
 
 	References
 	---------------------

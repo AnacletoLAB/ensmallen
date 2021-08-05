@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterDenitrificans.
+This file offers the methods to automatically retrieve the graph Rhodanobacter denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterDenitrificans graph.
+    """Return new instance of the Rhodanobacter denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodanobacterDenitrificans(
 
     Returns
     -----------------------
-    Instace of RhodanobacterDenitrificans graph.
+    Instace of Rhodanobacter denitrificans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumHalotolerans.
+This file offers the methods to automatically retrieve the graph Corynebacterium halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumHalotolerans graph.
+    """Return new instance of the Corynebacterium halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumHalotolerans(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumHalotolerans graph.
+    Instace of Corynebacterium halotolerans graph.
 
 	References
 	---------------------

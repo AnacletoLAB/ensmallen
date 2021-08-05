@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalopenitusMalekzadehii.
+This file offers the methods to automatically retrieve the graph Halopenitus malekzadehii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalopenitusMalekzadehii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalopenitusMalekzadehii graph.
+    """Return new instance of the Halopenitus malekzadehii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalopenitusMalekzadehii(
 
     Returns
     -----------------------
-    Instace of HalopenitusMalekzadehii graph.
+    Instace of Halopenitus malekzadehii graph.
 
 	References
 	---------------------

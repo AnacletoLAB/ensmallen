@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpWsm3224.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. WSM3224.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpWsm3224(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpWsm3224 graph.
+    """Return new instance of the Mesorhizobium sp. WSM3224 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumSpWsm3224(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpWsm3224 graph.
+    Instace of Mesorhizobium sp. WSM3224 graph.
 
 	References
 	---------------------

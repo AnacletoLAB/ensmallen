@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaplasmaPhagocytophilum.
+This file offers the methods to automatically retrieve the graph Anaplasma phagocytophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaplasmaPhagocytophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaplasmaPhagocytophilum graph.
+    """Return new instance of the Anaplasma phagocytophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaplasmaPhagocytophilum(
 
     Returns
     -----------------------
-    Instace of AnaplasmaPhagocytophilum graph.
+    Instace of Anaplasma phagocytophilum graph.
 
 	References
 	---------------------

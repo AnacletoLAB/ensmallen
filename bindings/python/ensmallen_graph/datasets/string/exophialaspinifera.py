@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaSpinifera.
+This file offers the methods to automatically retrieve the graph Exophiala spinifera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaSpinifera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaSpinifera graph.
+    """Return new instance of the Exophiala spinifera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaSpinifera(
 
     Returns
     -----------------------
-    Instace of ExophialaSpinifera graph.
+    Instace of Exophiala spinifera graph.
 
 	References
 	---------------------

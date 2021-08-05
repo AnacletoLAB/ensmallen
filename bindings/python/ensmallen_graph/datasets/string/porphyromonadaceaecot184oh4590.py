@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonadaceaeCot184oh4590.
+This file offers the methods to automatically retrieve the graph Porphyromonadaceae COT184OH4590.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonadaceaeCot184oh4590(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonadaceaeCot184oh4590 graph.
+    """Return new instance of the Porphyromonadaceae COT184OH4590 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonadaceaeCot184oh4590(
 
     Returns
     -----------------------
-    Instace of PorphyromonadaceaeCot184oh4590 graph.
+    Instace of Porphyromonadaceae COT184OH4590 graph.
 
 	References
 	---------------------

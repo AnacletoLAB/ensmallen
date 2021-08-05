@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EchinococcusGranulosus.
+This file offers the methods to automatically retrieve the graph Echinococcus granulosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EchinococcusGranulosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EchinococcusGranulosus graph.
+    """Return new instance of the Echinococcus granulosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EchinococcusGranulosus(
 
     Returns
     -----------------------
-    Instace of EchinococcusGranulosus graph.
+    Instace of Echinococcus granulosus graph.
 
 	References
 	---------------------

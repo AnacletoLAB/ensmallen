@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSpFjat14222.
+This file offers the methods to automatically retrieve the graph Lysinibacillus sp. FJAT-14222.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSpFjat14222(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSpFjat14222 graph.
+    """Return new instance of the Lysinibacillus sp. FJAT-14222 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusSpFjat14222(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSpFjat14222 graph.
+    Instace of Lysinibacillus sp. FJAT-14222 graph.
 
 	References
 	---------------------

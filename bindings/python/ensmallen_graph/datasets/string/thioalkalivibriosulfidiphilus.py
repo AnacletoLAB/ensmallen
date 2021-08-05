@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioSulfidiphilus.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio sulfidiphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioSulfidiphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioSulfidiphilus graph.
+    """Return new instance of the Thioalkalivibrio sulfidiphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalivibrioSulfidiphilus(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioSulfidiphilus graph.
+    Instace of Thioalkalivibrio sulfidiphilus graph.
 
 	References
 	---------------------

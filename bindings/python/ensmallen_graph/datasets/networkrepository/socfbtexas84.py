@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbTexas84.
+This file offers the methods to automatically retrieve the graph socfb-Texas84.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbTexas84(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbTexas84 graph.
+    """Return new instance of the socfb-Texas84 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbTexas84(
 
     Returns
     -----------------------
-    Instace of SocfbTexas84 graph.
+    Instace of socfb-Texas84 graph.
 
 	References
 	---------------------

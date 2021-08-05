@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PoeciliaFormosa.
+This file offers the methods to automatically retrieve the graph Poecilia formosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PoeciliaFormosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PoeciliaFormosa graph.
+    """Return new instance of the Poecilia formosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PoeciliaFormosa(
 
     Returns
     -----------------------
-    Instace of PoeciliaFormosa graph.
+    Instace of Poecilia formosa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFalkowbacteriaBacteriumRbg133914.
+This file offers the methods to automatically retrieve the graph Candidatus Falkowbacteria bacterium RBG_13_39_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFalkowbacteriaBacteriumRbg133914(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFalkowbacteriaBacteriumRbg133914 graph.
+    """Return new instance of the Candidatus Falkowbacteria bacterium RBG_13_39_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFalkowbacteriaBacteriumRbg133914(
 
     Returns
     -----------------------
-    Instace of CandidatusFalkowbacteriaBacteriumRbg133914 graph.
+    Instace of Candidatus Falkowbacteria bacterium RBG_13_39_14 graph.
 
 	References
 	---------------------

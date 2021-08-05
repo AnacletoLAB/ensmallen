@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesBicolor.
+This file offers the methods to automatically retrieve the graph Streptomyces bicolor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesBicolor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesBicolor graph.
+    """Return new instance of the Streptomyces bicolor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesBicolor(
 
     Returns
     -----------------------
-    Instace of StreptomycesBicolor graph.
+    Instace of Streptomyces bicolor graph.
 
 	References
 	---------------------

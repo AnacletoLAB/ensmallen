@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NisaeaDenitrificansDsm18348.
+This file offers the methods to automatically retrieve the graph Nisaea denitrificans DSM 18348.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NisaeaDenitrificansDsm18348(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NisaeaDenitrificansDsm18348 graph.
+    """Return new instance of the Nisaea denitrificans DSM 18348 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NisaeaDenitrificansDsm18348(
 
     Returns
     -----------------------
-    Instace of NisaeaDenitrificansDsm18348 graph.
+    Instace of Nisaea denitrificans DSM 18348 graph.
 
 	References
 	---------------------

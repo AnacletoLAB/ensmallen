@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OphiostomaPiceaeUamh11346.
+This file offers the methods to automatically retrieve the graph Ophiostoma piceae UAMH 11346.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OphiostomaPiceaeUamh11346(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OphiostomaPiceaeUamh11346 graph.
+    """Return new instance of the Ophiostoma piceae UAMH 11346 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OphiostomaPiceaeUamh11346(
 
     Returns
     -----------------------
-    Instace of OphiostomaPiceaeUamh11346 graph.
+    Instace of Ophiostoma piceae UAMH 11346 graph.
 
 	References
 	---------------------

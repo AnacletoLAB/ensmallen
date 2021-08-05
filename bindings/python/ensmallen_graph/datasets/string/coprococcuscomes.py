@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprococcusComes.
+This file offers the methods to automatically retrieve the graph Coprococcus comes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprococcusComes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprococcusComes graph.
+    """Return new instance of the Coprococcus comes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprococcusComes(
 
     Returns
     -----------------------
-    Instace of CoprococcusComes graph.
+    Instace of Coprococcus comes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurovumSpEnrichmentCultureCloneC5.
+This file offers the methods to automatically retrieve the graph Sulfurovum sp. enrichment culture clone C5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurovumSpEnrichmentCultureCloneC5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurovumSpEnrichmentCultureCloneC5 graph.
+    """Return new instance of the Sulfurovum sp. enrichment culture clone C5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurovumSpEnrichmentCultureCloneC5(
 
     Returns
     -----------------------
-    Instace of SulfurovumSpEnrichmentCultureCloneC5 graph.
+    Instace of Sulfurovum sp. enrichment culture clone C5 graph.
 
 	References
 	---------------------

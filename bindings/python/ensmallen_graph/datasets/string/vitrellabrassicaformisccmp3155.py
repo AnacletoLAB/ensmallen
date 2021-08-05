@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VitrellaBrassicaformisCcmp3155.
+This file offers the methods to automatically retrieve the graph Vitrella brassicaformis CCMP3155.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VitrellaBrassicaformisCcmp3155(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VitrellaBrassicaformisCcmp3155 graph.
+    """Return new instance of the Vitrella brassicaformis CCMP3155 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VitrellaBrassicaformisCcmp3155(
 
     Returns
     -----------------------
-    Instace of VitrellaBrassicaformisCcmp3155 graph.
+    Instace of Vitrella brassicaformis CCMP3155 graph.
 
 	References
 	---------------------

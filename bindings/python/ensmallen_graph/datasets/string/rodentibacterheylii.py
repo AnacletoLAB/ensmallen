@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentibacterHeylii.
+This file offers the methods to automatically retrieve the graph Rodentibacter heylii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentibacterHeylii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentibacterHeylii graph.
+    """Return new instance of the Rodentibacter heylii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentibacterHeylii(
 
     Returns
     -----------------------
-    Instace of RodentibacterHeylii graph.
+    Instace of Rodentibacter heylii graph.
 
 	References
 	---------------------

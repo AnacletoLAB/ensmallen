@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioGracilisDsm16080.
+This file offers the methods to automatically retrieve the graph Desulfovibrio gracilis DSM 16080.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioGracilisDsm16080(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioGracilisDsm16080 graph.
+    """Return new instance of the Desulfovibrio gracilis DSM 16080 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioGracilisDsm16080(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioGracilisDsm16080 graph.
+    Instace of Desulfovibrio gracilis DSM 16080 graph.
 
 	References
 	---------------------

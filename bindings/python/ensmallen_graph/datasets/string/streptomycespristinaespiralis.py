@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesPristinaespiralis.
+This file offers the methods to automatically retrieve the graph Streptomyces pristinaespiralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesPristinaespiralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesPristinaespiralis graph.
+    """Return new instance of the Streptomyces pristinaespiralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesPristinaespiralis(
 
     Returns
     -----------------------
-    Instace of StreptomycesPristinaespiralis graph.
+    Instace of Streptomyces pristinaespiralis graph.
 
 	References
 	---------------------

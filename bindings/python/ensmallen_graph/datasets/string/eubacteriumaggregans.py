@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumAggregans.
+This file offers the methods to automatically retrieve the graph Eubacterium aggregans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumAggregans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumAggregans graph.
+    """Return new instance of the Eubacterium aggregans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumAggregans(
 
     Returns
     -----------------------
-    Instace of EubacteriumAggregans graph.
+    Instace of Eubacterium aggregans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSordellii.
+This file offers the methods to automatically retrieve the graph Clostridium sordellii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSordellii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSordellii graph.
+    """Return new instance of the Clostridium sordellii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSordellii(
 
     Returns
     -----------------------
-    Instace of ClostridiumSordellii graph.
+    Instace of Clostridium sordellii graph.
 
 	References
 	---------------------

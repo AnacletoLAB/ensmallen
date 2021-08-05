@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetospirillumGryphiswaldense.
+This file offers the methods to automatically retrieve the graph Magnetospirillum gryphiswaldense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetospirillumGryphiswaldense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetospirillumGryphiswaldense graph.
+    """Return new instance of the Magnetospirillum gryphiswaldense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MagnetospirillumGryphiswaldense(
 
     Returns
     -----------------------
-    Instace of MagnetospirillumGryphiswaldense graph.
+    Instace of Magnetospirillum gryphiswaldense graph.
 
 	References
 	---------------------

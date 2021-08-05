@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospiraTrueperi.
+This file offers the methods to automatically retrieve the graph Rhodospira trueperi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospiraTrueperi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospiraTrueperi graph.
+    """Return new instance of the Rhodospira trueperi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospiraTrueperi(
 
     Returns
     -----------------------
-    Instace of RhodospiraTrueperi graph.
+    Instace of Rhodospira trueperi graph.
 
 	References
 	---------------------

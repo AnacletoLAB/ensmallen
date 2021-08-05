@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSaphenum.
+This file offers the methods to automatically retrieve the graph Eubacterium saphenum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSaphenum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSaphenum graph.
+    """Return new instance of the Eubacterium saphenum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumSaphenum(
 
     Returns
     -----------------------
-    Instace of EubacteriumSaphenum graph.
+    Instace of Eubacterium saphenum graph.
 
 	References
 	---------------------

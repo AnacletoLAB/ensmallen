@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumAethiopicum.
+This file offers the methods to automatically retrieve the graph Halorubrum aethiopicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumAethiopicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumAethiopicum graph.
+    """Return new instance of the Halorubrum aethiopicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumAethiopicum(
 
     Returns
     -----------------------
-    Instace of HalorubrumAethiopicum graph.
+    Instace of Halorubrum aethiopicum graph.
 
 	References
 	---------------------

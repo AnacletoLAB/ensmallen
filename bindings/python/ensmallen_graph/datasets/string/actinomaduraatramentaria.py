@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraAtramentaria.
+This file offers the methods to automatically retrieve the graph Actinomadura atramentaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraAtramentaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraAtramentaria graph.
+    """Return new instance of the Actinomadura atramentaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomaduraAtramentaria(
 
     Returns
     -----------------------
-    Instace of ActinomaduraAtramentaria graph.
+    Instace of Actinomadura atramentaria graph.
 
 	References
 	---------------------

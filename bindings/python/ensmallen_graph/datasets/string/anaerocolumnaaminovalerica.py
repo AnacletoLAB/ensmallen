@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerocolumnaAminovalerica.
+This file offers the methods to automatically retrieve the graph Anaerocolumna aminovalerica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerocolumnaAminovalerica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerocolumnaAminovalerica graph.
+    """Return new instance of the Anaerocolumna aminovalerica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerocolumnaAminovalerica(
 
     Returns
     -----------------------
-    Instace of AnaerocolumnaAminovalerica graph.
+    Instace of Anaerocolumna aminovalerica graph.
 
 	References
 	---------------------

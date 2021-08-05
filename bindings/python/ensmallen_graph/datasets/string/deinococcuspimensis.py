@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusPimensis.
+This file offers the methods to automatically retrieve the graph Deinococcus pimensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusPimensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusPimensis graph.
+    """Return new instance of the Deinococcus pimensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusPimensis(
 
     Returns
     -----------------------
-    Instace of DeinococcusPimensis graph.
+    Instace of Deinococcus pimensis graph.
 
 	References
 	---------------------

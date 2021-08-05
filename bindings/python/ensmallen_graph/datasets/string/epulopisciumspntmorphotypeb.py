@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpulopisciumSpNTMorphotypeB.
+This file offers the methods to automatically retrieve the graph Epulopiscium sp. N.t. morphotype B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpulopisciumSpNTMorphotypeB(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpulopisciumSpNTMorphotypeB graph.
+    """Return new instance of the Epulopiscium sp. N.t. morphotype B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpulopisciumSpNTMorphotypeB(
 
     Returns
     -----------------------
-    Instace of EpulopisciumSpNTMorphotypeB graph.
+    Instace of Epulopiscium sp. N.t. morphotype B graph.
 
 	References
 	---------------------

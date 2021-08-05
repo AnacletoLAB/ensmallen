@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseibacaCalidilacus.
+This file offers the methods to automatically retrieve the graph Roseibaca calidilacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseibacaCalidilacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseibacaCalidilacus graph.
+    """Return new instance of the Roseibaca calidilacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseibacaCalidilacus(
 
     Returns
     -----------------------
-    Instace of RoseibacaCalidilacus graph.
+    Instace of Roseibaca calidilacus graph.
 
 	References
 	---------------------

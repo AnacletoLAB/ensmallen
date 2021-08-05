@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AhrensiaSp13gom1096m.
+This file offers the methods to automatically retrieve the graph Ahrensia sp. 13GOM1096m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AhrensiaSp13gom1096m(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AhrensiaSp13gom1096m graph.
+    """Return new instance of the Ahrensia sp. 13GOM1096m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AhrensiaSp13gom1096m(
 
     Returns
     -----------------------
-    Instace of AhrensiaSp13gom1096m graph.
+    Instace of Ahrensia sp. 13GOM1096m graph.
 
 	References
 	---------------------

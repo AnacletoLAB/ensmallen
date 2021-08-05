@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MortierellaElongataAg77.
+This file offers the methods to automatically retrieve the graph Mortierella elongata AG-77.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MortierellaElongataAg77(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MortierellaElongataAg77 graph.
+    """Return new instance of the Mortierella elongata AG-77 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MortierellaElongataAg77(
 
     Returns
     -----------------------
-    Instace of MortierellaElongataAg77 graph.
+    Instace of Mortierella elongata AG-77 graph.
 
 	References
 	---------------------

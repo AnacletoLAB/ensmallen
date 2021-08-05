@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NecropsobacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Necropsobacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NecropsobacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NecropsobacterMassiliensis graph.
+    """Return new instance of the Necropsobacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NecropsobacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of NecropsobacterMassiliensis graph.
+    Instace of Necropsobacter massiliensis graph.
 
 	References
 	---------------------

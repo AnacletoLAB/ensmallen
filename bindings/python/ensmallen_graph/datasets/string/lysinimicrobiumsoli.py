@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumSoli.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumSoli graph.
+    """Return new instance of the Lysinimicrobium soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinimicrobiumSoli(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumSoli graph.
+    Instace of Lysinimicrobium soli graph.
 
 	References
 	---------------------

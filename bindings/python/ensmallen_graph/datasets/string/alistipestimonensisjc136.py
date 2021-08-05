@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesTimonensisJc136.
+This file offers the methods to automatically retrieve the graph Alistipes timonensis JC136.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesTimonensisJc136(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesTimonensisJc136 graph.
+    """Return new instance of the Alistipes timonensis JC136 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlistipesTimonensisJc136(
 
     Returns
     -----------------------
-    Instace of AlistipesTimonensisJc136 graph.
+    Instace of Alistipes timonensis JC136 graph.
 
 	References
 	---------------------

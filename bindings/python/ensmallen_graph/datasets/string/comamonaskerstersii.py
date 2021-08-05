@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonasKerstersii.
+This file offers the methods to automatically retrieve the graph Comamonas kerstersii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonasKerstersii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonasKerstersii graph.
+    """Return new instance of the Comamonas kerstersii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonasKerstersii(
 
     Returns
     -----------------------
-    Instace of ComamonasKerstersii graph.
+    Instace of Comamonas kerstersii graph.
 
 	References
 	---------------------

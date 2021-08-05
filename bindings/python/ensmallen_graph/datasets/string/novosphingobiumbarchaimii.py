@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumBarchaimii.
+This file offers the methods to automatically retrieve the graph Novosphingobium barchaimii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumBarchaimii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumBarchaimii graph.
+    """Return new instance of the Novosphingobium barchaimii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumBarchaimii(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumBarchaimii graph.
+    Instace of Novosphingobium barchaimii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeorhizobiumGalegaeBvOrientalis.
+This file offers the methods to automatically retrieve the graph Neorhizobium galegae bv. orientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeorhizobiumGalegaeBvOrientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeorhizobiumGalegaeBvOrientalis graph.
+    """Return new instance of the Neorhizobium galegae bv. orientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeorhizobiumGalegaeBvOrientalis(
 
     Returns
     -----------------------
-    Instace of NeorhizobiumGalegaeBvOrientalis graph.
+    Instace of Neorhizobium galegae bv. orientalis graph.
 
 	References
 	---------------------

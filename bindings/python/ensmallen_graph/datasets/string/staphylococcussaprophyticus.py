@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSaprophyticus.
+This file offers the methods to automatically retrieve the graph Staphylococcus saprophyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSaprophyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSaprophyticus graph.
+    """Return new instance of the Staphylococcus saprophyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusSaprophyticus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSaprophyticus graph.
+    Instace of Staphylococcus saprophyticus graph.
 
 	References
 	---------------------

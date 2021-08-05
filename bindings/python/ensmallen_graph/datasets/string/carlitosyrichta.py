@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarlitoSyrichta.
+This file offers the methods to automatically retrieve the graph Carlito syrichta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarlitoSyrichta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarlitoSyrichta graph.
+    """Return new instance of the Carlito syrichta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarlitoSyrichta(
 
     Returns
     -----------------------
-    Instace of CarlitoSyrichta graph.
+    Instace of Carlito syrichta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaGoodfellowiiDsm19756.
+This file offers the methods to automatically retrieve the graph Leptotrichia goodfellowii DSM 19756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaGoodfellowiiDsm19756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaGoodfellowiiDsm19756 graph.
+    """Return new instance of the Leptotrichia goodfellowii DSM 19756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptotrichiaGoodfellowiiDsm19756(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaGoodfellowiiDsm19756 graph.
+    Instace of Leptotrichia goodfellowii DSM 19756 graph.
 
 	References
 	---------------------

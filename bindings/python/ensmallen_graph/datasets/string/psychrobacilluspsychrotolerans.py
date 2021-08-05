@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacillusPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Psychrobacillus psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacillusPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacillusPsychrotolerans graph.
+    """Return new instance of the Psychrobacillus psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacillusPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of PsychrobacillusPsychrotolerans graph.
+    Instace of Psychrobacillus psychrotolerans graph.
 
 	References
 	---------------------

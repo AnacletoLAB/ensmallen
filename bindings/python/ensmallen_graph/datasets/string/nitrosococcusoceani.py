@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosococcusOceani.
+This file offers the methods to automatically retrieve the graph Nitrosococcus oceani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosococcusOceani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosococcusOceani graph.
+    """Return new instance of the Nitrosococcus oceani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosococcusOceani(
 
     Returns
     -----------------------
-    Instace of NitrosococcusOceani graph.
+    Instace of Nitrosococcus oceani graph.
 
 	References
 	---------------------

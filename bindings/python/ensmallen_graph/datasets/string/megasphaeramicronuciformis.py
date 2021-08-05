@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraMicronuciformis.
+This file offers the methods to automatically retrieve the graph Megasphaera micronuciformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraMicronuciformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraMicronuciformis graph.
+    """Return new instance of the Megasphaera micronuciformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegasphaeraMicronuciformis(
 
     Returns
     -----------------------
-    Instace of MegasphaeraMicronuciformis graph.
+    Instace of Megasphaera micronuciformis graph.
 
 	References
 	---------------------

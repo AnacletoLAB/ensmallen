@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SkermaniaPiniformisNbrc15059.
+This file offers the methods to automatically retrieve the graph Skermania piniformis NBRC 15059.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SkermaniaPiniformisNbrc15059(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SkermaniaPiniformisNbrc15059 graph.
+    """Return new instance of the Skermania piniformis NBRC 15059 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SkermaniaPiniformisNbrc15059(
 
     Returns
     -----------------------
-    Instace of SkermaniaPiniformisNbrc15059 graph.
+    Instace of Skermania piniformis NBRC 15059 graph.
 
 	References
 	---------------------

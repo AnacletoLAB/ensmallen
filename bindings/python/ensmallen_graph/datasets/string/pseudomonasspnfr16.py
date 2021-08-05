@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpNfr16.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. NFR16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpNfr16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpNfr16 graph.
+    """Return new instance of the Pseudomonas sp. NFR16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpNfr16(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpNfr16 graph.
+    Instace of Pseudomonas sp. NFR16 graph.
 
 	References
 	---------------------

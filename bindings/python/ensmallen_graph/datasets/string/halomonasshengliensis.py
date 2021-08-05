@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasShengliensis.
+This file offers the methods to automatically retrieve the graph Halomonas shengliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasShengliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasShengliensis graph.
+    """Return new instance of the Halomonas shengliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasShengliensis(
 
     Returns
     -----------------------
-    Instace of HalomonasShengliensis graph.
+    Instace of Halomonas shengliensis graph.
 
 	References
 	---------------------

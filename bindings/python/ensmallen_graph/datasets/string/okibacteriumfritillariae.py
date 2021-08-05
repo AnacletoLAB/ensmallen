@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OkibacteriumFritillariae.
+This file offers the methods to automatically retrieve the graph Okibacterium fritillariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OkibacteriumFritillariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OkibacteriumFritillariae graph.
+    """Return new instance of the Okibacterium fritillariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OkibacteriumFritillariae(
 
     Returns
     -----------------------
-    Instace of OkibacteriumFritillariae graph.
+    Instace of Okibacterium fritillariae graph.
 
 	References
 	---------------------

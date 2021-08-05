@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatumellaPtyseos.
+This file offers the methods to automatically retrieve the graph Tatumella ptyseos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatumellaPtyseos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatumellaPtyseos graph.
+    """Return new instance of the Tatumella ptyseos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TatumellaPtyseos(
 
     Returns
     -----------------------
-    Instace of TatumellaPtyseos graph.
+    Instace of Tatumella ptyseos graph.
 
 	References
 	---------------------

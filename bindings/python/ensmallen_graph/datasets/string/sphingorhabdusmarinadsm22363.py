@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingorhabdusMarinaDsm22363.
+This file offers the methods to automatically retrieve the graph Sphingorhabdus marina DSM 22363.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingorhabdusMarinaDsm22363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingorhabdusMarinaDsm22363 graph.
+    """Return new instance of the Sphingorhabdus marina DSM 22363 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingorhabdusMarinaDsm22363(
 
     Returns
     -----------------------
-    Instace of SphingorhabdusMarinaDsm22363 graph.
+    Instace of Sphingorhabdus marina DSM 22363 graph.
 
 	References
 	---------------------

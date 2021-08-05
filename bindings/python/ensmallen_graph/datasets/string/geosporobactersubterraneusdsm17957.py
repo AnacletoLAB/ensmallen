@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeosporobacterSubterraneusDsm17957.
+This file offers the methods to automatically retrieve the graph Geosporobacter subterraneus DSM 17957.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeosporobacterSubterraneusDsm17957(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeosporobacterSubterraneusDsm17957 graph.
+    """Return new instance of the Geosporobacter subterraneus DSM 17957 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeosporobacterSubterraneusDsm17957(
 
     Returns
     -----------------------
-    Instace of GeosporobacterSubterraneusDsm17957 graph.
+    Instace of Geosporobacter subterraneus DSM 17957 graph.
 
 	References
 	---------------------

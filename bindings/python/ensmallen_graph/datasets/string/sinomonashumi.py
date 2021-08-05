@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinomonasHumi.
+This file offers the methods to automatically retrieve the graph Sinomonas humi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinomonasHumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinomonasHumi graph.
+    """Return new instance of the Sinomonas humi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinomonasHumi(
 
     Returns
     -----------------------
-    Instace of SinomonasHumi graph.
+    Instace of Sinomonas humi graph.
 
 	References
 	---------------------

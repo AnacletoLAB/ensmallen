@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpBJedd.
+This file offers the methods to automatically retrieve the graph Bacillus sp. B-jedd.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpBJedd(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpBJedd graph.
+    """Return new instance of the Bacillus sp. B-jedd graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpBJedd(
 
     Returns
     -----------------------
-    Instace of BacillusSpBJedd graph.
+    Instace of Bacillus sp. B-jedd graph.
 
 	References
 	---------------------

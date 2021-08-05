@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSpCf125.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas sp. CF125.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSpCf125(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSpCf125 graph.
+    """Return new instance of the Pseudoxanthomonas sp. CF125 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasSpCf125(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSpCf125 graph.
+    Instace of Pseudoxanthomonas sp. CF125 graph.
 
 	References
 	---------------------

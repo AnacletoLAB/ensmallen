@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnserBrachyrhynchus.
+This file offers the methods to automatically retrieve the graph Anser brachyrhynchus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnserBrachyrhynchus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnserBrachyrhynchus graph.
+    """Return new instance of the Anser brachyrhynchus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnserBrachyrhynchus(
 
     Returns
     -----------------------
-    Instace of AnserBrachyrhynchus graph.
+    Instace of Anser brachyrhynchus graph.
 
 	References
 	---------------------

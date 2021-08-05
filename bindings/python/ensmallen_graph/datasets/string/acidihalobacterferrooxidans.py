@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidihalobacterFerrooxidans.
+This file offers the methods to automatically retrieve the graph Acidihalobacter ferrooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidihalobacterFerrooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidihalobacterFerrooxidans graph.
+    """Return new instance of the Acidihalobacter ferrooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidihalobacterFerrooxidans(
 
     Returns
     -----------------------
-    Instace of AcidihalobacterFerrooxidans graph.
+    Instace of Acidihalobacter ferrooxidans graph.
 
 	References
 	---------------------

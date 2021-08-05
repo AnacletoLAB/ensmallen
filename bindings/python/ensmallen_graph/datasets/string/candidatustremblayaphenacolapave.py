@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTremblayaPhenacolaPave.
+This file offers the methods to automatically retrieve the graph Candidatus Tremblaya phenacola PAVE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTremblayaPhenacolaPave(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTremblayaPhenacolaPave graph.
+    """Return new instance of the Candidatus Tremblaya phenacola PAVE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTremblayaPhenacolaPave(
 
     Returns
     -----------------------
-    Instace of CandidatusTremblayaPhenacolaPave graph.
+    Instace of Candidatus Tremblaya phenacola PAVE graph.
 
 	References
 	---------------------

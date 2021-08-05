@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaUniformisNbrc13702.
+This file offers the methods to automatically retrieve the graph Nocardia uniformis NBRC 13702.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaUniformisNbrc13702(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaUniformisNbrc13702 graph.
+    """Return new instance of the Nocardia uniformis NBRC 13702 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaUniformisNbrc13702(
 
     Returns
     -----------------------
-    Instace of NocardiaUniformisNbrc13702 graph.
+    Instace of Nocardia uniformis NBRC 13702 graph.
 
 	References
 	---------------------

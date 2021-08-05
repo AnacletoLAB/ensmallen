@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumPaxllaeri.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium paxllaeri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumPaxllaeri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumPaxllaeri graph.
+    """Return new instance of the Bradyrhizobium paxllaeri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumPaxllaeri(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumPaxllaeri graph.
+    Instace of Bradyrhizobium paxllaeri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NicotianaTomentosiformis.
+This file offers the methods to automatically retrieve the graph Nicotiana tomentosiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NicotianaTomentosiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NicotianaTomentosiformis graph.
+    """Return new instance of the Nicotiana tomentosiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NicotianaTomentosiformis(
 
     Returns
     -----------------------
-    Instace of NicotianaTomentosiformis graph.
+    Instace of Nicotiana tomentosiformis graph.
 
 	References
 	---------------------

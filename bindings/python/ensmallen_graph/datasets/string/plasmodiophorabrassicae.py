@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiophoraBrassicae.
+This file offers the methods to automatically retrieve the graph Plasmodiophora brassicae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiophoraBrassicae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiophoraBrassicae graph.
+    """Return new instance of the Plasmodiophora brassicae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlasmodiophoraBrassicae(
 
     Returns
     -----------------------
-    Instace of PlasmodiophoraBrassicae graph.
+    Instace of Plasmodiophora brassicae graph.
 
 	References
 	---------------------

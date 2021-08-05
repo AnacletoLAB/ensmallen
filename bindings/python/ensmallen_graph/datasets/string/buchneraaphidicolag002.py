@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BuchneraAphidicolaG002.
+This file offers the methods to automatically retrieve the graph Buchnera aphidicola G002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BuchneraAphidicolaG002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BuchneraAphidicolaG002 graph.
+    """Return new instance of the Buchnera aphidicola G002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BuchneraAphidicolaG002(
 
     Returns
     -----------------------
-    Instace of BuchneraAphidicolaG002 graph.
+    Instace of Buchnera aphidicola G002 graph.
 
 	References
 	---------------------

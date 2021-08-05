@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisXylanica.
+This file offers the methods to automatically retrieve the graph Amycolatopsis xylanica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisXylanica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisXylanica graph.
+    """Return new instance of the Amycolatopsis xylanica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisXylanica(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisXylanica graph.
+    Instace of Amycolatopsis xylanica graph.
 
 	References
 	---------------------

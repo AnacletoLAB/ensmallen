@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlenkiaTaihuensis.
+This file offers the methods to automatically retrieve the graph Klenkia taihuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlenkiaTaihuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlenkiaTaihuensis graph.
+    """Return new instance of the Klenkia taihuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlenkiaTaihuensis(
 
     Returns
     -----------------------
-    Instace of KlenkiaTaihuensis graph.
+    Instace of Klenkia taihuensis graph.
 
 	References
 	---------------------

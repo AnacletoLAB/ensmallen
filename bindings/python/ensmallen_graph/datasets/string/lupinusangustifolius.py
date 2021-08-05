@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LupinusAngustifolius.
+This file offers the methods to automatically retrieve the graph Lupinus angustifolius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LupinusAngustifolius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LupinusAngustifolius graph.
+    """Return new instance of the Lupinus angustifolius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LupinusAngustifolius(
 
     Returns
     -----------------------
-    Instace of LupinusAngustifolius graph.
+    Instace of Lupinus angustifolius graph.
 
 	References
 	---------------------

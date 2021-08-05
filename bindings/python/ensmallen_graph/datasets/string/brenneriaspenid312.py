@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrenneriaSpEnid312.
+This file offers the methods to automatically retrieve the graph Brenneria sp. EniD312.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrenneriaSpEnid312(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrenneriaSpEnid312 graph.
+    """Return new instance of the Brenneria sp. EniD312 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrenneriaSpEnid312(
 
     Returns
     -----------------------
-    Instace of BrenneriaSpEnid312 graph.
+    Instace of Brenneria sp. EniD312 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaBacteriumDg743.
+This file offers the methods to automatically retrieve the graph Parcubacteria bacterium DG_74_3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaBacteriumDg743(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaBacteriumDg743 graph.
+    """Return new instance of the Parcubacteria bacterium DG_74_3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaBacteriumDg743(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaBacteriumDg743 graph.
+    Instace of Parcubacteria bacterium DG_74_3 graph.
 
 	References
 	---------------------

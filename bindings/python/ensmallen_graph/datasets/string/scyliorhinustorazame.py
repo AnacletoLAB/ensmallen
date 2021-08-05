@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScyliorhinusTorazame.
+This file offers the methods to automatically retrieve the graph Scyliorhinus torazame.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ScyliorhinusTorazame(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScyliorhinusTorazame graph.
+    """Return new instance of the Scyliorhinus torazame graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ScyliorhinusTorazame(
 
     Returns
     -----------------------
-    Instace of ScyliorhinusTorazame graph.
+    Instace of Scyliorhinus torazame graph.
 
 	References
 	---------------------

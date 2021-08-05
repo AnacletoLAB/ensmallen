@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpH3.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. H3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSpH3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpH3 graph.
+    """Return new instance of the Sulfitobacter sp. H3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterSpH3(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpH3 graph.
+    Instace of Sulfitobacter sp. H3 graph.
 
 	References
 	---------------------

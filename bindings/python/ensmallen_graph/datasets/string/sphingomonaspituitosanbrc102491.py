@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasPituitosaNbrc102491.
+This file offers the methods to automatically retrieve the graph Sphingomonas pituitosa NBRC 102491.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasPituitosaNbrc102491(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasPituitosaNbrc102491 graph.
+    """Return new instance of the Sphingomonas pituitosa NBRC 102491 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasPituitosaNbrc102491(
 
     Returns
     -----------------------
-    Instace of SphingomonasPituitosaNbrc102491 graph.
+    Instace of Sphingomonas pituitosa NBRC 102491 graph.
 
 	References
 	---------------------

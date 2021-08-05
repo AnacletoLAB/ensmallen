@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesBikiniensis.
+This file offers the methods to automatically retrieve the graph Streptomyces bikiniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesBikiniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesBikiniensis graph.
+    """Return new instance of the Streptomyces bikiniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesBikiniensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesBikiniensis graph.
+    Instace of Streptomyces bikiniensis graph.
 
 	References
 	---------------------

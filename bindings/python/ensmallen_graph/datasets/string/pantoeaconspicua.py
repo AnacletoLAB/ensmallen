@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaConspicua.
+This file offers the methods to automatically retrieve the graph Pantoea conspicua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaConspicua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaConspicua graph.
+    """Return new instance of the Pantoea conspicua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaConspicua(
 
     Returns
     -----------------------
-    Instace of PantoeaConspicua graph.
+    Instace of Pantoea conspicua graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilusRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Methylophilus rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilusRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilusRhizosphaerae graph.
+    """Return new instance of the Methylophilus rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylophilusRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of MethylophilusRhizosphaerae graph.
+    Instace of Methylophilus rhizosphaerae graph.
 
 	References
 	---------------------

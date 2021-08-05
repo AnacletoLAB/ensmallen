@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpUrmo17wk12i8.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. URMO17WK12I8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpUrmo17wk12i8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpUrmo17wk12i8 graph.
+    """Return new instance of the Pseudomonas sp. URMO17WK12I8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpUrmo17wk12i8(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpUrmo17wk12i8 graph.
+    Instace of Pseudomonas sp. URMO17WK12I8 graph.
 
 	References
 	---------------------

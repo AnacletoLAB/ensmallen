@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusLaterosporusDsm25.
+This file offers the methods to automatically retrieve the graph Brevibacillus laterosporus DSM25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusLaterosporusDsm25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusLaterosporusDsm25 graph.
+    """Return new instance of the Brevibacillus laterosporus DSM25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacillusLaterosporusDsm25(
 
     Returns
     -----------------------
-    Instace of BrevibacillusLaterosporusDsm25 graph.
+    Instace of Brevibacillus laterosporus DSM25 graph.
 
 	References
 	---------------------

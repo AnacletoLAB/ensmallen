@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioJasicida.
+This file offers the methods to automatically retrieve the graph Vibrio jasicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioJasicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioJasicida graph.
+    """Return new instance of the Vibrio jasicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioJasicida(
 
     Returns
     -----------------------
-    Instace of VibrioJasicida graph.
+    Instace of Vibrio jasicida graph.
 
 	References
 	---------------------

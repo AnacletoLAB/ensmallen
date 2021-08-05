@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSingulare.
+This file offers the methods to automatically retrieve the graph Corynebacterium singulare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSingulare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSingulare graph.
+    """Return new instance of the Corynebacterium singulare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSingulare(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSingulare graph.
+    Instace of Corynebacterium singulare graph.
 
 	References
 	---------------------

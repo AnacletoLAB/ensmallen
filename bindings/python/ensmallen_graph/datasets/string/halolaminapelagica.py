@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalolaminaPelagica.
+This file offers the methods to automatically retrieve the graph Halolamina pelagica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalolaminaPelagica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalolaminaPelagica graph.
+    """Return new instance of the Halolamina pelagica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalolaminaPelagica(
 
     Returns
     -----------------------
-    Instace of HalolaminaPelagica graph.
+    Instace of Halolamina pelagica graph.
 
 	References
 	---------------------

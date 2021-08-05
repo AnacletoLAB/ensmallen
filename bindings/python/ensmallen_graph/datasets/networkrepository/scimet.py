@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Scimet.
+This file offers the methods to automatically retrieve the graph SciMet.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Scimet(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Scimet graph.
+    """Return new instance of the SciMet graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Scimet(
 
     Returns
     -----------------------
-    Instace of Scimet graph.
+    Instace of SciMet graph.
 
 	References
 	---------------------

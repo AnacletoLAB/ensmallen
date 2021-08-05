@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumLeguminosarumCb782.
+This file offers the methods to automatically retrieve the graph Rhizobium leguminosarum CB782.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumLeguminosarumCb782(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumLeguminosarumCb782 graph.
+    """Return new instance of the Rhizobium leguminosarum CB782 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumLeguminosarumCb782(
 
     Returns
     -----------------------
-    Instace of RhizobiumLeguminosarumCb782 graph.
+    Instace of Rhizobium leguminosarum CB782 graph.
 
 	References
 	---------------------

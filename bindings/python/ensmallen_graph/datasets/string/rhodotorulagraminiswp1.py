@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodotorulaGraminisWp1.
+This file offers the methods to automatically retrieve the graph Rhodotorula graminis WP1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodotorulaGraminisWp1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodotorulaGraminisWp1 graph.
+    """Return new instance of the Rhodotorula graminis WP1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodotorulaGraminisWp1(
 
     Returns
     -----------------------
-    Instace of RhodotorulaGraminisWp1 graph.
+    Instace of Rhodotorula graminis WP1 graph.
 
 	References
 	---------------------

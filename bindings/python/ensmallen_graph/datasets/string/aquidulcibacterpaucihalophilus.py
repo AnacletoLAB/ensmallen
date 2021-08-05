@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquidulcibacterPaucihalophilus.
+This file offers the methods to automatically retrieve the graph Aquidulcibacter paucihalophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquidulcibacterPaucihalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquidulcibacterPaucihalophilus graph.
+    """Return new instance of the Aquidulcibacter paucihalophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquidulcibacterPaucihalophilus(
 
     Returns
     -----------------------
-    Instace of AquidulcibacterPaucihalophilus graph.
+    Instace of Aquidulcibacter paucihalophilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumSp99.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium sp. 99.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumSp99(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumSp99 graph.
+    """Return new instance of the Hyphomicrobium sp. 99 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomicrobiumSp99(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumSp99 graph.
+    Instace of Hyphomicrobium sp. 99 graph.
 
 	References
 	---------------------

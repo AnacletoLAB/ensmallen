@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxSp43bgom46m.
+This file offers the methods to automatically retrieve the graph Alcanivorax sp. 43BGOM46m.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxSp43bgom46m(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxSp43bgom46m graph.
+    """Return new instance of the Alcanivorax sp. 43BGOM46m graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxSp43bgom46m(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxSp43bgom46m graph.
+    Instace of Alcanivorax sp. 43BGOM46m graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Enzymes8.
+This file offers the methods to automatically retrieve the graph ENZYMES8.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Enzymes8(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Enzymes8 graph.
+    """Return new instance of the ENZYMES8 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Enzymes8(
 
     Returns
     -----------------------
-    Instace of Enzymes8 graph.
+    Instace of ENZYMES8 graph.
 
 	References
 	---------------------

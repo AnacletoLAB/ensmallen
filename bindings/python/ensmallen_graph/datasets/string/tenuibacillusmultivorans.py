@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TenuibacillusMultivorans.
+This file offers the methods to automatically retrieve the graph Tenuibacillus multivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TenuibacillusMultivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TenuibacillusMultivorans graph.
+    """Return new instance of the Tenuibacillus multivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TenuibacillusMultivorans(
 
     Returns
     -----------------------
-    Instace of TenuibacillusMultivorans graph.
+    Instace of Tenuibacillus multivorans graph.
 
 	References
 	---------------------

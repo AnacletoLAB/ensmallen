@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Pf2177.
+This file offers the methods to automatically retrieve the graph pf2177.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Pf2177(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Pf2177 graph.
+    """Return new instance of the pf2177 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Pf2177(
 
     Returns
     -----------------------
-    Instace of Pf2177 graph.
+    Instace of pf2177 graph.
 
 	References
 	---------------------

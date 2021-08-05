@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesCongonensis.
+This file offers the methods to automatically retrieve the graph Bacteroides congonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesCongonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesCongonensis graph.
+    """Return new instance of the Bacteroides congonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesCongonensis(
 
     Returns
     -----------------------
-    Instace of BacteroidesCongonensis graph.
+    Instace of Bacteroides congonensis graph.
 
 	References
 	---------------------

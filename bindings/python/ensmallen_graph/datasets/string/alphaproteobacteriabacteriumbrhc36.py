@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumBrhC36.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium BRH_c36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumBrhC36(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumBrhC36 graph.
+    """Return new instance of the Alphaproteobacteria bacterium BRH_c36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumBrhC36(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumBrhC36 graph.
+    Instace of Alphaproteobacteria bacterium BRH_c36 graph.
 
 	References
 	---------------------

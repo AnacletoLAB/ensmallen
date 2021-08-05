@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Geom.
+This file offers the methods to automatically retrieve the graph geom.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Geom(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Geom graph.
+    """Return new instance of the geom graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Geom(
 
     Returns
     -----------------------
-    Instace of Geom graph.
+    Instace of geom graph.
 
 	References
 	---------------------

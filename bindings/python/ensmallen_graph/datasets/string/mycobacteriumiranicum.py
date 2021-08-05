@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumIranicum.
+This file offers the methods to automatically retrieve the graph Mycobacterium iranicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumIranicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumIranicum graph.
+    """Return new instance of the Mycobacterium iranicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumIranicum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumIranicum graph.
+    Instace of Mycobacterium iranicum graph.
 
 	References
 	---------------------

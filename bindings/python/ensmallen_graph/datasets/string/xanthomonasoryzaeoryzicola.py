@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasOryzaeOryzicola.
+This file offers the methods to automatically retrieve the graph Xanthomonas oryzae oryzicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasOryzaeOryzicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasOryzaeOryzicola graph.
+    """Return new instance of the Xanthomonas oryzae oryzicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasOryzaeOryzicola(
 
     Returns
     -----------------------
-    Instace of XanthomonasOryzaeOryzicola graph.
+    Instace of Xanthomonas oryzae oryzicola graph.
 
 	References
 	---------------------

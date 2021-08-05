@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HippeaSpKm1.
+This file offers the methods to automatically retrieve the graph Hippea sp. KM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HippeaSpKm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HippeaSpKm1 graph.
+    """Return new instance of the Hippea sp. KM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HippeaSpKm1(
 
     Returns
     -----------------------
-    Instace of HippeaSpKm1 graph.
+    Instace of Hippea sp. KM1 graph.
 
 	References
 	---------------------

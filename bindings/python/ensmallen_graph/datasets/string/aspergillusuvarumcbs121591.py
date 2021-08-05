@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusUvarumCbs121591.
+This file offers the methods to automatically retrieve the graph Aspergillus uvarum CBS 121591.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusUvarumCbs121591(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusUvarumCbs121591 graph.
+    """Return new instance of the Aspergillus uvarum CBS 121591 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusUvarumCbs121591(
 
     Returns
     -----------------------
-    Instace of AspergillusUvarumCbs121591 graph.
+    Instace of Aspergillus uvarum CBS 121591 graph.
 
 	References
 	---------------------

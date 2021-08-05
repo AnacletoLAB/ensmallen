@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Divorce.
+This file offers the methods to automatically retrieve the graph divorce.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Divorce(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Divorce graph.
+    """Return new instance of the divorce graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Divorce(
 
     Returns
     -----------------------
-    Instace of Divorce graph.
+    Instace of divorce graph.
 
 	References
 	---------------------

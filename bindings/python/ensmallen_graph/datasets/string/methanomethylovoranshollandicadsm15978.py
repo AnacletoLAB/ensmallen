@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanomethylovoransHollandicaDsm15978.
+This file offers the methods to automatically retrieve the graph Methanomethylovorans hollandica DSM 15978.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanomethylovoransHollandicaDsm15978(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanomethylovoransHollandicaDsm15978 graph.
+    """Return new instance of the Methanomethylovorans hollandica DSM 15978 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanomethylovoransHollandicaDsm15978(
 
     Returns
     -----------------------
-    Instace of MethanomethylovoransHollandicaDsm15978 graph.
+    Instace of Methanomethylovorans hollandica DSM 15978 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TaphrinaDeformans.
+This file offers the methods to automatically retrieve the graph Taphrina deformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TaphrinaDeformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TaphrinaDeformans graph.
+    """Return new instance of the Taphrina deformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TaphrinaDeformans(
 
     Returns
     -----------------------
-    Instace of TaphrinaDeformans graph.
+    Instace of Taphrina deformans graph.
 
 	References
 	---------------------

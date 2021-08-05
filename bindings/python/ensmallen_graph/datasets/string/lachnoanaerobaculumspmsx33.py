@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoanaerobaculumSpMsx33.
+This file offers the methods to automatically retrieve the graph Lachnoanaerobaculum sp. MSX33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoanaerobaculumSpMsx33(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoanaerobaculumSpMsx33 graph.
+    """Return new instance of the Lachnoanaerobaculum sp. MSX33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnoanaerobaculumSpMsx33(
 
     Returns
     -----------------------
-    Instace of LachnoanaerobaculumSpMsx33 graph.
+    Instace of Lachnoanaerobaculum sp. MSX33 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MustelaPutorius.
+This file offers the methods to automatically retrieve the graph Mustela putorius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MustelaPutorius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MustelaPutorius graph.
+    """Return new instance of the Mustela putorius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MustelaPutorius(
 
     Returns
     -----------------------
-    Instace of MustelaPutorius graph.
+    Instace of Mustela putorius graph.
 
 	References
 	---------------------

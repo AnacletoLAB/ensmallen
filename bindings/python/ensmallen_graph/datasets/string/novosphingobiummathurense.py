@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumMathurense.
+This file offers the methods to automatically retrieve the graph Novosphingobium mathurense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumMathurense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumMathurense graph.
+    """Return new instance of the Novosphingobium mathurense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumMathurense(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumMathurense graph.
+    Instace of Novosphingobium mathurense graph.
 
 	References
 	---------------------

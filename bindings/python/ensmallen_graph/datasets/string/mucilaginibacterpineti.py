@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterPineti.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter pineti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterPineti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterPineti graph.
+    """Return new instance of the Mucilaginibacter pineti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterPineti(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterPineti graph.
+    Instace of Mucilaginibacter pineti graph.
 
 	References
 	---------------------

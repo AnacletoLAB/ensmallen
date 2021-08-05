@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKuenenbacteriaBacteriumCg2303924.
+This file offers the methods to automatically retrieve the graph Candidatus Kuenenbacteria bacterium CG2_30_39_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKuenenbacteriaBacteriumCg2303924(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKuenenbacteriaBacteriumCg2303924 graph.
+    """Return new instance of the Candidatus Kuenenbacteria bacterium CG2_30_39_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKuenenbacteriaBacteriumCg2303924(
 
     Returns
     -----------------------
-    Instace of CandidatusKuenenbacteriaBacteriumCg2303924 graph.
+    Instace of Candidatus Kuenenbacteria bacterium CG2_30_39_24 graph.
 
 	References
 	---------------------

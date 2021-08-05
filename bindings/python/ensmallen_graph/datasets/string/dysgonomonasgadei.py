@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DysgonomonasGadei.
+This file offers the methods to automatically retrieve the graph Dysgonomonas gadei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DysgonomonasGadei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DysgonomonasGadei graph.
+    """Return new instance of the Dysgonomonas gadei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DysgonomonasGadei(
 
     Returns
     -----------------------
-    Instace of DysgonomonasGadei graph.
+    Instace of Dysgonomonas gadei graph.
 
 	References
 	---------------------

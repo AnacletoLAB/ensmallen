@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaHaemulonis.
+This file offers the methods to automatically retrieve the graph [Candida] haemulonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaHaemulonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaHaemulonis graph.
+    """Return new instance of the [Candida] haemulonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaHaemulonis(
 
     Returns
     -----------------------
-    Instace of CandidaHaemulonis graph.
+    Instace of [Candida] haemulonis graph.
 
 	References
 	---------------------

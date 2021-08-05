@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumCdBkt12695.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum CD BKT12695.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumCdBkt12695(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumCdBkt12695 graph.
+    """Return new instance of the Clostridium botulinum CD BKT12695 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumCdBkt12695(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumCdBkt12695 graph.
+    Instace of Clostridium botulinum CD BKT12695 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusRadiodurans.
+This file offers the methods to automatically retrieve the graph Deinococcus radiodurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusRadiodurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusRadiodurans graph.
+    """Return new instance of the Deinococcus radiodurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusRadiodurans(
 
     Returns
     -----------------------
-    Instace of DeinococcusRadiodurans graph.
+    Instace of Deinococcus radiodurans graph.
 
 	References
 	---------------------

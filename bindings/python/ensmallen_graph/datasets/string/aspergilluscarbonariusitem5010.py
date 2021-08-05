@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusCarbonariusItem5010.
+This file offers the methods to automatically retrieve the graph Aspergillus carbonarius ITEM 5010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusCarbonariusItem5010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusCarbonariusItem5010 graph.
+    """Return new instance of the Aspergillus carbonarius ITEM 5010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusCarbonariusItem5010(
 
     Returns
     -----------------------
-    Instace of AspergillusCarbonariusItem5010 graph.
+    Instace of Aspergillus carbonarius ITEM 5010 graph.
 
 	References
 	---------------------

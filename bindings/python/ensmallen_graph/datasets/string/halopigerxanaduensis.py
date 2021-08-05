@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalopigerXanaduensis.
+This file offers the methods to automatically retrieve the graph Halopiger xanaduensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalopigerXanaduensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalopigerXanaduensis graph.
+    """Return new instance of the Halopiger xanaduensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalopigerXanaduensis(
 
     Returns
     -----------------------
-    Instace of HalopigerXanaduensis graph.
+    Instace of Halopiger xanaduensis graph.
 
 	References
 	---------------------

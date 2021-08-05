@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TistliaConsotensisUsba355.
+This file offers the methods to automatically retrieve the graph Tistlia consotensis USBA 355.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TistliaConsotensisUsba355(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TistliaConsotensisUsba355 graph.
+    """Return new instance of the Tistlia consotensis USBA 355 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TistliaConsotensisUsba355(
 
     Returns
     -----------------------
-    Instace of TistliaConsotensisUsba355 graph.
+    Instace of Tistlia consotensis USBA 355 graph.
 
 	References
 	---------------------

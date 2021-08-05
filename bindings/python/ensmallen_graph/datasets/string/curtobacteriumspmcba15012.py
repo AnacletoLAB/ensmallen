@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpMcba15012.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. MCBA15_012.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpMcba15012(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpMcba15012 graph.
+    """Return new instance of the Curtobacterium sp. MCBA15_012 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpMcba15012(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpMcba15012 graph.
+    Instace of Curtobacterium sp. MCBA15_012 graph.
 
 	References
 	---------------------

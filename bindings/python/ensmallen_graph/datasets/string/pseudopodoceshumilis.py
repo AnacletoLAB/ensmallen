@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudopodocesHumilis.
+This file offers the methods to automatically retrieve the graph Pseudopodoces humilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudopodocesHumilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudopodocesHumilis graph.
+    """Return new instance of the Pseudopodoces humilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudopodocesHumilis(
 
     Returns
     -----------------------
-    Instace of PseudopodocesHumilis graph.
+    Instace of Pseudopodoces humilis graph.
 
 	References
 	---------------------

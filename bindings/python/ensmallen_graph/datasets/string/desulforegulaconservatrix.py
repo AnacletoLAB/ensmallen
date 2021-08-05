@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulforegulaConservatrix.
+This file offers the methods to automatically retrieve the graph Desulforegula conservatrix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulforegulaConservatrix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulforegulaConservatrix graph.
+    """Return new instance of the Desulforegula conservatrix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulforegulaConservatrix(
 
     Returns
     -----------------------
-    Instace of DesulforegulaConservatrix graph.
+    Instace of Desulforegula conservatrix graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMethanofastidiosumMethylthiophilus.
+This file offers the methods to automatically retrieve the graph Candidatus Methanofastidiosum methylthiophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMethanofastidiosumMethylthiophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMethanofastidiosumMethylthiophilus graph.
+    """Return new instance of the Candidatus Methanofastidiosum methylthiophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMethanofastidiosumMethylthiophilus(
 
     Returns
     -----------------------
-    Instace of CandidatusMethanofastidiosumMethylthiophilus graph.
+    Instace of Candidatus Methanofastidiosum methylthiophilus graph.
 
 	References
 	---------------------

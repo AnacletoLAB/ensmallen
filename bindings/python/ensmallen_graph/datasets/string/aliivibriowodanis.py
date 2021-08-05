@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliivibrioWodanis.
+This file offers the methods to automatically retrieve the graph Aliivibrio wodanis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliivibrioWodanis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliivibrioWodanis graph.
+    """Return new instance of the Aliivibrio wodanis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliivibrioWodanis(
 
     Returns
     -----------------------
-    Instace of AliivibrioWodanis graph.
+    Instace of Aliivibrio wodanis graph.
 
 	References
 	---------------------

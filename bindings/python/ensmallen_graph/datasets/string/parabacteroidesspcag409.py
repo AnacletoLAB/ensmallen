@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParabacteroidesSpCag409.
+This file offers the methods to automatically retrieve the graph Parabacteroides sp. CAG:409.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParabacteroidesSpCag409(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParabacteroidesSpCag409 graph.
+    """Return new instance of the Parabacteroides sp. CAG:409 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParabacteroidesSpCag409(
 
     Returns
     -----------------------
-    Instace of ParabacteroidesSpCag409 graph.
+    Instace of Parabacteroides sp. CAG:409 graph.
 
 	References
 	---------------------

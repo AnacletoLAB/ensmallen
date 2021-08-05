@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacacaFascicularis.
+This file offers the methods to automatically retrieve the graph Macaca fascicularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacacaFascicularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacacaFascicularis graph.
+    """Return new instance of the Macaca fascicularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MacacaFascicularis(
 
     Returns
     -----------------------
-    Instace of MacacaFascicularis graph.
+    Instace of Macaca fascicularis graph.
 
 	References
 	---------------------

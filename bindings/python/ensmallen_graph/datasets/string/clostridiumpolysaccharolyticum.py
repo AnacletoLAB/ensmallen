@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPolysaccharolyticum.
+This file offers the methods to automatically retrieve the graph [Clostridium] polysaccharolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPolysaccharolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPolysaccharolyticum graph.
+    """Return new instance of the [Clostridium] polysaccharolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPolysaccharolyticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumPolysaccharolyticum graph.
+    Instace of [Clostridium] polysaccharolyticum graph.
 
 	References
 	---------------------

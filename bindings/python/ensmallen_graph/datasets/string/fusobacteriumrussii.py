@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumRussii.
+This file offers the methods to automatically retrieve the graph Fusobacterium russii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumRussii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumRussii graph.
+    """Return new instance of the Fusobacterium russii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumRussii(
 
     Returns
     -----------------------
-    Instace of FusobacteriumRussii graph.
+    Instace of Fusobacterium russii graph.
 
 	References
 	---------------------

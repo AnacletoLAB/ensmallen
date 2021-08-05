@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CupriavidusMetallidurans.
+This file offers the methods to automatically retrieve the graph Cupriavidus metallidurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CupriavidusMetallidurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CupriavidusMetallidurans graph.
+    """Return new instance of the Cupriavidus metallidurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CupriavidusMetallidurans(
 
     Returns
     -----------------------
-    Instace of CupriavidusMetallidurans graph.
+    Instace of Cupriavidus metallidurans graph.
 
 	References
 	---------------------

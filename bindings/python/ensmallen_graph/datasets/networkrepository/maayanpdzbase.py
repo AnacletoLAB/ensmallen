@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanPdzbase.
+This file offers the methods to automatically retrieve the graph maayan-pdzbase.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanPdzbase(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanPdzbase graph.
+    """Return new instance of the maayan-pdzbase graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanPdzbase(
 
     Returns
     -----------------------
-    Instace of MaayanPdzbase graph.
+    Instace of maayan-pdzbase graph.
 
 	References
 	---------------------

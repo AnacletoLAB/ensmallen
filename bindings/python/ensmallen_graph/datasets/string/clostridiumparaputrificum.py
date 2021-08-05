@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumParaputrificum.
+This file offers the methods to automatically retrieve the graph Clostridium paraputrificum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumParaputrificum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumParaputrificum graph.
+    """Return new instance of the Clostridium paraputrificum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumParaputrificum(
 
     Returns
     -----------------------
-    Instace of ClostridiumParaputrificum graph.
+    Instace of Clostridium paraputrificum graph.
 
 	References
 	---------------------

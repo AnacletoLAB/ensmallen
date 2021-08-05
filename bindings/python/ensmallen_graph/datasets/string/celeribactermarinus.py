@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeleribacterMarinus.
+This file offers the methods to automatically retrieve the graph Celeribacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeleribacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeleribacterMarinus graph.
+    """Return new instance of the Celeribacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeleribacterMarinus(
 
     Returns
     -----------------------
-    Instace of CeleribacterMarinus graph.
+    Instace of Celeribacter marinus graph.
 
 	References
 	---------------------

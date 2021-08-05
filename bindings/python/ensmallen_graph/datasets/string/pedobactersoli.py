@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterSoli.
+This file offers the methods to automatically retrieve the graph Pedobacter soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterSoli graph.
+    """Return new instance of the Pedobacter soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterSoli(
 
     Returns
     -----------------------
-    Instace of PedobacterSoli graph.
+    Instace of Pedobacter soli graph.
 
 	References
 	---------------------

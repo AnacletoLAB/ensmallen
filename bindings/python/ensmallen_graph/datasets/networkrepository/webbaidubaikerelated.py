@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebBaiduBaikeRelated.
+This file offers the methods to automatically retrieve the graph web-baidu-baike-related.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def WebBaiduBaikeRelated(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebBaiduBaikeRelated graph.
+    """Return new instance of the web-baidu-baike-related graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def WebBaiduBaikeRelated(
 
     Returns
     -----------------------
-    Instace of WebBaiduBaikeRelated graph.
+    Instace of web-baidu-baike-related graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriSdmlac.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri SDMLAC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriSdmlac(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriSdmlac graph.
+    """Return new instance of the Pseudomonas stutzeri SDMLAC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriSdmlac(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriSdmlac graph.
+    Instace of Pseudomonas stutzeri SDMLAC graph.
 
 	References
 	---------------------

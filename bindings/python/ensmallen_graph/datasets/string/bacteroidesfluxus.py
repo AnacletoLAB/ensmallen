@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesFluxus.
+This file offers the methods to automatically retrieve the graph Bacteroides fluxus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesFluxus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesFluxus graph.
+    """Return new instance of the Bacteroides fluxus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesFluxus(
 
     Returns
     -----------------------
-    Instace of BacteroidesFluxus graph.
+    Instace of Bacteroides fluxus graph.
 
 	References
 	---------------------

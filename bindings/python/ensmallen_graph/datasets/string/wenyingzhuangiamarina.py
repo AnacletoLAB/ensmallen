@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WenyingzhuangiaMarina.
+This file offers the methods to automatically retrieve the graph Wenyingzhuangia marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WenyingzhuangiaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WenyingzhuangiaMarina graph.
+    """Return new instance of the Wenyingzhuangia marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WenyingzhuangiaMarina(
 
     Returns
     -----------------------
-    Instace of WenyingzhuangiaMarina graph.
+    Instace of Wenyingzhuangia marina graph.
 
 	References
 	---------------------

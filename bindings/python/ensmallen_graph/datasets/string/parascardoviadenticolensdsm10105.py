@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParascardoviaDenticolensDsm10105.
+This file offers the methods to automatically retrieve the graph Parascardovia denticolens DSM10105.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParascardoviaDenticolensDsm10105(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParascardoviaDenticolensDsm10105 graph.
+    """Return new instance of the Parascardovia denticolens DSM10105 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParascardoviaDenticolensDsm10105(
 
     Returns
     -----------------------
-    Instace of ParascardoviaDenticolensDsm10105 graph.
+    Instace of Parascardovia denticolens DSM10105 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumRubi.
+This file offers the methods to automatically retrieve the graph Rhizobium rubi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumRubi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumRubi graph.
+    """Return new instance of the Rhizobium rubi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumRubi(
 
     Returns
     -----------------------
-    Instace of RhizobiumRubi graph.
+    Instace of Rhizobium rubi graph.
 
 	References
 	---------------------

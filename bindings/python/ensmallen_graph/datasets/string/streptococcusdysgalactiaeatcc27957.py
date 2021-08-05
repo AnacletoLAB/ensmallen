@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDysgalactiaeAtcc27957.
+This file offers the methods to automatically retrieve the graph Streptococcus dysgalactiae ATCC27957.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDysgalactiaeAtcc27957(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDysgalactiaeAtcc27957 graph.
+    """Return new instance of the Streptococcus dysgalactiae ATCC27957 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDysgalactiaeAtcc27957(
 
     Returns
     -----------------------
-    Instace of StreptococcusDysgalactiaeAtcc27957 graph.
+    Instace of Streptococcus dysgalactiae ATCC27957 graph.
 
 	References
 	---------------------

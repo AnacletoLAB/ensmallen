@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDownei.
+This file offers the methods to automatically retrieve the graph Streptococcus downei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDownei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDownei graph.
+    """Return new instance of the Streptococcus downei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDownei(
 
     Returns
     -----------------------
-    Instace of StreptococcusDownei graph.
+    Instace of Streptococcus downei graph.
 
 	References
 	---------------------

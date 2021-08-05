@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpCag988.
+This file offers the methods to automatically retrieve the graph Bacillus sp. CAG:988.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpCag988(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpCag988 graph.
+    """Return new instance of the Bacillus sp. CAG:988 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpCag988(
 
     Returns
     -----------------------
-    Instace of BacillusSpCag988 graph.
+    Instace of Bacillus sp. CAG:988 graph.
 
 	References
 	---------------------

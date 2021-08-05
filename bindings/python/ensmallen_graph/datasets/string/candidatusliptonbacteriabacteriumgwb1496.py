@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusLiptonbacteriaBacteriumGwb1496.
+This file offers the methods to automatically retrieve the graph Candidatus Liptonbacteria bacterium GWB1_49_6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusLiptonbacteriaBacteriumGwb1496(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusLiptonbacteriaBacteriumGwb1496 graph.
+    """Return new instance of the Candidatus Liptonbacteria bacterium GWB1_49_6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusLiptonbacteriaBacteriumGwb1496(
 
     Returns
     -----------------------
-    Instace of CandidatusLiptonbacteriaBacteriumGwb1496 graph.
+    Instace of Candidatus Liptonbacteria bacterium GWB1_49_6 graph.
 
 	References
 	---------------------

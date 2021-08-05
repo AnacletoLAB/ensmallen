@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumCanariasense.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium canariasense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumCanariasense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumCanariasense graph.
+    """Return new instance of the Mycolicibacterium canariasense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumCanariasense(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumCanariasense graph.
+    Instace of Mycolicibacterium canariasense graph.
 
 	References
 	---------------------

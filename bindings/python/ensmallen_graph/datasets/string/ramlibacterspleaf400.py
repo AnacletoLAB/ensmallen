@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RamlibacterSpLeaf400.
+This file offers the methods to automatically retrieve the graph Ramlibacter sp. Leaf400.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RamlibacterSpLeaf400(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RamlibacterSpLeaf400 graph.
+    """Return new instance of the Ramlibacter sp. Leaf400 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RamlibacterSpLeaf400(
 
     Returns
     -----------------------
-    Instace of RamlibacterSpLeaf400 graph.
+    Instace of Ramlibacter sp. Leaf400 graph.
 
 	References
 	---------------------

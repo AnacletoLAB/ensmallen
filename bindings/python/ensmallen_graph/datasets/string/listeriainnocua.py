@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaInnocua.
+This file offers the methods to automatically retrieve the graph Listeria innocua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaInnocua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaInnocua graph.
+    """Return new instance of the Listeria innocua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaInnocua(
 
     Returns
     -----------------------
-    Instace of ListeriaInnocua graph.
+    Instace of Listeria innocua graph.
 
 	References
 	---------------------

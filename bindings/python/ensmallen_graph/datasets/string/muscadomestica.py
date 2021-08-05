@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuscaDomestica.
+This file offers the methods to automatically retrieve the graph Musca domestica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuscaDomestica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuscaDomestica graph.
+    """Return new instance of the Musca domestica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MuscaDomestica(
 
     Returns
     -----------------------
-    Instace of MuscaDomestica graph.
+    Instace of Musca domestica graph.
 
 	References
 	---------------------

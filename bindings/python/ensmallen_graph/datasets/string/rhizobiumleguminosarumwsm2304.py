@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumLeguminosarumWsm2304.
+This file offers the methods to automatically retrieve the graph Rhizobium leguminosarum WSM2304.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumLeguminosarumWsm2304(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumLeguminosarumWsm2304 graph.
+    """Return new instance of the Rhizobium leguminosarum WSM2304 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumLeguminosarumWsm2304(
 
     Returns
     -----------------------
-    Instace of RhizobiumLeguminosarumWsm2304 graph.
+    Instace of Rhizobium leguminosarum WSM2304 graph.
 
 	References
 	---------------------

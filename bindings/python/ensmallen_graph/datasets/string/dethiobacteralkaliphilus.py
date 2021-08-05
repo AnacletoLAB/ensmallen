@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DethiobacterAlkaliphilus.
+This file offers the methods to automatically retrieve the graph Dethiobacter alkaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DethiobacterAlkaliphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DethiobacterAlkaliphilus graph.
+    """Return new instance of the Dethiobacter alkaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DethiobacterAlkaliphilus(
 
     Returns
     -----------------------
-    Instace of DethiobacterAlkaliphilus graph.
+    Instace of Dethiobacter alkaliphilus graph.
 
 	References
 	---------------------

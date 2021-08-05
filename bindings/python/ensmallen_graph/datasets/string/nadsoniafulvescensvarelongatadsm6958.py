@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NadsoniaFulvescensVarElongataDsm6958.
+This file offers the methods to automatically retrieve the graph Nadsonia fulvescens var. elongata DSM 6958.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NadsoniaFulvescensVarElongataDsm6958(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NadsoniaFulvescensVarElongataDsm6958 graph.
+    """Return new instance of the Nadsonia fulvescens var. elongata DSM 6958 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NadsoniaFulvescensVarElongataDsm6958(
 
     Returns
     -----------------------
-    Instace of NadsoniaFulvescensVarElongataDsm6958 graph.
+    Instace of Nadsonia fulvescens var. elongata DSM 6958 graph.
 
 	References
 	---------------------

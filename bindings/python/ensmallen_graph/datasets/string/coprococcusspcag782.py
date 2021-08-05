@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprococcusSpCag782.
+This file offers the methods to automatically retrieve the graph Coprococcus sp. CAG:782.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprococcusSpCag782(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprococcusSpCag782 graph.
+    """Return new instance of the Coprococcus sp. CAG:782 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprococcusSpCag782(
 
     Returns
     -----------------------
-    Instace of CoprococcusSpCag782 graph.
+    Instace of Coprococcus sp. CAG:782 graph.
 
 	References
 	---------------------

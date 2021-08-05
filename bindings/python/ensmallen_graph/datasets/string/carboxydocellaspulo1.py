@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarboxydocellaSpUlo1.
+This file offers the methods to automatically retrieve the graph Carboxydocella sp. ULO1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarboxydocellaSpUlo1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarboxydocellaSpUlo1 graph.
+    """Return new instance of the Carboxydocella sp. ULO1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarboxydocellaSpUlo1(
 
     Returns
     -----------------------
-    Instace of CarboxydocellaSpUlo1 graph.
+    Instace of Carboxydocella sp. ULO1 graph.
 
 	References
 	---------------------

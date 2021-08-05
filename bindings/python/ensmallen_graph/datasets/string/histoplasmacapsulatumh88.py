@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HistoplasmaCapsulatumH88.
+This file offers the methods to automatically retrieve the graph Histoplasma capsulatum H88.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HistoplasmaCapsulatumH88(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HistoplasmaCapsulatumH88 graph.
+    """Return new instance of the Histoplasma capsulatum H88 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HistoplasmaCapsulatumH88(
 
     Returns
     -----------------------
-    Instace of HistoplasmaCapsulatumH88 graph.
+    Instace of Histoplasma capsulatum H88 graph.
 
 	References
 	---------------------

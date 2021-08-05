@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLitoralis.
+This file offers the methods to automatically retrieve the graph Bacillus litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLitoralis graph.
+    """Return new instance of the Bacillus litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusLitoralis(
 
     Returns
     -----------------------
-    Instace of BacillusLitoralis graph.
+    Instace of Bacillus litoralis graph.
 
 	References
 	---------------------

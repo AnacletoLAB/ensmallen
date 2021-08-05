@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumCg2306627.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium CG2_30_66_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumCg2306627(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumCg2306627 graph.
+    """Return new instance of the Deltaproteobacteria bacterium CG2_30_66_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumCg2306627(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumCg2306627 graph.
+    Instace of Deltaproteobacteria bacterium CG2_30_66_27 graph.
 
 	References
 	---------------------

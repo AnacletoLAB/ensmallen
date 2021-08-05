@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaHydrogenotrophica.
+This file offers the methods to automatically retrieve the graph Blautia hydrogenotrophica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaHydrogenotrophica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaHydrogenotrophica graph.
+    """Return new instance of the Blautia hydrogenotrophica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlautiaHydrogenotrophica(
 
     Returns
     -----------------------
-    Instace of BlautiaHydrogenotrophica graph.
+    Instace of Blautia hydrogenotrophica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph San1000.
+This file offers the methods to automatically retrieve the graph san1000.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def San1000(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the San1000 graph.
+    """Return new instance of the san1000 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def San1000(
 
     Returns
     -----------------------
-    Instace of San1000 graph.
+    Instace of san1000 graph.
 
 	References
 	---------------------

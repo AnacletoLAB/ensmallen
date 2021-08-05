@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraSpMccc1a01428.
+This file offers the methods to automatically retrieve the graph Thalassospira sp. MCCC 1A01428.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraSpMccc1a01428(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraSpMccc1a01428 graph.
+    """Return new instance of the Thalassospira sp. MCCC 1A01428 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassospiraSpMccc1a01428(
 
     Returns
     -----------------------
-    Instace of ThalassospiraSpMccc1a01428 graph.
+    Instace of Thalassospira sp. MCCC 1A01428 graph.
 
 	References
 	---------------------

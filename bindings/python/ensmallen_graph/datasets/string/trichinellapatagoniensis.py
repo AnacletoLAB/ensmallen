@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaPatagoniensis.
+This file offers the methods to automatically retrieve the graph Trichinella patagoniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaPatagoniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaPatagoniensis graph.
+    """Return new instance of the Trichinella patagoniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaPatagoniensis(
 
     Returns
     -----------------------
-    Instace of TrichinellaPatagoniensis graph.
+    Instace of Trichinella patagoniensis graph.
 
 	References
 	---------------------

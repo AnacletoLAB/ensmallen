@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeglectaTimonensis.
+This file offers the methods to automatically retrieve the graph Neglecta timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeglectaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeglectaTimonensis graph.
+    """Return new instance of the Neglecta timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeglectaTimonensis(
 
     Returns
     -----------------------
-    Instace of NeglectaTimonensis graph.
+    Instace of Neglecta timonensis graph.
 
 	References
 	---------------------

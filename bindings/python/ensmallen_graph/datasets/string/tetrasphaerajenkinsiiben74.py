@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrasphaeraJenkinsiiBen74.
+This file offers the methods to automatically retrieve the graph Tetrasphaera jenkinsii Ben 74.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrasphaeraJenkinsiiBen74(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrasphaeraJenkinsiiBen74 graph.
+    """Return new instance of the Tetrasphaera jenkinsii Ben 74 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrasphaeraJenkinsiiBen74(
 
     Returns
     -----------------------
-    Instace of TetrasphaeraJenkinsiiBen74 graph.
+    Instace of Tetrasphaera jenkinsii Ben 74 graph.
 
 	References
 	---------------------

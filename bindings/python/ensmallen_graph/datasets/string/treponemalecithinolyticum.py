@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaLecithinolyticum.
+This file offers the methods to automatically retrieve the graph Treponema lecithinolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaLecithinolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaLecithinolyticum graph.
+    """Return new instance of the Treponema lecithinolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaLecithinolyticum(
 
     Returns
     -----------------------
-    Instace of TreponemaLecithinolyticum graph.
+    Instace of Treponema lecithinolyticum graph.
 
 	References
 	---------------------

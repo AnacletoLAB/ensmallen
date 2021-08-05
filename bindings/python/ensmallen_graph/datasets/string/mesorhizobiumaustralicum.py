@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumAustralicum.
+This file offers the methods to automatically retrieve the graph Mesorhizobium australicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumAustralicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumAustralicum graph.
+    """Return new instance of the Mesorhizobium australicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumAustralicum(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumAustralicum graph.
+    Instace of Mesorhizobium australicum graph.
 
 	References
 	---------------------

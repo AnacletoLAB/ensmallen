@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaAquatica.
+This file offers the methods to automatically retrieve the graph Leifsonia aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaAquatica graph.
+    """Return new instance of the Leifsonia aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeifsoniaAquatica(
 
     Returns
     -----------------------
-    Instace of LeifsoniaAquatica graph.
+    Instace of Leifsonia aquatica graph.
 
 	References
 	---------------------

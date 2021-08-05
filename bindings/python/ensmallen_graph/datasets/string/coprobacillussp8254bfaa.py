@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprobacillusSp8254bfaa.
+This file offers the methods to automatically retrieve the graph Coprobacillus sp. 8_2_54BFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprobacillusSp8254bfaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprobacillusSp8254bfaa graph.
+    """Return new instance of the Coprobacillus sp. 8_2_54BFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoprobacillusSp8254bfaa(
 
     Returns
     -----------------------
-    Instace of CoprobacillusSp8254bfaa graph.
+    Instace of Coprobacillus sp. 8_2_54BFAA graph.
 
 	References
 	---------------------

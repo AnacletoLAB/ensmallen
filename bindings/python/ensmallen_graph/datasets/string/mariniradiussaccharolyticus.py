@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MariniradiusSaccharolyticus.
+This file offers the methods to automatically retrieve the graph Mariniradius saccharolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MariniradiusSaccharolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MariniradiusSaccharolyticus graph.
+    """Return new instance of the Mariniradius saccharolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MariniradiusSaccharolyticus(
 
     Returns
     -----------------------
-    Instace of MariniradiusSaccharolyticus graph.
+    Instace of Mariniradius saccharolyticus graph.
 
 	References
 	---------------------

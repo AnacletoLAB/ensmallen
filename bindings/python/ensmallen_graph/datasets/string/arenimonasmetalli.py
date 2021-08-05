@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasMetalli.
+This file offers the methods to automatically retrieve the graph Arenimonas metalli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasMetalli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasMetalli graph.
+    """Return new instance of the Arenimonas metalli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArenimonasMetalli(
 
     Returns
     -----------------------
-    Instace of ArenimonasMetalli graph.
+    Instace of Arenimonas metalli graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataellaPhaffiiGs115.
+This file offers the methods to automatically retrieve the graph Komagataella phaffii GS115.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataellaPhaffiiGs115(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataellaPhaffiiGs115 graph.
+    """Return new instance of the Komagataella phaffii GS115 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KomagataellaPhaffiiGs115(
 
     Returns
     -----------------------
-    Instace of KomagataellaPhaffiiGs115 graph.
+    Instace of Komagataella phaffii GS115 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseinatronobacterThiooxidans.
+This file offers the methods to automatically retrieve the graph Roseinatronobacter thiooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseinatronobacterThiooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseinatronobacterThiooxidans graph.
+    """Return new instance of the Roseinatronobacter thiooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseinatronobacterThiooxidans(
 
     Returns
     -----------------------
-    Instace of RoseinatronobacterThiooxidans graph.
+    Instace of Roseinatronobacter thiooxidans graph.
 
 	References
 	---------------------

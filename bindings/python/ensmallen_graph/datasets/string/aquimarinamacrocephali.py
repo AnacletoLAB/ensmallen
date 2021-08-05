@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaMacrocephali.
+This file offers the methods to automatically retrieve the graph Aquimarina macrocephali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaMacrocephali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaMacrocephali graph.
+    """Return new instance of the Aquimarina macrocephali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquimarinaMacrocephali(
 
     Returns
     -----------------------
-    Instace of AquimarinaMacrocephali graph.
+    Instace of Aquimarina macrocephali graph.
 
 	References
 	---------------------

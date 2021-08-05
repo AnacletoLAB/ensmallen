@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaPalustris.
+This file offers the methods to automatically retrieve the graph Kocuria palustris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaPalustris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaPalustris graph.
+    """Return new instance of the Kocuria palustris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KocuriaPalustris(
 
     Returns
     -----------------------
-    Instace of KocuriaPalustris graph.
+    Instace of Kocuria palustris graph.
 
 	References
 	---------------------

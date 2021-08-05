@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterPiechaudiiAtcc43553.
+This file offers the methods to automatically retrieve the graph Achromobacter piechaudii ATCC43553.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterPiechaudiiAtcc43553(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterPiechaudiiAtcc43553 graph.
+    """Return new instance of the Achromobacter piechaudii ATCC43553 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterPiechaudiiAtcc43553(
 
     Returns
     -----------------------
-    Instace of AchromobacterPiechaudiiAtcc43553 graph.
+    Instace of Achromobacter piechaudii ATCC43553 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatumellaMorbirosei.
+This file offers the methods to automatically retrieve the graph Tatumella morbirosei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatumellaMorbirosei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatumellaMorbirosei graph.
+    """Return new instance of the Tatumella morbirosei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TatumellaMorbirosei(
 
     Returns
     -----------------------
-    Instace of TatumellaMorbirosei graph.
+    Instace of Tatumella morbirosei graph.
 
 	References
 	---------------------

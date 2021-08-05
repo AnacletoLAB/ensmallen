@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasHalocynthiae.
+This file offers the methods to automatically retrieve the graph Halomonas halocynthiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasHalocynthiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasHalocynthiae graph.
+    """Return new instance of the Halomonas halocynthiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasHalocynthiae(
 
     Returns
     -----------------------
-    Instace of HalomonasHalocynthiae graph.
+    Instace of Halomonas halocynthiae graph.
 
 	References
 	---------------------

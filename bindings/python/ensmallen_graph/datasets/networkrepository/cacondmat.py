@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaCondmat.
+This file offers the methods to automatically retrieve the graph ca-CondMat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaCondmat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaCondmat graph.
+    """Return new instance of the ca-CondMat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaCondmat(
 
     Returns
     -----------------------
-    Instace of CaCondmat graph.
+    Instace of ca-CondMat graph.
 
 	References
 	---------------------

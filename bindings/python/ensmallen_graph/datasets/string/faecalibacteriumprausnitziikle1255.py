@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FaecalibacteriumPrausnitziiKle1255.
+This file offers the methods to automatically retrieve the graph Faecalibacterium prausnitzii KLE1255.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FaecalibacteriumPrausnitziiKle1255(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FaecalibacteriumPrausnitziiKle1255 graph.
+    """Return new instance of the Faecalibacterium prausnitzii KLE1255 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FaecalibacteriumPrausnitziiKle1255(
 
     Returns
     -----------------------
-    Instace of FaecalibacteriumPrausnitziiKle1255 graph.
+    Instace of Faecalibacterium prausnitzii KLE1255 graph.
 
 	References
 	---------------------

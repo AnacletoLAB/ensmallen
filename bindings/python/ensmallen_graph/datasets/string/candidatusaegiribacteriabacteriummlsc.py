@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAegiribacteriaBacteriumMlsC.
+This file offers the methods to automatically retrieve the graph Candidatus Aegiribacteria bacterium MLS_C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAegiribacteriaBacteriumMlsC(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAegiribacteriaBacteriumMlsC graph.
+    """Return new instance of the Candidatus Aegiribacteria bacterium MLS_C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAegiribacteriaBacteriumMlsC(
 
     Returns
     -----------------------
-    Instace of CandidatusAegiribacteriaBacteriumMlsC graph.
+    Instace of Candidatus Aegiribacteria bacterium MLS_C graph.
 
 	References
 	---------------------

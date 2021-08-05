@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaUmbonata.
+This file offers the methods to automatically retrieve the graph Olsenella umbonata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaUmbonata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaUmbonata graph.
+    """Return new instance of the Olsenella umbonata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaUmbonata(
 
     Returns
     -----------------------
-    Instace of OlsenellaUmbonata graph.
+    Instace of Olsenella umbonata graph.
 
 	References
 	---------------------

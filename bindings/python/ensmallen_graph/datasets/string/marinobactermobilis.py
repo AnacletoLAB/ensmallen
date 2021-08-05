@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterMobilis.
+This file offers the methods to automatically retrieve the graph Marinobacter mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterMobilis graph.
+    """Return new instance of the Marinobacter mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterMobilis(
 
     Returns
     -----------------------
-    Instace of MarinobacterMobilis graph.
+    Instace of Marinobacter mobilis graph.
 
 	References
 	---------------------

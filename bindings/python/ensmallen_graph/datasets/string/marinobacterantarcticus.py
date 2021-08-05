@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterAntarcticus.
+This file offers the methods to automatically retrieve the graph Marinobacter antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterAntarcticus graph.
+    """Return new instance of the Marinobacter antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterAntarcticus(
 
     Returns
     -----------------------
-    Instace of MarinobacterAntarcticus graph.
+    Instace of Marinobacter antarcticus graph.
 
 	References
 	---------------------

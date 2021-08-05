@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraHumireducens.
+This file offers the methods to automatically retrieve the graph Thauera humireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraHumireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraHumireducens graph.
+    """Return new instance of the Thauera humireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaueraHumireducens(
 
     Returns
     -----------------------
-    Instace of ThaueraHumireducens graph.
+    Instace of Thauera humireducens graph.
 
 	References
 	---------------------

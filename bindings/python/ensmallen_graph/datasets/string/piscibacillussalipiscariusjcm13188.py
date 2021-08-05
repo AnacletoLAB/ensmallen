@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PiscibacillusSalipiscariusJcm13188.
+This file offers the methods to automatically retrieve the graph Piscibacillus salipiscarius JCM 13188.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PiscibacillusSalipiscariusJcm13188(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PiscibacillusSalipiscariusJcm13188 graph.
+    """Return new instance of the Piscibacillus salipiscarius JCM 13188 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PiscibacillusSalipiscariusJcm13188(
 
     Returns
     -----------------------
-    Instace of PiscibacillusSalipiscariusJcm13188 graph.
+    Instace of Piscibacillus salipiscarius JCM 13188 graph.
 
 	References
 	---------------------

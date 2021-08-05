@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusRhodochrous.
+This file offers the methods to automatically retrieve the graph Rhodococcus rhodochrous.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusRhodochrous(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusRhodochrous graph.
+    """Return new instance of the Rhodococcus rhodochrous graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusRhodochrous(
 
     Returns
     -----------------------
-    Instace of RhodococcusRhodochrous graph.
+    Instace of Rhodococcus rhodochrous graph.
 
 	References
 	---------------------

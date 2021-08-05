@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidiphiliumCryptum.
+This file offers the methods to automatically retrieve the graph Acidiphilium cryptum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidiphiliumCryptum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidiphiliumCryptum graph.
+    """Return new instance of the Acidiphilium cryptum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidiphiliumCryptum(
 
     Returns
     -----------------------
-    Instace of AcidiphiliumCryptum graph.
+    Instace of Acidiphilium cryptum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriumPhsc20c1.
+This file offers the methods to automatically retrieve the graph actinobacterium PHSC20C1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriumPhsc20c1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriumPhsc20c1 graph.
+    """Return new instance of the actinobacterium PHSC20C1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacteriumPhsc20c1(
 
     Returns
     -----------------------
-    Instace of ActinobacteriumPhsc20c1 graph.
+    Instace of actinobacterium PHSC20C1 graph.
 
 	References
 	---------------------

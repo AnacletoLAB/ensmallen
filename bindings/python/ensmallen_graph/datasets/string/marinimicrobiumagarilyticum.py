@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiumAgarilyticum.
+This file offers the methods to automatically retrieve the graph Marinimicrobium agarilyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinimicrobiumAgarilyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiumAgarilyticum graph.
+    """Return new instance of the Marinimicrobium agarilyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinimicrobiumAgarilyticum(
 
     Returns
     -----------------------
-    Instace of MarinimicrobiumAgarilyticum graph.
+    Instace of Marinimicrobium agarilyticum graph.
 
 	References
 	---------------------

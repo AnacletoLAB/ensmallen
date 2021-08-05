@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaPhymatum.
+This file offers the methods to automatically retrieve the graph Burkholderia phymatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaPhymatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaPhymatum graph.
+    """Return new instance of the Burkholderia phymatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaPhymatum(
 
     Returns
     -----------------------
-    Instace of BurkholderiaPhymatum graph.
+    Instace of Burkholderia phymatum graph.
 
 	References
 	---------------------

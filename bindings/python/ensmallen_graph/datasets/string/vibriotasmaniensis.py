@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioTasmaniensis.
+This file offers the methods to automatically retrieve the graph Vibrio tasmaniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioTasmaniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioTasmaniensis graph.
+    """Return new instance of the Vibrio tasmaniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioTasmaniensis(
 
     Returns
     -----------------------
-    Instace of VibrioTasmaniensis graph.
+    Instace of Vibrio tasmaniensis graph.
 
 	References
 	---------------------

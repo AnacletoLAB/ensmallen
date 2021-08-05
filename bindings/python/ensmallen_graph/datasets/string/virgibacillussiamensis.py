@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusSiamensis.
+This file offers the methods to automatically retrieve the graph Virgibacillus siamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusSiamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusSiamensis graph.
+    """Return new instance of the Virgibacillus siamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusSiamensis(
 
     Returns
     -----------------------
-    Instace of VirgibacillusSiamensis graph.
+    Instace of Virgibacillus siamensis graph.
 
 	References
 	---------------------

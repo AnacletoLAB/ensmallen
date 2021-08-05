@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSenegalensis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus senegalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSenegalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSenegalensis graph.
+    """Return new instance of the Peptoniphilus senegalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusSenegalensis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSenegalensis graph.
+    Instace of Peptoniphilus senegalensis graph.
 
 	References
 	---------------------

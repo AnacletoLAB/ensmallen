@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharibacterFloricola.
+This file offers the methods to automatically retrieve the graph Saccharibacter floricola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharibacterFloricola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharibacterFloricola graph.
+    """Return new instance of the Saccharibacter floricola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharibacterFloricola(
 
     Returns
     -----------------------
-    Instace of SaccharibacterFloricola graph.
+    Instace of Saccharibacter floricola graph.
 
 	References
 	---------------------

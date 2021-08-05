@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NaumovozymaCastelliiCbs4309.
+This file offers the methods to automatically retrieve the graph Naumovozyma castellii CBS 4309.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NaumovozymaCastelliiCbs4309(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NaumovozymaCastelliiCbs4309 graph.
+    """Return new instance of the Naumovozyma castellii CBS 4309 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NaumovozymaCastelliiCbs4309(
 
     Returns
     -----------------------
-    Instace of NaumovozymaCastelliiCbs4309 graph.
+    Instace of Naumovozyma castellii CBS 4309 graph.
 
 	References
 	---------------------

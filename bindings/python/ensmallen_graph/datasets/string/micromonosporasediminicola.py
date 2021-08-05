@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSediminicola.
+This file offers the methods to automatically retrieve the graph Micromonospora sediminicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSediminicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSediminicola graph.
+    """Return new instance of the Micromonospora sediminicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSediminicola(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSediminicola graph.
+    Instace of Micromonospora sediminicola graph.
 
 	References
 	---------------------

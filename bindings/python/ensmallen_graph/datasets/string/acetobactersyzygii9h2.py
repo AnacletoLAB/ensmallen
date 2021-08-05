@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterSyzygii9h2.
+This file offers the methods to automatically retrieve the graph Acetobacter syzygii 9H-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterSyzygii9h2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterSyzygii9h2 graph.
+    """Return new instance of the Acetobacter syzygii 9H-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterSyzygii9h2(
 
     Returns
     -----------------------
-    Instace of AcetobacterSyzygii9h2 graph.
+    Instace of Acetobacter syzygii 9H-2 graph.
 
 	References
 	---------------------

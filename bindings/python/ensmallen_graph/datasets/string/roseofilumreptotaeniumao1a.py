@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseofilumReptotaeniumAo1A.
+This file offers the methods to automatically retrieve the graph Roseofilum reptotaenium AO1-A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseofilumReptotaeniumAo1A(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseofilumReptotaeniumAo1A graph.
+    """Return new instance of the Roseofilum reptotaenium AO1-A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseofilumReptotaeniumAo1A(
 
     Returns
     -----------------------
-    Instace of RoseofilumReptotaeniumAo1A graph.
+    Instace of Roseofilum reptotaenium AO1-A graph.
 
 	References
 	---------------------

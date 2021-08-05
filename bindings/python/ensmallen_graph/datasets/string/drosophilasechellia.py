@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaSechellia.
+This file offers the methods to automatically retrieve the graph Drosophila sechellia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaSechellia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaSechellia graph.
+    """Return new instance of the Drosophila sechellia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaSechellia(
 
     Returns
     -----------------------
-    Instace of DrosophilaSechellia graph.
+    Instace of Drosophila sechellia graph.
 
 	References
 	---------------------

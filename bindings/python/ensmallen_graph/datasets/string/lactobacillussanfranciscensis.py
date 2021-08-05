@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSanfranciscensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus sanfranciscensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSanfranciscensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSanfranciscensis graph.
+    """Return new instance of the Lactobacillus sanfranciscensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusSanfranciscensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusSanfranciscensis graph.
+    Instace of Lactobacillus sanfranciscensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusShackletonii.
+This file offers the methods to automatically retrieve the graph Bacillus shackletonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusShackletonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusShackletonii graph.
+    """Return new instance of the Bacillus shackletonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusShackletonii(
 
     Returns
     -----------------------
-    Instace of BacillusShackletonii graph.
+    Instace of Bacillus shackletonii graph.
 
 	References
 	---------------------

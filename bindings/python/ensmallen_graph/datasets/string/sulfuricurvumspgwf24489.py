@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricurvumSpGwf24489.
+This file offers the methods to automatically retrieve the graph Sulfuricurvum sp. GWF2_44_89.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricurvumSpGwf24489(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricurvumSpGwf24489 graph.
+    """Return new instance of the Sulfuricurvum sp. GWF2_44_89 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfuricurvumSpGwf24489(
 
     Returns
     -----------------------
-    Instace of SulfuricurvumSpGwf24489 graph.
+    Instace of Sulfuricurvum sp. GWF2_44_89 graph.
 
 	References
 	---------------------

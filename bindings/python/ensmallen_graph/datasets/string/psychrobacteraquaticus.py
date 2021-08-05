@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterAquaticus.
+This file offers the methods to automatically retrieve the graph Psychrobacter aquaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterAquaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterAquaticus graph.
+    """Return new instance of the Psychrobacter aquaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterAquaticus(
 
     Returns
     -----------------------
-    Instace of PsychrobacterAquaticus graph.
+    Instace of Psychrobacter aquaticus graph.
 
 	References
 	---------------------

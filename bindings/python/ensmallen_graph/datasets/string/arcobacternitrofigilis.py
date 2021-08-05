@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterNitrofigilis.
+This file offers the methods to automatically retrieve the graph Arcobacter nitrofigilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterNitrofigilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterNitrofigilis graph.
+    """Return new instance of the Arcobacter nitrofigilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcobacterNitrofigilis(
 
     Returns
     -----------------------
-    Instace of ArcobacterNitrofigilis graph.
+    Instace of Arcobacter nitrofigilis graph.
 
 	References
 	---------------------

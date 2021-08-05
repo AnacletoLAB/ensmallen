@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavihumibacterSpCaciam22h1.
+This file offers the methods to automatically retrieve the graph Flavihumibacter sp. CACIAM 22H1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavihumibacterSpCaciam22h1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavihumibacterSpCaciam22h1 graph.
+    """Return new instance of the Flavihumibacter sp. CACIAM 22H1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavihumibacterSpCaciam22h1(
 
     Returns
     -----------------------
-    Instace of FlavihumibacterSpCaciam22h1 graph.
+    Instace of Flavihumibacter sp. CACIAM 22H1 graph.
 
 	References
 	---------------------

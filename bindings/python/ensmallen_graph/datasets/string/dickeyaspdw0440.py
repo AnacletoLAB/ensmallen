@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaSpDw0440.
+This file offers the methods to automatically retrieve the graph Dickeya sp. DW 0440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaSpDw0440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaSpDw0440 graph.
+    """Return new instance of the Dickeya sp. DW 0440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaSpDw0440(
 
     Returns
     -----------------------
-    Instace of DickeyaSpDw0440 graph.
+    Instace of Dickeya sp. DW 0440 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaKunkeliiCr23x.
+This file offers the methods to automatically retrieve the graph Spiroplasma kunkelii CR2-3x.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaKunkeliiCr23x(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaKunkeliiCr23x graph.
+    """Return new instance of the Spiroplasma kunkelii CR2-3x graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaKunkeliiCr23x(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaKunkeliiCr23x graph.
+    Instace of Spiroplasma kunkelii CR2-3x graph.
 
 	References
 	---------------------

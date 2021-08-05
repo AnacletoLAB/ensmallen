@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromobacteriumSphagni.
+This file offers the methods to automatically retrieve the graph Chromobacterium sphagni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromobacteriumSphagni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromobacteriumSphagni graph.
+    """Return new instance of the Chromobacterium sphagni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromobacteriumSphagni(
 
     Returns
     -----------------------
-    Instace of ChromobacteriumSphagni graph.
+    Instace of Chromobacterium sphagni graph.
 
 	References
 	---------------------

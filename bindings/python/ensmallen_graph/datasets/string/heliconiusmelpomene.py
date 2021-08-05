@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HeliconiusMelpomene.
+This file offers the methods to automatically retrieve the graph Heliconius melpomene.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HeliconiusMelpomene(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HeliconiusMelpomene graph.
+    """Return new instance of the Heliconius melpomene graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HeliconiusMelpomene(
 
     Returns
     -----------------------
-    Instace of HeliconiusMelpomene graph.
+    Instace of Heliconius melpomene graph.
 
 	References
 	---------------------

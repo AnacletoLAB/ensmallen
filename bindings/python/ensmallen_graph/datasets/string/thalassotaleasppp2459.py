@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassotaleaSpPp2459.
+This file offers the methods to automatically retrieve the graph Thalassotalea sp. PP2-459.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassotaleaSpPp2459(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassotaleaSpPp2459 graph.
+    """Return new instance of the Thalassotalea sp. PP2-459 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassotaleaSpPp2459(
 
     Returns
     -----------------------
-    Instace of ThalassotaleaSpPp2459 graph.
+    Instace of Thalassotalea sp. PP2-459 graph.
 
 	References
 	---------------------

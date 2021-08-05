@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpizellomycesPunctatusDaomBr117.
+This file offers the methods to automatically retrieve the graph Spizellomyces punctatus DAOM BR117.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpizellomycesPunctatusDaomBr117(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpizellomycesPunctatusDaomBr117 graph.
+    """Return new instance of the Spizellomyces punctatus DAOM BR117 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpizellomycesPunctatusDaomBr117(
 
     Returns
     -----------------------
-    Instace of SpizellomycesPunctatusDaomBr117 graph.
+    Instace of Spizellomyces punctatus DAOM BR117 graph.
 
 	References
 	---------------------

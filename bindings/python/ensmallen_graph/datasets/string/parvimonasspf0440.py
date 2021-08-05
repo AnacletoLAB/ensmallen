@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvimonasSpF0440.
+This file offers the methods to automatically retrieve the graph Parvimonas sp. F0440.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvimonasSpF0440(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvimonasSpF0440 graph.
+    """Return new instance of the Parvimonas sp. F0440 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParvimonasSpF0440(
 
     Returns
     -----------------------
-    Instace of ParvimonasSpF0440 graph.
+    Instace of Parvimonas sp. F0440 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumD16.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium D16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumD16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumD16 graph.
+    """Return new instance of the Ruminococcaceae bacterium D16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcaceaeBacteriumD16(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumD16 graph.
+    Instace of Ruminococcaceae bacterium D16 graph.
 
 	References
 	---------------------

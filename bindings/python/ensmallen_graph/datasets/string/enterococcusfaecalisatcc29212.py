@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusFaecalisAtcc29212.
+This file offers the methods to automatically retrieve the graph Enterococcus faecalis ATCC29212.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusFaecalisAtcc29212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusFaecalisAtcc29212 graph.
+    """Return new instance of the Enterococcus faecalis ATCC29212 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusFaecalisAtcc29212(
 
     Returns
     -----------------------
-    Instace of EnterococcusFaecalisAtcc29212 graph.
+    Instace of Enterococcus faecalis ATCC29212 graph.
 
 	References
 	---------------------

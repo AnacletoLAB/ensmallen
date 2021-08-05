@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusWasatchensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus wasatchensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusWasatchensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusWasatchensis graph.
+    """Return new instance of the Lactobacillus wasatchensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusWasatchensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusWasatchensis graph.
+    Instace of Lactobacillus wasatchensis graph.
 
 	References
 	---------------------

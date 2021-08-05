@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusCristatus.
+This file offers the methods to automatically retrieve the graph Streptococcus cristatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusCristatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusCristatus graph.
+    """Return new instance of the Streptococcus cristatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusCristatus(
 
     Returns
     -----------------------
-    Instace of StreptococcusCristatus graph.
+    Instace of Streptococcus cristatus graph.
 
 	References
 	---------------------

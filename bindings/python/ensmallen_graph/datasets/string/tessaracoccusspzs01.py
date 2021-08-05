@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusSpZs01.
+This file offers the methods to automatically retrieve the graph Tessaracoccus sp. ZS01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusSpZs01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusSpZs01 graph.
+    """Return new instance of the Tessaracoccus sp. ZS01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusSpZs01(
 
     Returns
     -----------------------
-    Instace of TessaracoccusSpZs01 graph.
+    Instace of Tessaracoccus sp. ZS01 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlbimonasPacifica.
+This file offers the methods to automatically retrieve the graph Albimonas pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlbimonasPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlbimonasPacifica graph.
+    """Return new instance of the Albimonas pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlbimonasPacifica(
 
     Returns
     -----------------------
-    Instace of AlbimonasPacifica graph.
+    Instace of Albimonas pacifica graph.
 
 	References
 	---------------------

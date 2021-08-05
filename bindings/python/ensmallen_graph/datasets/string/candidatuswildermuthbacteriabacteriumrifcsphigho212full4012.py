@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWildermuthbacteriaBacteriumRifcsphigho212Full4012.
+This file offers the methods to automatically retrieve the graph Candidatus Wildermuthbacteria bacterium RIFCSPHIGHO2_12_FULL_40_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWildermuthbacteriaBacteriumRifcsphigho212Full4012(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWildermuthbacteriaBacteriumRifcsphigho212Full4012 graph.
+    """Return new instance of the Candidatus Wildermuthbacteria bacterium RIFCSPHIGHO2_12_FULL_40_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWildermuthbacteriaBacteriumRifcsphigho212Full4012(
 
     Returns
     -----------------------
-    Instace of CandidatusWildermuthbacteriaBacteriumRifcsphigho212Full4012 graph.
+    Instace of Candidatus Wildermuthbacteria bacterium RIFCSPHIGHO2_12_FULL_40_12 graph.
 
 	References
 	---------------------

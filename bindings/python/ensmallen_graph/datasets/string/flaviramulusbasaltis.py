@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlaviramulusBasaltis.
+This file offers the methods to automatically retrieve the graph Flaviramulus basaltis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlaviramulusBasaltis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlaviramulusBasaltis graph.
+    """Return new instance of the Flaviramulus basaltis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlaviramulusBasaltis(
 
     Returns
     -----------------------
-    Instace of FlaviramulusBasaltis graph.
+    Instace of Flaviramulus basaltis graph.
 
 	References
 	---------------------

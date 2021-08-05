@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpOr444.
+This file offers the methods to automatically retrieve the graph Rhodanobacter sp. OR444.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpOr444(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpOr444 graph.
+    """Return new instance of the Rhodanobacter sp. OR444 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodanobacterSpOr444(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpOr444 graph.
+    Instace of Rhodanobacter sp. OR444 graph.
 
 	References
 	---------------------

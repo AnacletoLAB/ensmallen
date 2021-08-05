@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterGhanensis.
+This file offers the methods to automatically retrieve the graph Acetobacter ghanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterGhanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterGhanensis graph.
+    """Return new instance of the Acetobacter ghanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterGhanensis(
 
     Returns
     -----------------------
-    Instace of AcetobacterGhanensis graph.
+    Instace of Acetobacter ghanensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpTks.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. TKS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpTks(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpTks graph.
+    """Return new instance of the Sphingobium sp. TKS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpTks(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpTks graph.
+    Instace of Sphingobium sp. TKS graph.
 
 	References
 	---------------------

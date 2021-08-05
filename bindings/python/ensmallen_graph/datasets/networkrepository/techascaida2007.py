@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechAsCaida2007.
+This file offers the methods to automatically retrieve the graph tech-as-caida2007.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -47,7 +47,7 @@ def TechAsCaida2007(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechAsCaida2007 graph.
+    """Return new instance of the tech-as-caida2007 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -74,7 +74,7 @@ def TechAsCaida2007(
 
     Returns
     -----------------------
-    Instace of TechAsCaida2007 graph.
+    Instace of tech-as-caida2007 graph.
 
 	References
 	---------------------

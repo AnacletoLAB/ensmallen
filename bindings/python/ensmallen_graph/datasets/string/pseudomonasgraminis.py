@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasGraminis.
+This file offers the methods to automatically retrieve the graph Pseudomonas graminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasGraminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasGraminis graph.
+    """Return new instance of the Pseudomonas graminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasGraminis(
 
     Returns
     -----------------------
-    Instace of PseudomonasGraminis graph.
+    Instace of Pseudomonas graminis graph.
 
 	References
 	---------------------

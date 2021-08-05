@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Gent113.
+This file offers the methods to automatically retrieve the graph gent113.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Gent113(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Gent113 graph.
+    """Return new instance of the gent113 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Gent113(
 
     Returns
     -----------------------
-    Instace of Gent113 graph.
+    Instace of gent113 graph.
 
 	References
 	---------------------

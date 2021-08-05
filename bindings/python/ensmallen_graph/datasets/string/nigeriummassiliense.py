@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NigeriumMassiliense.
+This file offers the methods to automatically retrieve the graph Nigerium massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NigeriumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NigeriumMassiliense graph.
+    """Return new instance of the Nigerium massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NigeriumMassiliense(
 
     Returns
     -----------------------
-    Instace of NigeriumMassiliense graph.
+    Instace of Nigerium massiliense graph.
 
 	References
 	---------------------

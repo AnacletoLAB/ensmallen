@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSp770b2.
+This file offers the methods to automatically retrieve the graph Variovorax sp. 770b2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSp770b2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSp770b2 graph.
+    """Return new instance of the Variovorax sp. 770b2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSp770b2(
 
     Returns
     -----------------------
-    Instace of VariovoraxSp770b2 graph.
+    Instace of Variovorax sp. 770b2 graph.
 
 	References
 	---------------------

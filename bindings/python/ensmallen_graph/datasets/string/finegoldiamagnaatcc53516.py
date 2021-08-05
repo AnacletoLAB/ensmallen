@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FinegoldiaMagnaAtcc53516.
+This file offers the methods to automatically retrieve the graph Finegoldia magna ATCC53516.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FinegoldiaMagnaAtcc53516(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FinegoldiaMagnaAtcc53516 graph.
+    """Return new instance of the Finegoldia magna ATCC53516 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FinegoldiaMagnaAtcc53516(
 
     Returns
     -----------------------
-    Instace of FinegoldiaMagnaAtcc53516 graph.
+    Instace of Finegoldia magna ATCC53516 graph.
 
 	References
 	---------------------

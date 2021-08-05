@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterSphagniphilus.
+This file offers the methods to automatically retrieve the graph Polynucleobacter sphagniphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterSphagniphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterSphagniphilus graph.
+    """Return new instance of the Polynucleobacter sphagniphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterSphagniphilus(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterSphagniphilus graph.
+    Instace of Polynucleobacter sphagniphilus graph.
 
 	References
 	---------------------

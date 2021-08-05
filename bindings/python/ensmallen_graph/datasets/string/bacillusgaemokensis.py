@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGaemokensis.
+This file offers the methods to automatically retrieve the graph Bacillus gaemokensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusGaemokensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGaemokensis graph.
+    """Return new instance of the Bacillus gaemokensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusGaemokensis(
 
     Returns
     -----------------------
-    Instace of BacillusGaemokensis graph.
+    Instace of Bacillus gaemokensis graph.
 
 	References
 	---------------------

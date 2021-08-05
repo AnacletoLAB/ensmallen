@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadGermanyOsm.
+This file offers the methods to automatically retrieve the graph road-germany-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadGermanyOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadGermanyOsm graph.
+    """Return new instance of the road-germany-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadGermanyOsm(
 
     Returns
     -----------------------
-    Instace of RoadGermanyOsm graph.
+    Instace of road-germany-osm graph.
 
 	References
 	---------------------

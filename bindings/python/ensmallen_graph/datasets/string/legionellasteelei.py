@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaSteelei.
+This file offers the methods to automatically retrieve the graph Legionella steelei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaSteelei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaSteelei graph.
+    """Return new instance of the Legionella steelei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaSteelei(
 
     Returns
     -----------------------
-    Instace of LegionellaSteelei graph.
+    Instace of Legionella steelei graph.
 
 	References
 	---------------------

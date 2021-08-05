@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioHsCx.
+This file offers the methods to automatically retrieve the graph bio-HS-CX.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioHsCx(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioHsCx graph.
+    """Return new instance of the bio-HS-CX graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioHsCx(
 
     Returns
     -----------------------
-    Instace of BioHsCx graph.
+    Instace of bio-HS-CX graph.
 
 	References
 	---------------------

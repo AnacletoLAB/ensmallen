@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSiliginis.
+This file offers the methods to automatically retrieve the graph Lactobacillus siliginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSiliginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSiliginis graph.
+    """Return new instance of the Lactobacillus siliginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSiliginis(
 
     Returns
     -----------------------
-    Instace of LactobacillusSiliginis graph.
+    Instace of Lactobacillus siliginis graph.
 
 	References
 	---------------------

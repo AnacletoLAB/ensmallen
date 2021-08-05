@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterAlbidus.
+This file offers the methods to automatically retrieve the graph Gluconobacter albidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterAlbidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterAlbidus graph.
+    """Return new instance of the Gluconobacter albidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GluconobacterAlbidus(
 
     Returns
     -----------------------
-    Instace of GluconobacterAlbidus graph.
+    Instace of Gluconobacter albidus graph.
 
 	References
 	---------------------

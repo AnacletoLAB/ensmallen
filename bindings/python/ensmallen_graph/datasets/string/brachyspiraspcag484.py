@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraSpCag484.
+This file offers the methods to automatically retrieve the graph Brachyspira sp. CAG:484.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraSpCag484(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraSpCag484 graph.
+    """Return new instance of the Brachyspira sp. CAG:484 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachyspiraSpCag484(
 
     Returns
     -----------------------
-    Instace of BrachyspiraSpCag484 graph.
+    Instace of Brachyspira sp. CAG:484 graph.
 
 	References
 	---------------------

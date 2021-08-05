@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpartansii.
+This file offers the methods to automatically retrieve the graph Flavobacterium spartansii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpartansii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpartansii graph.
+    """Return new instance of the Flavobacterium spartansii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumSpartansii(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpartansii graph.
+    Instace of Flavobacterium spartansii graph.
 
 	References
 	---------------------

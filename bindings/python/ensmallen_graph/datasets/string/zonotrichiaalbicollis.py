@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZonotrichiaAlbicollis.
+This file offers the methods to automatically retrieve the graph Zonotrichia albicollis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZonotrichiaAlbicollis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZonotrichiaAlbicollis graph.
+    """Return new instance of the Zonotrichia albicollis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZonotrichiaAlbicollis(
 
     Returns
     -----------------------
-    Instace of ZonotrichiaAlbicollis graph.
+    Instace of Zonotrichia albicollis graph.
 
 	References
 	---------------------

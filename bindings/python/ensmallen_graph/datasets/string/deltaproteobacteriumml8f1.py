@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaProteobacteriumMl8F1.
+This file offers the methods to automatically retrieve the graph delta proteobacterium ML8_F1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaProteobacteriumMl8F1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaProteobacteriumMl8F1 graph.
+    """Return new instance of the delta proteobacterium ML8_F1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaProteobacteriumMl8F1(
 
     Returns
     -----------------------
-    Instace of DeltaProteobacteriumMl8F1 graph.
+    Instace of delta proteobacterium ML8_F1 graph.
 
 	References
 	---------------------

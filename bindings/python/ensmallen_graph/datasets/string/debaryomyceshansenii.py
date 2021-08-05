@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DebaryomycesHansenii.
+This file offers the methods to automatically retrieve the graph Debaryomyces hansenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DebaryomycesHansenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DebaryomycesHansenii graph.
+    """Return new instance of the Debaryomyces hansenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DebaryomycesHansenii(
 
     Returns
     -----------------------
-    Instace of DebaryomycesHansenii graph.
+    Instace of Debaryomyces hansenii graph.
 
 	References
 	---------------------

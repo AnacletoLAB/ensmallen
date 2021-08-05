@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RaphidiopsisBrookii.
+This file offers the methods to automatically retrieve the graph Raphidiopsis brookii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RaphidiopsisBrookii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RaphidiopsisBrookii graph.
+    """Return new instance of the Raphidiopsis brookii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RaphidiopsisBrookii(
 
     Returns
     -----------------------
-    Instace of RaphidiopsisBrookii graph.
+    Instace of Raphidiopsis brookii graph.
 
 	References
 	---------------------

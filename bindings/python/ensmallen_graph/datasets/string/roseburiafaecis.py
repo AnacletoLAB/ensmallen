@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseburiaFaecis.
+This file offers the methods to automatically retrieve the graph Roseburia faecis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseburiaFaecis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseburiaFaecis graph.
+    """Return new instance of the Roseburia faecis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RoseburiaFaecis(
 
     Returns
     -----------------------
-    Instace of RoseburiaFaecis graph.
+    Instace of Roseburia faecis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeratocystisFimbriataCbs114723.
+This file offers the methods to automatically retrieve the graph Ceratocystis fimbriata CBS 114723.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeratocystisFimbriataCbs114723(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeratocystisFimbriataCbs114723 graph.
+    """Return new instance of the Ceratocystis fimbriata CBS 114723 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeratocystisFimbriataCbs114723(
 
     Returns
     -----------------------
-    Instace of CeratocystisFimbriataCbs114723 graph.
+    Instace of Ceratocystis fimbriata CBS 114723 graph.
 
 	References
 	---------------------

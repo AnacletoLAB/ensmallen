@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusSpPh9.
+This file offers the methods to automatically retrieve the graph Anaerococcus sp. PH9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusSpPh9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusSpPh9 graph.
+    """Return new instance of the Anaerococcus sp. PH9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusSpPh9(
 
     Returns
     -----------------------
-    Instace of AnaerococcusSpPh9 graph.
+    Instace of Anaerococcus sp. PH9 graph.
 
 	References
 	---------------------

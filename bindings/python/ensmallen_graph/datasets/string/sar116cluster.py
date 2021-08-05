@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar116Cluster.
+This file offers the methods to automatically retrieve the graph SAR116 cluster.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Sar116Cluster(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar116Cluster graph.
+    """Return new instance of the SAR116 cluster graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Sar116Cluster(
 
     Returns
     -----------------------
-    Instace of Sar116Cluster graph.
+    Instace of SAR116 cluster graph.
 
 	References
 	---------------------

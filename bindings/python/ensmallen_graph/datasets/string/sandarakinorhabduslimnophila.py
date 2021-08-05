@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SandarakinorhabdusLimnophila.
+This file offers the methods to automatically retrieve the graph Sandarakinorhabdus limnophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SandarakinorhabdusLimnophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SandarakinorhabdusLimnophila graph.
+    """Return new instance of the Sandarakinorhabdus limnophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SandarakinorhabdusLimnophila(
 
     Returns
     -----------------------
-    Instace of SandarakinorhabdusLimnophila graph.
+    Instace of Sandarakinorhabdus limnophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph InfectDublin.
+This file offers the methods to automatically retrieve the graph infect-dublin.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def InfectDublin(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the InfectDublin graph.
+    """Return new instance of the infect-dublin graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def InfectDublin(
 
     Returns
     -----------------------
-    Instace of InfectDublin graph.
+    Instace of infect-dublin graph.
 
 	References
 	---------------------

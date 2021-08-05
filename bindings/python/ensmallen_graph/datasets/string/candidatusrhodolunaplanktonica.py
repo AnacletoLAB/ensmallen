@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRhodolunaPlanktonica.
+This file offers the methods to automatically retrieve the graph Candidatus Rhodoluna planktonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRhodolunaPlanktonica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRhodolunaPlanktonica graph.
+    """Return new instance of the Candidatus Rhodoluna planktonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRhodolunaPlanktonica(
 
     Returns
     -----------------------
-    Instace of CandidatusRhodolunaPlanktonica graph.
+    Instace of Candidatus Rhodoluna planktonica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriMf28.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri MF28.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriMf28(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriMf28 graph.
+    """Return new instance of the Pseudomonas stutzeri MF28 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriMf28(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriMf28 graph.
+    Instace of Pseudomonas stutzeri MF28 graph.
 
 	References
 	---------------------

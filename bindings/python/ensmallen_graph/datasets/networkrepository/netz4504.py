@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Netz4504.
+This file offers the methods to automatically retrieve the graph netz4504.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Netz4504(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Netz4504 graph.
+    """Return new instance of the netz4504 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Netz4504(
 
     Returns
     -----------------------
-    Instace of Netz4504 graph.
+    Instace of netz4504 graph.
 
 	References
 	---------------------

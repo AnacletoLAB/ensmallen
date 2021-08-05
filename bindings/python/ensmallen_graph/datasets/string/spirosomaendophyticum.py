@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaEndophyticum.
+This file offers the methods to automatically retrieve the graph Spirosoma endophyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaEndophyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaEndophyticum graph.
+    """Return new instance of the Spirosoma endophyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirosomaEndophyticum(
 
     Returns
     -----------------------
-    Instace of SpirosomaEndophyticum graph.
+    Instace of Spirosoma endophyticum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelobacterSeleniigenesDsm18267.
+This file offers the methods to automatically retrieve the graph Pelobacter seleniigenes DSM 18267.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelobacterSeleniigenesDsm18267(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelobacterSeleniigenesDsm18267 graph.
+    """Return new instance of the Pelobacter seleniigenes DSM 18267 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelobacterSeleniigenesDsm18267(
 
     Returns
     -----------------------
-    Instace of PelobacterSeleniigenesDsm18267 graph.
+    Instace of Pelobacter seleniigenes DSM 18267 graph.
 
 	References
 	---------------------

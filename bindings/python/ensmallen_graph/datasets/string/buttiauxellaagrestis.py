@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButtiauxellaAgrestis.
+This file offers the methods to automatically retrieve the graph Buttiauxella agrestis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButtiauxellaAgrestis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButtiauxellaAgrestis graph.
+    """Return new instance of the Buttiauxella agrestis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButtiauxellaAgrestis(
 
     Returns
     -----------------------
-    Instace of ButtiauxellaAgrestis graph.
+    Instace of Buttiauxella agrestis graph.
 
 	References
 	---------------------

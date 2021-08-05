@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpMaepy2.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. MAEPY2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpMaepy2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpMaepy2 graph.
+    """Return new instance of the Paenibacillus sp. MAEPY2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpMaepy2(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpMaepy2 graph.
+    Instace of Paenibacillus sp. MAEPY2 graph.
 
 	References
 	---------------------

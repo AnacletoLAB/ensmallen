@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusManasiensis.
+This file offers the methods to automatically retrieve the graph Oceanobacillus manasiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusManasiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusManasiensis graph.
+    """Return new instance of the Oceanobacillus manasiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanobacillusManasiensis(
 
     Returns
     -----------------------
-    Instace of OceanobacillusManasiensis graph.
+    Instace of Oceanobacillus manasiensis graph.
 
 	References
 	---------------------

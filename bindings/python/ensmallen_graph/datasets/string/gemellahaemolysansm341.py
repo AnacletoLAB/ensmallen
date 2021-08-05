@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemellaHaemolysansM341.
+This file offers the methods to automatically retrieve the graph Gemella haemolysans M341.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemellaHaemolysansM341(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemellaHaemolysansM341 graph.
+    """Return new instance of the Gemella haemolysans M341 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemellaHaemolysansM341(
 
     Returns
     -----------------------
-    Instace of GemellaHaemolysansM341 graph.
+    Instace of Gemella haemolysans M341 graph.
 
 	References
 	---------------------

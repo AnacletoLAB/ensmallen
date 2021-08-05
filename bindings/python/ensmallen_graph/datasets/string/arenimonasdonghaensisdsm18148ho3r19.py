@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArenimonasDonghaensisDsm18148Ho3R19.
+This file offers the methods to automatically retrieve the graph Arenimonas donghaensis DSM 18148 HO3-R19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArenimonasDonghaensisDsm18148Ho3R19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArenimonasDonghaensisDsm18148Ho3R19 graph.
+    """Return new instance of the Arenimonas donghaensis DSM 18148 HO3-R19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArenimonasDonghaensisDsm18148Ho3R19(
 
     Returns
     -----------------------
-    Instace of ArenimonasDonghaensisDsm18148Ho3R19 graph.
+    Instace of Arenimonas donghaensis DSM 18148 HO3-R19 graph.
 
 	References
 	---------------------

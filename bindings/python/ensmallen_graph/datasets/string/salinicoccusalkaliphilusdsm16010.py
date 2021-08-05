@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusAlkaliphilusDsm16010.
+This file offers the methods to automatically retrieve the graph Salinicoccus alkaliphilus DSM 16010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusAlkaliphilusDsm16010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusAlkaliphilusDsm16010 graph.
+    """Return new instance of the Salinicoccus alkaliphilus DSM 16010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicoccusAlkaliphilusDsm16010(
 
     Returns
     -----------------------
-    Instace of SalinicoccusAlkaliphilusDsm16010 graph.
+    Instace of Salinicoccus alkaliphilus DSM 16010 graph.
 
 	References
 	---------------------

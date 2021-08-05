@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhoenixDactylifera.
+This file offers the methods to automatically retrieve the graph Phoenix dactylifera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhoenixDactylifera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhoenixDactylifera graph.
+    """Return new instance of the Phoenix dactylifera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhoenixDactylifera(
 
     Returns
     -----------------------
-    Instace of PhoenixDactylifera graph.
+    Instace of Phoenix dactylifera graph.
 
 	References
 	---------------------

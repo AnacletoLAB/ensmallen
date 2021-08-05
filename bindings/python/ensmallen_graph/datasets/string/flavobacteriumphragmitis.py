@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumPhragmitis.
+This file offers the methods to automatically retrieve the graph Flavobacterium phragmitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumPhragmitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumPhragmitis graph.
+    """Return new instance of the Flavobacterium phragmitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumPhragmitis(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumPhragmitis graph.
+    Instace of Flavobacterium phragmitis graph.
 
 	References
 	---------------------

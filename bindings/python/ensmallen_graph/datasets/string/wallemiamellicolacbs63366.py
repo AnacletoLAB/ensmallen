@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WallemiaMellicolaCbs63366.
+This file offers the methods to automatically retrieve the graph Wallemia mellicola CBS 633.66.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WallemiaMellicolaCbs63366(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WallemiaMellicolaCbs63366 graph.
+    """Return new instance of the Wallemia mellicola CBS 633.66 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WallemiaMellicolaCbs63366(
 
     Returns
     -----------------------
-    Instace of WallemiaMellicolaCbs63366 graph.
+    Instace of Wallemia mellicola CBS 633.66 graph.
 
 	References
 	---------------------

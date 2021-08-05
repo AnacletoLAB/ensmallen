@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpRoot336d2.
+This file offers the methods to automatically retrieve the graph Duganella sp. Root336D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpRoot336d2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpRoot336d2 graph.
+    """Return new instance of the Duganella sp. Root336D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpRoot336d2(
 
     Returns
     -----------------------
-    Instace of DuganellaSpRoot336d2 graph.
+    Instace of Duganella sp. Root336D2 graph.
 
 	References
 	---------------------

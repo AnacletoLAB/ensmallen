@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SteccherinumOchraceum.
+This file offers the methods to automatically retrieve the graph Steccherinum ochraceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SteccherinumOchraceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SteccherinumOchraceum graph.
+    """Return new instance of the Steccherinum ochraceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SteccherinumOchraceum(
 
     Returns
     -----------------------
-    Instace of SteccherinumOchraceum graph.
+    Instace of Steccherinum ochraceum graph.
 
 	References
 	---------------------

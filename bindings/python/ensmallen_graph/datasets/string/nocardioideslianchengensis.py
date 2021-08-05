@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesLianchengensis.
+This file offers the methods to automatically retrieve the graph Nocardioides lianchengensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesLianchengensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesLianchengensis graph.
+    """Return new instance of the Nocardioides lianchengensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesLianchengensis(
 
     Returns
     -----------------------
-    Instace of NocardioidesLianchengensis graph.
+    Instace of Nocardioides lianchengensis graph.
 
 	References
 	---------------------

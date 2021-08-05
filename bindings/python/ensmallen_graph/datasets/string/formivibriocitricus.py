@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FormivibrioCitricus.
+This file offers the methods to automatically retrieve the graph Formivibrio citricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FormivibrioCitricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FormivibrioCitricus graph.
+    """Return new instance of the Formivibrio citricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FormivibrioCitricus(
 
     Returns
     -----------------------
-    Instace of FormivibrioCitricus graph.
+    Instace of Formivibrio citricus graph.
 
 	References
 	---------------------

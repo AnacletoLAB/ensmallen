@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaeBacteriumSm2339.
+This file offers the methods to automatically retrieve the graph Chlamydiae bacterium SM23_39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaeBacteriumSm2339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaeBacteriumSm2339 graph.
+    """Return new instance of the Chlamydiae bacterium SM23_39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaeBacteriumSm2339(
 
     Returns
     -----------------------
-    Instace of ChlamydiaeBacteriumSm2339 graph.
+    Instace of Chlamydiae bacterium SM23_39 graph.
 
 	References
 	---------------------

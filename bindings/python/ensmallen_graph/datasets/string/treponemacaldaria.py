@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaCaldaria.
+This file offers the methods to automatically retrieve the graph Treponema caldaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaCaldaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaCaldaria graph.
+    """Return new instance of the Treponema caldaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TreponemaCaldaria(
 
     Returns
     -----------------------
-    Instace of TreponemaCaldaria graph.
+    Instace of Treponema caldaria graph.
 
 	References
 	---------------------

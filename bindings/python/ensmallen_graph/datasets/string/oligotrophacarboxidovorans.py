@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OligotrophaCarboxidovorans.
+This file offers the methods to automatically retrieve the graph Oligotropha carboxidovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OligotrophaCarboxidovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OligotrophaCarboxidovorans graph.
+    """Return new instance of the Oligotropha carboxidovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OligotrophaCarboxidovorans(
 
     Returns
     -----------------------
-    Instace of OligotrophaCarboxidovorans graph.
+    Instace of Oligotropha carboxidovorans graph.
 
 	References
 	---------------------

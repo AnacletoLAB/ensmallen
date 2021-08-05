@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChelonobacterOris.
+This file offers the methods to automatically retrieve the graph Chelonobacter oris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChelonobacterOris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChelonobacterOris graph.
+    """Return new instance of the Chelonobacter oris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChelonobacterOris(
 
     Returns
     -----------------------
-    Instace of ChelonobacterOris graph.
+    Instace of Chelonobacter oris graph.
 
 	References
 	---------------------

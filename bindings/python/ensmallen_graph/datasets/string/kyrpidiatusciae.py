@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KyrpidiaTusciae.
+This file offers the methods to automatically retrieve the graph Kyrpidia tusciae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KyrpidiaTusciae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KyrpidiaTusciae graph.
+    """Return new instance of the Kyrpidia tusciae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KyrpidiaTusciae(
 
     Returns
     -----------------------
-    Instace of KyrpidiaTusciae graph.
+    Instace of Kyrpidia tusciae graph.
 
 	References
 	---------------------

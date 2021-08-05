@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSimilisDsm23365Jcm2765.
+This file offers the methods to automatically retrieve the graph Lactobacillus similis DSM 23365 JCM 2765.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSimilisDsm23365Jcm2765(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSimilisDsm23365Jcm2765 graph.
+    """Return new instance of the Lactobacillus similis DSM 23365 JCM 2765 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSimilisDsm23365Jcm2765(
 
     Returns
     -----------------------
-    Instace of LactobacillusSimilisDsm23365Jcm2765 graph.
+    Instace of Lactobacillus similis DSM 23365 JCM 2765 graph.
 
 	References
 	---------------------

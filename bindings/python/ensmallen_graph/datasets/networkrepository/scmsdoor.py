@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ScMsdoor.
+This file offers the methods to automatically retrieve the graph sc-msdoor.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def ScMsdoor(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ScMsdoor graph.
+    """Return new instance of the sc-msdoor graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def ScMsdoor(
 
     Returns
     -----------------------
-    Instace of ScMsdoor graph.
+    Instace of sc-msdoor graph.
 
 	References
 	---------------------

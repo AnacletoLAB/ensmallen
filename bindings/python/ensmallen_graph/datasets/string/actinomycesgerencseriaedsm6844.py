@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesGerencseriaeDsm6844.
+This file offers the methods to automatically retrieve the graph Actinomyces gerencseriae DSM 6844.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesGerencseriaeDsm6844(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesGerencseriaeDsm6844 graph.
+    """Return new instance of the Actinomyces gerencseriae DSM 6844 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesGerencseriaeDsm6844(
 
     Returns
     -----------------------
-    Instace of ActinomycesGerencseriaeDsm6844 graph.
+    Instace of Actinomyces gerencseriae DSM 6844 graph.
 
 	References
 	---------------------

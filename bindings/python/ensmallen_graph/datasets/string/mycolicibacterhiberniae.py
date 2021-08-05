@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacterHiberniae.
+This file offers the methods to automatically retrieve the graph Mycolicibacter hiberniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacterHiberniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacterHiberniae graph.
+    """Return new instance of the Mycolicibacter hiberniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacterHiberniae(
 
     Returns
     -----------------------
-    Instace of MycolicibacterHiberniae graph.
+    Instace of Mycolicibacter hiberniae graph.
 
 	References
 	---------------------

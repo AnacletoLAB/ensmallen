@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocTwitterFollows.
+This file offers the methods to automatically retrieve the graph soc-twitter-follows.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def SocTwitterFollows(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocTwitterFollows graph.
+    """Return new instance of the soc-twitter-follows graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def SocTwitterFollows(
 
     Returns
     -----------------------
-    Instace of SocTwitterFollows graph.
+    Instace of soc-twitter-follows graph.
 
 	References
 	---------------------

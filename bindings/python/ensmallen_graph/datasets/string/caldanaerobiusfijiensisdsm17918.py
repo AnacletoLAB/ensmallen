@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldanaerobiusFijiensisDsm17918.
+This file offers the methods to automatically retrieve the graph Caldanaerobius fijiensis DSM 17918.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldanaerobiusFijiensisDsm17918(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldanaerobiusFijiensisDsm17918 graph.
+    """Return new instance of the Caldanaerobius fijiensis DSM 17918 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldanaerobiusFijiensisDsm17918(
 
     Returns
     -----------------------
-    Instace of CaldanaerobiusFijiensisDsm17918 graph.
+    Instace of Caldanaerobius fijiensis DSM 17918 graph.
 
 	References
 	---------------------

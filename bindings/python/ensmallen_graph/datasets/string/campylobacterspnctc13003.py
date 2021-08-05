@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpNctc13003.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. NCTC 13003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpNctc13003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpNctc13003 graph.
+    """Return new instance of the Campylobacter sp. NCTC 13003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterSpNctc13003(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpNctc13003 graph.
+    Instace of Campylobacter sp. NCTC 13003 graph.
 
 	References
 	---------------------

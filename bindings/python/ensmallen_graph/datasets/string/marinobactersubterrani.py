@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSubterrani.
+This file offers the methods to automatically retrieve the graph Marinobacter subterrani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSubterrani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSubterrani graph.
+    """Return new instance of the Marinobacter subterrani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSubterrani(
 
     Returns
     -----------------------
-    Instace of MarinobacterSubterrani graph.
+    Instace of Marinobacter subterrani graph.
 
 	References
 	---------------------

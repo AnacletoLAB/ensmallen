@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitrusUnshiu.
+This file offers the methods to automatically retrieve the graph Citrus unshiu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitrusUnshiu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitrusUnshiu graph.
+    """Return new instance of the Citrus unshiu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CitrusUnshiu(
 
     Returns
     -----------------------
-    Instace of CitrusUnshiu graph.
+    Instace of Citrus unshiu graph.
 
 	References
 	---------------------

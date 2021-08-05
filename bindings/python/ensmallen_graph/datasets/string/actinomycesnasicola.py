@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesNasicola.
+This file offers the methods to automatically retrieve the graph Actinomyces nasicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesNasicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesNasicola graph.
+    """Return new instance of the Actinomyces nasicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesNasicola(
 
     Returns
     -----------------------
-    Instace of ActinomycesNasicola graph.
+    Instace of Actinomyces nasicola graph.
 
 	References
 	---------------------

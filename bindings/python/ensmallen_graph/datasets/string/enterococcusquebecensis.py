@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusQuebecensis.
+This file offers the methods to automatically retrieve the graph Enterococcus quebecensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusQuebecensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusQuebecensis graph.
+    """Return new instance of the Enterococcus quebecensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusQuebecensis(
 
     Returns
     -----------------------
-    Instace of EnterococcusQuebecensis graph.
+    Instace of Enterococcus quebecensis graph.
 
 	References
 	---------------------

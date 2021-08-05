@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaSativaIndicaGroup.
+This file offers the methods to automatically retrieve the graph Oryza sativa Indica Group.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaSativaIndicaGroup(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaSativaIndicaGroup graph.
+    """Return new instance of the Oryza sativa Indica Group graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OryzaSativaIndicaGroup(
 
     Returns
     -----------------------
-    Instace of OryzaSativaIndicaGroup graph.
+    Instace of Oryza sativa Indica Group graph.
 
 	References
 	---------------------

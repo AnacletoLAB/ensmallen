@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriumScgcAaa278O22.
+This file offers the methods to automatically retrieve the graph actinobacterium SCGC AAA278-O22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriumScgcAaa278O22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriumScgcAaa278O22 graph.
+    """Return new instance of the actinobacterium SCGC AAA278-O22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriumScgcAaa278O22(
 
     Returns
     -----------------------
-    Instace of ActinobacteriumScgcAaa278O22 graph.
+    Instace of actinobacterium SCGC AAA278-O22 graph.
 
 	References
 	---------------------

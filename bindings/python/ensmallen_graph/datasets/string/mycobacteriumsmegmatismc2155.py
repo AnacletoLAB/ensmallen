@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSmegmatisMc2155.
+This file offers the methods to automatically retrieve the graph Mycobacterium smegmatis MC2155.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSmegmatisMc2155(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSmegmatisMc2155 graph.
+    """Return new instance of the Mycobacterium smegmatis MC2155 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSmegmatisMc2155(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSmegmatisMc2155 graph.
+    Instace of Mycobacterium smegmatis MC2155 graph.
 
 	References
 	---------------------

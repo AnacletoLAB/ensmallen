@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OstreococcusTauri.
+This file offers the methods to automatically retrieve the graph Ostreococcus tauri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OstreococcusTauri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OstreococcusTauri graph.
+    """Return new instance of the Ostreococcus tauri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OstreococcusTauri(
 
     Returns
     -----------------------
-    Instace of OstreococcusTauri graph.
+    Instace of Ostreococcus tauri graph.
 
 	References
 	---------------------

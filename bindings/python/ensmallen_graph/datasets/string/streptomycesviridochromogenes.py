@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesViridochromogenes.
+This file offers the methods to automatically retrieve the graph Streptomyces viridochromogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesViridochromogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesViridochromogenes graph.
+    """Return new instance of the Streptomyces viridochromogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesViridochromogenes(
 
     Returns
     -----------------------
-    Instace of StreptomycesViridochromogenes graph.
+    Instace of Streptomyces viridochromogenes graph.
 
 	References
 	---------------------

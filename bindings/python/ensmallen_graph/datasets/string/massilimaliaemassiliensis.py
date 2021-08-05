@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassilimaliaeMassiliensis.
+This file offers the methods to automatically retrieve the graph Massilimaliae massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassilimaliaeMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassilimaliaeMassiliensis graph.
+    """Return new instance of the Massilimaliae massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassilimaliaeMassiliensis(
 
     Returns
     -----------------------
-    Instace of MassilimaliaeMassiliensis graph.
+    Instace of Massilimaliae massiliensis graph.
 
 	References
 	---------------------

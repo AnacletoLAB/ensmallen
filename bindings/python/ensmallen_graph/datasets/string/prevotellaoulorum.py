@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOulorum.
+This file offers the methods to automatically retrieve the graph Prevotella oulorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOulorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOulorum graph.
+    """Return new instance of the Prevotella oulorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaOulorum(
 
     Returns
     -----------------------
-    Instace of PrevotellaOulorum graph.
+    Instace of Prevotella oulorum graph.
 
 	References
 	---------------------

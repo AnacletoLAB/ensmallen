@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiastellaPopuli.
+This file offers the methods to automatically retrieve the graph Niastella populi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiastellaPopuli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiastellaPopuli graph.
+    """Return new instance of the Niastella populi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NiastellaPopuli(
 
     Returns
     -----------------------
-    Instace of NiastellaPopuli graph.
+    Instace of Niastella populi graph.
 
 	References
 	---------------------

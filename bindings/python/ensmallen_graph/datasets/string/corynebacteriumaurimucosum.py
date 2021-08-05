@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumAurimucosum.
+This file offers the methods to automatically retrieve the graph Corynebacterium aurimucosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumAurimucosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumAurimucosum graph.
+    """Return new instance of the Corynebacterium aurimucosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumAurimucosum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumAurimucosum graph.
+    Instace of Corynebacterium aurimucosum graph.
 
 	References
 	---------------------

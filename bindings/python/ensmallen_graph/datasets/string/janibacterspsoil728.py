@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanibacterSpSoil728.
+This file offers the methods to automatically retrieve the graph Janibacter sp. Soil728.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanibacterSpSoil728(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanibacterSpSoil728 graph.
+    """Return new instance of the Janibacter sp. Soil728 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JanibacterSpSoil728(
 
     Returns
     -----------------------
-    Instace of JanibacterSpSoil728 graph.
+    Instace of Janibacter sp. Soil728 graph.
 
 	References
 	---------------------

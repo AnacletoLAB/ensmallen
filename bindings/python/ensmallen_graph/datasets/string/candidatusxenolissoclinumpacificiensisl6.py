@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusXenolissoclinumPacificiensisL6.
+This file offers the methods to automatically retrieve the graph Candidatus Xenolissoclinum pacificiensis L6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusXenolissoclinumPacificiensisL6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusXenolissoclinumPacificiensisL6 graph.
+    """Return new instance of the Candidatus Xenolissoclinum pacificiensis L6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusXenolissoclinumPacificiensisL6(
 
     Returns
     -----------------------
-    Instace of CandidatusXenolissoclinumPacificiensisL6 graph.
+    Instace of Candidatus Xenolissoclinum pacificiensis L6 graph.
 
 	References
 	---------------------

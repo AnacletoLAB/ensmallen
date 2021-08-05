@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasponiaAndersonii.
+This file offers the methods to automatically retrieve the graph Parasponia andersonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParasponiaAndersonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasponiaAndersonii graph.
+    """Return new instance of the Parasponia andersonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParasponiaAndersonii(
 
     Returns
     -----------------------
-    Instace of ParasponiaAndersonii graph.
+    Instace of Parasponia andersonii graph.
 
 	References
 	---------------------

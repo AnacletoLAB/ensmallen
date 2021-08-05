@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShimwelliaBlattae.
+This file offers the methods to automatically retrieve the graph Shimwellia blattae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShimwelliaBlattae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShimwelliaBlattae graph.
+    """Return new instance of the Shimwellia blattae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShimwelliaBlattae(
 
     Returns
     -----------------------
-    Instace of ShimwelliaBlattae graph.
+    Instace of Shimwellia blattae graph.
 
 	References
 	---------------------

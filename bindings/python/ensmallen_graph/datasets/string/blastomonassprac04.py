@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomonasSpRac04.
+This file offers the methods to automatically retrieve the graph Blastomonas sp. RAC04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomonasSpRac04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomonasSpRac04 graph.
+    """Return new instance of the Blastomonas sp. RAC04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomonasSpRac04(
 
     Returns
     -----------------------
-    Instace of BlastomonasSpRac04 graph.
+    Instace of Blastomonas sp. RAC04 graph.
 
 	References
 	---------------------

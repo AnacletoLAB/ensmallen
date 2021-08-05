@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WilliamsiaSp1135.
+This file offers the methods to automatically retrieve the graph Williamsia sp. 1135.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WilliamsiaSp1135(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WilliamsiaSp1135 graph.
+    """Return new instance of the Williamsia sp. 1135 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WilliamsiaSp1135(
 
     Returns
     -----------------------
-    Instace of WilliamsiaSp1135 graph.
+    Instace of Williamsia sp. 1135 graph.
 
 	References
 	---------------------

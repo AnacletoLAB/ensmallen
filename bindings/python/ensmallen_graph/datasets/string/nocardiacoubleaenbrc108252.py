@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaCoubleaeNbrc108252.
+This file offers the methods to automatically retrieve the graph Nocardia coubleae NBRC 108252.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaCoubleaeNbrc108252(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaCoubleaeNbrc108252 graph.
+    """Return new instance of the Nocardia coubleae NBRC 108252 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaCoubleaeNbrc108252(
 
     Returns
     -----------------------
-    Instace of NocardiaCoubleaeNbrc108252 graph.
+    Instace of Nocardia coubleae NBRC 108252 graph.
 
 	References
 	---------------------

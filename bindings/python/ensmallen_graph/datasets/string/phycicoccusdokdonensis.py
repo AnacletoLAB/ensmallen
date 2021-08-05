@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycicoccusDokdonensis.
+This file offers the methods to automatically retrieve the graph Phycicoccus dokdonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycicoccusDokdonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycicoccusDokdonensis graph.
+    """Return new instance of the Phycicoccus dokdonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycicoccusDokdonensis(
 
     Returns
     -----------------------
-    Instace of PhycicoccusDokdonensis graph.
+    Instace of Phycicoccus dokdonensis graph.
 
 	References
 	---------------------

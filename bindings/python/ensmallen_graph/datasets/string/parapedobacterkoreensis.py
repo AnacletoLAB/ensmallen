@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParapedobacterKoreensis.
+This file offers the methods to automatically retrieve the graph Parapedobacter koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParapedobacterKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParapedobacterKoreensis graph.
+    """Return new instance of the Parapedobacter koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParapedobacterKoreensis(
 
     Returns
     -----------------------
-    Instace of ParapedobacterKoreensis graph.
+    Instace of Parapedobacter koreensis graph.
 
 	References
 	---------------------

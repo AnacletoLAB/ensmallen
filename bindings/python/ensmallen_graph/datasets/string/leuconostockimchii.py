@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocKimchii.
+This file offers the methods to automatically retrieve the graph Leuconostoc kimchii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocKimchii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocKimchii graph.
+    """Return new instance of the Leuconostoc kimchii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocKimchii(
 
     Returns
     -----------------------
-    Instace of LeuconostocKimchii graph.
+    Instace of Leuconostoc kimchii graph.
 
 	References
 	---------------------

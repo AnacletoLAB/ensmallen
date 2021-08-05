@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JanthinobacteriumAgaricidamnosum.
+This file offers the methods to automatically retrieve the graph Janthinobacterium agaricidamnosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JanthinobacteriumAgaricidamnosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JanthinobacteriumAgaricidamnosum graph.
+    """Return new instance of the Janthinobacterium agaricidamnosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JanthinobacteriumAgaricidamnosum(
 
     Returns
     -----------------------
-    Instace of JanthinobacteriumAgaricidamnosum graph.
+    Instace of Janthinobacterium agaricidamnosum graph.
 
 	References
 	---------------------

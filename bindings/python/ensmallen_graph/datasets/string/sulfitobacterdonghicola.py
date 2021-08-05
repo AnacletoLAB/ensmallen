@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterDonghicola.
+This file offers the methods to automatically retrieve the graph Sulfitobacter donghicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterDonghicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterDonghicola graph.
+    """Return new instance of the Sulfitobacter donghicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterDonghicola(
 
     Returns
     -----------------------
-    Instace of SulfitobacterDonghicola graph.
+    Instace of Sulfitobacter donghicola graph.
 
 	References
 	---------------------

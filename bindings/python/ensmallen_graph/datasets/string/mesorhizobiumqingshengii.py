@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumQingshengii.
+This file offers the methods to automatically retrieve the graph Mesorhizobium qingshengii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumQingshengii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumQingshengii graph.
+    """Return new instance of the Mesorhizobium qingshengii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumQingshengii(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumQingshengii graph.
+    Instace of Mesorhizobium qingshengii graph.
 
 	References
 	---------------------

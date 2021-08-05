@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSaccharoperbutylacetonicum.
+This file offers the methods to automatically retrieve the graph Clostridium saccharoperbutylacetonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSaccharoperbutylacetonicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSaccharoperbutylacetonicum graph.
+    """Return new instance of the Clostridium saccharoperbutylacetonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSaccharoperbutylacetonicum(
 
     Returns
     -----------------------
-    Instace of ClostridiumSaccharoperbutylacetonicum graph.
+    Instace of Clostridium saccharoperbutylacetonicum graph.
 
 	References
 	---------------------

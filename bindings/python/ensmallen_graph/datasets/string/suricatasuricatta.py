@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuricataSuricatta.
+This file offers the methods to automatically retrieve the graph Suricata suricatta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuricataSuricatta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuricataSuricatta graph.
+    """Return new instance of the Suricata suricatta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SuricataSuricatta(
 
     Returns
     -----------------------
-    Instace of SuricataSuricatta graph.
+    Instace of Suricata suricatta graph.
 
 	References
 	---------------------

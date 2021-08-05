@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetaSpEbm43.
+This file offers the methods to automatically retrieve the graph Spirochaeta sp. EBM-43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetaSpEbm43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetaSpEbm43 graph.
+    """Return new instance of the Spirochaeta sp. EBM-43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetaSpEbm43(
 
     Returns
     -----------------------
-    Instace of SpirochaetaSpEbm43 graph.
+    Instace of Spirochaeta sp. EBM-43 graph.
 
 	References
 	---------------------

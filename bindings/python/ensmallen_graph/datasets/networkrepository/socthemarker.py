@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocThemarker.
+This file offers the methods to automatically retrieve the graph soc-themarker.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def SocThemarker(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocThemarker graph.
+    """Return new instance of the soc-themarker graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def SocThemarker(
 
     Returns
     -----------------------
-    Instace of SocThemarker graph.
+    Instace of soc-themarker graph.
 
 	References
 	---------------------

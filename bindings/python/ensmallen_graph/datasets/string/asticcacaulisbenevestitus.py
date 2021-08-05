@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisBenevestitus.
+This file offers the methods to automatically retrieve the graph Asticcacaulis benevestitus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisBenevestitus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisBenevestitus graph.
+    """Return new instance of the Asticcacaulis benevestitus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AsticcacaulisBenevestitus(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisBenevestitus graph.
+    Instace of Asticcacaulis benevestitus graph.
 
 	References
 	---------------------

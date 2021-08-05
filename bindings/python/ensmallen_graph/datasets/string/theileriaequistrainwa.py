@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheileriaEquiStrainWa.
+This file offers the methods to automatically retrieve the graph Theileria equi strain WA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheileriaEquiStrainWa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheileriaEquiStrainWa graph.
+    """Return new instance of the Theileria equi strain WA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TheileriaEquiStrainWa(
 
     Returns
     -----------------------
-    Instace of TheileriaEquiStrainWa graph.
+    Instace of Theileria equi strain WA graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudorhodobacterAntarcticus.
+This file offers the methods to automatically retrieve the graph Pseudorhodobacter antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudorhodobacterAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudorhodobacterAntarcticus graph.
+    """Return new instance of the Pseudorhodobacter antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudorhodobacterAntarcticus(
 
     Returns
     -----------------------
-    Instace of PseudorhodobacterAntarcticus graph.
+    Instace of Pseudorhodobacter antarcticus graph.
 
 	References
 	---------------------

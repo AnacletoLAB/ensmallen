@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSimiae.
+This file offers the methods to automatically retrieve the graph Mycobacterium simiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSimiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSimiae graph.
+    """Return new instance of the Mycobacterium simiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSimiae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSimiae graph.
+    Instace of Mycobacterium simiae graph.
 
 	References
 	---------------------

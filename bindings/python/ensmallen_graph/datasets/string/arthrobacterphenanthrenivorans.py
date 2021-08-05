@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterPhenanthrenivorans.
+This file offers the methods to automatically retrieve the graph Arthrobacter phenanthrenivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterPhenanthrenivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterPhenanthrenivorans graph.
+    """Return new instance of the Arthrobacter phenanthrenivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterPhenanthrenivorans(
 
     Returns
     -----------------------
-    Instace of ArthrobacterPhenanthrenivorans graph.
+    Instace of Arthrobacter phenanthrenivorans graph.
 
 	References
 	---------------------

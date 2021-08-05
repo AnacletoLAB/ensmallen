@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpHgh0039.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. HGH0039.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpHgh0039(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpHgh0039 graph.
+    """Return new instance of the Paenibacillus sp. HGH0039 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpHgh0039(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpHgh0039 graph.
+    Instace of Paenibacillus sp. HGH0039 graph.
 
 	References
 	---------------------

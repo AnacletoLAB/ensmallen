@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCampbellbacteriaBacteriumRifcsplowo2023512.
+This file offers the methods to automatically retrieve the graph Candidatus Campbellbacteria bacterium RIFCSPLOWO2_02_35_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCampbellbacteriaBacteriumRifcsplowo2023512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCampbellbacteriaBacteriumRifcsplowo2023512 graph.
+    """Return new instance of the Candidatus Campbellbacteria bacterium RIFCSPLOWO2_02_35_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCampbellbacteriaBacteriumRifcsplowo2023512(
 
     Returns
     -----------------------
-    Instace of CandidatusCampbellbacteriaBacteriumRifcsplowo2023512 graph.
+    Instace of Candidatus Campbellbacteria bacterium RIFCSPLOWO2_02_35_12 graph.
 
 	References
 	---------------------

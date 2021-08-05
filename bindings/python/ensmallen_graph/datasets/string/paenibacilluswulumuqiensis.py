@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusWulumuqiensis.
+This file offers the methods to automatically retrieve the graph Paenibacillus wulumuqiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusWulumuqiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusWulumuqiensis graph.
+    """Return new instance of the Paenibacillus wulumuqiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusWulumuqiensis(
 
     Returns
     -----------------------
-    Instace of PaenibacillusWulumuqiensis graph.
+    Instace of Paenibacillus wulumuqiensis graph.
 
 	References
 	---------------------

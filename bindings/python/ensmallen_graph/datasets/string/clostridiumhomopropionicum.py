@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumHomopropionicum.
+This file offers the methods to automatically retrieve the graph Clostridium homopropionicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumHomopropionicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumHomopropionicum graph.
+    """Return new instance of the Clostridium homopropionicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumHomopropionicum(
 
     Returns
     -----------------------
-    Instace of ClostridiumHomopropionicum graph.
+    Instace of Clostridium homopropionicum graph.
 
 	References
 	---------------------

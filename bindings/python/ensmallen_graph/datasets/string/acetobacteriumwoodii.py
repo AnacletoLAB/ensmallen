@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacteriumWoodii.
+This file offers the methods to automatically retrieve the graph Acetobacterium woodii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacteriumWoodii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacteriumWoodii graph.
+    """Return new instance of the Acetobacterium woodii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacteriumWoodii(
 
     Returns
     -----------------------
-    Instace of AcetobacteriumWoodii graph.
+    Instace of Acetobacterium woodii graph.
 
 	References
 	---------------------

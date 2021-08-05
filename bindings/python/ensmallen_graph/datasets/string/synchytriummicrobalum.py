@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynchytriumMicrobalum.
+This file offers the methods to automatically retrieve the graph Synchytrium microbalum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynchytriumMicrobalum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynchytriumMicrobalum graph.
+    """Return new instance of the Synchytrium microbalum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynchytriumMicrobalum(
 
     Returns
     -----------------------
-    Instace of SynchytriumMicrobalum graph.
+    Instace of Synchytrium microbalum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OdobenusRosmarus.
+This file offers the methods to automatically retrieve the graph Odobenus rosmarus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OdobenusRosmarus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OdobenusRosmarus graph.
+    """Return new instance of the Odobenus rosmarus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OdobenusRosmarus(
 
     Returns
     -----------------------
-    Instace of OdobenusRosmarus graph.
+    Instace of Odobenus rosmarus graph.
 
 	References
 	---------------------

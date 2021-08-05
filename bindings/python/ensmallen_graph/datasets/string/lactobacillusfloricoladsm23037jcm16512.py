@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFloricolaDsm23037Jcm16512.
+This file offers the methods to automatically retrieve the graph Lactobacillus floricola DSM 23037 JCM 16512.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFloricolaDsm23037Jcm16512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFloricolaDsm23037Jcm16512 graph.
+    """Return new instance of the Lactobacillus floricola DSM 23037 JCM 16512 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusFloricolaDsm23037Jcm16512(
 
     Returns
     -----------------------
-    Instace of LactobacillusFloricolaDsm23037Jcm16512 graph.
+    Instace of Lactobacillus floricola DSM 23037 JCM 16512 graph.
 
 	References
 	---------------------

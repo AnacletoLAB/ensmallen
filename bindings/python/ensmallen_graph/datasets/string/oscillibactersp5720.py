@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillibacterSp5720.
+This file offers the methods to automatically retrieve the graph Oscillibacter sp. 57_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillibacterSp5720(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillibacterSp5720 graph.
+    """Return new instance of the Oscillibacter sp. 57_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OscillibacterSp5720(
 
     Returns
     -----------------------
-    Instace of OscillibacterSp5720 graph.
+    Instace of Oscillibacter sp. 57_20 graph.
 
 	References
 	---------------------

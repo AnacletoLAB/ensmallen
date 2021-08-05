@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferYueqingensis.
+This file offers the methods to automatically retrieve the graph Microbulbifer yueqingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferYueqingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferYueqingensis graph.
+    """Return new instance of the Microbulbifer yueqingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferYueqingensis(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferYueqingensis graph.
+    Instace of Microbulbifer yueqingensis graph.
 
 	References
 	---------------------

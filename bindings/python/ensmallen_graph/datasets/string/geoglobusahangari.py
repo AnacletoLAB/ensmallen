@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeoglobusAhangari.
+This file offers the methods to automatically retrieve the graph Geoglobus ahangari.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeoglobusAhangari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeoglobusAhangari graph.
+    """Return new instance of the Geoglobus ahangari graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeoglobusAhangari(
 
     Returns
     -----------------------
-    Instace of GeoglobusAhangari graph.
+    Instace of Geoglobus ahangari graph.
 
 	References
 	---------------------

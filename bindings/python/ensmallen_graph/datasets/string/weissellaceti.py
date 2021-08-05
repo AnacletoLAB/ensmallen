@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaCeti.
+This file offers the methods to automatically retrieve the graph Weissella ceti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaCeti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaCeti graph.
+    """Return new instance of the Weissella ceti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WeissellaCeti(
 
     Returns
     -----------------------
-    Instace of WeissellaCeti graph.
+    Instace of Weissella ceti graph.
 
 	References
 	---------------------

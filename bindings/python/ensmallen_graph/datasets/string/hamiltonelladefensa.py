@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HamiltonellaDefensa.
+This file offers the methods to automatically retrieve the graph Hamiltonella defensa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HamiltonellaDefensa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HamiltonellaDefensa graph.
+    """Return new instance of the Hamiltonella defensa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HamiltonellaDefensa(
 
     Returns
     -----------------------
-    Instace of HamiltonellaDefensa graph.
+    Instace of Hamiltonella defensa graph.
 
 	References
 	---------------------

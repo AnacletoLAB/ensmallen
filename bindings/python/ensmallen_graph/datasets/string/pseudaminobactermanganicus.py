@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudaminobacterManganicus.
+This file offers the methods to automatically retrieve the graph Pseudaminobacter manganicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudaminobacterManganicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudaminobacterManganicus graph.
+    """Return new instance of the Pseudaminobacter manganicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudaminobacterManganicus(
 
     Returns
     -----------------------
-    Instace of PseudaminobacterManganicus graph.
+    Instace of Pseudaminobacter manganicus graph.
 
 	References
 	---------------------

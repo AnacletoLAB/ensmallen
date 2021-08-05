@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyclobacteriaceaeBacteriumAk24.
+This file offers the methods to automatically retrieve the graph Cyclobacteriaceae bacterium AK24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyclobacteriaceaeBacteriumAk24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyclobacteriaceaeBacteriumAk24 graph.
+    """Return new instance of the Cyclobacteriaceae bacterium AK24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyclobacteriaceaeBacteriumAk24(
 
     Returns
     -----------------------
-    Instace of CyclobacteriaceaeBacteriumAk24 graph.
+    Instace of Cyclobacteriaceae bacterium AK24 graph.
 
 	References
 	---------------------

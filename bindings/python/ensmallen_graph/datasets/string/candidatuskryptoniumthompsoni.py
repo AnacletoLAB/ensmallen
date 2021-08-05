@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKryptoniumThompsoni.
+This file offers the methods to automatically retrieve the graph Candidatus Kryptonium thompsoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKryptoniumThompsoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKryptoniumThompsoni graph.
+    """Return new instance of the Candidatus Kryptonium thompsoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKryptoniumThompsoni(
 
     Returns
     -----------------------
-    Instace of CandidatusKryptoniumThompsoni graph.
+    Instace of Candidatus Kryptonium thompsoni graph.
 
 	References
 	---------------------

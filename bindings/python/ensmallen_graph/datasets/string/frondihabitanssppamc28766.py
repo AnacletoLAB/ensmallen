@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrondihabitansSpPamc28766.
+This file offers the methods to automatically retrieve the graph Frondihabitans sp. PAMC 28766.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrondihabitansSpPamc28766(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrondihabitansSpPamc28766 graph.
+    """Return new instance of the Frondihabitans sp. PAMC 28766 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrondihabitansSpPamc28766(
 
     Returns
     -----------------------
-    Instace of FrondihabitansSpPamc28766 graph.
+    Instace of Frondihabitans sp. PAMC 28766 graph.
 
 	References
 	---------------------

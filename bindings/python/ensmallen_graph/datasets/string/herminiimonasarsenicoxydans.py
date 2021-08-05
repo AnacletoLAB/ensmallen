@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerminiimonasArsenicoxydans.
+This file offers the methods to automatically retrieve the graph Herminiimonas arsenicoxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerminiimonasArsenicoxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerminiimonasArsenicoxydans graph.
+    """Return new instance of the Herminiimonas arsenicoxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerminiimonasArsenicoxydans(
 
     Returns
     -----------------------
-    Instace of HerminiimonasArsenicoxydans graph.
+    Instace of Herminiimonas arsenicoxydans graph.
 
 	References
 	---------------------

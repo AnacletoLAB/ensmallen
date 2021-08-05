@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSpCag786.
+This file offers the methods to automatically retrieve the graph Eubacterium sp. CAG:786.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSpCag786(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSpCag786 graph.
+    """Return new instance of the Eubacterium sp. CAG:786 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumSpCag786(
 
     Returns
     -----------------------
-    Instace of EubacteriumSpCag786 graph.
+    Instace of Eubacterium sp. CAG:786 graph.
 
 	References
 	---------------------

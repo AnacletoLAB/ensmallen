@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumMongolense.
+This file offers the methods to automatically retrieve the graph Rhizobium mongolense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumMongolense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumMongolense graph.
+    """Return new instance of the Rhizobium mongolense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumMongolense(
 
     Returns
     -----------------------
-    Instace of RhizobiumMongolense graph.
+    Instace of Rhizobium mongolense graph.
 
 	References
 	---------------------

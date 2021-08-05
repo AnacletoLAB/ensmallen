@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JonesiaQuinghaiensis.
+This file offers the methods to automatically retrieve the graph Jonesia quinghaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JonesiaQuinghaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JonesiaQuinghaiensis graph.
+    """Return new instance of the Jonesia quinghaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JonesiaQuinghaiensis(
 
     Returns
     -----------------------
-    Instace of JonesiaQuinghaiensis graph.
+    Instace of Jonesia quinghaiensis graph.
 
 	References
 	---------------------

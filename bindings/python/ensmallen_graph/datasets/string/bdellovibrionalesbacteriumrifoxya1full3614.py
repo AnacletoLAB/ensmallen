@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrionalesBacteriumRifoxya1Full3614.
+This file offers the methods to automatically retrieve the graph Bdellovibrionales bacterium RIFOXYA1_FULL_36_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrionalesBacteriumRifoxya1Full3614(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrionalesBacteriumRifoxya1Full3614 graph.
+    """Return new instance of the Bdellovibrionales bacterium RIFOXYA1_FULL_36_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrionalesBacteriumRifoxya1Full3614(
 
     Returns
     -----------------------
-    Instace of BdellovibrionalesBacteriumRifoxya1Full3614 graph.
+    Instace of Bdellovibrionales bacterium RIFOXYA1_FULL_36_14 graph.
 
 	References
 	---------------------

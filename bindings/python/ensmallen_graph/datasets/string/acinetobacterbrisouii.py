@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterBrisouii.
+This file offers the methods to automatically retrieve the graph Acinetobacter brisouii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterBrisouii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterBrisouii graph.
+    """Return new instance of the Acinetobacter brisouii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterBrisouii(
 
     Returns
     -----------------------
-    Instace of AcinetobacterBrisouii graph.
+    Instace of Acinetobacter brisouii graph.
 
 	References
 	---------------------

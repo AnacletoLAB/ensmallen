@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerticilliumAlfalfaeVams102.
+This file offers the methods to automatically retrieve the graph Verticillium alfalfae VaMs.102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerticilliumAlfalfaeVams102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerticilliumAlfalfaeVams102 graph.
+    """Return new instance of the Verticillium alfalfae VaMs.102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerticilliumAlfalfaeVams102(
 
     Returns
     -----------------------
-    Instace of VerticilliumAlfalfaeVams102 graph.
+    Instace of Verticillium alfalfae VaMs.102 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sw10040d3Trial1.
+This file offers the methods to automatically retrieve the graph SW-100-4-0d3-trial1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sw10040d3Trial1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sw10040d3Trial1 graph.
+    """Return new instance of the SW-100-4-0d3-trial1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sw10040d3Trial1(
 
     Returns
     -----------------------
-    Instace of Sw10040d3Trial1 graph.
+    Instace of SW-100-4-0d3-trial1 graph.
 
 	References
 	---------------------

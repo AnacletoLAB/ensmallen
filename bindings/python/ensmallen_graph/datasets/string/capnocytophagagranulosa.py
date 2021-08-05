@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CapnocytophagaGranulosa.
+This file offers the methods to automatically retrieve the graph Capnocytophaga granulosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CapnocytophagaGranulosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CapnocytophagaGranulosa graph.
+    """Return new instance of the Capnocytophaga granulosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CapnocytophagaGranulosa(
 
     Returns
     -----------------------
-    Instace of CapnocytophagaGranulosa graph.
+    Instace of Capnocytophaga granulosa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaSeosinensis.
+This file offers the methods to automatically retrieve the graph Jannaschia seosinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaSeosinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaSeosinensis graph.
+    """Return new instance of the Jannaschia seosinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaSeosinensis(
 
     Returns
     -----------------------
-    Instace of JannaschiaSeosinensis graph.
+    Instace of Jannaschia seosinensis graph.
 
 	References
 	---------------------

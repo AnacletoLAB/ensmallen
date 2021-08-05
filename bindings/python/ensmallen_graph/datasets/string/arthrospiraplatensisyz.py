@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrospiraPlatensisYz.
+This file offers the methods to automatically retrieve the graph Arthrospira platensis YZ.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrospiraPlatensisYz(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrospiraPlatensisYz graph.
+    """Return new instance of the Arthrospira platensis YZ graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrospiraPlatensisYz(
 
     Returns
     -----------------------
-    Instace of ArthrospiraPlatensisYz graph.
+    Instace of Arthrospira platensis YZ graph.
 
 	References
 	---------------------

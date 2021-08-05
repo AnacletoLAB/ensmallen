@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMicrarchaeotaArchaeonCg1025115.
+This file offers the methods to automatically retrieve the graph Candidatus Micrarchaeota archaeon CG1_02_51_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMicrarchaeotaArchaeonCg1025115(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMicrarchaeotaArchaeonCg1025115 graph.
+    """Return new instance of the Candidatus Micrarchaeota archaeon CG1_02_51_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMicrarchaeotaArchaeonCg1025115(
 
     Returns
     -----------------------
-    Instace of CandidatusMicrarchaeotaArchaeonCg1025115 graph.
+    Instace of Candidatus Micrarchaeota archaeon CG1_02_51_15 graph.
 
 	References
 	---------------------

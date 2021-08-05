@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlammeovirgaSpSjp92.
+This file offers the methods to automatically retrieve the graph Flammeovirga sp. SJP92.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlammeovirgaSpSjp92(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlammeovirgaSpSjp92 graph.
+    """Return new instance of the Flammeovirga sp. SJP92 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlammeovirgaSpSjp92(
 
     Returns
     -----------------------
-    Instace of FlammeovirgaSpSjp92 graph.
+    Instace of Flammeovirga sp. SJP92 graph.
 
 	References
 	---------------------

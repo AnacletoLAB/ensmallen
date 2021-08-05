@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LaribacterHongkongensis.
+This file offers the methods to automatically retrieve the graph Laribacter hongkongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LaribacterHongkongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LaribacterHongkongensis graph.
+    """Return new instance of the Laribacter hongkongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LaribacterHongkongensis(
 
     Returns
     -----------------------
-    Instace of LaribacterHongkongensis graph.
+    Instace of Laribacter hongkongensis graph.
 
 	References
 	---------------------

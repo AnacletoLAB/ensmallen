@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterFetusSubspVenerealis.
+This file offers the methods to automatically retrieve the graph Campylobacter fetus subsp. venerealis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterFetusSubspVenerealis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterFetusSubspVenerealis graph.
+    """Return new instance of the Campylobacter fetus subsp. venerealis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterFetusSubspVenerealis(
 
     Returns
     -----------------------
-    Instace of CampylobacterFetusSubspVenerealis graph.
+    Instace of Campylobacter fetus subsp. venerealis graph.
 
 	References
 	---------------------

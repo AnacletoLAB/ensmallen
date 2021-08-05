@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobiumSpCaciam14.
+This file offers the methods to automatically retrieve the graph Cyanobium sp. CACIAM14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobiumSpCaciam14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobiumSpCaciam14 graph.
+    """Return new instance of the Cyanobium sp. CACIAM14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CyanobiumSpCaciam14(
 
     Returns
     -----------------------
-    Instace of CyanobiumSpCaciam14 graph.
+    Instace of Cyanobium sp. CACIAM14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoritellaMarina.
+This file offers the methods to automatically retrieve the graph Moritella marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoritellaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoritellaMarina graph.
+    """Return new instance of the Moritella marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoritellaMarina(
 
     Returns
     -----------------------
-    Instace of MoritellaMarina graph.
+    Instace of Moritella marina graph.
 
 	References
 	---------------------

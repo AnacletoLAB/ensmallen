@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeromyscusManiculatus.
+This file offers the methods to automatically retrieve the graph Peromyscus maniculatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeromyscusManiculatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeromyscusManiculatus graph.
+    """Return new instance of the Peromyscus maniculatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeromyscusManiculatus(
 
     Returns
     -----------------------
-    Instace of PeromyscusManiculatus graph.
+    Instace of Peromyscus maniculatus graph.
 
 	References
 	---------------------

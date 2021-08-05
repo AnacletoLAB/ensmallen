@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioMytili.
+This file offers the methods to automatically retrieve the graph Vibrio mytili.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioMytili(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioMytili graph.
+    """Return new instance of the Vibrio mytili graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioMytili(
 
     Returns
     -----------------------
-    Instace of VibrioMytili graph.
+    Instace of Vibrio mytili graph.
 
 	References
 	---------------------

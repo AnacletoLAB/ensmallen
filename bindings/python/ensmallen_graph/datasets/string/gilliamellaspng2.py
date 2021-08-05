@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilliamellaSpNG2.
+This file offers the methods to automatically retrieve the graph Gilliamella sp. N-G2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilliamellaSpNG2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilliamellaSpNG2 graph.
+    """Return new instance of the Gilliamella sp. N-G2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GilliamellaSpNG2(
 
     Returns
     -----------------------
-    Instace of GilliamellaSpNG2 graph.
+    Instace of Gilliamella sp. N-G2 graph.
 
 	References
 	---------------------

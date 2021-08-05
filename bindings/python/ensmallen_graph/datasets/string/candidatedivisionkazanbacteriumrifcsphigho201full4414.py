@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionKazanBacteriumRifcsphigho201Full4414.
+This file offers the methods to automatically retrieve the graph candidate division Kazan bacterium RIFCSPHIGHO2_01_FULL_44_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionKazanBacteriumRifcsphigho201Full4414(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionKazanBacteriumRifcsphigho201Full4414 graph.
+    """Return new instance of the candidate division Kazan bacterium RIFCSPHIGHO2_01_FULL_44_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionKazanBacteriumRifcsphigho201Full4414(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionKazanBacteriumRifcsphigho201Full4414 graph.
+    Instace of candidate division Kazan bacterium RIFCSPHIGHO2_01_FULL_44_14 graph.
 
 	References
 	---------------------

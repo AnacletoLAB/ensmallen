@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SanguibacterGelidistatuariae.
+This file offers the methods to automatically retrieve the graph Sanguibacter gelidistatuariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SanguibacterGelidistatuariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SanguibacterGelidistatuariae graph.
+    """Return new instance of the Sanguibacter gelidistatuariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SanguibacterGelidistatuariae(
 
     Returns
     -----------------------
-    Instace of SanguibacterGelidistatuariae graph.
+    Instace of Sanguibacter gelidistatuariae graph.
 
 	References
 	---------------------

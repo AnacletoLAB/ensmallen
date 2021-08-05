@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumLowii.
+This file offers the methods to automatically retrieve the graph Corynebacterium lowii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumLowii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumLowii graph.
+    """Return new instance of the Corynebacterium lowii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumLowii(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumLowii graph.
+    Instace of Corynebacterium lowii graph.
 
 	References
 	---------------------

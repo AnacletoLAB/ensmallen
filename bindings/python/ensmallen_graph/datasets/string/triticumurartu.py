@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TriticumUrartu.
+This file offers the methods to automatically retrieve the graph Triticum urartu.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TriticumUrartu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TriticumUrartu graph.
+    """Return new instance of the Triticum urartu graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TriticumUrartu(
 
     Returns
     -----------------------
-    Instace of TriticumUrartu graph.
+    Instace of Triticum urartu graph.
 
 	References
 	---------------------

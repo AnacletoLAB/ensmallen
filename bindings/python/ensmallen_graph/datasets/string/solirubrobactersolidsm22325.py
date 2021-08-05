@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolirubrobacterSoliDsm22325.
+This file offers the methods to automatically retrieve the graph Solirubrobacter soli DSM 22325.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolirubrobacterSoliDsm22325(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolirubrobacterSoliDsm22325 graph.
+    """Return new instance of the Solirubrobacter soli DSM 22325 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolirubrobacterSoliDsm22325(
 
     Returns
     -----------------------
-    Instace of SolirubrobacterSoliDsm22325 graph.
+    Instace of Solirubrobacter soli DSM 22325 graph.
 
 	References
 	---------------------

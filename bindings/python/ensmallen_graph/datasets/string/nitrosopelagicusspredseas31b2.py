@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosopelagicusSpRedseaS31B2.
+This file offers the methods to automatically retrieve the graph Nitrosopelagicus sp. REDSEA-S31_B2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosopelagicusSpRedseaS31B2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosopelagicusSpRedseaS31B2 graph.
+    """Return new instance of the Nitrosopelagicus sp. REDSEA-S31_B2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosopelagicusSpRedseaS31B2(
 
     Returns
     -----------------------
-    Instace of NitrosopelagicusSpRedseaS31B2 graph.
+    Instace of Nitrosopelagicus sp. REDSEA-S31_B2 graph.
 
 	References
 	---------------------

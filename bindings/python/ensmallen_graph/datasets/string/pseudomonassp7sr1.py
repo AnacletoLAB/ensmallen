@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSp7sr1.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. 7SR1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSp7sr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSp7sr1 graph.
+    """Return new instance of the Pseudomonas sp. 7SR1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSp7sr1(
 
     Returns
     -----------------------
-    Instace of PseudomonasSp7sr1 graph.
+    Instace of Pseudomonas sp. 7SR1 graph.
 
 	References
 	---------------------

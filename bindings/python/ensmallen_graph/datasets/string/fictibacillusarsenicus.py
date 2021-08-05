@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FictibacillusArsenicus.
+This file offers the methods to automatically retrieve the graph Fictibacillus arsenicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FictibacillusArsenicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FictibacillusArsenicus graph.
+    """Return new instance of the Fictibacillus arsenicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FictibacillusArsenicus(
 
     Returns
     -----------------------
-    Instace of FictibacillusArsenicus graph.
+    Instace of Fictibacillus arsenicus graph.
 
 	References
 	---------------------

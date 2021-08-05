@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumChaponense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium chaponense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumChaponense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumChaponense graph.
+    """Return new instance of the Chryseobacterium chaponense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumChaponense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumChaponense graph.
+    Instace of Chryseobacterium chaponense graph.
 
 	References
 	---------------------

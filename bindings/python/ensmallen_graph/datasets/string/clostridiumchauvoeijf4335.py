@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumChauvoeiJf4335.
+This file offers the methods to automatically retrieve the graph Clostridium chauvoei JF4335.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumChauvoeiJf4335(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumChauvoeiJf4335 graph.
+    """Return new instance of the Clostridium chauvoei JF4335 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumChauvoeiJf4335(
 
     Returns
     -----------------------
-    Instace of ClostridiumChauvoeiJf4335 graph.
+    Instace of Clostridium chauvoei JF4335 graph.
 
 	References
 	---------------------

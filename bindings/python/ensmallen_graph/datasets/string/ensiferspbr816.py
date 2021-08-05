@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSpBr816.
+This file offers the methods to automatically retrieve the graph Ensifer sp. BR816.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSpBr816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSpBr816 graph.
+    """Return new instance of the Ensifer sp. BR816 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnsiferSpBr816(
 
     Returns
     -----------------------
-    Instace of EnsiferSpBr816 graph.
+    Instace of Ensifer sp. BR816 graph.
 
 	References
 	---------------------

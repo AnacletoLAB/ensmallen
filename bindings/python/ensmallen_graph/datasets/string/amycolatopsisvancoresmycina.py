@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisVancoresmycina.
+This file offers the methods to automatically retrieve the graph Amycolatopsis vancoresmycina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisVancoresmycina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisVancoresmycina graph.
+    """Return new instance of the Amycolatopsis vancoresmycina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisVancoresmycina(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisVancoresmycina graph.
+    Instace of Amycolatopsis vancoresmycina graph.
 
 	References
 	---------------------

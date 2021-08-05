@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassilibacteriumSenegalense.
+This file offers the methods to automatically retrieve the graph Massilibacterium senegalense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassilibacteriumSenegalense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassilibacteriumSenegalense graph.
+    """Return new instance of the Massilibacterium senegalense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassilibacteriumSenegalense(
 
     Returns
     -----------------------
-    Instace of MassilibacteriumSenegalense graph.
+    Instace of Massilibacterium senegalense graph.
 
 	References
 	---------------------

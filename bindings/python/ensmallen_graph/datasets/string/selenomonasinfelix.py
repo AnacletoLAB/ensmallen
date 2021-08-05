@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasInfelix.
+This file offers the methods to automatically retrieve the graph Selenomonas infelix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasInfelix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasInfelix graph.
+    """Return new instance of the Selenomonas infelix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasInfelix(
 
     Returns
     -----------------------
-    Instace of SelenomonasInfelix graph.
+    Instace of Selenomonas infelix graph.
 
 	References
 	---------------------

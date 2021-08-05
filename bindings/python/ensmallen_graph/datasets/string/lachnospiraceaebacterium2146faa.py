@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacterium2146faa.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium 2146FAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacterium2146faa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacterium2146faa graph.
+    """Return new instance of the Lachnospiraceae bacterium 2146FAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacterium2146faa(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacterium2146faa graph.
+    Instace of Lachnospiraceae bacterium 2146FAA graph.
 
 	References
 	---------------------

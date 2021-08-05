@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpIbun.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. IBUN.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpIbun(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpIbun graph.
+    """Return new instance of the Rhizobium sp. IBUN graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpIbun(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpIbun graph.
+    Instace of Rhizobium sp. IBUN graph.
 
 	References
 	---------------------

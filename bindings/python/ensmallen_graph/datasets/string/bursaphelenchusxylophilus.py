@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BursaphelenchusXylophilus.
+This file offers the methods to automatically retrieve the graph Bursaphelenchus xylophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BursaphelenchusXylophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BursaphelenchusXylophilus graph.
+    """Return new instance of the Bursaphelenchus xylophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BursaphelenchusXylophilus(
 
     Returns
     -----------------------
-    Instace of BursaphelenchusXylophilus graph.
+    Instace of Bursaphelenchus xylophilus graph.
 
 	References
 	---------------------

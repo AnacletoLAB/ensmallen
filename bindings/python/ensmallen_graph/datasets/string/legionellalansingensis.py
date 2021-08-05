@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaLansingensis.
+This file offers the methods to automatically retrieve the graph Legionella lansingensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaLansingensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaLansingensis graph.
+    """Return new instance of the Legionella lansingensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaLansingensis(
 
     Returns
     -----------------------
-    Instace of LegionellaLansingensis graph.
+    Instace of Legionella lansingensis graph.
 
 	References
 	---------------------

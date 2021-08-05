@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlistipesFinegoldii.
+This file offers the methods to automatically retrieve the graph Alistipes finegoldii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlistipesFinegoldii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlistipesFinegoldii graph.
+    """Return new instance of the Alistipes finegoldii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlistipesFinegoldii(
 
     Returns
     -----------------------
-    Instace of AlistipesFinegoldii graph.
+    Instace of Alistipes finegoldii graph.
 
 	References
 	---------------------

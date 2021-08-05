@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusZeaxanthinifaciens.
+This file offers the methods to automatically retrieve the graph Paracoccus zeaxanthinifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusZeaxanthinifaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusZeaxanthinifaciens graph.
+    """Return new instance of the Paracoccus zeaxanthinifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusZeaxanthinifaciens(
 
     Returns
     -----------------------
-    Instace of ParacoccusZeaxanthinifaciens graph.
+    Instace of Paracoccus zeaxanthinifaciens graph.
 
 	References
 	---------------------

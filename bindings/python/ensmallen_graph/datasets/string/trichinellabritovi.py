@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaBritovi.
+This file offers the methods to automatically retrieve the graph Trichinella britovi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaBritovi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaBritovi graph.
+    """Return new instance of the Trichinella britovi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaBritovi(
 
     Returns
     -----------------------
-    Instace of TrichinellaBritovi graph.
+    Instace of Trichinella britovi graph.
 
 	References
 	---------------------

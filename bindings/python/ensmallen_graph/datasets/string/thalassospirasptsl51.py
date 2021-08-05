@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraSpTsl51.
+This file offers the methods to automatically retrieve the graph Thalassospira sp. TSL5-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraSpTsl51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraSpTsl51 graph.
+    """Return new instance of the Thalassospira sp. TSL5-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassospiraSpTsl51(
 
     Returns
     -----------------------
-    Instace of ThalassospiraSpTsl51 graph.
+    Instace of Thalassospira sp. TSL5-1 graph.
 
 	References
 	---------------------

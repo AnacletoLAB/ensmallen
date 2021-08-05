@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenolepisDiminuta.
+This file offers the methods to automatically retrieve the graph Hymenolepis diminuta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenolepisDiminuta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenolepisDiminuta graph.
+    """Return new instance of the Hymenolepis diminuta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenolepisDiminuta(
 
     Returns
     -----------------------
-    Instace of HymenolepisDiminuta graph.
+    Instace of Hymenolepis diminuta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CetobacteriumCeti.
+This file offers the methods to automatically retrieve the graph Cetobacterium ceti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CetobacteriumCeti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CetobacteriumCeti graph.
+    """Return new instance of the Cetobacterium ceti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CetobacteriumCeti(
 
     Returns
     -----------------------
-    Instace of CetobacteriumCeti graph.
+    Instace of Cetobacterium ceti graph.
 
 	References
 	---------------------

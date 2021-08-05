@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheropithecusGelada.
+This file offers the methods to automatically retrieve the graph Theropithecus gelada.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheropithecusGelada(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheropithecusGelada graph.
+    """Return new instance of the Theropithecus gelada graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TheropithecusGelada(
 
     Returns
     -----------------------
-    Instace of TheropithecusGelada graph.
+    Instace of Theropithecus gelada graph.
 
 	References
 	---------------------

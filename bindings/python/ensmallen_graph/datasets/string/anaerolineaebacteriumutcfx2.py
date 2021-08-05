@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerolineaeBacteriumUtcfx2.
+This file offers the methods to automatically retrieve the graph Anaerolineae bacterium UTCFX2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerolineaeBacteriumUtcfx2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerolineaeBacteriumUtcfx2 graph.
+    """Return new instance of the Anaerolineae bacterium UTCFX2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerolineaeBacteriumUtcfx2(
 
     Returns
     -----------------------
-    Instace of AnaerolineaeBacteriumUtcfx2 graph.
+    Instace of Anaerolineae bacterium UTCFX2 graph.
 
 	References
 	---------------------

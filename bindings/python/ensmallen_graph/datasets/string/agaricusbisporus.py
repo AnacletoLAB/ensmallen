@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgaricusBisporus.
+This file offers the methods to automatically retrieve the graph Agaricus bisporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgaricusBisporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgaricusBisporus graph.
+    """Return new instance of the Agaricus bisporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgaricusBisporus(
 
     Returns
     -----------------------
-    Instace of AgaricusBisporus graph.
+    Instace of Agaricus bisporus graph.
 
 	References
 	---------------------

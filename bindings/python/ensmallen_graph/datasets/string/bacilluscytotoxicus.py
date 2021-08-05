@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCytotoxicus.
+This file offers the methods to automatically retrieve the graph Bacillus cytotoxicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCytotoxicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCytotoxicus graph.
+    """Return new instance of the Bacillus cytotoxicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusCytotoxicus(
 
     Returns
     -----------------------
-    Instace of BacillusCytotoxicus graph.
+    Instace of Bacillus cytotoxicus graph.
 
 	References
 	---------------------

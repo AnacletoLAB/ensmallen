@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JohnsonellaIgnava.
+This file offers the methods to automatically retrieve the graph Johnsonella ignava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JohnsonellaIgnava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JohnsonellaIgnava graph.
+    """Return new instance of the Johnsonella ignava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def JohnsonellaIgnava(
 
     Returns
     -----------------------
-    Instace of JohnsonellaIgnava graph.
+    Instace of Johnsonella ignava graph.
 
 	References
 	---------------------

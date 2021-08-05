@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpYr527.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. YR527.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpYr527(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpYr527 graph.
+    """Return new instance of the Nocardioides sp. YR527 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpYr527(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpYr527 graph.
+    Instace of Nocardioides sp. YR527 graph.
 
 	References
 	---------------------

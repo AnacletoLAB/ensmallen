@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaRiboflavina.
+This file offers the methods to automatically retrieve the graph Devosia riboflavina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaRiboflavina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaRiboflavina graph.
+    """Return new instance of the Devosia riboflavina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaRiboflavina(
 
     Returns
     -----------------------
-    Instace of DevosiaRiboflavina graph.
+    Instace of Devosia riboflavina graph.
 
 	References
 	---------------------

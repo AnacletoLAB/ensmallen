@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaOvisStrMichigan.
+This file offers the methods to automatically retrieve the graph Mycoplasma ovis str. Michigan.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaOvisStrMichigan(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaOvisStrMichigan graph.
+    """Return new instance of the Mycoplasma ovis str. Michigan graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaOvisStrMichigan(
 
     Returns
     -----------------------
-    Instace of MycoplasmaOvisStrMichigan graph.
+    Instace of Mycoplasma ovis str. Michigan graph.
 
 	References
 	---------------------

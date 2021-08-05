@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasLutea.
+This file offers the methods to automatically retrieve the graph Pseudomonas lutea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasLutea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasLutea graph.
+    """Return new instance of the Pseudomonas lutea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasLutea(
 
     Returns
     -----------------------
-    Instace of PseudomonasLutea graph.
+    Instace of Pseudomonas lutea graph.
 
 	References
 	---------------------

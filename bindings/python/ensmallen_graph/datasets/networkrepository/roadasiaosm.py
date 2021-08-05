@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadAsiaOsm.
+This file offers the methods to automatically retrieve the graph road-asia-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadAsiaOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadAsiaOsm graph.
+    """Return new instance of the road-asia-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadAsiaOsm(
 
     Returns
     -----------------------
-    Instace of RoadAsiaOsm graph.
+    Instace of road-asia-osm graph.
 
 	References
 	---------------------

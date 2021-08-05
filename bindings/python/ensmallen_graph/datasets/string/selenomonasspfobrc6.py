@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSpFobrc6.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. FOBRC6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSpFobrc6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSpFobrc6 graph.
+    """Return new instance of the Selenomonas sp. FOBRC6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSpFobrc6(
 
     Returns
     -----------------------
-    Instace of SelenomonasSpFobrc6 graph.
+    Instace of Selenomonas sp. FOBRC6 graph.
 
 	References
 	---------------------

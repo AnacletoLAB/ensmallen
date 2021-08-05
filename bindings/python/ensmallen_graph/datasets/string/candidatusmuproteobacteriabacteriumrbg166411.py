@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMuproteobacteriaBacteriumRbg166411.
+This file offers the methods to automatically retrieve the graph Candidatus Muproteobacteria bacterium RBG_16_64_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMuproteobacteriaBacteriumRbg166411(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMuproteobacteriaBacteriumRbg166411 graph.
+    """Return new instance of the Candidatus Muproteobacteria bacterium RBG_16_64_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMuproteobacteriaBacteriumRbg166411(
 
     Returns
     -----------------------
-    Instace of CandidatusMuproteobacteriaBacteriumRbg166411 graph.
+    Instace of Candidatus Muproteobacteria bacterium RBG_16_64_11 graph.
 
 	References
 	---------------------

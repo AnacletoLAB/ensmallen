@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaThiooxydans.
+This file offers the methods to automatically retrieve the graph Pandoraea thiooxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaThiooxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaThiooxydans graph.
+    """Return new instance of the Pandoraea thiooxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PandoraeaThiooxydans(
 
     Returns
     -----------------------
-    Instace of PandoraeaThiooxydans graph.
+    Instace of Pandoraea thiooxydans graph.
 
 	References
 	---------------------

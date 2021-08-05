@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cl10m1d8L5.
+This file offers the methods to automatically retrieve the graph CL-10M-1d8-L5.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cl10m1d8L5(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cl10m1d8L5 graph.
+    """Return new instance of the CL-10M-1d8-L5 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cl10m1d8L5(
 
     Returns
     -----------------------
-    Instace of Cl10m1d8L5 graph.
+    Instace of CL-10M-1d8-L5 graph.
 
 	References
 	---------------------

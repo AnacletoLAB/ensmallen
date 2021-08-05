@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusibacterSp3d3.
+This file offers the methods to automatically retrieve the graph Fusibacter sp. 3D3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusibacterSp3d3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusibacterSp3d3 graph.
+    """Return new instance of the Fusibacter sp. 3D3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusibacterSp3d3(
 
     Returns
     -----------------------
-    Instace of FusibacterSp3d3 graph.
+    Instace of Fusibacter sp. 3D3 graph.
 
 	References
 	---------------------

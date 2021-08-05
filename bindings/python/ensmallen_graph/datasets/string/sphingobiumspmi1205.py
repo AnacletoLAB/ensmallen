@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpMi1205.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. MI1205.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpMi1205(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpMi1205 graph.
+    """Return new instance of the Sphingobium sp. MI1205 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpMi1205(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpMi1205 graph.
+    Instace of Sphingobium sp. MI1205 graph.
 
 	References
 	---------------------

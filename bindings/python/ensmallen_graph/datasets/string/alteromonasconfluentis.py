@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasConfluentis.
+This file offers the methods to automatically retrieve the graph Alteromonas confluentis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasConfluentis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasConfluentis graph.
+    """Return new instance of the Alteromonas confluentis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasConfluentis(
 
     Returns
     -----------------------
-    Instace of AlteromonasConfluentis graph.
+    Instace of Alteromonas confluentis graph.
 
 	References
 	---------------------

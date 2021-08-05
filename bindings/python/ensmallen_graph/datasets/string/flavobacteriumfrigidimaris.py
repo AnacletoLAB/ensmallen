@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumFrigidimaris.
+This file offers the methods to automatically retrieve the graph Flavobacterium frigidimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumFrigidimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumFrigidimaris graph.
+    """Return new instance of the Flavobacterium frigidimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumFrigidimaris(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumFrigidimaris graph.
+    Instace of Flavobacterium frigidimaris graph.
 
 	References
 	---------------------

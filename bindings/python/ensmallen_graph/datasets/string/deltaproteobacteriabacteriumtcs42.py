@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumTcs42.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium tcs-42.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumTcs42(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumTcs42 graph.
+    """Return new instance of the Deltaproteobacteria bacterium tcs-42 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumTcs42(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumTcs42 graph.
+    Instace of Deltaproteobacteria bacterium tcs-42 graph.
 
 	References
 	---------------------

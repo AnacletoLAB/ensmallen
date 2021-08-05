@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterIrgensii.
+This file offers the methods to automatically retrieve the graph Polaribacter irgensii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterIrgensii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterIrgensii graph.
+    """Return new instance of the Polaribacter irgensii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolaribacterIrgensii(
 
     Returns
     -----------------------
-    Instace of PolaribacterIrgensii graph.
+    Instace of Polaribacter irgensii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterXylosoxidansNbrc15126.
+This file offers the methods to automatically retrieve the graph Achromobacter xylosoxidans NBRC15126.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterXylosoxidansNbrc15126(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterXylosoxidansNbrc15126 graph.
+    """Return new instance of the Achromobacter xylosoxidans NBRC15126 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AchromobacterXylosoxidansNbrc15126(
 
     Returns
     -----------------------
-    Instace of AchromobacterXylosoxidansNbrc15126 graph.
+    Instace of Achromobacter xylosoxidans NBRC15126 graph.
 
 	References
 	---------------------

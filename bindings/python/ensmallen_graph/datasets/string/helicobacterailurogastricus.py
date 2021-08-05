@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterAilurogastricus.
+This file offers the methods to automatically retrieve the graph Helicobacter ailurogastricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterAilurogastricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterAilurogastricus graph.
+    """Return new instance of the Helicobacter ailurogastricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterAilurogastricus(
 
     Returns
     -----------------------
-    Instace of HelicobacterAilurogastricus graph.
+    Instace of Helicobacter ailurogastricus graph.
 
 	References
 	---------------------

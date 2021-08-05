@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraWolbachiiSerovarCodiceStrCdc.
+This file offers the methods to automatically retrieve the graph Leptospira wolbachii serovar Codice str. CDC.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraWolbachiiSerovarCodiceStrCdc(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraWolbachiiSerovarCodiceStrCdc graph.
+    """Return new instance of the Leptospira wolbachii serovar Codice str. CDC graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraWolbachiiSerovarCodiceStrCdc(
 
     Returns
     -----------------------
-    Instace of LeptospiraWolbachiiSerovarCodiceStrCdc graph.
+    Instace of Leptospira wolbachii serovar Codice str. CDC graph.
 
 	References
 	---------------------

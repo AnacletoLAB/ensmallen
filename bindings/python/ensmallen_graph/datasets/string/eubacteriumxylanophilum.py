@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumXylanophilum.
+This file offers the methods to automatically retrieve the graph Eubacterium xylanophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumXylanophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumXylanophilum graph.
+    """Return new instance of the Eubacterium xylanophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumXylanophilum(
 
     Returns
     -----------------------
-    Instace of EubacteriumXylanophilum graph.
+    Instace of Eubacterium xylanophilum graph.
 
 	References
 	---------------------

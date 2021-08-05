@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusCurvatus.
+This file offers the methods to automatically retrieve the graph Lactobacillus curvatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusCurvatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusCurvatus graph.
+    """Return new instance of the Lactobacillus curvatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusCurvatus(
 
     Returns
     -----------------------
-    Instace of LactobacillusCurvatus graph.
+    Instace of Lactobacillus curvatus graph.
 
 	References
 	---------------------

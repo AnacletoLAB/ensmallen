@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaConsociata.
+This file offers the methods to automatically retrieve the graph Massilia consociata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaConsociata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaConsociata graph.
+    """Return new instance of the Massilia consociata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MassiliaConsociata(
 
     Returns
     -----------------------
-    Instace of MassiliaConsociata graph.
+    Instace of Massilia consociata graph.
 
 	References
 	---------------------

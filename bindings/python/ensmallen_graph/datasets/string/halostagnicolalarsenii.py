@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalostagnicolaLarsenii.
+This file offers the methods to automatically retrieve the graph Halostagnicola larsenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalostagnicolaLarsenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalostagnicolaLarsenii graph.
+    """Return new instance of the Halostagnicola larsenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalostagnicolaLarsenii(
 
     Returns
     -----------------------
-    Instace of HalostagnicolaLarsenii graph.
+    Instace of Halostagnicola larsenii graph.
 
 	References
 	---------------------

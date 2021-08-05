@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobialesBacteriumCch11D2.
+This file offers the methods to automatically retrieve the graph Rhizobiales bacterium CCH11-D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobialesBacteriumCch11D2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobialesBacteriumCch11D2 graph.
+    """Return new instance of the Rhizobiales bacterium CCH11-D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobialesBacteriumCch11D2(
 
     Returns
     -----------------------
-    Instace of RhizobialesBacteriumCch11D2 graph.
+    Instace of Rhizobiales bacterium CCH11-D2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SmittiumCulicis.
+This file offers the methods to automatically retrieve the graph Smittium culicis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SmittiumCulicis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SmittiumCulicis graph.
+    """Return new instance of the Smittium culicis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SmittiumCulicis(
 
     Returns
     -----------------------
-    Instace of SmittiumCulicis graph.
+    Instace of Smittium culicis graph.
 
 	References
 	---------------------

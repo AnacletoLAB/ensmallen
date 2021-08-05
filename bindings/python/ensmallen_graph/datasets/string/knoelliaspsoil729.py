@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KnoelliaSpSoil729.
+This file offers the methods to automatically retrieve the graph Knoellia sp. Soil729.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KnoelliaSpSoil729(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KnoelliaSpSoil729 graph.
+    """Return new instance of the Knoellia sp. Soil729 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KnoelliaSpSoil729(
 
     Returns
     -----------------------
-    Instace of KnoelliaSpSoil729 graph.
+    Instace of Knoellia sp. Soil729 graph.
 
 	References
 	---------------------

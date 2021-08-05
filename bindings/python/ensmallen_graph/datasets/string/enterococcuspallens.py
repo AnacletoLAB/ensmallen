@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusPallens.
+This file offers the methods to automatically retrieve the graph Enterococcus pallens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusPallens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusPallens graph.
+    """Return new instance of the Enterococcus pallens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusPallens(
 
     Returns
     -----------------------
-    Instace of EnterococcusPallens graph.
+    Instace of Enterococcus pallens graph.
 
 	References
 	---------------------

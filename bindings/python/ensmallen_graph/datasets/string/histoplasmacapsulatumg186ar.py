@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HistoplasmaCapsulatumG186ar.
+This file offers the methods to automatically retrieve the graph Histoplasma capsulatum G186AR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HistoplasmaCapsulatumG186ar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HistoplasmaCapsulatumG186ar graph.
+    """Return new instance of the Histoplasma capsulatum G186AR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HistoplasmaCapsulatumG186ar(
 
     Returns
     -----------------------
-    Instace of HistoplasmaCapsulatumG186ar graph.
+    Instace of Histoplasma capsulatum G186AR graph.
 
 	References
 	---------------------

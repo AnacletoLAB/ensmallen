@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutimaribacterSaemankumensis.
+This file offers the methods to automatically retrieve the graph Lutimaribacter saemankumensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutimaribacterSaemankumensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutimaribacterSaemankumensis graph.
+    """Return new instance of the Lutimaribacter saemankumensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutimaribacterSaemankumensis(
 
     Returns
     -----------------------
-    Instace of LutimaribacterSaemankumensis graph.
+    Instace of Lutimaribacter saemankumensis graph.
 
 	References
 	---------------------

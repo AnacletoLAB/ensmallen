@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumVrystaatense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium vrystaatense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumVrystaatense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumVrystaatense graph.
+    """Return new instance of the Chryseobacterium vrystaatense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChryseobacteriumVrystaatense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumVrystaatense graph.
+    Instace of Chryseobacterium vrystaatense graph.
 
 	References
 	---------------------

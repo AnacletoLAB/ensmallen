@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxRadicisN35.
+This file offers the methods to automatically retrieve the graph Acidovorax radicis N35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxRadicisN35(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxRadicisN35 graph.
+    """Return new instance of the Acidovorax radicis N35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxRadicisN35(
 
     Returns
     -----------------------
-    Instace of AcidovoraxRadicisN35 graph.
+    Instace of Acidovorax radicis N35 graph.
 
 	References
 	---------------------

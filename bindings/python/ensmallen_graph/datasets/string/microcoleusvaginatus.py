@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrocoleusVaginatus.
+This file offers the methods to automatically retrieve the graph Microcoleus vaginatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrocoleusVaginatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrocoleusVaginatus graph.
+    """Return new instance of the Microcoleus vaginatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrocoleusVaginatus(
 
     Returns
     -----------------------
-    Instace of MicrocoleusVaginatus graph.
+    Instace of Microcoleus vaginatus graph.
 
 	References
 	---------------------

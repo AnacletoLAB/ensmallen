@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeurosporaTetrasperma.
+This file offers the methods to automatically retrieve the graph Neurospora tetrasperma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeurosporaTetrasperma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeurosporaTetrasperma graph.
+    """Return new instance of the Neurospora tetrasperma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeurosporaTetrasperma(
 
     Returns
     -----------------------
-    Instace of NeurosporaTetrasperma graph.
+    Instace of Neurospora tetrasperma graph.
 
 	References
 	---------------------

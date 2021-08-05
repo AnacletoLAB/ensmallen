@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechArenasMeta.
+This file offers the methods to automatically retrieve the graph tech-arenas-meta.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def TechArenasMeta(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechArenasMeta graph.
+    """Return new instance of the tech-arenas-meta graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def TechArenasMeta(
 
     Returns
     -----------------------
-    Instace of TechArenasMeta graph.
+    Instace of tech-arenas-meta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaSpRoot436.
+This file offers the methods to automatically retrieve the graph Devosia sp. Root436.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaSpRoot436(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaSpRoot436 graph.
+    """Return new instance of the Devosia sp. Root436 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaSpRoot436(
 
     Returns
     -----------------------
-    Instace of DevosiaSpRoot436 graph.
+    Instace of Devosia sp. Root436 graph.
 
 	References
 	---------------------

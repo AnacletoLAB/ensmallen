@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FeBody.
+This file offers the methods to automatically retrieve the graph fe-body.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def FeBody(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FeBody graph.
+    """Return new instance of the fe-body graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def FeBody(
 
     Returns
     -----------------------
-    Instace of FeBody graph.
+    Instace of fe-body graph.
 
 	References
 	---------------------

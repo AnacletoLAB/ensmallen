@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeiothermusCerbereus.
+This file offers the methods to automatically retrieve the graph Meiothermus cerbereus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeiothermusCerbereus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeiothermusCerbereus graph.
+    """Return new instance of the Meiothermus cerbereus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeiothermusCerbereus(
 
     Returns
     -----------------------
-    Instace of MeiothermusCerbereus graph.
+    Instace of Meiothermus cerbereus graph.
 
 	References
 	---------------------

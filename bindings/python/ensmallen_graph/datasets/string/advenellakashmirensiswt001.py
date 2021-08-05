@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AdvenellaKashmirensisWt001.
+This file offers the methods to automatically retrieve the graph Advenella kashmirensis WT001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AdvenellaKashmirensisWt001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AdvenellaKashmirensisWt001 graph.
+    """Return new instance of the Advenella kashmirensis WT001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AdvenellaKashmirensisWt001(
 
     Returns
     -----------------------
-    Instace of AdvenellaKashmirensisWt001 graph.
+    Instace of Advenella kashmirensis WT001 graph.
 
 	References
 	---------------------

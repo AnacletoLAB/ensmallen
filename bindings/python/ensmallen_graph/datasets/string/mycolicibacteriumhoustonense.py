@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumHoustonense.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium houstonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumHoustonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumHoustonense graph.
+    """Return new instance of the Mycolicibacterium houstonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumHoustonense(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumHoustonense graph.
+    Instace of Mycolicibacterium houstonense graph.
 
 	References
 	---------------------

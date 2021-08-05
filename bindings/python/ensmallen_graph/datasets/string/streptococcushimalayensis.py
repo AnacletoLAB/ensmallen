@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusHimalayensis.
+This file offers the methods to automatically retrieve the graph Streptococcus himalayensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusHimalayensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusHimalayensis graph.
+    """Return new instance of the Streptococcus himalayensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusHimalayensis(
 
     Returns
     -----------------------
-    Instace of StreptococcusHimalayensis graph.
+    Instace of Streptococcus himalayensis graph.
 
 	References
 	---------------------

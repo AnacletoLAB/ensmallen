@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpRoot61.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. Root61.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpRoot61(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpRoot61 graph.
+    """Return new instance of the Microbacterium sp. Root61 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpRoot61(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpRoot61 graph.
+    Instace of Microbacterium sp. Root61 graph.
 
 	References
 	---------------------

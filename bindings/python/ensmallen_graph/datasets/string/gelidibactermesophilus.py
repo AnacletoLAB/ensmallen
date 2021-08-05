@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GelidibacterMesophilus.
+This file offers the methods to automatically retrieve the graph Gelidibacter mesophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GelidibacterMesophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GelidibacterMesophilus graph.
+    """Return new instance of the Gelidibacter mesophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GelidibacterMesophilus(
 
     Returns
     -----------------------
-    Instace of GelidibacterMesophilus graph.
+    Instace of Gelidibacter mesophilus graph.
 
 	References
 	---------------------

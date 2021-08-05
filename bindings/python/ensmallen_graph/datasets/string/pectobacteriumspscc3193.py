@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumSpScc3193.
+This file offers the methods to automatically retrieve the graph Pectobacterium sp. SCC3193.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumSpScc3193(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumSpScc3193 graph.
+    """Return new instance of the Pectobacterium sp. SCC3193 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PectobacteriumSpScc3193(
 
     Returns
     -----------------------
-    Instace of PectobacteriumSpScc3193 graph.
+    Instace of Pectobacterium sp. SCC3193 graph.
 
 	References
 	---------------------

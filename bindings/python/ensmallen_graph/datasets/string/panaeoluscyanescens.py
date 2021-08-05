@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PanaeolusCyanescens.
+This file offers the methods to automatically retrieve the graph Panaeolus cyanescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PanaeolusCyanescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PanaeolusCyanescens graph.
+    """Return new instance of the Panaeolus cyanescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PanaeolusCyanescens(
 
     Returns
     -----------------------
-    Instace of PanaeolusCyanescens graph.
+    Instace of Panaeolus cyanescens graph.
 
 	References
 	---------------------

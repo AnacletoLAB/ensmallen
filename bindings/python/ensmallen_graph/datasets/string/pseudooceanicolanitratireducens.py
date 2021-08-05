@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudooceanicolaNitratireducens.
+This file offers the methods to automatically retrieve the graph Pseudooceanicola nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudooceanicolaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudooceanicolaNitratireducens graph.
+    """Return new instance of the Pseudooceanicola nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudooceanicolaNitratireducens(
 
     Returns
     -----------------------
-    Instace of PseudooceanicolaNitratireducens graph.
+    Instace of Pseudooceanicola nitratireducens graph.
 
 	References
 	---------------------

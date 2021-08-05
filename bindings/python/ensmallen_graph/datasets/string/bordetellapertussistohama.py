@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BordetellaPertussisTohama.
+This file offers the methods to automatically retrieve the graph Bordetella pertussis Tohama.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BordetellaPertussisTohama(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BordetellaPertussisTohama graph.
+    """Return new instance of the Bordetella pertussis Tohama graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BordetellaPertussisTohama(
 
     Returns
     -----------------------
-    Instace of BordetellaPertussisTohama graph.
+    Instace of Bordetella pertussis Tohama graph.
 
 	References
 	---------------------

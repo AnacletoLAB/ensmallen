@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuccinatimonasSpCag777.
+This file offers the methods to automatically retrieve the graph Succinatimonas sp. CAG:777.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuccinatimonasSpCag777(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuccinatimonasSpCag777 graph.
+    """Return new instance of the Succinatimonas sp. CAG:777 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SuccinatimonasSpCag777(
 
     Returns
     -----------------------
-    Instace of SuccinatimonasSpCag777 graph.
+    Instace of Succinatimonas sp. CAG:777 graph.
 
 	References
 	---------------------

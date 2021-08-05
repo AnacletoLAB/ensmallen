@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EgrettaGarzetta.
+This file offers the methods to automatically retrieve the graph Egretta garzetta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EgrettaGarzetta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EgrettaGarzetta graph.
+    """Return new instance of the Egretta garzetta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EgrettaGarzetta(
 
     Returns
     -----------------------
-    Instace of EgrettaGarzetta graph.
+    Instace of Egretta garzetta graph.
 
 	References
 	---------------------

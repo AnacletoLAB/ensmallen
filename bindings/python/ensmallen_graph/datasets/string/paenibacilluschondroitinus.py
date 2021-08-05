@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusChondroitinus.
+This file offers the methods to automatically retrieve the graph Paenibacillus chondroitinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusChondroitinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusChondroitinus graph.
+    """Return new instance of the Paenibacillus chondroitinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusChondroitinus(
 
     Returns
     -----------------------
-    Instace of PaenibacillusChondroitinus graph.
+    Instace of Paenibacillus chondroitinus graph.
 
 	References
 	---------------------

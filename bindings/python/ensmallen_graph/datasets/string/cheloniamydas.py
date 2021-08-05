@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CheloniaMydas.
+This file offers the methods to automatically retrieve the graph Chelonia mydas.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CheloniaMydas(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CheloniaMydas graph.
+    """Return new instance of the Chelonia mydas graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CheloniaMydas(
 
     Returns
     -----------------------
-    Instace of CheloniaMydas graph.
+    Instace of Chelonia mydas graph.
 
 	References
 	---------------------

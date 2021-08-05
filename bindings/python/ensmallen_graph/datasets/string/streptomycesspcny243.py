@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpCny243.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. CNY243.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpCny243(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpCny243 graph.
+    """Return new instance of the Streptomyces sp. CNY243 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpCny243(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpCny243 graph.
+    Instace of Streptomyces sp. CNY243 graph.
 
 	References
 	---------------------

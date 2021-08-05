@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocaldumSzegedienseO12.
+This file offers the methods to automatically retrieve the graph Methylocaldum szegediense O-12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocaldumSzegedienseO12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocaldumSzegedienseO12 graph.
+    """Return new instance of the Methylocaldum szegediense O-12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylocaldumSzegedienseO12(
 
     Returns
     -----------------------
-    Instace of MethylocaldumSzegedienseO12 graph.
+    Instace of Methylocaldum szegediense O-12 graph.
 
 	References
 	---------------------

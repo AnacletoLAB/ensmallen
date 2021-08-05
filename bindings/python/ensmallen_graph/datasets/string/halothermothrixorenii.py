@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalothermothrixOrenii.
+This file offers the methods to automatically retrieve the graph Halothermothrix orenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalothermothrixOrenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalothermothrixOrenii graph.
+    """Return new instance of the Halothermothrix orenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalothermothrixOrenii(
 
     Returns
     -----------------------
-    Instace of HalothermothrixOrenii graph.
+    Instace of Halothermothrix orenii graph.
 
 	References
 	---------------------

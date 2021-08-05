@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocCitreum.
+This file offers the methods to automatically retrieve the graph Leuconostoc citreum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocCitreum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocCitreum graph.
+    """Return new instance of the Leuconostoc citreum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocCitreum(
 
     Returns
     -----------------------
-    Instace of LeuconostocCitreum graph.
+    Instace of Leuconostoc citreum graph.
 
 	References
 	---------------------

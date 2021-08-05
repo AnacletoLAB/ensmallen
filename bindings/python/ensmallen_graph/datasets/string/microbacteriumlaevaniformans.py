@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumLaevaniformans.
+This file offers the methods to automatically retrieve the graph Microbacterium laevaniformans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumLaevaniformans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumLaevaniformans graph.
+    """Return new instance of the Microbacterium laevaniformans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumLaevaniformans(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumLaevaniformans graph.
+    Instace of Microbacterium laevaniformans graph.
 
 	References
 	---------------------

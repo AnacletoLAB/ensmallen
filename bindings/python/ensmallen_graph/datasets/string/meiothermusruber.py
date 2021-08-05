@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeiothermusRuber.
+This file offers the methods to automatically retrieve the graph Meiothermus ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeiothermusRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeiothermusRuber graph.
+    """Return new instance of the Meiothermus ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeiothermusRuber(
 
     Returns
     -----------------------
-    Instace of MeiothermusRuber graph.
+    Instace of Meiothermus ruber graph.
 
 	References
 	---------------------

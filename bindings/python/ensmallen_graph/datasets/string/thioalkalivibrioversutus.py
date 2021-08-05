@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioVersutus.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio versutus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioVersutus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioVersutus graph.
+    """Return new instance of the Thioalkalivibrio versutus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioalkalivibrioVersutus(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioVersutus graph.
+    Instace of Thioalkalivibrio versutus graph.
 
 	References
 	---------------------

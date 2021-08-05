@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevirhabdusPacifica.
+This file offers the methods to automatically retrieve the graph Brevirhabdus pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevirhabdusPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevirhabdusPacifica graph.
+    """Return new instance of the Brevirhabdus pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevirhabdusPacifica(
 
     Returns
     -----------------------
-    Instace of BrevirhabdusPacifica graph.
+    Instace of Brevirhabdus pacifica graph.
 
 	References
 	---------------------

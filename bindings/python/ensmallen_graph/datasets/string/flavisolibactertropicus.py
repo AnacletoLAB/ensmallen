@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavisolibacterTropicus.
+This file offers the methods to automatically retrieve the graph Flavisolibacter tropicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavisolibacterTropicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavisolibacterTropicus graph.
+    """Return new instance of the Flavisolibacter tropicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavisolibacterTropicus(
 
     Returns
     -----------------------
-    Instace of FlavisolibacterTropicus graph.
+    Instace of Flavisolibacter tropicus graph.
 
 	References
 	---------------------

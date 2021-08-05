@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraGenomosp.
+This file offers the methods to automatically retrieve the graph Megasphaera genomosp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraGenomosp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraGenomosp graph.
+    """Return new instance of the Megasphaera genomosp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegasphaeraGenomosp(
 
     Returns
     -----------------------
-    Instace of MegasphaeraGenomosp graph.
+    Instace of Megasphaera genomosp. graph.
 
 	References
 	---------------------

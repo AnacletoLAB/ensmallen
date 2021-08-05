@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusTrypoxylicola.
+This file offers the methods to automatically retrieve the graph Bacillus trypoxylicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusTrypoxylicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusTrypoxylicola graph.
+    """Return new instance of the Bacillus trypoxylicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusTrypoxylicola(
 
     Returns
     -----------------------
-    Instace of BacillusTrypoxylicola graph.
+    Instace of Bacillus trypoxylicola graph.
 
 	References
 	---------------------

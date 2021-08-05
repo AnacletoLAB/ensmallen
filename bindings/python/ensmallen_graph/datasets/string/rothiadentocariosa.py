@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RothiaDentocariosa.
+This file offers the methods to automatically retrieve the graph Rothia dentocariosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RothiaDentocariosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RothiaDentocariosa graph.
+    """Return new instance of the Rothia dentocariosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RothiaDentocariosa(
 
     Returns
     -----------------------
-    Instace of RothiaDentocariosa graph.
+    Instace of Rothia dentocariosa graph.
 
 	References
 	---------------------

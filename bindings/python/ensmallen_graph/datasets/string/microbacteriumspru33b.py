@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpRu33b.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. RU33B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpRu33b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpRu33b graph.
+    """Return new instance of the Microbacterium sp. RU33B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpRu33b(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpRu33b graph.
+    Instace of Microbacterium sp. RU33B graph.
 
 	References
 	---------------------

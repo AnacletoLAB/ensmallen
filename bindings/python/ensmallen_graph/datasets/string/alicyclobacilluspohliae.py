@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusPohliae.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus pohliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusPohliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusPohliae graph.
+    """Return new instance of the Alicyclobacillus pohliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicyclobacillusPohliae(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusPohliae graph.
+    Instace of Alicyclobacillus pohliae graph.
 
 	References
 	---------------------

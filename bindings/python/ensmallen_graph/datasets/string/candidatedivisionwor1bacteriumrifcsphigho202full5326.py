@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionWor1BacteriumRifcsphigho202Full5326.
+This file offers the methods to automatically retrieve the graph candidate division WOR-1 bacterium RIFCSPHIGHO2_02_FULL_53_26.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionWor1BacteriumRifcsphigho202Full5326(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionWor1BacteriumRifcsphigho202Full5326 graph.
+    """Return new instance of the candidate division WOR-1 bacterium RIFCSPHIGHO2_02_FULL_53_26 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionWor1BacteriumRifcsphigho202Full5326(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionWor1BacteriumRifcsphigho202Full5326 graph.
+    Instace of candidate division WOR-1 bacterium RIFCSPHIGHO2_02_FULL_53_26 graph.
 
 	References
 	---------------------

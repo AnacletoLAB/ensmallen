@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalmonellaEntericaSubspHoutenaeStrAtccBaa1581.
+This file offers the methods to automatically retrieve the graph Salmonella enterica subsp. houtenae str. ATCC BAA-1581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalmonellaEntericaSubspHoutenaeStrAtccBaa1581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalmonellaEntericaSubspHoutenaeStrAtccBaa1581 graph.
+    """Return new instance of the Salmonella enterica subsp. houtenae str. ATCC BAA-1581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalmonellaEntericaSubspHoutenaeStrAtccBaa1581(
 
     Returns
     -----------------------
-    Instace of SalmonellaEntericaSubspHoutenaeStrAtccBaa1581 graph.
+    Instace of Salmonella enterica subsp. houtenae str. ATCC BAA-1581 graph.
 
 	References
 	---------------------

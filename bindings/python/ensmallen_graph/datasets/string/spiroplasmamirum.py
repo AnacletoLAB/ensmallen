@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaMirum.
+This file offers the methods to automatically retrieve the graph Spiroplasma mirum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaMirum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaMirum graph.
+    """Return new instance of the Spiroplasma mirum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaMirum(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaMirum graph.
+    Instace of Spiroplasma mirum graph.
 
 	References
 	---------------------

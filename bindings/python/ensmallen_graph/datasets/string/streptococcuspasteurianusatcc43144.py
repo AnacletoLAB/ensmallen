@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPasteurianusAtcc43144.
+This file offers the methods to automatically retrieve the graph Streptococcus pasteurianus ATCC 43144.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPasteurianusAtcc43144(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPasteurianusAtcc43144 graph.
+    """Return new instance of the Streptococcus pasteurianus ATCC 43144 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusPasteurianusAtcc43144(
 
     Returns
     -----------------------
-    Instace of StreptococcusPasteurianusAtcc43144 graph.
+    Instace of Streptococcus pasteurianus ATCC 43144 graph.
 
 	References
 	---------------------

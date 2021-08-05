@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AplysiaCalifornica.
+This file offers the methods to automatically retrieve the graph Aplysia californica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AplysiaCalifornica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AplysiaCalifornica graph.
+    """Return new instance of the Aplysia californica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AplysiaCalifornica(
 
     Returns
     -----------------------
-    Instace of AplysiaCalifornica graph.
+    Instace of Aplysia californica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasCryotolerans.
+This file offers the methods to automatically retrieve the graph Nitrosomonas cryotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasCryotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasCryotolerans graph.
+    """Return new instance of the Nitrosomonas cryotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosomonasCryotolerans(
 
     Returns
     -----------------------
-    Instace of NitrosomonasCryotolerans graph.
+    Instace of Nitrosomonas cryotolerans graph.
 
 	References
 	---------------------

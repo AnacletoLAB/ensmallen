@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSpBg2.
+This file offers the methods to automatically retrieve the graph Mycoplasma sp. Bg2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSpBg2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSpBg2 graph.
+    """Return new instance of the Mycoplasma sp. Bg2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaSpBg2(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSpBg2 graph.
+    Instace of Mycoplasma sp. Bg2 graph.
 
 	References
 	---------------------

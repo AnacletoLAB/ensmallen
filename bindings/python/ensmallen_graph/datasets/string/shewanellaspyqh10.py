@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaSpYqh10.
+This file offers the methods to automatically retrieve the graph Shewanella sp. YQH10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaSpYqh10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaSpYqh10 graph.
+    """Return new instance of the Shewanella sp. YQH10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaSpYqh10(
 
     Returns
     -----------------------
-    Instace of ShewanellaSpYqh10 graph.
+    Instace of Shewanella sp. YQH10 graph.
 
 	References
 	---------------------

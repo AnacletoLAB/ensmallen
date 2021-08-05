@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LutisporaThermophilaDsm19022.
+This file offers the methods to automatically retrieve the graph Lutispora thermophila DSM 19022.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LutisporaThermophilaDsm19022(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LutisporaThermophilaDsm19022 graph.
+    """Return new instance of the Lutispora thermophila DSM 19022 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LutisporaThermophilaDsm19022(
 
     Returns
     -----------------------
-    Instace of LutisporaThermophilaDsm19022 graph.
+    Instace of Lutispora thermophila DSM 19022 graph.
 
 	References
 	---------------------

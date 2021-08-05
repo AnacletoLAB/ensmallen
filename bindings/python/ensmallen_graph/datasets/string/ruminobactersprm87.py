@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminobacterSpRm87.
+This file offers the methods to automatically retrieve the graph Ruminobacter sp. RM87.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminobacterSpRm87(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminobacterSpRm87 graph.
+    """Return new instance of the Ruminobacter sp. RM87 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminobacterSpRm87(
 
     Returns
     -----------------------
-    Instace of RuminobacterSpRm87 graph.
+    Instace of Ruminobacter sp. RM87 graph.
 
 	References
 	---------------------

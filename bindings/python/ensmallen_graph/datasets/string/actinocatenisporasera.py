@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinocatenisporaSera.
+This file offers the methods to automatically retrieve the graph Actinocatenispora sera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinocatenisporaSera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinocatenisporaSera graph.
+    """Return new instance of the Actinocatenispora sera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinocatenisporaSera(
 
     Returns
     -----------------------
-    Instace of ActinocatenisporaSera graph.
+    Instace of Actinocatenispora sera graph.
 
 	References
 	---------------------

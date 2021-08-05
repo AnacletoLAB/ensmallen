@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanococcusAeolicus.
+This file offers the methods to automatically retrieve the graph Methanococcus aeolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanococcusAeolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanococcusAeolicus graph.
+    """Return new instance of the Methanococcus aeolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanococcusAeolicus(
 
     Returns
     -----------------------
-    Instace of MethanococcusAeolicus graph.
+    Instace of Methanococcus aeolicus graph.
 
 	References
 	---------------------

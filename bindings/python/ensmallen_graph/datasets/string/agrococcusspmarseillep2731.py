@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrococcusSpMarseilleP2731.
+This file offers the methods to automatically retrieve the graph Agrococcus sp. Marseille-P2731.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrococcusSpMarseilleP2731(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrococcusSpMarseilleP2731 graph.
+    """Return new instance of the Agrococcus sp. Marseille-P2731 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrococcusSpMarseilleP2731(
 
     Returns
     -----------------------
-    Instace of AgrococcusSpMarseilleP2731 graph.
+    Instace of Agrococcus sp. Marseille-P2731 graph.
 
 	References
 	---------------------

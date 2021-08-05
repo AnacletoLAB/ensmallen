@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusThoraltensis.
+This file offers the methods to automatically retrieve the graph Streptococcus thoraltensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusThoraltensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusThoraltensis graph.
+    """Return new instance of the Streptococcus thoraltensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusThoraltensis(
 
     Returns
     -----------------------
-    Instace of StreptococcusThoraltensis graph.
+    Instace of Streptococcus thoraltensis graph.
 
 	References
 	---------------------

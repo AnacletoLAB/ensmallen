@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentibacillusJeotgali.
+This file offers the methods to automatically retrieve the graph Lentibacillus jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentibacillusJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentibacillusJeotgali graph.
+    """Return new instance of the Lentibacillus jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LentibacillusJeotgali(
 
     Returns
     -----------------------
-    Instace of LentibacillusJeotgali graph.
+    Instace of Lentibacillus jeotgali graph.
 
 	References
 	---------------------

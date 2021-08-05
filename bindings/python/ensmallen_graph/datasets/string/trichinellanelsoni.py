@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichinellaNelsoni.
+This file offers the methods to automatically retrieve the graph Trichinella nelsoni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichinellaNelsoni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichinellaNelsoni graph.
+    """Return new instance of the Trichinella nelsoni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichinellaNelsoni(
 
     Returns
     -----------------------
-    Instace of TrichinellaNelsoni graph.
+    Instace of Trichinella nelsoni graph.
 
 	References
 	---------------------

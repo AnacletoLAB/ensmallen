@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasporobacteriumPaucivoransDsm15970.
+This file offers the methods to automatically retrieve the graph Parasporobacterium paucivorans DSM 15970.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParasporobacteriumPaucivoransDsm15970(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasporobacteriumPaucivoransDsm15970 graph.
+    """Return new instance of the Parasporobacterium paucivorans DSM 15970 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParasporobacteriumPaucivoransDsm15970(
 
     Returns
     -----------------------
-    Instace of ParasporobacteriumPaucivoransDsm15970 graph.
+    Instace of Parasporobacterium paucivorans DSM 15970 graph.
 
 	References
 	---------------------

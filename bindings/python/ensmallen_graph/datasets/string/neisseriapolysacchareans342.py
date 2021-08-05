@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaPolysacchareaNs342.
+This file offers the methods to automatically retrieve the graph Neisseria polysaccharea NS342.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaPolysacchareaNs342(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaPolysacchareaNs342 graph.
+    """Return new instance of the Neisseria polysaccharea NS342 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaPolysacchareaNs342(
 
     Returns
     -----------------------
-    Instace of NeisseriaPolysacchareaNs342 graph.
+    Instace of Neisseria polysaccharea NS342 graph.
 
 	References
 	---------------------

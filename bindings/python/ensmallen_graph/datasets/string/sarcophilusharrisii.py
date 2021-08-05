@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SarcophilusHarrisii.
+This file offers the methods to automatically retrieve the graph Sarcophilus harrisii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SarcophilusHarrisii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SarcophilusHarrisii graph.
+    """Return new instance of the Sarcophilus harrisii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SarcophilusHarrisii(
 
     Returns
     -----------------------
-    Instace of SarcophilusHarrisii graph.
+    Instace of Sarcophilus harrisii graph.
 
 	References
 	---------------------

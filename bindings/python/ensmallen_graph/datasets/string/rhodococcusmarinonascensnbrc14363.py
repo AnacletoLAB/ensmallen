@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusMarinonascensNbrc14363.
+This file offers the methods to automatically retrieve the graph Rhodococcus marinonascens NBRC 14363.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusMarinonascensNbrc14363(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusMarinonascensNbrc14363 graph.
+    """Return new instance of the Rhodococcus marinonascens NBRC 14363 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusMarinonascensNbrc14363(
 
     Returns
     -----------------------
-    Instace of RhodococcusMarinonascensNbrc14363 graph.
+    Instace of Rhodococcus marinonascens NBRC 14363 graph.
 
 	References
 	---------------------

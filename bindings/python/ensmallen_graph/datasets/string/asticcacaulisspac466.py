@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisSpAc466.
+This file offers the methods to automatically retrieve the graph Asticcacaulis sp. AC466.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisSpAc466(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisSpAc466 graph.
+    """Return new instance of the Asticcacaulis sp. AC466 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AsticcacaulisSpAc466(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisSpAc466 graph.
+    Instace of Asticcacaulis sp. AC466 graph.
 
 	References
 	---------------------

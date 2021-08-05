@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterSpKpr6.
+This file offers the methods to automatically retrieve the graph Enterobacter sp. kpr-6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterSpKpr6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterSpKpr6 graph.
+    """Return new instance of the Enterobacter sp. kpr-6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterSpKpr6(
 
     Returns
     -----------------------
-    Instace of EnterobacterSpKpr6 graph.
+    Instace of Enterobacter sp. kpr-6 graph.
 
 	References
 	---------------------

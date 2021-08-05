@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrobacterPenzbergensis.
+This file offers the methods to automatically retrieve the graph Hydrobacter penzbergensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrobacterPenzbergensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrobacterPenzbergensis graph.
+    """Return new instance of the Hydrobacter penzbergensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrobacterPenzbergensis(
 
     Returns
     -----------------------
-    Instace of HydrobacterPenzbergensis graph.
+    Instace of Hydrobacter penzbergensis graph.
 
 	References
 	---------------------

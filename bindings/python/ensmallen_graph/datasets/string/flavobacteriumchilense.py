@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumChilense.
+This file offers the methods to automatically retrieve the graph Flavobacterium chilense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumChilense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumChilense graph.
+    """Return new instance of the Flavobacterium chilense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumChilense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumChilense graph.
+    Instace of Flavobacterium chilense graph.
 
 	References
 	---------------------

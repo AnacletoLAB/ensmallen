@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusOceanisediminis.
+This file offers the methods to automatically retrieve the graph Bacillus oceanisediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusOceanisediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusOceanisediminis graph.
+    """Return new instance of the Bacillus oceanisediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusOceanisediminis(
 
     Returns
     -----------------------
-    Instace of BacillusOceanisediminis graph.
+    Instace of Bacillus oceanisediminis graph.
 
 	References
 	---------------------

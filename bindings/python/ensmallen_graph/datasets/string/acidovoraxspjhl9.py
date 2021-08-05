@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxSpJhl9.
+This file offers the methods to automatically retrieve the graph Acidovorax sp. JHL9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxSpJhl9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxSpJhl9 graph.
+    """Return new instance of the Acidovorax sp. JHL9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidovoraxSpJhl9(
 
     Returns
     -----------------------
-    Instace of AcidovoraxSpJhl9 graph.
+    Instace of Acidovorax sp. JHL9 graph.
 
 	References
 	---------------------

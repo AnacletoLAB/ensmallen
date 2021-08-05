@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedClostridiaBacterium.
+This file offers the methods to automatically retrieve the graph uncultured Clostridia bacterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedClostridiaBacterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedClostridiaBacterium graph.
+    """Return new instance of the uncultured Clostridia bacterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedClostridiaBacterium(
 
     Returns
     -----------------------
-    Instace of UnculturedClostridiaBacterium graph.
+    Instace of uncultured Clostridia bacterium graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CnuibacterPhyscomitrellae.
+This file offers the methods to automatically retrieve the graph Cnuibacter physcomitrellae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CnuibacterPhyscomitrellae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CnuibacterPhyscomitrellae graph.
+    """Return new instance of the Cnuibacter physcomitrellae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CnuibacterPhyscomitrellae(
 
     Returns
     -----------------------
-    Instace of CnuibacterPhyscomitrellae graph.
+    Instace of Cnuibacter physcomitrellae graph.
 
 	References
 	---------------------

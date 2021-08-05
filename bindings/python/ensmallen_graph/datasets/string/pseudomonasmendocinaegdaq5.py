@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMendocinaEgdaq5.
+This file offers the methods to automatically retrieve the graph Pseudomonas mendocina EGDAQ5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMendocinaEgdaq5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMendocinaEgdaq5 graph.
+    """Return new instance of the Pseudomonas mendocina EGDAQ5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasMendocinaEgdaq5(
 
     Returns
     -----------------------
-    Instace of PseudomonasMendocinaEgdaq5 graph.
+    Instace of Pseudomonas mendocina EGDAQ5 graph.
 
 	References
 	---------------------

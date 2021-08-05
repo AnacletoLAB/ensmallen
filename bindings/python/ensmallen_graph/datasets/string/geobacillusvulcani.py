@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusVulcani.
+This file offers the methods to automatically retrieve the graph Geobacillus vulcani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusVulcani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusVulcani graph.
+    """Return new instance of the Geobacillus vulcani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacillusVulcani(
 
     Returns
     -----------------------
-    Instace of GeobacillusVulcani graph.
+    Instace of Geobacillus vulcani graph.
 
 	References
 	---------------------

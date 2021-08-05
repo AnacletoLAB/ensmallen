@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAnorexicamassiliense.
+This file offers the methods to automatically retrieve the graph Clostridium anorexicamassiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAnorexicamassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAnorexicamassiliense graph.
+    """Return new instance of the Clostridium anorexicamassiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumAnorexicamassiliense(
 
     Returns
     -----------------------
-    Instace of ClostridiumAnorexicamassiliense graph.
+    Instace of Clostridium anorexicamassiliense graph.
 
 	References
 	---------------------

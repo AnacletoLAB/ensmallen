@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsaiaPrunellaeJcm25354.
+This file offers the methods to automatically retrieve the graph Asaia prunellae JCM 25354.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsaiaPrunellaeJcm25354(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsaiaPrunellaeJcm25354 graph.
+    """Return new instance of the Asaia prunellae JCM 25354 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsaiaPrunellaeJcm25354(
 
     Returns
     -----------------------
-    Instace of AsaiaPrunellaeJcm25354 graph.
+    Instace of Asaia prunellae JCM 25354 graph.
 
 	References
 	---------------------

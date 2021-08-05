@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKomeilibacteriaBacteriumRifoxyc2Full4512.
+This file offers the methods to automatically retrieve the graph Candidatus Komeilibacteria bacterium RIFOXYC2_FULL_45_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKomeilibacteriaBacteriumRifoxyc2Full4512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKomeilibacteriaBacteriumRifoxyc2Full4512 graph.
+    """Return new instance of the Candidatus Komeilibacteria bacterium RIFOXYC2_FULL_45_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKomeilibacteriaBacteriumRifoxyc2Full4512(
 
     Returns
     -----------------------
-    Instace of CandidatusKomeilibacteriaBacteriumRifoxyc2Full4512 graph.
+    Instace of Candidatus Komeilibacteria bacterium RIFOXYC2_FULL_45_12 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloceanibacterCaenitepidi.
+This file offers the methods to automatically retrieve the graph Methyloceanibacter caenitepidi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloceanibacterCaenitepidi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloceanibacterCaenitepidi graph.
+    """Return new instance of the Methyloceanibacter caenitepidi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloceanibacterCaenitepidi(
 
     Returns
     -----------------------
-    Instace of MethyloceanibacterCaenitepidi graph.
+    Instace of Methyloceanibacter caenitepidi graph.
 
 	References
 	---------------------

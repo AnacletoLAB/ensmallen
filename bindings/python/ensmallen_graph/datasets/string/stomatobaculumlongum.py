@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StomatobaculumLongum.
+This file offers the methods to automatically retrieve the graph Stomatobaculum longum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StomatobaculumLongum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StomatobaculumLongum graph.
+    """Return new instance of the Stomatobaculum longum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StomatobaculumLongum(
 
     Returns
     -----------------------
-    Instace of StomatobaculumLongum graph.
+    Instace of Stomatobaculum longum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumGraminicolaM1001.
+This file offers the methods to automatically retrieve the graph Colletotrichum graminicola M1.001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumGraminicolaM1001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumGraminicolaM1001 graph.
+    """Return new instance of the Colletotrichum graminicola M1.001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumGraminicolaM1001(
 
     Returns
     -----------------------
-    Instace of ColletotrichumGraminicolaM1001 graph.
+    Instace of Colletotrichum graminicola M1.001 graph.
 
 	References
 	---------------------

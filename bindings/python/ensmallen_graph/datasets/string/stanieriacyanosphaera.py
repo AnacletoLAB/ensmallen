@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StanieriaCyanosphaera.
+This file offers the methods to automatically retrieve the graph Stanieria cyanosphaera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StanieriaCyanosphaera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StanieriaCyanosphaera graph.
+    """Return new instance of the Stanieria cyanosphaera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StanieriaCyanosphaera(
 
     Returns
     -----------------------
-    Instace of StanieriaCyanosphaera graph.
+    Instace of Stanieria cyanosphaera graph.
 
 	References
 	---------------------

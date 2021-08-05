@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinotignumSchaalii.
+This file offers the methods to automatically retrieve the graph Actinotignum schaalii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinotignumSchaalii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinotignumSchaalii graph.
+    """Return new instance of the Actinotignum schaalii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinotignumSchaalii(
 
     Returns
     -----------------------
-    Instace of ActinotignumSchaalii graph.
+    Instace of Actinotignum schaalii graph.
 
 	References
 	---------------------

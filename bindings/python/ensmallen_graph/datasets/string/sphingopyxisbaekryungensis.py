@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingopyxisBaekryungensis.
+This file offers the methods to automatically retrieve the graph Sphingopyxis baekryungensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingopyxisBaekryungensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingopyxisBaekryungensis graph.
+    """Return new instance of the Sphingopyxis baekryungensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingopyxisBaekryungensis(
 
     Returns
     -----------------------
-    Instace of SphingopyxisBaekryungensis graph.
+    Instace of Sphingopyxis baekryungensis graph.
 
 	References
 	---------------------

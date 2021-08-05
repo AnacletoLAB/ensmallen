@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeonGw2011Ar20.
+This file offers the methods to automatically retrieve the graph archaeon GW2011_AR20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeonGw2011Ar20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeonGw2011Ar20 graph.
+    """Return new instance of the archaeon GW2011_AR20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArchaeonGw2011Ar20(
 
     Returns
     -----------------------
-    Instace of ArchaeonGw2011Ar20 graph.
+    Instace of archaeon GW2011_AR20 graph.
 
 	References
 	---------------------

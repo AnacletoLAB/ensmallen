@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CosenzaeaMyxofaciensAtcc19692.
+This file offers the methods to automatically retrieve the graph Cosenzaea myxofaciens ATCC 19692.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CosenzaeaMyxofaciensAtcc19692(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CosenzaeaMyxofaciensAtcc19692 graph.
+    """Return new instance of the Cosenzaea myxofaciens ATCC 19692 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CosenzaeaMyxofaciensAtcc19692(
 
     Returns
     -----------------------
-    Instace of CosenzaeaMyxofaciensAtcc19692 graph.
+    Instace of Cosenzaea myxofaciens ATCC 19692 graph.
 
 	References
 	---------------------

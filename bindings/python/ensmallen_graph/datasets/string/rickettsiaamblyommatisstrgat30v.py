@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsiaAmblyommatisStrGat30v.
+This file offers the methods to automatically retrieve the graph Rickettsia amblyommatis str. GAT-30V.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsiaAmblyommatisStrGat30v(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsiaAmblyommatisStrGat30v graph.
+    """Return new instance of the Rickettsia amblyommatis str. GAT-30V graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RickettsiaAmblyommatisStrGat30v(
 
     Returns
     -----------------------
-    Instace of RickettsiaAmblyommatisStrGat30v graph.
+    Instace of Rickettsia amblyommatis str. GAT-30V graph.
 
 	References
 	---------------------

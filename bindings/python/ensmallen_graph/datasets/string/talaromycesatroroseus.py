@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesAtroroseus.
+This file offers the methods to automatically retrieve the graph Talaromyces atroroseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesAtroroseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesAtroroseus graph.
+    """Return new instance of the Talaromyces atroroseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TalaromycesAtroroseus(
 
     Returns
     -----------------------
-    Instace of TalaromycesAtroroseus graph.
+    Instace of Talaromyces atroroseus graph.
 
 	References
 	---------------------

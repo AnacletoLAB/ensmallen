@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph As20000102.
+This file offers the methods to automatically retrieve the graph as20000102.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def As20000102(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the As20000102 graph.
+    """Return new instance of the as20000102 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def As20000102(
 
     Returns
     -----------------------
-    Instace of As20000102 graph.
+    Instace of as20000102 graph.
 
 	References
 	---------------------

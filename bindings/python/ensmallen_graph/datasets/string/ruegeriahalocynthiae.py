@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaHalocynthiae.
+This file offers the methods to automatically retrieve the graph Ruegeria halocynthiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaHalocynthiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaHalocynthiae graph.
+    """Return new instance of the Ruegeria halocynthiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuegeriaHalocynthiae(
 
     Returns
     -----------------------
-    Instace of RuegeriaHalocynthiae graph.
+    Instace of Ruegeria halocynthiae graph.
 
 	References
 	---------------------

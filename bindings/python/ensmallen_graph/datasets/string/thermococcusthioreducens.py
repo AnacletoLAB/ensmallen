@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusThioreducens.
+This file offers the methods to automatically retrieve the graph Thermococcus thioreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusThioreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusThioreducens graph.
+    """Return new instance of the Thermococcus thioreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusThioreducens(
 
     Returns
     -----------------------
-    Instace of ThermococcusThioreducens graph.
+    Instace of Thermococcus thioreducens graph.
 
 	References
 	---------------------

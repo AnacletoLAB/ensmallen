@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumRbg19ftCombo4210.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium RBG_19FT_COMBO_42_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumRbg19ftCombo4210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumRbg19ftCombo4210 graph.
+    """Return new instance of the Bacteroidetes bacterium RBG_19FT_COMBO_42_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumRbg19ftCombo4210(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumRbg19ftCombo4210 graph.
+    Instace of Bacteroidetes bacterium RBG_19FT_COMBO_42_10 graph.
 
 	References
 	---------------------

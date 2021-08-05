@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmorphothecaResinaeAtcc22711.
+This file offers the methods to automatically retrieve the graph Amorphotheca resinae ATCC 22711.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmorphothecaResinaeAtcc22711(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmorphothecaResinaeAtcc22711 graph.
+    """Return new instance of the Amorphotheca resinae ATCC 22711 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmorphothecaResinaeAtcc22711(
 
     Returns
     -----------------------
-    Instace of AmorphothecaResinaeAtcc22711 graph.
+    Instace of Amorphotheca resinae ATCC 22711 graph.
 
 	References
 	---------------------

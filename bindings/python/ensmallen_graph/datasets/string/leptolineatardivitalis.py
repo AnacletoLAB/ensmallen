@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptolineaTardivitalis.
+This file offers the methods to automatically retrieve the graph Leptolinea tardivitalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptolineaTardivitalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptolineaTardivitalis graph.
+    """Return new instance of the Leptolinea tardivitalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptolineaTardivitalis(
 
     Returns
     -----------------------
-    Instace of LeptolineaTardivitalis graph.
+    Instace of Leptolinea tardivitalis graph.
 
 	References
 	---------------------

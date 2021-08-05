@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasNasturtii.
+This file offers the methods to automatically retrieve the graph Xanthomonas nasturtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasNasturtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasNasturtii graph.
+    """Return new instance of the Xanthomonas nasturtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasNasturtii(
 
     Returns
     -----------------------
-    Instace of XanthomonasNasturtii graph.
+    Instace of Xanthomonas nasturtii graph.
 
 	References
 	---------------------

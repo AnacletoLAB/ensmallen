@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TarenayaHassleriana.
+This file offers the methods to automatically retrieve the graph Tarenaya hassleriana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TarenayaHassleriana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TarenayaHassleriana graph.
+    """Return new instance of the Tarenaya hassleriana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TarenayaHassleriana(
 
     Returns
     -----------------------
-    Instace of TarenayaHassleriana graph.
+    Instace of Tarenaya hassleriana graph.
 
 	References
 	---------------------

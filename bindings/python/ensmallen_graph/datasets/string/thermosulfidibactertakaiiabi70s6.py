@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosulfidibacterTakaiiAbi70s6.
+This file offers the methods to automatically retrieve the graph Thermosulfidibacter takaii ABI70S6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosulfidibacterTakaiiAbi70s6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosulfidibacterTakaiiAbi70s6 graph.
+    """Return new instance of the Thermosulfidibacter takaii ABI70S6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermosulfidibacterTakaiiAbi70s6(
 
     Returns
     -----------------------
-    Instace of ThermosulfidibacterTakaiiAbi70s6 graph.
+    Instace of Thermosulfidibacter takaii ABI70S6 graph.
 
 	References
 	---------------------

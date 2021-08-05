@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiohalospiraHalophilaDsm15071.
+This file offers the methods to automatically retrieve the graph Thiohalospira halophila DSM 15071.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiohalospiraHalophilaDsm15071(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiohalospiraHalophilaDsm15071 graph.
+    """Return new instance of the Thiohalospira halophila DSM 15071 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiohalospiraHalophilaDsm15071(
 
     Returns
     -----------------------
-    Instace of ThiohalospiraHalophilaDsm15071 graph.
+    Instace of Thiohalospira halophila DSM 15071 graph.
 
 	References
 	---------------------

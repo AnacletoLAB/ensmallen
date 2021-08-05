@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichococcusFlocculiformis.
+This file offers the methods to automatically retrieve the graph Trichococcus flocculiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichococcusFlocculiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichococcusFlocculiformis graph.
+    """Return new instance of the Trichococcus flocculiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichococcusFlocculiformis(
 
     Returns
     -----------------------
-    Instace of TrichococcusFlocculiformis graph.
+    Instace of Trichococcus flocculiformis graph.
 
 	References
 	---------------------

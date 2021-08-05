@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpAcs1612.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. ACS1612.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpAcs1612(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpAcs1612 graph.
+    """Return new instance of the Mycobacterium sp. ACS1612 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpAcs1612(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpAcs1612 graph.
+    Instace of Mycobacterium sp. ACS1612 graph.
 
 	References
 	---------------------

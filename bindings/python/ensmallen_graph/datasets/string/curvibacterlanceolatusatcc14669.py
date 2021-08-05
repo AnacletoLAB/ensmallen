@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurvibacterLanceolatusAtcc14669.
+This file offers the methods to automatically retrieve the graph Curvibacter lanceolatus ATCC 14669.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurvibacterLanceolatusAtcc14669(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurvibacterLanceolatusAtcc14669 graph.
+    """Return new instance of the Curvibacter lanceolatus ATCC 14669 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurvibacterLanceolatusAtcc14669(
 
     Returns
     -----------------------
-    Instace of CurvibacterLanceolatusAtcc14669 graph.
+    Instace of Curvibacter lanceolatus ATCC 14669 graph.
 
 	References
 	---------------------

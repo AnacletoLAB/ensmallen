@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnidentifiedEubacteriumScb49.
+This file offers the methods to automatically retrieve the graph unidentified eubacterium SCB49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnidentifiedEubacteriumScb49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnidentifiedEubacteriumScb49 graph.
+    """Return new instance of the unidentified eubacterium SCB49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnidentifiedEubacteriumScb49(
 
     Returns
     -----------------------
-    Instace of UnidentifiedEubacteriumScb49 graph.
+    Instace of unidentified eubacterium SCB49 graph.
 
 	References
 	---------------------

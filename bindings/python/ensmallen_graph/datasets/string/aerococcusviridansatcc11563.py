@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AerococcusViridansAtcc11563.
+This file offers the methods to automatically retrieve the graph Aerococcus viridans ATCC11563.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AerococcusViridansAtcc11563(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AerococcusViridansAtcc11563 graph.
+    """Return new instance of the Aerococcus viridans ATCC11563 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AerococcusViridansAtcc11563(
 
     Returns
     -----------------------
-    Instace of AerococcusViridansAtcc11563 graph.
+    Instace of Aerococcus viridans ATCC11563 graph.
 
 	References
 	---------------------

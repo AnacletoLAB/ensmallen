@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NanoarchaeotaArchaeonScgcAaa011G17.
+This file offers the methods to automatically retrieve the graph Nanoarchaeota archaeon SCGC AAA011-G17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NanoarchaeotaArchaeonScgcAaa011G17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NanoarchaeotaArchaeonScgcAaa011G17 graph.
+    """Return new instance of the Nanoarchaeota archaeon SCGC AAA011-G17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NanoarchaeotaArchaeonScgcAaa011G17(
 
     Returns
     -----------------------
-    Instace of NanoarchaeotaArchaeonScgcAaa011G17 graph.
+    Instace of Nanoarchaeota archaeon SCGC AAA011-G17 graph.
 
 	References
 	---------------------

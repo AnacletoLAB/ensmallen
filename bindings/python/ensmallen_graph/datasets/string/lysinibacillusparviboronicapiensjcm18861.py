@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusParviboronicapiensJcm18861.
+This file offers the methods to automatically retrieve the graph Lysinibacillus parviboronicapiens JCM 18861.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusParviboronicapiensJcm18861(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusParviboronicapiensJcm18861 graph.
+    """Return new instance of the Lysinibacillus parviboronicapiens JCM 18861 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinibacillusParviboronicapiensJcm18861(
 
     Returns
     -----------------------
-    Instace of LysinibacillusParviboronicapiensJcm18861 graph.
+    Instace of Lysinibacillus parviboronicapiens JCM 18861 graph.
 
 	References
 	---------------------

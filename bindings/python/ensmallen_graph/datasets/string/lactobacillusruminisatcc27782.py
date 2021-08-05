@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusRuminisAtcc27782.
+This file offers the methods to automatically retrieve the graph Lactobacillus ruminis ATCC27782.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusRuminisAtcc27782(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusRuminisAtcc27782 graph.
+    """Return new instance of the Lactobacillus ruminis ATCC27782 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusRuminisAtcc27782(
 
     Returns
     -----------------------
-    Instace of LactobacillusRuminisAtcc27782 graph.
+    Instace of Lactobacillus ruminis ATCC27782 graph.
 
 	References
 	---------------------

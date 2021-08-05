@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitricoccusSpCh26a.
+This file offers the methods to automatically retrieve the graph Citricoccus sp. CH26A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitricoccusSpCh26a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitricoccusSpCh26a graph.
+    """Return new instance of the Citricoccus sp. CH26A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitricoccusSpCh26a(
 
     Returns
     -----------------------
-    Instace of CitricoccusSpCh26a graph.
+    Instace of Citricoccus sp. CH26A graph.
 
 	References
 	---------------------

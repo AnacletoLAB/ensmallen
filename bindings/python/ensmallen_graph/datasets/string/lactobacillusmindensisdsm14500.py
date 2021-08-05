@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusMindensisDsm14500.
+This file offers the methods to automatically retrieve the graph Lactobacillus mindensis DSM 14500.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusMindensisDsm14500(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusMindensisDsm14500 graph.
+    """Return new instance of the Lactobacillus mindensis DSM 14500 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusMindensisDsm14500(
 
     Returns
     -----------------------
-    Instace of LactobacillusMindensisDsm14500 graph.
+    Instace of Lactobacillus mindensis DSM 14500 graph.
 
 	References
 	---------------------

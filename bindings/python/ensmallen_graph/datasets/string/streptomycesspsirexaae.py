@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpSirexaae.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. SirexAAE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpSirexaae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpSirexaae graph.
+    """Return new instance of the Streptomyces sp. SirexAAE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpSirexaae(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpSirexaae graph.
+    Instace of Streptomyces sp. SirexAAE graph.
 
 	References
 	---------------------

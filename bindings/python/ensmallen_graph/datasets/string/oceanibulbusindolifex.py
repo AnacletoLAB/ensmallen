@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanibulbusIndolifex.
+This file offers the methods to automatically retrieve the graph Oceanibulbus indolifex.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanibulbusIndolifex(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanibulbusIndolifex graph.
+    """Return new instance of the Oceanibulbus indolifex graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanibulbusIndolifex(
 
     Returns
     -----------------------
-    Instace of OceanibulbusIndolifex graph.
+    Instace of Oceanibulbus indolifex graph.
 
 	References
 	---------------------

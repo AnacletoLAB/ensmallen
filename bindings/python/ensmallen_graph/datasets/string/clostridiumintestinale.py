@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumIntestinale.
+This file offers the methods to automatically retrieve the graph Clostridium intestinale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumIntestinale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumIntestinale graph.
+    """Return new instance of the Clostridium intestinale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumIntestinale(
 
     Returns
     -----------------------
-    Instace of ClostridiumIntestinale graph.
+    Instace of Clostridium intestinale graph.
 
 	References
 	---------------------

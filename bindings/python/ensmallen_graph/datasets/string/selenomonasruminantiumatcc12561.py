@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasRuminantiumAtcc12561.
+This file offers the methods to automatically retrieve the graph Selenomonas ruminantium ATCC12561.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasRuminantiumAtcc12561(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasRuminantiumAtcc12561 graph.
+    """Return new instance of the Selenomonas ruminantium ATCC12561 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasRuminantiumAtcc12561(
 
     Returns
     -----------------------
-    Instace of SelenomonasRuminantiumAtcc12561 graph.
+    Instace of Selenomonas ruminantium ATCC12561 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyaloperonosporaArabidopsidis.
+This file offers the methods to automatically retrieve the graph Hyaloperonospora arabidopsidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyaloperonosporaArabidopsidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyaloperonosporaArabidopsidis graph.
+    """Return new instance of the Hyaloperonospora arabidopsidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyaloperonosporaArabidopsidis(
 
     Returns
     -----------------------
-    Instace of HyaloperonosporaArabidopsidis graph.
+    Instace of Hyaloperonospora arabidopsidis graph.
 
 	References
 	---------------------

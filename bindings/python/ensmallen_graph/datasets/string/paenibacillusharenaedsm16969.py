@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusHarenaeDsm16969.
+This file offers the methods to automatically retrieve the graph Paenibacillus harenae DSM 16969.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusHarenaeDsm16969(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusHarenaeDsm16969 graph.
+    """Return new instance of the Paenibacillus harenae DSM 16969 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusHarenaeDsm16969(
 
     Returns
     -----------------------
-    Instace of PaenibacillusHarenaeDsm16969 graph.
+    Instace of Paenibacillus harenae DSM 16969 graph.
 
 	References
 	---------------------

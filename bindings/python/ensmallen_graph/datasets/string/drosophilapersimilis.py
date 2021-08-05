@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaPersimilis.
+This file offers the methods to automatically retrieve the graph Drosophila persimilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaPersimilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaPersimilis graph.
+    """Return new instance of the Drosophila persimilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaPersimilis(
 
     Returns
     -----------------------
-    Instace of DrosophilaPersimilis graph.
+    Instace of Drosophila persimilis graph.
 
 	References
 	---------------------

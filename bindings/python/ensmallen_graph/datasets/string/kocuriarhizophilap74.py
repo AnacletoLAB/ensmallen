@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KocuriaRhizophilaP74.
+This file offers the methods to automatically retrieve the graph Kocuria rhizophila P74.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KocuriaRhizophilaP74(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KocuriaRhizophilaP74 graph.
+    """Return new instance of the Kocuria rhizophila P74 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KocuriaRhizophilaP74(
 
     Returns
     -----------------------
-    Instace of KocuriaRhizophilaP74 graph.
+    Instace of Kocuria rhizophila P74 graph.
 
 	References
 	---------------------

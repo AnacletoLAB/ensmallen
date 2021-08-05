@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaBrevipalpis.
+This file offers the methods to automatically retrieve the graph Glossina brevipalpis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaBrevipalpis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaBrevipalpis graph.
+    """Return new instance of the Glossina brevipalpis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaBrevipalpis(
 
     Returns
     -----------------------
-    Instace of GlossinaBrevipalpis graph.
+    Instace of Glossina brevipalpis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbStanford3.
+This file offers the methods to automatically retrieve the graph socfb-Stanford3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbStanford3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbStanford3 graph.
+    """Return new instance of the socfb-Stanford3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbStanford3(
 
     Returns
     -----------------------
-    Instace of SocfbStanford3 graph.
+    Instace of socfb-Stanford3 graph.
 
 	References
 	---------------------

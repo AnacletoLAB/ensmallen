@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacteralesBacteriumRifoxyb1Full6716.
+This file offers the methods to automatically retrieve the graph Caulobacterales bacterium RIFOXYB1_FULL_67_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacteralesBacteriumRifoxyb1Full6716(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacteralesBacteriumRifoxyb1Full6716 graph.
+    """Return new instance of the Caulobacterales bacterium RIFOXYB1_FULL_67_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacteralesBacteriumRifoxyb1Full6716(
 
     Returns
     -----------------------
-    Instace of CaulobacteralesBacteriumRifoxyb1Full6716 graph.
+    Instace of Caulobacterales bacterium RIFOXYB1_FULL_67_16 graph.
 
 	References
 	---------------------

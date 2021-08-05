@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinosynnemaMirum.
+This file offers the methods to automatically retrieve the graph Actinosynnema mirum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinosynnemaMirum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinosynnemaMirum graph.
+    """Return new instance of the Actinosynnema mirum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinosynnemaMirum(
 
     Returns
     -----------------------
-    Instace of ActinosynnemaMirum graph.
+    Instace of Actinosynnema mirum graph.
 
 	References
 	---------------------

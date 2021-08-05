@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanFoodweb.
+This file offers the methods to automatically retrieve the graph maayan-foodweb.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanFoodweb(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanFoodweb graph.
+    """Return new instance of the maayan-foodweb graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanFoodweb(
 
     Returns
     -----------------------
-    Instace of MaayanFoodweb graph.
+    Instace of maayan-foodweb graph.
 
 	References
 	---------------------

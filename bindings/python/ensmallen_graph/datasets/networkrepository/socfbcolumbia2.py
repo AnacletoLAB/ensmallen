@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbColumbia2.
+This file offers the methods to automatically retrieve the graph socfb-Columbia2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbColumbia2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbColumbia2 graph.
+    """Return new instance of the socfb-Columbia2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbColumbia2(
 
     Returns
     -----------------------
-    Instace of SocfbColumbia2 graph.
+    Instace of socfb-Columbia2 graph.
 
 	References
 	---------------------

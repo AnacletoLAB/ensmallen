@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAgalactiaeLmg14747.
+This file offers the methods to automatically retrieve the graph Streptococcus agalactiae LMG14747.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAgalactiaeLmg14747(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAgalactiaeLmg14747 graph.
+    """Return new instance of the Streptococcus agalactiae LMG14747 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAgalactiaeLmg14747(
 
     Returns
     -----------------------
-    Instace of StreptococcusAgalactiaeLmg14747 graph.
+    Instace of Streptococcus agalactiae LMG14747 graph.
 
 	References
 	---------------------

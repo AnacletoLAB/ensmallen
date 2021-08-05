@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArchaeoglobusVeneficus.
+This file offers the methods to automatically retrieve the graph Archaeoglobus veneficus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArchaeoglobusVeneficus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArchaeoglobusVeneficus graph.
+    """Return new instance of the Archaeoglobus veneficus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArchaeoglobusVeneficus(
 
     Returns
     -----------------------
-    Instace of ArchaeoglobusVeneficus graph.
+    Instace of Archaeoglobus veneficus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinokineosporaBangkokensis.
+This file offers the methods to automatically retrieve the graph Actinokineospora bangkokensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinokineosporaBangkokensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinokineosporaBangkokensis graph.
+    """Return new instance of the Actinokineospora bangkokensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinokineosporaBangkokensis(
 
     Returns
     -----------------------
-    Instace of ActinokineosporaBangkokensis graph.
+    Instace of Actinokineospora bangkokensis graph.
 
 	References
 	---------------------

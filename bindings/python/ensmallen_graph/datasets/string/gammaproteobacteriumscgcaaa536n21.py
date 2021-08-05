@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumScgcAaa536N21.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium SCGC AAA536-N21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumScgcAaa536N21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumScgcAaa536N21 graph.
+    """Return new instance of the gamma proteobacterium SCGC AAA536-N21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumScgcAaa536N21(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumScgcAaa536N21 graph.
+    Instace of gamma proteobacterium SCGC AAA536-N21 graph.
 
 	References
 	---------------------

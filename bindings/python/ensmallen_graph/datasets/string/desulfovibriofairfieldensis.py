@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioFairfieldensis.
+This file offers the methods to automatically retrieve the graph Desulfovibrio fairfieldensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioFairfieldensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioFairfieldensis graph.
+    """Return new instance of the Desulfovibrio fairfieldensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioFairfieldensis(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioFairfieldensis graph.
+    Instace of Desulfovibrio fairfieldensis graph.
 
 	References
 	---------------------

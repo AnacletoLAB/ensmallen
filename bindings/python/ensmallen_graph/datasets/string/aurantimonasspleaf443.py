@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AurantimonasSpLeaf443.
+This file offers the methods to automatically retrieve the graph Aurantimonas sp. Leaf443.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AurantimonasSpLeaf443(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AurantimonasSpLeaf443 graph.
+    """Return new instance of the Aurantimonas sp. Leaf443 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AurantimonasSpLeaf443(
 
     Returns
     -----------------------
-    Instace of AurantimonasSpLeaf443 graph.
+    Instace of Aurantimonas sp. Leaf443 graph.
 
 	References
 	---------------------

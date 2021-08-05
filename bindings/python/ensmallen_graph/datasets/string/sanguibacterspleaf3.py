@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SanguibacterSpLeaf3.
+This file offers the methods to automatically retrieve the graph Sanguibacter sp. Leaf3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SanguibacterSpLeaf3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SanguibacterSpLeaf3 graph.
+    """Return new instance of the Sanguibacter sp. Leaf3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SanguibacterSpLeaf3(
 
     Returns
     -----------------------
-    Instace of SanguibacterSpLeaf3 graph.
+    Instace of Sanguibacter sp. Leaf3 graph.
 
 	References
 	---------------------

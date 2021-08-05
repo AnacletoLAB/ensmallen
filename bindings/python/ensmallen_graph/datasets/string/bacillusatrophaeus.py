@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAtrophaeus.
+This file offers the methods to automatically retrieve the graph Bacillus atrophaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAtrophaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAtrophaeus graph.
+    """Return new instance of the Bacillus atrophaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAtrophaeus(
 
     Returns
     -----------------------
-    Instace of BacillusAtrophaeus graph.
+    Instace of Bacillus atrophaeus graph.
 
 	References
 	---------------------

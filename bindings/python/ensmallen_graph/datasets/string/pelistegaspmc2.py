@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelistegaSpMc2.
+This file offers the methods to automatically retrieve the graph Pelistega sp. MC2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelistegaSpMc2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelistegaSpMc2 graph.
+    """Return new instance of the Pelistega sp. MC2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelistegaSpMc2(
 
     Returns
     -----------------------
-    Instace of PelistegaSpMc2 graph.
+    Instace of Pelistega sp. MC2 graph.
 
 	References
 	---------------------

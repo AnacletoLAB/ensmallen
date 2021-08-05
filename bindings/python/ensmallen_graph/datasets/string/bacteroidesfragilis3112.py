@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesFragilis3112.
+This file offers the methods to automatically retrieve the graph Bacteroides fragilis 3112.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesFragilis3112(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesFragilis3112 graph.
+    """Return new instance of the Bacteroides fragilis 3112 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesFragilis3112(
 
     Returns
     -----------------------
-    Instace of BacteroidesFragilis3112 graph.
+    Instace of Bacteroides fragilis 3112 graph.
 
 	References
 	---------------------

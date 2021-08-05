@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumGa0074134.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium Ga0074134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumGa0074134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumGa0074134 graph.
+    """Return new instance of the Gammaproteobacteria bacterium Ga0074134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumGa0074134(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumGa0074134 graph.
+    Instace of Gammaproteobacteria bacterium Ga0074134 graph.
 
 	References
 	---------------------

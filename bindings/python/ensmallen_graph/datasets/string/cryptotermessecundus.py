@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptotermesSecundus.
+This file offers the methods to automatically retrieve the graph Cryptotermes secundus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptotermesSecundus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptotermesSecundus graph.
+    """Return new instance of the Cryptotermes secundus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptotermesSecundus(
 
     Returns
     -----------------------
-    Instace of CryptotermesSecundus graph.
+    Instace of Cryptotermes secundus graph.
 
 	References
 	---------------------

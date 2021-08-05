@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaCrassostreae.
+This file offers the methods to automatically retrieve the graph Nocardia crassostreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaCrassostreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaCrassostreae graph.
+    """Return new instance of the Nocardia crassostreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaCrassostreae(
 
     Returns
     -----------------------
-    Instace of NocardiaCrassostreae graph.
+    Instace of Nocardia crassostreae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusDenitrificansDsm12475.
+This file offers the methods to automatically retrieve the graph Thiobacillus denitrificans DSM12475.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusDenitrificansDsm12475(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusDenitrificansDsm12475 graph.
+    """Return new instance of the Thiobacillus denitrificans DSM12475 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiobacillusDenitrificansDsm12475(
 
     Returns
     -----------------------
-    Instace of ThiobacillusDenitrificansDsm12475 graph.
+    Instace of Thiobacillus denitrificans DSM12475 graph.
 
 	References
 	---------------------

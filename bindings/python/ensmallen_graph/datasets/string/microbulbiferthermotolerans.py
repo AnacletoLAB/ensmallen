@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferThermotolerans.
+This file offers the methods to automatically retrieve the graph Microbulbifer thermotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferThermotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferThermotolerans graph.
+    """Return new instance of the Microbulbifer thermotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferThermotolerans(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferThermotolerans graph.
+    Instace of Microbulbifer thermotolerans graph.
 
 	References
 	---------------------

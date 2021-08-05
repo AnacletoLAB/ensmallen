@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAbietaniphila.
+This file offers the methods to automatically retrieve the graph Pseudomonas abietaniphila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAbietaniphila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAbietaniphila graph.
+    """Return new instance of the Pseudomonas abietaniphila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAbietaniphila(
 
     Returns
     -----------------------
-    Instace of PseudomonasAbietaniphila graph.
+    Instace of Pseudomonas abietaniphila graph.
 
 	References
 	---------------------

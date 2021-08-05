@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycetocolaSaprophilus.
+This file offers the methods to automatically retrieve the graph Mycetocola saprophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycetocolaSaprophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycetocolaSaprophilus graph.
+    """Return new instance of the Mycetocola saprophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycetocolaSaprophilus(
 
     Returns
     -----------------------
-    Instace of MycetocolaSaprophilus graph.
+    Instace of Mycetocola saprophilus graph.
 
 	References
 	---------------------

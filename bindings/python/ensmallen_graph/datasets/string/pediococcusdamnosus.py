@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusDamnosus.
+This file offers the methods to automatically retrieve the graph Pediococcus damnosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusDamnosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusDamnosus graph.
+    """Return new instance of the Pediococcus damnosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PediococcusDamnosus(
 
     Returns
     -----------------------
-    Instace of PediococcusDamnosus graph.
+    Instace of Pediococcus damnosus graph.
 
 	References
 	---------------------

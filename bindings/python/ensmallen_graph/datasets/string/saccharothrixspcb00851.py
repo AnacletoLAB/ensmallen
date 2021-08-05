@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharothrixSpCb00851.
+This file offers the methods to automatically retrieve the graph Saccharothrix sp. CB00851.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharothrixSpCb00851(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharothrixSpCb00851 graph.
+    """Return new instance of the Saccharothrix sp. CB00851 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharothrixSpCb00851(
 
     Returns
     -----------------------
-    Instace of SaccharothrixSpCb00851 graph.
+    Instace of Saccharothrix sp. CB00851 graph.
 
 	References
 	---------------------

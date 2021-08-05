@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulgatibacterIncomptus.
+This file offers the methods to automatically retrieve the graph Vulgatibacter incomptus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulgatibacterIncomptus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulgatibacterIncomptus graph.
+    """Return new instance of the Vulgatibacter incomptus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VulgatibacterIncomptus(
 
     Returns
     -----------------------
-    Instace of VulgatibacterIncomptus graph.
+    Instace of Vulgatibacter incomptus graph.
 
 	References
 	---------------------

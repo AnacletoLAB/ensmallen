@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGobiensis.
+This file offers the methods to automatically retrieve the graph Bacillus gobiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusGobiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGobiensis graph.
+    """Return new instance of the Bacillus gobiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusGobiensis(
 
     Returns
     -----------------------
-    Instace of BacillusGobiensis graph.
+    Instace of Bacillus gobiensis graph.
 
 	References
 	---------------------

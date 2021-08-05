@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasSpAu12.
+This file offers the methods to automatically retrieve the graph Aureimonas sp. AU12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasSpAu12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasSpAu12 graph.
+    """Return new instance of the Aureimonas sp. AU12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureimonasSpAu12(
 
     Returns
     -----------------------
-    Instace of AureimonasSpAu12 graph.
+    Instace of Aureimonas sp. AU12 graph.
 
 	References
 	---------------------

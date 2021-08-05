@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSmithii.
+This file offers the methods to automatically retrieve the graph Bacillus smithii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSmithii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSmithii graph.
+    """Return new instance of the Bacillus smithii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSmithii(
 
     Returns
     -----------------------
-    Instace of BacillusSmithii graph.
+    Instace of Bacillus smithii graph.
 
 	References
 	---------------------

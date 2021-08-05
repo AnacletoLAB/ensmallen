@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeobacterPorticola.
+This file offers the methods to automatically retrieve the graph Phaeobacter porticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeobacterPorticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeobacterPorticola graph.
+    """Return new instance of the Phaeobacter porticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhaeobacterPorticola(
 
     Returns
     -----------------------
-    Instace of PhaeobacterPorticola graph.
+    Instace of Phaeobacter porticola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumNigrificans.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum nigrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumNigrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumNigrificans graph.
+    """Return new instance of the Desulfotomaculum nigrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumNigrificans(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumNigrificans graph.
+    Instace of Desulfotomaculum nigrificans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrenophoraTeresFTeres01.
+This file offers the methods to automatically retrieve the graph Pyrenophora teres f. teres 0-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrenophoraTeresFTeres01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrenophoraTeresFTeres01 graph.
+    """Return new instance of the Pyrenophora teres f. teres 0-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrenophoraTeresFTeres01(
 
     Returns
     -----------------------
-    Instace of PyrenophoraTeresFTeres01 graph.
+    Instace of Pyrenophora teres f. teres 0-1 graph.
 
 	References
 	---------------------

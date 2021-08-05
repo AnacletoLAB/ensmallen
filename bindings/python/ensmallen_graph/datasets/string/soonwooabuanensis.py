@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SoonwooaBuanensis.
+This file offers the methods to automatically retrieve the graph Soonwooa buanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SoonwooaBuanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SoonwooaBuanensis graph.
+    """Return new instance of the Soonwooa buanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SoonwooaBuanensis(
 
     Returns
     -----------------------
-    Instace of SoonwooaBuanensis graph.
+    Instace of Soonwooa buanensis graph.
 
 	References
 	---------------------

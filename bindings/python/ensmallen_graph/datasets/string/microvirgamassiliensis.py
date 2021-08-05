@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgaMassiliensis.
+This file offers the methods to automatically retrieve the graph Microvirga massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgaMassiliensis graph.
+    """Return new instance of the Microvirga massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrovirgaMassiliensis(
 
     Returns
     -----------------------
-    Instace of MicrovirgaMassiliensis graph.
+    Instace of Microvirga massiliensis graph.
 
 	References
 	---------------------

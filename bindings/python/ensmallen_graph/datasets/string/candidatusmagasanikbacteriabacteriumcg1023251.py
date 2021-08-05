@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMagasanikbacteriaBacteriumCg1023251.
+This file offers the methods to automatically retrieve the graph Candidatus Magasanikbacteria bacterium CG1_02_32_51.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMagasanikbacteriaBacteriumCg1023251(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMagasanikbacteriaBacteriumCg1023251 graph.
+    """Return new instance of the Candidatus Magasanikbacteria bacterium CG1_02_32_51 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMagasanikbacteriaBacteriumCg1023251(
 
     Returns
     -----------------------
-    Instace of CandidatusMagasanikbacteriaBacteriumCg1023251 graph.
+    Instace of Candidatus Magasanikbacteria bacterium CG1_02_32_51 graph.
 
 	References
 	---------------------

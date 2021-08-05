@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfDrosophilaMelanogaster.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Drosophila melanogaster.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfDrosophilaMelanogaster(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfDrosophilaMelanogaster graph.
+    """Return new instance of the Wolbachia endosymbiont of Drosophila melanogaster graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfDrosophilaMelanogaster(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfDrosophilaMelanogaster graph.
+    Instace of Wolbachia endosymbiont of Drosophila melanogaster graph.
 
 	References
 	---------------------

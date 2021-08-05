@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylothermusHellenicus.
+This file offers the methods to automatically retrieve the graph Staphylothermus hellenicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylothermusHellenicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylothermusHellenicus graph.
+    """Return new instance of the Staphylothermus hellenicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylothermusHellenicus(
 
     Returns
     -----------------------
-    Instace of StaphylothermusHellenicus graph.
+    Instace of Staphylothermus hellenicus graph.
 
 	References
 	---------------------

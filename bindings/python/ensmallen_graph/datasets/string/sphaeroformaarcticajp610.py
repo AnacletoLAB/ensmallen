@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaeroformaArcticaJp610.
+This file offers the methods to automatically retrieve the graph Sphaeroforma arctica JP610.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaeroformaArcticaJp610(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaeroformaArcticaJp610 graph.
+    """Return new instance of the Sphaeroforma arctica JP610 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphaeroformaArcticaJp610(
 
     Returns
     -----------------------
-    Instace of SphaeroformaArcticaJp610 graph.
+    Instace of Sphaeroforma arctica JP610 graph.
 
 	References
 	---------------------

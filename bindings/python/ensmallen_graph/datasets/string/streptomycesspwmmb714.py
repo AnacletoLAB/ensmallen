@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpWmmb714.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. WMMB 714.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpWmmb714(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpWmmb714 graph.
+    """Return new instance of the Streptomyces sp. WMMB 714 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpWmmb714(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpWmmb714 graph.
+    Instace of Streptomyces sp. WMMB 714 graph.
 
 	References
 	---------------------

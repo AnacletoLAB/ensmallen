@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaAbortusLlg.
+This file offers the methods to automatically retrieve the graph Chlamydia abortus LLG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaAbortusLlg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaAbortusLlg graph.
+    """Return new instance of the Chlamydia abortus LLG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaAbortusLlg(
 
     Returns
     -----------------------
-    Instace of ChlamydiaAbortusLlg graph.
+    Instace of Chlamydia abortus LLG graph.
 
 	References
 	---------------------

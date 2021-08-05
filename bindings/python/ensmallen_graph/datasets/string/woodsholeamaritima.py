@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WoodsholeaMaritima.
+This file offers the methods to automatically retrieve the graph Woodsholea maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WoodsholeaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WoodsholeaMaritima graph.
+    """Return new instance of the Woodsholea maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WoodsholeaMaritima(
 
     Returns
     -----------------------
-    Instace of WoodsholeaMaritima graph.
+    Instace of Woodsholea maritima graph.
 
 	References
 	---------------------

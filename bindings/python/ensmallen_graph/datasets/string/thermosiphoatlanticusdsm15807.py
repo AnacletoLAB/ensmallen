@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermosiphoAtlanticusDsm15807.
+This file offers the methods to automatically retrieve the graph Thermosipho atlanticus DSM 15807.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermosiphoAtlanticusDsm15807(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermosiphoAtlanticusDsm15807 graph.
+    """Return new instance of the Thermosipho atlanticus DSM 15807 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermosiphoAtlanticusDsm15807(
 
     Returns
     -----------------------
-    Instace of ThermosiphoAtlanticusDsm15807 graph.
+    Instace of Thermosipho atlanticus DSM 15807 graph.
 
 	References
 	---------------------

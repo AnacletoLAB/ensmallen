@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaAgalactiae14628.
+This file offers the methods to automatically retrieve the graph Mycoplasma agalactiae 14628.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaAgalactiae14628(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaAgalactiae14628 graph.
+    """Return new instance of the Mycoplasma agalactiae 14628 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaAgalactiae14628(
 
     Returns
     -----------------------
-    Instace of MycoplasmaAgalactiae14628 graph.
+    Instace of Mycoplasma agalactiae 14628 graph.
 
 	References
 	---------------------

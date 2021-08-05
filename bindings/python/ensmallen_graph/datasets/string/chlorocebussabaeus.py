@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorocebusSabaeus.
+This file offers the methods to automatically retrieve the graph Chlorocebus sabaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorocebusSabaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorocebusSabaeus graph.
+    """Return new instance of the Chlorocebus sabaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorocebusSabaeus(
 
     Returns
     -----------------------
-    Instace of ChlorocebusSabaeus graph.
+    Instace of Chlorocebus sabaeus graph.
 
 	References
 	---------------------

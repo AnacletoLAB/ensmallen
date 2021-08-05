@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasHaloplanktisAnt505.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas haloplanktis ANT505.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasHaloplanktisAnt505(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasHaloplanktisAnt505 graph.
+    """Return new instance of the Pseudoalteromonas haloplanktis ANT505 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoalteromonasHaloplanktisAnt505(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasHaloplanktisAnt505 graph.
+    Instace of Pseudoalteromonas haloplanktis ANT505 graph.
 
 	References
 	---------------------

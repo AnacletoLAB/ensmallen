@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusVulcanius.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus vulcanius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusVulcanius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusVulcanius graph.
+    """Return new instance of the Methanocaldococcus vulcanius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocaldococcusVulcanius(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusVulcanius graph.
+    Instace of Methanocaldococcus vulcanius graph.
 
 	References
 	---------------------

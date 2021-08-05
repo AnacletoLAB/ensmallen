@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRoizmanbacteriaBacteriumRifcsplowo201Full3513.
+This file offers the methods to automatically retrieve the graph Candidatus Roizmanbacteria bacterium RIFCSPLOWO2_01_FULL_35_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRoizmanbacteriaBacteriumRifcsplowo201Full3513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRoizmanbacteriaBacteriumRifcsplowo201Full3513 graph.
+    """Return new instance of the Candidatus Roizmanbacteria bacterium RIFCSPLOWO2_01_FULL_35_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRoizmanbacteriaBacteriumRifcsplowo201Full3513(
 
     Returns
     -----------------------
-    Instace of CandidatusRoizmanbacteriaBacteriumRifcsplowo201Full3513 graph.
+    Instace of Candidatus Roizmanbacteria bacterium RIFCSPLOWO2_01_FULL_35_13 graph.
 
 	References
 	---------------------

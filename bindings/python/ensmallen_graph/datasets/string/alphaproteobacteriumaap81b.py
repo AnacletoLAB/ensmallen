@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumAap81b.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium AAP81b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumAap81b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumAap81b graph.
+    """Return new instance of the alpha proteobacterium AAP81b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumAap81b(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumAap81b graph.
+    Instace of alpha proteobacterium AAP81b graph.
 
 	References
 	---------------------

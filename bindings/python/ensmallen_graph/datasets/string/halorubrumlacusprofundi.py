@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumLacusprofundi.
+This file offers the methods to automatically retrieve the graph Halorubrum lacusprofundi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumLacusprofundi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumLacusprofundi graph.
+    """Return new instance of the Halorubrum lacusprofundi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalorubrumLacusprofundi(
 
     Returns
     -----------------------
-    Instace of HalorubrumLacusprofundi graph.
+    Instace of Halorubrum lacusprofundi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbWesleyan43.
+This file offers the methods to automatically retrieve the graph socfb-Wesleyan43.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbWesleyan43(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbWesleyan43 graph.
+    """Return new instance of the socfb-Wesleyan43 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbWesleyan43(
 
     Returns
     -----------------------
-    Instace of SocfbWesleyan43 graph.
+    Instace of socfb-Wesleyan43 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlautiaWexlerae.
+This file offers the methods to automatically retrieve the graph Blautia wexlerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlautiaWexlerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlautiaWexlerae graph.
+    """Return new instance of the Blautia wexlerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlautiaWexlerae(
 
     Returns
     -----------------------
-    Instace of BlautiaWexlerae graph.
+    Instace of Blautia wexlerae graph.
 
 	References
 	---------------------

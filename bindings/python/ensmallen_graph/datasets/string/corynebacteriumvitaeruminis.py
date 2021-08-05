@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumVitaeruminis.
+This file offers the methods to automatically retrieve the graph Corynebacterium vitaeruminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumVitaeruminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumVitaeruminis graph.
+    """Return new instance of the Corynebacterium vitaeruminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumVitaeruminis(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumVitaeruminis graph.
+    Instace of Corynebacterium vitaeruminis graph.
 
 	References
 	---------------------

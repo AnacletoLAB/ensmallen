@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesterenkoniaSpF.
+This file offers the methods to automatically retrieve the graph Nesterenkonia sp. F.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesterenkoniaSpF(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesterenkoniaSpF graph.
+    """Return new instance of the Nesterenkonia sp. F graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NesterenkoniaSpF(
 
     Returns
     -----------------------
-    Instace of NesterenkoniaSpF graph.
+    Instace of Nesterenkonia sp. F graph.
 
 	References
 	---------------------

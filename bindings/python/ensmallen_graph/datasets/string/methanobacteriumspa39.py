@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumSpA39.
+This file offers the methods to automatically retrieve the graph Methanobacterium sp. A39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumSpA39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumSpA39 graph.
+    """Return new instance of the Methanobacterium sp. A39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobacteriumSpA39(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumSpA39 graph.
+    Instace of Methanobacterium sp. A39 graph.
 
 	References
 	---------------------

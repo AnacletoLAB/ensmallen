@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NematocidaSp1Ertm2.
+This file offers the methods to automatically retrieve the graph Nematocida sp. 1 ERTm2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NematocidaSp1Ertm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NematocidaSp1Ertm2 graph.
+    """Return new instance of the Nematocida sp. 1 ERTm2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NematocidaSp1Ertm2(
 
     Returns
     -----------------------
-    Instace of NematocidaSp1Ertm2 graph.
+    Instace of Nematocida sp. 1 ERTm2 graph.
 
 	References
 	---------------------

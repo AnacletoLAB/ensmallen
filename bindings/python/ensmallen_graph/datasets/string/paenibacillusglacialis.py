@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusGlacialis.
+This file offers the methods to automatically retrieve the graph Paenibacillus glacialis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusGlacialis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusGlacialis graph.
+    """Return new instance of the Paenibacillus glacialis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusGlacialis(
 
     Returns
     -----------------------
-    Instace of PaenibacillusGlacialis graph.
+    Instace of Paenibacillus glacialis graph.
 
 	References
 	---------------------

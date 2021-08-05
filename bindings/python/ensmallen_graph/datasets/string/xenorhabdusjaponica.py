@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusJaponica.
+This file offers the methods to automatically retrieve the graph Xenorhabdus japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusJaponica graph.
+    """Return new instance of the Xenorhabdus japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusJaponica(
 
     Returns
     -----------------------
-    Instace of XenorhabdusJaponica graph.
+    Instace of Xenorhabdus japonica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RaineyellaAntarctica.
+This file offers the methods to automatically retrieve the graph Raineyella antarctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RaineyellaAntarctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RaineyellaAntarctica graph.
+    """Return new instance of the Raineyella antarctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RaineyellaAntarctica(
 
     Returns
     -----------------------
-    Instace of RaineyellaAntarctica graph.
+    Instace of Raineyella antarctica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalothermothrixSpDtu029.
+This file offers the methods to automatically retrieve the graph Halothermothrix sp. DTU029.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalothermothrixSpDtu029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalothermothrixSpDtu029 graph.
+    """Return new instance of the Halothermothrix sp. DTU029 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalothermothrixSpDtu029(
 
     Returns
     -----------------------
-    Instace of HalothermothrixSpDtu029 graph.
+    Instace of Halothermothrix sp. DTU029 graph.
 
 	References
 	---------------------

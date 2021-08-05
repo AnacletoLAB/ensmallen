@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Debr.
+This file offers the methods to automatically retrieve the graph debr.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Debr(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Debr graph.
+    """Return new instance of the debr graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Debr(
 
     Returns
     -----------------------
-    Instace of Debr graph.
+    Instace of debr graph.
 
 	References
 	---------------------

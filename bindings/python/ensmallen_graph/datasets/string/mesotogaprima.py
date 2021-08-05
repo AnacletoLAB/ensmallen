@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesotogaPrima.
+This file offers the methods to automatically retrieve the graph Mesotoga prima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesotogaPrima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesotogaPrima graph.
+    """Return new instance of the Mesotoga prima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesotogaPrima(
 
     Returns
     -----------------------
-    Instace of MesotogaPrima graph.
+    Instace of Mesotoga prima graph.
 
 	References
 	---------------------

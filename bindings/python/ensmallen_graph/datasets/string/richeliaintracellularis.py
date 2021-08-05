@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RicheliaIntracellularis.
+This file offers the methods to automatically retrieve the graph Richelia intracellularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RicheliaIntracellularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RicheliaIntracellularis graph.
+    """Return new instance of the Richelia intracellularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RicheliaIntracellularis(
 
     Returns
     -----------------------
-    Instace of RicheliaIntracellularis graph.
+    Instace of Richelia intracellularis graph.
 
 	References
 	---------------------

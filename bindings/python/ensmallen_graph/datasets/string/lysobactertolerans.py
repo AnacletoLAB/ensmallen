@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterTolerans.
+This file offers the methods to automatically retrieve the graph Lysobacter tolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterTolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterTolerans graph.
+    """Return new instance of the Lysobacter tolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterTolerans(
 
     Returns
     -----------------------
-    Instace of LysobacterTolerans graph.
+    Instace of Lysobacter tolerans graph.
 
 	References
 	---------------------

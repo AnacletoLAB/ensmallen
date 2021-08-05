@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucosisporaMaris.
+This file offers the methods to automatically retrieve the graph Verrucosispora maris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucosisporaMaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucosisporaMaris graph.
+    """Return new instance of the Verrucosispora maris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VerrucosisporaMaris(
 
     Returns
     -----------------------
-    Instace of VerrucosisporaMaris graph.
+    Instace of Verrucosispora maris graph.
 
 	References
 	---------------------

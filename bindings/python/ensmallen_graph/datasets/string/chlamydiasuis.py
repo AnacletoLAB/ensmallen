@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaSuis.
+This file offers the methods to automatically retrieve the graph Chlamydia suis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaSuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaSuis graph.
+    """Return new instance of the Chlamydia suis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaSuis(
 
     Returns
     -----------------------
-    Instace of ChlamydiaSuis graph.
+    Instace of Chlamydia suis graph.
 
 	References
 	---------------------

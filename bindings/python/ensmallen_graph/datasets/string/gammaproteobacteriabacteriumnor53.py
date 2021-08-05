@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumNor53.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium NOR53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumNor53(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumNor53 graph.
+    """Return new instance of the Gammaproteobacteria bacterium NOR53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumNor53(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumNor53 graph.
+    Instace of Gammaproteobacteria bacterium NOR53 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesMarneffeiAtcc18224.
+This file offers the methods to automatically retrieve the graph Talaromyces marneffei ATCC 18224.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesMarneffeiAtcc18224(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesMarneffeiAtcc18224 graph.
+    """Return new instance of the Talaromyces marneffei ATCC 18224 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TalaromycesMarneffeiAtcc18224(
 
     Returns
     -----------------------
-    Instace of TalaromycesMarneffeiAtcc18224 graph.
+    Instace of Talaromyces marneffei ATCC 18224 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSoli.
+This file offers the methods to automatically retrieve the graph Gordonia soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSoli graph.
+    """Return new instance of the Gordonia soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaSoli(
 
     Returns
     -----------------------
-    Instace of GordoniaSoli graph.
+    Instace of Gordonia soli graph.
 
 	References
 	---------------------

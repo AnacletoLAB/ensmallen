@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpJcb.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. JCB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpJcb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpJcb graph.
+    """Return new instance of the Corynebacterium sp. JCB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumSpJcb(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpJcb graph.
+    Instace of Corynebacterium sp. JCB graph.
 
 	References
 	---------------------

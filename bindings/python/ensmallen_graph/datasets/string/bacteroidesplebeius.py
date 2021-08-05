@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPlebeius.
+This file offers the methods to automatically retrieve the graph Bacteroides plebeius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPlebeius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPlebeius graph.
+    """Return new instance of the Bacteroides plebeius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesPlebeius(
 
     Returns
     -----------------------
-    Instace of BacteroidesPlebeius graph.
+    Instace of Bacteroides plebeius graph.
 
 	References
 	---------------------

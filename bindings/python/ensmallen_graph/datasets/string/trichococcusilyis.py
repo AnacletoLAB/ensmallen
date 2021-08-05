@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichococcusIlyis.
+This file offers the methods to automatically retrieve the graph Trichococcus ilyis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichococcusIlyis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichococcusIlyis graph.
+    """Return new instance of the Trichococcus ilyis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichococcusIlyis(
 
     Returns
     -----------------------
-    Instace of TrichococcusIlyis graph.
+    Instace of Trichococcus ilyis graph.
 
 	References
 	---------------------

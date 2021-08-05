@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumCoprostanoligenes.
+This file offers the methods to automatically retrieve the graph Eubacterium coprostanoligenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumCoprostanoligenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumCoprostanoligenes graph.
+    """Return new instance of the Eubacterium coprostanoligenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriumCoprostanoligenes(
 
     Returns
     -----------------------
-    Instace of EubacteriumCoprostanoligenes graph.
+    Instace of Eubacterium coprostanoligenes graph.
 
 	References
 	---------------------

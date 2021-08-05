@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaMultisaccharivorax.
+This file offers the methods to automatically retrieve the graph Prevotella multisaccharivorax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaMultisaccharivorax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaMultisaccharivorax graph.
+    """Return new instance of the Prevotella multisaccharivorax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaMultisaccharivorax(
 
     Returns
     -----------------------
-    Instace of PrevotellaMultisaccharivorax graph.
+    Instace of Prevotella multisaccharivorax graph.
 
 	References
 	---------------------

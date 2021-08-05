@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichormusSpNmc1.
+This file offers the methods to automatically retrieve the graph Trichormus sp. NMC-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichormusSpNmc1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichormusSpNmc1 graph.
+    """Return new instance of the Trichormus sp. NMC-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichormusSpNmc1(
 
     Returns
     -----------------------
-    Instace of TrichormusSpNmc1 graph.
+    Instace of Trichormus sp. NMC-1 graph.
 
 	References
 	---------------------

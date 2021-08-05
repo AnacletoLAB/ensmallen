@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFalkowbacteriaBacteriumRifcsplowo202Full4521.
+This file offers the methods to automatically retrieve the graph Candidatus Falkowbacteria bacterium RIFCSPLOWO2_02_FULL_45_21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFalkowbacteriaBacteriumRifcsplowo202Full4521(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFalkowbacteriaBacteriumRifcsplowo202Full4521 graph.
+    """Return new instance of the Candidatus Falkowbacteria bacterium RIFCSPLOWO2_02_FULL_45_21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFalkowbacteriaBacteriumRifcsplowo202Full4521(
 
     Returns
     -----------------------
-    Instace of CandidatusFalkowbacteriaBacteriumRifcsplowo202Full4521 graph.
+    Instace of Candidatus Falkowbacteria bacterium RIFCSPLOWO2_02_FULL_45_21 graph.
 
 	References
 	---------------------

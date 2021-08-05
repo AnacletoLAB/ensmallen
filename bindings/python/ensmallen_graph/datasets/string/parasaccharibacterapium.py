@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasaccharibacterApium.
+This file offers the methods to automatically retrieve the graph Parasaccharibacter apium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParasaccharibacterApium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasaccharibacterApium graph.
+    """Return new instance of the Parasaccharibacter apium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParasaccharibacterApium(
 
     Returns
     -----------------------
-    Instace of ParasaccharibacterApium graph.
+    Instace of Parasaccharibacter apium graph.
 
 	References
 	---------------------

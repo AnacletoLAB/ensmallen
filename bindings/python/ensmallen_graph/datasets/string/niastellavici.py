@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NiastellaVici.
+This file offers the methods to automatically retrieve the graph Niastella vici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NiastellaVici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NiastellaVici graph.
+    """Return new instance of the Niastella vici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NiastellaVici(
 
     Returns
     -----------------------
-    Instace of NiastellaVici graph.
+    Instace of Niastella vici graph.
 
 	References
 	---------------------

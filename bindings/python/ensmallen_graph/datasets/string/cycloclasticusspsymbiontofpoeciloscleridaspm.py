@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CycloclasticusSpSymbiontOfPoeciloscleridaSpM.
+This file offers the methods to automatically retrieve the graph Cycloclasticus sp. symbiont of Poecilosclerida sp. M.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CycloclasticusSpSymbiontOfPoeciloscleridaSpM(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CycloclasticusSpSymbiontOfPoeciloscleridaSpM graph.
+    """Return new instance of the Cycloclasticus sp. symbiont of Poecilosclerida sp. M graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CycloclasticusSpSymbiontOfPoeciloscleridaSpM(
 
     Returns
     -----------------------
-    Instace of CycloclasticusSpSymbiontOfPoeciloscleridaSpM graph.
+    Instace of Cycloclasticus sp. symbiont of Poecilosclerida sp. M graph.
 
 	References
 	---------------------

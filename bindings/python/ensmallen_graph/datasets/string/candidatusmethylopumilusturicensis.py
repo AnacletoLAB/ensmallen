@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMethylopumilusTuricensis.
+This file offers the methods to automatically retrieve the graph Candidatus Methylopumilus turicensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMethylopumilusTuricensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMethylopumilusTuricensis graph.
+    """Return new instance of the Candidatus Methylopumilus turicensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMethylopumilusTuricensis(
 
     Returns
     -----------------------
-    Instace of CandidatusMethylopumilusTuricensis graph.
+    Instace of Candidatus Methylopumilus turicensis graph.
 
 	References
 	---------------------

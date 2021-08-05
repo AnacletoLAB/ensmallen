@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesLuteus.
+This file offers the methods to automatically retrieve the graph Nocardioides luteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesLuteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesLuteus graph.
+    """Return new instance of the Nocardioides luteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesLuteus(
 
     Returns
     -----------------------
-    Instace of NocardioidesLuteus graph.
+    Instace of Nocardioides luteus graph.
 
 	References
 	---------------------

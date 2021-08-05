@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KrasilnikoviellaFlava.
+This file offers the methods to automatically retrieve the graph Krasilnikoviella flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KrasilnikoviellaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KrasilnikoviellaFlava graph.
+    """Return new instance of the Krasilnikoviella flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KrasilnikoviellaFlava(
 
     Returns
     -----------------------
-    Instace of KrasilnikoviellaFlava graph.
+    Instace of Krasilnikoviella flava graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaOtitidiscaviarumIfm11049.
+This file offers the methods to automatically retrieve the graph Nocardia otitidiscaviarum IFM 11049.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaOtitidiscaviarumIfm11049(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaOtitidiscaviarumIfm11049 graph.
+    """Return new instance of the Nocardia otitidiscaviarum IFM 11049 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaOtitidiscaviarumIfm11049(
 
     Returns
     -----------------------
-    Instace of NocardiaOtitidiscaviarumIfm11049 graph.
+    Instace of Nocardia otitidiscaviarum IFM 11049 graph.
 
 	References
 	---------------------

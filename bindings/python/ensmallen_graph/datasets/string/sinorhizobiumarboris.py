@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumArboris.
+This file offers the methods to automatically retrieve the graph Sinorhizobium arboris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumArboris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumArboris graph.
+    """Return new instance of the Sinorhizobium arboris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SinorhizobiumArboris(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumArboris graph.
+    Instace of Sinorhizobium arboris graph.
 
 	References
 	---------------------

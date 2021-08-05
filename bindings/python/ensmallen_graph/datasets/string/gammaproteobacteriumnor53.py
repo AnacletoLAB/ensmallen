@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaProteobacteriumNor53.
+This file offers the methods to automatically retrieve the graph gamma proteobacterium NOR53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaProteobacteriumNor53(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaProteobacteriumNor53 graph.
+    """Return new instance of the gamma proteobacterium NOR53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaProteobacteriumNor53(
 
     Returns
     -----------------------
-    Instace of GammaProteobacteriumNor53 graph.
+    Instace of gamma proteobacterium NOR53 graph.
 
 	References
 	---------------------

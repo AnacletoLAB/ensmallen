@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaAlcalifaciensDsm30120.
+This file offers the methods to automatically retrieve the graph Providencia alcalifaciens DSM 30120.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaAlcalifaciensDsm30120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaAlcalifaciensDsm30120 graph.
+    """Return new instance of the Providencia alcalifaciens DSM 30120 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProvidenciaAlcalifaciensDsm30120(
 
     Returns
     -----------------------
-    Instace of ProvidenciaAlcalifaciensDsm30120 graph.
+    Instace of Providencia alcalifaciens DSM 30120 graph.
 
 	References
 	---------------------

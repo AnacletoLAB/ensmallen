@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSubsaxonicum.
+This file offers the methods to automatically retrieve the graph Flavobacterium subsaxonicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSubsaxonicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSubsaxonicum graph.
+    """Return new instance of the Flavobacterium subsaxonicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSubsaxonicum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSubsaxonicum graph.
+    Instace of Flavobacterium subsaxonicum graph.
 
 	References
 	---------------------

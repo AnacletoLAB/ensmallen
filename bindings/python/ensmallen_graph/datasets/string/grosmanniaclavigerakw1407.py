@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GrosmanniaClavigeraKw1407.
+This file offers the methods to automatically retrieve the graph Grosmannia clavigera kw1407.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GrosmanniaClavigeraKw1407(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GrosmanniaClavigeraKw1407 graph.
+    """Return new instance of the Grosmannia clavigera kw1407 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GrosmanniaClavigeraKw1407(
 
     Returns
     -----------------------
-    Instace of GrosmanniaClavigeraKw1407 graph.
+    Instace of Grosmannia clavigera kw1407 graph.
 
 	References
 	---------------------

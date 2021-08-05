@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpCag302.
+This file offers the methods to automatically retrieve the graph Clostridium sp. CAG:302.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpCag302(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpCag302 graph.
+    """Return new instance of the Clostridium sp. CAG:302 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpCag302(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpCag302 graph.
+    Instace of Clostridium sp. CAG:302 graph.
 
 	References
 	---------------------

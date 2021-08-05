@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoflavibacterZeaxanthDsm18436.
+This file offers the methods to automatically retrieve the graph Mesoflavibacter zeaxanth. DSM18436.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoflavibacterZeaxanthDsm18436(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoflavibacterZeaxanthDsm18436 graph.
+    """Return new instance of the Mesoflavibacter zeaxanth. DSM18436 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesoflavibacterZeaxanthDsm18436(
 
     Returns
     -----------------------
-    Instace of MesoflavibacterZeaxanthDsm18436 graph.
+    Instace of Mesoflavibacter zeaxanth. DSM18436 graph.
 
 	References
 	---------------------

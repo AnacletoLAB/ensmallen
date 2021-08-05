@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospinaSpAb629b18.
+This file offers the methods to automatically retrieve the graph Nitrospina sp. AB629B18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospinaSpAb629b18(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospinaSpAb629b18 graph.
+    """Return new instance of the Nitrospina sp. AB629B18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrospinaSpAb629b18(
 
     Returns
     -----------------------
-    Instace of NitrospinaSpAb629b18 graph.
+    Instace of Nitrospina sp. AB629B18 graph.
 
 	References
 	---------------------

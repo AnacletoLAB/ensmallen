@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaricaPapaya.
+This file offers the methods to automatically retrieve the graph Carica papaya.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaricaPapaya(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaricaPapaya graph.
+    """Return new instance of the Carica papaya graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaricaPapaya(
 
     Returns
     -----------------------
-    Instace of CaricaPapaya graph.
+    Instace of Carica papaya graph.
 
 	References
 	---------------------

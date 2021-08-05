@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAmbofaciens.
+This file offers the methods to automatically retrieve the graph Streptomyces ambofaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAmbofaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAmbofaciens graph.
+    """Return new instance of the Streptomyces ambofaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesAmbofaciens(
 
     Returns
     -----------------------
-    Instace of StreptomycesAmbofaciens graph.
+    Instace of Streptomyces ambofaciens graph.
 
 	References
 	---------------------

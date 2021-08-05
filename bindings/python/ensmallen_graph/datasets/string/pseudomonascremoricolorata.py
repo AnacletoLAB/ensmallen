@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCremoricolorata.
+This file offers the methods to automatically retrieve the graph Pseudomonas cremoricolorata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCremoricolorata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCremoricolorata graph.
+    """Return new instance of the Pseudomonas cremoricolorata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasCremoricolorata(
 
     Returns
     -----------------------
-    Instace of PseudomonasCremoricolorata graph.
+    Instace of Pseudomonas cremoricolorata graph.
 
 	References
 	---------------------

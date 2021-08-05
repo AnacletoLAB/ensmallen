@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotodesmusBlepharus.
+This file offers the methods to automatically retrieve the graph Photodesmus blepharus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotodesmusBlepharus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotodesmusBlepharus graph.
+    """Return new instance of the Photodesmus blepharus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotodesmusBlepharus(
 
     Returns
     -----------------------
-    Instace of PhotodesmusBlepharus graph.
+    Instace of Photodesmus blepharus graph.
 
 	References
 	---------------------

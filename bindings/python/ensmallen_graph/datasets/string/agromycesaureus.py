@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgromycesAureus.
+This file offers the methods to automatically retrieve the graph Agromyces aureus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgromycesAureus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgromycesAureus graph.
+    """Return new instance of the Agromyces aureus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgromycesAureus(
 
     Returns
     -----------------------
-    Instace of AgromycesAureus graph.
+    Instace of Agromyces aureus graph.
 
 	References
 	---------------------

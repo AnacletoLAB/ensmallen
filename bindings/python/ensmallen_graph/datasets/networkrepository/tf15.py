@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf15.
+This file offers the methods to automatically retrieve the graph TF15.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf15(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf15 graph.
+    """Return new instance of the TF15 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf15(
 
     Returns
     -----------------------
-    Instace of Tf15 graph.
+    Instace of TF15 graph.
 
 	References
 	---------------------

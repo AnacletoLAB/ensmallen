@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumGlycines.
+This file offers the methods to automatically retrieve the graph Flavobacterium glycines.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumGlycines(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumGlycines graph.
+    """Return new instance of the Flavobacterium glycines graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumGlycines(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumGlycines graph.
+    Instace of Flavobacterium glycines graph.
 
 	References
 	---------------------

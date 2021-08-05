@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaceaeBacteriumDnf00626.
+This file offers the methods to automatically retrieve the graph Veillonellaceae bacterium DNF00626.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaceaeBacteriumDnf00626(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaceaeBacteriumDnf00626 graph.
+    """Return new instance of the Veillonellaceae bacterium DNF00626 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaceaeBacteriumDnf00626(
 
     Returns
     -----------------------
-    Instace of VeillonellaceaeBacteriumDnf00626 graph.
+    Instace of Veillonellaceae bacterium DNF00626 graph.
 
 	References
 	---------------------

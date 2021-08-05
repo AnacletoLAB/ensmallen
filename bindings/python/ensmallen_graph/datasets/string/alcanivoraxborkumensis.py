@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlcanivoraxBorkumensis.
+This file offers the methods to automatically retrieve the graph Alcanivorax borkumensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlcanivoraxBorkumensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlcanivoraxBorkumensis graph.
+    """Return new instance of the Alcanivorax borkumensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlcanivoraxBorkumensis(
 
     Returns
     -----------------------
-    Instace of AlcanivoraxBorkumensis graph.
+    Instace of Alcanivorax borkumensis graph.
 
 	References
 	---------------------

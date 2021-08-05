@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpAsf502.
+This file offers the methods to automatically retrieve the graph Clostridium sp. ASF502.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpAsf502(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpAsf502 graph.
+    """Return new instance of the Clostridium sp. ASF502 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpAsf502(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpAsf502 graph.
+    Instace of Clostridium sp. ASF502 graph.
 
 	References
 	---------------------

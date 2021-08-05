@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StappiaIndica.
+This file offers the methods to automatically retrieve the graph Stappia indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StappiaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StappiaIndica graph.
+    """Return new instance of the Stappia indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StappiaIndica(
 
     Returns
     -----------------------
-    Instace of StappiaIndica graph.
+    Instace of Stappia indica graph.
 
 	References
 	---------------------

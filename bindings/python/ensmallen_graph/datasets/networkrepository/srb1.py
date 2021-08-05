@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Srb1.
+This file offers the methods to automatically retrieve the graph srb1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Srb1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Srb1 graph.
+    """Return new instance of the srb1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Srb1(
 
     Returns
     -----------------------
-    Instace of Srb1 graph.
+    Instace of srb1 graph.
 
 	References
 	---------------------

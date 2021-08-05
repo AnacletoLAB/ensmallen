@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cnr2000.
+This file offers the methods to automatically retrieve the graph cnr-2000.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cnr2000(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cnr2000 graph.
+    """Return new instance of the cnr-2000 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cnr2000(
 
     Returns
     -----------------------
-    Instace of Cnr2000 graph.
+    Instace of cnr-2000 graph.
 
 	References
 	---------------------

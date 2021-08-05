@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesTsukubensis.
+This file offers the methods to automatically retrieve the graph Streptomyces tsukubensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesTsukubensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesTsukubensis graph.
+    """Return new instance of the Streptomyces tsukubensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesTsukubensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesTsukubensis graph.
+    Instace of Streptomyces tsukubensis graph.
 
 	References
 	---------------------

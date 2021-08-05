@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpRoot1279.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. Root1279.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpRoot1279(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpRoot1279 graph.
+    """Return new instance of the Brevundimonas sp. Root1279 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpRoot1279(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpRoot1279 graph.
+    Instace of Brevundimonas sp. Root1279 graph.
 
 	References
 	---------------------

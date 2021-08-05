@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHayakitensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus hayakitensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHayakitensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHayakitensis graph.
+    """Return new instance of the Lactobacillus hayakitensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusHayakitensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusHayakitensis graph.
+    Instace of Lactobacillus hayakitensis graph.
 
 	References
 	---------------------

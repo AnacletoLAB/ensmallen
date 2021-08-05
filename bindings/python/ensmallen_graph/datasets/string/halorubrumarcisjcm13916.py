@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumArcisJcm13916.
+This file offers the methods to automatically retrieve the graph Halorubrum arcis JCM 13916.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumArcisJcm13916(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumArcisJcm13916 graph.
+    """Return new instance of the Halorubrum arcis JCM 13916 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumArcisJcm13916(
 
     Returns
     -----------------------
-    Instace of HalorubrumArcisJcm13916 graph.
+    Instace of Halorubrum arcis JCM 13916 graph.
 
 	References
 	---------------------

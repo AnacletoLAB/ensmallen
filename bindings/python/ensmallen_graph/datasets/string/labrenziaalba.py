@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaAlba.
+This file offers the methods to automatically retrieve the graph Labrenzia alba.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaAlba(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaAlba graph.
+    """Return new instance of the Labrenzia alba graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrenziaAlba(
 
     Returns
     -----------------------
-    Instace of LabrenziaAlba graph.
+    Instace of Labrenzia alba graph.
 
 	References
 	---------------------

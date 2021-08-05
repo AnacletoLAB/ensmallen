@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnoanaerobaculumSaburreumF0468.
+This file offers the methods to automatically retrieve the graph Lachnoanaerobaculum saburreum F0468.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnoanaerobaculumSaburreumF0468(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnoanaerobaculumSaburreumF0468 graph.
+    """Return new instance of the Lachnoanaerobaculum saburreum F0468 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnoanaerobaculumSaburreumF0468(
 
     Returns
     -----------------------
-    Instace of LachnoanaerobaculumSaburreumF0468 graph.
+    Instace of Lachnoanaerobaculum saburreum F0468 graph.
 
 	References
 	---------------------

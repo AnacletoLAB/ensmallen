@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpMt2.
+This file offers the methods to automatically retrieve the graph Bacillus sp. MT2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpMt2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpMt2 graph.
+    """Return new instance of the Bacillus sp. MT2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpMt2(
 
     Returns
     -----------------------
-    Instace of BacillusSpMt2 graph.
+    Instace of Bacillus sp. MT2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumSulci.
+This file offers the methods to automatically retrieve the graph Eubacterium sulci.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumSulci(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumSulci graph.
+    """Return new instance of the Eubacterium sulci graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumSulci(
 
     Returns
     -----------------------
-    Instace of EubacteriumSulci graph.
+    Instace of Eubacterium sulci graph.
 
 	References
 	---------------------

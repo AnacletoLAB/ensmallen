@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShigellaDysenteriaeSd197.
+This file offers the methods to automatically retrieve the graph Shigella dysenteriae Sd197.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShigellaDysenteriaeSd197(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShigellaDysenteriaeSd197 graph.
+    """Return new instance of the Shigella dysenteriae Sd197 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShigellaDysenteriaeSd197(
 
     Returns
     -----------------------
-    Instace of ShigellaDysenteriaeSd197 graph.
+    Instace of Shigella dysenteriae Sd197 graph.
 
 	References
 	---------------------

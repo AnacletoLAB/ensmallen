@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisJaponica.
+This file offers the methods to automatically retrieve the graph Amycolatopsis japonica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisJaponica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisJaponica graph.
+    """Return new instance of the Amycolatopsis japonica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisJaponica(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisJaponica graph.
+    Instace of Amycolatopsis japonica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetschnikowiaAffPulcherrima.
+This file offers the methods to automatically retrieve the graph Metschnikowia aff. pulcherrima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetschnikowiaAffPulcherrima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetschnikowiaAffPulcherrima graph.
+    """Return new instance of the Metschnikowia aff. pulcherrima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetschnikowiaAffPulcherrima(
 
     Returns
     -----------------------
-    Instace of MetschnikowiaAffPulcherrima graph.
+    Instace of Metschnikowia aff. pulcherrima graph.
 
 	References
 	---------------------

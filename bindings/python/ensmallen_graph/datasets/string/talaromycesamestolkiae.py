@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TalaromycesAmestolkiae.
+This file offers the methods to automatically retrieve the graph Talaromyces amestolkiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TalaromycesAmestolkiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TalaromycesAmestolkiae graph.
+    """Return new instance of the Talaromyces amestolkiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TalaromycesAmestolkiae(
 
     Returns
     -----------------------
-    Instace of TalaromycesAmestolkiae graph.
+    Instace of Talaromyces amestolkiae graph.
 
 	References
 	---------------------

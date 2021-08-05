@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpibacteriumUlvae.
+This file offers the methods to automatically retrieve the graph Epibacterium ulvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpibacteriumUlvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpibacteriumUlvae graph.
+    """Return new instance of the Epibacterium ulvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpibacteriumUlvae(
 
     Returns
     -----------------------
-    Instace of EpibacteriumUlvae graph.
+    Instace of Epibacterium ulvae graph.
 
 	References
 	---------------------

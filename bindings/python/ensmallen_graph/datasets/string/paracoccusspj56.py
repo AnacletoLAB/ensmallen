@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSpJ56.
+This file offers the methods to automatically retrieve the graph Paracoccus sp. J56.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSpJ56(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSpJ56 graph.
+    """Return new instance of the Paracoccus sp. J56 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusSpJ56(
 
     Returns
     -----------------------
-    Instace of ParacoccusSpJ56 graph.
+    Instace of Paracoccus sp. J56 graph.
 
 	References
 	---------------------

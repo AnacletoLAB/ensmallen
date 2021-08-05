@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSp6146afaa.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. 6146AFAA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSp6146afaa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSp6146afaa graph.
+    """Return new instance of the Desulfovibrio sp. 6146AFAA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSp6146afaa(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSp6146afaa graph.
+    Instace of Desulfovibrio sp. 6146AFAA graph.
 
 	References
 	---------------------

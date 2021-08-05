@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSp8g7Msg3316.
+This file offers the methods to automatically retrieve the graph Enterococcus sp. 8G7_MSG3316.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusSp8g7Msg3316(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSp8g7Msg3316 graph.
+    """Return new instance of the Enterococcus sp. 8G7_MSG3316 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusSp8g7Msg3316(
 
     Returns
     -----------------------
-    Instace of EnterococcusSp8g7Msg3316 graph.
+    Instace of Enterococcus sp. 8G7_MSG3316 graph.
 
 	References
 	---------------------

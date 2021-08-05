@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FenollariaTimonensis.
+This file offers the methods to automatically retrieve the graph Fenollaria timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FenollariaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FenollariaTimonensis graph.
+    """Return new instance of the Fenollaria timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FenollariaTimonensis(
 
     Returns
     -----------------------
-    Instace of FenollariaTimonensis graph.
+    Instace of Fenollaria timonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HebelomaCylindrosporumH7.
+This file offers the methods to automatically retrieve the graph Hebeloma cylindrosporum h7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HebelomaCylindrosporumH7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HebelomaCylindrosporumH7 graph.
+    """Return new instance of the Hebeloma cylindrosporum h7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HebelomaCylindrosporumH7(
 
     Returns
     -----------------------
-    Instace of HebelomaCylindrosporumH7 graph.
+    Instace of Hebeloma cylindrosporum h7 graph.
 
 	References
 	---------------------

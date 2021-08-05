@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PisolithusMicrocarpus441.
+This file offers the methods to automatically retrieve the graph Pisolithus microcarpus 441.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PisolithusMicrocarpus441(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PisolithusMicrocarpus441 graph.
+    """Return new instance of the Pisolithus microcarpus 441 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PisolithusMicrocarpus441(
 
     Returns
     -----------------------
-    Instace of PisolithusMicrocarpus441 graph.
+    Instace of Pisolithus microcarpus 441 graph.
 
 	References
 	---------------------

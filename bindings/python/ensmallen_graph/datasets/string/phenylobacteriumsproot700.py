@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumSpRoot700.
+This file offers the methods to automatically retrieve the graph Phenylobacterium sp. Root700.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumSpRoot700(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumSpRoot700 graph.
+    """Return new instance of the Phenylobacterium sp. Root700 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhenylobacteriumSpRoot700(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumSpRoot700 graph.
+    Instace of Phenylobacterium sp. Root700 graph.
 
 	References
 	---------------------

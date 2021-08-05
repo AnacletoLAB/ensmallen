@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerotignumNeopropionicum.
+This file offers the methods to automatically retrieve the graph Anaerotignum neopropionicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerotignumNeopropionicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerotignumNeopropionicum graph.
+    """Return new instance of the Anaerotignum neopropionicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerotignumNeopropionicum(
 
     Returns
     -----------------------
-    Instace of AnaerotignumNeopropionicum graph.
+    Instace of Anaerotignum neopropionicum graph.
 
 	References
 	---------------------

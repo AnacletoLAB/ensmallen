@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureobasidiumSubglacialeExf2481.
+This file offers the methods to automatically retrieve the graph Aureobasidium subglaciale EXF-2481.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureobasidiumSubglacialeExf2481(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureobasidiumSubglacialeExf2481 graph.
+    """Return new instance of the Aureobasidium subglaciale EXF-2481 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureobasidiumSubglacialeExf2481(
 
     Returns
     -----------------------
-    Instace of AureobasidiumSubglacialeExf2481 graph.
+    Instace of Aureobasidium subglaciale EXF-2481 graph.
 
 	References
 	---------------------

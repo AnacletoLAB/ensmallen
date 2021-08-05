@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KitasatosporaSpRoot187.
+This file offers the methods to automatically retrieve the graph Kitasatospora sp. Root187.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KitasatosporaSpRoot187(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KitasatosporaSpRoot187 graph.
+    """Return new instance of the Kitasatospora sp. Root187 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KitasatosporaSpRoot187(
 
     Returns
     -----------------------
-    Instace of KitasatosporaSpRoot187 graph.
+    Instace of Kitasatospora sp. Root187 graph.
 
 	References
 	---------------------

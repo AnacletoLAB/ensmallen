@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaTrevisanii.
+This file offers the methods to automatically retrieve the graph Leptotrichia trevisanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaTrevisanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaTrevisanii graph.
+    """Return new instance of the Leptotrichia trevisanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaTrevisanii(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaTrevisanii graph.
+    Instace of Leptotrichia trevisanii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusGriffiniae.
+This file offers the methods to automatically retrieve the graph Xenorhabdus griffiniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusGriffiniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusGriffiniae graph.
+    """Return new instance of the Xenorhabdus griffiniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusGriffiniae(
 
     Returns
     -----------------------
-    Instace of XenorhabdusGriffiniae graph.
+    Instace of Xenorhabdus griffiniae graph.
 
 	References
 	---------------------

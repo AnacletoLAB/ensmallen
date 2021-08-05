@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TessaracoccusFlavus.
+This file offers the methods to automatically retrieve the graph Tessaracoccus flavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TessaracoccusFlavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TessaracoccusFlavus graph.
+    """Return new instance of the Tessaracoccus flavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TessaracoccusFlavus(
 
     Returns
     -----------------------
-    Instace of TessaracoccusFlavus graph.
+    Instace of Tessaracoccus flavus graph.
 
 	References
 	---------------------

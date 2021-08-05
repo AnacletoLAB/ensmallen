@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MangrovibacterPhragmitis.
+This file offers the methods to automatically retrieve the graph Mangrovibacter phragmitis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MangrovibacterPhragmitis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MangrovibacterPhragmitis graph.
+    """Return new instance of the Mangrovibacter phragmitis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MangrovibacterPhragmitis(
 
     Returns
     -----------------------
-    Instace of MangrovibacterPhragmitis graph.
+    Instace of Mangrovibacter phragmitis graph.
 
 	References
 	---------------------

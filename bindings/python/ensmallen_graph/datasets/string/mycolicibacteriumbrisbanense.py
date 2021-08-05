@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumBrisbanense.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium brisbanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumBrisbanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumBrisbanense graph.
+    """Return new instance of the Mycolicibacterium brisbanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumBrisbanense(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumBrisbanense graph.
+    Instace of Mycolicibacterium brisbanense graph.
 
 	References
 	---------------------

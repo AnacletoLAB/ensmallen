@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryomorphaceaeBacteriumBacl21Mag121220Bin10.
+This file offers the methods to automatically retrieve the graph Cryomorphaceae bacterium BACL21 MAG-121220-bin10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryomorphaceaeBacteriumBacl21Mag121220Bin10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryomorphaceaeBacteriumBacl21Mag121220Bin10 graph.
+    """Return new instance of the Cryomorphaceae bacterium BACL21 MAG-121220-bin10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryomorphaceaeBacteriumBacl21Mag121220Bin10(
 
     Returns
     -----------------------
-    Instace of CryomorphaceaeBacteriumBacl21Mag121220Bin10 graph.
+    Instace of Cryomorphaceae bacterium BACL21 MAG-121220-bin10 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PythiumUltimum.
+This file offers the methods to automatically retrieve the graph Pythium ultimum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PythiumUltimum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PythiumUltimum graph.
+    """Return new instance of the Pythium ultimum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PythiumUltimum(
 
     Returns
     -----------------------
-    Instace of PythiumUltimum graph.
+    Instace of Pythium ultimum graph.
 
 	References
 	---------------------

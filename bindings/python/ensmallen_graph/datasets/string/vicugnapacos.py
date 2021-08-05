@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VicugnaPacos.
+This file offers the methods to automatically retrieve the graph Vicugna pacos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VicugnaPacos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VicugnaPacos graph.
+    """Return new instance of the Vicugna pacos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VicugnaPacos(
 
     Returns
     -----------------------
-    Instace of VicugnaPacos graph.
+    Instace of Vicugna pacos graph.
 
 	References
 	---------------------

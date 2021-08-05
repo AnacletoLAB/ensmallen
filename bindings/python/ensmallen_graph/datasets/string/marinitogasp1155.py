@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinitogaSp1155.
+This file offers the methods to automatically retrieve the graph Marinitoga sp. 1155.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinitogaSp1155(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinitogaSp1155 graph.
+    """Return new instance of the Marinitoga sp. 1155 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinitogaSp1155(
 
     Returns
     -----------------------
-    Instace of MarinitogaSp1155 graph.
+    Instace of Marinitoga sp. 1155 graph.
 
 	References
 	---------------------

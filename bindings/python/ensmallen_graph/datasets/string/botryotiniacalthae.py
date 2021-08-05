@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BotryotiniaCalthae.
+This file offers the methods to automatically retrieve the graph Botryotinia calthae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BotryotiniaCalthae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BotryotiniaCalthae graph.
+    """Return new instance of the Botryotinia calthae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BotryotiniaCalthae(
 
     Returns
     -----------------------
-    Instace of BotryotiniaCalthae graph.
+    Instace of Botryotinia calthae graph.
 
 	References
 	---------------------

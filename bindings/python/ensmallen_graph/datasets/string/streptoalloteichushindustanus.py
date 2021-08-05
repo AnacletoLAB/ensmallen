@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptoalloteichusHindustanus.
+This file offers the methods to automatically retrieve the graph Streptoalloteichus hindustanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptoalloteichusHindustanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptoalloteichusHindustanus graph.
+    """Return new instance of the Streptoalloteichus hindustanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptoalloteichusHindustanus(
 
     Returns
     -----------------------
-    Instace of StreptoalloteichusHindustanus graph.
+    Instace of Streptoalloteichus hindustanus graph.
 
 	References
 	---------------------

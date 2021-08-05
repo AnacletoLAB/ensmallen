@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumXueshanense.
+This file offers the methods to automatically retrieve the graph Flavobacterium xueshanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumXueshanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumXueshanense graph.
+    """Return new instance of the Flavobacterium xueshanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumXueshanense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumXueshanense graph.
+    Instace of Flavobacterium xueshanense graph.
 
 	References
 	---------------------

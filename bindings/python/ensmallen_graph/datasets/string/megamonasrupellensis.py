@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegamonasRupellensis.
+This file offers the methods to automatically retrieve the graph Megamonas rupellensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegamonasRupellensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegamonasRupellensis graph.
+    """Return new instance of the Megamonas rupellensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegamonasRupellensis(
 
     Returns
     -----------------------
-    Instace of MegamonasRupellensis graph.
+    Instace of Megamonas rupellensis graph.
 
 	References
 	---------------------

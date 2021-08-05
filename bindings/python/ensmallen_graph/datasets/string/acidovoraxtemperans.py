@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidovoraxTemperans.
+This file offers the methods to automatically retrieve the graph Acidovorax temperans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidovoraxTemperans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidovoraxTemperans graph.
+    """Return new instance of the Acidovorax temperans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidovoraxTemperans(
 
     Returns
     -----------------------
-    Instace of AcidovoraxTemperans graph.
+    Instace of Acidovorax temperans graph.
 
 	References
 	---------------------

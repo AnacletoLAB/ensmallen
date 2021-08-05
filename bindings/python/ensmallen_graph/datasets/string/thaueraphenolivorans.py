@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThaueraPhenolivorans.
+This file offers the methods to automatically retrieve the graph Thauera phenolivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThaueraPhenolivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThaueraPhenolivorans graph.
+    """Return new instance of the Thauera phenolivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThaueraPhenolivorans(
 
     Returns
     -----------------------
-    Instace of ThaueraPhenolivorans graph.
+    Instace of Thauera phenolivorans graph.
 
 	References
 	---------------------

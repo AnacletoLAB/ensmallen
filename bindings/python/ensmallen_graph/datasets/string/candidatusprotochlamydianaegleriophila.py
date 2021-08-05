@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusProtochlamydiaNaegleriophila.
+This file offers the methods to automatically retrieve the graph Candidatus Protochlamydia naegleriophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusProtochlamydiaNaegleriophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusProtochlamydiaNaegleriophila graph.
+    """Return new instance of the Candidatus Protochlamydia naegleriophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusProtochlamydiaNaegleriophila(
 
     Returns
     -----------------------
-    Instace of CandidatusProtochlamydiaNaegleriophila graph.
+    Instace of Candidatus Protochlamydia naegleriophila graph.
 
 	References
 	---------------------

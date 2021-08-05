@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SteroidobacterDenitrificans.
+This file offers the methods to automatically retrieve the graph Steroidobacter denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SteroidobacterDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SteroidobacterDenitrificans graph.
+    """Return new instance of the Steroidobacter denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SteroidobacterDenitrificans(
 
     Returns
     -----------------------
-    Instace of SteroidobacterDenitrificans graph.
+    Instace of Steroidobacter denitrificans graph.
 
 	References
 	---------------------

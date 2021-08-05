@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaSpDd3.
+This file offers the methods to automatically retrieve the graph Serratia sp. DD3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaSpDd3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaSpDd3 graph.
+    """Return new instance of the Serratia sp. DD3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaSpDd3(
 
     Returns
     -----------------------
-    Instace of SerratiaSpDd3 graph.
+    Instace of Serratia sp. DD3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzoarcusSpCib.
+This file offers the methods to automatically retrieve the graph Azoarcus sp. CIB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzoarcusSpCib(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzoarcusSpCib graph.
+    """Return new instance of the Azoarcus sp. CIB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzoarcusSpCib(
 
     Returns
     -----------------------
-    Instace of AzoarcusSpCib graph.
+    Instace of Azoarcus sp. CIB graph.
 
 	References
 	---------------------

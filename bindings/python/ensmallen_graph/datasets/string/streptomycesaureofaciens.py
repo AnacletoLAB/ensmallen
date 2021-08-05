@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAureofaciens.
+This file offers the methods to automatically retrieve the graph Streptomyces aureofaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAureofaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAureofaciens graph.
+    """Return new instance of the Streptomyces aureofaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesAureofaciens(
 
     Returns
     -----------------------
-    Instace of StreptomycesAureofaciens graph.
+    Instace of Streptomyces aureofaciens graph.
 
 	References
 	---------------------

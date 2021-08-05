@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPlurextorum.
+This file offers the methods to automatically retrieve the graph Streptococcus plurextorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPlurextorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPlurextorum graph.
+    """Return new instance of the Streptococcus plurextorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPlurextorum(
 
     Returns
     -----------------------
-    Instace of StreptococcusPlurextorum graph.
+    Instace of Streptococcus plurextorum graph.
 
 	References
 	---------------------

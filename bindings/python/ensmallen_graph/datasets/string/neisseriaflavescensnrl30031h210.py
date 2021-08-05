@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaFlavescensNrl30031h210.
+This file offers the methods to automatically retrieve the graph Neisseria flavescens NRL30031H210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaFlavescensNrl30031h210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaFlavescensNrl30031h210 graph.
+    """Return new instance of the Neisseria flavescens NRL30031H210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaFlavescensNrl30031h210(
 
     Returns
     -----------------------
-    Instace of NeisseriaFlavescensNrl30031h210 graph.
+    Instace of Neisseria flavescens NRL30031H210 graph.
 
 	References
 	---------------------

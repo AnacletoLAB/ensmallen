@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CavenderiaFasciculataSh3.
+This file offers the methods to automatically retrieve the graph Cavenderia fasciculata SH3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CavenderiaFasciculataSh3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CavenderiaFasciculataSh3 graph.
+    """Return new instance of the Cavenderia fasciculata SH3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CavenderiaFasciculataSh3(
 
     Returns
     -----------------------
-    Instace of CavenderiaFasciculataSh3 graph.
+    Instace of Cavenderia fasciculata SH3 graph.
 
 	References
 	---------------------

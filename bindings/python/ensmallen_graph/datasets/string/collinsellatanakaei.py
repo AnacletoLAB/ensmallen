@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaTanakaei.
+This file offers the methods to automatically retrieve the graph Collinsella tanakaei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaTanakaei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaTanakaei graph.
+    """Return new instance of the Collinsella tanakaei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CollinsellaTanakaei(
 
     Returns
     -----------------------
-    Instace of CollinsellaTanakaei graph.
+    Instace of Collinsella tanakaei graph.
 
 	References
 	---------------------

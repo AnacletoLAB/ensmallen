@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollimonasFungivorans.
+This file offers the methods to automatically retrieve the graph Collimonas fungivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollimonasFungivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollimonasFungivorans graph.
+    """Return new instance of the Collimonas fungivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CollimonasFungivorans(
 
     Returns
     -----------------------
-    Instace of CollimonasFungivorans graph.
+    Instace of Collimonas fungivorans graph.
 
 	References
 	---------------------

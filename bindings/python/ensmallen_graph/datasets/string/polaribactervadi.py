@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterVadi.
+This file offers the methods to automatically retrieve the graph Polaribacter vadi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterVadi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterVadi graph.
+    """Return new instance of the Polaribacter vadi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterVadi(
 
     Returns
     -----------------------
-    Instace of PolaribacterVadi graph.
+    Instace of Polaribacter vadi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumTerpenotabidum.
+This file offers the methods to automatically retrieve the graph Corynebacterium terpenotabidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumTerpenotabidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumTerpenotabidum graph.
+    """Return new instance of the Corynebacterium terpenotabidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumTerpenotabidum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumTerpenotabidum graph.
+    Instace of Corynebacterium terpenotabidum graph.
 
 	References
 	---------------------

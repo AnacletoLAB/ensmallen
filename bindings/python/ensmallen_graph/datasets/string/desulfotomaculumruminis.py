@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumRuminis.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum ruminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumRuminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumRuminis graph.
+    """Return new instance of the Desulfotomaculum ruminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumRuminis(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumRuminis graph.
+    Instace of Desulfotomaculum ruminis graph.
 
 	References
 	---------------------

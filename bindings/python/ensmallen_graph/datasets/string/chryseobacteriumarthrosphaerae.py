@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumArthrosphaerae.
+This file offers the methods to automatically retrieve the graph Chryseobacterium arthrosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumArthrosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumArthrosphaerae graph.
+    """Return new instance of the Chryseobacterium arthrosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumArthrosphaerae(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumArthrosphaerae graph.
+    Instace of Chryseobacterium arthrosphaerae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaMiyamotoi.
+This file offers the methods to automatically retrieve the graph Borrelia miyamotoi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaMiyamotoi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaMiyamotoi graph.
+    """Return new instance of the Borrelia miyamotoi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaMiyamotoi(
 
     Returns
     -----------------------
-    Instace of BorreliaMiyamotoi graph.
+    Instace of Borrelia miyamotoi graph.
 
 	References
 	---------------------

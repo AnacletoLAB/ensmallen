@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMethanoperedensNitroreducens.
+This file offers the methods to automatically retrieve the graph Candidatus Methanoperedens nitroreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMethanoperedensNitroreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMethanoperedensNitroreducens graph.
+    """Return new instance of the Candidatus Methanoperedens nitroreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMethanoperedensNitroreducens(
 
     Returns
     -----------------------
-    Instace of CandidatusMethanoperedensNitroreducens graph.
+    Instace of Candidatus Methanoperedens nitroreducens graph.
 
 	References
 	---------------------

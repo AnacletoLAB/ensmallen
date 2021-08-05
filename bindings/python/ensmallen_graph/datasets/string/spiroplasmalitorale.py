@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaLitorale.
+This file offers the methods to automatically retrieve the graph Spiroplasma litorale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaLitorale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaLitorale graph.
+    """Return new instance of the Spiroplasma litorale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaLitorale(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaLitorale graph.
+    Instace of Spiroplasma litorale graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumVaccae.
+This file offers the methods to automatically retrieve the graph Mycobacterium vaccae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumVaccae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumVaccae graph.
+    """Return new instance of the Mycobacterium vaccae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumVaccae(
 
     Returns
     -----------------------
-    Instace of MycobacteriumVaccae graph.
+    Instace of Mycobacterium vaccae graph.
 
 	References
 	---------------------

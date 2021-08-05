@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermaerobacterMarianensis.
+This file offers the methods to automatically retrieve the graph Thermaerobacter marianensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermaerobacterMarianensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermaerobacterMarianensis graph.
+    """Return new instance of the Thermaerobacter marianensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermaerobacterMarianensis(
 
     Returns
     -----------------------
-    Instace of ThermaerobacterMarianensis graph.
+    Instace of Thermaerobacter marianensis graph.
 
 	References
 	---------------------

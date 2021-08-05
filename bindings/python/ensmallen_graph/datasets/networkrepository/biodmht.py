@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioDmHt.
+This file offers the methods to automatically retrieve the graph bio-DM-HT.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioDmHt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioDmHt graph.
+    """Return new instance of the bio-DM-HT graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioDmHt(
 
     Returns
     -----------------------
-    Instace of BioDmHt graph.
+    Instace of bio-DM-HT graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSp37ma.
+This file offers the methods to automatically retrieve the graph Bacillus sp. 37MA.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSp37ma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSp37ma graph.
+    """Return new instance of the Bacillus sp. 37MA graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSp37ma(
 
     Returns
     -----------------------
-    Instace of BacillusSp37ma graph.
+    Instace of Bacillus sp. 37MA graph.
 
 	References
 	---------------------

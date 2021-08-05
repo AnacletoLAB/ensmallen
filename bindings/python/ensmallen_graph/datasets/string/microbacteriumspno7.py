@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpNo7.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. No. 7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpNo7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpNo7 graph.
+    """Return new instance of the Microbacterium sp. No. 7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpNo7(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpNo7 graph.
+    Instace of Microbacterium sp. No. 7 graph.
 
 	References
 	---------------------

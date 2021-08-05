@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPentosus.
+This file offers the methods to automatically retrieve the graph Lactobacillus pentosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPentosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPentosus graph.
+    """Return new instance of the Lactobacillus pentosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusPentosus(
 
     Returns
     -----------------------
-    Instace of LactobacillusPentosus graph.
+    Instace of Lactobacillus pentosus graph.
 
 	References
 	---------------------

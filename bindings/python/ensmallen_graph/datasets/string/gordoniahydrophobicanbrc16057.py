@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaHydrophobicaNbrc16057.
+This file offers the methods to automatically retrieve the graph Gordonia hydrophobica NBRC 16057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaHydrophobicaNbrc16057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaHydrophobicaNbrc16057 graph.
+    """Return new instance of the Gordonia hydrophobica NBRC 16057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaHydrophobicaNbrc16057(
 
     Returns
     -----------------------
-    Instace of GordoniaHydrophobicaNbrc16057 graph.
+    Instace of Gordonia hydrophobica NBRC 16057 graph.
 
 	References
 	---------------------

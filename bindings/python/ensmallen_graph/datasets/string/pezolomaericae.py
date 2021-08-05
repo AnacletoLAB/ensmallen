@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PezolomaEricae.
+This file offers the methods to automatically retrieve the graph Pezoloma ericae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PezolomaEricae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PezolomaEricae graph.
+    """Return new instance of the Pezoloma ericae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PezolomaEricae(
 
     Returns
     -----------------------
-    Instace of PezolomaEricae graph.
+    Instace of Pezoloma ericae graph.
 
 	References
 	---------------------

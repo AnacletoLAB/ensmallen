@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisZeicola.
+This file offers the methods to automatically retrieve the graph Bipolaris zeicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisZeicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisZeicola graph.
+    """Return new instance of the Bipolaris zeicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BipolarisZeicola(
 
     Returns
     -----------------------
-    Instace of BipolarisZeicola graph.
+    Instace of Bipolaris zeicola graph.
 
 	References
 	---------------------

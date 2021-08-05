@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyunsoonleellaJejuensis.
+This file offers the methods to automatically retrieve the graph Hyunsoonleella jejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyunsoonleellaJejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyunsoonleellaJejuensis graph.
+    """Return new instance of the Hyunsoonleella jejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyunsoonleellaJejuensis(
 
     Returns
     -----------------------
-    Instace of HyunsoonleellaJejuensis graph.
+    Instace of Hyunsoonleella jejuensis graph.
 
 	References
 	---------------------

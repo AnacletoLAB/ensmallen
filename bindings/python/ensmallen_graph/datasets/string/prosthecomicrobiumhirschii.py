@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProsthecomicrobiumHirschii.
+This file offers the methods to automatically retrieve the graph Prosthecomicrobium hirschii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProsthecomicrobiumHirschii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProsthecomicrobiumHirschii graph.
+    """Return new instance of the Prosthecomicrobium hirschii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProsthecomicrobiumHirschii(
 
     Returns
     -----------------------
-    Instace of ProsthecomicrobiumHirschii graph.
+    Instace of Prosthecomicrobium hirschii graph.
 
 	References
 	---------------------

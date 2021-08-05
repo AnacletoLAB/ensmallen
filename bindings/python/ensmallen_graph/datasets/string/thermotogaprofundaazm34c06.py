@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaProfundaAzm34c06.
+This file offers the methods to automatically retrieve the graph Thermotoga profunda AZM34c06.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaProfundaAzm34c06(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaProfundaAzm34c06 graph.
+    """Return new instance of the Thermotoga profunda AZM34c06 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermotogaProfundaAzm34c06(
 
     Returns
     -----------------------
-    Instace of ThermotogaProfundaAzm34c06 graph.
+    Instace of Thermotoga profunda AZM34c06 graph.
 
 	References
 	---------------------

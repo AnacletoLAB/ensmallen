@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusLugdunensis.
+This file offers the methods to automatically retrieve the graph Staphylococcus lugdunensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusLugdunensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusLugdunensis graph.
+    """Return new instance of the Staphylococcus lugdunensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusLugdunensis(
 
     Returns
     -----------------------
-    Instace of StaphylococcusLugdunensis graph.
+    Instace of Staphylococcus lugdunensis graph.
 
 	References
 	---------------------

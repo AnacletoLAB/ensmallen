@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaConfusa.
+This file offers the methods to automatically retrieve the graph Weissella confusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaConfusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaConfusa graph.
+    """Return new instance of the Weissella confusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaConfusa(
 
     Returns
     -----------------------
-    Instace of WeissellaConfusa graph.
+    Instace of Weissella confusa graph.
 
 	References
 	---------------------

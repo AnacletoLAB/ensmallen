@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusHalophilus.
+This file offers the methods to automatically retrieve the graph Paracoccus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusHalophilus graph.
+    """Return new instance of the Paracoccus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusHalophilus(
 
     Returns
     -----------------------
-    Instace of ParacoccusHalophilus graph.
+    Instace of Paracoccus halophilus graph.
 
 	References
 	---------------------

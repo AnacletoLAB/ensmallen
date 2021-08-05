@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriNf13.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri NF13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriNf13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriNf13 graph.
+    """Return new instance of the Pseudomonas stutzeri NF13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriNf13(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriNf13 graph.
+    Instace of Pseudomonas stutzeri NF13 graph.
 
 	References
 	---------------------

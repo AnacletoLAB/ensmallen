@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbSanta74.
+This file offers the methods to automatically retrieve the graph socfb-Santa74.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbSanta74(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbSanta74 graph.
+    """Return new instance of the socfb-Santa74 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbSanta74(
 
     Returns
     -----------------------
-    Instace of SocfbSanta74 graph.
+    Instace of socfb-Santa74 graph.
 
 	References
 	---------------------

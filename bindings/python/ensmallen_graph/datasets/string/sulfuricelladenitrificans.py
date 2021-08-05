@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricellaDenitrificans.
+This file offers the methods to automatically retrieve the graph Sulfuricella denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricellaDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricellaDenitrificans graph.
+    """Return new instance of the Sulfuricella denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfuricellaDenitrificans(
 
     Returns
     -----------------------
-    Instace of SulfuricellaDenitrificans graph.
+    Instace of Sulfuricella denitrificans graph.
 
 	References
 	---------------------

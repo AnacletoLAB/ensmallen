@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NioellaNitratireducens.
+This file offers the methods to automatically retrieve the graph Nioella nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NioellaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NioellaNitratireducens graph.
+    """Return new instance of the Nioella nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NioellaNitratireducens(
 
     Returns
     -----------------------
-    Instace of NioellaNitratireducens graph.
+    Instace of Nioella nitratireducens graph.
 
 	References
 	---------------------

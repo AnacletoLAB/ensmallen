@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCoahuilensisP1143.
+This file offers the methods to automatically retrieve the graph Bacillus coahuilensis p1.1.43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCoahuilensisP1143(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCoahuilensisP1143 graph.
+    """Return new instance of the Bacillus coahuilensis p1.1.43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusCoahuilensisP1143(
 
     Returns
     -----------------------
-    Instace of BacillusCoahuilensisP1143 graph.
+    Instace of Bacillus coahuilensis p1.1.43 graph.
 
 	References
 	---------------------

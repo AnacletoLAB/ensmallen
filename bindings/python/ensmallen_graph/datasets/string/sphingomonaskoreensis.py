@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasKoreensis.
+This file offers the methods to automatically retrieve the graph Sphingomonas koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasKoreensis graph.
+    """Return new instance of the Sphingomonas koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasKoreensis(
 
     Returns
     -----------------------
-    Instace of SphingomonasKoreensis graph.
+    Instace of Sphingomonas koreensis graph.
 
 	References
 	---------------------

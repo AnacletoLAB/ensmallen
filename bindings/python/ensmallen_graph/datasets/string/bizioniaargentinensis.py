@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BizioniaArgentinensis.
+This file offers the methods to automatically retrieve the graph Bizionia argentinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BizioniaArgentinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BizioniaArgentinensis graph.
+    """Return new instance of the Bizionia argentinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BizioniaArgentinensis(
 
     Returns
     -----------------------
-    Instace of BizioniaArgentinensis graph.
+    Instace of Bizionia argentinensis graph.
 
 	References
 	---------------------

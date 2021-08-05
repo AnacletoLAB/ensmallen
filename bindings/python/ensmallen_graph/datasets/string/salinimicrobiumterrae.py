@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinimicrobiumTerrae.
+This file offers the methods to automatically retrieve the graph Salinimicrobium terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinimicrobiumTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinimicrobiumTerrae graph.
+    """Return new instance of the Salinimicrobium terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinimicrobiumTerrae(
 
     Returns
     -----------------------
-    Instace of SalinimicrobiumTerrae graph.
+    Instace of Salinimicrobium terrae graph.
 
 	References
 	---------------------

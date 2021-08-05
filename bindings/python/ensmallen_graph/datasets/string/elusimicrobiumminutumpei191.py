@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ElusimicrobiumMinutumPei191.
+This file offers the methods to automatically retrieve the graph Elusimicrobium minutum Pei191.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ElusimicrobiumMinutumPei191(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ElusimicrobiumMinutumPei191 graph.
+    """Return new instance of the Elusimicrobium minutum Pei191 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ElusimicrobiumMinutumPei191(
 
     Returns
     -----------------------
-    Instace of ElusimicrobiumMinutumPei191 graph.
+    Instace of Elusimicrobium minutum Pei191 graph.
 
 	References
 	---------------------

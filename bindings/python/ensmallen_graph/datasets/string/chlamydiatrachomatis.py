@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaTrachomatis.
+This file offers the methods to automatically retrieve the graph Chlamydia trachomatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaTrachomatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaTrachomatis graph.
+    """Return new instance of the Chlamydia trachomatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaTrachomatis(
 
     Returns
     -----------------------
-    Instace of ChlamydiaTrachomatis graph.
+    Instace of Chlamydia trachomatis graph.
 
 	References
 	---------------------

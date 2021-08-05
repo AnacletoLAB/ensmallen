@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizosaccharomycesOctosporus.
+This file offers the methods to automatically retrieve the graph Schizosaccharomyces octosporus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizosaccharomycesOctosporus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizosaccharomycesOctosporus graph.
+    """Return new instance of the Schizosaccharomyces octosporus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchizosaccharomycesOctosporus(
 
     Returns
     -----------------------
-    Instace of SchizosaccharomycesOctosporus graph.
+    Instace of Schizosaccharomyces octosporus graph.
 
 	References
 	---------------------

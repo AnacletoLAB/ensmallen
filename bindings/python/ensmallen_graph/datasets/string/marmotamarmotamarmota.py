@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarmotaMarmotaMarmota.
+This file offers the methods to automatically retrieve the graph Marmota marmota marmota.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarmotaMarmotaMarmota(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarmotaMarmotaMarmota graph.
+    """Return new instance of the Marmota marmota marmota graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarmotaMarmotaMarmota(
 
     Returns
     -----------------------
-    Instace of MarmotaMarmotaMarmota graph.
+    Instace of Marmota marmota marmota graph.
 
 	References
 	---------------------

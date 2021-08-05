@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospinaeBacteriumRifcsplowo2123915.
+This file offers the methods to automatically retrieve the graph Nitrospinae bacterium RIFCSPLOWO2_12_39_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospinaeBacteriumRifcsplowo2123915(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospinaeBacteriumRifcsplowo2123915 graph.
+    """Return new instance of the Nitrospinae bacterium RIFCSPLOWO2_12_39_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospinaeBacteriumRifcsplowo2123915(
 
     Returns
     -----------------------
-    Instace of NitrospinaeBacteriumRifcsplowo2123915 graph.
+    Instace of Nitrospinae bacterium RIFCSPLOWO2_12_39_15 graph.
 
 	References
 	---------------------

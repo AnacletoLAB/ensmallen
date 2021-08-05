@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumCg1024617.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium CG1_02_46_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumCg1024617(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumCg1024617 graph.
+    """Return new instance of the Alphaproteobacteria bacterium CG1_02_46_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumCg1024617(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumCg1024617 graph.
+    Instace of Alphaproteobacteria bacterium CG1_02_46_17 graph.
 
 	References
 	---------------------

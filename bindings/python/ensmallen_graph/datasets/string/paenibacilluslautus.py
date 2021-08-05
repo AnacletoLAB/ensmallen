@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusLautus.
+This file offers the methods to automatically retrieve the graph Paenibacillus lautus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusLautus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusLautus graph.
+    """Return new instance of the Paenibacillus lautus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusLautus(
 
     Returns
     -----------------------
-    Instace of PaenibacillusLautus graph.
+    Instace of Paenibacillus lautus graph.
 
 	References
 	---------------------

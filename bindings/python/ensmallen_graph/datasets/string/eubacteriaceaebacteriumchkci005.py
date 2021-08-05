@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriaceaeBacteriumChkci005.
+This file offers the methods to automatically retrieve the graph Eubacteriaceae bacterium CHKCI005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriaceaeBacteriumChkci005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriaceaeBacteriumChkci005 graph.
+    """Return new instance of the Eubacteriaceae bacterium CHKCI005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EubacteriaceaeBacteriumChkci005(
 
     Returns
     -----------------------
-    Instace of EubacteriaceaeBacteriumChkci005 graph.
+    Instace of Eubacteriaceae bacterium CHKCI005 graph.
 
 	References
 	---------------------

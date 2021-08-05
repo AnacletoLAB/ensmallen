@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RtTwitterCopen.
+This file offers the methods to automatically retrieve the graph rt-twitter-copen.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def RtTwitterCopen(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RtTwitterCopen graph.
+    """Return new instance of the rt-twitter-copen graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def RtTwitterCopen(
 
     Returns
     -----------------------
-    Instace of RtTwitterCopen graph.
+    Instace of rt-twitter-copen graph.
 
 	References
 	---------------------

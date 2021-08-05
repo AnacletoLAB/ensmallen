@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PuniceicoccalesBacteriumVerruco01.
+This file offers the methods to automatically retrieve the graph Puniceicoccales bacterium Verruco_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PuniceicoccalesBacteriumVerruco01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PuniceicoccalesBacteriumVerruco01 graph.
+    """Return new instance of the Puniceicoccales bacterium Verruco_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PuniceicoccalesBacteriumVerruco01(
 
     Returns
     -----------------------
-    Instace of PuniceicoccalesBacteriumVerruco01 graph.
+    Instace of Puniceicoccales bacterium Verruco_01 graph.
 
 	References
 	---------------------

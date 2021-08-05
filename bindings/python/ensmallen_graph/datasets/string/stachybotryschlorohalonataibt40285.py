@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StachybotrysChlorohalonataIbt40285.
+This file offers the methods to automatically retrieve the graph Stachybotrys chlorohalonata IBT 40285.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StachybotrysChlorohalonataIbt40285(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StachybotrysChlorohalonataIbt40285 graph.
+    """Return new instance of the Stachybotrys chlorohalonata IBT 40285 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StachybotrysChlorohalonataIbt40285(
 
     Returns
     -----------------------
-    Instace of StachybotrysChlorohalonataIbt40285 graph.
+    Instace of Stachybotrys chlorohalonata IBT 40285 graph.
 
 	References
 	---------------------

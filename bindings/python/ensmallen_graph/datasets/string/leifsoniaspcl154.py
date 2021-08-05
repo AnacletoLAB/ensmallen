@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSpCl154.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. CL154.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaSpCl154(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSpCl154 graph.
+    """Return new instance of the Leifsonia sp. CL154 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeifsoniaSpCl154(
 
     Returns
     -----------------------
-    Instace of LeifsoniaSpCl154 graph.
+    Instace of Leifsonia sp. CL154 graph.
 
 	References
 	---------------------

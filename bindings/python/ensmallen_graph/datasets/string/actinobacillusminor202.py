@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusMinor202.
+This file offers the methods to automatically retrieve the graph Actinobacillus minor 202.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusMinor202(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusMinor202 graph.
+    """Return new instance of the Actinobacillus minor 202 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusMinor202(
 
     Returns
     -----------------------
-    Instace of ActinobacillusMinor202 graph.
+    Instace of Actinobacillus minor 202 graph.
 
 	References
 	---------------------

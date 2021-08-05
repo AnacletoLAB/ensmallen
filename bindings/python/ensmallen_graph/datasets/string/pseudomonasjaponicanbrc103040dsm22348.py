@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasJaponicaNbrc103040Dsm22348.
+This file offers the methods to automatically retrieve the graph Pseudomonas japonica NBRC 103040 DSM 22348.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasJaponicaNbrc103040Dsm22348(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasJaponicaNbrc103040Dsm22348 graph.
+    """Return new instance of the Pseudomonas japonica NBRC 103040 DSM 22348 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasJaponicaNbrc103040Dsm22348(
 
     Returns
     -----------------------
-    Instace of PseudomonasJaponicaNbrc103040Dsm22348 graph.
+    Instace of Pseudomonas japonica NBRC 103040 DSM 22348 graph.
 
 	References
 	---------------------

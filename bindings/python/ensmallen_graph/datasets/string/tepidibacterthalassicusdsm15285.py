@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TepidibacterThalassicusDsm15285.
+This file offers the methods to automatically retrieve the graph Tepidibacter thalassicus DSM 15285.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TepidibacterThalassicusDsm15285(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TepidibacterThalassicusDsm15285 graph.
+    """Return new instance of the Tepidibacter thalassicus DSM 15285 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TepidibacterThalassicusDsm15285(
 
     Returns
     -----------------------
-    Instace of TepidibacterThalassicusDsm15285 graph.
+    Instace of Tepidibacter thalassicus DSM 15285 graph.
 
 	References
 	---------------------

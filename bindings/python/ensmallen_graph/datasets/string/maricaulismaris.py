@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaricaulisMaris.
+This file offers the methods to automatically retrieve the graph Maricaulis maris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaricaulisMaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaricaulisMaris graph.
+    """Return new instance of the Maricaulis maris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MaricaulisMaris(
 
     Returns
     -----------------------
-    Instace of MaricaulisMaris graph.
+    Instace of Maricaulis maris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaGinsengisoliNbrc100965.
+This file offers the methods to automatically retrieve the graph Paraburkholderia ginsengisoli NBRC 100965.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaGinsengisoliNbrc100965(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaGinsengisoliNbrc100965 graph.
+    """Return new instance of the Paraburkholderia ginsengisoli NBRC 100965 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaGinsengisoliNbrc100965(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaGinsengisoliNbrc100965 graph.
+    Instace of Paraburkholderia ginsengisoli NBRC 100965 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaOroxyli.
+This file offers the methods to automatically retrieve the graph Pseudonocardia oroxyli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaOroxyli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaOroxyli graph.
+    """Return new instance of the Pseudonocardia oroxyli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaOroxyli(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaOroxyli graph.
+    Instace of Pseudonocardia oroxyli graph.
 
 	References
 	---------------------

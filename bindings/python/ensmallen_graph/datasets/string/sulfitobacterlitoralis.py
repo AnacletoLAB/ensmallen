@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterLitoralis.
+This file offers the methods to automatically retrieve the graph Sulfitobacter litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterLitoralis graph.
+    """Return new instance of the Sulfitobacter litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfitobacterLitoralis(
 
     Returns
     -----------------------
-    Instace of SulfitobacterLitoralis graph.
+    Instace of Sulfitobacter litoralis graph.
 
 	References
 	---------------------

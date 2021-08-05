@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OchotonaPrinceps.
+This file offers the methods to automatically retrieve the graph Ochotona princeps.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OchotonaPrinceps(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OchotonaPrinceps graph.
+    """Return new instance of the Ochotona princeps graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OchotonaPrinceps(
 
     Returns
     -----------------------
-    Instace of OchotonaPrinceps graph.
+    Instace of Ochotona princeps graph.
 
 	References
 	---------------------

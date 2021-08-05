@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterCibinongensis4h1.
+This file offers the methods to automatically retrieve the graph Acetobacter cibinongensis 4H-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterCibinongensis4h1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterCibinongensis4h1 graph.
+    """Return new instance of the Acetobacter cibinongensis 4H-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterCibinongensis4h1(
 
     Returns
     -----------------------
-    Instace of AcetobacterCibinongensis4h1 graph.
+    Instace of Acetobacter cibinongensis 4H-1 graph.
 
 	References
 	---------------------

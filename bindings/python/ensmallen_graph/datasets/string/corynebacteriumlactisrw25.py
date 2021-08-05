@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumLactisRw25.
+This file offers the methods to automatically retrieve the graph Corynebacterium lactis RW2-5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumLactisRw25(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumLactisRw25 graph.
+    """Return new instance of the Corynebacterium lactis RW2-5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumLactisRw25(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumLactisRw25 graph.
+    Instace of Corynebacterium lactis RW2-5 graph.
 
 	References
 	---------------------

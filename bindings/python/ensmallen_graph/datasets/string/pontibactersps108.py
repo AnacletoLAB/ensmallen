@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacterSpS108.
+This file offers the methods to automatically retrieve the graph Pontibacter sp. S10-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacterSpS108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacterSpS108 graph.
+    """Return new instance of the Pontibacter sp. S10-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacterSpS108(
 
     Returns
     -----------------------
-    Instace of PontibacterSpS108 graph.
+    Instace of Pontibacter sp. S10-8 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UliginosibacteriumGangwonense.
+This file offers the methods to automatically retrieve the graph Uliginosibacterium gangwonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UliginosibacteriumGangwonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UliginosibacteriumGangwonense graph.
+    """Return new instance of the Uliginosibacterium gangwonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UliginosibacteriumGangwonense(
 
     Returns
     -----------------------
-    Instace of UliginosibacteriumGangwonense graph.
+    Instace of Uliginosibacterium gangwonense graph.
 
 	References
 	---------------------

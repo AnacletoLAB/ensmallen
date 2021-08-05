@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrotaleaFlava.
+This file offers the methods to automatically retrieve the graph Hydrotalea flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrotaleaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrotaleaFlava graph.
+    """Return new instance of the Hydrotalea flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrotaleaFlava(
 
     Returns
     -----------------------
-    Instace of HydrotaleaFlava graph.
+    Instace of Hydrotalea flava graph.
 
 	References
 	---------------------

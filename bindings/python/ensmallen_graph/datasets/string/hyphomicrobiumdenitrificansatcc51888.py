@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumDenitrificansAtcc51888.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium denitrificans ATCC51888.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumDenitrificansAtcc51888(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumDenitrificansAtcc51888 graph.
+    """Return new instance of the Hyphomicrobium denitrificans ATCC51888 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomicrobiumDenitrificansAtcc51888(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumDenitrificansAtcc51888 graph.
+    Instace of Hyphomicrobium denitrificans ATCC51888 graph.
 
 	References
 	---------------------

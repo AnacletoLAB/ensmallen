@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomonasSpLw13.
+This file offers the methods to automatically retrieve the graph Methylomonas sp. LW13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomonasSpLw13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomonasSpLw13 graph.
+    """Return new instance of the Methylomonas sp. LW13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomonasSpLw13(
 
     Returns
     -----------------------
-    Instace of MethylomonasSpLw13 graph.
+    Instace of Methylomonas sp. LW13 graph.
 
 	References
 	---------------------

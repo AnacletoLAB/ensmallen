@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Football.
+This file offers the methods to automatically retrieve the graph football.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Football(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Football graph.
+    """Return new instance of the football graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Football(
 
     Returns
     -----------------------
-    Instace of Football graph.
+    Instace of football graph.
 
 	References
 	---------------------

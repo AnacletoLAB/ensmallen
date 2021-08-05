@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioNatriegens.
+This file offers the methods to automatically retrieve the graph Vibrio natriegens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioNatriegens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioNatriegens graph.
+    """Return new instance of the Vibrio natriegens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioNatriegens(
 
     Returns
     -----------------------
-    Instace of VibrioNatriegens graph.
+    Instace of Vibrio natriegens graph.
 
 	References
 	---------------------

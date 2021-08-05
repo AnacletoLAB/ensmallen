@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AstyanaxMexicanus.
+This file offers the methods to automatically retrieve the graph Astyanax mexicanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AstyanaxMexicanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AstyanaxMexicanus graph.
+    """Return new instance of the Astyanax mexicanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AstyanaxMexicanus(
 
     Returns
     -----------------------
-    Instace of AstyanaxMexicanus graph.
+    Instace of Astyanax mexicanus graph.
 
 	References
 	---------------------

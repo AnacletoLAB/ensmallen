@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeadbetterellaByssophila.
+This file offers the methods to automatically retrieve the graph Leadbetterella byssophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeadbetterellaByssophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeadbetterellaByssophila graph.
+    """Return new instance of the Leadbetterella byssophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeadbetterellaByssophila(
 
     Returns
     -----------------------
-    Instace of LeadbetterellaByssophila graph.
+    Instace of Leadbetterella byssophila graph.
 
 	References
 	---------------------

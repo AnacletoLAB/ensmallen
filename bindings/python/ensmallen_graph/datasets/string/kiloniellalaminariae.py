@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KiloniellaLaminariae.
+This file offers the methods to automatically retrieve the graph Kiloniella laminariae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KiloniellaLaminariae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KiloniellaLaminariae graph.
+    """Return new instance of the Kiloniella laminariae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KiloniellaLaminariae(
 
     Returns
     -----------------------
-    Instace of KiloniellaLaminariae graph.
+    Instace of Kiloniella laminariae graph.
 
 	References
 	---------------------

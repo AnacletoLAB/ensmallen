@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FriedmanniellaFlava.
+This file offers the methods to automatically retrieve the graph Friedmanniella flava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FriedmanniellaFlava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FriedmanniellaFlava graph.
+    """Return new instance of the Friedmanniella flava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FriedmanniellaFlava(
 
     Returns
     -----------------------
-    Instace of FriedmanniellaFlava graph.
+    Instace of Friedmanniella flava graph.
 
 	References
 	---------------------

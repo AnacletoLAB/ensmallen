@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrosocosmicusOleophilus.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrosocosmicus oleophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrosocosmicusOleophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrosocosmicusOleophilus graph.
+    """Return new instance of the Candidatus Nitrosocosmicus oleophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrosocosmicusOleophilus(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrosocosmicusOleophilus graph.
+    Instace of Candidatus Nitrosocosmicus oleophilus graph.
 
 	References
 	---------------------

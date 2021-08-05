@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterSpM21.
+This file offers the methods to automatically retrieve the graph Geobacter sp. M21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterSpM21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterSpM21 graph.
+    """Return new instance of the Geobacter sp. M21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeobacterSpM21(
 
     Returns
     -----------------------
-    Instace of GeobacterSpM21 graph.
+    Instace of Geobacter sp. M21 graph.
 
 	References
 	---------------------

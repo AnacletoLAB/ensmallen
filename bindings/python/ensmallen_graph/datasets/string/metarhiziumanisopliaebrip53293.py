@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetarhiziumAnisopliaeBrip53293.
+This file offers the methods to automatically retrieve the graph Metarhizium anisopliae BRIP 53293.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetarhiziumAnisopliaeBrip53293(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetarhiziumAnisopliaeBrip53293 graph.
+    """Return new instance of the Metarhizium anisopliae BRIP 53293 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetarhiziumAnisopliaeBrip53293(
 
     Returns
     -----------------------
-    Instace of MetarhiziumAnisopliaeBrip53293 graph.
+    Instace of Metarhizium anisopliae BRIP 53293 graph.
 
 	References
 	---------------------

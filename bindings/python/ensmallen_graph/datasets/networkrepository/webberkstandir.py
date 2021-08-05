@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WebBerkstanDir.
+This file offers the methods to automatically retrieve the graph web-BerkStan-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -42,7 +42,7 @@ def WebBerkstanDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WebBerkstanDir graph.
+    """Return new instance of the web-BerkStan-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -69,7 +69,7 @@ def WebBerkstanDir(
 
     Returns
     -----------------------
-    Instace of WebBerkstanDir graph.
+    Instace of web-BerkStan-dir graph.
 
 	References
 	---------------------

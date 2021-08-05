@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DendrosporobacterQuercicolus.
+This file offers the methods to automatically retrieve the graph Dendrosporobacter quercicolus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DendrosporobacterQuercicolus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DendrosporobacterQuercicolus graph.
+    """Return new instance of the Dendrosporobacter quercicolus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DendrosporobacterQuercicolus(
 
     Returns
     -----------------------
-    Instace of DendrosporobacterQuercicolus graph.
+    Instace of Dendrosporobacter quercicolus graph.
 
 	References
 	---------------------

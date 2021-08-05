@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusHenryi.
+This file offers the methods to automatically retrieve the graph Streptococcus henryi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusHenryi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusHenryi graph.
+    """Return new instance of the Streptococcus henryi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusHenryi(
 
     Returns
     -----------------------
-    Instace of StreptococcusHenryi graph.
+    Instace of Streptococcus henryi graph.
 
 	References
 	---------------------

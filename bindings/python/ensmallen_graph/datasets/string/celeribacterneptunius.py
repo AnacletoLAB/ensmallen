@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CeleribacterNeptunius.
+This file offers the methods to automatically retrieve the graph Celeribacter neptunius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CeleribacterNeptunius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CeleribacterNeptunius graph.
+    """Return new instance of the Celeribacter neptunius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CeleribacterNeptunius(
 
     Returns
     -----------------------
-    Instace of CeleribacterNeptunius graph.
+    Instace of Celeribacter neptunius graph.
 
 	References
 	---------------------

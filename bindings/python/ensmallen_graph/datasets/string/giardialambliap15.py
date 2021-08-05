@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GiardiaLambliaP15.
+This file offers the methods to automatically retrieve the graph Giardia lamblia P15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GiardiaLambliaP15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GiardiaLambliaP15 graph.
+    """Return new instance of the Giardia lamblia P15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GiardiaLambliaP15(
 
     Returns
     -----------------------
-    Instace of GiardiaLambliaP15 graph.
+    Instace of Giardia lamblia P15 graph.
 
 	References
 	---------------------

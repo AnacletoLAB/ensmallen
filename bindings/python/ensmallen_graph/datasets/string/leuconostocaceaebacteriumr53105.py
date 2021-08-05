@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocaceaeBacteriumR53105.
+This file offers the methods to automatically retrieve the graph Leuconostocaceae bacterium R-53105.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocaceaeBacteriumR53105(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocaceaeBacteriumR53105 graph.
+    """Return new instance of the Leuconostocaceae bacterium R-53105 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeuconostocaceaeBacteriumR53105(
 
     Returns
     -----------------------
-    Instace of LeuconostocaceaeBacteriumR53105 graph.
+    Instace of Leuconostocaceae bacterium R-53105 graph.
 
 	References
 	---------------------

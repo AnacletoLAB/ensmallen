@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DictyosteliumDiscoideum.
+This file offers the methods to automatically retrieve the graph Dictyostelium discoideum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DictyosteliumDiscoideum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DictyosteliumDiscoideum graph.
+    """Return new instance of the Dictyostelium discoideum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DictyosteliumDiscoideum(
 
     Returns
     -----------------------
-    Instace of DictyosteliumDiscoideum graph.
+    Instace of Dictyostelium discoideum graph.
 
 	References
 	---------------------

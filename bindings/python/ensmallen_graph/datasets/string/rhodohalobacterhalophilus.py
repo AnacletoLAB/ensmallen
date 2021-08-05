@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodohalobacterHalophilus.
+This file offers the methods to automatically retrieve the graph Rhodohalobacter halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodohalobacterHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodohalobacterHalophilus graph.
+    """Return new instance of the Rhodohalobacter halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodohalobacterHalophilus(
 
     Returns
     -----------------------
-    Instace of RhodohalobacterHalophilus graph.
+    Instace of Rhodohalobacter halophilus graph.
 
 	References
 	---------------------

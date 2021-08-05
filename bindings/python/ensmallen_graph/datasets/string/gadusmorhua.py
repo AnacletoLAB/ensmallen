@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GadusMorhua.
+This file offers the methods to automatically retrieve the graph Gadus morhua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GadusMorhua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GadusMorhua graph.
+    """Return new instance of the Gadus morhua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GadusMorhua(
 
     Returns
     -----------------------
-    Instace of GadusMorhua graph.
+    Instace of Gadus morhua graph.
 
 	References
 	---------------------

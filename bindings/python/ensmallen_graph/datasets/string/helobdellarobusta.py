@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelobdellaRobusta.
+This file offers the methods to automatically retrieve the graph Helobdella robusta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelobdellaRobusta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelobdellaRobusta graph.
+    """Return new instance of the Helobdella robusta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelobdellaRobusta(
 
     Returns
     -----------------------
-    Instace of HelobdellaRobusta graph.
+    Instace of Helobdella robusta graph.
 
 	References
 	---------------------

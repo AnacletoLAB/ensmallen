@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApteryxRowi.
+This file offers the methods to automatically retrieve the graph Apteryx rowi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApteryxRowi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApteryxRowi graph.
+    """Return new instance of the Apteryx rowi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApteryxRowi(
 
     Returns
     -----------------------
-    Instace of ApteryxRowi graph.
+    Instace of Apteryx rowi graph.
 
 	References
 	---------------------

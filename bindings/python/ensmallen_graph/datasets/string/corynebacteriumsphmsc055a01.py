@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumSpHmsc055a01.
+This file offers the methods to automatically retrieve the graph Corynebacterium sp. HMSC055A01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumSpHmsc055a01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumSpHmsc055a01 graph.
+    """Return new instance of the Corynebacterium sp. HMSC055A01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumSpHmsc055a01(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumSpHmsc055a01 graph.
+    Instace of Corynebacterium sp. HMSC055A01 graph.
 
 	References
 	---------------------

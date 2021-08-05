@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistocephalusSolidus.
+This file offers the methods to automatically retrieve the graph Schistocephalus solidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistocephalusSolidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistocephalusSolidus graph.
+    """Return new instance of the Schistocephalus solidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistocephalusSolidus(
 
     Returns
     -----------------------
-    Instace of SchistocephalusSolidus graph.
+    Instace of Schistocephalus solidus graph.
 
 	References
 	---------------------

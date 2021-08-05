@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoldemaniaMassiliensis.
+This file offers the methods to automatically retrieve the graph Holdemania massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoldemaniaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoldemaniaMassiliensis graph.
+    """Return new instance of the Holdemania massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HoldemaniaMassiliensis(
 
     Returns
     -----------------------
-    Instace of HoldemaniaMassiliensis graph.
+    Instace of Holdemania massiliensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpLpu83.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. LPU83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpLpu83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpLpu83 graph.
+    """Return new instance of the Rhizobium sp. LPU83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpLpu83(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpLpu83 graph.
+    Instace of Rhizobium sp. LPU83 graph.
 
 	References
 	---------------------

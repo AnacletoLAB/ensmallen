@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpFh2.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. FH2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpFh2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpFh2 graph.
+    """Return new instance of the Chryseobacterium sp. FH2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpFh2(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpFh2 graph.
+    Instace of Chryseobacterium sp. FH2 graph.
 
 	References
 	---------------------

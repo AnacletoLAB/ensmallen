@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaCypripedii.
+This file offers the methods to automatically retrieve the graph Pantoea cypripedii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaCypripedii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaCypripedii graph.
+    """Return new instance of the Pantoea cypripedii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaCypripedii(
 
     Returns
     -----------------------
-    Instace of PantoeaCypripedii graph.
+    Instace of Pantoea cypripedii graph.
 
 	References
 	---------------------

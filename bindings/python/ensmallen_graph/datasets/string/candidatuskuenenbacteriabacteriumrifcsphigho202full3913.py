@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKuenenbacteriaBacteriumRifcsphigho202Full3913.
+This file offers the methods to automatically retrieve the graph Candidatus Kuenenbacteria bacterium RIFCSPHIGHO2_02_FULL_39_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKuenenbacteriaBacteriumRifcsphigho202Full3913(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKuenenbacteriaBacteriumRifcsphigho202Full3913 graph.
+    """Return new instance of the Candidatus Kuenenbacteria bacterium RIFCSPHIGHO2_02_FULL_39_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKuenenbacteriaBacteriumRifcsphigho202Full3913(
 
     Returns
     -----------------------
-    Instace of CandidatusKuenenbacteriaBacteriumRifcsphigho202Full3913 graph.
+    Instace of Candidatus Kuenenbacteria bacterium RIFCSPHIGHO2_02_FULL_39_13 graph.
 
 	References
 	---------------------

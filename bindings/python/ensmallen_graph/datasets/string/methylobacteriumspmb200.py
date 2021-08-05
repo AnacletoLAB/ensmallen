@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumSpMb200.
+This file offers the methods to automatically retrieve the graph Methylobacterium sp. MB200.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumSpMb200(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumSpMb200 graph.
+    """Return new instance of the Methylobacterium sp. MB200 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumSpMb200(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumSpMb200 graph.
+    Instace of Methylobacterium sp. MB200 graph.
 
 	References
 	---------------------

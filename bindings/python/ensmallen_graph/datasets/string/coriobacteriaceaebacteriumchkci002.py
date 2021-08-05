@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoriobacteriaceaeBacteriumChkci002.
+This file offers the methods to automatically retrieve the graph Coriobacteriaceae bacterium CHKCI002.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoriobacteriaceaeBacteriumChkci002(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoriobacteriaceaeBacteriumChkci002 graph.
+    """Return new instance of the Coriobacteriaceae bacterium CHKCI002 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoriobacteriaceaeBacteriumChkci002(
 
     Returns
     -----------------------
-    Instace of CoriobacteriaceaeBacteriumChkci002 graph.
+    Instace of Coriobacteriaceae bacterium CHKCI002 graph.
 
 	References
 	---------------------

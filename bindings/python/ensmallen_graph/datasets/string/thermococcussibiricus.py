@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusSibiricus.
+This file offers the methods to automatically retrieve the graph Thermococcus sibiricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusSibiricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusSibiricus graph.
+    """Return new instance of the Thermococcus sibiricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusSibiricus(
 
     Returns
     -----------------------
-    Instace of ThermococcusSibiricus graph.
+    Instace of Thermococcus sibiricus graph.
 
 	References
 	---------------------

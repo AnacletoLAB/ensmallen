@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliifodinibiusRoseus.
+This file offers the methods to automatically retrieve the graph Aliifodinibius roseus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliifodinibiusRoseus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliifodinibiusRoseus graph.
+    """Return new instance of the Aliifodinibius roseus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliifodinibiusRoseus(
 
     Returns
     -----------------------
-    Instace of AliifodinibiusRoseus graph.
+    Instace of Aliifodinibius roseus graph.
 
 	References
 	---------------------

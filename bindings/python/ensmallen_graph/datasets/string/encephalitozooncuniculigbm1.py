@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EncephalitozoonCuniculiGbM1.
+This file offers the methods to automatically retrieve the graph Encephalitozoon cuniculi GB-M1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EncephalitozoonCuniculiGbM1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EncephalitozoonCuniculiGbM1 graph.
+    """Return new instance of the Encephalitozoon cuniculi GB-M1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EncephalitozoonCuniculiGbM1(
 
     Returns
     -----------------------
-    Instace of EncephalitozoonCuniculiGbM1 graph.
+    Instace of Encephalitozoon cuniculi GB-M1 graph.
 
 	References
 	---------------------

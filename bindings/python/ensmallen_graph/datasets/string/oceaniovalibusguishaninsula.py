@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceaniovalibusGuishaninsula.
+This file offers the methods to automatically retrieve the graph Oceaniovalibus guishaninsula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceaniovalibusGuishaninsula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceaniovalibusGuishaninsula graph.
+    """Return new instance of the Oceaniovalibus guishaninsula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceaniovalibusGuishaninsula(
 
     Returns
     -----------------------
-    Instace of OceaniovalibusGuishaninsula graph.
+    Instace of Oceaniovalibus guishaninsula graph.
 
 	References
 	---------------------

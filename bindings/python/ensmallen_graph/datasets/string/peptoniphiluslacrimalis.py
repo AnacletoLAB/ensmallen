@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusLacrimalis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus lacrimalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusLacrimalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusLacrimalis graph.
+    """Return new instance of the Peptoniphilus lacrimalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PeptoniphilusLacrimalis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusLacrimalis graph.
+    Instace of Peptoniphilus lacrimalis graph.
 
 	References
 	---------------------

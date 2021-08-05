@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterHartonius.
+This file offers the methods to automatically retrieve the graph Pedobacter hartonius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterHartonius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterHartonius graph.
+    """Return new instance of the Pedobacter hartonius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterHartonius(
 
     Returns
     -----------------------
-    Instace of PedobacterHartonius graph.
+    Instace of Pedobacter hartonius graph.
 
 	References
 	---------------------

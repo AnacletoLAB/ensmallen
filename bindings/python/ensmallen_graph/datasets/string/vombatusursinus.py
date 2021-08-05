@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VombatusUrsinus.
+This file offers the methods to automatically retrieve the graph Vombatus ursinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VombatusUrsinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VombatusUrsinus graph.
+    """Return new instance of the Vombatus ursinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VombatusUrsinus(
 
     Returns
     -----------------------
-    Instace of VombatusUrsinus graph.
+    Instace of Vombatus ursinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurobacteriumThermolithotrophum.
+This file offers the methods to automatically retrieve the graph Desulfurobacterium thermolithotrophum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurobacteriumThermolithotrophum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurobacteriumThermolithotrophum graph.
+    """Return new instance of the Desulfurobacterium thermolithotrophum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurobacteriumThermolithotrophum(
 
     Returns
     -----------------------
-    Instace of DesulfurobacteriumThermolithotrophum graph.
+    Instace of Desulfurobacterium thermolithotrophum graph.
 
 	References
 	---------------------

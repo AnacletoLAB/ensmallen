@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CulturomicaMassiliensis.
+This file offers the methods to automatically retrieve the graph Culturomica massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CulturomicaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CulturomicaMassiliensis graph.
+    """Return new instance of the Culturomica massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CulturomicaMassiliensis(
 
     Returns
     -----------------------
-    Instace of CulturomicaMassiliensis graph.
+    Instace of Culturomica massiliensis graph.
 
 	References
 	---------------------

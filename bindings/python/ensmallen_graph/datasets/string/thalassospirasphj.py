@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraSpHj.
+This file offers the methods to automatically retrieve the graph Thalassospira sp. HJ.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraSpHj(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraSpHj graph.
+    """Return new instance of the Thalassospira sp. HJ graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassospiraSpHj(
 
     Returns
     -----------------------
-    Instace of ThalassospiraSpHj graph.
+    Instace of Thalassospira sp. HJ graph.
 
 	References
 	---------------------

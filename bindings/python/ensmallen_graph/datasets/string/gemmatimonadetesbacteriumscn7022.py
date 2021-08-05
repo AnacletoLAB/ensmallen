@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonadetesBacteriumScn7022.
+This file offers the methods to automatically retrieve the graph Gemmatimonadetes bacterium SCN 70-22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonadetesBacteriumScn7022(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonadetesBacteriumScn7022 graph.
+    """Return new instance of the Gemmatimonadetes bacterium SCN 70-22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemmatimonadetesBacteriumScn7022(
 
     Returns
     -----------------------
-    Instace of GemmatimonadetesBacteriumScn7022 graph.
+    Instace of Gemmatimonadetes bacterium SCN 70-22 graph.
 
 	References
 	---------------------

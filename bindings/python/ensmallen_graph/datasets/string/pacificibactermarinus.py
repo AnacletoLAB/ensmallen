@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PacificibacterMarinus.
+This file offers the methods to automatically retrieve the graph Pacificibacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PacificibacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PacificibacterMarinus graph.
+    """Return new instance of the Pacificibacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PacificibacterMarinus(
 
     Returns
     -----------------------
-    Instace of PacificibacterMarinus graph.
+    Instace of Pacificibacter marinus graph.
 
 	References
 	---------------------

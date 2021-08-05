@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SegniliparusRugosus.
+This file offers the methods to automatically retrieve the graph Segniliparus rugosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SegniliparusRugosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SegniliparusRugosus graph.
+    """Return new instance of the Segniliparus rugosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SegniliparusRugosus(
 
     Returns
     -----------------------
-    Instace of SegniliparusRugosus graph.
+    Instace of Segniliparus rugosus graph.
 
 	References
 	---------------------

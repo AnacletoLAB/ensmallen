@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacteriaceaeBacteriumB14.
+This file offers the methods to automatically retrieve the graph Enterobacteriaceae bacterium B14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacteriaceaeBacteriumB14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacteriaceaeBacteriumB14 graph.
+    """Return new instance of the Enterobacteriaceae bacterium B14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacteriaceaeBacteriumB14(
 
     Returns
     -----------------------
-    Instace of EnterobacteriaceaeBacteriumB14 graph.
+    Instace of Enterobacteriaceae bacterium B14 graph.
 
 	References
 	---------------------

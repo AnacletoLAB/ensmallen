@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpSoil805.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. Soil805.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpSoil805(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpSoil805 graph.
+    """Return new instance of the Nocardioides sp. Soil805 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpSoil805(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpSoil805 graph.
+    Instace of Nocardioides sp. Soil805 graph.
 
 	References
 	---------------------

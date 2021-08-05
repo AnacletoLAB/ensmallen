@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShuttleworthiaSpMsx8b.
+This file offers the methods to automatically retrieve the graph Shuttleworthia sp. MSX8B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShuttleworthiaSpMsx8b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShuttleworthiaSpMsx8b graph.
+    """Return new instance of the Shuttleworthia sp. MSX8B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShuttleworthiaSpMsx8b(
 
     Returns
     -----------------------
-    Instace of ShuttleworthiaSpMsx8b graph.
+    Instace of Shuttleworthia sp. MSX8B graph.
 
 	References
 	---------------------

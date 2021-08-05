@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlteromonasSpRw2a1.
+This file offers the methods to automatically retrieve the graph Alteromonas sp. RW2A1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlteromonasSpRw2a1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlteromonasSpRw2a1 graph.
+    """Return new instance of the Alteromonas sp. RW2A1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlteromonasSpRw2a1(
 
     Returns
     -----------------------
-    Instace of AlteromonasSpRw2a1 graph.
+    Instace of Alteromonas sp. RW2A1 graph.
 
 	References
 	---------------------

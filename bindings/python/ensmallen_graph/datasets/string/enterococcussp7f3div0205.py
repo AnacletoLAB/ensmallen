@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusSp7f3Div0205.
+This file offers the methods to automatically retrieve the graph Enterococcus sp. 7F3_DIV0205.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusSp7f3Div0205(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusSp7f3Div0205 graph.
+    """Return new instance of the Enterococcus sp. 7F3_DIV0205 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusSp7f3Div0205(
 
     Returns
     -----------------------
-    Instace of EnterococcusSp7f3Div0205 graph.
+    Instace of Enterococcus sp. 7F3_DIV0205 graph.
 
 	References
 	---------------------

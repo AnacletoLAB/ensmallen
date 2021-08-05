@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IntestinimonasMassiliensis.
+This file offers the methods to automatically retrieve the graph Intestinimonas massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IntestinimonasMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IntestinimonasMassiliensis graph.
+    """Return new instance of the Intestinimonas massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IntestinimonasMassiliensis(
 
     Returns
     -----------------------
-    Instace of IntestinimonasMassiliensis graph.
+    Instace of Intestinimonas massiliensis graph.
 
 	References
 	---------------------

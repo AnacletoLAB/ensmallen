@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioSpBr.
+This file offers the methods to automatically retrieve the graph Cellvibrio sp. BR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioSpBr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioSpBr graph.
+    """Return new instance of the Cellvibrio sp. BR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellvibrioSpBr(
 
     Returns
     -----------------------
-    Instace of CellvibrioSpBr graph.
+    Instace of Cellvibrio sp. BR graph.
 
 	References
 	---------------------

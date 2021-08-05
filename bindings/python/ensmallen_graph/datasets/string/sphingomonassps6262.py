@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpS6262.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. S6-262.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpS6262(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpS6262 graph.
+    """Return new instance of the Sphingomonas sp. S6-262 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpS6262(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpS6262 graph.
+    Instace of Sphingomonas sp. S6-262 graph.
 
 	References
 	---------------------

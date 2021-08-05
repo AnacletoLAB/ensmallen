@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EdaphobacillusLindanitolerans.
+This file offers the methods to automatically retrieve the graph Edaphobacillus lindanitolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EdaphobacillusLindanitolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EdaphobacillusLindanitolerans graph.
+    """Return new instance of the Edaphobacillus lindanitolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EdaphobacillusLindanitolerans(
 
     Returns
     -----------------------
-    Instace of EdaphobacillusLindanitolerans graph.
+    Instace of Edaphobacillus lindanitolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobiusGelatinovorus.
+This file offers the methods to automatically retrieve the graph Thalassobius gelatinovorus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobiusGelatinovorus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobiusGelatinovorus graph.
+    """Return new instance of the Thalassobius gelatinovorus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassobiusGelatinovorus(
 
     Returns
     -----------------------
-    Instace of ThalassobiusGelatinovorus graph.
+    Instace of Thalassobius gelatinovorus graph.
 
 	References
 	---------------------

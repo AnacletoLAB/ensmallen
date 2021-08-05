@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpOk602.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. ok602.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpOk602(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpOk602 graph.
+    """Return new instance of the Pseudomonas sp. ok602 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasSpOk602(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpOk602 graph.
+    Instace of Pseudomonas sp. ok602 graph.
 
 	References
 	---------------------

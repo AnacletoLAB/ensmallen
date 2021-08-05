@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumUmmariense.
+This file offers the methods to automatically retrieve the graph Flavobacterium ummariense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumUmmariense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumUmmariense graph.
+    """Return new instance of the Flavobacterium ummariense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumUmmariense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumUmmariense graph.
+    Instace of Flavobacterium ummariense graph.
 
 	References
 	---------------------

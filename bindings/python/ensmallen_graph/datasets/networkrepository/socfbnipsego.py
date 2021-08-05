@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbNipsEgo.
+This file offers the methods to automatically retrieve the graph socfb-nips-ego.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbNipsEgo(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbNipsEgo graph.
+    """Return new instance of the socfb-nips-ego graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbNipsEgo(
 
     Returns
     -----------------------
-    Instace of SocfbNipsEgo graph.
+    Instace of socfb-nips-ego graph.
 
 	References
 	---------------------

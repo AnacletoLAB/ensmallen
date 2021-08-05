@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaHermsii.
+This file offers the methods to automatically retrieve the graph Borrelia hermsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaHermsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaHermsii graph.
+    """Return new instance of the Borrelia hermsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaHermsii(
 
     Returns
     -----------------------
-    Instace of BorreliaHermsii graph.
+    Instace of Borrelia hermsii graph.
 
 	References
 	---------------------

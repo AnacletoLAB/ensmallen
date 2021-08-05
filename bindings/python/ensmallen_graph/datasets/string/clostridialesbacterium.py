@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacterium.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacterium graph.
+    """Return new instance of the Clostridiales bacterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacterium(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacterium graph.
+    Instace of Clostridiales bacterium graph.
 
 	References
 	---------------------

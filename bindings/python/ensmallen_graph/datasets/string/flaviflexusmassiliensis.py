@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlaviflexusMassiliensis.
+This file offers the methods to automatically retrieve the graph Flaviflexus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlaviflexusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlaviflexusMassiliensis graph.
+    """Return new instance of the Flaviflexus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlaviflexusMassiliensis(
 
     Returns
     -----------------------
-    Instace of FlaviflexusMassiliensis graph.
+    Instace of Flaviflexus massiliensis graph.
 
 	References
 	---------------------

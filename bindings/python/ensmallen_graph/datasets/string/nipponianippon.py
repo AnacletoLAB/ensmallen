@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NipponiaNippon.
+This file offers the methods to automatically retrieve the graph Nipponia nippon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NipponiaNippon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NipponiaNippon graph.
+    """Return new instance of the Nipponia nippon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NipponiaNippon(
 
     Returns
     -----------------------
-    Instace of NipponiaNippon graph.
+    Instace of Nipponia nippon graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermocladiumSpEchB.
+This file offers the methods to automatically retrieve the graph Thermocladium sp. ECH_B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermocladiumSpEchB(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermocladiumSpEchB graph.
+    """Return new instance of the Thermocladium sp. ECH_B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermocladiumSpEchB(
 
     Returns
     -----------------------
-    Instace of ThermocladiumSpEchB graph.
+    Instace of Thermocladium sp. ECH_B graph.
 
 	References
 	---------------------

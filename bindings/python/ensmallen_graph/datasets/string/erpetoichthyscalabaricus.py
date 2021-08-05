@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErpetoichthysCalabaricus.
+This file offers the methods to automatically retrieve the graph Erpetoichthys calabaricus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErpetoichthysCalabaricus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErpetoichthysCalabaricus graph.
+    """Return new instance of the Erpetoichthys calabaricus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErpetoichthysCalabaricus(
 
     Returns
     -----------------------
-    Instace of ErpetoichthysCalabaricus graph.
+    Instace of Erpetoichthys calabaricus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesUniformis.
+This file offers the methods to automatically retrieve the graph Bacteroides uniformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesUniformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesUniformis graph.
+    """Return new instance of the Bacteroides uniformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesUniformis(
 
     Returns
     -----------------------
-    Instace of BacteroidesUniformis graph.
+    Instace of Bacteroides uniformis graph.
 
 	References
 	---------------------

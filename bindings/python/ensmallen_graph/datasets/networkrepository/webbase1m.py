@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Webbase1m.
+This file offers the methods to automatically retrieve the graph webbase-1M.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Webbase1m(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Webbase1m graph.
+    """Return new instance of the webbase-1M graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Webbase1m(
 
     Returns
     -----------------------
-    Instace of Webbase1m graph.
+    Instace of webbase-1M graph.
 
 	References
 	---------------------

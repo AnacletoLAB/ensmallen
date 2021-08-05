@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteralesBacteriumCg2306027.
+This file offers the methods to automatically retrieve the graph Desulfobacterales bacterium CG2_30_60_27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteralesBacteriumCg2306027(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteralesBacteriumCg2306027 graph.
+    """Return new instance of the Desulfobacterales bacterium CG2_30_60_27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobacteralesBacteriumCg2306027(
 
     Returns
     -----------------------
-    Instace of DesulfobacteralesBacteriumCg2306027 graph.
+    Instace of Desulfobacterales bacterium CG2_30_60_27 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrionalesBacteriumGwa2659.
+This file offers the methods to automatically retrieve the graph Desulfovibrionales bacterium GWA2_65_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrionalesBacteriumGwa2659(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrionalesBacteriumGwa2659 graph.
+    """Return new instance of the Desulfovibrionales bacterium GWA2_65_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrionalesBacteriumGwa2659(
 
     Returns
     -----------------------
-    Instace of DesulfovibrionalesBacteriumGwa2659 graph.
+    Instace of Desulfovibrionales bacterium GWA2_65_9 graph.
 
 	References
 	---------------------

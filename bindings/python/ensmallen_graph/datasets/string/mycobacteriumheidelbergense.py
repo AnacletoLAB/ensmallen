@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumHeidelbergense.
+This file offers the methods to automatically retrieve the graph Mycobacterium heidelbergense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumHeidelbergense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumHeidelbergense graph.
+    """Return new instance of the Mycobacterium heidelbergense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumHeidelbergense(
 
     Returns
     -----------------------
-    Instace of MycobacteriumHeidelbergense graph.
+    Instace of Mycobacterium heidelbergense graph.
 
 	References
 	---------------------

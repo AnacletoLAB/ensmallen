@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaParamesenteroides.
+This file offers the methods to automatically retrieve the graph Weissella paramesenteroides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaParamesenteroides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaParamesenteroides graph.
+    """Return new instance of the Weissella paramesenteroides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeissellaParamesenteroides(
 
     Returns
     -----------------------
-    Instace of WeissellaParamesenteroides graph.
+    Instace of Weissella paramesenteroides graph.
 
 	References
 	---------------------

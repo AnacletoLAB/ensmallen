@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrodermaOtae.
+This file offers the methods to automatically retrieve the graph Arthroderma otae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrodermaOtae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrodermaOtae graph.
+    """Return new instance of the Arthroderma otae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrodermaOtae(
 
     Returns
     -----------------------
-    Instace of ArthrodermaOtae graph.
+    Instace of Arthroderma otae graph.
 
 	References
 	---------------------

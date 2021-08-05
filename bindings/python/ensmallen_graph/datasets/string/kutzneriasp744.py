@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KutzneriaSp744.
+This file offers the methods to automatically retrieve the graph Kutzneria sp. 744.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KutzneriaSp744(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KutzneriaSp744 graph.
+    """Return new instance of the Kutzneria sp. 744 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KutzneriaSp744(
 
     Returns
     -----------------------
-    Instace of KutzneriaSp744 graph.
+    Instace of Kutzneria sp. 744 graph.
 
 	References
 	---------------------

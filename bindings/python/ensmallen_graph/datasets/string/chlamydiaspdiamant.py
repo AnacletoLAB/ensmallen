@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaSpDiamant.
+This file offers the methods to automatically retrieve the graph Chlamydia sp. Diamant.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaSpDiamant(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaSpDiamant graph.
+    """Return new instance of the Chlamydia sp. Diamant graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaSpDiamant(
 
     Returns
     -----------------------
-    Instace of ChlamydiaSpDiamant graph.
+    Instace of Chlamydia sp. Diamant graph.
 
 	References
 	---------------------

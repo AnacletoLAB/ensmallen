@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesDurhamensis.
+This file offers the methods to automatically retrieve the graph Streptomyces durhamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesDurhamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesDurhamensis graph.
+    """Return new instance of the Streptomyces durhamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesDurhamensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesDurhamensis graph.
+    Instace of Streptomyces durhamensis graph.
 
 	References
 	---------------------

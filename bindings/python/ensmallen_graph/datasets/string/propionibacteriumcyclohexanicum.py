@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumCyclohexanicum.
+This file offers the methods to automatically retrieve the graph Propionibacterium cyclohexanicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumCyclohexanicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumCyclohexanicum graph.
+    """Return new instance of the Propionibacterium cyclohexanicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PropionibacteriumCyclohexanicum(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumCyclohexanicum graph.
+    Instace of Propionibacterium cyclohexanicum graph.
 
 	References
 	---------------------

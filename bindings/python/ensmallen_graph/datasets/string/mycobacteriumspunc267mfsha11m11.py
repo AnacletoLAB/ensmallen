@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpUnc267mfsha11m11.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. UNC267MFSha1.1M11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpUnc267mfsha11m11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpUnc267mfsha11m11 graph.
+    """Return new instance of the Mycobacterium sp. UNC267MFSha1.1M11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpUnc267mfsha11m11(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpUnc267mfsha11m11 graph.
+    Instace of Mycobacterium sp. UNC267MFSha1.1M11 graph.
 
 	References
 	---------------------

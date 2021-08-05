@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioScGt.
+This file offers the methods to automatically retrieve the graph bio-SC-GT.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioScGt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioScGt graph.
+    """Return new instance of the bio-SC-GT graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioScGt(
 
     Returns
     -----------------------
-    Instace of BioScGt graph.
+    Instace of bio-SC-GT graph.
 
 	References
 	---------------------

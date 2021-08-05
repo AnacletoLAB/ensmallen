@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CriblamydiaSequanensis.
+This file offers the methods to automatically retrieve the graph Criblamydia sequanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CriblamydiaSequanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CriblamydiaSequanensis graph.
+    """Return new instance of the Criblamydia sequanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CriblamydiaSequanensis(
 
     Returns
     -----------------------
-    Instace of CriblamydiaSequanensis graph.
+    Instace of Criblamydia sequanensis graph.
 
 	References
 	---------------------

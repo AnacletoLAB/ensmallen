@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaVaginalis.
+This file offers the methods to automatically retrieve the graph Collinsella vaginalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaVaginalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaVaginalis graph.
+    """Return new instance of the Collinsella vaginalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollinsellaVaginalis(
 
     Returns
     -----------------------
-    Instace of CollinsellaVaginalis graph.
+    Instace of Collinsella vaginalis graph.
 
 	References
 	---------------------

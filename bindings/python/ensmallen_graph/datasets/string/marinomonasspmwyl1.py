@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasSpMwyl1.
+This file offers the methods to automatically retrieve the graph Marinomonas sp. MWYL1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasSpMwyl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasSpMwyl1 graph.
+    """Return new instance of the Marinomonas sp. MWYL1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinomonasSpMwyl1(
 
     Returns
     -----------------------
-    Instace of MarinomonasSpMwyl1 graph.
+    Instace of Marinomonas sp. MWYL1 graph.
 
 	References
 	---------------------

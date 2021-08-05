@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysobacterEnzymogenes.
+This file offers the methods to automatically retrieve the graph Lysobacter enzymogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysobacterEnzymogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysobacterEnzymogenes graph.
+    """Return new instance of the Lysobacter enzymogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysobacterEnzymogenes(
 
     Returns
     -----------------------
-    Instace of LysobacterEnzymogenes graph.
+    Instace of Lysobacter enzymogenes graph.
 
 	References
 	---------------------

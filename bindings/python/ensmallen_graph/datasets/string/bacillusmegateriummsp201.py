@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMegateriumMsp201.
+This file offers the methods to automatically retrieve the graph Bacillus megaterium MSP201.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMegateriumMsp201(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMegateriumMsp201 graph.
+    """Return new instance of the Bacillus megaterium MSP201 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusMegateriumMsp201(
 
     Returns
     -----------------------
-    Instace of BacillusMegateriumMsp201 graph.
+    Instace of Bacillus megaterium MSP201 graph.
 
 	References
 	---------------------

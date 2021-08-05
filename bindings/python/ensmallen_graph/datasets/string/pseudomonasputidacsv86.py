@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPutidaCsv86.
+This file offers the methods to automatically retrieve the graph Pseudomonas putida CSV86.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPutidaCsv86(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPutidaCsv86 graph.
+    """Return new instance of the Pseudomonas putida CSV86 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPutidaCsv86(
 
     Returns
     -----------------------
-    Instace of PseudomonasPutidaCsv86 graph.
+    Instace of Pseudomonas putida CSV86 graph.
 
 	References
 	---------------------

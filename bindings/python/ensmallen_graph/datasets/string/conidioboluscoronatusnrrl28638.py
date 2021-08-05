@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConidiobolusCoronatusNrrl28638.
+This file offers the methods to automatically retrieve the graph Conidiobolus coronatus NRRL 28638.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConidiobolusCoronatusNrrl28638(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConidiobolusCoronatusNrrl28638 graph.
+    """Return new instance of the Conidiobolus coronatus NRRL 28638 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConidiobolusCoronatusNrrl28638(
 
     Returns
     -----------------------
-    Instace of ConidiobolusCoronatusNrrl28638 graph.
+    Instace of Conidiobolus coronatus NRRL 28638 graph.
 
 	References
 	---------------------

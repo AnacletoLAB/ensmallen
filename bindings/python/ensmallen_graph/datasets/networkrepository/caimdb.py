@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaImdb.
+This file offers the methods to automatically retrieve the graph ca-IMDB.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -41,7 +41,7 @@ def CaImdb(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaImdb graph.
+    """Return new instance of the ca-IMDB graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -68,7 +68,7 @@ def CaImdb(
 
     Returns
     -----------------------
-    Instace of CaImdb graph.
+    Instace of ca-IMDB graph.
 
 	References
 	---------------------

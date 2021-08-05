@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasHydrophilaYl17.
+This file offers the methods to automatically retrieve the graph Aeromonas hydrophila YL17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasHydrophilaYl17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasHydrophilaYl17 graph.
+    """Return new instance of the Aeromonas hydrophila YL17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeromonasHydrophilaYl17(
 
     Returns
     -----------------------
-    Instace of AeromonasHydrophilaYl17 graph.
+    Instace of Aeromonas hydrophila YL17 graph.
 
 	References
 	---------------------

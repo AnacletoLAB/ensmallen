@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolimonasAquatica.
+This file offers the methods to automatically retrieve the graph Solimonas aquatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolimonasAquatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolimonasAquatica graph.
+    """Return new instance of the Solimonas aquatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolimonasAquatica(
 
     Returns
     -----------------------
-    Instace of SolimonasAquatica graph.
+    Instace of Solimonas aquatica graph.
 
 	References
 	---------------------

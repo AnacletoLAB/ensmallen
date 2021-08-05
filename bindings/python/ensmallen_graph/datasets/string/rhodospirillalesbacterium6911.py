@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillalesBacterium6911.
+This file offers the methods to automatically retrieve the graph Rhodospirillales bacterium 69-11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillalesBacterium6911(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillalesBacterium6911 graph.
+    """Return new instance of the Rhodospirillales bacterium 69-11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillalesBacterium6911(
 
     Returns
     -----------------------
-    Instace of RhodospirillalesBacterium6911 graph.
+    Instace of Rhodospirillales bacterium 69-11 graph.
 
 	References
 	---------------------

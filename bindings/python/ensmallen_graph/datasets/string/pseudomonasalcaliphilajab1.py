@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAlcaliphilaJab1.
+This file offers the methods to automatically retrieve the graph Pseudomonas alcaliphila JAB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAlcaliphilaJab1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAlcaliphilaJab1 graph.
+    """Return new instance of the Pseudomonas alcaliphila JAB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAlcaliphilaJab1(
 
     Returns
     -----------------------
-    Instace of PseudomonasAlcaliphilaJab1 graph.
+    Instace of Pseudomonas alcaliphila JAB1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesGroupBacteriumGw2011Gwc14311.
+This file offers the methods to automatically retrieve the graph Microgenomates group bacterium GW2011_GWC1_43_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesGroupBacteriumGw2011Gwc14311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesGroupBacteriumGw2011Gwc14311 graph.
+    """Return new instance of the Microgenomates group bacterium GW2011_GWC1_43_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesGroupBacteriumGw2011Gwc14311(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesGroupBacteriumGw2011Gwc14311 graph.
+    Instace of Microgenomates group bacterium GW2011_GWC1_43_11 graph.
 
 	References
 	---------------------

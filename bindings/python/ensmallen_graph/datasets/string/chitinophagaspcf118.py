@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaSpCf118.
+This file offers the methods to automatically retrieve the graph Chitinophaga sp. CF118.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaSpCf118(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaSpCf118 graph.
+    """Return new instance of the Chitinophaga sp. CF118 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaSpCf118(
 
     Returns
     -----------------------
-    Instace of ChitinophagaSpCf118 graph.
+    Instace of Chitinophaga sp. CF118 graph.
 
 	References
 	---------------------

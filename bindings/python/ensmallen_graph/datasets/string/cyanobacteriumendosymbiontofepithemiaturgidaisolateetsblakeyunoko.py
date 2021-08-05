@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko.
+This file offers the methods to automatically retrieve the graph cyanobacterium endosymbiont of Epithemia turgida isolate EtSB Lake Yunoko.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko graph.
+    """Return new instance of the cyanobacterium endosymbiont of Epithemia turgida isolate EtSB Lake Yunoko graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko(
 
     Returns
     -----------------------
-    Instace of CyanobacteriumEndosymbiontOfEpithemiaTurgidaIsolateEtsbLakeYunoko graph.
+    Instace of cyanobacterium endosymbiont of Epithemia turgida isolate EtSB Lake Yunoko graph.
 
 	References
 	---------------------

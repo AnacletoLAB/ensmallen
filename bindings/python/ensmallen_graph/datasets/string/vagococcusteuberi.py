@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VagococcusTeuberi.
+This file offers the methods to automatically retrieve the graph Vagococcus teuberi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VagococcusTeuberi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VagococcusTeuberi graph.
+    """Return new instance of the Vagococcus teuberi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VagococcusTeuberi(
 
     Returns
     -----------------------
-    Instace of VagococcusTeuberi graph.
+    Instace of Vagococcus teuberi graph.
 
 	References
 	---------------------

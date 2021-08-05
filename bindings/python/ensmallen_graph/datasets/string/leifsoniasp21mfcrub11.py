@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeifsoniaSp21mfcrub11.
+This file offers the methods to automatically retrieve the graph Leifsonia sp. 21MFCrub1.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeifsoniaSp21mfcrub11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeifsoniaSp21mfcrub11 graph.
+    """Return new instance of the Leifsonia sp. 21MFCrub1.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeifsoniaSp21mfcrub11(
 
     Returns
     -----------------------
-    Instace of LeifsoniaSp21mfcrub11 graph.
+    Instace of Leifsonia sp. 21MFCrub1.1 graph.
 
 	References
 	---------------------

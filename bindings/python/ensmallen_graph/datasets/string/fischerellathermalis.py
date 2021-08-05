@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FischerellaThermalis.
+This file offers the methods to automatically retrieve the graph Fischerella thermalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FischerellaThermalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FischerellaThermalis graph.
+    """Return new instance of the Fischerella thermalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FischerellaThermalis(
 
     Returns
     -----------------------
-    Instace of FischerellaThermalis graph.
+    Instace of Fischerella thermalis graph.
 
 	References
 	---------------------

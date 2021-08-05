@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusTokodaii.
+This file offers the methods to automatically retrieve the graph Sulfolobus tokodaii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusTokodaii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusTokodaii graph.
+    """Return new instance of the Sulfolobus tokodaii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfolobusTokodaii(
 
     Returns
     -----------------------
-    Instace of SulfolobusTokodaii graph.
+    Instace of Sulfolobus tokodaii graph.
 
 	References
 	---------------------

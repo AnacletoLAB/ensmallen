@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusFlavithermusTno09006.
+This file offers the methods to automatically retrieve the graph Anoxybacillus flavithermus TNO09006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusFlavithermusTno09006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusFlavithermusTno09006 graph.
+    """Return new instance of the Anoxybacillus flavithermus TNO09006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnoxybacillusFlavithermusTno09006(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusFlavithermusTno09006 graph.
+    Instace of Anoxybacillus flavithermus TNO09006 graph.
 
 	References
 	---------------------

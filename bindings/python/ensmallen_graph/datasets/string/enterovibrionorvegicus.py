@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterovibrioNorvegicus.
+This file offers the methods to automatically retrieve the graph Enterovibrio norvegicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterovibrioNorvegicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterovibrioNorvegicus graph.
+    """Return new instance of the Enterovibrio norvegicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterovibrioNorvegicus(
 
     Returns
     -----------------------
-    Instace of EnterovibrioNorvegicus graph.
+    Instace of Enterovibrio norvegicus graph.
 
 	References
 	---------------------

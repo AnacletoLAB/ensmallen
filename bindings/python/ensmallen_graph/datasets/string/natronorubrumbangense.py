@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatronorubrumBangense.
+This file offers the methods to automatically retrieve the graph Natronorubrum bangense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatronorubrumBangense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatronorubrumBangense graph.
+    """Return new instance of the Natronorubrum bangense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatronorubrumBangense(
 
     Returns
     -----------------------
-    Instace of NatronorubrumBangense graph.
+    Instace of Natronorubrum bangense graph.
 
 	References
 	---------------------

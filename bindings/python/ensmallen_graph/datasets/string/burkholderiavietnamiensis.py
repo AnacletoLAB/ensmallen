@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaVietnamiensis.
+This file offers the methods to automatically retrieve the graph Burkholderia vietnamiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaVietnamiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaVietnamiensis graph.
+    """Return new instance of the Burkholderia vietnamiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaVietnamiensis(
 
     Returns
     -----------------------
-    Instace of BurkholderiaVietnamiensis graph.
+    Instace of Burkholderia vietnamiensis graph.
 
 	References
 	---------------------

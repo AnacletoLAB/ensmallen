@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaPutida.
+This file offers the methods to automatically retrieve the graph Massilia putida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaPutida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaPutida graph.
+    """Return new instance of the Massilia putida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaPutida(
 
     Returns
     -----------------------
-    Instace of MassiliaPutida graph.
+    Instace of Massilia putida graph.
 
 	References
 	---------------------

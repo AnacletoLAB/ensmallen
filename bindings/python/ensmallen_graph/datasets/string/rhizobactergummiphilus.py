@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobacterGummiphilus.
+This file offers the methods to automatically retrieve the graph Rhizobacter gummiphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobacterGummiphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobacterGummiphilus graph.
+    """Return new instance of the Rhizobacter gummiphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobacterGummiphilus(
 
     Returns
     -----------------------
-    Instace of RhizobacterGummiphilus graph.
+    Instace of Rhizobacter gummiphilus graph.
 
 	References
 	---------------------

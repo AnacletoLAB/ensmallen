@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeronosporaEffusa.
+This file offers the methods to automatically retrieve the graph Peronospora effusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeronosporaEffusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeronosporaEffusa graph.
+    """Return new instance of the Peronospora effusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeronosporaEffusa(
 
     Returns
     -----------------------
-    Instace of PeronosporaEffusa graph.
+    Instace of Peronospora effusa graph.
 
 	References
 	---------------------

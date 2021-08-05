@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Pedobacter rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterRhizosphaerae graph.
+    """Return new instance of the Pedobacter rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of PedobacterRhizosphaerae graph.
+    Instace of Pedobacter rhizosphaerae graph.
 
 	References
 	---------------------

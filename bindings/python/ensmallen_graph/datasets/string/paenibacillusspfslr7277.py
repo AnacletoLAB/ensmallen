@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpFslr7277.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. FSLR7277.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpFslr7277(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpFslr7277 graph.
+    """Return new instance of the Paenibacillus sp. FSLR7277 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpFslr7277(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpFslr7277 graph.
+    Instace of Paenibacillus sp. FSLR7277 graph.
 
 	References
 	---------------------

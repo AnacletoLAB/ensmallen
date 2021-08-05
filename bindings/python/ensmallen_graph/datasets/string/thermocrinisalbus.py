@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermocrinisAlbus.
+This file offers the methods to automatically retrieve the graph Thermocrinis albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermocrinisAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermocrinisAlbus graph.
+    """Return new instance of the Thermocrinis albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermocrinisAlbus(
 
     Returns
     -----------------------
-    Instace of ThermocrinisAlbus graph.
+    Instace of Thermocrinis albus graph.
 
 	References
 	---------------------

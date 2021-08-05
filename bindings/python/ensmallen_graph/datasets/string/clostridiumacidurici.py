@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAcidurici.
+This file offers the methods to automatically retrieve the graph Clostridium acidurici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAcidurici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAcidurici graph.
+    """Return new instance of the Clostridium acidurici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumAcidurici(
 
     Returns
     -----------------------
-    Instace of ClostridiumAcidurici graph.
+    Instace of Clostridium acidurici graph.
 
 	References
 	---------------------

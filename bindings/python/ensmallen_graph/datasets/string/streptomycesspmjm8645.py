@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpMjm8645.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. MJM8645.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpMjm8645(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpMjm8645 graph.
+    """Return new instance of the Streptomyces sp. MJM8645 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpMjm8645(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpMjm8645 graph.
+    Instace of Streptomyces sp. MJM8645 graph.
 
 	References
 	---------------------

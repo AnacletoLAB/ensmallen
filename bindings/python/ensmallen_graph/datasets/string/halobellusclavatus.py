@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobellusClavatus.
+This file offers the methods to automatically retrieve the graph Halobellus clavatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobellusClavatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobellusClavatus graph.
+    """Return new instance of the Halobellus clavatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalobellusClavatus(
 
     Returns
     -----------------------
-    Instace of HalobellusClavatus graph.
+    Instace of Halobellus clavatus graph.
 
 	References
 	---------------------

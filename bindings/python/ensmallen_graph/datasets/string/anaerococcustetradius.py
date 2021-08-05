@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusTetradius.
+This file offers the methods to automatically retrieve the graph Anaerococcus tetradius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusTetradius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusTetradius graph.
+    """Return new instance of the Anaerococcus tetradius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusTetradius(
 
     Returns
     -----------------------
-    Instace of AnaerococcusTetradius graph.
+    Instace of Anaerococcus tetradius graph.
 
 	References
 	---------------------

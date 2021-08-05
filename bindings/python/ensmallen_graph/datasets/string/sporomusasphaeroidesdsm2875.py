@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporomusaSphaeroidesDsm2875.
+This file offers the methods to automatically retrieve the graph Sporomusa sphaeroides DSM 2875.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporomusaSphaeroidesDsm2875(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporomusaSphaeroidesDsm2875 graph.
+    """Return new instance of the Sporomusa sphaeroides DSM 2875 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporomusaSphaeroidesDsm2875(
 
     Returns
     -----------------------
-    Instace of SporomusaSphaeroidesDsm2875 graph.
+    Instace of Sporomusa sphaeroides DSM 2875 graph.
 
 	References
 	---------------------

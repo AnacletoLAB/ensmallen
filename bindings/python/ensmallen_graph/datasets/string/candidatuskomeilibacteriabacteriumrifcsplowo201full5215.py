@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKomeilibacteriaBacteriumRifcsplowo201Full5215.
+This file offers the methods to automatically retrieve the graph Candidatus Komeilibacteria bacterium RIFCSPLOWO2_01_FULL_52_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKomeilibacteriaBacteriumRifcsplowo201Full5215(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKomeilibacteriaBacteriumRifcsplowo201Full5215 graph.
+    """Return new instance of the Candidatus Komeilibacteria bacterium RIFCSPLOWO2_01_FULL_52_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKomeilibacteriaBacteriumRifcsplowo201Full5215(
 
     Returns
     -----------------------
-    Instace of CandidatusKomeilibacteriaBacteriumRifcsplowo201Full5215 graph.
+    Instace of Candidatus Komeilibacteria bacterium RIFCSPLOWO2_01_FULL_52_15 graph.
 
 	References
 	---------------------

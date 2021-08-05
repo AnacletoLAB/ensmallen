@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaElaeis.
+This file offers the methods to automatically retrieve the graph Devosia elaeis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaElaeis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaElaeis graph.
+    """Return new instance of the Devosia elaeis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaElaeis(
 
     Returns
     -----------------------
-    Instace of DevosiaElaeis graph.
+    Instace of Devosia elaeis graph.
 
 	References
 	---------------------

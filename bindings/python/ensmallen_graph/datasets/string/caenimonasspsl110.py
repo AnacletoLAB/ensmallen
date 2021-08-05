@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenimonasSpSl110.
+This file offers the methods to automatically retrieve the graph Caenimonas sp. SL110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenimonasSpSl110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenimonasSpSl110 graph.
+    """Return new instance of the Caenimonas sp. SL110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaenimonasSpSl110(
 
     Returns
     -----------------------
-    Instace of CaenimonasSpSl110 graph.
+    Instace of Caenimonas sp. SL110 graph.
 
 	References
 	---------------------

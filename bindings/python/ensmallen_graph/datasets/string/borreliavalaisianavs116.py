@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BorreliaValaisianaVs116.
+This file offers the methods to automatically retrieve the graph Borrelia valaisiana VS116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BorreliaValaisianaVs116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BorreliaValaisianaVs116 graph.
+    """Return new instance of the Borrelia valaisiana VS116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BorreliaValaisianaVs116(
 
     Returns
     -----------------------
-    Instace of BorreliaValaisianaVs116 graph.
+    Instace of Borrelia valaisiana VS116 graph.
 
 	References
 	---------------------

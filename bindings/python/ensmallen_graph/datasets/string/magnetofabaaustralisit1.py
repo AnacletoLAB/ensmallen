@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetofabaAustralisIt1.
+This file offers the methods to automatically retrieve the graph Magnetofaba australis IT-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetofabaAustralisIt1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetofabaAustralisIt1 graph.
+    """Return new instance of the Magnetofaba australis IT-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnetofabaAustralisIt1(
 
     Returns
     -----------------------
-    Instace of MagnetofabaAustralisIt1 graph.
+    Instace of Magnetofaba australis IT-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaLongaSw024.
+This file offers the methods to automatically retrieve the graph Aquimarina longa SW024.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaLongaSw024(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaLongaSw024 graph.
+    """Return new instance of the Aquimarina longa SW024 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquimarinaLongaSw024(
 
     Returns
     -----------------------
-    Instace of AquimarinaLongaSw024 graph.
+    Instace of Aquimarina longa SW024 graph.
 
 	References
 	---------------------

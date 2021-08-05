@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaPrimitiaZas1.
+This file offers the methods to automatically retrieve the graph Treponema primitia ZAS-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaPrimitiaZas1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaPrimitiaZas1 graph.
+    """Return new instance of the Treponema primitia ZAS-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaPrimitiaZas1(
 
     Returns
     -----------------------
-    Instace of TreponemaPrimitiaZas1 graph.
+    Instace of Treponema primitia ZAS-1 graph.
 
 	References
 	---------------------

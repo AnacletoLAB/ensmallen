@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaribaculumMassiliense.
+This file offers the methods to automatically retrieve the graph Varibaculum massiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaribaculumMassiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaribaculumMassiliense graph.
+    """Return new instance of the Varibaculum massiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VaribaculumMassiliense(
 
     Returns
     -----------------------
-    Instace of VaribaculumMassiliense graph.
+    Instace of Varibaculum massiliense graph.
 
 	References
 	---------------------

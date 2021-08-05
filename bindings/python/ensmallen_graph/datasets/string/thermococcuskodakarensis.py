@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusKodakarensis.
+This file offers the methods to automatically retrieve the graph Thermococcus kodakarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusKodakarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusKodakarensis graph.
+    """Return new instance of the Thermococcus kodakarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusKodakarensis(
 
     Returns
     -----------------------
-    Instace of ThermococcusKodakarensis graph.
+    Instace of Thermococcus kodakarensis graph.
 
 	References
 	---------------------

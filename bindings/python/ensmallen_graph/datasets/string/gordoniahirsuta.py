@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaHirsuta.
+This file offers the methods to automatically retrieve the graph Gordonia hirsuta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaHirsuta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaHirsuta graph.
+    """Return new instance of the Gordonia hirsuta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaHirsuta(
 
     Returns
     -----------------------
-    Instace of GordoniaHirsuta graph.
+    Instace of Gordonia hirsuta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlicyclobacillusAcidocaldariusTc41.
+This file offers the methods to automatically retrieve the graph Alicyclobacillus acidocaldarius Tc41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlicyclobacillusAcidocaldariusTc41(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlicyclobacillusAcidocaldariusTc41 graph.
+    """Return new instance of the Alicyclobacillus acidocaldarius Tc41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlicyclobacillusAcidocaldariusTc41(
 
     Returns
     -----------------------
-    Instace of AlicyclobacillusAcidocaldariusTc41 graph.
+    Instace of Alicyclobacillus acidocaldarius Tc41 graph.
 
 	References
 	---------------------

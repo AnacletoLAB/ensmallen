@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CephaloticoccusPrimus.
+This file offers the methods to automatically retrieve the graph Cephaloticoccus primus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CephaloticoccusPrimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CephaloticoccusPrimus graph.
+    """Return new instance of the Cephaloticoccus primus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CephaloticoccusPrimus(
 
     Returns
     -----------------------
-    Instace of CephaloticoccusPrimus graph.
+    Instace of Cephaloticoccus primus graph.
 
 	References
 	---------------------

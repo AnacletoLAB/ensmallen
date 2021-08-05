@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaSimulans.
+This file offers the methods to automatically retrieve the graph Drosophila simulans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaSimulans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaSimulans graph.
+    """Return new instance of the Drosophila simulans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaSimulans(
 
     Returns
     -----------------------
-    Instace of DrosophilaSimulans graph.
+    Instace of Drosophila simulans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumGibsoniae.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum gibsoniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumGibsoniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumGibsoniae graph.
+    """Return new instance of the Desulfotomaculum gibsoniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumGibsoniae(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumGibsoniae graph.
+    Instace of Desulfotomaculum gibsoniae graph.
 
 	References
 	---------------------

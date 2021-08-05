@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BabesiaBovis.
+This file offers the methods to automatically retrieve the graph Babesia bovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BabesiaBovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BabesiaBovis graph.
+    """Return new instance of the Babesia bovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BabesiaBovis(
 
     Returns
     -----------------------
-    Instace of BabesiaBovis graph.
+    Instace of Babesia bovis graph.
 
 	References
 	---------------------

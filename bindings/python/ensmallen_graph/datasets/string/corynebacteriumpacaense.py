@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumPacaense.
+This file offers the methods to automatically retrieve the graph Corynebacterium pacaense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumPacaense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumPacaense graph.
+    """Return new instance of the Corynebacterium pacaense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumPacaense(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumPacaense graph.
+    Instace of Corynebacterium pacaense graph.
 
 	References
 	---------------------

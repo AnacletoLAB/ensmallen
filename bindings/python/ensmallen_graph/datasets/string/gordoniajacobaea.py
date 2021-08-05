@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaJacobaea.
+This file offers the methods to automatically retrieve the graph Gordonia jacobaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaJacobaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaJacobaea graph.
+    """Return new instance of the Gordonia jacobaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaJacobaea(
 
     Returns
     -----------------------
-    Instace of GordoniaJacobaea graph.
+    Instace of Gordonia jacobaea graph.
 
 	References
 	---------------------

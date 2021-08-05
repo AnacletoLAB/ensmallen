@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MalasseziaVespertilionis.
+This file offers the methods to automatically retrieve the graph Malassezia vespertilionis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MalasseziaVespertilionis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MalasseziaVespertilionis graph.
+    """Return new instance of the Malassezia vespertilionis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MalasseziaVespertilionis(
 
     Returns
     -----------------------
-    Instace of MalasseziaVespertilionis graph.
+    Instace of Malassezia vespertilionis graph.
 
 	References
 	---------------------

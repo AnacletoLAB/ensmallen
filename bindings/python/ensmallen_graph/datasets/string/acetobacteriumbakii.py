@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacteriumBakii.
+This file offers the methods to automatically retrieve the graph Acetobacterium bakii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacteriumBakii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacteriumBakii graph.
+    """Return new instance of the Acetobacterium bakii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacteriumBakii(
 
     Returns
     -----------------------
-    Instace of AcetobacteriumBakii graph.
+    Instace of Acetobacterium bakii graph.
 
 	References
 	---------------------

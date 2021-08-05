@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConfluentimicrobiumSpEmb200Ns6.
+This file offers the methods to automatically retrieve the graph Confluentimicrobium sp. EMB200-NS6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConfluentimicrobiumSpEmb200Ns6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConfluentimicrobiumSpEmb200Ns6 graph.
+    """Return new instance of the Confluentimicrobium sp. EMB200-NS6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConfluentimicrobiumSpEmb200Ns6(
 
     Returns
     -----------------------
-    Instace of ConfluentimicrobiumSpEmb200Ns6 graph.
+    Instace of Confluentimicrobium sp. EMB200-NS6 graph.
 
 	References
 	---------------------

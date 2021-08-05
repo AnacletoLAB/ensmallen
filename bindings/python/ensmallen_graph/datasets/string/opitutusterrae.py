@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpitutusTerrae.
+This file offers the methods to automatically retrieve the graph Opitutus terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpitutusTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpitutusTerrae graph.
+    """Return new instance of the Opitutus terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OpitutusTerrae(
 
     Returns
     -----------------------
-    Instace of OpitutusTerrae graph.
+    Instace of Opitutus terrae graph.
 
 	References
 	---------------------

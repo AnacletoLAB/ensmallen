@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophilusSpLeaf414.
+This file offers the methods to automatically retrieve the graph Methylophilus sp. Leaf414.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophilusSpLeaf414(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophilusSpLeaf414 graph.
+    """Return new instance of the Methylophilus sp. Leaf414 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylophilusSpLeaf414(
 
     Returns
     -----------------------
-    Instace of MethylophilusSpLeaf414 graph.
+    Instace of Methylophilus sp. Leaf414 graph.
 
 	References
 	---------------------

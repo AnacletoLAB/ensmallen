@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribiusSalinus.
+This file offers the methods to automatically retrieve the graph Maribius salinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribiusSalinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribiusSalinus graph.
+    """Return new instance of the Maribius salinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribiusSalinus(
 
     Returns
     -----------------------
-    Instace of MaribiusSalinus graph.
+    Instace of Maribius salinus graph.
 
 	References
 	---------------------

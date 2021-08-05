@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuhomycesTanzawaensisNrrlY17324.
+This file offers the methods to automatically retrieve the graph Suhomyces tanzawaensis NRRL Y-17324.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuhomycesTanzawaensisNrrlY17324(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuhomycesTanzawaensisNrrlY17324 graph.
+    """Return new instance of the Suhomyces tanzawaensis NRRL Y-17324 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SuhomycesTanzawaensisNrrlY17324(
 
     Returns
     -----------------------
-    Instace of SuhomycesTanzawaensisNrrlY17324 graph.
+    Instace of Suhomyces tanzawaensis NRRL Y-17324 graph.
 
 	References
 	---------------------

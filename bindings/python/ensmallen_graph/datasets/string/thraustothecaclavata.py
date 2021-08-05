@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThraustothecaClavata.
+This file offers the methods to automatically retrieve the graph Thraustotheca clavata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThraustothecaClavata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThraustothecaClavata graph.
+    """Return new instance of the Thraustotheca clavata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThraustothecaClavata(
 
     Returns
     -----------------------
-    Instace of ThraustothecaClavata graph.
+    Instace of Thraustotheca clavata graph.
 
 	References
 	---------------------

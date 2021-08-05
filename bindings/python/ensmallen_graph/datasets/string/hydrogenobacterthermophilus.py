@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenobacterThermophilus.
+This file offers the methods to automatically retrieve the graph Hydrogenobacter thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenobacterThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenobacterThermophilus graph.
+    """Return new instance of the Hydrogenobacter thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HydrogenobacterThermophilus(
 
     Returns
     -----------------------
-    Instace of HydrogenobacterThermophilus graph.
+    Instace of Hydrogenobacter thermophilus graph.
 
 	References
 	---------------------

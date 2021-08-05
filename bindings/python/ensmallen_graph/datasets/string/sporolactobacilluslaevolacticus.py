@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporolactobacillusLaevolacticus.
+This file offers the methods to automatically retrieve the graph Sporolactobacillus laevolacticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporolactobacillusLaevolacticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporolactobacillusLaevolacticus graph.
+    """Return new instance of the Sporolactobacillus laevolacticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporolactobacillusLaevolacticus(
 
     Returns
     -----------------------
-    Instace of SporolactobacillusLaevolacticus graph.
+    Instace of Sporolactobacillus laevolacticus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytophthoraParasitica.
+This file offers the methods to automatically retrieve the graph Phytophthora parasitica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytophthoraParasitica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytophthoraParasitica graph.
+    """Return new instance of the Phytophthora parasitica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhytophthoraParasitica(
 
     Returns
     -----------------------
-    Instace of PhytophthoraParasitica graph.
+    Instace of Phytophthora parasitica graph.
 
 	References
 	---------------------

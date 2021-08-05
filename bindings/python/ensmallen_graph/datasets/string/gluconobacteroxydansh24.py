@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterOxydansH24.
+This file offers the methods to automatically retrieve the graph Gluconobacter oxydans H24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterOxydansH24(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterOxydansH24 graph.
+    """Return new instance of the Gluconobacter oxydans H24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GluconobacterOxydansH24(
 
     Returns
     -----------------------
-    Instace of GluconobacterOxydansH24 graph.
+    Instace of Gluconobacter oxydans H24 graph.
 
 	References
 	---------------------

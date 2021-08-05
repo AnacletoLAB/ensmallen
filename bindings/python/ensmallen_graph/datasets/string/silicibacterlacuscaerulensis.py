@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SilicibacterLacuscaerulensis.
+This file offers the methods to automatically retrieve the graph Silicibacter lacuscaerulensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SilicibacterLacuscaerulensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SilicibacterLacuscaerulensis graph.
+    """Return new instance of the Silicibacter lacuscaerulensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SilicibacterLacuscaerulensis(
 
     Returns
     -----------------------
-    Instace of SilicibacterLacuscaerulensis graph.
+    Instace of Silicibacter lacuscaerulensis graph.
 
 	References
 	---------------------

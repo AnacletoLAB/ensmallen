@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalarchaeumAcidiphilum.
+This file offers the methods to automatically retrieve the graph Halarchaeum acidiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalarchaeumAcidiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalarchaeumAcidiphilum graph.
+    """Return new instance of the Halarchaeum acidiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalarchaeumAcidiphilum(
 
     Returns
     -----------------------
-    Instace of HalarchaeumAcidiphilum graph.
+    Instace of Halarchaeum acidiphilum graph.
 
 	References
 	---------------------

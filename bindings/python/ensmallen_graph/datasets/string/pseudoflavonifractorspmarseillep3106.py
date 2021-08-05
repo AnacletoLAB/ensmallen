@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoflavonifractorSpMarseilleP3106.
+This file offers the methods to automatically retrieve the graph Pseudoflavonifractor sp. Marseille-P3106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoflavonifractorSpMarseilleP3106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoflavonifractorSpMarseilleP3106 graph.
+    """Return new instance of the Pseudoflavonifractor sp. Marseille-P3106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoflavonifractorSpMarseilleP3106(
 
     Returns
     -----------------------
-    Instace of PseudoflavonifractorSpMarseilleP3106 graph.
+    Instace of Pseudoflavonifractor sp. Marseille-P3106 graph.
 
 	References
 	---------------------

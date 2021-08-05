@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaAcidivoransNbrc108247.
+This file offers the methods to automatically retrieve the graph Nocardia acidivorans NBRC 108247.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaAcidivoransNbrc108247(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaAcidivoransNbrc108247 graph.
+    """Return new instance of the Nocardia acidivorans NBRC 108247 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaAcidivoransNbrc108247(
 
     Returns
     -----------------------
-    Instace of NocardiaAcidivoransNbrc108247 graph.
+    Instace of Nocardia acidivorans NBRC 108247 graph.
 
 	References
 	---------------------

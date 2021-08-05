@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpAnc5600.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. ANC 5600.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpAnc5600(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpAnc5600 graph.
+    """Return new instance of the Acinetobacter sp. ANC 5600 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpAnc5600(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpAnc5600 graph.
+    Instace of Acinetobacter sp. ANC 5600 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaOligosperma.
+This file offers the methods to automatically retrieve the graph Exophiala oligosperma.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaOligosperma(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaOligosperma graph.
+    """Return new instance of the Exophiala oligosperma graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExophialaOligosperma(
 
     Returns
     -----------------------
-    Instace of ExophialaOligosperma graph.
+    Instace of Exophiala oligosperma graph.
 
 	References
 	---------------------

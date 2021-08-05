@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterOrientalis.
+This file offers the methods to automatically retrieve the graph Maribacter orientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterOrientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterOrientalis graph.
+    """Return new instance of the Maribacter orientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterOrientalis(
 
     Returns
     -----------------------
-    Instace of MaribacterOrientalis graph.
+    Instace of Maribacter orientalis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidalesBacteriumKa00251.
+This file offers the methods to automatically retrieve the graph Bacteroidales bacterium KA00251.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidalesBacteriumKa00251(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidalesBacteriumKa00251 graph.
+    """Return new instance of the Bacteroidales bacterium KA00251 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidalesBacteriumKa00251(
 
     Returns
     -----------------------
-    Instace of BacteroidalesBacteriumKa00251 graph.
+    Instace of Bacteroidales bacterium KA00251 graph.
 
 	References
 	---------------------

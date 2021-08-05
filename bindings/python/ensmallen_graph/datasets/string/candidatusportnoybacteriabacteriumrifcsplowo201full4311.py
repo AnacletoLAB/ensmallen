@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortnoybacteriaBacteriumRifcsplowo201Full4311.
+This file offers the methods to automatically retrieve the graph Candidatus Portnoybacteria bacterium RIFCSPLOWO2_01_FULL_43_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPortnoybacteriaBacteriumRifcsplowo201Full4311(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortnoybacteriaBacteriumRifcsplowo201Full4311 graph.
+    """Return new instance of the Candidatus Portnoybacteria bacterium RIFCSPLOWO2_01_FULL_43_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPortnoybacteriaBacteriumRifcsplowo201Full4311(
 
     Returns
     -----------------------
-    Instace of CandidatusPortnoybacteriaBacteriumRifcsplowo201Full4311 graph.
+    Instace of Candidatus Portnoybacteria bacterium RIFCSPLOWO2_01_FULL_43_11 graph.
 
 	References
 	---------------------

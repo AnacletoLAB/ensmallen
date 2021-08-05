@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumRhizogenes.
+This file offers the methods to automatically retrieve the graph Agrobacterium rhizogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumRhizogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumRhizogenes graph.
+    """Return new instance of the Agrobacterium rhizogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AgrobacteriumRhizogenes(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumRhizogenes graph.
+    Instace of Agrobacterium rhizogenes graph.
 
 	References
 	---------------------

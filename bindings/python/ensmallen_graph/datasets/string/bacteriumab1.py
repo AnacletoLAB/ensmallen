@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumAb1.
+This file offers the methods to automatically retrieve the graph bacterium AB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumAb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumAb1 graph.
+    """Return new instance of the bacterium AB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumAb1(
 
     Returns
     -----------------------
-    Instace of BacteriumAb1 graph.
+    Instace of bacterium AB1 graph.
 
 	References
 	---------------------

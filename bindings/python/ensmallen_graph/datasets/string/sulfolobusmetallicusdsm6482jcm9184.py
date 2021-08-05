@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusMetallicusDsm6482Jcm9184.
+This file offers the methods to automatically retrieve the graph Sulfolobus metallicus DSM 6482 JCM 9184.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusMetallicusDsm6482Jcm9184(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusMetallicusDsm6482Jcm9184 graph.
+    """Return new instance of the Sulfolobus metallicus DSM 6482 JCM 9184 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfolobusMetallicusDsm6482Jcm9184(
 
     Returns
     -----------------------
-    Instace of SulfolobusMetallicusDsm6482Jcm9184 graph.
+    Instace of Sulfolobus metallicus DSM 6482 JCM 9184 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaBenthicaKt99.
+This file offers the methods to automatically retrieve the graph Shewanella benthica KT99.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaBenthicaKt99(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaBenthicaKt99 graph.
+    """Return new instance of the Shewanella benthica KT99 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaBenthicaKt99(
 
     Returns
     -----------------------
-    Instace of ShewanellaBenthicaKt99 graph.
+    Instace of Shewanella benthica KT99 graph.
 
 	References
 	---------------------

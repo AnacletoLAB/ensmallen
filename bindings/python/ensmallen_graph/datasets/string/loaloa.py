@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoaLoa.
+This file offers the methods to automatically retrieve the graph Loa loa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoaLoa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoaLoa graph.
+    """Return new instance of the Loa loa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LoaLoa(
 
     Returns
     -----------------------
-    Instace of LoaLoa graph.
+    Instace of Loa loa graph.
 
 	References
 	---------------------

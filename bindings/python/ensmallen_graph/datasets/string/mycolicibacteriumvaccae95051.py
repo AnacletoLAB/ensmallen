@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumVaccae95051.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium vaccae 95051.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumVaccae95051(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumVaccae95051 graph.
+    """Return new instance of the Mycolicibacterium vaccae 95051 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumVaccae95051(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumVaccae95051 graph.
+    Instace of Mycolicibacterium vaccae 95051 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSinduriensis.
+This file offers the methods to automatically retrieve the graph Lysinibacillus sinduriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSinduriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSinduriensis graph.
+    """Return new instance of the Lysinibacillus sinduriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusSinduriensis(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSinduriensis graph.
+    Instace of Lysinibacillus sinduriensis graph.
 
 	References
 	---------------------

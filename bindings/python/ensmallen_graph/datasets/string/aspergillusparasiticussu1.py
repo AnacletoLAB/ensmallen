@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusParasiticusSu1.
+This file offers the methods to automatically retrieve the graph Aspergillus parasiticus SU-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusParasiticusSu1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusParasiticusSu1 graph.
+    """Return new instance of the Aspergillus parasiticus SU-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusParasiticusSu1(
 
     Returns
     -----------------------
-    Instace of AspergillusParasiticusSu1 graph.
+    Instace of Aspergillus parasiticus SU-1 graph.
 
 	References
 	---------------------

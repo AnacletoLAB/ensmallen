@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApibacterMensalis.
+This file offers the methods to automatically retrieve the graph Apibacter mensalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApibacterMensalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApibacterMensalis graph.
+    """Return new instance of the Apibacter mensalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApibacterMensalis(
 
     Returns
     -----------------------
-    Instace of ApibacterMensalis graph.
+    Instace of Apibacter mensalis graph.
 
 	References
 	---------------------

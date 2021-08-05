@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CamelusDromedarius.
+This file offers the methods to automatically retrieve the graph Camelus dromedarius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CamelusDromedarius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CamelusDromedarius graph.
+    """Return new instance of the Camelus dromedarius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CamelusDromedarius(
 
     Returns
     -----------------------
-    Instace of CamelusDromedarius graph.
+    Instace of Camelus dromedarius graph.
 
 	References
 	---------------------

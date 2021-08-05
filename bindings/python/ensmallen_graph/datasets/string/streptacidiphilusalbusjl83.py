@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusAlbusJl83.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus albus JL83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusAlbusJl83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusAlbusJl83 graph.
+    """Return new instance of the Streptacidiphilus albus JL83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptacidiphilusAlbusJl83(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusAlbusJl83 graph.
+    Instace of Streptacidiphilus albus JL83 graph.
 
 	References
 	---------------------

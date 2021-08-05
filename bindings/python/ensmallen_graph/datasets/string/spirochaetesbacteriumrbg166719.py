@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirochaetesBacteriumRbg166719.
+This file offers the methods to automatically retrieve the graph Spirochaetes bacterium RBG_16_67_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirochaetesBacteriumRbg166719(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirochaetesBacteriumRbg166719 graph.
+    """Return new instance of the Spirochaetes bacterium RBG_16_67_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirochaetesBacteriumRbg166719(
 
     Returns
     -----------------------
-    Instace of SpirochaetesBacteriumRbg166719 graph.
+    Instace of Spirochaetes bacterium RBG_16_67_19 graph.
 
 	References
 	---------------------

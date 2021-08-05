@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsilocybeCyanescens.
+This file offers the methods to automatically retrieve the graph Psilocybe cyanescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsilocybeCyanescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsilocybeCyanescens graph.
+    """Return new instance of the Psilocybe cyanescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsilocybeCyanescens(
 
     Returns
     -----------------------
-    Instace of PsilocybeCyanescens graph.
+    Instace of Psilocybe cyanescens graph.
 
 	References
 	---------------------

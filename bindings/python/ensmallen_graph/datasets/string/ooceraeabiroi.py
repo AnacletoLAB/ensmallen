@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OoceraeaBiroi.
+This file offers the methods to automatically retrieve the graph Ooceraea biroi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OoceraeaBiroi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OoceraeaBiroi graph.
+    """Return new instance of the Ooceraea biroi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OoceraeaBiroi(
 
     Returns
     -----------------------
-    Instace of OoceraeaBiroi graph.
+    Instace of Ooceraea biroi graph.
 
 	References
 	---------------------

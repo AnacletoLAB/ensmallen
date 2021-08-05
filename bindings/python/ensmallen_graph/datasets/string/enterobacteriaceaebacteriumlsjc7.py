@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacteriaceaeBacteriumLsjc7.
+This file offers the methods to automatically retrieve the graph Enterobacteriaceae bacterium LSJC7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacteriaceaeBacteriumLsjc7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacteriaceaeBacteriumLsjc7 graph.
+    """Return new instance of the Enterobacteriaceae bacterium LSJC7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacteriaceaeBacteriumLsjc7(
 
     Returns
     -----------------------
-    Instace of EnterobacteriaceaeBacteriumLsjc7 graph.
+    Instace of Enterobacteriaceae bacterium LSJC7 graph.
 
 	References
 	---------------------

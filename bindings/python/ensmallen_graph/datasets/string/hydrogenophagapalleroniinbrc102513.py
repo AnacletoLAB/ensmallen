@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaPalleroniiNbrc102513.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga palleronii NBRC 102513.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaPalleroniiNbrc102513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaPalleroniiNbrc102513 graph.
+    """Return new instance of the Hydrogenophaga palleronii NBRC 102513 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaPalleroniiNbrc102513(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaPalleroniiNbrc102513 graph.
+    Instace of Hydrogenophaga palleronii NBRC 102513 graph.
 
 	References
 	---------------------

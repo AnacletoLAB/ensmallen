@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumButyricum.
+This file offers the methods to automatically retrieve the graph Clostridium butyricum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumButyricum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumButyricum graph.
+    """Return new instance of the Clostridium butyricum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumButyricum(
 
     Returns
     -----------------------
-    Instace of ClostridiumButyricum graph.
+    Instace of Clostridium butyricum graph.
 
 	References
 	---------------------

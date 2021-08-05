@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndozoicomonasMontiporaeCl33.
+This file offers the methods to automatically retrieve the graph Endozoicomonas montiporae CL-33.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndozoicomonasMontiporaeCl33(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndozoicomonasMontiporaeCl33 graph.
+    """Return new instance of the Endozoicomonas montiporae CL-33 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EndozoicomonasMontiporaeCl33(
 
     Returns
     -----------------------
-    Instace of EndozoicomonasMontiporaeCl33 graph.
+    Instace of Endozoicomonas montiporae CL-33 graph.
 
 	References
 	---------------------

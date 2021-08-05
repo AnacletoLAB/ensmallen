@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalobiformaLacisalsi.
+This file offers the methods to automatically retrieve the graph Halobiforma lacisalsi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalobiformaLacisalsi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalobiformaLacisalsi graph.
+    """Return new instance of the Halobiforma lacisalsi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalobiformaLacisalsi(
 
     Returns
     -----------------------
-    Instace of HalobiformaLacisalsi graph.
+    Instace of Halobiforma lacisalsi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Twitter.
+This file offers the methods to automatically retrieve the graph twitter.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Twitter(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Twitter graph.
+    """Return new instance of the twitter graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Twitter(
 
     Returns
     -----------------------
-    Instace of Twitter graph.
+    Instace of twitter graph.
 
 	References
 	---------------------

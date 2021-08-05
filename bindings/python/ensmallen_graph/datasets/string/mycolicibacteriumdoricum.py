@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycolicibacteriumDoricum.
+This file offers the methods to automatically retrieve the graph Mycolicibacterium doricum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycolicibacteriumDoricum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycolicibacteriumDoricum graph.
+    """Return new instance of the Mycolicibacterium doricum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycolicibacteriumDoricum(
 
     Returns
     -----------------------
-    Instace of MycolicibacteriumDoricum graph.
+    Instace of Mycolicibacterium doricum graph.
 
 	References
 	---------------------

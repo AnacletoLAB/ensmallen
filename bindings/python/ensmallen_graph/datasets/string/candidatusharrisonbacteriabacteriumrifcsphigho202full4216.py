@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusHarrisonbacteriaBacteriumRifcsphigho202Full4216.
+This file offers the methods to automatically retrieve the graph Candidatus Harrisonbacteria bacterium RIFCSPHIGHO2_02_FULL_42_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusHarrisonbacteriaBacteriumRifcsphigho202Full4216(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusHarrisonbacteriaBacteriumRifcsphigho202Full4216 graph.
+    """Return new instance of the Candidatus Harrisonbacteria bacterium RIFCSPHIGHO2_02_FULL_42_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusHarrisonbacteriaBacteriumRifcsphigho202Full4216(
 
     Returns
     -----------------------
-    Instace of CandidatusHarrisonbacteriaBacteriumRifcsphigho202Full4216 graph.
+    Instace of Candidatus Harrisonbacteria bacterium RIFCSPHIGHO2_02_FULL_42_16 graph.
 
 	References
 	---------------------

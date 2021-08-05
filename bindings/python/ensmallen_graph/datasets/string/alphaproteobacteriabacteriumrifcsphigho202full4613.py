@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumRifcsphigho202Full4613.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_46_13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumRifcsphigho202Full4613(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumRifcsphigho202Full4613 graph.
+    """Return new instance of the Alphaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_46_13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumRifcsphigho202Full4613(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumRifcsphigho202Full4613 graph.
+    Instace of Alphaproteobacteria bacterium RIFCSPHIGHO2_02_FULL_46_13 graph.
 
 	References
 	---------------------

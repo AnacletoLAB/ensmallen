@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BeauveriaBassiana.
+This file offers the methods to automatically retrieve the graph Beauveria bassiana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BeauveriaBassiana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BeauveriaBassiana graph.
+    """Return new instance of the Beauveria bassiana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BeauveriaBassiana(
 
     Returns
     -----------------------
-    Instace of BeauveriaBassiana graph.
+    Instace of Beauveria bassiana graph.
 
 	References
 	---------------------

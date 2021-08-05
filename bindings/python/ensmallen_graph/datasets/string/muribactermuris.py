@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuribacterMuris.
+This file offers the methods to automatically retrieve the graph Muribacter muris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuribacterMuris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuribacterMuris graph.
+    """Return new instance of the Muribacter muris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MuribacterMuris(
 
     Returns
     -----------------------
-    Instace of MuribacterMuris graph.
+    Instace of Muribacter muris graph.
 
 	References
 	---------------------

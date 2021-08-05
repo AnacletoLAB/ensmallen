@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermophagusXiamenensis.
+This file offers the methods to automatically retrieve the graph Thermophagus xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermophagusXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermophagusXiamenensis graph.
+    """Return new instance of the Thermophagus xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermophagusXiamenensis(
 
     Returns
     -----------------------
-    Instace of ThermophagusXiamenensis graph.
+    Instace of Thermophagus xiamenensis graph.
 
 	References
 	---------------------

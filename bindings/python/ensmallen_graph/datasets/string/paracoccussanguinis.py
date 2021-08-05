@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusSanguinis.
+This file offers the methods to automatically retrieve the graph Paracoccus sanguinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusSanguinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusSanguinis graph.
+    """Return new instance of the Paracoccus sanguinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParacoccusSanguinis(
 
     Returns
     -----------------------
-    Instace of ParacoccusSanguinis graph.
+    Instace of Paracoccus sanguinis graph.
 
 	References
 	---------------------

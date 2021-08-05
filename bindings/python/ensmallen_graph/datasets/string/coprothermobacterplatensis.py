@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoprothermobacterPlatensis.
+This file offers the methods to automatically retrieve the graph Coprothermobacter platensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoprothermobacterPlatensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoprothermobacterPlatensis graph.
+    """Return new instance of the Coprothermobacter platensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoprothermobacterPlatensis(
 
     Returns
     -----------------------
-    Instace of CoprothermobacterPlatensis graph.
+    Instace of Coprothermobacter platensis graph.
 
 	References
 	---------------------

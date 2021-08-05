@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpNrrlwc3626.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. NRRLWC3626.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpNrrlwc3626(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpNrrlwc3626 graph.
+    """Return new instance of the Streptomyces sp. NRRLWC3626 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpNrrlwc3626(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpNrrlwc3626 graph.
+    Instace of Streptomyces sp. NRRLWC3626 graph.
 
 	References
 	---------------------

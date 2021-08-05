@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Wave.
+This file offers the methods to automatically retrieve the graph wave.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Wave(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Wave graph.
+    """Return new instance of the wave graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Wave(
 
     Returns
     -----------------------
-    Instace of Wave graph.
+    Instace of wave graph.
 
 	References
 	---------------------

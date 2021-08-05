@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitreicellaSpSe45.
+This file offers the methods to automatically retrieve the graph Citreicella sp. SE45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CitreicellaSpSe45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitreicellaSpSe45 graph.
+    """Return new instance of the Citreicella sp. SE45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CitreicellaSpSe45(
 
     Returns
     -----------------------
-    Instace of CitreicellaSpSe45 graph.
+    Instace of Citreicella sp. SE45 graph.
 
 	References
 	---------------------

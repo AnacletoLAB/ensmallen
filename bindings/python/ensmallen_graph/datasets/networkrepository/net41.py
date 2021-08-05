@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Net41.
+This file offers the methods to automatically retrieve the graph net4-1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Net41(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Net41 graph.
+    """Return new instance of the net4-1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Net41(
 
     Returns
     -----------------------
-    Instace of Net41 graph.
+    Instace of net4-1 graph.
 
 	References
 	---------------------

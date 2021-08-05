@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaEiseniae.
+This file offers the methods to automatically retrieve the graph Chitinophaga eiseniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaEiseniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaEiseniae graph.
+    """Return new instance of the Chitinophaga eiseniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaEiseniae(
 
     Returns
     -----------------------
-    Instace of ChitinophagaEiseniae graph.
+    Instace of Chitinophaga eiseniae graph.
 
 	References
 	---------------------

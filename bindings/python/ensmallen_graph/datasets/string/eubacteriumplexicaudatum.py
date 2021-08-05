@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumPlexicaudatum.
+This file offers the methods to automatically retrieve the graph Eubacterium plexicaudatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumPlexicaudatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumPlexicaudatum graph.
+    """Return new instance of the Eubacterium plexicaudatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumPlexicaudatum(
 
     Returns
     -----------------------
-    Instace of EubacteriumPlexicaudatum graph.
+    Instace of Eubacterium plexicaudatum graph.
 
 	References
 	---------------------

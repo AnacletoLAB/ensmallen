@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpUnc358mftsu51.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. UNC358MFTsu51.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSpUnc358mftsu51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpUnc358mftsu51 graph.
+    """Return new instance of the Caulobacter sp. UNC358MFTsu51 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterSpUnc358mftsu51(
 
     Returns
     -----------------------
-    Instace of CaulobacterSpUnc358mftsu51 graph.
+    Instace of Caulobacter sp. UNC358MFTsu51 graph.
 
 	References
 	---------------------

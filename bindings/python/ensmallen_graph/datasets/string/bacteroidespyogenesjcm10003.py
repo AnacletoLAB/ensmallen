@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesPyogenesJcm10003.
+This file offers the methods to automatically retrieve the graph Bacteroides pyogenes JCM10003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesPyogenesJcm10003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesPyogenesJcm10003 graph.
+    """Return new instance of the Bacteroides pyogenes JCM10003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesPyogenesJcm10003(
 
     Returns
     -----------------------
-    Instace of BacteroidesPyogenesJcm10003 graph.
+    Instace of Bacteroides pyogenes JCM10003 graph.
 
 	References
 	---------------------

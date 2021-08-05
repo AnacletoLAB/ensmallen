@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumDivergens.
+This file offers the methods to automatically retrieve the graph Carnobacterium divergens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumDivergens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumDivergens graph.
+    """Return new instance of the Carnobacterium divergens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnobacteriumDivergens(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumDivergens graph.
+    Instace of Carnobacterium divergens graph.
 
 	References
 	---------------------

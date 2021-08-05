@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaLacunata.
+This file offers the methods to automatically retrieve the graph Moraxella lacunata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaLacunata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaLacunata graph.
+    """Return new instance of the Moraxella lacunata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoraxellaLacunata(
 
     Returns
     -----------------------
-    Instace of MoraxellaLacunata graph.
+    Instace of Moraxella lacunata graph.
 
 	References
 	---------------------

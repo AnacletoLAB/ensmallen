@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfOnchocerca.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Onchocerca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfOnchocerca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfOnchocerca graph.
+    """Return new instance of the Wolbachia endosymbiont of Onchocerca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfOnchocerca(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfOnchocerca graph.
+    Instace of Wolbachia endosymbiont of Onchocerca graph.
 
 	References
 	---------------------

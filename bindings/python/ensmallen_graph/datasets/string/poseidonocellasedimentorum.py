@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PoseidonocellaSedimentorum.
+This file offers the methods to automatically retrieve the graph Poseidonocella sedimentorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PoseidonocellaSedimentorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PoseidonocellaSedimentorum graph.
+    """Return new instance of the Poseidonocella sedimentorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PoseidonocellaSedimentorum(
 
     Returns
     -----------------------
-    Instace of PoseidonocellaSedimentorum graph.
+    Instace of Poseidonocella sedimentorum graph.
 
 	References
 	---------------------

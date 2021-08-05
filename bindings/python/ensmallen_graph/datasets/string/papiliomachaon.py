@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PapilioMachaon.
+This file offers the methods to automatically retrieve the graph Papilio machaon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PapilioMachaon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PapilioMachaon graph.
+    """Return new instance of the Papilio machaon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PapilioMachaon(
 
     Returns
     -----------------------
-    Instace of PapilioMachaon graph.
+    Instace of Papilio machaon graph.
 
 	References
 	---------------------

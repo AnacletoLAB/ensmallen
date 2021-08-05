@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldilineaAerophila.
+This file offers the methods to automatically retrieve the graph Caldilinea aerophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldilineaAerophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldilineaAerophila graph.
+    """Return new instance of the Caldilinea aerophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldilineaAerophila(
 
     Returns
     -----------------------
-    Instace of CaldilineaAerophila graph.
+    Instace of Caldilinea aerophila graph.
 
 	References
 	---------------------

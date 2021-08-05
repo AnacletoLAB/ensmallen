@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeuconostocGasicomitatum.
+This file offers the methods to automatically retrieve the graph Leuconostoc gasicomitatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeuconostocGasicomitatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeuconostocGasicomitatum graph.
+    """Return new instance of the Leuconostoc gasicomitatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeuconostocGasicomitatum(
 
     Returns
     -----------------------
-    Instace of LeuconostocGasicomitatum graph.
+    Instace of Leuconostoc gasicomitatum graph.
 
 	References
 	---------------------

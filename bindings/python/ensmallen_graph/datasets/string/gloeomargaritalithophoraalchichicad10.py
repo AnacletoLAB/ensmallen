@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GloeomargaritaLithophoraAlchichicaD10.
+This file offers the methods to automatically retrieve the graph Gloeomargarita lithophora Alchichica-D10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GloeomargaritaLithophoraAlchichicaD10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GloeomargaritaLithophoraAlchichicaD10 graph.
+    """Return new instance of the Gloeomargarita lithophora Alchichica-D10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GloeomargaritaLithophoraAlchichicaD10(
 
     Returns
     -----------------------
-    Instace of GloeomargaritaLithophoraAlchichicaD10 graph.
+    Instace of Gloeomargarita lithophora Alchichica-D10 graph.
 
 	References
 	---------------------

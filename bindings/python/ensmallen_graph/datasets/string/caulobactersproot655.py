@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSpRoot655.
+This file offers the methods to automatically retrieve the graph Caulobacter sp. Root655.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSpRoot655(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSpRoot655 graph.
+    """Return new instance of the Caulobacter sp. Root655 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaulobacterSpRoot655(
 
     Returns
     -----------------------
-    Instace of CaulobacterSpRoot655 graph.
+    Instace of Caulobacter sp. Root655 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallaecimonasPentaromativorans.
+This file offers the methods to automatically retrieve the graph Gallaecimonas pentaromativorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallaecimonasPentaromativorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallaecimonasPentaromativorans graph.
+    """Return new instance of the Gallaecimonas pentaromativorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GallaecimonasPentaromativorans(
 
     Returns
     -----------------------
-    Instace of GallaecimonasPentaromativorans graph.
+    Instace of Gallaecimonas pentaromativorans graph.
 
 	References
 	---------------------

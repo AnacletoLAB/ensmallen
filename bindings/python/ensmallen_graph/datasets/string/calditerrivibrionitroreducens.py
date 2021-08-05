@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalditerrivibrioNitroreducens.
+This file offers the methods to automatically retrieve the graph Calditerrivibrio nitroreducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalditerrivibrioNitroreducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalditerrivibrioNitroreducens graph.
+    """Return new instance of the Calditerrivibrio nitroreducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CalditerrivibrioNitroreducens(
 
     Returns
     -----------------------
-    Instace of CalditerrivibrioNitroreducens graph.
+    Instace of Calditerrivibrio nitroreducens graph.
 
 	References
 	---------------------

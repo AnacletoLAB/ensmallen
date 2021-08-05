@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfocurvusVexinensis.
+This file offers the methods to automatically retrieve the graph Desulfocurvus vexinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfocurvusVexinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfocurvusVexinensis graph.
+    """Return new instance of the Desulfocurvus vexinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfocurvusVexinensis(
 
     Returns
     -----------------------
-    Instace of DesulfocurvusVexinensis graph.
+    Instace of Desulfocurvus vexinensis graph.
 
 	References
 	---------------------

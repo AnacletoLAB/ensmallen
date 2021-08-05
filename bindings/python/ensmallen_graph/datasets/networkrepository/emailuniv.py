@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmailUniv.
+This file offers the methods to automatically retrieve the graph email-univ.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EmailUniv(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmailUniv graph.
+    """Return new instance of the email-univ graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EmailUniv(
 
     Returns
     -----------------------
-    Instace of EmailUniv graph.
+    Instace of email-univ graph.
 
 	References
 	---------------------

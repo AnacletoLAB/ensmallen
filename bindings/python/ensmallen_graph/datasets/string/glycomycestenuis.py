@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycomycesTenuis.
+This file offers the methods to automatically retrieve the graph Glycomyces tenuis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycomycesTenuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycomycesTenuis graph.
+    """Return new instance of the Glycomyces tenuis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlycomycesTenuis(
 
     Returns
     -----------------------
-    Instace of GlycomycesTenuis graph.
+    Instace of Glycomyces tenuis graph.
 
 	References
 	---------------------

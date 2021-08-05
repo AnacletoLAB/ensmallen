@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedArchaeonA07hr60.
+This file offers the methods to automatically retrieve the graph uncultured archaeon A07HR60.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedArchaeonA07hr60(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedArchaeonA07hr60 graph.
+    """Return new instance of the uncultured archaeon A07HR60 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedArchaeonA07hr60(
 
     Returns
     -----------------------
-    Instace of UnculturedArchaeonA07hr60 graph.
+    Instace of uncultured archaeon A07HR60 graph.
 
 	References
 	---------------------

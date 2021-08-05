@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNucleicultrixAmoebiphilaFs5.
+This file offers the methods to automatically retrieve the graph Candidatus Nucleicultrix amoebiphila FS5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNucleicultrixAmoebiphilaFs5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNucleicultrixAmoebiphilaFs5 graph.
+    """Return new instance of the Candidatus Nucleicultrix amoebiphila FS5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNucleicultrixAmoebiphilaFs5(
 
     Returns
     -----------------------
-    Instace of CandidatusNucleicultrixAmoebiphilaFs5 graph.
+    Instace of Candidatus Nucleicultrix amoebiphila FS5 graph.
 
 	References
 	---------------------

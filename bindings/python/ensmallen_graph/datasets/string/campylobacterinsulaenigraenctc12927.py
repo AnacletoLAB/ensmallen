@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterInsulaenigraeNctc12927.
+This file offers the methods to automatically retrieve the graph Campylobacter insulaenigrae NCTC 12927.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterInsulaenigraeNctc12927(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterInsulaenigraeNctc12927 graph.
+    """Return new instance of the Campylobacter insulaenigrae NCTC 12927 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterInsulaenigraeNctc12927(
 
     Returns
     -----------------------
-    Instace of CampylobacterInsulaenigraeNctc12927 graph.
+    Instace of Campylobacter insulaenigrae NCTC 12927 graph.
 
 	References
 	---------------------

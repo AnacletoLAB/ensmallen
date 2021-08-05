@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumExtorquensAm1.
+This file offers the methods to automatically retrieve the graph Methylobacterium extorquens AM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumExtorquensAm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumExtorquensAm1 graph.
+    """Return new instance of the Methylobacterium extorquens AM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumExtorquensAm1(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumExtorquensAm1 graph.
+    Instace of Methylobacterium extorquens AM1 graph.
 
 	References
 	---------------------

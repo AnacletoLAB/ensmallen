@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumTanaceti.
+This file offers the methods to automatically retrieve the graph Colletotrichum tanaceti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumTanaceti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumTanaceti graph.
+    """Return new instance of the Colletotrichum tanaceti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumTanaceti(
 
     Returns
     -----------------------
-    Instace of ColletotrichumTanaceti graph.
+    Instace of Colletotrichum tanaceti graph.
 
 	References
 	---------------------

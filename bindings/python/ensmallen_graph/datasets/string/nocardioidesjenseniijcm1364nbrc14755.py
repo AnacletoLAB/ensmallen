@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesJenseniiJcm1364Nbrc14755.
+This file offers the methods to automatically retrieve the graph Nocardioides jensenii JCM 1364 NBRC 14755.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesJenseniiJcm1364Nbrc14755(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesJenseniiJcm1364Nbrc14755 graph.
+    """Return new instance of the Nocardioides jensenii JCM 1364 NBRC 14755 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesJenseniiJcm1364Nbrc14755(
 
     Returns
     -----------------------
-    Instace of NocardioidesJenseniiJcm1364Nbrc14755 graph.
+    Instace of Nocardioides jensenii JCM 1364 NBRC 14755 graph.
 
 	References
 	---------------------

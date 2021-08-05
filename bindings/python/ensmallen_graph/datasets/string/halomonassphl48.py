@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasSpHl48.
+This file offers the methods to automatically retrieve the graph Halomonas sp. HL48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasSpHl48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasSpHl48 graph.
+    """Return new instance of the Halomonas sp. HL48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasSpHl48(
 
     Returns
     -----------------------
-    Instace of HalomonasSpHl48 graph.
+    Instace of Halomonas sp. HL48 graph.
 
 	References
 	---------------------

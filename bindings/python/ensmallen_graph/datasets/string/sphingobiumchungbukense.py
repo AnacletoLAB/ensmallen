@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumChungbukense.
+This file offers the methods to automatically retrieve the graph Sphingobium chungbukense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumChungbukense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumChungbukense graph.
+    """Return new instance of the Sphingobium chungbukense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumChungbukense(
 
     Returns
     -----------------------
-    Instace of SphingobiumChungbukense graph.
+    Instace of Sphingobium chungbukense graph.
 
 	References
 	---------------------

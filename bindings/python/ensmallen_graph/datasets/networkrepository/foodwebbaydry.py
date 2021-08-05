@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FoodwebBaydry.
+This file offers the methods to automatically retrieve the graph foodweb-baydry.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def FoodwebBaydry(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FoodwebBaydry graph.
+    """Return new instance of the foodweb-baydry graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def FoodwebBaydry(
 
     Returns
     -----------------------
-    Instace of FoodwebBaydry graph.
+    Instace of foodweb-baydry graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeleagrisGallopavo.
+This file offers the methods to automatically retrieve the graph Meleagris gallopavo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeleagrisGallopavo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeleagrisGallopavo graph.
+    """Return new instance of the Meleagris gallopavo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MeleagrisGallopavo(
 
     Returns
     -----------------------
-    Instace of MeleagrisGallopavo graph.
+    Instace of Meleagris gallopavo graph.
 
 	References
 	---------------------

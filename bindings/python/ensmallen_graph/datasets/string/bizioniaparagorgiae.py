@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BizioniaParagorgiae.
+This file offers the methods to automatically retrieve the graph Bizionia paragorgiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BizioniaParagorgiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BizioniaParagorgiae graph.
+    """Return new instance of the Bizionia paragorgiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BizioniaParagorgiae(
 
     Returns
     -----------------------
-    Instace of BizioniaParagorgiae graph.
+    Instace of Bizionia paragorgiae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TolumonasSpBrl61.
+This file offers the methods to automatically retrieve the graph Tolumonas sp. BRL61.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TolumonasSpBrl61(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TolumonasSpBrl61 graph.
+    """Return new instance of the Tolumonas sp. BRL61 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TolumonasSpBrl61(
 
     Returns
     -----------------------
-    Instace of TolumonasSpBrl61 graph.
+    Instace of Tolumonas sp. BRL61 graph.
 
 	References
 	---------------------

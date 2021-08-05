@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExophialaDermatitidis.
+This file offers the methods to automatically retrieve the graph Exophiala dermatitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExophialaDermatitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExophialaDermatitidis graph.
+    """Return new instance of the Exophiala dermatitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExophialaDermatitidis(
 
     Returns
     -----------------------
-    Instace of ExophialaDermatitidis graph.
+    Instace of Exophiala dermatitidis graph.
 
 	References
 	---------------------

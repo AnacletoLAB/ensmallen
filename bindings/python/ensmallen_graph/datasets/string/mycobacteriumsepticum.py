@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSepticum.
+This file offers the methods to automatically retrieve the graph Mycobacterium septicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSepticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSepticum graph.
+    """Return new instance of the Mycobacterium septicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSepticum(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSepticum graph.
+    Instace of Mycobacterium septicum graph.
 
 	References
 	---------------------

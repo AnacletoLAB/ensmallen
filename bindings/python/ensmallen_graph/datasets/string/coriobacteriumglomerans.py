@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoriobacteriumGlomerans.
+This file offers the methods to automatically retrieve the graph Coriobacterium glomerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoriobacteriumGlomerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoriobacteriumGlomerans graph.
+    """Return new instance of the Coriobacterium glomerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoriobacteriumGlomerans(
 
     Returns
     -----------------------
-    Instace of CoriobacteriumGlomerans graph.
+    Instace of Coriobacterium glomerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoregulaFormicica.
+This file offers the methods to automatically retrieve the graph Methanoregula formicica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoregulaFormicica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoregulaFormicica graph.
+    """Return new instance of the Methanoregula formicica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanoregulaFormicica(
 
     Returns
     -----------------------
-    Instace of MethanoregulaFormicica graph.
+    Instace of Methanoregula formicica graph.
 
 	References
 	---------------------

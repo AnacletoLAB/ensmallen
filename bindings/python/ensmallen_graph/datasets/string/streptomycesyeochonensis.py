@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesYeochonensis.
+This file offers the methods to automatically retrieve the graph Streptomyces yeochonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesYeochonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesYeochonensis graph.
+    """Return new instance of the Streptomyces yeochonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesYeochonensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesYeochonensis graph.
+    Instace of Streptomyces yeochonensis graph.
 
 	References
 	---------------------

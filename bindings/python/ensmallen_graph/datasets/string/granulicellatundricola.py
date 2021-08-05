@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulicellaTundricola.
+This file offers the methods to automatically retrieve the graph Granulicella tundricola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulicellaTundricola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulicellaTundricola graph.
+    """Return new instance of the Granulicella tundricola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GranulicellaTundricola(
 
     Returns
     -----------------------
-    Instace of GranulicellaTundricola graph.
+    Instace of Granulicella tundricola graph.
 
 	References
 	---------------------

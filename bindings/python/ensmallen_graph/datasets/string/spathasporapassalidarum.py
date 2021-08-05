@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpathasporaPassalidarum.
+This file offers the methods to automatically retrieve the graph Spathaspora passalidarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpathasporaPassalidarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpathasporaPassalidarum graph.
+    """Return new instance of the Spathaspora passalidarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpathasporaPassalidarum(
 
     Returns
     -----------------------
-    Instace of SpathasporaPassalidarum graph.
+    Instace of Spathaspora passalidarum graph.
 
 	References
 	---------------------

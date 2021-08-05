@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrogenomatesBacteriumScgcAaa011B20.
+This file offers the methods to automatically retrieve the graph Microgenomates bacterium SCGC AAA011-B20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrogenomatesBacteriumScgcAaa011B20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrogenomatesBacteriumScgcAaa011B20 graph.
+    """Return new instance of the Microgenomates bacterium SCGC AAA011-B20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrogenomatesBacteriumScgcAaa011B20(
 
     Returns
     -----------------------
-    Instace of MicrogenomatesBacteriumScgcAaa011B20 graph.
+    Instace of Microgenomates bacterium SCGC AAA011-B20 graph.
 
 	References
 	---------------------

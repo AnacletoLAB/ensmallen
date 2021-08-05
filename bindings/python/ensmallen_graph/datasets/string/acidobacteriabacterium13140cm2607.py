@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacterium13140cm2607.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium 13_1_40CM_2_60_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacterium13140cm2607(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacterium13140cm2607 graph.
+    """Return new instance of the Acidobacteria bacterium 13_1_40CM_2_60_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacterium13140cm2607(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacterium13140cm2607 graph.
+    Instace of Acidobacteria bacterium 13_1_40CM_2_60_7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumRamulus.
+This file offers the methods to automatically retrieve the graph Eubacterium ramulus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumRamulus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumRamulus graph.
+    """Return new instance of the Eubacterium ramulus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumRamulus(
 
     Returns
     -----------------------
-    Instace of EubacteriumRamulus graph.
+    Instace of Eubacterium ramulus graph.
 
 	References
 	---------------------

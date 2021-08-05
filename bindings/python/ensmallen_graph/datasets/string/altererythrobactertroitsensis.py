@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterTroitsensis.
+This file offers the methods to automatically retrieve the graph Altererythrobacter troitsensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterTroitsensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterTroitsensis graph.
+    """Return new instance of the Altererythrobacter troitsensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterTroitsensis(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterTroitsensis graph.
+    Instace of Altererythrobacter troitsensis graph.
 
 	References
 	---------------------

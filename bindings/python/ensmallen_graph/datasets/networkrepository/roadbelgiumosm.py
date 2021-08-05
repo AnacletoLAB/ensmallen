@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoadBelgiumOsm.
+This file offers the methods to automatically retrieve the graph road-belgium-osm.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def RoadBelgiumOsm(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoadBelgiumOsm graph.
+    """Return new instance of the road-belgium-osm graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def RoadBelgiumOsm(
 
     Returns
     -----------------------
-    Instace of RoadBelgiumOsm graph.
+    Instace of road-belgium-osm graph.
 
 	References
 	---------------------

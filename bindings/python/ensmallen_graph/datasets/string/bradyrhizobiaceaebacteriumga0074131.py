@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiaceaeBacteriumGa0074131.
+This file offers the methods to automatically retrieve the graph Bradyrhizobiaceae bacterium Ga0074131.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiaceaeBacteriumGa0074131(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiaceaeBacteriumGa0074131 graph.
+    """Return new instance of the Bradyrhizobiaceae bacterium Ga0074131 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiaceaeBacteriumGa0074131(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiaceaeBacteriumGa0074131 graph.
+    Instace of Bradyrhizobiaceae bacterium Ga0074131 graph.
 
 	References
 	---------------------

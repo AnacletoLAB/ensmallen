@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterSpCag977.
+This file offers the methods to automatically retrieve the graph Acetobacter sp. CAG:977.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterSpCag977(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterSpCag977 graph.
+    """Return new instance of the Acetobacter sp. CAG:977 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterSpCag977(
 
     Returns
     -----------------------
-    Instace of AcetobacterSpCag977 graph.
+    Instace of Acetobacter sp. CAG:977 graph.
 
 	References
 	---------------------

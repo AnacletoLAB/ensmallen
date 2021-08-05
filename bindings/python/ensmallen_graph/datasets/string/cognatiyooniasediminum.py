@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CognatiyooniaSediminum.
+This file offers the methods to automatically retrieve the graph Cognatiyoonia sediminum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CognatiyooniaSediminum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CognatiyooniaSediminum graph.
+    """Return new instance of the Cognatiyoonia sediminum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CognatiyooniaSediminum(
 
     Returns
     -----------------------
-    Instace of CognatiyooniaSediminum graph.
+    Instace of Cognatiyoonia sediminum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSpB7740.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. B7740.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSpB7740(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSpB7740 graph.
+    """Return new instance of the Rhodococcus sp. B7740 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusSpB7740(
 
     Returns
     -----------------------
-    Instace of RhodococcusSpB7740 graph.
+    Instace of Rhodococcus sp. B7740 graph.
 
 	References
 	---------------------

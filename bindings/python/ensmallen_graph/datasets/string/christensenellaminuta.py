@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChristensenellaMinuta.
+This file offers the methods to automatically retrieve the graph Christensenella minuta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChristensenellaMinuta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChristensenellaMinuta graph.
+    """Return new instance of the Christensenella minuta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChristensenellaMinuta(
 
     Returns
     -----------------------
-    Instace of ChristensenellaMinuta graph.
+    Instace of Christensenella minuta graph.
 
 	References
 	---------------------

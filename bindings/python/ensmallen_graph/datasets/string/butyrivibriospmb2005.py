@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpMb2005.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. MB2005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpMb2005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpMb2005 graph.
+    """Return new instance of the Butyrivibrio sp. MB2005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioSpMb2005(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpMb2005 graph.
+    Instace of Butyrivibrio sp. MB2005 graph.
 
 	References
 	---------------------

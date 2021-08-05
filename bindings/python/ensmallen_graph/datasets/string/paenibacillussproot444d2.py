@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpRoot444d2.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. Root444D2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpRoot444d2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpRoot444d2 graph.
+    """Return new instance of the Paenibacillus sp. Root444D2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpRoot444d2(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpRoot444d2 graph.
+    Instace of Paenibacillus sp. Root444D2 graph.
 
 	References
 	---------------------

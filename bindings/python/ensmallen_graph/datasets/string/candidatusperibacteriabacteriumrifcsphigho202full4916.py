@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeribacteriaBacteriumRifcsphigho202Full4916.
+This file offers the methods to automatically retrieve the graph Candidatus Peribacteria bacterium RIFCSPHIGHO2_02_FULL_49_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeribacteriaBacteriumRifcsphigho202Full4916(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeribacteriaBacteriumRifcsphigho202Full4916 graph.
+    """Return new instance of the Candidatus Peribacteria bacterium RIFCSPHIGHO2_02_FULL_49_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeribacteriaBacteriumRifcsphigho202Full4916(
 
     Returns
     -----------------------
-    Instace of CandidatusPeribacteriaBacteriumRifcsphigho202Full4916 graph.
+    Instace of Candidatus Peribacteria bacterium RIFCSPHIGHO2_02_FULL_49_16 graph.
 
 	References
 	---------------------

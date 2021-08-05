@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UcidataGama.
+This file offers the methods to automatically retrieve the graph ucidata-gama.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def UcidataGama(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UcidataGama graph.
+    """Return new instance of the ucidata-gama graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def UcidataGama(
 
     Returns
     -----------------------
-    Instace of UcidataGama graph.
+    Instace of ucidata-gama graph.
 
 	References
 	---------------------

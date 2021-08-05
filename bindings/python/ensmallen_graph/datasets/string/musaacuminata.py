@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MusaAcuminata.
+This file offers the methods to automatically retrieve the graph Musa acuminata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MusaAcuminata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MusaAcuminata graph.
+    """Return new instance of the Musa acuminata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MusaAcuminata(
 
     Returns
     -----------------------
-    Instace of MusaAcuminata graph.
+    Instace of Musa acuminata graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatumellaSpUcdDSuzukii.
+This file offers the methods to automatically retrieve the graph Tatumella sp. UCD-D_suzukii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatumellaSpUcdDSuzukii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatumellaSpUcdDSuzukii graph.
+    """Return new instance of the Tatumella sp. UCD-D_suzukii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TatumellaSpUcdDSuzukii(
 
     Returns
     -----------------------
-    Instace of TatumellaSpUcdDSuzukii graph.
+    Instace of Tatumella sp. UCD-D_suzukii graph.
 
 	References
 	---------------------

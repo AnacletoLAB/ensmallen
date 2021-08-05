@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumVulpinum.
+This file offers the methods to automatically retrieve the graph Penicillium vulpinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumVulpinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumVulpinum graph.
+    """Return new instance of the Penicillium vulpinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumVulpinum(
 
     Returns
     -----------------------
-    Instace of PenicilliumVulpinum graph.
+    Instace of Penicillium vulpinum graph.
 
 	References
 	---------------------

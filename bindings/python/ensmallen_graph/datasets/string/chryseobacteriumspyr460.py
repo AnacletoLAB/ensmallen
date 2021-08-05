@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpYr460.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. YR460.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpYr460(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpYr460 graph.
+    """Return new instance of the Chryseobacterium sp. YR460 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpYr460(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpYr460 graph.
+    Instace of Chryseobacterium sp. YR460 graph.
 
 	References
 	---------------------

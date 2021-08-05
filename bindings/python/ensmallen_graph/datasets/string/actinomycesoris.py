@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesOris.
+This file offers the methods to automatically retrieve the graph Actinomyces oris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesOris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesOris graph.
+    """Return new instance of the Actinomyces oris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesOris(
 
     Returns
     -----------------------
-    Instace of ActinomycesOris graph.
+    Instace of Actinomyces oris graph.
 
 	References
 	---------------------

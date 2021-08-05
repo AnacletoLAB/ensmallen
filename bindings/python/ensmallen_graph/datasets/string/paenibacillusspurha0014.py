@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpUrha0014.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. URHA0014.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpUrha0014(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpUrha0014 graph.
+    """Return new instance of the Paenibacillus sp. URHA0014 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusSpUrha0014(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpUrha0014 graph.
+    Instace of Paenibacillus sp. URHA0014 graph.
 
 	References
 	---------------------

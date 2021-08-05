@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeeksellaSpFf8.
+This file offers the methods to automatically retrieve the graph Weeksella sp. FF8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeeksellaSpFf8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeeksellaSpFf8 graph.
+    """Return new instance of the Weeksella sp. FF8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WeeksellaSpFf8(
 
     Returns
     -----------------------
-    Instace of WeeksellaSpFf8 graph.
+    Instace of Weeksella sp. FF8 graph.
 
 	References
 	---------------------

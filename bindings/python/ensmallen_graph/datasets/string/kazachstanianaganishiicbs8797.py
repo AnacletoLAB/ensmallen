@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KazachstaniaNaganishiiCbs8797.
+This file offers the methods to automatically retrieve the graph Kazachstania naganishii CBS 8797.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KazachstaniaNaganishiiCbs8797(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KazachstaniaNaganishiiCbs8797 graph.
+    """Return new instance of the Kazachstania naganishii CBS 8797 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KazachstaniaNaganishiiCbs8797(
 
     Returns
     -----------------------
-    Instace of KazachstaniaNaganishiiCbs8797 graph.
+    Instace of Kazachstania naganishii CBS 8797 graph.
 
 	References
 	---------------------

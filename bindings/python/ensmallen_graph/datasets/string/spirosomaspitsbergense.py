@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaSpitsbergense.
+This file offers the methods to automatically retrieve the graph Spirosoma spitsbergense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaSpitsbergense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaSpitsbergense graph.
+    """Return new instance of the Spirosoma spitsbergense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirosomaSpitsbergense(
 
     Returns
     -----------------------
-    Instace of SpirosomaSpitsbergense graph.
+    Instace of Spirosoma spitsbergense graph.
 
 	References
 	---------------------

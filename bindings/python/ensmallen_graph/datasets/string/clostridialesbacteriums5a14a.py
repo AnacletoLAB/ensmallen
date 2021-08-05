@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumS5A14a.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium S5-A14a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumS5A14a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumS5A14a graph.
+    """Return new instance of the Clostridiales bacterium S5-A14a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumS5A14a(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumS5A14a graph.
+    Instace of Clostridiales bacterium S5-A14a graph.
 
 	References
 	---------------------

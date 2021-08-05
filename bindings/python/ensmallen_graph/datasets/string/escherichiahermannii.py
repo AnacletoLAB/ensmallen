@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaHermannii.
+This file offers the methods to automatically retrieve the graph Escherichia hermannii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaHermannii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaHermannii graph.
+    """Return new instance of the Escherichia hermannii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaHermannii(
 
     Returns
     -----------------------
-    Instace of EscherichiaHermannii graph.
+    Instace of Escherichia hermannii graph.
 
 	References
 	---------------------

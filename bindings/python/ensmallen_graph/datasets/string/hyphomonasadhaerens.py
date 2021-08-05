@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasAdhaerens.
+This file offers the methods to automatically retrieve the graph Hyphomonas adhaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasAdhaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasAdhaerens graph.
+    """Return new instance of the Hyphomonas adhaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasAdhaerens(
 
     Returns
     -----------------------
-    Instace of HyphomonasAdhaerens graph.
+    Instace of Hyphomonas adhaerens graph.
 
 	References
 	---------------------

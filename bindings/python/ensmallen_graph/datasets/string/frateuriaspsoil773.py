@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrateuriaSpSoil773.
+This file offers the methods to automatically retrieve the graph Frateuria sp. Soil773.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrateuriaSpSoil773(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrateuriaSpSoil773 graph.
+    """Return new instance of the Frateuria sp. Soil773 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrateuriaSpSoil773(
 
     Returns
     -----------------------
-    Instace of FrateuriaSpSoil773 graph.
+    Instace of Frateuria sp. Soil773 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusInfantisNrrlB14911.
+This file offers the methods to automatically retrieve the graph Bacillus infantis NRRL B-14911.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusInfantisNrrlB14911(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusInfantisNrrlB14911 graph.
+    """Return new instance of the Bacillus infantis NRRL B-14911 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusInfantisNrrlB14911(
 
     Returns
     -----------------------
-    Instace of BacillusInfantisNrrlB14911 graph.
+    Instace of Bacillus infantis NRRL B-14911 graph.
 
 	References
 	---------------------

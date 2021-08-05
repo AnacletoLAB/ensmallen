@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrososphaeraEvergladensis.
+This file offers the methods to automatically retrieve the graph Nitrososphaera evergladensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrososphaeraEvergladensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrososphaeraEvergladensis graph.
+    """Return new instance of the Nitrososphaera evergladensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrososphaeraEvergladensis(
 
     Returns
     -----------------------
-    Instace of NitrososphaeraEvergladensis graph.
+    Instace of Nitrososphaera evergladensis graph.
 
 	References
 	---------------------

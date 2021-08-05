@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpHgb0020.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. HGB0020.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpHgb0020(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpHgb0020 graph.
+    """Return new instance of the Streptomyces sp. HGB0020 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpHgb0020(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpHgb0020 graph.
+    Instace of Streptomyces sp. HGB0020 graph.
 
 	References
 	---------------------

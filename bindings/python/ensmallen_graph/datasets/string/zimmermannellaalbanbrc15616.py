@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZimmermannellaAlbaNbrc15616.
+This file offers the methods to automatically retrieve the graph [Zimmermannella] alba NBRC 15616.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZimmermannellaAlbaNbrc15616(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZimmermannellaAlbaNbrc15616 graph.
+    """Return new instance of the [Zimmermannella] alba NBRC 15616 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZimmermannellaAlbaNbrc15616(
 
     Returns
     -----------------------
-    Instace of ZimmermannellaAlbaNbrc15616 graph.
+    Instace of [Zimmermannella] alba NBRC 15616 graph.
 
 	References
 	---------------------

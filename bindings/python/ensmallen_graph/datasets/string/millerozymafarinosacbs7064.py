@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MillerozymaFarinosaCbs7064.
+This file offers the methods to automatically retrieve the graph Millerozyma farinosa CBS 7064.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MillerozymaFarinosaCbs7064(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MillerozymaFarinosaCbs7064 graph.
+    """Return new instance of the Millerozyma farinosa CBS 7064 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MillerozymaFarinosaCbs7064(
 
     Returns
     -----------------------
-    Instace of MillerozymaFarinosaCbs7064 graph.
+    Instace of Millerozyma farinosa CBS 7064 graph.
 
 	References
 	---------------------

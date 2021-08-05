@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpScn6214.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. SCN 62-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpScn6214(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpScn6214 graph.
+    """Return new instance of the Erythrobacter sp. SCN 62-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpScn6214(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpScn6214 graph.
+    Instace of Erythrobacter sp. SCN 62-14 graph.
 
 	References
 	---------------------

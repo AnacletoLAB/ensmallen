@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaKoehlerae.
+This file offers the methods to automatically retrieve the graph Bartonella koehlerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaKoehlerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaKoehlerae graph.
+    """Return new instance of the Bartonella koehlerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BartonellaKoehlerae(
 
     Returns
     -----------------------
-    Instace of BartonellaKoehlerae graph.
+    Instace of Bartonella koehlerae graph.
 
 	References
 	---------------------

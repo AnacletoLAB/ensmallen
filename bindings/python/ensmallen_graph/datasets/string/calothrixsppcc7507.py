@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CalothrixSpPcc7507.
+This file offers the methods to automatically retrieve the graph Calothrix sp. PCC7507.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CalothrixSpPcc7507(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CalothrixSpPcc7507 graph.
+    """Return new instance of the Calothrix sp. PCC7507 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CalothrixSpPcc7507(
 
     Returns
     -----------------------
-    Instace of CalothrixSpPcc7507 graph.
+    Instace of Calothrix sp. PCC7507 graph.
 
 	References
 	---------------------

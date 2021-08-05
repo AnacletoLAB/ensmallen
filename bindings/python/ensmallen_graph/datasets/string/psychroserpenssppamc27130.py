@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychroserpensSpPamc27130.
+This file offers the methods to automatically retrieve the graph Psychroserpens sp. PAMC27130.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychroserpensSpPamc27130(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychroserpensSpPamc27130 graph.
+    """Return new instance of the Psychroserpens sp. PAMC27130 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychroserpensSpPamc27130(
 
     Returns
     -----------------------
-    Instace of PsychroserpensSpPamc27130 graph.
+    Instace of Psychroserpens sp. PAMC27130 graph.
 
 	References
 	---------------------

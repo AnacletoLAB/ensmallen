@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParvibaculumLavamentivorans.
+This file offers the methods to automatically retrieve the graph Parvibaculum lavamentivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParvibaculumLavamentivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParvibaculumLavamentivorans graph.
+    """Return new instance of the Parvibaculum lavamentivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParvibaculumLavamentivorans(
 
     Returns
     -----------------------
-    Instace of ParvibaculumLavamentivorans graph.
+    Instace of Parvibaculum lavamentivorans graph.
 
 	References
 	---------------------

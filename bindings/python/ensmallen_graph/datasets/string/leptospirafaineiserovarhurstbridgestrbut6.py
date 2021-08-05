@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraFaineiSerovarHurstbridgeStrBut6.
+This file offers the methods to automatically retrieve the graph Leptospira fainei serovar Hurstbridge str. BUT 6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraFaineiSerovarHurstbridgeStrBut6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraFaineiSerovarHurstbridgeStrBut6 graph.
+    """Return new instance of the Leptospira fainei serovar Hurstbridge str. BUT 6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraFaineiSerovarHurstbridgeStrBut6(
 
     Returns
     -----------------------
-    Instace of LeptospiraFaineiSerovarHurstbridgeStrBut6 graph.
+    Instace of Leptospira fainei serovar Hurstbridge str. BUT 6 graph.
 
 	References
 	---------------------

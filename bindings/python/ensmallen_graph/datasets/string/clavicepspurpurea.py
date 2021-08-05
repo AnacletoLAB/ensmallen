@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClavicepsPurpurea.
+This file offers the methods to automatically retrieve the graph Claviceps purpurea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClavicepsPurpurea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClavicepsPurpurea graph.
+    """Return new instance of the Claviceps purpurea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClavicepsPurpurea(
 
     Returns
     -----------------------
-    Instace of ClavicepsPurpurea graph.
+    Instace of Claviceps purpurea graph.
 
 	References
 	---------------------

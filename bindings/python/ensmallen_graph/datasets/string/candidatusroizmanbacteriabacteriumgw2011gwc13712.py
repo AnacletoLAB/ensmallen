@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRoizmanbacteriaBacteriumGw2011Gwc13712.
+This file offers the methods to automatically retrieve the graph Candidatus Roizmanbacteria bacterium GW2011_GWC1_37_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRoizmanbacteriaBacteriumGw2011Gwc13712(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRoizmanbacteriaBacteriumGw2011Gwc13712 graph.
+    """Return new instance of the Candidatus Roizmanbacteria bacterium GW2011_GWC1_37_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRoizmanbacteriaBacteriumGw2011Gwc13712(
 
     Returns
     -----------------------
-    Instace of CandidatusRoizmanbacteriaBacteriumGw2011Gwc13712 graph.
+    Instace of Candidatus Roizmanbacteria bacterium GW2011_GWC1_37_12 graph.
 
 	References
 	---------------------

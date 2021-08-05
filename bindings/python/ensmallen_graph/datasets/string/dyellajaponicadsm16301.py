@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyellaJaponicaDsm16301.
+This file offers the methods to automatically retrieve the graph Dyella japonica DSM 16301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyellaJaponicaDsm16301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyellaJaponicaDsm16301 graph.
+    """Return new instance of the Dyella japonica DSM 16301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyellaJaponicaDsm16301(
 
     Returns
     -----------------------
-    Instace of DyellaJaponicaDsm16301 graph.
+    Instace of Dyella japonica DSM 16301 graph.
 
 	References
 	---------------------

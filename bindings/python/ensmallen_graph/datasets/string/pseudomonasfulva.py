@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasFulva.
+This file offers the methods to automatically retrieve the graph Pseudomonas fulva.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasFulva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasFulva graph.
+    """Return new instance of the Pseudomonas fulva graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasFulva(
 
     Returns
     -----------------------
-    Instace of PseudomonasFulva graph.
+    Instace of Pseudomonas fulva graph.
 
 	References
 	---------------------

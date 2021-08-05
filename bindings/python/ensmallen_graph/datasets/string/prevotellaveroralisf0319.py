@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaVeroralisF0319.
+This file offers the methods to automatically retrieve the graph Prevotella veroralis F0319.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaVeroralisF0319(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaVeroralisF0319 graph.
+    """Return new instance of the Prevotella veroralis F0319 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaVeroralisF0319(
 
     Returns
     -----------------------
-    Instace of PrevotellaVeroralisF0319 graph.
+    Instace of Prevotella veroralis F0319 graph.
 
 	References
 	---------------------

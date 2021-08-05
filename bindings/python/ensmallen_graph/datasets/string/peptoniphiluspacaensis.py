@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusPacaensis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus pacaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusPacaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusPacaensis graph.
+    """Return new instance of the Peptoniphilus pacaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusPacaensis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusPacaensis graph.
+    Instace of Peptoniphilus pacaensis graph.
 
 	References
 	---------------------

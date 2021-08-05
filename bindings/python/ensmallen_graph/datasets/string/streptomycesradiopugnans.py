@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesRadiopugnans.
+This file offers the methods to automatically retrieve the graph Streptomyces radiopugnans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesRadiopugnans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesRadiopugnans graph.
+    """Return new instance of the Streptomyces radiopugnans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesRadiopugnans(
 
     Returns
     -----------------------
-    Instace of StreptomycesRadiopugnans graph.
+    Instace of Streptomyces radiopugnans graph.
 
 	References
 	---------------------

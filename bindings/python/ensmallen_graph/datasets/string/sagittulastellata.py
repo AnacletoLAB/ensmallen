@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SagittulaStellata.
+This file offers the methods to automatically retrieve the graph Sagittula stellata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SagittulaStellata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SagittulaStellata graph.
+    """Return new instance of the Sagittula stellata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SagittulaStellata(
 
     Returns
     -----------------------
-    Instace of SagittulaStellata graph.
+    Instace of Sagittula stellata graph.
 
 	References
 	---------------------

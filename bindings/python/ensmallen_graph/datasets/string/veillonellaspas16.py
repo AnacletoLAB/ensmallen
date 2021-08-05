@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaSpAs16.
+This file offers the methods to automatically retrieve the graph Veillonella sp. AS16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaSpAs16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaSpAs16 graph.
+    """Return new instance of the Veillonella sp. AS16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaSpAs16(
 
     Returns
     -----------------------
-    Instace of VeillonellaSpAs16 graph.
+    Instace of Veillonella sp. AS16 graph.
 
 	References
 	---------------------

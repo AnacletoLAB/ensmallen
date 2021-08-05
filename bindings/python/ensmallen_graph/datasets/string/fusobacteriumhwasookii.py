@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumHwasookii.
+This file offers the methods to automatically retrieve the graph Fusobacterium hwasookii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumHwasookii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumHwasookii graph.
+    """Return new instance of the Fusobacterium hwasookii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumHwasookii(
 
     Returns
     -----------------------
-    Instace of FusobacteriumHwasookii graph.
+    Instace of Fusobacterium hwasookii graph.
 
 	References
 	---------------------

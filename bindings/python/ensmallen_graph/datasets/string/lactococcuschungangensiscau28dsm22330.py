@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusChungangensisCau28Dsm22330.
+This file offers the methods to automatically retrieve the graph Lactococcus chungangensis CAU 28 DSM 22330.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusChungangensisCau28Dsm22330(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusChungangensisCau28Dsm22330 graph.
+    """Return new instance of the Lactococcus chungangensis CAU 28 DSM 22330 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactococcusChungangensisCau28Dsm22330(
 
     Returns
     -----------------------
-    Instace of LactococcusChungangensisCau28Dsm22330 graph.
+    Instace of Lactococcus chungangensis CAU 28 DSM 22330 graph.
 
 	References
 	---------------------

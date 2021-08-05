@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PanTroglodytes.
+This file offers the methods to automatically retrieve the graph Pan troglodytes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PanTroglodytes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PanTroglodytes graph.
+    """Return new instance of the Pan troglodytes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PanTroglodytes(
 
     Returns
     -----------------------
-    Instace of PanTroglodytes graph.
+    Instace of Pan troglodytes graph.
 
 	References
 	---------------------

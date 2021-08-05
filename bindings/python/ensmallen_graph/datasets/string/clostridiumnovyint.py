@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumNovyiNt.
+This file offers the methods to automatically retrieve the graph Clostridium novyi NT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumNovyiNt(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumNovyiNt graph.
+    """Return new instance of the Clostridium novyi NT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumNovyiNt(
 
     Returns
     -----------------------
-    Instace of ClostridiumNovyiNt graph.
+    Instace of Clostridium novyi NT graph.
 
 	References
 	---------------------

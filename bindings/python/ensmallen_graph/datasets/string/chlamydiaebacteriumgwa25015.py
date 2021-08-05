@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaeBacteriumGwa25015.
+This file offers the methods to automatically retrieve the graph Chlamydiae bacterium GWA2_50_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaeBacteriumGwa25015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaeBacteriumGwa25015 graph.
+    """Return new instance of the Chlamydiae bacterium GWA2_50_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaeBacteriumGwa25015(
 
     Returns
     -----------------------
-    Instace of ChlamydiaeBacteriumGwa25015 graph.
+    Instace of Chlamydiae bacterium GWA2_50_15 graph.
 
 	References
 	---------------------

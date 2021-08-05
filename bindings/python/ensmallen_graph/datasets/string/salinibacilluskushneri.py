@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinibacillusKushneri.
+This file offers the methods to automatically retrieve the graph Salinibacillus kushneri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinibacillusKushneri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinibacillusKushneri graph.
+    """Return new instance of the Salinibacillus kushneri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinibacillusKushneri(
 
     Returns
     -----------------------
-    Instace of SalinibacillusKushneri graph.
+    Instace of Salinibacillus kushneri graph.
 
 	References
 	---------------------

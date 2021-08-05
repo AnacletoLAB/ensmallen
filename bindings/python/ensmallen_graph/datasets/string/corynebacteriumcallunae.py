@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCallunae.
+This file offers the methods to automatically retrieve the graph Corynebacterium callunae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCallunae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCallunae graph.
+    """Return new instance of the Corynebacterium callunae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumCallunae(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCallunae graph.
+    Instace of Corynebacterium callunae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SodalisLikeEndosymbiontOfProechinophthirusFluctus.
+This file offers the methods to automatically retrieve the graph Sodalis-like endosymbiont of Proechinophthirus fluctus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SodalisLikeEndosymbiontOfProechinophthirusFluctus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SodalisLikeEndosymbiontOfProechinophthirusFluctus graph.
+    """Return new instance of the Sodalis-like endosymbiont of Proechinophthirus fluctus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SodalisLikeEndosymbiontOfProechinophthirusFluctus(
 
     Returns
     -----------------------
-    Instace of SodalisLikeEndosymbiontOfProechinophthirusFluctus graph.
+    Instace of Sodalis-like endosymbiont of Proechinophthirus fluctus graph.
 
 	References
 	---------------------

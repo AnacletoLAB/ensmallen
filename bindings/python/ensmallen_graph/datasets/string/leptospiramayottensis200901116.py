@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraMayottensis200901116.
+This file offers the methods to automatically retrieve the graph Leptospira mayottensis 200901116.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraMayottensis200901116(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraMayottensis200901116 graph.
+    """Return new instance of the Leptospira mayottensis 200901116 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraMayottensis200901116(
 
     Returns
     -----------------------
-    Instace of LeptospiraMayottensis200901116 graph.
+    Instace of Leptospira mayottensis 200901116 graph.
 
 	References
 	---------------------

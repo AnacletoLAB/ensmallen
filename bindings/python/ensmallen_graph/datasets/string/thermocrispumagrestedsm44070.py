@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermocrispumAgresteDsm44070.
+This file offers the methods to automatically retrieve the graph Thermocrispum agreste DSM 44070.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermocrispumAgresteDsm44070(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermocrispumAgresteDsm44070 graph.
+    """Return new instance of the Thermocrispum agreste DSM 44070 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermocrispumAgresteDsm44070(
 
     Returns
     -----------------------
-    Instace of ThermocrispumAgresteDsm44070 graph.
+    Instace of Thermocrispum agreste DSM 44070 graph.
 
 	References
 	---------------------

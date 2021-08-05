@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromicrobiumSpRoot495.
+This file offers the methods to automatically retrieve the graph Aeromicrobium sp. Root495.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromicrobiumSpRoot495(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromicrobiumSpRoot495 graph.
+    """Return new instance of the Aeromicrobium sp. Root495 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromicrobiumSpRoot495(
 
     Returns
     -----------------------
-    Instace of AeromicrobiumSpRoot495 graph.
+    Instace of Aeromicrobium sp. Root495 graph.
 
 	References
 	---------------------

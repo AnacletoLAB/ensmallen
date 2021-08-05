@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar324ClusterBacteriumRedseaS27B3.
+This file offers the methods to automatically retrieve the graph SAR324 cluster bacterium REDSEA-S27_B3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Sar324ClusterBacteriumRedseaS27B3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar324ClusterBacteriumRedseaS27B3 graph.
+    """Return new instance of the SAR324 cluster bacterium REDSEA-S27_B3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Sar324ClusterBacteriumRedseaS27B3(
 
     Returns
     -----------------------
-    Instace of Sar324ClusterBacteriumRedseaS27B3 graph.
+    Instace of SAR324 cluster bacterium REDSEA-S27_B3 graph.
 
 	References
 	---------------------

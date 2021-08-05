@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaMarisrubri.
+This file offers the methods to automatically retrieve the graph Ruegeria marisrubri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaMarisrubri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaMarisrubri graph.
+    """Return new instance of the Ruegeria marisrubri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaMarisrubri(
 
     Returns
     -----------------------
-    Instace of RuegeriaMarisrubri graph.
+    Instace of Ruegeria marisrubri graph.
 
 	References
 	---------------------

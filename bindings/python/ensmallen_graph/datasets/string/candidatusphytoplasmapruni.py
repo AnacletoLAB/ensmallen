@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPhytoplasmaPruni.
+This file offers the methods to automatically retrieve the graph Candidatus Phytoplasma pruni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPhytoplasmaPruni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPhytoplasmaPruni graph.
+    """Return new instance of the Candidatus Phytoplasma pruni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPhytoplasmaPruni(
 
     Returns
     -----------------------
-    Instace of CandidatusPhytoplasmaPruni graph.
+    Instace of Candidatus Phytoplasma pruni graph.
 
 	References
 	---------------------

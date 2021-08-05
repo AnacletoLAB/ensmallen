@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumTepidiprofundiDsm19306.
+This file offers the methods to automatically retrieve the graph Clostridium tepidiprofundi DSM 19306.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumTepidiprofundiDsm19306(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumTepidiprofundiDsm19306 graph.
+    """Return new instance of the Clostridium tepidiprofundi DSM 19306 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumTepidiprofundiDsm19306(
 
     Returns
     -----------------------
-    Instace of ClostridiumTepidiprofundiDsm19306 graph.
+    Instace of Clostridium tepidiprofundi DSM 19306 graph.
 
 	References
 	---------------------

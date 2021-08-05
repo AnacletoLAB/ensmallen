@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiaportheHelianthi.
+This file offers the methods to automatically retrieve the graph Diaporthe helianthi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiaportheHelianthi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiaportheHelianthi graph.
+    """Return new instance of the Diaporthe helianthi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DiaportheHelianthi(
 
     Returns
     -----------------------
-    Instace of DiaportheHelianthi graph.
+    Instace of Diaporthe helianthi graph.
 
 	References
 	---------------------

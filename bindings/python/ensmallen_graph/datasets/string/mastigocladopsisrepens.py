@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MastigocladopsisRepens.
+This file offers the methods to automatically retrieve the graph Mastigocladopsis repens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MastigocladopsisRepens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MastigocladopsisRepens graph.
+    """Return new instance of the Mastigocladopsis repens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MastigocladopsisRepens(
 
     Returns
     -----------------------
-    Instace of MastigocladopsisRepens graph.
+    Instace of Mastigocladopsis repens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphaeroformaArctica.
+This file offers the methods to automatically retrieve the graph Sphaeroforma arctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphaeroformaArctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphaeroformaArctica graph.
+    """Return new instance of the Sphaeroforma arctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphaeroformaArctica(
 
     Returns
     -----------------------
-    Instace of SphaeroformaArctica graph.
+    Instace of Sphaeroforma arctica graph.
 
 	References
 	---------------------

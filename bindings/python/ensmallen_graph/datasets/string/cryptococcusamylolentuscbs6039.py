@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptococcusAmylolentusCbs6039.
+This file offers the methods to automatically retrieve the graph Cryptococcus amylolentus CBS 6039.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptococcusAmylolentusCbs6039(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptococcusAmylolentusCbs6039 graph.
+    """Return new instance of the Cryptococcus amylolentus CBS 6039 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptococcusAmylolentusCbs6039(
 
     Returns
     -----------------------
-    Instace of CryptococcusAmylolentusCbs6039 graph.
+    Instace of Cryptococcus amylolentus CBS 6039 graph.
 
 	References
 	---------------------

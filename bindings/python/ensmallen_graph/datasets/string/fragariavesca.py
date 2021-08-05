@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FragariaVesca.
+This file offers the methods to automatically retrieve the graph Fragaria vesca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FragariaVesca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FragariaVesca graph.
+    """Return new instance of the Fragaria vesca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FragariaVesca(
 
     Returns
     -----------------------
-    Instace of FragariaVesca graph.
+    Instace of Fragaria vesca graph.
 
 	References
 	---------------------

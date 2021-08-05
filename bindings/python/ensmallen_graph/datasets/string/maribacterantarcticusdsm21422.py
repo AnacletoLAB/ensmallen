@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterAntarcticusDsm21422.
+This file offers the methods to automatically retrieve the graph Maribacter antarcticus DSM 21422.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterAntarcticusDsm21422(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterAntarcticusDsm21422 graph.
+    """Return new instance of the Maribacter antarcticus DSM 21422 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterAntarcticusDsm21422(
 
     Returns
     -----------------------
-    Instace of MaribacterAntarcticusDsm21422 graph.
+    Instace of Maribacter antarcticus DSM 21422 graph.
 
 	References
 	---------------------

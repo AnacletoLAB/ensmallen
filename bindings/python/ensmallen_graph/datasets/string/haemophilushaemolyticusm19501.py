@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusHaemolyticusM19501.
+This file offers the methods to automatically retrieve the graph Haemophilus haemolyticus M19501.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusHaemolyticusM19501(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusHaemolyticusM19501 graph.
+    """Return new instance of the Haemophilus haemolyticus M19501 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaemophilusHaemolyticusM19501(
 
     Returns
     -----------------------
-    Instace of HaemophilusHaemolyticusM19501 graph.
+    Instace of Haemophilus haemolyticus M19501 graph.
 
 	References
 	---------------------

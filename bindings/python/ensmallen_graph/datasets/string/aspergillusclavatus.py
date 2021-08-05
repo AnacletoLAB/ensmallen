@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusClavatus.
+This file offers the methods to automatically retrieve the graph Aspergillus clavatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusClavatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusClavatus graph.
+    """Return new instance of the Aspergillus clavatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusClavatus(
 
     Returns
     -----------------------
-    Instace of AspergillusClavatus graph.
+    Instace of Aspergillus clavatus graph.
 
 	References
 	---------------------

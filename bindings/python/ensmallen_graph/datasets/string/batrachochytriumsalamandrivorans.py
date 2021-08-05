@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BatrachochytriumSalamandrivorans.
+This file offers the methods to automatically retrieve the graph Batrachochytrium salamandrivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BatrachochytriumSalamandrivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BatrachochytriumSalamandrivorans graph.
+    """Return new instance of the Batrachochytrium salamandrivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BatrachochytriumSalamandrivorans(
 
     Returns
     -----------------------
-    Instace of BatrachochytriumSalamandrivorans graph.
+    Instace of Batrachochytrium salamandrivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusMali.
+This file offers the methods to automatically retrieve the graph Lactobacillus mali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusMali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusMali graph.
+    """Return new instance of the Lactobacillus mali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusMali(
 
     Returns
     -----------------------
-    Instace of LactobacillusMali graph.
+    Instace of Lactobacillus mali graph.
 
 	References
 	---------------------

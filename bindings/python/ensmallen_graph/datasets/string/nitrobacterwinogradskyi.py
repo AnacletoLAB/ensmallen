@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrobacterWinogradskyi.
+This file offers the methods to automatically retrieve the graph Nitrobacter winogradskyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrobacterWinogradskyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrobacterWinogradskyi graph.
+    """Return new instance of the Nitrobacter winogradskyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrobacterWinogradskyi(
 
     Returns
     -----------------------
-    Instace of NitrobacterWinogradskyi graph.
+    Instace of Nitrobacter winogradskyi graph.
 
 	References
 	---------------------

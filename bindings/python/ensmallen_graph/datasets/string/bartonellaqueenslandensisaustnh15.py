@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaQueenslandensisAustNh15.
+This file offers the methods to automatically retrieve the graph Bartonella queenslandensis AUST/NH15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaQueenslandensisAustNh15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaQueenslandensisAustNh15 graph.
+    """Return new instance of the Bartonella queenslandensis AUST/NH15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaQueenslandensisAustNh15(
 
     Returns
     -----------------------
-    Instace of BartonellaQueenslandensisAustNh15 graph.
+    Instace of Bartonella queenslandensis AUST/NH15 graph.
 
 	References
 	---------------------

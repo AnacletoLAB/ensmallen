@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioHumanGene1.
+This file offers the methods to automatically retrieve the graph bio-human-gene1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def BioHumanGene1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioHumanGene1 graph.
+    """Return new instance of the bio-human-gene1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def BioHumanGene1(
 
     Returns
     -----------------------
-    Instace of BioHumanGene1 graph.
+    Instace of bio-human-gene1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusHamsteri.
+This file offers the methods to automatically retrieve the graph Lactobacillus hamsteri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusHamsteri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusHamsteri graph.
+    """Return new instance of the Lactobacillus hamsteri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusHamsteri(
 
     Returns
     -----------------------
-    Instace of LactobacillusHamsteri graph.
+    Instace of Lactobacillus hamsteri graph.
 
 	References
 	---------------------

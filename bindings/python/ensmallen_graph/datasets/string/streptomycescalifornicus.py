@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCalifornicus.
+This file offers the methods to automatically retrieve the graph Streptomyces californicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCalifornicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCalifornicus graph.
+    """Return new instance of the Streptomyces californicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCalifornicus(
 
     Returns
     -----------------------
-    Instace of StreptomycesCalifornicus graph.
+    Instace of Streptomyces californicus graph.
 
 	References
 	---------------------

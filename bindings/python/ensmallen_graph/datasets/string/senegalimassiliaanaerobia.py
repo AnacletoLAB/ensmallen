@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SenegalimassiliaAnaerobia.
+This file offers the methods to automatically retrieve the graph Senegalimassilia anaerobia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SenegalimassiliaAnaerobia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SenegalimassiliaAnaerobia graph.
+    """Return new instance of the Senegalimassilia anaerobia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SenegalimassiliaAnaerobia(
 
     Returns
     -----------------------
-    Instace of SenegalimassiliaAnaerobia graph.
+    Instace of Senegalimassilia anaerobia graph.
 
 	References
 	---------------------

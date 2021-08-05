@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LimnochordaPilosa.
+This file offers the methods to automatically retrieve the graph Limnochorda pilosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LimnochordaPilosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LimnochordaPilosa graph.
+    """Return new instance of the Limnochorda pilosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LimnochordaPilosa(
 
     Returns
     -----------------------
-    Instace of LimnochordaPilosa graph.
+    Instace of Limnochorda pilosa graph.
 
 	References
 	---------------------

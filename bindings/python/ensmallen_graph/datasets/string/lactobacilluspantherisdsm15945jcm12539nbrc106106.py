@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPantherisDsm15945Jcm12539Nbrc106106.
+This file offers the methods to automatically retrieve the graph Lactobacillus pantheris DSM 15945 JCM 12539 NBRC 106106.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPantherisDsm15945Jcm12539Nbrc106106(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPantherisDsm15945Jcm12539Nbrc106106 graph.
+    """Return new instance of the Lactobacillus pantheris DSM 15945 JCM 12539 NBRC 106106 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPantherisDsm15945Jcm12539Nbrc106106(
 
     Returns
     -----------------------
-    Instace of LactobacillusPantherisDsm15945Jcm12539Nbrc106106 graph.
+    Instace of Lactobacillus pantheris DSM 15945 JCM 12539 NBRC 106106 graph.
 
 	References
 	---------------------

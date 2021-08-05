@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcanthocheilonemaViteae.
+This file offers the methods to automatically retrieve the graph Acanthocheilonema viteae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcanthocheilonemaViteae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcanthocheilonemaViteae graph.
+    """Return new instance of the Acanthocheilonema viteae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcanthocheilonemaViteae(
 
     Returns
     -----------------------
-    Instace of AcanthocheilonemaViteae graph.
+    Instace of Acanthocheilonema viteae graph.
 
 	References
 	---------------------

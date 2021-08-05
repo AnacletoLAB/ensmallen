@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JaapiaArgillaceaMucl33604.
+This file offers the methods to automatically retrieve the graph Jaapia argillacea MUCL 33604.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JaapiaArgillaceaMucl33604(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JaapiaArgillaceaMucl33604 graph.
+    """Return new instance of the Jaapia argillacea MUCL 33604 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JaapiaArgillaceaMucl33604(
 
     Returns
     -----------------------
-    Instace of JaapiaArgillaceaMucl33604 graph.
+    Instace of Jaapia argillacea MUCL 33604 graph.
 
 	References
 	---------------------

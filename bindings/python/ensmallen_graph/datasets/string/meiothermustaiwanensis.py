@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeiothermusTaiwanensis.
+This file offers the methods to automatically retrieve the graph Meiothermus taiwanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeiothermusTaiwanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeiothermusTaiwanensis graph.
+    """Return new instance of the Meiothermus taiwanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MeiothermusTaiwanensis(
 
     Returns
     -----------------------
-    Instace of MeiothermusTaiwanensis graph.
+    Instace of Meiothermus taiwanensis graph.
 
 	References
 	---------------------

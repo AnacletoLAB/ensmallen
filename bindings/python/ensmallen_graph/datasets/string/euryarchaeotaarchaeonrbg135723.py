@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EuryarchaeotaArchaeonRbg135723.
+This file offers the methods to automatically retrieve the graph Euryarchaeota archaeon RBG_13_57_23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EuryarchaeotaArchaeonRbg135723(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EuryarchaeotaArchaeonRbg135723 graph.
+    """Return new instance of the Euryarchaeota archaeon RBG_13_57_23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EuryarchaeotaArchaeonRbg135723(
 
     Returns
     -----------------------
-    Instace of EuryarchaeotaArchaeonRbg135723 graph.
+    Instace of Euryarchaeota archaeon RBG_13_57_23 graph.
 
 	References
 	---------------------

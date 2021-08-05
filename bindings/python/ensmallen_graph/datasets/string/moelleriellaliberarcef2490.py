@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoelleriellaLiberaRcef2490.
+This file offers the methods to automatically retrieve the graph Moelleriella libera RCEF 2490.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoelleriellaLiberaRcef2490(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoelleriellaLiberaRcef2490 graph.
+    """Return new instance of the Moelleriella libera RCEF 2490 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoelleriellaLiberaRcef2490(
 
     Returns
     -----------------------
-    Instace of MoelleriellaLiberaRcef2490 graph.
+    Instace of Moelleriella libera RCEF 2490 graph.
 
 	References
 	---------------------

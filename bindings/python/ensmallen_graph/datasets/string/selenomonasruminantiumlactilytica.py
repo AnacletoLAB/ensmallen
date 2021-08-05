@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasRuminantiumLactilytica.
+This file offers the methods to automatically retrieve the graph Selenomonas ruminantium lactilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasRuminantiumLactilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasRuminantiumLactilytica graph.
+    """Return new instance of the Selenomonas ruminantium lactilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasRuminantiumLactilytica(
 
     Returns
     -----------------------
-    Instace of SelenomonasRuminantiumLactilytica graph.
+    Instace of Selenomonas ruminantium lactilytica graph.
 
 	References
 	---------------------

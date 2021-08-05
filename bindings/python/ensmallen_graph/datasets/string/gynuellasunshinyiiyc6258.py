@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GynuellaSunshinyiiYc6258.
+This file offers the methods to automatically retrieve the graph Gynuella sunshinyii YC6258.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GynuellaSunshinyiiYc6258(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GynuellaSunshinyiiYc6258 graph.
+    """Return new instance of the Gynuella sunshinyii YC6258 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GynuellaSunshinyiiYc6258(
 
     Returns
     -----------------------
-    Instace of GynuellaSunshinyiiYc6258 graph.
+    Instace of Gynuella sunshinyii YC6258 graph.
 
 	References
 	---------------------

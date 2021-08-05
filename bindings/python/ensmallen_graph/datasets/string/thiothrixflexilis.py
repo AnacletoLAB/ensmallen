@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiothrixFlexilis.
+This file offers the methods to automatically retrieve the graph Thiothrix flexilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiothrixFlexilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiothrixFlexilis graph.
+    """Return new instance of the Thiothrix flexilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiothrixFlexilis(
 
     Returns
     -----------------------
-    Instace of ThiothrixFlexilis graph.
+    Instace of Thiothrix flexilis graph.
 
 	References
 	---------------------

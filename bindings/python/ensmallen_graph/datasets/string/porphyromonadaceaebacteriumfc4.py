@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonadaceaeBacteriumFc4.
+This file offers the methods to automatically retrieve the graph Porphyromonadaceae bacterium FC4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonadaceaeBacteriumFc4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonadaceaeBacteriumFc4 graph.
+    """Return new instance of the Porphyromonadaceae bacterium FC4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonadaceaeBacteriumFc4(
 
     Returns
     -----------------------
-    Instace of PorphyromonadaceaeBacteriumFc4 graph.
+    Instace of Porphyromonadaceae bacterium FC4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiaBacteriumGa0077533.
+This file offers the methods to automatically retrieve the graph Verrucomicrobia bacterium Ga0077533.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiaBacteriumGa0077533(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiaBacteriumGa0077533 graph.
+    """Return new instance of the Verrucomicrobia bacterium Ga0077533 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiaBacteriumGa0077533(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiaBacteriumGa0077533 graph.
+    Instace of Verrucomicrobia bacterium Ga0077533 graph.
 
 	References
 	---------------------

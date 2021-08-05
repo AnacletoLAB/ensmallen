@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActibacteriumMucosumKctc23349.
+This file offers the methods to automatically retrieve the graph Actibacterium mucosum KCTC 23349.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActibacteriumMucosumKctc23349(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActibacteriumMucosumKctc23349 graph.
+    """Return new instance of the Actibacterium mucosum KCTC 23349 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActibacteriumMucosumKctc23349(
 
     Returns
     -----------------------
-    Instace of ActibacteriumMucosumKctc23349 graph.
+    Instace of Actibacterium mucosum KCTC 23349 graph.
 
 	References
 	---------------------

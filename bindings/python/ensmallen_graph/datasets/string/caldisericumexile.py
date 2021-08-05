@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldisericumExile.
+This file offers the methods to automatically retrieve the graph Caldisericum exile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldisericumExile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldisericumExile graph.
+    """Return new instance of the Caldisericum exile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldisericumExile(
 
     Returns
     -----------------------
-    Instace of CaldisericumExile graph.
+    Instace of Caldisericum exile graph.
 
 	References
 	---------------------

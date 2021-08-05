@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SilicibacterSpTrichch4b.
+This file offers the methods to automatically retrieve the graph Silicibacter sp. TrichCH4B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SilicibacterSpTrichch4b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SilicibacterSpTrichch4b graph.
+    """Return new instance of the Silicibacter sp. TrichCH4B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SilicibacterSpTrichch4b(
 
     Returns
     -----------------------
-    Instace of SilicibacterSpTrichch4b graph.
+    Instace of Silicibacter sp. TrichCH4B graph.
 
 	References
 	---------------------

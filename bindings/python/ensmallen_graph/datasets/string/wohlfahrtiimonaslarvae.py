@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WohlfahrtiimonasLarvae.
+This file offers the methods to automatically retrieve the graph Wohlfahrtiimonas larvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WohlfahrtiimonasLarvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WohlfahrtiimonasLarvae graph.
+    """Return new instance of the Wohlfahrtiimonas larvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WohlfahrtiimonasLarvae(
 
     Returns
     -----------------------
-    Instace of WohlfahrtiimonasLarvae graph.
+    Instace of Wohlfahrtiimonas larvae graph.
 
 	References
 	---------------------

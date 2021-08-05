@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSulciaMuelleriSmdsem.
+This file offers the methods to automatically retrieve the graph Candidatus Sulcia muelleri SMDSEM.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSulciaMuelleriSmdsem(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSulciaMuelleriSmdsem graph.
+    """Return new instance of the Candidatus Sulcia muelleri SMDSEM graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSulciaMuelleriSmdsem(
 
     Returns
     -----------------------
-    Instace of CandidatusSulciaMuelleriSmdsem graph.
+    Instace of Candidatus Sulcia muelleri SMDSEM graph.
 
 	References
 	---------------------

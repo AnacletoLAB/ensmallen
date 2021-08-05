@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerovibrioSpRm50.
+This file offers the methods to automatically retrieve the graph Anaerovibrio sp. RM50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerovibrioSpRm50(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerovibrioSpRm50 graph.
+    """Return new instance of the Anaerovibrio sp. RM50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerovibrioSpRm50(
 
     Returns
     -----------------------
-    Instace of AnaerovibrioSpRm50 graph.
+    Instace of Anaerovibrio sp. RM50 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyotisBrandtii.
+This file offers the methods to automatically retrieve the graph Myotis brandtii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyotisBrandtii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyotisBrandtii graph.
+    """Return new instance of the Myotis brandtii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyotisBrandtii(
 
     Returns
     -----------------------
-    Instace of MyotisBrandtii graph.
+    Instace of Myotis brandtii graph.
 
 	References
 	---------------------

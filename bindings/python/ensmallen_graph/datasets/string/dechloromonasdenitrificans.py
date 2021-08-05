@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DechloromonasDenitrificans.
+This file offers the methods to automatically retrieve the graph Dechloromonas denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DechloromonasDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DechloromonasDenitrificans graph.
+    """Return new instance of the Dechloromonas denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DechloromonasDenitrificans(
 
     Returns
     -----------------------
-    Instace of DechloromonasDenitrificans graph.
+    Instace of Dechloromonas denitrificans graph.
 
 	References
 	---------------------

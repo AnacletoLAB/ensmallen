@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusVillosusKin24T80.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus villosus KIN24-T80.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusVillosusKin24T80(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusVillosusKin24T80 graph.
+    """Return new instance of the Methanocaldococcus villosus KIN24-T80 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanocaldococcusVillosusKin24T80(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusVillosusKin24T80 graph.
+    Instace of Methanocaldococcus villosus KIN24-T80 graph.
 
 	References
 	---------------------

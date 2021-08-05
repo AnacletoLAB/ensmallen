@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CroceitaleaDokdonensisDokdo023.
+This file offers the methods to automatically retrieve the graph Croceitalea dokdonensis DOKDO 023.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CroceitaleaDokdonensisDokdo023(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CroceitaleaDokdonensisDokdo023 graph.
+    """Return new instance of the Croceitalea dokdonensis DOKDO 023 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CroceitaleaDokdonensisDokdo023(
 
     Returns
     -----------------------
-    Instace of CroceitaleaDokdonensisDokdo023 graph.
+    Instace of Croceitalea dokdonensis DOKDO 023 graph.
 
 	References
 	---------------------

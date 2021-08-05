@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaludibacteriumYongneupenseDsm18731.
+This file offers the methods to automatically retrieve the graph Paludibacterium yongneupense DSM 18731.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaludibacteriumYongneupenseDsm18731(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaludibacteriumYongneupenseDsm18731 graph.
+    """Return new instance of the Paludibacterium yongneupense DSM 18731 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaludibacteriumYongneupenseDsm18731(
 
     Returns
     -----------------------
-    Instace of PaludibacteriumYongneupenseDsm18731 graph.
+    Instace of Paludibacterium yongneupense DSM 18731 graph.
 
 	References
 	---------------------

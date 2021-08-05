@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomicrobiumRoseum.
+This file offers the methods to automatically retrieve the graph Thermomicrobium roseum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomicrobiumRoseum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomicrobiumRoseum graph.
+    """Return new instance of the Thermomicrobium roseum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermomicrobiumRoseum(
 
     Returns
     -----------------------
-    Instace of ThermomicrobiumRoseum graph.
+    Instace of Thermomicrobium roseum graph.
 
 	References
 	---------------------

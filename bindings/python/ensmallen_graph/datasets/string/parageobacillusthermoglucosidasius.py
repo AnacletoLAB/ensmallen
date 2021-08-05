@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParageobacillusThermoglucosidasius.
+This file offers the methods to automatically retrieve the graph Parageobacillus thermoglucosidasius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParageobacillusThermoglucosidasius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParageobacillusThermoglucosidasius graph.
+    """Return new instance of the Parageobacillus thermoglucosidasius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParageobacillusThermoglucosidasius(
 
     Returns
     -----------------------
-    Instace of ParageobacillusThermoglucosidasius graph.
+    Instace of Parageobacillus thermoglucosidasius graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaWestfalica.
+This file offers the methods to automatically retrieve the graph Gordonia westfalica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaWestfalica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaWestfalica graph.
+    """Return new instance of the Gordonia westfalica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaWestfalica(
 
     Returns
     -----------------------
-    Instace of GordoniaWestfalica graph.
+    Instace of Gordonia westfalica graph.
 
 	References
 	---------------------

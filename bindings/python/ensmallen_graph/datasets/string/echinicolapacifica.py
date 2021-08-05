@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EchinicolaPacifica.
+This file offers the methods to automatically retrieve the graph Echinicola pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EchinicolaPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EchinicolaPacifica graph.
+    """Return new instance of the Echinicola pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EchinicolaPacifica(
 
     Returns
     -----------------------
-    Instace of EchinicolaPacifica graph.
+    Instace of Echinicola pacifica graph.
 
 	References
 	---------------------

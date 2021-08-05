@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichophytonInterdigitaleMr816.
+This file offers the methods to automatically retrieve the graph Trichophyton interdigitale MR816.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichophytonInterdigitaleMr816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichophytonInterdigitaleMr816 graph.
+    """Return new instance of the Trichophyton interdigitale MR816 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichophytonInterdigitaleMr816(
 
     Returns
     -----------------------
-    Instace of TrichophytonInterdigitaleMr816 graph.
+    Instace of Trichophyton interdigitale MR816 graph.
 
 	References
 	---------------------

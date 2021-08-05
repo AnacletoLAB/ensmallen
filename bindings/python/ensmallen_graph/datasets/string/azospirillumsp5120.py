@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzospirillumSp5120.
+This file offers the methods to automatically retrieve the graph Azospirillum sp. 51_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzospirillumSp5120(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzospirillumSp5120 graph.
+    """Return new instance of the Azospirillum sp. 51_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzospirillumSp5120(
 
     Returns
     -----------------------
-    Instace of AzospirillumSp5120 graph.
+    Instace of Azospirillum sp. 51_20 graph.
 
 	References
 	---------------------

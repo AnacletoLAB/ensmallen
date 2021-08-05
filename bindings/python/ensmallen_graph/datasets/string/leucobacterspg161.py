@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterSpG161.
+This file offers the methods to automatically retrieve the graph Leucobacter sp. G161.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterSpG161(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterSpG161 graph.
+    """Return new instance of the Leucobacter sp. G161 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucobacterSpG161(
 
     Returns
     -----------------------
-    Instace of LeucobacterSpG161 graph.
+    Instace of Leucobacter sp. G161 graph.
 
 	References
 	---------------------

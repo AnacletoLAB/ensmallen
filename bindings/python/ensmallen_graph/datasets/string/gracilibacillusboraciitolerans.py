@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusBoraciitolerans.
+This file offers the methods to automatically retrieve the graph Gracilibacillus boraciitolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusBoraciitolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusBoraciitolerans graph.
+    """Return new instance of the Gracilibacillus boraciitolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GracilibacillusBoraciitolerans(
 
     Returns
     -----------------------
-    Instace of GracilibacillusBoraciitolerans graph.
+    Instace of Gracilibacillus boraciitolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PapaverSomniferum.
+This file offers the methods to automatically retrieve the graph Papaver somniferum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PapaverSomniferum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PapaverSomniferum graph.
+    """Return new instance of the Papaver somniferum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PapaverSomniferum(
 
     Returns
     -----------------------
-    Instace of PapaverSomniferum graph.
+    Instace of Papaver somniferum graph.
 
 	References
 	---------------------

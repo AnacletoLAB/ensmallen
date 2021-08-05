@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpDw54.
+This file offers the methods to automatically retrieve the graph Bacillus sp. DW54.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpDw54(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpDw54 graph.
+    """Return new instance of the Bacillus sp. DW54 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSpDw54(
 
     Returns
     -----------------------
-    Instace of BacillusSpDw54 graph.
+    Instace of Bacillus sp. DW54 graph.
 
 	References
 	---------------------

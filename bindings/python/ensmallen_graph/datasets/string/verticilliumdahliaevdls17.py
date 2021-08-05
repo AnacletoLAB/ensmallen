@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerticilliumDahliaeVdls17.
+This file offers the methods to automatically retrieve the graph Verticillium dahliae VdLs.17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerticilliumDahliaeVdls17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerticilliumDahliaeVdls17 graph.
+    """Return new instance of the Verticillium dahliae VdLs.17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerticilliumDahliaeVdls17(
 
     Returns
     -----------------------
-    Instace of VerticilliumDahliaeVdls17 graph.
+    Instace of Verticillium dahliae VdLs.17 graph.
 
 	References
 	---------------------

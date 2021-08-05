@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JiangellaMuralis.
+This file offers the methods to automatically retrieve the graph Jiangella muralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JiangellaMuralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JiangellaMuralis graph.
+    """Return new instance of the Jiangella muralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JiangellaMuralis(
 
     Returns
     -----------------------
-    Instace of JiangellaMuralis graph.
+    Instace of Jiangella muralis graph.
 
 	References
 	---------------------

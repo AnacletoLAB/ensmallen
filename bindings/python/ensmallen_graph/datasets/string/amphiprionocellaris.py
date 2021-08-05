@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphiprionOcellaris.
+This file offers the methods to automatically retrieve the graph Amphiprion ocellaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmphiprionOcellaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphiprionOcellaris graph.
+    """Return new instance of the Amphiprion ocellaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmphiprionOcellaris(
 
     Returns
     -----------------------
-    Instace of AmphiprionOcellaris graph.
+    Instace of Amphiprion ocellaris graph.
 
 	References
 	---------------------

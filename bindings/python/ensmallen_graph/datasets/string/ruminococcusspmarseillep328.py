@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpMarseilleP328.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. Marseille-P328.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpMarseilleP328(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpMarseilleP328 graph.
+    """Return new instance of the Ruminococcus sp. Marseille-P328 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusSpMarseilleP328(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpMarseilleP328 graph.
+    Instace of Ruminococcus sp. Marseille-P328 graph.
 
 	References
 	---------------------

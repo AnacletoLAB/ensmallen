@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaEpidermidihirudinis.
+This file offers the methods to automatically retrieve the graph Devosia epidermidihirudinis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaEpidermidihirudinis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaEpidermidihirudinis graph.
+    """Return new instance of the Devosia epidermidihirudinis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaEpidermidihirudinis(
 
     Returns
     -----------------------
-    Instace of DevosiaEpidermidihirudinis graph.
+    Instace of Devosia epidermidihirudinis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorellaSorokiniana.
+This file offers the methods to automatically retrieve the graph Chlorella sorokiniana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorellaSorokiniana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorellaSorokiniana graph.
+    """Return new instance of the Chlorella sorokiniana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlorellaSorokiniana(
 
     Returns
     -----------------------
-    Instace of ChlorellaSorokiniana graph.
+    Instace of Chlorella sorokiniana graph.
 
 	References
 	---------------------

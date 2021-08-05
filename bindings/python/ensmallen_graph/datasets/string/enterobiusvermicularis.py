@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobiusVermicularis.
+This file offers the methods to automatically retrieve the graph Enterobius vermicularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobiusVermicularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobiusVermicularis graph.
+    """Return new instance of the Enterobius vermicularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobiusVermicularis(
 
     Returns
     -----------------------
-    Instace of EnterobiusVermicularis graph.
+    Instace of Enterobius vermicularis graph.
 
 	References
 	---------------------

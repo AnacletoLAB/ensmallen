@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSalsus.
+This file offers the methods to automatically retrieve the graph Bacillus salsus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSalsus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSalsus graph.
+    """Return new instance of the Bacillus salsus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSalsus(
 
     Returns
     -----------------------
-    Instace of BacillusSalsus graph.
+    Instace of Bacillus salsus graph.
 
 	References
 	---------------------

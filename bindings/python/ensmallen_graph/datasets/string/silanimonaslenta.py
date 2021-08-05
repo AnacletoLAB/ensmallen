@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SilanimonasLenta.
+This file offers the methods to automatically retrieve the graph Silanimonas lenta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SilanimonasLenta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SilanimonasLenta graph.
+    """Return new instance of the Silanimonas lenta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SilanimonasLenta(
 
     Returns
     -----------------------
-    Instace of SilanimonasLenta graph.
+    Instace of Silanimonas lenta graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolemyaElarraichensisGillSymbiont.
+This file offers the methods to automatically retrieve the graph Solemya elarraichensis gill symbiont.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolemyaElarraichensisGillSymbiont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolemyaElarraichensisGillSymbiont graph.
+    """Return new instance of the Solemya elarraichensis gill symbiont graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SolemyaElarraichensisGillSymbiont(
 
     Returns
     -----------------------
-    Instace of SolemyaElarraichensisGillSymbiont graph.
+    Instace of Solemya elarraichensis gill symbiont graph.
 
 	References
 	---------------------

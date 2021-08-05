@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BathymodiolusAzoricusThioautotrophicGillSymbiont.
+This file offers the methods to automatically retrieve the graph Bathymodiolus azoricus thioautotrophic gill symbiont.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BathymodiolusAzoricusThioautotrophicGillSymbiont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BathymodiolusAzoricusThioautotrophicGillSymbiont graph.
+    """Return new instance of the Bathymodiolus azoricus thioautotrophic gill symbiont graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BathymodiolusAzoricusThioautotrophicGillSymbiont(
 
     Returns
     -----------------------
-    Instace of BathymodiolusAzoricusThioautotrophicGillSymbiont graph.
+    Instace of Bathymodiolus azoricus thioautotrophic gill symbiont graph.
 
 	References
 	---------------------

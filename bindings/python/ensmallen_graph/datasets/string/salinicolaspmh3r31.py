@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicolaSpMh3r31.
+This file offers the methods to automatically retrieve the graph Salinicola sp. MH3R3-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicolaSpMh3r31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicolaSpMh3r31 graph.
+    """Return new instance of the Salinicola sp. MH3R3-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinicolaSpMh3r31(
 
     Returns
     -----------------------
-    Instace of SalinicolaSpMh3r31 graph.
+    Instace of Salinicola sp. MH3R3-1 graph.
 
 	References
 	---------------------

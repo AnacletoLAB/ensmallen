@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSp2915.
+This file offers the methods to automatically retrieve the graph Clostridium sp. 29_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSp2915(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSp2915 graph.
+    """Return new instance of the Clostridium sp. 29_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSp2915(
 
     Returns
     -----------------------
-    Instace of ClostridiumSp2915 graph.
+    Instace of Clostridium sp. 29_15 graph.
 
 	References
 	---------------------

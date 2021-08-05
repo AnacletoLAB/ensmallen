@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumPaludis.
+This file offers the methods to automatically retrieve the graph Methanobacterium paludis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumPaludis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumPaludis graph.
+    """Return new instance of the Methanobacterium paludis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobacteriumPaludis(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumPaludis graph.
+    Instace of Methanobacterium paludis graph.
 
 	References
 	---------------------

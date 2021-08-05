@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospirillumFerrooxidans.
+This file offers the methods to automatically retrieve the graph Leptospirillum ferrooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospirillumFerrooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospirillumFerrooxidans graph.
+    """Return new instance of the Leptospirillum ferrooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptospirillumFerrooxidans(
 
     Returns
     -----------------------
-    Instace of LeptospirillumFerrooxidans graph.
+    Instace of Leptospirillum ferrooxidans graph.
 
 	References
 	---------------------

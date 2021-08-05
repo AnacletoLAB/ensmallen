@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlattabacteriumSpMadar.
+This file offers the methods to automatically retrieve the graph Blattabacterium sp. MADAR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlattabacteriumSpMadar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlattabacteriumSpMadar graph.
+    """Return new instance of the Blattabacterium sp. MADAR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlattabacteriumSpMadar(
 
     Returns
     -----------------------
-    Instace of BlattabacteriumSpMadar graph.
+    Instace of Blattabacterium sp. MADAR graph.
 
 	References
 	---------------------

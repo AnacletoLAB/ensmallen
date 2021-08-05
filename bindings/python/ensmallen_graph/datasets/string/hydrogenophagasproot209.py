@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaSpRoot209.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga sp. Root209.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaSpRoot209(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaSpRoot209 graph.
+    """Return new instance of the Hydrogenophaga sp. Root209 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaSpRoot209(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaSpRoot209 graph.
+    Instace of Hydrogenophaga sp. Root209 graph.
 
 	References
 	---------------------

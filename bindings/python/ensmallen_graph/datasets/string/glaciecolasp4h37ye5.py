@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaSp4h37ye5.
+This file offers the methods to automatically retrieve the graph Glaciecola sp. 4H37YE5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaSp4h37ye5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaSp4h37ye5 graph.
+    """Return new instance of the Glaciecola sp. 4H37YE5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaSp4h37ye5(
 
     Returns
     -----------------------
-    Instace of GlaciecolaSp4h37ye5 graph.
+    Instace of Glaciecola sp. 4H37YE5 graph.
 
 	References
 	---------------------

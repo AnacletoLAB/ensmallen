@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldicellulosiruptorBescii.
+This file offers the methods to automatically retrieve the graph Caldicellulosiruptor bescii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldicellulosiruptorBescii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldicellulosiruptorBescii graph.
+    """Return new instance of the Caldicellulosiruptor bescii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldicellulosiruptorBescii(
 
     Returns
     -----------------------
-    Instace of CaldicellulosiruptorBescii graph.
+    Instace of Caldicellulosiruptor bescii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaMonocytogenesScott.
+This file offers the methods to automatically retrieve the graph Listeria monocytogenes Scott.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaMonocytogenesScott(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaMonocytogenesScott graph.
+    """Return new instance of the Listeria monocytogenes Scott graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaMonocytogenesScott(
 
     Returns
     -----------------------
-    Instace of ListeriaMonocytogenesScott graph.
+    Instace of Listeria monocytogenes Scott graph.
 
 	References
 	---------------------

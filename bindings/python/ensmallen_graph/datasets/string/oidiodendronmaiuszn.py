@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OidiodendronMaiusZn.
+This file offers the methods to automatically retrieve the graph Oidiodendron maius Zn.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OidiodendronMaiusZn(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OidiodendronMaiusZn graph.
+    """Return new instance of the Oidiodendron maius Zn graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OidiodendronMaiusZn(
 
     Returns
     -----------------------
-    Instace of OidiodendronMaiusZn graph.
+    Instace of Oidiodendron maius Zn graph.
 
 	References
 	---------------------

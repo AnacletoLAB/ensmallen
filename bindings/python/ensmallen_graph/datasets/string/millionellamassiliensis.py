@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MillionellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Millionella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MillionellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MillionellaMassiliensis graph.
+    """Return new instance of the Millionella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MillionellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of MillionellaMassiliensis graph.
+    Instace of Millionella massiliensis graph.
 
 	References
 	---------------------

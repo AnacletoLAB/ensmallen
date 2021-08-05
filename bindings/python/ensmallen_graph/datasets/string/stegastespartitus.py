@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StegastesPartitus.
+This file offers the methods to automatically retrieve the graph Stegastes partitus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StegastesPartitus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StegastesPartitus graph.
+    """Return new instance of the Stegastes partitus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StegastesPartitus(
 
     Returns
     -----------------------
-    Instace of StegastesPartitus graph.
+    Instace of Stegastes partitus graph.
 
 	References
 	---------------------

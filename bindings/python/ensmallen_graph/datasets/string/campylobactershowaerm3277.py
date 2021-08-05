@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterShowaeRm3277.
+This file offers the methods to automatically retrieve the graph Campylobacter showae RM3277.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterShowaeRm3277(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterShowaeRm3277 graph.
+    """Return new instance of the Campylobacter showae RM3277 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterShowaeRm3277(
 
     Returns
     -----------------------
-    Instace of CampylobacterShowaeRm3277 graph.
+    Instace of Campylobacter showae RM3277 graph.
 
 	References
 	---------------------

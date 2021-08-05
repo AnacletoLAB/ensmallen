@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Uk2002.
+This file offers the methods to automatically retrieve the graph uk-2002.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Uk2002(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Uk2002 graph.
+    """Return new instance of the uk-2002 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Uk2002(
 
     Returns
     -----------------------
-    Instace of Uk2002 graph.
+    Instace of uk-2002 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumSg839.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium SG8_39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumSg839(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumSg839 graph.
+    """Return new instance of the Betaproteobacteria bacterium SG8_39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumSg839(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumSg839 graph.
+    Instace of Betaproteobacteria bacterium SG8_39 graph.
 
 	References
 	---------------------

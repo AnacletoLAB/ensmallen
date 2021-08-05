@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSp24Yea8.
+This file offers the methods to automatically retrieve the graph Rhodobacter sp. 24-YEA-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSp24Yea8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSp24Yea8 graph.
+    """Return new instance of the Rhodobacter sp. 24-YEA-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacterSp24Yea8(
 
     Returns
     -----------------------
-    Instace of RhodobacterSp24Yea8 graph.
+    Instace of Rhodobacter sp. 24-YEA-8 graph.
 
 	References
 	---------------------

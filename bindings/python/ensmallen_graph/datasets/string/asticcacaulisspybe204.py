@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AsticcacaulisSpYbe204.
+This file offers the methods to automatically retrieve the graph Asticcacaulis sp. YBE204.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AsticcacaulisSpYbe204(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AsticcacaulisSpYbe204 graph.
+    """Return new instance of the Asticcacaulis sp. YBE204 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AsticcacaulisSpYbe204(
 
     Returns
     -----------------------
-    Instace of AsticcacaulisSpYbe204 graph.
+    Instace of Asticcacaulis sp. YBE204 graph.
 
 	References
 	---------------------

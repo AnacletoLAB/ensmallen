@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PandoraeaPnomenusa.
+This file offers the methods to automatically retrieve the graph Pandoraea pnomenusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PandoraeaPnomenusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PandoraeaPnomenusa graph.
+    """Return new instance of the Pandoraea pnomenusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PandoraeaPnomenusa(
 
     Returns
     -----------------------
-    Instace of PandoraeaPnomenusa graph.
+    Instace of Pandoraea pnomenusa graph.
 
 	References
 	---------------------

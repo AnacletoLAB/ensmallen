@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaPallidulaDsm14239Acam615.
+This file offers the methods to automatically retrieve the graph Glaciecola pallidula DSM 14239 ACAM 615.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaPallidulaDsm14239Acam615(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaPallidulaDsm14239Acam615 graph.
+    """Return new instance of the Glaciecola pallidula DSM 14239 ACAM 615 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlaciecolaPallidulaDsm14239Acam615(
 
     Returns
     -----------------------
-    Instace of GlaciecolaPallidulaDsm14239Acam615 graph.
+    Instace of Glaciecola pallidula DSM 14239 ACAM 615 graph.
 
 	References
 	---------------------

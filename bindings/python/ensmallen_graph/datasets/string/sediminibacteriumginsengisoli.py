@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SediminibacteriumGinsengisoli.
+This file offers the methods to automatically retrieve the graph Sediminibacterium ginsengisoli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SediminibacteriumGinsengisoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SediminibacteriumGinsengisoli graph.
+    """Return new instance of the Sediminibacterium ginsengisoli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SediminibacteriumGinsengisoli(
 
     Returns
     -----------------------
-    Instace of SediminibacteriumGinsengisoli graph.
+    Instace of Sediminibacterium ginsengisoli graph.
 
 	References
 	---------------------

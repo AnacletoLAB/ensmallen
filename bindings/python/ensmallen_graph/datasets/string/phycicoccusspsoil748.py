@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycicoccusSpSoil748.
+This file offers the methods to automatically retrieve the graph Phycicoccus sp. Soil748.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycicoccusSpSoil748(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycicoccusSpSoil748 graph.
+    """Return new instance of the Phycicoccus sp. Soil748 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhycicoccusSpSoil748(
 
     Returns
     -----------------------
-    Instace of PhycicoccusSpSoil748 graph.
+    Instace of Phycicoccus sp. Soil748 graph.
 
 	References
 	---------------------

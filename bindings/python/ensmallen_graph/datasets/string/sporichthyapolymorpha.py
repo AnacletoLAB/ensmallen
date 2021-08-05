@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporichthyaPolymorpha.
+This file offers the methods to automatically retrieve the graph Sporichthya polymorpha.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporichthyaPolymorpha(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporichthyaPolymorpha graph.
+    """Return new instance of the Sporichthya polymorpha graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporichthyaPolymorpha(
 
     Returns
     -----------------------
-    Instace of SporichthyaPolymorpha graph.
+    Instace of Sporichthya polymorpha graph.
 
 	References
 	---------------------

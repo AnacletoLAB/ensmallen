@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StegodyphusMimosarum.
+This file offers the methods to automatically retrieve the graph Stegodyphus mimosarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StegodyphusMimosarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StegodyphusMimosarum graph.
+    """Return new instance of the Stegodyphus mimosarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StegodyphusMimosarum(
 
     Returns
     -----------------------
-    Instace of StegodyphusMimosarum graph.
+    Instace of Stegodyphus mimosarum graph.
 
 	References
 	---------------------

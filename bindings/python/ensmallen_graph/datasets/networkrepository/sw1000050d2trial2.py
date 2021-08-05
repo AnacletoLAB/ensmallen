@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sw1000050d2Trial2.
+This file offers the methods to automatically retrieve the graph SW-10000-5-0d2-trial2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sw1000050d2Trial2(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sw1000050d2Trial2 graph.
+    """Return new instance of the SW-10000-5-0d2-trial2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sw1000050d2Trial2(
 
     Returns
     -----------------------
-    Instace of Sw1000050d2Trial2 graph.
+    Instace of SW-10000-5-0d2-trial2 graph.
 
 	References
 	---------------------

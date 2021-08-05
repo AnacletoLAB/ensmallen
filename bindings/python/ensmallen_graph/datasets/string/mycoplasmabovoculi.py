@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaBovoculi.
+This file offers the methods to automatically retrieve the graph Mycoplasma bovoculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaBovoculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaBovoculi graph.
+    """Return new instance of the Mycoplasma bovoculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaBovoculi(
 
     Returns
     -----------------------
-    Instace of MycoplasmaBovoculi graph.
+    Instace of Mycoplasma bovoculi graph.
 
 	References
 	---------------------

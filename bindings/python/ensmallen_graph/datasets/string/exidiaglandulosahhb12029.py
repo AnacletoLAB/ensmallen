@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExidiaGlandulosaHhb12029.
+This file offers the methods to automatically retrieve the graph Exidia glandulosa HHB12029.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExidiaGlandulosaHhb12029(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExidiaGlandulosaHhb12029 graph.
+    """Return new instance of the Exidia glandulosa HHB12029 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ExidiaGlandulosaHhb12029(
 
     Returns
     -----------------------
-    Instace of ExidiaGlandulosaHhb12029 graph.
+    Instace of Exidia glandulosa HHB12029 graph.
 
 	References
 	---------------------

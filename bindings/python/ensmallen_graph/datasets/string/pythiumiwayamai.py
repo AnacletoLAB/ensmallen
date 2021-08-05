@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PythiumIwayamai.
+This file offers the methods to automatically retrieve the graph Pythium iwayamai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PythiumIwayamai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PythiumIwayamai graph.
+    """Return new instance of the Pythium iwayamai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PythiumIwayamai(
 
     Returns
     -----------------------
-    Instace of PythiumIwayamai graph.
+    Instace of Pythium iwayamai graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlloscardoviaMacacae.
+This file offers the methods to automatically retrieve the graph Alloscardovia macacae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlloscardoviaMacacae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlloscardoviaMacacae graph.
+    """Return new instance of the Alloscardovia macacae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlloscardoviaMacacae(
 
     Returns
     -----------------------
-    Instace of AlloscardoviaMacacae graph.
+    Instace of Alloscardovia macacae graph.
 
 	References
 	---------------------

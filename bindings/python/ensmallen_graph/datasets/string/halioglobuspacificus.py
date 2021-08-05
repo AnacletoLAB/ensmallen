@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalioglobusPacificus.
+This file offers the methods to automatically retrieve the graph Halioglobus pacificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalioglobusPacificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalioglobusPacificus graph.
+    """Return new instance of the Halioglobus pacificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalioglobusPacificus(
 
     Returns
     -----------------------
-    Instace of HalioglobusPacificus graph.
+    Instace of Halioglobus pacificus graph.
 
 	References
 	---------------------

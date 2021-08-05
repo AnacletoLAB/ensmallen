@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavihumibacterPetaseusNbrc106054.
+This file offers the methods to automatically retrieve the graph Flavihumibacter petaseus NBRC 106054.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavihumibacterPetaseusNbrc106054(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavihumibacterPetaseusNbrc106054 graph.
+    """Return new instance of the Flavihumibacter petaseus NBRC 106054 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavihumibacterPetaseusNbrc106054(
 
     Returns
     -----------------------
-    Instace of FlavihumibacterPetaseusNbrc106054 graph.
+    Instace of Flavihumibacter petaseus NBRC 106054 graph.
 
 	References
 	---------------------

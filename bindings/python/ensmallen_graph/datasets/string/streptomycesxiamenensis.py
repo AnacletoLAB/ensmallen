@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesXiamenensis.
+This file offers the methods to automatically retrieve the graph Streptomyces xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesXiamenensis graph.
+    """Return new instance of the Streptomyces xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesXiamenensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesXiamenensis graph.
+    Instace of Streptomyces xiamenensis graph.
 
 	References
 	---------------------

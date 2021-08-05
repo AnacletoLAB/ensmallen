@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusSalifodinaeDsm8989.
+This file offers the methods to automatically retrieve the graph Halococcus salifodinae DSM 8989.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusSalifodinaeDsm8989(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusSalifodinaeDsm8989 graph.
+    """Return new instance of the Halococcus salifodinae DSM 8989 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalococcusSalifodinaeDsm8989(
 
     Returns
     -----------------------
-    Instace of HalococcusSalifodinaeDsm8989 graph.
+    Instace of Halococcus salifodinae DSM 8989 graph.
 
 	References
 	---------------------

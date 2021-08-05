@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Connectus.
+This file offers the methods to automatically retrieve the graph connectus.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Connectus(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Connectus graph.
+    """Return new instance of the connectus graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Connectus(
 
     Returns
     -----------------------
-    Instace of Connectus graph.
+    Instace of connectus graph.
 
 	References
 	---------------------

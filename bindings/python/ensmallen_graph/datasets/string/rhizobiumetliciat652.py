@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumEtliCiat652.
+This file offers the methods to automatically retrieve the graph Rhizobium etli CIAT652.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumEtliCiat652(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumEtliCiat652 graph.
+    """Return new instance of the Rhizobium etli CIAT652 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumEtliCiat652(
 
     Returns
     -----------------------
-    Instace of RhizobiumEtliCiat652 graph.
+    Instace of Rhizobium etli CIAT652 graph.
 
 	References
 	---------------------

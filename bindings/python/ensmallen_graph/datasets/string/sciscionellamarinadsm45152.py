@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SciscionellaMarinaDsm45152.
+This file offers the methods to automatically retrieve the graph Sciscionella marina DSM 45152.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SciscionellaMarinaDsm45152(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SciscionellaMarinaDsm45152 graph.
+    """Return new instance of the Sciscionella marina DSM 45152 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SciscionellaMarinaDsm45152(
 
     Returns
     -----------------------
-    Instace of SciscionellaMarinaDsm45152 graph.
+    Instace of Sciscionella marina DSM 45152 graph.
 
 	References
 	---------------------

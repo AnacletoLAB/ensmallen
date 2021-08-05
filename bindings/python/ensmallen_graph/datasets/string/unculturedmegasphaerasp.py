@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedMegasphaeraSp.
+This file offers the methods to automatically retrieve the graph uncultured Megasphaera sp..
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedMegasphaeraSp(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedMegasphaeraSp graph.
+    """Return new instance of the uncultured Megasphaera sp. graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedMegasphaeraSp(
 
     Returns
     -----------------------
-    Instace of UnculturedMegasphaeraSp graph.
+    Instace of uncultured Megasphaera sp. graph.
 
 	References
 	---------------------

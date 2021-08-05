@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPseudoalcaligenesCect5344.
+This file offers the methods to automatically retrieve the graph Pseudomonas pseudoalcaligenes CECT5344.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPseudoalcaligenesCect5344(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPseudoalcaligenesCect5344 graph.
+    """Return new instance of the Pseudomonas pseudoalcaligenes CECT5344 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasPseudoalcaligenesCect5344(
 
     Returns
     -----------------------
-    Instace of PseudomonasPseudoalcaligenesCect5344 graph.
+    Instace of Pseudomonas pseudoalcaligenes CECT5344 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaChukchiensis.
+This file offers the methods to automatically retrieve the graph Colwellia chukchiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaChukchiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaChukchiensis graph.
+    """Return new instance of the Colwellia chukchiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaChukchiensis(
 
     Returns
     -----------------------
-    Instace of ColwelliaChukchiensis graph.
+    Instace of Colwellia chukchiensis graph.
 
 	References
 	---------------------

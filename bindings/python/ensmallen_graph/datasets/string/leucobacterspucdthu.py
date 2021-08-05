@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterSpUcdThu.
+This file offers the methods to automatically retrieve the graph Leucobacter sp. UCD-THU.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterSpUcdThu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterSpUcdThu graph.
+    """Return new instance of the Leucobacter sp. UCD-THU graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucobacterSpUcdThu(
 
     Returns
     -----------------------
-    Instace of LeucobacterSpUcdThu graph.
+    Instace of Leucobacter sp. UCD-THU graph.
 
 	References
 	---------------------

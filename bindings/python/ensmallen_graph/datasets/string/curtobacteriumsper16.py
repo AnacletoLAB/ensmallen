@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpEr16.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. ER1/6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpEr16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpEr16 graph.
+    """Return new instance of the Curtobacterium sp. ER1/6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpEr16(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpEr16 graph.
+    Instace of Curtobacterium sp. ER1/6 graph.
 
 	References
 	---------------------

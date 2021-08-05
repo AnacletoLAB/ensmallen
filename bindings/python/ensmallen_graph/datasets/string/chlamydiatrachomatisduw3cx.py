@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaTrachomatisDUw3Cx.
+This file offers the methods to automatically retrieve the graph Chlamydia trachomatis D/UW-3/CX.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaTrachomatisDUw3Cx(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaTrachomatisDUw3Cx graph.
+    """Return new instance of the Chlamydia trachomatis D/UW-3/CX graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlamydiaTrachomatisDUw3Cx(
 
     Returns
     -----------------------
-    Instace of ChlamydiaTrachomatisDUw3Cx graph.
+    Instace of Chlamydia trachomatis D/UW-3/CX graph.
 
 	References
 	---------------------

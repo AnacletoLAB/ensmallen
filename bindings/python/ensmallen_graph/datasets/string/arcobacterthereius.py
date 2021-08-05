@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterThereius.
+This file offers the methods to automatically retrieve the graph Arcobacter thereius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterThereius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterThereius graph.
+    """Return new instance of the Arcobacter thereius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcobacterThereius(
 
     Returns
     -----------------------
-    Instace of ArcobacterThereius graph.
+    Instace of Arcobacter thereius graph.
 
 	References
 	---------------------

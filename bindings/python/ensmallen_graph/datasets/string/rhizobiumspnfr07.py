@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpNfr07.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. NFR07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpNfr07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpNfr07 graph.
+    """Return new instance of the Rhizobium sp. NFR07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpNfr07(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpNfr07 graph.
+    Instace of Rhizobium sp. NFR07 graph.
 
 	References
 	---------------------

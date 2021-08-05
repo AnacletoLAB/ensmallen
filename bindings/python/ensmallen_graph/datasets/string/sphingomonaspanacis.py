@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasPanacis.
+This file offers the methods to automatically retrieve the graph Sphingomonas panacis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasPanacis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasPanacis graph.
+    """Return new instance of the Sphingomonas panacis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasPanacis(
 
     Returns
     -----------------------
-    Instace of SphingomonasPanacis graph.
+    Instace of Sphingomonas panacis graph.
 
 	References
 	---------------------

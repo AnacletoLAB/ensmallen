@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusButanolivorans.
+This file offers the methods to automatically retrieve the graph Bacillus butanolivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusButanolivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusButanolivorans graph.
+    """Return new instance of the Bacillus butanolivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusButanolivorans(
 
     Returns
     -----------------------
-    Instace of BacillusButanolivorans graph.
+    Instace of Bacillus butanolivorans graph.
 
 	References
 	---------------------

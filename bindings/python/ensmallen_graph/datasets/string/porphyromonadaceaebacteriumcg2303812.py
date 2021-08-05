@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonadaceaeBacteriumCg2303812.
+This file offers the methods to automatically retrieve the graph Porphyromonadaceae bacterium CG2_30_38_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonadaceaeBacteriumCg2303812(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonadaceaeBacteriumCg2303812 graph.
+    """Return new instance of the Porphyromonadaceae bacterium CG2_30_38_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PorphyromonadaceaeBacteriumCg2303812(
 
     Returns
     -----------------------
-    Instace of PorphyromonadaceaeBacteriumCg2303812 graph.
+    Instace of Porphyromonadaceae bacterium CG2_30_38_12 graph.
 
 	References
 	---------------------

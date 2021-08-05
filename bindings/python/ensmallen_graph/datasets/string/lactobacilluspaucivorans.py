@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPaucivorans.
+This file offers the methods to automatically retrieve the graph Lactobacillus paucivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPaucivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPaucivorans graph.
+    """Return new instance of the Lactobacillus paucivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPaucivorans(
 
     Returns
     -----------------------
-    Instace of LactobacillusPaucivorans graph.
+    Instace of Lactobacillus paucivorans graph.
 
 	References
 	---------------------

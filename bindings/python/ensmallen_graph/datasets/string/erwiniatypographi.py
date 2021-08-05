@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaTypographi.
+This file offers the methods to automatically retrieve the graph Erwinia typographi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaTypographi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaTypographi graph.
+    """Return new instance of the Erwinia typographi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErwiniaTypographi(
 
     Returns
     -----------------------
-    Instace of ErwiniaTypographi graph.
+    Instace of Erwinia typographi graph.
 
 	References
 	---------------------

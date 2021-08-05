@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumAcetoxidans.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum acetoxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumAcetoxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumAcetoxidans graph.
+    """Return new instance of the Desulfotomaculum acetoxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumAcetoxidans(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumAcetoxidans graph.
+    Instace of Desulfotomaculum acetoxidans graph.
 
 	References
 	---------------------

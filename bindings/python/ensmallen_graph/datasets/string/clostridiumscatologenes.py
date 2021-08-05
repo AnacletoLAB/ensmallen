@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumScatologenes.
+This file offers the methods to automatically retrieve the graph Clostridium scatologenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumScatologenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumScatologenes graph.
+    """Return new instance of the Clostridium scatologenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumScatologenes(
 
     Returns
     -----------------------
-    Instace of ClostridiumScatologenes graph.
+    Instace of Clostridium scatologenes graph.
 
 	References
 	---------------------

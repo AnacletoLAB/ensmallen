@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaSp7321.
+This file offers the methods to automatically retrieve the graph Pseudonocardia sp. 73-21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaSp7321(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaSp7321 graph.
+    """Return new instance of the Pseudonocardia sp. 73-21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaSp7321(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaSp7321 graph.
+    Instace of Pseudonocardia sp. 73-21 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalispirochaetaAlkalicaDsm8900.
+This file offers the methods to automatically retrieve the graph Alkalispirochaeta alkalica DSM 8900.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalispirochaetaAlkalicaDsm8900(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalispirochaetaAlkalicaDsm8900 graph.
+    """Return new instance of the Alkalispirochaeta alkalica DSM 8900 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalispirochaetaAlkalicaDsm8900(
 
     Returns
     -----------------------
-    Instace of AlkalispirochaetaAlkalicaDsm8900 graph.
+    Instace of Alkalispirochaeta alkalica DSM 8900 graph.
 
 	References
 	---------------------

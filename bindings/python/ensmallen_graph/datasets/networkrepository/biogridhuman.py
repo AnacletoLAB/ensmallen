@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioGridHuman.
+This file offers the methods to automatically retrieve the graph bio-grid-human.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def BioGridHuman(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioGridHuman graph.
+    """Return new instance of the bio-grid-human graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def BioGridHuman(
 
     Returns
     -----------------------
-    Instace of BioGridHuman graph.
+    Instace of bio-grid-human graph.
 
 	References
 	---------------------

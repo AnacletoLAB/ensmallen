@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumVulneris.
+This file offers the methods to automatically retrieve the graph Mycobacterium vulneris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumVulneris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumVulneris graph.
+    """Return new instance of the Mycobacterium vulneris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumVulneris(
 
     Returns
     -----------------------
-    Instace of MycobacteriumVulneris graph.
+    Instace of Mycobacterium vulneris graph.
 
 	References
 	---------------------

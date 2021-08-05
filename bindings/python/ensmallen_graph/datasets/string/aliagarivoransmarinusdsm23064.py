@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliagarivoransMarinusDsm23064.
+This file offers the methods to automatically retrieve the graph Aliagarivorans marinus DSM 23064.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliagarivoransMarinusDsm23064(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliagarivoransMarinusDsm23064 graph.
+    """Return new instance of the Aliagarivorans marinus DSM 23064 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliagarivoransMarinusDsm23064(
 
     Returns
     -----------------------
-    Instace of AliagarivoransMarinusDsm23064 graph.
+    Instace of Aliagarivorans marinus DSM 23064 graph.
 
 	References
 	---------------------

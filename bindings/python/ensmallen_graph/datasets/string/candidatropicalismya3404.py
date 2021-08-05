@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaTropicalisMya3404.
+This file offers the methods to automatically retrieve the graph Candida tropicalis MYA-3404.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaTropicalisMya3404(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaTropicalisMya3404 graph.
+    """Return new instance of the Candida tropicalis MYA-3404 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaTropicalisMya3404(
 
     Returns
     -----------------------
-    Instace of CandidaTropicalisMya3404 graph.
+    Instace of Candida tropicalis MYA-3404 graph.
 
 	References
 	---------------------

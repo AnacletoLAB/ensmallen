@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCichorii.
+This file offers the methods to automatically retrieve the graph Pseudomonas cichorii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCichorii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCichorii graph.
+    """Return new instance of the Pseudomonas cichorii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasCichorii(
 
     Returns
     -----------------------
-    Instace of PseudomonasCichorii graph.
+    Instace of Pseudomonas cichorii graph.
 
 	References
 	---------------------

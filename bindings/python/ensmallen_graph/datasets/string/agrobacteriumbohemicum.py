@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgrobacteriumBohemicum.
+This file offers the methods to automatically retrieve the graph Agrobacterium bohemicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgrobacteriumBohemicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgrobacteriumBohemicum graph.
+    """Return new instance of the Agrobacterium bohemicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgrobacteriumBohemicum(
 
     Returns
     -----------------------
-    Instace of AgrobacteriumBohemicum graph.
+    Instace of Agrobacterium bohemicum graph.
 
 	References
 	---------------------

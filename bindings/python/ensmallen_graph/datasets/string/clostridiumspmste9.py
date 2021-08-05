@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpMste9.
+This file offers the methods to automatically retrieve the graph Clostridium sp. MSTE9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpMste9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpMste9 graph.
+    """Return new instance of the Clostridium sp. MSTE9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSpMste9(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpMste9 graph.
+    Instace of Clostridium sp. MSTE9 graph.
 
 	References
 	---------------------

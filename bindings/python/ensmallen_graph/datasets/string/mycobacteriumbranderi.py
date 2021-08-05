@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumBranderi.
+This file offers the methods to automatically retrieve the graph Mycobacterium branderi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumBranderi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumBranderi graph.
+    """Return new instance of the Mycobacterium branderi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumBranderi(
 
     Returns
     -----------------------
-    Instace of MycobacteriumBranderi graph.
+    Instace of Mycobacterium branderi graph.
 
 	References
 	---------------------

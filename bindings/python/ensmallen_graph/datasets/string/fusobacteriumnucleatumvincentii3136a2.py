@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumNucleatumVincentii3136a2.
+This file offers the methods to automatically retrieve the graph Fusobacterium nucleatum vincentii 3136A2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumNucleatumVincentii3136a2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumNucleatumVincentii3136a2 graph.
+    """Return new instance of the Fusobacterium nucleatum vincentii 3136A2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumNucleatumVincentii3136a2(
 
     Returns
     -----------------------
-    Instace of FusobacteriumNucleatumVincentii3136a2 graph.
+    Instace of Fusobacterium nucleatum vincentii 3136A2 graph.
 
 	References
 	---------------------

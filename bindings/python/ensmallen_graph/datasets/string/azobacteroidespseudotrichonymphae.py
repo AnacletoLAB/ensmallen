@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzobacteroidesPseudotrichonymphae.
+This file offers the methods to automatically retrieve the graph Azobacteroides pseudotrichonymphae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzobacteroidesPseudotrichonymphae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzobacteroidesPseudotrichonymphae graph.
+    """Return new instance of the Azobacteroides pseudotrichonymphae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AzobacteroidesPseudotrichonymphae(
 
     Returns
     -----------------------
-    Instace of AzobacteroidesPseudotrichonymphae graph.
+    Instace of Azobacteroides pseudotrichonymphae graph.
 
 	References
 	---------------------

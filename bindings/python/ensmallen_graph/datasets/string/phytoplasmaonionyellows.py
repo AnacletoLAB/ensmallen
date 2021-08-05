@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaOnionYellows.
+This file offers the methods to automatically retrieve the graph Phytoplasma onion yellows.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaOnionYellows(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaOnionYellows graph.
+    """Return new instance of the Phytoplasma onion yellows graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytoplasmaOnionYellows(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaOnionYellows graph.
+    Instace of Phytoplasma onion yellows graph.
 
 	References
 	---------------------

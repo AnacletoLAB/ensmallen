@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColi536.
+This file offers the methods to automatically retrieve the graph Escherichia coli 536.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColi536(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColi536 graph.
+    """Return new instance of the Escherichia coli 536 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaColi536(
 
     Returns
     -----------------------
-    Instace of EscherichiaColi536 graph.
+    Instace of Escherichia coli 536 graph.
 
 	References
 	---------------------

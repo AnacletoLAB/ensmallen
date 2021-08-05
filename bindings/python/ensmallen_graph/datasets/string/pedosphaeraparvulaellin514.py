@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedosphaeraParvulaEllin514.
+This file offers the methods to automatically retrieve the graph Pedosphaera parvula Ellin514.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedosphaeraParvulaEllin514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedosphaeraParvulaEllin514 graph.
+    """Return new instance of the Pedosphaera parvula Ellin514 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedosphaeraParvulaEllin514(
 
     Returns
     -----------------------
-    Instace of PedosphaeraParvulaEllin514 graph.
+    Instace of Pedosphaera parvula Ellin514 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalapricumSalinum.
+This file offers the methods to automatically retrieve the graph Halapricum salinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalapricumSalinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalapricumSalinum graph.
+    """Return new instance of the Halapricum salinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalapricumSalinum(
 
     Returns
     -----------------------
-    Instace of HalapricumSalinum graph.
+    Instace of Halapricum salinum graph.
 
 	References
 	---------------------

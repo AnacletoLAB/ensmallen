@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasFuscans.
+This file offers the methods to automatically retrieve the graph Xanthomonas fuscans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasFuscans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasFuscans graph.
+    """Return new instance of the Xanthomonas fuscans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasFuscans(
 
     Returns
     -----------------------
-    Instace of XanthomonasFuscans graph.
+    Instace of Xanthomonas fuscans graph.
 
 	References
 	---------------------

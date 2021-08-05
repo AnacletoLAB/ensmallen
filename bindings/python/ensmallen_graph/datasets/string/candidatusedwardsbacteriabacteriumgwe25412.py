@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusEdwardsbacteriaBacteriumGwe25412.
+This file offers the methods to automatically retrieve the graph Candidatus Edwardsbacteria bacterium GWE2_54_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusEdwardsbacteriaBacteriumGwe25412(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusEdwardsbacteriaBacteriumGwe25412 graph.
+    """Return new instance of the Candidatus Edwardsbacteria bacterium GWE2_54_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusEdwardsbacteriaBacteriumGwe25412(
 
     Returns
     -----------------------
-    Instace of CandidatusEdwardsbacteriaBacteriumGwe25412 graph.
+    Instace of Candidatus Edwardsbacteria bacterium GWE2_54_12 graph.
 
 	References
 	---------------------

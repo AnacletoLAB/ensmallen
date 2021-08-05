@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnhydrobacterAerosaccus.
+This file offers the methods to automatically retrieve the graph Enhydrobacter aerosaccus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnhydrobacterAerosaccus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnhydrobacterAerosaccus graph.
+    """Return new instance of the Enhydrobacter aerosaccus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnhydrobacterAerosaccus(
 
     Returns
     -----------------------
-    Instace of EnhydrobacterAerosaccus graph.
+    Instace of Enhydrobacter aerosaccus graph.
 
 	References
 	---------------------

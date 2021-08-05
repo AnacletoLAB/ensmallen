@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusEquorum.
+This file offers the methods to automatically retrieve the graph Staphylococcus equorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusEquorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusEquorum graph.
+    """Return new instance of the Staphylococcus equorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusEquorum(
 
     Returns
     -----------------------
-    Instace of StaphylococcusEquorum graph.
+    Instace of Staphylococcus equorum graph.
 
 	References
 	---------------------

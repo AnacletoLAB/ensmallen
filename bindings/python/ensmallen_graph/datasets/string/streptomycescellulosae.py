@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCellulosae.
+This file offers the methods to automatically retrieve the graph Streptomyces cellulosae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCellulosae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCellulosae graph.
+    """Return new instance of the Streptomyces cellulosae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCellulosae(
 
     Returns
     -----------------------
-    Instace of StreptomycesCellulosae graph.
+    Instace of Streptomyces cellulosae graph.
 
 	References
 	---------------------

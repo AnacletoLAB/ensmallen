@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaPestisCo92.
+This file offers the methods to automatically retrieve the graph Yersinia pestis CO92.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaPestisCo92(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaPestisCo92 graph.
+    """Return new instance of the Yersinia pestis CO92 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaPestisCo92(
 
     Returns
     -----------------------
-    Instace of YersiniaPestisCo92 graph.
+    Instace of Yersinia pestis CO92 graph.
 
 	References
 	---------------------

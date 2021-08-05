@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterPhenylpyruvicus.
+This file offers the methods to automatically retrieve the graph Psychrobacter phenylpyruvicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterPhenylpyruvicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterPhenylpyruvicus graph.
+    """Return new instance of the Psychrobacter phenylpyruvicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PsychrobacterPhenylpyruvicus(
 
     Returns
     -----------------------
-    Instace of PsychrobacterPhenylpyruvicus graph.
+    Instace of Psychrobacter phenylpyruvicus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaHisticola.
+This file offers the methods to automatically retrieve the graph Prevotella histicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaHisticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaHisticola graph.
+    """Return new instance of the Prevotella histicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaHisticola(
 
     Returns
     -----------------------
-    Instace of PrevotellaHisticola graph.
+    Instace of Prevotella histicola graph.
 
 	References
 	---------------------

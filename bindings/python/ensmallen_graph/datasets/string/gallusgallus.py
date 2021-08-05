@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallusGallus.
+This file offers the methods to automatically retrieve the graph Gallus gallus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallusGallus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallusGallus graph.
+    """Return new instance of the Gallus gallus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GallusGallus(
 
     Returns
     -----------------------
-    Instace of GallusGallus graph.
+    Instace of Gallus gallus graph.
 
 	References
 	---------------------

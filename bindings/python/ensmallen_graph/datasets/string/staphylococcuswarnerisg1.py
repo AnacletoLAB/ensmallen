@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusWarneriSg1.
+This file offers the methods to automatically retrieve the graph Staphylococcus warneri SG1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusWarneriSg1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusWarneriSg1 graph.
+    """Return new instance of the Staphylococcus warneri SG1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusWarneriSg1(
 
     Returns
     -----------------------
-    Instace of StaphylococcusWarneriSg1 graph.
+    Instace of Staphylococcus warneri SG1 graph.
 
 	References
 	---------------------

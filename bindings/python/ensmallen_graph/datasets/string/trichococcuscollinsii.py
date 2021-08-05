@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichococcusCollinsii.
+This file offers the methods to automatically retrieve the graph Trichococcus collinsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichococcusCollinsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichococcusCollinsii graph.
+    """Return new instance of the Trichococcus collinsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichococcusCollinsii(
 
     Returns
     -----------------------
-    Instace of TrichococcusCollinsii graph.
+    Instace of Trichococcus collinsii graph.
 
 	References
 	---------------------

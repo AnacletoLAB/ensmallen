@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusUhrbacteriaBacteriumRifcsphigho201Full6320.
+This file offers the methods to automatically retrieve the graph Candidatus Uhrbacteria bacterium RIFCSPHIGHO2_01_FULL_63_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusUhrbacteriaBacteriumRifcsphigho201Full6320(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusUhrbacteriaBacteriumRifcsphigho201Full6320 graph.
+    """Return new instance of the Candidatus Uhrbacteria bacterium RIFCSPHIGHO2_01_FULL_63_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusUhrbacteriaBacteriumRifcsphigho201Full6320(
 
     Returns
     -----------------------
-    Instace of CandidatusUhrbacteriaBacteriumRifcsphigho201Full6320 graph.
+    Instace of Candidatus Uhrbacteria bacterium RIFCSPHIGHO2_01_FULL_63_20 graph.
 
 	References
 	---------------------

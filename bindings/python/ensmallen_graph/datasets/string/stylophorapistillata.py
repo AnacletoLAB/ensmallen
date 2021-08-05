@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StylophoraPistillata.
+This file offers the methods to automatically retrieve the graph Stylophora pistillata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StylophoraPistillata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StylophoraPistillata graph.
+    """Return new instance of the Stylophora pistillata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StylophoraPistillata(
 
     Returns
     -----------------------
-    Instace of StylophoraPistillata graph.
+    Instace of Stylophora pistillata graph.
 
 	References
 	---------------------

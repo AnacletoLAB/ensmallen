@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolobacteriumMooreiF0204.
+This file offers the methods to automatically retrieve the graph Solobacterium moorei F0204.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolobacteriumMooreiF0204(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolobacteriumMooreiF0204 graph.
+    """Return new instance of the Solobacterium moorei F0204 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolobacteriumMooreiF0204(
 
     Returns
     -----------------------
-    Instace of SolobacteriumMooreiF0204 graph.
+    Instace of Solobacterium moorei F0204 graph.
 
 	References
 	---------------------

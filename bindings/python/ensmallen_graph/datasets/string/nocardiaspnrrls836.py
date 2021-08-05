@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSpNrrlS836.
+This file offers the methods to automatically retrieve the graph Nocardia sp. NRRL S-836.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSpNrrlS836(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSpNrrlS836 graph.
+    """Return new instance of the Nocardia sp. NRRL S-836 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaSpNrrlS836(
 
     Returns
     -----------------------
-    Instace of NocardiaSpNrrlS836 graph.
+    Instace of Nocardia sp. NRRL S-836 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraWeiliiSerovarRanarumStrIcft.
+This file offers the methods to automatically retrieve the graph Leptospira weilii serovar Ranarum str. ICFT.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraWeiliiSerovarRanarumStrIcft(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraWeiliiSerovarRanarumStrIcft graph.
+    """Return new instance of the Leptospira weilii serovar Ranarum str. ICFT graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraWeiliiSerovarRanarumStrIcft(
 
     Returns
     -----------------------
-    Instace of LeptospiraWeiliiSerovarRanarumStrIcft graph.
+    Instace of Leptospira weilii serovar Ranarum str. ICFT graph.
 
 	References
 	---------------------

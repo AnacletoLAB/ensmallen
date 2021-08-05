@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumLipophiloflavum.
+This file offers the methods to automatically retrieve the graph Corynebacterium lipophiloflavum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumLipophiloflavum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumLipophiloflavum graph.
+    """Return new instance of the Corynebacterium lipophiloflavum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumLipophiloflavum(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumLipophiloflavum graph.
+    Instace of Corynebacterium lipophiloflavum graph.
 
 	References
 	---------------------

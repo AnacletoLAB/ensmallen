@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaMathscinetDir.
+This file offers the methods to automatically retrieve the graph ca-MathSciNet-dir.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def CaMathscinetDir(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaMathscinetDir graph.
+    """Return new instance of the ca-MathSciNet-dir graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def CaMathscinetDir(
 
     Returns
     -----------------------
-    Instace of CaMathscinetDir graph.
+    Instace of ca-MathSciNet-dir graph.
 
 	References
 	---------------------

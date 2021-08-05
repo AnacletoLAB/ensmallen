@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DemequinaAurantiaca.
+This file offers the methods to automatically retrieve the graph Demequina aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DemequinaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DemequinaAurantiaca graph.
+    """Return new instance of the Demequina aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DemequinaAurantiaca(
 
     Returns
     -----------------------
-    Instace of DemequinaAurantiaca graph.
+    Instace of Demequina aurantiaca graph.
 
 	References
 	---------------------

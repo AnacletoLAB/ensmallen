@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WinogradskyellaThalassocola.
+This file offers the methods to automatically retrieve the graph Winogradskyella thalassocola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WinogradskyellaThalassocola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WinogradskyellaThalassocola graph.
+    """Return new instance of the Winogradskyella thalassocola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WinogradskyellaThalassocola(
 
     Returns
     -----------------------
-    Instace of WinogradskyellaThalassocola graph.
+    Instace of Winogradskyella thalassocola graph.
 
 	References
 	---------------------

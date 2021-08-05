@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PetrotogaMobilis.
+This file offers the methods to automatically retrieve the graph Petrotoga mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PetrotogaMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PetrotogaMobilis graph.
+    """Return new instance of the Petrotoga mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PetrotogaMobilis(
 
     Returns
     -----------------------
-    Instace of PetrotogaMobilis graph.
+    Instace of Petrotoga mobilis graph.
 
 	References
 	---------------------

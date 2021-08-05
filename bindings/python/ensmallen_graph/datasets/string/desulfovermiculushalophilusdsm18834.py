@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovermiculusHalophilusDsm18834.
+This file offers the methods to automatically retrieve the graph Desulfovermiculus halophilus DSM 18834.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovermiculusHalophilusDsm18834(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovermiculusHalophilusDsm18834 graph.
+    """Return new instance of the Desulfovermiculus halophilus DSM 18834 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovermiculusHalophilusDsm18834(
 
     Returns
     -----------------------
-    Instace of DesulfovermiculusHalophilusDsm18834 graph.
+    Instace of Desulfovermiculus halophilus DSM 18834 graph.
 
 	References
 	---------------------

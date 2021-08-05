@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MonopterusAlbus.
+This file offers the methods to automatically retrieve the graph Monopterus albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MonopterusAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MonopterusAlbus graph.
+    """Return new instance of the Monopterus albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MonopterusAlbus(
 
     Returns
     -----------------------
-    Instace of MonopterusAlbus graph.
+    Instace of Monopterus albus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sw100050d1Trial3.
+This file offers the methods to automatically retrieve the graph SW-1000-5-0d1-trial3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Sw100050d1Trial3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sw100050d1Trial3 graph.
+    """Return new instance of the SW-1000-5-0d1-trial3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Sw100050d1Trial3(
 
     Returns
     -----------------------
-    Instace of Sw100050d1Trial3 graph.
+    Instace of SW-1000-5-0d1-trial3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumCg2304417.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium CG2_30_44_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumCg2304417(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumCg2304417 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium CG2_30_44_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumCg2304417(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumCg2304417 graph.
+    Instace of Candidatus Peregrinibacteria bacterium CG2_30_44_17 graph.
 
 	References
 	---------------------

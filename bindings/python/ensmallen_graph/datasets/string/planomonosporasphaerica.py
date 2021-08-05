@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanomonosporaSphaerica.
+This file offers the methods to automatically retrieve the graph Planomonospora sphaerica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanomonosporaSphaerica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanomonosporaSphaerica graph.
+    """Return new instance of the Planomonospora sphaerica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanomonosporaSphaerica(
 
     Returns
     -----------------------
-    Instace of PlanomonosporaSphaerica graph.
+    Instace of Planomonospora sphaerica graph.
 
 	References
 	---------------------

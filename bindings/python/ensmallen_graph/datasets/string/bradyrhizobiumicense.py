@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumIcense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium icense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumIcense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumIcense graph.
+    """Return new instance of the Bradyrhizobium icense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumIcense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumIcense graph.
+    Instace of Bradyrhizobium icense graph.
 
 	References
 	---------------------

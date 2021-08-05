@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesHimastatinicusAtcc53653.
+This file offers the methods to automatically retrieve the graph Streptomyces himastatinicus ATCC 53653.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesHimastatinicusAtcc53653(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesHimastatinicusAtcc53653 graph.
+    """Return new instance of the Streptomyces himastatinicus ATCC 53653 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesHimastatinicusAtcc53653(
 
     Returns
     -----------------------
-    Instace of StreptomycesHimastatinicusAtcc53653 graph.
+    Instace of Streptomyces himastatinicus ATCC 53653 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GilvimarinusPolysaccharolyticus.
+This file offers the methods to automatically retrieve the graph Gilvimarinus polysaccharolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GilvimarinusPolysaccharolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GilvimarinusPolysaccharolyticus graph.
+    """Return new instance of the Gilvimarinus polysaccharolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GilvimarinusPolysaccharolyticus(
 
     Returns
     -----------------------
-    Instace of GilvimarinusPolysaccharolyticus graph.
+    Instace of Gilvimarinus polysaccharolyticus graph.
 
 	References
 	---------------------

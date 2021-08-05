@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumReichenbachii.
+This file offers the methods to automatically retrieve the graph Flavobacterium reichenbachii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumReichenbachii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumReichenbachii graph.
+    """Return new instance of the Flavobacterium reichenbachii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumReichenbachii(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumReichenbachii graph.
+    Instace of Flavobacterium reichenbachii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumRifcsphigho201Full4349.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium RIFCSPHIGHO2_01_FULL_43_49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho201Full4349(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumRifcsphigho201Full4349 graph.
+    """Return new instance of the Deltaproteobacteria bacterium RIFCSPHIGHO2_01_FULL_43_49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho201Full4349(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumRifcsphigho201Full4349 graph.
+    Instace of Deltaproteobacteria bacterium RIFCSPHIGHO2_01_FULL_43_49 graph.
 
 	References
 	---------------------

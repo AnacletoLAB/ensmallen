@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusAlbus7Dsm20455.
+This file offers the methods to automatically retrieve the graph Ruminococcus albus 7  DSM 20455.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusAlbus7Dsm20455(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusAlbus7Dsm20455 graph.
+    """Return new instance of the Ruminococcus albus 7  DSM 20455 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusAlbus7Dsm20455(
 
     Returns
     -----------------------
-    Instace of RuminococcusAlbus7Dsm20455 graph.
+    Instace of Ruminococcus albus 7  DSM 20455 graph.
 
 	References
 	---------------------

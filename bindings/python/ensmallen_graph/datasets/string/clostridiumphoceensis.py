@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPhoceensis.
+This file offers the methods to automatically retrieve the graph Clostridium phoceensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPhoceensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPhoceensis graph.
+    """Return new instance of the Clostridium phoceensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPhoceensis(
 
     Returns
     -----------------------
-    Instace of ClostridiumPhoceensis graph.
+    Instace of Clostridium phoceensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacillusHalophilus.
+This file offers the methods to automatically retrieve the graph Gracilibacillus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacillusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacillusHalophilus graph.
+    """Return new instance of the Gracilibacillus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GracilibacillusHalophilus(
 
     Returns
     -----------------------
-    Instace of GracilibacillusHalophilus graph.
+    Instace of Gracilibacillus halophilus graph.
 
 	References
 	---------------------

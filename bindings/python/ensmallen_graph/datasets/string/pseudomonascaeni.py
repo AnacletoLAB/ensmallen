@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCaeni.
+This file offers the methods to automatically retrieve the graph Pseudomonas caeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCaeni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCaeni graph.
+    """Return new instance of the Pseudomonas caeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasCaeni(
 
     Returns
     -----------------------
-    Instace of PseudomonasCaeni graph.
+    Instace of Pseudomonas caeni graph.
 
 	References
 	---------------------

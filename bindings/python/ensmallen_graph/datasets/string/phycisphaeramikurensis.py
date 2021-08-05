@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhycisphaeraMikurensis.
+This file offers the methods to automatically retrieve the graph Phycisphaera mikurensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhycisphaeraMikurensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhycisphaeraMikurensis graph.
+    """Return new instance of the Phycisphaera mikurensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhycisphaeraMikurensis(
 
     Returns
     -----------------------
-    Instace of PhycisphaeraMikurensis graph.
+    Instace of Phycisphaera mikurensis graph.
 
 	References
 	---------------------

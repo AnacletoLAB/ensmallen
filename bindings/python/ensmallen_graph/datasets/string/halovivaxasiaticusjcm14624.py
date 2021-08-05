@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalovivaxAsiaticusJcm14624.
+This file offers the methods to automatically retrieve the graph Halovivax asiaticus JCM 14624.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalovivaxAsiaticusJcm14624(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalovivaxAsiaticusJcm14624 graph.
+    """Return new instance of the Halovivax asiaticus JCM 14624 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalovivaxAsiaticusJcm14624(
 
     Returns
     -----------------------
-    Instace of HalovivaxAsiaticusJcm14624 graph.
+    Instace of Halovivax asiaticus JCM 14624 graph.
 
 	References
 	---------------------

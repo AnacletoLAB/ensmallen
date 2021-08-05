@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph San200071.
+This file offers the methods to automatically retrieve the graph san200-0-7-1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def San200071(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the San200071 graph.
+    """Return new instance of the san200-0-7-1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def San200071(
 
     Returns
     -----------------------
-    Instace of San200071 graph.
+    Instace of san200-0-7-1 graph.
 
 	References
 	---------------------

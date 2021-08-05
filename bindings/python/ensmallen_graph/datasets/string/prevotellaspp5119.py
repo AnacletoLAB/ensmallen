@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpP5119.
+This file offers the methods to automatically retrieve the graph Prevotella sp. P5-119.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpP5119(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpP5119 graph.
+    """Return new instance of the Prevotella sp. P5-119 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpP5119(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpP5119 graph.
+    Instace of Prevotella sp. P5-119 graph.
 
 	References
 	---------------------

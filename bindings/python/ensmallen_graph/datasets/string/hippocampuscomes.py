@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HippocampusComes.
+This file offers the methods to automatically retrieve the graph Hippocampus comes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HippocampusComes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HippocampusComes graph.
+    """Return new instance of the Hippocampus comes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HippocampusComes(
 
     Returns
     -----------------------
-    Instace of HippocampusComes graph.
+    Instace of Hippocampus comes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeribacteriaBacteriumRifoxyd2Full5815.
+This file offers the methods to automatically retrieve the graph Candidatus Peribacteria bacterium RIFOXYD2_FULL_58_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeribacteriaBacteriumRifoxyd2Full5815(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeribacteriaBacteriumRifoxyd2Full5815 graph.
+    """Return new instance of the Candidatus Peribacteria bacterium RIFOXYD2_FULL_58_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeribacteriaBacteriumRifoxyd2Full5815(
 
     Returns
     -----------------------
-    Instace of CandidatusPeribacteriaBacteriumRifoxyd2Full5815 graph.
+    Instace of Candidatus Peribacteria bacterium RIFOXYD2_FULL_58_15 graph.
 
 	References
 	---------------------

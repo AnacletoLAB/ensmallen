@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloropiconPrimus.
+This file offers the methods to automatically retrieve the graph Chloropicon primus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloropiconPrimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloropiconPrimus graph.
+    """Return new instance of the Chloropicon primus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChloropiconPrimus(
 
     Returns
     -----------------------
-    Instace of ChloropiconPrimus graph.
+    Instace of Chloropicon primus graph.
 
 	References
 	---------------------

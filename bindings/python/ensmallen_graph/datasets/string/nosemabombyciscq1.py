@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NosemaBombycisCq1.
+This file offers the methods to automatically retrieve the graph Nosema bombycis CQ1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NosemaBombycisCq1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NosemaBombycisCq1 graph.
+    """Return new instance of the Nosema bombycis CQ1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NosemaBombycisCq1(
 
     Returns
     -----------------------
-    Instace of NosemaBombycisCq1 graph.
+    Instace of Nosema bombycis CQ1 graph.
 
 	References
 	---------------------

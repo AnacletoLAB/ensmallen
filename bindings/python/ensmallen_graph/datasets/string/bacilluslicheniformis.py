@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusLicheniformis.
+This file offers the methods to automatically retrieve the graph Bacillus licheniformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusLicheniformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusLicheniformis graph.
+    """Return new instance of the Bacillus licheniformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusLicheniformis(
 
     Returns
     -----------------------
-    Instace of BacillusLicheniformis graph.
+    Instace of Bacillus licheniformis graph.
 
 	References
 	---------------------

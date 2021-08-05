@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterAurescens.
+This file offers the methods to automatically retrieve the graph Arthrobacter aurescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterAurescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterAurescens graph.
+    """Return new instance of the Arthrobacter aurescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterAurescens(
 
     Returns
     -----------------------
-    Instace of ArthrobacterAurescens graph.
+    Instace of Arthrobacter aurescens graph.
 
 	References
 	---------------------

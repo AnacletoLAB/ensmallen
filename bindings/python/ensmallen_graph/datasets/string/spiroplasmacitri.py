@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaCitri.
+This file offers the methods to automatically retrieve the graph Spiroplasma citri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaCitri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaCitri graph.
+    """Return new instance of the Spiroplasma citri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpiroplasmaCitri(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaCitri graph.
+    Instace of Spiroplasma citri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrenziaSpOb1.
+This file offers the methods to automatically retrieve the graph Labrenzia sp. OB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrenziaSpOb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrenziaSpOb1 graph.
+    """Return new instance of the Labrenzia sp. OB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrenziaSpOb1(
 
     Returns
     -----------------------
-    Instace of LabrenziaSpOb1 graph.
+    Instace of Labrenzia sp. OB1 graph.
 
 	References
 	---------------------

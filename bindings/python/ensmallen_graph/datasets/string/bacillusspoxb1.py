@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpOxb1.
+This file offers the methods to automatically retrieve the graph Bacillus sp. OxB-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpOxb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpOxb1 graph.
+    """Return new instance of the Bacillus sp. OxB-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpOxb1(
 
     Returns
     -----------------------
-    Instace of BacillusSpOxb1 graph.
+    Instace of Bacillus sp. OxB-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedCandidatusPoseidonialesArchaeon.
+This file offers the methods to automatically retrieve the graph uncultured Candidatus Poseidoniales archaeon.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedCandidatusPoseidonialesArchaeon(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedCandidatusPoseidonialesArchaeon graph.
+    """Return new instance of the uncultured Candidatus Poseidoniales archaeon graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedCandidatusPoseidonialesArchaeon(
 
     Returns
     -----------------------
-    Instace of UnculturedCandidatusPoseidonialesArchaeon graph.
+    Instace of uncultured Candidatus Poseidoniales archaeon graph.
 
 	References
 	---------------------

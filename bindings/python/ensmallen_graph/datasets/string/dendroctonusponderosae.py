@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DendroctonusPonderosae.
+This file offers the methods to automatically retrieve the graph Dendroctonus ponderosae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DendroctonusPonderosae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DendroctonusPonderosae graph.
+    """Return new instance of the Dendroctonus ponderosae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DendroctonusPonderosae(
 
     Returns
     -----------------------
-    Instace of DendroctonusPonderosae graph.
+    Instace of Dendroctonus ponderosae graph.
 
 	References
 	---------------------

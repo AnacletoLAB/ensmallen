@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasOryzaePxo99a.
+This file offers the methods to automatically retrieve the graph Xanthomonas oryzae PXO99A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasOryzaePxo99a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasOryzaePxo99a graph.
+    """Return new instance of the Xanthomonas oryzae PXO99A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def XanthomonasOryzaePxo99a(
 
     Returns
     -----------------------
-    Instace of XanthomonasOryzaePxo99a graph.
+    Instace of Xanthomonas oryzae PXO99A graph.
 
 	References
 	---------------------

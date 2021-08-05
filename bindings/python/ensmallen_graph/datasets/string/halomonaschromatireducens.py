@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasChromatireducens.
+This file offers the methods to automatically retrieve the graph Halomonas chromatireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasChromatireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasChromatireducens graph.
+    """Return new instance of the Halomonas chromatireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasChromatireducens(
 
     Returns
     -----------------------
-    Instace of HalomonasChromatireducens graph.
+    Instace of Halomonas chromatireducens graph.
 
 	References
 	---------------------

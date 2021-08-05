@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaTerpenica.
+This file offers the methods to automatically retrieve the graph Nocardia terpenica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaTerpenica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaTerpenica graph.
+    """Return new instance of the Nocardia terpenica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaTerpenica(
 
     Returns
     -----------------------
-    Instace of NocardiaTerpenica graph.
+    Instace of Nocardia terpenica graph.
 
 	References
 	---------------------

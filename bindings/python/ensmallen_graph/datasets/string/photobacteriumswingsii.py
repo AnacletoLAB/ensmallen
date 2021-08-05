@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumSwingsii.
+This file offers the methods to automatically retrieve the graph Photobacterium swingsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumSwingsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumSwingsii graph.
+    """Return new instance of the Photobacterium swingsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumSwingsii(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumSwingsii graph.
+    Instace of Photobacterium swingsii graph.
 
 	References
 	---------------------

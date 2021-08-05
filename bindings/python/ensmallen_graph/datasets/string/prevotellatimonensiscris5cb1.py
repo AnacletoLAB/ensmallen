@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaTimonensisCris5cb1.
+This file offers the methods to automatically retrieve the graph Prevotella timonensis CRIS5CB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaTimonensisCris5cb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaTimonensisCris5cb1 graph.
+    """Return new instance of the Prevotella timonensis CRIS5CB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaTimonensisCris5cb1(
 
     Returns
     -----------------------
-    Instace of PrevotellaTimonensisCris5cb1 graph.
+    Instace of Prevotella timonensis CRIS5CB1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumNalgiovense.
+This file offers the methods to automatically retrieve the graph Penicillium nalgiovense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumNalgiovense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumNalgiovense graph.
+    """Return new instance of the Penicillium nalgiovense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumNalgiovense(
 
     Returns
     -----------------------
-    Instace of PenicilliumNalgiovense graph.
+    Instace of Penicillium nalgiovense graph.
 
 	References
 	---------------------

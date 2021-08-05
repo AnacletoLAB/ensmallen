@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaromonasSpCg912.
+This file offers the methods to automatically retrieve the graph Polaromonas sp. CG912.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaromonasSpCg912(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaromonasSpCg912 graph.
+    """Return new instance of the Polaromonas sp. CG912 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PolaromonasSpCg912(
 
     Returns
     -----------------------
-    Instace of PolaromonasSpCg912 graph.
+    Instace of Polaromonas sp. CG912 graph.
 
 	References
 	---------------------

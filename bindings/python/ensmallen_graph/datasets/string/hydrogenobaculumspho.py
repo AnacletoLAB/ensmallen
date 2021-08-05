@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenobaculumSpHo.
+This file offers the methods to automatically retrieve the graph Hydrogenobaculum sp. HO.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenobaculumSpHo(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenobaculumSpHo graph.
+    """Return new instance of the Hydrogenobaculum sp. HO graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HydrogenobaculumSpHo(
 
     Returns
     -----------------------
-    Instace of HydrogenobaculumSpHo graph.
+    Instace of Hydrogenobaculum sp. HO graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryzaGlumipatula.
+This file offers the methods to automatically retrieve the graph Oryza glumipatula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryzaGlumipatula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryzaGlumipatula graph.
+    """Return new instance of the Oryza glumipatula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryzaGlumipatula(
 
     Returns
     -----------------------
-    Instace of OryzaGlumipatula graph.
+    Instace of Oryza glumipatula graph.
 
 	References
 	---------------------

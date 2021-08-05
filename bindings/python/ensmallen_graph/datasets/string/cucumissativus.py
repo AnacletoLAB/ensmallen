@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CucumisSativus.
+This file offers the methods to automatically retrieve the graph Cucumis sativus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CucumisSativus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CucumisSativus graph.
+    """Return new instance of the Cucumis sativus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CucumisSativus(
 
     Returns
     -----------------------
-    Instace of CucumisSativus graph.
+    Instace of Cucumis sativus graph.
 
 	References
 	---------------------

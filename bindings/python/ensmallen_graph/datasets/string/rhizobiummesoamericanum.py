@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumMesoamericanum.
+This file offers the methods to automatically retrieve the graph Rhizobium mesoamericanum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumMesoamericanum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumMesoamericanum graph.
+    """Return new instance of the Rhizobium mesoamericanum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumMesoamericanum(
 
     Returns
     -----------------------
-    Instace of RhizobiumMesoamericanum graph.
+    Instace of Rhizobium mesoamericanum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffDigg.
+This file offers the methods to automatically retrieve the graph aff-digg.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def AffDigg(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffDigg graph.
+    """Return new instance of the aff-digg graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def AffDigg(
 
     Returns
     -----------------------
-    Instace of AffDigg graph.
+    Instace of aff-digg graph.
 
 	References
 	---------------------

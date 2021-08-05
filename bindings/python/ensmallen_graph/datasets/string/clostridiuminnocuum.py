@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumInnocuum.
+This file offers the methods to automatically retrieve the graph Clostridium innocuum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumInnocuum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumInnocuum graph.
+    """Return new instance of the Clostridium innocuum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumInnocuum(
 
     Returns
     -----------------------
-    Instace of ClostridiumInnocuum graph.
+    Instace of Clostridium innocuum graph.
 
 	References
 	---------------------

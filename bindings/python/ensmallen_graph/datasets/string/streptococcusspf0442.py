@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpF0442.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. F0442.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpF0442(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpF0442 graph.
+    """Return new instance of the Streptococcus sp. F0442 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpF0442(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpF0442 graph.
+    Instace of Streptococcus sp. F0442 graph.
 
 	References
 	---------------------

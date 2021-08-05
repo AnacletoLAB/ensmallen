@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaMucosaC102.
+This file offers the methods to automatically retrieve the graph Neisseria mucosa C102.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaMucosaC102(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaMucosaC102 graph.
+    """Return new instance of the Neisseria mucosa C102 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NeisseriaMucosaC102(
 
     Returns
     -----------------------
-    Instace of NeisseriaMucosaC102 graph.
+    Instace of Neisseria mucosa C102 graph.
 
 	References
 	---------------------

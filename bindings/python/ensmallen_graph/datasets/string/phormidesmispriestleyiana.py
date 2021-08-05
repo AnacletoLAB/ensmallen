@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhormidesmisPriestleyiAna.
+This file offers the methods to automatically retrieve the graph Phormidesmis priestleyi Ana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhormidesmisPriestleyiAna(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhormidesmisPriestleyiAna graph.
+    """Return new instance of the Phormidesmis priestleyi Ana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhormidesmisPriestleyiAna(
 
     Returns
     -----------------------
-    Instace of PhormidesmisPriestleyiAna graph.
+    Instace of Phormidesmis priestleyi Ana graph.
 
 	References
 	---------------------

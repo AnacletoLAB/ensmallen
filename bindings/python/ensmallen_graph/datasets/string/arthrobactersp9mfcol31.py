@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSp9mfcol31.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. 9MFCol31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSp9mfcol31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSp9mfcol31 graph.
+    """Return new instance of the Arthrobacter sp. 9MFCol31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterSp9mfcol31(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSp9mfcol31 graph.
+    Instace of Arthrobacter sp. 9MFCol31 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiaBacterium41269.
+This file offers the methods to automatically retrieve the graph Clostridia bacterium 41_269.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiaBacterium41269(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiaBacterium41269 graph.
+    """Return new instance of the Clostridia bacterium 41_269 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiaBacterium41269(
 
     Returns
     -----------------------
-    Instace of ClostridiaBacterium41269 graph.
+    Instace of Clostridia bacterium 41_269 graph.
 
 	References
 	---------------------

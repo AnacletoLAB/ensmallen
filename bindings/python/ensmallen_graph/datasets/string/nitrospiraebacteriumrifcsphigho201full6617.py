@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumRifcsphigho201Full6617.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium RIFCSPHIGHO2_01_FULL_66_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumRifcsphigho201Full6617(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumRifcsphigho201Full6617 graph.
+    """Return new instance of the Nitrospirae bacterium RIFCSPHIGHO2_01_FULL_66_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumRifcsphigho201Full6617(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumRifcsphigho201Full6617 graph.
+    Instace of Nitrospirae bacterium RIFCSPHIGHO2_01_FULL_66_17 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelobacterSpSfb93.
+This file offers the methods to automatically retrieve the graph Pelobacter sp. SFB93.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelobacterSpSfb93(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelobacterSpSfb93 graph.
+    """Return new instance of the Pelobacter sp. SFB93 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelobacterSpSfb93(
 
     Returns
     -----------------------
-    Instace of PelobacterSpSfb93 graph.
+    Instace of Pelobacter sp. SFB93 graph.
 
 	References
 	---------------------

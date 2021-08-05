@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Tf11.
+This file offers the methods to automatically retrieve the graph TF11.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Tf11(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Tf11 graph.
+    """Return new instance of the TF11 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Tf11(
 
     Returns
     -----------------------
-    Instace of Tf11 graph.
+    Instace of TF11 graph.
 
 	References
 	---------------------

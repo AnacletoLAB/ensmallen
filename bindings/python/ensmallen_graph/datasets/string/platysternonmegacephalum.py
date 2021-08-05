@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlatysternonMegacephalum.
+This file offers the methods to automatically retrieve the graph Platysternon megacephalum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlatysternonMegacephalum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlatysternonMegacephalum graph.
+    """Return new instance of the Platysternon megacephalum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlatysternonMegacephalum(
 
     Returns
     -----------------------
-    Instace of PlatysternonMegacephalum graph.
+    Instace of Platysternon megacephalum graph.
 
 	References
 	---------------------

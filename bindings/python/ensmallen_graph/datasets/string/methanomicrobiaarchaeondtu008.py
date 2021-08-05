@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanomicrobiaArchaeonDtu008.
+This file offers the methods to automatically retrieve the graph Methanomicrobia archaeon DTU008.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanomicrobiaArchaeonDtu008(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanomicrobiaArchaeonDtu008 graph.
+    """Return new instance of the Methanomicrobia archaeon DTU008 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanomicrobiaArchaeonDtu008(
 
     Returns
     -----------------------
-    Instace of MethanomicrobiaArchaeonDtu008 graph.
+    Instace of Methanomicrobia archaeon DTU008 graph.
 
 	References
 	---------------------

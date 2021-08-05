@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSiamensisKctc13613.
+This file offers the methods to automatically retrieve the graph Bacillus siamensis KCTC 13613.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSiamensisKctc13613(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSiamensisKctc13613 graph.
+    """Return new instance of the Bacillus siamensis KCTC 13613 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSiamensisKctc13613(
 
     Returns
     -----------------------
-    Instace of BacillusSiamensisKctc13613 graph.
+    Instace of Bacillus siamensis KCTC 13613 graph.
 
 	References
 	---------------------

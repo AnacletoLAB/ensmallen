@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesSpUrha0020.
+This file offers the methods to automatically retrieve the graph Nocardioides sp. URHA0020.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesSpUrha0020(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesSpUrha0020 graph.
+    """Return new instance of the Nocardioides sp. URHA0020 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesSpUrha0020(
 
     Returns
     -----------------------
-    Instace of NocardioidesSpUrha0020 graph.
+    Instace of Nocardioides sp. URHA0020 graph.
 
 	References
 	---------------------

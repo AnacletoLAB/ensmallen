@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSpHk10.
+This file offers the methods to automatically retrieve the graph Micromonospora sp. HK10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSpHk10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSpHk10 graph.
+    """Return new instance of the Micromonospora sp. HK10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSpHk10(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSpHk10 graph.
+    Instace of Micromonospora sp. HK10 graph.
 
 	References
 	---------------------

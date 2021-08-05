@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesMediterranea.
+This file offers the methods to automatically retrieve the graph Actinomyces mediterranea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesMediterranea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesMediterranea graph.
+    """Return new instance of the Actinomyces mediterranea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesMediterranea(
 
     Returns
     -----------------------
-    Instace of ActinomycesMediterranea graph.
+    Instace of Actinomyces mediterranea graph.
 
 	References
 	---------------------

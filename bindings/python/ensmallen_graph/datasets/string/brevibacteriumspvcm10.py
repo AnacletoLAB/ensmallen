@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacteriumSpVcm10.
+This file offers the methods to automatically retrieve the graph Brevibacterium sp. VCM10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacteriumSpVcm10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacteriumSpVcm10 graph.
+    """Return new instance of the Brevibacterium sp. VCM10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevibacteriumSpVcm10(
 
     Returns
     -----------------------
-    Instace of BrevibacteriumSpVcm10 graph.
+    Instace of Brevibacterium sp. VCM10 graph.
 
 	References
 	---------------------

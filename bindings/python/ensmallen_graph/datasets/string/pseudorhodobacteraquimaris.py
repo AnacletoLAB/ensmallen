@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudorhodobacterAquimaris.
+This file offers the methods to automatically retrieve the graph Pseudorhodobacter aquimaris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudorhodobacterAquimaris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudorhodobacterAquimaris graph.
+    """Return new instance of the Pseudorhodobacter aquimaris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudorhodobacterAquimaris(
 
     Returns
     -----------------------
-    Instace of PseudorhodobacterAquimaris graph.
+    Instace of Pseudorhodobacter aquimaris graph.
 
 	References
 	---------------------

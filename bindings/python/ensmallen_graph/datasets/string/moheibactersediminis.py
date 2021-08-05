@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoheibacterSediminis.
+This file offers the methods to automatically retrieve the graph Moheibacter sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoheibacterSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoheibacterSediminis graph.
+    """Return new instance of the Moheibacter sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MoheibacterSediminis(
 
     Returns
     -----------------------
-    Instace of MoheibacterSediminis graph.
+    Instace of Moheibacter sediminis graph.
 
 	References
 	---------------------

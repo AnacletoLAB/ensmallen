@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusBeddingii.
+This file offers the methods to automatically retrieve the graph Xenorhabdus beddingii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusBeddingii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusBeddingii graph.
+    """Return new instance of the Xenorhabdus beddingii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusBeddingii(
 
     Returns
     -----------------------
-    Instace of XenorhabdusBeddingii graph.
+    Instace of Xenorhabdus beddingii graph.
 
 	References
 	---------------------

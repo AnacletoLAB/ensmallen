@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AllokutzneriaAlbata.
+This file offers the methods to automatically retrieve the graph Allokutzneria albata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AllokutzneriaAlbata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AllokutzneriaAlbata graph.
+    """Return new instance of the Allokutzneria albata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AllokutzneriaAlbata(
 
     Returns
     -----------------------
-    Instace of AllokutzneriaAlbata graph.
+    Instace of Allokutzneria albata graph.
 
 	References
 	---------------------

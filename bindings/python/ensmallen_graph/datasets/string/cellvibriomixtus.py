@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioMixtus.
+This file offers the methods to automatically retrieve the graph Cellvibrio mixtus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioMixtus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioMixtus graph.
+    """Return new instance of the Cellvibrio mixtus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellvibrioMixtus(
 
     Returns
     -----------------------
-    Instace of CellvibrioMixtus graph.
+    Instace of Cellvibrio mixtus graph.
 
 	References
 	---------------------

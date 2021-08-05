@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaSpDnf00869.
+This file offers the methods to automatically retrieve the graph Veillonella sp. DNF00869.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaSpDnf00869(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaSpDnf00869 graph.
+    """Return new instance of the Veillonella sp. DNF00869 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaSpDnf00869(
 
     Returns
     -----------------------
-    Instace of VeillonellaSpDnf00869 graph.
+    Instace of Veillonella sp. DNF00869 graph.
 
 	References
 	---------------------

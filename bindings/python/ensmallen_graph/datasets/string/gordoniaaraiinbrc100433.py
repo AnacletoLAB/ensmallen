@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaAraiiNbrc100433.
+This file offers the methods to automatically retrieve the graph Gordonia araii NBRC 100433.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaAraiiNbrc100433(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaAraiiNbrc100433 graph.
+    """Return new instance of the Gordonia araii NBRC 100433 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaAraiiNbrc100433(
 
     Returns
     -----------------------
-    Instace of GordoniaAraiiNbrc100433 graph.
+    Instace of Gordonia araii NBRC 100433 graph.
 
 	References
 	---------------------

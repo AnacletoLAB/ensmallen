@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AkkermansiaSpKle1797.
+This file offers the methods to automatically retrieve the graph Akkermansia sp. KLE1797.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AkkermansiaSpKle1797(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AkkermansiaSpKle1797 graph.
+    """Return new instance of the Akkermansia sp. KLE1797 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AkkermansiaSpKle1797(
 
     Returns
     -----------------------
-    Instace of AkkermansiaSpKle1797 graph.
+    Instace of Akkermansia sp. KLE1797 graph.
 
 	References
 	---------------------

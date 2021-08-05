@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RickettsialesBacteriumExBugulaNeritinaAb1.
+This file offers the methods to automatically retrieve the graph Rickettsiales bacterium (ex Bugula neritina AB1).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RickettsialesBacteriumExBugulaNeritinaAb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RickettsialesBacteriumExBugulaNeritinaAb1 graph.
+    """Return new instance of the Rickettsiales bacterium (ex Bugula neritina AB1) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RickettsialesBacteriumExBugulaNeritinaAb1(
 
     Returns
     -----------------------
-    Instace of RickettsialesBacteriumExBugulaNeritinaAb1 graph.
+    Instace of Rickettsiales bacterium (ex Bugula neritina AB1) graph.
 
 	References
 	---------------------

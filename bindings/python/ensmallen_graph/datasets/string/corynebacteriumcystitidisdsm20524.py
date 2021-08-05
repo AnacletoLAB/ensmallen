@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCystitidisDsm20524.
+This file offers the methods to automatically retrieve the graph Corynebacterium cystitidis DSM 20524.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCystitidisDsm20524(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCystitidisDsm20524 graph.
+    """Return new instance of the Corynebacterium cystitidis DSM 20524 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumCystitidisDsm20524(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCystitidisDsm20524 graph.
+    Instace of Corynebacterium cystitidis DSM 20524 graph.
 
 	References
 	---------------------

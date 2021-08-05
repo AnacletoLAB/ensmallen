@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimonasVoraii.
+This file offers the methods to automatically retrieve the graph Aquimonas voraii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimonasVoraii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimonasVoraii graph.
+    """Return new instance of the Aquimonas voraii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquimonasVoraii(
 
     Returns
     -----------------------
-    Instace of AquimonasVoraii graph.
+    Instace of Aquimonas voraii graph.
 
 	References
 	---------------------

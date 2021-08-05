@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiBacteriumNicil2.
+This file offers the methods to automatically retrieve the graph Chlorobi bacterium NICIL-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiBacteriumNicil2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiBacteriumNicil2 graph.
+    """Return new instance of the Chlorobi bacterium NICIL-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChlorobiBacteriumNicil2(
 
     Returns
     -----------------------
-    Instace of ChlorobiBacteriumNicil2 graph.
+    Instace of Chlorobi bacterium NICIL-2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dd199.
+This file offers the methods to automatically retrieve the graph DD199.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dd199(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dd199 graph.
+    """Return new instance of the DD199 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dd199(
 
     Returns
     -----------------------
-    Instace of Dd199 graph.
+    Instace of DD199 graph.
 
 	References
 	---------------------

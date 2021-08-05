@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacteriumImcc26256.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium IMCC26256.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacteriumImcc26256(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacteriumImcc26256 graph.
+    """Return new instance of the Actinobacteria bacterium IMCC26256 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacteriumImcc26256(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacteriumImcc26256 graph.
+    Instace of Actinobacteria bacterium IMCC26256 graph.
 
 	References
 	---------------------

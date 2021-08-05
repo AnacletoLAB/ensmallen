@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlesiocystisPacifica.
+This file offers the methods to automatically retrieve the graph Plesiocystis pacifica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlesiocystisPacifica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlesiocystisPacifica graph.
+    """Return new instance of the Plesiocystis pacifica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlesiocystisPacifica(
 
     Returns
     -----------------------
-    Instace of PlesiocystisPacifica graph.
+    Instace of Plesiocystis pacifica graph.
 
 	References
 	---------------------

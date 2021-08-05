@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MangrovibacterSpMfb070.
+This file offers the methods to automatically retrieve the graph Mangrovibacter sp. MFB070.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MangrovibacterSpMfb070(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MangrovibacterSpMfb070 graph.
+    """Return new instance of the Mangrovibacter sp. MFB070 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MangrovibacterSpMfb070(
 
     Returns
     -----------------------
-    Instace of MangrovibacterSpMfb070 graph.
+    Instace of Mangrovibacter sp. MFB070 graph.
 
 	References
 	---------------------

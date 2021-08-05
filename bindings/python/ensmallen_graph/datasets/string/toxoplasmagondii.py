@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ToxoplasmaGondii.
+This file offers the methods to automatically retrieve the graph Toxoplasma gondii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ToxoplasmaGondii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ToxoplasmaGondii graph.
+    """Return new instance of the Toxoplasma gondii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ToxoplasmaGondii(
 
     Returns
     -----------------------
-    Instace of ToxoplasmaGondii graph.
+    Instace of Toxoplasma gondii graph.
 
 	References
 	---------------------

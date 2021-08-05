@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BremiaLactucae.
+This file offers the methods to automatically retrieve the graph Bremia lactucae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BremiaLactucae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BremiaLactucae graph.
+    """Return new instance of the Bremia lactucae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BremiaLactucae(
 
     Returns
     -----------------------
-    Instace of BremiaLactucae graph.
+    Instace of Bremia lactucae graph.
 
 	References
 	---------------------

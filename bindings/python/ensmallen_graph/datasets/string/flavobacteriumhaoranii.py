@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumHaoranii.
+This file offers the methods to automatically retrieve the graph Flavobacterium haoranii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumHaoranii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumHaoranii graph.
+    """Return new instance of the Flavobacterium haoranii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumHaoranii(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumHaoranii graph.
+    Instace of Flavobacterium haoranii graph.
 
 	References
 	---------------------

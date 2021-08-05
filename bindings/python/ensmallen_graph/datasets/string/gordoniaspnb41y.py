@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaSpNb41y.
+This file offers the methods to automatically retrieve the graph Gordonia sp. NB4-1Y.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaSpNb41y(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaSpNb41y graph.
+    """Return new instance of the Gordonia sp. NB4-1Y graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordoniaSpNb41y(
 
     Returns
     -----------------------
-    Instace of GordoniaSpNb41y graph.
+    Instace of Gordonia sp. NB4-1Y graph.
 
 	References
 	---------------------

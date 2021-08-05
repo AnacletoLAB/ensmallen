@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HospitalWardProximity.
+This file offers the methods to automatically retrieve the graph hospital-ward-proximity.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -38,7 +38,7 @@ def HospitalWardProximity(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HospitalWardProximity graph.
+    """Return new instance of the hospital-ward-proximity graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -65,7 +65,7 @@ def HospitalWardProximity(
 
     Returns
     -----------------------
-    Instace of HospitalWardProximity graph.
+    Instace of hospital-ward-proximity graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaAvicenniae.
+This file offers the methods to automatically retrieve the graph Micromonospora avicenniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaAvicenniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaAvicenniae graph.
+    """Return new instance of the Micromonospora avicenniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaAvicenniae(
 
     Returns
     -----------------------
-    Instace of MicromonosporaAvicenniae graph.
+    Instace of Micromonospora avicenniae graph.
 
 	References
 	---------------------

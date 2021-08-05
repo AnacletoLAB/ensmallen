@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VirgibacillusSalinus.
+This file offers the methods to automatically retrieve the graph Virgibacillus salinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VirgibacillusSalinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VirgibacillusSalinus graph.
+    """Return new instance of the Virgibacillus salinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VirgibacillusSalinus(
 
     Returns
     -----------------------
-    Instace of VirgibacillusSalinus graph.
+    Instace of Virgibacillus salinus graph.
 
 	References
 	---------------------

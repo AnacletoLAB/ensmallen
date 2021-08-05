@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesAlni.
+This file offers the methods to automatically retrieve the graph Streptomyces alni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesAlni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesAlni graph.
+    """Return new instance of the Streptomyces alni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesAlni(
 
     Returns
     -----------------------
-    Instace of StreptomycesAlni graph.
+    Instace of Streptomyces alni graph.
 
 	References
 	---------------------

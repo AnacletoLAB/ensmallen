@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaladaptatusSpR4.
+This file offers the methods to automatically retrieve the graph Haladaptatus sp. R4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaladaptatusSpR4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaladaptatusSpR4 graph.
+    """Return new instance of the Haladaptatus sp. R4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaladaptatusSpR4(
 
     Returns
     -----------------------
-    Instace of HaladaptatusSpR4 graph.
+    Instace of Haladaptatus sp. R4 graph.
 
 	References
 	---------------------

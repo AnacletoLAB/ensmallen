@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KoribacterVersatilis.
+This file offers the methods to automatically retrieve the graph Koribacter versatilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KoribacterVersatilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KoribacterVersatilis graph.
+    """Return new instance of the Koribacter versatilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KoribacterVersatilis(
 
     Returns
     -----------------------
-    Instace of KoribacterVersatilis graph.
+    Instace of Koribacter versatilis graph.
 
 	References
 	---------------------

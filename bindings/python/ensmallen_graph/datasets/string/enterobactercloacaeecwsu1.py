@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterCloacaeEcwsu1.
+This file offers the methods to automatically retrieve the graph Enterobacter cloacae EcWSU1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterCloacaeEcwsu1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterCloacaeEcwsu1 graph.
+    """Return new instance of the Enterobacter cloacae EcWSU1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacterCloacaeEcwsu1(
 
     Returns
     -----------------------
-    Instace of EnterobacterCloacaeEcwsu1 graph.
+    Instace of Enterobacter cloacae EcWSU1 graph.
 
 	References
 	---------------------

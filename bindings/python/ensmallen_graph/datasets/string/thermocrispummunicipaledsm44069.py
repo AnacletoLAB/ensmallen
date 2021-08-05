@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermocrispumMunicipaleDsm44069.
+This file offers the methods to automatically retrieve the graph Thermocrispum municipale DSM 44069.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermocrispumMunicipaleDsm44069(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermocrispumMunicipaleDsm44069 graph.
+    """Return new instance of the Thermocrispum municipale DSM 44069 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermocrispumMunicipaleDsm44069(
 
     Returns
     -----------------------
-    Instace of ThermocrispumMunicipaleDsm44069 graph.
+    Instace of Thermocrispum municipale DSM 44069 graph.
 
 	References
 	---------------------

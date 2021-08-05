@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpRu3701.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. ru370.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpRu3701(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpRu3701 graph.
+    """Return new instance of the Microbacterium sp. ru370.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSpRu3701(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpRu3701 graph.
+    Instace of Microbacterium sp. ru370.1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterNorwichensis.
+This file offers the methods to automatically retrieve the graph Hymenobacter norwichensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterNorwichensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterNorwichensis graph.
+    """Return new instance of the Hymenobacter norwichensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HymenobacterNorwichensis(
 
     Returns
     -----------------------
-    Instace of HymenobacterNorwichensis graph.
+    Instace of Hymenobacter norwichensis graph.
 
 	References
 	---------------------

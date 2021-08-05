@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumNk4a144.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium NK4A144.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumNk4a144(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumNk4a144 graph.
+    """Return new instance of the Lachnospiraceae bacterium NK4A144 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumNk4a144(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumNk4a144 graph.
+    Instace of Lachnospiraceae bacterium NK4A144 graph.
 
 	References
 	---------------------

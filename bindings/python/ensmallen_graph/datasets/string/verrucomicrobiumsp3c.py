@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VerrucomicrobiumSp3c.
+This file offers the methods to automatically retrieve the graph Verrucomicrobium sp. 3C.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VerrucomicrobiumSp3c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VerrucomicrobiumSp3c graph.
+    """Return new instance of the Verrucomicrobium sp. 3C graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VerrucomicrobiumSp3c(
 
     Returns
     -----------------------
-    Instace of VerrucomicrobiumSp3c graph.
+    Instace of Verrucomicrobium sp. 3C graph.
 
 	References
 	---------------------

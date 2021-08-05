@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloarculaMarismortui.
+This file offers the methods to automatically retrieve the graph Haloarcula marismortui.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloarculaMarismortui(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloarculaMarismortui graph.
+    """Return new instance of the Haloarcula marismortui graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloarculaMarismortui(
 
     Returns
     -----------------------
-    Instace of HaloarculaMarismortui graph.
+    Instace of Haloarcula marismortui graph.
 
 	References
 	---------------------

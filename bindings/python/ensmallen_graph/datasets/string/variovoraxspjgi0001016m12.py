@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpJgi0001016M12.
+This file offers the methods to automatically retrieve the graph Variovorax sp. JGI 0001016-M12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpJgi0001016M12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpJgi0001016M12 graph.
+    """Return new instance of the Variovorax sp. JGI 0001016-M12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpJgi0001016M12(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpJgi0001016M12 graph.
+    Instace of Variovorax sp. JGI 0001016-M12 graph.
 
 	References
 	---------------------

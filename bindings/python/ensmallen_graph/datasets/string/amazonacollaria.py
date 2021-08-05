@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmazonaCollaria.
+This file offers the methods to automatically retrieve the graph Amazona collaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmazonaCollaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmazonaCollaria graph.
+    """Return new instance of the Amazona collaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmazonaCollaria(
 
     Returns
     -----------------------
-    Instace of AmazonaCollaria graph.
+    Instace of Amazona collaria graph.
 
 	References
 	---------------------

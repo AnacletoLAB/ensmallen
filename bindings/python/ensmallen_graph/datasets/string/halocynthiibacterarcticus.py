@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalocynthiibacterArcticus.
+This file offers the methods to automatically retrieve the graph Halocynthiibacter arcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalocynthiibacterArcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalocynthiibacterArcticus graph.
+    """Return new instance of the Halocynthiibacter arcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalocynthiibacterArcticus(
 
     Returns
     -----------------------
-    Instace of HalocynthiibacterArcticus graph.
+    Instace of Halocynthiibacter arcticus graph.
 
 	References
 	---------------------

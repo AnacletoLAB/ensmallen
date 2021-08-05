@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Packing500x100x100B050.
+This file offers the methods to automatically retrieve the graph packing-500x100x100-b050.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Packing500x100x100B050(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Packing500x100x100B050 graph.
+    """Return new instance of the packing-500x100x100-b050 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Packing500x100x100B050(
 
     Returns
     -----------------------
-    Instace of Packing500x100x100B050 graph.
+    Instace of packing-500x100x100-b050 graph.
 
 	References
 	---------------------

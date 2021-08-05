@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingomonasSpOk281.
+This file offers the methods to automatically retrieve the graph Sphingomonas sp. OK281.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingomonasSpOk281(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingomonasSpOk281 graph.
+    """Return new instance of the Sphingomonas sp. OK281 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingomonasSpOk281(
 
     Returns
     -----------------------
-    Instace of SphingomonasSpOk281 graph.
+    Instace of Sphingomonas sp. OK281 graph.
 
 	References
 	---------------------

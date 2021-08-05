@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfurimonasSpRifoxyd12Full3339.
+This file offers the methods to automatically retrieve the graph Sulfurimonas sp. RIFOXYD12_FULL_33_39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfurimonasSpRifoxyd12Full3339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfurimonasSpRifoxyd12Full3339 graph.
+    """Return new instance of the Sulfurimonas sp. RIFOXYD12_FULL_33_39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfurimonasSpRifoxyd12Full3339(
 
     Returns
     -----------------------
-    Instace of SulfurimonasSpRifoxyd12Full3339 graph.
+    Instace of Sulfurimonas sp. RIFOXYD12_FULL_33_39 graph.
 
 	References
 	---------------------

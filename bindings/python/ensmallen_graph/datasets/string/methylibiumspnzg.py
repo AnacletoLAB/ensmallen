@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylibiumSpNzg.
+This file offers the methods to automatically retrieve the graph Methylibium sp. NZG.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylibiumSpNzg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylibiumSpNzg graph.
+    """Return new instance of the Methylibium sp. NZG graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylibiumSpNzg(
 
     Returns
     -----------------------
-    Instace of MethylibiumSpNzg graph.
+    Instace of Methylibium sp. NZG graph.
 
 	References
 	---------------------

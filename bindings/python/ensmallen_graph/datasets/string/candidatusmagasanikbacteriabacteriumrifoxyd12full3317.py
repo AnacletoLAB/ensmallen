@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMagasanikbacteriaBacteriumRifoxyd12Full3317.
+This file offers the methods to automatically retrieve the graph Candidatus Magasanikbacteria bacterium RIFOXYD12_FULL_33_17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMagasanikbacteriaBacteriumRifoxyd12Full3317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMagasanikbacteriaBacteriumRifoxyd12Full3317 graph.
+    """Return new instance of the Candidatus Magasanikbacteria bacterium RIFOXYD12_FULL_33_17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMagasanikbacteriaBacteriumRifoxyd12Full3317(
 
     Returns
     -----------------------
-    Instace of CandidatusMagasanikbacteriaBacteriumRifoxyd12Full3317 graph.
+    Instace of Candidatus Magasanikbacteria bacterium RIFOXYD12_FULL_33_17 graph.
 
 	References
 	---------------------

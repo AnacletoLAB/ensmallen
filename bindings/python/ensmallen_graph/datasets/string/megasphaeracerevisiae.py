@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraCerevisiae.
+This file offers the methods to automatically retrieve the graph Megasphaera cerevisiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraCerevisiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraCerevisiae graph.
+    """Return new instance of the Megasphaera cerevisiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MegasphaeraCerevisiae(
 
     Returns
     -----------------------
-    Instace of MegasphaeraCerevisiae graph.
+    Instace of Megasphaera cerevisiae graph.
 
 	References
 	---------------------

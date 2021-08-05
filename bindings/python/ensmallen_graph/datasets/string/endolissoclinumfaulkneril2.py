@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndolissoclinumFaulkneriL2.
+This file offers the methods to automatically retrieve the graph Endolissoclinum faulkneri L2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndolissoclinumFaulkneriL2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndolissoclinumFaulkneriL2 graph.
+    """Return new instance of the Endolissoclinum faulkneri L2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndolissoclinumFaulkneriL2(
 
     Returns
     -----------------------
-    Instace of EndolissoclinumFaulkneriL2 graph.
+    Instace of Endolissoclinum faulkneri L2 graph.
 
 	References
 	---------------------

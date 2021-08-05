@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanobacteriumSpIppasB1200.
+This file offers the methods to automatically retrieve the graph Cyanobacterium sp. IPPAS B-1200.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanobacteriumSpIppasB1200(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanobacteriumSpIppasB1200 graph.
+    """Return new instance of the Cyanobacterium sp. IPPAS B-1200 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyanobacteriumSpIppasB1200(
 
     Returns
     -----------------------
-    Instace of CyanobacteriumSpIppasB1200 graph.
+    Instace of Cyanobacterium sp. IPPAS B-1200 graph.
 
 	References
 	---------------------

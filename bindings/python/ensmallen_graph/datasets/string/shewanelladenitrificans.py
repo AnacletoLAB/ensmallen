@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaDenitrificans.
+This file offers the methods to automatically retrieve the graph Shewanella denitrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaDenitrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaDenitrificans graph.
+    """Return new instance of the Shewanella denitrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaDenitrificans(
 
     Returns
     -----------------------
-    Instace of ShewanellaDenitrificans graph.
+    Instace of Shewanella denitrificans graph.
 
 	References
 	---------------------

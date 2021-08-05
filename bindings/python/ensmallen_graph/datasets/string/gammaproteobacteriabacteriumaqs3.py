@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumAqs3.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium AqS3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumAqs3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumAqs3 graph.
+    """Return new instance of the Gammaproteobacteria bacterium AqS3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GammaproteobacteriaBacteriumAqs3(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumAqs3 graph.
+    Instace of Gammaproteobacteria bacterium AqS3 graph.
 
 	References
 	---------------------

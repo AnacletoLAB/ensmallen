@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusVogelbacteriaBacteriumGwa15114.
+This file offers the methods to automatically retrieve the graph Candidatus Vogelbacteria bacterium GWA1_51_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusVogelbacteriaBacteriumGwa15114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusVogelbacteriaBacteriumGwa15114 graph.
+    """Return new instance of the Candidatus Vogelbacteria bacterium GWA1_51_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusVogelbacteriaBacteriumGwa15114(
 
     Returns
     -----------------------
-    Instace of CandidatusVogelbacteriaBacteriumGwa15114 graph.
+    Instace of Candidatus Vogelbacteria bacterium GWA1_51_14 graph.
 
 	References
 	---------------------

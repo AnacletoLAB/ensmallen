@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhytoplasmaAsterYellows.
+This file offers the methods to automatically retrieve the graph Phytoplasma aster yellows.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhytoplasmaAsterYellows(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhytoplasmaAsterYellows graph.
+    """Return new instance of the Phytoplasma aster yellows graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhytoplasmaAsterYellows(
 
     Returns
     -----------------------
-    Instace of PhytoplasmaAsterYellows graph.
+    Instace of Phytoplasma aster yellows graph.
 
 	References
 	---------------------

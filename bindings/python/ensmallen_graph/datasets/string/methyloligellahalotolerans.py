@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloligellaHalotolerans.
+This file offers the methods to automatically retrieve the graph Methyloligella halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloligellaHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloligellaHalotolerans graph.
+    """Return new instance of the Methyloligella halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloligellaHalotolerans(
 
     Returns
     -----------------------
-    Instace of MethyloligellaHalotolerans graph.
+    Instace of Methyloligella halotolerans graph.
 
 	References
 	---------------------

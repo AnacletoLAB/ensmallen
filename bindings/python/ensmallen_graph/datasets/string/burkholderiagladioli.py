@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaGladioli.
+This file offers the methods to automatically retrieve the graph Burkholderia gladioli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaGladioli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaGladioli graph.
+    """Return new instance of the Burkholderia gladioli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaGladioli(
 
     Returns
     -----------------------
-    Instace of BurkholderiaGladioli graph.
+    Instace of Burkholderia gladioli graph.
 
 	References
 	---------------------

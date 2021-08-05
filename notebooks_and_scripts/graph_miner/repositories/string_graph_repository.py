@@ -51,6 +51,7 @@ class StringGraphRepository(GraphRepository):
                             taxon_id=taxon_id,
                             version=version
                         ),
+                        "name": graph_name,
                         "sources_column": "protein1",
                         "destinations_column": "protein2",
                         "weights_column": "combined_score",
@@ -73,10 +74,12 @@ class StringGraphRepository(GraphRepository):
         """
         for target in string.punctuation:
             partial_graph_name = partial_graph_name.replace(target, " ")
-        return "".join([
-            term.capitalize()
-            for term in partial_graph_name.split(" ")
-        ])
+        if " " in partial_graph_name:
+            return "".join([
+                term.capitalize()
+                for term in partial_graph_name.split(" ")
+            ])
+        return partial_graph_name
 
     def get_formatted_repository_name(self) -> str:
         """Return formatted repository name."""
@@ -107,7 +110,7 @@ class StringGraphRepository(GraphRepository):
         graph_name: str,
     ) -> List[str]:
         """Return list of versions of the given graph.
-        
+
         Parameters
         -----------------------
         graph_name: str,

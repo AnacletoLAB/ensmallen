@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobaccaAcetoxidans.
+This file offers the methods to automatically retrieve the graph Desulfobacca acetoxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobaccaAcetoxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobaccaAcetoxidans graph.
+    """Return new instance of the Desulfobacca acetoxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfobaccaAcetoxidans(
 
     Returns
     -----------------------
-    Instace of DesulfobaccaAcetoxidans graph.
+    Instace of Desulfobacca acetoxidans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAminophilum.
+This file offers the methods to automatically retrieve the graph Clostridium aminophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAminophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAminophilum graph.
+    """Return new instance of the Clostridium aminophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumAminophilum(
 
     Returns
     -----------------------
-    Instace of ClostridiumAminophilum graph.
+    Instace of Clostridium aminophilum graph.
 
 	References
 	---------------------

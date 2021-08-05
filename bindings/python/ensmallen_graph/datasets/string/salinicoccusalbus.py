@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinicoccusAlbus.
+This file offers the methods to automatically retrieve the graph Salinicoccus albus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinicoccusAlbus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinicoccusAlbus graph.
+    """Return new instance of the Salinicoccus albus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SalinicoccusAlbus(
 
     Returns
     -----------------------
-    Instace of SalinicoccusAlbus graph.
+    Instace of Salinicoccus albus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpUnccl10.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. UNCCL10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpUnccl10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpUnccl10 graph.
+    """Return new instance of the Microbacterium sp. UNCCL10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumSpUnccl10(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpUnccl10 graph.
+    Instace of Microbacterium sp. UNCCL10 graph.
 
 	References
 	---------------------

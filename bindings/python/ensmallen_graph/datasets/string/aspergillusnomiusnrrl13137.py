@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusNomiusNrrl13137.
+This file offers the methods to automatically retrieve the graph Aspergillus nomius NRRL 13137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusNomiusNrrl13137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusNomiusNrrl13137 graph.
+    """Return new instance of the Aspergillus nomius NRRL 13137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusNomiusNrrl13137(
 
     Returns
     -----------------------
-    Instace of AspergillusNomiusNrrl13137 graph.
+    Instace of Aspergillus nomius NRRL 13137 graph.
 
 	References
 	---------------------

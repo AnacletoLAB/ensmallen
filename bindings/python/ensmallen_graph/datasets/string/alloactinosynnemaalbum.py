@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlloactinosynnemaAlbum.
+This file offers the methods to automatically retrieve the graph Alloactinosynnema album.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlloactinosynnemaAlbum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlloactinosynnemaAlbum graph.
+    """Return new instance of the Alloactinosynnema album graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlloactinosynnemaAlbum(
 
     Returns
     -----------------------
-    Instace of AlloactinosynnemaAlbum graph.
+    Instace of Alloactinosynnema album graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaulobacterSegnis.
+This file offers the methods to automatically retrieve the graph Caulobacter segnis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaulobacterSegnis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaulobacterSegnis graph.
+    """Return new instance of the Caulobacter segnis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaulobacterSegnis(
 
     Returns
     -----------------------
-    Instace of CaulobacterSegnis graph.
+    Instace of Caulobacter segnis graph.
 
 	References
 	---------------------

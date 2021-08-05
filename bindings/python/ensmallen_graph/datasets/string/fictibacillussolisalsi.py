@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FictibacillusSolisalsi.
+This file offers the methods to automatically retrieve the graph Fictibacillus solisalsi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FictibacillusSolisalsi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FictibacillusSolisalsi graph.
+    """Return new instance of the Fictibacillus solisalsi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FictibacillusSolisalsi(
 
     Returns
     -----------------------
-    Instace of FictibacillusSolisalsi graph.
+    Instace of Fictibacillus solisalsi graph.
 
 	References
 	---------------------

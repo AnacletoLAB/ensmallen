@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumSpAap83.
+This file offers the methods to automatically retrieve the graph Novosphingobium sp. AAP83.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumSpAap83(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumSpAap83 graph.
+    """Return new instance of the Novosphingobium sp. AAP83 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NovosphingobiumSpAap83(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumSpAap83 graph.
+    Instace of Novosphingobium sp. AAP83 graph.
 
 	References
 	---------------------

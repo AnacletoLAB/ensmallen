@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpitutusSpGas368.
+This file offers the methods to automatically retrieve the graph Opitutus sp. GAS368.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OpitutusSpGas368(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpitutusSpGas368 graph.
+    """Return new instance of the Opitutus sp. GAS368 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OpitutusSpGas368(
 
     Returns
     -----------------------
-    Instace of OpitutusSpGas368 graph.
+    Instace of Opitutus sp. GAS368 graph.
 
 	References
 	---------------------

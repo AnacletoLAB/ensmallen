@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaSpinosa.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora spinosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaSpinosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaSpinosa graph.
+    """Return new instance of the Saccharopolyspora spinosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharopolysporaSpinosa(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaSpinosa graph.
+    Instace of Saccharopolyspora spinosa graph.
 
 	References
 	---------------------

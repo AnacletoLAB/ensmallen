@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpJcm19034.
+This file offers the methods to automatically retrieve the graph Bacillus sp. JCM 19034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpJcm19034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpJcm19034 graph.
+    """Return new instance of the Bacillus sp. JCM 19034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpJcm19034(
 
     Returns
     -----------------------
-    Instace of BacillusSpJcm19034 graph.
+    Instace of Bacillus sp. JCM 19034 graph.
 
 	References
 	---------------------

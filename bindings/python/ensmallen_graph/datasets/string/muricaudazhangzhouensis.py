@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuricaudaZhangzhouensis.
+This file offers the methods to automatically retrieve the graph Muricauda zhangzhouensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuricaudaZhangzhouensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuricaudaZhangzhouensis graph.
+    """Return new instance of the Muricauda zhangzhouensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MuricaudaZhangzhouensis(
 
     Returns
     -----------------------
-    Instace of MuricaudaZhangzhouensis graph.
+    Instace of Muricauda zhangzhouensis graph.
 
 	References
 	---------------------

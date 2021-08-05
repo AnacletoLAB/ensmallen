@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyotisLucifugus.
+This file offers the methods to automatically retrieve the graph Myotis lucifugus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyotisLucifugus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyotisLucifugus graph.
+    """Return new instance of the Myotis lucifugus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyotisLucifugus(
 
     Returns
     -----------------------
-    Instace of MyotisLucifugus graph.
+    Instace of Myotis lucifugus graph.
 
 	References
 	---------------------

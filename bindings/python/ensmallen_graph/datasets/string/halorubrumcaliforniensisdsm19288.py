@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumCaliforniensisDsm19288.
+This file offers the methods to automatically retrieve the graph Halorubrum californiensis DSM 19288.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumCaliforniensisDsm19288(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumCaliforniensisDsm19288 graph.
+    """Return new instance of the Halorubrum californiensis DSM 19288 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumCaliforniensisDsm19288(
 
     Returns
     -----------------------
-    Instace of HalorubrumCaliforniensisDsm19288 graph.
+    Instace of Halorubrum californiensis DSM 19288 graph.
 
 	References
 	---------------------

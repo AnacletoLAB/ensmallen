@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StomoxysCalcitrans.
+This file offers the methods to automatically retrieve the graph Stomoxys calcitrans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StomoxysCalcitrans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StomoxysCalcitrans graph.
+    """Return new instance of the Stomoxys calcitrans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StomoxysCalcitrans(
 
     Returns
     -----------------------
-    Instace of StomoxysCalcitrans graph.
+    Instace of Stomoxys calcitrans graph.
 
 	References
 	---------------------

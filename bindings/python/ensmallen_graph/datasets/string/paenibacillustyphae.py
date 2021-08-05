@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusTyphae.
+This file offers the methods to automatically retrieve the graph Paenibacillus typhae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusTyphae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusTyphae graph.
+    """Return new instance of the Paenibacillus typhae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusTyphae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusTyphae graph.
+    Instace of Paenibacillus typhae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasAnticariensis.
+This file offers the methods to automatically retrieve the graph Halomonas anticariensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasAnticariensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasAnticariensis graph.
+    """Return new instance of the Halomonas anticariensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalomonasAnticariensis(
 
     Returns
     -----------------------
-    Instace of HalomonasAnticariensis graph.
+    Instace of Halomonas anticariensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydophilaPneumoniaeAr39.
+This file offers the methods to automatically retrieve the graph Chlamydophila pneumoniae AR39.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydophilaPneumoniaeAr39(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydophilaPneumoniaeAr39 graph.
+    """Return new instance of the Chlamydophila pneumoniae AR39 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydophilaPneumoniaeAr39(
 
     Returns
     -----------------------
-    Instace of ChlamydophilaPneumoniaeAr39 graph.
+    Instace of Chlamydophila pneumoniae AR39 graph.
 
 	References
 	---------------------

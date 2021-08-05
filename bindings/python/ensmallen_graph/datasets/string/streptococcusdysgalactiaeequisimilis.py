@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusDysgalactiaeEquisimilis.
+This file offers the methods to automatically retrieve the graph Streptococcus dysgalactiae equisimilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusDysgalactiaeEquisimilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusDysgalactiaeEquisimilis graph.
+    """Return new instance of the Streptococcus dysgalactiae equisimilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusDysgalactiaeEquisimilis(
 
     Returns
     -----------------------
-    Instace of StreptococcusDysgalactiaeEquisimilis graph.
+    Instace of Streptococcus dysgalactiae equisimilis graph.
 
 	References
 	---------------------

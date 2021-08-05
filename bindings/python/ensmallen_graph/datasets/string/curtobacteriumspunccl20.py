@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumSpUnccl20.
+This file offers the methods to automatically retrieve the graph Curtobacterium sp. UNCCL20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumSpUnccl20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumSpUnccl20 graph.
+    """Return new instance of the Curtobacterium sp. UNCCL20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumSpUnccl20(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumSpUnccl20 graph.
+    Instace of Curtobacterium sp. UNCCL20 graph.
 
 	References
 	---------------------

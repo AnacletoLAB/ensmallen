@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusFlorumDsm22689Jcm16035.
+This file offers the methods to automatically retrieve the graph Lactobacillus florum DSM 22689 JCM 16035.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusFlorumDsm22689Jcm16035(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusFlorumDsm22689Jcm16035 graph.
+    """Return new instance of the Lactobacillus florum DSM 22689 JCM 16035 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusFlorumDsm22689Jcm16035(
 
     Returns
     -----------------------
-    Instace of LactobacillusFlorumDsm22689Jcm16035 graph.
+    Instace of Lactobacillus florum DSM 22689 JCM 16035 graph.
 
 	References
 	---------------------

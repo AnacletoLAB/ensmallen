@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSpEm1321.
+This file offers the methods to automatically retrieve the graph Flavobacterium sp. EM1321.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSpEm1321(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSpEm1321 graph.
+    """Return new instance of the Flavobacterium sp. EM1321 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSpEm1321(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSpEm1321 graph.
+    Instace of Flavobacterium sp. EM1321 graph.
 
 	References
 	---------------------

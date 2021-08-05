@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodanobacterSpFw510T8.
+This file offers the methods to automatically retrieve the graph Rhodanobacter sp. FW510-T8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodanobacterSpFw510T8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodanobacterSpFw510T8 graph.
+    """Return new instance of the Rhodanobacter sp. FW510-T8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodanobacterSpFw510T8(
 
     Returns
     -----------------------
-    Instace of RhodanobacterSpFw510T8 graph.
+    Instace of Rhodanobacter sp. FW510-T8 graph.
 
 	References
 	---------------------

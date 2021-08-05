@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalisediminibacteriumHaloalkalitolerans.
+This file offers the methods to automatically retrieve the graph Salisediminibacterium haloalkalitolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalisediminibacteriumHaloalkalitolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalisediminibacteriumHaloalkalitolerans graph.
+    """Return new instance of the Salisediminibacterium haloalkalitolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalisediminibacteriumHaloalkalitolerans(
 
     Returns
     -----------------------
-    Instace of SalisediminibacteriumHaloalkalitolerans graph.
+    Instace of Salisediminibacterium haloalkalitolerans graph.
 
 	References
 	---------------------

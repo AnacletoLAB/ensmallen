@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgarivoransGilvus.
+This file offers the methods to automatically retrieve the graph Agarivorans gilvus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgarivoransGilvus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgarivoransGilvus graph.
+    """Return new instance of the Agarivorans gilvus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgarivoransGilvus(
 
     Returns
     -----------------------
-    Instace of AgarivoransGilvus graph.
+    Instace of Agarivorans gilvus graph.
 
 	References
 	---------------------

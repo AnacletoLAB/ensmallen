@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycetesBacteriumRifcsphigho202Full4012.
+This file offers the methods to automatically retrieve the graph Planctomycetes bacterium RIFCSPHIGHO2_02_FULL_40_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycetesBacteriumRifcsphigho202Full4012(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycetesBacteriumRifcsphigho202Full4012 graph.
+    """Return new instance of the Planctomycetes bacterium RIFCSPHIGHO2_02_FULL_40_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctomycetesBacteriumRifcsphigho202Full4012(
 
     Returns
     -----------------------
-    Instace of PlanctomycetesBacteriumRifcsphigho202Full4012 graph.
+    Instace of Planctomycetes bacterium RIFCSPHIGHO2_02_FULL_40_12 graph.
 
 	References
 	---------------------

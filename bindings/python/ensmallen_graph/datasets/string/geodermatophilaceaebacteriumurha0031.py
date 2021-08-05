@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilaceaeBacteriumUrha0031.
+This file offers the methods to automatically retrieve the graph Geodermatophilaceae bacterium URHA0031.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilaceaeBacteriumUrha0031(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilaceaeBacteriumUrha0031 graph.
+    """Return new instance of the Geodermatophilaceae bacterium URHA0031 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeodermatophilaceaeBacteriumUrha0031(
 
     Returns
     -----------------------
-    Instace of GeodermatophilaceaeBacteriumUrha0031 graph.
+    Instace of Geodermatophilaceae bacterium URHA0031 graph.
 
 	References
 	---------------------

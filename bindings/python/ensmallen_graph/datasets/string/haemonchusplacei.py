@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemonchusPlacei.
+This file offers the methods to automatically retrieve the graph Haemonchus placei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemonchusPlacei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemonchusPlacei graph.
+    """Return new instance of the Haemonchus placei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaemonchusPlacei(
 
     Returns
     -----------------------
-    Instace of HaemonchusPlacei graph.
+    Instace of Haemonchus placei graph.
 
 	References
 	---------------------

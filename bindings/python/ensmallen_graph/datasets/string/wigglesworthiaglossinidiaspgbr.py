@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WigglesworthiaGlossinidiaSpGbr.
+This file offers the methods to automatically retrieve the graph Wigglesworthia glossinidia sp. Gbr.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WigglesworthiaGlossinidiaSpGbr(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WigglesworthiaGlossinidiaSpGbr graph.
+    """Return new instance of the Wigglesworthia glossinidia sp. Gbr graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WigglesworthiaGlossinidiaSpGbr(
 
     Returns
     -----------------------
-    Instace of WigglesworthiaGlossinidiaSpGbr graph.
+    Instace of Wigglesworthia glossinidia sp. Gbr graph.
 
 	References
 	---------------------

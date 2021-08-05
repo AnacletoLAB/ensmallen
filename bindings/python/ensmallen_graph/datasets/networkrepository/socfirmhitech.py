@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocFirmHiTech.
+This file offers the methods to automatically retrieve the graph soc-firm-hi-tech.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SocFirmHiTech(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocFirmHiTech graph.
+    """Return new instance of the soc-firm-hi-tech graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SocFirmHiTech(
 
     Returns
     -----------------------
-    Instace of SocFirmHiTech graph.
+    Instace of soc-firm-hi-tech graph.
 
 	References
 	---------------------

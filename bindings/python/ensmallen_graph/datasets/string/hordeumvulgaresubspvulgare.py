@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HordeumVulgareSubspVulgare.
+This file offers the methods to automatically retrieve the graph Hordeum vulgare subsp. vulgare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HordeumVulgareSubspVulgare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HordeumVulgareSubspVulgare graph.
+    """Return new instance of the Hordeum vulgare subsp. vulgare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HordeumVulgareSubspVulgare(
 
     Returns
     -----------------------
-    Instace of HordeumVulgareSubspVulgare graph.
+    Instace of Hordeum vulgare subsp. vulgare graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanospirillalesBacteriumScgcAaa298N10.
+This file offers the methods to automatically retrieve the graph Oceanospirillales bacterium SCGC AAA298-N10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanospirillalesBacteriumScgcAaa298N10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanospirillalesBacteriumScgcAaa298N10 graph.
+    """Return new instance of the Oceanospirillales bacterium SCGC AAA298-N10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanospirillalesBacteriumScgcAaa298N10(
 
     Returns
     -----------------------
-    Instace of OceanospirillalesBacteriumScgcAaa298N10 graph.
+    Instace of Oceanospirillales bacterium SCGC AAA298-N10 graph.
 
 	References
 	---------------------

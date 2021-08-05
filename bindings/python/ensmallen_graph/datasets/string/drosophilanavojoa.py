@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaNavojoa.
+This file offers the methods to automatically retrieve the graph Drosophila navojoa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaNavojoa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaNavojoa graph.
+    """Return new instance of the Drosophila navojoa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaNavojoa(
 
     Returns
     -----------------------
-    Instace of DrosophilaNavojoa graph.
+    Instace of Drosophila navojoa graph.
 
 	References
 	---------------------

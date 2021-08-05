@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpCf038.
+This file offers the methods to automatically retrieve the graph Massilia sp. CF038.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpCf038(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpCf038 graph.
+    """Return new instance of the Massilia sp. CF038 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MassiliaSpCf038(
 
     Returns
     -----------------------
-    Instace of MassiliaSpCf038 graph.
+    Instace of Massilia sp. CF038 graph.
 
 	References
 	---------------------

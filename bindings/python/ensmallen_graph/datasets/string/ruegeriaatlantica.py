@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaAtlantica.
+This file offers the methods to automatically retrieve the graph Ruegeria atlantica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaAtlantica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaAtlantica graph.
+    """Return new instance of the Ruegeria atlantica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuegeriaAtlantica(
 
     Returns
     -----------------------
-    Instace of RuegeriaAtlantica graph.
+    Instace of Ruegeria atlantica graph.
 
 	References
 	---------------------

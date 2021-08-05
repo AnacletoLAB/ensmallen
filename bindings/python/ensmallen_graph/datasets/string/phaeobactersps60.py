@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeobacterSpS60.
+This file offers the methods to automatically retrieve the graph Phaeobacter sp. S60.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeobacterSpS60(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeobacterSpS60 graph.
+    """Return new instance of the Phaeobacter sp. S60 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhaeobacterSpS60(
 
     Returns
     -----------------------
-    Instace of PhaeobacterSpS60 graph.
+    Instace of Phaeobacter sp. S60 graph.
 
 	References
 	---------------------

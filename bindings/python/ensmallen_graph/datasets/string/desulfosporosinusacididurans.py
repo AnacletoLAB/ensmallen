@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusAcididurans.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus acididurans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusAcididurans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusAcididurans graph.
+    """Return new instance of the Desulfosporosinus acididurans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfosporosinusAcididurans(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusAcididurans graph.
+    Instace of Desulfosporosinus acididurans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfifellaPfennigii.
+This file offers the methods to automatically retrieve the graph Afifella pfennigii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfifellaPfennigii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfifellaPfennigii graph.
+    """Return new instance of the Afifella pfennigii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AfifellaPfennigii(
 
     Returns
     -----------------------
-    Instace of AfifellaPfennigii graph.
+    Instace of Afifella pfennigii graph.
 
 	References
 	---------------------

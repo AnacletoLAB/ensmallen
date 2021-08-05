@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillumRubrum.
+This file offers the methods to automatically retrieve the graph Rhodospirillum rubrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillumRubrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillumRubrum graph.
+    """Return new instance of the Rhodospirillum rubrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodospirillumRubrum(
 
     Returns
     -----------------------
-    Instace of RhodospirillumRubrum graph.
+    Instace of Rhodospirillum rubrum graph.
 
 	References
 	---------------------

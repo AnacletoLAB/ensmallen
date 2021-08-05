@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpYr577.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. YR577.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpYr577(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpYr577 graph.
+    """Return new instance of the Mesorhizobium sp. YR577 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumSpYr577(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpYr577 graph.
+    Instace of Mesorhizobium sp. YR577 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusAetherivorans.
+This file offers the methods to automatically retrieve the graph Rhodococcus aetherivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusAetherivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusAetherivorans graph.
+    """Return new instance of the Rhodococcus aetherivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusAetherivorans(
 
     Returns
     -----------------------
-    Instace of RhodococcusAetherivorans graph.
+    Instace of Rhodococcus aetherivorans graph.
 
 	References
 	---------------------

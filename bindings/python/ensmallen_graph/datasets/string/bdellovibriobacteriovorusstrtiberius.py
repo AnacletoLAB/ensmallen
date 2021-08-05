@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BdellovibrioBacteriovorusStrTiberius.
+This file offers the methods to automatically retrieve the graph Bdellovibrio bacteriovorus str. Tiberius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BdellovibrioBacteriovorusStrTiberius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BdellovibrioBacteriovorusStrTiberius graph.
+    """Return new instance of the Bdellovibrio bacteriovorus str. Tiberius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BdellovibrioBacteriovorusStrTiberius(
 
     Returns
     -----------------------
-    Instace of BdellovibrioBacteriovorusStrTiberius graph.
+    Instace of Bdellovibrio bacteriovorus str. Tiberius graph.
 
 	References
 	---------------------

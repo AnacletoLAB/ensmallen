@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSalivariusUcc118.
+This file offers the methods to automatically retrieve the graph Lactobacillus salivarius UCC118.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSalivariusUcc118(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSalivariusUcc118 graph.
+    """Return new instance of the Lactobacillus salivarius UCC118 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSalivariusUcc118(
 
     Returns
     -----------------------
-    Instace of LactobacillusSalivariusUcc118 graph.
+    Instace of Lactobacillus salivarius UCC118 graph.
 
 	References
 	---------------------

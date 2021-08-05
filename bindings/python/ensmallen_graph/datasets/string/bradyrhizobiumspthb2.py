@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumSpThb2.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium sp. thb2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumSpThb2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumSpThb2 graph.
+    """Return new instance of the Bradyrhizobium sp. thb2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BradyrhizobiumSpThb2(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumSpThb2 graph.
+    Instace of Bradyrhizobium sp. thb2 graph.
 
 	References
 	---------------------

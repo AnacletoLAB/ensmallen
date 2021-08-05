@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubritaleaSqualenifaciensDsm18772.
+This file offers the methods to automatically retrieve the graph Rubritalea squalenifaciens DSM 18772.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubritaleaSqualenifaciensDsm18772(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubritaleaSqualenifaciensDsm18772 graph.
+    """Return new instance of the Rubritalea squalenifaciens DSM 18772 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RubritaleaSqualenifaciensDsm18772(
 
     Returns
     -----------------------
-    Instace of RubritaleaSqualenifaciensDsm18772 graph.
+    Instace of Rubritalea squalenifaciens DSM 18772 graph.
 
 	References
 	---------------------

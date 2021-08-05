@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylosarcinaFibrataAmlC10.
+This file offers the methods to automatically retrieve the graph Methylosarcina fibrata AML-C10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylosarcinaFibrataAmlC10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylosarcinaFibrataAmlC10 graph.
+    """Return new instance of the Methylosarcina fibrata AML-C10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylosarcinaFibrataAmlC10(
 
     Returns
     -----------------------
-    Instace of MethylosarcinaFibrataAmlC10 graph.
+    Instace of Methylosarcina fibrata AML-C10 graph.
 
 	References
 	---------------------

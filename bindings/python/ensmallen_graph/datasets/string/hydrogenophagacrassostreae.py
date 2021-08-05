@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrogenophagaCrassostreae.
+This file offers the methods to automatically retrieve the graph Hydrogenophaga crassostreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrogenophagaCrassostreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrogenophagaCrassostreae graph.
+    """Return new instance of the Hydrogenophaga crassostreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrogenophagaCrassostreae(
 
     Returns
     -----------------------
-    Instace of HydrogenophagaCrassostreae graph.
+    Instace of Hydrogenophaga crassostreae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KluyveraCryocrescens.
+This file offers the methods to automatically retrieve the graph Kluyvera cryocrescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KluyveraCryocrescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KluyveraCryocrescens graph.
+    """Return new instance of the Kluyvera cryocrescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KluyveraCryocrescens(
 
     Returns
     -----------------------
-    Instace of KluyveraCryocrescens graph.
+    Instace of Kluyvera cryocrescens graph.
 
 	References
 	---------------------

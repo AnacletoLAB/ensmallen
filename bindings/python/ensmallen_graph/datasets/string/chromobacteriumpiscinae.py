@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChromobacteriumPiscinae.
+This file offers the methods to automatically retrieve the graph Chromobacterium piscinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChromobacteriumPiscinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChromobacteriumPiscinae graph.
+    """Return new instance of the Chromobacterium piscinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChromobacteriumPiscinae(
 
     Returns
     -----------------------
-    Instace of ChromobacteriumPiscinae graph.
+    Instace of Chromobacterium piscinae graph.
 
 	References
 	---------------------

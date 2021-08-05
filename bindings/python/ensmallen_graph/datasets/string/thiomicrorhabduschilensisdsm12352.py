@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomicrorhabdusChilensisDsm12352.
+This file offers the methods to automatically retrieve the graph Thiomicrorhabdus chilensis DSM 12352.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomicrorhabdusChilensisDsm12352(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomicrorhabdusChilensisDsm12352 graph.
+    """Return new instance of the Thiomicrorhabdus chilensis DSM 12352 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiomicrorhabdusChilensisDsm12352(
 
     Returns
     -----------------------
-    Instace of ThiomicrorhabdusChilensisDsm12352 graph.
+    Instace of Thiomicrorhabdus chilensis DSM 12352 graph.
 
 	References
 	---------------------

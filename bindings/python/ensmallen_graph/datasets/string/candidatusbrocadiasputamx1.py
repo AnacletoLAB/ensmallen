@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBrocadiaSpUtamx1.
+This file offers the methods to automatically retrieve the graph Candidatus Brocadia sp. UTAMX1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBrocadiaSpUtamx1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBrocadiaSpUtamx1 graph.
+    """Return new instance of the Candidatus Brocadia sp. UTAMX1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBrocadiaSpUtamx1(
 
     Returns
     -----------------------
-    Instace of CandidatusBrocadiaSpUtamx1 graph.
+    Instace of Candidatus Brocadia sp. UTAMX1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCrocodyli.
+This file offers the methods to automatically retrieve the graph Mycoplasma crocodyli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCrocodyli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCrocodyli graph.
+    """Return new instance of the Mycoplasma crocodyli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaCrocodyli(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCrocodyli graph.
+    Instace of Mycoplasma crocodyli graph.
 
 	References
 	---------------------

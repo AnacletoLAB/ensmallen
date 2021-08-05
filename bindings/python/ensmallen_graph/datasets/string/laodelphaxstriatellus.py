@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LaodelphaxStriatellus.
+This file offers the methods to automatically retrieve the graph Laodelphax striatellus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LaodelphaxStriatellus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LaodelphaxStriatellus graph.
+    """Return new instance of the Laodelphax striatellus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LaodelphaxStriatellus(
 
     Returns
     -----------------------
-    Instace of LaodelphaxStriatellus graph.
+    Instace of Laodelphax striatellus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomonasSp11b.
+This file offers the methods to automatically retrieve the graph Methylomonas sp. 11b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomonasSp11b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomonasSp11b graph.
+    """Return new instance of the Methylomonas sp. 11b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomonasSp11b(
 
     Returns
     -----------------------
-    Instace of MethylomonasSp11b graph.
+    Instace of Methylomonas sp. 11b graph.
 
 	References
 	---------------------

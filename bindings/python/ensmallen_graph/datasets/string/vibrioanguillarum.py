@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioAnguillarum.
+This file offers the methods to automatically retrieve the graph Vibrio anguillarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioAnguillarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioAnguillarum graph.
+    """Return new instance of the Vibrio anguillarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioAnguillarum(
 
     Returns
     -----------------------
-    Instace of VibrioAnguillarum graph.
+    Instace of Vibrio anguillarum graph.
 
 	References
 	---------------------

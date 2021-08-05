@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusPentosaceus.
+This file offers the methods to automatically retrieve the graph Pediococcus pentosaceus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusPentosaceus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusPentosaceus graph.
+    """Return new instance of the Pediococcus pentosaceus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PediococcusPentosaceus(
 
     Returns
     -----------------------
-    Instace of PediococcusPentosaceus graph.
+    Instace of Pediococcus pentosaceus graph.
 
 	References
 	---------------------

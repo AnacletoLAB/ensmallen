@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaFlavaJlt2011.
+This file offers the methods to automatically retrieve the graph Gramella flava JLT2011.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaFlavaJlt2011(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaFlavaJlt2011 graph.
+    """Return new instance of the Gramella flava JLT2011 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GramellaFlavaJlt2011(
 
     Returns
     -----------------------
-    Instace of GramellaFlavaJlt2011 graph.
+    Instace of Gramella flava JLT2011 graph.
 
 	References
 	---------------------

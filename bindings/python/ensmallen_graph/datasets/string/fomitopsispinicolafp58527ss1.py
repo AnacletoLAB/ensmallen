@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FomitopsisPinicolaFp58527Ss1.
+This file offers the methods to automatically retrieve the graph Fomitopsis pinicola FP-58527 SS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FomitopsisPinicolaFp58527Ss1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FomitopsisPinicolaFp58527Ss1 graph.
+    """Return new instance of the Fomitopsis pinicola FP-58527 SS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FomitopsisPinicolaFp58527Ss1(
 
     Returns
     -----------------------
-    Instace of FomitopsisPinicolaFp58527Ss1 graph.
+    Instace of Fomitopsis pinicola FP-58527 SS1 graph.
 
 	References
 	---------------------

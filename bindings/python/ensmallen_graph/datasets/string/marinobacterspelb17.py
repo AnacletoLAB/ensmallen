@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpElb17.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. ELB17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpElb17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpElb17 graph.
+    """Return new instance of the Marinobacter sp. ELB17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterSpElb17(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpElb17 graph.
+    Instace of Marinobacter sp. ELB17 graph.
 
 	References
 	---------------------

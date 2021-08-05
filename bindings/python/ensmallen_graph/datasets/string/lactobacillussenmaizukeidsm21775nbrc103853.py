@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSenmaizukeiDsm21775Nbrc103853.
+This file offers the methods to automatically retrieve the graph Lactobacillus senmaizukei DSM 21775 NBRC 103853.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSenmaizukeiDsm21775Nbrc103853(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSenmaizukeiDsm21775Nbrc103853 graph.
+    """Return new instance of the Lactobacillus senmaizukei DSM 21775 NBRC 103853 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSenmaizukeiDsm21775Nbrc103853(
 
     Returns
     -----------------------
-    Instace of LactobacillusSenmaizukeiDsm21775Nbrc103853 graph.
+    Instace of Lactobacillus senmaizukei DSM 21775 NBRC 103853 graph.
 
 	References
 	---------------------

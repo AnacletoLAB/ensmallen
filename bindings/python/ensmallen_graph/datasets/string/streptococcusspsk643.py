@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpSk643.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. SK643.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpSk643(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpSk643 graph.
+    """Return new instance of the Streptococcus sp. SK643 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpSk643(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpSk643 graph.
+    Instace of Streptococcus sp. SK643 graph.
 
 	References
 	---------------------

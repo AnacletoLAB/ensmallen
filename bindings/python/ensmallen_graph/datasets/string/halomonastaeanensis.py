@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomonasTaeanensis.
+This file offers the methods to automatically retrieve the graph Halomonas taeanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomonasTaeanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomonasTaeanensis graph.
+    """Return new instance of the Halomonas taeanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomonasTaeanensis(
 
     Returns
     -----------------------
-    Instace of HalomonasTaeanensis graph.
+    Instace of Halomonas taeanensis graph.
 
 	References
 	---------------------

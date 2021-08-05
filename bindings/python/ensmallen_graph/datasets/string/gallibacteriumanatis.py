@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallibacteriumAnatis.
+This file offers the methods to automatically retrieve the graph Gallibacterium anatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallibacteriumAnatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallibacteriumAnatis graph.
+    """Return new instance of the Gallibacterium anatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GallibacteriumAnatis(
 
     Returns
     -----------------------
-    Instace of GallibacteriumAnatis graph.
+    Instace of Gallibacterium anatis graph.
 
 	References
 	---------------------

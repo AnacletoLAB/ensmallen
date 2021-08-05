@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfitibacterAlkalitoleransDsm16504.
+This file offers the methods to automatically retrieve the graph Desulfitibacter alkalitolerans DSM 16504.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfitibacterAlkalitoleransDsm16504(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfitibacterAlkalitoleransDsm16504 graph.
+    """Return new instance of the Desulfitibacter alkalitolerans DSM 16504 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfitibacterAlkalitoleransDsm16504(
 
     Returns
     -----------------------
-    Instace of DesulfitibacterAlkalitoleransDsm16504 graph.
+    Instace of Desulfitibacter alkalitolerans DSM 16504 graph.
 
 	References
 	---------------------

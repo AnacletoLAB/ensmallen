@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TechPgp.
+This file offers the methods to automatically retrieve the graph tech-pgp.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -47,7 +47,7 @@ def TechPgp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TechPgp graph.
+    """Return new instance of the tech-pgp graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -74,7 +74,7 @@ def TechPgp(
 
     Returns
     -----------------------
-    Instace of TechPgp graph.
+    Instace of tech-pgp graph.
 
 	References
 	---------------------

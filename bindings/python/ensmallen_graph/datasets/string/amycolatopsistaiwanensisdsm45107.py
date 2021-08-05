@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisTaiwanensisDsm45107.
+This file offers the methods to automatically retrieve the graph Amycolatopsis taiwanensis DSM 45107.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisTaiwanensisDsm45107(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisTaiwanensisDsm45107 graph.
+    """Return new instance of the Amycolatopsis taiwanensis DSM 45107 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisTaiwanensisDsm45107(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisTaiwanensisDsm45107 graph.
+    Instace of Amycolatopsis taiwanensis DSM 45107 graph.
 
 	References
 	---------------------

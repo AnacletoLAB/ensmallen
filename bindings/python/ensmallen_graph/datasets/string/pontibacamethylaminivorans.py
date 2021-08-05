@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PontibacaMethylaminivorans.
+This file offers the methods to automatically retrieve the graph Pontibaca methylaminivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PontibacaMethylaminivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PontibacaMethylaminivorans graph.
+    """Return new instance of the Pontibaca methylaminivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PontibacaMethylaminivorans(
 
     Returns
     -----------------------
-    Instace of PontibacaMethylaminivorans graph.
+    Instace of Pontibaca methylaminivorans graph.
 
 	References
 	---------------------

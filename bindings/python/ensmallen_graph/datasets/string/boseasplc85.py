@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSpLc85.
+This file offers the methods to automatically retrieve the graph Bosea sp. LC85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSpLc85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSpLc85 graph.
+    """Return new instance of the Bosea sp. LC85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BoseaSpLc85(
 
     Returns
     -----------------------
-    Instace of BoseaSpLc85 graph.
+    Instace of Bosea sp. LC85 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulforhabdusNorvegica.
+This file offers the methods to automatically retrieve the graph Thermodesulforhabdus norvegica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulforhabdusNorvegica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulforhabdusNorvegica graph.
+    """Return new instance of the Thermodesulforhabdus norvegica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermodesulforhabdusNorvegica(
 
     Returns
     -----------------------
-    Instace of ThermodesulforhabdusNorvegica graph.
+    Instace of Thermodesulforhabdus norvegica graph.
 
 	References
 	---------------------

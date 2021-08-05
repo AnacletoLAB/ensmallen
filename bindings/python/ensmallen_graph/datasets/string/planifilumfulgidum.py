@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanifilumFulgidum.
+This file offers the methods to automatically retrieve the graph Planifilum fulgidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanifilumFulgidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanifilumFulgidum graph.
+    """Return new instance of the Planifilum fulgidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanifilumFulgidum(
 
     Returns
     -----------------------
-    Instace of PlanifilumFulgidum graph.
+    Instace of Planifilum fulgidum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesFlavovariabilis.
+This file offers the methods to automatically retrieve the graph Streptomyces flavovariabilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesFlavovariabilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesFlavovariabilis graph.
+    """Return new instance of the Streptomyces flavovariabilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesFlavovariabilis(
 
     Returns
     -----------------------
-    Instace of StreptomycesFlavovariabilis graph.
+    Instace of Streptomyces flavovariabilis graph.
 
 	References
 	---------------------

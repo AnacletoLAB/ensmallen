@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaFormicigeneransAtcc27755.
+This file offers the methods to automatically retrieve the graph Dorea formicigenerans ATCC27755.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaFormicigeneransAtcc27755(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaFormicigeneransAtcc27755 graph.
+    """Return new instance of the Dorea formicigenerans ATCC27755 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DoreaFormicigeneransAtcc27755(
 
     Returns
     -----------------------
-    Instace of DoreaFormicigeneransAtcc27755 graph.
+    Instace of Dorea formicigenerans ATCC27755 graph.
 
 	References
 	---------------------

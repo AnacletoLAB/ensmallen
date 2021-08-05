@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaQuateirensis.
+This file offers the methods to automatically retrieve the graph Legionella quateirensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaQuateirensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaQuateirensis graph.
+    """Return new instance of the Legionella quateirensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LegionellaQuateirensis(
 
     Returns
     -----------------------
-    Instace of LegionellaQuateirensis graph.
+    Instace of Legionella quateirensis graph.
 
 	References
 	---------------------

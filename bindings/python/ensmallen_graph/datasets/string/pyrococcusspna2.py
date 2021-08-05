@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusSpNa2.
+This file offers the methods to automatically retrieve the graph Pyrococcus sp. NA2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusSpNa2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusSpNa2 graph.
+    """Return new instance of the Pyrococcus sp. NA2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusSpNa2(
 
     Returns
     -----------------------
-    Instace of PyrococcusSpNa2 graph.
+    Instace of Pyrococcus sp. NA2 graph.
 
 	References
 	---------------------

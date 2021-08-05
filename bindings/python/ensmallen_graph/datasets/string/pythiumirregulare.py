@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PythiumIrregulare.
+This file offers the methods to automatically retrieve the graph Pythium irregulare.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PythiumIrregulare(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PythiumIrregulare graph.
+    """Return new instance of the Pythium irregulare graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PythiumIrregulare(
 
     Returns
     -----------------------
-    Instace of PythiumIrregulare graph.
+    Instace of Pythium irregulare graph.
 
 	References
 	---------------------

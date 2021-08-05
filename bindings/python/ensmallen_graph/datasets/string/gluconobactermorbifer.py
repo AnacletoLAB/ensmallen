@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GluconobacterMorbifer.
+This file offers the methods to automatically retrieve the graph Gluconobacter morbifer.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GluconobacterMorbifer(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GluconobacterMorbifer graph.
+    """Return new instance of the Gluconobacter morbifer graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GluconobacterMorbifer(
 
     Returns
     -----------------------
-    Instace of GluconobacterMorbifer graph.
+    Instace of Gluconobacter morbifer graph.
 
 	References
 	---------------------

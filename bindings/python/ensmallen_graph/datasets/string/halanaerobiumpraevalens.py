@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumPraevalens.
+This file offers the methods to automatically retrieve the graph Halanaerobium praevalens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumPraevalens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumPraevalens graph.
+    """Return new instance of the Halanaerobium praevalens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HalanaerobiumPraevalens(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumPraevalens graph.
+    Instace of Halanaerobium praevalens graph.
 
 	References
 	---------------------

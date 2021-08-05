@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PicrophilusTorridus.
+This file offers the methods to automatically retrieve the graph Picrophilus torridus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PicrophilusTorridus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PicrophilusTorridus graph.
+    """Return new instance of the Picrophilus torridus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PicrophilusTorridus(
 
     Returns
     -----------------------
-    Instace of PicrophilusTorridus graph.
+    Instace of Picrophilus torridus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpRoot264.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. Root264.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpRoot264(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpRoot264 graph.
+    """Return new instance of the Streptomyces sp. Root264 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpRoot264(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpRoot264 graph.
+    Instace of Streptomyces sp. Root264 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocaldococcusFervens.
+This file offers the methods to automatically retrieve the graph Methanocaldococcus fervens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocaldococcusFervens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocaldococcusFervens graph.
+    """Return new instance of the Methanocaldococcus fervens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocaldococcusFervens(
 
     Returns
     -----------------------
-    Instace of MethanocaldococcusFervens graph.
+    Instace of Methanocaldococcus fervens graph.
 
 	References
 	---------------------

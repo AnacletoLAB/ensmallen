@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DactylellinaHaptotylaCbs20050.
+This file offers the methods to automatically retrieve the graph Dactylellina haptotyla CBS 200.50.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DactylellinaHaptotylaCbs20050(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DactylellinaHaptotylaCbs20050 graph.
+    """Return new instance of the Dactylellina haptotyla CBS 200.50 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DactylellinaHaptotylaCbs20050(
 
     Returns
     -----------------------
-    Instace of DactylellinaHaptotylaCbs20050 graph.
+    Instace of Dactylellina haptotyla CBS 200.50 graph.
 
 	References
 	---------------------

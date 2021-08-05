@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EucalyptusGrandis.
+This file offers the methods to automatically retrieve the graph Eucalyptus grandis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EucalyptusGrandis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EucalyptusGrandis graph.
+    """Return new instance of the Eucalyptus grandis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EucalyptusGrandis(
 
     Returns
     -----------------------
-    Instace of EucalyptusGrandis graph.
+    Instace of Eucalyptus grandis graph.
 
 	References
 	---------------------

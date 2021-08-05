@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaPseudoobscuraPseudoobscura.
+This file offers the methods to automatically retrieve the graph Drosophila pseudoobscura pseudoobscura.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaPseudoobscuraPseudoobscura(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaPseudoobscuraPseudoobscura graph.
+    """Return new instance of the Drosophila pseudoobscura pseudoobscura graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DrosophilaPseudoobscuraPseudoobscura(
 
     Returns
     -----------------------
-    Instace of DrosophilaPseudoobscuraPseudoobscura graph.
+    Instace of Drosophila pseudoobscura pseudoobscura graph.
 
 	References
 	---------------------

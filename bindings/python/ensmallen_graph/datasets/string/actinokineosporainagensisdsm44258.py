@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinokineosporaInagensisDsm44258.
+This file offers the methods to automatically retrieve the graph Actinokineospora inagensis DSM 44258.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinokineosporaInagensisDsm44258(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinokineosporaInagensisDsm44258 graph.
+    """Return new instance of the Actinokineospora inagensis DSM 44258 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinokineosporaInagensisDsm44258(
 
     Returns
     -----------------------
-    Instace of ActinokineosporaInagensisDsm44258 graph.
+    Instace of Actinokineospora inagensis DSM 44258 graph.
 
 	References
 	---------------------

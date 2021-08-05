@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCoelicolor.
+This file offers the methods to automatically retrieve the graph Streptomyces coelicolor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCoelicolor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCoelicolor graph.
+    """Return new instance of the Streptomyces coelicolor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCoelicolor(
 
     Returns
     -----------------------
-    Instace of StreptomycesCoelicolor graph.
+    Instace of Streptomyces coelicolor graph.
 
 	References
 	---------------------

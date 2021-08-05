@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FontibacillusPanacisegetis.
+This file offers the methods to automatically retrieve the graph Fontibacillus panacisegetis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FontibacillusPanacisegetis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FontibacillusPanacisegetis graph.
+    """Return new instance of the Fontibacillus panacisegetis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FontibacillusPanacisegetis(
 
     Returns
     -----------------------
-    Instace of FontibacillusPanacisegetis graph.
+    Instace of Fontibacillus panacisegetis graph.
 
 	References
 	---------------------

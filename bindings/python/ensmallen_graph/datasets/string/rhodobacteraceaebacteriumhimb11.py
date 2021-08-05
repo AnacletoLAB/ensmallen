@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumHimb11.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium HIMB11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumHimb11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumHimb11 graph.
+    """Return new instance of the Rhodobacteraceae bacterium HIMB11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacteraceaeBacteriumHimb11(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumHimb11 graph.
+    Instace of Rhodobacteraceae bacterium HIMB11 graph.
 
 	References
 	---------------------

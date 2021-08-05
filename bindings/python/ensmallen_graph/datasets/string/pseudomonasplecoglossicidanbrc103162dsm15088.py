@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasPlecoglossicidaNbrc103162Dsm15088.
+This file offers the methods to automatically retrieve the graph Pseudomonas plecoglossicida NBRC 103162 DSM 15088.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasPlecoglossicidaNbrc103162Dsm15088 graph.
+    """Return new instance of the Pseudomonas plecoglossicida NBRC 103162 DSM 15088 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasPlecoglossicidaNbrc103162Dsm15088(
 
     Returns
     -----------------------
-    Instace of PseudomonasPlecoglossicidaNbrc103162Dsm15088 graph.
+    Instace of Pseudomonas plecoglossicida NBRC 103162 DSM 15088 graph.
 
 	References
 	---------------------

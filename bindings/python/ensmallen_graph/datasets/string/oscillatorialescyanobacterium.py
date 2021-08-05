@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OscillatorialesCyanobacterium.
+This file offers the methods to automatically retrieve the graph Oscillatoriales cyanobacterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OscillatorialesCyanobacterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OscillatorialesCyanobacterium graph.
+    """Return new instance of the Oscillatoriales cyanobacterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OscillatorialesCyanobacterium(
 
     Returns
     -----------------------
-    Instace of OscillatorialesCyanobacterium graph.
+    Instace of Oscillatoriales cyanobacterium graph.
 
 	References
 	---------------------

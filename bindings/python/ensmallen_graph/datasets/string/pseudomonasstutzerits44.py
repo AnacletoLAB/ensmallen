@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasStutzeriTs44.
+This file offers the methods to automatically retrieve the graph Pseudomonas stutzeri TS44.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasStutzeriTs44(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasStutzeriTs44 graph.
+    """Return new instance of the Pseudomonas stutzeri TS44 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasStutzeriTs44(
 
     Returns
     -----------------------
-    Instace of PseudomonasStutzeriTs44 graph.
+    Instace of Pseudomonas stutzeri TS44 graph.
 
 	References
 	---------------------

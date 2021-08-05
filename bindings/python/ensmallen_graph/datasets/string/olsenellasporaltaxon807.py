@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaSpOralTaxon807.
+This file offers the methods to automatically retrieve the graph Olsenella sp. oral taxon 807.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaSpOralTaxon807(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaSpOralTaxon807 graph.
+    """Return new instance of the Olsenella sp. oral taxon 807 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaSpOralTaxon807(
 
     Returns
     -----------------------
-    Instace of OlsenellaSpOralTaxon807 graph.
+    Instace of Olsenella sp. oral taxon 807 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusYeei.
+This file offers the methods to automatically retrieve the graph Paracoccus yeei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusYeei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusYeei graph.
+    """Return new instance of the Paracoccus yeei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusYeei(
 
     Returns
     -----------------------
-    Instace of ParacoccusYeei graph.
+    Instace of Paracoccus yeei graph.
 
 	References
 	---------------------

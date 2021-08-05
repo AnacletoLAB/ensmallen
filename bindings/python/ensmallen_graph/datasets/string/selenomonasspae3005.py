@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SelenomonasSpAe3005.
+This file offers the methods to automatically retrieve the graph Selenomonas sp. AE3005.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SelenomonasSpAe3005(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SelenomonasSpAe3005 graph.
+    """Return new instance of the Selenomonas sp. AE3005 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SelenomonasSpAe3005(
 
     Returns
     -----------------------
-    Instace of SelenomonasSpAe3005 graph.
+    Instace of Selenomonas sp. AE3005 graph.
 
 	References
 	---------------------

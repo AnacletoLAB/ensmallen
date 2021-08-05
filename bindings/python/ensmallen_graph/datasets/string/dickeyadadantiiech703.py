@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaDadantiiEch703.
+This file offers the methods to automatically retrieve the graph Dickeya dadantii Ech703.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaDadantiiEch703(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaDadantiiEch703 graph.
+    """Return new instance of the Dickeya dadantii Ech703 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaDadantiiEch703(
 
     Returns
     -----------------------
-    Instace of DickeyaDadantiiEch703 graph.
+    Instace of Dickeya dadantii Ech703 graph.
 
 	References
 	---------------------

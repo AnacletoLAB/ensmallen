@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalorubrumKocuriiJcm14978.
+This file offers the methods to automatically retrieve the graph Halorubrum kocurii JCM 14978.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalorubrumKocuriiJcm14978(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalorubrumKocuriiJcm14978 graph.
+    """Return new instance of the Halorubrum kocurii JCM 14978 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalorubrumKocuriiJcm14978(
 
     Returns
     -----------------------
-    Instace of HalorubrumKocuriiJcm14978 graph.
+    Instace of Halorubrum kocurii JCM 14978 graph.
 
 	References
 	---------------------

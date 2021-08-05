@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GillisiaLimnaea.
+This file offers the methods to automatically retrieve the graph Gillisia limnaea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GillisiaLimnaea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GillisiaLimnaea graph.
+    """Return new instance of the Gillisia limnaea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GillisiaLimnaea(
 
     Returns
     -----------------------
-    Instace of GillisiaLimnaea graph.
+    Instace of Gillisia limnaea graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabaenaCylindrica.
+This file offers the methods to automatically retrieve the graph Anabaena cylindrica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabaenaCylindrica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabaenaCylindrica graph.
+    """Return new instance of the Anabaena cylindrica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnabaenaCylindrica(
 
     Returns
     -----------------------
-    Instace of AnabaenaCylindrica graph.
+    Instace of Anabaena cylindrica graph.
 
 	References
 	---------------------

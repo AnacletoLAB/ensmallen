@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSalmonicidaSubspMasoucidaNbrc13784.
+This file offers the methods to automatically retrieve the graph Aeromonas salmonicida subsp. masoucida NBRC 13784.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSalmonicidaSubspMasoucidaNbrc13784 graph.
+    """Return new instance of the Aeromonas salmonicida subsp. masoucida NBRC 13784 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSalmonicidaSubspMasoucidaNbrc13784(
 
     Returns
     -----------------------
-    Instace of AeromonasSalmonicidaSubspMasoucidaNbrc13784 graph.
+    Instace of Aeromonas salmonicida subsp. masoucida NBRC 13784 graph.
 
 	References
 	---------------------

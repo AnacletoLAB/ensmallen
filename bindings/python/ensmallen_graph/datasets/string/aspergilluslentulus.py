@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusLentulus.
+This file offers the methods to automatically retrieve the graph Aspergillus lentulus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusLentulus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusLentulus graph.
+    """Return new instance of the Aspergillus lentulus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusLentulus(
 
     Returns
     -----------------------
-    Instace of AspergillusLentulus graph.
+    Instace of Aspergillus lentulus graph.
 
 	References
 	---------------------

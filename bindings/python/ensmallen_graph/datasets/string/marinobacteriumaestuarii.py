@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacteriumAestuarii.
+This file offers the methods to automatically retrieve the graph Marinobacterium aestuarii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacteriumAestuarii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacteriumAestuarii graph.
+    """Return new instance of the Marinobacterium aestuarii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacteriumAestuarii(
 
     Returns
     -----------------------
-    Instace of MarinobacteriumAestuarii graph.
+    Instace of Marinobacterium aestuarii graph.
 
 	References
 	---------------------

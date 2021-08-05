@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusLutrae.
+This file offers the methods to automatically retrieve the graph Staphylococcus lutrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusLutrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusLutrae graph.
+    """Return new instance of the Staphylococcus lutrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusLutrae(
 
     Returns
     -----------------------
-    Instace of StaphylococcusLutrae graph.
+    Instace of Staphylococcus lutrae graph.
 
 	References
 	---------------------

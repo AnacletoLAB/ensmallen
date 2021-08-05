@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SebaldellaTermitidis.
+This file offers the methods to automatically retrieve the graph Sebaldella termitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SebaldellaTermitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SebaldellaTermitidis graph.
+    """Return new instance of the Sebaldella termitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SebaldellaTermitidis(
 
     Returns
     -----------------------
-    Instace of SebaldellaTermitidis graph.
+    Instace of Sebaldella termitidis graph.
 
 	References
 	---------------------

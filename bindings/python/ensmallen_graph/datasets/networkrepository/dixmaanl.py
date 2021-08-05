@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Dixmaanl.
+This file offers the methods to automatically retrieve the graph dixmaanl.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Dixmaanl(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Dixmaanl graph.
+    """Return new instance of the dixmaanl graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Dixmaanl(
 
     Returns
     -----------------------
-    Instace of Dixmaanl graph.
+    Instace of dixmaanl graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TatlockiaMicdadei.
+This file offers the methods to automatically retrieve the graph Tatlockia micdadei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TatlockiaMicdadei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TatlockiaMicdadei graph.
+    """Return new instance of the Tatlockia micdadei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TatlockiaMicdadei(
 
     Returns
     -----------------------
-    Instace of TatlockiaMicdadei graph.
+    Instace of Tatlockia micdadei graph.
 
 	References
 	---------------------

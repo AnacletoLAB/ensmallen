@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaPickettii12d.
+This file offers the methods to automatically retrieve the graph Ralstonia pickettii 12D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaPickettii12d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaPickettii12d graph.
+    """Return new instance of the Ralstonia pickettii 12D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RalstoniaPickettii12d(
 
     Returns
     -----------------------
-    Instace of RalstoniaPickettii12d graph.
+    Instace of Ralstonia pickettii 12D graph.
 
 	References
 	---------------------

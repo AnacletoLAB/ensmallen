@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumTaihuense.
+This file offers the methods to automatically retrieve the graph Chryseobacterium taihuense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumTaihuense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumTaihuense graph.
+    """Return new instance of the Chryseobacterium taihuense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumTaihuense(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumTaihuense graph.
+    Instace of Chryseobacterium taihuense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GelatoporiaSubvermisporaB.
+This file offers the methods to automatically retrieve the graph Gelatoporia subvermispora B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GelatoporiaSubvermisporaB(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GelatoporiaSubvermisporaB graph.
+    """Return new instance of the Gelatoporia subvermispora B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GelatoporiaSubvermisporaB(
 
     Returns
     -----------------------
-    Instace of GelatoporiaSubvermisporaB graph.
+    Instace of Gelatoporia subvermispora B graph.
 
 	References
 	---------------------

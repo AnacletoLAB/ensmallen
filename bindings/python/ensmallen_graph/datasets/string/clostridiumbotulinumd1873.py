@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumD1873.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum D 1873.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumD1873(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumD1873 graph.
+    """Return new instance of the Clostridium botulinum D 1873 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumD1873(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumD1873 graph.
+    Instace of Clostridium botulinum D 1873 graph.
 
 	References
 	---------------------

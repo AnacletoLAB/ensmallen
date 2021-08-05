@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Cegb2919.
+This file offers the methods to automatically retrieve the graph cegb2919.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Cegb2919(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Cegb2919 graph.
+    """Return new instance of the cegb2919 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Cegb2919(
 
     Returns
     -----------------------
-    Instace of Cegb2919 graph.
+    Instace of cegb2919 graph.
 
 	References
 	---------------------

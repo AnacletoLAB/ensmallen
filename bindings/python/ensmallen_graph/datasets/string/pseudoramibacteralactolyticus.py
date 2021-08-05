@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoramibacterAlactolyticus.
+This file offers the methods to automatically retrieve the graph Pseudoramibacter alactolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoramibacterAlactolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoramibacterAlactolyticus graph.
+    """Return new instance of the Pseudoramibacter alactolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoramibacterAlactolyticus(
 
     Returns
     -----------------------
-    Instace of PseudoramibacterAlactolyticus graph.
+    Instace of Pseudoramibacter alactolyticus graph.
 
 	References
 	---------------------

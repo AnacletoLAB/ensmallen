@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FriedmanniomycesSimplex.
+This file offers the methods to automatically retrieve the graph Friedmanniomyces simplex.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FriedmanniomycesSimplex(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FriedmanniomycesSimplex graph.
+    """Return new instance of the Friedmanniomyces simplex graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FriedmanniomycesSimplex(
 
     Returns
     -----------------------
-    Instace of FriedmanniomycesSimplex graph.
+    Instace of Friedmanniomyces simplex graph.
 
 	References
 	---------------------

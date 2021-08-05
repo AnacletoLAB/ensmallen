@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollimonasSpOk307.
+This file offers the methods to automatically retrieve the graph Collimonas sp. OK307.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollimonasSpOk307(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollimonasSpOk307 graph.
+    """Return new instance of the Collimonas sp. OK307 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CollimonasSpOk307(
 
     Returns
     -----------------------
-    Instace of CollimonasSpOk307 graph.
+    Instace of Collimonas sp. OK307 graph.
 
 	References
 	---------------------

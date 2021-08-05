@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumSpCf444.
+This file offers the methods to automatically retrieve the graph Herbaspirillum sp. CF444.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumSpCf444(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumSpCf444 graph.
+    """Return new instance of the Herbaspirillum sp. CF444 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HerbaspirillumSpCf444(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumSpCf444 graph.
+    Instace of Herbaspirillum sp. CF444 graph.
 
 	References
 	---------------------

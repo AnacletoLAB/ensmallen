@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoclavibacterHelvolus.
+This file offers the methods to automatically retrieve the graph Pseudoclavibacter helvolus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoclavibacterHelvolus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoclavibacterHelvolus graph.
+    """Return new instance of the Pseudoclavibacter helvolus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoclavibacterHelvolus(
 
     Returns
     -----------------------
-    Instace of PseudoclavibacterHelvolus graph.
+    Instace of Pseudoclavibacter helvolus graph.
 
 	References
 	---------------------

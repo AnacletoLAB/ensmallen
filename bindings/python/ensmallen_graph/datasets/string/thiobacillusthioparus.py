@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusThioparus.
+This file offers the methods to automatically retrieve the graph Thiobacillus thioparus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusThioparus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusThioparus graph.
+    """Return new instance of the Thiobacillus thioparus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiobacillusThioparus(
 
     Returns
     -----------------------
-    Instace of ThiobacillusThioparus graph.
+    Instace of Thiobacillus thioparus graph.
 
 	References
 	---------------------

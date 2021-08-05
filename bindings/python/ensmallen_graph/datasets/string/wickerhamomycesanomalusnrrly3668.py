@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WickerhamomycesAnomalusNrrlY3668.
+This file offers the methods to automatically retrieve the graph Wickerhamomyces anomalus NRRL Y-366-8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WickerhamomycesAnomalusNrrlY3668(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WickerhamomycesAnomalusNrrlY3668 graph.
+    """Return new instance of the Wickerhamomyces anomalus NRRL Y-366-8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WickerhamomycesAnomalusNrrlY3668(
 
     Returns
     -----------------------
-    Instace of WickerhamomycesAnomalusNrrlY3668 graph.
+    Instace of Wickerhamomyces anomalus NRRL Y-366-8 graph.
 
 	References
 	---------------------

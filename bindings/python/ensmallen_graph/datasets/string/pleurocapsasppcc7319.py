@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PleurocapsaSpPcc7319.
+This file offers the methods to automatically retrieve the graph Pleurocapsa sp. PCC7319.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PleurocapsaSpPcc7319(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PleurocapsaSpPcc7319 graph.
+    """Return new instance of the Pleurocapsa sp. PCC7319 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PleurocapsaSpPcc7319(
 
     Returns
     -----------------------
-    Instace of PleurocapsaSpPcc7319 graph.
+    Instace of Pleurocapsa sp. PCC7319 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCaseinilyticus.
+This file offers the methods to automatically retrieve the graph Bacillus caseinilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCaseinilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCaseinilyticus graph.
+    """Return new instance of the Bacillus caseinilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusCaseinilyticus(
 
     Returns
     -----------------------
-    Instace of BacillusCaseinilyticus graph.
+    Instace of Bacillus caseinilyticus graph.
 
 	References
 	---------------------

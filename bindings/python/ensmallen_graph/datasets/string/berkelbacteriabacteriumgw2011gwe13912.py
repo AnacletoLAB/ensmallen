@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BerkelbacteriaBacteriumGw2011Gwe13912.
+This file offers the methods to automatically retrieve the graph Berkelbacteria bacterium GW2011_GWE1_39_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BerkelbacteriaBacteriumGw2011Gwe13912(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BerkelbacteriaBacteriumGw2011Gwe13912 graph.
+    """Return new instance of the Berkelbacteria bacterium GW2011_GWE1_39_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BerkelbacteriaBacteriumGw2011Gwe13912(
 
     Returns
     -----------------------
-    Instace of BerkelbacteriaBacteriumGw2011Gwe13912 graph.
+    Instace of Berkelbacteria bacterium GW2011_GWE1_39_12 graph.
 
 	References
 	---------------------

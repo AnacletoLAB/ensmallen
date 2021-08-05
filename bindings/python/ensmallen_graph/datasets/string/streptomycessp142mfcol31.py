@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSp142mfcol31.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. 142MFCol31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSp142mfcol31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSp142mfcol31 graph.
+    """Return new instance of the Streptomyces sp. 142MFCol31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSp142mfcol31(
 
     Returns
     -----------------------
-    Instace of StreptomycesSp142mfcol31 graph.
+    Instace of Streptomyces sp. 142MFCol31 graph.
 
 	References
 	---------------------

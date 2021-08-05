@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCarboxidivorans.
+This file offers the methods to automatically retrieve the graph Clostridium carboxidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCarboxidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCarboxidivorans graph.
+    """Return new instance of the Clostridium carboxidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumCarboxidivorans(
 
     Returns
     -----------------------
-    Instace of ClostridiumCarboxidivorans graph.
+    Instace of Clostridium carboxidivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PleurotusOstreatusPc15.
+This file offers the methods to automatically retrieve the graph Pleurotus ostreatus PC15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PleurotusOstreatusPc15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PleurotusOstreatusPc15 graph.
+    """Return new instance of the Pleurotus ostreatus PC15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PleurotusOstreatusPc15(
 
     Returns
     -----------------------
-    Instace of PleurotusOstreatusPc15 graph.
+    Instace of Pleurotus ostreatus PC15 graph.
 
 	References
 	---------------------

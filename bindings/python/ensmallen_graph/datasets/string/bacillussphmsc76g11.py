@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpHmsc76g11.
+This file offers the methods to automatically retrieve the graph Bacillus sp. HMSC76G11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpHmsc76g11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpHmsc76g11 graph.
+    """Return new instance of the Bacillus sp. HMSC76G11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpHmsc76g11(
 
     Returns
     -----------------------
-    Instace of BacillusSpHmsc76g11 graph.
+    Instace of Bacillus sp. HMSC76G11 graph.
 
 	References
 	---------------------

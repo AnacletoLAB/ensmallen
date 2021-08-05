@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfofundulusThermosubterraneusDsm16057.
+This file offers the methods to automatically retrieve the graph Desulfofundulus thermosubterraneus DSM 16057.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfofundulusThermosubterraneusDsm16057(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfofundulusThermosubterraneusDsm16057 graph.
+    """Return new instance of the Desulfofundulus thermosubterraneus DSM 16057 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfofundulusThermosubterraneusDsm16057(
 
     Returns
     -----------------------
-    Instace of DesulfofundulusThermosubterraneusDsm16057 graph.
+    Instace of Desulfofundulus thermosubterraneus DSM 16057 graph.
 
 	References
 	---------------------

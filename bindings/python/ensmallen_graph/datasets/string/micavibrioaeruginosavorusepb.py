@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicavibrioAeruginosavorusEpb.
+This file offers the methods to automatically retrieve the graph Micavibrio aeruginosavorus EPB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicavibrioAeruginosavorusEpb(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicavibrioAeruginosavorusEpb graph.
+    """Return new instance of the Micavibrio aeruginosavorus EPB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicavibrioAeruginosavorusEpb(
 
     Returns
     -----------------------
-    Instace of MicavibrioAeruginosavorusEpb graph.
+    Instace of Micavibrio aeruginosavorus EPB graph.
 
 	References
 	---------------------

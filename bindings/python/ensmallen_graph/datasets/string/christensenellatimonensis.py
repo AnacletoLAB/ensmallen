@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChristensenellaTimonensis.
+This file offers the methods to automatically retrieve the graph Christensenella timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChristensenellaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChristensenellaTimonensis graph.
+    """Return new instance of the Christensenella timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChristensenellaTimonensis(
 
     Returns
     -----------------------
-    Instace of ChristensenellaTimonensis graph.
+    Instace of Christensenella timonensis graph.
 
 	References
 	---------------------

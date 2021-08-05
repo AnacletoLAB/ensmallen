@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NesterenkoniaSpPf2b19.
+This file offers the methods to automatically retrieve the graph Nesterenkonia sp. PF2B19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NesterenkoniaSpPf2b19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NesterenkoniaSpPf2b19 graph.
+    """Return new instance of the Nesterenkonia sp. PF2B19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NesterenkoniaSpPf2b19(
 
     Returns
     -----------------------
-    Instace of NesterenkoniaSpPf2b19 graph.
+    Instace of Nesterenkonia sp. PF2B19 graph.
 
 	References
 	---------------------

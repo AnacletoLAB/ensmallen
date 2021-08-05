@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterWoluwensis.
+This file offers the methods to automatically retrieve the graph Arthrobacter woluwensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterWoluwensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterWoluwensis graph.
+    """Return new instance of the Arthrobacter woluwensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterWoluwensis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterWoluwensis graph.
+    Instace of Arthrobacter woluwensis graph.
 
 	References
 	---------------------

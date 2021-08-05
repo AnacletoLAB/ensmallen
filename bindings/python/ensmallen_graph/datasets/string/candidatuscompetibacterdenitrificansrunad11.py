@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCompetibacterDenitrificansRunAD11.
+This file offers the methods to automatically retrieve the graph Candidatus Competibacter denitrificans Run_A_D11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCompetibacterDenitrificansRunAD11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCompetibacterDenitrificansRunAD11 graph.
+    """Return new instance of the Candidatus Competibacter denitrificans Run_A_D11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCompetibacterDenitrificansRunAD11(
 
     Returns
     -----------------------
-    Instace of CandidatusCompetibacterDenitrificansRunAD11 graph.
+    Instace of Candidatus Competibacter denitrificans Run_A_D11 graph.
 
 	References
 	---------------------

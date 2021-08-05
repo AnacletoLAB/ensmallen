@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumSpAnt17.
+This file offers the methods to automatically retrieve the graph Sphingobium sp. Ant17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumSpAnt17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumSpAnt17 graph.
+    """Return new instance of the Sphingobium sp. Ant17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumSpAnt17(
 
     Returns
     -----------------------
-    Instace of SphingobiumSpAnt17 graph.
+    Instace of Sphingobium sp. Ant17 graph.
 
 	References
 	---------------------

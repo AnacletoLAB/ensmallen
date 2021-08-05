@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlamydiaAvium.
+This file offers the methods to automatically retrieve the graph Chlamydia avium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlamydiaAvium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlamydiaAvium graph.
+    """Return new instance of the Chlamydia avium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlamydiaAvium(
 
     Returns
     -----------------------
-    Instace of ChlamydiaAvium graph.
+    Instace of Chlamydia avium graph.
 
 	References
 	---------------------

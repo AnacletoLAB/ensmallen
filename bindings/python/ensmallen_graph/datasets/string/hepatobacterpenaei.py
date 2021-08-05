@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HepatobacterPenaei.
+This file offers the methods to automatically retrieve the graph Hepatobacter penaei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HepatobacterPenaei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HepatobacterPenaei graph.
+    """Return new instance of the Hepatobacter penaei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HepatobacterPenaei(
 
     Returns
     -----------------------
-    Instace of HepatobacterPenaei graph.
+    Instace of Hepatobacter penaei graph.
 
 	References
 	---------------------

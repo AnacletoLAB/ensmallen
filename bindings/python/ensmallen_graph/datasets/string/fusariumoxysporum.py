@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumOxysporum.
+This file offers the methods to automatically retrieve the graph Fusarium oxysporum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumOxysporum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumOxysporum graph.
+    """Return new instance of the Fusarium oxysporum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusariumOxysporum(
 
     Returns
     -----------------------
-    Instace of FusariumOxysporum graph.
+    Instace of Fusarium oxysporum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OribacteriumParvum.
+This file offers the methods to automatically retrieve the graph Oribacterium parvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OribacteriumParvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OribacteriumParvum graph.
+    """Return new instance of the Oribacterium parvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OribacteriumParvum(
 
     Returns
     -----------------------
-    Instace of OribacteriumParvum graph.
+    Instace of Oribacterium parvum graph.
 
 	References
 	---------------------

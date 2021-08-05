@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioMexicanus.
+This file offers the methods to automatically retrieve the graph Vibrio mexicanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioMexicanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioMexicanus graph.
+    """Return new instance of the Vibrio mexicanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioMexicanus(
 
     Returns
     -----------------------
-    Instace of VibrioMexicanus graph.
+    Instace of Vibrio mexicanus graph.
 
 	References
 	---------------------

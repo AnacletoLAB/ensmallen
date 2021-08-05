@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisBaichengensis.
+This file offers the methods to automatically retrieve the graph Nocardiopsis baichengensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisBaichengensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisBaichengensis graph.
+    """Return new instance of the Nocardiopsis baichengensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisBaichengensis(
 
     Returns
     -----------------------
-    Instace of NocardiopsisBaichengensis graph.
+    Instace of Nocardiopsis baichengensis graph.
 
 	References
 	---------------------

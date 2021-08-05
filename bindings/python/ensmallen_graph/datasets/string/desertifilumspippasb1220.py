@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesertifilumSpIppasB1220.
+This file offers the methods to automatically retrieve the graph Desertifilum sp. IPPAS B-1220.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesertifilumSpIppasB1220(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesertifilumSpIppasB1220 graph.
+    """Return new instance of the Desertifilum sp. IPPAS B-1220 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesertifilumSpIppasB1220(
 
     Returns
     -----------------------
-    Instace of DesertifilumSpIppasB1220 graph.
+    Instace of Desertifilum sp. IPPAS B-1220 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParacoccusVersutus.
+This file offers the methods to automatically retrieve the graph Paracoccus versutus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParacoccusVersutus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParacoccusVersutus graph.
+    """Return new instance of the Paracoccus versutus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParacoccusVersutus(
 
     Returns
     -----------------------
-    Instace of ParacoccusVersutus graph.
+    Instace of Paracoccus versutus graph.
 
 	References
 	---------------------

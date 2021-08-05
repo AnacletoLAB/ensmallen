@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidimicrobiiaBacteriumRedseaS09B7.
+This file offers the methods to automatically retrieve the graph Acidimicrobiia bacterium REDSEA-S09_B7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidimicrobiiaBacteriumRedseaS09B7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidimicrobiiaBacteriumRedseaS09B7 graph.
+    """Return new instance of the Acidimicrobiia bacterium REDSEA-S09_B7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidimicrobiiaBacteriumRedseaS09B7(
 
     Returns
     -----------------------
-    Instace of AcidimicrobiiaBacteriumRedseaS09B7 graph.
+    Instace of Acidimicrobiia bacterium REDSEA-S09_B7 graph.
 
 	References
 	---------------------

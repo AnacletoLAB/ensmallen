@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasCellaseaDsm20118.
+This file offers the methods to automatically retrieve the graph Cellulomonas cellasea DSM 20118.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasCellaseaDsm20118(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasCellaseaDsm20118 graph.
+    """Return new instance of the Cellulomonas cellasea DSM 20118 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasCellaseaDsm20118(
 
     Returns
     -----------------------
-    Instace of CellulomonasCellaseaDsm20118 graph.
+    Instace of Cellulomonas cellasea DSM 20118 graph.
 
 	References
 	---------------------

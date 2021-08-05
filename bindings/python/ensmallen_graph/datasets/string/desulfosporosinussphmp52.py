@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfosporosinusSpHmp52.
+This file offers the methods to automatically retrieve the graph Desulfosporosinus sp. HMP52.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfosporosinusSpHmp52(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfosporosinusSpHmp52 graph.
+    """Return new instance of the Desulfosporosinus sp. HMP52 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfosporosinusSpHmp52(
 
     Returns
     -----------------------
-    Instace of DesulfosporosinusSpHmp52 graph.
+    Instace of Desulfosporosinus sp. HMP52 graph.
 
 	References
 	---------------------

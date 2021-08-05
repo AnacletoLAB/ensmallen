@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloramatorQuimbayensis.
+This file offers the methods to automatically retrieve the graph Caloramator quimbayensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloramatorQuimbayensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloramatorQuimbayensis graph.
+    """Return new instance of the Caloramator quimbayensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaloramatorQuimbayensis(
 
     Returns
     -----------------------
-    Instace of CaloramatorQuimbayensis graph.
+    Instace of Caloramator quimbayensis graph.
 
 	References
 	---------------------

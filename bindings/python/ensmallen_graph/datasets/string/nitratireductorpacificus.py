@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratireductorPacificus.
+This file offers the methods to automatically retrieve the graph Nitratireductor pacificus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratireductorPacificus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratireductorPacificus graph.
+    """Return new instance of the Nitratireductor pacificus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitratireductorPacificus(
 
     Returns
     -----------------------
-    Instace of NitratireductorPacificus graph.
+    Instace of Nitratireductor pacificus graph.
 
 	References
 	---------------------

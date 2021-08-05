@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EcheneisNaucrates.
+This file offers the methods to automatically retrieve the graph Echeneis naucrates.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EcheneisNaucrates(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EcheneisNaucrates graph.
+    """Return new instance of the Echeneis naucrates graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EcheneisNaucrates(
 
     Returns
     -----------------------
-    Instace of EcheneisNaucrates graph.
+    Instace of Echeneis naucrates graph.
 
 	References
 	---------------------

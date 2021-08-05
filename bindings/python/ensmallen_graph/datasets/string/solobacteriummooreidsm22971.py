@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolobacteriumMooreiDsm22971.
+This file offers the methods to automatically retrieve the graph Solobacterium moorei DSM22971.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolobacteriumMooreiDsm22971(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolobacteriumMooreiDsm22971 graph.
+    """Return new instance of the Solobacterium moorei DSM22971 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolobacteriumMooreiDsm22971(
 
     Returns
     -----------------------
-    Instace of SolobacteriumMooreiDsm22971 graph.
+    Instace of Solobacterium moorei DSM22971 graph.
 
 	References
 	---------------------

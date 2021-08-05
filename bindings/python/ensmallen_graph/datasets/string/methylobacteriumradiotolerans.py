@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumRadiotolerans.
+This file offers the methods to automatically retrieve the graph Methylobacterium radiotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumRadiotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumRadiotolerans graph.
+    """Return new instance of the Methylobacterium radiotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylobacteriumRadiotolerans(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumRadiotolerans graph.
+    Instace of Methylobacterium radiotolerans graph.
 
 	References
 	---------------------

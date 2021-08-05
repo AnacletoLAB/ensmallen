@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOdoratitofuiDsm19909Jcm15043.
+This file offers the methods to automatically retrieve the graph Lactobacillus odoratitofui DSM 19909 JCM 15043.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusOdoratitofuiDsm19909Jcm15043(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOdoratitofuiDsm19909Jcm15043 graph.
+    """Return new instance of the Lactobacillus odoratitofui DSM 19909 JCM 15043 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusOdoratitofuiDsm19909Jcm15043(
 
     Returns
     -----------------------
-    Instace of LactobacillusOdoratitofuiDsm19909Jcm15043 graph.
+    Instace of Lactobacillus odoratitofui DSM 19909 JCM 15043 graph.
 
 	References
 	---------------------

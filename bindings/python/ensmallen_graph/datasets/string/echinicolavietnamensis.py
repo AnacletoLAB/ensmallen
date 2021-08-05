@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EchinicolaVietnamensis.
+This file offers the methods to automatically retrieve the graph Echinicola vietnamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EchinicolaVietnamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EchinicolaVietnamensis graph.
+    """Return new instance of the Echinicola vietnamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EchinicolaVietnamensis(
 
     Returns
     -----------------------
-    Instace of EchinicolaVietnamensis graph.
+    Instace of Echinicola vietnamensis graph.
 
 	References
 	---------------------

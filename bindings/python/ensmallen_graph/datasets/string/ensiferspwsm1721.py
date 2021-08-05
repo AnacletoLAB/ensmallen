@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnsiferSpWsm1721.
+This file offers the methods to automatically retrieve the graph Ensifer sp. WSM1721.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnsiferSpWsm1721(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnsiferSpWsm1721 graph.
+    """Return new instance of the Ensifer sp. WSM1721 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnsiferSpWsm1721(
 
     Returns
     -----------------------
-    Instace of EnsiferSpWsm1721 graph.
+    Instace of Ensifer sp. WSM1721 graph.
 
 	References
 	---------------------

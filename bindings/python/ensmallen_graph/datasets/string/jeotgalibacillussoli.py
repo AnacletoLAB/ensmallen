@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JeotgalibacillusSoli.
+This file offers the methods to automatically retrieve the graph Jeotgalibacillus soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JeotgalibacillusSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JeotgalibacillusSoli graph.
+    """Return new instance of the Jeotgalibacillus soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JeotgalibacillusSoli(
 
     Returns
     -----------------------
-    Instace of JeotgalibacillusSoli graph.
+    Instace of Jeotgalibacillus soli graph.
 
 	References
 	---------------------

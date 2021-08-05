@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumJeanii.
+This file offers the methods to automatically retrieve the graph Photobacterium jeanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumJeanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumJeanii graph.
+    """Return new instance of the Photobacterium jeanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotobacteriumJeanii(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumJeanii graph.
+    Instace of Photobacterium jeanii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AzoarcusSpPa01.
+This file offers the methods to automatically retrieve the graph Azoarcus sp. PA01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AzoarcusSpPa01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AzoarcusSpPa01 graph.
+    """Return new instance of the Azoarcus sp. PA01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AzoarcusSpPa01(
 
     Returns
     -----------------------
-    Instace of AzoarcusSpPa01 graph.
+    Instace of Azoarcus sp. PA01 graph.
 
 	References
 	---------------------

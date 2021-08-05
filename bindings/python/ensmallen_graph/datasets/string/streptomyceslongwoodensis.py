@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesLongwoodensis.
+This file offers the methods to automatically retrieve the graph Streptomyces longwoodensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesLongwoodensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesLongwoodensis graph.
+    """Return new instance of the Streptomyces longwoodensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesLongwoodensis(
 
     Returns
     -----------------------
-    Instace of StreptomycesLongwoodensis graph.
+    Instace of Streptomyces longwoodensis graph.
 
 	References
 	---------------------

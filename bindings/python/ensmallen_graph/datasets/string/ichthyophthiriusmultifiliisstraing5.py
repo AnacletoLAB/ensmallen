@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IchthyophthiriusMultifiliisStrainG5.
+This file offers the methods to automatically retrieve the graph Ichthyophthirius multifiliis strain G5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IchthyophthiriusMultifiliisStrainG5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IchthyophthiriusMultifiliisStrainG5 graph.
+    """Return new instance of the Ichthyophthirius multifiliis strain G5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IchthyophthiriusMultifiliisStrainG5(
 
     Returns
     -----------------------
-    Instace of IchthyophthiriusMultifiliisStrainG5 graph.
+    Instace of Ichthyophthirius multifiliis strain G5 graph.
 
 	References
 	---------------------

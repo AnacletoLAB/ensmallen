@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PediococcusAcidilacticiDsm20284.
+This file offers the methods to automatically retrieve the graph Pediococcus acidilactici DSM20284.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PediococcusAcidilacticiDsm20284(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PediococcusAcidilacticiDsm20284 graph.
+    """Return new instance of the Pediococcus acidilactici DSM20284 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PediococcusAcidilacticiDsm20284(
 
     Returns
     -----------------------
-    Instace of PediococcusAcidilacticiDsm20284 graph.
+    Instace of Pediococcus acidilactici DSM20284 graph.
 
 	References
 	---------------------

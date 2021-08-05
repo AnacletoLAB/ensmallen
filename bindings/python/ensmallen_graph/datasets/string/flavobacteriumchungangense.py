@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumChungangense.
+This file offers the methods to automatically retrieve the graph Flavobacterium chungangense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumChungangense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumChungangense graph.
+    """Return new instance of the Flavobacterium chungangense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumChungangense(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumChungangense graph.
+    Instace of Flavobacterium chungangense graph.
 
 	References
 	---------------------

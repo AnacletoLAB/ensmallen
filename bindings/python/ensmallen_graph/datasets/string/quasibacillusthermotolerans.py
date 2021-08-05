@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph QuasibacillusThermotolerans.
+This file offers the methods to automatically retrieve the graph Quasibacillus thermotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def QuasibacillusThermotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the QuasibacillusThermotolerans graph.
+    """Return new instance of the Quasibacillus thermotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def QuasibacillusThermotolerans(
 
     Returns
     -----------------------
-    Instace of QuasibacillusThermotolerans graph.
+    Instace of Quasibacillus thermotolerans graph.
 
 	References
 	---------------------

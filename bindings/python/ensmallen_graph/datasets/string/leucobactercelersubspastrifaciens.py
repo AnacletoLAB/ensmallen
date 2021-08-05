@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterCelerSubspAstrifaciens.
+This file offers the methods to automatically retrieve the graph Leucobacter celer subsp. astrifaciens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterCelerSubspAstrifaciens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterCelerSubspAstrifaciens graph.
+    """Return new instance of the Leucobacter celer subsp. astrifaciens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeucobacterCelerSubspAstrifaciens(
 
     Returns
     -----------------------
-    Instace of LeucobacterCelerSubspAstrifaciens graph.
+    Instace of Leucobacter celer subsp. astrifaciens graph.
 
 	References
 	---------------------

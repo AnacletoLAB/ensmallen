@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpJl475.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. JL475.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpJl475(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpJl475 graph.
+    """Return new instance of the Erythrobacter sp. JL475 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErythrobacterSpJl475(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpJl475 graph.
+    Instace of Erythrobacter sp. JL475 graph.
 
 	References
 	---------------------

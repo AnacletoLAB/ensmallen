@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobaculumMobile.
+This file offers the methods to automatically retrieve the graph Anaerobaculum mobile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobaculumMobile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobaculumMobile graph.
+    """Return new instance of the Anaerobaculum mobile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerobaculumMobile(
 
     Returns
     -----------------------
-    Instace of AnaerobaculumMobile graph.
+    Instace of Anaerobaculum mobile graph.
 
 	References
 	---------------------

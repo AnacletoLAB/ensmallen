@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PropionibacteriumAcnesSk182bjcvi.
+This file offers the methods to automatically retrieve the graph Propionibacterium acnes SK182BJCVI.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PropionibacteriumAcnesSk182bjcvi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PropionibacteriumAcnesSk182bjcvi graph.
+    """Return new instance of the Propionibacterium acnes SK182BJCVI graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PropionibacteriumAcnesSk182bjcvi(
 
     Returns
     -----------------------
-    Instace of PropionibacteriumAcnesSk182bjcvi graph.
+    Instace of Propionibacterium acnes SK182BJCVI graph.
 
 	References
 	---------------------

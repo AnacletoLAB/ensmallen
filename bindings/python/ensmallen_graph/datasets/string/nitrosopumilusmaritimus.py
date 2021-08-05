@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosopumilusMaritimus.
+This file offers the methods to automatically retrieve the graph Nitrosopumilus maritimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosopumilusMaritimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosopumilusMaritimus graph.
+    """Return new instance of the Nitrosopumilus maritimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NitrosopumilusMaritimus(
 
     Returns
     -----------------------
-    Instace of NitrosopumilusMaritimus graph.
+    Instace of Nitrosopumilus maritimus graph.
 
 	References
 	---------------------

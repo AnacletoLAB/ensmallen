@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpongiibacterSpImcc21906.
+This file offers the methods to automatically retrieve the graph Spongiibacter sp. IMCC21906.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpongiibacterSpImcc21906(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpongiibacterSpImcc21906 graph.
+    """Return new instance of the Spongiibacter sp. IMCC21906 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpongiibacterSpImcc21906(
 
     Returns
     -----------------------
-    Instace of SpongiibacterSpImcc21906 graph.
+    Instace of Spongiibacter sp. IMCC21906 graph.
 
 	References
 	---------------------

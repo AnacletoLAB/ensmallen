@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusDonghaensis.
+This file offers the methods to automatically retrieve the graph Planococcus donghaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusDonghaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusDonghaensis graph.
+    """Return new instance of the Planococcus donghaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanococcusDonghaensis(
 
     Returns
     -----------------------
-    Instace of PlanococcusDonghaensis graph.
+    Instace of Planococcus donghaensis graph.
 
 	References
 	---------------------

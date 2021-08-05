@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumGwd23219.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium GWD2_32_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumGwd23219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumGwd23219 graph.
+    """Return new instance of the Clostridiales bacterium GWD2_32_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumGwd23219(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumGwd23219 graph.
+    Instace of Clostridiales bacterium GWD2_32_19 graph.
 
 	References
 	---------------------

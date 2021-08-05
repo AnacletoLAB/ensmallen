@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanomicrobiaArchaeonJdfr19.
+This file offers the methods to automatically retrieve the graph Methanomicrobia archaeon JdFR-19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanomicrobiaArchaeonJdfr19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanomicrobiaArchaeonJdfr19 graph.
+    """Return new instance of the Methanomicrobia archaeon JdFR-19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanomicrobiaArchaeonJdfr19(
 
     Returns
     -----------------------
-    Instace of MethanomicrobiaArchaeonJdfr19 graph.
+    Instace of Methanomicrobia archaeon JdFR-19 graph.
 
 	References
 	---------------------

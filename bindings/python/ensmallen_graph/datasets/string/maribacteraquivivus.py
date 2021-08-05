@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterAquivivus.
+This file offers the methods to automatically retrieve the graph Maribacter aquivivus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterAquivivus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterAquivivus graph.
+    """Return new instance of the Maribacter aquivivus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterAquivivus(
 
     Returns
     -----------------------
-    Instace of MaribacterAquivivus graph.
+    Instace of Maribacter aquivivus graph.
 
 	References
 	---------------------

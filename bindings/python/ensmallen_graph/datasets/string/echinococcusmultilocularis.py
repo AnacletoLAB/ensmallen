@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EchinococcusMultilocularis.
+This file offers the methods to automatically retrieve the graph Echinococcus multilocularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EchinococcusMultilocularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EchinococcusMultilocularis graph.
+    """Return new instance of the Echinococcus multilocularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EchinococcusMultilocularis(
 
     Returns
     -----------------------
-    Instace of EchinococcusMultilocularis graph.
+    Instace of Echinococcus multilocularis graph.
 
 	References
 	---------------------

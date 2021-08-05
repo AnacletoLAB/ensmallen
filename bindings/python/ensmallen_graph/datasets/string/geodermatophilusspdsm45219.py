@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusSpDsm45219.
+This file offers the methods to automatically retrieve the graph Geodermatophilus sp. DSM 45219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusSpDsm45219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusSpDsm45219 graph.
+    """Return new instance of the Geodermatophilus sp. DSM 45219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeodermatophilusSpDsm45219(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusSpDsm45219 graph.
+    Instace of Geodermatophilus sp. DSM 45219 graph.
 
 	References
 	---------------------

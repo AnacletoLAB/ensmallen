@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MixiaOsmundaeIam14324.
+This file offers the methods to automatically retrieve the graph Mixia osmundae IAM 14324.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MixiaOsmundaeIam14324(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MixiaOsmundaeIam14324 graph.
+    """Return new instance of the Mixia osmundae IAM 14324 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MixiaOsmundaeIam14324(
 
     Returns
     -----------------------
-    Instace of MixiaOsmundaeIam14324 graph.
+    Instace of Mixia osmundae IAM 14324 graph.
 
 	References
 	---------------------

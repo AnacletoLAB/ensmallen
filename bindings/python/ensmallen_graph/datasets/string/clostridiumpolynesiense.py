@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumPolynesiense.
+This file offers the methods to automatically retrieve the graph Clostridium polynesiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumPolynesiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumPolynesiense graph.
+    """Return new instance of the Clostridium polynesiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumPolynesiense(
 
     Returns
     -----------------------
-    Instace of ClostridiumPolynesiense graph.
+    Instace of Clostridium polynesiense graph.
 
 	References
 	---------------------

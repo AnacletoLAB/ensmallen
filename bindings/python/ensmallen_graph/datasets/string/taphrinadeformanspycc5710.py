@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TaphrinaDeformansPycc5710.
+This file offers the methods to automatically retrieve the graph Taphrina deformans PYCC 5710.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TaphrinaDeformansPycc5710(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TaphrinaDeformansPycc5710 graph.
+    """Return new instance of the Taphrina deformans PYCC 5710 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TaphrinaDeformansPycc5710(
 
     Returns
     -----------------------
-    Instace of TaphrinaDeformansPycc5710 graph.
+    Instace of Taphrina deformans PYCC 5710 graph.
 
 	References
 	---------------------

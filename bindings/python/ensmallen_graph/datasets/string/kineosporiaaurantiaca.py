@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KineosporiaAurantiaca.
+This file offers the methods to automatically retrieve the graph Kineosporia aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KineosporiaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KineosporiaAurantiaca graph.
+    """Return new instance of the Kineosporia aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KineosporiaAurantiaca(
 
     Returns
     -----------------------
-    Instace of KineosporiaAurantiaca graph.
+    Instace of Kineosporia aurantiaca graph.
 
 	References
 	---------------------

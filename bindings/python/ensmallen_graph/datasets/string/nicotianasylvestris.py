@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NicotianaSylvestris.
+This file offers the methods to automatically retrieve the graph Nicotiana sylvestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NicotianaSylvestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NicotianaSylvestris graph.
+    """Return new instance of the Nicotiana sylvestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NicotianaSylvestris(
 
     Returns
     -----------------------
-    Instace of NicotianaSylvestris graph.
+    Instace of Nicotiana sylvestris graph.
 
 	References
 	---------------------

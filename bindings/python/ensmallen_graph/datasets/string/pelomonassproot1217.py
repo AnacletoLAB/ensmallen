@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PelomonasSpRoot1217.
+This file offers the methods to automatically retrieve the graph Pelomonas sp. Root1217.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PelomonasSpRoot1217(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PelomonasSpRoot1217 graph.
+    """Return new instance of the Pelomonas sp. Root1217 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PelomonasSpRoot1217(
 
     Returns
     -----------------------
-    Instace of PelomonasSpRoot1217 graph.
+    Instace of Pelomonas sp. Root1217 graph.
 
 	References
 	---------------------

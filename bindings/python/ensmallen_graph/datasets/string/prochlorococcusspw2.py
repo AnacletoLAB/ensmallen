@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusSpW2.
+This file offers the methods to automatically retrieve the graph Prochlorococcus sp. W2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusSpW2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusSpW2 graph.
+    """Return new instance of the Prochlorococcus sp. W2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProchlorococcusSpW2(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusSpW2 graph.
+    Instace of Prochlorococcus sp. W2 graph.
 
 	References
 	---------------------

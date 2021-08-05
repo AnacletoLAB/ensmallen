@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSp11mf.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. 11MF.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSp11mf(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSp11mf graph.
+    """Return new instance of the Microbacterium sp. 11MF graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobacteriumSp11mf(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSp11mf graph.
+    Instace of Microbacterium sp. 11MF graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomycetesBacteriumGwf25010.
+This file offers the methods to automatically retrieve the graph Planctomycetes bacterium GWF2_50_10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomycetesBacteriumGwf25010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomycetesBacteriumGwf25010 graph.
+    """Return new instance of the Planctomycetes bacterium GWF2_50_10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanctomycetesBacteriumGwf25010(
 
     Returns
     -----------------------
-    Instace of PlanctomycetesBacteriumGwf25010 graph.
+    Instace of Planctomycetes bacterium GWF2_50_10 graph.
 
 	References
 	---------------------

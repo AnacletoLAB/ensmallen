@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ReichenbachiellaAgariperforans.
+This file offers the methods to automatically retrieve the graph Reichenbachiella agariperforans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ReichenbachiellaAgariperforans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ReichenbachiellaAgariperforans graph.
+    """Return new instance of the Reichenbachiella agariperforans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ReichenbachiellaAgariperforans(
 
     Returns
     -----------------------
-    Instace of ReichenbachiellaAgariperforans graph.
+    Instace of Reichenbachiella agariperforans graph.
 
 	References
 	---------------------

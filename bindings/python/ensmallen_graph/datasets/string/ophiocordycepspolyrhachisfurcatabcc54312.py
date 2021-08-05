@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OphiocordycepsPolyrhachisFurcataBcc54312.
+This file offers the methods to automatically retrieve the graph Ophiocordyceps polyrhachis-furcata BCC 54312.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OphiocordycepsPolyrhachisFurcataBcc54312(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OphiocordycepsPolyrhachisFurcataBcc54312 graph.
+    """Return new instance of the Ophiocordyceps polyrhachis-furcata BCC 54312 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OphiocordycepsPolyrhachisFurcataBcc54312(
 
     Returns
     -----------------------
-    Instace of OphiocordycepsPolyrhachisFurcataBcc54312 graph.
+    Instace of Ophiocordyceps polyrhachis-furcata BCC 54312 graph.
 
 	References
 	---------------------

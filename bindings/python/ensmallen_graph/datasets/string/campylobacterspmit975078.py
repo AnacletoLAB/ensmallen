@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterSpMit975078.
+This file offers the methods to automatically retrieve the graph Campylobacter sp. MIT975078.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterSpMit975078(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterSpMit975078 graph.
+    """Return new instance of the Campylobacter sp. MIT975078 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterSpMit975078(
 
     Returns
     -----------------------
-    Instace of CampylobacterSpMit975078 graph.
+    Instace of Campylobacter sp. MIT975078 graph.
 
 	References
 	---------------------

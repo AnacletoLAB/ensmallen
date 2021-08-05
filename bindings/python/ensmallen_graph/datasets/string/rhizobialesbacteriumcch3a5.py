@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobialesBacteriumCch3A5.
+This file offers the methods to automatically retrieve the graph Rhizobiales bacterium CCH3-A5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobialesBacteriumCch3A5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobialesBacteriumCch3A5 graph.
+    """Return new instance of the Rhizobiales bacterium CCH3-A5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobialesBacteriumCch3A5(
 
     Returns
     -----------------------
-    Instace of RhizobialesBacteriumCch3A5 graph.
+    Instace of Rhizobiales bacterium CCH3-A5 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MeliponaQuadrifasciata.
+This file offers the methods to automatically retrieve the graph Melipona quadrifasciata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MeliponaQuadrifasciata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MeliponaQuadrifasciata graph.
+    """Return new instance of the Melipona quadrifasciata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MeliponaQuadrifasciata(
 
     Returns
     -----------------------
-    Instace of MeliponaQuadrifasciata graph.
+    Instace of Melipona quadrifasciata graph.
 
 	References
 	---------------------

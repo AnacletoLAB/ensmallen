@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterPylori26695.
+This file offers the methods to automatically retrieve the graph Helicobacter pylori 26695.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterPylori26695(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterPylori26695 graph.
+    """Return new instance of the Helicobacter pylori 26695 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterPylori26695(
 
     Returns
     -----------------------
-    Instace of HelicobacterPylori26695 graph.
+    Instace of Helicobacter pylori 26695 graph.
 
 	References
 	---------------------

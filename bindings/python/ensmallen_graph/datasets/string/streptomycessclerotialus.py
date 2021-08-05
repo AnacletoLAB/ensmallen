@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSclerotialus.
+This file offers the methods to automatically retrieve the graph Streptomyces sclerotialus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSclerotialus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSclerotialus graph.
+    """Return new instance of the Streptomyces sclerotialus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSclerotialus(
 
     Returns
     -----------------------
-    Instace of StreptomycesSclerotialus graph.
+    Instace of Streptomyces sclerotialus graph.
 
 	References
 	---------------------

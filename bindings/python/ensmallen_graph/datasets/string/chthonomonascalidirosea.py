@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChthonomonasCalidirosea.
+This file offers the methods to automatically retrieve the graph Chthonomonas calidirosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChthonomonasCalidirosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChthonomonasCalidirosea graph.
+    """Return new instance of the Chthonomonas calidirosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChthonomonasCalidirosea(
 
     Returns
     -----------------------
-    Instace of ChthonomonasCalidirosea graph.
+    Instace of Chthonomonas calidirosea graph.
 
 	References
 	---------------------

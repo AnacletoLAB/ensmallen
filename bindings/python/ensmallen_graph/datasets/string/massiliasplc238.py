@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSpLc238.
+This file offers the methods to automatically retrieve the graph Massilia sp. LC238.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSpLc238(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSpLc238 graph.
+    """Return new instance of the Massilia sp. LC238 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MassiliaSpLc238(
 
     Returns
     -----------------------
-    Instace of MassiliaSpLc238 graph.
+    Instace of Massilia sp. LC238 graph.
 
 	References
 	---------------------

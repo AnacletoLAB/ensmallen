@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusMarmoris.
+This file offers the methods to automatically retrieve the graph Deinococcus marmoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusMarmoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusMarmoris graph.
+    """Return new instance of the Deinococcus marmoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DeinococcusMarmoris(
 
     Returns
     -----------------------
-    Instace of DeinococcusMarmoris graph.
+    Instace of Deinococcus marmoris graph.
 
 	References
 	---------------------

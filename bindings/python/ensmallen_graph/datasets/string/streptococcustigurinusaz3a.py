@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusTigurinusAz3a.
+This file offers the methods to automatically retrieve the graph Streptococcus tigurinus AZ3a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusTigurinusAz3a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusTigurinusAz3a graph.
+    """Return new instance of the Streptococcus tigurinus AZ3a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusTigurinusAz3a(
 
     Returns
     -----------------------
-    Instace of StreptococcusTigurinusAz3a graph.
+    Instace of Streptococcus tigurinus AZ3a graph.
 
 	References
 	---------------------

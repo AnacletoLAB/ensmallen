@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EhrlichiaChaffeensis.
+This file offers the methods to automatically retrieve the graph Ehrlichia chaffeensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EhrlichiaChaffeensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EhrlichiaChaffeensis graph.
+    """Return new instance of the Ehrlichia chaffeensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EhrlichiaChaffeensis(
 
     Returns
     -----------------------
-    Instace of EhrlichiaChaffeensis graph.
+    Instace of Ehrlichia chaffeensis graph.
 
 	References
 	---------------------

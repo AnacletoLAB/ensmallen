@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaIntermedia.
+This file offers the methods to automatically retrieve the graph [Candida] intermedia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaIntermedia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaIntermedia graph.
+    """Return new instance of the [Candida] intermedia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaIntermedia(
 
     Returns
     -----------------------
-    Instace of CandidaIntermedia graph.
+    Instace of [Candida] intermedia graph.
 
 	References
 	---------------------

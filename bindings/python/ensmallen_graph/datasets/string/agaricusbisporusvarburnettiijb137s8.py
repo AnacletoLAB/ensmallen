@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AgaricusBisporusVarBurnettiiJb137S8.
+This file offers the methods to automatically retrieve the graph Agaricus bisporus var. burnettii JB137-S8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AgaricusBisporusVarBurnettiiJb137S8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AgaricusBisporusVarBurnettiiJb137S8 graph.
+    """Return new instance of the Agaricus bisporus var. burnettii JB137-S8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AgaricusBisporusVarBurnettiiJb137S8(
 
     Returns
     -----------------------
-    Instace of AgaricusBisporusVarBurnettiiJb137S8 graph.
+    Instace of Agaricus bisporus var. burnettii JB137-S8 graph.
 
 	References
 	---------------------

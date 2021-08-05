@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BipolarisSorokiniana.
+This file offers the methods to automatically retrieve the graph Bipolaris sorokiniana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BipolarisSorokiniana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BipolarisSorokiniana graph.
+    """Return new instance of the Bipolaris sorokiniana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BipolarisSorokiniana(
 
     Returns
     -----------------------
-    Instace of BipolarisSorokiniana graph.
+    Instace of Bipolaris sorokiniana graph.
 
 	References
 	---------------------

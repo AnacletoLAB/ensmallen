@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioSpAlsr1.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio sp. ALSr1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioSpAlsr1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioSpAlsr1 graph.
+    """Return new instance of the Thioalkalivibrio sp. ALSr1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThioalkalivibrioSpAlsr1(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioSpAlsr1 graph.
+    Instace of Thioalkalivibrio sp. ALSr1 graph.
 
 	References
 	---------------------

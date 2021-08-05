@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusTianmuensis.
+This file offers the methods to automatically retrieve the graph Paenibacillus tianmuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusTianmuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusTianmuensis graph.
+    """Return new instance of the Paenibacillus tianmuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusTianmuensis(
 
     Returns
     -----------------------
-    Instace of PaenibacillusTianmuensis graph.
+    Instace of Paenibacillus tianmuensis graph.
 
 	References
 	---------------------

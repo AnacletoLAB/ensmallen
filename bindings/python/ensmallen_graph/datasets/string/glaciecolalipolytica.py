@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaLipolytica.
+This file offers the methods to automatically retrieve the graph Glaciecola lipolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaLipolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaLipolytica graph.
+    """Return new instance of the Glaciecola lipolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaLipolytica(
 
     Returns
     -----------------------
-    Instace of GlaciecolaLipolytica graph.
+    Instace of Glaciecola lipolytica graph.
 
 	References
 	---------------------

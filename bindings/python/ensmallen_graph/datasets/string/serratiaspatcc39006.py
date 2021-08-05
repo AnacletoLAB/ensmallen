@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaSpAtcc39006.
+This file offers the methods to automatically retrieve the graph Serratia sp. ATCC39006.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaSpAtcc39006(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaSpAtcc39006 graph.
+    """Return new instance of the Serratia sp. ATCC39006 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaSpAtcc39006(
 
     Returns
     -----------------------
-    Instace of SerratiaSpAtcc39006 graph.
+    Instace of Serratia sp. ATCC39006 graph.
 
 	References
 	---------------------

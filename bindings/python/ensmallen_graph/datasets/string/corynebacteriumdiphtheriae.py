@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumDiphtheriae.
+This file offers the methods to automatically retrieve the graph Corynebacterium diphtheriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumDiphtheriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumDiphtheriae graph.
+    """Return new instance of the Corynebacterium diphtheriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumDiphtheriae(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumDiphtheriae graph.
+    Instace of Corynebacterium diphtheriae graph.
 
 	References
 	---------------------

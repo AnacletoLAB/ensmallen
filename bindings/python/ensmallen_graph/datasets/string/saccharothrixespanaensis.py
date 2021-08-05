@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharothrixEspanaensis.
+This file offers the methods to automatically retrieve the graph Saccharothrix espanaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharothrixEspanaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharothrixEspanaensis graph.
+    """Return new instance of the Saccharothrix espanaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SaccharothrixEspanaensis(
 
     Returns
     -----------------------
-    Instace of SaccharothrixEspanaensis graph.
+    Instace of Saccharothrix espanaensis graph.
 
 	References
 	---------------------

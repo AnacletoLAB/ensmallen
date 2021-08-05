@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiomonasBhubaneswarensis.
+This file offers the methods to automatically retrieve the graph Thiomonas bhubaneswarensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiomonasBhubaneswarensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiomonasBhubaneswarensis graph.
+    """Return new instance of the Thiomonas bhubaneswarensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThiomonasBhubaneswarensis(
 
     Returns
     -----------------------
-    Instace of ThiomonasBhubaneswarensis graph.
+    Instace of Thiomonas bhubaneswarensis graph.
 
 	References
 	---------------------

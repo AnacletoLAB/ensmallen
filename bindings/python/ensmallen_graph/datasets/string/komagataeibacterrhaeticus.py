@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KomagataeibacterRhaeticus.
+This file offers the methods to automatically retrieve the graph Komagataeibacter rhaeticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KomagataeibacterRhaeticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KomagataeibacterRhaeticus graph.
+    """Return new instance of the Komagataeibacter rhaeticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KomagataeibacterRhaeticus(
 
     Returns
     -----------------------
-    Instace of KomagataeibacterRhaeticus graph.
+    Instace of Komagataeibacter rhaeticus graph.
 
 	References
 	---------------------

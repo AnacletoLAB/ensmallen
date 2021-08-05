@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaceaeBacteriumKa00182.
+This file offers the methods to automatically retrieve the graph Veillonellaceae bacterium KA00182.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaceaeBacteriumKa00182(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaceaeBacteriumKa00182 graph.
+    """Return new instance of the Veillonellaceae bacterium KA00182 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaceaeBacteriumKa00182(
 
     Returns
     -----------------------
-    Instace of VeillonellaceaeBacteriumKa00182 graph.
+    Instace of Veillonellaceae bacterium KA00182 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastococcusMassiliensis.
+This file offers the methods to automatically retrieve the graph Blastococcus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastococcusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastococcusMassiliensis graph.
+    """Return new instance of the Blastococcus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlastococcusMassiliensis(
 
     Returns
     -----------------------
-    Instace of BlastococcusMassiliensis graph.
+    Instace of Blastococcus massiliensis graph.
 
 	References
 	---------------------

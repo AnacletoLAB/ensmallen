@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeucobacterSpPh1c.
+This file offers the methods to automatically retrieve the graph Leucobacter sp. PH1c.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeucobacterSpPh1c(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeucobacterSpPh1c graph.
+    """Return new instance of the Leucobacter sp. PH1c graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeucobacterSpPh1c(
 
     Returns
     -----------------------
-    Instace of LeucobacterSpPh1c graph.
+    Instace of Leucobacter sp. PH1c graph.
 
 	References
 	---------------------

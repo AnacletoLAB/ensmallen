@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpHzm.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. HZM.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpHzm(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpHzm graph.
+    """Return new instance of the Cellulomonas sp. HZM graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasSpHzm(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpHzm graph.
+    Instace of Cellulomonas sp. HZM graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusClavatusNrrl1.
+This file offers the methods to automatically retrieve the graph Aspergillus clavatus NRRL 1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusClavatusNrrl1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusClavatusNrrl1 graph.
+    """Return new instance of the Aspergillus clavatus NRRL 1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusClavatusNrrl1(
 
     Returns
     -----------------------
-    Instace of AspergillusClavatusNrrl1 graph.
+    Instace of Aspergillus clavatus NRRL 1 graph.
 
 	References
 	---------------------

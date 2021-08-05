@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachymonasDenitrificansDsm15123.
+This file offers the methods to automatically retrieve the graph Brachymonas denitrificans DSM 15123.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachymonasDenitrificansDsm15123(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachymonasDenitrificansDsm15123 graph.
+    """Return new instance of the Brachymonas denitrificans DSM 15123 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrachymonasDenitrificansDsm15123(
 
     Returns
     -----------------------
-    Instace of BrachymonasDenitrificansDsm15123 graph.
+    Instace of Brachymonas denitrificans DSM 15123 graph.
 
 	References
 	---------------------

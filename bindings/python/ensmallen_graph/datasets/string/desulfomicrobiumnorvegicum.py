@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfomicrobiumNorvegicum.
+This file offers the methods to automatically retrieve the graph Desulfomicrobium norvegicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfomicrobiumNorvegicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfomicrobiumNorvegicum graph.
+    """Return new instance of the Desulfomicrobium norvegicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfomicrobiumNorvegicum(
 
     Returns
     -----------------------
-    Instace of DesulfomicrobiumNorvegicum graph.
+    Instace of Desulfomicrobium norvegicum graph.
 
 	References
 	---------------------

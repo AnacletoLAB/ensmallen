@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisBalhimycina.
+This file offers the methods to automatically retrieve the graph Amycolatopsis balhimycina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisBalhimycina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisBalhimycina graph.
+    """Return new instance of the Amycolatopsis balhimycina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisBalhimycina(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisBalhimycina graph.
+    Instace of Amycolatopsis balhimycina graph.
 
 	References
 	---------------------

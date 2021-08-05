@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaNitratireducens.
+This file offers the methods to automatically retrieve the graph Glaciecola nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaNitratireducens graph.
+    """Return new instance of the Glaciecola nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaNitratireducens(
 
     Returns
     -----------------------
-    Instace of GlaciecolaNitratireducens graph.
+    Instace of Glaciecola nitratireducens graph.
 
 	References
 	---------------------

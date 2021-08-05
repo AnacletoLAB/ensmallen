@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrobaculumArsenaticumDsm13514.
+This file offers the methods to automatically retrieve the graph Pyrobaculum arsenaticum DSM 13514.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrobaculumArsenaticumDsm13514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrobaculumArsenaticumDsm13514 graph.
+    """Return new instance of the Pyrobaculum arsenaticum DSM 13514 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrobaculumArsenaticumDsm13514(
 
     Returns
     -----------------------
-    Instace of PyrobaculumArsenaticumDsm13514 graph.
+    Instace of Pyrobaculum arsenaticum DSM 13514 graph.
 
 	References
 	---------------------

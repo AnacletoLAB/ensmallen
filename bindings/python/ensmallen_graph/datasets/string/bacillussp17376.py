@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSp17376.
+This file offers the methods to automatically retrieve the graph Bacillus sp. 17376.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSp17376(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSp17376 graph.
+    """Return new instance of the Bacillus sp. 17376 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSp17376(
 
     Returns
     -----------------------
-    Instace of BacillusSp17376 graph.
+    Instace of Bacillus sp. 17376 graph.
 
 	References
 	---------------------

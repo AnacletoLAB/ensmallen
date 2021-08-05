@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitratiruptorTergarcusDsm16512.
+This file offers the methods to automatically retrieve the graph Nitratiruptor tergarcus DSM 16512.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitratiruptorTergarcusDsm16512(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitratiruptorTergarcusDsm16512 graph.
+    """Return new instance of the Nitratiruptor tergarcus DSM 16512 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitratiruptorTergarcusDsm16512(
 
     Returns
     -----------------------
-    Instace of NitratiruptorTergarcusDsm16512 graph.
+    Instace of Nitratiruptor tergarcus DSM 16512 graph.
 
 	References
 	---------------------

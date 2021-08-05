@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ValsaMaliVarPyri.
+This file offers the methods to automatically retrieve the graph Valsa mali var. pyri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ValsaMaliVarPyri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ValsaMaliVarPyri graph.
+    """Return new instance of the Valsa mali var. pyri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ValsaMaliVarPyri(
 
     Returns
     -----------------------
-    Instace of ValsaMaliVarPyri graph.
+    Instace of Valsa mali var. pyri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KluyveraAscorbata.
+This file offers the methods to automatically retrieve the graph Kluyvera ascorbata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KluyveraAscorbata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KluyveraAscorbata graph.
+    """Return new instance of the Kluyvera ascorbata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KluyveraAscorbata(
 
     Returns
     -----------------------
-    Instace of KluyveraAscorbata graph.
+    Instace of Kluyvera ascorbata graph.
 
 	References
 	---------------------

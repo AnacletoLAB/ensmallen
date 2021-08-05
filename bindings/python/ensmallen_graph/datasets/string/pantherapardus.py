@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantheraPardus.
+This file offers the methods to automatically retrieve the graph Panthera pardus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantheraPardus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantheraPardus graph.
+    """Return new instance of the Panthera pardus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantheraPardus(
 
     Returns
     -----------------------
-    Instace of PantheraPardus graph.
+    Instace of Panthera pardus graph.
 
 	References
 	---------------------

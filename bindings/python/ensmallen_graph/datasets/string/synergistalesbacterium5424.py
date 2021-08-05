@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynergistalesBacterium5424.
+This file offers the methods to automatically retrieve the graph Synergistales bacterium 54_24.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynergistalesBacterium5424(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynergistalesBacterium5424 graph.
+    """Return new instance of the Synergistales bacterium 54_24 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynergistalesBacterium5424(
 
     Returns
     -----------------------
-    Instace of SynergistalesBacterium5424 graph.
+    Instace of Synergistales bacterium 54_24 graph.
 
 	References
 	---------------------

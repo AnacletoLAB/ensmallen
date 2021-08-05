@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaPekkanenii.
+This file offers the methods to automatically retrieve the graph Yersinia pekkanenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaPekkanenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaPekkanenii graph.
+    """Return new instance of the Yersinia pekkanenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YersiniaPekkanenii(
 
     Returns
     -----------------------
-    Instace of YersiniaPekkanenii graph.
+    Instace of Yersinia pekkanenii graph.
 
 	References
 	---------------------

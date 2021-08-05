@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrosomonasMobilis.
+This file offers the methods to automatically retrieve the graph Nitrosomonas mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrosomonasMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrosomonasMobilis graph.
+    """Return new instance of the Nitrosomonas mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrosomonasMobilis(
 
     Returns
     -----------------------
-    Instace of NitrosomonasMobilis graph.
+    Instace of Nitrosomonas mobilis graph.
 
 	References
 	---------------------

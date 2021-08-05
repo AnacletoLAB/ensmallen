@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnobacteriumJeotgali.
+This file offers the methods to automatically retrieve the graph Carnobacterium jeotgali.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnobacteriumJeotgali(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnobacteriumJeotgali graph.
+    """Return new instance of the Carnobacterium jeotgali graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CarnobacteriumJeotgali(
 
     Returns
     -----------------------
-    Instace of CarnobacteriumJeotgali graph.
+    Instace of Carnobacterium jeotgali graph.
 
 	References
 	---------------------

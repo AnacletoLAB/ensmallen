@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DuganellaSpRoot1480d1.
+This file offers the methods to automatically retrieve the graph Duganella sp. Root1480D1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DuganellaSpRoot1480d1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DuganellaSpRoot1480d1 graph.
+    """Return new instance of the Duganella sp. Root1480D1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DuganellaSpRoot1480d1(
 
     Returns
     -----------------------
-    Instace of DuganellaSpRoot1480d1 graph.
+    Instace of Duganella sp. Root1480D1 graph.
 
 	References
 	---------------------

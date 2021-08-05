@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusKisonensisF0435.
+This file offers the methods to automatically retrieve the graph Lactobacillus kisonensis F0435.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusKisonensisF0435(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusKisonensisF0435 graph.
+    """Return new instance of the Lactobacillus kisonensis F0435 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusKisonensisF0435(
 
     Returns
     -----------------------
-    Instace of LactobacillusKisonensisF0435 graph.
+    Instace of Lactobacillus kisonensis F0435 graph.
 
 	References
 	---------------------

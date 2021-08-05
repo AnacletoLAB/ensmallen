@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloceanibacterStevinii.
+This file offers the methods to automatically retrieve the graph Methyloceanibacter stevinii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloceanibacterStevinii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloceanibacterStevinii graph.
+    """Return new instance of the Methyloceanibacter stevinii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloceanibacterStevinii(
 
     Returns
     -----------------------
-    Instace of MethyloceanibacterStevinii graph.
+    Instace of Methyloceanibacter stevinii graph.
 
 	References
 	---------------------

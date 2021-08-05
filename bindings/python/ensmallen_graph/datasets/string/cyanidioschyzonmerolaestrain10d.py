@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanidioschyzonMerolaeStrain10d.
+This file offers the methods to automatically retrieve the graph Cyanidioschyzon merolae strain 10D.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanidioschyzonMerolaeStrain10d(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanidioschyzonMerolaeStrain10d graph.
+    """Return new instance of the Cyanidioschyzon merolae strain 10D graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyanidioschyzonMerolaeStrain10d(
 
     Returns
     -----------------------
-    Instace of CyanidioschyzonMerolaeStrain10d graph.
+    Instace of Cyanidioschyzon merolae strain 10D graph.
 
 	References
 	---------------------

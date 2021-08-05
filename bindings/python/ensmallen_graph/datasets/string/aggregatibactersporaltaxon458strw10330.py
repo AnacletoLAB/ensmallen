@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AggregatibacterSpOralTaxon458StrW10330.
+This file offers the methods to automatically retrieve the graph Aggregatibacter sp. oral taxon 458 str. W10330.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AggregatibacterSpOralTaxon458StrW10330(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AggregatibacterSpOralTaxon458StrW10330 graph.
+    """Return new instance of the Aggregatibacter sp. oral taxon 458 str. W10330 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AggregatibacterSpOralTaxon458StrW10330(
 
     Returns
     -----------------------
-    Instace of AggregatibacterSpOralTaxon458StrW10330 graph.
+    Instace of Aggregatibacter sp. oral taxon 458 str. W10330 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterHominis.
+This file offers the methods to automatically retrieve the graph Campylobacter hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterHominis graph.
+    """Return new instance of the Campylobacter hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterHominis(
 
     Returns
     -----------------------
-    Instace of CampylobacterHominis graph.
+    Instace of Campylobacter hominis graph.
 
 	References
 	---------------------

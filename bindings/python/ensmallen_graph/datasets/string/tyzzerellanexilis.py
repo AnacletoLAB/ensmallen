@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TyzzerellaNexilis.
+This file offers the methods to automatically retrieve the graph Tyzzerella nexilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TyzzerellaNexilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TyzzerellaNexilis graph.
+    """Return new instance of the Tyzzerella nexilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TyzzerellaNexilis(
 
     Returns
     -----------------------
-    Instace of TyzzerellaNexilis graph.
+    Instace of Tyzzerella nexilis graph.
 
 	References
 	---------------------

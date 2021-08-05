@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldimonasManganoxidans.
+This file offers the methods to automatically retrieve the graph Caldimonas manganoxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldimonasManganoxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldimonasManganoxidans graph.
+    """Return new instance of the Caldimonas manganoxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaldimonasManganoxidans(
 
     Returns
     -----------------------
-    Instace of CaldimonasManganoxidans graph.
+    Instace of Caldimonas manganoxidans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumMedpeSwsndG1.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium MedPE-SWsnd-G1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumMedpeSwsndG1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumMedpeSwsndG1 graph.
+    """Return new instance of the Bacteroidetes bacterium MedPE-SWsnd-G1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumMedpeSwsndG1(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumMedpeSwsndG1 graph.
+    Instace of Bacteroidetes bacterium MedPE-SWsnd-G1 graph.
 
 	References
 	---------------------

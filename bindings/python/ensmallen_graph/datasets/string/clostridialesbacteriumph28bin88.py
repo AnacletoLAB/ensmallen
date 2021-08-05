@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumPh28Bin88.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium PH28_bin88.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumPh28Bin88(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumPh28Bin88 graph.
+    """Return new instance of the Clostridiales bacterium PH28_bin88 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumPh28Bin88(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumPh28Bin88 graph.
+    Instace of Clostridiales bacterium PH28_bin88 graph.
 
 	References
 	---------------------

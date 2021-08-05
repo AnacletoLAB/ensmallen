@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelcococcusSueciensis.
+This file offers the methods to automatically retrieve the graph Helcococcus sueciensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelcococcusSueciensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelcococcusSueciensis graph.
+    """Return new instance of the Helcococcus sueciensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelcococcusSueciensis(
 
     Returns
     -----------------------
-    Instace of HelcococcusSueciensis graph.
+    Instace of Helcococcus sueciensis graph.
 
 	References
 	---------------------

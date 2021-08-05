@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Epa.
+This file offers the methods to automatically retrieve the graph EPA.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Epa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Epa graph.
+    """Return new instance of the EPA graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Epa(
 
     Returns
     -----------------------
-    Instace of Epa graph.
+    Instace of EPA graph.
 
 	References
 	---------------------

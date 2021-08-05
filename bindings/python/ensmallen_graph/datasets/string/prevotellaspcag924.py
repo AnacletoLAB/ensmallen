@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaSpCag924.
+This file offers the methods to automatically retrieve the graph Prevotella sp. CAG:924.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaSpCag924(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaSpCag924 graph.
+    """Return new instance of the Prevotella sp. CAG:924 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PrevotellaSpCag924(
 
     Returns
     -----------------------
-    Instace of PrevotellaSpCag924 graph.
+    Instace of Prevotella sp. CAG:924 graph.
 
 	References
 	---------------------

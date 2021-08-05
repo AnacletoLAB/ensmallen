@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureimonasUreilytica.
+This file offers the methods to automatically retrieve the graph Aureimonas ureilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureimonasUreilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureimonasUreilytica graph.
+    """Return new instance of the Aureimonas ureilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AureimonasUreilytica(
 
     Returns
     -----------------------
-    Instace of AureimonasUreilytica graph.
+    Instace of Aureimonas ureilytica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinihabitansFlavidus.
+This file offers the methods to automatically retrieve the graph Salinihabitans flavidus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinihabitansFlavidus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinihabitansFlavidus graph.
+    """Return new instance of the Salinihabitans flavidus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinihabitansFlavidus(
 
     Returns
     -----------------------
-    Instace of SalinihabitansFlavidus graph.
+    Instace of Salinihabitans flavidus graph.
 
 	References
 	---------------------

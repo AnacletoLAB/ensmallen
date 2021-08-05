@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlsenellaUrininfantis.
+This file offers the methods to automatically retrieve the graph Olsenella urininfantis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlsenellaUrininfantis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlsenellaUrininfantis graph.
+    """Return new instance of the Olsenella urininfantis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OlsenellaUrininfantis(
 
     Returns
     -----------------------
-    Instace of OlsenellaUrininfantis graph.
+    Instace of Olsenella urininfantis graph.
 
 	References
 	---------------------

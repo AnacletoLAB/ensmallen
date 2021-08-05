@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusGallinarum.
+This file offers the methods to automatically retrieve the graph Enterococcus gallinarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusGallinarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusGallinarum graph.
+    """Return new instance of the Enterococcus gallinarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusGallinarum(
 
     Returns
     -----------------------
-    Instace of EnterococcusGallinarum graph.
+    Instace of Enterococcus gallinarum graph.
 
 	References
 	---------------------

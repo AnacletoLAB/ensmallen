@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodovulumSpMb263.
+This file offers the methods to automatically retrieve the graph Rhodovulum sp. MB263.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodovulumSpMb263(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodovulumSpMb263 graph.
+    """Return new instance of the Rhodovulum sp. MB263 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodovulumSpMb263(
 
     Returns
     -----------------------
-    Instace of RhodovulumSpMb263 graph.
+    Instace of Rhodovulum sp. MB263 graph.
 
 	References
 	---------------------

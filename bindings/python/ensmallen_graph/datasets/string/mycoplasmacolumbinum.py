@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaColumbinum.
+This file offers the methods to automatically retrieve the graph Mycoplasma columbinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaColumbinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaColumbinum graph.
+    """Return new instance of the Mycoplasma columbinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaColumbinum(
 
     Returns
     -----------------------
-    Instace of MycoplasmaColumbinum graph.
+    Instace of Mycoplasma columbinum graph.
 
 	References
 	---------------------

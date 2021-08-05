@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetallosphaeraHakonensisJcm8857Dsm7519.
+This file offers the methods to automatically retrieve the graph Metallosphaera hakonensis JCM 8857 DSM 7519.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetallosphaeraHakonensisJcm8857Dsm7519(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetallosphaeraHakonensisJcm8857Dsm7519 graph.
+    """Return new instance of the Metallosphaera hakonensis JCM 8857 DSM 7519 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetallosphaeraHakonensisJcm8857Dsm7519(
 
     Returns
     -----------------------
-    Instace of MetallosphaeraHakonensisJcm8857Dsm7519 graph.
+    Instace of Metallosphaera hakonensis JCM 8857 DSM 7519 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lesmis.
+This file offers the methods to automatically retrieve the graph lesmis.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lesmis(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lesmis graph.
+    """Return new instance of the lesmis graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lesmis(
 
     Returns
     -----------------------
-    Instace of Lesmis graph.
+    Instace of lesmis graph.
 
 	References
 	---------------------

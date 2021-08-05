@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumTofieldiae.
+This file offers the methods to automatically retrieve the graph Colletotrichum tofieldiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumTofieldiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumTofieldiae graph.
+    """Return new instance of the Colletotrichum tofieldiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumTofieldiae(
 
     Returns
     -----------------------
-    Instace of ColletotrichumTofieldiae graph.
+    Instace of Colletotrichum tofieldiae graph.
 
 	References
 	---------------------

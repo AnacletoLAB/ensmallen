@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumUkl133.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium UKL13-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumUkl133(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumUkl133 graph.
+    """Return new instance of the Bacteroidetes bacterium UKL13-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumUkl133(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumUkl133 graph.
+    Instace of Bacteroidetes bacterium UKL13-3 graph.
 
 	References
 	---------------------

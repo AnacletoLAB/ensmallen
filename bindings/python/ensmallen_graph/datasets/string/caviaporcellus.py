@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaviaPorcellus.
+This file offers the methods to automatically retrieve the graph Cavia porcellus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaviaPorcellus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaviaPorcellus graph.
+    """Return new instance of the Cavia porcellus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CaviaPorcellus(
 
     Returns
     -----------------------
-    Instace of CaviaPorcellus graph.
+    Instace of Cavia porcellus graph.
 
 	References
 	---------------------

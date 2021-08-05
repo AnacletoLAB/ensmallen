@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaryophanonTenue.
+This file offers the methods to automatically retrieve the graph Caryophanon tenue.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaryophanonTenue(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaryophanonTenue graph.
+    """Return new instance of the Caryophanon tenue graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaryophanonTenue(
 
     Returns
     -----------------------
-    Instace of CaryophanonTenue graph.
+    Instace of Caryophanon tenue graph.
 
 	References
 	---------------------

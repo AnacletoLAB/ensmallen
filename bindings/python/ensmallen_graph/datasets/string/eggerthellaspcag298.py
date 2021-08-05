@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EggerthellaSpCag298.
+This file offers the methods to automatically retrieve the graph Eggerthella sp. CAG:298.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EggerthellaSpCag298(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EggerthellaSpCag298 graph.
+    """Return new instance of the Eggerthella sp. CAG:298 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EggerthellaSpCag298(
 
     Returns
     -----------------------
-    Instace of EggerthellaSpCag298 graph.
+    Instace of Eggerthella sp. CAG:298 graph.
 
 	References
 	---------------------

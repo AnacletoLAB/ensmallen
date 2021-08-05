@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudonocardiaAmmonioxydans.
+This file offers the methods to automatically retrieve the graph Pseudonocardia ammonioxydans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudonocardiaAmmonioxydans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudonocardiaAmmonioxydans graph.
+    """Return new instance of the Pseudonocardia ammonioxydans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudonocardiaAmmonioxydans(
 
     Returns
     -----------------------
-    Instace of PseudonocardiaAmmonioxydans graph.
+    Instace of Pseudonocardia ammonioxydans graph.
 
 	References
 	---------------------

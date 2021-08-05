@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FructobacillusDurionis.
+This file offers the methods to automatically retrieve the graph Fructobacillus durionis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FructobacillusDurionis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FructobacillusDurionis graph.
+    """Return new instance of the Fructobacillus durionis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FructobacillusDurionis(
 
     Returns
     -----------------------
-    Instace of FructobacillusDurionis graph.
+    Instace of Fructobacillus durionis graph.
 
 	References
 	---------------------

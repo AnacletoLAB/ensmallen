@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaProteobacteriumScgcAaa536K22.
+This file offers the methods to automatically retrieve the graph alpha proteobacterium SCGC AAA536-K22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaProteobacteriumScgcAaa536K22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaProteobacteriumScgcAaa536K22 graph.
+    """Return new instance of the alpha proteobacterium SCGC AAA536-K22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaProteobacteriumScgcAaa536K22(
 
     Returns
     -----------------------
-    Instace of AlphaProteobacteriumScgcAaa536K22 graph.
+    Instace of alpha proteobacterium SCGC AAA536-K22 graph.
 
 	References
 	---------------------

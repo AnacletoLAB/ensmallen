@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErinaceusEuropaeus.
+This file offers the methods to automatically retrieve the graph Erinaceus europaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErinaceusEuropaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErinaceusEuropaeus graph.
+    """Return new instance of the Erinaceus europaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErinaceusEuropaeus(
 
     Returns
     -----------------------
-    Instace of ErinaceusEuropaeus graph.
+    Instace of Erinaceus europaeus graph.
 
 	References
 	---------------------

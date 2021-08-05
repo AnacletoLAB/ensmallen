@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumJicamae.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium jicamae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumJicamae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumJicamae graph.
+    """Return new instance of the Bradyrhizobium jicamae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumJicamae(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumJicamae graph.
+    Instace of Bradyrhizobium jicamae graph.
 
 	References
 	---------------------

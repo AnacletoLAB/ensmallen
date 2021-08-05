@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DermacoccusNishinomiyaensis.
+This file offers the methods to automatically retrieve the graph Dermacoccus nishinomiyaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DermacoccusNishinomiyaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DermacoccusNishinomiyaensis graph.
+    """Return new instance of the Dermacoccus nishinomiyaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DermacoccusNishinomiyaensis(
 
     Returns
     -----------------------
-    Instace of DermacoccusNishinomiyaensis graph.
+    Instace of Dermacoccus nishinomiyaensis graph.
 
 	References
 	---------------------

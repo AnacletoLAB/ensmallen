@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFalkowbacteriaBacteriumGw2011Gwf24332.
+This file offers the methods to automatically retrieve the graph Candidatus Falkowbacteria bacterium GW2011_GWF2_43_32.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFalkowbacteriaBacteriumGw2011Gwf24332(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFalkowbacteriaBacteriumGw2011Gwf24332 graph.
+    """Return new instance of the Candidatus Falkowbacteria bacterium GW2011_GWF2_43_32 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFalkowbacteriaBacteriumGw2011Gwf24332(
 
     Returns
     -----------------------
-    Instace of CandidatusFalkowbacteriaBacteriumGw2011Gwf24332 graph.
+    Instace of Candidatus Falkowbacteria bacterium GW2011_GWF2_43_32 graph.
 
 	References
 	---------------------

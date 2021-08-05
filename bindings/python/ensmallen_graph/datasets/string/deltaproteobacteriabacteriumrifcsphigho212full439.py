@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeltaproteobacteriaBacteriumRifcsphigho212Full439.
+This file offers the methods to automatically retrieve the graph Deltaproteobacteria bacterium RIFCSPHIGHO2_12_FULL_43_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho212Full439(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeltaproteobacteriaBacteriumRifcsphigho212Full439 graph.
+    """Return new instance of the Deltaproteobacteria bacterium RIFCSPHIGHO2_12_FULL_43_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeltaproteobacteriaBacteriumRifcsphigho212Full439(
 
     Returns
     -----------------------
-    Instace of DeltaproteobacteriaBacteriumRifcsphigho212Full439 graph.
+    Instace of Deltaproteobacteria bacterium RIFCSPHIGHO2_12_FULL_43_9 graph.
 
 	References
 	---------------------

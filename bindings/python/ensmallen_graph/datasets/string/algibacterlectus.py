@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgibacterLectus.
+This file offers the methods to automatically retrieve the graph Algibacter lectus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgibacterLectus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgibacterLectus graph.
+    """Return new instance of the Algibacter lectus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgibacterLectus(
 
     Returns
     -----------------------
-    Instace of AlgibacterLectus graph.
+    Instace of Algibacter lectus graph.
 
 	References
 	---------------------

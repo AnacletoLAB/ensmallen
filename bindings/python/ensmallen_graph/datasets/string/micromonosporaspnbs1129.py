@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSpNbs1129.
+This file offers the methods to automatically retrieve the graph Micromonospora sp. NBS 11-29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSpNbs1129(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSpNbs1129 graph.
+    """Return new instance of the Micromonospora sp. NBS 11-29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSpNbs1129(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSpNbs1129 graph.
+    Instace of Micromonospora sp. NBS 11-29 graph.
 
 	References
 	---------------------

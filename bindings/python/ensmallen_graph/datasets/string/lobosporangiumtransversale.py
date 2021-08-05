@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LobosporangiumTransversale.
+This file offers the methods to automatically retrieve the graph Lobosporangium transversale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LobosporangiumTransversale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LobosporangiumTransversale graph.
+    """Return new instance of the Lobosporangium transversale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LobosporangiumTransversale(
 
     Returns
     -----------------------
-    Instace of LobosporangiumTransversale graph.
+    Instace of Lobosporangium transversale graph.
 
 	References
 	---------------------

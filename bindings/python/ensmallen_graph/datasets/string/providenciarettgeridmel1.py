@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProvidenciaRettgeriDmel1.
+This file offers the methods to automatically retrieve the graph Providencia rettgeri Dmel1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProvidenciaRettgeriDmel1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProvidenciaRettgeriDmel1 graph.
+    """Return new instance of the Providencia rettgeri Dmel1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProvidenciaRettgeriDmel1(
 
     Returns
     -----------------------
-    Instace of ProvidenciaRettgeriDmel1 graph.
+    Instace of Providencia rettgeri Dmel1 graph.
 
 	References
 	---------------------

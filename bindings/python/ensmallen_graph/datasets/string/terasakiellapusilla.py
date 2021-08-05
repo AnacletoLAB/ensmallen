@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerasakiellaPusilla.
+This file offers the methods to automatically retrieve the graph Terasakiella pusilla.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerasakiellaPusilla(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerasakiellaPusilla graph.
+    """Return new instance of the Terasakiella pusilla graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TerasakiellaPusilla(
 
     Returns
     -----------------------
-    Instace of TerasakiellaPusilla graph.
+    Instace of Terasakiella pusilla graph.
 
 	References
 	---------------------

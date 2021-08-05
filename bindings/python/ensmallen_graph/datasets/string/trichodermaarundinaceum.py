@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichodermaArundinaceum.
+This file offers the methods to automatically retrieve the graph Trichoderma arundinaceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichodermaArundinaceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichodermaArundinaceum graph.
+    """Return new instance of the Trichoderma arundinaceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrichodermaArundinaceum(
 
     Returns
     -----------------------
-    Instace of TrichodermaArundinaceum graph.
+    Instace of Trichoderma arundinaceum graph.
 
 	References
 	---------------------

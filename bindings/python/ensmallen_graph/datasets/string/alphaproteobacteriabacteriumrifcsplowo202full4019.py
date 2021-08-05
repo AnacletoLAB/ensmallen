@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlphaproteobacteriaBacteriumRifcsplowo202Full4019.
+This file offers the methods to automatically retrieve the graph Alphaproteobacteria bacterium RIFCSPLOWO2_02_FULL_40_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlphaproteobacteriaBacteriumRifcsplowo202Full4019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlphaproteobacteriaBacteriumRifcsplowo202Full4019 graph.
+    """Return new instance of the Alphaproteobacteria bacterium RIFCSPLOWO2_02_FULL_40_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlphaproteobacteriaBacteriumRifcsplowo202Full4019(
 
     Returns
     -----------------------
-    Instace of AlphaproteobacteriaBacteriumRifcsplowo202Full4019 graph.
+    Instace of Alphaproteobacteria bacterium RIFCSPLOWO2_02_FULL_40_19 graph.
 
 	References
 	---------------------

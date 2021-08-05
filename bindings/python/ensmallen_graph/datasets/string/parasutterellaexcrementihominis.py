@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParasutterellaExcrementihominis.
+This file offers the methods to automatically retrieve the graph Parasutterella excrementihominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParasutterellaExcrementihominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParasutterellaExcrementihominis graph.
+    """Return new instance of the Parasutterella excrementihominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ParasutterellaExcrementihominis(
 
     Returns
     -----------------------
-    Instace of ParasutterellaExcrementihominis graph.
+    Instace of Parasutterella excrementihominis graph.
 
 	References
 	---------------------

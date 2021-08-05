@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KazachstaniaAfricana.
+This file offers the methods to automatically retrieve the graph Kazachstania africana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KazachstaniaAfricana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KazachstaniaAfricana graph.
+    """Return new instance of the Kazachstania africana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KazachstaniaAfricana(
 
     Returns
     -----------------------
-    Instace of KazachstaniaAfricana graph.
+    Instace of Kazachstania africana graph.
 
 	References
 	---------------------

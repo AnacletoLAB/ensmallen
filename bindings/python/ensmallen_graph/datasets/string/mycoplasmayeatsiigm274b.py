@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaYeatsiiGm274b.
+This file offers the methods to automatically retrieve the graph Mycoplasma yeatsii GM274B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaYeatsiiGm274b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaYeatsiiGm274b graph.
+    """Return new instance of the Mycoplasma yeatsii GM274B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaYeatsiiGm274b(
 
     Returns
     -----------------------
-    Instace of MycoplasmaYeatsiiGm274b graph.
+    Instace of Mycoplasma yeatsii GM274B graph.
 
 	References
 	---------------------

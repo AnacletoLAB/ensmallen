@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraeBacteriumRifcsplowo202Full6214.
+This file offers the methods to automatically retrieve the graph Nitrospirae bacterium RIFCSPLOWO2_02_FULL_62_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraeBacteriumRifcsplowo202Full6214(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraeBacteriumRifcsplowo202Full6214 graph.
+    """Return new instance of the Nitrospirae bacterium RIFCSPLOWO2_02_FULL_62_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraeBacteriumRifcsplowo202Full6214(
 
     Returns
     -----------------------
-    Instace of NitrospiraeBacteriumRifcsplowo202Full6214 graph.
+    Instace of Nitrospirae bacterium RIFCSPLOWO2_02_FULL_62_14 graph.
 
 	References
 	---------------------

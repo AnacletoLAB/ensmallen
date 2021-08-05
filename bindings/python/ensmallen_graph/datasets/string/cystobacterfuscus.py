@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CystobacterFuscus.
+This file offers the methods to automatically retrieve the graph Cystobacter fuscus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CystobacterFuscus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CystobacterFuscus graph.
+    """Return new instance of the Cystobacter fuscus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CystobacterFuscus(
 
     Returns
     -----------------------
-    Instace of CystobacterFuscus graph.
+    Instace of Cystobacter fuscus graph.
 
 	References
 	---------------------

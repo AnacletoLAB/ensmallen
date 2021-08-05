@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylophagaAminisulfidivorans.
+This file offers the methods to automatically retrieve the graph Methylophaga aminisulfidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylophagaAminisulfidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylophagaAminisulfidivorans graph.
+    """Return new instance of the Methylophaga aminisulfidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylophagaAminisulfidivorans(
 
     Returns
     -----------------------
-    Instace of MethylophagaAminisulfidivorans graph.
+    Instace of Methylophaga aminisulfidivorans graph.
 
 	References
 	---------------------

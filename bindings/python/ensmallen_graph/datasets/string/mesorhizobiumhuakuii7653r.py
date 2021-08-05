@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumHuakuii7653r.
+This file offers the methods to automatically retrieve the graph Mesorhizobium huakuii 7653R.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumHuakuii7653r(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumHuakuii7653r graph.
+    """Return new instance of the Mesorhizobium huakuii 7653R graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumHuakuii7653r(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumHuakuii7653r graph.
+    Instace of Mesorhizobium huakuii 7653R graph.
 
 	References
 	---------------------

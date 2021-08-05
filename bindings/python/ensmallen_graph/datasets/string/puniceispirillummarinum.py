@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PuniceispirillumMarinum.
+This file offers the methods to automatically retrieve the graph Puniceispirillum marinum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PuniceispirillumMarinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PuniceispirillumMarinum graph.
+    """Return new instance of the Puniceispirillum marinum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PuniceispirillumMarinum(
 
     Returns
     -----------------------
-    Instace of PuniceispirillumMarinum graph.
+    Instace of Puniceispirillum marinum graph.
 
 	References
 	---------------------

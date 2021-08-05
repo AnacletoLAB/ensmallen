@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatenovulumAgarivoransYm01.
+This file offers the methods to automatically retrieve the graph Catenovulum agarivorans YM01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatenovulumAgarivoransYm01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatenovulumAgarivoransYm01 graph.
+    """Return new instance of the Catenovulum agarivorans YM01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CatenovulumAgarivoransYm01(
 
     Returns
     -----------------------
-    Instace of CatenovulumAgarivoransYm01 graph.
+    Instace of Catenovulum agarivorans YM01 graph.
 
 	References
 	---------------------

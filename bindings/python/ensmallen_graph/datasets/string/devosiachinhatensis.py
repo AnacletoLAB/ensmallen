@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DevosiaChinhatensis.
+This file offers the methods to automatically retrieve the graph Devosia chinhatensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DevosiaChinhatensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DevosiaChinhatensis graph.
+    """Return new instance of the Devosia chinhatensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DevosiaChinhatensis(
 
     Returns
     -----------------------
-    Instace of DevosiaChinhatensis graph.
+    Instace of Devosia chinhatensis graph.
 
 	References
 	---------------------

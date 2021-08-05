@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NakamurellaPanacisegetis.
+This file offers the methods to automatically retrieve the graph Nakamurella panacisegetis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NakamurellaPanacisegetis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NakamurellaPanacisegetis graph.
+    """Return new instance of the Nakamurella panacisegetis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NakamurellaPanacisegetis(
 
     Returns
     -----------------------
-    Instace of NakamurellaPanacisegetis graph.
+    Instace of Nakamurella panacisegetis graph.
 
 	References
 	---------------------

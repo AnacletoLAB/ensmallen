@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata.
+This file offers the methods to automatically retrieve the graph Baumannia cicadellinicola str. Hc (Homalodisca coagulata).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata graph.
+    """Return new instance of the Baumannia cicadellinicola str. Hc (Homalodisca coagulata) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata(
 
     Returns
     -----------------------
-    Instace of BaumanniaCicadellinicolaStrHcHomalodiscaCoagulata graph.
+    Instace of Baumannia cicadellinicola str. Hc (Homalodisca coagulata) graph.
 
 	References
 	---------------------

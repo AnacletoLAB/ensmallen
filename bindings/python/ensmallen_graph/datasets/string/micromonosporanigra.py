@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaNigra.
+This file offers the methods to automatically retrieve the graph Micromonospora nigra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaNigra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaNigra graph.
+    """Return new instance of the Micromonospora nigra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaNigra(
 
     Returns
     -----------------------
-    Instace of MicromonosporaNigra graph.
+    Instace of Micromonospora nigra graph.
 
 	References
 	---------------------

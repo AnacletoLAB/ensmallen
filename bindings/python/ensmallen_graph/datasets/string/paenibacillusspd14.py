@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusSpD14.
+This file offers the methods to automatically retrieve the graph Paenibacillus sp. D14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusSpD14(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusSpD14 graph.
+    """Return new instance of the Paenibacillus sp. D14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusSpD14(
 
     Returns
     -----------------------
-    Instace of PaenibacillusSpD14 graph.
+    Instace of Paenibacillus sp. D14 graph.
 
 	References
 	---------------------

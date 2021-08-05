@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumArcticum.
+This file offers the methods to automatically retrieve the graph Methanobacterium arcticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumArcticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumArcticum graph.
+    """Return new instance of the Methanobacterium arcticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobacteriumArcticum(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumArcticum graph.
+    Instace of Methanobacterium arcticum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoktanellaHongkongensis.
+This file offers the methods to automatically retrieve the graph Loktanella hongkongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoktanellaHongkongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoktanellaHongkongensis graph.
+    """Return new instance of the Loktanella hongkongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LoktanellaHongkongensis(
 
     Returns
     -----------------------
-    Instace of LoktanellaHongkongensis graph.
+    Instace of Loktanella hongkongensis graph.
 
 	References
 	---------------------

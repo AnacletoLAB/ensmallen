@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusKaiserbacteriaBacteriumGw2011Gwa25212.
+This file offers the methods to automatically retrieve the graph Candidatus Kaiserbacteria bacterium GW2011_GWA2_52_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusKaiserbacteriaBacteriumGw2011Gwa25212(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusKaiserbacteriaBacteriumGw2011Gwa25212 graph.
+    """Return new instance of the Candidatus Kaiserbacteria bacterium GW2011_GWA2_52_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusKaiserbacteriaBacteriumGw2011Gwa25212(
 
     Returns
     -----------------------
-    Instace of CandidatusKaiserbacteriaBacteriumGw2011Gwa25212 graph.
+    Instace of Candidatus Kaiserbacteria bacterium GW2011_GWA2_52_12 graph.
 
 	References
 	---------------------

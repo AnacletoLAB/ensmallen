@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnetospirillumSpMe1.
+This file offers the methods to automatically retrieve the graph Magnetospirillum sp. ME-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnetospirillumSpMe1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnetospirillumSpMe1 graph.
+    """Return new instance of the Magnetospirillum sp. ME-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MagnetospirillumSpMe1(
 
     Returns
     -----------------------
-    Instace of MagnetospirillumSpMe1 graph.
+    Instace of Magnetospirillum sp. ME-1 graph.
 
 	References
 	---------------------

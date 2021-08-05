@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliterellaAtlanticaCena595.
+This file offers the methods to automatically retrieve the graph Aliterella atlantica CENA595.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliterellaAtlanticaCena595(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliterellaAtlanticaCena595 graph.
+    """Return new instance of the Aliterella atlantica CENA595 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliterellaAtlanticaCena595(
 
     Returns
     -----------------------
-    Instace of AliterellaAtlanticaCena595 graph.
+    Instace of Aliterella atlantica CENA595 graph.
 
 	References
 	---------------------

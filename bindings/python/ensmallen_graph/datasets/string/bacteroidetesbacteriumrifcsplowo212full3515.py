@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumRifcsplowo212Full3515.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium RIFCSPLOWO2_12_FULL_35_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumRifcsplowo212Full3515(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumRifcsplowo212Full3515 graph.
+    """Return new instance of the Bacteroidetes bacterium RIFCSPLOWO2_12_FULL_35_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidetesBacteriumRifcsplowo212Full3515(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumRifcsplowo212Full3515 graph.
+    Instace of Bacteroidetes bacterium RIFCSPLOWO2_12_FULL_35_15 graph.
 
 	References
 	---------------------

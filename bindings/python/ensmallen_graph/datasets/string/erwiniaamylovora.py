@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErwiniaAmylovora.
+This file offers the methods to automatically retrieve the graph Erwinia amylovora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErwiniaAmylovora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErwiniaAmylovora graph.
+    """Return new instance of the Erwinia amylovora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ErwiniaAmylovora(
 
     Returns
     -----------------------
-    Instace of ErwiniaAmylovora graph.
+    Instace of Erwinia amylovora graph.
 
 	References
 	---------------------

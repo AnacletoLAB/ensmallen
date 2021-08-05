@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AuxenochlorellaProtothecoides.
+This file offers the methods to automatically retrieve the graph Auxenochlorella protothecoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AuxenochlorellaProtothecoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AuxenochlorellaProtothecoides graph.
+    """Return new instance of the Auxenochlorella protothecoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AuxenochlorellaProtothecoides(
 
     Returns
     -----------------------
-    Instace of AuxenochlorellaProtothecoides graph.
+    Instace of Auxenochlorella protothecoides graph.
 
 	References
 	---------------------

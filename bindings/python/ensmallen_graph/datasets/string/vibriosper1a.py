@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioSpEr1a.
+This file offers the methods to automatically retrieve the graph Vibrio sp. ER1A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioSpEr1a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioSpEr1a graph.
+    """Return new instance of the Vibrio sp. ER1A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioSpEr1a(
 
     Returns
     -----------------------
-    Instace of VibrioSpEr1a graph.
+    Instace of Vibrio sp. ER1A graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatiglansAniliniDsm4660.
+This file offers the methods to automatically retrieve the graph Desulfatiglans anilini DSM 4660.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatiglansAniliniDsm4660(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatiglansAniliniDsm4660 graph.
+    """Return new instance of the Desulfatiglans anilini DSM 4660 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfatiglansAniliniDsm4660(
 
     Returns
     -----------------------
-    Instace of DesulfatiglansAniliniDsm4660 graph.
+    Instace of Desulfatiglans anilini DSM 4660 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CarnimonasNigrificans.
+This file offers the methods to automatically retrieve the graph Carnimonas nigrificans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CarnimonasNigrificans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CarnimonasNigrificans graph.
+    """Return new instance of the Carnimonas nigrificans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CarnimonasNigrificans(
 
     Returns
     -----------------------
-    Instace of CarnimonasNigrificans graph.
+    Instace of Carnimonas nigrificans graph.
 
 	References
 	---------------------

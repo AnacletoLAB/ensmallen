@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbSwarthmore42.
+This file offers the methods to automatically retrieve the graph socfb-Swarthmore42.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbSwarthmore42(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbSwarthmore42 graph.
+    """Return new instance of the socfb-Swarthmore42 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbSwarthmore42(
 
     Returns
     -----------------------
-    Instace of SocfbSwarthmore42 graph.
+    Instace of socfb-Swarthmore42 graph.
 
 	References
 	---------------------

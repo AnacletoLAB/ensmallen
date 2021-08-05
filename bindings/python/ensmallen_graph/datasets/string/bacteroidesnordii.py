@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesNordii.
+This file offers the methods to automatically retrieve the graph Bacteroides nordii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesNordii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesNordii graph.
+    """Return new instance of the Bacteroides nordii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesNordii(
 
     Returns
     -----------------------
-    Instace of BacteroidesNordii graph.
+    Instace of Bacteroides nordii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomicrobiumAlbum.
+This file offers the methods to automatically retrieve the graph Methylomicrobium album.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomicrobiumAlbum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomicrobiumAlbum graph.
+    """Return new instance of the Methylomicrobium album graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylomicrobiumAlbum(
 
     Returns
     -----------------------
-    Instace of MethylomicrobiumAlbum graph.
+    Instace of Methylomicrobium album graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarineActinobacteriumMedacidiG2a.
+This file offers the methods to automatically retrieve the graph marine actinobacterium MedAcidi-G2A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarineActinobacteriumMedacidiG2a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarineActinobacteriumMedacidiG2a graph.
+    """Return new instance of the marine actinobacterium MedAcidi-G2A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarineActinobacteriumMedacidiG2a(
 
     Returns
     -----------------------
-    Instace of MarineActinobacteriumMedacidiG2a graph.
+    Instace of marine actinobacterium MedAcidi-G2A graph.
 
 	References
 	---------------------

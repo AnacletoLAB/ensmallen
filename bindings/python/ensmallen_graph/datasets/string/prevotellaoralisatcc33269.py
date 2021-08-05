@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaOralisAtcc33269.
+This file offers the methods to automatically retrieve the graph Prevotella oralis ATCC33269.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaOralisAtcc33269(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaOralisAtcc33269 graph.
+    """Return new instance of the Prevotella oralis ATCC33269 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaOralisAtcc33269(
 
     Returns
     -----------------------
-    Instace of PrevotellaOralisAtcc33269 graph.
+    Instace of Prevotella oralis ATCC33269 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DanausPlexippus.
+This file offers the methods to automatically retrieve the graph Danaus plexippus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DanausPlexippus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DanausPlexippus graph.
+    """Return new instance of the Danaus plexippus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DanausPlexippus(
 
     Returns
     -----------------------
-    Instace of DanausPlexippus graph.
+    Instace of Danaus plexippus graph.
 
 	References
 	---------------------

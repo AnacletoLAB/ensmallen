@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusIhuae.
+This file offers the methods to automatically retrieve the graph Paenibacillus ihuae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusIhuae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusIhuae graph.
+    """Return new instance of the Paenibacillus ihuae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusIhuae(
 
     Returns
     -----------------------
-    Instace of PaenibacillusIhuae graph.
+    Instace of Paenibacillus ihuae graph.
 
 	References
 	---------------------

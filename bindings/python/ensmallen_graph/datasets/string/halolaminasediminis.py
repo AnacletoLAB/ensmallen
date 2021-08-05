@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalolaminaSediminis.
+This file offers the methods to automatically retrieve the graph Halolamina sediminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalolaminaSediminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalolaminaSediminis graph.
+    """Return new instance of the Halolamina sediminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalolaminaSediminis(
 
     Returns
     -----------------------
-    Instace of HalolaminaSediminis graph.
+    Instace of Halolamina sediminis graph.
 
 	References
 	---------------------

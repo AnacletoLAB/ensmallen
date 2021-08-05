@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AciduliprofundumSpMar08339.
+This file offers the methods to automatically retrieve the graph Aciduliprofundum sp. MAR08339.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AciduliprofundumSpMar08339(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AciduliprofundumSpMar08339 graph.
+    """Return new instance of the Aciduliprofundum sp. MAR08339 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AciduliprofundumSpMar08339(
 
     Returns
     -----------------------
-    Instace of AciduliprofundumSpMar08339 graph.
+    Instace of Aciduliprofundum sp. MAR08339 graph.
 
 	References
 	---------------------

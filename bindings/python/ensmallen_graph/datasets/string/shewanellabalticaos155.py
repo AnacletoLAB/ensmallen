@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaBalticaOs155.
+This file offers the methods to automatically retrieve the graph Shewanella baltica OS155.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaBalticaOs155(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaBalticaOs155 graph.
+    """Return new instance of the Shewanella baltica OS155 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaBalticaOs155(
 
     Returns
     -----------------------
-    Instace of ShewanellaBalticaOs155 graph.
+    Instace of Shewanella baltica OS155 graph.
 
 	References
 	---------------------

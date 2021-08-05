@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobacteriumVacuolatumDsm3385.
+This file offers the methods to automatically retrieve the graph Desulfobacterium vacuolatum DSM 3385.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobacteriumVacuolatumDsm3385(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobacteriumVacuolatumDsm3385 graph.
+    """Return new instance of the Desulfobacterium vacuolatum DSM 3385 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobacteriumVacuolatumDsm3385(
 
     Returns
     -----------------------
-    Instace of DesulfobacteriumVacuolatumDsm3385 graph.
+    Instace of Desulfobacterium vacuolatum DSM 3385 graph.
 
 	References
 	---------------------

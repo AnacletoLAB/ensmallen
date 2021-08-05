@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTaylorbacteriaBacteriumRifcsplowo212Full4967.
+This file offers the methods to automatically retrieve the graph Candidatus Taylorbacteria bacterium RIFCSPLOWO2_12_FULL_49_67.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTaylorbacteriaBacteriumRifcsplowo212Full4967(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTaylorbacteriaBacteriumRifcsplowo212Full4967 graph.
+    """Return new instance of the Candidatus Taylorbacteria bacterium RIFCSPLOWO2_12_FULL_49_67 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTaylorbacteriaBacteriumRifcsplowo212Full4967(
 
     Returns
     -----------------------
-    Instace of CandidatusTaylorbacteriaBacteriumRifcsplowo212Full4967 graph.
+    Instace of Candidatus Taylorbacteria bacterium RIFCSPLOWO2_12_FULL_49_67 graph.
 
 	References
 	---------------------

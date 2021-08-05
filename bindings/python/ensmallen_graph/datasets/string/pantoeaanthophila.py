@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaAnthophila.
+This file offers the methods to automatically retrieve the graph Pantoea anthophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaAnthophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaAnthophila graph.
+    """Return new instance of the Pantoea anthophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaAnthophila(
 
     Returns
     -----------------------
-    Instace of PantoeaAnthophila graph.
+    Instace of Pantoea anthophila graph.
 
 	References
 	---------------------

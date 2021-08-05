@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronumThiosulfatophilum.
+This file offers the methods to automatically retrieve the graph Desulfonatronum thiosulfatophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronumThiosulfatophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronumThiosulfatophilum graph.
+    """Return new instance of the Desulfonatronum thiosulfatophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonatronumThiosulfatophilum(
 
     Returns
     -----------------------
-    Instace of DesulfonatronumThiosulfatophilum graph.
+    Instace of Desulfonatronum thiosulfatophilum graph.
 
 	References
 	---------------------

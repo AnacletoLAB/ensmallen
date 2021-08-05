@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcanobacteriumSpS3pf19.
+This file offers the methods to automatically retrieve the graph Arcanobacterium sp. S3PF19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcanobacteriumSpS3pf19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcanobacteriumSpS3pf19 graph.
+    """Return new instance of the Arcanobacterium sp. S3PF19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArcanobacteriumSpS3pf19(
 
     Returns
     -----------------------
-    Instace of ArcanobacteriumSpS3pf19 graph.
+    Instace of Arcanobacterium sp. S3PF19 graph.
 
 	References
 	---------------------

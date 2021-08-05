@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurivibrioAlkaliphilus.
+This file offers the methods to automatically retrieve the graph Desulfurivibrio alkaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurivibrioAlkaliphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurivibrioAlkaliphilus graph.
+    """Return new instance of the Desulfurivibrio alkaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurivibrioAlkaliphilus(
 
     Returns
     -----------------------
-    Instace of DesulfurivibrioAlkaliphilus graph.
+    Instace of Desulfurivibrio alkaliphilus graph.
 
 	References
 	---------------------

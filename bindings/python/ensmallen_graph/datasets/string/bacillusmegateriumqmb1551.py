@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMegateriumQmB1551.
+This file offers the methods to automatically retrieve the graph Bacillus megaterium QM B1551.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMegateriumQmB1551(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMegateriumQmB1551 graph.
+    """Return new instance of the Bacillus megaterium QM B1551 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusMegateriumQmB1551(
 
     Returns
     -----------------------
-    Instace of BacillusMegateriumQmB1551 graph.
+    Instace of Bacillus megaterium QM B1551 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuricibacterSpH121.
+This file offers the methods to automatically retrieve the graph Turicibacter sp. H121.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TuricibacterSpH121(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuricibacterSpH121 graph.
+    """Return new instance of the Turicibacter sp. H121 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TuricibacterSpH121(
 
     Returns
     -----------------------
-    Instace of TuricibacterSpH121 graph.
+    Instace of Turicibacter sp. H121 graph.
 
 	References
 	---------------------

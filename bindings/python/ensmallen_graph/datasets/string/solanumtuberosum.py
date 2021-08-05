@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SolanumTuberosum.
+This file offers the methods to automatically retrieve the graph Solanum tuberosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SolanumTuberosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SolanumTuberosum graph.
+    """Return new instance of the Solanum tuberosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SolanumTuberosum(
 
     Returns
     -----------------------
-    Instace of SolanumTuberosum graph.
+    Instace of Solanum tuberosum graph.
 
 	References
 	---------------------

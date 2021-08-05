@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfobulbusSpTolSr.
+This file offers the methods to automatically retrieve the graph Desulfobulbus sp. Tol-SR.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfobulbusSpTolSr(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfobulbusSpTolSr graph.
+    """Return new instance of the Desulfobulbus sp. Tol-SR graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfobulbusSpTolSr(
 
     Returns
     -----------------------
-    Instace of DesulfobulbusSpTolSr graph.
+    Instace of Desulfobulbus sp. Tol-SR graph.
 
 	References
 	---------------------

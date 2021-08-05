@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PoeciliaMexicana.
+This file offers the methods to automatically retrieve the graph Poecilia mexicana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PoeciliaMexicana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PoeciliaMexicana graph.
+    """Return new instance of the Poecilia mexicana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PoeciliaMexicana(
 
     Returns
     -----------------------
-    Instace of PoeciliaMexicana graph.
+    Instace of Poecilia mexicana graph.
 
 	References
 	---------------------

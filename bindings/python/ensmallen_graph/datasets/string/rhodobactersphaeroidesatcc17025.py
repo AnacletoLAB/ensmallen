@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacterSphaeroidesAtcc17025.
+This file offers the methods to automatically retrieve the graph Rhodobacter sphaeroides ATCC17025.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacterSphaeroidesAtcc17025(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacterSphaeroidesAtcc17025 graph.
+    """Return new instance of the Rhodobacter sphaeroides ATCC17025 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodobacterSphaeroidesAtcc17025(
 
     Returns
     -----------------------
-    Instace of RhodobacterSphaeroidesAtcc17025 graph.
+    Instace of Rhodobacter sphaeroides ATCC17025 graph.
 
 	References
 	---------------------

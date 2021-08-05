@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomaduraMadurae.
+This file offers the methods to automatically retrieve the graph Actinomadura madurae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomaduraMadurae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomaduraMadurae graph.
+    """Return new instance of the Actinomadura madurae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinomaduraMadurae(
 
     Returns
     -----------------------
-    Instace of ActinomaduraMadurae graph.
+    Instace of Actinomadura madurae graph.
 
 	References
 	---------------------

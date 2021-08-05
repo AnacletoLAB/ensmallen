@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KluyveromycesLactisNrrlY1140.
+This file offers the methods to automatically retrieve the graph Kluyveromyces lactis NRRL Y-1140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KluyveromycesLactisNrrlY1140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KluyveromycesLactisNrrlY1140 graph.
+    """Return new instance of the Kluyveromyces lactis NRRL Y-1140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KluyveromycesLactisNrrlY1140(
 
     Returns
     -----------------------
-    Instace of KluyveromycesLactisNrrlY1140 graph.
+    Instace of Kluyveromyces lactis NRRL Y-1140 graph.
 
 	References
 	---------------------

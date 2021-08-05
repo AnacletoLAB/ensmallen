@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSaccharobutylicum.
+This file offers the methods to automatically retrieve the graph Clostridium saccharobutylicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSaccharobutylicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSaccharobutylicum graph.
+    """Return new instance of the Clostridium saccharobutylicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSaccharobutylicum(
 
     Returns
     -----------------------
-    Instace of ClostridiumSaccharobutylicum graph.
+    Instace of Clostridium saccharobutylicum graph.
 
 	References
 	---------------------

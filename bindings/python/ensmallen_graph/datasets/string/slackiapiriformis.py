@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SlackiaPiriformis.
+This file offers the methods to automatically retrieve the graph Slackia piriformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SlackiaPiriformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SlackiaPiriformis graph.
+    """Return new instance of the Slackia piriformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SlackiaPiriformis(
 
     Returns
     -----------------------
-    Instace of SlackiaPiriformis graph.
+    Instace of Slackia piriformis graph.
 
 	References
 	---------------------

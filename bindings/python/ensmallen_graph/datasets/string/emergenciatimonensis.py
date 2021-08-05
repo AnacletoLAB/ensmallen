@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EmergenciaTimonensis.
+This file offers the methods to automatically retrieve the graph Emergencia timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EmergenciaTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EmergenciaTimonensis graph.
+    """Return new instance of the Emergencia timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EmergenciaTimonensis(
 
     Returns
     -----------------------
-    Instace of EmergenciaTimonensis graph.
+    Instace of Emergencia timonensis graph.
 
 	References
 	---------------------

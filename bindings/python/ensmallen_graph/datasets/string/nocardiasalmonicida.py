@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaSalmonicida.
+This file offers the methods to automatically retrieve the graph Nocardia salmonicida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaSalmonicida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaSalmonicida graph.
+    """Return new instance of the Nocardia salmonicida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaSalmonicida(
 
     Returns
     -----------------------
-    Instace of NocardiaSalmonicida graph.
+    Instace of Nocardia salmonicida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeromyxobacterSpRbg166914.
+This file offers the methods to automatically retrieve the graph Anaeromyxobacter sp. RBG_16_69_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeromyxobacterSpRbg166914(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeromyxobacterSpRbg166914 graph.
+    """Return new instance of the Anaeromyxobacter sp. RBG_16_69_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaeromyxobacterSpRbg166914(
 
     Returns
     -----------------------
-    Instace of AnaeromyxobacterSpRbg166914 graph.
+    Instace of Anaeromyxobacter sp. RBG_16_69_14 graph.
 
 	References
 	---------------------

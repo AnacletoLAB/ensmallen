@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSaccharibacteriaBacteriumRaac3Tm71.
+This file offers the methods to automatically retrieve the graph Candidatus Saccharibacteria bacterium RAAC3_TM7_1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSaccharibacteriaBacteriumRaac3Tm71(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSaccharibacteriaBacteriumRaac3Tm71 graph.
+    """Return new instance of the Candidatus Saccharibacteria bacterium RAAC3_TM7_1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSaccharibacteriaBacteriumRaac3Tm71(
 
     Returns
     -----------------------
-    Instace of CandidatusSaccharibacteriaBacteriumRaac3Tm71 graph.
+    Instace of Candidatus Saccharibacteria bacterium RAAC3_TM7_1 graph.
 
 	References
 	---------------------

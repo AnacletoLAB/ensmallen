@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpNrrlS4.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. NRRL S-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpNrrlS4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpNrrlS4 graph.
+    """Return new instance of the Streptomyces sp. NRRL S-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpNrrlS4(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpNrrlS4 graph.
+    Instace of Streptomyces sp. NRRL S-4 graph.
 
 	References
 	---------------------

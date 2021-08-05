@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusSp2g.
+This file offers the methods to automatically retrieve the graph Rhodococcus sp. 2G.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusSp2g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusSp2g graph.
+    """Return new instance of the Rhodococcus sp. 2G graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodococcusSp2g(
 
     Returns
     -----------------------
-    Instace of RhodococcusSp2g graph.
+    Instace of Rhodococcus sp. 2G graph.
 
 	References
 	---------------------

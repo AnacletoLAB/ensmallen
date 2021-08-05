@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterLwoffiiWj10621.
+This file offers the methods to automatically retrieve the graph Acinetobacter lwoffii WJ10621.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterLwoffiiWj10621(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterLwoffiiWj10621 graph.
+    """Return new instance of the Acinetobacter lwoffii WJ10621 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterLwoffiiWj10621(
 
     Returns
     -----------------------
-    Instace of AcinetobacterLwoffiiWj10621 graph.
+    Instace of Acinetobacter lwoffii WJ10621 graph.
 
 	References
 	---------------------

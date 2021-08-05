@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusRapiDsm19907Jcm15042.
+This file offers the methods to automatically retrieve the graph Lactobacillus rapi DSM 19907 JCM 15042.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusRapiDsm19907Jcm15042(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusRapiDsm19907Jcm15042 graph.
+    """Return new instance of the Lactobacillus rapi DSM 19907 JCM 15042 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusRapiDsm19907Jcm15042(
 
     Returns
     -----------------------
-    Instace of LactobacillusRapiDsm19907Jcm15042 graph.
+    Instace of Lactobacillus rapi DSM 19907 JCM 15042 graph.
 
 	References
 	---------------------

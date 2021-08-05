@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AncylostomaCaninum.
+This file offers the methods to automatically retrieve the graph Ancylostoma caninum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AncylostomaCaninum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AncylostomaCaninum graph.
+    """Return new instance of the Ancylostoma caninum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AncylostomaCaninum(
 
     Returns
     -----------------------
-    Instace of AncylostomaCaninum graph.
+    Instace of Ancylostoma caninum graph.
 
 	References
 	---------------------

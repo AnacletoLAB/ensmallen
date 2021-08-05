@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloversatilisSpRac08.
+This file offers the methods to automatically retrieve the graph Methyloversatilis sp. RAC08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloversatilisSpRac08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloversatilisSpRac08 graph.
+    """Return new instance of the Methyloversatilis sp. RAC08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloversatilisSpRac08(
 
     Returns
     -----------------------
-    Instace of MethyloversatilisSpRac08 graph.
+    Instace of Methyloversatilis sp. RAC08 graph.
 
 	References
 	---------------------

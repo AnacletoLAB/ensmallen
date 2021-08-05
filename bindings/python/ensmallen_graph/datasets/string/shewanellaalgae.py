@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaAlgae.
+This file offers the methods to automatically retrieve the graph Shewanella algae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaAlgae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaAlgae graph.
+    """Return new instance of the Shewanella algae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaAlgae(
 
     Returns
     -----------------------
-    Instace of ShewanellaAlgae graph.
+    Instace of Shewanella algae graph.
 
 	References
 	---------------------

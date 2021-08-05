@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumFryxellicola.
+This file offers the methods to automatically retrieve the graph Flavobacterium fryxellicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumFryxellicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumFryxellicola graph.
+    """Return new instance of the Flavobacterium fryxellicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumFryxellicola(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumFryxellicola graph.
+    Instace of Flavobacterium fryxellicola graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioalkalivibrioHalophilus.
+This file offers the methods to automatically retrieve the graph Thioalkalivibrio halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioalkalivibrioHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioalkalivibrioHalophilus graph.
+    """Return new instance of the Thioalkalivibrio halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioalkalivibrioHalophilus(
 
     Returns
     -----------------------
-    Instace of ThioalkalivibrioHalophilus graph.
+    Instace of Thioalkalivibrio halophilus graph.
 
 	References
 	---------------------

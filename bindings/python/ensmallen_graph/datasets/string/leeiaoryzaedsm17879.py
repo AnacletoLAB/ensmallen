@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeeiaOryzaeDsm17879.
+This file offers the methods to automatically retrieve the graph Leeia oryzae DSM 17879.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeeiaOryzaeDsm17879(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeeiaOryzaeDsm17879 graph.
+    """Return new instance of the Leeia oryzae DSM 17879 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeeiaOryzaeDsm17879(
 
     Returns
     -----------------------
-    Instace of LeeiaOryzaeDsm17879 graph.
+    Instace of Leeia oryzae DSM 17879 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumAlkaliphilum.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum alkaliphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumAlkaliphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumAlkaliphilum graph.
+    """Return new instance of the Desulfotomaculum alkaliphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfotomaculumAlkaliphilum(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumAlkaliphilum graph.
+    Instace of Desulfotomaculum alkaliphilum graph.
 
 	References
 	---------------------

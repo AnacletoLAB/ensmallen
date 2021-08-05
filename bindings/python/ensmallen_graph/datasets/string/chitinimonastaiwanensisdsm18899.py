@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinimonasTaiwanensisDsm18899.
+This file offers the methods to automatically retrieve the graph Chitinimonas taiwanensis DSM 18899.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinimonasTaiwanensisDsm18899(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinimonasTaiwanensisDsm18899 graph.
+    """Return new instance of the Chitinimonas taiwanensis DSM 18899 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinimonasTaiwanensisDsm18899(
 
     Returns
     -----------------------
-    Instace of ChitinimonasTaiwanensisDsm18899 graph.
+    Instace of Chitinimonas taiwanensis DSM 18899 graph.
 
 	References
 	---------------------

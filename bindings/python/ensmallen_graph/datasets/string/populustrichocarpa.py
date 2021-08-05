@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PopulusTrichocarpa.
+This file offers the methods to automatically retrieve the graph Populus trichocarpa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PopulusTrichocarpa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PopulusTrichocarpa graph.
+    """Return new instance of the Populus trichocarpa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PopulusTrichocarpa(
 
     Returns
     -----------------------
-    Instace of PopulusTrichocarpa graph.
+    Instace of Populus trichocarpa graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RathayibacterTritici.
+This file offers the methods to automatically retrieve the graph Rathayibacter tritici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RathayibacterTritici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RathayibacterTritici graph.
+    """Return new instance of the Rathayibacter tritici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RathayibacterTritici(
 
     Returns
     -----------------------
-    Instace of RathayibacterTritici graph.
+    Instace of Rathayibacter tritici graph.
 
 	References
 	---------------------

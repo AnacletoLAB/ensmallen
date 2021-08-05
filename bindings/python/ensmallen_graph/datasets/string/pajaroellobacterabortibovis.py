@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PajaroellobacterAbortibovis.
+This file offers the methods to automatically retrieve the graph Pajaroellobacter abortibovis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PajaroellobacterAbortibovis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PajaroellobacterAbortibovis graph.
+    """Return new instance of the Pajaroellobacter abortibovis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PajaroellobacterAbortibovis(
 
     Returns
     -----------------------
-    Instace of PajaroellobacterAbortibovis graph.
+    Instace of Pajaroellobacter abortibovis graph.
 
 	References
 	---------------------

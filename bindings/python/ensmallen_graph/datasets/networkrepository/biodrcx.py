@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioDrCx.
+This file offers the methods to automatically retrieve the graph bio-DR-CX.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioDrCx(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioDrCx graph.
+    """Return new instance of the bio-DR-CX graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioDrCx(
 
     Returns
     -----------------------
-    Instace of BioDrCx graph.
+    Instace of bio-DR-CX graph.
 
 	References
 	---------------------

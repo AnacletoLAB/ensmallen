@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WinogradskyellaSpJ142.
+This file offers the methods to automatically retrieve the graph Winogradskyella sp. J14-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WinogradskyellaSpJ142(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WinogradskyellaSpJ142 graph.
+    """Return new instance of the Winogradskyella sp. J14-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WinogradskyellaSpJ142(
 
     Returns
     -----------------------
-    Instace of WinogradskyellaSpJ142 graph.
+    Instace of Winogradskyella sp. J14-2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlumeriaGraminis.
+This file offers the methods to automatically retrieve the graph Blumeria graminis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlumeriaGraminis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlumeriaGraminis graph.
+    """Return new instance of the Blumeria graminis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlumeriaGraminis(
 
     Returns
     -----------------------
-    Instace of BlumeriaGraminis graph.
+    Instace of Blumeria graminis graph.
 
 	References
 	---------------------

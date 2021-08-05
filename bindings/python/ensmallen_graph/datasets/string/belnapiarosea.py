@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BelnapiaRosea.
+This file offers the methods to automatically retrieve the graph Belnapia rosea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BelnapiaRosea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BelnapiaRosea graph.
+    """Return new instance of the Belnapia rosea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BelnapiaRosea(
 
     Returns
     -----------------------
-    Instace of BelnapiaRosea graph.
+    Instace of Belnapia rosea graph.
 
 	References
 	---------------------

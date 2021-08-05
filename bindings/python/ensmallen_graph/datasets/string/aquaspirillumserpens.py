@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquaspirillumSerpens.
+This file offers the methods to automatically retrieve the graph Aquaspirillum serpens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquaspirillumSerpens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquaspirillumSerpens graph.
+    """Return new instance of the Aquaspirillum serpens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquaspirillumSerpens(
 
     Returns
     -----------------------
-    Instace of AquaspirillumSerpens graph.
+    Instace of Aquaspirillum serpens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HammondiaHammondi.
+This file offers the methods to automatically retrieve the graph Hammondia hammondi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HammondiaHammondi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HammondiaHammondi graph.
+    """Return new instance of the Hammondia hammondi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HammondiaHammondi(
 
     Returns
     -----------------------
-    Instace of HammondiaHammondi graph.
+    Instace of Hammondia hammondi graph.
 
 	References
 	---------------------

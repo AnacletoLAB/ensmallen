@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumManausense.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium manausense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumManausense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumManausense graph.
+    """Return new instance of the Bradyrhizobium manausense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumManausense(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumManausense graph.
+    Instace of Bradyrhizobium manausense graph.
 
 	References
 	---------------------

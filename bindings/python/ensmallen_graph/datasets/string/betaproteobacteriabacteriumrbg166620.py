@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BetaproteobacteriaBacteriumRbg166620.
+This file offers the methods to automatically retrieve the graph Betaproteobacteria bacterium RBG_16_66_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BetaproteobacteriaBacteriumRbg166620(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BetaproteobacteriaBacteriumRbg166620 graph.
+    """Return new instance of the Betaproteobacteria bacterium RBG_16_66_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BetaproteobacteriaBacteriumRbg166620(
 
     Returns
     -----------------------
-    Instace of BetaproteobacteriaBacteriumRbg166620 graph.
+    Instace of Betaproteobacteria bacterium RBG_16_66_20 graph.
 
 	References
 	---------------------

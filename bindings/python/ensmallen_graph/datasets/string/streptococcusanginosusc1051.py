@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAnginosusC1051.
+This file offers the methods to automatically retrieve the graph Streptococcus anginosus C1051.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAnginosusC1051(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAnginosusC1051 graph.
+    """Return new instance of the Streptococcus anginosus C1051 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAnginosusC1051(
 
     Returns
     -----------------------
-    Instace of StreptococcusAnginosusC1051 graph.
+    Instace of Streptococcus anginosus C1051 graph.
 
 	References
 	---------------------

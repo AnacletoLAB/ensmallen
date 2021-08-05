@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GouaniaWilldenowi.
+This file offers the methods to automatically retrieve the graph Gouania willdenowi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GouaniaWilldenowi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GouaniaWilldenowi graph.
+    """Return new instance of the Gouania willdenowi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GouaniaWilldenowi(
 
     Returns
     -----------------------
-    Instace of GouaniaWilldenowi graph.
+    Instace of Gouania willdenowi graph.
 
 	References
 	---------------------

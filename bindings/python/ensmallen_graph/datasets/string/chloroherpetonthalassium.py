@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroherpetonThalassium.
+This file offers the methods to automatically retrieve the graph Chloroherpeton thalassium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroherpetonThalassium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroherpetonThalassium graph.
+    """Return new instance of the Chloroherpeton thalassium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChloroherpetonThalassium(
 
     Returns
     -----------------------
-    Instace of ChloroherpetonThalassium graph.
+    Instace of Chloroherpeton thalassium graph.
 
 	References
 	---------------------

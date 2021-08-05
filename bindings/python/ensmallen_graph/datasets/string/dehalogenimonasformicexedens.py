@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalogenimonasFormicexedens.
+This file offers the methods to automatically retrieve the graph Dehalogenimonas formicexedens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalogenimonasFormicexedens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalogenimonasFormicexedens graph.
+    """Return new instance of the Dehalogenimonas formicexedens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DehalogenimonasFormicexedens(
 
     Returns
     -----------------------
-    Instace of DehalogenimonasFormicexedens graph.
+    Instace of Dehalogenimonas formicexedens graph.
 
 	References
 	---------------------

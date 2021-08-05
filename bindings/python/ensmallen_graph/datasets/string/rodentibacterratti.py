@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RodentibacterRatti.
+This file offers the methods to automatically retrieve the graph Rodentibacter ratti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RodentibacterRatti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RodentibacterRatti graph.
+    """Return new instance of the Rodentibacter ratti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RodentibacterRatti(
 
     Returns
     -----------------------
-    Instace of RodentibacterRatti graph.
+    Instace of Rodentibacter ratti graph.
 
 	References
 	---------------------

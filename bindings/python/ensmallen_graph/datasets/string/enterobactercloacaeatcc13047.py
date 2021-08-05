@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterCloacaeAtcc13047.
+This file offers the methods to automatically retrieve the graph Enterobacter cloacae ATCC13047.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterCloacaeAtcc13047(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterCloacaeAtcc13047 graph.
+    """Return new instance of the Enterobacter cloacae ATCC13047 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterobacterCloacaeAtcc13047(
 
     Returns
     -----------------------
-    Instace of EnterobacterCloacaeAtcc13047 graph.
+    Instace of Enterobacter cloacae ATCC13047 graph.
 
 	References
 	---------------------

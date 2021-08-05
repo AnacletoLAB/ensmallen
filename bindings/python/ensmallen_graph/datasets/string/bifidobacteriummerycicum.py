@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumMerycicum.
+This file offers the methods to automatically retrieve the graph Bifidobacterium merycicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumMerycicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumMerycicum graph.
+    """Return new instance of the Bifidobacterium merycicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumMerycicum(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumMerycicum graph.
+    Instace of Bifidobacterium merycicum graph.
 
 	References
 	---------------------

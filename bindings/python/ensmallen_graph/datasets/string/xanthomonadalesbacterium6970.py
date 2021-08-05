@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonadalesBacterium6970.
+This file offers the methods to automatically retrieve the graph Xanthomonadales bacterium 69-70.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonadalesBacterium6970(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonadalesBacterium6970 graph.
+    """Return new instance of the Xanthomonadales bacterium 69-70 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonadalesBacterium6970(
 
     Returns
     -----------------------
-    Instace of XanthomonadalesBacterium6970 graph.
+    Instace of Xanthomonadales bacterium 69-70 graph.
 
 	References
 	---------------------

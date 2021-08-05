@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusIshikawaellaCapsulataMpkobe.
+This file offers the methods to automatically retrieve the graph Candidatus Ishikawaella capsulata Mpkobe.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusIshikawaellaCapsulataMpkobe(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusIshikawaellaCapsulataMpkobe graph.
+    """Return new instance of the Candidatus Ishikawaella capsulata Mpkobe graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusIshikawaellaCapsulataMpkobe(
 
     Returns
     -----------------------
-    Instace of CandidatusIshikawaellaCapsulataMpkobe graph.
+    Instace of Candidatus Ishikawaella capsulata Mpkobe graph.
 
 	References
 	---------------------

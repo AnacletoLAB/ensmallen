@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FranconibacterPulverisDsm19144.
+This file offers the methods to automatically retrieve the graph Franconibacter pulveris DSM 19144.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FranconibacterPulverisDsm19144(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FranconibacterPulverisDsm19144 graph.
+    """Return new instance of the Franconibacter pulveris DSM 19144 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FranconibacterPulverisDsm19144(
 
     Returns
     -----------------------
-    Instace of FranconibacterPulverisDsm19144 graph.
+    Instace of Franconibacter pulveris DSM 19144 graph.
 
 	References
 	---------------------

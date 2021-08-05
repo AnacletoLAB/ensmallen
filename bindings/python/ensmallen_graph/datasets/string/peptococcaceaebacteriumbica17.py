@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptococcaceaeBacteriumBica17.
+This file offers the methods to automatically retrieve the graph Peptococcaceae bacterium BICA1-7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptococcaceaeBacteriumBica17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptococcaceaeBacteriumBica17 graph.
+    """Return new instance of the Peptococcaceae bacterium BICA1-7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptococcaceaeBacteriumBica17(
 
     Returns
     -----------------------
-    Instace of PeptococcaceaeBacteriumBica17 graph.
+    Instace of Peptococcaceae bacterium BICA1-7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanohalophilusPortucalensisFdf1.
+This file offers the methods to automatically retrieve the graph Methanohalophilus portucalensis FDF-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanohalophilusPortucalensisFdf1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanohalophilusPortucalensisFdf1 graph.
+    """Return new instance of the Methanohalophilus portucalensis FDF-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanohalophilusPortucalensisFdf1(
 
     Returns
     -----------------------
-    Instace of MethanohalophilusPortucalensisFdf1 graph.
+    Instace of Methanohalophilus portucalensis FDF-1 graph.
 
 	References
 	---------------------

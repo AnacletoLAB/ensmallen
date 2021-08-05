@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArsenicicoccusBolidensis.
+This file offers the methods to automatically retrieve the graph Arsenicicoccus bolidensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArsenicicoccusBolidensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArsenicicoccusBolidensis graph.
+    """Return new instance of the Arsenicicoccus bolidensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArsenicicoccusBolidensis(
 
     Returns
     -----------------------
-    Instace of ArsenicicoccusBolidensis graph.
+    Instace of Arsenicicoccus bolidensis graph.
 
 	References
 	---------------------

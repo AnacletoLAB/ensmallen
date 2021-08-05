@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpPanFs17.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. PAN_FS17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpPanFs17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpPanFs17 graph.
+    """Return new instance of the Streptomyces sp. PAN_FS17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpPanFs17(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpPanFs17 graph.
+    Instace of Streptomyces sp. PAN_FS17 graph.
 
 	References
 	---------------------

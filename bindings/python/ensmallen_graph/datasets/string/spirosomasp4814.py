@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaSp4814.
+This file offers the methods to automatically retrieve the graph Spirosoma sp. 48-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaSp4814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaSp4814 graph.
+    """Return new instance of the Spirosoma sp. 48-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpirosomaSp4814(
 
     Returns
     -----------------------
-    Instace of SpirosomaSp4814 graph.
+    Instace of Spirosoma sp. 48-14 graph.
 
 	References
 	---------------------

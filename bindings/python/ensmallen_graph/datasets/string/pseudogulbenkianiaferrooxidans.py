@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogulbenkianiaFerrooxidans.
+This file offers the methods to automatically retrieve the graph Pseudogulbenkiania ferrooxidans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogulbenkianiaFerrooxidans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogulbenkianiaFerrooxidans graph.
+    """Return new instance of the Pseudogulbenkiania ferrooxidans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudogulbenkianiaFerrooxidans(
 
     Returns
     -----------------------
-    Instace of PseudogulbenkianiaFerrooxidans graph.
+    Instace of Pseudogulbenkiania ferrooxidans graph.
 
 	References
 	---------------------

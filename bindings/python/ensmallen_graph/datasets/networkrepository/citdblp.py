@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CitDblp.
+This file offers the methods to automatically retrieve the graph cit-DBLP.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CitDblp(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CitDblp graph.
+    """Return new instance of the cit-DBLP graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CitDblp(
 
     Returns
     -----------------------
-    Instace of CitDblp graph.
+    Instace of cit-DBLP graph.
 
 	References
 	---------------------

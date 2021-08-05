@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinalesArchaeonMethan01.
+This file offers the methods to automatically retrieve the graph Methanosarcinales archaeon Methan_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinalesArchaeonMethan01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinalesArchaeonMethan01 graph.
+    """Return new instance of the Methanosarcinales archaeon Methan_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinalesArchaeonMethan01(
 
     Returns
     -----------------------
-    Instace of MethanosarcinalesArchaeonMethan01 graph.
+    Instace of Methanosarcinales archaeon Methan_01 graph.
 
 	References
 	---------------------

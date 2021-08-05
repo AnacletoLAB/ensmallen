@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RicinusCommunis.
+This file offers the methods to automatically retrieve the graph Ricinus communis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RicinusCommunis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RicinusCommunis graph.
+    """Return new instance of the Ricinus communis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RicinusCommunis(
 
     Returns
     -----------------------
-    Instace of RicinusCommunis graph.
+    Instace of Ricinus communis graph.
 
 	References
 	---------------------

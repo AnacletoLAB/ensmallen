@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfatatorAutotrophicus.
+This file offers the methods to automatically retrieve the graph Thermodesulfatator autotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfatatorAutotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfatatorAutotrophicus graph.
+    """Return new instance of the Thermodesulfatator autotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermodesulfatatorAutotrophicus(
 
     Returns
     -----------------------
-    Instace of ThermodesulfatatorAutotrophicus graph.
+    Instace of Thermodesulfatator autotrophicus graph.
 
 	References
 	---------------------

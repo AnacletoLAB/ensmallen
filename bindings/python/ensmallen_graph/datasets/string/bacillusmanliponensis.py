@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusManliponensis.
+This file offers the methods to automatically retrieve the graph Bacillus manliponensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusManliponensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusManliponensis graph.
+    """Return new instance of the Bacillus manliponensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusManliponensis(
 
     Returns
     -----------------------
-    Instace of BacillusManliponensis graph.
+    Instace of Bacillus manliponensis graph.
 
 	References
 	---------------------

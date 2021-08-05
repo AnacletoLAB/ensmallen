@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesCellulosilyticus.
+This file offers the methods to automatically retrieve the graph Bacteroides cellulosilyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesCellulosilyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesCellulosilyticus graph.
+    """Return new instance of the Bacteroides cellulosilyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesCellulosilyticus(
 
     Returns
     -----------------------
-    Instace of BacteroidesCellulosilyticus graph.
+    Instace of Bacteroides cellulosilyticus graph.
 
 	References
 	---------------------

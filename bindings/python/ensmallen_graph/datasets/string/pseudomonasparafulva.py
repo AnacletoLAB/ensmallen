@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasParafulva.
+This file offers the methods to automatically retrieve the graph Pseudomonas parafulva.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasParafulva(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasParafulva graph.
+    """Return new instance of the Pseudomonas parafulva graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasParafulva(
 
     Returns
     -----------------------
-    Instace of PseudomonasParafulva graph.
+    Instace of Pseudomonas parafulva graph.
 
 	References
 	---------------------

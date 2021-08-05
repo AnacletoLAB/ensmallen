@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TardibacterChloracetimidivorans.
+This file offers the methods to automatically retrieve the graph Tardibacter chloracetimidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TardibacterChloracetimidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TardibacterChloracetimidivorans graph.
+    """Return new instance of the Tardibacter chloracetimidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TardibacterChloracetimidivorans(
 
     Returns
     -----------------------
-    Instace of TardibacterChloracetimidivorans graph.
+    Instace of Tardibacter chloracetimidivorans graph.
 
 	References
 	---------------------

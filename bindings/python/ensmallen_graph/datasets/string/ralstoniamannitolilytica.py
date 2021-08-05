@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaMannitolilytica.
+This file offers the methods to automatically retrieve the graph Ralstonia mannitolilytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaMannitolilytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaMannitolilytica graph.
+    """Return new instance of the Ralstonia mannitolilytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RalstoniaMannitolilytica(
 
     Returns
     -----------------------
-    Instace of RalstoniaMannitolilytica graph.
+    Instace of Ralstonia mannitolilytica graph.
 
 	References
 	---------------------

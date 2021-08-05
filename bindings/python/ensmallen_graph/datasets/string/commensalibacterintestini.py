@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CommensalibacterIntestini.
+This file offers the methods to automatically retrieve the graph Commensalibacter intestini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CommensalibacterIntestini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CommensalibacterIntestini graph.
+    """Return new instance of the Commensalibacter intestini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CommensalibacterIntestini(
 
     Returns
     -----------------------
-    Instace of CommensalibacterIntestini graph.
+    Instace of Commensalibacter intestini graph.
 
 	References
 	---------------------

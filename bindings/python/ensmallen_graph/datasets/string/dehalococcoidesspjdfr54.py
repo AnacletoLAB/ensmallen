@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DehalococcoidesSpJdfr54.
+This file offers the methods to automatically retrieve the graph Dehalococcoides sp. JdFR-54.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DehalococcoidesSpJdfr54(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DehalococcoidesSpJdfr54 graph.
+    """Return new instance of the Dehalococcoides sp. JdFR-54 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DehalococcoidesSpJdfr54(
 
     Returns
     -----------------------
-    Instace of DehalococcoidesSpJdfr54 graph.
+    Instace of Dehalococcoides sp. JdFR-54 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlossinaAusteni.
+This file offers the methods to automatically retrieve the graph Glossina austeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlossinaAusteni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlossinaAusteni graph.
+    """Return new instance of the Glossina austeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GlossinaAusteni(
 
     Returns
     -----------------------
-    Instace of GlossinaAusteni graph.
+    Instace of Glossina austeni graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrospiraPlatensisC1.
+This file offers the methods to automatically retrieve the graph Arthrospira platensis C1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrospiraPlatensisC1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrospiraPlatensisC1 graph.
+    """Return new instance of the Arthrospira platensis C1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrospiraPlatensisC1(
 
     Returns
     -----------------------
-    Instace of ArthrospiraPlatensisC1 graph.
+    Instace of Arthrospira platensis C1 graph.
 
 	References
 	---------------------

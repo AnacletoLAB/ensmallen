@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EscherichiaColiCft073.
+This file offers the methods to automatically retrieve the graph Escherichia coli CFT073.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EscherichiaColiCft073(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EscherichiaColiCft073 graph.
+    """Return new instance of the Escherichia coli CFT073 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EscherichiaColiCft073(
 
     Returns
     -----------------------
-    Instace of EscherichiaColiCft073 graph.
+    Instace of Escherichia coli CFT073 graph.
 
 	References
 	---------------------

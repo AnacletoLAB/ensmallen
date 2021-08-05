@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaVaviloviae.
+This file offers the methods to automatically retrieve the graph Bosea vaviloviae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaVaviloviae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaVaviloviae graph.
+    """Return new instance of the Bosea vaviloviae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaVaviloviae(
 
     Returns
     -----------------------
-    Instace of BoseaVaviloviae graph.
+    Instace of Bosea vaviloviae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCellostaticus.
+This file offers the methods to automatically retrieve the graph Streptomyces cellostaticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCellostaticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCellostaticus graph.
+    """Return new instance of the Streptomyces cellostaticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesCellostaticus(
 
     Returns
     -----------------------
-    Instace of StreptomycesCellostaticus graph.
+    Instace of Streptomyces cellostaticus graph.
 
 	References
 	---------------------

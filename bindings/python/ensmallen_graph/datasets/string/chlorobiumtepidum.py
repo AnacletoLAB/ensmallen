@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumTepidum.
+This file offers the methods to automatically retrieve the graph Chlorobium tepidum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumTepidum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumTepidum graph.
+    """Return new instance of the Chlorobium tepidum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumTepidum(
 
     Returns
     -----------------------
-    Instace of ChlorobiumTepidum graph.
+    Instace of Chlorobium tepidum graph.
 
 	References
 	---------------------

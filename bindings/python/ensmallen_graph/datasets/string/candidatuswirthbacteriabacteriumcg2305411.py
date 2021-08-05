@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWirthbacteriaBacteriumCg2305411.
+This file offers the methods to automatically retrieve the graph Candidatus Wirthbacteria bacterium CG2_30_54_11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWirthbacteriaBacteriumCg2305411(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWirthbacteriaBacteriumCg2305411 graph.
+    """Return new instance of the Candidatus Wirthbacteria bacterium CG2_30_54_11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWirthbacteriaBacteriumCg2305411(
 
     Returns
     -----------------------
-    Instace of CandidatusWirthbacteriaBacteriumCg2305411 graph.
+    Instace of Candidatus Wirthbacteria bacterium CG2_30_54_11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusKukulkanii.
+This file offers the methods to automatically retrieve the graph Pyrococcus kukulkanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusKukulkanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusKukulkanii graph.
+    """Return new instance of the Pyrococcus kukulkanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyrococcusKukulkanii(
 
     Returns
     -----------------------
-    Instace of PyrococcusKukulkanii graph.
+    Instace of Pyrococcus kukulkanii graph.
 
 	References
 	---------------------

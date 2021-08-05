@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaShandongensis.
+This file offers the methods to automatically retrieve the graph Gordonia shandongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaShandongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaShandongensis graph.
+    """Return new instance of the Gordonia shandongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaShandongensis(
 
     Returns
     -----------------------
-    Instace of GordoniaShandongensis graph.
+    Instace of Gordonia shandongensis graph.
 
 	References
 	---------------------

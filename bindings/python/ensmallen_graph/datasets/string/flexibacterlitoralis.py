@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlexibacterLitoralis.
+This file offers the methods to automatically retrieve the graph Flexibacter litoralis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlexibacterLitoralis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlexibacterLitoralis graph.
+    """Return new instance of the Flexibacter litoralis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlexibacterLitoralis(
 
     Returns
     -----------------------
-    Instace of FlexibacterLitoralis graph.
+    Instace of Flexibacter litoralis graph.
 
 	References
 	---------------------

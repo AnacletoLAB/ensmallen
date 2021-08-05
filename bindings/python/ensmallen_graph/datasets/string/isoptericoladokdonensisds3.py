@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IsoptericolaDokdonensisDs3.
+This file offers the methods to automatically retrieve the graph Isoptericola dokdonensis DS-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IsoptericolaDokdonensisDs3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IsoptericolaDokdonensisDs3 graph.
+    """Return new instance of the Isoptericola dokdonensis DS-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IsoptericolaDokdonensisDs3(
 
     Returns
     -----------------------
-    Instace of IsoptericolaDokdonensisDs3 graph.
+    Instace of Isoptericola dokdonensis DS-3 graph.
 
 	References
 	---------------------

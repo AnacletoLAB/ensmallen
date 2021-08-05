@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinorhizobiumFrediiHh103.
+This file offers the methods to automatically retrieve the graph Sinorhizobium fredii HH103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinorhizobiumFrediiHh103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinorhizobiumFrediiHh103 graph.
+    """Return new instance of the Sinorhizobium fredii HH103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SinorhizobiumFrediiHh103(
 
     Returns
     -----------------------
-    Instace of SinorhizobiumFrediiHh103 graph.
+    Instace of Sinorhizobium fredii HH103 graph.
 
 	References
 	---------------------

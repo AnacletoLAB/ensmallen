@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CrenarchaeotaArchaeonScgcAaa471B05.
+This file offers the methods to automatically retrieve the graph Crenarchaeota archaeon SCGC AAA471-B05.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CrenarchaeotaArchaeonScgcAaa471B05(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CrenarchaeotaArchaeonScgcAaa471B05 graph.
+    """Return new instance of the Crenarchaeota archaeon SCGC AAA471-B05 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CrenarchaeotaArchaeonScgcAaa471B05(
 
     Returns
     -----------------------
-    Instace of CrenarchaeotaArchaeonScgcAaa471B05 graph.
+    Instace of Crenarchaeota archaeon SCGC AAA471-B05 graph.
 
 	References
 	---------------------

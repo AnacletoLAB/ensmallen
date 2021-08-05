@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThielaviaTerrestris.
+This file offers the methods to automatically retrieve the graph Thielavia terrestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThielaviaTerrestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThielaviaTerrestris graph.
+    """Return new instance of the Thielavia terrestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThielaviaTerrestris(
 
     Returns
     -----------------------
-    Instace of ThielaviaTerrestris graph.
+    Instace of Thielavia terrestris graph.
 
 	References
 	---------------------

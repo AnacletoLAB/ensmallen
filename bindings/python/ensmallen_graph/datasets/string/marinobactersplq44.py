@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterSpLq44.
+This file offers the methods to automatically retrieve the graph Marinobacter sp. LQ44.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterSpLq44(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterSpLq44 graph.
+    """Return new instance of the Marinobacter sp. LQ44 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinobacterSpLq44(
 
     Returns
     -----------------------
-    Instace of MarinobacterSpLq44 graph.
+    Instace of Marinobacter sp. LQ44 graph.
 
 	References
 	---------------------

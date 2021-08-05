@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumLongumNcc2705.
+This file offers the methods to automatically retrieve the graph Bifidobacterium longum NCC2705.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumLongumNcc2705(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumLongumNcc2705 graph.
+    """Return new instance of the Bifidobacterium longum NCC2705 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumLongumNcc2705(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumLongumNcc2705 graph.
+    Instace of Bifidobacterium longum NCC2705 graph.
 
 	References
 	---------------------

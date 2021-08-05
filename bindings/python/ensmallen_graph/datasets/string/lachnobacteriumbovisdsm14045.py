@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnobacteriumBovisDsm14045.
+This file offers the methods to automatically retrieve the graph Lachnobacterium bovis DSM 14045.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnobacteriumBovisDsm14045(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnobacteriumBovisDsm14045 graph.
+    """Return new instance of the Lachnobacterium bovis DSM 14045 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnobacteriumBovisDsm14045(
 
     Returns
     -----------------------
-    Instace of LachnobacteriumBovisDsm14045 graph.
+    Instace of Lachnobacterium bovis DSM 14045 graph.
 
 	References
 	---------------------

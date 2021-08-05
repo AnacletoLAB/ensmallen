@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterSpZxy2.
+This file offers the methods to automatically retrieve the graph Arthrobacter sp. ZXY-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterSpZxy2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterSpZxy2 graph.
+    """Return new instance of the Arthrobacter sp. ZXY-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterSpZxy2(
 
     Returns
     -----------------------
-    Instace of ArthrobacterSpZxy2 graph.
+    Instace of Arthrobacter sp. ZXY-2 graph.
 
 	References
 	---------------------

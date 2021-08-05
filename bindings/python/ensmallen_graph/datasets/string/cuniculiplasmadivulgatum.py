@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CuniculiplasmaDivulgatum.
+This file offers the methods to automatically retrieve the graph Cuniculiplasma divulgatum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CuniculiplasmaDivulgatum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CuniculiplasmaDivulgatum graph.
+    """Return new instance of the Cuniculiplasma divulgatum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CuniculiplasmaDivulgatum(
 
     Returns
     -----------------------
-    Instace of CuniculiplasmaDivulgatum graph.
+    Instace of Cuniculiplasma divulgatum graph.
 
 	References
 	---------------------

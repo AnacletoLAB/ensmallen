@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfolobusSpJcm16833.
+This file offers the methods to automatically retrieve the graph Sulfolobus sp. JCM 16833.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfolobusSpJcm16833(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfolobusSpJcm16833 graph.
+    """Return new instance of the Sulfolobus sp. JCM 16833 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfolobusSpJcm16833(
 
     Returns
     -----------------------
-    Instace of SulfolobusSpJcm16833 graph.
+    Instace of Sulfolobus sp. JCM 16833 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumRubens.
+This file offers the methods to automatically retrieve the graph Penicillium rubens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumRubens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumRubens graph.
+    """Return new instance of the Penicillium rubens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PenicilliumRubens(
 
     Returns
     -----------------------
-    Instace of PenicilliumRubens graph.
+    Instace of Penicillium rubens graph.
 
 	References
 	---------------------

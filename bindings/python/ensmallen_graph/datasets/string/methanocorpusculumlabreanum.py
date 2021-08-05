@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanocorpusculumLabreanum.
+This file offers the methods to automatically retrieve the graph Methanocorpusculum labreanum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanocorpusculumLabreanum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanocorpusculumLabreanum graph.
+    """Return new instance of the Methanocorpusculum labreanum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanocorpusculumLabreanum(
 
     Returns
     -----------------------
-    Instace of MethanocorpusculumLabreanum graph.
+    Instace of Methanocorpusculum labreanum graph.
 
 	References
 	---------------------

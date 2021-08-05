@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GranulicatellaBalaenopterae.
+This file offers the methods to automatically retrieve the graph Granulicatella balaenopterae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GranulicatellaBalaenopterae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GranulicatellaBalaenopterae graph.
+    """Return new instance of the Granulicatella balaenopterae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GranulicatellaBalaenopterae(
 
     Returns
     -----------------------
-    Instace of GranulicatellaBalaenopterae graph.
+    Instace of Granulicatella balaenopterae graph.
 
 	References
 	---------------------

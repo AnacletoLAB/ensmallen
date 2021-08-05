@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoccidioidesImmitisH5384.
+This file offers the methods to automatically retrieve the graph Coccidioides immitis H538.4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoccidioidesImmitisH5384(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoccidioidesImmitisH5384 graph.
+    """Return new instance of the Coccidioides immitis H538.4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoccidioidesImmitisH5384(
 
     Returns
     -----------------------
-    Instace of CoccidioidesImmitisH5384 graph.
+    Instace of Coccidioides immitis H538.4 graph.
 
 	References
 	---------------------

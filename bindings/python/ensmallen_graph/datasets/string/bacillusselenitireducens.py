@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSelenitireducens.
+This file offers the methods to automatically retrieve the graph Bacillus selenitireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSelenitireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSelenitireducens graph.
+    """Return new instance of the Bacillus selenitireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusSelenitireducens(
 
     Returns
     -----------------------
-    Instace of BacillusSelenitireducens graph.
+    Instace of Bacillus selenitireducens graph.
 
 	References
 	---------------------

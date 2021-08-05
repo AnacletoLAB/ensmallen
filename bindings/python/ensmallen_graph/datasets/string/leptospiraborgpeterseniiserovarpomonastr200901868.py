@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraBorgpeterseniiSerovarPomonaStr200901868.
+This file offers the methods to automatically retrieve the graph Leptospira borgpetersenii serovar Pomona str. 200901868.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraBorgpeterseniiSerovarPomonaStr200901868(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraBorgpeterseniiSerovarPomonaStr200901868 graph.
+    """Return new instance of the Leptospira borgpetersenii serovar Pomona str. 200901868 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraBorgpeterseniiSerovarPomonaStr200901868(
 
     Returns
     -----------------------
-    Instace of LeptospiraBorgpeterseniiSerovarPomonaStr200901868 graph.
+    Instace of Leptospira borgpetersenii serovar Pomona str. 200901868 graph.
 
 	References
 	---------------------

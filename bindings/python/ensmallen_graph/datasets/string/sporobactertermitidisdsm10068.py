@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporobacterTermitidisDsm10068.
+This file offers the methods to automatically retrieve the graph Sporobacter termitidis DSM 10068.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporobacterTermitidisDsm10068(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporobacterTermitidisDsm10068 graph.
+    """Return new instance of the Sporobacter termitidis DSM 10068 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporobacterTermitidisDsm10068(
 
     Returns
     -----------------------
-    Instace of SporobacterTermitidisDsm10068 graph.
+    Instace of Sporobacter termitidis DSM 10068 graph.
 
 	References
 	---------------------

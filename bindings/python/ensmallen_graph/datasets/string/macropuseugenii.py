@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacropusEugenii.
+This file offers the methods to automatically retrieve the graph Macropus eugenii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacropusEugenii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacropusEugenii graph.
+    """Return new instance of the Macropus eugenii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MacropusEugenii(
 
     Returns
     -----------------------
-    Instace of MacropusEugenii graph.
+    Instace of Macropus eugenii graph.
 
 	References
 	---------------------

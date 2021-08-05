@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusDaejeonensis.
+This file offers the methods to automatically retrieve the graph Paenibacillus daejeonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusDaejeonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusDaejeonensis graph.
+    """Return new instance of the Paenibacillus daejeonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PaenibacillusDaejeonensis(
 
     Returns
     -----------------------
-    Instace of PaenibacillusDaejeonensis graph.
+    Instace of Paenibacillus daejeonensis graph.
 
 	References
 	---------------------

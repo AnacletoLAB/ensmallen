@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquimarinaMegaterium.
+This file offers the methods to automatically retrieve the graph Aquimarina megaterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquimarinaMegaterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquimarinaMegaterium graph.
+    """Return new instance of the Aquimarina megaterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AquimarinaMegaterium(
 
     Returns
     -----------------------
-    Instace of AquimarinaMegaterium graph.
+    Instace of Aquimarina megaterium graph.
 
 	References
 	---------------------

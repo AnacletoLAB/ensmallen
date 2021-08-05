@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCatenulae.
+This file offers the methods to automatically retrieve the graph Streptomyces catenulae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCatenulae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCatenulae graph.
+    """Return new instance of the Streptomyces catenulae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCatenulae(
 
     Returns
     -----------------------
-    Instace of StreptomycesCatenulae graph.
+    Instace of Streptomyces catenulae graph.
 
 	References
 	---------------------

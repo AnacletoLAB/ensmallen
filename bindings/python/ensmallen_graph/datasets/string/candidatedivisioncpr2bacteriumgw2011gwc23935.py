@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionCpr2BacteriumGw2011Gwc23935.
+This file offers the methods to automatically retrieve the graph candidate division CPR2 bacterium GW2011_GWC2_39_35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionCpr2BacteriumGw2011Gwc23935(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionCpr2BacteriumGw2011Gwc23935 graph.
+    """Return new instance of the candidate division CPR2 bacterium GW2011_GWC2_39_35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionCpr2BacteriumGw2011Gwc23935(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionCpr2BacteriumGw2011Gwc23935 graph.
+    Instace of candidate division CPR2 bacterium GW2011_GWC2_39_35 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeinococcusHopiensisKr140.
+This file offers the methods to automatically retrieve the graph Deinococcus hopiensis KR-140.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeinococcusHopiensisKr140(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeinococcusHopiensisKr140 graph.
+    """Return new instance of the Deinococcus hopiensis KR-140 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeinococcusHopiensisKr140(
 
     Returns
     -----------------------
-    Instace of DeinococcusHopiensisKr140 graph.
+    Instace of Deinococcus hopiensis KR-140 graph.
 
 	References
 	---------------------

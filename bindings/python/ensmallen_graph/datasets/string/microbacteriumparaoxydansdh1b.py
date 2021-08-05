@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumParaoxydansDh1b.
+This file offers the methods to automatically retrieve the graph Microbacterium paraoxydans DH1b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumParaoxydansDh1b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumParaoxydansDh1b graph.
+    """Return new instance of the Microbacterium paraoxydans DH1b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumParaoxydansDh1b(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumParaoxydansDh1b graph.
+    Instace of Microbacterium paraoxydans DH1b graph.
 
 	References
 	---------------------

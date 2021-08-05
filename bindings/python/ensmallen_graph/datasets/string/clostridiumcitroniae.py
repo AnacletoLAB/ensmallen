@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumCitroniae.
+This file offers the methods to automatically retrieve the graph Clostridium citroniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumCitroniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumCitroniae graph.
+    """Return new instance of the Clostridium citroniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumCitroniae(
 
     Returns
     -----------------------
-    Instace of ClostridiumCitroniae graph.
+    Instace of Clostridium citroniae graph.
 
 	References
 	---------------------

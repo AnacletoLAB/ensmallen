@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Grid1.
+This file offers the methods to automatically retrieve the graph grid1.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Grid1(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Grid1 graph.
+    """Return new instance of the grid1 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Grid1(
 
     Returns
     -----------------------
-    Instace of Grid1 graph.
+    Instace of grid1 graph.
 
 	References
 	---------------------

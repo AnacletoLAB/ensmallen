@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpDc12.
+This file offers the methods to automatically retrieve the graph Frankia sp. DC12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpDc12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpDc12 graph.
+    """Return new instance of the Frankia sp. DC12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrankiaSpDc12(
 
     Returns
     -----------------------
-    Instace of FrankiaSpDc12 graph.
+    Instace of Frankia sp. DC12 graph.
 
 	References
 	---------------------

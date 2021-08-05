@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSymbiont.
+This file offers the methods to automatically retrieve the graph Frankia symbiont.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSymbiont(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSymbiont graph.
+    """Return new instance of the Frankia symbiont graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSymbiont(
 
     Returns
     -----------------------
-    Instace of FrankiaSymbiont graph.
+    Instace of Frankia symbiont graph.
 
 	References
 	---------------------

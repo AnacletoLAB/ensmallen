@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpYr266.
+This file offers the methods to automatically retrieve the graph Variovorax sp. YR266.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpYr266(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpYr266 graph.
+    """Return new instance of the Variovorax sp. YR266 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpYr266(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpYr266 graph.
+    Instace of Variovorax sp. YR266 graph.
 
 	References
 	---------------------

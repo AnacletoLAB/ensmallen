@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumChlorochromatii.
+This file offers the methods to automatically retrieve the graph Chlorobium chlorochromatii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumChlorochromatii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumChlorochromatii graph.
+    """Return new instance of the Chlorobium chlorochromatii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumChlorochromatii(
 
     Returns
     -----------------------
-    Instace of ChlorobiumChlorochromatii graph.
+    Instace of Chlorobium chlorochromatii graph.
 
 	References
 	---------------------

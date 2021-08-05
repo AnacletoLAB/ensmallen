@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasXanthomarina.
+This file offers the methods to automatically retrieve the graph Pseudomonas xanthomarina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasXanthomarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasXanthomarina graph.
+    """Return new instance of the Pseudomonas xanthomarina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasXanthomarina(
 
     Returns
     -----------------------
-    Instace of PseudomonasXanthomarina graph.
+    Instace of Pseudomonas xanthomarina graph.
 
 	References
 	---------------------

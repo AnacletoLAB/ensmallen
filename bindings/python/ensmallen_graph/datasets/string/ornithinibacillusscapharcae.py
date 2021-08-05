@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OrnithinibacillusScapharcae.
+This file offers the methods to automatically retrieve the graph Ornithinibacillus scapharcae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OrnithinibacillusScapharcae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OrnithinibacillusScapharcae graph.
+    """Return new instance of the Ornithinibacillus scapharcae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OrnithinibacillusScapharcae(
 
     Returns
     -----------------------
-    Instace of OrnithinibacillusScapharcae graph.
+    Instace of Ornithinibacillus scapharcae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterKobei.
+This file offers the methods to automatically retrieve the graph Enterobacter kobei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterKobei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterKobei graph.
+    """Return new instance of the Enterobacter kobei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterKobei(
 
     Returns
     -----------------------
-    Instace of EnterobacterKobei graph.
+    Instace of Enterobacter kobei graph.
 
 	References
 	---------------------

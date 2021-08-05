@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrachyspiraHyodysenteriae.
+This file offers the methods to automatically retrieve the graph Brachyspira hyodysenteriae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrachyspiraHyodysenteriae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrachyspiraHyodysenteriae graph.
+    """Return new instance of the Brachyspira hyodysenteriae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrachyspiraHyodysenteriae(
 
     Returns
     -----------------------
-    Instace of BrachyspiraHyodysenteriae graph.
+    Instace of Brachyspira hyodysenteriae graph.
 
 	References
 	---------------------

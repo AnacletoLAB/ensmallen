@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpNiph3623.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. NIPH 3623.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpNiph3623(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpNiph3623 graph.
+    """Return new instance of the Acinetobacter sp. NIPH 3623 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpNiph3623(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpNiph3623 graph.
+    Instace of Acinetobacter sp. NIPH 3623 graph.
 
 	References
 	---------------------

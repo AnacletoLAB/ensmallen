@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaGrenadensisNbrc108939.
+This file offers the methods to automatically retrieve the graph Nocardia grenadensis NBRC 108939.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaGrenadensisNbrc108939(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaGrenadensisNbrc108939 graph.
+    """Return new instance of the Nocardia grenadensis NBRC 108939 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaGrenadensisNbrc108939(
 
     Returns
     -----------------------
-    Instace of NocardiaGrenadensisNbrc108939 graph.
+    Instace of Nocardia grenadensis NBRC 108939 graph.
 
 	References
 	---------------------

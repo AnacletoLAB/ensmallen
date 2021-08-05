@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TreponemaSpGwc16184.
+This file offers the methods to automatically retrieve the graph Treponema sp. GWC1_61_84.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TreponemaSpGwc16184(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TreponemaSpGwc16184 graph.
+    """Return new instance of the Treponema sp. GWC1_61_84 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TreponemaSpGwc16184(
 
     Returns
     -----------------------
-    Instace of TreponemaSpGwc16184 graph.
+    Instace of Treponema sp. GWC1_61_84 graph.
 
 	References
 	---------------------

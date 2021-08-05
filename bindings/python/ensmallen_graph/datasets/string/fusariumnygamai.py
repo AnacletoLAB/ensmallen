@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumNygamai.
+This file offers the methods to automatically retrieve the graph Fusarium nygamai.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumNygamai(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumNygamai graph.
+    """Return new instance of the Fusarium nygamai graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumNygamai(
 
     Returns
     -----------------------
-    Instace of FusariumNygamai graph.
+    Instace of Fusarium nygamai graph.
 
 	References
 	---------------------

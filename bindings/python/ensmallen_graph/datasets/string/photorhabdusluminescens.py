@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotorhabdusLuminescens.
+This file offers the methods to automatically retrieve the graph Photorhabdus luminescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotorhabdusLuminescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotorhabdusLuminescens graph.
+    """Return new instance of the Photorhabdus luminescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotorhabdusLuminescens(
 
     Returns
     -----------------------
-    Instace of PhotorhabdusLuminescens graph.
+    Instace of Photorhabdus luminescens graph.
 
 	References
 	---------------------

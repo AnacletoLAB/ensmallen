@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfovibrioThiophilus.
+This file offers the methods to automatically retrieve the graph Thermodesulfovibrio thiophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfovibrioThiophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfovibrioThiophilus graph.
+    """Return new instance of the Thermodesulfovibrio thiophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermodesulfovibrioThiophilus(
 
     Returns
     -----------------------
-    Instace of ThermodesulfovibrioThiophilus graph.
+    Instace of Thermodesulfovibrio thiophilus graph.
 
 	References
 	---------------------

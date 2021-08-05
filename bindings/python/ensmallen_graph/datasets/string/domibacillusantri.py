@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DomibacillusAntri.
+This file offers the methods to automatically retrieve the graph Domibacillus antri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DomibacillusAntri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DomibacillusAntri graph.
+    """Return new instance of the Domibacillus antri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DomibacillusAntri(
 
     Returns
     -----------------------
-    Instace of DomibacillusAntri graph.
+    Instace of Domibacillus antri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobacteriumSpAccc05744.
+This file offers the methods to automatically retrieve the graph Sphingobacterium sp. ACCC05744.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobacteriumSpAccc05744(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobacteriumSpAccc05744 graph.
+    """Return new instance of the Sphingobacterium sp. ACCC05744 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobacteriumSpAccc05744(
 
     Returns
     -----------------------
-    Instace of SphingobacteriumSpAccc05744 graph.
+    Instace of Sphingobacterium sp. ACCC05744 graph.
 
 	References
 	---------------------

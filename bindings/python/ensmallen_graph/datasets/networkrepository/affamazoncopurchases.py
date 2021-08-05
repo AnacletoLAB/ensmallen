@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AffAmazonCopurchases.
+This file offers the methods to automatically retrieve the graph aff-amazon-copurchases.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def AffAmazonCopurchases(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AffAmazonCopurchases graph.
+    """Return new instance of the aff-amazon-copurchases graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def AffAmazonCopurchases(
 
     Returns
     -----------------------
-    Instace of AffAmazonCopurchases graph.
+    Instace of aff-amazon-copurchases graph.
 
 	References
 	---------------------

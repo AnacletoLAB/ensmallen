@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusFordii.
+This file offers the methods to automatically retrieve the graph Bacillus fordii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusFordii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusFordii graph.
+    """Return new instance of the Bacillus fordii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusFordii(
 
     Returns
     -----------------------
-    Instace of BacillusFordii graph.
+    Instace of Bacillus fordii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DbpediaOccupation.
+This file offers the methods to automatically retrieve the graph dbpedia-occupation.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def DbpediaOccupation(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DbpediaOccupation graph.
+    """Return new instance of the dbpedia-occupation graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def DbpediaOccupation(
 
     Returns
     -----------------------
-    Instace of DbpediaOccupation graph.
+    Instace of dbpedia-occupation graph.
 
 	References
 	---------------------

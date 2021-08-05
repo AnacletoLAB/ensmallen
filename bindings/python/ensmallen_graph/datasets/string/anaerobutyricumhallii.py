@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerobutyricumHallii.
+This file offers the methods to automatically retrieve the graph Anaerobutyricum hallii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerobutyricumHallii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerobutyricumHallii graph.
+    """Return new instance of the Anaerobutyricum hallii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerobutyricumHallii(
 
     Returns
     -----------------------
-    Instace of AnaerobutyricumHallii graph.
+    Instace of Anaerobutyricum hallii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DialisterInvisus.
+This file offers the methods to automatically retrieve the graph Dialister invisus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DialisterInvisus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DialisterInvisus graph.
+    """Return new instance of the Dialister invisus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DialisterInvisus(
 
     Returns
     -----------------------
-    Instace of DialisterInvisus graph.
+    Instace of Dialister invisus graph.
 
 	References
 	---------------------

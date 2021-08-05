@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferMarinus.
+This file offers the methods to automatically retrieve the graph Microbulbifer marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferMarinus graph.
+    """Return new instance of the Microbulbifer marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferMarinus(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferMarinus graph.
+    Instace of Microbulbifer marinus graph.
 
 	References
 	---------------------

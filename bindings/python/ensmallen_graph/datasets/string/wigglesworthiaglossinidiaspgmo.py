@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WigglesworthiaGlossinidiaSpGmo.
+This file offers the methods to automatically retrieve the graph Wigglesworthia glossinidia sp. Gmo.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WigglesworthiaGlossinidiaSpGmo(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WigglesworthiaGlossinidiaSpGmo graph.
+    """Return new instance of the Wigglesworthia glossinidia sp. Gmo graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WigglesworthiaGlossinidiaSpGmo(
 
     Returns
     -----------------------
-    Instace of WigglesworthiaGlossinidiaSpGmo graph.
+    Instace of Wigglesworthia glossinidia sp. Gmo graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrateuriaTerrea.
+This file offers the methods to automatically retrieve the graph Frateuria terrea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrateuriaTerrea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrateuriaTerrea graph.
+    """Return new instance of the Frateuria terrea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrateuriaTerrea(
 
     Returns
     -----------------------
-    Instace of FrateuriaTerrea graph.
+    Instace of Frateuria terrea graph.
 
 	References
 	---------------------

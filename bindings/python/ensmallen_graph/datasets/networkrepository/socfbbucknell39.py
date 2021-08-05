@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBucknell39.
+This file offers the methods to automatically retrieve the graph socfb-Bucknell39.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBucknell39(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBucknell39 graph.
+    """Return new instance of the socfb-Bucknell39 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBucknell39(
 
     Returns
     -----------------------
-    Instace of SocfbBucknell39 graph.
+    Instace of socfb-Bucknell39 graph.
 
 	References
 	---------------------

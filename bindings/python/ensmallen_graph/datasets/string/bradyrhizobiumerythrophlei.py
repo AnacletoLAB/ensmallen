@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BradyrhizobiumErythrophlei.
+This file offers the methods to automatically retrieve the graph Bradyrhizobium erythrophlei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BradyrhizobiumErythrophlei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BradyrhizobiumErythrophlei graph.
+    """Return new instance of the Bradyrhizobium erythrophlei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BradyrhizobiumErythrophlei(
 
     Returns
     -----------------------
-    Instace of BradyrhizobiumErythrophlei graph.
+    Instace of Bradyrhizobium erythrophlei graph.
 
 	References
 	---------------------

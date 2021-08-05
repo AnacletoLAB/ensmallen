@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchleiferiaThermophila.
+This file offers the methods to automatically retrieve the graph Schleiferia thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchleiferiaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchleiferiaThermophila graph.
+    """Return new instance of the Schleiferia thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SchleiferiaThermophila(
 
     Returns
     -----------------------
-    Instace of SchleiferiaThermophila graph.
+    Instace of Schleiferia thermophila graph.
 
 	References
 	---------------------

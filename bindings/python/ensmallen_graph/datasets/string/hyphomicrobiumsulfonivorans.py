@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomicrobiumSulfonivorans.
+This file offers the methods to automatically retrieve the graph Hyphomicrobium sulfonivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomicrobiumSulfonivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomicrobiumSulfonivorans graph.
+    """Return new instance of the Hyphomicrobium sulfonivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomicrobiumSulfonivorans(
 
     Returns
     -----------------------
-    Instace of HyphomicrobiumSulfonivorans graph.
+    Instace of Hyphomicrobium sulfonivorans graph.
 
 	References
 	---------------------

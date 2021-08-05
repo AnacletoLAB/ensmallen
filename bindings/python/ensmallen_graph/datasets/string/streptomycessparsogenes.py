@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSparsogenes.
+This file offers the methods to automatically retrieve the graph Streptomyces sparsogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSparsogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSparsogenes graph.
+    """Return new instance of the Streptomyces sparsogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSparsogenes(
 
     Returns
     -----------------------
-    Instace of StreptomycesSparsogenes graph.
+    Instace of Streptomyces sparsogenes graph.
 
 	References
 	---------------------

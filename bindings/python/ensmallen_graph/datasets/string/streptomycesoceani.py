@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesOceani.
+This file offers the methods to automatically retrieve the graph Streptomyces oceani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesOceani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesOceani graph.
+    """Return new instance of the Streptomyces oceani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesOceani(
 
     Returns
     -----------------------
-    Instace of StreptomycesOceani graph.
+    Instace of Streptomyces oceani graph.
 
 	References
 	---------------------

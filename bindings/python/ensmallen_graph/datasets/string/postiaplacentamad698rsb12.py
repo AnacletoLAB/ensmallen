@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PostiaPlacentaMad698RSb12.
+This file offers the methods to automatically retrieve the graph Postia placenta MAD-698-R-SB12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PostiaPlacentaMad698RSb12(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PostiaPlacentaMad698RSb12 graph.
+    """Return new instance of the Postia placenta MAD-698-R-SB12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PostiaPlacentaMad698RSb12(
 
     Returns
     -----------------------
-    Instace of PostiaPlacentaMad698RSb12 graph.
+    Instace of Postia placenta MAD-698-R-SB12 graph.
 
 	References
 	---------------------

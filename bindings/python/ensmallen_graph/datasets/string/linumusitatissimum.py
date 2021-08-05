@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LinumUsitatissimum.
+This file offers the methods to automatically retrieve the graph Linum usitatissimum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LinumUsitatissimum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LinumUsitatissimum graph.
+    """Return new instance of the Linum usitatissimum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LinumUsitatissimum(
 
     Returns
     -----------------------
-    Instace of LinumUsitatissimum graph.
+    Instace of Linum usitatissimum graph.
 
 	References
 	---------------------

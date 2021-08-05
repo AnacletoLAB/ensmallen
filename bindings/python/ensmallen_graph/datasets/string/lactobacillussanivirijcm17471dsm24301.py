@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSaniviriJcm17471Dsm24301.
+This file offers the methods to automatically retrieve the graph Lactobacillus saniviri JCM 17471 DSM 24301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSaniviriJcm17471Dsm24301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSaniviriJcm17471Dsm24301 graph.
+    """Return new instance of the Lactobacillus saniviri JCM 17471 DSM 24301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSaniviriJcm17471Dsm24301(
 
     Returns
     -----------------------
-    Instace of LactobacillusSaniviriJcm17471Dsm24301 graph.
+    Instace of Lactobacillus saniviri JCM 17471 DSM 24301 graph.
 
 	References
 	---------------------

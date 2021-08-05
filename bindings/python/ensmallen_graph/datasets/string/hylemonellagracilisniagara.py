@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HylemonellaGracilisNiagara.
+This file offers the methods to automatically retrieve the graph Hylemonella gracilis Niagara.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HylemonellaGracilisNiagara(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HylemonellaGracilisNiagara graph.
+    """Return new instance of the Hylemonella gracilis Niagara graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HylemonellaGracilisNiagara(
 
     Returns
     -----------------------
-    Instace of HylemonellaGracilisNiagara graph.
+    Instace of Hylemonella gracilis Niagara graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaSpHmsc072f04.
+This file offers the methods to automatically retrieve the graph Neisseria sp. HMSC072F04.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaSpHmsc072f04(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaSpHmsc072f04 graph.
+    """Return new instance of the Neisseria sp. HMSC072F04 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaSpHmsc072f04(
 
     Returns
     -----------------------
-    Instace of NeisseriaSpHmsc072f04 graph.
+    Instace of Neisseria sp. HMSC072F04 graph.
 
 	References
 	---------------------

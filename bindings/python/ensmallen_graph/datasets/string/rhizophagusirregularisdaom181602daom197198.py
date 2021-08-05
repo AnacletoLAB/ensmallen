@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizophagusIrregularisDaom181602Daom197198.
+This file offers the methods to automatically retrieve the graph Rhizophagus irregularis DAOM 181602=DAOM 197198.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizophagusIrregularisDaom181602Daom197198(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizophagusIrregularisDaom181602Daom197198 graph.
+    """Return new instance of the Rhizophagus irregularis DAOM 181602=DAOM 197198 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizophagusIrregularisDaom181602Daom197198(
 
     Returns
     -----------------------
-    Instace of RhizophagusIrregularisDaom181602Daom197198 graph.
+    Instace of Rhizophagus irregularis DAOM 181602=DAOM 197198 graph.
 
 	References
 	---------------------

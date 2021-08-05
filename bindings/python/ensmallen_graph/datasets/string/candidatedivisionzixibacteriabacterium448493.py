@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionZixibacteriaBacterium448493.
+This file offers the methods to automatically retrieve the graph candidate division Zixibacteria bacterium 4484_93.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionZixibacteriaBacterium448493(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionZixibacteriaBacterium448493 graph.
+    """Return new instance of the candidate division Zixibacteria bacterium 4484_93 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionZixibacteriaBacterium448493(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionZixibacteriaBacterium448493 graph.
+    Instace of candidate division Zixibacteria bacterium 4484_93 graph.
 
 	References
 	---------------------

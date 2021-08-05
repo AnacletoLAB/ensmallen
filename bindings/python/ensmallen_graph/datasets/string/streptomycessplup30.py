@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpLup30.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. LUP30.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpLup30(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpLup30 graph.
+    """Return new instance of the Streptomyces sp. LUP30 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpLup30(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpLup30 graph.
+    Instace of Streptomyces sp. LUP30 graph.
 
 	References
 	---------------------

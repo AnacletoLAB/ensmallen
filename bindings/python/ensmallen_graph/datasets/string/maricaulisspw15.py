@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaricaulisSpW15.
+This file offers the methods to automatically retrieve the graph Maricaulis sp. W15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaricaulisSpW15(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaricaulisSpW15 graph.
+    """Return new instance of the Maricaulis sp. W15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaricaulisSpW15(
 
     Returns
     -----------------------
-    Instace of MaricaulisSpW15 graph.
+    Instace of Maricaulis sp. W15 graph.
 
 	References
 	---------------------

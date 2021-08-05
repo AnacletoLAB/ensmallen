@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HolophagaFoetida.
+This file offers the methods to automatically retrieve the graph Holophaga foetida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HolophagaFoetida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HolophagaFoetida graph.
+    """Return new instance of the Holophaga foetida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HolophagaFoetida(
 
     Returns
     -----------------------
-    Instace of HolophagaFoetida graph.
+    Instace of Holophaga foetida graph.
 
 	References
 	---------------------

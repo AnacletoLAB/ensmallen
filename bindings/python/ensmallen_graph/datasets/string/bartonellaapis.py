@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BartonellaApis.
+This file offers the methods to automatically retrieve the graph Bartonella apis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BartonellaApis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BartonellaApis graph.
+    """Return new instance of the Bartonella apis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BartonellaApis(
 
     Returns
     -----------------------
-    Instace of BartonellaApis graph.
+    Instace of Bartonella apis graph.
 
 	References
 	---------------------

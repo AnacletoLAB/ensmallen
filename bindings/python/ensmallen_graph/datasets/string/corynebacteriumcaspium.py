@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumCaspium.
+This file offers the methods to automatically retrieve the graph Corynebacterium caspium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumCaspium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumCaspium graph.
+    """Return new instance of the Corynebacterium caspium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumCaspium(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumCaspium graph.
+    Instace of Corynebacterium caspium graph.
 
 	References
 	---------------------

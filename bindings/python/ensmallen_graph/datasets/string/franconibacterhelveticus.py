@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FranconibacterHelveticus.
+This file offers the methods to automatically retrieve the graph Franconibacter helveticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FranconibacterHelveticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FranconibacterHelveticus graph.
+    """Return new instance of the Franconibacter helveticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FranconibacterHelveticus(
 
     Returns
     -----------------------
-    Instace of FranconibacterHelveticus graph.
+    Instace of Franconibacter helveticus graph.
 
 	References
 	---------------------

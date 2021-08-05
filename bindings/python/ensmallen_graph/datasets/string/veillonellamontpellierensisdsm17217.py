@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaMontpellierensisDsm17217.
+This file offers the methods to automatically retrieve the graph Veillonella montpellierensis DSM 17217.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaMontpellierensisDsm17217(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaMontpellierensisDsm17217 graph.
+    """Return new instance of the Veillonella montpellierensis DSM 17217 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VeillonellaMontpellierensisDsm17217(
 
     Returns
     -----------------------
-    Instace of VeillonellaMontpellierensisDsm17217 graph.
+    Instace of Veillonella montpellierensis DSM 17217 graph.
 
 	References
 	---------------------

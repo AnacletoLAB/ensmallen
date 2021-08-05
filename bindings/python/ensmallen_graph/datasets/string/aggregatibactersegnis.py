@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AggregatibacterSegnis.
+This file offers the methods to automatically retrieve the graph Aggregatibacter segnis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AggregatibacterSegnis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AggregatibacterSegnis graph.
+    """Return new instance of the Aggregatibacter segnis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AggregatibacterSegnis(
 
     Returns
     -----------------------
-    Instace of AggregatibacterSegnis graph.
+    Instace of Aggregatibacter segnis graph.
 
 	References
 	---------------------

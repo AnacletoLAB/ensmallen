@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcticibacterEurypsychrophilus.
+This file offers the methods to automatically retrieve the graph Arcticibacter eurypsychrophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcticibacterEurypsychrophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcticibacterEurypsychrophilus graph.
+    """Return new instance of the Arcticibacter eurypsychrophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcticibacterEurypsychrophilus(
 
     Returns
     -----------------------
-    Instace of ArcticibacterEurypsychrophilus graph.
+    Instace of Arcticibacter eurypsychrophilus graph.
 
 	References
 	---------------------

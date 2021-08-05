@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbBAnon.
+This file offers the methods to automatically retrieve the graph socfb-B-anon.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbBAnon(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbBAnon graph.
+    """Return new instance of the socfb-B-anon graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbBAnon(
 
     Returns
     -----------------------
-    Instace of SocfbBAnon graph.
+    Instace of socfb-B-anon graph.
 
 	References
 	---------------------

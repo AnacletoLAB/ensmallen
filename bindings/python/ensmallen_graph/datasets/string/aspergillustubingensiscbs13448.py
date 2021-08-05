@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusTubingensisCbs13448.
+This file offers the methods to automatically retrieve the graph Aspergillus tubingensis CBS 134.48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusTubingensisCbs13448(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusTubingensisCbs13448 graph.
+    """Return new instance of the Aspergillus tubingensis CBS 134.48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusTubingensisCbs13448(
 
     Returns
     -----------------------
-    Instace of AspergillusTubingensisCbs13448 graph.
+    Instace of Aspergillus tubingensis CBS 134.48 graph.
 
 	References
 	---------------------

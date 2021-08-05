@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XenorhabdusEapokensis.
+This file offers the methods to automatically retrieve the graph Xenorhabdus eapokensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XenorhabdusEapokensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XenorhabdusEapokensis graph.
+    """Return new instance of the Xenorhabdus eapokensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XenorhabdusEapokensis(
 
     Returns
     -----------------------
-    Instace of XenorhabdusEapokensis graph.
+    Instace of Xenorhabdus eapokensis graph.
 
 	References
 	---------------------

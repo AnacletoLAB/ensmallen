@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoefleaSp108.
+This file offers the methods to automatically retrieve the graph Hoeflea sp. 108.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoefleaSp108(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoefleaSp108 graph.
+    """Return new instance of the Hoeflea sp. 108 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HoefleaSp108(
 
     Returns
     -----------------------
-    Instace of HoefleaSp108 graph.
+    Instace of Hoeflea sp. 108 graph.
 
 	References
 	---------------------

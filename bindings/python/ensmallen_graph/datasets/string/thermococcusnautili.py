@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusNautili.
+This file offers the methods to automatically retrieve the graph Thermococcus nautili.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusNautili(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusNautili graph.
+    """Return new instance of the Thermococcus nautili graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusNautili(
 
     Returns
     -----------------------
-    Instace of ThermococcusNautili graph.
+    Instace of Thermococcus nautili graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HydrocarboniphagaEffusaAp103.
+This file offers the methods to automatically retrieve the graph Hydrocarboniphaga effusa AP103.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HydrocarboniphagaEffusaAp103(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HydrocarboniphagaEffusaAp103 graph.
+    """Return new instance of the Hydrocarboniphaga effusa AP103 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HydrocarboniphagaEffusaAp103(
 
     Returns
     -----------------------
-    Instace of HydrocarboniphagaEffusaAp103 graph.
+    Instace of Hydrocarboniphaga effusa AP103 graph.
 
 	References
 	---------------------

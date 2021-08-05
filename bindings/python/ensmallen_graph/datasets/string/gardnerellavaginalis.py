@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GardnerellaVaginalis.
+This file offers the methods to automatically retrieve the graph Gardnerella vaginalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GardnerellaVaginalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GardnerellaVaginalis graph.
+    """Return new instance of the Gardnerella vaginalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GardnerellaVaginalis(
 
     Returns
     -----------------------
-    Instace of GardnerellaVaginalis graph.
+    Instace of Gardnerella vaginalis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusMarinus.
+This file offers the methods to automatically retrieve the graph Algoriphagus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusMarinus graph.
+    """Return new instance of the Algoriphagus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriphagusMarinus(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusMarinus graph.
+    Instace of Algoriphagus marinus graph.
 
 	References
 	---------------------

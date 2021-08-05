@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpUmwgj.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. UMWGJ.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpUmwgj(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpUmwgj graph.
+    """Return new instance of the Mycobacterium sp. UMWGJ graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSpUmwgj(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpUmwgj graph.
+    Instace of Mycobacterium sp. UMWGJ graph.
 
 	References
 	---------------------

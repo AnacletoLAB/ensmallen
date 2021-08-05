@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmanitaThiersiiSkay4041.
+This file offers the methods to automatically retrieve the graph Amanita thiersii Skay4041.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmanitaThiersiiSkay4041(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmanitaThiersiiSkay4041 graph.
+    """Return new instance of the Amanita thiersii Skay4041 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmanitaThiersiiSkay4041(
 
     Returns
     -----------------------
-    Instace of AmanitaThiersiiSkay4041 graph.
+    Instace of Amanita thiersii Skay4041 graph.
 
 	References
 	---------------------

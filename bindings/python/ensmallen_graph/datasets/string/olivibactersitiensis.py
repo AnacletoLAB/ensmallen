@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OlivibacterSitiensis.
+This file offers the methods to automatically retrieve the graph Olivibacter sitiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OlivibacterSitiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OlivibacterSitiensis graph.
+    """Return new instance of the Olivibacter sitiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OlivibacterSitiensis(
 
     Returns
     -----------------------
-    Instace of OlivibacterSitiensis graph.
+    Instace of Olivibacter sitiensis graph.
 
 	References
 	---------------------

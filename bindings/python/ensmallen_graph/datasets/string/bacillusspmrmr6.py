@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpMrmr6.
+This file offers the methods to automatically retrieve the graph Bacillus sp. MRMR6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpMrmr6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpMrmr6 graph.
+    """Return new instance of the Bacillus sp. MRMR6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpMrmr6(
 
     Returns
     -----------------------
-    Instace of BacillusSpMrmr6 graph.
+    Instace of Bacillus sp. MRMR6 graph.
 
 	References
 	---------------------

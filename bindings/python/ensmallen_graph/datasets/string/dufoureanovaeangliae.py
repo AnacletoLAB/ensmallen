@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DufoureaNovaeangliae.
+This file offers the methods to automatically retrieve the graph Dufourea novaeangliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DufoureaNovaeangliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DufoureaNovaeangliae graph.
+    """Return new instance of the Dufourea novaeangliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DufoureaNovaeangliae(
 
     Returns
     -----------------------
-    Instace of DufoureaNovaeangliae graph.
+    Instace of Dufourea novaeangliae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OdyssellaThessalonicensis.
+This file offers the methods to automatically retrieve the graph Odyssella thessalonicensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OdyssellaThessalonicensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OdyssellaThessalonicensis graph.
+    """Return new instance of the Odyssella thessalonicensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OdyssellaThessalonicensis(
 
     Returns
     -----------------------
-    Instace of OdyssellaThessalonicensis graph.
+    Instace of Odyssella thessalonicensis graph.
 
 	References
 	---------------------

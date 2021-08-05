@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAnthracisAmes.
+This file offers the methods to automatically retrieve the graph Bacillus anthracis Ames.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAnthracisAmes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAnthracisAmes graph.
+    """Return new instance of the Bacillus anthracis Ames graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAnthracisAmes(
 
     Returns
     -----------------------
-    Instace of BacillusAnthracisAmes graph.
+    Instace of Bacillus anthracis Ames graph.
 
 	References
 	---------------------

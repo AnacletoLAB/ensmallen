@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoflexibacterRuber.
+This file offers the methods to automatically retrieve the graph Thermoflexibacter ruber.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoflexibacterRuber(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoflexibacterRuber graph.
+    """Return new instance of the Thermoflexibacter ruber graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermoflexibacterRuber(
 
     Returns
     -----------------------
-    Instace of ThermoflexibacterRuber graph.
+    Instace of Thermoflexibacter ruber graph.
 
 	References
 	---------------------

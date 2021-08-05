@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioNereis.
+This file offers the methods to automatically retrieve the graph Vibrio nereis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioNereis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioNereis graph.
+    """Return new instance of the Vibrio nereis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioNereis(
 
     Returns
     -----------------------
-    Instace of VibrioNereis graph.
+    Instace of Vibrio nereis graph.
 
 	References
 	---------------------

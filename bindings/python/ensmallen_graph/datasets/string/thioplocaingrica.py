@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioplocaIngrica.
+This file offers the methods to automatically retrieve the graph Thioploca ingrica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioplocaIngrica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioplocaIngrica graph.
+    """Return new instance of the Thioploca ingrica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioplocaIngrica(
 
     Returns
     -----------------------
-    Instace of ThioplocaIngrica graph.
+    Instace of Thioploca ingrica graph.
 
 	References
 	---------------------

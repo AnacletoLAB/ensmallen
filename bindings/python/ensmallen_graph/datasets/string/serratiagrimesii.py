@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaGrimesii.
+This file offers the methods to automatically retrieve the graph Serratia grimesii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaGrimesii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaGrimesii graph.
+    """Return new instance of the Serratia grimesii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaGrimesii(
 
     Returns
     -----------------------
-    Instace of SerratiaGrimesii graph.
+    Instace of Serratia grimesii graph.
 
 	References
 	---------------------

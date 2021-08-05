@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodobacteraceaeBacteriumWds1c4.
+This file offers the methods to automatically retrieve the graph Rhodobacteraceae bacterium WDS1C4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodobacteraceaeBacteriumWds1c4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodobacteraceaeBacteriumWds1c4 graph.
+    """Return new instance of the Rhodobacteraceae bacterium WDS1C4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodobacteraceaeBacteriumWds1c4(
 
     Returns
     -----------------------
-    Instace of RhodobacteraceaeBacteriumWds1c4 graph.
+    Instace of Rhodobacteraceae bacterium WDS1C4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumVerticillioides.
+This file offers the methods to automatically retrieve the graph Fusarium verticillioides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumVerticillioides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumVerticillioides graph.
+    """Return new instance of the Fusarium verticillioides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusariumVerticillioides(
 
     Returns
     -----------------------
-    Instace of FusariumVerticillioides graph.
+    Instace of Fusarium verticillioides graph.
 
 	References
 	---------------------

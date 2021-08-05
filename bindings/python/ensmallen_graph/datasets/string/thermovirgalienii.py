@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermovirgaLienii.
+This file offers the methods to automatically retrieve the graph Thermovirga lienii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermovirgaLienii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermovirgaLienii graph.
+    """Return new instance of the Thermovirga lienii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermovirgaLienii(
 
     Returns
     -----------------------
-    Instace of ThermovirgaLienii graph.
+    Instace of Thermovirga lienii graph.
 
 	References
 	---------------------

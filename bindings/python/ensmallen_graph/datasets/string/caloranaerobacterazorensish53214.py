@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaloranaerobacterAzorensisH53214.
+This file offers the methods to automatically retrieve the graph Caloranaerobacter azorensis H53214.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaloranaerobacterAzorensisH53214(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaloranaerobacterAzorensisH53214 graph.
+    """Return new instance of the Caloranaerobacter azorensis H53214 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaloranaerobacterAzorensisH53214(
 
     Returns
     -----------------------
-    Instace of CaloranaerobacterAzorensisH53214 graph.
+    Instace of Caloranaerobacter azorensis H53214 graph.
 
 	References
 	---------------------

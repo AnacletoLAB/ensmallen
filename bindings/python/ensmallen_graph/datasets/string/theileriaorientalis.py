@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TheileriaOrientalis.
+This file offers the methods to automatically retrieve the graph Theileria orientalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TheileriaOrientalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TheileriaOrientalis graph.
+    """Return new instance of the Theileria orientalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TheileriaOrientalis(
 
     Returns
     -----------------------
-    Instace of TheileriaOrientalis graph.
+    Instace of Theileria orientalis graph.
 
 	References
 	---------------------

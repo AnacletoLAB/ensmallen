@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassotaleaAgarivorans.
+This file offers the methods to automatically retrieve the graph Thalassotalea agarivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassotaleaAgarivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassotaleaAgarivorans graph.
+    """Return new instance of the Thalassotalea agarivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassotaleaAgarivorans(
 
     Returns
     -----------------------
-    Instace of ThalassotaleaAgarivorans graph.
+    Instace of Thalassotalea agarivorans graph.
 
 	References
 	---------------------

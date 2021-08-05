@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetragenococcusHalophilus.
+This file offers the methods to automatically retrieve the graph Tetragenococcus halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetragenococcusHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetragenococcusHalophilus graph.
+    """Return new instance of the Tetragenococcus halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TetragenococcusHalophilus(
 
     Returns
     -----------------------
-    Instace of TetragenococcusHalophilus graph.
+    Instace of Tetragenococcus halophilus graph.
 
 	References
 	---------------------

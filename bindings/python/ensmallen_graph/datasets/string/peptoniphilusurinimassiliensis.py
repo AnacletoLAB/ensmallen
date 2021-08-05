@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusUrinimassiliensis.
+This file offers the methods to automatically retrieve the graph Peptoniphilus urinimassiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusUrinimassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusUrinimassiliensis graph.
+    """Return new instance of the Peptoniphilus urinimassiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusUrinimassiliensis(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusUrinimassiliensis graph.
+    Instace of Peptoniphilus urinimassiliensis graph.
 
 	References
 	---------------------

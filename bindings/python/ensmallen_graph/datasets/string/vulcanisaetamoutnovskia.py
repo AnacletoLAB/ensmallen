@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulcanisaetaMoutnovskia.
+This file offers the methods to automatically retrieve the graph Vulcanisaeta moutnovskia.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulcanisaetaMoutnovskia(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulcanisaetaMoutnovskia graph.
+    """Return new instance of the Vulcanisaeta moutnovskia graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VulcanisaetaMoutnovskia(
 
     Returns
     -----------------------
-    Instace of VulcanisaetaMoutnovskia graph.
+    Instace of Vulcanisaeta moutnovskia graph.
 
 	References
 	---------------------

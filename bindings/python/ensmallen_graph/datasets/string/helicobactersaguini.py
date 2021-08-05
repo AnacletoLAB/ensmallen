@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterSaguini.
+This file offers the methods to automatically retrieve the graph Helicobacter saguini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterSaguini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterSaguini graph.
+    """Return new instance of the Helicobacter saguini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterSaguini(
 
     Returns
     -----------------------
-    Instace of HelicobacterSaguini graph.
+    Instace of Helicobacter saguini graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfonatronovibrioMagnus.
+This file offers the methods to automatically retrieve the graph Desulfonatronovibrio magnus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfonatronovibrioMagnus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfonatronovibrioMagnus graph.
+    """Return new instance of the Desulfonatronovibrio magnus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfonatronovibrioMagnus(
 
     Returns
     -----------------------
-    Instace of DesulfonatronovibrioMagnus graph.
+    Instace of Desulfonatronovibrio magnus graph.
 
 	References
 	---------------------

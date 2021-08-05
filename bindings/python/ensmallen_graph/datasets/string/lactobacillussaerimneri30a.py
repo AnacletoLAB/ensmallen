@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSaerimneri30a.
+This file offers the methods to automatically retrieve the graph Lactobacillus saerimneri 30a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSaerimneri30a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSaerimneri30a graph.
+    """Return new instance of the Lactobacillus saerimneri 30a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSaerimneri30a(
 
     Returns
     -----------------------
-    Instace of LactobacillusSaerimneri30a graph.
+    Instace of Lactobacillus saerimneri 30a graph.
 
 	References
 	---------------------

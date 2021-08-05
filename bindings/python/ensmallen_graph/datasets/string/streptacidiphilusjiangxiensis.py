@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusJiangxiensis.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus jiangxiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusJiangxiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusJiangxiensis graph.
+    """Return new instance of the Streptacidiphilus jiangxiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptacidiphilusJiangxiensis(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusJiangxiensis graph.
+    Instace of Streptacidiphilus jiangxiensis graph.
 
 	References
 	---------------------

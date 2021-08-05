@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanctomyceteKsu1.
+This file offers the methods to automatically retrieve the graph planctomycete KSU1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanctomyceteKsu1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanctomyceteKsu1 graph.
+    """Return new instance of the planctomycete KSU1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanctomyceteKsu1(
 
     Returns
     -----------------------
-    Instace of PlanctomyceteKsu1 graph.
+    Instace of planctomycete KSU1 graph.
 
 	References
 	---------------------

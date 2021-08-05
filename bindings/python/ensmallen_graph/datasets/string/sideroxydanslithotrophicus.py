@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SideroxydansLithotrophicus.
+This file offers the methods to automatically retrieve the graph Sideroxydans lithotrophicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SideroxydansLithotrophicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SideroxydansLithotrophicus graph.
+    """Return new instance of the Sideroxydans lithotrophicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SideroxydansLithotrophicus(
 
     Returns
     -----------------------
-    Instace of SideroxydansLithotrophicus graph.
+    Instace of Sideroxydans lithotrophicus graph.
 
 	References
 	---------------------

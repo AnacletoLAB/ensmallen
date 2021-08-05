@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaTerraeKimAndJung2007.
+This file offers the methods to automatically retrieve the graph Chitinophaga terrae Kim and Jung 2007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaTerraeKimAndJung2007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaTerraeKimAndJung2007 graph.
+    """Return new instance of the Chitinophaga terrae Kim and Jung 2007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaTerraeKimAndJung2007(
 
     Returns
     -----------------------
-    Instace of ChitinophagaTerraeKimAndJung2007 graph.
+    Instace of Chitinophaga terrae Kim and Jung 2007 graph.
 
 	References
 	---------------------

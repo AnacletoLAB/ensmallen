@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VaranusKomodoensis.
+This file offers the methods to automatically retrieve the graph Varanus komodoensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VaranusKomodoensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VaranusKomodoensis graph.
+    """Return new instance of the Varanus komodoensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VaranusKomodoensis(
 
     Returns
     -----------------------
-    Instace of VaranusKomodoensis graph.
+    Instace of Varanus komodoensis graph.
 
 	References
 	---------------------

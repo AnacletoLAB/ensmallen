@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkalibacteriumGilvum.
+This file offers the methods to automatically retrieve the graph Alkalibacterium gilvum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkalibacteriumGilvum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkalibacteriumGilvum graph.
+    """Return new instance of the Alkalibacterium gilvum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlkalibacteriumGilvum(
 
     Returns
     -----------------------
-    Instace of AlkalibacteriumGilvum graph.
+    Instace of Alkalibacterium gilvum graph.
 
 	References
 	---------------------

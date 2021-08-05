@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterChlorophenolicus.
+This file offers the methods to automatically retrieve the graph Arthrobacter chlorophenolicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterChlorophenolicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterChlorophenolicus graph.
+    """Return new instance of the Arthrobacter chlorophenolicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterChlorophenolicus(
 
     Returns
     -----------------------
-    Instace of ArthrobacterChlorophenolicus graph.
+    Instace of Arthrobacter chlorophenolicus graph.
 
 	References
 	---------------------

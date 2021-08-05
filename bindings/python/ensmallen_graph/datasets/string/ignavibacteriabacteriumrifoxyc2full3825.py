@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnavibacteriaBacteriumRifoxyc2Full3825.
+This file offers the methods to automatically retrieve the graph Ignavibacteria bacterium RIFOXYC2_FULL_38_25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnavibacteriaBacteriumRifoxyc2Full3825(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnavibacteriaBacteriumRifoxyc2Full3825 graph.
+    """Return new instance of the Ignavibacteria bacterium RIFOXYC2_FULL_38_25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnavibacteriaBacteriumRifoxyc2Full3825(
 
     Returns
     -----------------------
-    Instace of IgnavibacteriaBacteriumRifoxyc2Full3825 graph.
+    Instace of Ignavibacteria bacterium RIFOXYC2_FULL_38_25 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSungbacteriaBacteriumRifcsplowo202Full4813b.
+This file offers the methods to automatically retrieve the graph Candidatus Sungbacteria bacterium RIFCSPLOWO2_02_FULL_48_13b.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSungbacteriaBacteriumRifcsplowo202Full4813b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSungbacteriaBacteriumRifcsplowo202Full4813b graph.
+    """Return new instance of the Candidatus Sungbacteria bacterium RIFCSPLOWO2_02_FULL_48_13b graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSungbacteriaBacteriumRifcsplowo202Full4813b(
 
     Returns
     -----------------------
-    Instace of CandidatusSungbacteriaBacteriumRifcsplowo202Full4813b graph.
+    Instace of Candidatus Sungbacteria bacterium RIFCSPLOWO2_02_FULL_48_13b graph.
 
 	References
 	---------------------

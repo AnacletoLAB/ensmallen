@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusZinderiaInsecticolaCari.
+This file offers the methods to automatically retrieve the graph Candidatus Zinderia insecticola CARI.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusZinderiaInsecticolaCari(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusZinderiaInsecticolaCari graph.
+    """Return new instance of the Candidatus Zinderia insecticola CARI graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusZinderiaInsecticolaCari(
 
     Returns
     -----------------------
-    Instace of CandidatusZinderiaInsecticolaCari graph.
+    Instace of Candidatus Zinderia insecticola CARI graph.
 
 	References
 	---------------------

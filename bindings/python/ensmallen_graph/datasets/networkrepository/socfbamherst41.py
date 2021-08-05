@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbAmherst41.
+This file offers the methods to automatically retrieve the graph socfb-Amherst41.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbAmherst41(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbAmherst41 graph.
+    """Return new instance of the socfb-Amherst41 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbAmherst41(
 
     Returns
     -----------------------
-    Instace of SocfbAmherst41 graph.
+    Instace of socfb-Amherst41 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterHaemolyticus.
+This file offers the methods to automatically retrieve the graph Acinetobacter haemolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterHaemolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterHaemolyticus graph.
+    """Return new instance of the Acinetobacter haemolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcinetobacterHaemolyticus(
 
     Returns
     -----------------------
-    Instace of AcinetobacterHaemolyticus graph.
+    Instace of Acinetobacter haemolyticus graph.
 
 	References
 	---------------------

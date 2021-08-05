@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSpFw1012b.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. FW1012B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSpFw1012b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSpFw1012b graph.
+    """Return new instance of the Desulfovibrio sp. FW1012B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSpFw1012b(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSpFw1012b graph.
+    Instace of Desulfovibrio sp. FW1012B graph.
 
 	References
 	---------------------

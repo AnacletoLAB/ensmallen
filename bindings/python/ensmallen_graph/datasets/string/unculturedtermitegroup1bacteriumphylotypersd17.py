@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UnculturedTermiteGroup1BacteriumPhylotypeRsD17.
+This file offers the methods to automatically retrieve the graph uncultured Termite group 1 bacterium phylotype Rs-D17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UnculturedTermiteGroup1BacteriumPhylotypeRsD17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UnculturedTermiteGroup1BacteriumPhylotypeRsD17 graph.
+    """Return new instance of the uncultured Termite group 1 bacterium phylotype Rs-D17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UnculturedTermiteGroup1BacteriumPhylotypeRsD17(
 
     Returns
     -----------------------
-    Instace of UnculturedTermiteGroup1BacteriumPhylotypeRsD17 graph.
+    Instace of uncultured Termite group 1 bacterium phylotype Rs-D17 graph.
 
 	References
 	---------------------

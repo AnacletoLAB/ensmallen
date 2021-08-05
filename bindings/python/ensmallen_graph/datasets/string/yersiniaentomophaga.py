@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaEntomophaga.
+This file offers the methods to automatically retrieve the graph Yersinia entomophaga.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaEntomophaga(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaEntomophaga graph.
+    """Return new instance of the Yersinia entomophaga graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YersiniaEntomophaga(
 
     Returns
     -----------------------
-    Instace of YersiniaEntomophaga graph.
+    Instace of Yersinia entomophaga graph.
 
 	References
 	---------------------

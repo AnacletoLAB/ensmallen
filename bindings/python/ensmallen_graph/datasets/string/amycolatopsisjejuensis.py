@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisJejuensis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis jejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisJejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisJejuensis graph.
+    """Return new instance of the Amycolatopsis jejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AmycolatopsisJejuensis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisJejuensis graph.
+    Instace of Amycolatopsis jejuensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DonghicolaXiamenensis.
+This file offers the methods to automatically retrieve the graph Donghicola xiamenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DonghicolaXiamenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DonghicolaXiamenensis graph.
+    """Return new instance of the Donghicola xiamenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DonghicolaXiamenensis(
 
     Returns
     -----------------------
-    Instace of DonghicolaXiamenensis graph.
+    Instace of Donghicola xiamenensis graph.
 
 	References
 	---------------------

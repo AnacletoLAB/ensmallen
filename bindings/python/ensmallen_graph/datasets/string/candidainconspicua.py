@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaInconspicua.
+This file offers the methods to automatically retrieve the graph [Candida] inconspicua.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaInconspicua(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaInconspicua graph.
+    """Return new instance of the [Candida] inconspicua graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidaInconspicua(
 
     Returns
     -----------------------
-    Instace of CandidaInconspicua graph.
+    Instace of [Candida] inconspicua graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GammaproteobacteriaBacteriumMfb021.
+This file offers the methods to automatically retrieve the graph Gammaproteobacteria bacterium MFB021.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GammaproteobacteriaBacteriumMfb021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GammaproteobacteriaBacteriumMfb021 graph.
+    """Return new instance of the Gammaproteobacteria bacterium MFB021 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GammaproteobacteriaBacteriumMfb021(
 
     Returns
     -----------------------
-    Instace of GammaproteobacteriaBacteriumMfb021 graph.
+    Instace of Gammaproteobacteria bacterium MFB021 graph.
 
 	References
 	---------------------

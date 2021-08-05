@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HippeaAlviniae.
+This file offers the methods to automatically retrieve the graph Hippea alviniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HippeaAlviniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HippeaAlviniae graph.
+    """Return new instance of the Hippea alviniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HippeaAlviniae(
 
     Returns
     -----------------------
-    Instace of HippeaAlviniae graph.
+    Instace of Hippea alviniae graph.
 
 	References
 	---------------------

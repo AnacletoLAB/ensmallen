@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumTimonense.
+This file offers the methods to automatically retrieve the graph Corynebacterium timonense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumTimonense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumTimonense graph.
+    """Return new instance of the Corynebacterium timonense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumTimonense(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumTimonense graph.
+    Instace of Corynebacterium timonense graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NeisseriaPerflava.
+This file offers the methods to automatically retrieve the graph Neisseria perflava.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NeisseriaPerflava(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NeisseriaPerflava graph.
+    """Return new instance of the Neisseria perflava graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NeisseriaPerflava(
 
     Returns
     -----------------------
-    Instace of NeisseriaPerflava graph.
+    Instace of Neisseria perflava graph.
 
 	References
 	---------------------

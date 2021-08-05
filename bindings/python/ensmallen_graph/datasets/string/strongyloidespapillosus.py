@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StrongyloidesPapillosus.
+This file offers the methods to automatically retrieve the graph Strongyloides papillosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StrongyloidesPapillosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StrongyloidesPapillosus graph.
+    """Return new instance of the Strongyloides papillosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StrongyloidesPapillosus(
 
     Returns
     -----------------------
-    Instace of StrongyloidesPapillosus graph.
+    Instace of Strongyloides papillosus graph.
 
 	References
 	---------------------

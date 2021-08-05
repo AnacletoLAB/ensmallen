@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasThermotoleransDsm14292.
+This file offers the methods to automatically retrieve the graph Pseudomonas thermotolerans DSM 14292.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasThermotoleransDsm14292(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasThermotoleransDsm14292 graph.
+    """Return new instance of the Pseudomonas thermotolerans DSM 14292 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasThermotoleransDsm14292(
 
     Returns
     -----------------------
-    Instace of PseudomonasThermotoleransDsm14292 graph.
+    Instace of Pseudomonas thermotolerans DSM 14292 graph.
 
 	References
 	---------------------

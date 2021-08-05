@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumUrocaniciphilum.
+This file offers the methods to automatically retrieve the graph Flavobacterium urocaniciphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumUrocaniciphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumUrocaniciphilum graph.
+    """Return new instance of the Flavobacterium urocaniciphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumUrocaniciphilum(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumUrocaniciphilum graph.
+    Instace of Flavobacterium urocaniciphilum graph.
 
 	References
 	---------------------

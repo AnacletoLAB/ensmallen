@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Rajat01.
+This file offers the methods to automatically retrieve the graph rajat01.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Rajat01(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Rajat01 graph.
+    """Return new instance of the rajat01 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Rajat01(
 
     Returns
     -----------------------
-    Instace of Rajat01 graph.
+    Instace of rajat01 graph.
 
 	References
 	---------------------

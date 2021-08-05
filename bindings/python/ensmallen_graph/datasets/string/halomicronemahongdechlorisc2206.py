@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalomicronemaHongdechlorisC2206.
+This file offers the methods to automatically retrieve the graph Halomicronema hongdechloris C2206.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalomicronemaHongdechlorisC2206(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalomicronemaHongdechlorisC2206 graph.
+    """Return new instance of the Halomicronema hongdechloris C2206 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalomicronemaHongdechlorisC2206(
 
     Returns
     -----------------------
-    Instace of HalomicronemaHongdechlorisC2206 graph.
+    Instace of Halomicronema hongdechloris C2206 graph.
 
 	References
 	---------------------

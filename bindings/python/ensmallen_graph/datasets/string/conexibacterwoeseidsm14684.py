@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConexibacterWoeseiDsm14684.
+This file offers the methods to automatically retrieve the graph Conexibacter woesei DSM14684.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConexibacterWoeseiDsm14684(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConexibacterWoeseiDsm14684 graph.
+    """Return new instance of the Conexibacter woesei DSM14684 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ConexibacterWoeseiDsm14684(
 
     Returns
     -----------------------
-    Instace of ConexibacterWoeseiDsm14684 graph.
+    Instace of Conexibacter woesei DSM14684 graph.
 
 	References
 	---------------------

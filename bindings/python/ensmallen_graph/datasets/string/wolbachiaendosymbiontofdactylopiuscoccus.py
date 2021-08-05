@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WolbachiaEndosymbiontOfDactylopiusCoccus.
+This file offers the methods to automatically retrieve the graph Wolbachia endosymbiont of Dactylopius coccus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WolbachiaEndosymbiontOfDactylopiusCoccus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WolbachiaEndosymbiontOfDactylopiusCoccus graph.
+    """Return new instance of the Wolbachia endosymbiont of Dactylopius coccus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WolbachiaEndosymbiontOfDactylopiusCoccus(
 
     Returns
     -----------------------
-    Instace of WolbachiaEndosymbiontOfDactylopiusCoccus graph.
+    Instace of Wolbachia endosymbiont of Dactylopius coccus graph.
 
 	References
 	---------------------

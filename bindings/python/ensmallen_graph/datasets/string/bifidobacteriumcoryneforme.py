@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumCoryneforme.
+This file offers the methods to automatically retrieve the graph Bifidobacterium coryneforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumCoryneforme(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumCoryneforme graph.
+    """Return new instance of the Bifidobacterium coryneforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumCoryneforme(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumCoryneforme graph.
+    Instace of Bifidobacterium coryneforme graph.
 
 	References
 	---------------------

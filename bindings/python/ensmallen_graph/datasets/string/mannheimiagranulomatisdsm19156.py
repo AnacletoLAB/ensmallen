@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaGranulomatisDsm19156.
+This file offers the methods to automatically retrieve the graph Mannheimia granulomatis DSM 19156.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaGranulomatisDsm19156(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaGranulomatisDsm19156 graph.
+    """Return new instance of the Mannheimia granulomatis DSM 19156 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MannheimiaGranulomatisDsm19156(
 
     Returns
     -----------------------
-    Instace of MannheimiaGranulomatisDsm19156 graph.
+    Instace of Mannheimia granulomatis DSM 19156 graph.
 
 	References
 	---------------------

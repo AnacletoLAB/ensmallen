@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodoferaxFerrireducens.
+This file offers the methods to automatically retrieve the graph Rhodoferax ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodoferaxFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodoferaxFerrireducens graph.
+    """Return new instance of the Rhodoferax ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodoferaxFerrireducens(
 
     Returns
     -----------------------
-    Instace of RhodoferaxFerrireducens graph.
+    Instace of Rhodoferax ferrireducens graph.
 
 	References
 	---------------------

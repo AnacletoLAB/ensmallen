@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUsfca72.
+This file offers the methods to automatically retrieve the graph socfb-USFCA72.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUsfca72(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUsfca72 graph.
+    """Return new instance of the socfb-USFCA72 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUsfca72(
 
     Returns
     -----------------------
-    Instace of SocfbUsfca72 graph.
+    Instace of socfb-USFCA72 graph.
 
 	References
 	---------------------

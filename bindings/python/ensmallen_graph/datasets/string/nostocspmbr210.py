@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NostocSpMbr210.
+This file offers the methods to automatically retrieve the graph Nostoc sp. MBR 210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NostocSpMbr210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NostocSpMbr210 graph.
+    """Return new instance of the Nostoc sp. MBR 210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NostocSpMbr210(
 
     Returns
     -----------------------
-    Instace of NostocSpMbr210 graph.
+    Instace of Nostoc sp. MBR 210 graph.
 
 	References
 	---------------------

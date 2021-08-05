@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AchromobacterInsolitus.
+This file offers the methods to automatically retrieve the graph Achromobacter insolitus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AchromobacterInsolitus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AchromobacterInsolitus graph.
+    """Return new instance of the Achromobacter insolitus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AchromobacterInsolitus(
 
     Returns
     -----------------------
-    Instace of AchromobacterInsolitus graph.
+    Instace of Achromobacter insolitus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaLoihica.
+This file offers the methods to automatically retrieve the graph Shewanella loihica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaLoihica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaLoihica graph.
+    """Return new instance of the Shewanella loihica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ShewanellaLoihica(
 
     Returns
     -----------------------
-    Instace of ShewanellaLoihica graph.
+    Instace of Shewanella loihica graph.
 
 	References
 	---------------------

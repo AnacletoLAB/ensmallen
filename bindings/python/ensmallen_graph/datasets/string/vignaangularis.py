@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VignaAngularis.
+This file offers the methods to automatically retrieve the graph Vigna angularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VignaAngularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VignaAngularis graph.
+    """Return new instance of the Vigna angularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VignaAngularis(
 
     Returns
     -----------------------
-    Instace of VignaAngularis graph.
+    Instace of Vigna angularis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorobiumLimicola.
+This file offers the methods to automatically retrieve the graph Chlorobium limicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorobiumLimicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorobiumLimicola graph.
+    """Return new instance of the Chlorobium limicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorobiumLimicola(
 
     Returns
     -----------------------
-    Instace of ChlorobiumLimicola graph.
+    Instace of Chlorobium limicola graph.
 
 	References
 	---------------------

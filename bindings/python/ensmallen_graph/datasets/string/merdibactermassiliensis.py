@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MerdibacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Merdibacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MerdibacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MerdibacterMassiliensis graph.
+    """Return new instance of the Merdibacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MerdibacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of MerdibacterMassiliensis graph.
+    Instace of Merdibacter massiliensis graph.
 
 	References
 	---------------------

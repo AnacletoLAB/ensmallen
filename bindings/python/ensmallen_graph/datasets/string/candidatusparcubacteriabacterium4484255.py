@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusParcubacteriaBacterium4484255.
+This file offers the methods to automatically retrieve the graph Candidatus Parcubacteria bacterium 4484_255.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusParcubacteriaBacterium4484255(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusParcubacteriaBacterium4484255 graph.
+    """Return new instance of the Candidatus Parcubacteria bacterium 4484_255 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusParcubacteriaBacterium4484255(
 
     Returns
     -----------------------
-    Instace of CandidatusParcubacteriaBacterium4484255 graph.
+    Instace of Candidatus Parcubacteria bacterium 4484_255 graph.
 
 	References
 	---------------------

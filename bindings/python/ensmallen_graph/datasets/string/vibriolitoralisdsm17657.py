@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioLitoralisDsm17657.
+This file offers the methods to automatically retrieve the graph Vibrio litoralis DSM 17657.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioLitoralisDsm17657(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioLitoralisDsm17657 graph.
+    """Return new instance of the Vibrio litoralis DSM 17657 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VibrioLitoralisDsm17657(
 
     Returns
     -----------------------
-    Instace of VibrioLitoralisDsm17657 graph.
+    Instace of Vibrio litoralis DSM 17657 graph.
 
 	References
 	---------------------

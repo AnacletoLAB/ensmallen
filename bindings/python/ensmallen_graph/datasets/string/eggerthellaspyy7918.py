@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EggerthellaSpYy7918.
+This file offers the methods to automatically retrieve the graph Eggerthella sp. YY7918.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EggerthellaSpYy7918(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EggerthellaSpYy7918 graph.
+    """Return new instance of the Eggerthella sp. YY7918 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EggerthellaSpYy7918(
 
     Returns
     -----------------------
-    Instace of EggerthellaSpYy7918 graph.
+    Instace of Eggerthella sp. YY7918 graph.
 
 	References
 	---------------------

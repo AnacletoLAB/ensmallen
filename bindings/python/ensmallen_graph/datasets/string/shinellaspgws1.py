@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShinellaSpGws1.
+This file offers the methods to automatically retrieve the graph Shinella sp. GWS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShinellaSpGws1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShinellaSpGws1 graph.
+    """Return new instance of the Shinella sp. GWS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShinellaSpGws1(
 
     Returns
     -----------------------
-    Instace of ShinellaSpGws1 graph.
+    Instace of Shinella sp. GWS1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumSuccinicans.
+This file offers the methods to automatically retrieve the graph Flavobacterium succinicans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumSuccinicans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumSuccinicans graph.
+    """Return new instance of the Flavobacterium succinicans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumSuccinicans(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumSuccinicans graph.
+    Instace of Flavobacterium succinicans graph.
 
 	References
 	---------------------

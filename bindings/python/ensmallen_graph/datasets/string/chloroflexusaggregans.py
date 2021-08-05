@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChloroflexusAggregans.
+This file offers the methods to automatically retrieve the graph Chloroflexus aggregans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChloroflexusAggregans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChloroflexusAggregans graph.
+    """Return new instance of the Chloroflexus aggregans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChloroflexusAggregans(
 
     Returns
     -----------------------
-    Instace of ChloroflexusAggregans graph.
+    Instace of Chloroflexus aggregans graph.
 
 	References
 	---------------------

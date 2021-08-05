@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CyanistesCaeruleus.
+This file offers the methods to automatically retrieve the graph Cyanistes caeruleus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CyanistesCaeruleus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CyanistesCaeruleus graph.
+    """Return new instance of the Cyanistes caeruleus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CyanistesCaeruleus(
 
     Returns
     -----------------------
-    Instace of CyanistesCaeruleus graph.
+    Instace of Cyanistes caeruleus graph.
 
 	References
 	---------------------

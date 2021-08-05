@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteimonasAbyssi.
+This file offers the methods to automatically retrieve the graph Luteimonas abyssi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteimonasAbyssi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteimonasAbyssi graph.
+    """Return new instance of the Luteimonas abyssi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LuteimonasAbyssi(
 
     Returns
     -----------------------
-    Instace of LuteimonasAbyssi graph.
+    Instace of Luteimonas abyssi graph.
 
 	References
 	---------------------

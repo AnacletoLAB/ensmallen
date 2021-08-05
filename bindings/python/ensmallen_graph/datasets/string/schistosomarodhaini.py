@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchistosomaRodhaini.
+This file offers the methods to automatically retrieve the graph Schistosoma rodhaini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchistosomaRodhaini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchistosomaRodhaini graph.
+    """Return new instance of the Schistosoma rodhaini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchistosomaRodhaini(
 
     Returns
     -----------------------
-    Instace of SchistosomaRodhaini graph.
+    Instace of Schistosoma rodhaini graph.
 
 	References
 	---------------------

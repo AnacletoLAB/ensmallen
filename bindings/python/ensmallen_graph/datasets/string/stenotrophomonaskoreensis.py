@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasKoreensis.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasKoreensis graph.
+    """Return new instance of the Stenotrophomonas koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasKoreensis(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasKoreensis graph.
+    Instace of Stenotrophomonas koreensis graph.
 
 	References
 	---------------------

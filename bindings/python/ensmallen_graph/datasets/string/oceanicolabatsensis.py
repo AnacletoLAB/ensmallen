@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanicolaBatsensis.
+This file offers the methods to automatically retrieve the graph Oceanicola batsensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanicolaBatsensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanicolaBatsensis graph.
+    """Return new instance of the Oceanicola batsensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanicolaBatsensis(
 
     Returns
     -----------------------
-    Instace of OceanicolaBatsensis graph.
+    Instace of Oceanicola batsensis graph.
 
 	References
 	---------------------

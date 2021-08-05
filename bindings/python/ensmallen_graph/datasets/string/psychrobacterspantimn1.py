@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PsychrobacterSpAntimn1.
+This file offers the methods to automatically retrieve the graph Psychrobacter sp. AntiMn-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PsychrobacterSpAntimn1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PsychrobacterSpAntimn1 graph.
+    """Return new instance of the Psychrobacter sp. AntiMn-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PsychrobacterSpAntimn1(
 
     Returns
     -----------------------
-    Instace of PsychrobacterSpAntimn1 graph.
+    Instace of Psychrobacter sp. AntiMn-1 graph.
 
 	References
 	---------------------

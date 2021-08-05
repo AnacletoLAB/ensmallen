@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EquusAsinusAsinus.
+This file offers the methods to automatically retrieve the graph Equus asinus asinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EquusAsinusAsinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EquusAsinusAsinus graph.
+    """Return new instance of the Equus asinus asinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EquusAsinusAsinus(
 
     Returns
     -----------------------
-    Instace of EquusAsinusAsinus graph.
+    Instace of Equus asinus asinus graph.
 
 	References
 	---------------------

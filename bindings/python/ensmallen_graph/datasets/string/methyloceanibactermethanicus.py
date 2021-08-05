@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethyloceanibacterMethanicus.
+This file offers the methods to automatically retrieve the graph Methyloceanibacter methanicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethyloceanibacterMethanicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethyloceanibacterMethanicus graph.
+    """Return new instance of the Methyloceanibacter methanicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethyloceanibacterMethanicus(
 
     Returns
     -----------------------
-    Instace of MethyloceanibacterMethanicus graph.
+    Instace of Methyloceanibacter methanicus graph.
 
 	References
 	---------------------

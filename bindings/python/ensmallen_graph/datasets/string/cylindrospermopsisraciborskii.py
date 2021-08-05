@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CylindrospermopsisRaciborskii.
+This file offers the methods to automatically retrieve the graph Cylindrospermopsis raciborskii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CylindrospermopsisRaciborskii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CylindrospermopsisRaciborskii graph.
+    """Return new instance of the Cylindrospermopsis raciborskii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CylindrospermopsisRaciborskii(
 
     Returns
     -----------------------
-    Instace of CylindrospermopsisRaciborskii graph.
+    Instace of Cylindrospermopsis raciborskii graph.
 
 	References
 	---------------------

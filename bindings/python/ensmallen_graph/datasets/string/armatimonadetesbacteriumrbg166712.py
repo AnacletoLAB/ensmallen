@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmatimonadetesBacteriumRbg166712.
+This file offers the methods to automatically retrieve the graph Armatimonadetes bacterium RBG_16_67_12.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmatimonadetesBacteriumRbg166712(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmatimonadetesBacteriumRbg166712 graph.
+    """Return new instance of the Armatimonadetes bacterium RBG_16_67_12 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmatimonadetesBacteriumRbg166712(
 
     Returns
     -----------------------
-    Instace of ArmatimonadetesBacteriumRbg166712 graph.
+    Instace of Armatimonadetes bacterium RBG_16_67_12 graph.
 
 	References
 	---------------------

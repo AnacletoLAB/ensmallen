@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TissierelliaBacteriumKa00581.
+This file offers the methods to automatically retrieve the graph Tissierellia bacterium KA00581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TissierelliaBacteriumKa00581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TissierelliaBacteriumKa00581 graph.
+    """Return new instance of the Tissierellia bacterium KA00581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TissierelliaBacteriumKa00581(
 
     Returns
     -----------------------
-    Instace of TissierelliaBacteriumKa00581 graph.
+    Instace of Tissierellia bacterium KA00581 graph.
 
 	References
 	---------------------

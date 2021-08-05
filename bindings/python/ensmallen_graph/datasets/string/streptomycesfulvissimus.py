@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesFulvissimus.
+This file offers the methods to automatically retrieve the graph Streptomyces fulvissimus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesFulvissimus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesFulvissimus graph.
+    """Return new instance of the Streptomyces fulvissimus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesFulvissimus(
 
     Returns
     -----------------------
-    Instace of StreptomycesFulvissimus graph.
+    Instace of Streptomyces fulvissimus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusMarincolaHl49.
+This file offers the methods to automatically retrieve the graph Algoriphagus marincola HL49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusMarincolaHl49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusMarincolaHl49 graph.
+    """Return new instance of the Algoriphagus marincola HL49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgoriphagusMarincolaHl49(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusMarincolaHl49 graph.
+    Instace of Algoriphagus marincola HL49 graph.
 
 	References
 	---------------------

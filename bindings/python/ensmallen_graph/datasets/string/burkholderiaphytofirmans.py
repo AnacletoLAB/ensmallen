@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaPhytofirmans.
+This file offers the methods to automatically retrieve the graph Burkholderia phytofirmans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaPhytofirmans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaPhytofirmans graph.
+    """Return new instance of the Burkholderia phytofirmans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaPhytofirmans(
 
     Returns
     -----------------------
-    Instace of BurkholderiaPhytofirmans graph.
+    Instace of Burkholderia phytofirmans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoalteromonasIssachenkonii.
+This file offers the methods to automatically retrieve the graph Pseudoalteromonas issachenkonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoalteromonasIssachenkonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoalteromonasIssachenkonii graph.
+    """Return new instance of the Pseudoalteromonas issachenkonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoalteromonasIssachenkonii(
 
     Returns
     -----------------------
-    Instace of PseudoalteromonasIssachenkonii graph.
+    Instace of Pseudoalteromonas issachenkonii graph.
 
 	References
 	---------------------

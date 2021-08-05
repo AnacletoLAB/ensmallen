@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrancisellaEndosymbiontOfOrnithodorosMoubata.
+This file offers the methods to automatically retrieve the graph Francisella endosymbiont of Ornithodoros moubata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrancisellaEndosymbiontOfOrnithodorosMoubata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrancisellaEndosymbiontOfOrnithodorosMoubata graph.
+    """Return new instance of the Francisella endosymbiont of Ornithodoros moubata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FrancisellaEndosymbiontOfOrnithodorosMoubata(
 
     Returns
     -----------------------
-    Instace of FrancisellaEndosymbiontOfOrnithodorosMoubata graph.
+    Instace of Francisella endosymbiont of Ornithodoros moubata graph.
 
 	References
 	---------------------

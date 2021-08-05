@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhaeodactylumTricornutum.
+This file offers the methods to automatically retrieve the graph Phaeodactylum tricornutum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhaeodactylumTricornutum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhaeodactylumTricornutum graph.
+    """Return new instance of the Phaeodactylum tricornutum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhaeodactylumTricornutum(
 
     Returns
     -----------------------
-    Instace of PhaeodactylumTricornutum graph.
+    Instace of Phaeodactylum tricornutum graph.
 
 	References
 	---------------------

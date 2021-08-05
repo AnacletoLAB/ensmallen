@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferulaSpBvorr071.
+This file offers the methods to automatically retrieve the graph Haloferula sp. BvORR071.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferulaSpBvorr071(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferulaSpBvorr071 graph.
+    """Return new instance of the Haloferula sp. BvORR071 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloferulaSpBvorr071(
 
     Returns
     -----------------------
-    Instace of HaloferulaSpBvorr071 graph.
+    Instace of Haloferula sp. BvORR071 graph.
 
 	References
 	---------------------

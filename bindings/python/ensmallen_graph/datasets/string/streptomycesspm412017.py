@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpM412017.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. M41(2017).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpM412017(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpM412017 graph.
+    """Return new instance of the Streptomyces sp. M41(2017) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpM412017(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpM412017 graph.
+    Instace of Streptomyces sp. M41(2017) graph.
 
 	References
 	---------------------

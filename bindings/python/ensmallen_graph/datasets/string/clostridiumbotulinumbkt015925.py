@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBotulinumBkt015925.
+This file offers the methods to automatically retrieve the graph Clostridium botulinum BKT015925.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBotulinumBkt015925(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBotulinumBkt015925 graph.
+    """Return new instance of the Clostridium botulinum BKT015925 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBotulinumBkt015925(
 
     Returns
     -----------------------
-    Instace of ClostridiumBotulinumBkt015925 graph.
+    Instace of Clostridium botulinum BKT015925 graph.
 
 	References
 	---------------------

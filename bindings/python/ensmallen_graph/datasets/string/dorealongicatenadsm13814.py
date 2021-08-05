@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaLongicatenaDsm13814.
+This file offers the methods to automatically retrieve the graph Dorea longicatena DSM13814.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaLongicatenaDsm13814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaLongicatenaDsm13814 graph.
+    """Return new instance of the Dorea longicatena DSM13814 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DoreaLongicatenaDsm13814(
 
     Returns
     -----------------------
-    Instace of DoreaLongicatenaDsm13814 graph.
+    Instace of Dorea longicatena DSM13814 graph.
 
 	References
 	---------------------

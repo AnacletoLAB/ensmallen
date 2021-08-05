@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaTenuis.
+This file offers the methods to automatically retrieve the graph Candida tenuis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaTenuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaTenuis graph.
+    """Return new instance of the Candida tenuis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaTenuis(
 
     Returns
     -----------------------
-    Instace of CandidaTenuis graph.
+    Instace of Candida tenuis graph.
 
 	References
 	---------------------

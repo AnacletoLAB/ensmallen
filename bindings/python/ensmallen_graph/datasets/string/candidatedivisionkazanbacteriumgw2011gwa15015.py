@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidateDivisionKazanBacteriumGw2011Gwa15015.
+This file offers the methods to automatically retrieve the graph candidate division Kazan bacterium GW2011_GWA1_50_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidateDivisionKazanBacteriumGw2011Gwa15015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidateDivisionKazanBacteriumGw2011Gwa15015 graph.
+    """Return new instance of the candidate division Kazan bacterium GW2011_GWA1_50_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidateDivisionKazanBacteriumGw2011Gwa15015(
 
     Returns
     -----------------------
-    Instace of CandidateDivisionKazanBacteriumGw2011Gwa15015 graph.
+    Instace of candidate division Kazan bacterium GW2011_GWA1_50_15 graph.
 
 	References
 	---------------------

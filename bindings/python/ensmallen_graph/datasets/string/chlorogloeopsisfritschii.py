@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChlorogloeopsisFritschii.
+This file offers the methods to automatically retrieve the graph Chlorogloeopsis fritschii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChlorogloeopsisFritschii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChlorogloeopsisFritschii graph.
+    """Return new instance of the Chlorogloeopsis fritschii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChlorogloeopsisFritschii(
 
     Returns
     -----------------------
-    Instace of ChlorogloeopsisFritschii graph.
+    Instace of Chlorogloeopsis fritschii graph.
 
 	References
 	---------------------

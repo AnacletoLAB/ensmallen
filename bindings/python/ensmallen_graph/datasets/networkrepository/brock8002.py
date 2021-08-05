@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Brock8002.
+This file offers the methods to automatically retrieve the graph brock800-2.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def Brock8002(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Brock8002 graph.
+    """Return new instance of the brock800-2 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def Brock8002(
 
     Returns
     -----------------------
-    Instace of Brock8002 graph.
+    Instace of brock800-2 graph.
 
 	References
 	---------------------

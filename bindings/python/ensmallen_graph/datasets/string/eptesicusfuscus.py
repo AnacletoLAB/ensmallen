@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EptesicusFuscus.
+This file offers the methods to automatically retrieve the graph Eptesicus fuscus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EptesicusFuscus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EptesicusFuscus graph.
+    """Return new instance of the Eptesicus fuscus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EptesicusFuscus(
 
     Returns
     -----------------------
-    Instace of EptesicusFuscus graph.
+    Instace of Eptesicus fuscus graph.
 
 	References
 	---------------------

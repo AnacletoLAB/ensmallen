@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CycloclasticusZancles.
+This file offers the methods to automatically retrieve the graph Cycloclasticus zancles.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CycloclasticusZancles(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CycloclasticusZancles graph.
+    """Return new instance of the Cycloclasticus zancles graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CycloclasticusZancles(
 
     Returns
     -----------------------
-    Instace of CycloclasticusZancles graph.
+    Instace of Cycloclasticus zancles graph.
 
 	References
 	---------------------

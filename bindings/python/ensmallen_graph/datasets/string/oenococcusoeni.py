@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OenococcusOeni.
+This file offers the methods to automatically retrieve the graph Oenococcus oeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OenococcusOeni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OenococcusOeni graph.
+    """Return new instance of the Oenococcus oeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OenococcusOeni(
 
     Returns
     -----------------------
-    Instace of OenococcusOeni graph.
+    Instace of Oenococcus oeni graph.
 
 	References
 	---------------------

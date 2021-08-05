@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaSpG5847.
+This file offers the methods to automatically retrieve the graph Mycoplasma sp. G5847.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaSpG5847(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaSpG5847 graph.
+    """Return new instance of the Mycoplasma sp. G5847 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaSpG5847(
 
     Returns
     -----------------------
-    Instace of MycoplasmaSpG5847 graph.
+    Instace of Mycoplasma sp. G5847 graph.
 
 	References
 	---------------------

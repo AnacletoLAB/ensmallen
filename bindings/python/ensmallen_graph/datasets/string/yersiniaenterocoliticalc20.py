@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YersiniaEnterocoliticaLc20.
+This file offers the methods to automatically retrieve the graph Yersinia enterocolitica LC20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YersiniaEnterocoliticaLc20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YersiniaEnterocoliticaLc20 graph.
+    """Return new instance of the Yersinia enterocolitica LC20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def YersiniaEnterocoliticaLc20(
 
     Returns
     -----------------------
-    Instace of YersiniaEnterocoliticaLc20 graph.
+    Instace of Yersinia enterocolitica LC20 graph.
 
 	References
 	---------------------

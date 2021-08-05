@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurtobacteriumPusillum.
+This file offers the methods to automatically retrieve the graph Curtobacterium pusillum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurtobacteriumPusillum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurtobacteriumPusillum graph.
+    """Return new instance of the Curtobacterium pusillum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurtobacteriumPusillum(
 
     Returns
     -----------------------
-    Instace of CurtobacteriumPusillum graph.
+    Instace of Curtobacterium pusillum graph.
 
 	References
 	---------------------

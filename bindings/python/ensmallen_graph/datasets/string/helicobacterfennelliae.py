@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterFennelliae.
+This file offers the methods to automatically retrieve the graph Helicobacter fennelliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterFennelliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterFennelliae graph.
+    """Return new instance of the Helicobacter fennelliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterFennelliae(
 
     Returns
     -----------------------
-    Instace of HelicobacterFennelliae graph.
+    Instace of Helicobacter fennelliae graph.
 
 	References
 	---------------------

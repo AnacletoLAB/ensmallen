@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AncylobacterRudongensis.
+This file offers the methods to automatically retrieve the graph Ancylobacter rudongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AncylobacterRudongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AncylobacterRudongensis graph.
+    """Return new instance of the Ancylobacter rudongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AncylobacterRudongensis(
 
     Returns
     -----------------------
-    Instace of AncylobacterRudongensis graph.
+    Instace of Ancylobacter rudongensis graph.
 
 	References
 	---------------------

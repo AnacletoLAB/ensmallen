@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaMimosarum.
+This file offers the methods to automatically retrieve the graph Burkholderia mimosarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaMimosarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaMimosarum graph.
+    """Return new instance of the Burkholderia mimosarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BurkholderiaMimosarum(
 
     Returns
     -----------------------
-    Instace of BurkholderiaMimosarum graph.
+    Instace of Burkholderia mimosarum graph.
 
 	References
 	---------------------

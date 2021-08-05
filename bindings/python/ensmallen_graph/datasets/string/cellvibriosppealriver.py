@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioSpPealriver.
+This file offers the methods to automatically retrieve the graph Cellvibrio sp. pealriver.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioSpPealriver(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioSpPealriver graph.
+    """Return new instance of the Cellvibrio sp. pealriver graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellvibrioSpPealriver(
 
     Returns
     -----------------------
-    Instace of CellvibrioSpPealriver graph.
+    Instace of Cellvibrio sp. pealriver graph.
 
 	References
 	---------------------

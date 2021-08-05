@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParcubacteriaBacteriumOlb19.
+This file offers the methods to automatically retrieve the graph Parcubacteria bacterium OLB19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParcubacteriaBacteriumOlb19(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParcubacteriaBacteriumOlb19 graph.
+    """Return new instance of the Parcubacteria bacterium OLB19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParcubacteriaBacteriumOlb19(
 
     Returns
     -----------------------
-    Instace of ParcubacteriaBacteriumOlb19 graph.
+    Instace of Parcubacteria bacterium OLB19 graph.
 
 	References
 	---------------------

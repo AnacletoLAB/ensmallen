@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaliangiumOchraceum.
+This file offers the methods to automatically retrieve the graph Haliangium ochraceum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaliangiumOchraceum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaliangiumOchraceum graph.
+    """Return new instance of the Haliangium ochraceum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaliangiumOchraceum(
 
     Returns
     -----------------------
-    Instace of HaliangiumOchraceum graph.
+    Instace of Haliangium ochraceum graph.
 
 	References
 	---------------------

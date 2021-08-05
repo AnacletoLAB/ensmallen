@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lshp1270.
+This file offers the methods to automatically retrieve the graph lshp1270.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lshp1270(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lshp1270 graph.
+    """Return new instance of the lshp1270 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lshp1270(
 
     Returns
     -----------------------
-    Instace of Lshp1270 graph.
+    Instace of lshp1270 graph.
 
 	References
 	---------------------

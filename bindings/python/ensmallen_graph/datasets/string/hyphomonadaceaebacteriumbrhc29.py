@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonadaceaeBacteriumBrhC29.
+This file offers the methods to automatically retrieve the graph Hyphomonadaceae bacterium BRH_c29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonadaceaeBacteriumBrhC29(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonadaceaeBacteriumBrhC29 graph.
+    """Return new instance of the Hyphomonadaceae bacterium BRH_c29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomonadaceaeBacteriumBrhC29(
 
     Returns
     -----------------------
-    Instace of HyphomonadaceaeBacteriumBrhC29 graph.
+    Instace of Hyphomonadaceae bacterium BRH_c29 graph.
 
 	References
 	---------------------

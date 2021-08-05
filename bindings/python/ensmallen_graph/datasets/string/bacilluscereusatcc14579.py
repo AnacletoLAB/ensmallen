@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusCereusAtcc14579.
+This file offers the methods to automatically retrieve the graph Bacillus cereus ATCC 14579.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusCereusAtcc14579(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusCereusAtcc14579 graph.
+    """Return new instance of the Bacillus cereus ATCC 14579 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusCereusAtcc14579(
 
     Returns
     -----------------------
-    Instace of BacillusCereusAtcc14579 graph.
+    Instace of Bacillus cereus ATCC 14579 graph.
 
 	References
 	---------------------

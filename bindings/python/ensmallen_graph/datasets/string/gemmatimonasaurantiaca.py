@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonasAurantiaca.
+This file offers the methods to automatically retrieve the graph Gemmatimonas aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonasAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonasAurantiaca graph.
+    """Return new instance of the Gemmatimonas aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemmatimonasAurantiaca(
 
     Returns
     -----------------------
-    Instace of GemmatimonasAurantiaca graph.
+    Instace of Gemmatimonas aurantiaca graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisSpNrrlB16309.
+This file offers the methods to automatically retrieve the graph Nocardiopsis sp. NRRL B-16309.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisSpNrrlB16309(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisSpNrrlB16309 graph.
+    """Return new instance of the Nocardiopsis sp. NRRL B-16309 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiopsisSpNrrlB16309(
 
     Returns
     -----------------------
-    Instace of NocardiopsisSpNrrlB16309 graph.
+    Instace of Nocardiopsis sp. NRRL B-16309 graph.
 
 	References
 	---------------------

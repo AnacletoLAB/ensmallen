@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MixiaOsmundae.
+This file offers the methods to automatically retrieve the graph Mixia osmundae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MixiaOsmundae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MixiaOsmundae graph.
+    """Return new instance of the Mixia osmundae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MixiaOsmundae(
 
     Returns
     -----------------------
-    Instace of MixiaOsmundae graph.
+    Instace of Mixia osmundae graph.
 
 	References
 	---------------------

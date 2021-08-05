@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurobacteriumSpTc51.
+This file offers the methods to automatically retrieve the graph Desulfurobacterium sp. TC51.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurobacteriumSpTc51(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurobacteriumSpTc51 graph.
+    """Return new instance of the Desulfurobacterium sp. TC51 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurobacteriumSpTc51(
 
     Returns
     -----------------------
-    Instace of DesulfurobacteriumSpTc51 graph.
+    Instace of Desulfurobacterium sp. TC51 graph.
 
 	References
 	---------------------

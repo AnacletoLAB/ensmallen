@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolaribacterSpBm10.
+This file offers the methods to automatically retrieve the graph Polaribacter sp. BM10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolaribacterSpBm10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolaribacterSpBm10 graph.
+    """Return new instance of the Polaribacter sp. BM10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolaribacterSpBm10(
 
     Returns
     -----------------------
-    Instace of PolaribacterSpBm10 graph.
+    Instace of Polaribacter sp. BM10 graph.
 
 	References
 	---------------------

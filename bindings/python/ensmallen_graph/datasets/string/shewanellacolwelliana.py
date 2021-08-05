@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ShewanellaColwelliana.
+This file offers the methods to automatically retrieve the graph Shewanella colwelliana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ShewanellaColwelliana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ShewanellaColwelliana graph.
+    """Return new instance of the Shewanella colwelliana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ShewanellaColwelliana(
 
     Returns
     -----------------------
-    Instace of ShewanellaColwelliana graph.
+    Instace of Shewanella colwelliana graph.
 
 	References
 	---------------------

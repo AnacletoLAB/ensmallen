@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioBizertensisDsm18034.
+This file offers the methods to automatically retrieve the graph Desulfovibrio bizertensis DSM 18034.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioBizertensisDsm18034(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioBizertensisDsm18034 graph.
+    """Return new instance of the Desulfovibrio bizertensis DSM 18034 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfovibrioBizertensisDsm18034(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioBizertensisDsm18034 graph.
+    Instace of Desulfovibrio bizertensis DSM 18034 graph.
 
 	References
 	---------------------

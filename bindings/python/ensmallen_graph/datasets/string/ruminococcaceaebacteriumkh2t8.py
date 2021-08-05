@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcaceaeBacteriumKh2t8.
+This file offers the methods to automatically retrieve the graph Ruminococcaceae bacterium KH2T8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcaceaeBacteriumKh2t8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcaceaeBacteriumKh2t8 graph.
+    """Return new instance of the Ruminococcaceae bacterium KH2T8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcaceaeBacteriumKh2t8(
 
     Returns
     -----------------------
-    Instace of RuminococcaceaeBacteriumKh2t8 graph.
+    Instace of Ruminococcaceae bacterium KH2T8 graph.
 
 	References
 	---------------------

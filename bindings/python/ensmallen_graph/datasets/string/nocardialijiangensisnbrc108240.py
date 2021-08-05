@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiaLijiangensisNbrc108240.
+This file offers the methods to automatically retrieve the graph Nocardia lijiangensis NBRC 108240.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiaLijiangensisNbrc108240(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiaLijiangensisNbrc108240 graph.
+    """Return new instance of the Nocardia lijiangensis NBRC 108240 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardiaLijiangensisNbrc108240(
 
     Returns
     -----------------------
-    Instace of NocardiaLijiangensisNbrc108240 graph.
+    Instace of Nocardia lijiangensis NBRC 108240 graph.
 
 	References
 	---------------------

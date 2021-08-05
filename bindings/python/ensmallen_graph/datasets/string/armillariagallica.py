@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArmillariaGallica.
+This file offers the methods to automatically retrieve the graph Armillaria gallica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArmillariaGallica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArmillariaGallica graph.
+    """Return new instance of the Armillaria gallica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArmillariaGallica(
 
     Returns
     -----------------------
-    Instace of ArmillariaGallica graph.
+    Instace of Armillaria gallica graph.
 
 	References
 	---------------------

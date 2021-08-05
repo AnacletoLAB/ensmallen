@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusSenegalensis.
+This file offers the methods to automatically retrieve the graph Anaerococcus senegalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusSenegalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusSenegalensis graph.
+    """Return new instance of the Anaerococcus senegalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusSenegalensis(
 
     Returns
     -----------------------
-    Instace of AnaerococcusSenegalensis graph.
+    Instace of Anaerococcus senegalensis graph.
 
 	References
 	---------------------

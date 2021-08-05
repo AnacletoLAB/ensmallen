@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalococcusSaccharolyticusDsm5350.
+This file offers the methods to automatically retrieve the graph Halococcus saccharolyticus DSM 5350.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalococcusSaccharolyticusDsm5350(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalococcusSaccharolyticusDsm5350 graph.
+    """Return new instance of the Halococcus saccharolyticus DSM 5350 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalococcusSaccharolyticusDsm5350(
 
     Returns
     -----------------------
-    Instace of HalococcusSaccharolyticusDsm5350 graph.
+    Instace of Halococcus saccharolyticus DSM 5350 graph.
 
 	References
 	---------------------

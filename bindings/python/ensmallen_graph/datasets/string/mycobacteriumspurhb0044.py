@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpUrhb0044.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. URHB0044.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpUrhb0044(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpUrhb0044 graph.
+    """Return new instance of the Mycobacterium sp. URHB0044 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycobacteriumSpUrhb0044(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpUrhb0044 graph.
+    Instace of Mycobacterium sp. URHB0044 graph.
 
 	References
 	---------------------

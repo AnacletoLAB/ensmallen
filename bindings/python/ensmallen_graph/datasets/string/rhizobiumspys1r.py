@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpYs1r.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. YS1r.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpYs1r(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpYs1r graph.
+    """Return new instance of the Rhizobium sp. YS1r graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhizobiumSpYs1r(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpYs1r graph.
+    Instace of Rhizobium sp. YS1r graph.
 
 	References
 	---------------------

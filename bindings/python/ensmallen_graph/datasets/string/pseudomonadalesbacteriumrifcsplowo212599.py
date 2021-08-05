@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonadalesBacteriumRifcsplowo212599.
+This file offers the methods to automatically retrieve the graph Pseudomonadales bacterium RIFCSPLOWO2_12_59_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonadalesBacteriumRifcsplowo212599(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonadalesBacteriumRifcsplowo212599 graph.
+    """Return new instance of the Pseudomonadales bacterium RIFCSPLOWO2_12_59_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonadalesBacteriumRifcsplowo212599(
 
     Returns
     -----------------------
-    Instace of PseudomonadalesBacteriumRifcsplowo212599 graph.
+    Instace of Pseudomonadales bacterium RIFCSPLOWO2_12_59_9 graph.
 
 	References
 	---------------------

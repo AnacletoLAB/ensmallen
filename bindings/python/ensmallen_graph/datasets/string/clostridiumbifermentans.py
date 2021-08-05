@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumBifermentans.
+This file offers the methods to automatically retrieve the graph Clostridium bifermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumBifermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumBifermentans graph.
+    """Return new instance of the Clostridium bifermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumBifermentans(
 
     Returns
     -----------------------
-    Instace of ClostridiumBifermentans graph.
+    Instace of Clostridium bifermentans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonadaceaeBacteriumH1.
+This file offers the methods to automatically retrieve the graph Comamonadaceae bacterium H1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonadaceaeBacteriumH1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonadaceaeBacteriumH1 graph.
+    """Return new instance of the Comamonadaceae bacterium H1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ComamonadaceaeBacteriumH1(
 
     Returns
     -----------------------
-    Instace of ComamonadaceaeBacteriumH1 graph.
+    Instace of Comamonadaceae bacterium H1 graph.
 
 	References
 	---------------------

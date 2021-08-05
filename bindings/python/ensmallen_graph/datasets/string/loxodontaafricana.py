@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LoxodontaAfricana.
+This file offers the methods to automatically retrieve the graph Loxodonta africana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LoxodontaAfricana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LoxodontaAfricana graph.
+    """Return new instance of the Loxodonta africana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LoxodontaAfricana(
 
     Returns
     -----------------------
-    Instace of LoxodontaAfricana graph.
+    Instace of Loxodonta africana graph.
 
 	References
 	---------------------

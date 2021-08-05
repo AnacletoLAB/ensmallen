@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesFaecichinchillae.
+This file offers the methods to automatically retrieve the graph Bacteroides faecichinchillae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesFaecichinchillae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesFaecichinchillae graph.
+    """Return new instance of the Bacteroides faecichinchillae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesFaecichinchillae(
 
     Returns
     -----------------------
-    Instace of BacteroidesFaecichinchillae graph.
+    Instace of Bacteroides faecichinchillae graph.
 
 	References
 	---------------------

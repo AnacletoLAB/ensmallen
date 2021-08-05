@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomycesSilverae.
+This file offers the methods to automatically retrieve the graph Blastomyces silverae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomycesSilverae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomycesSilverae graph.
+    """Return new instance of the Blastomyces silverae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomycesSilverae(
 
     Returns
     -----------------------
-    Instace of BlastomycesSilverae graph.
+    Instace of Blastomyces silverae graph.
 
 	References
 	---------------------

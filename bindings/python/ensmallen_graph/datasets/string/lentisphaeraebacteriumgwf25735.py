@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LentisphaeraeBacteriumGwf25735.
+This file offers the methods to automatically retrieve the graph Lentisphaerae bacterium GWF2_57_35.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LentisphaeraeBacteriumGwf25735(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LentisphaeraeBacteriumGwf25735 graph.
+    """Return new instance of the Lentisphaerae bacterium GWF2_57_35 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LentisphaeraeBacteriumGwf25735(
 
     Returns
     -----------------------
-    Instace of LentisphaeraeBacteriumGwf25735 graph.
+    Instace of Lentisphaerae bacterium GWF2_57_35 graph.
 
 	References
 	---------------------

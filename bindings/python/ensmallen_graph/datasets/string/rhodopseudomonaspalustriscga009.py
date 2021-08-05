@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodopseudomonasPalustrisCga009.
+This file offers the methods to automatically retrieve the graph Rhodopseudomonas palustris CGA009.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodopseudomonasPalustrisCga009(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodopseudomonasPalustrisCga009 graph.
+    """Return new instance of the Rhodopseudomonas palustris CGA009 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodopseudomonasPalustrisCga009(
 
     Returns
     -----------------------
-    Instace of RhodopseudomonasPalustrisCga009 graph.
+    Instace of Rhodopseudomonas palustris CGA009 graph.
 
 	References
 	---------------------

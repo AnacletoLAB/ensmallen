@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSwezeyi.
+This file offers the methods to automatically retrieve the graph Bacillus swezeyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSwezeyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSwezeyi graph.
+    """Return new instance of the Bacillus swezeyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSwezeyi(
 
     Returns
     -----------------------
-    Instace of BacillusSwezeyi graph.
+    Instace of Bacillus swezeyi graph.
 
 	References
 	---------------------

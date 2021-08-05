@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusBerkelbacteriaBacteriumCg2304320.
+This file offers the methods to automatically retrieve the graph Candidatus Berkelbacteria bacterium CG2_30_43_20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusBerkelbacteriaBacteriumCg2304320(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusBerkelbacteriaBacteriumCg2304320 graph.
+    """Return new instance of the Candidatus Berkelbacteria bacterium CG2_30_43_20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusBerkelbacteriaBacteriumCg2304320(
 
     Returns
     -----------------------
-    Instace of CandidatusBerkelbacteriaBacteriumCg2304320 graph.
+    Instace of Candidatus Berkelbacteria bacterium CG2_30_43_20 graph.
 
 	References
 	---------------------

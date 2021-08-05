@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusTuaregi.
+This file offers the methods to automatically retrieve the graph Bacillus tuaregi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusTuaregi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusTuaregi graph.
+    """Return new instance of the Bacillus tuaregi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusTuaregi(
 
     Returns
     -----------------------
-    Instace of BacillusTuaregi graph.
+    Instace of Bacillus tuaregi graph.
 
 	References
 	---------------------

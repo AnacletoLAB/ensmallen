@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellvibrioSpOa2007.
+This file offers the methods to automatically retrieve the graph Cellvibrio sp. OA-2007.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellvibrioSpOa2007(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellvibrioSpOa2007 graph.
+    """Return new instance of the Cellvibrio sp. OA-2007 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellvibrioSpOa2007(
 
     Returns
     -----------------------
-    Instace of CellvibrioSpOa2007 graph.
+    Instace of Cellvibrio sp. OA-2007 graph.
 
 	References
 	---------------------

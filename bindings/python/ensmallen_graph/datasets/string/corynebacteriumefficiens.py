@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumEfficiens.
+This file offers the methods to automatically retrieve the graph Corynebacterium efficiens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumEfficiens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumEfficiens graph.
+    """Return new instance of the Corynebacterium efficiens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CorynebacteriumEfficiens(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumEfficiens graph.
+    Instace of Corynebacterium efficiens graph.
 
 	References
 	---------------------

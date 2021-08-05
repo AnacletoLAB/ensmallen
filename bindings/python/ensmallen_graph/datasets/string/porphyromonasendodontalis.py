@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasEndodontalis.
+This file offers the methods to automatically retrieve the graph Porphyromonas endodontalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasEndodontalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasEndodontalis graph.
+    """Return new instance of the Porphyromonas endodontalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasEndodontalis(
 
     Returns
     -----------------------
-    Instace of PorphyromonasEndodontalis graph.
+    Instace of Porphyromonas endodontalis graph.
 
 	References
 	---------------------

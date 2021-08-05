@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterLuteolusNbrc107841.
+This file offers the methods to automatically retrieve the graph Arthrobacter luteolus NBRC 107841.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterLuteolusNbrc107841(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterLuteolusNbrc107841 graph.
+    """Return new instance of the Arthrobacter luteolus NBRC 107841 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArthrobacterLuteolusNbrc107841(
 
     Returns
     -----------------------
-    Instace of ArthrobacterLuteolusNbrc107841 graph.
+    Instace of Arthrobacter luteolus NBRC 107841 graph.
 
 	References
 	---------------------

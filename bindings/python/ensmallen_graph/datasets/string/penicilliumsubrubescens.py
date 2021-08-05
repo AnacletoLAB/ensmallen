@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PenicilliumSubrubescens.
+This file offers the methods to automatically retrieve the graph Penicillium subrubescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PenicilliumSubrubescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PenicilliumSubrubescens graph.
+    """Return new instance of the Penicillium subrubescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PenicilliumSubrubescens(
 
     Returns
     -----------------------
-    Instace of PenicilliumSubrubescens graph.
+    Instace of Penicillium subrubescens graph.
 
 	References
 	---------------------

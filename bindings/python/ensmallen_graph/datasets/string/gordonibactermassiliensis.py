@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordonibacterMassiliensis.
+This file offers the methods to automatically retrieve the graph Gordonibacter massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordonibacterMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordonibacterMassiliensis graph.
+    """Return new instance of the Gordonibacter massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GordonibacterMassiliensis(
 
     Returns
     -----------------------
-    Instace of GordonibacterMassiliensis graph.
+    Instace of Gordonibacter massiliensis graph.
 
 	References
 	---------------------

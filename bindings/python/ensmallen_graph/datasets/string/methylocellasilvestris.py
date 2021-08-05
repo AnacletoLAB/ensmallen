@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylocellaSilvestris.
+This file offers the methods to automatically retrieve the graph Methylocella silvestris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylocellaSilvestris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylocellaSilvestris graph.
+    """Return new instance of the Methylocella silvestris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylocellaSilvestris(
 
     Returns
     -----------------------
-    Instace of MethylocellaSilvestris graph.
+    Instace of Methylocella silvestris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaHyorhinisSk76.
+This file offers the methods to automatically retrieve the graph Mycoplasma hyorhinis SK76.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaHyorhinisSk76(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaHyorhinisSk76 graph.
+    """Return new instance of the Mycoplasma hyorhinis SK76 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MycoplasmaHyorhinisSk76(
 
     Returns
     -----------------------
-    Instace of MycoplasmaHyorhinisSk76 graph.
+    Instace of Mycoplasma hyorhinis SK76 graph.
 
 	References
 	---------------------

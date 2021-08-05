@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlkaliphilusMetalliredigens.
+This file offers the methods to automatically retrieve the graph Alkaliphilus metalliredigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlkaliphilusMetalliredigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlkaliphilusMetalliredigens graph.
+    """Return new instance of the Alkaliphilus metalliredigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlkaliphilusMetalliredigens(
 
     Returns
     -----------------------
-    Instace of AlkaliphilusMetalliredigens graph.
+    Instace of Alkaliphilus metalliredigens graph.
 
 	References
 	---------------------

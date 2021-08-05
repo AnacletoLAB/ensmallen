@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumIriomotense.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium iriomotense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumIriomotense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumIriomotense graph.
+    """Return new instance of the Lysinimicrobium iriomotense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinimicrobiumIriomotense(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumIriomotense graph.
+    Instace of Lysinimicrobium iriomotense graph.
 
 	References
 	---------------------

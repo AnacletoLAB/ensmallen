@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesBarnesiae.
+This file offers the methods to automatically retrieve the graph Bacteroides barnesiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesBarnesiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesBarnesiae graph.
+    """Return new instance of the Bacteroides barnesiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidesBarnesiae(
 
     Returns
     -----------------------
-    Instace of BacteroidesBarnesiae graph.
+    Instace of Bacteroides barnesiae graph.
 
 	References
 	---------------------

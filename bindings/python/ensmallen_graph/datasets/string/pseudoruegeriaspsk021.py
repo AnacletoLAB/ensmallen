@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoruegeriaSpSk021.
+This file offers the methods to automatically retrieve the graph Pseudoruegeria sp. SK021.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoruegeriaSpSk021(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoruegeriaSpSk021 graph.
+    """Return new instance of the Pseudoruegeria sp. SK021 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoruegeriaSpSk021(
 
     Returns
     -----------------------
-    Instace of PseudoruegeriaSpSk021 graph.
+    Instace of Pseudoruegeria sp. SK021 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizophagusSpMucl43196.
+This file offers the methods to automatically retrieve the graph Rhizophagus sp. MUCL 43196.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizophagusSpMucl43196(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizophagusSpMucl43196 graph.
+    """Return new instance of the Rhizophagus sp. MUCL 43196 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizophagusSpMucl43196(
 
     Returns
     -----------------------
-    Instace of RhizophagusSpMucl43196 graph.
+    Instace of Rhizophagus sp. MUCL 43196 graph.
 
 	References
 	---------------------

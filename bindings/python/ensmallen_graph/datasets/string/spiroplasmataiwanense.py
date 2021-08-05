@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpiroplasmaTaiwanense.
+This file offers the methods to automatically retrieve the graph Spiroplasma taiwanense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpiroplasmaTaiwanense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpiroplasmaTaiwanense graph.
+    """Return new instance of the Spiroplasma taiwanense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpiroplasmaTaiwanense(
 
     Returns
     -----------------------
-    Instace of SpiroplasmaTaiwanense graph.
+    Instace of Spiroplasma taiwanense graph.
 
 	References
 	---------------------

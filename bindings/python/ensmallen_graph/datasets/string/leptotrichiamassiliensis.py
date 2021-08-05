@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaMassiliensis.
+This file offers the methods to automatically retrieve the graph Leptotrichia massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaMassiliensis graph.
+    """Return new instance of the Leptotrichia massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptotrichiaMassiliensis(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaMassiliensis graph.
+    Instace of Leptotrichia massiliensis graph.
 
 	References
 	---------------------

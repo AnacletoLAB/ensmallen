@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusRenniniDsm20253.
+This file offers the methods to automatically retrieve the graph Lactobacillus rennini DSM 20253.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusRenniniDsm20253(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusRenniniDsm20253 graph.
+    """Return new instance of the Lactobacillus rennini DSM 20253 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusRenniniDsm20253(
 
     Returns
     -----------------------
-    Instace of LactobacillusRenniniDsm20253 graph.
+    Instace of Lactobacillus rennini DSM 20253 graph.
 
 	References
 	---------------------

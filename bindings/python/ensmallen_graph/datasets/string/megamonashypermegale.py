@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegamonasHypermegale.
+This file offers the methods to automatically retrieve the graph Megamonas hypermegale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegamonasHypermegale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegamonasHypermegale graph.
+    """Return new instance of the Megamonas hypermegale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegamonasHypermegale(
 
     Returns
     -----------------------
-    Instace of MegamonasHypermegale graph.
+    Instace of Megamonas hypermegale graph.
 
 	References
 	---------------------

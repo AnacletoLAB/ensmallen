@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterHarbinensis.
+This file offers the methods to automatically retrieve the graph Acinetobacter harbinensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterHarbinensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterHarbinensis graph.
+    """Return new instance of the Acinetobacter harbinensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterHarbinensis(
 
     Returns
     -----------------------
-    Instace of AcinetobacterHarbinensis graph.
+    Instace of Acinetobacter harbinensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumBangladeshense.
+This file offers the methods to automatically retrieve the graph Rhizobium bangladeshense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumBangladeshense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumBangladeshense graph.
+    """Return new instance of the Rhizobium bangladeshense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumBangladeshense(
 
     Returns
     -----------------------
-    Instace of RhizobiumBangladeshense graph.
+    Instace of Rhizobium bangladeshense graph.
 
 	References
 	---------------------

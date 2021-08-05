@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusUzinuraDiaspidicolaStrAsner.
+This file offers the methods to automatically retrieve the graph Candidatus Uzinura diaspidicola str. ASNER.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusUzinuraDiaspidicolaStrAsner(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusUzinuraDiaspidicolaStrAsner graph.
+    """Return new instance of the Candidatus Uzinura diaspidicola str. ASNER graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusUzinuraDiaspidicolaStrAsner(
 
     Returns
     -----------------------
-    Instace of CandidatusUzinuraDiaspidicolaStrAsner graph.
+    Instace of Candidatus Uzinura diaspidicola str. ASNER graph.
 
 	References
 	---------------------

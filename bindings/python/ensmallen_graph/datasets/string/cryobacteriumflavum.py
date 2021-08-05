@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryobacteriumFlavum.
+This file offers the methods to automatically retrieve the graph Cryobacterium flavum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryobacteriumFlavum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryobacteriumFlavum graph.
+    """Return new instance of the Cryobacterium flavum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryobacteriumFlavum(
 
     Returns
     -----------------------
-    Instace of CryobacteriumFlavum graph.
+    Instace of Cryobacterium flavum graph.
 
 	References
 	---------------------

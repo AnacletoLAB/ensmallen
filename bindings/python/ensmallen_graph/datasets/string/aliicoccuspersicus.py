@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AliicoccusPersicus.
+This file offers the methods to automatically retrieve the graph Aliicoccus persicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AliicoccusPersicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AliicoccusPersicus graph.
+    """Return new instance of the Aliicoccus persicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AliicoccusPersicus(
 
     Returns
     -----------------------
-    Instace of AliicoccusPersicus graph.
+    Instace of Aliicoccus persicus graph.
 
 	References
 	---------------------

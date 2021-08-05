@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptacidiphilusJeojiense.
+This file offers the methods to automatically retrieve the graph Streptacidiphilus jeojiense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptacidiphilusJeojiense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptacidiphilusJeojiense graph.
+    """Return new instance of the Streptacidiphilus jeojiense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptacidiphilusJeojiense(
 
     Returns
     -----------------------
-    Instace of StreptacidiphilusJeojiense graph.
+    Instace of Streptacidiphilus jeojiense graph.
 
 	References
 	---------------------

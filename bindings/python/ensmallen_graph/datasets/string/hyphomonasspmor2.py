@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpMor2.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. Mor2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpMor2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpMor2 graph.
+    """Return new instance of the Hyphomonas sp. Mor2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HyphomonasSpMor2(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpMor2 graph.
+    Instace of Hyphomonas sp. Mor2 graph.
 
 	References
 	---------------------

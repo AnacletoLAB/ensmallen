@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcinetobacterSpCag1963641.
+This file offers the methods to automatically retrieve the graph Acinetobacter sp. CAG:196_36_41.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcinetobacterSpCag1963641(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcinetobacterSpCag1963641 graph.
+    """Return new instance of the Acinetobacter sp. CAG:196_36_41 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcinetobacterSpCag1963641(
 
     Returns
     -----------------------
-    Instace of AcinetobacterSpCag1963641 graph.
+    Instace of Acinetobacter sp. CAG:196_36_41 graph.
 
 	References
 	---------------------

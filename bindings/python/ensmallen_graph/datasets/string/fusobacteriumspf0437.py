@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumSpF0437.
+This file offers the methods to automatically retrieve the graph Fusobacterium sp. F0437.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumSpF0437(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumSpF0437 graph.
+    """Return new instance of the Fusobacterium sp. F0437 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumSpF0437(
 
     Returns
     -----------------------
-    Instace of FusobacteriumSpF0437 graph.
+    Instace of Fusobacterium sp. F0437 graph.
 
 	References
 	---------------------

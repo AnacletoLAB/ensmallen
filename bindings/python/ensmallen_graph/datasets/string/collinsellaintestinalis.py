@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CollinsellaIntestinalis.
+This file offers the methods to automatically retrieve the graph Collinsella intestinalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CollinsellaIntestinalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CollinsellaIntestinalis graph.
+    """Return new instance of the Collinsella intestinalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CollinsellaIntestinalis(
 
     Returns
     -----------------------
-    Instace of CollinsellaIntestinalis graph.
+    Instace of Collinsella intestinalis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterSp4425.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter sp. 44-25.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterSp4425(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterSp4425 graph.
+    """Return new instance of the Mucilaginibacter sp. 44-25 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterSp4425(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterSp4425 graph.
+    Instace of Mucilaginibacter sp. 44-25 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmycolatopsisPretoriensis.
+This file offers the methods to automatically retrieve the graph Amycolatopsis pretoriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmycolatopsisPretoriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmycolatopsisPretoriensis graph.
+    """Return new instance of the Amycolatopsis pretoriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmycolatopsisPretoriensis(
 
     Returns
     -----------------------
-    Instace of AmycolatopsisPretoriensis graph.
+    Instace of Amycolatopsis pretoriensis graph.
 
 	References
 	---------------------

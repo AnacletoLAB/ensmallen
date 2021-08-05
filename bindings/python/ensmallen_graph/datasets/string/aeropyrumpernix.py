@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeropyrumPernix.
+This file offers the methods to automatically retrieve the graph Aeropyrum pernix.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeropyrumPernix(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeropyrumPernix graph.
+    """Return new instance of the Aeropyrum pernix graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeropyrumPernix(
 
     Returns
     -----------------------
-    Instace of AeropyrumPernix graph.
+    Instace of Aeropyrum pernix graph.
 
 	References
 	---------------------

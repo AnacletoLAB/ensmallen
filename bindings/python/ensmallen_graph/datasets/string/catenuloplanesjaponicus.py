@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CatenuloplanesJaponicus.
+This file offers the methods to automatically retrieve the graph Catenuloplanes japonicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CatenuloplanesJaponicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CatenuloplanesJaponicus graph.
+    """Return new instance of the Catenuloplanes japonicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CatenuloplanesJaponicus(
 
     Returns
     -----------------------
-    Instace of CatenuloplanesJaponicus graph.
+    Instace of Catenuloplanes japonicus graph.
 
 	References
 	---------------------

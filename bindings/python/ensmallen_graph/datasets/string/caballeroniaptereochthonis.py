@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaballeroniaPtereochthonis.
+This file offers the methods to automatically retrieve the graph Caballeronia ptereochthonis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaballeroniaPtereochthonis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaballeroniaPtereochthonis graph.
+    """Return new instance of the Caballeronia ptereochthonis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaballeroniaPtereochthonis(
 
     Returns
     -----------------------
-    Instace of CaballeroniaPtereochthonis graph.
+    Instace of Caballeronia ptereochthonis graph.
 
 	References
 	---------------------

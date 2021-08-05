@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HahellaChejuensis.
+This file offers the methods to automatically retrieve the graph Hahella chejuensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HahellaChejuensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HahellaChejuensis graph.
+    """Return new instance of the Hahella chejuensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HahellaChejuensis(
 
     Returns
     -----------------------
-    Instace of HahellaChejuensis graph.
+    Instace of Hahella chejuensis graph.
 
 	References
 	---------------------

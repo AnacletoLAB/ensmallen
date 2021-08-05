@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GramellaSalexigens.
+This file offers the methods to automatically retrieve the graph Gramella salexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GramellaSalexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GramellaSalexigens graph.
+    """Return new instance of the Gramella salexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GramellaSalexigens(
 
     Returns
     -----------------------
-    Instace of GramellaSalexigens graph.
+    Instace of Gramella salexigens graph.
 
 	References
 	---------------------

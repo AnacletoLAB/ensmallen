@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaceaeBacterium15036681.
+This file offers the methods to automatically retrieve the graph Pasteurellaceae bacterium 15-036681.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaceaeBacterium15036681(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaceaeBacterium15036681 graph.
+    """Return new instance of the Pasteurellaceae bacterium 15-036681 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PasteurellaceaeBacterium15036681(
 
     Returns
     -----------------------
-    Instace of PasteurellaceaeBacterium15036681 graph.
+    Instace of Pasteurellaceae bacterium 15-036681 graph.
 
 	References
 	---------------------

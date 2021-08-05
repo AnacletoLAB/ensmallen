@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NatranaerobiusThermophilus.
+This file offers the methods to automatically retrieve the graph Natranaerobius thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NatranaerobiusThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NatranaerobiusThermophilus graph.
+    """Return new instance of the Natranaerobius thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NatranaerobiusThermophilus(
 
     Returns
     -----------------------
-    Instace of NatranaerobiusThermophilus graph.
+    Instace of Natranaerobius thermophilus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PicoidesPubescens.
+This file offers the methods to automatically retrieve the graph Picoides pubescens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PicoidesPubescens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PicoidesPubescens graph.
+    """Return new instance of the Picoides pubescens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PicoidesPubescens(
 
     Returns
     -----------------------
-    Instace of PicoidesPubescens graph.
+    Instace of Picoides pubescens graph.
 
 	References
 	---------------------

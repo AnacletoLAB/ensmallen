@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriumAcamd5.
+This file offers the methods to automatically retrieve the graph actinobacterium acAMD5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriumAcamd5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriumAcamd5 graph.
+    """Return new instance of the actinobacterium acAMD5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacteriumAcamd5(
 
     Returns
     -----------------------
-    Instace of ActinobacteriumAcamd5 graph.
+    Instace of actinobacterium acAMD5 graph.
 
 	References
 	---------------------

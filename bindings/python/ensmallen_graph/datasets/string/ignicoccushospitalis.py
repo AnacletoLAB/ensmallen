@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnicoccusHospitalis.
+This file offers the methods to automatically retrieve the graph Ignicoccus hospitalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnicoccusHospitalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnicoccusHospitalis graph.
+    """Return new instance of the Ignicoccus hospitalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IgnicoccusHospitalis(
 
     Returns
     -----------------------
-    Instace of IgnicoccusHospitalis graph.
+    Instace of Ignicoccus hospitalis graph.
 
 	References
 	---------------------

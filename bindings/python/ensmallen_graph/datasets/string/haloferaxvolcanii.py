@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaloferaxVolcanii.
+This file offers the methods to automatically retrieve the graph Haloferax volcanii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaloferaxVolcanii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaloferaxVolcanii graph.
+    """Return new instance of the Haloferax volcanii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaloferaxVolcanii(
 
     Returns
     -----------------------
-    Instace of HaloferaxVolcanii graph.
+    Instace of Haloferax volcanii graph.
 
 	References
 	---------------------

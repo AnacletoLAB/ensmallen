@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumXpb1003.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium XPB1003.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumXpb1003(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumXpb1003 graph.
+    """Return new instance of the Lachnospiraceae bacterium XPB1003 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LachnospiraceaeBacteriumXpb1003(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumXpb1003 graph.
+    Instace of Lachnospiraceae bacterium XPB1003 graph.
 
 	References
 	---------------------

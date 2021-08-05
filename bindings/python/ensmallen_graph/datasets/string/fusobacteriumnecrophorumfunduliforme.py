@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusobacteriumNecrophorumFunduliforme.
+This file offers the methods to automatically retrieve the graph Fusobacterium necrophorum funduliforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusobacteriumNecrophorumFunduliforme(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusobacteriumNecrophorumFunduliforme graph.
+    """Return new instance of the Fusobacterium necrophorum funduliforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FusobacteriumNecrophorumFunduliforme(
 
     Returns
     -----------------------
-    Instace of FusobacteriumNecrophorumFunduliforme graph.
+    Instace of Fusobacterium necrophorum funduliforme graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumLotiUsda3471.
+This file offers the methods to automatically retrieve the graph Mesorhizobium loti USDA3471.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumLotiUsda3471(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumLotiUsda3471 graph.
+    """Return new instance of the Mesorhizobium loti USDA3471 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesorhizobiumLotiUsda3471(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumLotiUsda3471 graph.
+    Instace of Mesorhizobium loti USDA3471 graph.
 
 	References
 	---------------------

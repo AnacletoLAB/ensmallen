@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DrosophilaVirilis.
+This file offers the methods to automatically retrieve the graph Drosophila virilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DrosophilaVirilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DrosophilaVirilis graph.
+    """Return new instance of the Drosophila virilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DrosophilaVirilis(
 
     Returns
     -----------------------
-    Instace of DrosophilaVirilis graph.
+    Instace of Drosophila virilis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmatimonasSpAp64.
+This file offers the methods to automatically retrieve the graph Gemmatimonas sp. AP64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmatimonasSpAp64(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmatimonasSpAp64 graph.
+    """Return new instance of the Gemmatimonas sp. AP64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GemmatimonasSpAp64(
 
     Returns
     -----------------------
-    Instace of GemmatimonasSpAp64 graph.
+    Instace of Gemmatimonas sp. AP64 graph.
 
 	References
 	---------------------

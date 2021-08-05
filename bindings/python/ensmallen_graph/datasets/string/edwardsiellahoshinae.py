@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EdwardsiellaHoshinae.
+This file offers the methods to automatically retrieve the graph Edwardsiella hoshinae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EdwardsiellaHoshinae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EdwardsiellaHoshinae graph.
+    """Return new instance of the Edwardsiella hoshinae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EdwardsiellaHoshinae(
 
     Returns
     -----------------------
-    Instace of EdwardsiellaHoshinae graph.
+    Instace of Edwardsiella hoshinae graph.
 
 	References
 	---------------------

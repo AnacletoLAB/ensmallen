@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterSpUnc380mfsha31.
+This file offers the methods to automatically retrieve the graph Hymenobacter sp. unc380mfsha3.1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterSpUnc380mfsha31(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterSpUnc380mfsha31 graph.
+    """Return new instance of the Hymenobacter sp. unc380mfsha3.1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterSpUnc380mfsha31(
 
     Returns
     -----------------------
-    Instace of HymenobacterSpUnc380mfsha31 graph.
+    Instace of Hymenobacter sp. unc380mfsha3.1 graph.
 
 	References
 	---------------------

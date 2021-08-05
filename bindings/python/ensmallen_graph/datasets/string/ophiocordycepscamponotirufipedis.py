@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OphiocordycepsCamponotiRufipedis.
+This file offers the methods to automatically retrieve the graph Ophiocordyceps camponoti-rufipedis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OphiocordycepsCamponotiRufipedis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OphiocordycepsCamponotiRufipedis graph.
+    """Return new instance of the Ophiocordyceps camponoti-rufipedis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OphiocordycepsCamponotiRufipedis(
 
     Returns
     -----------------------
-    Instace of OphiocordycepsCamponotiRufipedis graph.
+    Instace of Ophiocordyceps camponoti-rufipedis graph.
 
 	References
 	---------------------

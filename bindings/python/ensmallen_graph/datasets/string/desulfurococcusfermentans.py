@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfurococcusFermentans.
+This file offers the methods to automatically retrieve the graph Desulfurococcus fermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfurococcusFermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfurococcusFermentans graph.
+    """Return new instance of the Desulfurococcus fermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfurococcusFermentans(
 
     Returns
     -----------------------
-    Instace of DesulfurococcusFermentans graph.
+    Instace of Desulfurococcus fermentans graph.
 
 	References
 	---------------------

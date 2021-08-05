@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumOculi.
+This file offers the methods to automatically retrieve the graph Corynebacterium oculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumOculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumOculi graph.
+    """Return new instance of the Corynebacterium oculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumOculi(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumOculi graph.
+    Instace of Corynebacterium oculi graph.
 
 	References
 	---------------------

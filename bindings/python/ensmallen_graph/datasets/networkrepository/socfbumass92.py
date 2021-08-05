@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUmass92.
+This file offers the methods to automatically retrieve the graph socfb-UMass92.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUmass92(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUmass92 graph.
+    """Return new instance of the socfb-UMass92 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUmass92(
 
     Returns
     -----------------------
-    Instace of SocfbUmass92 graph.
+    Instace of socfb-UMass92 graph.
 
 	References
 	---------------------

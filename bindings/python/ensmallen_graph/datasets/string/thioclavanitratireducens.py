@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThioclavaNitratireducens.
+This file offers the methods to automatically retrieve the graph Thioclava nitratireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThioclavaNitratireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThioclavaNitratireducens graph.
+    """Return new instance of the Thioclava nitratireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThioclavaNitratireducens(
 
     Returns
     -----------------------
-    Instace of ThioclavaNitratireducens graph.
+    Instace of Thioclava nitratireducens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE740.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E740.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE740(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE740 graph.
+    """Return new instance of the Mycobacterium sp. E740 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE740(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE740 graph.
+    Instace of Mycobacterium sp. E740 graph.
 
 	References
 	---------------------

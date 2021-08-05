@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IdiomarinaIndica.
+This file offers the methods to automatically retrieve the graph Idiomarina indica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IdiomarinaIndica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IdiomarinaIndica graph.
+    """Return new instance of the Idiomarina indica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IdiomarinaIndica(
 
     Returns
     -----------------------
-    Instace of IdiomarinaIndica graph.
+    Instace of Idiomarina indica graph.
 
 	References
 	---------------------

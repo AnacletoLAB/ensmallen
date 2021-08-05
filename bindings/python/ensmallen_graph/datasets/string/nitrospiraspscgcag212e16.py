@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NitrospiraSpScgcAg212E16.
+This file offers the methods to automatically retrieve the graph Nitrospira sp. SCGC AG-212-E16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NitrospiraSpScgcAg212E16(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NitrospiraSpScgcAg212E16 graph.
+    """Return new instance of the Nitrospira sp. SCGC AG-212-E16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NitrospiraSpScgcAg212E16(
 
     Returns
     -----------------------
-    Instace of NitrospiraSpScgcAg212E16 graph.
+    Instace of Nitrospira sp. SCGC AG-212-E16 graph.
 
 	References
 	---------------------

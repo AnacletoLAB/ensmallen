@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardioidesTerrae.
+This file offers the methods to automatically retrieve the graph Nocardioides terrae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardioidesTerrae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardioidesTerrae graph.
+    """Return new instance of the Nocardioides terrae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NocardioidesTerrae(
 
     Returns
     -----------------------
-    Instace of NocardioidesTerrae graph.
+    Instace of Nocardioides terrae graph.
 
 	References
 	---------------------

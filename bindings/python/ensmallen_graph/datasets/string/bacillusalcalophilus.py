@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAlcalophilus.
+This file offers the methods to automatically retrieve the graph Bacillus alcalophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAlcalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAlcalophilus graph.
+    """Return new instance of the Bacillus alcalophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAlcalophilus(
 
     Returns
     -----------------------
-    Instace of BacillusAlcalophilus graph.
+    Instace of Bacillus alcalophilus graph.
 
 	References
 	---------------------

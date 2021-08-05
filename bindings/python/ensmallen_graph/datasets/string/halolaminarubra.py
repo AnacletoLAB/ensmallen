@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalolaminaRubra.
+This file offers the methods to automatically retrieve the graph Halolamina rubra.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalolaminaRubra(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalolaminaRubra graph.
+    """Return new instance of the Halolamina rubra graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalolaminaRubra(
 
     Returns
     -----------------------
-    Instace of HalolaminaRubra graph.
+    Instace of Halolamina rubra graph.
 
 	References
 	---------------------

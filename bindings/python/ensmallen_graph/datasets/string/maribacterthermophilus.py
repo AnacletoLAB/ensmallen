@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterThermophilus.
+This file offers the methods to automatically retrieve the graph Maribacter thermophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterThermophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterThermophilus graph.
+    """Return new instance of the Maribacter thermophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaribacterThermophilus(
 
     Returns
     -----------------------
-    Instace of MaribacterThermophilus graph.
+    Instace of Maribacter thermophilus graph.
 
 	References
 	---------------------

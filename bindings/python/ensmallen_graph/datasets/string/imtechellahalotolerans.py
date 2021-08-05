@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ImtechellaHalotolerans.
+This file offers the methods to automatically retrieve the graph Imtechella halotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ImtechellaHalotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ImtechellaHalotolerans graph.
+    """Return new instance of the Imtechella halotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ImtechellaHalotolerans(
 
     Returns
     -----------------------
-    Instace of ImtechellaHalotolerans graph.
+    Instace of Imtechella halotolerans graph.
 
 	References
 	---------------------

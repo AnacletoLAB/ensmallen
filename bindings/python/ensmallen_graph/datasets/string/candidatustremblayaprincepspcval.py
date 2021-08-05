@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTremblayaPrincepsPcval.
+This file offers the methods to automatically retrieve the graph Candidatus Tremblaya princeps PCVAL.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTremblayaPrincepsPcval(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTremblayaPrincepsPcval graph.
+    """Return new instance of the Candidatus Tremblaya princeps PCVAL graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTremblayaPrincepsPcval(
 
     Returns
     -----------------------
-    Instace of CandidatusTremblayaPrincepsPcval graph.
+    Instace of Candidatus Tremblaya princeps PCVAL graph.
 
 	References
 	---------------------

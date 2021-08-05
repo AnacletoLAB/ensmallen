@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfuricellaSpT08.
+This file offers the methods to automatically retrieve the graph Sulfuricella sp. T08.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfuricellaSpT08(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfuricellaSpT08 graph.
+    """Return new instance of the Sulfuricella sp. T08 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SulfuricellaSpT08(
 
     Returns
     -----------------------
-    Instace of SulfuricellaSpT08 graph.
+    Instace of Sulfuricella sp. T08 graph.
 
 	References
 	---------------------

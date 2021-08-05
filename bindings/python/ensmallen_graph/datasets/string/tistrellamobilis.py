@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TistrellaMobilis.
+This file offers the methods to automatically retrieve the graph Tistrella mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TistrellaMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TistrellaMobilis graph.
+    """Return new instance of the Tistrella mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TistrellaMobilis(
 
     Returns
     -----------------------
-    Instace of TistrellaMobilis graph.
+    Instace of Tistrella mobilis graph.
 
 	References
 	---------------------

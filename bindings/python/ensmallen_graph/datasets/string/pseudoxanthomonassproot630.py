@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasSpRoot630.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas sp. Root630.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasSpRoot630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasSpRoot630 graph.
+    """Return new instance of the Pseudoxanthomonas sp. Root630 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasSpRoot630(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasSpRoot630 graph.
+    Instace of Pseudoxanthomonas sp. Root630 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidaminococcusMassiliensis.
+This file offers the methods to automatically retrieve the graph Acidaminococcus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidaminococcusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidaminococcusMassiliensis graph.
+    """Return new instance of the Acidaminococcus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidaminococcusMassiliensis(
 
     Returns
     -----------------------
-    Instace of AcidaminococcusMassiliensis graph.
+    Instace of Acidaminococcus massiliensis graph.
 
 	References
 	---------------------

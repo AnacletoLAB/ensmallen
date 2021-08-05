@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinovumAlgicolaDg898.
+This file offers the methods to automatically retrieve the graph Marinovum algicola DG 898.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinovumAlgicolaDg898(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinovumAlgicolaDg898 graph.
+    """Return new instance of the Marinovum algicola DG 898 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinovumAlgicolaDg898(
 
     Returns
     -----------------------
-    Instace of MarinovumAlgicolaDg898 graph.
+    Instace of Marinovum algicola DG 898 graph.
 
 	References
 	---------------------

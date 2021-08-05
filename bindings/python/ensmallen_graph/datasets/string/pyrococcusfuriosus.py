@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyrococcusFuriosus.
+This file offers the methods to automatically retrieve the graph Pyrococcus furiosus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyrococcusFuriosus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyrococcusFuriosus graph.
+    """Return new instance of the Pyrococcus furiosus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PyrococcusFuriosus(
 
     Returns
     -----------------------
-    Instace of PyrococcusFuriosus graph.
+    Instace of Pyrococcus furiosus graph.
 
 	References
 	---------------------

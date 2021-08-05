@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumAquatile.
+This file offers the methods to automatically retrieve the graph Flavobacterium aquatile.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumAquatile(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumAquatile graph.
+    """Return new instance of the Flavobacterium aquatile graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumAquatile(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumAquatile graph.
+    Instace of Flavobacterium aquatile graph.
 
 	References
 	---------------------

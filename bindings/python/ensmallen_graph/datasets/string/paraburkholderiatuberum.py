@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ParaburkholderiaTuberum.
+This file offers the methods to automatically retrieve the graph Paraburkholderia tuberum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ParaburkholderiaTuberum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ParaburkholderiaTuberum graph.
+    """Return new instance of the Paraburkholderia tuberum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ParaburkholderiaTuberum(
 
     Returns
     -----------------------
-    Instace of ParaburkholderiaTuberum graph.
+    Instace of Paraburkholderia tuberum graph.
 
 	References
 	---------------------

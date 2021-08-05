@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FusariumSpAf4.
+This file offers the methods to automatically retrieve the graph Fusarium sp. AF-4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FusariumSpAf4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FusariumSpAf4 graph.
+    """Return new instance of the Fusarium sp. AF-4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FusariumSpAf4(
 
     Returns
     -----------------------
-    Instace of FusariumSpAf4 graph.
+    Instace of Fusarium sp. AF-4 graph.
 
 	References
 	---------------------

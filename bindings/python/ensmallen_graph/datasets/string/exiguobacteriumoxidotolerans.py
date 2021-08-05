@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ExiguobacteriumOxidotolerans.
+This file offers the methods to automatically retrieve the graph Exiguobacterium oxidotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ExiguobacteriumOxidotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ExiguobacteriumOxidotolerans graph.
+    """Return new instance of the Exiguobacterium oxidotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ExiguobacteriumOxidotolerans(
 
     Returns
     -----------------------
-    Instace of ExiguobacteriumOxidotolerans graph.
+    Instace of Exiguobacterium oxidotolerans graph.
 
 	References
 	---------------------

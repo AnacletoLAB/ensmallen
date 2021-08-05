@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MorganellaMorganii.
+This file offers the methods to automatically retrieve the graph Morganella morganii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MorganellaMorganii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MorganellaMorganii graph.
+    """Return new instance of the Morganella morganii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MorganellaMorganii(
 
     Returns
     -----------------------
-    Instace of MorganellaMorganii graph.
+    Instace of Morganella morganii graph.
 
 	References
 	---------------------

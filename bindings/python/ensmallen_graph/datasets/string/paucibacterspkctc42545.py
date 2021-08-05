@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaucibacterSpKctc42545.
+This file offers the methods to automatically retrieve the graph Paucibacter sp. KCTC 42545.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaucibacterSpKctc42545(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaucibacterSpKctc42545 graph.
+    """Return new instance of the Paucibacter sp. KCTC 42545 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaucibacterSpKctc42545(
 
     Returns
     -----------------------
-    Instace of PaucibacterSpKctc42545 graph.
+    Instace of Paucibacter sp. KCTC 42545 graph.
 
 	References
 	---------------------

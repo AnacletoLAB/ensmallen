@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorchorusCapsularis.
+This file offers the methods to automatically retrieve the graph Corchorus capsularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorchorusCapsularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorchorusCapsularis graph.
+    """Return new instance of the Corchorus capsularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorchorusCapsularis(
 
     Returns
     -----------------------
-    Instace of CorchorusCapsularis graph.
+    Instace of Corchorus capsularis graph.
 
 	References
 	---------------------

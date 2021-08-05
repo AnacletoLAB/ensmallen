@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SinomicrobiumOceani.
+This file offers the methods to automatically retrieve the graph Sinomicrobium oceani.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SinomicrobiumOceani(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SinomicrobiumOceani graph.
+    """Return new instance of the Sinomicrobium oceani graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SinomicrobiumOceani(
 
     Returns
     -----------------------
-    Instace of SinomicrobiumOceani graph.
+    Instace of Sinomicrobium oceani graph.
 
 	References
 	---------------------

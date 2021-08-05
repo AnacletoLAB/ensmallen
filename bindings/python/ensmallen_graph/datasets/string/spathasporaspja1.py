@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpathasporaSpJa1.
+This file offers the methods to automatically retrieve the graph Spathaspora sp. JA1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpathasporaSpJa1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpathasporaSpJa1 graph.
+    """Return new instance of the Spathaspora sp. JA1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SpathasporaSpJa1(
 
     Returns
     -----------------------
-    Instace of SpathasporaSpJa1 graph.
+    Instace of Spathaspora sp. JA1 graph.
 
 	References
 	---------------------

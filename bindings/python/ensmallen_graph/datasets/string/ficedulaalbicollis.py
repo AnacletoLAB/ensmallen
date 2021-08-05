@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FicedulaAlbicollis.
+This file offers the methods to automatically retrieve the graph Ficedula albicollis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FicedulaAlbicollis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FicedulaAlbicollis graph.
+    """Return new instance of the Ficedula albicollis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FicedulaAlbicollis(
 
     Returns
     -----------------------
-    Instace of FicedulaAlbicollis graph.
+    Instace of Ficedula albicollis graph.
 
 	References
 	---------------------

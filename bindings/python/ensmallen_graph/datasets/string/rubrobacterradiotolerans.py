@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RubrobacterRadiotolerans.
+This file offers the methods to automatically retrieve the graph Rubrobacter radiotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RubrobacterRadiotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RubrobacterRadiotolerans graph.
+    """Return new instance of the Rubrobacter radiotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RubrobacterRadiotolerans(
 
     Returns
     -----------------------
-    Instace of RubrobacterRadiotolerans graph.
+    Instace of Rubrobacter radiotolerans graph.
 
 	References
 	---------------------

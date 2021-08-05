@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidianusManzaensis.
+This file offers the methods to automatically retrieve the graph Acidianus manzaensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidianusManzaensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidianusManzaensis graph.
+    """Return new instance of the Acidianus manzaensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidianusManzaensis(
 
     Returns
     -----------------------
-    Instace of AcidianusManzaensis graph.
+    Instace of Acidianus manzaensis graph.
 
 	References
 	---------------------

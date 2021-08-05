@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HylemonellaGracilisAtcc19624.
+This file offers the methods to automatically retrieve the graph Hylemonella gracilis ATCC19624.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HylemonellaGracilisAtcc19624(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HylemonellaGracilisAtcc19624 graph.
+    """Return new instance of the Hylemonella gracilis ATCC19624 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HylemonellaGracilisAtcc19624(
 
     Returns
     -----------------------
-    Instace of HylemonellaGracilisAtcc19624 graph.
+    Instace of Hylemonella gracilis ATCC19624 graph.
 
 	References
 	---------------------

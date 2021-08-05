@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenibacillusEhimensisA2.
+This file offers the methods to automatically retrieve the graph Paenibacillus ehimensis A2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenibacillusEhimensisA2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenibacillusEhimensisA2 graph.
+    """Return new instance of the Paenibacillus ehimensis A2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenibacillusEhimensisA2(
 
     Returns
     -----------------------
-    Instace of PaenibacillusEhimensisA2 graph.
+    Instace of Paenibacillus ehimensis A2 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusRuberCbs135680.
+This file offers the methods to automatically retrieve the graph Aspergillus ruber CBS 135680.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusRuberCbs135680(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusRuberCbs135680 graph.
+    """Return new instance of the Aspergillus ruber CBS 135680 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusRuberCbs135680(
 
     Returns
     -----------------------
-    Instace of AspergillusRuberCbs135680 graph.
+    Instace of Aspergillus ruber CBS 135680 graph.
 
 	References
 	---------------------

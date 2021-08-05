@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MegasphaeraSpNm10.
+This file offers the methods to automatically retrieve the graph Megasphaera sp. NM10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MegasphaeraSpNm10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MegasphaeraSpNm10 graph.
+    """Return new instance of the Megasphaera sp. NM10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MegasphaeraSpNm10(
 
     Returns
     -----------------------
-    Instace of MegasphaeraSpNm10 graph.
+    Instace of Megasphaera sp. NM10 graph.
 
 	References
 	---------------------

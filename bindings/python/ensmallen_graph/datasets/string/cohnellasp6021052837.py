@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CohnellaSp6021052837.
+This file offers the methods to automatically retrieve the graph Cohnella sp. 6021052837.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CohnellaSp6021052837(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CohnellaSp6021052837 graph.
+    """Return new instance of the Cohnella sp. 6021052837 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CohnellaSp6021052837(
 
     Returns
     -----------------------
-    Instace of CohnellaSp6021052837 graph.
+    Instace of Cohnella sp. 6021052837 graph.
 
 	References
 	---------------------

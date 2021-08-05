@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusTerreusNih2624.
+This file offers the methods to automatically retrieve the graph Aspergillus terreus NIH2624.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusTerreusNih2624(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusTerreusNih2624 graph.
+    """Return new instance of the Aspergillus terreus NIH2624 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusTerreusNih2624(
 
     Returns
     -----------------------
-    Instace of AspergillusTerreusNih2624 graph.
+    Instace of Aspergillus terreus NIH2624 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HerbaspirillumRhizosphaerae.
+This file offers the methods to automatically retrieve the graph Herbaspirillum rhizosphaerae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HerbaspirillumRhizosphaerae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HerbaspirillumRhizosphaerae graph.
+    """Return new instance of the Herbaspirillum rhizosphaerae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HerbaspirillumRhizosphaerae(
 
     Returns
     -----------------------
-    Instace of HerbaspirillumRhizosphaerae graph.
+    Instace of Herbaspirillum rhizosphaerae graph.
 
 	References
 	---------------------

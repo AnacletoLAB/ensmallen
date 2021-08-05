@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Imdb.
+This file offers the methods to automatically retrieve the graph IMDB.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -24,16 +24,16 @@ from ..automatic_graph_retrieval import AutomaticallyRetrievedGraph
 from ...ensmallen_graph import EnsmallenGraph  # pylint: disable=import-error
 
 
-def Imdb(
+def IMDB(
     directed: bool = False,
     preprocess: bool = True,
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/networkrepository",
-    version: str = "latest",
+    version: str = "labeled",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Imdb graph.
+    """Return new instance of the IMDB graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -53,14 +53,17 @@ def Imdb(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "latest",
-        The version of the graph to retrieve.	
+    version: str = "labeled",
+        The version of the graph to retrieve.		
+	The available versions are:
+			- dynamic
+			- labeled
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 
     Returns
     -----------------------
-    Instace of Imdb graph.
+    Instace of IMDB graph.
 
 	References
 	---------------------
@@ -77,7 +80,7 @@ def Imdb(
 	```
     """
     return AutomaticallyRetrievedGraph(
-        graph_name="Imdb",
+        graph_name="IMDB",
         dataset="networkrepository",
         version=version,
         directed=directed,

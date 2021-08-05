@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KangiellaGeojedonensis.
+This file offers the methods to automatically retrieve the graph Kangiella geojedonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KangiellaGeojedonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KangiellaGeojedonensis graph.
+    """Return new instance of the Kangiella geojedonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KangiellaGeojedonensis(
 
     Returns
     -----------------------
-    Instace of KangiellaGeojedonensis graph.
+    Instace of Kangiella geojedonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbDuke14.
+This file offers the methods to automatically retrieve the graph socfb-Duke14.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbDuke14(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbDuke14 graph.
+    """Return new instance of the socfb-Duke14 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbDuke14(
 
     Returns
     -----------------------
-    Instace of SocfbDuke14 graph.
+    Instace of socfb-Duke14 graph.
 
 	References
 	---------------------

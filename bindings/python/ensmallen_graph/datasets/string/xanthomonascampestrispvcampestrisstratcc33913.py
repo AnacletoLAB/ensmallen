@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasCampestrisPvCampestrisStrAtcc33913.
+This file offers the methods to automatically retrieve the graph Xanthomonas campestris pv. campestris str. ATCC 33913.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasCampestrisPvCampestrisStrAtcc33913 graph.
+    """Return new instance of the Xanthomonas campestris pv. campestris str. ATCC 33913 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasCampestrisPvCampestrisStrAtcc33913(
 
     Returns
     -----------------------
-    Instace of XanthomonasCampestrisPvCampestrisStrAtcc33913 graph.
+    Instace of Xanthomonas campestris pv. campestris str. ATCC 33913 graph.
 
 	References
 	---------------------

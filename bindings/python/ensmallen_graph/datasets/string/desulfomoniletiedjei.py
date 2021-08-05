@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfomonileTiedjei.
+This file offers the methods to automatically retrieve the graph Desulfomonile tiedjei.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfomonileTiedjei(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfomonileTiedjei graph.
+    """Return new instance of the Desulfomonile tiedjei graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfomonileTiedjei(
 
     Returns
     -----------------------
-    Instace of DesulfomonileTiedjei graph.
+    Instace of Desulfomonile tiedjei graph.
 
 	References
 	---------------------

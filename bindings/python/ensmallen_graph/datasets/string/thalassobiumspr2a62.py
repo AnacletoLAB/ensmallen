@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassobiumSpR2a62.
+This file offers the methods to automatically retrieve the graph Thalassobium sp. R2A62.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassobiumSpR2a62(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassobiumSpR2a62 graph.
+    """Return new instance of the Thalassobium sp. R2A62 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassobiumSpR2a62(
 
     Returns
     -----------------------
-    Instace of ThalassobiumSpR2a62 graph.
+    Instace of Thalassobium sp. R2A62 graph.
 
 	References
 	---------------------

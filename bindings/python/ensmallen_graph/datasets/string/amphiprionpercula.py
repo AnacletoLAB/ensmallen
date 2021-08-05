@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AmphiprionPercula.
+This file offers the methods to automatically retrieve the graph Amphiprion percula.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AmphiprionPercula(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AmphiprionPercula graph.
+    """Return new instance of the Amphiprion percula graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AmphiprionPercula(
 
     Returns
     -----------------------
-    Instace of AmphiprionPercula graph.
+    Instace of Amphiprion percula graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesRoseochromogenusSubspOscitansDs12976.
+This file offers the methods to automatically retrieve the graph Streptomyces roseochromogenus subsp. oscitans DS 12.976.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesRoseochromogenusSubspOscitansDs12976(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesRoseochromogenusSubspOscitansDs12976 graph.
+    """Return new instance of the Streptomyces roseochromogenus subsp. oscitans DS 12.976 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesRoseochromogenusSubspOscitansDs12976(
 
     Returns
     -----------------------
-    Instace of StreptomycesRoseochromogenusSubspOscitansDs12976 graph.
+    Instace of Streptomyces roseochromogenus subsp. oscitans DS 12.976 graph.
 
 	References
 	---------------------

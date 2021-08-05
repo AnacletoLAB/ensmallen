@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SanguibacterMarinus.
+This file offers the methods to automatically retrieve the graph Sanguibacter marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SanguibacterMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SanguibacterMarinus graph.
+    """Return new instance of the Sanguibacter marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SanguibacterMarinus(
 
     Returns
     -----------------------
-    Instace of SanguibacterMarinus graph.
+    Instace of Sanguibacter marinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DeferribacteralesBacteriumDeferri01.
+This file offers the methods to automatically retrieve the graph Deferribacterales bacterium Deferri_01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DeferribacteralesBacteriumDeferri01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DeferribacteralesBacteriumDeferri01 graph.
+    """Return new instance of the Deferribacterales bacterium Deferri_01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DeferribacteralesBacteriumDeferri01(
 
     Returns
     -----------------------
-    Instace of DeferribacteralesBacteriumDeferri01 graph.
+    Instace of Deferribacterales bacterium Deferri_01 graph.
 
 	References
 	---------------------

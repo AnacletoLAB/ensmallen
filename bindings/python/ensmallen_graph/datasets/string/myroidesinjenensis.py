@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyroidesInjenensis.
+This file offers the methods to automatically retrieve the graph Myroides injenensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyroidesInjenensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyroidesInjenensis graph.
+    """Return new instance of the Myroides injenensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MyroidesInjenensis(
 
     Returns
     -----------------------
-    Instace of MyroidesInjenensis graph.
+    Instace of Myroides injenensis graph.
 
 	References
 	---------------------

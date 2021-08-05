@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusMediterraneensis.
+This file offers the methods to automatically retrieve the graph Anaerococcus mediterraneensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusMediterraneensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusMediterraneensis graph.
+    """Return new instance of the Anaerococcus mediterraneensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerococcusMediterraneensis(
 
     Returns
     -----------------------
-    Instace of AnaerococcusMediterraneensis graph.
+    Instace of Anaerococcus mediterraneensis graph.
 
 	References
 	---------------------

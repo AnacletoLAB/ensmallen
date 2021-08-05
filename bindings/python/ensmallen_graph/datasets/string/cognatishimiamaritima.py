@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CognatishimiaMaritima.
+This file offers the methods to automatically retrieve the graph Cognatishimia maritima.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CognatishimiaMaritima(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CognatishimiaMaritima graph.
+    """Return new instance of the Cognatishimia maritima graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CognatishimiaMaritima(
 
     Returns
     -----------------------
-    Instace of CognatishimiaMaritima graph.
+    Instace of Cognatishimia maritima graph.
 
 	References
 	---------------------

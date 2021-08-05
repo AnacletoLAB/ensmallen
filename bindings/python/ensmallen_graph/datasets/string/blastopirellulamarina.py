@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastopirellulaMarina.
+This file offers the methods to automatically retrieve the graph Blastopirellula marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastopirellulaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastopirellulaMarina graph.
+    """Return new instance of the Blastopirellula marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BlastopirellulaMarina(
 
     Returns
     -----------------------
-    Instace of BlastopirellulaMarina graph.
+    Instace of Blastopirellula marina graph.
 
 	References
 	---------------------

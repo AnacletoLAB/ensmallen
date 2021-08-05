@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacteriaBacteriumGa0077560.
+This file offers the methods to automatically retrieve the graph Actinobacteria bacterium Ga0077560.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacteriaBacteriumGa0077560(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacteriaBacteriumGa0077560 graph.
+    """Return new instance of the Actinobacteria bacterium Ga0077560 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinobacteriaBacteriumGa0077560(
 
     Returns
     -----------------------
-    Instace of ActinobacteriaBacteriumGa0077560 graph.
+    Instace of Actinobacteria bacterium Ga0077560 graph.
 
 	References
 	---------------------

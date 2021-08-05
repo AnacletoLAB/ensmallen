@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WinogradskyellaPsychrotolerans.
+This file offers the methods to automatically retrieve the graph Winogradskyella psychrotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WinogradskyellaPsychrotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WinogradskyellaPsychrotolerans graph.
+    """Return new instance of the Winogradskyella psychrotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def WinogradskyellaPsychrotolerans(
 
     Returns
     -----------------------
-    Instace of WinogradskyellaPsychrotolerans graph.
+    Instace of Winogradskyella psychrotolerans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterHimalayensis.
+This file offers the methods to automatically retrieve the graph Helicobacter himalayensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterHimalayensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterHimalayensis graph.
+    """Return new instance of the Helicobacter himalayensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterHimalayensis(
 
     Returns
     -----------------------
-    Instace of HelicobacterHimalayensis graph.
+    Instace of Helicobacter himalayensis graph.
 
 	References
 	---------------------

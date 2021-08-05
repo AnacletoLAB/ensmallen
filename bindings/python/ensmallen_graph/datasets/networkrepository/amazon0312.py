@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Amazon0312.
+This file offers the methods to automatically retrieve the graph amazon0312.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Amazon0312(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Amazon0312 graph.
+    """Return new instance of the amazon0312 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Amazon0312(
 
     Returns
     -----------------------
-    Instace of Amazon0312 graph.
+    Instace of amazon0312 graph.
 
 	References
 	---------------------

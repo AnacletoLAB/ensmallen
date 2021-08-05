@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NostocSpNies3756.
+This file offers the methods to automatically retrieve the graph Nostoc sp. NIES-3756.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NostocSpNies3756(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NostocSpNies3756 graph.
+    """Return new instance of the Nostoc sp. NIES-3756 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NostocSpNies3756(
 
     Returns
     -----------------------
-    Instace of NostocSpNies3756 graph.
+    Instace of Nostoc sp. NIES-3756 graph.
 
 	References
 	---------------------

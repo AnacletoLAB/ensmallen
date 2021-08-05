@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HymenobacterSpDg25b.
+This file offers the methods to automatically retrieve the graph Hymenobacter sp. DG25B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HymenobacterSpDg25b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HymenobacterSpDg25b graph.
+    """Return new instance of the Hymenobacter sp. DG25B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HymenobacterSpDg25b(
 
     Returns
     -----------------------
-    Instace of HymenobacterSpDg25b graph.
+    Instace of Hymenobacter sp. DG25B graph.
 
 	References
 	---------------------

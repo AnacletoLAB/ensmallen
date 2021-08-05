@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpilithonimonasLactis.
+This file offers the methods to automatically retrieve the graph Epilithonimonas lactis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpilithonimonasLactis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpilithonimonasLactis graph.
+    """Return new instance of the Epilithonimonas lactis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EpilithonimonasLactis(
 
     Returns
     -----------------------
-    Instace of EpilithonimonasLactis graph.
+    Instace of Epilithonimonas lactis graph.
 
 	References
 	---------------------

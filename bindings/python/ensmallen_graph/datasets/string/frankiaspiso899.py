@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FrankiaSpIso899.
+This file offers the methods to automatically retrieve the graph Frankia sp. Iso899.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FrankiaSpIso899(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FrankiaSpIso899 graph.
+    """Return new instance of the Frankia sp. Iso899 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FrankiaSpIso899(
 
     Returns
     -----------------------
-    Instace of FrankiaSpIso899 graph.
+    Instace of Frankia sp. Iso899 graph.
 
 	References
 	---------------------

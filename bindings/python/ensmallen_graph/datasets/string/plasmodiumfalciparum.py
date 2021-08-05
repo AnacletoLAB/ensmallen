@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlasmodiumFalciparum.
+This file offers the methods to automatically retrieve the graph Plasmodium falciparum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlasmodiumFalciparum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlasmodiumFalciparum graph.
+    """Return new instance of the Plasmodium falciparum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlasmodiumFalciparum(
 
     Returns
     -----------------------
-    Instace of PlasmodiumFalciparum graph.
+    Instace of Plasmodium falciparum graph.
 
 	References
 	---------------------

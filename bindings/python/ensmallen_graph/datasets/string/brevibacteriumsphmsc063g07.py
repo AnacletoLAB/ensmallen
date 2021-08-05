@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacteriumSpHmsc063g07.
+This file offers the methods to automatically retrieve the graph Brevibacterium sp. HMSC063G07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacteriumSpHmsc063g07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacteriumSpHmsc063g07 graph.
+    """Return new instance of the Brevibacterium sp. HMSC063G07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacteriumSpHmsc063g07(
 
     Returns
     -----------------------
-    Instace of BrevibacteriumSpHmsc063g07 graph.
+    Instace of Brevibacterium sp. HMSC063G07 graph.
 
 	References
 	---------------------

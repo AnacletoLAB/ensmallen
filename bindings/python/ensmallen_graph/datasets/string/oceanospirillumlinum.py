@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanospirillumLinum.
+This file offers the methods to automatically retrieve the graph Oceanospirillum linum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanospirillumLinum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanospirillumLinum graph.
+    """Return new instance of the Oceanospirillum linum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanospirillumLinum(
 
     Returns
     -----------------------
-    Instace of OceanospirillumLinum graph.
+    Instace of Oceanospirillum linum graph.
 
 	References
 	---------------------

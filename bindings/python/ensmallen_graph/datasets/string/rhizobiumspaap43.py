@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpAap43.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. AAP43.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpAap43(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpAap43 graph.
+    """Return new instance of the Rhizobium sp. AAP43 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpAap43(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpAap43 graph.
+    Instace of Rhizobium sp. AAP43 graph.
 
 	References
 	---------------------

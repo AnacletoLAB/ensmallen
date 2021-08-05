@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBatumici.
+This file offers the methods to automatically retrieve the graph Pseudomonas batumici.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBatumici(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBatumici graph.
+    """Return new instance of the Pseudomonas batumici graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBatumici(
 
     Returns
     -----------------------
-    Instace of PseudomonasBatumici graph.
+    Instace of Pseudomonas batumici graph.
 
 	References
 	---------------------

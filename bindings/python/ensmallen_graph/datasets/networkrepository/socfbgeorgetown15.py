@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbGeorgetown15.
+This file offers the methods to automatically retrieve the graph socfb-Georgetown15.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbGeorgetown15(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbGeorgetown15 graph.
+    """Return new instance of the socfb-Georgetown15 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbGeorgetown15(
 
     Returns
     -----------------------
-    Instace of SocfbGeorgetown15 graph.
+    Instace of socfb-Georgetown15 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZymomonasMobilisPomaceae.
+This file offers the methods to automatically retrieve the graph Zymomonas mobilis pomaceae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZymomonasMobilisPomaceae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZymomonasMobilisPomaceae graph.
+    """Return new instance of the Zymomonas mobilis pomaceae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ZymomonasMobilisPomaceae(
 
     Returns
     -----------------------
-    Instace of ZymomonasMobilisPomaceae graph.
+    Instace of Zymomonas mobilis pomaceae graph.
 
 	References
 	---------------------

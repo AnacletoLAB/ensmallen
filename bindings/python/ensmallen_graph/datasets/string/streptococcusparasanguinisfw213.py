@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusParasanguinisFw213.
+This file offers the methods to automatically retrieve the graph Streptococcus parasanguinis FW213.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusParasanguinisFw213(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusParasanguinisFw213 graph.
+    """Return new instance of the Streptococcus parasanguinis FW213 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusParasanguinisFw213(
 
     Returns
     -----------------------
-    Instace of StreptococcusParasanguinisFw213 graph.
+    Instace of Streptococcus parasanguinis FW213 graph.
 
 	References
 	---------------------

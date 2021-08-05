@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumMarinumDsm44953.
+This file offers the methods to automatically retrieve the graph Corynebacterium marinum DSM 44953.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumMarinumDsm44953(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumMarinumDsm44953 graph.
+    """Return new instance of the Corynebacterium marinum DSM 44953 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumMarinumDsm44953(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumMarinumDsm44953 graph.
+    Instace of Corynebacterium marinum DSM 44953 graph.
 
 	References
 	---------------------

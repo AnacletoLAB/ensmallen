@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DoreaSpCag317.
+This file offers the methods to automatically retrieve the graph Dorea sp. CAG:317.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DoreaSpCag317(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DoreaSpCag317 graph.
+    """Return new instance of the Dorea sp. CAG:317 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DoreaSpCag317(
 
     Returns
     -----------------------
-    Instace of DoreaSpCag317 graph.
+    Instace of Dorea sp. CAG:317 graph.
 
 	References
 	---------------------

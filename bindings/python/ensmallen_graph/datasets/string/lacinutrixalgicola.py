@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LacinutrixAlgicola.
+This file offers the methods to automatically retrieve the graph Lacinutrix algicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LacinutrixAlgicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LacinutrixAlgicola graph.
+    """Return new instance of the Lacinutrix algicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LacinutrixAlgicola(
 
     Returns
     -----------------------
-    Instace of LacinutrixAlgicola graph.
+    Instace of Lacinutrix algicola graph.
 
 	References
 	---------------------

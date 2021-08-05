@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SnodgrassellaAlvi.
+This file offers the methods to automatically retrieve the graph Snodgrassella alvi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SnodgrassellaAlvi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SnodgrassellaAlvi graph.
+    """Return new instance of the Snodgrassella alvi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SnodgrassellaAlvi(
 
     Returns
     -----------------------
-    Instace of SnodgrassellaAlvi graph.
+    Instace of Snodgrassella alvi graph.
 
 	References
 	---------------------

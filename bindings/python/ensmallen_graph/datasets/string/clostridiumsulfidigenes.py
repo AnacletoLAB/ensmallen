@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSulfidigenes.
+This file offers the methods to automatically retrieve the graph Clostridium sulfidigenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSulfidigenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSulfidigenes graph.
+    """Return new instance of the Clostridium sulfidigenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumSulfidigenes(
 
     Returns
     -----------------------
-    Instace of ClostridiumSulfidigenes graph.
+    Instace of Clostridium sulfidigenes graph.
 
 	References
 	---------------------

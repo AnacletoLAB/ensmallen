@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaledivibacterHalophilus.
+This file offers the methods to automatically retrieve the graph Maledivibacter halophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaledivibacterHalophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaledivibacterHalophilus graph.
+    """Return new instance of the Maledivibacter halophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MaledivibacterHalophilus(
 
     Returns
     -----------------------
-    Instace of MaledivibacterHalophilus graph.
+    Instace of Maledivibacter halophilus graph.
 
 	References
 	---------------------

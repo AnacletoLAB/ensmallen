@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColwelliaAgarivorans.
+This file offers the methods to automatically retrieve the graph Colwellia agarivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColwelliaAgarivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColwelliaAgarivorans graph.
+    """Return new instance of the Colwellia agarivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColwelliaAgarivorans(
 
     Returns
     -----------------------
-    Instace of ColwelliaAgarivorans graph.
+    Instace of Colwellia agarivorans graph.
 
 	References
 	---------------------

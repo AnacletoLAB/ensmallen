@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassospiraAustralica.
+This file offers the methods to automatically retrieve the graph Thalassospira australica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassospiraAustralica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassospiraAustralica graph.
+    """Return new instance of the Thalassospira australica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThalassospiraAustralica(
 
     Returns
     -----------------------
-    Instace of ThalassospiraAustralica graph.
+    Instace of Thalassospira australica graph.
 
 	References
 	---------------------

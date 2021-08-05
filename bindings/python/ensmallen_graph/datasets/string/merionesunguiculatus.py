@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MerionesUnguiculatus.
+This file offers the methods to automatically retrieve the graph Meriones unguiculatus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MerionesUnguiculatus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MerionesUnguiculatus graph.
+    """Return new instance of the Meriones unguiculatus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MerionesUnguiculatus(
 
     Returns
     -----------------------
-    Instace of MerionesUnguiculatus graph.
+    Instace of Meriones unguiculatus graph.
 
 	References
 	---------------------

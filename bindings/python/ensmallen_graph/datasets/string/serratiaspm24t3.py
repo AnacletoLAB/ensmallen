@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaSpM24t3.
+This file offers the methods to automatically retrieve the graph Serratia sp. M24T3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaSpM24t3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaSpM24t3 graph.
+    """Return new instance of the Serratia sp. M24T3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaSpM24t3(
 
     Returns
     -----------------------
-    Instace of SerratiaSpM24t3 graph.
+    Instace of Serratia sp. M24T3 graph.
 
 	References
 	---------------------

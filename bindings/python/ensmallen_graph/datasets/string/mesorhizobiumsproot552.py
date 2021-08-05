@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpRoot552.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. Root552.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpRoot552(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpRoot552 graph.
+    """Return new instance of the Mesorhizobium sp. Root552 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumSpRoot552(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpRoot552 graph.
+    Instace of Mesorhizobium sp. Root552 graph.
 
 	References
 	---------------------

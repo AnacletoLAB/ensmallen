@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AureobasidiumMelanogenumCbs110374.
+This file offers the methods to automatically retrieve the graph Aureobasidium melanogenum CBS 110374.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AureobasidiumMelanogenumCbs110374(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AureobasidiumMelanogenumCbs110374 graph.
+    """Return new instance of the Aureobasidium melanogenum CBS 110374 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AureobasidiumMelanogenumCbs110374(
 
     Returns
     -----------------------
-    Instace of AureobasidiumMelanogenumCbs110374 graph.
+    Instace of Aureobasidium melanogenum CBS 110374 graph.
 
 	References
 	---------------------

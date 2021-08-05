@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioSpX2.
+This file offers the methods to automatically retrieve the graph Desulfovibrio sp. X2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioSpX2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioSpX2 graph.
+    """Return new instance of the Desulfovibrio sp. X2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioSpX2(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioSpX2 graph.
+    Instace of Desulfovibrio sp. X2 graph.
 
 	References
 	---------------------

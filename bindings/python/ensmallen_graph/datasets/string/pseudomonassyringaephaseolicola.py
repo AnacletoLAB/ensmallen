@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSyringaePhaseolicola.
+This file offers the methods to automatically retrieve the graph Pseudomonas syringae phaseolicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSyringaePhaseolicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSyringaePhaseolicola graph.
+    """Return new instance of the Pseudomonas syringae phaseolicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSyringaePhaseolicola(
 
     Returns
     -----------------------
-    Instace of PseudomonasSyringaePhaseolicola graph.
+    Instace of Pseudomonas syringae phaseolicola graph.
 
 	References
 	---------------------

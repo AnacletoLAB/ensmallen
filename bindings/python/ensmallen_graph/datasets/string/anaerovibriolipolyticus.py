@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerovibrioLipolyticus.
+This file offers the methods to automatically retrieve the graph Anaerovibrio lipolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerovibrioLipolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerovibrioLipolyticus graph.
+    """Return new instance of the Anaerovibrio lipolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerovibrioLipolyticus(
 
     Returns
     -----------------------
-    Instace of AnaerovibrioLipolyticus graph.
+    Instace of Anaerovibrio lipolyticus graph.
 
 	References
 	---------------------

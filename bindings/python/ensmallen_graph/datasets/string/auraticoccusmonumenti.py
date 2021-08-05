@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AuraticoccusMonumenti.
+This file offers the methods to automatically retrieve the graph Auraticoccus monumenti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AuraticoccusMonumenti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AuraticoccusMonumenti graph.
+    """Return new instance of the Auraticoccus monumenti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AuraticoccusMonumenti(
 
     Returns
     -----------------------
-    Instace of AuraticoccusMonumenti graph.
+    Instace of Auraticoccus monumenti graph.
 
 	References
 	---------------------

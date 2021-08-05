@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPlantarum.
+This file offers the methods to automatically retrieve the graph Lactobacillus plantarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPlantarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPlantarum graph.
+    """Return new instance of the Lactobacillus plantarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusPlantarum(
 
     Returns
     -----------------------
-    Instace of LactobacillusPlantarum graph.
+    Instace of Lactobacillus plantarum graph.
 
 	References
 	---------------------

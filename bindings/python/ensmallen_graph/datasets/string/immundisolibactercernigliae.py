@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ImmundisolibacterCernigliae.
+This file offers the methods to automatically retrieve the graph Immundisolibacter cernigliae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ImmundisolibacterCernigliae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ImmundisolibacterCernigliae graph.
+    """Return new instance of the Immundisolibacter cernigliae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ImmundisolibacterCernigliae(
 
     Returns
     -----------------------
-    Instace of ImmundisolibacterCernigliae graph.
+    Instace of Immundisolibacter cernigliae graph.
 
 	References
 	---------------------

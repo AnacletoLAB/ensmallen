@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichosporonAsahii.
+This file offers the methods to automatically retrieve the graph Trichosporon asahii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichosporonAsahii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichosporonAsahii graph.
+    """Return new instance of the Trichosporon asahii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichosporonAsahii(
 
     Returns
     -----------------------
-    Instace of TrichosporonAsahii graph.
+    Instace of Trichosporon asahii graph.
 
 	References
 	---------------------

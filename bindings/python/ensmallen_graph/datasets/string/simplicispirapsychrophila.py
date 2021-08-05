@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SimplicispiraPsychrophila.
+This file offers the methods to automatically retrieve the graph Simplicispira psychrophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SimplicispiraPsychrophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SimplicispiraPsychrophila graph.
+    """Return new instance of the Simplicispira psychrophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SimplicispiraPsychrophila(
 
     Returns
     -----------------------
-    Instace of SimplicispiraPsychrophila graph.
+    Instace of Simplicispira psychrophila graph.
 
 	References
 	---------------------

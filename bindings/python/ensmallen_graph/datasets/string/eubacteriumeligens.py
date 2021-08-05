@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EubacteriumEligens.
+This file offers the methods to automatically retrieve the graph Eubacterium eligens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EubacteriumEligens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EubacteriumEligens graph.
+    """Return new instance of the Eubacterium eligens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EubacteriumEligens(
 
     Returns
     -----------------------
-    Instace of EubacteriumEligens graph.
+    Instace of Eubacterium eligens graph.
 
 	References
 	---------------------

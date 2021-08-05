@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ash85.
+This file offers the methods to automatically retrieve the graph ash85.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ash85(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ash85 graph.
+    """Return new instance of the ash85 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ash85(
 
     Returns
     -----------------------
-    Instace of Ash85 graph.
+    Instace of ash85 graph.
 
 	References
 	---------------------

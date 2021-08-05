@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BaudoiniaCompniacensis.
+This file offers the methods to automatically retrieve the graph Baudoinia compniacensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BaudoiniaCompniacensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BaudoiniaCompniacensis graph.
+    """Return new instance of the Baudoinia compniacensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BaudoiniaCompniacensis(
 
     Returns
     -----------------------
-    Instace of BaudoiniaCompniacensis graph.
+    Instace of Baudoinia compniacensis graph.
 
 	References
 	---------------------

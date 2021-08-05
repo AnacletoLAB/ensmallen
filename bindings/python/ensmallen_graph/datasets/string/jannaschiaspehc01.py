@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph JannaschiaSpEhc01.
+This file offers the methods to automatically retrieve the graph Jannaschia sp. EhC01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def JannaschiaSpEhc01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the JannaschiaSpEhc01 graph.
+    """Return new instance of the Jannaschia sp. EhC01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def JannaschiaSpEhc01(
 
     Returns
     -----------------------
-    Instace of JannaschiaSpEhc01 graph.
+    Instace of Jannaschia sp. EhC01 graph.
 
 	References
 	---------------------

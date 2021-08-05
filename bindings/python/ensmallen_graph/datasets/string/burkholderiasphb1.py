@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpHb1.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. HB1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpHb1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpHb1 graph.
+    """Return new instance of the Burkholderia sp. HB1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpHb1(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpHb1 graph.
+    Instace of Burkholderia sp. HB1 graph.
 
 	References
 	---------------------

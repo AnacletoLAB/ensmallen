@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbSimmons81.
+This file offers the methods to automatically retrieve the graph socfb-Simmons81.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbSimmons81(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbSimmons81 graph.
+    """Return new instance of the socfb-Simmons81 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbSimmons81(
 
     Returns
     -----------------------
-    Instace of SocfbSimmons81 graph.
+    Instace of socfb-Simmons81 graph.
 
 	References
 	---------------------

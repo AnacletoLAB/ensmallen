@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusVogelbacteriaBacteriumRifoxyd1Full4619.
+This file offers the methods to automatically retrieve the graph Candidatus Vogelbacteria bacterium RIFOXYD1_FULL_46_19.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusVogelbacteriaBacteriumRifoxyd1Full4619(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusVogelbacteriaBacteriumRifoxyd1Full4619 graph.
+    """Return new instance of the Candidatus Vogelbacteria bacterium RIFOXYD1_FULL_46_19 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusVogelbacteriaBacteriumRifoxyd1Full4619(
 
     Returns
     -----------------------
-    Instace of CandidatusVogelbacteriaBacteriumRifoxyd1Full4619 graph.
+    Instace of Candidatus Vogelbacteria bacterium RIFOXYD1_FULL_46_19 graph.
 
 	References
 	---------------------

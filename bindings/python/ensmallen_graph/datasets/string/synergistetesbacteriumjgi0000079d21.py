@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SynergistetesBacteriumJgi0000079D21.
+This file offers the methods to automatically retrieve the graph Synergistetes bacterium JGI 0000079-D21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SynergistetesBacteriumJgi0000079D21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SynergistetesBacteriumJgi0000079D21 graph.
+    """Return new instance of the Synergistetes bacterium JGI 0000079-D21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SynergistetesBacteriumJgi0000079D21(
 
     Returns
     -----------------------
-    Instace of SynergistetesBacteriumJgi0000079D21 graph.
+    Instace of Synergistetes bacterium JGI 0000079-D21 graph.
 
 	References
 	---------------------

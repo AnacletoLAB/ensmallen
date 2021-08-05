@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MagnaportheOryzae.
+This file offers the methods to automatically retrieve the graph Magnaporthe oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MagnaportheOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MagnaportheOryzae graph.
+    """Return new instance of the Magnaporthe oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MagnaportheOryzae(
 
     Returns
     -----------------------
-    Instace of MagnaportheOryzae graph.
+    Instace of Magnaporthe oryzae graph.
 
 	References
 	---------------------

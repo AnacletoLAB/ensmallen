@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfococcusOleovorans.
+This file offers the methods to automatically retrieve the graph Desulfococcus oleovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfococcusOleovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfococcusOleovorans graph.
+    """Return new instance of the Desulfococcus oleovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfococcusOleovorans(
 
     Returns
     -----------------------
-    Instace of DesulfococcusOleovorans graph.
+    Instace of Desulfococcus oleovorans graph.
 
 	References
 	---------------------

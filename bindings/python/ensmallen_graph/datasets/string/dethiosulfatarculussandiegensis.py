@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DethiosulfatarculusSandiegensis.
+This file offers the methods to automatically retrieve the graph Dethiosulfatarculus sandiegensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DethiosulfatarculusSandiegensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DethiosulfatarculusSandiegensis graph.
+    """Return new instance of the Dethiosulfatarculus sandiegensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DethiosulfatarculusSandiegensis(
 
     Returns
     -----------------------
-    Instace of DethiosulfatarculusSandiegensis graph.
+    Instace of Dethiosulfatarculus sandiegensis graph.
 
 	References
 	---------------------

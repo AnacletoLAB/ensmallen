@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SaccharopolysporaAntimicrobica.
+This file offers the methods to automatically retrieve the graph Saccharopolyspora antimicrobica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SaccharopolysporaAntimicrobica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SaccharopolysporaAntimicrobica graph.
+    """Return new instance of the Saccharopolyspora antimicrobica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SaccharopolysporaAntimicrobica(
 
     Returns
     -----------------------
-    Instace of SaccharopolysporaAntimicrobica graph.
+    Instace of Saccharopolyspora antimicrobica graph.
 
 	References
 	---------------------

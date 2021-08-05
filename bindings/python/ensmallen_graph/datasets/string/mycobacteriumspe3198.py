@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE3198.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E3198.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE3198(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE3198 graph.
+    """Return new instance of the Mycobacterium sp. E3198 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE3198(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE3198 graph.
+    Instace of Mycobacterium sp. E3198 graph.
 
 	References
 	---------------------

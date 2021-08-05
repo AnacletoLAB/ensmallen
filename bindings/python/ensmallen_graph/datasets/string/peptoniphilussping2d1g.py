@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PeptoniphilusSpIng2D1g.
+This file offers the methods to automatically retrieve the graph Peptoniphilus sp. ING2-D1G.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PeptoniphilusSpIng2D1g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PeptoniphilusSpIng2D1g graph.
+    """Return new instance of the Peptoniphilus sp. ING2-D1G graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PeptoniphilusSpIng2D1g(
 
     Returns
     -----------------------
-    Instace of PeptoniphilusSpIng2D1g graph.
+    Instace of Peptoniphilus sp. ING2-D1G graph.
 
 	References
 	---------------------

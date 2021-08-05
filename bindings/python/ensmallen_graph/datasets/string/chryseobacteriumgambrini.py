@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumGambrini.
+This file offers the methods to automatically retrieve the graph Chryseobacterium gambrini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumGambrini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumGambrini graph.
+    """Return new instance of the Chryseobacterium gambrini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumGambrini(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumGambrini graph.
+    Instace of Chryseobacterium gambrini graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMicrarchaeotaArchaeonRbg16369.
+This file offers the methods to automatically retrieve the graph Candidatus Micrarchaeota archaeon RBG_16_36_9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMicrarchaeotaArchaeonRbg16369(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMicrarchaeotaArchaeonRbg16369 graph.
+    """Return new instance of the Candidatus Micrarchaeota archaeon RBG_16_36_9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMicrarchaeotaArchaeonRbg16369(
 
     Returns
     -----------------------
-    Instace of CandidatusMicrarchaeotaArchaeonRbg16369 graph.
+    Instace of Candidatus Micrarchaeota archaeon RBG_16_36_9 graph.
 
 	References
 	---------------------

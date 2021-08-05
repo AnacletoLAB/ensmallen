@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OdoribacterSplanchnicus.
+This file offers the methods to automatically retrieve the graph Odoribacter splanchnicus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OdoribacterSplanchnicus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OdoribacterSplanchnicus graph.
+    """Return new instance of the Odoribacter splanchnicus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OdoribacterSplanchnicus(
 
     Returns
     -----------------------
-    Instace of OdoribacterSplanchnicus graph.
+    Instace of Odoribacter splanchnicus graph.
 
 	References
 	---------------------

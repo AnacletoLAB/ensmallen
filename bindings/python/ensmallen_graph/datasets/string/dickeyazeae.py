@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaZeae.
+This file offers the methods to automatically retrieve the graph Dickeya zeae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaZeae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaZeae graph.
+    """Return new instance of the Dickeya zeae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaZeae(
 
     Returns
     -----------------------
-    Instace of DickeyaZeae graph.
+    Instace of Dickeya zeae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AquitaleaMagnusonii.
+This file offers the methods to automatically retrieve the graph Aquitalea magnusonii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AquitaleaMagnusonii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AquitaleaMagnusonii graph.
+    """Return new instance of the Aquitalea magnusonii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AquitaleaMagnusonii(
 
     Returns
     -----------------------
-    Instace of AquitaleaMagnusonii graph.
+    Instace of Aquitalea magnusonii graph.
 
 	References
 	---------------------

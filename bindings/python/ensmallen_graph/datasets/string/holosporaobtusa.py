@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HolosporaObtusa.
+This file offers the methods to automatically retrieve the graph Holospora obtusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HolosporaObtusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HolosporaObtusa graph.
+    """Return new instance of the Holospora obtusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HolosporaObtusa(
 
     Returns
     -----------------------
-    Instace of HolosporaObtusa graph.
+    Instace of Holospora obtusa graph.
 
 	References
 	---------------------

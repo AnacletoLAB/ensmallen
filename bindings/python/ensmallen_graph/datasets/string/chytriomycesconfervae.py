@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChytriomycesConfervae.
+This file offers the methods to automatically retrieve the graph Chytriomyces confervae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChytriomycesConfervae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChytriomycesConfervae graph.
+    """Return new instance of the Chytriomyces confervae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChytriomycesConfervae(
 
     Returns
     -----------------------
-    Instace of ChytriomycesConfervae graph.
+    Instace of Chytriomyces confervae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesClavuligerus.
+This file offers the methods to automatically retrieve the graph Streptomyces clavuligerus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesClavuligerus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesClavuligerus graph.
+    """Return new instance of the Streptomyces clavuligerus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesClavuligerus(
 
     Returns
     -----------------------
-    Instace of StreptomycesClavuligerus graph.
+    Instace of Streptomyces clavuligerus graph.
 
 	References
 	---------------------

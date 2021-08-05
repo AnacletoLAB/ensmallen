@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SorangiumCellulosumSoCe56.
+This file offers the methods to automatically retrieve the graph Sorangium cellulosum So ce56.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SorangiumCellulosumSoCe56(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SorangiumCellulosumSoCe56 graph.
+    """Return new instance of the Sorangium cellulosum So ce56 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SorangiumCellulosumSoCe56(
 
     Returns
     -----------------------
-    Instace of SorangiumCellulosumSoCe56 graph.
+    Instace of Sorangium cellulosum So ce56 graph.
 
 	References
 	---------------------

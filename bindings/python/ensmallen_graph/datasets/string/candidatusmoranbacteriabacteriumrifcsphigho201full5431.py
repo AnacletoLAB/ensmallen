@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMoranbacteriaBacteriumRifcsphigho201Full5431.
+This file offers the methods to automatically retrieve the graph Candidatus Moranbacteria bacterium RIFCSPHIGHO2_01_FULL_54_31.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMoranbacteriaBacteriumRifcsphigho201Full5431(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMoranbacteriaBacteriumRifcsphigho201Full5431 graph.
+    """Return new instance of the Candidatus Moranbacteria bacterium RIFCSPHIGHO2_01_FULL_54_31 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMoranbacteriaBacteriumRifcsphigho201Full5431(
 
     Returns
     -----------------------
-    Instace of CandidatusMoranbacteriaBacteriumRifcsphigho201Full5431 graph.
+    Instace of Candidatus Moranbacteria bacterium RIFCSPHIGHO2_01_FULL_54_31 graph.
 
 	References
 	---------------------

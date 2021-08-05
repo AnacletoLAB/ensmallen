@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LampropediaHyalinaDsm16112.
+This file offers the methods to automatically retrieve the graph Lampropedia hyalina DSM 16112.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LampropediaHyalinaDsm16112(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LampropediaHyalinaDsm16112 graph.
+    """Return new instance of the Lampropedia hyalina DSM 16112 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LampropediaHyalinaDsm16112(
 
     Returns
     -----------------------
-    Instace of LampropediaHyalinaDsm16112 graph.
+    Instace of Lampropedia hyalina DSM 16112 graph.
 
 	References
 	---------------------

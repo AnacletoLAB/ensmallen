@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Lock2232.
+This file offers the methods to automatically retrieve the graph lock2232.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Lock2232(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Lock2232 graph.
+    """Return new instance of the lock2232 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Lock2232(
 
     Returns
     -----------------------
-    Instace of Lock2232 graph.
+    Instace of lock2232 graph.
 
 	References
 	---------------------

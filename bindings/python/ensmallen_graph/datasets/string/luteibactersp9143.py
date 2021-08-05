@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LuteibacterSp9143.
+This file offers the methods to automatically retrieve the graph Luteibacter sp. 9143.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LuteibacterSp9143(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LuteibacterSp9143 graph.
+    """Return new instance of the Luteibacter sp. 9143 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LuteibacterSp9143(
 
     Returns
     -----------------------
-    Instace of LuteibacterSp9143 graph.
+    Instace of Luteibacter sp. 9143 graph.
 
 	References
 	---------------------

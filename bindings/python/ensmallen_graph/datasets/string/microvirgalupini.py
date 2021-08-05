@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgaLupini.
+This file offers the methods to automatically retrieve the graph Microvirga lupini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgaLupini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgaLupini graph.
+    """Return new instance of the Microvirga lupini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrovirgaLupini(
 
     Returns
     -----------------------
-    Instace of MicrovirgaLupini graph.
+    Instace of Microvirga lupini graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanosarcinaSp2HT1a6.
+This file offers the methods to automatically retrieve the graph Methanosarcina sp. 2.H.T.1A.6.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanosarcinaSp2HT1a6(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanosarcinaSp2HT1a6 graph.
+    """Return new instance of the Methanosarcina sp. 2.H.T.1A.6 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanosarcinaSp2HT1a6(
 
     Returns
     -----------------------
-    Instace of MethanosarcinaSp2HT1a6 graph.
+    Instace of Methanosarcina sp. 2.H.T.1A.6 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusSpHot20860m813i02.
+This file offers the methods to automatically retrieve the graph Prochlorococcus sp. HOT208_60m_813I02.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusSpHot20860m813i02(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusSpHot20860m813i02 graph.
+    """Return new instance of the Prochlorococcus sp. HOT208_60m_813I02 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProchlorococcusSpHot20860m813i02(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusSpHot20860m813i02 graph.
+    Instace of Prochlorococcus sp. HOT208_60m_813I02 graph.
 
 	References
 	---------------------

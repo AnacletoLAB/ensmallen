@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoniliophthoraRoreri.
+This file offers the methods to automatically retrieve the graph Moniliophthora roreri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoniliophthoraRoreri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoniliophthoraRoreri graph.
+    """Return new instance of the Moniliophthora roreri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoniliophthoraRoreri(
 
     Returns
     -----------------------
-    Instace of MoniliophthoraRoreri graph.
+    Instace of Moniliophthora roreri graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraMeyeriSerovarHardjoStrWent5.
+This file offers the methods to automatically retrieve the graph Leptospira meyeri serovar Hardjo str. Went 5.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraMeyeriSerovarHardjoStrWent5(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraMeyeriSerovarHardjoStrWent5 graph.
+    """Return new instance of the Leptospira meyeri serovar Hardjo str. Went 5 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraMeyeriSerovarHardjoStrWent5(
 
     Returns
     -----------------------
-    Instace of LeptospiraMeyeriSerovarHardjoStrWent5 graph.
+    Instace of Leptospira meyeri serovar Hardjo str. Went 5 graph.
 
 	References
 	---------------------

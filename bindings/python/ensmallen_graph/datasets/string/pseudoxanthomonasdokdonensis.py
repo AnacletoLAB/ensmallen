@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoxanthomonasDokdonensis.
+This file offers the methods to automatically retrieve the graph Pseudoxanthomonas dokdonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoxanthomonasDokdonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoxanthomonasDokdonensis graph.
+    """Return new instance of the Pseudoxanthomonas dokdonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudoxanthomonasDokdonensis(
 
     Returns
     -----------------------
-    Instace of PseudoxanthomonasDokdonensis graph.
+    Instace of Pseudoxanthomonas dokdonensis graph.
 
 	References
 	---------------------

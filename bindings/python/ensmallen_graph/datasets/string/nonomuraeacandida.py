@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaCandida.
+This file offers the methods to automatically retrieve the graph Nonomuraea candida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaCandida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaCandida graph.
+    """Return new instance of the Nonomuraea candida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaCandida(
 
     Returns
     -----------------------
-    Instace of NonomuraeaCandida graph.
+    Instace of Nonomuraea candida graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocDouban.
+This file offers the methods to automatically retrieve the graph soc-douban.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -40,7 +40,7 @@ def SocDouban(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocDouban graph.
+    """Return new instance of the soc-douban graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -67,7 +67,7 @@ def SocDouban(
 
     Returns
     -----------------------
-    Instace of SocDouban graph.
+    Instace of soc-douban graph.
 
 	References
 	---------------------

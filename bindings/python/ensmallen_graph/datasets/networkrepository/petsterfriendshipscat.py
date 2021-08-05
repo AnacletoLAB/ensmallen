@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PetsterFriendshipsCat.
+This file offers the methods to automatically retrieve the graph petster-friendships-cat.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def PetsterFriendshipsCat(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PetsterFriendshipsCat graph.
+    """Return new instance of the petster-friendships-cat graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def PetsterFriendshipsCat(
 
     Returns
     -----------------------
-    Instace of PetsterFriendshipsCat graph.
+    Instace of petster-friendships-cat graph.
 
 	References
 	---------------------

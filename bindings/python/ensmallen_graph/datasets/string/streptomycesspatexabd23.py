@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpAtexabd23.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. ATexABD23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpAtexabd23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpAtexabd23 graph.
+    """Return new instance of the Streptomyces sp. ATexABD23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesSpAtexabd23(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpAtexabd23 graph.
+    Instace of Streptomyces sp. ATexABD23 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusSydowiiCbs59365.
+This file offers the methods to automatically retrieve the graph Aspergillus sydowii CBS 593.65.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusSydowiiCbs59365(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusSydowiiCbs59365 graph.
+    """Return new instance of the Aspergillus sydowii CBS 593.65 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusSydowiiCbs59365(
 
     Returns
     -----------------------
-    Instace of AspergillusSydowiiCbs59365 graph.
+    Instace of Aspergillus sydowii CBS 593.65 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NecatorAmericanus.
+This file offers the methods to automatically retrieve the graph Necator americanus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NecatorAmericanus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NecatorAmericanus graph.
+    """Return new instance of the Necator americanus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NecatorAmericanus(
 
     Returns
     -----------------------
-    Instace of NecatorAmericanus graph.
+    Instace of Necator americanus graph.
 
 	References
 	---------------------

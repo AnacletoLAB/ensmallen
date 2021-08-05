@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MannheimiaHaemolyticaSerotypeA2Bovine.
+This file offers the methods to automatically retrieve the graph Mannheimia haemolytica serotype A2 BOVINE.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MannheimiaHaemolyticaSerotypeA2Bovine(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MannheimiaHaemolyticaSerotypeA2Bovine graph.
+    """Return new instance of the Mannheimia haemolytica serotype A2 BOVINE graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MannheimiaHaemolyticaSerotypeA2Bovine(
 
     Returns
     -----------------------
-    Instace of MannheimiaHaemolyticaSerotypeA2Bovine graph.
+    Instace of Mannheimia haemolytica serotype A2 BOVINE graph.
 
 	References
 	---------------------

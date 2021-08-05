@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpC150.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. C150.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpC150(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpC150 graph.
+    """Return new instance of the Streptococcus sp. C150 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpC150(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpC150 graph.
+    Instace of Streptococcus sp. C150 graph.
 
 	References
 	---------------------

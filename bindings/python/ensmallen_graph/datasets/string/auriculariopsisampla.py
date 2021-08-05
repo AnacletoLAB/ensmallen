@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AuriculariopsisAmpla.
+This file offers the methods to automatically retrieve the graph Auriculariopsis ampla.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AuriculariopsisAmpla(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AuriculariopsisAmpla graph.
+    """Return new instance of the Auriculariopsis ampla graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AuriculariopsisAmpla(
 
     Returns
     -----------------------
-    Instace of AuriculariopsisAmpla graph.
+    Instace of Auriculariopsis ampla graph.
 
 	References
 	---------------------

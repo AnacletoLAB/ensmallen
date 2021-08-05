@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthromitusSpSfbmousenl.
+This file offers the methods to automatically retrieve the graph Arthromitus sp. SFBmouseNL.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthromitusSpSfbmousenl(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthromitusSpSfbmousenl graph.
+    """Return new instance of the Arthromitus sp. SFBmouseNL graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthromitusSpSfbmousenl(
 
     Returns
     -----------------------
-    Instace of ArthromitusSpSfbmousenl graph.
+    Instace of Arthromitus sp. SFBmouseNL graph.
 
 	References
 	---------------------

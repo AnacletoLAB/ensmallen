@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSynechococcusSpongiarum.
+This file offers the methods to automatically retrieve the graph Candidatus Synechococcus spongiarum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSynechococcusSpongiarum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSynechococcusSpongiarum graph.
+    """Return new instance of the Candidatus Synechococcus spongiarum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSynechococcusSpongiarum(
 
     Returns
     -----------------------
-    Instace of CandidatusSynechococcusSpongiarum graph.
+    Instace of Candidatus Synechococcus spongiarum graph.
 
 	References
 	---------------------

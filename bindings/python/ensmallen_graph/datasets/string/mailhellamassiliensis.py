@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MailhellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Mailhella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MailhellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MailhellaMassiliensis graph.
+    """Return new instance of the Mailhella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MailhellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of MailhellaMassiliensis graph.
+    Instace of Mailhella massiliensis graph.
 
 	References
 	---------------------

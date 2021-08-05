@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinomonasSpSbi22.
+This file offers the methods to automatically retrieve the graph Marinomonas sp. SBI22.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinomonasSpSbi22(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinomonasSpSbi22 graph.
+    """Return new instance of the Marinomonas sp. SBI22 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinomonasSpSbi22(
 
     Returns
     -----------------------
-    Instace of MarinomonasSpSbi22 graph.
+    Instace of Marinomonas sp. SBI22 graph.
 
 	References
 	---------------------

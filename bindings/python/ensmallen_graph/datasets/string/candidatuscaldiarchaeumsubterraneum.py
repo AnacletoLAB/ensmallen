@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusCaldiarchaeumSubterraneum.
+This file offers the methods to automatically retrieve the graph Candidatus Caldiarchaeum subterraneum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusCaldiarchaeumSubterraneum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusCaldiarchaeumSubterraneum graph.
+    """Return new instance of the Candidatus Caldiarchaeum subterraneum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusCaldiarchaeumSubterraneum(
 
     Returns
     -----------------------
-    Instace of CandidatusCaldiarchaeumSubterraneum graph.
+    Instace of Candidatus Caldiarchaeum subterraneum graph.
 
 	References
 	---------------------

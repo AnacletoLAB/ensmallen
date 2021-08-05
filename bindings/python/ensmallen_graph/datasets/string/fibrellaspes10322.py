@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrellaSpEs10322.
+This file offers the methods to automatically retrieve the graph Fibrella sp. ES10-3-2-2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrellaSpEs10322(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrellaSpEs10322 graph.
+    """Return new instance of the Fibrella sp. ES10-3-2-2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FibrellaSpEs10322(
 
     Returns
     -----------------------
-    Instace of FibrellaSpEs10322 graph.
+    Instace of Fibrella sp. ES10-3-2-2 graph.
 
 	References
 	---------------------

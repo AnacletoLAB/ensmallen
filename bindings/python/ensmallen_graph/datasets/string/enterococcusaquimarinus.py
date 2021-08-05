@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusAquimarinus.
+This file offers the methods to automatically retrieve the graph Enterococcus aquimarinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusAquimarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusAquimarinus graph.
+    """Return new instance of the Enterococcus aquimarinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterococcusAquimarinus(
 
     Returns
     -----------------------
-    Instace of EnterococcusAquimarinus graph.
+    Instace of Enterococcus aquimarinus graph.
 
 	References
 	---------------------

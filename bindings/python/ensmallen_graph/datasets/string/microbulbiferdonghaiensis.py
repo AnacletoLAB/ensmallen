@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobulbiferDonghaiensis.
+This file offers the methods to automatically retrieve the graph Microbulbifer donghaiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobulbiferDonghaiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobulbiferDonghaiensis graph.
+    """Return new instance of the Microbulbifer donghaiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicrobulbiferDonghaiensis(
 
     Returns
     -----------------------
-    Instace of MicrobulbiferDonghaiensis graph.
+    Instace of Microbulbifer donghaiensis graph.
 
 	References
 	---------------------

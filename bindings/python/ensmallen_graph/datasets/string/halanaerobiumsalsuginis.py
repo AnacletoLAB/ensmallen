@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HalanaerobiumSalsuginis.
+This file offers the methods to automatically retrieve the graph Halanaerobium salsuginis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HalanaerobiumSalsuginis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HalanaerobiumSalsuginis graph.
+    """Return new instance of the Halanaerobium salsuginis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HalanaerobiumSalsuginis(
 
     Returns
     -----------------------
-    Instace of HalanaerobiumSalsuginis graph.
+    Instace of Halanaerobium salsuginis graph.
 
 	References
 	---------------------

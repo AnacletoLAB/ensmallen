@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumChlorophenolicum.
+This file offers the methods to automatically retrieve the graph Sphingobium chlorophenolicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumChlorophenolicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumChlorophenolicum graph.
+    """Return new instance of the Sphingobium chlorophenolicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SphingobiumChlorophenolicum(
 
     Returns
     -----------------------
-    Instace of SphingobiumChlorophenolicum graph.
+    Instace of Sphingobium chlorophenolicum graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphacelomaMurrayae.
+This file offers the methods to automatically retrieve the graph Sphaceloma murrayae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphacelomaMurrayae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphacelomaMurrayae graph.
+    """Return new instance of the Sphaceloma murrayae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphacelomaMurrayae(
 
     Returns
     -----------------------
-    Instace of SphacelomaMurrayae graph.
+    Instace of Sphaceloma murrayae graph.
 
 	References
 	---------------------

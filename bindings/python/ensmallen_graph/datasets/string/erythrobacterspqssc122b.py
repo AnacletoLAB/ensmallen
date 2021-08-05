@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ErythrobacterSpQssc122b.
+This file offers the methods to automatically retrieve the graph Erythrobacter sp. QSSC1-22B.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ErythrobacterSpQssc122b(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ErythrobacterSpQssc122b graph.
+    """Return new instance of the Erythrobacter sp. QSSC1-22B graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ErythrobacterSpQssc122b(
 
     Returns
     -----------------------
-    Instace of ErythrobacterSpQssc122b graph.
+    Instace of Erythrobacter sp. QSSC1-22B graph.
 
 	References
 	---------------------

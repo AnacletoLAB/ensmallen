@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacteriumThermosaccharolyticum.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacterium thermosaccharolyticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacteriumThermosaccharolyticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacteriumThermosaccharolyticum graph.
+    """Return new instance of the Thermoanaerobacterium thermosaccharolyticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoanaerobacteriumThermosaccharolyticum(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacteriumThermosaccharolyticum graph.
+    Instace of Thermoanaerobacterium thermosaccharolyticum graph.
 
 	References
 	---------------------

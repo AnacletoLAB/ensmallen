@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermoanaerobacterWiegelii.
+This file offers the methods to automatically retrieve the graph Thermoanaerobacter wiegelii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermoanaerobacterWiegelii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermoanaerobacterWiegelii graph.
+    """Return new instance of the Thermoanaerobacter wiegelii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermoanaerobacterWiegelii(
 
     Returns
     -----------------------
-    Instace of ThermoanaerobacterWiegelii graph.
+    Instace of Thermoanaerobacter wiegelii graph.
 
 	References
 	---------------------

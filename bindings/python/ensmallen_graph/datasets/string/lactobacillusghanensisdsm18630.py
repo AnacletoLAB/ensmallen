@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusGhanensisDsm18630.
+This file offers the methods to automatically retrieve the graph Lactobacillus ghanensis DSM 18630.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusGhanensisDsm18630(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusGhanensisDsm18630 graph.
+    """Return new instance of the Lactobacillus ghanensis DSM 18630 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusGhanensisDsm18630(
 
     Returns
     -----------------------
-    Instace of LactobacillusGhanensisDsm18630 graph.
+    Instace of Lactobacillus ghanensis DSM 18630 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNitrospiraInopinata.
+This file offers the methods to automatically retrieve the graph Candidatus Nitrospira inopinata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNitrospiraInopinata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNitrospiraInopinata graph.
+    """Return new instance of the Candidatus Nitrospira inopinata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNitrospiraInopinata(
 
     Returns
     -----------------------
-    Instace of CandidatusNitrospiraInopinata graph.
+    Instace of Candidatus Nitrospira inopinata graph.
 
 	References
 	---------------------

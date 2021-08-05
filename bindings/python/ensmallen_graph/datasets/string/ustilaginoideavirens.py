@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UstilaginoideaVirens.
+This file offers the methods to automatically retrieve the graph Ustilaginoidea virens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UstilaginoideaVirens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UstilaginoideaVirens graph.
+    """Return new instance of the Ustilaginoidea virens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def UstilaginoideaVirens(
 
     Returns
     -----------------------
-    Instace of UstilaginoideaVirens graph.
+    Instace of Ustilaginoidea virens graph.
 
 	References
 	---------------------

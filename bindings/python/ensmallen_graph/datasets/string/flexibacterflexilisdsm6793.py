@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlexibacterFlexilisDsm6793.
+This file offers the methods to automatically retrieve the graph Flexibacter flexilis DSM 6793.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlexibacterFlexilisDsm6793(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlexibacterFlexilisDsm6793 graph.
+    """Return new instance of the Flexibacter flexilis DSM 6793 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlexibacterFlexilisDsm6793(
 
     Returns
     -----------------------
-    Instace of FlexibacterFlexilisDsm6793 graph.
+    Instace of Flexibacter flexilis DSM 6793 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChrysochlorisAsiatica.
+This file offers the methods to automatically retrieve the graph Chrysochloris asiatica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChrysochlorisAsiatica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChrysochlorisAsiatica graph.
+    """Return new instance of the Chrysochloris asiatica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChrysochlorisAsiatica(
 
     Returns
     -----------------------
-    Instace of ChrysochlorisAsiatica graph.
+    Instace of Chrysochloris asiatica graph.
 
 	References
 	---------------------

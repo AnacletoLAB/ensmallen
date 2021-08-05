@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpIhbB17019.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. IHB B 17019.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpIhbB17019(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpIhbB17019 graph.
+    """Return new instance of the Chryseobacterium sp. IHB B 17019 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpIhbB17019(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpIhbB17019 graph.
+    Instace of Chryseobacterium sp. IHB B 17019 graph.
 
 	References
 	---------------------

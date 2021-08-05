@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPeregrinibacteriaBacteriumCg1025453.
+This file offers the methods to automatically retrieve the graph Candidatus Peregrinibacteria bacterium CG1_02_54_53.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPeregrinibacteriaBacteriumCg1025453(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPeregrinibacteriaBacteriumCg1025453 graph.
+    """Return new instance of the Candidatus Peregrinibacteria bacterium CG1_02_54_53 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPeregrinibacteriaBacteriumCg1025453(
 
     Returns
     -----------------------
-    Instace of CandidatusPeregrinibacteriaBacteriumCg1025453 graph.
+    Instace of Candidatus Peregrinibacteria bacterium CG1_02_54_53 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SuccinivibrioDextrinosolvens.
+This file offers the methods to automatically retrieve the graph Succinivibrio dextrinosolvens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SuccinivibrioDextrinosolvens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SuccinivibrioDextrinosolvens graph.
+    """Return new instance of the Succinivibrio dextrinosolvens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SuccinivibrioDextrinosolvens(
 
     Returns
     -----------------------
-    Instace of SuccinivibrioDextrinosolvens graph.
+    Instace of Succinivibrio dextrinosolvens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SulfitobacterSpEe36.
+This file offers the methods to automatically retrieve the graph Sulfitobacter sp. EE36.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SulfitobacterSpEe36(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SulfitobacterSpEe36 graph.
+    """Return new instance of the Sulfitobacter sp. EE36 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SulfitobacterSpEe36(
 
     Returns
     -----------------------
-    Instace of SulfitobacterSpEe36 graph.
+    Instace of Sulfitobacter sp. EE36 graph.
 
 	References
 	---------------------

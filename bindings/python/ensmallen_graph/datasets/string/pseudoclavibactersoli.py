@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudoclavibacterSoli.
+This file offers the methods to automatically retrieve the graph Pseudoclavibacter soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudoclavibacterSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudoclavibacterSoli graph.
+    """Return new instance of the Pseudoclavibacter soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudoclavibacterSoli(
 
     Returns
     -----------------------
-    Instace of PseudoclavibacterSoli graph.
+    Instace of Pseudoclavibacter soli graph.
 
 	References
 	---------------------

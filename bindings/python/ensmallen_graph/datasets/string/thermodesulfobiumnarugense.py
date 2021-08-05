@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermodesulfobiumNarugense.
+This file offers the methods to automatically retrieve the graph Thermodesulfobium narugense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermodesulfobiumNarugense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermodesulfobiumNarugense graph.
+    """Return new instance of the Thermodesulfobium narugense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermodesulfobiumNarugense(
 
     Returns
     -----------------------
-    Instace of ThermodesulfobiumNarugense graph.
+    Instace of Thermodesulfobium narugense graph.
 
 	References
 	---------------------

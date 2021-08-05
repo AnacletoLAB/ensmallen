@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DactylosporangiumAurantiacum.
+This file offers the methods to automatically retrieve the graph Dactylosporangium aurantiacum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DactylosporangiumAurantiacum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DactylosporangiumAurantiacum graph.
+    """Return new instance of the Dactylosporangium aurantiacum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DactylosporangiumAurantiacum(
 
     Returns
     -----------------------
-    Instace of DactylosporangiumAurantiacum graph.
+    Instace of Dactylosporangium aurantiacum graph.
 
 	References
 	---------------------

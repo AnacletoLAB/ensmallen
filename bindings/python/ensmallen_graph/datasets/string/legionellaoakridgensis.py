@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaOakridgensis.
+This file offers the methods to automatically retrieve the graph Legionella oakridgensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaOakridgensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaOakridgensis graph.
+    """Return new instance of the Legionella oakridgensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaOakridgensis(
 
     Returns
     -----------------------
-    Instace of LegionellaOakridgensis graph.
+    Instace of Legionella oakridgensis graph.
 
 	References
 	---------------------

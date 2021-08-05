@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusFlavus.
+This file offers the methods to automatically retrieve the graph Aspergillus flavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusFlavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusFlavus graph.
+    """Return new instance of the Aspergillus flavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusFlavus(
 
     Returns
     -----------------------
-    Instace of AspergillusFlavus graph.
+    Instace of Aspergillus flavus graph.
 
 	References
 	---------------------

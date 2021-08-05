@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaenorhabditisLatens.
+This file offers the methods to automatically retrieve the graph Caenorhabditis latens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaenorhabditisLatens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaenorhabditisLatens graph.
+    """Return new instance of the Caenorhabditis latens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaenorhabditisLatens(
 
     Returns
     -----------------------
-    Instace of CaenorhabditisLatens graph.
+    Instace of Caenorhabditis latens graph.
 
 	References
 	---------------------

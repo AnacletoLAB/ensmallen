@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizoctoniaSolaniAg1Ib.
+This file offers the methods to automatically retrieve the graph Rhizoctonia solani AG-1 IB.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizoctoniaSolaniAg1Ib(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizoctoniaSolaniAg1Ib graph.
+    """Return new instance of the Rhizoctonia solani AG-1 IB graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizoctoniaSolaniAg1Ib(
 
     Returns
     -----------------------
-    Instace of RhizoctoniaSolaniAg1Ib graph.
+    Instace of Rhizoctonia solani AG-1 IB graph.
 
 	References
 	---------------------

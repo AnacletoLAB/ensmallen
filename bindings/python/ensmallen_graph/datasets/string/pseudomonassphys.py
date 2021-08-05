@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSpHys.
+This file offers the methods to automatically retrieve the graph Pseudomonas sp. HYS.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSpHys(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSpHys graph.
+    """Return new instance of the Pseudomonas sp. HYS graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSpHys(
 
     Returns
     -----------------------
-    Instace of PseudomonasSpHys graph.
+    Instace of Pseudomonas sp. HYS graph.
 
 	References
 	---------------------

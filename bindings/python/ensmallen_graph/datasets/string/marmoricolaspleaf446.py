@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarmoricolaSpLeaf446.
+This file offers the methods to automatically retrieve the graph Marmoricola sp. Leaf446.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarmoricolaSpLeaf446(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarmoricolaSpLeaf446 graph.
+    """Return new instance of the Marmoricola sp. Leaf446 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarmoricolaSpLeaf446(
 
     Returns
     -----------------------
-    Instace of MarmoricolaSpLeaf446 graph.
+    Instace of Marmoricola sp. Leaf446 graph.
 
 	References
 	---------------------

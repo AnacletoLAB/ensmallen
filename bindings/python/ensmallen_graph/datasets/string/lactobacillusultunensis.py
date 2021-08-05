@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusUltunensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus ultunensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusUltunensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusUltunensis graph.
+    """Return new instance of the Lactobacillus ultunensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusUltunensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusUltunensis graph.
+    Instace of Lactobacillus ultunensis graph.
 
 	References
 	---------------------

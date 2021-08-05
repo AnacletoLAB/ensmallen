@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProteusHauseriAtcc700826.
+This file offers the methods to automatically retrieve the graph Proteus hauseri ATCC 700826.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProteusHauseriAtcc700826(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProteusHauseriAtcc700826 graph.
+    """Return new instance of the Proteus hauseri ATCC 700826 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ProteusHauseriAtcc700826(
 
     Returns
     -----------------------
-    Instace of ProteusHauseriAtcc700826 graph.
+    Instace of Proteus hauseri ATCC 700826 graph.
 
 	References
 	---------------------

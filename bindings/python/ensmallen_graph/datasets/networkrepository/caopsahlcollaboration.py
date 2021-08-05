@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaOpsahlCollaboration.
+This file offers the methods to automatically retrieve the graph ca-opsahl-collaboration.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def CaOpsahlCollaboration(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaOpsahlCollaboration graph.
+    """Return new instance of the ca-opsahl-collaboration graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def CaOpsahlCollaboration(
 
     Returns
     -----------------------
-    Instace of CaOpsahlCollaboration graph.
+    Instace of ca-opsahl-collaboration graph.
 
 	References
 	---------------------

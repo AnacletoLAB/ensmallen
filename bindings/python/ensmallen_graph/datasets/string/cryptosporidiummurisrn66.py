@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CryptosporidiumMurisRn66.
+This file offers the methods to automatically retrieve the graph Cryptosporidium muris RN66.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CryptosporidiumMurisRn66(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CryptosporidiumMurisRn66 graph.
+    """Return new instance of the Cryptosporidium muris RN66 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CryptosporidiumMurisRn66(
 
     Returns
     -----------------------
-    Instace of CryptosporidiumMurisRn66 graph.
+    Instace of Cryptosporidium muris RN66 graph.
 
 	References
 	---------------------

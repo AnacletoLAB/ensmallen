@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusSpLemmy01.
+This file offers the methods to automatically retrieve the graph Geobacillus sp. LEMMY01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusSpLemmy01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusSpLemmy01 graph.
+    """Return new instance of the Geobacillus sp. LEMMY01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacillusSpLemmy01(
 
     Returns
     -----------------------
-    Instace of GeobacillusSpLemmy01 graph.
+    Instace of Geobacillus sp. LEMMY01 graph.
 
 	References
 	---------------------

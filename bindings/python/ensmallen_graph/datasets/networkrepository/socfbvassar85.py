@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbVassar85.
+This file offers the methods to automatically retrieve the graph socfb-Vassar85.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbVassar85(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbVassar85 graph.
+    """Return new instance of the socfb-Vassar85 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbVassar85(
 
     Returns
     -----------------------
-    Instace of SocfbVassar85 graph.
+    Instace of socfb-Vassar85 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaSpCb01531.
+This file offers the methods to automatically retrieve the graph Micromonospora sp. CB01531.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaSpCb01531(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaSpCb01531 graph.
+    """Return new instance of the Micromonospora sp. CB01531 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MicromonosporaSpCb01531(
 
     Returns
     -----------------------
-    Instace of MicromonosporaSpCb01531 graph.
+    Instace of Micromonospora sp. CB01531 graph.
 
 	References
 	---------------------

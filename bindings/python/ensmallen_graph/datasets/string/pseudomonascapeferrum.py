@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasCapeferrum.
+This file offers the methods to automatically retrieve the graph Pseudomonas capeferrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasCapeferrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasCapeferrum graph.
+    """Return new instance of the Pseudomonas capeferrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasCapeferrum(
 
     Returns
     -----------------------
-    Instace of PseudomonasCapeferrum graph.
+    Instace of Pseudomonas capeferrum graph.
 
 	References
 	---------------------

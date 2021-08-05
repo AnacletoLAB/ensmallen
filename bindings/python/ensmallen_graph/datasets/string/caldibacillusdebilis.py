@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaldibacillusDebilis.
+This file offers the methods to automatically retrieve the graph Caldibacillus debilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CaldibacillusDebilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaldibacillusDebilis graph.
+    """Return new instance of the Caldibacillus debilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CaldibacillusDebilis(
 
     Returns
     -----------------------
-    Instace of CaldibacillusDebilis graph.
+    Instace of Caldibacillus debilis graph.
 
 	References
 	---------------------

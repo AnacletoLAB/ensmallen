@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ProchlorococcusMarinusNatl1a.
+This file offers the methods to automatically retrieve the graph Prochlorococcus marinus NATL1A.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ProchlorococcusMarinusNatl1a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ProchlorococcusMarinusNatl1a graph.
+    """Return new instance of the Prochlorococcus marinus NATL1A graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ProchlorococcusMarinusNatl1a(
 
     Returns
     -----------------------
-    Instace of ProchlorococcusMarinusNatl1a graph.
+    Instace of Prochlorococcus marinus NATL1A graph.
 
 	References
 	---------------------

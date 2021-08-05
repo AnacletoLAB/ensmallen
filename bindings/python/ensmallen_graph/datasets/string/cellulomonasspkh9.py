@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasSpKh9.
+This file offers the methods to automatically retrieve the graph Cellulomonas sp. KH9.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasSpKh9(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasSpKh9 graph.
+    """Return new instance of the Cellulomonas sp. KH9 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CellulomonasSpKh9(
 
     Returns
     -----------------------
-    Instace of CellulomonasSpKh9 graph.
+    Instace of Cellulomonas sp. KH9 graph.
 
 	References
 	---------------------

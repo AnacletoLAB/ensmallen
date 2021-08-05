@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasBalearicaDsm6083.
+This file offers the methods to automatically retrieve the graph Pseudomonas balearica DSM 6083.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasBalearicaDsm6083(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasBalearicaDsm6083 graph.
+    """Return new instance of the Pseudomonas balearica DSM 6083 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasBalearicaDsm6083(
 
     Returns
     -----------------------
-    Instace of PseudomonasBalearicaDsm6083 graph.
+    Instace of Pseudomonas balearica DSM 6083 graph.
 
 	References
 	---------------------

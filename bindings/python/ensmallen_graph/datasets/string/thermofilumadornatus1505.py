@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermofilumAdornatus1505.
+This file offers the methods to automatically retrieve the graph Thermofilum adornatus 1505.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermofilumAdornatus1505(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermofilumAdornatus1505 graph.
+    """Return new instance of the Thermofilum adornatus 1505 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermofilumAdornatus1505(
 
     Returns
     -----------------------
-    Instace of ThermofilumAdornatus1505 graph.
+    Instace of Thermofilum adornatus 1505 graph.
 
 	References
 	---------------------

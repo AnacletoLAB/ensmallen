@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodoferaxAntarcticus.
+This file offers the methods to automatically retrieve the graph Rhodoferax antarcticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodoferaxAntarcticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodoferaxAntarcticus graph.
+    """Return new instance of the Rhodoferax antarcticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodoferaxAntarcticus(
 
     Returns
     -----------------------
-    Instace of RhodoferaxAntarcticus graph.
+    Instace of Rhodoferax antarcticus graph.
 
 	References
 	---------------------

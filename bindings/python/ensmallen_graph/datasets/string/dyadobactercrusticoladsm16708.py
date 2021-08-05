@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterCrusticolaDsm16708.
+This file offers the methods to automatically retrieve the graph Dyadobacter crusticola DSM 16708.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyadobacterCrusticolaDsm16708(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterCrusticolaDsm16708 graph.
+    """Return new instance of the Dyadobacter crusticola DSM 16708 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyadobacterCrusticolaDsm16708(
 
     Returns
     -----------------------
-    Instace of DyadobacterCrusticolaDsm16708 graph.
+    Instace of Dyadobacter crusticola DSM 16708 graph.
 
 	References
 	---------------------

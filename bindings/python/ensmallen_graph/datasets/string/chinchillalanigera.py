@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChinchillaLanigera.
+This file offers the methods to automatically retrieve the graph Chinchilla lanigera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChinchillaLanigera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChinchillaLanigera graph.
+    """Return new instance of the Chinchilla lanigera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ChinchillaLanigera(
 
     Returns
     -----------------------
-    Instace of ChinchillaLanigera graph.
+    Instace of Chinchilla lanigera graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SideroxydansSpGwf25914.
+This file offers the methods to automatically retrieve the graph Sideroxydans sp. GWF2_59_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SideroxydansSpGwf25914(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SideroxydansSpGwf25914 graph.
+    """Return new instance of the Sideroxydans sp. GWF2_59_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SideroxydansSpGwf25914(
 
     Returns
     -----------------------
-    Instace of SideroxydansSpGwf25914 graph.
+    Instace of Sideroxydans sp. GWF2_59_14 graph.
 
 	References
 	---------------------

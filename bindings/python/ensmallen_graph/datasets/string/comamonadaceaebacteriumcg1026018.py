@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ComamonadaceaeBacteriumCg1026018.
+This file offers the methods to automatically retrieve the graph Comamonadaceae bacterium CG1_02_60_18.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ComamonadaceaeBacteriumCg1026018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ComamonadaceaeBacteriumCg1026018 graph.
+    """Return new instance of the Comamonadaceae bacterium CG1_02_60_18 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ComamonadaceaeBacteriumCg1026018(
 
     Returns
     -----------------------
-    Instace of ComamonadaceaeBacteriumCg1026018 graph.
+    Instace of Comamonadaceae bacterium CG1_02_60_18 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterTyphlonius.
+This file offers the methods to automatically retrieve the graph Helicobacter typhlonius.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterTyphlonius(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterTyphlonius graph.
+    """Return new instance of the Helicobacter typhlonius graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HelicobacterTyphlonius(
 
     Returns
     -----------------------
-    Instace of HelicobacterTyphlonius graph.
+    Instace of Helicobacter typhlonius graph.
 
 	References
 	---------------------

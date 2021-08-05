@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusVestibularis.
+This file offers the methods to automatically retrieve the graph Streptococcus vestibularis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusVestibularis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusVestibularis graph.
+    """Return new instance of the Streptococcus vestibularis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusVestibularis(
 
     Returns
     -----------------------
-    Instace of StreptococcusVestibularis graph.
+    Instace of Streptococcus vestibularis graph.
 
 	References
 	---------------------

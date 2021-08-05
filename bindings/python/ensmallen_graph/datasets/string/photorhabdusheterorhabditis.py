@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotorhabdusHeterorhabditis.
+This file offers the methods to automatically retrieve the graph Photorhabdus heterorhabditis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotorhabdusHeterorhabditis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotorhabdusHeterorhabditis graph.
+    """Return new instance of the Photorhabdus heterorhabditis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhotorhabdusHeterorhabditis(
 
     Returns
     -----------------------
-    Instace of PhotorhabdusHeterorhabditis graph.
+    Instace of Photorhabdus heterorhabditis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucilaginibacterSpPamc26640.
+This file offers the methods to automatically retrieve the graph Mucilaginibacter sp. PAMC 26640.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucilaginibacterSpPamc26640(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucilaginibacterSpPamc26640 graph.
+    """Return new instance of the Mucilaginibacter sp. PAMC 26640 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MucilaginibacterSpPamc26640(
 
     Returns
     -----------------------
-    Instace of MucilaginibacterSpPamc26640 graph.
+    Instace of Mucilaginibacter sp. PAMC 26640 graph.
 
 	References
 	---------------------

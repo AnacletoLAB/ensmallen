@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesMelas.
+This file offers the methods to automatically retrieve the graph Anopheles melas.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesMelas(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesMelas graph.
+    """Return new instance of the Anopheles melas graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnophelesMelas(
 
     Returns
     -----------------------
-    Instace of AnophelesMelas graph.
+    Instace of Anopheles melas graph.
 
 	References
 	---------------------

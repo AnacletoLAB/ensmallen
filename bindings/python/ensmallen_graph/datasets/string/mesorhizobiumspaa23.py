@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesorhizobiumSpAa23.
+This file offers the methods to automatically retrieve the graph Mesorhizobium sp. AA23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesorhizobiumSpAa23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesorhizobiumSpAa23 graph.
+    """Return new instance of the Mesorhizobium sp. AA23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MesorhizobiumSpAa23(
 
     Returns
     -----------------------
-    Instace of MesorhizobiumSpAa23 graph.
+    Instace of Mesorhizobium sp. AA23 graph.
 
 	References
 	---------------------

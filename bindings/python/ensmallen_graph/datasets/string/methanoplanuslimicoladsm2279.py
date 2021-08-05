@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanoplanusLimicolaDsm2279.
+This file offers the methods to automatically retrieve the graph Methanoplanus limicola DSM 2279.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanoplanusLimicolaDsm2279(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanoplanusLimicolaDsm2279 graph.
+    """Return new instance of the Methanoplanus limicola DSM 2279 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanoplanusLimicolaDsm2279(
 
     Returns
     -----------------------
-    Instace of MethanoplanusLimicolaDsm2279 graph.
+    Instace of Methanoplanus limicola DSM 2279 graph.
 
 	References
 	---------------------

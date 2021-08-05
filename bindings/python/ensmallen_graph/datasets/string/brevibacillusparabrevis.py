@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusParabrevis.
+This file offers the methods to automatically retrieve the graph Brevibacillus parabrevis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusParabrevis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusParabrevis graph.
+    """Return new instance of the Brevibacillus parabrevis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacillusParabrevis(
 
     Returns
     -----------------------
-    Instace of BrevibacillusParabrevis graph.
+    Instace of Brevibacillus parabrevis graph.
 
 	References
 	---------------------

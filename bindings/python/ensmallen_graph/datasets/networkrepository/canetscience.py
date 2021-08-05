@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaNetscience.
+This file offers the methods to automatically retrieve the graph ca-netscience.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def CaNetscience(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaNetscience graph.
+    """Return new instance of the ca-netscience graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def CaNetscience(
 
     Returns
     -----------------------
-    Instace of CaNetscience graph.
+    Instace of ca-netscience graph.
 
 	References
 	---------------------

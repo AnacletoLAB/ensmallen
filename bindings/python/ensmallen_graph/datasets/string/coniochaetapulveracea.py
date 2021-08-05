@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConiochaetaPulveracea.
+This file offers the methods to automatically retrieve the graph Coniochaeta pulveracea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConiochaetaPulveracea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConiochaetaPulveracea graph.
+    """Return new instance of the Coniochaeta pulveracea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ConiochaetaPulveracea(
 
     Returns
     -----------------------
-    Instace of ConiochaetaPulveracea graph.
+    Instace of Coniochaeta pulveracea graph.
 
 	References
 	---------------------

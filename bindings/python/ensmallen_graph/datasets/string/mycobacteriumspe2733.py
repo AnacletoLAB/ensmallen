@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpE2733.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. E2733.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpE2733(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpE2733 graph.
+    """Return new instance of the Mycobacterium sp. E2733 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpE2733(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpE2733 graph.
+    Instace of Mycobacterium sp. E2733 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaDispar.
+This file offers the methods to automatically retrieve the graph Veillonella dispar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaDispar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaDispar graph.
+    """Return new instance of the Veillonella dispar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaDispar(
 
     Returns
     -----------------------
-    Instace of VeillonellaDispar graph.
+    Instace of Veillonella dispar graph.
 
 	References
 	---------------------

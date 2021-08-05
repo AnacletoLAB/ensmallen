@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CohaesibacterMarisflavi.
+This file offers the methods to automatically retrieve the graph Cohaesibacter marisflavi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CohaesibacterMarisflavi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CohaesibacterMarisflavi graph.
+    """Return new instance of the Cohaesibacter marisflavi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CohaesibacterMarisflavi(
 
     Returns
     -----------------------
-    Instace of CohaesibacterMarisflavi graph.
+    Instace of Cohaesibacter marisflavi graph.
 
 	References
 	---------------------

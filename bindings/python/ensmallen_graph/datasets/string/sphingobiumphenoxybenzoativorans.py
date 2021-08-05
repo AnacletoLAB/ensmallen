@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SphingobiumPhenoxybenzoativorans.
+This file offers the methods to automatically retrieve the graph Sphingobium phenoxybenzoativorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SphingobiumPhenoxybenzoativorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SphingobiumPhenoxybenzoativorans graph.
+    """Return new instance of the Sphingobium phenoxybenzoativorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SphingobiumPhenoxybenzoativorans(
 
     Returns
     -----------------------
-    Instace of SphingobiumPhenoxybenzoativorans graph.
+    Instace of Sphingobium phenoxybenzoativorans graph.
 
 	References
 	---------------------

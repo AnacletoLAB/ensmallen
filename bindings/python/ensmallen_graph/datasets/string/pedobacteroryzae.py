@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterOryzae.
+This file offers the methods to automatically retrieve the graph Pedobacter oryzae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterOryzae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterOryzae graph.
+    """Return new instance of the Pedobacter oryzae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PedobacterOryzae(
 
     Returns
     -----------------------
-    Instace of PedobacterOryzae graph.
+    Instace of Pedobacter oryzae graph.
 
 	References
 	---------------------

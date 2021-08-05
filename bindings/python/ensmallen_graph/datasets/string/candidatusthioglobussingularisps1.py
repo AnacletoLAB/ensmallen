@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusThioglobusSingularisPs1.
+This file offers the methods to automatically retrieve the graph Candidatus Thioglobus singularis PS1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusThioglobusSingularisPs1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusThioglobusSingularisPs1 graph.
+    """Return new instance of the Candidatus Thioglobus singularis PS1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusThioglobusSingularisPs1(
 
     Returns
     -----------------------
-    Instace of CandidatusThioglobusSingularisPs1 graph.
+    Instace of Candidatus Thioglobus singularis PS1 graph.
 
 	References
 	---------------------

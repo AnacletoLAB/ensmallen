@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophaceaeBacteriumCg2305814.
+This file offers the methods to automatically retrieve the graph Syntrophaceae bacterium CG2_30_58_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophaceaeBacteriumCg2305814(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophaceaeBacteriumCg2305814 graph.
+    """Return new instance of the Syntrophaceae bacterium CG2_30_58_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophaceaeBacteriumCg2305814(
 
     Returns
     -----------------------
-    Instace of SyntrophaceaeBacteriumCg2305814 graph.
+    Instace of Syntrophaceae bacterium CG2_30_58_14 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasVeronii.
+This file offers the methods to automatically retrieve the graph Aeromonas veronii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasVeronii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasVeronii graph.
+    """Return new instance of the Aeromonas veronii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AeromonasVeronii(
 
     Returns
     -----------------------
-    Instace of AeromonasVeronii graph.
+    Instace of Aeromonas veronii graph.
 
 	References
 	---------------------

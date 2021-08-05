@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnabaenaSpCaAtcc33047.
+This file offers the methods to automatically retrieve the graph Anabaena sp. CA ATCC 33047.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnabaenaSpCaAtcc33047(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnabaenaSpCaAtcc33047 graph.
+    """Return new instance of the Anabaena sp. CA ATCC 33047 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnabaenaSpCaAtcc33047(
 
     Returns
     -----------------------
-    Instace of AnabaenaSpCaAtcc33047 graph.
+    Instace of Anabaena sp. CA ATCC 33047 graph.
 
 	References
 	---------------------

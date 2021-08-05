@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetrahymenaThermophilaSb210.
+This file offers the methods to automatically retrieve the graph Tetrahymena thermophila SB210.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetrahymenaThermophilaSb210(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetrahymenaThermophilaSb210 graph.
+    """Return new instance of the Tetrahymena thermophila SB210 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetrahymenaThermophilaSb210(
 
     Returns
     -----------------------
-    Instace of TetrahymenaThermophilaSb210 graph.
+    Instace of Tetrahymena thermophila SB210 graph.
 
 	References
 	---------------------

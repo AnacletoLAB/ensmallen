@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioSpXbb1001.
+This file offers the methods to automatically retrieve the graph Butyrivibrio sp. XBB1001.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioSpXbb1001(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioSpXbb1001 graph.
+    """Return new instance of the Butyrivibrio sp. XBB1001 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ButyrivibrioSpXbb1001(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioSpXbb1001 graph.
+    Instace of Butyrivibrio sp. XBB1001 graph.
 
 	References
 	---------------------

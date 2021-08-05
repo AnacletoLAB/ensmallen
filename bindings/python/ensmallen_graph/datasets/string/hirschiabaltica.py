@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HirschiaBaltica.
+This file offers the methods to automatically retrieve the graph Hirschia baltica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HirschiaBaltica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HirschiaBaltica graph.
+    """Return new instance of the Hirschia baltica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HirschiaBaltica(
 
     Returns
     -----------------------
-    Instace of HirschiaBaltica graph.
+    Instace of Hirschia baltica graph.
 
 	References
 	---------------------

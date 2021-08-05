@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VulpesVulpes.
+This file offers the methods to automatically retrieve the graph Vulpes vulpes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VulpesVulpes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VulpesVulpes graph.
+    """Return new instance of the Vulpes vulpes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VulpesVulpes(
 
     Returns
     -----------------------
-    Instace of VulpesVulpes graph.
+    Instace of Vulpes vulpes graph.
 
 	References
 	---------------------

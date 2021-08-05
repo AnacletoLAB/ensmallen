@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GordoniaEffusa.
+This file offers the methods to automatically retrieve the graph Gordonia effusa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GordoniaEffusa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GordoniaEffusa graph.
+    """Return new instance of the Gordonia effusa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GordoniaEffusa(
 
     Returns
     -----------------------
-    Instace of GordoniaEffusa graph.
+    Instace of Gordonia effusa graph.
 
 	References
 	---------------------

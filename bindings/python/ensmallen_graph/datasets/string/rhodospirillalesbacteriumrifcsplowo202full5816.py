@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillalesBacteriumRifcsplowo202Full5816.
+This file offers the methods to automatically retrieve the graph Rhodospirillales bacterium RIFCSPLOWO2_02_FULL_58_16.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillalesBacteriumRifcsplowo202Full5816(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillalesBacteriumRifcsplowo202Full5816 graph.
+    """Return new instance of the Rhodospirillales bacterium RIFCSPLOWO2_02_FULL_58_16 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillalesBacteriumRifcsplowo202Full5816(
 
     Returns
     -----------------------
-    Instace of RhodospirillalesBacteriumRifcsplowo202Full5816 graph.
+    Instace of Rhodospirillales bacterium RIFCSPLOWO2_02_FULL_58_16 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GallibacteriumSalpingitidis.
+This file offers the methods to automatically retrieve the graph Gallibacterium salpingitidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GallibacteriumSalpingitidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GallibacteriumSalpingitidis graph.
+    """Return new instance of the Gallibacterium salpingitidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GallibacteriumSalpingitidis(
 
     Returns
     -----------------------
-    Instace of GallibacteriumSalpingitidis graph.
+    Instace of Gallibacterium salpingitidis graph.
 
 	References
 	---------------------

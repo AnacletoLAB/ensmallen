@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DickeyaSpNcppb569.
+This file offers the methods to automatically retrieve the graph Dickeya sp. NCPPB569.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DickeyaSpNcppb569(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DickeyaSpNcppb569 graph.
+    """Return new instance of the Dickeya sp. NCPPB569 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DickeyaSpNcppb569(
 
     Returns
     -----------------------
-    Instace of DickeyaSpNcppb569 graph.
+    Instace of Dickeya sp. NCPPB569 graph.
 
 	References
 	---------------------

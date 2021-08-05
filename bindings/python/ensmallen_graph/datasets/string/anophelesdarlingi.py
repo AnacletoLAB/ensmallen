@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesDarlingi.
+This file offers the methods to automatically retrieve the graph Anopheles darlingi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesDarlingi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesDarlingi graph.
+    """Return new instance of the Anopheles darlingi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnophelesDarlingi(
 
     Returns
     -----------------------
-    Instace of AnophelesDarlingi graph.
+    Instace of Anopheles darlingi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinilyticumAquatileDsm21506.
+This file offers the methods to automatically retrieve the graph Chitinilyticum aquatile DSM 21506.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinilyticumAquatileDsm21506(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinilyticumAquatileDsm21506 graph.
+    """Return new instance of the Chitinilyticum aquatile DSM 21506 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinilyticumAquatileDsm21506(
 
     Returns
     -----------------------
-    Instace of ChitinilyticumAquatileDsm21506 graph.
+    Instace of Chitinilyticum aquatile DSM 21506 graph.
 
 	References
 	---------------------

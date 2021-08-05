@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolysporaSaharensis.
+This file offers the methods to automatically retrieve the graph Actinopolyspora saharensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolysporaSaharensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolysporaSaharensis graph.
+    """Return new instance of the Actinopolyspora saharensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinopolysporaSaharensis(
 
     Returns
     -----------------------
-    Instace of ActinopolysporaSaharensis graph.
+    Instace of Actinopolyspora saharensis graph.
 
 	References
 	---------------------

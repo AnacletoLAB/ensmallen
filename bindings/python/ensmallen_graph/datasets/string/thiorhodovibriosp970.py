@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiorhodovibrioSp970.
+This file offers the methods to automatically retrieve the graph Thiorhodovibrio sp. 970.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiorhodovibrioSp970(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiorhodovibrioSp970 graph.
+    """Return new instance of the Thiorhodovibrio sp. 970 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiorhodovibrioSp970(
 
     Returns
     -----------------------
-    Instace of ThiorhodovibrioSp970 graph.
+    Instace of Thiorhodovibrio sp. 970 graph.
 
 	References
 	---------------------

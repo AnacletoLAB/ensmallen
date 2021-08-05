@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidetesBacteriumScgcAaa027n21.
+This file offers the methods to automatically retrieve the graph Bacteroidetes bacterium SCGC AAA027N21.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidetesBacteriumScgcAaa027n21(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidetesBacteriumScgcAaa027n21 graph.
+    """Return new instance of the Bacteroidetes bacterium SCGC AAA027N21 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacteroidetesBacteriumScgcAaa027n21(
 
     Returns
     -----------------------
-    Instace of BacteroidetesBacteriumScgcAaa027n21 graph.
+    Instace of Bacteroidetes bacterium SCGC AAA027N21 graph.
 
 	References
 	---------------------

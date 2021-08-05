@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SlashdotZoo.
+This file offers the methods to automatically retrieve the graph slashdot-zoo.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def SlashdotZoo(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SlashdotZoo graph.
+    """Return new instance of the slashdot-zoo graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def SlashdotZoo(
 
     Returns
     -----------------------
-    Instace of SlashdotZoo graph.
+    Instace of slashdot-zoo graph.
 
 	References
 	---------------------

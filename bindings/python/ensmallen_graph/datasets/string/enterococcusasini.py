@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusAsini.
+This file offers the methods to automatically retrieve the graph Enterococcus asini.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusAsini(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusAsini graph.
+    """Return new instance of the Enterococcus asini graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusAsini(
 
     Returns
     -----------------------
-    Instace of EnterococcusAsini graph.
+    Instace of Enterococcus asini graph.
 
 	References
 	---------------------

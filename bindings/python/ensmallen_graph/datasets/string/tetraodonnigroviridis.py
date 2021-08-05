@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TetraodonNigroviridis.
+This file offers the methods to automatically retrieve the graph Tetraodon nigroviridis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TetraodonNigroviridis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TetraodonNigroviridis graph.
+    """Return new instance of the Tetraodon nigroviridis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TetraodonNigroviridis(
 
     Returns
     -----------------------
-    Instace of TetraodonNigroviridis graph.
+    Instace of Tetraodon nigroviridis graph.
 
 	References
 	---------------------

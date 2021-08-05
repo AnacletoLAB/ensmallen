@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HelicobacterWinghamensis.
+This file offers the methods to automatically retrieve the graph Helicobacter winghamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HelicobacterWinghamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HelicobacterWinghamensis graph.
+    """Return new instance of the Helicobacter winghamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HelicobacterWinghamensis(
 
     Returns
     -----------------------
-    Instace of HelicobacterWinghamensis graph.
+    Instace of Helicobacter winghamensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterPasteurianusIfo328301.
+This file offers the methods to automatically retrieve the graph Acetobacter pasteurianus IFO328301.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterPasteurianusIfo328301(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterPasteurianusIfo328301 graph.
+    """Return new instance of the Acetobacter pasteurianus IFO328301 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcetobacterPasteurianusIfo328301(
 
     Returns
     -----------------------
-    Instace of AcetobacterPasteurianusIfo328301 graph.
+    Instace of Acetobacter pasteurianus IFO328301 graph.
 
 	References
 	---------------------

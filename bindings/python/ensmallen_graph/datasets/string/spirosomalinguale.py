@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SpirosomaLinguale.
+This file offers the methods to automatically retrieve the graph Spirosoma linguale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SpirosomaLinguale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SpirosomaLinguale graph.
+    """Return new instance of the Spirosoma linguale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SpirosomaLinguale(
 
     Returns
     -----------------------
-    Instace of SpirosomaLinguale graph.
+    Instace of Spirosoma linguale graph.
 
 	References
 	---------------------

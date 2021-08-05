@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaSymbiotica.
+This file offers the methods to automatically retrieve the graph Serratia symbiotica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaSymbiotica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaSymbiotica graph.
+    """Return new instance of the Serratia symbiotica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SerratiaSymbiotica(
 
     Returns
     -----------------------
-    Instace of SerratiaSymbiotica graph.
+    Instace of Serratia symbiotica graph.
 
 	References
 	---------------------

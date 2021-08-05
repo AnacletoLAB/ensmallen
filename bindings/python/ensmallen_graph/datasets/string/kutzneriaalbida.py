@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KutzneriaAlbida.
+This file offers the methods to automatically retrieve the graph Kutzneria albida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KutzneriaAlbida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KutzneriaAlbida graph.
+    """Return new instance of the Kutzneria albida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KutzneriaAlbida(
 
     Returns
     -----------------------
-    Instace of KutzneriaAlbida graph.
+    Instace of Kutzneria albida graph.
 
 	References
 	---------------------

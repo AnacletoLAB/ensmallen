@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetarhiziumAcridum.
+This file offers the methods to automatically retrieve the graph Metarhizium acridum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetarhiziumAcridum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetarhiziumAcridum graph.
+    """Return new instance of the Metarhizium acridum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MetarhiziumAcridum(
 
     Returns
     -----------------------
-    Instace of MetarhiziumAcridum graph.
+    Instace of Metarhizium acridum graph.
 
 	References
 	---------------------

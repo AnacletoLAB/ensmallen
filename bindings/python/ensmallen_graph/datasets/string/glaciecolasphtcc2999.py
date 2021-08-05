@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlaciecolaSpHtcc2999.
+This file offers the methods to automatically retrieve the graph Glaciecola sp. HTCC2999.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlaciecolaSpHtcc2999(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlaciecolaSpHtcc2999 graph.
+    """Return new instance of the Glaciecola sp. HTCC2999 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlaciecolaSpHtcc2999(
 
     Returns
     -----------------------
-    Instace of GlaciecolaSpHtcc2999 graph.
+    Instace of Glaciecola sp. HTCC2999 graph.
 
 	References
 	---------------------

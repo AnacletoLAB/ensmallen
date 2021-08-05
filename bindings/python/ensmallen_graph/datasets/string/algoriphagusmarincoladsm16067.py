@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriphagusMarincolaDsm16067.
+This file offers the methods to automatically retrieve the graph Algoriphagus marincola DSM16067.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriphagusMarincolaDsm16067(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriphagusMarincolaDsm16067 graph.
+    """Return new instance of the Algoriphagus marincola DSM16067 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgoriphagusMarincolaDsm16067(
 
     Returns
     -----------------------
-    Instace of AlgoriphagusMarincolaDsm16067 graph.
+    Instace of Algoriphagus marincola DSM16067 graph.
 
 	References
 	---------------------

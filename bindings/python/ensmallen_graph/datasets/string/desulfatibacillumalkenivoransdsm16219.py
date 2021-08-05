@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfatibacillumAlkenivoransDsm16219.
+This file offers the methods to automatically retrieve the graph Desulfatibacillum alkenivorans DSM 16219.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfatibacillumAlkenivoransDsm16219(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfatibacillumAlkenivoransDsm16219 graph.
+    """Return new instance of the Desulfatibacillum alkenivorans DSM 16219 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfatibacillumAlkenivoransDsm16219(
 
     Returns
     -----------------------
-    Instace of DesulfatibacillumAlkenivoransDsm16219 graph.
+    Instace of Desulfatibacillum alkenivorans DSM 16219 graph.
 
 	References
 	---------------------

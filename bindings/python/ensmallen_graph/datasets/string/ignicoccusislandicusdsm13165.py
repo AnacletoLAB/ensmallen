@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnicoccusIslandicusDsm13165.
+This file offers the methods to automatically retrieve the graph Ignicoccus islandicus DSM 13165.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnicoccusIslandicusDsm13165(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnicoccusIslandicusDsm13165 graph.
+    """Return new instance of the Ignicoccus islandicus DSM 13165 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def IgnicoccusIslandicusDsm13165(
 
     Returns
     -----------------------
-    Instace of IgnicoccusIslandicusDsm13165 graph.
+    Instace of Ignicoccus islandicus DSM 13165 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HyphomonasSpBhbn044.
+This file offers the methods to automatically retrieve the graph Hyphomonas sp. BHBN044.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HyphomonasSpBhbn044(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HyphomonasSpBhbn044 graph.
+    """Return new instance of the Hyphomonas sp. BHBN044 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HyphomonasSpBhbn044(
 
     Returns
     -----------------------
-    Instace of HyphomonasSpBhbn044 graph.
+    Instace of Hyphomonas sp. BHBN044 graph.
 
 	References
 	---------------------

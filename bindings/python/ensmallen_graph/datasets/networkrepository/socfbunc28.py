@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SocfbUnc28.
+This file offers the methods to automatically retrieve the graph socfb-UNC28.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -54,7 +54,7 @@ def SocfbUnc28(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SocfbUnc28 graph.
+    """Return new instance of the socfb-UNC28 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -81,7 +81,7 @@ def SocfbUnc28(
 
     Returns
     -----------------------
-    Instace of SocfbUnc28 graph.
+    Instace of socfb-UNC28 graph.
 
 	References
 	---------------------

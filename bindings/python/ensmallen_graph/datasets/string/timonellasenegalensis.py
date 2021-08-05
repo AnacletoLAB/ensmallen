@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TimonellaSenegalensis.
+This file offers the methods to automatically retrieve the graph Timonella senegalensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TimonellaSenegalensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TimonellaSenegalensis graph.
+    """Return new instance of the Timonella senegalensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TimonellaSenegalensis(
 
     Returns
     -----------------------
-    Instace of TimonellaSenegalensis graph.
+    Instace of Timonella senegalensis graph.
 
 	References
 	---------------------

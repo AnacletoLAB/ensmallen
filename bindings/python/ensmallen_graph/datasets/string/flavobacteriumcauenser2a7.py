@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumCauenseR2a7.
+This file offers the methods to automatically retrieve the graph Flavobacterium cauense R2A-7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumCauenseR2a7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumCauenseR2a7 graph.
+    """Return new instance of the Flavobacterium cauense R2A-7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriumCauenseR2a7(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumCauenseR2a7 graph.
+    Instace of Flavobacterium cauense R2A-7 graph.
 
 	References
 	---------------------

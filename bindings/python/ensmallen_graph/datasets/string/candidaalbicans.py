@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaAlbicans.
+This file offers the methods to automatically retrieve the graph Candida albicans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaAlbicans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaAlbicans graph.
+    """Return new instance of the Candida albicans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaAlbicans(
 
     Returns
     -----------------------
-    Instace of CandidaAlbicans graph.
+    Instace of Candida albicans graph.
 
 	References
 	---------------------

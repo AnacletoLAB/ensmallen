@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillalesBacteriumBbd199114.
+This file offers the methods to automatically retrieve the graph Rhodospirillales bacterium BBD 1991-14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillalesBacteriumBbd199114(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillalesBacteriumBbd199114 graph.
+    """Return new instance of the Rhodospirillales bacterium BBD 1991-14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillalesBacteriumBbd199114(
 
     Returns
     -----------------------
-    Instace of RhodospirillalesBacteriumBbd199114 graph.
+    Instace of Rhodospirillales bacterium BBD 1991-14 graph.
 
 	References
 	---------------------

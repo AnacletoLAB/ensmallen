@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DialisterSuccinatiphilus.
+This file offers the methods to automatically retrieve the graph Dialister succinatiphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DialisterSuccinatiphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DialisterSuccinatiphilus graph.
+    """Return new instance of the Dialister succinatiphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DialisterSuccinatiphilus(
 
     Returns
     -----------------------
-    Instace of DialisterSuccinatiphilus graph.
+    Instace of Dialister succinatiphilus graph.
 
 	References
 	---------------------

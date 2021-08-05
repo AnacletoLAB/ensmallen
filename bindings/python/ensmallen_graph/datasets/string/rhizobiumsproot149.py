@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumSpRoot149.
+This file offers the methods to automatically retrieve the graph Rhizobium sp. Root149.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumSpRoot149(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumSpRoot149 graph.
+    """Return new instance of the Rhizobium sp. Root149 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumSpRoot149(
 
     Returns
     -----------------------
-    Instace of RhizobiumSpRoot149 graph.
+    Instace of Rhizobium sp. Root149 graph.
 
 	References
 	---------------------

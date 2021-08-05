@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusWildermuthbacteriaBacteriumGwa24615.
+This file offers the methods to automatically retrieve the graph Candidatus Wildermuthbacteria bacterium GWA2_46_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusWildermuthbacteriaBacteriumGwa24615(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusWildermuthbacteriaBacteriumGwa24615 graph.
+    """Return new instance of the Candidatus Wildermuthbacteria bacterium GWA2_46_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusWildermuthbacteriaBacteriumGwa24615(
 
     Returns
     -----------------------
-    Instace of CandidatusWildermuthbacteriaBacteriumGwa24615 graph.
+    Instace of Candidatus Wildermuthbacteria bacterium GWA2_46_15 graph.
 
 	References
 	---------------------

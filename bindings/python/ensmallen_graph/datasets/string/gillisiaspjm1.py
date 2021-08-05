@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GillisiaSpJm1.
+This file offers the methods to automatically retrieve the graph Gillisia sp. JM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GillisiaSpJm1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GillisiaSpJm1 graph.
+    """Return new instance of the Gillisia sp. JM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GillisiaSpJm1(
 
     Returns
     -----------------------
-    Instace of GillisiaSpJm1 graph.
+    Instace of Gillisia sp. JM1 graph.
 
 	References
 	---------------------

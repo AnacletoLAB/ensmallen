@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusSpE463.
+This file offers the methods to automatically retrieve the graph Staphylococcus sp. E463.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusSpE463(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusSpE463 graph.
+    """Return new instance of the Staphylococcus sp. E463 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylococcusSpE463(
 
     Returns
     -----------------------
-    Instace of StaphylococcusSpE463 graph.
+    Instace of Staphylococcus sp. E463 graph.
 
 	References
 	---------------------

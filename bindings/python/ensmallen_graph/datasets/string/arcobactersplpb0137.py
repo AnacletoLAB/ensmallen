@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArcobacterSpLpb0137.
+This file offers the methods to automatically retrieve the graph Arcobacter sp. LPB0137.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArcobacterSpLpb0137(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArcobacterSpLpb0137 graph.
+    """Return new instance of the Arcobacter sp. LPB0137 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArcobacterSpLpb0137(
 
     Returns
     -----------------------
-    Instace of ArcobacterSpLpb0137 graph.
+    Instace of Arcobacter sp. LPB0137 graph.
 
 	References
 	---------------------

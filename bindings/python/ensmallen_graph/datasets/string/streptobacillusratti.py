@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptobacillusRatti.
+This file offers the methods to automatically retrieve the graph Streptobacillus ratti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptobacillusRatti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptobacillusRatti graph.
+    """Return new instance of the Streptobacillus ratti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptobacillusRatti(
 
     Returns
     -----------------------
-    Instace of StreptobacillusRatti graph.
+    Instace of Streptobacillus ratti graph.
 
 	References
 	---------------------

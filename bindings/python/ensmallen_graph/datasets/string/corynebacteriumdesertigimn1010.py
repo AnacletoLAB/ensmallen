@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CorynebacteriumDesertiGimn1010.
+This file offers the methods to automatically retrieve the graph Corynebacterium deserti GIMN1.010.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CorynebacteriumDesertiGimn1010(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CorynebacteriumDesertiGimn1010 graph.
+    """Return new instance of the Corynebacterium deserti GIMN1.010 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CorynebacteriumDesertiGimn1010(
 
     Returns
     -----------------------
-    Instace of CorynebacteriumDesertiGimn1010 graph.
+    Instace of Corynebacterium deserti GIMN1.010 graph.
 
 	References
 	---------------------

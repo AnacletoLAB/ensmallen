@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OpsahlOpenflights.
+This file offers the methods to automatically retrieve the graph opsahl-openflights.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def OpsahlOpenflights(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OpsahlOpenflights graph.
+    """Return new instance of the opsahl-openflights graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def OpsahlOpenflights(
 
     Returns
     -----------------------
-    Instace of OpsahlOpenflights graph.
+    Instace of opsahl-openflights graph.
 
 	References
 	---------------------

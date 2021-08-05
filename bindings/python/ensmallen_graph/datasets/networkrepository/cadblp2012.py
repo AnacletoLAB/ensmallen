@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CaDblp2012.
+This file offers the methods to automatically retrieve the graph ca-dblp-2012.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -43,7 +43,7 @@ def CaDblp2012(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CaDblp2012 graph.
+    """Return new instance of the ca-dblp-2012 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -70,7 +70,7 @@ def CaDblp2012(
 
     Returns
     -----------------------
-    Instace of CaDblp2012 graph.
+    Instace of ca-dblp-2012 graph.
 
 	References
 	---------------------

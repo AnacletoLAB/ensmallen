@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PomaceaCanaliculata.
+This file offers the methods to automatically retrieve the graph Pomacea canaliculata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PomaceaCanaliculata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PomaceaCanaliculata graph.
+    """Return new instance of the Pomacea canaliculata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PomaceaCanaliculata(
 
     Returns
     -----------------------
-    Instace of PomaceaCanaliculata graph.
+    Instace of Pomacea canaliculata graph.
 
 	References
 	---------------------

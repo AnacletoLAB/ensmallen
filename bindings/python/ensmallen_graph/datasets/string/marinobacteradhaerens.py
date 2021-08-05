@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinobacterAdhaerens.
+This file offers the methods to automatically retrieve the graph Marinobacter adhaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinobacterAdhaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinobacterAdhaerens graph.
+    """Return new instance of the Marinobacter adhaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MarinobacterAdhaerens(
 
     Returns
     -----------------------
-    Instace of MarinobacterAdhaerens graph.
+    Instace of Marinobacter adhaerens graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CebusCapucinus.
+This file offers the methods to automatically retrieve the graph Cebus capucinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CebusCapucinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CebusCapucinus graph.
+    """Return new instance of the Cebus capucinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CebusCapucinus(
 
     Returns
     -----------------------
-    Instace of CebusCapucinus graph.
+    Instace of Cebus capucinus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusReuteriDsm20016.
+This file offers the methods to automatically retrieve the graph Lactobacillus reuteri DSM20016.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusReuteriDsm20016(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusReuteriDsm20016 graph.
+    """Return new instance of the Lactobacillus reuteri DSM20016 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusReuteriDsm20016(
 
     Returns
     -----------------------
-    Instace of LactobacillusReuteriDsm20016 graph.
+    Instace of Lactobacillus reuteri DSM20016 graph.
 
 	References
 	---------------------

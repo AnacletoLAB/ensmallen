@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusNiger.
+This file offers the methods to automatically retrieve the graph Aspergillus niger.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusNiger(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusNiger graph.
+    """Return new instance of the Aspergillus niger graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AspergillusNiger(
 
     Returns
     -----------------------
-    Instace of AspergillusNiger graph.
+    Instace of Aspergillus niger graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasSyringaeCc1513.
+This file offers the methods to automatically retrieve the graph Pseudomonas syringae CC1513.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasSyringaeCc1513(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasSyringaeCc1513 graph.
+    """Return new instance of the Pseudomonas syringae CC1513 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PseudomonasSyringaeCc1513(
 
     Returns
     -----------------------
-    Instace of PseudomonasSyringaeCc1513 graph.
+    Instace of Pseudomonas syringae CC1513 graph.
 
 	References
 	---------------------

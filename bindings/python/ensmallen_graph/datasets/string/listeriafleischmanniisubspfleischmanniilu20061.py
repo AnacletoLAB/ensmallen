@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaFleischmanniiSubspFleischmanniiLu20061.
+This file offers the methods to automatically retrieve the graph Listeria fleischmannii subsp. fleischmannii LU2006-1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaFleischmanniiSubspFleischmanniiLu20061(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaFleischmanniiSubspFleischmanniiLu20061 graph.
+    """Return new instance of the Listeria fleischmannii subsp. fleischmannii LU2006-1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ListeriaFleischmanniiSubspFleischmanniiLu20061(
 
     Returns
     -----------------------
-    Instace of ListeriaFleischmanniiSubspFleischmanniiLu20061 graph.
+    Instace of Listeria fleischmannii subsp. fleischmannii LU2006-1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumChimaera.
+This file offers the methods to automatically retrieve the graph Mycobacterium chimaera.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumChimaera(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumChimaera graph.
+    """Return new instance of the Mycobacterium chimaera graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumChimaera(
 
     Returns
     -----------------------
-    Instace of MycobacteriumChimaera graph.
+    Instace of Mycobacterium chimaera graph.
 
 	References
 	---------------------

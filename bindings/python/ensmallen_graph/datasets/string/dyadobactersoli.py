@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DyadobacterSoli.
+This file offers the methods to automatically retrieve the graph Dyadobacter soli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DyadobacterSoli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DyadobacterSoli graph.
+    """Return new instance of the Dyadobacter soli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DyadobacterSoli(
 
     Returns
     -----------------------
-    Instace of DyadobacterSoli graph.
+    Instace of Dyadobacter soli graph.
 
 	References
 	---------------------

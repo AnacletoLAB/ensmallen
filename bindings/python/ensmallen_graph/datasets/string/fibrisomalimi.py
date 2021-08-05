@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FibrisomaLimi.
+This file offers the methods to automatically retrieve the graph Fibrisoma limi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FibrisomaLimi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FibrisomaLimi graph.
+    """Return new instance of the Fibrisoma limi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FibrisomaLimi(
 
     Returns
     -----------------------
-    Instace of FibrisomaLimi graph.
+    Instace of Fibrisoma limi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GlycineMax.
+This file offers the methods to automatically retrieve the graph Glycine max.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GlycineMax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GlycineMax graph.
+    """Return new instance of the Glycine max graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GlycineMax(
 
     Returns
     -----------------------
-    Instace of GlycineMax graph.
+    Instace of Glycine max graph.
 
 	References
 	---------------------

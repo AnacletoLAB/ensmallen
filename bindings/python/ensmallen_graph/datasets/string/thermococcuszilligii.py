@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusZilligii.
+This file offers the methods to automatically retrieve the graph Thermococcus zilligii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusZilligii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusZilligii graph.
+    """Return new instance of the Thermococcus zilligii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThermococcusZilligii(
 
     Returns
     -----------------------
-    Instace of ThermococcusZilligii graph.
+    Instace of Thermococcus zilligii graph.
 
 	References
 	---------------------

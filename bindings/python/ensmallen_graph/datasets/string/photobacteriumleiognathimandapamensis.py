@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhotobacteriumLeiognathiMandapamensis.
+This file offers the methods to automatically retrieve the graph Photobacterium leiognathi mandapamensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhotobacteriumLeiognathiMandapamensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhotobacteriumLeiognathiMandapamensis graph.
+    """Return new instance of the Photobacterium leiognathi mandapamensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhotobacteriumLeiognathiMandapamensis(
 
     Returns
     -----------------------
-    Instace of PhotobacteriumLeiognathiMandapamensis graph.
+    Instace of Photobacterium leiognathi mandapamensis graph.
 
 	References
 	---------------------

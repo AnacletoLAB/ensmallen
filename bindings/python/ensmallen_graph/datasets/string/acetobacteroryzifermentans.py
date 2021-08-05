@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcetobacterOryzifermentans.
+This file offers the methods to automatically retrieve the graph Acetobacter oryzifermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcetobacterOryzifermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcetobacterOryzifermentans graph.
+    """Return new instance of the Acetobacter oryzifermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcetobacterOryzifermentans(
 
     Returns
     -----------------------
-    Instace of AcetobacterOryzifermentans graph.
+    Instace of Acetobacter oryzifermentans graph.
 
 	References
 	---------------------

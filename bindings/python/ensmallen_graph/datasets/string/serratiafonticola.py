@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SerratiaFonticola.
+This file offers the methods to automatically retrieve the graph Serratia fonticola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SerratiaFonticola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SerratiaFonticola graph.
+    """Return new instance of the Serratia fonticola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SerratiaFonticola(
 
     Returns
     -----------------------
-    Instace of SerratiaFonticola graph.
+    Instace of Serratia fonticola graph.
 
 	References
 	---------------------

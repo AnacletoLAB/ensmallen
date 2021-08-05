@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoriobacteriaceaeBacteriumBv3ac1.
+This file offers the methods to automatically retrieve the graph Coriobacteriaceae bacterium BV3Ac1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoriobacteriaceaeBacteriumBv3ac1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoriobacteriaceaeBacteriumBv3ac1 graph.
+    """Return new instance of the Coriobacteriaceae bacterium BV3Ac1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoriobacteriaceaeBacteriumBv3ac1(
 
     Returns
     -----------------------
-    Instace of CoriobacteriaceaeBacteriumBv3ac1 graph.
+    Instace of Coriobacteriaceae bacterium BV3Ac1 graph.
 
 	References
 	---------------------

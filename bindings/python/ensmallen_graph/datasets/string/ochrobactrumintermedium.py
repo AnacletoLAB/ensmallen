@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OchrobactrumIntermedium.
+This file offers the methods to automatically retrieve the graph Ochrobactrum intermedium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OchrobactrumIntermedium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OchrobactrumIntermedium graph.
+    """Return new instance of the Ochrobactrum intermedium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OchrobactrumIntermedium(
 
     Returns
     -----------------------
-    Instace of OchrobactrumIntermedium graph.
+    Instace of Ochrobactrum intermedium graph.
 
 	References
 	---------------------

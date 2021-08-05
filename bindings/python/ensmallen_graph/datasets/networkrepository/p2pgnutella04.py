@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph P2pGnutella04.
+This file offers the methods to automatically retrieve the graph p2p-Gnutella04.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def P2pGnutella04(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the P2pGnutella04 graph.
+    """Return new instance of the p2p-Gnutella04 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def P2pGnutella04(
 
     Returns
     -----------------------
-    Instace of P2pGnutella04 graph.
+    Instace of p2p-Gnutella04 graph.
 
 	References
 	---------------------

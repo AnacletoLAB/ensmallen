@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodococcusPyridinivorans.
+This file offers the methods to automatically retrieve the graph Rhodococcus pyridinivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodococcusPyridinivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodococcusPyridinivorans graph.
+    """Return new instance of the Rhodococcus pyridinivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhodococcusPyridinivorans(
 
     Returns
     -----------------------
-    Instace of RhodococcusPyridinivorans graph.
+    Instace of Rhodococcus pyridinivorans graph.
 
 	References
 	---------------------

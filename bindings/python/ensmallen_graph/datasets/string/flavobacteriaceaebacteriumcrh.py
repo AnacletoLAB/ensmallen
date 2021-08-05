@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriaceaeBacteriumCrh.
+This file offers the methods to automatically retrieve the graph Flavobacteriaceae bacterium CRH.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriaceaeBacteriumCrh(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriaceaeBacteriumCrh graph.
+    """Return new instance of the Flavobacteriaceae bacterium CRH graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavobacteriaceaeBacteriumCrh(
 
     Returns
     -----------------------
-    Instace of FlavobacteriaceaeBacteriumCrh graph.
+    Instace of Flavobacteriaceae bacterium CRH graph.
 
 	References
 	---------------------

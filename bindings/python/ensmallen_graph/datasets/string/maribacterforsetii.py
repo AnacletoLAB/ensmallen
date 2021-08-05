@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaribacterForsetii.
+This file offers the methods to automatically retrieve the graph Maribacter forsetii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MaribacterForsetii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaribacterForsetii graph.
+    """Return new instance of the Maribacter forsetii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MaribacterForsetii(
 
     Returns
     -----------------------
-    Instace of MaribacterForsetii graph.
+    Instace of Maribacter forsetii graph.
 
 	References
 	---------------------

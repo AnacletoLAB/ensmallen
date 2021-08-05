@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylococcusArgenteus.
+This file offers the methods to automatically retrieve the graph Staphylococcus argenteus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylococcusArgenteus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylococcusArgenteus graph.
+    """Return new instance of the Staphylococcus argenteus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StaphylococcusArgenteus(
 
     Returns
     -----------------------
-    Instace of StaphylococcusArgenteus graph.
+    Instace of Staphylococcus argenteus graph.
 
 	References
 	---------------------

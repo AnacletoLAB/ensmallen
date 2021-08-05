@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KlenkiaMarina.
+This file offers the methods to automatically retrieve the graph Klenkia marina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KlenkiaMarina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KlenkiaMarina graph.
+    """Return new instance of the Klenkia marina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KlenkiaMarina(
 
     Returns
     -----------------------
-    Instace of KlenkiaMarina graph.
+    Instace of Klenkia marina graph.
 
 	References
 	---------------------

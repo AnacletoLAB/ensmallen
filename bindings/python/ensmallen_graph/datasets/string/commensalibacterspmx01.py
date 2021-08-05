@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CommensalibacterSpMx01.
+This file offers the methods to automatically retrieve the graph Commensalibacter sp. MX01.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CommensalibacterSpMx01(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CommensalibacterSpMx01 graph.
+    """Return new instance of the Commensalibacter sp. MX01 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CommensalibacterSpMx01(
 
     Returns
     -----------------------
-    Instace of CommensalibacterSpMx01 graph.
+    Instace of Commensalibacter sp. MX01 graph.
 
 	References
 	---------------------

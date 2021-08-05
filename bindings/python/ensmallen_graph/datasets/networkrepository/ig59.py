@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Ig59.
+This file offers the methods to automatically retrieve the graph IG5-9.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Ig59(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Ig59 graph.
+    """Return new instance of the IG5-9 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Ig59(
 
     Returns
     -----------------------
-    Instace of Ig59 graph.
+    Instace of IG5-9 graph.
 
 	References
 	---------------------

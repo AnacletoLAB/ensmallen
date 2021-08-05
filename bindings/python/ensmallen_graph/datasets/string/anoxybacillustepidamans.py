@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusTepidamans.
+This file offers the methods to automatically retrieve the graph Anoxybacillus tepidamans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusTepidamans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusTepidamans graph.
+    """Return new instance of the Anoxybacillus tepidamans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnoxybacillusTepidamans(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusTepidamans graph.
+    Instace of Anoxybacillus tepidamans graph.
 
 	References
 	---------------------

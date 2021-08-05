@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Aa3.
+This file offers the methods to automatically retrieve the graph aa3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def Aa3(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Aa3 graph.
+    """Return new instance of the aa3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def Aa3(
 
     Returns
     -----------------------
-    Instace of Aa3 graph.
+    Instace of aa3 graph.
 
 	References
 	---------------------

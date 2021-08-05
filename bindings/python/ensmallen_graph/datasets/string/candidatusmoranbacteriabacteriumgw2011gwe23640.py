@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusMoranbacteriaBacteriumGw2011Gwe23640.
+This file offers the methods to automatically retrieve the graph Candidatus Moranbacteria bacterium GW2011_GWE2_36_40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusMoranbacteriaBacteriumGw2011Gwe23640(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusMoranbacteriaBacteriumGw2011Gwe23640 graph.
+    """Return new instance of the Candidatus Moranbacteria bacterium GW2011_GWE2_36_40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusMoranbacteriaBacteriumGw2011Gwe23640(
 
     Returns
     -----------------------
-    Instace of CandidatusMoranbacteriaBacteriumGw2011Gwe23640 graph.
+    Instace of Candidatus Moranbacteria bacterium GW2011_GWE2_36_40 graph.
 
 	References
 	---------------------

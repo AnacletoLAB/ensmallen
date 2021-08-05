@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylacidiphilumKamchatkenseKam1.
+This file offers the methods to automatically retrieve the graph Methylacidiphilum kamchatkense Kam1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylacidiphilumKamchatkenseKam1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylacidiphilumKamchatkenseKam1 graph.
+    """Return new instance of the Methylacidiphilum kamchatkense Kam1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylacidiphilumKamchatkenseKam1(
 
     Returns
     -----------------------
-    Instace of MethylacidiphilumKamchatkenseKam1 graph.
+    Instace of Methylacidiphilum kamchatkense Kam1 graph.
 
 	References
 	---------------------

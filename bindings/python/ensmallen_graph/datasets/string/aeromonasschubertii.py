@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromonasSchubertii.
+This file offers the methods to automatically retrieve the graph Aeromonas schubertii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromonasSchubertii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromonasSchubertii graph.
+    """Return new instance of the Aeromonas schubertii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromonasSchubertii(
 
     Returns
     -----------------------
-    Instace of AeromonasSchubertii graph.
+    Instace of Aeromonas schubertii graph.
 
 	References
 	---------------------

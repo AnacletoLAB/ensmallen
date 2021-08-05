@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaPullorum.
+This file offers the methods to automatically retrieve the graph Mycoplasma pullorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaPullorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaPullorum graph.
+    """Return new instance of the Mycoplasma pullorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaPullorum(
 
     Returns
     -----------------------
-    Instace of MycoplasmaPullorum graph.
+    Instace of Mycoplasma pullorum graph.
 
 	References
 	---------------------

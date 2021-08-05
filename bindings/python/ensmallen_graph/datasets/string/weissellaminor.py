@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph WeissellaMinor.
+This file offers the methods to automatically retrieve the graph Weissella minor.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def WeissellaMinor(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the WeissellaMinor graph.
+    """Return new instance of the Weissella minor graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def WeissellaMinor(
 
     Returns
     -----------------------
-    Instace of WeissellaMinor graph.
+    Instace of Weissella minor graph.
 
 	References
 	---------------------

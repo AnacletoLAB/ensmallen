@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidalesBacteriumKht7.
+This file offers the methods to automatically retrieve the graph Bacteroidales bacterium KHT7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidalesBacteriumKht7(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidalesBacteriumKht7 graph.
+    """Return new instance of the Bacteroidales bacterium KHT7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidalesBacteriumKht7(
 
     Returns
     -----------------------
-    Instace of BacteroidalesBacteriumKht7 graph.
+    Instace of Bacteroidales bacterium KHT7 graph.
 
 	References
 	---------------------

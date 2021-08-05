@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasGingivalisAtcc33277.
+This file offers the methods to automatically retrieve the graph Porphyromonas gingivalis ATCC33277.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasGingivalisAtcc33277(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasGingivalisAtcc33277 graph.
+    """Return new instance of the Porphyromonas gingivalis ATCC33277 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasGingivalisAtcc33277(
 
     Returns
     -----------------------
-    Instace of PorphyromonasGingivalisAtcc33277 graph.
+    Instace of Porphyromonas gingivalis ATCC33277 graph.
 
 	References
 	---------------------

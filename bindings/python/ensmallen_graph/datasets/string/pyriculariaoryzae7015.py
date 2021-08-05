@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PyriculariaOryzae7015.
+This file offers the methods to automatically retrieve the graph Pyricularia oryzae 70-15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PyriculariaOryzae7015(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PyriculariaOryzae7015 graph.
+    """Return new instance of the Pyricularia oryzae 70-15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PyriculariaOryzae7015(
 
     Returns
     -----------------------
-    Instace of PyriculariaOryzae7015 graph.
+    Instace of Pyricularia oryzae 70-15 graph.
 
 	References
 	---------------------

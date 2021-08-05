@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CycloclasticusSpP1.
+This file offers the methods to automatically retrieve the graph Cycloclasticus sp. P1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CycloclasticusSpP1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CycloclasticusSpP1 graph.
+    """Return new instance of the Cycloclasticus sp. P1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CycloclasticusSpP1(
 
     Returns
     -----------------------
-    Instace of CycloclasticusSpP1 graph.
+    Instace of Cycloclasticus sp. P1 graph.
 
 	References
 	---------------------

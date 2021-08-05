@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporocytophagaMyxococcoides.
+This file offers the methods to automatically retrieve the graph Sporocytophaga myxococcoides.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporocytophagaMyxococcoides(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporocytophagaMyxococcoides graph.
+    """Return new instance of the Sporocytophaga myxococcoides graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SporocytophagaMyxococcoides(
 
     Returns
     -----------------------
-    Instace of SporocytophagaMyxococcoides graph.
+    Instace of Sporocytophaga myxococcoides graph.
 
 	References
 	---------------------

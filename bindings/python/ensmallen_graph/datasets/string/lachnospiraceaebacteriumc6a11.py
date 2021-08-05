@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumC6a11.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium C6A11.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumC6a11(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumC6a11 graph.
+    """Return new instance of the Lachnospiraceae bacterium C6A11 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumC6a11(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumC6a11 graph.
+    Instace of Lachnospiraceae bacterium C6A11 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaemophilusHaemoglobinophilus.
+This file offers the methods to automatically retrieve the graph Haemophilus haemoglobinophilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaemophilusHaemoglobinophilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaemophilusHaemoglobinophilus graph.
+    """Return new instance of the Haemophilus haemoglobinophilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HaemophilusHaemoglobinophilus(
 
     Returns
     -----------------------
-    Instace of HaemophilusHaemoglobinophilus graph.
+    Instace of Haemophilus haemoglobinophilus graph.
 
 	References
 	---------------------

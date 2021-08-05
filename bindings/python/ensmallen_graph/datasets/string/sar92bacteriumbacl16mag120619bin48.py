@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph Sar92BacteriumBacl16Mag120619Bin48.
+This file offers the methods to automatically retrieve the graph SAR92 bacterium BACL16 MAG-120619-bin48.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def Sar92BacteriumBacl16Mag120619Bin48(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the Sar92BacteriumBacl16Mag120619Bin48 graph.
+    """Return new instance of the SAR92 bacterium BACL16 MAG-120619-bin48 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def Sar92BacteriumBacl16Mag120619Bin48(
 
     Returns
     -----------------------
-    Instace of Sar92BacteriumBacl16Mag120619Bin48 graph.
+    Instace of SAR92 bacterium BACL16 MAG-120619-bin48 graph.
 
 	References
 	---------------------

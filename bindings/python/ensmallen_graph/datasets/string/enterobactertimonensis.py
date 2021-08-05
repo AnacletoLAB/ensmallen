@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterTimonensis.
+This file offers the methods to automatically retrieve the graph Enterobacter timonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterTimonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterTimonensis graph.
+    """Return new instance of the Enterobacter timonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterTimonensis(
 
     Returns
     -----------------------
-    Instace of EnterobacterTimonensis graph.
+    Instace of Enterobacter timonensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaPomeroyi.
+This file offers the methods to automatically retrieve the graph Ruegeria pomeroyi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaPomeroyi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaPomeroyi graph.
+    """Return new instance of the Ruegeria pomeroyi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuegeriaPomeroyi(
 
     Returns
     -----------------------
-    Instace of RuegeriaPomeroyi graph.
+    Instace of Ruegeria pomeroyi graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgoriellaXinjiangensis.
+This file offers the methods to automatically retrieve the graph Algoriella xinjiangensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgoriellaXinjiangensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgoriellaXinjiangensis graph.
+    """Return new instance of the Algoriella xinjiangensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlgoriellaXinjiangensis(
 
     Returns
     -----------------------
-    Instace of AlgoriellaXinjiangensis graph.
+    Instace of Algoriella xinjiangensis graph.
 
 	References
 	---------------------

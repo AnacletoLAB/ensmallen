@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SegetibacterKoreensis.
+This file offers the methods to automatically retrieve the graph Segetibacter koreensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SegetibacterKoreensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SegetibacterKoreensis graph.
+    """Return new instance of the Segetibacter koreensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SegetibacterKoreensis(
 
     Returns
     -----------------------
-    Instace of SegetibacterKoreensis graph.
+    Instace of Segetibacter koreensis graph.
 
 	References
 	---------------------

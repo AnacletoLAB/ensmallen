@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylomicrobiumBuryatense5g.
+This file offers the methods to automatically retrieve the graph Methylomicrobium buryatense 5G.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylomicrobiumBuryatense5g(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylomicrobiumBuryatense5g graph.
+    """Return new instance of the Methylomicrobium buryatense 5G graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylomicrobiumBuryatense5g(
 
     Returns
     -----------------------
-    Instace of MethylomicrobiumBuryatense5g graph.
+    Instace of Methylomicrobium buryatense 5G graph.
 
 	References
 	---------------------

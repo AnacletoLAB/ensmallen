@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidaMaltosa.
+This file offers the methods to automatically retrieve the graph Candida maltosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidaMaltosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidaMaltosa graph.
+    """Return new instance of the Candida maltosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CandidaMaltosa(
 
     Returns
     -----------------------
-    Instace of CandidaMaltosa graph.
+    Instace of Candida maltosa graph.
 
 	References
 	---------------------

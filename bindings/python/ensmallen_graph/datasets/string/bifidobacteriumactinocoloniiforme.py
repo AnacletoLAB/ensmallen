@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumActinocoloniiforme.
+This file offers the methods to automatically retrieve the graph Bifidobacterium actinocoloniiforme.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumActinocoloniiforme(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumActinocoloniiforme graph.
+    """Return new instance of the Bifidobacterium actinocoloniiforme graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumActinocoloniiforme(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumActinocoloniiforme graph.
+    Instace of Bifidobacterium actinocoloniiforme graph.
 
 	References
 	---------------------

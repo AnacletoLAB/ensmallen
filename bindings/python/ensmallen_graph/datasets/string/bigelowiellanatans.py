@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BigelowiellaNatans.
+This file offers the methods to automatically retrieve the graph Bigelowiella natans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BigelowiellaNatans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BigelowiellaNatans graph.
+    """Return new instance of the Bigelowiella natans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BigelowiellaNatans(
 
     Returns
     -----------------------
-    Instace of BigelowiellaNatans graph.
+    Instace of Bigelowiella natans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusHomomorphusCbs101889.
+This file offers the methods to automatically retrieve the graph Aspergillus homomorphus CBS 101889.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusHomomorphusCbs101889(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusHomomorphusCbs101889 graph.
+    """Return new instance of the Aspergillus homomorphus CBS 101889 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusHomomorphusCbs101889(
 
     Returns
     -----------------------
-    Instace of AspergillusHomomorphusCbs101889 graph.
+    Instace of Aspergillus homomorphus CBS 101889 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusMethanolicusMga3.
+This file offers the methods to automatically retrieve the graph Bacillus methanolicus MGA3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusMethanolicusMga3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusMethanolicusMga3 graph.
+    """Return new instance of the Bacillus methanolicus MGA3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusMethanolicusMga3(
 
     Returns
     -----------------------
-    Instace of BacillusMethanolicusMga3 graph.
+    Instace of Bacillus methanolicus MGA3 graph.
 
 	References
 	---------------------

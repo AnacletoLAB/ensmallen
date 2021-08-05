@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CurvibacterSpGwa264110.
+This file offers the methods to automatically retrieve the graph Curvibacter sp. GWA2_64_110.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CurvibacterSpGwa264110(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CurvibacterSpGwa264110 graph.
+    """Return new instance of the Curvibacter sp. GWA2_64_110 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CurvibacterSpGwa264110(
 
     Returns
     -----------------------
-    Instace of CurvibacterSpGwa264110 graph.
+    Instace of Curvibacter sp. GWA2_64_110 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ContiguousUsa.
+This file offers the methods to automatically retrieve the graph contiguous-usa.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def ContiguousUsa(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ContiguousUsa graph.
+    """Return new instance of the contiguous-usa graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def ContiguousUsa(
 
     Returns
     -----------------------
-    Instace of ContiguousUsa graph.
+    Instace of contiguous-usa graph.
 
 	References
 	---------------------

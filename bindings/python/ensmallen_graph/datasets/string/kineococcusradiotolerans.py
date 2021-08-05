@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KineococcusRadiotolerans.
+This file offers the methods to automatically retrieve the graph Kineococcus radiotolerans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KineococcusRadiotolerans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KineococcusRadiotolerans graph.
+    """Return new instance of the Kineococcus radiotolerans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KineococcusRadiotolerans(
 
     Returns
     -----------------------
-    Instace of KineococcusRadiotolerans graph.
+    Instace of Kineococcus radiotolerans graph.
 
 	References
 	---------------------

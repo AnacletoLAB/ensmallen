@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarinimicrobiaBacteriumTcs55.
+This file offers the methods to automatically retrieve the graph Marinimicrobia bacterium TCS55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarinimicrobiaBacteriumTcs55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarinimicrobiaBacteriumTcs55 graph.
+    """Return new instance of the Marinimicrobia bacterium TCS55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarinimicrobiaBacteriumTcs55(
 
     Returns
     -----------------------
-    Instace of MarinimicrobiaBacteriumTcs55 graph.
+    Instace of Marinimicrobia bacterium TCS55 graph.
 
 	References
 	---------------------

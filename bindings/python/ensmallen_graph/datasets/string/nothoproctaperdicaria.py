@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NothoproctaPerdicaria.
+This file offers the methods to automatically retrieve the graph Nothoprocta perdicaria.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NothoproctaPerdicaria(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NothoproctaPerdicaria graph.
+    """Return new instance of the Nothoprocta perdicaria graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NothoproctaPerdicaria(
 
     Returns
     -----------------------
-    Instace of NothoproctaPerdicaria graph.
+    Instace of Nothoprocta perdicaria graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StenotrophomonasPanacihumi.
+This file offers the methods to automatically retrieve the graph Stenotrophomonas panacihumi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StenotrophomonasPanacihumi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StenotrophomonasPanacihumi graph.
+    """Return new instance of the Stenotrophomonas panacihumi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StenotrophomonasPanacihumi(
 
     Returns
     -----------------------
-    Instace of StenotrophomonasPanacihumi graph.
+    Instace of Stenotrophomonas panacihumi graph.
 
 	References
 	---------------------

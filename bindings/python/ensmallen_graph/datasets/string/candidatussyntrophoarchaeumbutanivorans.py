@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusSyntrophoarchaeumButanivorans.
+This file offers the methods to automatically retrieve the graph Candidatus Syntrophoarchaeum butanivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusSyntrophoarchaeumButanivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusSyntrophoarchaeumButanivorans graph.
+    """Return new instance of the Candidatus Syntrophoarchaeum butanivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusSyntrophoarchaeumButanivorans(
 
     Returns
     -----------------------
-    Instace of CandidatusSyntrophoarchaeumButanivorans graph.
+    Instace of Candidatus Syntrophoarchaeum butanivorans graph.
 
 	References
 	---------------------

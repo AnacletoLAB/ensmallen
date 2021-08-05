@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterRectus.
+This file offers the methods to automatically retrieve the graph Campylobacter rectus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterRectus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterRectus graph.
+    """Return new instance of the Campylobacter rectus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CampylobacterRectus(
 
     Returns
     -----------------------
-    Instace of CampylobacterRectus graph.
+    Instace of Campylobacter rectus graph.
 
 	References
 	---------------------

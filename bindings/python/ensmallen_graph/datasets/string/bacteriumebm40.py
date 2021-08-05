@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteriumEbm40.
+This file offers the methods to automatically retrieve the graph bacterium EBM-40.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteriumEbm40(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteriumEbm40 graph.
+    """Return new instance of the bacterium EBM-40 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteriumEbm40(
 
     Returns
     -----------------------
-    Instace of BacteriumEbm40 graph.
+    Instace of bacterium EBM-40 graph.
 
 	References
 	---------------------

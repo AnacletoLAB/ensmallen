@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrinickiaCaryophylli.
+This file offers the methods to automatically retrieve the graph Trinickia caryophylli.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrinickiaCaryophylli(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrinickiaCaryophylli graph.
+    """Return new instance of the Trinickia caryophylli graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TrinickiaCaryophylli(
 
     Returns
     -----------------------
-    Instace of TrinickiaCaryophylli graph.
+    Instace of Trinickia caryophylli graph.
 
 	References
 	---------------------

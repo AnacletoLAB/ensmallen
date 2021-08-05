@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MacrococcusCaseolyticus.
+This file offers the methods to automatically retrieve the graph Macrococcus caseolyticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MacrococcusCaseolyticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MacrococcusCaseolyticus graph.
+    """Return new instance of the Macrococcus caseolyticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MacrococcusCaseolyticus(
 
     Returns
     -----------------------
-    Instace of MacrococcusCaseolyticus graph.
+    Instace of Macrococcus caseolyticus graph.
 
 	References
 	---------------------

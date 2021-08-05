@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MassiliaSp9096.
+This file offers the methods to automatically retrieve the graph Massilia sp. 9096.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MassiliaSp9096(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MassiliaSp9096 graph.
+    """Return new instance of the Massilia sp. 9096 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MassiliaSp9096(
 
     Returns
     -----------------------
-    Instace of MassiliaSp9096 graph.
+    Instace of Massilia sp. 9096 graph.
 
 	References
 	---------------------

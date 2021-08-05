@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhinopithecusRoxellana.
+This file offers the methods to automatically retrieve the graph Rhinopithecus roxellana.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhinopithecusRoxellana(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhinopithecusRoxellana graph.
+    """Return new instance of the Rhinopithecus roxellana graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RhinopithecusRoxellana(
 
     Returns
     -----------------------
-    Instace of RhinopithecusRoxellana graph.
+    Instace of Rhinopithecus roxellana graph.
 
 	References
 	---------------------

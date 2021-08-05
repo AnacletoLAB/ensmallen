@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SalinivibrioCosticolaSubspAlcaliphilus.
+This file offers the methods to automatically retrieve the graph Salinivibrio costicola subsp. alcaliphilus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SalinivibrioCosticolaSubspAlcaliphilus graph.
+    """Return new instance of the Salinivibrio costicola subsp. alcaliphilus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SalinivibrioCosticolaSubspAlcaliphilus(
 
     Returns
     -----------------------
-    Instace of SalinivibrioCosticolaSubspAlcaliphilus graph.
+    Instace of Salinivibrio costicola subsp. alcaliphilus graph.
 
 	References
 	---------------------

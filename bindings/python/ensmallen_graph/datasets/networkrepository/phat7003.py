@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PHat7003.
+This file offers the methods to automatically retrieve the graph p-hat700-3.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -46,7 +46,7 @@ def PHat7003(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PHat7003 graph.
+    """Return new instance of the p-hat700-3 graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -73,7 +73,7 @@ def PHat7003(
 
     Returns
     -----------------------
-    Instace of PHat7003 graph.
+    Instace of p-hat700-3 graph.
 
 	References
 	---------------------

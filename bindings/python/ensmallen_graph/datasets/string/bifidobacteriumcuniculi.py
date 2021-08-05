@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumCuniculi.
+This file offers the methods to automatically retrieve the graph Bifidobacterium cuniculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumCuniculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumCuniculi graph.
+    """Return new instance of the Bifidobacterium cuniculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BifidobacteriumCuniculi(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumCuniculi graph.
+    Instace of Bifidobacterium cuniculi graph.
 
 	References
 	---------------------

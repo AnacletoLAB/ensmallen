@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSpHsism1.
+This file offers the methods to automatically retrieve the graph Streptococcus sp. HSISM1.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSpHsism1(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSpHsism1 graph.
+    """Return new instance of the Streptococcus sp. HSISM1 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSpHsism1(
 
     Returns
     -----------------------
-    Instace of StreptococcusSpHsism1 graph.
+    Instace of Streptococcus sp. HSISM1 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZetaproteobacteriaBacteriumCg10255237.
+This file offers the methods to automatically retrieve the graph Zetaproteobacteria bacterium CG1_02_55_237.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZetaproteobacteriaBacteriumCg10255237(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZetaproteobacteriaBacteriumCg10255237 graph.
+    """Return new instance of the Zetaproteobacteria bacterium CG1_02_55_237 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZetaproteobacteriaBacteriumCg10255237(
 
     Returns
     -----------------------
-    Instace of ZetaproteobacteriaBacteriumCg10255237 graph.
+    Instace of Zetaproteobacteria bacterium CG1_02_55_237 graph.
 
 	References
 	---------------------

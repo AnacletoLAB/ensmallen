@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavobacteriumHydatis.
+This file offers the methods to automatically retrieve the graph Flavobacterium hydatis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavobacteriumHydatis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavobacteriumHydatis graph.
+    """Return new instance of the Flavobacterium hydatis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def FlavobacteriumHydatis(
 
     Returns
     -----------------------
-    Instace of FlavobacteriumHydatis graph.
+    Instace of Flavobacterium hydatis graph.
 
 	References
 	---------------------

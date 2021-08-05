@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StigmatellaAurantiaca.
+This file offers the methods to automatically retrieve the graph Stigmatella aurantiaca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StigmatellaAurantiaca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StigmatellaAurantiaca graph.
+    """Return new instance of the Stigmatella aurantiaca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StigmatellaAurantiaca(
 
     Returns
     -----------------------
-    Instace of StigmatellaAurantiaca graph.
+    Instace of Stigmatella aurantiaca graph.
 
 	References
 	---------------------

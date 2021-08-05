@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OryctolagusCuniculus.
+This file offers the methods to automatically retrieve the graph Oryctolagus cuniculus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OryctolagusCuniculus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OryctolagusCuniculus graph.
+    """Return new instance of the Oryctolagus cuniculus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OryctolagusCuniculus(
 
     Returns
     -----------------------
-    Instace of OryctolagusCuniculus graph.
+    Instace of Oryctolagus cuniculus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndozoicomonasMontiporae.
+This file offers the methods to automatically retrieve the graph Endozoicomonas montiporae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndozoicomonasMontiporae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndozoicomonasMontiporae graph.
+    """Return new instance of the Endozoicomonas montiporae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EndozoicomonasMontiporae(
 
     Returns
     -----------------------
-    Instace of EndozoicomonasMontiporae graph.
+    Instace of Endozoicomonas montiporae graph.
 
 	References
 	---------------------

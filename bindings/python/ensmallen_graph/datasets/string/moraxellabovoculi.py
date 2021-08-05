@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MoraxellaBovoculi.
+This file offers the methods to automatically retrieve the graph Moraxella bovoculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MoraxellaBovoculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MoraxellaBovoculi graph.
+    """Return new instance of the Moraxella bovoculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MoraxellaBovoculi(
 
     Returns
     -----------------------
-    Instace of MoraxellaBovoculi graph.
+    Instace of Moraxella bovoculi graph.
 
 	References
 	---------------------

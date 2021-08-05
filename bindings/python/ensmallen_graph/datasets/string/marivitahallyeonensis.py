@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MarivitaHallyeonensis.
+This file offers the methods to automatically retrieve the graph Marivita hallyeonensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MarivitaHallyeonensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MarivitaHallyeonensis graph.
+    """Return new instance of the Marivita hallyeonensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MarivitaHallyeonensis(
 
     Returns
     -----------------------
-    Instace of MarivitaHallyeonensis graph.
+    Instace of Marivita hallyeonensis graph.
 
 	References
 	---------------------

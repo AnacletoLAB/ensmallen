@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HaliaeetusLeucocephalus.
+This file offers the methods to automatically retrieve the graph Haliaeetus leucocephalus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HaliaeetusLeucocephalus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HaliaeetusLeucocephalus graph.
+    """Return new instance of the Haliaeetus leucocephalus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def HaliaeetusLeucocephalus(
 
     Returns
     -----------------------
-    Instace of HaliaeetusLeucocephalus graph.
+    Instace of Haliaeetus leucocephalus graph.
 
 	References
 	---------------------

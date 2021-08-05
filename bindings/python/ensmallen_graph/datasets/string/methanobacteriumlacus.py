@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobacteriumLacus.
+This file offers the methods to automatically retrieve the graph Methanobacterium lacus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobacteriumLacus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobacteriumLacus graph.
+    """Return new instance of the Methanobacterium lacus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobacteriumLacus(
 
     Returns
     -----------------------
-    Instace of MethanobacteriumLacus graph.
+    Instace of Methanobacterium lacus graph.
 
 	References
 	---------------------

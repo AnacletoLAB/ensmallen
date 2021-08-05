@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusNanopusillusAcidilobi.
+This file offers the methods to automatically retrieve the graph Candidatus Nanopusillus acidilobi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusNanopusillusAcidilobi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusNanopusillusAcidilobi graph.
+    """Return new instance of the Candidatus Nanopusillus acidilobi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusNanopusillusAcidilobi(
 
     Returns
     -----------------------
-    Instace of CandidatusNanopusillusAcidilobi graph.
+    Instace of Candidatus Nanopusillus acidilobi graph.
 
 	References
 	---------------------

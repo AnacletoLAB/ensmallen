@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusTigurinus1366.
+This file offers the methods to automatically retrieve the graph Streptococcus tigurinus 1366.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusTigurinus1366(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusTigurinus1366 graph.
+    """Return new instance of the Streptococcus tigurinus 1366 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusTigurinus1366(
 
     Returns
     -----------------------
-    Instace of StreptococcusTigurinus1366 graph.
+    Instace of Streptococcus tigurinus 1366 graph.
 
 	References
 	---------------------

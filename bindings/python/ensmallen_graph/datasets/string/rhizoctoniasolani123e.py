@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizoctoniaSolani123e.
+This file offers the methods to automatically retrieve the graph Rhizoctonia solani 123E.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizoctoniaSolani123e(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizoctoniaSolani123e graph.
+    """Return new instance of the Rhizoctonia solani 123E graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizoctoniaSolani123e(
 
     Returns
     -----------------------
-    Instace of RhizoctoniaSolani123e graph.
+    Instace of Rhizoctonia solani 123E graph.
 
 	References
 	---------------------

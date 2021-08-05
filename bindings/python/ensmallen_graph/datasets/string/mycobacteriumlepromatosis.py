@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumLepromatosis.
+This file offers the methods to automatically retrieve the graph Mycobacterium lepromatosis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumLepromatosis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumLepromatosis graph.
+    """Return new instance of the Mycobacterium lepromatosis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumLepromatosis(
 
     Returns
     -----------------------
-    Instace of MycobacteriumLepromatosis graph.
+    Instace of Mycobacterium lepromatosis graph.
 
 	References
 	---------------------

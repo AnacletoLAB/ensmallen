@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph IgnatzschineriaLarvae.
+This file offers the methods to automatically retrieve the graph Ignatzschineria larvae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def IgnatzschineriaLarvae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the IgnatzschineriaLarvae graph.
+    """Return new instance of the Ignatzschineria larvae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def IgnatzschineriaLarvae(
 
     Returns
     -----------------------
-    Instace of IgnatzschineriaLarvae graph.
+    Instace of Ignatzschineria larvae graph.
 
 	References
 	---------------------

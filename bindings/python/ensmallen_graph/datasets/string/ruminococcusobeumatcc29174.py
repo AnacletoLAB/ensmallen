@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusObeumAtcc29174.
+This file offers the methods to automatically retrieve the graph Ruminococcus obeum ATCC29174.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusObeumAtcc29174(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusObeumAtcc29174 graph.
+    """Return new instance of the Ruminococcus obeum ATCC29174 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusObeumAtcc29174(
 
     Returns
     -----------------------
-    Instace of RuminococcusObeumAtcc29174 graph.
+    Instace of Ruminococcus obeum ATCC29174 graph.
 
 	References
 	---------------------

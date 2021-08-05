@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSobrinusDsm20742Atcc33478.
+This file offers the methods to automatically retrieve the graph Streptococcus sobrinus DSM 20742 ATCC 33478.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSobrinusDsm20742Atcc33478(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSobrinusDsm20742Atcc33478 graph.
+    """Return new instance of the Streptococcus sobrinus DSM 20742 ATCC 33478 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptococcusSobrinusDsm20742Atcc33478(
 
     Returns
     -----------------------
-    Instace of StreptococcusSobrinusDsm20742Atcc33478 graph.
+    Instace of Streptococcus sobrinus DSM 20742 ATCC 33478 graph.
 
 	References
 	---------------------

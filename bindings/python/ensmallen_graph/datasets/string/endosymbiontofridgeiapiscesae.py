@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EndosymbiontOfRidgeiaPiscesae.
+This file offers the methods to automatically retrieve the graph endosymbiont of Ridgeia piscesae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EndosymbiontOfRidgeiaPiscesae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EndosymbiontOfRidgeiaPiscesae graph.
+    """Return new instance of the endosymbiont of Ridgeia piscesae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EndosymbiontOfRidgeiaPiscesae(
 
     Returns
     -----------------------
-    Instace of EndosymbiontOfRidgeiaPiscesae graph.
+    Instace of endosymbiont of Ridgeia piscesae graph.
 
 	References
 	---------------------

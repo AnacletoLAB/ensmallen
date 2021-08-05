@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhenylobacteriumImmobileAtcc35973.
+This file offers the methods to automatically retrieve the graph Phenylobacterium immobile (ATCC 35973).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhenylobacteriumImmobileAtcc35973(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhenylobacteriumImmobileAtcc35973 graph.
+    """Return new instance of the Phenylobacterium immobile (ATCC 35973) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PhenylobacteriumImmobileAtcc35973(
 
     Returns
     -----------------------
-    Instace of PhenylobacteriumImmobileAtcc35973 graph.
+    Instace of Phenylobacterium immobile (ATCC 35973) graph.
 
 	References
 	---------------------

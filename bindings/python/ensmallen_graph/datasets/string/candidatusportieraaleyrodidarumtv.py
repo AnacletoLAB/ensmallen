@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusPortieraAleyrodidarumTv.
+This file offers the methods to automatically retrieve the graph Candidatus Portiera aleyrodidarum TV.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusPortieraAleyrodidarumTv(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusPortieraAleyrodidarumTv graph.
+    """Return new instance of the Candidatus Portiera aleyrodidarum TV graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusPortieraAleyrodidarumTv(
 
     Returns
     -----------------------
-    Instace of CandidatusPortieraAleyrodidarumTv graph.
+    Instace of Candidatus Portiera aleyrodidarum TV graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidithiobacillusCaldus.
+This file offers the methods to automatically retrieve the graph Acidithiobacillus caldus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidithiobacillusCaldus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidithiobacillusCaldus graph.
+    """Return new instance of the Acidithiobacillus caldus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AcidithiobacillusCaldus(
 
     Returns
     -----------------------
-    Instace of AcidithiobacillusCaldus graph.
+    Instace of Acidithiobacillus caldus graph.
 
 	References
 	---------------------

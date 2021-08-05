@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BlastomycesDermatitidisEr3.
+This file offers the methods to automatically retrieve the graph Blastomyces dermatitidis ER-3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BlastomycesDermatitidisEr3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BlastomycesDermatitidisEr3 graph.
+    """Return new instance of the Blastomyces dermatitidis ER-3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BlastomycesDermatitidisEr3(
 
     Returns
     -----------------------
-    Instace of BlastomycesDermatitidisEr3 graph.
+    Instace of Blastomyces dermatitidis ER-3 graph.
 
 	References
 	---------------------

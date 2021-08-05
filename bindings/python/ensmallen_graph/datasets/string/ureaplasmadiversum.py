@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph UreaplasmaDiversum.
+This file offers the methods to automatically retrieve the graph Ureaplasma diversum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def UreaplasmaDiversum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the UreaplasmaDiversum graph.
+    """Return new instance of the Ureaplasma diversum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def UreaplasmaDiversum(
 
     Returns
     -----------------------
-    Instace of UreaplasmaDiversum graph.
+    Instace of Ureaplasma diversum graph.
 
 	References
 	---------------------

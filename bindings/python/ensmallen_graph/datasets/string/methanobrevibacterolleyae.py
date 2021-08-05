@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterOlleyae.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter olleyae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterOlleyae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterOlleyae graph.
+    """Return new instance of the Methanobrevibacter olleyae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanobrevibacterOlleyae(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterOlleyae graph.
+    Instace of Methanobrevibacter olleyae graph.
 
 	References
 	---------------------

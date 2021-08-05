@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AestuariibacterSalexigens.
+This file offers the methods to automatically retrieve the graph Aestuariibacter salexigens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AestuariibacterSalexigens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AestuariibacterSalexigens graph.
+    """Return new instance of the Aestuariibacter salexigens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AestuariibacterSalexigens(
 
     Returns
     -----------------------
-    Instace of AestuariibacterSalexigens graph.
+    Instace of Aestuariibacter salexigens graph.
 
 	References
 	---------------------

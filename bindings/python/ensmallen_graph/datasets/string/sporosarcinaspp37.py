@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SporosarcinaSpP37.
+This file offers the methods to automatically retrieve the graph Sporosarcina sp. P37.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SporosarcinaSpP37(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SporosarcinaSpP37 graph.
+    """Return new instance of the Sporosarcina sp. P37 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SporosarcinaSpP37(
 
     Returns
     -----------------------
-    Instace of SporosarcinaSpP37 graph.
+    Instace of Sporosarcina sp. P37 graph.
 
 	References
 	---------------------

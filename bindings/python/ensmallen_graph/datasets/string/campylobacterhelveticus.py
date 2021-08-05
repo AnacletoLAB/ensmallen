@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CampylobacterHelveticus.
+This file offers the methods to automatically retrieve the graph Campylobacter helveticus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CampylobacterHelveticus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CampylobacterHelveticus graph.
+    """Return new instance of the Campylobacter helveticus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CampylobacterHelveticus(
 
     Returns
     -----------------------
-    Instace of CampylobacterHelveticus graph.
+    Instace of Campylobacter helveticus graph.
 
 	References
 	---------------------

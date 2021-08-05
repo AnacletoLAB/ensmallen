@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FlavihumibacterSpZg627.
+This file offers the methods to automatically retrieve the graph Flavihumibacter sp. ZG627.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FlavihumibacterSpZg627(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FlavihumibacterSpZg627 graph.
+    """Return new instance of the Flavihumibacter sp. ZG627 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FlavihumibacterSpZg627(
 
     Returns
     -----------------------
-    Instace of FlavihumibacterSpZg627 graph.
+    Instace of Flavihumibacter sp. ZG627 graph.
 
 	References
 	---------------------

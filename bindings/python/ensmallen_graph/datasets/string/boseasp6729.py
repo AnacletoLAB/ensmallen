@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BoseaSp6729.
+This file offers the methods to automatically retrieve the graph Bosea sp. 67-29.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BoseaSp6729(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BoseaSp6729 graph.
+    """Return new instance of the Bosea sp. 67-29 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BoseaSp6729(
 
     Returns
     -----------------------
-    Instace of BoseaSp6729 graph.
+    Instace of Bosea sp. 67-29 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KingellaNegevensis.
+This file offers the methods to automatically retrieve the graph Kingella negevensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KingellaNegevensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KingellaNegevensis graph.
+    """Return new instance of the Kingella negevensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KingellaNegevensis(
 
     Returns
     -----------------------
-    Instace of KingellaNegevensis graph.
+    Instace of Kingella negevensis graph.
 
 	References
 	---------------------

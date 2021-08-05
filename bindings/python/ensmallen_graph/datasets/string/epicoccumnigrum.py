@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpicoccumNigrum.
+This file offers the methods to automatically retrieve the graph Epicoccum nigrum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpicoccumNigrum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpicoccumNigrum graph.
+    """Return new instance of the Epicoccum nigrum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpicoccumNigrum(
 
     Returns
     -----------------------
-    Instace of EpicoccumNigrum graph.
+    Instace of Epicoccum nigrum graph.
 
 	References
 	---------------------

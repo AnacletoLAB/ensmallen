@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPasteurii.
+This file offers the methods to automatically retrieve the graph Lactobacillus pasteurii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPasteurii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPasteurii graph.
+    """Return new instance of the Lactobacillus pasteurii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusPasteurii(
 
     Returns
     -----------------------
-    Instace of LactobacillusPasteurii graph.
+    Instace of Lactobacillus pasteurii graph.
 
 	References
 	---------------------

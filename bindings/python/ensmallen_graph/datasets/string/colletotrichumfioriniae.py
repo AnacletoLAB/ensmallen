@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumFioriniae.
+This file offers the methods to automatically retrieve the graph Colletotrichum fioriniae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumFioriniae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumFioriniae graph.
+    """Return new instance of the Colletotrichum fioriniae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ColletotrichumFioriniae(
 
     Returns
     -----------------------
-    Instace of ColletotrichumFioriniae graph.
+    Instace of Colletotrichum fioriniae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GracilibacterSpBrhC7a.
+This file offers the methods to automatically retrieve the graph Gracilibacter sp. BRH_c7a.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GracilibacterSpBrhC7a(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GracilibacterSpBrhC7a graph.
+    """Return new instance of the Gracilibacter sp. BRH_c7a graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GracilibacterSpBrhC7a(
 
     Returns
     -----------------------
-    Instace of GracilibacterSpBrhC7a graph.
+    Instace of Gracilibacter sp. BRH_c7a graph.
 
 	References
 	---------------------

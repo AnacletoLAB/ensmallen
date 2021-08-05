@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TrichoplaxAdhaerens.
+This file offers the methods to automatically retrieve the graph Trichoplax adhaerens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TrichoplaxAdhaerens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TrichoplaxAdhaerens graph.
+    """Return new instance of the Trichoplax adhaerens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def TrichoplaxAdhaerens(
 
     Returns
     -----------------------
-    Instace of TrichoplaxAdhaerens graph.
+    Instace of Trichoplax adhaerens graph.
 
 	References
 	---------------------

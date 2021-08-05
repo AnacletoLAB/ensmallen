@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcidobacteriaBacteriumGa0077534.
+This file offers the methods to automatically retrieve the graph Acidobacteria bacterium Ga0077534.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcidobacteriaBacteriumGa0077534(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcidobacteriaBacteriumGa0077534 graph.
+    """Return new instance of the Acidobacteria bacterium Ga0077534 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcidobacteriaBacteriumGa0077534(
 
     Returns
     -----------------------
-    Instace of AcidobacteriaBacteriumGa0077534 graph.
+    Instace of Acidobacteria bacterium Ga0077534 graph.
 
 	References
 	---------------------

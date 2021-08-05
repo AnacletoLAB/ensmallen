@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpBal3.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. BAL3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpBal3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpBal3 graph.
+    """Return new instance of the Brevundimonas sp. BAL3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BrevundimonasSpBal3(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpBal3 graph.
+    Instace of Brevundimonas sp. BAL3 graph.
 
 	References
 	---------------------

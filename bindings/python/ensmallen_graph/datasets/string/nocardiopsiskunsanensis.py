@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NocardiopsisKunsanensis.
+This file offers the methods to automatically retrieve the graph Nocardiopsis kunsanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NocardiopsisKunsanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NocardiopsisKunsanensis graph.
+    """Return new instance of the Nocardiopsis kunsanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NocardiopsisKunsanensis(
 
     Returns
     -----------------------
-    Instace of NocardiopsisKunsanensis graph.
+    Instace of Nocardiopsis kunsanensis graph.
 
 	References
 	---------------------

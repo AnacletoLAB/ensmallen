@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BifidobacteriumSpAgr2158.
+This file offers the methods to automatically retrieve the graph Bifidobacterium sp. AGR2158.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BifidobacteriumSpAgr2158(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BifidobacteriumSpAgr2158 graph.
+    """Return new instance of the Bifidobacterium sp. AGR2158 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BifidobacteriumSpAgr2158(
 
     Returns
     -----------------------
-    Instace of BifidobacteriumSpAgr2158 graph.
+    Instace of Bifidobacterium sp. AGR2158 graph.
 
 	References
 	---------------------

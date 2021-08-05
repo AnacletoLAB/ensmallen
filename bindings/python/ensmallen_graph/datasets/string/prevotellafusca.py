@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PrevotellaFusca.
+This file offers the methods to automatically retrieve the graph Prevotella fusca.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PrevotellaFusca(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PrevotellaFusca graph.
+    """Return new instance of the Prevotella fusca graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PrevotellaFusca(
 
     Returns
     -----------------------
-    Instace of PrevotellaFusca graph.
+    Instace of Prevotella fusca graph.
 
 	References
 	---------------------

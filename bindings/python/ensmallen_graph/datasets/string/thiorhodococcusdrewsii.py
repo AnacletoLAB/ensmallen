@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiorhodococcusDrewsii.
+This file offers the methods to automatically retrieve the graph Thiorhodococcus drewsii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiorhodococcusDrewsii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiorhodococcusDrewsii graph.
+    """Return new instance of the Thiorhodococcus drewsii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiorhodococcusDrewsii(
 
     Returns
     -----------------------
-    Instace of ThiorhodococcusDrewsii graph.
+    Instace of Thiorhodococcus drewsii graph.
 
 	References
 	---------------------

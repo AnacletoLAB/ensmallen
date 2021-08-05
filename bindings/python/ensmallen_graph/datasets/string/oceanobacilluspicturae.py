@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusPicturae.
+This file offers the methods to automatically retrieve the graph Oceanobacillus picturae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusPicturae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusPicturae graph.
+    """Return new instance of the Oceanobacillus picturae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def OceanobacillusPicturae(
 
     Returns
     -----------------------
-    Instace of OceanobacillusPicturae graph.
+    Instace of Oceanobacillus picturae graph.
 
 	References
 	---------------------

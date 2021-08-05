@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudolabrysSpRoot1462.
+This file offers the methods to automatically retrieve the graph Pseudolabrys sp. Root1462.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudolabrysSpRoot1462(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudolabrysSpRoot1462 graph.
+    """Return new instance of the Pseudolabrys sp. Root1462 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudolabrysSpRoot1462(
 
     Returns
     -----------------------
-    Instace of PseudolabrysSpRoot1462 graph.
+    Instace of Pseudolabrys sp. Root1462 graph.
 
 	References
 	---------------------

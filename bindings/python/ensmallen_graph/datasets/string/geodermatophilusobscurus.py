@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeodermatophilusObscurus.
+This file offers the methods to automatically retrieve the graph Geodermatophilus obscurus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeodermatophilusObscurus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeodermatophilusObscurus graph.
+    """Return new instance of the Geodermatophilus obscurus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GeodermatophilusObscurus(
 
     Returns
     -----------------------
-    Instace of GeodermatophilusObscurus graph.
+    Instace of Geodermatophilus obscurus graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SyntrophusGentianae.
+This file offers the methods to automatically retrieve the graph Syntrophus gentianae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SyntrophusGentianae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SyntrophusGentianae graph.
+    """Return new instance of the Syntrophus gentianae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SyntrophusGentianae(
 
     Returns
     -----------------------
-    Instace of SyntrophusGentianae graph.
+    Instace of Syntrophus gentianae graph.
 
 	References
 	---------------------

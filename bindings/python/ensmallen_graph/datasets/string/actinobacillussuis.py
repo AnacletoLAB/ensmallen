@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusSuis.
+This file offers the methods to automatically retrieve the graph Actinobacillus suis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusSuis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusSuis graph.
+    """Return new instance of the Actinobacillus suis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusSuis(
 
     Returns
     -----------------------
-    Instace of ActinobacillusSuis graph.
+    Instace of Actinobacillus suis graph.
 
 	References
 	---------------------

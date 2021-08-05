@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PorphyromonasSpKle1280.
+This file offers the methods to automatically retrieve the graph Porphyromonas sp. KLE1280.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PorphyromonasSpKle1280(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PorphyromonasSpKle1280 graph.
+    """Return new instance of the Porphyromonas sp. KLE1280 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PorphyromonasSpKle1280(
 
     Returns
     -----------------------
-    Instace of PorphyromonasSpKle1280 graph.
+    Instace of Porphyromonas sp. KLE1280 graph.
 
 	References
 	---------------------

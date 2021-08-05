@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AuriculariaDelicata.
+This file offers the methods to automatically retrieve the graph Auricularia delicata.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AuriculariaDelicata(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AuriculariaDelicata graph.
+    """Return new instance of the Auricularia delicata graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AuriculariaDelicata(
 
     Returns
     -----------------------
-    Instace of AuriculariaDelicata graph.
+    Instace of Auricularia delicata graph.
 
 	References
 	---------------------

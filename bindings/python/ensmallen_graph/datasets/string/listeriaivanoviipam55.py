@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ListeriaIvanoviiPam55.
+This file offers the methods to automatically retrieve the graph Listeria ivanovii PAM55.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ListeriaIvanoviiPam55(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ListeriaIvanoviiPam55 graph.
+    """Return new instance of the Listeria ivanovii PAM55 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ListeriaIvanoviiPam55(
 
     Returns
     -----------------------
-    Instace of ListeriaIvanoviiPam55 graph.
+    Instace of Listeria ivanovii PAM55 graph.
 
 	References
 	---------------------

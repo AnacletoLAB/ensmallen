@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSubtilisSubspInaquosorum.
+This file offers the methods to automatically retrieve the graph Bacillus subtilis subsp. inaquosorum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSubtilisSubspInaquosorum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSubtilisSubspInaquosorum graph.
+    """Return new instance of the Bacillus subtilis subsp. inaquosorum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSubtilisSubspInaquosorum(
 
     Returns
     -----------------------
-    Instace of BacillusSubtilisSubspInaquosorum graph.
+    Instace of Bacillus subtilis subsp. inaquosorum graph.
 
 	References
 	---------------------

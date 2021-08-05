@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SymbiobacteriumThermophilum.
+This file offers the methods to automatically retrieve the graph Symbiobacterium thermophilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SymbiobacteriumThermophilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SymbiobacteriumThermophilum graph.
+    """Return new instance of the Symbiobacterium thermophilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SymbiobacteriumThermophilum(
 
     Returns
     -----------------------
-    Instace of SymbiobacteriumThermophilum graph.
+    Instace of Symbiobacterium thermophilum graph.
 
 	References
 	---------------------

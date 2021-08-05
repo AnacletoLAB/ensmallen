@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TerrabacterSpRoot85.
+This file offers the methods to automatically retrieve the graph Terrabacter sp. Root85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TerrabacterSpRoot85(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TerrabacterSpRoot85 graph.
+    """Return new instance of the Terrabacter sp. Root85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TerrabacterSpRoot85(
 
     Returns
     -----------------------
-    Instace of TerrabacterSpRoot85 graph.
+    Instace of Terrabacter sp. Root85 graph.
 
 	References
 	---------------------

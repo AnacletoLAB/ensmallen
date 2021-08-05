@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAceticum.
+This file offers the methods to automatically retrieve the graph Clostridium aceticum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAceticum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAceticum graph.
+    """Return new instance of the Clostridium aceticum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumAceticum(
 
     Returns
     -----------------------
-    Instace of ClostridiumAceticum graph.
+    Instace of Clostridium aceticum graph.
 
 	References
 	---------------------

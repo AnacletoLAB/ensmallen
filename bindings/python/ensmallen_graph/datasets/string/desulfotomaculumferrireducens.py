@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfotomaculumFerrireducens.
+This file offers the methods to automatically retrieve the graph Desulfotomaculum ferrireducens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfotomaculumFerrireducens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfotomaculumFerrireducens graph.
+    """Return new instance of the Desulfotomaculum ferrireducens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DesulfotomaculumFerrireducens(
 
     Returns
     -----------------------
-    Instace of DesulfotomaculumFerrireducens graph.
+    Instace of Desulfotomaculum ferrireducens graph.
 
 	References
 	---------------------

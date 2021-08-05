@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ConchiformibiusSteedae.
+This file offers the methods to automatically retrieve the graph Conchiformibius steedae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ConchiformibiusSteedae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ConchiformibiusSteedae graph.
+    """Return new instance of the Conchiformibius steedae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ConchiformibiusSteedae(
 
     Returns
     -----------------------
-    Instace of ConchiformibiusSteedae graph.
+    Instace of Conchiformibius steedae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterobacterHormaecheiSubspOharae.
+This file offers the methods to automatically retrieve the graph Enterobacter hormaechei subsp. oharae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterobacterHormaecheiSubspOharae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterobacterHormaecheiSubspOharae graph.
+    """Return new instance of the Enterobacter hormaechei subsp. oharae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EnterobacterHormaecheiSubspOharae(
 
     Returns
     -----------------------
-    Instace of EnterobacterHormaecheiSubspOharae graph.
+    Instace of Enterobacter hormaechei subsp. oharae graph.
 
 	References
 	---------------------

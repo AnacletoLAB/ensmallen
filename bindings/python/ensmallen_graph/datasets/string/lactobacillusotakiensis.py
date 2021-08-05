@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusOtakiensis.
+This file offers the methods to automatically retrieve the graph Lactobacillus otakiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusOtakiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusOtakiensis graph.
+    """Return new instance of the Lactobacillus otakiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactobacillusOtakiensis(
 
     Returns
     -----------------------
-    Instace of LactobacillusOtakiensis graph.
+    Instace of Lactobacillus otakiensis graph.
 
 	References
 	---------------------

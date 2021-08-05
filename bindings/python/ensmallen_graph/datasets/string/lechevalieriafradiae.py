@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LechevalieriaFradiae.
+This file offers the methods to automatically retrieve the graph Lechevalieria fradiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LechevalieriaFradiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LechevalieriaFradiae graph.
+    """Return new instance of the Lechevalieria fradiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LechevalieriaFradiae(
 
     Returns
     -----------------------
-    Instace of LechevalieriaFradiae graph.
+    Instace of Lechevalieria fradiae graph.
 
 	References
 	---------------------

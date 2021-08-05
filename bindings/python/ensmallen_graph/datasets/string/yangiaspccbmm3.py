@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph YangiaSpCcbMm3.
+This file offers the methods to automatically retrieve the graph Yangia sp. CCB-MM3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def YangiaSpCcbMm3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the YangiaSpCcbMm3 graph.
+    """Return new instance of the Yangia sp. CCB-MM3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def YangiaSpCcbMm3(
 
     Returns
     -----------------------
-    Instace of YangiaSpCcbMm3 graph.
+    Instace of Yangia sp. CCB-MM3 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PectobacteriumBrasiliense.
+This file offers the methods to automatically retrieve the graph Pectobacterium brasiliense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PectobacteriumBrasiliense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PectobacteriumBrasiliense graph.
+    """Return new instance of the Pectobacterium brasiliense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PectobacteriumBrasiliense(
 
     Returns
     -----------------------
-    Instace of PectobacteriumBrasiliense graph.
+    Instace of Pectobacterium brasiliense graph.
 
 	References
 	---------------------

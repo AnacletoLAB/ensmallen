@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ZimmermannellaBifidaNbrc103089.
+This file offers the methods to automatically retrieve the graph [Zimmermannella] bifida NBRC 103089.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ZimmermannellaBifidaNbrc103089(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ZimmermannellaBifidaNbrc103089 graph.
+    """Return new instance of the [Zimmermannella] bifida NBRC 103089 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ZimmermannellaBifidaNbrc103089(
 
     Returns
     -----------------------
-    Instace of ZimmermannellaBifidaNbrc103089 graph.
+    Instace of [Zimmermannella] bifida NBRC 103089 graph.
 
 	References
 	---------------------

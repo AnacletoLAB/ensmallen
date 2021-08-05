@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KallipygaMassiliensis.
+This file offers the methods to automatically retrieve the graph Kallipyga massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KallipygaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KallipygaMassiliensis graph.
+    """Return new instance of the Kallipyga massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def KallipygaMassiliensis(
 
     Returns
     -----------------------
-    Instace of KallipygaMassiliensis graph.
+    Instace of Kallipyga massiliensis graph.
 
 	References
 	---------------------

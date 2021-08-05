@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph FerrithrixThermotoleransDsm19514.
+This file offers the methods to automatically retrieve the graph Ferrithrix thermotolerans DSM 19514.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def FerrithrixThermotoleransDsm19514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the FerrithrixThermotoleransDsm19514 graph.
+    """Return new instance of the Ferrithrix thermotolerans DSM 19514 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def FerrithrixThermotoleransDsm19514(
 
     Returns
     -----------------------
-    Instace of FerrithrixThermotoleransDsm19514 graph.
+    Instace of Ferrithrix thermotolerans DSM 19514 graph.
 
 	References
 	---------------------

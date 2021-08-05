@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermococcusGuaymasensisDsm11113.
+This file offers the methods to automatically retrieve the graph Thermococcus guaymasensis DSM 11113.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermococcusGuaymasensisDsm11113(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermococcusGuaymasensisDsm11113 graph.
+    """Return new instance of the Thermococcus guaymasensis DSM 11113 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermococcusGuaymasensisDsm11113(
 
     Returns
     -----------------------
-    Instace of ThermococcusGuaymasensisDsm11113 graph.
+    Instace of Thermococcus guaymasensis DSM 11113 graph.
 
 	References
 	---------------------

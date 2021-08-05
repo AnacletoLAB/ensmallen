@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PodosporaAnserina.
+This file offers the methods to automatically retrieve the graph Podospora anserina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PodosporaAnserina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PodosporaAnserina graph.
+    """Return new instance of the Podospora anserina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PodosporaAnserina(
 
     Returns
     -----------------------
-    Instace of PodosporaAnserina graph.
+    Instace of Podospora anserina graph.
 
 	References
 	---------------------

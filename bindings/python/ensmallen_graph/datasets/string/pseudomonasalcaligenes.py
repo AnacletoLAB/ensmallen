@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasAlcaligenes.
+This file offers the methods to automatically retrieve the graph Pseudomonas alcaligenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasAlcaligenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasAlcaligenes graph.
+    """Return new instance of the Pseudomonas alcaligenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasAlcaligenes(
 
     Returns
     -----------------------
-    Instace of PseudomonasAlcaligenes graph.
+    Instace of Pseudomonas alcaligenes graph.
 
 	References
 	---------------------

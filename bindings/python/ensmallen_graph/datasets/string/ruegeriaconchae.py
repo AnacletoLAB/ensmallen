@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuegeriaConchae.
+This file offers the methods to automatically retrieve the graph Ruegeria conchae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuegeriaConchae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuegeriaConchae graph.
+    """Return new instance of the Ruegeria conchae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuegeriaConchae(
 
     Returns
     -----------------------
-    Instace of RuegeriaConchae graph.
+    Instace of Ruegeria conchae graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MyroidesPhaeus.
+This file offers the methods to automatically retrieve the graph Myroides phaeus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MyroidesPhaeus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MyroidesPhaeus graph.
+    """Return new instance of the Myroides phaeus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MyroidesPhaeus(
 
     Returns
     -----------------------
-    Instace of MyroidesPhaeus graph.
+    Instace of Myroides phaeus graph.
 
 	References
 	---------------------

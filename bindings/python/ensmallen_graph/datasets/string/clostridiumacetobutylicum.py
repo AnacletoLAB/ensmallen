@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumAcetobutylicum.
+This file offers the methods to automatically retrieve the graph Clostridium acetobutylicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumAcetobutylicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumAcetobutylicum graph.
+    """Return new instance of the Clostridium acetobutylicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ClostridiumAcetobutylicum(
 
     Returns
     -----------------------
-    Instace of ClostridiumAcetobutylicum graph.
+    Instace of Clostridium acetobutylicum graph.
 
 	References
 	---------------------

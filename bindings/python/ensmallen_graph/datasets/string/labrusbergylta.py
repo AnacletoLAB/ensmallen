@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LabrusBergylta.
+This file offers the methods to automatically retrieve the graph Labrus bergylta.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LabrusBergylta(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LabrusBergylta graph.
+    """Return new instance of the Labrus bergylta graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LabrusBergylta(
 
     Returns
     -----------------------
-    Instace of LabrusBergylta graph.
+    Instace of Labrus bergylta graph.
 
 	References
 	---------------------

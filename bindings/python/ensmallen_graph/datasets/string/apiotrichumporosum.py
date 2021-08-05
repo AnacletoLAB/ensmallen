@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ApiotrichumPorosum.
+This file offers the methods to automatically retrieve the graph Apiotrichum porosum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ApiotrichumPorosum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ApiotrichumPorosum graph.
+    """Return new instance of the Apiotrichum porosum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ApiotrichumPorosum(
 
     Returns
     -----------------------
-    Instace of ApiotrichumPorosum graph.
+    Instace of Apiotrichum porosum graph.
 
 	References
 	---------------------

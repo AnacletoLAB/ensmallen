@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudovibrioSpAb134.
+This file offers the methods to automatically retrieve the graph Pseudovibrio sp. Ab134.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudovibrioSpAb134(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudovibrioSpAb134 graph.
+    """Return new instance of the Pseudovibrio sp. Ab134 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudovibrioSpAb134(
 
     Returns
     -----------------------
-    Instace of PseudovibrioSpAb134 graph.
+    Instace of Pseudovibrio sp. Ab134 graph.
 
 	References
 	---------------------

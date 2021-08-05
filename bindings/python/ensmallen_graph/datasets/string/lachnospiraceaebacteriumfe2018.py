@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LachnospiraceaeBacteriumFe2018.
+This file offers the methods to automatically retrieve the graph Lachnospiraceae bacterium FE2018.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LachnospiraceaeBacteriumFe2018(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LachnospiraceaeBacteriumFe2018 graph.
+    """Return new instance of the Lachnospiraceae bacterium FE2018 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LachnospiraceaeBacteriumFe2018(
 
     Returns
     -----------------------
-    Instace of LachnospiraceaeBacteriumFe2018 graph.
+    Instace of Lachnospiraceae bacterium FE2018 graph.
 
 	References
 	---------------------

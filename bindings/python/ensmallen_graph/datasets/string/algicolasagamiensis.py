@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlgicolaSagamiensis.
+This file offers the methods to automatically retrieve the graph Algicola sagamiensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlgicolaSagamiensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlgicolaSagamiensis graph.
+    """Return new instance of the Algicola sagamiensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AlgicolaSagamiensis(
 
     Returns
     -----------------------
-    Instace of AlgicolaSagamiensis graph.
+    Instace of Algicola sagamiensis graph.
 
 	References
 	---------------------

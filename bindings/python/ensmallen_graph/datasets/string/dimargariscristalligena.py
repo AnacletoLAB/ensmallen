@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DimargarisCristalligena.
+This file offers the methods to automatically retrieve the graph Dimargaris cristalligena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DimargarisCristalligena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DimargarisCristalligena graph.
+    """Return new instance of the Dimargaris cristalligena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DimargarisCristalligena(
 
     Returns
     -----------------------
-    Instace of DimargarisCristalligena graph.
+    Instace of Dimargaris cristalligena graph.
 
 	References
 	---------------------

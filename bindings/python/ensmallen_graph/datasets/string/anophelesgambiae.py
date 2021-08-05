@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnophelesGambiae.
+This file offers the methods to automatically retrieve the graph Anopheles gambiae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnophelesGambiae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnophelesGambiae graph.
+    """Return new instance of the Anopheles gambiae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnophelesGambiae(
 
     Returns
     -----------------------
-    Instace of AnophelesGambiae graph.
+    Instace of Anopheles gambiae graph.
 
 	References
 	---------------------

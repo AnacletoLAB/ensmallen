@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ButyrivibrioFibrisolvens164.
+This file offers the methods to automatically retrieve the graph Butyrivibrio fibrisolvens 16/4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ButyrivibrioFibrisolvens164(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ButyrivibrioFibrisolvens164 graph.
+    """Return new instance of the Butyrivibrio fibrisolvens 16/4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ButyrivibrioFibrisolvens164(
 
     Returns
     -----------------------
-    Instace of ButyrivibrioFibrisolvens164 graph.
+    Instace of Butyrivibrio fibrisolvens 16/4 graph.
 
 	References
 	---------------------

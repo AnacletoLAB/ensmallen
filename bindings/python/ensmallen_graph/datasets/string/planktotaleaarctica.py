@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanktotaleaArctica.
+This file offers the methods to automatically retrieve the graph Planktotalea arctica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanktotaleaArctica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanktotaleaArctica graph.
+    """Return new instance of the Planktotalea arctica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanktotaleaArctica(
 
     Returns
     -----------------------
-    Instace of PlanktotaleaArctica graph.
+    Instace of Planktotalea arctica graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BabjeviellaInositovoraNrrlY12698.
+This file offers the methods to automatically retrieve the graph Babjeviella inositovora NRRL Y-12698.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BabjeviellaInositovoraNrrlY12698(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BabjeviellaInositovoraNrrlY12698 graph.
+    """Return new instance of the Babjeviella inositovora NRRL Y-12698 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BabjeviellaInositovoraNrrlY12698(
 
     Returns
     -----------------------
-    Instace of BabjeviellaInositovoraNrrlY12698 graph.
+    Instace of Babjeviella inositovora NRRL Y-12698 graph.
 
 	References
 	---------------------

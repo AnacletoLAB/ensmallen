@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhizobiumNepotum397.
+This file offers the methods to automatically retrieve the graph Rhizobium nepotum 39/7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhizobiumNepotum397(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhizobiumNepotum397 graph.
+    """Return new instance of the Rhizobium nepotum 39/7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhizobiumNepotum397(
 
     Returns
     -----------------------
-    Instace of RhizobiumNepotum397 graph.
+    Instace of Rhizobium nepotum 39/7 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanococcusMassiliensis.
+This file offers the methods to automatically retrieve the graph Planococcus massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanococcusMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanococcusMassiliensis graph.
+    """Return new instance of the Planococcus massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PlanococcusMassiliensis(
 
     Returns
     -----------------------
-    Instace of PlanococcusMassiliensis graph.
+    Instace of Planococcus massiliensis graph.
 
 	References
 	---------------------

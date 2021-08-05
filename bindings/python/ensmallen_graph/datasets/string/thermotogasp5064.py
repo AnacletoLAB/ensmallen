@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermotogaSp5064.
+This file offers the methods to automatically retrieve the graph Thermotoga sp. 50_64.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermotogaSp5064(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermotogaSp5064 graph.
+    """Return new instance of the Thermotoga sp. 50_64 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermotogaSp5064(
 
     Returns
     -----------------------
-    Instace of ThermotogaSp5064 graph.
+    Instace of Thermotoga sp. 50_64 graph.
 
 	References
 	---------------------

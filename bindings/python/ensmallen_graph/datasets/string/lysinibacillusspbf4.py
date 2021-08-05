@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinibacillusSpBf4.
+This file offers the methods to automatically retrieve the graph Lysinibacillus sp. BF4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinibacillusSpBf4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinibacillusSpBf4 graph.
+    """Return new instance of the Lysinibacillus sp. BF4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LysinibacillusSpBf4(
 
     Returns
     -----------------------
-    Instace of LysinibacillusSpBf4 graph.
+    Instace of Lysinibacillus sp. BF4 graph.
 
 	References
 	---------------------

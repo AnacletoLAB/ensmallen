@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AustwickiaChelonae.
+This file offers the methods to automatically retrieve the graph Austwickia chelonae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AustwickiaChelonae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AustwickiaChelonae graph.
+    """Return new instance of the Austwickia chelonae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AustwickiaChelonae(
 
     Returns
     -----------------------
-    Instace of AustwickiaChelonae graph.
+    Instace of Austwickia chelonae graph.
 
 	References
 	---------------------

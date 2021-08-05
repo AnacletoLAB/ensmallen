@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DiplosphaeraColitermitum.
+This file offers the methods to automatically retrieve the graph Diplosphaera colitermitum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DiplosphaeraColitermitum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DiplosphaeraColitermitum graph.
+    """Return new instance of the Diplosphaera colitermitum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DiplosphaeraColitermitum(
 
     Returns
     -----------------------
-    Instace of DiplosphaeraColitermitum graph.
+    Instace of Diplosphaera colitermitum graph.
 
 	References
 	---------------------

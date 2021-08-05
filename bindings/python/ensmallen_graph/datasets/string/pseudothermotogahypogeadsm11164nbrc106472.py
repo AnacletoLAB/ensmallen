@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudothermotogaHypogeaDsm11164Nbrc106472.
+This file offers the methods to automatically retrieve the graph Pseudothermotoga hypogea DSM 11164 NBRC 106472.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudothermotogaHypogeaDsm11164Nbrc106472(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudothermotogaHypogeaDsm11164Nbrc106472 graph.
+    """Return new instance of the Pseudothermotoga hypogea DSM 11164 NBRC 106472 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudothermotogaHypogeaDsm11164Nbrc106472(
 
     Returns
     -----------------------
-    Instace of PseudothermotogaHypogeaDsm11164Nbrc106472 graph.
+    Instace of Pseudothermotoga hypogea DSM 11164 NBRC 106472 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EpsilonproteobacteriaBacteriumTcs49.
+This file offers the methods to automatically retrieve the graph Epsilonproteobacteria bacterium tcs-49.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EpsilonproteobacteriaBacteriumTcs49(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EpsilonproteobacteriaBacteriumTcs49 graph.
+    """Return new instance of the Epsilonproteobacteria bacterium tcs-49 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def EpsilonproteobacteriaBacteriumTcs49(
 
     Returns
     -----------------------
-    Instace of EpsilonproteobacteriaBacteriumTcs49 graph.
+    Instace of Epsilonproteobacteria bacterium tcs-49 graph.
 
 	References
 	---------------------

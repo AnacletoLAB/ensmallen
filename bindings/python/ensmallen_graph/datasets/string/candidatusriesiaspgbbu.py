@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRiesiaSpGbbu.
+This file offers the methods to automatically retrieve the graph Candidatus Riesia sp. GBBU.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRiesiaSpGbbu(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRiesiaSpGbbu graph.
+    """Return new instance of the Candidatus Riesia sp. GBBU graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRiesiaSpGbbu(
 
     Returns
     -----------------------
-    Instace of CandidatusRiesiaSpGbbu graph.
+    Instace of Candidatus Riesia sp. GBBU graph.
 
 	References
 	---------------------

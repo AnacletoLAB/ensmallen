@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EntamoebaHistolytica.
+This file offers the methods to automatically retrieve the graph Entamoeba histolytica.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EntamoebaHistolytica(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EntamoebaHistolytica graph.
+    """Return new instance of the Entamoeba histolytica graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EntamoebaHistolytica(
 
     Returns
     -----------------------
-    Instace of EntamoebaHistolytica graph.
+    Instace of Entamoeba histolytica graph.
 
 	References
 	---------------------

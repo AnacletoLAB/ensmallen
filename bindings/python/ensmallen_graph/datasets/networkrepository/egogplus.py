@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EgoGplus.
+This file offers the methods to automatically retrieve the graph ego-gplus.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def EgoGplus(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EgoGplus graph.
+    """Return new instance of the ego-gplus graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def EgoGplus(
 
     Returns
     -----------------------
-    Instace of EgoGplus graph.
+    Instace of ego-gplus graph.
 
 	References
 	---------------------

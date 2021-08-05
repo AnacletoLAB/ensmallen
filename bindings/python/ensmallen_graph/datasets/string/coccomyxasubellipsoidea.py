@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoccomyxaSubellipsoidea.
+This file offers the methods to automatically retrieve the graph Coccomyxa subellipsoidea.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoccomyxaSubellipsoidea(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoccomyxaSubellipsoidea graph.
+    """Return new instance of the Coccomyxa subellipsoidea graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CoccomyxaSubellipsoidea(
 
     Returns
     -----------------------
-    Instace of CoccomyxaSubellipsoidea graph.
+    Instace of Coccomyxa subellipsoidea graph.
 
 	References
 	---------------------

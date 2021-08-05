@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrugiaPahangi.
+This file offers the methods to automatically retrieve the graph Brugia pahangi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrugiaPahangi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrugiaPahangi graph.
+    """Return new instance of the Brugia pahangi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrugiaPahangi(
 
     Returns
     -----------------------
-    Instace of BrugiaPahangi graph.
+    Instace of Brugia pahangi graph.
 
 	References
 	---------------------

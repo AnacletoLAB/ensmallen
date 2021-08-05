@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThalassotaleaCrassostreae.
+This file offers the methods to automatically retrieve the graph Thalassotalea crassostreae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThalassotaleaCrassostreae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThalassotaleaCrassostreae graph.
+    """Return new instance of the Thalassotalea crassostreae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThalassotaleaCrassostreae(
 
     Returns
     -----------------------
-    Instace of ThalassotaleaCrassostreae graph.
+    Instace of Thalassotalea crassostreae graph.
 
 	References
 	---------------------

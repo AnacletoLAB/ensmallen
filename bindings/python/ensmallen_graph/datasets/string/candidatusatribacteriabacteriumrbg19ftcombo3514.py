@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusAtribacteriaBacteriumRbg19ftCombo3514.
+This file offers the methods to automatically retrieve the graph Candidatus Atribacteria bacterium RBG_19FT_COMBO_35_14.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusAtribacteriaBacteriumRbg19ftCombo3514(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusAtribacteriaBacteriumRbg19ftCombo3514 graph.
+    """Return new instance of the Candidatus Atribacteria bacterium RBG_19FT_COMBO_35_14 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusAtribacteriaBacteriumRbg19ftCombo3514(
 
     Returns
     -----------------------
-    Instace of CandidatusAtribacteriaBacteriumRbg19ftCombo3514 graph.
+    Instace of Candidatus Atribacteria bacterium RBG_19FT_COMBO_35_14 graph.
 
 	References
 	---------------------

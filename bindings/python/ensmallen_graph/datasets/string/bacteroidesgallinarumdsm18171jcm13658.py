@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesGallinarumDsm18171Jcm13658.
+This file offers the methods to automatically retrieve the graph Bacteroides gallinarum DSM 18171 JCM 13658.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesGallinarumDsm18171Jcm13658(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesGallinarumDsm18171Jcm13658 graph.
+    """Return new instance of the Bacteroides gallinarum DSM 18171 JCM 13658 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesGallinarumDsm18171Jcm13658(
 
     Returns
     -----------------------
-    Instace of BacteroidesGallinarumDsm18171Jcm13658 graph.
+    Instace of Bacteroides gallinarum DSM 18171 JCM 13658 graph.
 
 	References
 	---------------------

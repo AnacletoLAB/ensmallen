@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinobacillusPleuropneumoniae14074.
+This file offers the methods to automatically retrieve the graph Actinobacillus pleuropneumoniae 1 4074.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinobacillusPleuropneumoniae14074(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinobacillusPleuropneumoniae14074 graph.
+    """Return new instance of the Actinobacillus pleuropneumoniae 1 4074 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ActinobacillusPleuropneumoniae14074(
 
     Returns
     -----------------------
-    Instace of ActinobacillusPleuropneumoniae14074 graph.
+    Instace of Actinobacillus pleuropneumoniae 1 4074 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevibacillusSpOk042.
+This file offers the methods to automatically retrieve the graph Brevibacillus sp. OK042.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevibacillusSpOk042(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevibacillusSpOk042 graph.
+    """Return new instance of the Brevibacillus sp. OK042 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevibacillusSpOk042(
 
     Returns
     -----------------------
-    Instace of BrevibacillusSpOk042 graph.
+    Instace of Brevibacillus sp. OK042 graph.
 
 	References
 	---------------------

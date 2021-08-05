@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SordariaMacrospora.
+This file offers the methods to automatically retrieve the graph Sordaria macrospora.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SordariaMacrospora(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SordariaMacrospora graph.
+    """Return new instance of the Sordaria macrospora graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def SordariaMacrospora(
 
     Returns
     -----------------------
-    Instace of SordariaMacrospora graph.
+    Instace of Sordaria macrospora graph.
 
 	References
 	---------------------

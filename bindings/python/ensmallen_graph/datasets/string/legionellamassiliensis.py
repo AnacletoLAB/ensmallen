@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LegionellaMassiliensis.
+This file offers the methods to automatically retrieve the graph Legionella massiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LegionellaMassiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LegionellaMassiliensis graph.
+    """Return new instance of the Legionella massiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LegionellaMassiliensis(
 
     Returns
     -----------------------
-    Instace of LegionellaMassiliensis graph.
+    Instace of Legionella massiliensis graph.
 
 	References
 	---------------------

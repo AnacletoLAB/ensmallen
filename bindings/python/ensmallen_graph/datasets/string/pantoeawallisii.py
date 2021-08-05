@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PantoeaWallisii.
+This file offers the methods to automatically retrieve the graph Pantoea wallisii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PantoeaWallisii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PantoeaWallisii graph.
+    """Return new instance of the Pantoea wallisii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PantoeaWallisii(
 
     Returns
     -----------------------
-    Instace of PantoeaWallisii graph.
+    Instace of Pantoea wallisii graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DialisterSpCag486.
+This file offers the methods to automatically retrieve the graph Dialister sp. CAG:486.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DialisterSpCag486(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DialisterSpCag486 graph.
+    """Return new instance of the Dialister sp. CAG:486 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DialisterSpCag486(
 
     Returns
     -----------------------
-    Instace of DialisterSpCag486 graph.
+    Instace of Dialister sp. CAG:486 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PlanktothrixAgardhii.
+This file offers the methods to automatically retrieve the graph Planktothrix agardhii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PlanktothrixAgardhii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PlanktothrixAgardhii graph.
+    """Return new instance of the Planktothrix agardhii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PlanktothrixAgardhii(
 
     Returns
     -----------------------
-    Instace of PlanktothrixAgardhii graph.
+    Instace of Planktothrix agardhii graph.
 
 	References
 	---------------------

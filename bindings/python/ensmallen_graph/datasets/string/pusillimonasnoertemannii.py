@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PusillimonasNoertemannii.
+This file offers the methods to automatically retrieve the graph Pusillimonas noertemannii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PusillimonasNoertemannii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PusillimonasNoertemannii graph.
+    """Return new instance of the Pusillimonas noertemannii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PusillimonasNoertemannii(
 
     Returns
     -----------------------
-    Instace of PusillimonasNoertemannii graph.
+    Instace of Pusillimonas noertemannii graph.
 
 	References
 	---------------------

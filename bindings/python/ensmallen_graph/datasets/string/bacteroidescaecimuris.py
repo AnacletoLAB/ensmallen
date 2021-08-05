@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacteroidesCaecimuris.
+This file offers the methods to automatically retrieve the graph Bacteroides caecimuris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacteroidesCaecimuris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacteroidesCaecimuris graph.
+    """Return new instance of the Bacteroides caecimuris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacteroidesCaecimuris(
 
     Returns
     -----------------------
-    Instace of BacteroidesCaecimuris graph.
+    Instace of Bacteroides caecimuris graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChryseobacteriumSpFp211J200.
+This file offers the methods to automatically retrieve the graph Chryseobacterium sp. FP211-J200.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChryseobacteriumSpFp211J200(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChryseobacteriumSpFp211J200 graph.
+    """Return new instance of the Chryseobacterium sp. FP211-J200 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChryseobacteriumSpFp211J200(
 
     Returns
     -----------------------
-    Instace of ChryseobacteriumSpFp211J200 graph.
+    Instace of Chryseobacterium sp. FP211-J200 graph.
 
 	References
 	---------------------

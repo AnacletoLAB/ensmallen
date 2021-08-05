@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusVaginalis.
+This file offers the methods to automatically retrieve the graph Anaerococcus vaginalis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusVaginalis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusVaginalis graph.
+    """Return new instance of the Anaerococcus vaginalis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaerococcusVaginalis(
 
     Returns
     -----------------------
-    Instace of AnaerococcusVaginalis graph.
+    Instace of Anaerococcus vaginalis graph.
 
 	References
 	---------------------

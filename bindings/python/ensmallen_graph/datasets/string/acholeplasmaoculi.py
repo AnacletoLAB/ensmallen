@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AcholeplasmaOculi.
+This file offers the methods to automatically retrieve the graph Acholeplasma oculi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AcholeplasmaOculi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AcholeplasmaOculi graph.
+    """Return new instance of the Acholeplasma oculi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AcholeplasmaOculi(
 
     Returns
     -----------------------
-    Instace of AcholeplasmaOculi graph.
+    Instace of Acholeplasma oculi graph.
 
 	References
 	---------------------

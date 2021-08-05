@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudomonasMucidolens.
+This file offers the methods to automatically retrieve the graph Pseudomonas mucidolens.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudomonasMucidolens(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudomonasMucidolens graph.
+    """Return new instance of the Pseudomonas mucidolens graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudomonasMucidolens(
 
     Returns
     -----------------------
-    Instace of PseudomonasMucidolens graph.
+    Instace of Pseudomonas mucidolens graph.
 
 	References
 	---------------------

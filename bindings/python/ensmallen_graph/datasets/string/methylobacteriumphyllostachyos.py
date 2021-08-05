@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylobacteriumPhyllostachyos.
+This file offers the methods to automatically retrieve the graph Methylobacterium phyllostachyos.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylobacteriumPhyllostachyos(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylobacteriumPhyllostachyos graph.
+    """Return new instance of the Methylobacterium phyllostachyos graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethylobacteriumPhyllostachyos(
 
     Returns
     -----------------------
-    Instace of MethylobacteriumPhyllostachyos graph.
+    Instace of Methylobacterium phyllostachyos graph.
 
 	References
 	---------------------

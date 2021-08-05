@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OceanobacillusLimi.
+This file offers the methods to automatically retrieve the graph Oceanobacillus limi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OceanobacillusLimi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OceanobacillusLimi graph.
+    """Return new instance of the Oceanobacillus limi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OceanobacillusLimi(
 
     Returns
     -----------------------
-    Instace of OceanobacillusLimi graph.
+    Instace of Oceanobacillus limi graph.
 
 	References
 	---------------------

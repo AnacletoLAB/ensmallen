@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GemmobacterMegaterium.
+This file offers the methods to automatically retrieve the graph Gemmobacter megaterium.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GemmobacterMegaterium(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GemmobacterMegaterium graph.
+    """Return new instance of the Gemmobacter megaterium graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GemmobacterMegaterium(
 
     Returns
     -----------------------
-    Instace of GemmobacterMegaterium graph.
+    Instace of Gemmobacter megaterium graph.
 
 	References
 	---------------------

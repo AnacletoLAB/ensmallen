@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VeillonellaRatti.
+This file offers the methods to automatically retrieve the graph Veillonella ratti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VeillonellaRatti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VeillonellaRatti graph.
+    """Return new instance of the Veillonella ratti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VeillonellaRatti(
 
     Returns
     -----------------------
-    Instace of VeillonellaRatti graph.
+    Instace of Veillonella ratti graph.
 
 	References
 	---------------------

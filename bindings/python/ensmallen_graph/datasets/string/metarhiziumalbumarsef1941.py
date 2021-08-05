@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MetarhiziumAlbumArsef1941.
+This file offers the methods to automatically retrieve the graph Metarhizium album ARSEF 1941.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MetarhiziumAlbumArsef1941(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MetarhiziumAlbumArsef1941 graph.
+    """Return new instance of the Metarhizium album ARSEF 1941 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MetarhiziumAlbumArsef1941(
 
     Returns
     -----------------------
-    Instace of MetarhiziumAlbumArsef1941 graph.
+    Instace of Metarhizium album ARSEF 1941 graph.
 
 	References
 	---------------------

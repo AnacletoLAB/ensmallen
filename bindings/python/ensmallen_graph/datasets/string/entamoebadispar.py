@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EntamoebaDispar.
+This file offers the methods to automatically retrieve the graph Entamoeba dispar.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EntamoebaDispar(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EntamoebaDispar graph.
+    """Return new instance of the Entamoeba dispar graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EntamoebaDispar(
 
     Returns
     -----------------------
-    Instace of EntamoebaDispar graph.
+    Instace of Entamoeba dispar graph.
 
 	References
 	---------------------

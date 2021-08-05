@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioMetschnikovii.
+This file offers the methods to automatically retrieve the graph Vibrio metschnikovii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioMetschnikovii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioMetschnikovii graph.
+    """Return new instance of the Vibrio metschnikovii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioMetschnikovii(
 
     Returns
     -----------------------
-    Instace of VibrioMetschnikovii graph.
+    Instace of Vibrio metschnikovii graph.
 
 	References
 	---------------------

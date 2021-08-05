@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoccidioidesImmitisRmscc2394.
+This file offers the methods to automatically retrieve the graph Coccidioides immitis RMSCC 2394.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoccidioidesImmitisRmscc2394(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoccidioidesImmitisRmscc2394 graph.
+    """Return new instance of the Coccidioides immitis RMSCC 2394 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoccidioidesImmitisRmscc2394(
 
     Returns
     -----------------------
-    Instace of CoccidioidesImmitisRmscc2394 graph.
+    Instace of Coccidioides immitis RMSCC 2394 graph.
 
 	References
 	---------------------

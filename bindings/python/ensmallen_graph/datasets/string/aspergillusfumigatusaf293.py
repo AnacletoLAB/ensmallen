@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusFumigatusAf293.
+This file offers the methods to automatically retrieve the graph Aspergillus fumigatus Af293.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusFumigatusAf293(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusFumigatusAf293 graph.
+    """Return new instance of the Aspergillus fumigatus Af293 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusFumigatusAf293(
 
     Returns
     -----------------------
-    Instace of AspergillusFumigatusAf293 graph.
+    Instace of Aspergillus fumigatus Af293 graph.
 
 	References
 	---------------------

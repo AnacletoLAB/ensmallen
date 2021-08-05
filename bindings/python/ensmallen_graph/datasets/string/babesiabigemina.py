@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BabesiaBigemina.
+This file offers the methods to automatically retrieve the graph Babesia bigemina.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BabesiaBigemina(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BabesiaBigemina graph.
+    """Return new instance of the Babesia bigemina graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BabesiaBigemina(
 
     Returns
     -----------------------
-    Instace of BabesiaBigemina graph.
+    Instace of Babesia bigemina graph.
 
 	References
 	---------------------

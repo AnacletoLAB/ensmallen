@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NovosphingobiumAcidiphilum.
+This file offers the methods to automatically retrieve the graph Novosphingobium acidiphilum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NovosphingobiumAcidiphilum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NovosphingobiumAcidiphilum graph.
+    """Return new instance of the Novosphingobium acidiphilum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NovosphingobiumAcidiphilum(
 
     Returns
     -----------------------
-    Instace of NovosphingobiumAcidiphilum graph.
+    Instace of Novosphingobium acidiphilum graph.
 
 	References
 	---------------------

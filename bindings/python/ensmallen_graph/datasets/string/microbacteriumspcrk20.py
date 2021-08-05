@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrobacteriumSpCrk20.
+This file offers the methods to automatically retrieve the graph Microbacterium sp. CrK20.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrobacteriumSpCrk20(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrobacteriumSpCrk20 graph.
+    """Return new instance of the Microbacterium sp. CrK20 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrobacteriumSpCrk20(
 
     Returns
     -----------------------
-    Instace of MicrobacteriumSpCrk20 graph.
+    Instace of Microbacterium sp. CrK20 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycoplasmaCanadense.
+This file offers the methods to automatically retrieve the graph Mycoplasma canadense.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycoplasmaCanadense(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycoplasmaCanadense graph.
+    """Return new instance of the Mycoplasma canadense graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycoplasmaCanadense(
 
     Returns
     -----------------------
-    Instace of MycoplasmaCanadense graph.
+    Instace of Mycoplasma canadense graph.
 
 	References
 	---------------------

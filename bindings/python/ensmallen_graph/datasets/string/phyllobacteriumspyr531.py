@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PhyllobacteriumSpYr531.
+This file offers the methods to automatically retrieve the graph Phyllobacterium sp. YR531.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PhyllobacteriumSpYr531(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PhyllobacteriumSpYr531 graph.
+    """Return new instance of the Phyllobacterium sp. YR531 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PhyllobacteriumSpYr531(
 
     Returns
     -----------------------
-    Instace of PhyllobacteriumSpYr531 graph.
+    Instace of Phyllobacterium sp. YR531 graph.
 
 	References
 	---------------------

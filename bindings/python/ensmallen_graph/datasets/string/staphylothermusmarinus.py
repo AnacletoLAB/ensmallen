@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StaphylothermusMarinus.
+This file offers the methods to automatically retrieve the graph Staphylothermus marinus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StaphylothermusMarinus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StaphylothermusMarinus graph.
+    """Return new instance of the Staphylothermus marinus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StaphylothermusMarinus(
 
     Returns
     -----------------------
-    Instace of StaphylothermusMarinus graph.
+    Instace of Staphylothermus marinus graph.
 
 	References
 	---------------------

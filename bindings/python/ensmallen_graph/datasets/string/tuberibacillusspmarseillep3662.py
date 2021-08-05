@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TuberibacillusSpMarseilleP3662.
+This file offers the methods to automatically retrieve the graph Tuberibacillus sp. Marseille-P3662.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TuberibacillusSpMarseilleP3662(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TuberibacillusSpMarseilleP3662 graph.
+    """Return new instance of the Tuberibacillus sp. Marseille-P3662 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TuberibacillusSpMarseilleP3662(
 
     Returns
     -----------------------
-    Instace of TuberibacillusSpMarseilleP3662 graph.
+    Instace of Tuberibacillus sp. Marseille-P3662 graph.
 
 	References
 	---------------------

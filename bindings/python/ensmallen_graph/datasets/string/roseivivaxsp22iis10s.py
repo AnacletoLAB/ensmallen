@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RoseivivaxSp22iis10s.
+This file offers the methods to automatically retrieve the graph Roseivivax sp. 22IIs10s.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RoseivivaxSp22iis10s(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RoseivivaxSp22iis10s graph.
+    """Return new instance of the Roseivivax sp. 22IIs10s graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RoseivivaxSp22iis10s(
 
     Returns
     -----------------------
-    Instace of RoseivivaxSp22iis10s graph.
+    Instace of Roseivivax sp. 22IIs10s graph.
 
 	References
 	---------------------

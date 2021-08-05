@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusFermentibacterDaniensis.
+This file offers the methods to automatically retrieve the graph Candidatus Fermentibacter daniensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusFermentibacterDaniensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusFermentibacterDaniensis graph.
+    """Return new instance of the Candidatus Fermentibacter daniensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusFermentibacterDaniensis(
 
     Returns
     -----------------------
-    Instace of CandidatusFermentibacterDaniensis graph.
+    Instace of Candidatus Fermentibacter daniensis graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MaayanFigeys.
+This file offers the methods to automatically retrieve the graph maayan-figeys.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -33,7 +33,7 @@ def MaayanFigeys(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MaayanFigeys graph.
+    """Return new instance of the maayan-figeys graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -60,7 +60,7 @@ def MaayanFigeys(
 
     Returns
     -----------------------
-    Instace of MaayanFigeys graph.
+    Instace of maayan-figeys graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NodulariaSpumigena.
+This file offers the methods to automatically retrieve the graph Nodularia spumigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NodulariaSpumigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NodulariaSpumigena graph.
+    """Return new instance of the Nodularia spumigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def NodulariaSpumigena(
 
     Returns
     -----------------------
-    Instace of NodulariaSpumigena graph.
+    Instace of Nodularia spumigena graph.
 
 	References
 	---------------------

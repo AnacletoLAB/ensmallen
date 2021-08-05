@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PolynucleobacterSpMwhAdlerW8.
+This file offers the methods to automatically retrieve the graph Polynucleobacter sp. MWH-Adler-W8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PolynucleobacterSpMwhAdlerW8(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PolynucleobacterSpMwhAdlerW8 graph.
+    """Return new instance of the Polynucleobacter sp. MWH-Adler-W8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PolynucleobacterSpMwhAdlerW8(
 
     Returns
     -----------------------
-    Instace of PolynucleobacterSpMwhAdlerW8 graph.
+    Instace of Polynucleobacter sp. MWH-Adler-W8 graph.
 
 	References
 	---------------------

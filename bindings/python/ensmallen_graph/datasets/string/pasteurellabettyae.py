@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PasteurellaBettyae.
+This file offers the methods to automatically retrieve the graph Pasteurella bettyae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PasteurellaBettyae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PasteurellaBettyae graph.
+    """Return new instance of the Pasteurella bettyae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def PasteurellaBettyae(
 
     Returns
     -----------------------
-    Instace of PasteurellaBettyae graph.
+    Instace of Pasteurella bettyae graph.
 
 	References
 	---------------------

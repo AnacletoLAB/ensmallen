@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacillusJurassicusNbrc107829.
+This file offers the methods to automatically retrieve the graph Geobacillus jurassicus NBRC 107829.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacillusJurassicusNbrc107829(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacillusJurassicusNbrc107829 graph.
+    """Return new instance of the Geobacillus jurassicus NBRC 107829 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacillusJurassicusNbrc107829(
 
     Returns
     -----------------------
-    Instace of GeobacillusJurassicusNbrc107829 graph.
+    Instace of Geobacillus jurassicus NBRC 107829 graph.
 
 	References
 	---------------------

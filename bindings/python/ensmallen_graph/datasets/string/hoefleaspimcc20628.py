@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph HoefleaSpImcc20628.
+This file offers the methods to automatically retrieve the graph Hoeflea sp. IMCC20628.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def HoefleaSpImcc20628(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the HoefleaSpImcc20628 graph.
+    """Return new instance of the Hoeflea sp. IMCC20628 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def HoefleaSpImcc20628(
 
     Returns
     -----------------------
-    Instace of HoefleaSpImcc20628 graph.
+    Instace of Hoeflea sp. IMCC20628 graph.
 
 	References
 	---------------------

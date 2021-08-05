@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BurkholderiaSpJs23.
+This file offers the methods to automatically retrieve the graph Burkholderia sp. JS23.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BurkholderiaSpJs23(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BurkholderiaSpJs23 graph.
+    """Return new instance of the Burkholderia sp. JS23 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BurkholderiaSpJs23(
 
     Returns
     -----------------------
-    Instace of BurkholderiaSpJs23 graph.
+    Instace of Burkholderia sp. JS23 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RhodospirillumSpUnkMgs17.
+This file offers the methods to automatically retrieve the graph Rhodospirillum sp. UNK.MGS-17.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RhodospirillumSpUnkMgs17(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RhodospirillumSpUnkMgs17 graph.
+    """Return new instance of the Rhodospirillum sp. UNK.MGS-17 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RhodospirillumSpUnkMgs17(
 
     Returns
     -----------------------
-    Instace of RhodospirillumSpUnkMgs17 graph.
+    Instace of Rhodospirillum sp. UNK.MGS-17 graph.
 
 	References
 	---------------------

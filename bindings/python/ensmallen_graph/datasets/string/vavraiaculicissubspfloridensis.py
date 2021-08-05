@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VavraiaCulicisSubspFloridensis.
+This file offers the methods to automatically retrieve the graph Vavraia culicis subsp. floridensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VavraiaCulicisSubspFloridensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VavraiaCulicisSubspFloridensis graph.
+    """Return new instance of the Vavraia culicis subsp. floridensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VavraiaCulicisSubspFloridensis(
 
     Returns
     -----------------------
-    Instace of VavraiaCulicisSubspFloridensis graph.
+    Instace of Vavraia culicis subsp. floridensis graph.
 
 	References
 	---------------------

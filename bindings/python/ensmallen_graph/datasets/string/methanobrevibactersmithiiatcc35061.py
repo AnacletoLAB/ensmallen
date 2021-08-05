@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanobrevibacterSmithiiAtcc35061.
+This file offers the methods to automatically retrieve the graph Methanobrevibacter smithii ATCC35061.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanobrevibacterSmithiiAtcc35061(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanobrevibacterSmithiiAtcc35061 graph.
+    """Return new instance of the Methanobrevibacter smithii ATCC35061 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethanobrevibacterSmithiiAtcc35061(
 
     Returns
     -----------------------
-    Instace of MethanobrevibacterSmithiiAtcc35061 graph.
+    Instace of Methanobrevibacter smithii ATCC35061 graph.
 
 	References
 	---------------------

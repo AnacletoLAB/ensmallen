@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SchizosaccharomycesJaponicusYfs275.
+This file offers the methods to automatically retrieve the graph Schizosaccharomyces japonicus yFS275.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SchizosaccharomycesJaponicusYfs275(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SchizosaccharomycesJaponicusYfs275 graph.
+    """Return new instance of the Schizosaccharomyces japonicus yFS275 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SchizosaccharomycesJaponicusYfs275(
 
     Returns
     -----------------------
-    Instace of SchizosaccharomycesJaponicusYfs275 graph.
+    Instace of Schizosaccharomyces japonicus yFS275 graph.
 
 	References
 	---------------------

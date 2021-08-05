@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaerococcusSpSb3.
+This file offers the methods to automatically retrieve the graph Anaerococcus sp. SB3.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaerococcusSpSb3(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaerococcusSpSb3 graph.
+    """Return new instance of the Anaerococcus sp. SB3 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AnaerococcusSpSb3(
 
     Returns
     -----------------------
-    Instace of AnaerococcusSpSb3 graph.
+    Instace of Anaerococcus sp. SB3 graph.
 
 	References
 	---------------------

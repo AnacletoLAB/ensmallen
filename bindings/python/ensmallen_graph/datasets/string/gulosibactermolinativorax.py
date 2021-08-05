@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GulosibacterMolinativorax.
+This file offers the methods to automatically retrieve the graph Gulosibacter molinativorax.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GulosibacterMolinativorax(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GulosibacterMolinativorax graph.
+    """Return new instance of the Gulosibacter molinativorax graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def GulosibacterMolinativorax(
 
     Returns
     -----------------------
-    Instace of GulosibacterMolinativorax graph.
+    Instace of Gulosibacter molinativorax graph.
 
 	References
 	---------------------

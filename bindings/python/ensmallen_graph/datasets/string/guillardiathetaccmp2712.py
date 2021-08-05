@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GuillardiaThetaCcmp2712.
+This file offers the methods to automatically retrieve the graph Guillardia theta CCMP2712.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GuillardiaThetaCcmp2712(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GuillardiaThetaCcmp2712 graph.
+    """Return new instance of the Guillardia theta CCMP2712 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GuillardiaThetaCcmp2712(
 
     Returns
     -----------------------
-    Instace of GuillardiaThetaCcmp2712 graph.
+    Instace of Guillardia theta CCMP2712 graph.
 
 	References
 	---------------------

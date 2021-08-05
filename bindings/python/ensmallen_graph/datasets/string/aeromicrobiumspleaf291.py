@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AeromicrobiumSpLeaf291.
+This file offers the methods to automatically retrieve the graph Aeromicrobium sp. Leaf291.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AeromicrobiumSpLeaf291(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AeromicrobiumSpLeaf291 graph.
+    """Return new instance of the Aeromicrobium sp. Leaf291 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AeromicrobiumSpLeaf291(
 
     Returns
     -----------------------
-    Instace of AeromicrobiumSpLeaf291 graph.
+    Instace of Aeromicrobium sp. Leaf291 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridiumSpC105kso13.
+This file offers the methods to automatically retrieve the graph Clostridium sp. C105KSO13.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridiumSpC105kso13(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridiumSpC105kso13 graph.
+    """Return new instance of the Clostridium sp. C105KSO13 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridiumSpC105kso13(
 
     Returns
     -----------------------
-    Instace of ClostridiumSpC105kso13 graph.
+    Instace of Clostridium sp. C105KSO13 graph.
 
 	References
 	---------------------

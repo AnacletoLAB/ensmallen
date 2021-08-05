@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ChitinophagaSancti.
+This file offers the methods to automatically retrieve the graph Chitinophaga sancti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ChitinophagaSancti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ChitinophagaSancti graph.
+    """Return new instance of the Chitinophaga sancti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ChitinophagaSancti(
 
     Returns
     -----------------------
-    Instace of ChitinophagaSancti graph.
+    Instace of Chitinophaga sancti graph.
 
 	References
 	---------------------

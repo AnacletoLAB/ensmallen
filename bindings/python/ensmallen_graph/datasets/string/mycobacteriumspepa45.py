@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MycobacteriumSpEpa45.
+This file offers the methods to automatically retrieve the graph Mycobacterium sp. EPa45.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MycobacteriumSpEpa45(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MycobacteriumSpEpa45 graph.
+    """Return new instance of the Mycobacterium sp. EPa45 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MycobacteriumSpEpa45(
 
     Returns
     -----------------------
-    Instace of MycobacteriumSpEpa45 graph.
+    Instace of Mycobacterium sp. EPa45 graph.
 
 	References
 	---------------------

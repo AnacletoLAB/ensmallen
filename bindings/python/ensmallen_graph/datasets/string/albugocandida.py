@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AlbugoCandida.
+This file offers the methods to automatically retrieve the graph Albugo candida.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AlbugoCandida(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AlbugoCandida graph.
+    """Return new instance of the Albugo candida graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AlbugoCandida(
 
     Returns
     -----------------------
-    Instace of AlbugoCandida graph.
+    Instace of Albugo candida graph.
 
 	References
 	---------------------

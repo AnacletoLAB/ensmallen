@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PedobacterCaeni.
+This file offers the methods to automatically retrieve the graph Pedobacter caeni.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PedobacterCaeni(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PedobacterCaeni graph.
+    """Return new instance of the Pedobacter caeni graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PedobacterCaeni(
 
     Returns
     -----------------------
-    Instace of PedobacterCaeni graph.
+    Instace of Pedobacter caeni graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BrevundimonasSpLm2.
+This file offers the methods to automatically retrieve the graph Brevundimonas sp. LM2.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BrevundimonasSpLm2(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BrevundimonasSpLm2 graph.
+    """Return new instance of the Brevundimonas sp. LM2 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BrevundimonasSpLm2(
 
     Returns
     -----------------------
-    Instace of BrevundimonasSpLm2 graph.
+    Instace of Brevundimonas sp. LM2 graph.
 
 	References
 	---------------------

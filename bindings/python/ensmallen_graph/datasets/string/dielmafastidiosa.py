@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DielmaFastidiosa.
+This file offers the methods to automatically retrieve the graph Dielma fastidiosa.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DielmaFastidiosa(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DielmaFastidiosa graph.
+    """Return new instance of the Dielma fastidiosa graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def DielmaFastidiosa(
 
     Returns
     -----------------------
-    Instace of DielmaFastidiosa graph.
+    Instace of Dielma fastidiosa graph.
 
 	References
 	---------------------

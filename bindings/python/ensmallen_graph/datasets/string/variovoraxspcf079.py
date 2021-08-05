@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VariovoraxSpCf079.
+This file offers the methods to automatically retrieve the graph Variovorax sp. CF079.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VariovoraxSpCf079(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VariovoraxSpCf079 graph.
+    """Return new instance of the Variovorax sp. CF079 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def VariovoraxSpCf079(
 
     Returns
     -----------------------
-    Instace of VariovoraxSpCf079 graph.
+    Instace of Variovorax sp. CF079 graph.
 
 	References
 	---------------------

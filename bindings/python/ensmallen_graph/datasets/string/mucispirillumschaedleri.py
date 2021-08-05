@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MucispirillumSchaedleri.
+This file offers the methods to automatically retrieve the graph Mucispirillum schaedleri.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MucispirillumSchaedleri(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MucispirillumSchaedleri graph.
+    """Return new instance of the Mucispirillum schaedleri graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MucispirillumSchaedleri(
 
     Returns
     -----------------------
-    Instace of MucispirillumSchaedleri graph.
+    Instace of Mucispirillum schaedleri graph.
 
 	References
 	---------------------

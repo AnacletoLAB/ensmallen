@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph OmnitrophicaBacteriumRifoxyb12Full507.
+This file offers the methods to automatically retrieve the graph Omnitrophica bacterium RIFOXYB12_FULL_50_7.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def OmnitrophicaBacteriumRifoxyb12Full507(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the OmnitrophicaBacteriumRifoxyb12Full507 graph.
+    """Return new instance of the Omnitrophica bacterium RIFOXYB12_FULL_50_7 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def OmnitrophicaBacteriumRifoxyb12Full507(
 
     Returns
     -----------------------
-    Instace of OmnitrophicaBacteriumRifoxyb12Full507 graph.
+    Instace of Omnitrophica bacterium RIFOXYB12_FULL_50_7 graph.
 
 	References
 	---------------------

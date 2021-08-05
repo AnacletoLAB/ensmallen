@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinopolysporaRighensis.
+This file offers the methods to automatically retrieve the graph Actinopolyspora righensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinopolysporaRighensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinopolysporaRighensis graph.
+    """Return new instance of the Actinopolyspora righensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinopolysporaRighensis(
 
     Returns
     -----------------------
-    Instace of ActinopolysporaRighensis graph.
+    Instace of Actinopolyspora righensis graph.
 
 	References
 	---------------------

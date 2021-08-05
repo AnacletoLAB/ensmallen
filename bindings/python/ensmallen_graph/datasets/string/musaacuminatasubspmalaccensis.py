@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MusaAcuminataSubspMalaccensis.
+This file offers the methods to automatically retrieve the graph Musa acuminata subsp. malaccensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MusaAcuminataSubspMalaccensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MusaAcuminataSubspMalaccensis graph.
+    """Return new instance of the Musa acuminata subsp. malaccensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MusaAcuminataSubspMalaccensis(
 
     Returns
     -----------------------
-    Instace of MusaAcuminataSubspMalaccensis graph.
+    Instace of Musa acuminata subsp. malaccensis graph.
 
 	References
 	---------------------

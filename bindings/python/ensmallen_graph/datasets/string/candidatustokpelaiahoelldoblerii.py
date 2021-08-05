@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusTokpelaiaHoelldoblerii.
+This file offers the methods to automatically retrieve the graph Candidatus Tokpelaia hoelldoblerii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusTokpelaiaHoelldoblerii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusTokpelaiaHoelldoblerii graph.
+    """Return new instance of the Candidatus Tokpelaia hoelldoblerii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusTokpelaiaHoelldoblerii(
 
     Returns
     -----------------------
-    Instace of CandidatusTokpelaiaHoelldoblerii graph.
+    Instace of Candidatus Tokpelaia hoelldoblerii graph.
 
 	References
 	---------------------

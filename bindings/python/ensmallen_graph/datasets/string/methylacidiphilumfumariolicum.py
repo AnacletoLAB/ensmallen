@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethylacidiphilumFumariolicum.
+This file offers the methods to automatically retrieve the graph Methylacidiphilum fumariolicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethylacidiphilumFumariolicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethylacidiphilumFumariolicum graph.
+    """Return new instance of the Methylacidiphilum fumariolicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MethylacidiphilumFumariolicum(
 
     Returns
     -----------------------
-    Instace of MethylacidiphilumFumariolicum graph.
+    Instace of Methylacidiphilum fumariolicum graph.
 
 	References
 	---------------------

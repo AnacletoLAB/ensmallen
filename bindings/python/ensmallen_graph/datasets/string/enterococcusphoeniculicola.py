@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph EnterococcusPhoeniculicola.
+This file offers the methods to automatically retrieve the graph Enterococcus phoeniculicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def EnterococcusPhoeniculicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the EnterococcusPhoeniculicola graph.
+    """Return new instance of the Enterococcus phoeniculicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def EnterococcusPhoeniculicola(
 
     Returns
     -----------------------
-    Instace of EnterococcusPhoeniculicola graph.
+    Instace of Enterococcus phoeniculicola graph.
 
 	References
 	---------------------

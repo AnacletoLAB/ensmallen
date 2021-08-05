@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThiobacillusDenitrificansAtcc25259.
+This file offers the methods to automatically retrieve the graph Thiobacillus denitrificans ATCC25259.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThiobacillusDenitrificansAtcc25259(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThiobacillusDenitrificansAtcc25259 graph.
+    """Return new instance of the Thiobacillus denitrificans ATCC25259 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ThiobacillusDenitrificansAtcc25259(
 
     Returns
     -----------------------
-    Instace of ThiobacillusDenitrificansAtcc25259 graph.
+    Instace of Thiobacillus denitrificans ATCC25259 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BalneolaSpEhc07.
+This file offers the methods to automatically retrieve the graph Balneola sp. EhC07.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BalneolaSpEhc07(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BalneolaSpEhc07 graph.
+    """Return new instance of the Balneola sp. EhC07 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BalneolaSpEhc07(
 
     Returns
     -----------------------
-    Instace of BalneolaSpEhc07 graph.
+    Instace of Balneola sp. EhC07 graph.
 
 	References
 	---------------------

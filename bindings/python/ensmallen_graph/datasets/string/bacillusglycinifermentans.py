@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusGlycinifermentans.
+This file offers the methods to automatically retrieve the graph Bacillus glycinifermentans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusGlycinifermentans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusGlycinifermentans graph.
+    """Return new instance of the Bacillus glycinifermentans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusGlycinifermentans(
 
     Returns
     -----------------------
-    Instace of BacillusGlycinifermentans graph.
+    Instace of Bacillus glycinifermentans graph.
 
 	References
 	---------------------

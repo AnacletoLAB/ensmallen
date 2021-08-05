@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesCelluloflavus.
+This file offers the methods to automatically retrieve the graph Streptomyces celluloflavus.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesCelluloflavus(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesCelluloflavus graph.
+    """Return new instance of the Streptomyces celluloflavus graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesCelluloflavus(
 
     Returns
     -----------------------
-    Instace of StreptomycesCelluloflavus graph.
+    Instace of Streptomyces celluloflavus graph.
 
 	References
 	---------------------

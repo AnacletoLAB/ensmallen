@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MesoniaMobilis.
+This file offers the methods to automatically retrieve the graph Mesonia mobilis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MesoniaMobilis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MesoniaMobilis graph.
+    """Return new instance of the Mesonia mobilis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MesoniaMobilis(
 
     Returns
     -----------------------
-    Instace of MesoniaMobilis graph.
+    Instace of Mesonia mobilis graph.
 
 	References
 	---------------------

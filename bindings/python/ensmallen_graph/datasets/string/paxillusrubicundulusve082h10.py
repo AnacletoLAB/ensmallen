@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaxillusRubicundulusVe082h10.
+This file offers the methods to automatically retrieve the graph Paxillus rubicundulus Ve08.2h10.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaxillusRubicundulusVe082h10(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaxillusRubicundulusVe082h10 graph.
+    """Return new instance of the Paxillus rubicundulus Ve08.2h10 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaxillusRubicundulusVe082h10(
 
     Returns
     -----------------------
-    Instace of PaxillusRubicundulusVe082h10 graph.
+    Instace of Paxillus rubicundulus Ve08.2h10 graph.
 
 	References
 	---------------------

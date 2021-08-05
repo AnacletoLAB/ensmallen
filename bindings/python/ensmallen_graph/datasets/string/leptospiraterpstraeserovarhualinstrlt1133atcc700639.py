@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639.
+This file offers the methods to automatically retrieve the graph Leptospira terpstrae serovar Hualin str. LT 11-33 ATCC 700639.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639 graph.
+    """Return new instance of the Leptospira terpstrae serovar Hualin str. LT 11-33 ATCC 700639 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639(
 
     Returns
     -----------------------
-    Instace of LeptospiraTerpstraeSerovarHualinStrLt1133Atcc700639 graph.
+    Instace of Leptospira terpstrae serovar Hualin str. LT 11-33 ATCC 700639 graph.
 
 	References
 	---------------------

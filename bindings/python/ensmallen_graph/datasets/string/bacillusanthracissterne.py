@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusAnthracisSterne.
+This file offers the methods to automatically retrieve the graph Bacillus anthracis Sterne.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusAnthracisSterne(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusAnthracisSterne graph.
+    """Return new instance of the Bacillus anthracis Sterne graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def BacillusAnthracisSterne(
 
     Returns
     -----------------------
-    Instace of BacillusAnthracisSterne graph.
+    Instace of Bacillus anthracis Sterne graph.
 
 	References
 	---------------------

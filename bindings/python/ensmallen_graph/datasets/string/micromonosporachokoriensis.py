@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicromonosporaChokoriensis.
+This file offers the methods to automatically retrieve the graph Micromonospora chokoriensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicromonosporaChokoriensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicromonosporaChokoriensis graph.
+    """Return new instance of the Micromonospora chokoriensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicromonosporaChokoriensis(
 
     Returns
     -----------------------
-    Instace of MicromonosporaChokoriensis graph.
+    Instace of Micromonospora chokoriensis graph.
 
 	References
 	---------------------

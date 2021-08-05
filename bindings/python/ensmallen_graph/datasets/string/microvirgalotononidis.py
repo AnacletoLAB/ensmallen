@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MicrovirgaLotononidis.
+This file offers the methods to automatically retrieve the graph Microvirga lotononidis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MicrovirgaLotononidis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MicrovirgaLotononidis graph.
+    """Return new instance of the Microvirga lotononidis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def MicrovirgaLotononidis(
 
     Returns
     -----------------------
-    Instace of MicrovirgaLotononidis graph.
+    Instace of Microvirga lotononidis graph.
 
 	References
 	---------------------

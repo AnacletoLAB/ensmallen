@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PseudogymnoascusSpVkmF4519Fw2642.
+This file offers the methods to automatically retrieve the graph Pseudogymnoascus sp. VKM F-4519 (FW-2642).
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PseudogymnoascusSpVkmF4519Fw2642(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PseudogymnoascusSpVkmF4519Fw2642 graph.
+    """Return new instance of the Pseudogymnoascus sp. VKM F-4519 (FW-2642) graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PseudogymnoascusSpVkmF4519Fw2642(
 
     Returns
     -----------------------
-    Instace of PseudogymnoascusSpVkmF4519Fw2642 graph.
+    Instace of Pseudogymnoascus sp. VKM F-4519 (FW-2642) graph.
 
 	References
 	---------------------

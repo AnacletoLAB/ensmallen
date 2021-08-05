@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusPyogenes.
+This file offers the methods to automatically retrieve the graph Streptococcus pyogenes.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusPyogenes(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusPyogenes graph.
+    """Return new instance of the Streptococcus pyogenes graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusPyogenes(
 
     Returns
     -----------------------
-    Instace of StreptococcusPyogenes graph.
+    Instace of Streptococcus pyogenes graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusPerolensDsm12744.
+This file offers the methods to automatically retrieve the graph Lactobacillus perolens DSM 12744.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusPerolensDsm12744(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusPerolensDsm12744 graph.
+    """Return new instance of the Lactobacillus perolens DSM 12744 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusPerolensDsm12744(
 
     Returns
     -----------------------
-    Instace of LactobacillusPerolensDsm12744 graph.
+    Instace of Lactobacillus perolens DSM 12744 graph.
 
 	References
 	---------------------

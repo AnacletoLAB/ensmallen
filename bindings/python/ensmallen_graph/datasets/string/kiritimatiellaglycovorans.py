@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KiritimatiellaGlycovorans.
+This file offers the methods to automatically retrieve the graph Kiritimatiella glycovorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KiritimatiellaGlycovorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KiritimatiellaGlycovorans graph.
+    """Return new instance of the Kiritimatiella glycovorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KiritimatiellaGlycovorans(
 
     Returns
     -----------------------
-    Instace of KiritimatiellaGlycovorans graph.
+    Instace of Kiritimatiella glycovorans graph.
 
 	References
 	---------------------

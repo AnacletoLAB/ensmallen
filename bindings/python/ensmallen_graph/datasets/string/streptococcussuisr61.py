@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusSuisR61.
+This file offers the methods to automatically retrieve the graph Streptococcus suis R61.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusSuisR61(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusSuisR61 graph.
+    """Return new instance of the Streptococcus suis R61 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusSuisR61(
 
     Returns
     -----------------------
-    Instace of StreptococcusSuisR61 graph.
+    Instace of Streptococcus suis R61 graph.
 
 	References
 	---------------------

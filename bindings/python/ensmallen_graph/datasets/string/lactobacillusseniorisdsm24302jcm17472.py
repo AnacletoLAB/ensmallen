@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactobacillusSeniorisDsm24302Jcm17472.
+This file offers the methods to automatically retrieve the graph Lactobacillus senioris DSM 24302 JCM 17472.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactobacillusSeniorisDsm24302Jcm17472(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactobacillusSeniorisDsm24302Jcm17472 graph.
+    """Return new instance of the Lactobacillus senioris DSM 24302 JCM 17472 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LactobacillusSeniorisDsm24302Jcm17472(
 
     Returns
     -----------------------
-    Instace of LactobacillusSeniorisDsm24302Jcm17472 graph.
+    Instace of Lactobacillus senioris DSM 24302 JCM 17472 graph.
 
 	References
 	---------------------

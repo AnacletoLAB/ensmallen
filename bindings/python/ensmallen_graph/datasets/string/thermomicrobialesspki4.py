@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ThermomicrobialesSpKi4.
+This file offers the methods to automatically retrieve the graph Thermomicrobiales sp. KI4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ThermomicrobialesSpKi4(
     version: str = "11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ThermomicrobialesSpKi4 graph.
+    """Return new instance of the Thermomicrobiales sp. KI4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ThermomicrobialesSpKi4(
 
     Returns
     -----------------------
-    Instace of ThermomicrobialesSpKi4 graph.
+    Instace of Thermomicrobiales sp. KI4 graph.
 
 	References
 	---------------------

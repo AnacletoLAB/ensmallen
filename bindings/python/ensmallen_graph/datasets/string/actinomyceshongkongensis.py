@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ActinomycesHongkongensis.
+This file offers the methods to automatically retrieve the graph Actinomyces hongkongensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ActinomycesHongkongensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ActinomycesHongkongensis graph.
+    """Return new instance of the Actinomyces hongkongensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ActinomycesHongkongensis(
 
     Returns
     -----------------------
-    Instace of ActinomycesHongkongensis graph.
+    Instace of Actinomyces hongkongensis graph.
 
 	References
 	---------------------

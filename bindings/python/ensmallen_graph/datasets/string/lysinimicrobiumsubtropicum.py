@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LysinimicrobiumSubtropicum.
+This file offers the methods to automatically retrieve the graph Lysinimicrobium subtropicum.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LysinimicrobiumSubtropicum(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LysinimicrobiumSubtropicum graph.
+    """Return new instance of the Lysinimicrobium subtropicum graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LysinimicrobiumSubtropicum(
 
     Returns
     -----------------------
-    Instace of LysinimicrobiumSubtropicum graph.
+    Instace of Lysinimicrobium subtropicum graph.
 
 	References
 	---------------------

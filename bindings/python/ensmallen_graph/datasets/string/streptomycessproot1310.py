@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesSpRoot1310.
+This file offers the methods to automatically retrieve the graph Streptomyces sp. Root1310.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesSpRoot1310(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesSpRoot1310 graph.
+    """Return new instance of the Streptomyces sp. Root1310 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def StreptomycesSpRoot1310(
 
     Returns
     -----------------------
-    Instace of StreptomycesSpRoot1310 graph.
+    Instace of Streptomyces sp. Root1310 graph.
 
 	References
 	---------------------

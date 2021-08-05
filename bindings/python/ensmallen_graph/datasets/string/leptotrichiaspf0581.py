@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LeptotrichiaSpF0581.
+This file offers the methods to automatically retrieve the graph Leptotrichia sp. F0581.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LeptotrichiaSpF0581(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LeptotrichiaSpF0581 graph.
+    """Return new instance of the Leptotrichia sp. F0581 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LeptotrichiaSpF0581(
 
     Returns
     -----------------------
-    Instace of LeptotrichiaSpF0581 graph.
+    Instace of Leptotrichia sp. F0581 graph.
 
 	References
 	---------------------

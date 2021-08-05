@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BisonBisonBison.
+This file offers the methods to automatically retrieve the graph Bison bison bison.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BisonBisonBison(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BisonBisonBison graph.
+    """Return new instance of the Bison bison bison graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BisonBisonBison(
 
     Returns
     -----------------------
-    Instace of BisonBisonBison graph.
+    Instace of Bison bison bison graph.
 
 	References
 	---------------------

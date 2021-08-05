@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnoxybacillusFlavithermusYunnanensis.
+This file offers the methods to automatically retrieve the graph Anoxybacillus flavithermus yunnanensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnoxybacillusFlavithermusYunnanensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnoxybacillusFlavithermusYunnanensis graph.
+    """Return new instance of the Anoxybacillus flavithermus yunnanensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnoxybacillusFlavithermusYunnanensis(
 
     Returns
     -----------------------
-    Instace of AnoxybacillusFlavithermusYunnanensis graph.
+    Instace of Anoxybacillus flavithermus yunnanensis graph.
 
 	References
 	---------------------

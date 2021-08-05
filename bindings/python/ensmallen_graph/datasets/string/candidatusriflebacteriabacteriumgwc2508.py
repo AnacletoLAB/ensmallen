@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CandidatusRiflebacteriaBacteriumGwc2508.
+This file offers the methods to automatically retrieve the graph Candidatus Riflebacteria bacterium GWC2_50_8.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CandidatusRiflebacteriaBacteriumGwc2508(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CandidatusRiflebacteriaBacteriumGwc2508 graph.
+    """Return new instance of the Candidatus Riflebacteria bacterium GWC2_50_8 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CandidatusRiflebacteriaBacteriumGwc2508(
 
     Returns
     -----------------------
-    Instace of CandidatusRiflebacteriaBacteriumGwc2508 graph.
+    Instace of Candidatus Riflebacteria bacterium GWC2_50_8 graph.
 
 	References
 	---------------------

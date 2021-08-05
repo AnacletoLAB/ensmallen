@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MethanothermobacterMarburgensisStrMarburg.
+This file offers the methods to automatically retrieve the graph Methanothermobacter marburgensis str. Marburg.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MethanothermobacterMarburgensisStrMarburg(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MethanothermobacterMarburgensisStrMarburg graph.
+    """Return new instance of the Methanothermobacter marburgensis str. Marburg graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MethanothermobacterMarburgensisStrMarburg(
 
     Returns
     -----------------------
-    Instace of MethanothermobacterMarburgensisStrMarburg graph.
+    Instace of Methanothermobacter marburgensis str. Marburg graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArthrobacterGlobiformis.
+This file offers the methods to automatically retrieve the graph Arthrobacter globiformis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArthrobacterGlobiformis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArthrobacterGlobiformis graph.
+    """Return new instance of the Arthrobacter globiformis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def ArthrobacterGlobiformis(
 
     Returns
     -----------------------
-    Instace of ArthrobacterGlobiformis graph.
+    Instace of Arthrobacter globiformis graph.
 
 	References
 	---------------------

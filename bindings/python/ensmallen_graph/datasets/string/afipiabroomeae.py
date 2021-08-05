@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AfipiaBroomeae.
+This file offers the methods to automatically retrieve the graph Afipia broomeae.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AfipiaBroomeae(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AfipiaBroomeae graph.
+    """Return new instance of the Afipia broomeae graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AfipiaBroomeae(
 
     Returns
     -----------------------
-    Instace of AfipiaBroomeae graph.
+    Instace of Afipia broomeae graph.
 
 	References
 	---------------------

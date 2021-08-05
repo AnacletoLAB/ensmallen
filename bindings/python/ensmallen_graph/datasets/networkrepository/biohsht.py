@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BioHsHt.
+This file offers the methods to automatically retrieve the graph bio-HS-HT.
 
 The graph is automatically retrieved from the NetworkRepository repository. 
 
@@ -44,7 +44,7 @@ def BioHsHt(
     version: str = "latest",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BioHsHt graph.
+    """Return new instance of the bio-HS-HT graph.
 
     The graph is automatically retrieved from the NetworkRepository repository.	
 
@@ -71,7 +71,7 @@ def BioHsHt(
 
     Returns
     -----------------------
-    Instace of BioHsHt graph.
+    Instace of bio-HS-HT graph.
 
 	References
 	---------------------

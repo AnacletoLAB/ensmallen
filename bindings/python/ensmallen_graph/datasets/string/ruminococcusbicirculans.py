@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusBicirculans.
+This file offers the methods to automatically retrieve the graph Ruminococcus bicirculans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusBicirculans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusBicirculans graph.
+    """Return new instance of the Ruminococcus bicirculans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def RuminococcusBicirculans(
 
     Returns
     -----------------------
-    Instace of RuminococcusBicirculans graph.
+    Instace of Ruminococcus bicirculans graph.
 
 	References
 	---------------------

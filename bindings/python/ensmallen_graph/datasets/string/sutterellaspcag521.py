@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph SutterellaSpCag521.
+This file offers the methods to automatically retrieve the graph Sutterella sp. CAG:521.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def SutterellaSpCag521(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the SutterellaSpCag521 graph.
+    """Return new instance of the Sutterella sp. CAG:521 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def SutterellaSpCag521(
 
     Returns
     -----------------------
-    Instace of SutterellaSpCag521 graph.
+    Instace of Sutterella sp. CAG:521 graph.
 
 	References
 	---------------------

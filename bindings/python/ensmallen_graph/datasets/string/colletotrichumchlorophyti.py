@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ColletotrichumChlorophyti.
+This file offers the methods to automatically retrieve the graph Colletotrichum chlorophyti.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ColletotrichumChlorophyti(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ColletotrichumChlorophyti graph.
+    """Return new instance of the Colletotrichum chlorophyti graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ColletotrichumChlorophyti(
 
     Returns
     -----------------------
-    Instace of ColletotrichumChlorophyti graph.
+    Instace of Colletotrichum chlorophyti graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph KibdelosporangiumSpMj126Nf4.
+This file offers the methods to automatically retrieve the graph Kibdelosporangium sp. MJ126-NF4.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def KibdelosporangiumSpMj126Nf4(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the KibdelosporangiumSpMj126Nf4 graph.
+    """Return new instance of the Kibdelosporangium sp. MJ126-NF4 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def KibdelosporangiumSpMj126Nf4(
 
     Returns
     -----------------------
-    Instace of KibdelosporangiumSpMj126Nf4 graph.
+    Instace of Kibdelosporangium sp. MJ126-NF4 graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptococcusAnginosusF0211.
+This file offers the methods to automatically retrieve the graph Streptococcus anginosus F0211.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptococcusAnginosusF0211(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptococcusAnginosusF0211 graph.
+    """Return new instance of the Streptococcus anginosus F0211 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptococcusAnginosusF0211(
 
     Returns
     -----------------------
-    Instace of StreptococcusAnginosusF0211 graph.
+    Instace of Streptococcus anginosus F0211 graph.
 
 	References
 	---------------------

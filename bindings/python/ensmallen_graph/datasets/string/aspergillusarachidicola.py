@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AspergillusArachidicola.
+This file offers the methods to automatically retrieve the graph Aspergillus arachidicola.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AspergillusArachidicola(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AspergillusArachidicola graph.
+    """Return new instance of the Aspergillus arachidicola graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AspergillusArachidicola(
 
     Returns
     -----------------------
-    Instace of AspergillusArachidicola graph.
+    Instace of Aspergillus arachidicola graph.
 
 	References
 	---------------------

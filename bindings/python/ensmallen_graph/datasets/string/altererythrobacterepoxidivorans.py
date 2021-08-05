@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AltererythrobacterEpoxidivorans.
+This file offers the methods to automatically retrieve the graph Altererythrobacter epoxidivorans.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AltererythrobacterEpoxidivorans(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AltererythrobacterEpoxidivorans graph.
+    """Return new instance of the Altererythrobacter epoxidivorans graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def AltererythrobacterEpoxidivorans(
 
     Returns
     -----------------------
-    Instace of AltererythrobacterEpoxidivorans graph.
+    Instace of Altererythrobacter epoxidivorans graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph NonomuraeaPusilla.
+This file offers the methods to automatically retrieve the graph Nonomuraea pusilla.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def NonomuraeaPusilla(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the NonomuraeaPusilla graph.
+    """Return new instance of the Nonomuraea pusilla graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def NonomuraeaPusilla(
 
     Returns
     -----------------------
-    Instace of NonomuraeaPusilla graph.
+    Instace of Nonomuraea pusilla graph.
 
 	References
 	---------------------

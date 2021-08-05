@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RalstoniaSpMd27.
+This file offers the methods to automatically retrieve the graph Ralstonia sp. MD27.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RalstoniaSpMd27(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RalstoniaSpMd27 graph.
+    """Return new instance of the Ralstonia sp. MD27 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RalstoniaSpMd27(
 
     Returns
     -----------------------
-    Instace of RalstoniaSpMd27 graph.
+    Instace of Ralstonia sp. MD27 graph.
 
 	References
 	---------------------

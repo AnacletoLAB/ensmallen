@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph RuminococcusSpCag724.
+This file offers the methods to automatically retrieve the graph Ruminococcus sp. CAG:724.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def RuminococcusSpCag724(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the RuminococcusSpCag724 graph.
+    """Return new instance of the Ruminococcus sp. CAG:724 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def RuminococcusSpCag724(
 
     Returns
     -----------------------
-    Instace of RuminococcusSpCag724 graph.
+    Instace of Ruminococcus sp. CAG:724 graph.
 
 	References
 	---------------------

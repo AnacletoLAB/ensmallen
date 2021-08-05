@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph TateyamariaOmphalii.
+This file offers the methods to automatically retrieve the graph Tateyamaria omphalii.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def TateyamariaOmphalii(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the TateyamariaOmphalii graph.
+    """Return new instance of the Tateyamaria omphalii graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def TateyamariaOmphalii(
 
     Returns
     -----------------------
-    Instace of TateyamariaOmphalii graph.
+    Instace of Tateyamaria omphalii graph.
 
 	References
 	---------------------

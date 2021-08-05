@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph MuribaculumIntestinale.
+This file offers the methods to automatically retrieve the graph Muribaculum intestinale.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def MuribaculumIntestinale(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the MuribaculumIntestinale graph.
+    """Return new instance of the Muribaculum intestinale graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def MuribaculumIntestinale(
 
     Returns
     -----------------------
-    Instace of MuribaculumIntestinale graph.
+    Instace of Muribaculum intestinale graph.
 
 	References
 	---------------------

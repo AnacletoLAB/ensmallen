@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph GeobacterToluenoxydansJcm15764.
+This file offers the methods to automatically retrieve the graph Geobacter toluenoxydans JCM 15764.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def GeobacterToluenoxydansJcm15764(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the GeobacterToluenoxydansJcm15764 graph.
+    """Return new instance of the Geobacter toluenoxydans JCM 15764 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def GeobacterToluenoxydansJcm15764(
 
     Returns
     -----------------------
-    Instace of GeobacterToluenoxydansJcm15764 graph.
+    Instace of Geobacter toluenoxydans JCM 15764 graph.
 
 	References
 	---------------------

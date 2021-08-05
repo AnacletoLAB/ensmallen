@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ClostridialesBacteriumGwf23885.
+This file offers the methods to automatically retrieve the graph Clostridiales bacterium GWF2_38_85.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ClostridialesBacteriumGwf23885(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ClostridialesBacteriumGwf23885 graph.
+    """Return new instance of the Clostridiales bacterium GWF2_38_85 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ClostridialesBacteriumGwf23885(
 
     Returns
     -----------------------
-    Instace of ClostridialesBacteriumGwf23885 graph.
+    Instace of Clostridiales bacterium GWF2_38_85 graph.
 
 	References
 	---------------------

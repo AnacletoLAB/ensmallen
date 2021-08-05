@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph AnaeromyxobacterSpFw1095.
+This file offers the methods to automatically retrieve the graph Anaeromyxobacter sp. Fw1095.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def AnaeromyxobacterSpFw1095(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the AnaeromyxobacterSpFw1095 graph.
+    """Return new instance of the Anaeromyxobacter sp. Fw1095 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def AnaeromyxobacterSpFw1095(
 
     Returns
     -----------------------
-    Instace of AnaeromyxobacterSpFw1095 graph.
+    Instace of Anaeromyxobacter sp. Fw1095 graph.
 
 	References
 	---------------------

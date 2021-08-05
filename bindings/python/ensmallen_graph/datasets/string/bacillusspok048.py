@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph BacillusSpOk048.
+This file offers the methods to automatically retrieve the graph Bacillus sp. OK048.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def BacillusSpOk048(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the BacillusSpOk048 graph.
+    """Return new instance of the Bacillus sp. OK048 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def BacillusSpOk048(
 
     Returns
     -----------------------
-    Instace of BacillusSpOk048 graph.
+    Instace of Bacillus sp. OK048 graph.
 
 	References
 	---------------------

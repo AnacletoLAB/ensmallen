@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LactococcusLactisCremoris.
+This file offers the methods to automatically retrieve the graph Lactococcus lactis cremoris.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LactococcusLactisCremoris(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LactococcusLactisCremoris graph.
+    """Return new instance of the Lactococcus lactis cremoris graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def LactococcusLactisCremoris(
 
     Returns
     -----------------------
-    Instace of LactococcusLactisCremoris graph.
+    Instace of Lactococcus lactis cremoris graph.
 
 	References
 	---------------------

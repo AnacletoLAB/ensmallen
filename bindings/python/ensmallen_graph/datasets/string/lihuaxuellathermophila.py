@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph LihuaxuellaThermophila.
+This file offers the methods to automatically retrieve the graph Lihuaxuella thermophila.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def LihuaxuellaThermophila(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the LihuaxuellaThermophila graph.
+    """Return new instance of the Lihuaxuella thermophila graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def LihuaxuellaThermophila(
 
     Returns
     -----------------------
-    Instace of LihuaxuellaThermophila graph.
+    Instace of Lihuaxuella thermophila graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph ArhodomonasAquaeoleiDsm8974.
+This file offers the methods to automatically retrieve the graph Arhodomonas aquaeolei DSM 8974.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def ArhodomonasAquaeoleiDsm8974(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the ArhodomonasAquaeoleiDsm8974 graph.
+    """Return new instance of the Arhodomonas aquaeolei DSM 8974 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def ArhodomonasAquaeoleiDsm8974(
 
     Returns
     -----------------------
-    Instace of ArhodomonasAquaeoleiDsm8974 graph.
+    Instace of Arhodomonas aquaeolei DSM 8974 graph.
 
 	References
 	---------------------

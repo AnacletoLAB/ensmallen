@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph StreptomycesViolaceusniger.
+This file offers the methods to automatically retrieve the graph Streptomyces violaceusniger.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def StreptomycesViolaceusniger(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the StreptomycesViolaceusniger graph.
+    """Return new instance of the Streptomyces violaceusniger graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def StreptomycesViolaceusniger(
 
     Returns
     -----------------------
-    Instace of StreptomycesViolaceusniger graph.
+    Instace of Streptomyces violaceusniger graph.
 
 	References
 	---------------------

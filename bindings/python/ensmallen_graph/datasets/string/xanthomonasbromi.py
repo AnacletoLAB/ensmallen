@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph XanthomonasBromi.
+This file offers the methods to automatically retrieve the graph Xanthomonas bromi.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def XanthomonasBromi(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the XanthomonasBromi graph.
+    """Return new instance of the Xanthomonas bromi graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def XanthomonasBromi(
 
     Returns
     -----------------------
-    Instace of XanthomonasBromi graph.
+    Instace of Xanthomonas bromi graph.
 
 	References
 	---------------------

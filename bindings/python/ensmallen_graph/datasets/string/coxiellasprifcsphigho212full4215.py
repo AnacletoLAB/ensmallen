@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CoxiellaSpRifcsphigho212Full4215.
+This file offers the methods to automatically retrieve the graph Coxiella sp. RIFCSPHIGHO2_12_FULL_42_15.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CoxiellaSpRifcsphigho212Full4215(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CoxiellaSpRifcsphigho212Full4215 graph.
+    """Return new instance of the Coxiella sp. RIFCSPHIGHO2_12_FULL_42_15 graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def CoxiellaSpRifcsphigho212Full4215(
 
     Returns
     -----------------------
-    Instace of CoxiellaSpRifcsphigho212Full4215 graph.
+    Instace of Coxiella sp. RIFCSPHIGHO2_12_FULL_42_15 graph.
 
 	References
 	---------------------

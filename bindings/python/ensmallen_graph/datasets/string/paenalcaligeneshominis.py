@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph PaenalcaligenesHominis.
+This file offers the methods to automatically retrieve the graph Paenalcaligenes hominis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def PaenalcaligenesHominis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the PaenalcaligenesHominis graph.
+    """Return new instance of the Paenalcaligenes hominis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -65,7 +65,7 @@ def PaenalcaligenesHominis(
 
     Returns
     -----------------------
-    Instace of PaenalcaligenesHominis graph.
+    Instace of Paenalcaligenes hominis graph.
 
 	References
 	---------------------

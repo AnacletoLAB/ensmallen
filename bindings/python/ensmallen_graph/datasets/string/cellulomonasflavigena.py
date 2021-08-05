@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph CellulomonasFlavigena.
+This file offers the methods to automatically retrieve the graph Cellulomonas flavigena.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def CellulomonasFlavigena(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the CellulomonasFlavigena graph.
+    """Return new instance of the Cellulomonas flavigena graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def CellulomonasFlavigena(
 
     Returns
     -----------------------
-    Instace of CellulomonasFlavigena graph.
+    Instace of Cellulomonas flavigena graph.
 
 	References
 	---------------------

@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph VibrioBrasiliensis.
+This file offers the methods to automatically retrieve the graph Vibrio brasiliensis.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def VibrioBrasiliensis(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the VibrioBrasiliensis graph.
+    """Return new instance of the Vibrio brasiliensis graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def VibrioBrasiliensis(
 
     Returns
     -----------------------
-    Instace of VibrioBrasiliensis graph.
+    Instace of Vibrio brasiliensis graph.
 
 	References
 	---------------------

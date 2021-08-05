@@ -1,5 +1,5 @@
 """
-This file offers the methods to automatically retrieve the graph DesulfovibrioGigas.
+This file offers the methods to automatically retrieve the graph Desulfovibrio gigas.
 
 The graph is automatically retrieved from the STRING repository. 
 
@@ -36,7 +36,7 @@ def DesulfovibrioGigas(
     version: str = "11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
-    """Return new instance of the DesulfovibrioGigas graph.
+    """Return new instance of the Desulfovibrio gigas graph.
 
     The graph is automatically retrieved from the STRING repository.	
 
@@ -66,7 +66,7 @@ def DesulfovibrioGigas(
 
     Returns
     -----------------------
-    Instace of DesulfovibrioGigas graph.
+    Instace of Desulfovibrio gigas graph.
 
 	References
 	---------------------
