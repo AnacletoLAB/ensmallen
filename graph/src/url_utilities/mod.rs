@@ -381,3 +381,5 @@ mod string_format_url;
 pub(crate) use string_format_url::*;
 mod string_url_utilities;
 pub use string_url_utilities::*;
+mod angular_link_url_utilities;
+pub use angular_link_url_utilities::*;

@@ -210,7 +210,7 @@ class AutomaticallyRetrievedGraph:
         """Return EnsmallenGraph containing required graph."""
         paths = self._graph.get("paths", None)
         arguments = {
-            **arguments,
+            **self._graph["arguments"],
             **self._additional_graph_kwargs
         }
         if paths is not None:
