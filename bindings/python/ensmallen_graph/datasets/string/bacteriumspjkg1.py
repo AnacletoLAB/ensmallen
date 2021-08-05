@@ -33,7 +33,7 @@ def BacteriumSpJkg1(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.0",
+    version: str = "links.v11.0",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Bacterium sp. JKG1 graph.
@@ -56,10 +56,12 @@ def BacteriumSpJkg1(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.0",
+    version: str = "links.v11.0",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.0
+			- homology.v11.0
+			- physical.links.v11.0
+			- links.v11.0
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 

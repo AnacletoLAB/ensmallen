@@ -33,7 +33,7 @@ def CorynebacteriumSpHmsc04h06(
     verbose: int = 2,
     cache: bool = True,
     cache_path: str = "graphs/string",
-    version: str = "11.5",
+    version: str = "links.v11.5",
     **additional_graph_kwargs: Dict
 ) -> EnsmallenGraph:
     """Return new instance of the Corynebacterium sp. HMSC04H06 graph.
@@ -56,10 +56,12 @@ def CorynebacteriumSpHmsc04h06(
         and preprocess them only once.
     cache_path: str = "graphs",
         Where to store the downloaded graphs.
-    version: str = "11.5",
+    version: str = "links.v11.5",
         The version of the graph to retrieve.		
 	The available versions are:
-			- 11.5
+			- homology.v11.5
+			- physical.links.v11.5
+			- links.v11.5
     additional_graph_kwargs: Dict,
         Additional graph kwargs.
 

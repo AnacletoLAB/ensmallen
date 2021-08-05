@@ -28,35 +28,78 @@ class StringGraphRepository(GraphRepository):
 
         mined_data = {}
 
-        graph_url_pattern = "https://stringdb-static.org/download/protein.links.v{version}/{taxon_id}.protein.links.v{version}.txt.gz"
+        type_of_graphs = [
+            "homology",
+            "physical.links",
+            "links",
+        ]
 
-        for version, species in (
-            ("11.0", species_11_0),
-            ("11.5", species_11_5),
-        ):
-            for _, row in species.iterrows():
-                graph_name = row.STRING_name_compact
-                stored_graph_name = self.build_stored_graph_name(graph_name)
-                if stored_graph_name not in mined_data:
-                    mined_data[stored_graph_name] = {}
-                taxon_id = row[0]
-                graph_url = graph_url_pattern.format(
-                    taxon_id=taxon_id,
-                    version=version
-                )
-                mined_data[stored_graph_name][version] = {
-                    "urls": [graph_url],
-                    "arguments": {
-                        "edge_path": "{taxon_id}.protein.links.v{version}.txt".format(
-                            taxon_id=taxon_id,
-                            version=version
-                        ),
-                        "name": graph_name,
-                        "sources_column": "protein1",
-                        "destinations_column": "protein2",
-                        "weights_column": "combined_score",
+        parameters_per_type_of_graph = {
+            "links": {
+                "sources_column": "protein1",
+                "destinations_column": "protein2",
+                "weights_column": "combined_score",
+            },
+            "physical.links": {
+                "sources_column": "protein1",
+                "destinations_column": "protein2",
+                "weights_column": "combined_score",
+            },
+            "homology": {
+                "sources_column": "##protein1",
+                "destinations_column": "protein2",
+                "weights_column": "bitscore",
+            }
+        }
+
+        edge_list_url_pattern = "https://stringdb-static.org/download/protein.{type_of_graph}.v{version}/{taxon_id}.protein.{type_of_graph}.v{version}.txt.gz"
+        node_list_url_pattern = "https://stringdb-static.org/download/protein.info.v{version}/{taxon_id}.protein.info.v{version}.txt.gz"
+
+        for type_of_graph in type_of_graphs:
+            for version, species in (
+                ("11.0", species_11_0),
+                ("11.5", species_11_5),
+            ):
+                for _, row in species.iterrows():
+                    graph_name = row.STRING_name_compact
+                    stored_graph_name = self.build_stored_graph_name(graph_name)
+                    if stored_graph_name not in mined_data:
+                        mined_data[stored_graph_name] = {}
+                    taxon_id = row[0]
+                    edge_list_url = edge_list_url_pattern.format(
+                        taxon_id=taxon_id,
+                        version=version,
+                        type_of_graph=type_of_graph
+                    )
+                    node_list_url = node_list_url_pattern.format(
+                        taxon_id=taxon_id,
+                        version=version,
+                        type_of_graph=type_of_graph
+                    )
+                    full_version_code = "{type_of_graph}.v{version}".format(
+                        type_of_graph=type_of_graph,
+                        version=version
+                    )
+                    mined_data[stored_graph_name][full_version_code] = {
+                        "urls": [
+                            edge_list_url,
+                            node_list_url
+                        ],
+                        "arguments": {
+                            "edge_path": "{taxon_id}.protein.{type_of_graph}.v{version}.txt".format(
+                                taxon_id=taxon_id,
+                                version=version,
+                                type_of_graph=type_of_graph
+                            ),
+                            "node_path": "{taxon_id}.protein.info.v{version}.txt".format(
+                                taxon_id=taxon_id,
+                                version=version
+                            ),
+                            "name": graph_name,
+                            "nodes_column": "protein_external_id",
+                            **parameters_per_type_of_graph[type_of_graph]
+                        }
                     }
-                }
 
         return mined_data
 
