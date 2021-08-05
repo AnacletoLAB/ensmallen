@@ -80,14 +80,30 @@ def get_dataset(
     graph_names = get_available_graphs_from_repository(repository)
 
     if not set_validator(graph_names)(graph_name):
+
+        # We check if the given graph is from another repository
+        other_repository = None
+        for candidate_repository in get_available_repository():
+            if graph_name in get_available_graphs_from_repository(
+                candidate_repository
+            ):
+                other_repository = candidate_repository
+
         raise ValueError((
             "The provided graph name `{}` is not within the set "
-            "of supported graph names, {}.\n"
-            "Did you mean `{}`?"
+            "of supported graph names within the repository {}.\n"
+            "Did you mean `{}`?\n"
+            "{}"
+            "The complete set of graphs available from the given "
+            "repository is {}."
         ).format(
             graph_name,
+            repository,
+            closest(graph_name, graph_names),
+            "" if other_repository is None else "We have found a graph with the given name in the repository `{}`. Maybe you wanted to use this one?\n".format(
+                other_repository
+            ),
             ", ".join(graph_names),
-            closest(graph_name, graph_names)
         ))
 
     return getattr(getattr(datasets, repository), graph_name)
