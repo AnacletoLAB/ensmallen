@@ -428,7 +428,6 @@ impl Graph {
         self.must_be_undirected()?;
         let verbose = verbose.unwrap_or(false);
         let nodes_number = self.get_nodes_number() as usize;
-        let mut parents = vec![NOT_PRESENT; nodes_number];
         let (cpu_number, pool) = get_thread_pool()?;
         let shared_stacks: Arc<Vec<Mutex<Vec<NodeT>>>> = Arc::from(
             (0..std::cmp::max(cpu_number - 1, 1))
@@ -438,6 +437,7 @@ impl Graph {
         let active_nodes_number = AtomicUsize::new(0);
         let completed = AtomicBool::new(false);
         let total_inserted_edges = AtomicUsize::new(0);
+        let mut parents = vec![NOT_PRESENT; nodes_number];
         let thread_safe_parents = ThreadDataRaceAware {
             value: std::cell::UnsafeCell::new(&mut parents),
         };
@@ -575,12 +575,12 @@ impl Graph {
                 1,
             ));
         }
-        let verbose = verbose.unwrap_or(false);
+        let verbose = verbose.unwrap_or(true);
 
-        let components = self
-            .iter_node_ids()
-            .map(|_| AtomicU32::new(NOT_PRESENT))
-            .collect::<Vec<_>>();
+        let mut components = vec![NOT_PRESENT; self.get_nodes_number() as usize];
+        let thread_safe_components = ThreadDataRaceAware {
+            value: std::cell::UnsafeCell::new(&mut components),
+        };
         let mut min_component_size: NodeT = NodeT::MAX;
         let mut max_component_size: NodeT = 0;
         let mut components_number: NodeT = 0;
@@ -622,14 +622,15 @@ impl Graph {
                     .as_ref(),
                     self.get_nodes_number() as usize,
                 );
+                let components = thread_safe_components.value.get();
                 let min_component_size = thread_safe_min_component_size.value.get();
                 let max_component_size = thread_safe_max_component_size.value.get();
                 let components_number = thread_safe_components_number.value.get();
                 self.iter_node_ids()
                     .progress_with(pb)
-                    .for_each(|src| {
+                    .for_each(|src| unsafe {
                         // If the node has already been explored we skip ahead.
-                        if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                        if (*components)[src as usize] != NOT_PRESENT {
                             return;
                         }
 
@@ -640,8 +641,7 @@ impl Graph {
                         {
                             // We set singletons as self-loops for now.
                             unsafe {
-                                components[src as usize]
-                                    .store(**components_number, Ordering::Relaxed);
+                                (*components)[src as usize] = **components_number;
                                 **components_number += 1;
                                 **min_component_size = 1;
                                 **max_component_size = (**max_component_size).max(1);
@@ -652,7 +652,7 @@ impl Graph {
                         loop {
                             // if the node has been now mapped to a component by anyone of the
                             // parallel threads, move on to the next node.
-                            if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                            if (*components)[src as usize] != NOT_PRESENT {
                                 break;
                             }
                             // Otherwise, Check if the parallel threads are finished
@@ -667,7 +667,7 @@ impl Graph {
                                 // presence check above and the active nodes numbers check
                                 // the src node will never increase the component size and thus
                                 // leading to wrong results.
-                                if components[src as usize].load(Ordering::Relaxed) != NOT_PRESENT {
+                                if (*components)[src as usize] != NOT_PRESENT {
                                     break;
                                 }
                                 let ccs =
@@ -715,14 +715,11 @@ impl Graph {
                         }
                     };
 
-                    let src_component = components[src as usize].load(Ordering::Relaxed);
+                    let src_component = components[src as usize];
                     unsafe{self.iter_unchecked_neighbour_node_ids_from_source_node_id(src)}
                         .for_each(|dst| {
-                            if components[dst as usize].swap(src_component, Ordering::SeqCst)
-                                == NOT_PRESENT
-                            {
-                                active_nodes_number.fetch_add(1, Ordering::SeqCst);
-                                current_component_size.fetch_add(1, Ordering::SeqCst);
+                            if components[dst as usize] == NOT_PRESENT {
+                                components[dst as usize] == src_component;
                                 shared_stacks[rand_u64(dst as u64) as usize % shared_stacks.len()]
                                     .lock()
                                     .expect("The lock is poisoned from the panic of another thread")
