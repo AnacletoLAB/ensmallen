@@ -27,7 +27,7 @@ impl Graph {
     ///
     /// # Safety
     /// If the given node ID does not exists in the graph this method will panic.
-    pub unsafe fn is_unchecked_disconnected_from_node_id(&self, node_id: NodeT) -> bool {
+    pub unsafe fn is_unchecked_disconnected_node_from_node_id(&self, node_id: NodeT) -> bool {
         !self.is_unchecked_connected_from_node_id(node_id)
     }
 
@@ -46,7 +46,7 @@ impl Graph {
         }
         // If this is a directed graph, we need to distinguish trap nodes from singleton nodes
         if self.is_directed() {
-            self.is_unchecked_disconnected_from_node_id(node_id)
+            self.is_unchecked_disconnected_node_from_node_id(node_id)
         } else {
             // Otherwise in an undirected graph the nodes with zero degree are only
             // singleton nodes.
@@ -71,7 +71,7 @@ impl Graph {
         &self,
         node_id: NodeT,
     ) -> bool {
-        self.is_unchecked_disconnected_from_node_id(node_id)
+        self.is_unchecked_disconnected_node_from_node_id(node_id)
             && self.get_unchecked_node_degree_from_node_id(node_id) > 0
             && self
                 .iter_unchecked_neighbour_node_ids_from_source_node_id(node_id)

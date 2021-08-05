@@ -488,7 +488,8 @@ impl Graph {
     /// the Ensmallen rust package.
     pub fn get_node_ontologies(&self) -> Vec<Option<String>> {
         let mut node_urls = vec![None; self.get_nodes_number() as usize];
-        self.par_iter_node_ontologies().collect_into_vec(&mut node_urls);
+        self.par_iter_node_ontologies()
+            .collect_into_vec(&mut node_urls);
         node_urls
     }
 

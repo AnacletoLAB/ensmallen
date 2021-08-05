@@ -36,9 +36,9 @@ pub(crate) fn may_be_string_node_name(node_name: &str) -> bool {
     let mut begins_with_number = false;
     let mut contains_a_dot_after_number = false;
     let mut has_characters_after_dot = false;
-    for character in node_name.chars(){
+    for character in node_name.chars() {
         if character == '.' {
-            if begins_with_number{
+            if begins_with_number {
                 contains_a_dot_after_number = true;
                 continue;
             } else {
@@ -50,12 +50,12 @@ pub(crate) fn may_be_string_node_name(node_name: &str) -> bool {
             break;
         }
         // Otherwise if the character
-        // is a digit, we know that we 
+        // is a digit, we know that we
         // are continuing from a list
         // of integers otherwise we
         // would have already broken
         // out of the for loop.
-        if character.is_digit(10){
+        if character.is_digit(10) {
             begins_with_number = true;
         } else {
             begins_with_number = false;

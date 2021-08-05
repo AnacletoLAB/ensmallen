@@ -1,7 +1,8 @@
 use crate::{
     convert_edge_list_to_numeric, convert_node_list_node_types_to_numeric,
-    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, is_numeric_edge_list, get_rows_number,
-    sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT, Result, WeightT,
+    densify_sparse_numeric_edge_list, get_minmax_node_from_numeric_edge_list, get_rows_number,
+    is_numeric_edge_list, sort_numeric_edge_list_inplace, EdgeT, EdgeTypeT, NodeT, NodeTypeT,
+    Result, WeightT,
 };
 use log::info;
 
