@@ -492,7 +492,6 @@ class AutomaticallyRetrievedGraph:
                 "verbose": self._verbose > 0,
                 "directed": self._directed,
                 "name": self._name,
-                **self._additional_graph_kwargs,
             })
 
         # Otherwise just load the graph.
